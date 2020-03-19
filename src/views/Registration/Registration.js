@@ -1,6 +1,6 @@
 import React from 'react';
 import { useFormikContext } from 'formik';
-import { Step1, Step2, Step3 } from './components';
+import { Step1, Step2, Step3, Step4 } from './components';
 import { Banner } from '../../components/Banner';
 import Background from '../../assets/img/banners/banner-1.png';
 
@@ -16,6 +16,7 @@ const Registration = () => {
         {step === 1 && <Step1 />}
         {step === 2 && <Step2 />}
         {step === 3 && <Step3 />}
+        {step === 4 && <Step4 />}
       </div>
     </div>
   );

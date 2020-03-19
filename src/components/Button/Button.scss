@@ -37,6 +37,13 @@
     height: 42px;
   }
 
+  &--size {
+    &--small {
+      width: 74px;
+      padding: 5px 10px;
+    }
+  }
+
   &__icon {
     width: 16px;
     height: 15px;
