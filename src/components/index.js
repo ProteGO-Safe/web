@@ -8,3 +8,4 @@ export { FieldSet } from './FieldSet';
 export { Container } from './Container';
 export { Input } from './Input';
 export { Option } from './Option';
+export { Warning } from './Warning';
