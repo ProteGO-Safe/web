@@ -13,12 +13,13 @@ const Banner = ({ background, children, size }) => (
 );
 
 Banner.defaultProps = {
+  background: '',
   children: null,
   size: 'medium'
 };
 
 Banner.propTypes = {
-  background: PropTypes.object,
+  background: PropTypes.string,
   children: PropTypes.node,
   size: PropTypes.oneOf(['small', 'medium', 'big'])
 };

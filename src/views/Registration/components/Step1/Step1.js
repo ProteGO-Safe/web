@@ -5,7 +5,7 @@ import {
   Brand,
   Button,
   Checkbox,
-  Checkboxes,
+  FieldSet,
   Container,
   Input
 } from '../../../../components';
@@ -30,7 +30,7 @@ const Step1 = () => {
           name={FIELD_NAME}
           value={values[FIELD_NAME]}
         />
-        <Checkboxes>
+        <FieldSet>
           <Checkbox
             description="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut"
             name="term1"
@@ -43,7 +43,7 @@ const Step1 = () => {
             onChange={handleChange}
             value={values.term2}
           />
-        </Checkboxes>
+        </FieldSet>
         <Button
           disabled={!values.name}
           onClick={() => null}
