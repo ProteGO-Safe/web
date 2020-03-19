@@ -4,9 +4,15 @@ import { FormProvider } from '../../context/FormContext';
 
 import Registration from './Registration';
 
-const RegistrationContainer = ({ initialValues, onSubmit }) => {
+const RegistrationContainer = () => {
+  const initialValues = {
+    name: ''
+  };
+
+  const handleSubmit = () => null;
+
   return (
-    <Formik initialValues={initialValues} onSubmit={onSubmit}>
+    <Formik initialValues={initialValues} onSubmit={handleSubmit}>
       {props => (
         <FormProvider formProps={props}>
           <Registration />

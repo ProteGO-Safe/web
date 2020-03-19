@@ -1,8 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Banner = ({ children, size }) => (
-  <div className={`banner ${size}`}>{children}</div>
+import './Banner.scss';
+
+const Banner = ({ background, children, size }) => (
+  <div
+    className={`banner ${size}`}
+    style={{ backgroundImage: `url(${background})` }}
+  >
+    {children}
+  </div>
 );
 
 Banner.defaultProps = {
@@ -11,6 +18,7 @@ Banner.defaultProps = {
 };
 
 Banner.propTypes = {
+  background: PropTypes.object,
   children: PropTypes.node,
   size: PropTypes.oneOf(['small', 'medium', 'big'])
 };
