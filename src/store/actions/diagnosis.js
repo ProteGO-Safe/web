@@ -22,10 +22,12 @@ export const diagnosisFetchError = ({ message, status }) => ({
 const exampleResponse = {
     "conditions": [],
     "question": {
-        "text": "Please select if you've got any of the following symptoms:",
-        "type": "group_multiple",
+        "type": "single",
+        "text": "Are you breathing very fast?",
         "items": [
             {
+                "id": "s_13",
+                "name": "Accelerated breathing",
                 "choices": [
                     {
                         "id": "present",
@@ -35,45 +37,16 @@ const exampleResponse = {
                         "id": "absent",
                         "label": "No"
                     }
-                ],
-                "id": "s_2",
-                "name": "Shortness of breath"
-            },
-            {
-                "choices": [
-                    {
-                        "id": "present",
-                        "label": "Yes"
-                    },
-                    {
-                        "id": "absent",
-                        "label": "No"
-                    }
-                ],
-                "id": "s_1",
-                "name": "Cough"
-            },
-            {
-                "choices": [
-                    {
-                        "id": "present",
-                        "label": "Yes"
-                    },
-                    {
-                        "id": "absent",
-                        "label": "No"
-                    }
-                ],
-                "id": "s_0",
-                "name": "Fever"
+                ]
             }
-        ]
+        ],
+        "extras": {}
     }
 };
 
 export function getDiagnosis(data) {
     return dispatch => {
-        dispatch(diagnosisFetchRequested(data));
+        dispatch(diagnosisFetchRequested({data}));
         dispatch(diagnosisFetchSuccess({data: exampleResponse}))
         // DiagnosisRepository.getDiagnosis(data)
         //   .then(data => dispatch(diagnosisFetchSuccess(data)))

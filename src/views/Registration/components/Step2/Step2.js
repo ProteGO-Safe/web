@@ -3,7 +3,7 @@ import { useFormikContext } from 'formik';
 import { Container, FieldSet, Option } from '../../../../components';
 
 import {
-  FIELD_GENDER,
+  FIELD_SEX,
   VALUE_MAN,
   VALUE_WOMAN,
   VALUE_OTHER
@@ -23,25 +23,25 @@ const Step2 = () => {
       <h3>Kim jesteś?</h3>
       <FieldSet>
         <Option
-          checked={values[FIELD_GENDER] === VALUE_MAN}
-          name={FIELD_GENDER}
-          onChange={() => handleChange(FIELD_GENDER, VALUE_MAN)}
+          checked={values[FIELD_SEX] === VALUE_MAN}
+          name={FIELD_SEX}
+          onChange={() => handleChange(FIELD_SEX, VALUE_MAN)}
           text="Mężczyzna"
-          value={values[FIELD_GENDER]}
+          value={values[FIELD_SEX]}
         />
         <Option
-          checked={values[FIELD_GENDER] === VALUE_WOMAN}
-          name={FIELD_GENDER}
-          onChange={() => handleChange(FIELD_GENDER, VALUE_WOMAN)}
+          checked={values[FIELD_SEX] === VALUE_WOMAN}
+          name={FIELD_SEX}
+          onChange={() => handleChange(FIELD_SEX, VALUE_WOMAN)}
           text="Kobieta"
-          value={values[FIELD_GENDER]}
+          value={values[FIELD_SEX]}
         />
         <Option
-          checked={values[FIELD_GENDER] === VALUE_OTHER}
-          name={FIELD_GENDER}
-          onChange={() => handleChange(FIELD_GENDER, VALUE_OTHER)}
+          checked={values[FIELD_SEX] === VALUE_OTHER}
+          name={FIELD_SEX}
+          onChange={() => handleChange(FIELD_SEX, VALUE_OTHER)}
           text="Inne"
-          value={values[FIELD_GENDER]}
+          value={values[FIELD_SEX]}
         />
       </FieldSet>
     </Container>

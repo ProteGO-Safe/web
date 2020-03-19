@@ -17,11 +17,12 @@ const diagnosisReducer = (state = INITIAL_STATE, action) => {
                 data: { evidence }
             } = action;
 
-            const currentEvidence = state.evidence
+            const currentEvidence = state.evidence;
 
             return {
                 ...state,
                 evidence: [...currentEvidence, ...evidence],
+                inProgress: true,
                 isLoading: true
             };
         })();
@@ -31,13 +32,16 @@ const diagnosisReducer = (state = INITIAL_STATE, action) => {
                 data: { question, should_stop, conditions }
             } = action;
 
-
+            const isInProgress = () => {
+                return should_stop != null;
+            };
 
             return {
                 ...state,
                 question,
                 should_stop,
                 conditions,
+                inProgress: isInProgress(),
                 isLoading: false
             };
         })();
