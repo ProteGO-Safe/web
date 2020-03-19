@@ -6,7 +6,9 @@ import Registration from './Registration';
 
 const RegistrationContainer = () => {
   const initialValues = {
-    name: ''
+    name: '',
+    term1: false,
+    term2: false
   };
 
   const handleSubmit = () => null;

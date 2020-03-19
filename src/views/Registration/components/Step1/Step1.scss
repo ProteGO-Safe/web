@@ -5,7 +5,7 @@
             "banner"
             "container"
   ;
-    grid-template-rows: 163px auto;
+    grid-template-rows: minmax(1fr, 163px) auto;
     width: 100%;
     height: 100vh;
 
@@ -15,6 +15,10 @@
 
     .container {
       grid-area: container;
+
+      .checkboxes {
+        margin: 18px 0 11px;
+      }
 
       .button {
         margin: auto 0 33px;

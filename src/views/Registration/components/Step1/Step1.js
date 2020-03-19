@@ -4,6 +4,8 @@ import {
   Banner,
   Brand,
   Button,
+  Checkbox,
+  Checkboxes,
   Container,
   Input
 } from '../../../../components';
@@ -28,6 +30,20 @@ const Step1 = () => {
           name={FIELD_NAME}
           value={values[FIELD_NAME]}
         />
+        <Checkboxes>
+          <Checkbox
+            description="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut"
+            name="term1"
+            onChange={handleChange}
+            value={values.term1}
+          />
+          <Checkbox
+            description="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut"
+            name="term2"
+            onChange={handleChange}
+            value={values.term2}
+          />
+        </Checkboxes>
         <Button
           disabled={!values.name}
           onClick={() => null}

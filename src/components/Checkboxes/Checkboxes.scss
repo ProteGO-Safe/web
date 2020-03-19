@@ -1,0 +1,7 @@
+.checkboxes {
+  .checkbox {
+    + .checkbox {
+      margin-top: 2px;
+    }
+  }
+}
