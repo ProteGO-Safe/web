@@ -20,4 +20,23 @@
     text-align: center;
     min-height: 74px;
   }
+
+  &--white {
+    justify-content: center;
+    height: 100%;
+
+    .brand {
+      &__sign {
+        width: 64px;
+        height: 64px;
+        margin-bottom: 6px;
+      }
+
+      &__text {
+        width: 142px;
+        height: 26px;
+        margin-bottom: 0;
+      }
+    }
+  }
 }

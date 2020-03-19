@@ -11,6 +11,13 @@
     box-sizing: border-box;
   }
 
+  h2 {
+    color: $black;
+    font-size: 28px;
+    letter-spacing: 0;
+    line-height: 37px;
+  }
+
   h3 {
     color: $black;
     font-size: 20px;
@@ -33,6 +40,23 @@
     line-height: 24px;
     color: $primary_1;
     margin: 0;
+  }
+
+  p {
+    &.big {
+      color: $black;
+      font-size: 18px;
+      line-height: 24px;
+      letter-spacing: 0;
+    }
+  }
+
+  .text-bold {
+    font-weight: bold;
+  }
+
+  .text-center {
+    text-align: center;
   }
 
   > .view {
