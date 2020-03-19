@@ -3,11 +3,11 @@ import { useDispatch, useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
 import { Formik } from 'formik';
 
-import Single from './Single';
+import GroupSingle from './GroupSingle';
 import { getDiagnosis } from '../../../../store/actions/diagnosis';
-import { FIELD_CHOICE_ID } from '../../../../constants';
+import { FIELD_CHOICE_ID, FIELD_ITEM_ID } from '../../../../constants';
 
-const SingleContainer = ({ question }) => {
+const GroupSingleContainer = ({ question }) => {
   const dispatch = useDispatch();
 
   const {
@@ -16,15 +16,17 @@ const SingleContainer = ({ question }) => {
   } = useSelector(state => state.user);
 
   const initialValues = {
-    [FIELD_CHOICE_ID]: ''
+    [FIELD_ITEM_ID]: '',
+    [FIELD_CHOICE_ID]: '',
   };
 
   const handleSubmit = values => {
+    console.log(values)
     const data = {
       sex,
       age,
       evidence: [{
-        id: question.items[0].id,
+        id: values[FIELD_ITEM_ID],
         choice_id: values[FIELD_CHOICE_ID]
       }]
     };
@@ -33,12 +35,12 @@ const SingleContainer = ({ question }) => {
 
   return (
     <Formik initialValues={initialValues} onSubmit={handleSubmit}>
-      <Single text={question.text} choices={question.items[0].choices}/>
+      <GroupSingle text={question.text} items={question.items}/>
     </Formik>
   );
 };
 
-SingleContainer.propTypes = {
+GroupSingleContainer.propTypes = {
   question: PropTypes.shape({
     text: PropTypes.string.isRequired,
     items: PropTypes.arrayOf(PropTypes.shape({
@@ -53,4 +55,4 @@ SingleContainer.propTypes = {
   }).isRequired
 };
 
-export default SingleContainer;
+export default GroupSingleContainer;

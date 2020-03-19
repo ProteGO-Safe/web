@@ -22,12 +22,40 @@ export const diagnosisFetchError = ({ message, status }) => ({
 const exampleResponse = {
     "conditions": [],
     "question": {
-        "type": "single",
-        "text": "Are you breathing very fast?",
+        "type": "group_single",
+        "text": "How high is your fever?",
         "items": [
             {
-                "id": "s_13",
-                "name": "Accelerated breathing",
+                "id": "s_3",
+                "name": "Between 37.5°C and 40°C (99.5°F and 104°F)",
+                "choices": [
+                    {
+                        "id": "present",
+                        "label": "Yes"
+                    },
+                    {
+                        "id": "absent",
+                        "label": "No"
+                    }
+                ]
+            },
+            {
+                "id": "s_4",
+                "name": "Greater than 40°C (104°F)",
+                "choices": [
+                    {
+                        "id": "present",
+                        "label": "Yes"
+                    },
+                    {
+                        "id": "absent",
+                        "label": "No"
+                    }
+                ]
+            },
+            {
+                "id": "s_5",
+                "name": "I haven’t measured",
                 "choices": [
                     {
                         "id": "present",

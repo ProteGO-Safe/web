@@ -6,7 +6,7 @@ import { Container } from '../../../../components/Container';
 import { Option } from '../../../../components/Option';
 import { FieldSet } from '../../../../components/FieldSet';
 import { Button } from '../../../../components/Button';
-import { FIELD_ID } from '../../../../constants';
+import { FIELD_CHOICE_ID } from '../../../../constants';
 import Icon from '../../../../assets/img/icons/angle-right-white.svg';
 
 const Single = ({ text, choices }) => {
@@ -19,11 +19,11 @@ const Single = ({ text, choices }) => {
   const renderOption = choice => (
     <Option
       key={choice.id}
-      checked={values[FIELD_ID] === choice.id}
-      name={FIELD_ID}
-      onChange={() => handleChange(FIELD_ID, choice.id)}
+      checked={values[FIELD_CHOICE_ID] === choice.id}
+      name={FIELD_CHOICE_ID}
+      onChange={() => handleChange(FIELD_CHOICE_ID, choice.id)}
       text={choice.label}
-      value={values[FIELD_ID]}
+      value={values[FIELD_CHOICE_ID]}
     />
   );
 
@@ -36,7 +36,7 @@ const Single = ({ text, choices }) => {
         {renderOptions()}
       </FieldSet>
       <Button
-        disabled={!values[FIELD_ID]}
+        disabled={!values[FIELD_CHOICE_ID]}
         height="small"
         onClick={submitForm}
         icon={Icon}
