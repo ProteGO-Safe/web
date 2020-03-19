@@ -1,0 +1,52 @@
+@import '../../assets/styles/colors';
+
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 286px;
+  padding: 12px;
+  line-height: 16px;
+  font-size: 12px;
+  letter-spacing: 0;
+  -webkit-appearance: none;
+  box-shadow: 0 3px 6px #00000029;
+  border-style: none;
+  border-radius: 6px;
+
+  &:hover,
+  &:focus {
+    outline: none;
+  }
+
+  &:disabled {
+    opacity: 0.6;
+  }
+
+  &--primary {
+    background-color: $primary_2;
+    color: $white;
+  }
+
+  &--small {
+    height: 29px;
+  }
+
+  &--normal {
+    height: 42px;
+  }
+
+  &--size {
+    &--small {
+      width: 74px;
+      padding: 5px 10px;
+    }
+  }
+
+  &__icon {
+    width: 16px;
+    height: 15px;
+    margin-left: 12px;
+  }
+}

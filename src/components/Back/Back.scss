@@ -1,0 +1,17 @@
+.back-btn {
+  margin: 15px 21px;
+  padding: 0;
+  background: none;
+  border: none;
+  -webkit-appearance: none;
+  cursor: pointer;
+
+  &:focus {
+    outline: none;
+  }
+
+  img {
+    width: 24px;
+    height: 21px;
+  }
+}

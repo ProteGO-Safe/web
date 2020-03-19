@@ -1,0 +1,32 @@
+@import '../../assets/styles/colors';
+
+.input {
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  &__field {
+    height: 28px;
+    border-style: solid;
+    border-width: 0 0 2px;
+    border-color: $primary_2;
+    font-size: 18px;
+    line-height: 24px;
+    padding: 2px;
+    color: $black;
+    letter-spacing: 0;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  &__description {
+    font-size: 10px;
+    line-height: 13px;
+    letter-spacing: 0;
+    color: $black;
+  }
+}
