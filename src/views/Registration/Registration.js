@@ -1,7 +1,11 @@
 import React from 'react';
 
 const Registration = () => {
-  return <div>Rejestracja</div>;
+  return (
+    <div>
+
+    </div>
+  )
 };
 
 export default Registration;
