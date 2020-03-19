@@ -28,16 +28,18 @@ const Step1 = () => {
       />
       <FieldSet>
         <Checkbox
+          checked={values.term1 === 'term1'}
           description="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut"
           name="term1"
-          onChange={handleChange}
-          value={values.term1}
+          onChange={() => setFieldValue('term1', 'term1')}
+          value="term1"
         />
         <Checkbox
+          checked={values.term2 === 'term2'}
           description="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut"
           name="term2"
-          onChange={handleChange}
-          value={values.term2}
+          onChange={() => setFieldValue('term2', 'term2')}
+          value="term2"
         />
       </FieldSet>
       <Button

@@ -3,10 +3,11 @@ import PropTypes from 'prop-types';
 
 import './Checkbox.scss';
 
-const Checkbox = ({ description, name, onChange, type, value }) => (
+const Checkbox = ({ checked, description, name, onChange, type, value }) => (
   <div className="checkbox checkbox__wrapper">
     <div className="checkbox__field__wrapper">
       <input
+        checked={checked}
         className="checkbox__field"
         name={name}
         onChange={onChange}
@@ -22,6 +23,7 @@ const Checkbox = ({ description, name, onChange, type, value }) => (
 );
 
 Checkbox.defaultProps = {
+  checked: false,
   description: undefined,
   onChange: undefined,
   type: 'checkbox',
@@ -29,6 +31,7 @@ Checkbox.defaultProps = {
 };
 
 Checkbox.propTypes = {
+  checked: PropTypes.bool,
   description: PropTypes.string,
   name: PropTypes.string.isRequired,
   onChange: PropTypes.func,

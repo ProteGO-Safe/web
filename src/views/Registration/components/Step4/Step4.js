@@ -68,7 +68,7 @@ const Step4 = () => {
           !values[FIELD_CHRONIC_SICK] && !values[FIELD_CHRONIC_SICK_OTHER]
         }
         height="small"
-        onClick={() => setFieldValue('step', 2)}
+        onClick={() => null}
         icon={Icon}
         size="small"
         text="Dalej"
