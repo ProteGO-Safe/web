@@ -1,0 +1,41 @@
+@import '../../assets/styles/colors';
+
+.app {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  min-width: 320px;
+
+  * {
+    box-sizing: border-box;
+  }
+
+  h3 {
+    color: $black;
+    font-size: 20px;
+    font-weight: bold;
+    letter-spacing: 0;
+    line-height: 26px;
+  }
+
+  h4 {
+    font-size: 14px;
+    letter-spacing: 0;
+    line-height: 24px;
+    color: $primary_2;
+    margin: 0;
+  }
+
+  h5 {
+    font-size: 18px;
+    letter-spacing: 0;
+    line-height: 24px;
+    color: $primary_1;
+    margin: 0;
+  }
+
+  > .view {
+    width: 100%;
+  }
+}

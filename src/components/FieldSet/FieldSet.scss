@@ -1,0 +1,15 @@
+.fieldset {
+  width: 100%;
+
+  .checkbox {
+    + .checkbox {
+      margin-top: 2px;
+    }
+  }
+
+  .option {
+    + .option {
+      margin-top: 24px;
+    }
+  }
+}

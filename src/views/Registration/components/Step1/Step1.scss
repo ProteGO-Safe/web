@@ -1,0 +1,27 @@
+.registration{
+  &__step--1 {
+    display: grid;
+    grid-template-areas:
+            "banner"
+            "container";
+    grid-template-rows: minmax(auto, 163px) auto;
+    width: 100%;
+    height: 100vh;
+
+    .banner {
+      grid-area: banner;
+    }
+
+    .container {
+      grid-area: container;
+
+      .fieldset {
+        margin: 18px 0 11px;
+      }
+
+      .button {
+        margin: auto 0 33px;
+      }
+    }
+  }
+}

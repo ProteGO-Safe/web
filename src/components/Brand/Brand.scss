@@ -1,0 +1,23 @@
+.brand {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 26px auto 16px;
+
+  &__sign {
+    width: 81px;
+    height: 81px;
+    margin-bottom: 8px;
+  }
+
+  &__text {
+    width: 180px;
+    height: 33px;
+    margin-bottom: 26px;
+  }
+
+  &__content {
+    text-align: center;
+    min-height: 74px;
+  }
+}
