@@ -1,10 +1,10 @@
 .registration{
-  &__step--1 {
+  &__step--3 {
     display: grid;
     grid-template-areas:
             "banner"
             "container";
-    grid-template-rows: minmax(auto, 163px) auto;
+    grid-template-rows: minmax(auto, 302px) 1fr;
     width: 100%;
     height: 100vh;
 
@@ -14,13 +14,11 @@
 
     .container {
       grid-area: container;
+      align-items: flex-start;
 
-      .fieldset {
-        margin: 18px 0 11px;
-      }
-
-      .button {
-        margin: auto 0 33px;
+      h3 {
+        text-align: left;
+        margin: 33px 0 36px;
       }
     }
   }

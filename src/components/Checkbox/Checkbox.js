@@ -33,7 +33,7 @@ Checkbox.propTypes = {
   name: PropTypes.string.isRequired,
   onChange: PropTypes.func,
   type: PropTypes.oneOf(['checkbox', 'radio']),
-  value: PropTypes.string
+  value: PropTypes.oneOfType([PropTypes.bool, PropTypes.string])
 };
 
 export default Checkbox;

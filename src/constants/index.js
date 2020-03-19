@@ -1,3 +1,4 @@
+export const FIELD_AGE = 'age';
 export const FIELD_GENDER = 'gender';
 export const FIELD_NAME = 'name';
 

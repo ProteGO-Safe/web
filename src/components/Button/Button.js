@@ -17,14 +17,14 @@ const Button = ({ disabled, height, icon, onClick, text, type }) => (
 Button.defaultProps = {
   disabled: false,
   height: 'normal',
-  icon: undefined,
+  icon: '',
   type: 'primary'
 };
 
 Button.propTypes = {
   disabled: PropTypes.bool,
   height: PropTypes.oneOf(['small', 'normal']),
-  icon: PropTypes.object,
+  icon: PropTypes.string,
   onClick: PropTypes.func.isRequired,
   text: PropTypes.string.isRequired,
   type: PropTypes.oneOf(['primary'])
