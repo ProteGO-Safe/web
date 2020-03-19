@@ -1,14 +1,14 @@
 import React from 'react';
 import { Formik } from 'formik';
-import { FormProvider } from '../../context/FormContext';
 
 import Registration from './Registration';
 import { FIELD_GENDER, FIELD_NAME } from '../../constants';
 
 const RegistrationContainer = () => {
   const initialValues = {
-    [FIELD_GENDER]: null,
+    [FIELD_GENDER]: '',
     [FIELD_NAME]: '',
+    step: 1,
     term1: false,
     term2: false
   };
@@ -17,11 +17,7 @@ const RegistrationContainer = () => {
 
   return (
     <Formik initialValues={initialValues} onSubmit={handleSubmit}>
-      {props => (
-        <FormProvider formProps={props}>
-          <Registration />
-        </FormProvider>
-      )}
+      <Registration />
     </Formik>
   );
 };

@@ -3,11 +3,12 @@ import PropTypes from 'prop-types';
 
 import './Option.scss';
 
-const Option = ({ checked, onChange, text, value }) => (
+const Option = ({ checked, name, onChange, text, value }) => (
   <div className="option option__wrapper">
     <input
       checked={checked}
       className="option__field"
+      name={name}
       onChange={onChange}
       type="radio"
       value={value}
@@ -17,11 +18,12 @@ const Option = ({ checked, onChange, text, value }) => (
 );
 
 Option.defaultProps = {
-  checked: null
+  checked: false
 };
 
 Option.propTypes = {
-  checked: PropTypes.string,
+  checked: PropTypes.bool,
+  name: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,
   text: PropTypes.string.isRequired,
   value: PropTypes.string.isRequired
