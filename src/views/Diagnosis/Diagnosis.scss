@@ -1,0 +1,32 @@
+.view__diagnosis {
+  display: grid;
+  grid-template-areas: "banner" "container";
+  grid-row-gap: 37px;
+  grid-template-rows: minmax(min-content, 204px) minmax(min-content, 3fr);
+  min-height: 100vh;
+
+  .banner {
+    grid-area: banner;
+  }
+
+  .container {
+
+    h3 {
+      margin-top: 0;
+    }
+
+    .content {
+      grid-area: content;
+      align-self: start;
+      padding-top: 30px;
+    }
+
+    .fieldset {
+      margin-bottom: 30px;
+    }
+
+    .button {
+      margin: auto 0 33px auto;
+    }
+  }
+}
