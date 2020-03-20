@@ -1,5 +1,6 @@
 import React from 'react';
-import { useHistory } from 'react-router-dom';
+import PropTypes from 'prop-types';
+
 import Background from '../../assets/img/banners/banner-1.png';
 import {
   Back,
@@ -11,13 +12,11 @@ import {
   Legend
 } from '../../components';
 
-const Daily = () => {
-  const history = useHistory();
-
+const Daily = ({ onBack, onDiagnosis, today, previousDays }) => {
   return (
     <div className="view view__my-health">
       <Banner background={Background}>
-        <Back onClick={() => history.push('/')} />
+        <Back onClick={onBack} />
         <Brand content={false} small white />
       </Banner>
       <Container>
@@ -25,28 +24,37 @@ const Daily = () => {
         <Legend />
         <div className="today">
           <Button
-            onClick={() => null}
-            text="DZIŚ 19-03-2020 - KLIKNIJ I UZUPEŁNIJ DANE"
+            onClick={onDiagnosis}
+            text={`DZIŚ ${today} - KLIKNIJ I UZUPEŁNIJ DANE`}
             type="success-blank"
           />
         </div>
         <div className="line" />
         <FieldSet>
-          <Button onClick={() => null} text="środa 18-03-2020" type="black" />
-          <Button
-            onClick={() => null}
-            text="wtorek 17-03-2020"
-            type="success"
-          />
-          <Button
-            onClick={() => null}
-            text="poniedziałek 16-03-2020"
-            type="black"
-          />
+          {previousDays.map(_obj => (
+            <Button
+              key={_obj.day}
+              onClick={() => null}
+              text={_obj.day}
+              type={_obj.wasDiagnosis ? 'success' : 'black'}
+            />
+          ))}
         </FieldSet>
       </Container>
     </div>
   );
+};
+
+Daily.propTypes = {
+  onBack: PropTypes.func.isRequired,
+  onDiagnosis: PropTypes.func.isRequired,
+  today: PropTypes.string.isRequired,
+  previousDays: PropTypes.arrayOf(
+    PropTypes.shape({
+      day: PropTypes.string.isRequired,
+      wasDiagnosis: PropTypes.bool.isRequired
+    })
+  ).isRequired
 };
 
 export default Daily;

@@ -3,6 +3,7 @@ import { useSelector } from 'react-redux';
 import { Route, Switch } from 'react-router-dom';
 import {
   Daily,
+  Diagnosis,
   Home,
   HowItWorks,
   MyHealth,
@@ -34,6 +35,7 @@ function App() {
               <Route exact path="/numbers" component={Numbers} />
               <Route exact path="/privacy-policy" component={PrivacyPolicy} />
               <Route exact path="/regulations" component={Regulations} />
+              <Route exact path="/diagnosis" component={Diagnosis} />
             </>
           )}
         </Switch>
