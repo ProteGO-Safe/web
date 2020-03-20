@@ -48,7 +48,7 @@ const MenuContainer = () => {
     },
     {
       icon: Icon5,
-      path: '',
+      path: '/numbers',
       slug: 'numery_alarmowe',
       title: 'Numery alarmowe'
     },

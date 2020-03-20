@@ -1,6 +1,6 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
-import { Home, PrivacyPolicy, Registration } from '../../views';
+import { Home, Numbers, PrivacyPolicy, Registration, Regulations } from '../../views';
 import { Menu } from '../Menu';
 
 import './App.scss';
@@ -14,9 +14,11 @@ function App() {
     <div className={`app ${menuVisible}`}>
       <div className="app__inner">
         <Switch>
-          {/*<Route exact path="/" component={Registration} />*/}
+          {/* <Route exact path="/" component={Registration} /> */}
           <Route exact path="/" component={Home} />
           <Route exact path="/privacy-policy" component={PrivacyPolicy} />
+          <Route exact path="/regulations" component={Regulations} />
+          <Route exact path="/numbers" component={Numbers} />
         </Switch>
         <Menu />
       </div>
