@@ -20,7 +20,7 @@ import './Step4.scss';
 import Icon from '../../../../assets/img/icons/angle-right-white.svg';
 
 const Step4 = () => {
-  const { handleChange, setFieldValue, values } = useFormikContext();
+  const { handleChange, setFieldValue, submitForm, values } = useFormikContext();
 
   return (
     <Container>
@@ -68,7 +68,7 @@ const Step4 = () => {
           !values[FIELD_CHRONIC_SICK] && !values[FIELD_CHRONIC_SICK_OTHER]
         }
         height="small"
-        onClick={() => null}
+        onClick={submitForm}
         icon={Icon}
         size="small"
         text="Dalej"
