@@ -1,6 +1,13 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useFormikContext } from 'formik';
-import {InstallApp, InstallAppInstruction, Step1, Step2, Step3, Step4} from './components';
+import {
+  InstallApp,
+  InstallAppInstruction,
+  Step1,
+  Step2,
+  Step3,
+  Step4
+} from './components';
 import { Back, Banner } from '../../components';
 import Background from '../../assets/img/banners/banner-1.png';
 
@@ -9,6 +16,12 @@ const Registration = () => {
     setFieldValue,
     values: { step }
   } = useFormikContext();
+
+  useEffect(() => {
+    if (window && window.scrollTo) {
+      window.scrollTo(0, 0);
+    }
+  }, [step]);
 
   const handleBack = () => {
     if (step <= 1) {
