@@ -5,6 +5,7 @@ import { getDiagnosis, clearDiagnosis } from '../../store/actions/diagnosis';
 import { getTriage } from '../../store/actions/triage';
 
 import Diagnosis from './Diagnosis';
+import { Summary } from './components/Summary';
 
 import './Diagnosis.scss';
 
@@ -39,6 +40,10 @@ const DiagnosisContainer = () => {
       dispatch(getTriage(data));
     }
   }, [inProgress, evidence]);
+
+  if (!inProgress && evidence.length > 0) {
+    return <Summary question={question} />;
+  }
 
   const onClearDiagnosis = () => dispatch(clearDiagnosis());
 

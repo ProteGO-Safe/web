@@ -64,21 +64,36 @@
     line-height: 24px;
     color: $primary_1;
     margin: 0;
+
+    &.small {
+      font-size: 14px;
+      color: $primary_1;
+      line-height: 19px;
+    }
   }
 
   p {
+    color: $black;
+    letter-spacing: 0;
+
+    &.smaller {
+      font-size: 10px;
+      line-height: 13px;
+    }
+
     &.small {
-      color: $black;
       font-size: 12px;
-      letter-spacing: 0;
       line-height: 16px;
     }
 
+    &.medium {
+      font-size: 14px;
+      line-height: 19px;
+    }
+
     &.big {
-      color: $black;
       font-size: 18px;
       line-height: 24px;
-      letter-spacing: 0;
     }
   }
 
