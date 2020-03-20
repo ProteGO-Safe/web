@@ -29,6 +29,11 @@
     color: $white;
   }
 
+  &--secondary {
+    background-color: $white;
+    border: 1px solid $primary_1;
+  }
+
   &--small {
     height: 29px;
   }

@@ -8,12 +8,14 @@ import TextWhite from '../../assets/img/logo/safesafe-white.png';
 
 import './Brand.scss';
 
-const Brand = ({ content, white }) => {
+const Brand = ({ content, small, white }) => {
   const TextImg = white ? TextWhite : Text;
   const SignImg = white ? SignWhite : Sign;
+  const isWhite = white ? 'brand--white' : '';
+  const isSmall = small ? 'brand--small' : '';
 
   return (
-    <div className={`brand ${white ? 'brand--white' : ''}`}>
+    <div className={`brand ${isWhite} ${isSmall}`}>
       <img className="brand__sign" src={SignImg} alt="SafeSafe" />
       <img className="brand__text" src={TextImg} alt="SafeSafe" />
       {content && (

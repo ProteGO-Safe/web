@@ -55,6 +55,13 @@
   }
 
   p {
+    &.small {
+      color: $black;
+      font-size: 12px;
+      letter-spacing: 0;
+      line-height: 16px;
+    }
+
     &.big {
       color: $black;
       font-size: 18px;

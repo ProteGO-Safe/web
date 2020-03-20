@@ -62,7 +62,7 @@ const MenuContainer = () => {
     },
     {
       icon: Icon7,
-      path: '',
+      path: '/privacy-policy',
       slug: 'polityka_prywatnosci',
       title: 'Polityka prywatności'
     },
