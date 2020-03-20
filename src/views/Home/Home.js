@@ -16,8 +16,7 @@ const WarningCase1 = () => (
   <>
     <Warning />
     <p className="big text-center text-bold">
-      W ciągu najbliższych dni musimy wspólnie zebrać więcej danych - odpowiadaj
-      na pytania!
+      Niskie ryzyko - kontynuuj działania profilaktyczne
     </p>
   </>
 );
@@ -25,21 +24,31 @@ const WarningCase1 = () => (
 const WarningCase2 = () => (
   <>
     <Warning color="green" />
-    <h2>NIEWIELKIE RYZYKO INFEKCJI</h2>
+    <h2>Samokontrola - zostań w domu i monitoruj stan swojego zdrowia </h2>
   </>
 );
 
 const WarningCase3 = () => (
   <>
     <Warning color="yellow" />
-    <h2>NISKIE RYZYKO INFEKCJI</h2>
+    <h2>Odizoluj się, nie wychodź, unikaj kontaktów z domownikami</h2>
   </>
 );
 
 const WarningCase4 = () => (
   <>
     <Warning color="red" />
-    <h2>WYSOKIE RYZYKO INFEKCJI</h2>
+    <h2>Powiadom służby medyczne i unikaj wszelkich kontaktów.</h2>
+  </>
+);
+
+const WarningCase5 = () => (
+  <>
+    <Warning color="red" />
+    <h2>
+      Powiadom służby medyczne, konieczna izolacja ambulatoryjna, unikaj
+      wszelkich kontaktów.
+    </h2>
   </>
 );
 
@@ -60,7 +69,7 @@ const Home = () => {
         return <WarningCase4 />;
       }
       case 'isolation_ambulance': {
-        return <WarningCase4 />;
+        return <WarningCase5 />;
       }
       default: {
         return null;
