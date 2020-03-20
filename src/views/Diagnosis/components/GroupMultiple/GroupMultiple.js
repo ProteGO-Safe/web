@@ -23,26 +23,22 @@ const GroupMultiple = ({ text, items }) => {
     }
   };
 
-  const renderOption = item => {
-    return (
-      <Option
-        key={item.id}
-        checked={values[item.id] === VALUE_PRESENT}
-        name={item.id}
-        onChange={() => handleChange(item.id)}
-        text={item.name}
-        type={'checkbox'}
-        value={values[item.id]}
-      />
-    );
-  };
-
-  const renderOptions = () => items.map(_item => renderOption(_item));
-
   return (
     <Container>
       <h3>{text}</h3>
-      <FieldSet>{renderOptions()}</FieldSet>
+      <FieldSet>
+        {items.map(item => (
+          <Option
+            key={item.id}
+            checked={values[item.id] === VALUE_PRESENT}
+            name={item.id}
+            onChange={() => handleChange(item.id)}
+            text={item.name}
+            type="checkbox"
+            value={values[item.id]}
+          />
+        ))}
+      </FieldSet>
       <Button
         height="small"
         onClick={submitForm}
@@ -67,7 +63,7 @@ GroupMultiple.propTypes = {
         })
       )
     })
-  )
+  ).isRequired
 };
 
 export default GroupMultiple;

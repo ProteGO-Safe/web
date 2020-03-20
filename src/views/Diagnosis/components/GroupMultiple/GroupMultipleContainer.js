@@ -9,8 +9,8 @@ import { VALUE_ABSENT } from '../../../../constants';
 
 const GroupMultipleContainer = ({ question }) => {
   const dispatch = useDispatch();
-
   const { sex, age } = useSelector(state => state.user);
+  const { evidence: existingEvidence } = useSelector(state => state.diagnosis);
 
   const generateInitialValues = () => {
     const initialValues = {};
@@ -30,7 +30,7 @@ const GroupMultipleContainer = ({ question }) => {
     const data = {
       sex,
       age,
-      evidence: [...evidence]
+      evidence: [...existingEvidence, ...evidence]
     };
     dispatch(getDiagnosis(data));
   };

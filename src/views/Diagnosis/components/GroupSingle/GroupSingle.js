@@ -6,7 +6,11 @@ import { Container } from '../../../../components/Container';
 import { Option } from '../../../../components/Option';
 import { FieldSet } from '../../../../components/FieldSet';
 import { Button } from '../../../../components/Button';
-import { FIELD_CHOICE_ID, FIELD_ITEM_ID, VALUE_PRESENT } from '../../../../constants';
+import {
+  FIELD_CHOICE_ID,
+  FIELD_ITEM_ID,
+  VALUE_PRESENT
+} from '../../../../constants';
 import Icon from '../../../../assets/img/icons/angle-right-white.svg';
 
 const GroupSingle = ({ text, items }) => {
@@ -33,9 +37,7 @@ const GroupSingle = ({ text, items }) => {
   return (
     <Container>
       <h3>{text}</h3>
-      <FieldSet>
-        {renderOptions()}
-      </FieldSet>
+      <FieldSet>{renderOptions()}</FieldSet>
       <Button
         disabled={!values[FIELD_CHOICE_ID]}
         height="small"
@@ -45,18 +47,21 @@ const GroupSingle = ({ text, items }) => {
         text="Dalej"
       />
     </Container>
-  )
+  );
 };
 
 GroupSingle.propTypes = {
   text: PropTypes.string.isRequired,
-  items: PropTypes.arrayOf(PropTypes.shape({
+  items: PropTypes.arrayOf(
+    PropTypes.shape({
       id: PropTypes.string.isRequired,
       name: PropTypes.string.isRequired,
-      choices: PropTypes.arrayOf(PropTypes.shape({
-        id: PropTypes.string.isRequired,
-        label: PropTypes.string.isRequired
-      })),
+      choices: PropTypes.arrayOf(
+        PropTypes.shape({
+          id: PropTypes.string.isRequired,
+          label: PropTypes.string.isRequired
+        })
+      )
     })
   )
 };

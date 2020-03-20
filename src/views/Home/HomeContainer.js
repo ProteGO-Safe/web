@@ -8,7 +8,7 @@ const HomeContainer = () => {
   const questionnaires = useSelector(state => state.questionnaires);
 
   if (Object.keys(questionnaires).length === 0) {
-    return <Diagnosis/>
+    return <Diagnosis />;
   }
   return <Home />;
 };

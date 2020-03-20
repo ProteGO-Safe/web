@@ -32,9 +32,7 @@ const Single = ({ text, choices }) => {
   return (
     <Container>
       <h3>{text}</h3>
-      <FieldSet>
-        {renderOptions()}
-      </FieldSet>
+      <FieldSet>{renderOptions()}</FieldSet>
       <Button
         disabled={!values[FIELD_CHOICE_ID]}
         height="small"
@@ -44,15 +42,17 @@ const Single = ({ text, choices }) => {
         text="Dalej"
       />
     </Container>
-  )
+  );
 };
 
 Single.propTypes = {
   text: PropTypes.string.isRequired,
-  choices: PropTypes.arrayOf(PropTypes.shape({
-    id: PropTypes.string.isRequired,
-    label: PropTypes.string.isRequired
-  })),
+  choices: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string.isRequired,
+      label: PropTypes.string.isRequired
+    })
+  )
 };
 
 export default Single;
