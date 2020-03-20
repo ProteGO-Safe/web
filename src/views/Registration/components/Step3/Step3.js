@@ -15,6 +15,8 @@ const Step3 = () => {
     }
   };
 
+  const disabled = !values[FIELD_AGE] || values[FIELD_AGE] > 150 || values[FIELD_AGE] < 1;
+
   return (
     <Container>
       <h3>Ile masz?</h3>
@@ -22,12 +24,14 @@ const Step3 = () => {
         placeholder="wiek"
         onChange={handleChange}
         onKeyPress={handleKeyPress}
+        max={150}
+        min={1}
         name={FIELD_AGE}
         type="number"
         value={values[FIELD_AGE]}
       />
       <Button
-        disabled={!values[FIELD_AGE]}
+        disabled={disabled}
         height="small"
         onClick={() => setFieldValue('step', 4)}
         icon={Icon}

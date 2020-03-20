@@ -1,5 +1,6 @@
 import React from 'react';
 
+import { useSelector } from 'react-redux';
 import Icon1 from '../../assets/img/icons/001-care.svg';
 import Icon2 from '../../assets/img/icons/002-laptop.svg';
 import Icon3 from '../../assets/img/icons/003-idea.svg';
@@ -14,12 +15,11 @@ import useMenuContext from '../../hooks/useMenuContext';
 
 const MenuContainer = () => {
   const { visible } = useMenuContext();
+  const userName = useSelector(state => state.user.name);
 
   if (!visible) {
     return null;
   }
-
-  const userName = 'Mateusz';
 
   const items = [
     {
