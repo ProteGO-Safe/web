@@ -1,13 +1,16 @@
 import {
   DIAGNOSIS_FETCH_REQUESTED,
   DIAGNOSIS_FETCH_SUCCESS,
-  DIAGNOSIS_FETCH_ERROR
+  DIAGNOSIS_FETCH_ERROR,
+  DIAGNOSIS_CLEAR_REQUESTED
 } from '../../types/diagnosis';
 
 const INITIAL_STATE = {
   evidence: [],
   inProgress: false,
-  allQuestion: []
+  isLoading: false,
+  isResetting: false,
+  question: {}
 };
 
 const diagnosisReducer = (state = INITIAL_STATE, action) => {
@@ -22,31 +25,33 @@ const diagnosisReducer = (state = INITIAL_STATE, action) => {
           ...state,
           evidence: [...evidence],
           inProgress: true,
-          isLoading: true
+          isLoading: true,
+          isResetting: false
         };
       })();
     case DIAGNOSIS_FETCH_SUCCESS:
       return (() => {
         const {
-          data: { question, should_stop, conditions }
+          data: { question, should_stop }
         } = action;
-
-        const currentAllQuestion = state.allQuestion;
 
         return {
           ...state,
-          question,
-          should_stop,
-          conditions,
-          inProgress: should_stop !== null,
-          isLoading: false,
-          allQuestion: [...currentAllQuestion, question]
+          ...(question !== null && { question }),
+          inProgress: !should_stop,
+          isLoading: false
         };
       })();
     case DIAGNOSIS_FETCH_ERROR:
       return {
         ...state,
         isLoading: false
+      };
+    case DIAGNOSIS_CLEAR_REQUESTED:
+      return {
+        ...state,
+        ...INITIAL_STATE,
+        isResetting: true
       };
     default:
       return state;
