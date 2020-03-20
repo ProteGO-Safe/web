@@ -1,0 +1,36 @@
+.view__numbers {
+  display: grid;
+  grid-template-areas: "banner" "container";
+  grid-template-rows: 102px 1fr;
+  width: 100%;
+  height: 100vh;
+
+  .banner {
+    grid-area: banner;
+  }
+
+  .container {
+    display: grid;
+    grid-template-areas: "title" "content";
+    grid-template-rows: 50px 1fr;
+    grid-area: container;
+
+    .h1 {
+      grid-area: title;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 50px;
+    }
+
+    .h2 {
+      margin-bottom: 15px;
+    }
+
+    .content {
+      grid-area: content;
+      align-self: start;
+      padding-top: 30px;
+    }
+  }
+}

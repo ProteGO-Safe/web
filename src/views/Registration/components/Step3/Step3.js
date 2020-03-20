@@ -22,6 +22,7 @@ const Step3 = () => {
         onChange={handleChange}
         onKeyPress={handleKeyPress}
         name={FIELD_AGE}
+        type="number"
         value={values[FIELD_AGE]}
       />
     </Container>

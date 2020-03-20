@@ -12,4 +12,10 @@
       margin-top: 24px;
     }
   }
+
+  .button {
+    + .button {
+      margin-top: 10px;
+    }
+  }
 }

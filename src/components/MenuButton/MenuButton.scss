@@ -1,0 +1,21 @@
+.menu__button {
+  position: absolute;
+  top: 18px;
+  right: 12px;
+  width: 18px;
+  height: auto;
+  cursor: pointer;
+  -webkit-appearance: none;
+  border: none;
+  background: none;
+  padding: 0;
+  margin: 0;
+
+  &:focus {
+    outline: none;
+  }
+
+  img {
+    width: 100%;
+  }
+}

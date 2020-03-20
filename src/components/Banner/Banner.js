@@ -3,9 +3,9 @@ import PropTypes from 'prop-types';
 
 import './Banner.scss';
 
-const Banner = ({ background, children, size }) => (
+const Banner = ({ background, children }) => (
   <div
-    className={`banner ${size}`}
+    className="banner"
     style={{ backgroundImage: `url(${background})` }}
   >
     {children}
@@ -14,14 +14,12 @@ const Banner = ({ background, children, size }) => (
 
 Banner.defaultProps = {
   background: '',
-  children: null,
-  size: 'medium'
+  children: null
 };
 
 Banner.propTypes = {
   background: PropTypes.string,
-  children: PropTypes.node,
-  size: PropTypes.oneOf(['small', 'medium', 'big'])
+  children: PropTypes.node
 };
 
 export default Banner;

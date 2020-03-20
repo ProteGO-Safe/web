@@ -1,14 +1,33 @@
 @import '../../assets/styles/colors';
 
 .app {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  width: 100%;
+  position: relative;
   min-width: 320px;
+  overflow-x: hidden;
+
+  &__inner {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    transition: 200ms transform linear;
+  }
+
+  &.menu-visible {
+    .app__inner {
+      transform: translate(-259px, 0);
+    }
+  }
 
   * {
     box-sizing: border-box;
+  }
+
+  h2 {
+    color: $black;
+    font-size: 28px;
+    letter-spacing: 0;
+    line-height: 37px;
   }
 
   h3 {
@@ -25,6 +44,18 @@
     line-height: 24px;
     color: $primary_2;
     margin: 0;
+
+    &.medium {
+      font-size: 18px;
+      line-height: 24px;
+      letter-spacing: 0;
+    }
+
+    &.big {
+      font-size: 24px;
+      line-height: 32px;
+      letter-spacing: 0;
+    }
   }
 
   h5 {
@@ -33,6 +64,30 @@
     line-height: 24px;
     color: $primary_1;
     margin: 0;
+  }
+
+  p {
+    &.small {
+      color: $black;
+      font-size: 12px;
+      letter-spacing: 0;
+      line-height: 16px;
+    }
+
+    &.big {
+      color: $black;
+      font-size: 18px;
+      line-height: 24px;
+      letter-spacing: 0;
+    }
+  }
+
+  .text-bold {
+    font-weight: bold;
+  }
+
+  .text-center {
+    text-align: center;
   }
 
   > .view {

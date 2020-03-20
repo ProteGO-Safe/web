@@ -1,0 +1,44 @@
+.view__privacy-policy {
+  display: grid;
+  grid-template-areas: "banner" "container";
+  grid-template-rows: 102px 1fr;
+  width: 100%;
+  height: 100vh;
+
+  .banner {
+    grid-area: banner;
+  }
+
+  .container {
+    display: grid;
+    grid-template-areas: "title" "content" "buttons";
+    grid-area: container;
+
+    h4 {
+      grid-area: title;
+      align-self: baseline;
+      padding: 18px 0;
+    }
+
+    .content {
+      grid-area: content;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-self: normal;
+    }
+
+    .p1 {
+      margin: 0 0 30px;
+    }
+
+    .p2 {
+      margin: 0 0 30px;
+    }
+
+    .fieldset {
+      grid-area: buttons;
+      padding-bottom: 30px;
+    }
+  }
+}
