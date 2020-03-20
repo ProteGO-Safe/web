@@ -2,6 +2,8 @@ import React from 'react';
 import { Formik } from 'formik';
 import { useDispatch } from 'react-redux';
 
+import { saveUser } from '../../store/actions/user';
+
 import {
   FIELD_AGE,
   FIELD_CHRONIC_SICK,
@@ -9,7 +11,6 @@ import {
   FIELD_SEX,
   FIELD_NAME
 } from '../../constants';
-import { saveUser } from '../../store/actions/user';
 import Registration from './Registration';
 
 const RegistrationContainer = () => {

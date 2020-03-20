@@ -1,16 +1,11 @@
 import { USER_SAVE } from '../../types/user';
 
-const INITIAL_STATE = {
-    name: "tomo",
-    sex: "male",
-    age: 30
-};
+const INITIAL_STATE = {};
 
 const diagnosisReducer = (state = INITIAL_STATE, action) => {
   switch (action.type) {
     case USER_SAVE:
       return (() => {
-        console.log(action);
         const {
           data: {
             name,
