@@ -27,13 +27,14 @@
     "react", "react-hooks", "jsx-a11y", "prettier"
   ],
   "rules": {
+    "react-hooks/exhaustive-deps": 0,
+    "react/no-unescaped-entities": 0,
     "import/prefer-default-export": 0,
     "react/jsx-filename-extension": [1, {
       "extensions": [".js", ".jsx"]
     }],
     "radix": 0,
     "react-hooks/rules-of-hooks": "error",
-    "react-hooks/exhaustive-deps": "warn",
     "no-console": "off",
     "react/prop-types": 0,
     "prettier/prettier": ["error"]

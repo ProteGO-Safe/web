@@ -2,15 +2,14 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { useFormikContext } from 'formik';
 
-import { Container } from '../../../../components/Container';
-import { Option } from '../../../../components/Option';
-import { FieldSet } from '../../../../components/FieldSet';
-import { Button } from '../../../../components/Button';
+import { Button, FieldSet, Option } from '../../../../components';
+
 import {
   FIELD_CHOICE_ID,
   FIELD_ITEM_ID,
   VALUE_PRESENT
 } from '../../../../constants';
+
 import Icon from '../../../../assets/img/icons/angle-right-white.svg';
 
 const GroupSingle = ({ text, items }) => {
@@ -23,6 +22,7 @@ const GroupSingle = ({ text, items }) => {
 
   const renderOption = item => (
     <Option
+      color="white"
       key={item.id}
       checked={values[FIELD_ITEM_ID] === item.id}
       name={FIELD_ITEM_ID}
@@ -32,12 +32,12 @@ const GroupSingle = ({ text, items }) => {
     />
   );
 
-  const renderOptions = () => items.map(_item => renderOption(_item));
+  const renderOptions = items.map(_item => renderOption(_item));
 
   return (
-    <Container>
+    <>
       <h3>{text}</h3>
-      <FieldSet>{renderOptions()}</FieldSet>
+      <FieldSet>{renderOptions}</FieldSet>
       <Button
         disabled={!values[FIELD_CHOICE_ID]}
         height="small"
@@ -46,7 +46,7 @@ const GroupSingle = ({ text, items }) => {
         size="small"
         text="Dalej"
       />
-    </Container>
+    </>
   );
 };
 

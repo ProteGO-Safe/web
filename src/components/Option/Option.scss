@@ -31,10 +31,31 @@
     content: '';
     opacity: 0;
     z-index: 1;
+    cursor: pointer;
 
     &:checked {
       + .option__label {
         background-color: darken($primary_2, 10%);
+      }
+    }
+  }
+
+  &--white {
+    .option{
+      &__label {
+        border-radius: 5px;
+        border: 1px solid $primary_2;
+        background-color: $white;
+        color: $primary_2
+      }
+
+      &__field {
+        &:checked {
+          + .option__label {
+            background-color: $primary_2;
+            color: $white;
+          }
+        }
       }
     }
   }

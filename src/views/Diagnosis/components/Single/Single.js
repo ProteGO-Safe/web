@@ -2,12 +2,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { useFormikContext } from 'formik';
 
-import { Container } from '../../../../components/Container';
-import { Option } from '../../../../components/Option';
-import { FieldSet } from '../../../../components/FieldSet';
-import { Button } from '../../../../components/Button';
 import { FIELD_CHOICE_ID } from '../../../../constants';
 import Icon from '../../../../assets/img/icons/angle-right-white.svg';
+import {
+  Button,
+  FieldSet,
+  Option
+} from '../../../../components';
 
 const Single = ({ text, choices }) => {
   const { setFieldValue, values, submitForm } = useFormikContext();
@@ -18,6 +19,7 @@ const Single = ({ text, choices }) => {
 
   const renderOption = choice => (
     <Option
+      color="white"
       key={choice.id}
       checked={values[FIELD_CHOICE_ID] === choice.id}
       name={FIELD_CHOICE_ID}
@@ -27,12 +29,12 @@ const Single = ({ text, choices }) => {
     />
   );
 
-  const renderOptions = () => choices.map(_choise => renderOption(_choise));
+  const renderOptions = choices.map(_choise => renderOption(_choise));
 
   return (
-    <Container>
+    <>
       <h3>{text}</h3>
-      <FieldSet>{renderOptions()}</FieldSet>
+      <FieldSet>{renderOptions}</FieldSet>
       <Button
         disabled={!values[FIELD_CHOICE_ID]}
         height="small"
@@ -41,7 +43,7 @@ const Single = ({ text, choices }) => {
         size="small"
         text="Dalej"
       />
-    </Container>
+    </>
   );
 };
 

@@ -20,7 +20,7 @@ const GroupMultipleContainer = ({ question }) => {
 
   const handleSubmit = values => {
     const evidence = [];
-    for (let [key, value] of Object.entries(values)) {
+    for (const [key, value] of Object.entries(values)) {
       evidence.push({
         id: key,
         choice_id: value
@@ -32,7 +32,9 @@ const GroupMultipleContainer = ({ question }) => {
       age,
       evidence: [...existingEvidence, ...evidence]
     };
-    dispatch(getDiagnosis(data));
+    dispatch(getDiagnosis(data)).then(() =>
+      window.scrollTo ? window.scrollTo(0, 0) : null
+    );
   };
 
   return (

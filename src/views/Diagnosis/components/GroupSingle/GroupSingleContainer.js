@@ -31,7 +31,9 @@ const GroupSingleContainer = ({ question }) => {
         }
       ]
     };
-    dispatch(getDiagnosis(data));
+    dispatch(getDiagnosis(data)).then(() =>
+      window.scrollTo ? window.scrollTo(0, 0) : null
+    );
   };
 
   return (

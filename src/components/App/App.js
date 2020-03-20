@@ -1,7 +1,14 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { Route, Switch } from 'react-router-dom';
-import { Home, Numbers, PrivacyPolicy, Registration, Regulations } from '../../views';
+import {
+  Home,
+  HowItWorks,
+  Numbers,
+  PrivacyPolicy,
+  Registration,
+  Regulations
+} from '../../views';
 import { Menu } from '../Menu';
 
 import './App.scss';
@@ -20,6 +27,7 @@ function App() {
           <Route exact path="/privacy-policy" component={PrivacyPolicy} />
           <Route exact path="/regulations" component={Regulations} />
           <Route exact path="/numbers" component={Numbers} />
+          <Route exact path="/how-it-works" component={HowItWorks} />
         </Switch>
         <Menu />
       </div>

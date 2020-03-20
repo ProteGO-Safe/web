@@ -10,7 +10,7 @@ const Numbers = () => {
   return (
     <div className="view view__numbers">
       <Banner background={Background}>
-        <Back onClick={() => history.push('/privacy-policy')} />
+        <Back onClick={() => history.push('/')} />
         <Brand content={false} small white />
       </Banner>
       <Container>

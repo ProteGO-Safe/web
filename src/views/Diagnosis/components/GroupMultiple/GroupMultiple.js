@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { useFormikContext } from 'formik';
 
-import { Container } from '../../../../components/Container';
 import { Option } from '../../../../components/Option';
 import { FieldSet } from '../../../../components/FieldSet';
 import { Button } from '../../../../components/Button';
@@ -24,11 +23,12 @@ const GroupMultiple = ({ text, items }) => {
   };
 
   return (
-    <Container>
+    <>
       <h3>{text}</h3>
       <FieldSet>
         {items.map(item => (
           <Option
+            color="white"
             key={item.id}
             checked={values[item.id] === VALUE_PRESENT}
             name={item.id}
@@ -46,7 +46,7 @@ const GroupMultiple = ({ text, items }) => {
         size="small"
         text="Dalej"
       />
-    </Container>
+    </>
   );
 };
 
