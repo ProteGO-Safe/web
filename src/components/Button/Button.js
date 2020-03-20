@@ -29,7 +29,7 @@ Button.propTypes = {
   onClick: PropTypes.func.isRequired,
   size: PropTypes.oneOf(['small', 'normal']),
   text: PropTypes.string.isRequired,
-  type: PropTypes.oneOf(['primary', 'secondary'])
+  type: PropTypes.oneOf(['blank', 'primary', 'secondary'])
 };
 
 export default Button;

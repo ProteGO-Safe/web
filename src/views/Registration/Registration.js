@@ -1,6 +1,6 @@
 import React from 'react';
 import { useFormikContext } from 'formik';
-import { Step1, Step2, Step3, Step4 } from './components';
+import {InstallApp, InstallAppInstruction, Step1, Step2, Step3, Step4} from './components';
 import { Back, Banner } from '../../components';
 import Background from '../../assets/img/banners/banner-1.png';
 
@@ -15,8 +15,16 @@ const Registration = () => {
       return;
     }
 
-    setFieldValue('step',parseInt(step) - 1);
+    setFieldValue('step', parseInt(step) - 1);
   };
+
+  if (step === 'install_app_1') {
+    return <InstallApp />;
+  }
+
+  if (step === 'install_app_2') {
+    return <InstallAppInstruction />;
+  }
 
   return (
     <div className="view view__registration">

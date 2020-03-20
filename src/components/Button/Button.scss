@@ -14,6 +14,7 @@
   box-shadow: 0 3px 6px #00000029;
   border-style: none;
   border-radius: 6px;
+  cursor: pointer;
 
   &:hover,
   &:focus {
@@ -32,6 +33,12 @@
   &--secondary {
     background-color: $white;
     border: 1px solid $primary_1;
+  }
+
+  &--blank {
+    background: none;
+    color: #DCDCDC;
+    box-shadow: none;
   }
 
   &--small {
