@@ -1,6 +1,6 @@
 import React from 'react';
 import Background from '../../assets/img/banners/banner-1.png';
-import { Banner, Brand, Button, Container, Warning } from '../../components';
+import { Banner, Brand, Button, Container, MenuButton, Warning } from '../../components';
 import './Home.scss';
 
 const WarningCase1 = () => (
@@ -43,6 +43,7 @@ const Home = () => {
     <div className="view view__home">
       <Banner background={Background} size="small">
         <Brand content={false} white />
+        <MenuButton />
       </Banner>
       <Container>
         {renderRiskLevel}

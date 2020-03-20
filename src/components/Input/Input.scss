@@ -17,6 +17,8 @@
     padding: 2px;
     color: $black;
     letter-spacing: 0;
+    -webkit-appearance: none;
+    border-radius: 0;
 
     &:focus {
       outline: none;
