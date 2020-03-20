@@ -1,0 +1,78 @@
+@import '../../../../assets/styles/colors';
+
+.view__summary {
+  display: grid;
+  grid-template-areas: "banner" "container";
+  grid-template-rows: 100px 1fr;
+  height: 100vh;
+
+  .banner {
+    grid-area: banner;
+  }
+
+  .container {
+    display: grid;
+    grid-template-areas: "content" "user" "box" "line" "buttons";
+    grid-template-rows: minmax(min-content, 156px) auto auto 48px auto;
+    grid-area: container;
+
+    .content {
+      grid-area: content;
+      text-align: center;
+    }
+
+    .user {
+      display: flex;
+      grid-area: user;
+      justify-self: center;
+
+      &__avatar {
+        margin-right: 23px;
+      }
+
+      &__data {
+        > * {
+          margin: 0;
+        }
+      }
+    }
+
+    .box {
+      grid-area: box;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      background-color: $gray_4;
+      border-radius: 5px;
+      padding: 5px 10px;
+      min-height: 51px;
+
+      > * {
+        margin: 0;
+      }
+    }
+
+    .line {
+      grid-area: line;
+      align-self: center;
+
+      &:after {
+        display: block;
+        content: '';
+        height: 1px;
+        width: 100%;
+        background-color: $gray_4;
+      }
+    }
+
+    .content {
+      grid-area: content;
+      align-self: start;
+      padding-top: 30px;
+    }
+
+    .fieldset {
+      grid-area: buttons;
+    }
+  }
+}
