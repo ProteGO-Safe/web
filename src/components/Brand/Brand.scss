@@ -39,4 +39,19 @@
       }
     }
   }
+
+  &--small {
+    .brand {
+      &__sign {
+        width: 41px;
+        height: 41px;
+        margin-bottom: 4px;
+      }
+
+      &__text {
+        width: 93px;
+        height: 17px;
+      }
+    }
+  }
 }

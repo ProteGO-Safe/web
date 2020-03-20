@@ -17,7 +17,11 @@ const Menu = ({ items, userName }) => {
 
     return (
       <li className={`menu__item ${isBottom}`} key={slug}>
-        <Link className={`menu__item__link ${isBold}`} to={path}>
+        <Link
+          className={`menu__item__link ${isBold}`}
+          onClick={handleClose}
+          to={path}
+        >
           <img className="menu__item__icon" src={icon} alt={title} />
           {title}
         </Link>

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
-import { Home, Registration } from '../../views';
+import { Home, PrivacyPolicy, Registration } from '../../views';
 import { Menu } from '../Menu';
 
 import './App.scss';
@@ -16,6 +16,7 @@ function App() {
         <Switch>
           {/*<Route exact path="/" component={Registration} />*/}
           <Route exact path="/" component={Home} />
+          <Route exact path="/privacy-policy" component={PrivacyPolicy} />
         </Switch>
         <Menu />
       </div>
