@@ -44,6 +44,18 @@
     line-height: 24px;
     color: $primary_2;
     margin: 0;
+
+    &.medium {
+      font-size: 18px;
+      line-height: 24px;
+      letter-spacing: 0;
+    }
+
+    &.big {
+      font-size: 24px;
+      line-height: 32px;
+      letter-spacing: 0;
+    }
   }
 
   h5 {

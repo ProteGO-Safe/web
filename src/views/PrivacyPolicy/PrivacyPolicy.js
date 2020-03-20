@@ -1,7 +1,14 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
 import Background from '../../assets/img/banners/banner-1.png';
-import { Back, Banner, Brand, Button, Container, FieldSet } from '../../components';
+import {
+  Back,
+  Banner,
+  Brand,
+  Button,
+  Container,
+  FieldSet
+} from '../../components';
 import './PrivacyPolicy.scss';
 
 const PrivacyPolicy = () => {
@@ -27,7 +34,11 @@ const PrivacyPolicy = () => {
           </p>
         </div>
         <FieldSet>
-          <Button onClick={() => null} type="secondary" text="Regulamin" />
+          <Button
+            onClick={() => history.push('/regulations')}
+            type="secondary"
+            text="Regulamin"
+          />
           <Button onClick={() => null} type="secondary" text="RODO" />
           <Button onClick={() => null} type="secondary" text="Moje dane" />
           <Button onClick={() => null} type="secondary" text="Bezpieczeństwo" />
