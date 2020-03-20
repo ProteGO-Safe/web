@@ -1,0 +1,28 @@
+@import '../../assets/styles/colors';
+
+.legend {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  &__item {
+    display: flex;
+    align-items: center;
+    width: 50%;
+  }
+
+  &__dot {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    margin-right: 8px;
+
+    &--1{
+      background-color: $primary_1;
+    }
+
+    &--2 {
+      background-color: $black;
+    }
+  }
+}
