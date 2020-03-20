@@ -18,3 +18,5 @@ export const FIELD_ITEM_ID = 'item_id';
 export const VALUE_PRESENT = 'present';
 export const VALUE_ABSENT = 'absent';
 
+export const ANDROID = 'Android';
+export const IOS = 'iOS';

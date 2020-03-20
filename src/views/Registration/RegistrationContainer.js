@@ -22,6 +22,7 @@ const RegistrationContainer = () => {
     [FIELD_NAME]: '',
     [FIELD_CHRONIC_SICK]: '',
     [FIELD_CHRONIC_SICK_OTHER]: '',
+    installApp: true,
     step: 1,
     term1: false,
     term2: false
