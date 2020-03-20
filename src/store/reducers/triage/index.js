@@ -26,8 +26,6 @@ const triageReducer = (state = INITIAL_STATE, action) => {
           data: { triage_level, label, description, serious }
         } = action;
 
-        console.log(action);
-
         return {
           ...state,
           triageLevel: triage_level,
