@@ -1,6 +1,15 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
+
 import Background from '../../assets/img/banners/banner-1.png';
-import { Banner, Brand, Button, Container, MenuButton, Warning } from '../../components';
+import {
+  Banner,
+  Brand,
+  Button,
+  Container,
+  MenuButton,
+  Warning
+} from '../../components';
 import './Home.scss';
 
 const WarningCase1 = () => (
@@ -35,8 +44,28 @@ const WarningCase4 = () => (
 );
 
 const Home = () => {
+  const { triageLevel } = useSelector(state => state.triage);
   const renderRiskLevel = (() => {
-    return <WarningCase4 />;
+    switch (triageLevel) {
+      case 'no_risk': {
+        return <WarningCase1 />;
+      }
+      case 'self_monitoring': {
+        return <WarningCase2 />;
+      }
+      case 'quarantine': {
+        return <WarningCase3 />;
+      }
+      case 'isolation_call': {
+        return <WarningCase4 />;
+      }
+      case 'isolation_ambulance': {
+        return <WarningCase4 />;
+      }
+      default: {
+        return null;
+      }
+    }
   })();
 
   return (

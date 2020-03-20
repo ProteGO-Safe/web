@@ -3,7 +3,6 @@ import {
   TRIAGE_FETCH_SUCCESS,
   TRIAGE_FETCH_ERROR
 } from '../../types/triage';
-import { DIAGNOSIS_CLEAR_REQUESTED } from '../../types/diagnosis';
 
 const INITIAL_STATE = {
   isLoading: false,
@@ -28,7 +27,7 @@ const triageReducer = (state = INITIAL_STATE, action) => {
 
         return {
           ...state,
-          triageLevel: triage_level,
+          triageLevel: triage_level, // no_risk || self_monitoring ||  quarantine || isolation_call || isolation_ambulance
           label,
           description,
           serious,
@@ -39,11 +38,6 @@ const triageReducer = (state = INITIAL_STATE, action) => {
       return {
         ...state,
         isLoading: false
-      };
-    case DIAGNOSIS_CLEAR_REQUESTED:
-      return {
-        ...state,
-        ...INITIAL_STATE
       };
     default:
       return state;
