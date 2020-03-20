@@ -4,6 +4,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { getDiagnosis } from '../../store/actions/diagnosis';
 import { Single } from './components/Single';
 import { GroupSingle } from './components/GroupSingle';
+import { GroupMultiple } from './components/GroupMultiple';
 
 const DiagnosisContainer = () => {
   const dispatch = useDispatch();
@@ -28,7 +29,7 @@ const DiagnosisContainer = () => {
     return <GroupSingle question={question} />;
   }
   if (question && question.type === 'group_multiple') {
-    return null;
+    return <GroupMultiple question={question}/>;
   }
   return null;
 };

@@ -22,12 +22,12 @@ export const diagnosisFetchError = ({ message, status }) => ({
 const exampleResponse = {
     "conditions": [],
     "question": {
-        "type": "group_single",
-        "text": "How high is your fever?",
+        "type": "group_multiple",
+        "text": "Please select if you've got any of the following symptoms:",
         "items": [
             {
-                "id": "s_3",
-                "name": "Between 37.5°C and 40°C (99.5°F and 104°F)",
+                "id": "s_0",
+                "name": "Fever",
                 "choices": [
                     {
                         "id": "present",
@@ -40,8 +40,8 @@ const exampleResponse = {
                 ]
             },
             {
-                "id": "s_4",
-                "name": "Greater than 40°C (104°F)",
+                "id": "s_1",
+                "name": "Cough",
                 "choices": [
                     {
                         "id": "present",
@@ -54,8 +54,8 @@ const exampleResponse = {
                 ]
             },
             {
-                "id": "s_5",
-                "name": "I haven’t measured",
+                "id": "s_2",
+                "name": "Shortness of breath",
                 "choices": [
                     {
                         "id": "present",
@@ -73,6 +73,7 @@ const exampleResponse = {
 };
 
 export function getDiagnosis(data) {
+    console.log(data)
     return dispatch => {
         dispatch(diagnosisFetchRequested({data}));
         dispatch(diagnosisFetchSuccess({data: exampleResponse}))
