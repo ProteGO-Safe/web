@@ -6,15 +6,11 @@ const questionnairesReducer = (state = INITIAL_STATE, action) => {
   switch (action.type) {
     case QUESTIONNAIRES_ADD:
       return (() => {
-        const {
-          data: { questionnaire }
-        } = action;
-
-        const timestamp = new Date();
+        const { data, timestamp } = action;
 
         return {
           ...state,
-          [timestamp]: questionnaire
+          [timestamp]: data
         };
       })();
     default:

@@ -28,3 +28,13 @@ export function getDiagnosis(data) {
       .catch(error => dispatch(diagnosisFetchError(error)));
   };
 }
+
+export const clearDiagnosisRequested = () => ({
+  type: types.DIAGNOSIS_CLEAR_REQUESTED
+});
+
+export function clearDiagnosis() {
+  return async dispatch => {
+    dispatch(clearDiagnosisRequested());
+  };
+}

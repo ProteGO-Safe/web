@@ -2,23 +2,34 @@ import React from 'react';
 import { Banner } from '../../components/Banner';
 import Background from '../../assets/img/banners/banner-1.png';
 import { Back, Container } from '../../components';
-import { GroupMultiple, GroupSingle, Single } from './components';
+import { GroupMultiple, GroupSingle, Single, Summary } from './components';
 
-const Diagnosis = ({ isLoading, question }) => (
+const Diagnosis = ({
+  evidence,
+  isLoading,
+  inProgress,
+  question,
+  clearDiagnosis
+}) => (
   <div className="view view__diagnosis view__diagnosis--single">
     <Banner background={Background}>
-      <Back onClick={() => null} />
+      <Back onClick={clearDiagnosis} />
     </Banner>
     <Container>
-      {!isLoading && question && question.type === 'single' && (
+      {!isLoading && inProgress && question && question.type === 'single' && (
         <Single question={question} />
       )}
-      {!isLoading && question && question.type === 'group_single' && (
-        <GroupSingle question={question} />
-      )}
-      {!isLoading && question && question.type === 'group_multiple' && (
-        <GroupMultiple question={question} />
-      )}
+      {!isLoading &&
+        inProgress &&
+        question &&
+        question.type === 'group_single' && <GroupSingle question={question} />}
+      {!isLoading &&
+        inProgress &&
+        question &&
+        question.type === 'group_multiple' && (
+          <GroupMultiple question={question} />
+        )}
+      {!inProgress && evidence.length > 0 && <Summary question={question} />}
     </Container>
   </div>
 );

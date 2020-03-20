@@ -1,7 +1,8 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
-import { getDiagnosis } from '../../store/actions/diagnosis';
+import { getDiagnosis, clearDiagnosis } from '../../store/actions/diagnosis';
+import { getTriage } from '../../store/actions/triage';
 
 import Diagnosis from './Diagnosis';
 
@@ -11,7 +12,13 @@ const DiagnosisContainer = () => {
   const dispatch = useDispatch();
   const { sex, age } = useSelector(state => state.user);
 
-  const { question, isLoading } = useSelector(state => state.diagnosis);
+  const {
+    evidence,
+    question,
+    isLoading,
+    isResetting,
+    inProgress
+  } = useSelector(state => state.diagnosis);
 
   useEffect(() => {
     const data = {
@@ -20,9 +27,30 @@ const DiagnosisContainer = () => {
       evidence: []
     };
     dispatch(getDiagnosis(data));
-  }, []);
+  }, [isResetting]);
 
-  return <Diagnosis isLoading={isLoading} question={question} />;
+  useEffect(() => {
+    if (!inProgress && evidence.length > 0) {
+      const data = {
+        sex,
+        age,
+        evidence
+      };
+      dispatch(getTriage(data));
+    }
+  }, [inProgress, evidence]);
+
+  const onClearDiagnosis = () => dispatch(clearDiagnosis());
+
+  return (
+    <Diagnosis
+      isLoading={isLoading}
+      question={question}
+      evidence={evidence}
+      inProgress={inProgress}
+      clearDiagnosis={onClearDiagnosis}
+    />
+  );
 };
 
 export default DiagnosisContainer;

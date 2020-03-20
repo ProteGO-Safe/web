@@ -1,44 +1,55 @@
 import {
-    TRIAGE_FETCH_REQUESTED,
-    TRIAGE_FETCH_SUCCESS,
-    TRIAGE_FETCH_ERROR
-} from "../../types/triage";
+  TRIAGE_FETCH_REQUESTED,
+  TRIAGE_FETCH_SUCCESS,
+  TRIAGE_FETCH_ERROR
+} from '../../types/triage';
+import { DIAGNOSIS_CLEAR_REQUESTED } from '../../types/diagnosis';
 
 const INITIAL_STATE = {
-
+  isLoading: false,
+  triageLevel: '',
+  label: '',
+  description: '',
+  serious: []
 };
 
 const triageReducer = (state = INITIAL_STATE, action) => {
-    switch (action.type) {
+  switch (action.type) {
     case TRIAGE_FETCH_REQUESTED:
-        return {
-            ...state,
-            isLoading: true
-        };
+      return {
+        ...state,
+        isLoading: true
+      };
     case TRIAGE_FETCH_SUCCESS:
-        return (() => {
-            const {
-                data: { triage_level, label, description, serious, root_cause }
-            } = action;
+      return (() => {
+        const {
+          data: { triage_level, label, description, serious }
+        } = action;
 
-            return {
-                ...state,
-                triage_level,
-                label,
-                description,
-                serious,
-                root_cause,
-                isLoading: false
-            };
-        })();
-    case TRIAGE_FETCH_ERROR:
+        console.log(action);
+
         return {
-            ...state,
-            isLoading: false
+          ...state,
+          triageLevel: triage_level,
+          label,
+          description,
+          serious,
+          isLoading: false
         };
+      })();
+    case TRIAGE_FETCH_ERROR:
+      return {
+        ...state,
+        isLoading: false
+      };
+    case DIAGNOSIS_CLEAR_REQUESTED:
+      return {
+        ...state,
+        ...INITIAL_STATE
+      };
     default:
-        return state;
-    }
+      return state;
+  }
 };
 
 export default triageReducer;
