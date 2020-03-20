@@ -41,6 +41,22 @@
     box-shadow: none;
   }
 
+  &--black {
+    background-color: $black;
+    color: $white;
+  }
+
+  &--success {
+    background-color: $primary_1;
+    color: $white;
+  }
+
+  &--success-blank {
+    background-color: $white;
+    border: 1px solid $primary_1;
+    color: $black;
+  }
+
   &--small {
     height: 29px;
   }

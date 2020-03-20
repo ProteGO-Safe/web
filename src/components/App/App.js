@@ -2,8 +2,10 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import { Route, Switch } from 'react-router-dom';
 import {
+  Daily,
   Home,
   HowItWorks,
+  MyHealth,
   Numbers,
   PrivacyPolicy,
   Registration,
@@ -24,10 +26,16 @@ function App() {
       <div className="app__inner">
         <Switch>
           <Route exact path="/" component={name ? Home : Registration} />
-          <Route exact path="/privacy-policy" component={PrivacyPolicy} />
-          <Route exact path="/regulations" component={Regulations} />
-          <Route exact path="/numbers" component={Numbers} />
-          <Route exact path="/how-it-works" component={HowItWorks} />
+          {name && (
+            <>
+              <Route exact path="/daily" component={Daily} />
+              <Route exact path="/how-it-works" component={HowItWorks} />
+              <Route exact path="/my-health" component={MyHealth} />
+              <Route exact path="/numbers" component={Numbers} />
+              <Route exact path="/privacy-policy" component={PrivacyPolicy} />
+              <Route exact path="/regulations" component={Regulations} />
+            </>
+          )}
         </Switch>
         <Menu />
       </div>
