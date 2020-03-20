@@ -2,7 +2,7 @@
   display: grid;
   grid-template-areas: "banner" "container";
   grid-row-gap: 37px;
-  grid-template-rows: minmax(min-content, 204px) minmax(min-content, 3fr);
+  grid-template-rows: 204px minmax(min-content, 3fr);
   min-height: 100vh;
 
   .banner {
