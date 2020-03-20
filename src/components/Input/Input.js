@@ -3,7 +3,15 @@ import PropTypes from 'prop-types';
 
 import './Input.scss';
 
-const Input = ({ description, name, onChange, onKeyPress, placeholder, type, value }) => (
+const Input = ({
+  description,
+  name,
+  onChange,
+  onKeyPress,
+  placeholder,
+  type,
+  value
+}) => (
   <div className="input input__wrapper">
     <input
       className="input__field"
@@ -34,7 +42,7 @@ Input.propTypes = {
   onKeyPress: PropTypes.func,
   placeholder: PropTypes.string,
   type: PropTypes.string,
-  value: PropTypes.string
+  value: PropTypes.oneOfType([PropTypes.number, PropTypes.string])
 };
 
 export default Input;
