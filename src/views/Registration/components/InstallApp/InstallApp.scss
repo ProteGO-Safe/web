@@ -1,3 +1,5 @@
+@import '../../../../assets/styles/colors';
+
 .view__install-app {
   display: grid;
   grid-template-areas: "banner" "container";
@@ -29,6 +31,62 @@
       grid-area: content;
       align-self: start;
       padding-top: 30px;
+    }
+
+    .instruction {
+      display: grid;
+      align-self: center;
+      grid-template-columns: repeat(3, 1fr);
+      grid-gap: 20px;
+
+      > div {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        text-align: center;
+
+        img {
+          width: 58px;
+          height: 92px;
+          margin-bottom: 20px;
+        }
+
+        p {
+          font-size: 10px;
+          line-height: 13px;
+          letter-spacing: 0;
+
+          span {
+            color: $primary_2;
+            font-weight: bold;
+          }
+        }
+      }
+
+      &__ios {
+        grid-template-columns: 0.5fr 1.5fr 0.5fr;
+
+        + .fieldset {
+          &:before {
+            display: block;
+            margin: 0 auto 16px;
+            width: 2px;
+            height: 56px;
+            background-color: $primary_1;
+            content: '';
+          }
+
+          &:after {
+            grid-area: line;
+            display: block;
+            margin: 13px auto -30px;
+            width: 2px;
+            height: 30px;
+            background-color: $primary_1;
+            content: '';
+          }
+        }
+      }
     }
   }
 }

@@ -8,6 +8,7 @@ import {
   Container,
   FieldSet
 } from '../../../../components';
+import Img1 from '../../../../assets/img/icons/expotr-icon.svg';
 
 const InstallAppAndroid = ({ onLeave }) => {
   const { setFieldValue } = useFormikContext();
@@ -21,18 +22,20 @@ const InstallAppAndroid = ({ onLeave }) => {
         <h4 className="h1 text-center medium">
           Zainstaluj aplikację na swoim smartfonie z systemem Android
         </h4>
-        <p>Instrukcja</p>
+        <div className="instruction instruction__ios">
+          <div />
+          <div>
+            <img src={Img1} alt="Krok 1" />
+            <p>
+              Odszukaj poniżej symbol <span>"udostępnij"</span> i znajdź pozycję{' '}
+              <span>"Do ekranu początkowego"</span>
+            </p>
+          </div>
+          <div />
+        </div>
         <FieldSet>
-          <Button
-            onClick={onLeave}
-            text="Gotowe"
-            type="primary"
-          />
-          <Button
-            onClick={onLeave}
-            text="pomiń"
-            type="blank"
-          />
+          <Button onClick={onLeave} text="Gotowe" type="primary" />
+          <Button onClick={onLeave} text="pomiń" type="blank" />
         </FieldSet>
       </Container>
     </div>
