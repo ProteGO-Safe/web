@@ -21,7 +21,7 @@ const PrivacyPolicy = () => {
         <Brand content={false} small white />
       </Banner>
       <Container>
-        <h4>Polityka prywatności</h4>
+        <h4 className="medium">Polityka prywatności</h4>
         <div className="content">
           <p className="p1 small">
             Wszystkie dane ktore przekazujesz do aplikacji sa anonimizowane -

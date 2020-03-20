@@ -15,7 +15,7 @@ const Regulations = () => {
       </Banner>
       <Container>
         <p className="p2 small text-center">Polityka prywatności</p>
-        <h4 className="text-center">Regulamin</h4>
+        <h4 className="text-center medium">Regulamin</h4>
         <div className="content">
           <p className="p1 small">
             Wszystkie dane ktore przekazujesz do aplikacji sa anonimizowane -

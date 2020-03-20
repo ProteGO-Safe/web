@@ -36,7 +36,7 @@ const MenuContainer = () => {
     },
     {
       icon: Icon3,
-      path: '',
+      path: '/how-it-works',
       slug: 'jak_to_dziala',
       title: 'Jak to działa?'
     },
