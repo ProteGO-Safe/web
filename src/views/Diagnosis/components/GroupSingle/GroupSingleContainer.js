@@ -19,7 +19,6 @@ const GroupSingleContainer = ({ question }) => {
   };
 
   const handleSubmit = values => {
-    console.log(values);
     const data = {
       sex,
       age,

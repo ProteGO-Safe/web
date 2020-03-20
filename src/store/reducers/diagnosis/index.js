@@ -10,7 +10,8 @@ const INITIAL_STATE = {
   inProgress: false,
   isLoading: false,
   isResetting: false,
-  question: {}
+  question: {},
+  allQuestions: []
 };
 
 const diagnosisReducer = (state = INITIAL_STATE, action) => {
@@ -39,7 +40,8 @@ const diagnosisReducer = (state = INITIAL_STATE, action) => {
           ...state,
           ...(question !== null && { question }),
           inProgress: !should_stop,
-          isLoading: false
+          isLoading: false,
+          allQuestions: [...state.allQuestions, question]
         };
       })();
     case DIAGNOSIS_FETCH_ERROR:
