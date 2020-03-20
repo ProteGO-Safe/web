@@ -1,6 +1,6 @@
 import { USER_SAVE } from '../../types/user';
 
-const INITIAL_STATE = {name: "dsds", age: 22, sex: "male"};
+const INITIAL_STATE = {};
 
 const diagnosisReducer = (state = INITIAL_STATE, action) => {
   switch (action.type) {
