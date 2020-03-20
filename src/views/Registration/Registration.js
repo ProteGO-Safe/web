@@ -1,6 +1,6 @@
 import React from 'react';
 import { useFormikContext } from 'formik';
-import { InstallApp, Step1, Step2, Step3, Step4 } from './components';
+import {InstallApp, InstallAppInstruction, Step1, Step2, Step3, Step4} from './components';
 import { Back, Banner } from '../../components';
 import Background from '../../assets/img/banners/banner-1.png';
 
@@ -20,6 +20,10 @@ const Registration = () => {
 
   if (step === 'install_app_1') {
     return <InstallApp />;
+  }
+
+  if (step === 'install_app_2') {
+    return <InstallAppInstruction />;
   }
 
   return (

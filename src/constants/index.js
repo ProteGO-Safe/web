@@ -11,3 +11,6 @@ export const VALUE_OTHER = 'other';
 export const VALUE_CHRONIC_SICK_1 = '1';
 export const VALUE_CHRONIC_SICK_2 = '2';
 export const VALUE_CHRONIC_SICK_3 = '3';
+
+export const ANDROID = 'Android';
+export const IOS = 'iOS';

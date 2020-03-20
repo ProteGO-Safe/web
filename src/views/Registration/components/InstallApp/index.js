@@ -1,1 +1,1 @@
-export { default as InstallApp } from './InstallApp';
+export { default as InstallApp } from './installAppContainer';

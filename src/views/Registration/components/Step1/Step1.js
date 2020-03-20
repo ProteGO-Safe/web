@@ -12,9 +12,17 @@ import { FIELD_NAME } from '../../../../constants';
 import Icon from '../../../../assets/img/icons/angle-right-white.svg';
 
 import './Step1.scss';
+import getMobileOperatingSystem from '../../../../services/getMobileOperationSystem';
 
 const Step1 = () => {
   const { handleChange, setFieldValue, values } = useFormikContext();
+
+  const handleClick = () => {
+    const system = getMobileOperatingSystem();
+    const { installApp } = values;
+
+    setFieldValue('step', system && installApp ? 'install_app_1' : 2);
+  };
 
   return (
     <Container>
@@ -44,7 +52,7 @@ const Step1 = () => {
       </FieldSet>
       <Button
         disabled={!values.name}
-        onClick={() => setFieldValue('step', 2)}
+        onClick={handleClick}
         icon={Icon}
         text="Przejdź dalej"
       />

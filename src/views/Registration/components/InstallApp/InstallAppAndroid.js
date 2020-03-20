@@ -8,13 +8,12 @@ import {
   Container,
   FieldSet
 } from '../../../../components';
-import './InstallApp.scss';
 
-const InstallApp = () => {
+const InstallAppAndroid = ({ onLeave }) => {
   const { setFieldValue } = useFormikContext();
 
   return (
-    <div className="view view__numbers">
+    <div className="view view__install-app">
       <Banner background={Background}>
         <Brand content={false} small white />
       </Banner>
@@ -23,7 +22,7 @@ const InstallApp = () => {
           Zainstaluj aplikację na swoim smartfonie z systemem Android
         </h4>
         <p className="small text-center">
-          W ten sposób uzyskasz łatwy dostępdo aplikacji z głównego ekranu
+          W ten sposób uzyskasz łatwy dostęp do aplikacji z głównego ekranu
           telefonu.
         </p>
         <FieldSet>
@@ -32,15 +31,11 @@ const InstallApp = () => {
             text="Zainstaluj"
             type="primary"
           />
-          <Button
-            onClick={() => setFieldValue('step', 2)}
-            text="pomiń"
-            type="blank"
-          />
+          <Button onClick={onLeave} text="pomiń" type="blank" />
         </FieldSet>
       </Container>
     </div>
   );
 };
 
-export default InstallApp;
+export default InstallAppAndroid;

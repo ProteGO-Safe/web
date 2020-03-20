@@ -1,4 +1,4 @@
-.view__numbers {
+.view__install-app {
   display: grid;
   grid-template-areas: "banner" "container";
   grid-template-rows: 102px 1fr;
@@ -14,6 +14,8 @@
     grid-template-areas: "title" "content";
     grid-template-rows: 50px 1fr;
     grid-area: container;
+    align-items: baseline;
+    padding: 30px 0;
 
     .h1 {
       grid-area: title;
@@ -21,10 +23,6 @@
       align-items: center;
       justify-content: center;
       height: 50px;
-    }
-
-    .h2 {
-      margin-bottom: 15px;
     }
 
     .content {
