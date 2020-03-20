@@ -1,12 +1,12 @@
 import axios from "axios";
 
-const baseDomain = "https://api.infermedica.com";
+const baseDomain = "https://api.safesafe.app";
 const baseURL = `${baseDomain}/covid19`;
 
 const Repository = axios.create({ baseURL });
 
 Repository.interceptors.request.use(config => {
-  config.headers = { "App-Id": "XXXXXX", "App-Key": "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX", "Model": "infermedica-pl" };
+  config.headers = { "Model": "infermedica-pl" };
   return config;
 }, error => Promise.reject(error));
 

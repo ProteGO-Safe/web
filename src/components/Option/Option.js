@@ -3,14 +3,14 @@ import PropTypes from 'prop-types';
 
 import './Option.scss';
 
-const Option = ({ checked, name, onChange, text, value }) => (
+const Option = ({ checked, name, onChange, text, type, value }) => (
   <div className="option option__wrapper">
     <input
       checked={checked}
       className="option__field"
       name={name}
       onChange={onChange}
-      type="radio"
+      type={type}
       value={value}
     />
     <div className="option__label">{text}</div>
@@ -18,7 +18,9 @@ const Option = ({ checked, name, onChange, text, value }) => (
 );
 
 Option.defaultProps = {
-  checked: false
+  checked: false,
+  type: "radio",
+  value: ''
 };
 
 Option.propTypes = {
@@ -26,7 +28,8 @@ Option.propTypes = {
   name: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,
   text: PropTypes.string.isRequired,
-  value: PropTypes.string.isRequired
+  type: PropTypes.oneOf(['checkbox', 'radio']),
+  value: PropTypes.string
 };
 
 export default Option;

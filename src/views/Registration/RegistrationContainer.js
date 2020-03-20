@@ -4,21 +4,21 @@ import { useDispatch } from 'react-redux';
 
 import { saveUser } from '../../store/actions/user';
 
-import Registration from './Registration';
 import {
   FIELD_AGE,
   FIELD_CHRONIC_SICK,
   FIELD_CHRONIC_SICK_OTHER,
-  FIELD_GENDER,
+  FIELD_SEX,
   FIELD_NAME
 } from '../../constants';
+import Registration from './Registration';
 
 const RegistrationContainer = () => {
   const dispatch = useDispatch();
 
   const initialValues = {
     [FIELD_AGE]: '',
-    [FIELD_GENDER]: '',
+    [FIELD_SEX]: '',
     [FIELD_NAME]: '',
     [FIELD_CHRONIC_SICK]: '',
     [FIELD_CHRONIC_SICK_OTHER]: '',
