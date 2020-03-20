@@ -8,10 +8,9 @@ import { GroupMultiple } from './components/GroupMultiple';
 
 const DiagnosisContainer = () => {
   const dispatch = useDispatch();
-
   const { sex, age } = useSelector(state => state.user);
 
-  const { question } = useSelector(state => state.diagnosis);
+  const { question, inProgress } = useSelector(state => state.diagnosis);
 
   useEffect(() => {
     const data = {
@@ -22,6 +21,11 @@ const DiagnosisContainer = () => {
     dispatch(getDiagnosis(data));
   }, []);
 
+  // useEffect(() => {
+  //   if ()
+  //   dispatch(getDiagnosis(data));
+  // }, [inProgress]);
+
   if (question && question.type === 'single') {
     return <Single question={question} />;
   }
@@ -29,7 +33,7 @@ const DiagnosisContainer = () => {
     return <GroupSingle question={question} />;
   }
   if (question && question.type === 'group_multiple') {
-    return <GroupMultiple question={question}/>;
+    return <GroupMultiple question={question} />;
   }
   return null;
 };

@@ -6,7 +6,9 @@ import {
 
 const INITIAL_STATE = {
     evidence: [],
-    inProgress: false
+    inProgress: false,
+    currentQuestion: {},
+    allQuestion: []
 };
 
 const diagnosisReducer = (state = INITIAL_STATE, action) => {

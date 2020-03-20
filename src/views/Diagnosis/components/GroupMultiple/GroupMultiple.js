@@ -44,7 +44,6 @@ const GroupMultiple = ({ text, items }) => {
       <h3>{text}</h3>
       <FieldSet>{renderOptions()}</FieldSet>
       <Button
-        disabled={Object.values(values).every(value => value === VALUE_ABSENT)}
         height="small"
         onClick={submitForm}
         icon={Icon}

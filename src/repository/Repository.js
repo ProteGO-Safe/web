@@ -6,7 +6,7 @@ const baseURL = `${baseDomain}/covid19`;
 const Repository = axios.create({ baseURL });
 
 Repository.interceptors.request.use(config => {
-  config.headers = { "App-Id": "XXXXXX", "App-Key": "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX", "Model": "infermedica-pl" };
+  config.headers = { "App-Id": "adf09874", "App-Key": "66999fa89346b6f44861c5dfb04657e3", "Model": "infermedica-pl" };
   return config;
 }, error => Promise.reject(error));
 
