@@ -1,5 +1,11 @@
 @import '../../assets/styles/colors';
 
+@mixin smallPlaceholder() {
+  color: $black;
+  font-size: 10px;
+  line-height: 13px;
+};
+
 .input {
   &__wrapper {
     display: flex;
@@ -23,6 +29,31 @@
     &:focus {
       outline: none;
     }
+
+    &--small {
+      width: 80%;
+
+      &::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+        @include smallPlaceholder;
+      }
+      &::-moz-placeholder { /* Firefox 19+ */
+        @include smallPlaceholder;
+      }
+      &:-ms-input-placeholder { /* IE 10+ */
+        @include smallPlaceholder;
+      }
+      &:-moz-placeholder { /* Firefox 18- */
+        @include smallPlaceholder;
+      }
+    }
+  }
+
+  &__label {
+    font-size: 14px;
+    line-height: 19px;
+    letter-spacing: 0;
+    font-weight: bold;
+    margin-bottom: 7px;
   }
 
   &__description {

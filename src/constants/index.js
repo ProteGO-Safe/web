@@ -20,3 +20,16 @@ export const VALUE_ABSENT = 'absent';
 
 export const ANDROID = 'Android';
 export const IOS = 'iOS';
+
+export const FIELD_TEMPERATURE_MORNING = 'temperatureMorning';
+export const FIELD_TEMPERATURE_EVENING = 'temperatureEvening';
+export const FIELD_RUNNY_NOSE = 'runnyNose';
+export const FIELD_COUGH = 'cough';
+export const FIELD_CHILLS = 'chills';
+export const FIELD_MUSCLE_PAIN = 'musclePain';
+export const FIELD_CONTACTS = 'contacts';
+
+export const VALUE_SYMPTOM_LEVEL_1 = 'level 1';
+export const VALUE_SYMPTOM_LEVEL_2 = 'level 2';
+export const VALUE_SYMPTOM_LEVEL_3 = 'level 3';
+export const VALUE_SYMPTOM_LEVEL_4 = 'level 4';

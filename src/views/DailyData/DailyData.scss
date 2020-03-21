@@ -1,0 +1,61 @@
+@import '../../assets/styles/colors';
+
+.view__data {
+  padding-top: 102px;
+  padding-bottom: 152px;
+
+  .banner {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 102px;
+    z-index: 2;
+  }
+
+  .container {
+    &__content {
+      display: grid;
+      grid-template-areas: "title" "date" "user" "form";
+      grid-template-rows: 54px 85px auto auto;
+
+      .h1 {
+        grid-area: title;
+      }
+
+      .date {
+        grid-area: date;
+      }
+
+      .user {
+        grid-area: user;
+        padding-bottom: 30px;
+      }
+
+      .form {
+        grid-area: form;
+
+        h4 {
+          margin-bottom: 7px;
+        }
+
+        .fieldset {
+          + h4 {
+            margin-top: 30px
+          }
+        }
+      }
+    }
+
+    &__footer {
+      position: fixed;
+      bottom: 0;
+      left: calc(50% - 143px);
+      width: 100%;
+      padding: 18px 0 24px;
+      border-top: 1px solid $gray_4;
+      background-color: $white;
+      z-index: 2;
+    }
+  }
+}

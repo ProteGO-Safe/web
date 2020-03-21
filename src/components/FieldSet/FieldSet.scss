@@ -1,6 +1,12 @@
 .fieldset {
   width: 100%;
 
+  &--horizontal {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 20px;
+  }
+
   .checkbox {
     + .checkbox {
       margin-top: 2px;
@@ -16,6 +22,12 @@
   .button {
     + .button {
       margin-top: 10px;
+    }
+  }
+
+  .range {
+    + .range {
+      margin-top: 17px;
     }
   }
 }
