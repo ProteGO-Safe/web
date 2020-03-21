@@ -12,5 +12,6 @@ export { MenuButton } from './MenuButton';
 export { Option } from './Option';
 export { Ok } from './Ok';
 export { Range } from './Range';
+export { Textarea } from './Textarea';
 export { User } from './User';
 export { Warning } from './Warning';
