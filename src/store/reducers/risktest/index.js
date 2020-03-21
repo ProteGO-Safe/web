@@ -1,10 +1,10 @@
-import { QUESTIONNAIRES_ADD } from '../../types/questionnaires';
+import { RISK_TEST_ADD } from '../../types/risktest';
 
 const INITIAL_STATE = {};
 
-const questionnairesReducer = (state = INITIAL_STATE, action) => {
+const riskTestReducer = (state = INITIAL_STATE, action) => {
   switch (action.type) {
-    case QUESTIONNAIRES_ADD:
+    case RISK_TEST_ADD:
       return (() => {
         const { data, timestamp } = action;
 
@@ -18,4 +18,4 @@ const questionnairesReducer = (state = INITIAL_STATE, action) => {
   }
 };
 
-export default questionnairesReducer;
+export default riskTestReducer;

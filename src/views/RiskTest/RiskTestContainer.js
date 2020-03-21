@@ -3,25 +3,27 @@ import { useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import moment from 'moment';
 
-import { DiagnosisAlreadyDone } from './components/DiagnosisAlreadyDone';
 import RiskTest from './RiskTest';
 import createCalendar from '../../utills/calendar';
+import { RiskTestAlreadyDone } from './components/RiskTestAlreadyDone';
 
 const RiskTestContainer = () => {
   const history = useHistory();
-  const questionnaires = useSelector(state => state.questionnaires);
+  const riskTest = useSelector(state => state.riskTest);
   const [isFilled, setIsFilled] = useState(false);
 
-  const daysInQuestionnaires = Object.keys(questionnaires);
-  const calendar = createCalendar(daysInQuestionnaires);
+  const daysInRiskTest = Object.keys(riskTest).map(timestamp =>
+    moment.unix(timestamp)
+  );
+  const calendar = createCalendar(daysInRiskTest);
 
-  const makeDiagnosisInLast12Hours = () => {
+  const isFilledisInLast12Hours = () => {
     const _12HoursAgo = moment().subtract(12, 'h');
-    return daysInQuestionnaires.some(value => _12HoursAgo.diff(value) <= 0);
+    return daysInRiskTest.some(value => _12HoursAgo.diff(value) <= 0);
   };
 
   const goToDiagnosis = () => {
-    if (makeDiagnosisInLast12Hours()) {
+    if (isFilledisInLast12Hours()) {
       setIsFilled(true);
       return;
     }
@@ -31,15 +33,11 @@ const RiskTestContainer = () => {
   const goToHome = () => history.push('/');
 
   if (isFilled) {
-    return <DiagnosisAlreadyDone goBack={() => setIsFilled(false)} />;
+    return <RiskTestAlreadyDone goBack={() => setIsFilled(false)} />;
   }
 
   return (
-    <RiskTest
-      onBack={goToHome}
-      onFill={goToDiagnosis}
-      calendar={calendar}
-    />
+    <RiskTest onBack={goToHome} onFill={goToDiagnosis} calendar={calendar} />
   );
 };
 

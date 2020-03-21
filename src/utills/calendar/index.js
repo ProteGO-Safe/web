@@ -5,6 +5,7 @@ import 'moment/locale/pl';
 const dateFormat = 'dddd - D-MM-YYYY';
 const todayFormat = 'D-MM-YYYY';
 
+// filledDays contains moments
 const createCalendar = (filledDays = []) => {
   moment.locale('pl');
 
@@ -15,9 +16,7 @@ const createCalendar = (filledDays = []) => {
 
   for (let index = 0; index < 14; index++) {
     const dayBefore = day.subtract(1, 'days');
-    const isFilled = filledDays.some(value =>
-      moment(value).isSame(dayBefore, 'day')
-    );
+    const isFilled = filledDays.some(value => value.isSame(dayBefore, 'day'));
     previousDays.push({ day: dayBefore.format(dateFormat), isFilled });
   }
 
