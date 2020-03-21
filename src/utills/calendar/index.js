@@ -2,7 +2,8 @@ import moment from 'moment';
 import PropTypes from 'prop-types';
 import 'moment/locale/pl';
 
-const dateFormat = 'dddd - D-MM-YYYY';
+const dateFormat = 'D-MM-YYYY';
+const dayWeekFormat = 'dddd';
 const todayFormat = 'D-MM-YYYY';
 
 // filledDays contains moments
@@ -19,6 +20,7 @@ const createCalendar = (filledDays = []) => {
     const filledDay = filledDays.find(value => value.isSame(dayBefore, 'day'));
     previousDays.push({
       day: dayBefore.format(dateFormat),
+      dayWeek: dayBefore.format(dayWeekFormat),
       isFilled: !!filledDay,
       timestamp: filledDay && filledDay.unix()
     });

@@ -13,8 +13,8 @@
 
   .container {
     display: grid;
-    grid-template-areas: "title" "legend" "today" "line" "list";
-    grid-template-rows: 50px 50px auto 25px 1fr;
+    grid-template-areas: "title" "today" "line" "list";
+    grid-template-rows: 65px auto 25px 1fr;
     grid-area: container;
 
     .h1 {
@@ -41,6 +41,14 @@
     .fieldset {
       grid-area: list;
       align-self: baseline;
+
+      .button {
+        position: relative;
+        :first-child {
+          position: absolute;
+          left: 15px;
+        }
+      }
     }
   }
 }
