@@ -3,7 +3,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 
 import Summary from './Summary';
-import { clearDiagnosis } from '../../../../store/actions/diagnosis';
 import { addRiskTest } from '../../../../store/actions/risktest';
 
 const SummaryContainer = () => {
@@ -25,9 +24,7 @@ const SummaryContainer = () => {
     history.push('/');
   };
 
-  const tryAgain = () => dispatch(clearDiagnosis());
-
-  return <Summary onSave={save} onTryAgain={tryAgain} />;
+  return <Summary onSave={save} />;
 };
 
 export default SummaryContainer;
