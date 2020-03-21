@@ -1,65 +1,20 @@
-import React, { useState } from 'react';
-import { useSelector } from 'react-redux';
+import React from 'react';
 import { useHistory } from 'react-router-dom';
-import moment from 'moment';
-import 'moment/locale/pl';
 
-import { DiagnosisAlreadyDone } from './components/DiagnosisAlreadyDone';
 import Daily from './Daily';
-
-const dateFormat = 'dddd - D-MM-YYYY';
-const todayFormat = 'D-MM-YYYY';
+import createCalendar from '../../utills/calendar';
 
 const DailyContainer = () => {
   const history = useHistory();
-  const questionnaires = useSelector(state => state.questionnaires);
-  const [showDiagnosisAlreadyDone, setShowDiagnosisAlreadyDone] = useState(
-    false
-  );
-  moment.locale('pl');
-  const day = moment();
-  const today = day.format(todayFormat);
 
-  const daysInQuestionnaires = Object.keys(questionnaires);
+  const filledDays = [];
+  const calendar = createCalendar(filledDays);
 
-  const previousDays = [];
-  for (let index = 0; index < 14; index++) {
-    const dayBefore = day.subtract(1, 'days');
-    const isFilled = daysInQuestionnaires.some(value =>
-      moment(value).isSame(dayBefore, 'day')
-    );
-    previousDays.push({ day: dayBefore.format(dateFormat), isFilled });
-  }
-
-  const makeDiagnosisInLast12Hours = () => {
-    const _12HoursAgo = moment().subtract(12, 'h');
-    return daysInQuestionnaires.some(value => _12HoursAgo.diff(value) <= 0);
-  };
-
-  const goToDiagnosis = () => {
-    if (makeDiagnosisInLast12Hours()) {
-      setShowDiagnosisAlreadyDone(true);
-      return;
-    }
-    history.push('/diagnosis');
-  };
+  const fill = () => history.push('/daily-data');
 
   const goToHome = () => history.push('/');
 
-  if (showDiagnosisAlreadyDone) {
-    return (
-      <DiagnosisAlreadyDone goBack={() => setShowDiagnosisAlreadyDone(false)} />
-    );
-  }
-
-  return (
-    <Daily
-      onBack={goToHome}
-      onFill={goToDiagnosis}
-      today={today}
-      previousDays={previousDays}
-    />
-  );
+  return <Daily calendar={calendar} onFill={fill} onBack={goToHome} />;
 };
 
 export default DailyContainer;

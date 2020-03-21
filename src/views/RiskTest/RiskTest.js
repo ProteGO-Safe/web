@@ -11,16 +11,16 @@ import {
   FieldSet,
   Legend
 } from '../../components';
-import './MyHealth.scss';
+import { calendarPropType } from '../../utills/calendar';
 
-const MyHealth = ({ onBack, onFill, today, previousDays }) => (
-  <div className="view view__my-health">
+const RiskTest = ({ onBack, onFill, calendar: { today, previousDays } }) => (
+  <div className="view view__risk-test">
     <Banner background={Background}>
       <Back onClick={onBack} />
       <Brand content={false} small white />
     </Banner>
     <Container>
-      <h4 className="h1 text-center medium">Moje zdrowie</h4>
+      <h4 className="h1 text-center medium">Dziennik</h4>
       <Legend />
       <div className="today">
         <Button
@@ -44,16 +44,10 @@ const MyHealth = ({ onBack, onFill, today, previousDays }) => (
   </div>
 );
 
-MyHealth.propTypes = {
+RiskTest.propTypes = {
   onBack: PropTypes.func.isRequired,
   onFill: PropTypes.func.isRequired,
-  previousDays: PropTypes.arrayOf(
-    PropTypes.shape({
-      day: PropTypes.string.isRequired,
-      wasDiagnosis: PropTypes.bool.isRequired
-    })
-  ).isRequired,
-  today: PropTypes.string.isRequired
+  calendar: calendarPropType
 };
 
-export default MyHealth;
+export default RiskTest;
