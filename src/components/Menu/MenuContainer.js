@@ -24,14 +24,14 @@ const MenuContainer = () => {
   const items = [
     {
       icon: Icon1,
-      path: '/my-health',
-      slug: 'moje_zdrowie',
+      path: '/daily',
+      slug: 'dziennik',
       title: 'Moje zdrowie'
     },
     {
       icon: Icon2,
-      path: '/daily',
-      slug: 'dziennik',
+      path: '/risk-test',
+      slug: 'test oceny ryzyka',
       title: 'Test oceny ryzyka'
     },
     {

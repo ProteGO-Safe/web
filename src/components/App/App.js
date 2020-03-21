@@ -6,7 +6,7 @@ import {
   Diagnosis,
   Home,
   HowItWorks,
-  MyHealth,
+  RiskTest,
   Numbers,
   PrivacyPolicy,
   Registration,
@@ -31,7 +31,7 @@ function App() {
             <>
               <Route exact path="/daily" component={Daily} />
               <Route exact path="/how-it-works" component={HowItWorks} />
-              <Route exact path="/my-health" component={MyHealth} />
+              <Route exact path="/risk-test" component={RiskTest} />
               <Route exact path="/numbers" component={Numbers} />
               <Route exact path="/privacy-policy" component={PrivacyPolicy} />
               <Route exact path="/regulations" component={Regulations} />
