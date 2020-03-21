@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { useHistory } from 'react-router-dom';
 
 import Background from '../../assets/img/banners/banner-1.png';
@@ -10,8 +9,10 @@ import {
   Button,
   Container,
   FieldSet,
-  Legend
+  User
 } from '../../components';
+
+import './DailyData.scss';
 
 const DailyData = () => {
   const history = useHistory();
@@ -24,26 +25,18 @@ const DailyData = () => {
         <Back onClick={handleBack} />
         <Brand content={false} small white />
       </Banner>
-      <Container>
+      <Container className="container__content">
         <h4 className="h1 text-center medium">Dziennik</h4>
-        <Legend />
-        <div className="today">
-          <Button
-            onClick={onDiagnosis}
-            text={`DZIŚ ${today} - KLIKNIJ I UZUPEŁNIJ DANE`}
-            type="success-blank"
-          />
+        <div className="date text-center">
+          <h4>Uzupełnij dane za dzień</h4>
+          <h4 className="primary-1">środa 18-03-2020</h4>
         </div>
-        <div className="line" />
+        <User />
+        <div className="form" />
+      </Container>
+      <Container className="container__footer">
         <FieldSet>
-          {previousDays.map(_obj => (
-            <Button
-              key={_obj.day}
-              onClick={() => null}
-              text={_obj.day}
-              type={_obj.wasDiagnosis ? 'success' : 'black'}
-            />
-          ))}
+          <Button onClick={() => null} text="Zapisz" type="primary" />
         </FieldSet>
       </Container>
     </div>

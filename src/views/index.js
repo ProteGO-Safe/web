@@ -1,4 +1,5 @@
 export { Daily } from './Daily';
+export { DailyData } from './DailyData';
 export { Diagnosis } from './Diagnosis';
 export { Home } from './Home';
 export { HowItWorks } from './HowItWorks';

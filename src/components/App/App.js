@@ -3,6 +3,7 @@ import { useSelector } from 'react-redux';
 import { Route, Switch } from 'react-router-dom';
 import {
   Daily,
+  DailyData,
   Diagnosis,
   Home,
   HowItWorks,
@@ -30,6 +31,7 @@ function App() {
           {name && (
             <>
               <Route exact path="/daily" component={Daily} />
+              <Route exact path="/daily-data" component={DailyData} />
               <Route exact path="/how-it-works" component={HowItWorks} />
               <Route exact path="/risk-test" component={RiskTest} />
               <Route exact path="/numbers" component={Numbers} />

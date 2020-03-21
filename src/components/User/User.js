@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import UserImg from '../../assets/img/icons/user.svg';
+import './User.scss';
 
 const User = ({ data }) => {
   const { age, name, sex } = data;

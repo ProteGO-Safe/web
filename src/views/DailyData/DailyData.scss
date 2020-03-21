@@ -1,45 +1,48 @@
 @import '../../assets/styles/colors';
 
-.view__my-data {
-  display: grid;
-  grid-template-areas: "banner" "container";
-  grid-template-rows: 102px 1fr;
+.view__data {
+  padding-top: 102px;
+  padding-bottom: 102px;
   height: 100vh;
 
   .banner {
-    grid-area: banner;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 102px;
   }
 
   .container {
-    display: grid;
-    grid-template-areas: "title" "date" "user" "form";
-    grid-template-rows: 54px 85px auto 25px 1fr;
-    grid-area: container;
+    &__content {
+      display: grid;
+      grid-template-areas: "title" "date" "user" "form";
+      grid-template-rows: 54px 85px auto 25px;
 
-    .h1 {
-      grid-area: title;
-    }
+      .h1 {
+        grid-area: title;
+      }
 
-    .line {
-      grid-area: line;
-      align-self: center;
+      .date {
+        grid-area: date;
+      }
 
-      &:after {
-        display: block;
-        content: '';
-        height: 1px;
-        width: 100%;
-        background-color: $gray_4;
+      .user {
+        grid-area: user;
+      }
+
+      .fieldset {
+        align-self: baseline;
       }
     }
 
-    .today {
-      grid-area: today;
-    }
-
-    .fieldset {
-      grid-area: list;
-      align-self: baseline;
+    &__footer {
+      position: fixed;
+      bottom: 0;
+      left: calc(50% - 143px);
+      width: 100%;
+      padding: 18px 0 24px;
+      border-top: 1px solid $gray_4;
     }
   }
 }

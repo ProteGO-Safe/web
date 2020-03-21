@@ -21,22 +21,6 @@
       text-align: center;
     }
 
-    .user {
-      display: flex;
-      grid-area: user;
-      justify-self: center;
-
-      &__avatar {
-        margin-right: 23px;
-      }
-
-      &__data {
-        > * {
-          margin: 0;
-        }
-      }
-    }
-
     .box {
       grid-area: box;
       display: flex;
