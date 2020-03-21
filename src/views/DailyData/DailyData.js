@@ -11,13 +11,17 @@ import {
   FieldSet,
   User
 } from '../../components';
+import { Form } from './components';
 
 import './DailyData.scss';
+import { useFormikContext } from 'formik';
 
 const DailyData = () => {
   const history = useHistory();
 
   const handleBack = () => history.push('/daily');
+
+  const { dirty } = useFormikContext();
 
   return (
     <div className="view view__data">
@@ -32,11 +36,15 @@ const DailyData = () => {
           <h4 className="primary-1">środa 18-03-2020</h4>
         </div>
         <User />
-        <div className="form" />
+        <Form />
       </Container>
       <Container className="container__footer">
         <FieldSet>
-          <Button onClick={() => null} text="Zapisz" type="primary" />
+          <Button
+            onClick={!dirty ? () => null : () => null}
+            text={!dirty ? 'Powrót' : 'Zapisz'}
+            type="primary"
+          />
         </FieldSet>
       </Container>
     </div>

@@ -3,12 +3,19 @@ import PropTypes from 'prop-types';
 
 import './FieldSet.scss';
 
-const FieldSet = ({ children }) => (
-  <div className="fieldset">{children}</div>
+const FieldSet = ({ children, horizontal }) => (
+  <div className={`fieldset ${horizontal ? 'fieldset--horizontal' : ''}`}>
+    {children}
+  </div>
 );
 
+FieldSet.defaultProps = {
+  horizontal: false
+};
+
 FieldSet.propTypes = {
-  children: PropTypes.node.isRequired
+  children: PropTypes.node.isRequired,
+  horizontal: PropTypes.bool
 };
 
 export default FieldSet;

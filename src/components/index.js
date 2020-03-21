@@ -11,5 +11,6 @@ export { Legend } from './Legend';
 export { Menu } from './Menu';
 export { MenuButton } from './MenuButton';
 export { Option } from './Option';
+export { Range } from './Range';
 export { User } from './User';
 export { Warning } from './Warning';

@@ -5,18 +5,21 @@ import './Input.scss';
 
 const Input = ({
   description,
+  label,
   min,
   max,
   name,
   onChange,
   onKeyPress,
   placeholder,
+  size,
   type,
   value
 }) => (
   <div className="input input__wrapper">
+    {label && <span className="input__label">{label}</span>}
     <input
-      className="input__field"
+      className={`input__field input__field--${size}`}
       max={max}
       min={min}
       name={name}
@@ -32,23 +35,27 @@ const Input = ({
 
 Input.defaultProps = {
   description: undefined,
+  label: undefined,
   max: undefined,
   min: undefined,
   onChange: undefined,
   onKeyPress: () => null,
   placeholder: '',
+  size: 'normal',
   type: 'text',
   value: null
 };
 
 Input.propTypes = {
   description: PropTypes.string,
+  label: PropTypes.string,
   max: PropTypes.number,
   min: PropTypes.number,
   name: PropTypes.string.isRequired,
   onChange: PropTypes.func,
   onKeyPress: PropTypes.func,
   placeholder: PropTypes.string,
+  size: PropTypes.oneOf(['small', 'normal']),
   type: PropTypes.string,
   value: PropTypes.oneOfType([PropTypes.number, PropTypes.string])
 };
