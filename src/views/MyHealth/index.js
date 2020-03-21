@@ -1,1 +1,1 @@
-export { default as MyHealth } from './MyHealth';
+export { default as MyHealth } from './MyHealthContainer';

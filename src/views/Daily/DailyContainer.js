@@ -25,10 +25,10 @@ const DailyContainer = () => {
   const previousDays = [];
   for (let index = 0; index < 14; index++) {
     const dayBefore = day.subtract(1, 'days');
-    const wasDiagnosis = daysInQuestionnaires.some(value =>
+    const isFilled = daysInQuestionnaires.some(value =>
       moment(value).isSame(dayBefore, 'day')
     );
-    previousDays.push({ day: dayBefore.format(dateFormat), wasDiagnosis });
+    previousDays.push({ day: dayBefore.format(dateFormat), isFilled });
   }
 
   const makeDiagnosisInLast12Hours = () => {
@@ -55,7 +55,7 @@ const DailyContainer = () => {
   return (
     <Daily
       onBack={goToHome}
-      onDiagnosis={goToDiagnosis}
+      onFill={goToDiagnosis}
       today={today}
       previousDays={previousDays}
     />
