@@ -23,11 +23,18 @@ const PrivacyPolicy = () => {
       <Container>
         <h4 className="medium">Polityka prywatności</h4>
         <div className="content">
+          <p className="p1 small text-bold">Privacy by Design & Privacy by Default</p>
           <p className="p1 small">
-            Wszystkie dane ktore przekazujesz do aplikacji sa anonimizowane -
-            nikt - nawet tworcy aplikacji, nie maja mozliwosci do nich wgladu.
-            Zeby walczyc z epidemia musimy budowac baze danych - dlatego
-            swtorzylismy ta aplikacje.
+            Chcemy przeciwdziałać Koronawirusowi, ale nie za wszelką cenę. Twoja
+            prywatność jest dla nas równie ważna. Wszystkie informacje dotyczące
+            Twojego stanu zdrowia, które przekazujesz do SafeSafe są zapisywane
+            w postaci plików cookies i pozostają na Twoim urządzeniu. Nie mamy
+            do nich wglądu. Widzimy tylko ID Twojego urządzenia, Twoje imię,
+            wiek, a w przyszłości być może Twoją lokalizację. Jeśli będziemy
+            planowali zmiany, poinformujemy Cię o tym i poprosimy o Twoją zgodę
+            przed wprowadzeniem zmian. Szczegóły dotyczące SafeSafe i tego jak
+            przetwarzamy Twoje dane znajdziesz w naszym Regulaminie i Polityce
+            Prywatności.
           </p>
           <p className="p2 small text-center">
             Poniżej możesz zapoznać się ze szczegółami:
