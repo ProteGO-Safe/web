@@ -1,0 +1,45 @@
+@import '../../assets/styles/colors';
+
+.view__my-data {
+  display: grid;
+  grid-template-areas: "banner" "container";
+  grid-template-rows: 102px 1fr;
+  height: 100vh;
+
+  .banner {
+    grid-area: banner;
+  }
+
+  .container {
+    display: grid;
+    grid-template-areas: "title" "date" "user" "form";
+    grid-template-rows: 54px 85px auto 25px 1fr;
+    grid-area: container;
+
+    .h1 {
+      grid-area: title;
+    }
+
+    .line {
+      grid-area: line;
+      align-self: center;
+
+      &:after {
+        display: block;
+        content: '';
+        height: 1px;
+        width: 100%;
+        background-color: $gray_4;
+      }
+    }
+
+    .today {
+      grid-area: today;
+    }
+
+    .fieldset {
+      grid-area: list;
+      align-self: baseline;
+    }
+  }
+}
