@@ -15,6 +15,7 @@ import { calendarPropType } from '../../utills/calendar';
 
 const Daily = ({
   goToHistory,
+  isFilledToday,
   onBack,
   onFill,
   calendar: { today, previousDays }
@@ -30,8 +31,10 @@ const Daily = ({
         <div className="today">
           <Button
             onClick={onFill}
-            text={`DZIŚ ${today} - KLIKNIJ I UZUPEŁNIJ DANE`}
-            type="primary"
+            text={`DZIŚ ${today}${
+              !isFilledToday ? ' - KLIKNIJ I UZUPEŁNIJ DANE' : ''
+            }`}
+            type={isFilledToday ? 'gray' : 'primary'}
           />
         </div>
         <div className="line" />
@@ -58,6 +61,7 @@ Daily.propTypes = {
   goToHistory: PropTypes.func.isRequired,
   onBack: PropTypes.func.isRequired,
   onFill: PropTypes.func.isRequired,
+  isFilledToday: PropTypes.bool.isRequired,
   calendar: calendarPropType
 };
 

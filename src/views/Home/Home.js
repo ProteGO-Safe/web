@@ -1,5 +1,6 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
+import { useHistory } from 'react-router-dom';
 
 import Background from '../../assets/img/banners/banner-1.png';
 import {
@@ -8,16 +9,15 @@ import {
   Button,
   Container,
   MenuButton,
+  Ok,
   Warning
 } from '../../components';
 import './Home.scss';
 
-const WarningCase1 = () => (
+const OkCase = () => (
   <>
-    <Warning />
-    <p className="big text-center text-bold">
-      Niskie ryzyko - kontynuuj działania profilaktyczne
-    </p>
+    <Ok color="blue" />
+    <p className="big text-center text-bold">PRZESTRZEGAJ PROFILAKTYKI</p>
   </>
 );
 
@@ -53,11 +53,12 @@ const WarningCase5 = () => (
 );
 
 const Home = () => {
+  const history = useHistory();
   const { triageLevel } = useSelector(state => state.triage);
   const renderRiskLevel = (() => {
     switch (triageLevel) {
       case 'no_risk': {
-        return <WarningCase1 />;
+        return <OkCase />;
       }
       case 'self_monitoring': {
         return <WarningCase2 />;
@@ -84,8 +85,16 @@ const Home = () => {
         <MenuButton />
       </Banner>
       <Container>
+        <p>
+          przeanalizowaliśmy Twoje odpowiedzi na podstawie wytycznych WHO, w tym
+          momencie jesteś w grupie:
+        </p>
         {renderRiskLevel}
-        <Button onClick={() => null} type="primary" text="Co mam zrobić?" />
+        <Button
+          onClick={() => history.push('/risk-information')}
+          type="primary"
+          text="Co mam zrobić?"
+        />
       </Container>
     </div>
   );

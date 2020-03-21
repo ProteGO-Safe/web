@@ -8,6 +8,7 @@ import {
   Home,
   HowItWorks,
   RiskTest,
+  RiskInformation,
   Numbers,
   PrivacyPolicy,
   Registration,
@@ -35,6 +36,11 @@ function App() {
               <Route exact path="/daily-data" component={DailyData} />
               <Route exact path="/how-it-works" component={HowItWorks} />
               <Route exact path="/risk-test" component={RiskTest} />
+              <Route
+                exact
+                path="/risk-information"
+                component={RiskInformation}
+              />
               <Route exact path="/numbers" component={Numbers} />
               <Route exact path="/privacy-policy" component={PrivacyPolicy} />
               <Route exact path="/regulations" component={Regulations} />

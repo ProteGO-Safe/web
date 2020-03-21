@@ -47,6 +47,7 @@ const DailyContainer = () => {
       onFill={fill}
       onBack={goToHome}
       goToHistory={goToHistory}
+      isFilledToday={!!dailyFilledToday}
     />
   );
 };

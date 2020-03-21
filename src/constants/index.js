@@ -6,7 +6,6 @@ export const FIELD_CHRONIC_SICK_OTHER = 'chronic_sick_other';
 
 export const VALUE_MAN = 'male';
 export const VALUE_WOMAN = 'female';
-export const VALUE_OTHER = 'other';
 
 export const VALUE_CHRONIC_SICK_1 = '1';
 export const VALUE_CHRONIC_SICK_2 = '2';

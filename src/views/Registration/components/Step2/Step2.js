@@ -5,8 +5,7 @@ import { Container, FieldSet, Option } from '../../../../components';
 import {
   FIELD_SEX,
   VALUE_MAN,
-  VALUE_WOMAN,
-  VALUE_OTHER
+  VALUE_WOMAN
 } from '../../../../constants';
 import './Step2.scss';
 
@@ -34,13 +33,6 @@ const Step2 = () => {
           name={FIELD_SEX}
           onChange={() => handleChange(FIELD_SEX, VALUE_WOMAN)}
           text="Kobieta"
-          value={values[FIELD_SEX]}
-        />
-        <Option
-          checked={values[FIELD_SEX] === VALUE_OTHER}
-          name={FIELD_SEX}
-          onChange={() => handleChange(FIELD_SEX, VALUE_OTHER)}
-          text="Inne"
           value={values[FIELD_SEX]}
         />
       </FieldSet>
