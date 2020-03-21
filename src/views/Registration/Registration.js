@@ -2,7 +2,6 @@ import React, { useEffect } from 'react';
 import { useFormikContext } from 'formik';
 import {
   InstallApp,
-  InstallAppInstruction,
   Step1,
   Step2,
   Step3,
@@ -31,12 +30,8 @@ const Registration = () => {
     setFieldValue('step', parseInt(step) - 1);
   };
 
-  if (step === 'install_app_1') {
+  if (step === 'install_app') {
     return <InstallApp />;
-  }
-
-  if (step === 'install_app_2') {
-    return <InstallAppInstruction />;
   }
 
   return (
