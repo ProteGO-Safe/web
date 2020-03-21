@@ -20,7 +20,7 @@ const RiskTest = ({ onBack, onFill, calendar: { today, previousDays } }) => (
       <Brand content={false} small white />
     </Banner>
     <Container>
-      <h4 className="h1 text-center medium">Dziennik</h4>
+      <h4 className="h1 text-center medium">Test oceny ryzyka</h4>
       <Legend />
       <div className="today">
         <Button

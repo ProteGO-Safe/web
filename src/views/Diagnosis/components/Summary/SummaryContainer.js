@@ -4,7 +4,7 @@ import { useHistory } from 'react-router-dom';
 
 import Summary from './Summary';
 import { clearDiagnosis } from '../../../../store/actions/diagnosis';
-import { addQuestionnaire } from '../../../../store/actions/questionnaires';
+import { addRiskTest } from '../../../../store/actions/risktest';
 
 const SummaryContainer = () => {
   const history = useHistory();
@@ -21,7 +21,7 @@ const SummaryContainer = () => {
       label,
       description
     };
-    dispatch(addQuestionnaire(data));
+    dispatch(addRiskTest(data));
     history.push('/');
   };
 

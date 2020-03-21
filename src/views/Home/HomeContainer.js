@@ -5,9 +5,9 @@ import Home from './Home';
 import { Diagnosis } from '../Diagnosis';
 
 const HomeContainer = () => {
-  const questionnaires = useSelector(state => state.questionnaires);
+  const riskTest = useSelector(state => state.riskTest);
 
-  if (Object.keys(questionnaires).length === 0) {
+  if (Object.keys(riskTest).length === 0) {
     return <Diagnosis />;
   }
   return <Home />;

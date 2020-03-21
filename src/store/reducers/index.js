@@ -3,13 +3,15 @@ import { combineReducers } from 'redux';
 import diagnosis from './diagnosis';
 import triage from './triage';
 import user from './user';
-import questionnaires from './questionnaires';
+import riskTest from './risktest';
+import daily from './daily';
 
 const reducers = combineReducers({
   diagnosis,
   triage,
   user,
-  questionnaires
+  riskTest,
+  daily
 });
 
 export default reducers;

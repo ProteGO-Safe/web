@@ -1,9 +1,9 @@
 import React from 'react';
 import Background from '../../../../assets/img/banners/banner-1.png';
 import { Back, Banner, Brand, Container } from '../../../../components';
-import './DiagnosisAlreadyDone.scss';
+import './RiskTestAlreadyDone.scss';
 
-const DiagnosisAlreadyDone = ({ goBack }) => {
+const RiskTestAlreadyDone = ({ goBack }) => {
   return (
     <div className="view view__regulations">
       <Banner background={Background}>
@@ -21,4 +21,4 @@ const DiagnosisAlreadyDone = ({ goBack }) => {
   );
 };
 
-export default DiagnosisAlreadyDone;
+export default RiskTestAlreadyDone;
