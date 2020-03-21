@@ -9,6 +9,10 @@ import {
   FieldSet
 } from '../../../../components';
 
+import Img1 from '../../../../assets/img/icons/and-step-1.svg';
+import Img2 from '../../../../assets/img/icons/and-step-2.svg';
+import Img3 from '../../../../assets/img/icons/and-step-3.svg';
+
 const InstallAppAndroid = ({ onLeave }) => {
   const { setFieldValue } = useFormikContext();
 
@@ -21,14 +25,30 @@ const InstallAppAndroid = ({ onLeave }) => {
         <h4 className="h1 text-center medium">
           Zainstaluj aplikację na swoim smartfonie z systemem Android
         </h4>
-        <p className="small text-center">
-          W ten sposób uzyskasz łatwy dostęp do aplikacji z głównego ekranu
-          telefonu.
-        </p>
+        <div className="instruction instruction__android">
+          <div>
+            <img src={Img1} alt="Krok 1" />
+            <p>
+              Naciśnij <span>"menu"</span> w oknie swojej przeglądarki
+            </p>
+          </div>
+          <div>
+            <img src={Img2} alt="Krok 2" />
+            <p>
+              Znajdź pozycję <span>"dodaj do ekranu głównego"</span>
+            </p>
+          </div>
+          <div>
+            <img src={Img3} alt="Krok 3" />
+            <p>
+              Gotowe! Skrót do aplikacji jest teraz na pulpicie Twojego telefonu
+            </p>
+          </div>
+        </div>
         <FieldSet>
           <Button
-            onClick={() => setFieldValue('step', 'install_app_2')}
-            text="Zainstaluj"
+            onClick={() => setFieldValue('step', 2)}
+            text="Gotowe"
             type="primary"
           />
           <Button onClick={onLeave} text="pomiń" type="blank" />

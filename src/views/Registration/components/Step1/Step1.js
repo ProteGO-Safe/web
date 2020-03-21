@@ -21,7 +21,7 @@ const Step1 = () => {
     const system = getMobileOperatingSystem();
     const { installApp } = values;
 
-    setFieldValue('step', system && installApp ? 'install_app_1' : 2);
+    setFieldValue('step', system && installApp ? 'install_app' : 2);
   };
 
   return (
