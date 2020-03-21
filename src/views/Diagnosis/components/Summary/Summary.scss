@@ -12,33 +12,29 @@
 
   .container {
     display: grid;
-    grid-template-areas: "content" "user" "box" "line" "buttons";
-    grid-template-rows: minmax(min-content, 156px) auto auto 48px auto;
+    grid-template-areas: "content1" "content2" "buttons";
     grid-area: container;
 
     .content {
-      grid-area: content;
-      text-align: center;
-    }
+      &--1 {
+        grid-area: content1;
+        align-self: end;
 
-    .box {
-      grid-area: box;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      background-color: $gray_4;
-      border-radius: 5px;
-      padding: 5px 10px;
-      min-height: 51px;
+        p {
+          margin: 0;
+        }
+      }
 
-      > * {
-        margin: 0;
+      &--2 {
+        grid-area: content2;
+        align-self: center;
       }
     }
 
-    .line {
-      grid-area: line;
-      align-self: center;
+    .fieldset {
+      grid-area: buttons;
+      padding: 18px 0;
+      border-top: 1px solid $gray_4;
 
       &:after {
         display: block;
@@ -47,16 +43,6 @@
         width: 100%;
         background-color: $gray_4;
       }
-    }
-
-    .content {
-      grid-area: content;
-      align-self: start;
-      padding-top: 30px;
-    }
-
-    .fieldset {
-      grid-area: buttons;
     }
   }
 }
