@@ -9,8 +9,7 @@ import {
   Brand,
   Button,
   Container,
-  FieldSet,
-  User
+  FieldSet
 } from '../../components';
 
 import { Form } from './components';
@@ -26,28 +25,21 @@ const DailyData = ({ onBack, isViewMode }) => {
         <Brand content={false} small white />
       </Banner>
       <Container className="container__content">
-        <h4 className="h1 text-center medium">Dziennik</h4>
-        <div className="date text-center">
-          <h4>{isViewMode ? 'Świetna robota!' : 'Uzupełnij dane za dzień'}</h4>
-          {isViewMode ? (
-            <p>Już odpowiedziałeś na ankietę w tym dniu</p>
-          ) : (
-            <h4 className="primary-1">środa 18-03-2020</h4>
-          )}
-          {isViewMode && <h4 className="primary-1">Podsumujmy:</h4>}
-        </div>
-        <User />
+        <h4 className="title medium">Dziennik zdrowia</h4>
+        <p className="date medium">czwartek 19-03-2020</p>
         <Form isViewMode={isViewMode} />
       </Container>
-      <Container className="container__footer">
-        <FieldSet>
-          <Button
-            onClick={!dirty || isViewMode ? onBack : submitForm}
-            text={!dirty || isViewMode ? 'Powrót' : 'Zapisz'}
-            type="primary"
-          />
-        </FieldSet>
-      </Container>
+      <div className="footer">
+        <Container className="container__footer">
+          <FieldSet>
+            <Button
+              onClick={!dirty || isViewMode ? onBack : submitForm}
+              text={!dirty || isViewMode ? 'Powrót' : 'Zapisz'}
+              type="primary"
+            />
+          </FieldSet>
+        </Container>
+      </div>
     </div>
   );
 };

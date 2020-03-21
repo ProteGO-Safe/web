@@ -1,7 +1,7 @@
 @import '../../assets/styles/colors';
 
 .view__data {
-  padding-top: 102px;
+  padding-top: 75px;
   padding-bottom: 152px;
 
   .banner {
@@ -9,27 +9,22 @@
     top: 0;
     left: 0;
     width: 100%;
-    height: 102px;
+    height: 75px;
     z-index: 2;
   }
 
   .container {
     &__content {
       display: grid;
-      grid-template-areas: "title" "date" "user" "form";
-      grid-template-rows: 54px 85px auto auto;
+      grid-template-areas: "title date" "form form";
 
-      .h1 {
+      .title {
         grid-area: title;
       }
 
       .date {
         grid-area: date;
-      }
-
-      .user {
-        grid-area: user;
-        padding-bottom: 30px;
+        justify-self: end;
       }
 
       .form {
@@ -46,16 +41,19 @@
         }
       }
     }
+  }
 
-    &__footer {
-      position: fixed;
-      bottom: 0;
-      left: calc(50% - 143px);
-      width: 100%;
+  .footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: $white;
+    z-index: 2;
+
+    .fieldset {
       padding: 18px 0 24px;
       border-top: 1px solid $gray_4;
-      background-color: $white;
-      z-index: 2;
     }
   }
 }

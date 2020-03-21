@@ -1,0 +1,36 @@
+@import '../../assets/styles/colors';
+
+.textarea {
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  &__field {
+    height: 145px;
+    resize: none;
+    border: 1px solid $primary_2;
+    font-size: 14px;
+    line-height: 19px;
+    padding: 4px;
+    color: $black;
+    letter-spacing: 0;
+    -webkit-appearance: none;
+    border-radius: 0;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  &__label {
+    font-size: 10px;
+    line-height: 13px;
+    letter-spacing: 0;
+    padding-bottom: 8.5px;
+    border-bottom: 2px solid $primary_2;
+    margin-bottom: 18.5px;
+    width: 80%;
+  }
+}

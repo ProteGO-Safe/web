@@ -10,7 +10,7 @@ import {
   FIELD_TEMPERATURE_EVENING,
   FIELD_TEMPERATURE_MORNING
 } from '../../../../constants';
-import { FieldSet, Input, Range } from '../../../../components';
+import { FieldSet, Input, Range, Textarea } from '../../../../components';
 
 const Form = ({ isViewMode }) => {
   const { handleChange, values } = useFormikContext();
@@ -52,13 +52,11 @@ const Form = ({ isViewMode }) => {
       </FieldSet>
       <h4 className="big">Kontakty</h4>
       <FieldSet>
-        <Input
+        <Textarea
           disabled={isViewMode}
+          label="Z kim się spotkałem, gdzie byłem - wpisz"
           name={FIELD_CONTACTS}
           onChange={handleChange}
-          placeholder={
-            isViewMode ? '' : 'Z kim się spotkałem, gdzie byłem - wpisz'
-          }
           size="small"
           value={values[FIELD_CONTACTS]}
         />
