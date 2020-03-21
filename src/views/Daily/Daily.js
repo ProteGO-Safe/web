@@ -8,8 +8,7 @@ import {
   Brand,
   Button,
   Container,
-  FieldSet,
-  Legend
+  FieldSet
 } from '../../components';
 import './Daily.scss';
 import { calendarPropType } from '../../utills/calendar';
@@ -28,12 +27,11 @@ const Daily = ({
       </Banner>
       <Container>
         <h4 className="h1 text-center medium">Moje zdrowie</h4>
-        <Legend />
         <div className="today">
           <Button
             onClick={onFill}
             text={`DZIŚ ${today} - KLIKNIJ I UZUPEŁNIJ DANE`}
-            type="success-blank"
+            type="primary"
           />
         </div>
         <div className="line" />
@@ -43,9 +41,12 @@ const Daily = ({
               disabled={!_obj.isFilled}
               key={_obj.day}
               onClick={() => goToHistory(_obj.timestamp)}
-              text={_obj.day}
-              type={_obj.isFilled ? 'success' : 'black'}
-            />
+              text=""
+              type="gray"
+            >
+              <span>{_obj.dayWeek}</span>
+              <span className="text-bold">{_obj.day}</span>
+            </Button>
           ))}
         </FieldSet>
       </Container>

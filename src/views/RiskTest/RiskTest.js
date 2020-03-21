@@ -8,8 +8,7 @@ import {
   Brand,
   Button,
   Container,
-  FieldSet,
-  Legend
+  FieldSet
 } from '../../components';
 import { calendarPropType } from '../../utills/calendar';
 
@@ -21,23 +20,20 @@ const RiskTest = ({ onBack, onFill, calendar: { today, previousDays } }) => (
     </Banner>
     <Container>
       <h4 className="h1 text-center medium">Test oceny ryzyka</h4>
-      <Legend />
       <div className="today">
         <Button
           onClick={onFill}
-          text={`DZIŚ ${today} - KLIKNIJ I UZUPEŁNIJ DANE`}
-          type="success-blank"
+          text={`DZIŚ ${today} - WYKONAJ TEST`}
+          type="primary"
         />
       </div>
       <div className="line" />
       <FieldSet>
         {previousDays.map(_obj => (
-          <Button
-            key={_obj.day}
-            onClick={() => null}
-            text={_obj.day}
-            type={_obj.isFilled ? 'success' : 'black'}
-          />
+          <Button key={_obj.day} onClick={() => null} text="" type="gray">
+            <span>{_obj.dayWeek}</span>
+            <span className="text-bold">{_obj.day}</span>
+          </Button>
         ))}
       </FieldSet>
     </Container>
