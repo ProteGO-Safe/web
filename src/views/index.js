@@ -4,6 +4,7 @@ export { Diagnosis } from './Diagnosis';
 export { Home } from './Home';
 export { HowItWorks } from './HowItWorks';
 export { RiskTest } from './RiskTest';
+export { RiskTestData } from './RiskTestData';
 export { RiskInformation } from './RiskInformation';
 export { Numbers } from './Numbers';
 export { PrivacyPolicy } from './PrivacyPolicy';
