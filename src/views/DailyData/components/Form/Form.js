@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { useFormikContext } from 'formik';
 import {
   FIELD_CHILLS,
@@ -11,13 +12,14 @@ import {
 } from '../../../../constants';
 import { FieldSet, Input, Range } from '../../../../components';
 
-const Form = () => {
+const Form = ({ isViewMode }) => {
   const { handleChange, values } = useFormikContext();
   return (
     <div className="form">
       <h4 className="big">Temperatura</h4>
       <FieldSet horizontal>
         <Input
+          disabled={isViewMode}
           label="Rano"
           name={FIELD_TEMPERATURE_MORNING}
           max={50}
@@ -27,6 +29,7 @@ const Form = () => {
           value={values[FIELD_TEMPERATURE_MORNING]}
         />
         <Input
+          disabled={isViewMode}
           label="Wieczorem"
           name={FIELD_TEMPERATURE_EVENING}
           max={50}
@@ -38,23 +41,34 @@ const Form = () => {
       </FieldSet>
       <h4 className="big">Objawy</h4>
       <FieldSet>
-        <Range field={FIELD_RUNNY_NOSE} label="Katar" />
-        <Range field={FIELD_COUGH} label="Kaszel" />
-        <Range field={FIELD_CHILLS} label="Dreszcze" />
-        <Range field={FIELD_MUSCLE_PAIN} label="Ból mięśni" />
+        <Range field={FIELD_RUNNY_NOSE} label="Katar" disable={isViewMode} />
+        <Range field={FIELD_COUGH} label="Kaszel" disable={isViewMode} />
+        <Range field={FIELD_CHILLS} label="Dreszcze" disable={isViewMode} />
+        <Range
+          field={FIELD_MUSCLE_PAIN}
+          label="Ból mięśni"
+          disable={isViewMode}
+        />
       </FieldSet>
       <h4 className="big">Kontakty</h4>
       <FieldSet>
         <Input
+          disabled={isViewMode}
           name={FIELD_CONTACTS}
           onChange={handleChange}
-          placeholder="Z kim się spotkałem, gdzie byłem - wpisz"
+          placeholder={
+            isViewMode ? '' : 'Z kim się spotkałem, gdzie byłem - wpisz'
+          }
           size="small"
           value={values[FIELD_CONTACTS]}
         />
       </FieldSet>
     </div>
   );
+};
+
+Form.propTypes = {
+  isViewMode: PropTypes.bool.isRequired
 };
 
 export default Form;

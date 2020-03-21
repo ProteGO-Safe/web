@@ -5,6 +5,7 @@ import './Input.scss';
 
 const Input = ({
   description,
+  disabled,
   label,
   min,
   max,
@@ -21,6 +22,7 @@ const Input = ({
     <input
       className={`input__field input__field--${size}`}
       max={max}
+      disabled={disabled}
       min={min}
       name={name}
       onChange={onChange}
@@ -35,6 +37,7 @@ const Input = ({
 
 Input.defaultProps = {
   description: undefined,
+  disabled: false,
   label: undefined,
   max: undefined,
   min: undefined,
@@ -48,6 +51,7 @@ Input.defaultProps = {
 
 Input.propTypes = {
   description: PropTypes.string,
+  disabled: PropTypes.bool,
   label: PropTypes.string,
   max: PropTypes.number,
   min: PropTypes.number,
