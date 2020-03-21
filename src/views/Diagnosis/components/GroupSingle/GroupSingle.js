@@ -11,6 +11,7 @@ import {
 } from '../../../../constants';
 
 import Icon from '../../../../assets/img/icons/angle-right-white.svg';
+import { itemsPropType } from '../../prop-types';
 
 const GroupSingle = ({ text, items }) => {
   const { setFieldValue, values, submitForm } = useFormikContext();
@@ -20,24 +21,22 @@ const GroupSingle = ({ text, items }) => {
     setFieldValue(FIELD_CHOICE_ID, VALUE_PRESENT);
   };
 
-  const renderOption = item => (
-    <Option
-      color="white"
-      key={item.id}
-      checked={values[FIELD_ITEM_ID] === item.id}
-      name={FIELD_ITEM_ID}
-      onChange={() => handleChange(item.id)}
-      text={item.name}
-      value={values[FIELD_ITEM_ID]}
-    />
-  );
-
-  const renderOptions = items.map(_item => renderOption(_item));
-
   return (
     <>
       <h3>{text}</h3>
-      <FieldSet>{renderOptions}</FieldSet>
+      <FieldSet>
+        {items.map(item => (
+          <Option
+            color="white"
+            key={item.id}
+            checked={values[FIELD_ITEM_ID] === item.id}
+            name={FIELD_ITEM_ID}
+            onChange={() => handleChange(item.id)}
+            text={item.name}
+            value={values[FIELD_ITEM_ID]}
+          />
+        ))}
+      </FieldSet>
       <Button
         disabled={!values[FIELD_CHOICE_ID]}
         height="small"
@@ -52,18 +51,7 @@ const GroupSingle = ({ text, items }) => {
 
 GroupSingle.propTypes = {
   text: PropTypes.string.isRequired,
-  items: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.string.isRequired,
-      name: PropTypes.string.isRequired,
-      choices: PropTypes.arrayOf(
-        PropTypes.shape({
-          id: PropTypes.string.isRequired,
-          label: PropTypes.string.isRequired
-        })
-      )
-    })
-  )
+  items: itemsPropType
 };
 
 export default GroupSingle;

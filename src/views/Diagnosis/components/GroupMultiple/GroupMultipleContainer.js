@@ -1,11 +1,11 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import PropTypes from 'prop-types';
 import { Formik } from 'formik';
 
 import GroupMultiple from './GroupMultiple';
 import { getDiagnosis } from '../../../../store/actions/diagnosis';
 import { VALUE_ABSENT } from '../../../../constants';
+import { questionPropType } from '../../prop-types';
 
 const GroupMultipleContainer = ({ question }) => {
   const dispatch = useDispatch();
@@ -45,21 +45,7 @@ const GroupMultipleContainer = ({ question }) => {
 };
 
 GroupMultipleContainer.propTypes = {
-  question: PropTypes.shape({
-    text: PropTypes.string.isRequired,
-    items: PropTypes.arrayOf(
-      PropTypes.shape({
-        id: PropTypes.string.isRequired,
-        name: PropTypes.string.isRequired,
-        choices: PropTypes.arrayOf(
-          PropTypes.shape({
-            id: PropTypes.string.isRequired,
-            label: PropTypes.string.isRequired
-          })
-        )
-      })
-    )
-  }).isRequired
+  question: questionPropType
 };
 
 export default GroupMultipleContainer;

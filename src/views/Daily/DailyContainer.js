@@ -7,7 +7,8 @@ import 'moment/locale/pl';
 import { DiagnosisAlreadyDone } from './components/DiagnosisAlreadyDone';
 import Daily from './Daily';
 
-const dateFormat = 'dddd - Do MMMM YYYY';
+const dateFormat = 'dddd - D-MM-YYYY';
+const todayFormat = 'D-MM-YYYY';
 
 const DailyContainer = () => {
   const history = useHistory();
@@ -17,7 +18,7 @@ const DailyContainer = () => {
   );
   moment.locale('pl');
   const day = moment();
-  const today = day.format(dateFormat);
+  const today = day.format(todayFormat);
 
   const daysInQuestionnaires = Object.keys(questionnaires);
 
