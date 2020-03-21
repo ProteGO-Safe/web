@@ -12,7 +12,13 @@ import {
 } from '../../components';
 import { calendarPropType } from '../../utills/calendar';
 
-const RiskTest = ({ onBack, onFill, calendar: { today, previousDays } }) => (
+const RiskTest = ({
+  goToHistory,
+  isFilledToday,
+  onBack,
+  onFill,
+  calendar: { today, previousDays }
+}) => (
   <div className="view view__risk-test">
     <Banner background={Background}>
       <Back onClick={onBack} />
@@ -23,14 +29,20 @@ const RiskTest = ({ onBack, onFill, calendar: { today, previousDays } }) => (
       <div className="today">
         <Button
           onClick={onFill}
-          text={`DZIŚ ${today} - WYKONAJ TEST`}
-          type="primary"
+          text={`DZIŚ ${today}${!isFilledToday ? ' - WYKONAJ TEST' : ''}`}
+          type={isFilledToday ? 'gray' : 'primary'}
         />
       </div>
       <div className="line" />
       <FieldSet>
         {previousDays.map(_obj => (
-          <Button key={_obj.day} onClick={() => null} text="" type="gray">
+          <Button
+            disabled={!_obj.isFilled}
+            key={_obj.day}
+            onClick={() => goToHistory(_obj.timestamp)}
+            text=""
+            type="gray"
+          >
             <span>{_obj.dayWeek}</span>
             <span className="text-bold">{_obj.day}</span>
           </Button>
@@ -43,6 +55,8 @@ const RiskTest = ({ onBack, onFill, calendar: { today, previousDays } }) => (
 RiskTest.propTypes = {
   onBack: PropTypes.func.isRequired,
   onFill: PropTypes.func.isRequired,
+  goToHistory: PropTypes.func.isRequired,
+  isFilledToday: PropTypes.bool.isRequired,
   calendar: calendarPropType
 };
 

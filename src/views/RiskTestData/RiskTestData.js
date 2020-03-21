@@ -5,7 +5,13 @@ import Background from '../../assets/img/banners/banner-1.png';
 import { Back, Banner, Brand, Container } from '../../components';
 import './RiskTestData.scss';
 
-const RiskTestData = () => {
+const RiskTestData = ({
+  day,
+  questions,
+  idToChoiceResolver,
+  isToday,
+  triageLevelInformation
+}) => {
   const history = useHistory();
   const handleBack = () => history.push('/risk-test');
 
@@ -18,26 +24,29 @@ const RiskTestData = () => {
       <Container>
         <div className="title">
           <h4 className="h1 text-center medium">Test oceny ryzyka</h4>
-          <h6 className="text-center">DZIŚ 19-03-2020</h6>
+          <h6 className="text-center">
+            {isToday && 'DZIŚ'} {day}
+          </h6>
         </div>
         <div className="data">
-          <div className="data__single">
-            <p className="text-bold small">
-              Czy w ciągu ostatniego tygodnia wychodziłeś z domu?
-            </p>
-            <p className="small">nie</p>
-          </div>
-          <div className="data__single">
-            <p className="text-bold small">Temperatura</p>
-            <p className="small">36,9 - 37,9</p>
-          </div>
-          <div className="data__single">
-            <p className="text-bold small">Objawy</p>
-            <p className="small">brak</p>
-          </div>
+          {questions
+            .filter(question => question)
+            .map(question => (
+              <div key={question.text} className="data__single">
+                <p className="text-bold small">{question.text}</p>
+                {question.items.map(item => (
+                  <div key={item.name}>
+                    <p className="small">{item.name}</p>
+                    <p className="small">
+                      {idToChoiceResolver(item.id, item.choices)}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            ))}
           <div className="data__single">
             <p className="text-bold small">Przyznana grupa</p>
-            <p className="small">niewielkie ryzyko infekcji</p>
+            <p className="small">{triageLevelInformation}</p>
           </div>
         </div>
       </Container>

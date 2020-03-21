@@ -13,64 +13,63 @@ import {
   Warning
 } from '../../components';
 import './Home.scss';
+import triageLevelResolver from '../../utills/triage';
 
-const OkCase = () => (
+const OkCase = ({ text }) => (
   <>
     <Ok color="blue" />
-    <p className="big text-center text-bold">PRZESTRZEGAJ PROFILAKTYKI</p>
+    <p className="big text-center text-bold">{text}</p>
   </>
 );
 
-const WarningCase2 = () => (
+const WarningCase2 = ({ text }) => (
   <>
-    <Warning color="green" />
-    <h2>Samokontrola - zostań w domu i monitoruj stan swojego zdrowia </h2>
+    <Ok color="blue" />
+    <h2>{text}</h2>
   </>
 );
 
-const WarningCase3 = () => (
+const WarningCase3 = ({ text }) => (
   <>
     <Warning color="yellow" />
-    <h2>Odizoluj się, nie wychodź, unikaj kontaktów z domownikami</h2>
+    <h2>{text}</h2>
   </>
 );
 
-const WarningCase4 = () => (
+const WarningCase4 = ({ text }) => (
   <>
-    <Warning color="red" />
-    <h2>Powiadom służby medyczne i unikaj wszelkich kontaktów.</h2>
+    <Warning color="orange" />
+    <h2>{text}</h2>
   </>
 );
 
-const WarningCase5 = () => (
+const WarningCase5 = ({ text }) => (
   <>
     <Warning color="red" />
-    <h2>
-      Powiadom służby medyczne, konieczna izolacja ambulatoryjna, unikaj
-      wszelkich kontaktów.
-    </h2>
+    <h2>{text}</h2>
   </>
 );
 
 const Home = () => {
   const history = useHistory();
   const { triageLevel } = useSelector(state => state.triage);
+  const triageLevelInformation = triageLevelResolver(triageLevel);
   const renderRiskLevel = (() => {
     switch (triageLevel) {
       case 'no_risk': {
-        return <OkCase />;
+        return <OkCase text={triageLevelInformation} />;
       }
       case 'self_monitoring': {
-        return <WarningCase2 />;
+        return <WarningCase2 text={triageLevelInformation} />;
       }
       case 'quarantine': {
-        return <WarningCase3 />;
+        return <WarningCase3 text={triageLevelInformation} />;
       }
       case 'isolation_call': {
-        return <WarningCase4 />;
+        return <WarningCase4 text={triageLevelInformation} />;
       }
       case 'isolation_ambulance': {
-        return <WarningCase5 />;
+        return <WarningCase5 text={triageLevelInformation} />;
       }
       default: {
         return null;

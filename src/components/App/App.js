@@ -37,7 +37,11 @@ function App() {
               <Route exact path="/daily-data" component={DailyData} />
               <Route exact path="/how-it-works" component={HowItWorks} />
               <Route exact path="/risk-test" component={RiskTest} />
-              <Route exact path="/risk-test-data" component={RiskTestData} />
+              <Route
+                exact
+                path="/risk-test-data/:id"
+                component={RiskTestData}
+              />
               <Route
                 exact
                 path="/risk-information"

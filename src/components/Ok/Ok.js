@@ -20,9 +20,8 @@ const Ok = ({ color }) => (
         height="202.819"
         filterUnits="userSpaceOnUse"
       >
-        <feOffset dy="3" input="SourceAlpha" />
+        <feOffset dy="3" />
         <feGaussianBlur stdDeviation="3" result="blur" />
-        <feFlood flood-opacity="0.161" />
         <feComposite operator="in" in2="blur" />
         <feComposite in="SourceGraphic" />
       </filter>
@@ -59,7 +58,6 @@ const Ok = ({ color }) => (
             d="M407.751,213.329,328.92,76.784a24.133,24.133,0,0,0-41.811,0L208.278,213.329a24.122,24.122,0,0,0,20.891,36.2H386.832a24.123,24.123,0,0,0,20.919-36.2ZM395.79,230.563a10.12,10.12,0,0,1-8.958,5.187H229.169a10.36,10.36,0,0,1-8.958-15.533l39.431-68.259,39.4-68.286a10.355,10.355,0,0,1,17.914,0l39.431,68.286,39.4,68.259A10.107,10.107,0,0,1,395.79,230.563Z"
             transform="translate(-196 -58.71)"
             fill="#4b89bc"
-            fill-rule="evenodd"
           />
         </g>
       </g>

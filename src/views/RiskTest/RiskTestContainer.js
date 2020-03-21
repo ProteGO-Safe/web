@@ -5,7 +5,6 @@ import moment from 'moment';
 
 import RiskTest from './RiskTest';
 import createCalendar from '../../utills/calendar';
-import { RiskTestAlreadyDone } from './components/RiskTestAlreadyDone';
 
 const RiskTestContainer = () => {
   const history = useHistory();
@@ -17,13 +16,14 @@ const RiskTestContainer = () => {
   );
   const calendar = createCalendar(daysInRiskTest);
 
-  const isFilledisInLast12Hours = () => {
-    const _12HoursAgo = moment().subtract(12, 'h');
-    return daysInRiskTest.some(value => _12HoursAgo.diff(value) <= 0);
-  };
+  const _12HoursAgo = moment().subtract(12, 'h');
+
+  const riskFilledToday = daysInRiskTest.find(
+    value => _12HoursAgo.diff(value) <= 0
+  );
 
   const goToDiagnosis = () => {
-    if (isFilledisInLast12Hours()) {
+    if (riskFilledToday) {
       setIsFilled(true);
       return;
     }
@@ -32,12 +32,21 @@ const RiskTestContainer = () => {
 
   const goToHome = () => history.push('/');
 
-  if (isFilled) {
-    return <RiskTestAlreadyDone goBack={() => setIsFilled(false)} />;
+  const goToHistory = timestamp => history.push(`/risk-test-data/${timestamp}`);
+
+  if (isFilled && riskFilledToday) {
+    const timestamp = riskFilledToday.unix();
+    goToHistory(timestamp);
   }
 
   return (
-    <RiskTest onBack={goToHome} onFill={goToDiagnosis} calendar={calendar} />
+    <RiskTest
+      onBack={goToHome}
+      onFill={goToDiagnosis}
+      goToHistory={goToHistory}
+      isFilledToday={!!riskFilledToday}
+      calendar={calendar}
+    />
   );
 };
 
