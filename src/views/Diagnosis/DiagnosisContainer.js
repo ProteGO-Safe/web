@@ -28,6 +28,7 @@ const DiagnosisContainer = () => {
       evidence: []
     };
     dispatch(getDiagnosis(data));
+    // eslint-disable-next-line
   }, [isResetting]);
 
   useEffect(() => {
@@ -39,10 +40,11 @@ const DiagnosisContainer = () => {
       };
       dispatch(getTriage(data));
     }
+    // eslint-disable-next-line
   }, [inProgress, evidence]);
 
   if (!inProgress && evidence.length > 0) {
-    return <Summary question={question} />;
+    return <Summary />;
   }
 
   const onClearDiagnosis = () => dispatch(clearDiagnosis());

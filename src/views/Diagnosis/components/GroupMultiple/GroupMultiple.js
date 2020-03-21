@@ -7,6 +7,7 @@ import { FieldSet } from '../../../../components/FieldSet';
 import { Button } from '../../../../components/Button';
 import { VALUE_ABSENT, VALUE_PRESENT } from '../../../../constants';
 import Icon from '../../../../assets/img/icons/angle-right-white.svg';
+import { itemsPropType } from '../../prop-types';
 
 const GroupMultiple = ({ text, items }) => {
   const { setFieldValue, values, submitForm } = useFormikContext();
@@ -52,18 +53,7 @@ const GroupMultiple = ({ text, items }) => {
 
 GroupMultiple.propTypes = {
   text: PropTypes.string.isRequired,
-  items: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.string.isRequired,
-      name: PropTypes.string.isRequired,
-      choices: PropTypes.arrayOf(
-        PropTypes.shape({
-          id: PropTypes.string.isRequired,
-          label: PropTypes.string.isRequired
-        })
-      )
-    })
-  ).isRequired
+  items: itemsPropType
 };
 
 export default GroupMultiple;

@@ -1,11 +1,11 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import PropTypes from 'prop-types';
 import { Formik } from 'formik';
 
 import GroupSingle from './GroupSingle';
 import { getDiagnosis } from '../../../../store/actions/diagnosis';
 import { FIELD_CHOICE_ID, FIELD_ITEM_ID } from '../../../../constants';
+import { questionPropType } from '../../prop-types';
 
 const GroupSingleContainer = ({ question }) => {
   const dispatch = useDispatch();
@@ -43,21 +43,7 @@ const GroupSingleContainer = ({ question }) => {
 };
 
 GroupSingleContainer.propTypes = {
-  question: PropTypes.shape({
-    text: PropTypes.string.isRequired,
-    items: PropTypes.arrayOf(
-      PropTypes.shape({
-        id: PropTypes.string.isRequired,
-        name: PropTypes.string.isRequired,
-        choices: PropTypes.arrayOf(
-          PropTypes.shape({
-            id: PropTypes.string.isRequired,
-            label: PropTypes.string.isRequired
-          })
-        )
-      })
-    )
-  }).isRequired
+  question: questionPropType
 };
 
 export default GroupSingleContainer;
