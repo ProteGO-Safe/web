@@ -31,6 +31,7 @@ function App() {
           {name && (
             <>
               <Route exact path="/daily" component={Daily} />
+              <Route exact path="/daily/:id" component={DailyData} />
               <Route exact path="/daily-data" component={DailyData} />
               <Route exact path="/how-it-works" component={HowItWorks} />
               <Route exact path="/risk-test" component={RiskTest} />

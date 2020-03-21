@@ -17,13 +17,14 @@ const DailyContainer = () => {
 
   const calendar = createCalendar(daysInDaily);
 
-  const isFilledToday = () => {
-    const _24HoursAgo = moment().subtract(24, 'h');
-    return daysInDaily.some(value => _24HoursAgo.diff(value) <= 0);
-  };
+  const _24HoursAgo = moment().subtract(24, 'h');
+
+  const dailyFilledToday = daysInDaily.find(
+    value => _24HoursAgo.diff(value) <= 0
+  );
 
   const fill = () => {
-    if (isFilledToday()) {
+    if (dailyFilledToday) {
       setIsFilled(true);
       return;
     }
@@ -33,11 +34,21 @@ const DailyContainer = () => {
 
   const goToHome = () => history.push('/');
 
-  if (isFilled) {
-    // widok dzisiejszego wypelnienia
+  const goToHistory = timestamp => history.push(`/daily/${timestamp}`);
+
+  if (isFilled && dailyFilledToday) {
+    const timestamp = dailyFilledToday.unix();
+    goToHistory(timestamp);
   }
 
-  return <Daily calendar={calendar} onFill={fill} onBack={goToHome} />;
+  return (
+    <Daily
+      calendar={calendar}
+      onFill={fill}
+      onBack={goToHome}
+      goToHistory={goToHistory}
+    />
+  );
 };
 
 export default DailyContainer;

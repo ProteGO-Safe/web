@@ -9,7 +9,7 @@ export const dailyAddRequested = ({ data }) => ({
 });
 
 export function addDaily(data) {
-  return dispatch => {
+  return async dispatch => {
     dispatch(dailyAddRequested({ data }));
   };
 }

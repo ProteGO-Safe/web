@@ -16,7 +16,7 @@ const levels = {
   [VALUE_SYMPTOM_LEVEL_4]: 'silny'
 };
 
-const Range = ({ label, onClick, value }) => {
+const Range = ({ disable, label, onClick, value }) => {
   const options = [
     VALUE_SYMPTOM_LEVEL_1,
     VALUE_SYMPTOM_LEVEL_2,
@@ -27,6 +27,7 @@ const Range = ({ label, onClick, value }) => {
 
     return (
       <button
+        disabled={disable}
         className={`range__option ${isActive}`}
         key={option}
         onClick={() => onClick(option)}
@@ -49,6 +50,7 @@ const Range = ({ label, onClick, value }) => {
 };
 
 Range.defaultProps = {
+  disable: PropTypes.bool.isRequired,
   label: PropTypes.string.isRequired,
   onClick: PropTypes.func.isRequired,
   value: PropTypes.string.isRequired
