@@ -29,7 +29,6 @@ import {
 
 const Summary = () => {
   const { handleSubmit, setFieldValue, values } = useFormikContext();
-
   return (
     <div className="view view__registration-summary">
       <Banner background={Background}>
@@ -51,37 +50,37 @@ const Summary = () => {
           <ul data-empty="Brak przewlekłych chorób">
             {values[FIELD_CHRONIC_SICK_1] && (
               <li>
-                <p className="small">{values[FIELD_CHRONIC_SICK_1]}</p>
+                <p className="small">{FIELD_CHRONIC_SICK_1}</p>
               </li>
             )}
             {values[FIELD_CHRONIC_SICK_2] && (
               <li>
-                <p className="small">{values[FIELD_CHRONIC_SICK_2]}</p>
+                <p className="small">{FIELD_CHRONIC_SICK_2}</p>
               </li>
             )}
             {values[FIELD_CHRONIC_SICK_3] && (
               <li>
-                <p className="small">{values[FIELD_CHRONIC_SICK_3]}</p>
+                <p className="small">{FIELD_CHRONIC_SICK_3}</p>
               </li>
             )}
             {values[FIELD_CHRONIC_SICK_4] && (
               <li>
-                <p className="small">{values[FIELD_CHRONIC_SICK_4]}</p>
+                <p className="small">{FIELD_CHRONIC_SICK_4}</p>
               </li>
             )}
             {values[FIELD_CHRONIC_SICK_5] && (
               <li>
-                <p className="small">{values[FIELD_CHRONIC_SICK_5]}</p>
+                <p className="small">{FIELD_CHRONIC_SICK_4}</p>
               </li>
             )}
             {values[FIELD_CHRONIC_SICK_6] && (
               <li>
-                <p className="small">{values[FIELD_CHRONIC_SICK_6]}</p>
+                <p className="small">{FIELD_CHRONIC_SICK_5}</p>
               </li>
             )}
             {values[FIELD_CHRONIC_SICK_7] && (
               <li>
-                <p className="small">{values[FIELD_CHRONIC_SICK_7]}</p>
+                <p className="small">{FIELD_CHRONIC_SICK_6}</p>
               </li>
             )}
           </ul>
@@ -110,7 +109,7 @@ const Summary = () => {
             height="small"
             icon={AngleLeftIcon}
             iconLeft
-            onClick={() => setFieldValue('step', 8)}
+            onClick={() => setFieldValue('step', 1)}
             text="Cofnij"
             size="small"
           />

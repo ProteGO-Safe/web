@@ -19,7 +19,7 @@ import './Step5.scss';
 import Icon from '../../../../assets/img/icons/angle-right-white.svg';
 
 const Step5 = () => {
-  const { setFieldValue, submitForm, values } = useFormikContext();
+  const { setFieldValue, values } = useFormikContext();
 
   const fields = [
     {
@@ -78,7 +78,7 @@ const Step5 = () => {
       <Button
         disabled={!values[FIELD_BLOOD_GROUP]}
         height="small"
-        onClick={submitForm}
+        onClick={() => setFieldValue('step', 6)}
         icon={Icon}
         size="small"
         text="Dalej"

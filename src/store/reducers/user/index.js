@@ -1,21 +1,21 @@
-import { USER_SAVE } from '../../types/user';
+import { HIDE_INFORMATION_SCREEN, USER_SAVE } from '../../types/user';
 
-const INITIAL_STATE = {};
+const INITIAL_STATE = {
+  age: '',
+  bloodGroup: '',
+  chronicSicks: [], // { name, time }
+  name: '',
+  sex: '',
+  showInformationScreen: true,
+  smokeNumber: ''
+};
 
 const diagnosisReducer = (state = INITIAL_STATE, action) => {
   switch (action.type) {
     case USER_SAVE:
       return (() => {
         const {
-          data: {
-            name,
-            sex,
-            age,
-            chronic_sick,
-            chronic_sick_other,
-            term1,
-            term2
-          }
+          data: { name, sex, age, chronicSicks, bloodGroup, smokeNumber }
         } = action;
 
         return {
@@ -23,12 +23,16 @@ const diagnosisReducer = (state = INITIAL_STATE, action) => {
           name,
           sex,
           age,
-          chronic_sick,
-          chronic_sick_other,
-          term1,
-          term2
+          chronicSicks: [...chronicSicks],
+          bloodGroup,
+          smokeNumber
         };
       })();
+    case HIDE_INFORMATION_SCREEN:
+      return {
+        ...state,
+        showInformationScreen: false
+      };
     default:
       return state;
   }

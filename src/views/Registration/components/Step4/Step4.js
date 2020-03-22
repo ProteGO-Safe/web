@@ -12,11 +12,17 @@ import {
   FIELD_CHRONIC_SICK_1,
   FIELD_CHRONIC_SICK_1_DESC,
   FIELD_CHRONIC_SICK_2,
+  FIELD_CHRONIC_SICK_2_DESC,
   FIELD_CHRONIC_SICK_3,
+  FIELD_CHRONIC_SICK_3_DESC,
   FIELD_CHRONIC_SICK_4,
+  FIELD_CHRONIC_SICK_4_DESC,
   FIELD_CHRONIC_SICK_5,
+  FIELD_CHRONIC_SICK_5_DESC,
   FIELD_CHRONIC_SICK_6,
-  FIELD_CHRONIC_SICK_7
+  FIELD_CHRONIC_SICK_6_DESC,
+  FIELD_CHRONIC_SICK_7,
+  FIELD_CHRONIC_SICK_7_DESC
 } from '../../../../constants';
 
 import './Step4.scss';
@@ -32,27 +38,27 @@ const Step4 = () => {
     },
     {
       checkbox: FIELD_CHRONIC_SICK_2,
-      input: FIELD_CHRONIC_SICK_2
+      input: FIELD_CHRONIC_SICK_2_DESC
     },
     {
       checkbox: FIELD_CHRONIC_SICK_3,
-      input: FIELD_CHRONIC_SICK_3
+      input: FIELD_CHRONIC_SICK_3_DESC
     },
     {
       checkbox: FIELD_CHRONIC_SICK_4,
-      input: FIELD_CHRONIC_SICK_4
+      input: FIELD_CHRONIC_SICK_4_DESC
     },
     {
       checkbox: FIELD_CHRONIC_SICK_5,
-      input: FIELD_CHRONIC_SICK_5
+      input: FIELD_CHRONIC_SICK_5_DESC
     },
     {
       checkbox: FIELD_CHRONIC_SICK_6,
-      input: FIELD_CHRONIC_SICK_6
+      input: FIELD_CHRONIC_SICK_6_DESC
     },
     {
       checkbox: FIELD_CHRONIC_SICK_7,
-      input: FIELD_CHRONIC_SICK_7
+      input: FIELD_CHRONIC_SICK_7_DESC
     }
   ].map(({ checkbox, input }) => (
     <Fragment key={checkbox}>

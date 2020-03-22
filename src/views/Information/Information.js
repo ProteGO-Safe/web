@@ -1,13 +1,15 @@
 import React from 'react';
+import { useDispatch } from 'react-redux';
+
 import Background from '../../assets/img/banners/banner-8.png';
 import { Banner, Brand, Button, Container, FieldSet } from '../../components';
 import './Information.scss';
+import { hideInformationScreen } from '../../store/actions/user';
 
 const Complete = () => {
-  // TODO po kliknięciu trzeba ustawić flagę w storze, że user zobaczył
-  // ten widok. Jak flaga będzie ustawiona, wtedy route / powinien kierować na home
-  // Docelowo /information jest do usunięcia
-  const handleClick = () => {};
+  const dispatch = useDispatch();
+
+  const handleClick = () => dispatch(hideInformationScreen());
 
   return (
     <div className="view view__information">
