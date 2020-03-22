@@ -29,21 +29,21 @@ const RiskTestData = ({
           </h6>
         </div>
         <div className="data">
-          {questions
-            .filter(question => question)
-            .map(question => (
-              <div key={question.text} className="data__single">
-                <p className="text-bold small">{question.text}</p>
-                {question.items.map(item => (
-                  <div key={item.name}>
+          {questions.map(question => (
+            <div key={question.text} className="data__single">
+              <p className="text-bold small">{question.text}</p>
+              {question.items.map(item => (
+                <div key={item.name}>
+                  {question.type !== 'single' && (
                     <p className="small">{item.name}</p>
-                    <p className="small">
-                      {idToChoiceResolver(item.id, item.choices)}
-                    </p>
-                  </div>
-                ))}
-              </div>
-            ))}
+                  )}
+                  <p className="small">
+                    {idToChoiceResolver(item.id, item.choices)}
+                  </p>
+                </div>
+              ))}
+            </div>
+          ))}
           <div className="data__single">
             <p className="text-bold small">Przyznana grupa</p>
             <p className="small">{triageLevelInformation}</p>
