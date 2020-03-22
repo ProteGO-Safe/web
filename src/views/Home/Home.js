@@ -1,19 +1,11 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
-
-import Background from '../../assets/img/banners/banner-1.png';
-import {
-  Banner,
-  Brand,
-  Button,
-  Container,
-  MenuButton,
-  Ok,
-  Warning
-} from '../../components';
-import './Home.scss';
 import triageLevelResolver from '../../utills/triage';
+import Background from '../../assets/img/banners/banner-1.png';
+import { Button, Container, Ok, Warning } from '../../components';
+import { Header } from '../components/Header';
+import './Home.scss';
 
 const OkCase = ({ text }) => (
   <>
@@ -79,10 +71,7 @@ const Home = () => {
 
   return (
     <div className="view view__home">
-      <Banner background={Background} size="small">
-        <Brand content={false} white />
-        <MenuButton />
-      </Banner>
+      <Header background={Background} />
       <Container>
         <p>
           przeanalizowaliśmy Twoje odpowiedzi na podstawie wytycznych WHO, w tym

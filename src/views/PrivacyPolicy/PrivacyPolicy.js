@@ -1,25 +1,16 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
 import Background from '../../assets/img/banners/banner-1.png';
-import {
-  Back,
-  Banner,
-  Brand,
-  Button,
-  Container,
-  FieldSet
-} from '../../components';
+import { Button, Container, FieldSet } from '../../components';
 import './PrivacyPolicy.scss';
+import { Header } from '../components';
 
 const PrivacyPolicy = () => {
   const history = useHistory();
 
   return (
     <div className="view view__privacy-policy">
-      <Banner background={Background}>
-        <Back onClick={() => history.push('/')} />
-        <Brand content={false} small white />
-      </Banner>
+      <Header background={Background} prevUrl="/" />
       <Container>
         <h4 className="medium">Polityka prywatności</h4>
         <div className="content">

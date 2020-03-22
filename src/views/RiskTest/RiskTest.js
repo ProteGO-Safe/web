@@ -2,28 +2,19 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import Background from '../../assets/img/banners/banner-1.png';
-import {
-  Back,
-  Banner,
-  Brand,
-  Button,
-  Container,
-  FieldSet
-} from '../../components';
+import { Button, Container, FieldSet } from '../../components';
+import { Header } from '../components';
+
 import { calendarPropType } from '../../utills/calendar';
 
 const RiskTest = ({
   goToHistory,
   isFilledToday,
-  onBack,
   onFill,
   calendar: { today, previousDays }
 }) => (
   <div className="view view__risk-test">
-    <Banner background={Background}>
-      <Back onClick={onBack} />
-      <Brand content={false} small white />
-    </Banner>
+    <Header background={Background} prevUrl="/" />
     <Container>
       <h4 className="h1 text-center medium">Test oceny ryzyka</h4>
       <div className="today">
@@ -53,7 +44,6 @@ const RiskTest = ({
 );
 
 RiskTest.propTypes = {
-  onBack: PropTypes.func.isRequired,
   onFill: PropTypes.func.isRequired,
   goToHistory: PropTypes.func.isRequired,
   isFilledToday: PropTypes.bool.isRequired,

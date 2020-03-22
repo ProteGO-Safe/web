@@ -30,8 +30,6 @@ const RiskTestContainer = () => {
     history.push('/diagnosis');
   };
 
-  const goToHome = () => history.push('/');
-
   const goToHistory = timestamp => history.push(`/risk-test-data/${timestamp}`);
 
   if (isFilled && riskFilledToday) {
@@ -41,7 +39,6 @@ const RiskTestContainer = () => {
 
   return (
     <RiskTest
-      onBack={goToHome}
       onFill={goToDiagnosis}
       goToHistory={goToHistory}
       isFilledToday={!!riskFilledToday}

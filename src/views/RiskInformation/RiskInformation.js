@@ -1,13 +1,13 @@
 import React from 'react';
-import { useHistory } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 
 import Background from '../../assets/img/banners/banner-1.png';
-import { Back, Banner, Brand, Container } from '../../components';
+import { Container } from '../../components';
+import { Header } from '../components';
+
 import './RiskInformation.scss';
 
 const RiskInformation = () => {
-  const history = useHistory();
   const { triageLevel } = useSelector(state => state.triage);
 
   const renderRiskHeader = (() => {
@@ -58,10 +58,7 @@ const RiskInformation = () => {
 
   return (
     <div className="view view__risk-information">
-      <Banner background={Background}>
-        <Back onClick={() => history.push('/')} />
-        <Brand content={false} small white />
-      </Banner>
+      <Header background={Background} prevUrl="/" />
       <Container>
         <p className="p2 small text-center">{renderRiskHeader}</p>
         <div className="content">
