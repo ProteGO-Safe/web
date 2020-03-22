@@ -7,8 +7,7 @@ import {
   FIELD_COUGH,
   FIELD_MUSCLE_PAIN,
   FIELD_RUNNY_NOSE,
-  FIELD_TEMPERATURE_EVENING,
-  FIELD_TEMPERATURE_MORNING
+  FIELD_TEMPERATURE
 } from '../../../../constants';
 import { FieldSet, Input, Range, Textarea } from '../../../../components';
 
@@ -20,23 +19,12 @@ const Form = ({ isViewMode }) => {
       <FieldSet horizontal>
         <Input
           disabled={isViewMode}
-          label="Rano"
-          name={FIELD_TEMPERATURE_MORNING}
+          name={FIELD_TEMPERATURE}
           max={50}
           min={1}
           onChange={handleChange}
           type="number"
-          value={values[FIELD_TEMPERATURE_MORNING]}
-        />
-        <Input
-          disabled={isViewMode}
-          label="Wieczorem"
-          name={FIELD_TEMPERATURE_EVENING}
-          max={50}
-          min={1}
-          onChange={handleChange}
-          type="number"
-          value={values[FIELD_TEMPERATURE_EVENING]}
+          value={values[FIELD_TEMPERATURE]}
         />
       </FieldSet>
       <h4 className="big">Objawy</h4>

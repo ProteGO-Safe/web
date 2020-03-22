@@ -10,8 +10,7 @@ import {
   FIELD_COUGH,
   FIELD_MUSCLE_PAIN,
   FIELD_RUNNY_NOSE,
-  FIELD_TEMPERATURE_EVENING,
-  FIELD_TEMPERATURE_MORNING,
+  FIELD_TEMPERATURE,
   VALUE_SYMPTOM_LEVEL_1
 } from '../../constants';
 import { addDaily } from '../../store/actions/daily';
@@ -31,10 +30,8 @@ const DailyDataContainer = () => {
   const dailyData = daily[[id]];
 
   const initialValues = {
-    [FIELD_TEMPERATURE_MORNING]:
-      (dailyData && dailyData.data[FIELD_TEMPERATURE_MORNING]) || '',
-    [FIELD_TEMPERATURE_EVENING]:
-      (dailyData && dailyData.data[FIELD_TEMPERATURE_EVENING]) || '',
+    [FIELD_TEMPERATURE]:
+      (dailyData && dailyData.data[FIELD_TEMPERATURE]) || '',
     [FIELD_RUNNY_NOSE]:
       (dailyData && dailyData.data[FIELD_RUNNY_NOSE]) || VALUE_SYMPTOM_LEVEL_1,
     [FIELD_COUGH]:

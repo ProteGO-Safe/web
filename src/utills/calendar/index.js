@@ -1,6 +1,5 @@
 import moment from 'moment';
 import PropTypes from 'prop-types';
-import 'moment/locale/pl';
 
 const dateFormat = 'D-MM-YYYY';
 const dayWeekFormat = 'dddd';
@@ -8,7 +7,6 @@ const todayFormat = 'D-MM-YYYY';
 
 // filledDays contains moments
 const createCalendar = (filledDays = []) => {
-  moment.locale('pl');
 
   const day = moment();
   const today = day.format(todayFormat);
