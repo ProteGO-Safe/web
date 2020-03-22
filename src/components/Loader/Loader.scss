@@ -1,0 +1,59 @@
+@import '../../assets/styles/colors';
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0) scale(1);
+  }
+  25% {
+    transform: rotate(90deg) scale(0.5);
+  }
+  50% {
+    transform: rotate(180deg) scale(1);
+  }
+  75% {
+    transform: rotate(270deg) scale(0.5);
+  }
+  100% {
+    transform: rotate(360deg) scale(1);
+  }
+}
+
+.loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9;
+  background-color: $white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &__wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 88px;
+    transition: 200ms transform linear;
+    animation: rotate 2000ms linear infinite;
+  }
+
+  &__circle {
+    width: 30px;
+    height: 30px;
+    margin: 7px;
+    border-radius: 50%;
+
+    &--1,
+    &--2 {
+      background-color: $primary_2;
+    }
+
+    &--3,
+    &--4 {
+      background-color: $primary_1;
+    }
+  }
+}

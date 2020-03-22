@@ -17,8 +17,8 @@ export const FIELD_CHRONIC_SICK_6_DESC = 'chronic_sick_6_desc';
 export const FIELD_CHRONIC_SICK_7_DESC = 'chronic_sick_7_desc';
 export const FIELD_BLOOD_GROUP = 'bloodGroup';
 
-export const VALUE_MAN = 'Mężczyzna';
-export const VALUE_WOMAN = 'Kobieta';
+export const VALUE_MAN = 'male';
+export const VALUE_WOMAN = 'female';
 
 export const FIELD_CHOICE_ID = 'choice_id';
 export const FIELD_ITEM_ID = 'item_id';
