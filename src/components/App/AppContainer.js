@@ -1,10 +1,13 @@
 import React from 'react';
 import { MenuProvider } from '../../context/MenuContext';
+import { LoaderProvider } from '../../context/LoaderContext';
 import App from './App';
 
 const AppContainer = () => (
   <MenuProvider>
-    <App />
+    <LoaderProvider>
+      <App />
+    </LoaderProvider>
   </MenuProvider>
 );
 

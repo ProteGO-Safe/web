@@ -42,7 +42,11 @@ function App() {
               <Route exact path="/risk-information" component={RiskInformation} />
               <Route exact path="/numbers" component={Numbers} />
               <Route exact path="/privacy-policy" component={PrivacyPolicy} />
-              <Route exact path="/privacy-policy-details" component={PrivacyPolicyDetails} />
+              <Route
+                exact
+                path="/privacy-policy-details"
+                component={PrivacyPolicyDetails}
+              />
               <Route exact path="/regulations" component={Regulations} />
               <Route exact path="/diagnosis" component={Diagnosis} />
             </>

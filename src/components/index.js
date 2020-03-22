@@ -7,6 +7,7 @@ export { Checkbox } from './Checkbox';
 export { Container } from './Container';
 export { FieldSet } from './FieldSet';
 export { Input } from './Input';
+export { Loader } from './Loader';
 export { Menu } from './Menu';
 export { MenuButton } from './MenuButton';
 export { Option } from './Option';
