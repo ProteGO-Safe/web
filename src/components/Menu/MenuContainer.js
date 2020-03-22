@@ -26,7 +26,7 @@ const MenuContainer = () => {
       icon: Icon1,
       path: '/daily',
       slug: 'dziennik',
-      title: 'Moje zdrowie'
+      title: 'Moj dziennik zdrowia'
     },
     {
       icon: Icon2,
