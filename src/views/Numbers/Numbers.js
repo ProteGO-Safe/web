@@ -22,7 +22,9 @@ const Numbers = () => {
             <p className="p1 small">
               Powiatowa Stacja Sanitarno-Epidemiologiczna we Wrocławiu
             </p>
-            <p className="p2 small text-bold">tel. 71 329 58 43</p>
+            <p className="p2 small text-bold">
+              <a href="tel:713295843">tel. 71 329 58 43</a>
+            </p>
           </div>
         </div>
       </Container>
