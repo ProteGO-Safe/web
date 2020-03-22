@@ -8,5 +8,6 @@ export { RiskTestData } from './RiskTestData';
 export { RiskInformation } from './RiskInformation';
 export { Numbers } from './Numbers';
 export { PrivacyPolicy } from './PrivacyPolicy';
+export { PrivacyPolicyDetails } from './PrivacyPolicyDetails';
 export { Registration } from './Registration';
 export { Regulations } from './Regulations';

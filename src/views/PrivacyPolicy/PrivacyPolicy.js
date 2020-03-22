@@ -52,7 +52,7 @@ const PrivacyPolicy = () => {
             text="Regulamin"
           />
           <Button
-            onClick={() => null}
+            onClick={() => history.push('/privacy-policy-details')}
             type="secondary"
             text="Polityka prywatności"
           />
