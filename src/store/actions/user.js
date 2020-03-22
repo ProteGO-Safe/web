@@ -5,25 +5,18 @@ export const saveUserRequested = data => ({
   type: types.USER_SAVE
 });
 
-export function saveUser({
-  age,
-  sex,
-  name,
-  chronic_sick,
-  chronic_sick_other,
-  term1,
-  term2
-}) {
-  const data = {
-    age,
-    sex,
-    name,
-    chronic_sick,
-    chronic_sick_other,
-    term1,
-    term2
-  };
+export const hideInformationScreenRequested = () => ({
+  type: types.HIDE_INFORMATION_SCREEN
+});
+
+export function saveUser(data) {
   return dispatch => {
     dispatch(saveUserRequested(data));
+  };
+}
+
+export function hideInformationScreen() {
+  return dispatch => {
+    dispatch(hideInformationScreenRequested());
   };
 }

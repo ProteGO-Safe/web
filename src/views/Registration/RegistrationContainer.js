@@ -22,7 +22,8 @@ import {
   FIELD_CHRONIC_SICK_7_DESC,
   FIELD_SEX,
   FIELD_NAME,
-  FIELD_BLOOD_GROUP
+  FIELD_BLOOD_GROUP,
+  FIELD_SMOKE_NUMBER, VALUE_MAN, VALUE_WOMAN
 } from '../../constants';
 import Registration from './Registration';
 
@@ -54,7 +55,38 @@ const RegistrationContainer = () => {
     term2: false
   };
 
-  const handleSubmit = form => dispatch(saveUser(form));
+  const resolveSex = field => {
+    switch (field) {
+      case VALUE_MAN:
+        return 'male';
+      case VALUE_WOMAN:
+        return 'female';
+      default:
+        return '';
+    }
+  };
+
+  const handleSubmit = form => {
+    const chronicSicks = [];
+    if (form[FIELD_CHRONIC_SICK_1]) chronicSicks.push({ name: FIELD_CHRONIC_SICK_1, time: form[FIELD_CHRONIC_SICK_1_DESC] });
+    if (form[FIELD_CHRONIC_SICK_2]) chronicSicks.push({ name: FIELD_CHRONIC_SICK_2, time: form[FIELD_CHRONIC_SICK_2_DESC] });
+    if (form[FIELD_CHRONIC_SICK_3]) chronicSicks.push({ name: FIELD_CHRONIC_SICK_3, time: form[FIELD_CHRONIC_SICK_3_DESC] });
+    if (form[FIELD_CHRONIC_SICK_4]) chronicSicks.push({ name: FIELD_CHRONIC_SICK_4, time: form[FIELD_CHRONIC_SICK_4_DESC] });
+    if (form[FIELD_CHRONIC_SICK_5]) chronicSicks.push({ name: FIELD_CHRONIC_SICK_5, time: form[FIELD_CHRONIC_SICK_5_DESC] });
+    if (form[FIELD_CHRONIC_SICK_6]) chronicSicks.push({ name: FIELD_CHRONIC_SICK_6, time: form[FIELD_CHRONIC_SICK_6_DESC] });
+    if (form[FIELD_CHRONIC_SICK_7]) chronicSicks.push({ name: FIELD_CHRONIC_SICK_7, time: form[FIELD_CHRONIC_SICK_7_DESC] });
+
+    const data = {
+      name: form[FIELD_AGE],
+      sex: resolveSex(form[FIELD_SEX]),
+      age: form[FIELD_AGE],
+      chronicSicks: [...chronicSicks],
+      bloodGroup: form[FIELD_BLOOD_GROUP],
+      smokeNumber: form[FIELD_SMOKE_NUMBER]
+    };
+
+    dispatch(saveUser(data));
+  };
 
   return (
     <Formik initialValues={initialValues} onSubmit={handleSubmit}>
