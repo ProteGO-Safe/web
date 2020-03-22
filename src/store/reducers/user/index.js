@@ -1,4 +1,4 @@
-import { HIDE_INFORMATION_SCREEN, USER_SAVE } from '../../types/user';
+import { USER_SAVE } from '../../types/user';
 
 const INITIAL_STATE = {
   age: '',
@@ -6,7 +6,6 @@ const INITIAL_STATE = {
   chronicSicks: [], // { name, time }
   name: '',
   sex: '',
-  showInformationScreen: true,
   smokeNumber: ''
 };
 
@@ -28,11 +27,6 @@ const diagnosisReducer = (state = INITIAL_STATE, action) => {
           smokeNumber
         };
       })();
-    case HIDE_INFORMATION_SCREEN:
-      return {
-        ...state,
-        showInformationScreen: false
-      };
     default:
       return state;
   }

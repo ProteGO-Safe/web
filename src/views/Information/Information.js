@@ -1,16 +1,10 @@
 import React from 'react';
-import { useDispatch } from 'react-redux';
 
 import Background from '../../assets/img/banners/banner-8.png';
 import { Banner, Brand, Button, Container, FieldSet } from '../../components';
 import './Information.scss';
-import { hideInformationScreen } from '../../store/actions/user';
 
-const Complete = () => {
-  const dispatch = useDispatch();
-
-  const handleClick = () => dispatch(hideInformationScreen());
-
+const Complete = ({ hideInformation }) => {
   return (
     <div className="view view__information">
       <Banner background={Background}>
@@ -39,7 +33,7 @@ const Complete = () => {
         </div>
 
         <FieldSet>
-          <Button onClick={handleClick} text="Ok, zaczynamy" />
+          <Button onClick={hideInformation} text="Ok, zaczynamy" />
         </FieldSet>
       </Container>
     </div>
