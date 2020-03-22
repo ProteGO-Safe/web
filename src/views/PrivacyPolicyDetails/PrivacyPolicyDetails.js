@@ -2,23 +2,23 @@ import React from 'react';
 import { useHistory } from 'react-router-dom';
 import Background from '../../assets/img/banners/banner-1.png';
 import { Back, Banner, Brand, Container } from '../../components';
-import './Regulations.scss';
-import { RegulationsContent } from './component/RegulationsContent';
+import './PrivacyPolicyDetails.scss';
+import { PrivacyPolicyContent } from './component/PrivacyPolicyContent';
 
-const Regulations = () => {
+const PrivacyPolicyDetails = () => {
   const history = useHistory();
 
   return (
-    <div className="view view__regulations">
+    <div className="view view__privacy-policy-details">
       <Banner background={Background}>
         <Back onClick={() => history.push('/privacy-policy')} />
         <Brand content={false} small white />
       </Banner>
       <Container>
-        <h4 className="text-center medium">Regulamin</h4>
+        <h4 className="text-center medium">Polityka prywatności</h4>
         <div className="content">
           <p className="p1 small">
-            <RegulationsContent />
+            <PrivacyPolicyContent />
           </p>
         </div>
       </Container>
@@ -26,4 +26,4 @@ const Regulations = () => {
   );
 };
 
-export default Regulations;
+export default PrivacyPolicyDetails;
