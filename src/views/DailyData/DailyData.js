@@ -16,7 +16,7 @@ const DailyData = ({ onBack, isViewMode }) => {
       <Header background={Background} prevUrl="/daily" />
       <Container className="container__content">
         <h4 className="title medium">Dziennik zdrowia</h4>
-        <p className="date medium">czwartek 19-03-2020</p>
+        <p className="date medium">19-03-2020</p>
         <Form isViewMode={isViewMode} />
       </Container>
       <div className="footer">
