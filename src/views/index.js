@@ -3,6 +3,7 @@ export { DailyData } from './DailyData';
 export { Diagnosis } from './Diagnosis';
 export { Home } from './Home';
 export { HowItWorks } from './HowItWorks';
+export { Information } from './Information';
 export { RiskTest } from './RiskTest';
 export { RiskTestData } from './RiskTestData';
 export { RiskInformation } from './RiskInformation';

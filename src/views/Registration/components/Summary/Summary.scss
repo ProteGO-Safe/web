@@ -1,0 +1,73 @@
+@import '../../../../assets/styles/colors';
+
+.view__registration-summary {
+  display: grid;
+  grid-template-areas: "banner" "container";
+  grid-template-rows: 100px 1fr;
+  width: 100%;
+  height: 100vh;
+
+  .banner {
+    grid-area: banner;
+  }
+
+  .container {
+    display: grid;
+    grid-template-areas: "user" "content";
+    grid-template-rows: 48px 1fr;
+    grid-area: container;
+    align-items: baseline;
+    padding: 30px 0;
+
+    .user {
+      grid-area: user;
+      align-self: end;
+      justify-self: start;
+      display: flex;
+      align-items: center;
+
+      img {
+        margin-right: 15px;
+      }
+    }
+
+    .content {
+      grid-area: content;
+      align-self: start;
+
+      p {
+        margin-top: 13px;
+
+        span {
+          display: inline-block;
+          vertical-align: middle;
+          margin-right: 13px;
+        }
+      }
+
+      ul {
+        padding-left: 20px;
+        margin: 7px 0;
+
+        &:empty {
+          &:after {
+            display: list-item;
+            font-size: 12px;
+            line-height: 16px;
+            content: attr(data-empty);
+          }
+        }
+      }
+    }
+
+    .fieldset {
+      padding-top: 18px;
+      margin-top: 18px;
+      border-top: 1px solid $gray_4;
+
+      .button + .button {
+        margin-top: 29px;
+      }
+    }
+  }
+}

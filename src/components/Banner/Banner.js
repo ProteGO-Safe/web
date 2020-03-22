@@ -4,10 +4,7 @@ import PropTypes from 'prop-types';
 import './Banner.scss';
 
 const Banner = ({ background, children }) => (
-  <div
-    className="banner"
-    style={{ backgroundImage: `url(${background})` }}
-  >
+  <div className="banner" style={{ backgroundImage: `url(${background})` }}>
     {children}
   </div>
 );

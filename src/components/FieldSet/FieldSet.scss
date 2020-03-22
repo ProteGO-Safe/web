@@ -1,15 +1,19 @@
 .fieldset {
   width: 100%;
 
-  &--horizontal {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-column-gap: 20px;
+  .input {
+    + .checkbox {
+      margin-top: 12px;
+    }
   }
 
   .checkbox {
     + .checkbox {
       margin-top: 2px;
+    }
+
+    &.big + .checkbox {
+      margin-top: 7px;
     }
   }
 
@@ -28,6 +32,27 @@
   .range {
     + .range {
       margin-top: 17px;
+    }
+  }
+
+  &--horizontal {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    > * {
+      width: calc(50% - 10px);
+
+      &:nth-child(2) {
+        margin-top: 0 !important;
+      }
+    }
+
+    .option {
+      + .option {
+        margin-top: 12px;
+      }
     }
   }
 }

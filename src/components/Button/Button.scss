@@ -30,6 +30,12 @@
     color: $white;
   }
 
+  &--outline {
+    background-color: $white;
+    color: $primary_2;
+    border: 1px solid $primary_2;
+  }
+
   &--secondary {
     background-color: $white;
     border: 1px solid $primary_1;
@@ -81,5 +87,14 @@
     width: 16px;
     height: 15px;
     margin-left: 12px;
+  }
+
+  &--icon-left {
+    flex-direction: row-reverse;
+
+    .button__icon {
+      margin-left: 0;
+      margin-right: 12px;
+    }
   }
 }

@@ -1,0 +1,47 @@
+import React from 'react';
+import Background from '../../assets/img/banners/banner-8.png';
+import { Banner, Brand, Button, Container, FieldSet } from '../../components';
+import './Information.scss';
+
+const Complete = () => {
+  // TODO po kliknięciu trzeba ustawić flagę w storze, że user zobaczył
+  // ten widok. Jak flaga będzie ustawiona, wtedy route / powinien kierować na home
+  // Docelowo /information jest do usunięcia
+  const handleClick = () => {};
+
+  return (
+    <div className="view view__information">
+      <Banner background={Background}>
+        <Brand content={false} small white />
+      </Banner>
+      <Container>
+        <div className="content">
+          <p className="p1 medium-2">
+            Jedną z głównych funkcji tej aplikacji jest{' '}
+            <span className="text-bold">
+              Kwestionariusz oceny ryzyka zarażanie COVID-19 zgodnie
+              z&nbsp;wytycznymi WHO
+            </span>{' '}
+            (Światowej Organizacji Zdrowia).
+          </p>
+          <h4 className="medium">Ważne, Kwestionariusz:</h4>
+          <p className="p2 medium-2">
+            - NIE JEST DIAGNOZĄ. Diagnozę może postawić wyłącznie lekarz i test
+            medyczny na obecność wirusa.
+            <br />- Pomaga monitorować swój stan zdrowia - Musi zostać
+            wypełniony w 100% zgodnie z prawdą
+          </p>
+          <p className="p3 medium-2 primary-2 text-bold">
+            - Musi zostać wypełniony w 100% zgodnie z prawdą
+          </p>
+        </div>
+
+        <FieldSet>
+          <Button onClick={handleClick} text="Ok, zaczynamy" />
+        </FieldSet>
+      </Container>
+    </div>
+  );
+};
+
+export default Complete;

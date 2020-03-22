@@ -2,23 +2,22 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 26px auto 16px;
+  margin: 19px auto 7px;
 
   &__sign {
-    width: 81px;
-    height: 81px;
-    margin-bottom: 8px;
+    width: 64px;
+    height: 64px;
+    margin-bottom: 6px;
   }
 
   &__text {
-    width: 180px;
-    height: 33px;
-    margin-bottom: 26px;
+    width: 142px;
+    height: 26px;
+    margin-bottom: 12px;
   }
 
   &__content {
     text-align: center;
-    min-height: 74px;
   }
 
   &--white {
@@ -26,15 +25,7 @@
     height: 100%;
 
     .brand {
-      &__sign {
-        width: 64px;
-        height: 64px;
-        margin-bottom: 6px;
-      }
-
       &__text {
-        width: 142px;
-        height: 26px;
         margin-bottom: 0;
       }
     }

@@ -5,14 +5,35 @@ import {
   Step1,
   Step2,
   Step3,
-  Step4
+  Step4,
+  Step5,
+  Step6,
+  Step7,
+  Summary
 } from './components';
-import { Back, Banner } from '../../components';
-import Background from '../../assets/img/banners/banner-1.png';
+import { Banner } from '../../components';
+
+import Banner1 from '../../assets/img/banners/banner-1.png';
+import Banner2 from '../../assets/img/banners/banner-2.png';
+import Banner3 from '../../assets/img/banners/banner-3.png';
+import Banner4 from '../../assets/img/banners/banner-4.png';
+import Banner5 from '../../assets/img/banners/banner-5.png';
+import Banner6 from '../../assets/img/banners/banner-6.png';
+import Banner7 from '../../assets/img/banners/banner-7.png';
+
+const banners = {
+  1: Banner1,
+  install_app: Banner1,
+  2: Banner2,
+  3: Banner3,
+  4: Banner4,
+  5: Banner5,
+  6: Banner6,
+  7: Banner7
+};
 
 const Registration = () => {
   const {
-    setFieldValue,
     values: { step }
   } = useFormikContext();
 
@@ -22,31 +43,27 @@ const Registration = () => {
     }
   }, [step]);
 
-  const handleBack = () => {
-    if (step <= 1) {
-      return;
-    }
-
-    setFieldValue('step', parseInt(step) - 1);
-  };
-
-  if (step === 'install_app') {
-    return <InstallApp />;
+  switch (step) {
+    case 'install_app':
+      return <InstallApp />;
+    case 8:
+      return <Summary />;
+    default:
+      return (
+        <div className="view view__registration">
+          <div className={`registration registration__step--${step}`}>
+            <Banner background={banners[step]} size="small" />
+            {step === 1 && <Step1 />}
+            {step === 2 && <Step2 />}
+            {step === 3 && <Step3 />}
+            {step === 4 && <Step4 />}
+            {step === 5 && <Step5 />}
+            {step === 6 && <Step6 />}
+            {step === 7 && <Step7 />}
+          </div>
+        </div>
+      );
   }
-
-  return (
-    <div className="view view__registration">
-      <div className={`registration registration__step--${step}`}>
-        <Banner background={Background} size="small">
-          {step > 1 && <Back onClick={handleBack} />}
-        </Banner>
-        {step === 1 && <Step1 />}
-        {step === 2 && <Step2 />}
-        {step === 3 && <Step3 />}
-        {step === 4 && <Step4 />}
-      </div>
-    </div>
-  );
 };
 
 export default Registration;

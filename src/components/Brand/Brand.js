@@ -20,10 +20,9 @@ const Brand = ({ content, small, white }) => {
       <img className="brand__text" src={TextImg} alt="SafeSafe" />
       {content && (
         <div className="brand__content">
-          <h4 className="brand__text-1">
+          <h4 className="brand__text-1 medium">
             Włącz się do wspólnej walki przeciwko Koronawirusowi.
           </h4>
-          <h5 className="brand__text-2">Spersonalizuj swoją apliakcję.</h5>
         </div>
       )}
     </div>
