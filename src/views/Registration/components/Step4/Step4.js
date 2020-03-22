@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useState } from 'react';
 import { useFormikContext } from 'formik';
 import {
   Button,
@@ -30,6 +30,7 @@ import Icon from '../../../../assets/img/icons/angle-right-white.svg';
 
 const Step4 = () => {
   const { handleChange, setFieldValue, values } = useFormikContext();
+  const [otherSelected, setOtherSelected] = useState(false);
 
   const fields = [
     {
@@ -60,13 +61,27 @@ const Step4 = () => {
       checkbox: FIELD_CHRONIC_SICK_7,
       input: FIELD_CHRONIC_SICK_7_DESC
     }
-  ].map(({ checkbox, input }) => (
+  ];
+
+  const handelSelectOther = () => {
+    setOtherSelected(true);
+    fields
+      .map(field => field.checkbox)
+      .forEach(item => setFieldValue(item, false));
+  };
+
+  const handleSetFieldValue = (field, value) => {
+    setOtherSelected(false);
+    setFieldValue(field, value);
+  };
+
+  const fieldsToRender = fields.map(({ checkbox, input }) => (
     <Fragment key={checkbox}>
       <Checkbox
         checked={values[checkbox]}
         description={checkbox}
         name={checkbox}
-        onChange={() => setFieldValue(checkbox, !values[checkbox])}
+        onChange={() => handleSetFieldValue(checkbox, !values[checkbox])}
         size="big"
         value={values[checkbox]}
       />
@@ -92,7 +107,16 @@ const Step4 = () => {
         Czy jesteś na coś
         <br /> przewlekle chory?
       </h3>
-      <FieldSet>{fields}</FieldSet>
+      <FieldSet>
+        {fieldsToRender}
+        <Checkbox
+          checked={otherSelected}
+          description="nie jestem przewlekle chory."
+          name="nie jestem przewlekle chory."
+          onChange={handelSelectOther}
+          size="big"
+        />
+      </FieldSet>
       <Button
         height="small"
         onClick={() => setFieldValue('step', 5)}
