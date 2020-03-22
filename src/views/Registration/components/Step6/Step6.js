@@ -39,7 +39,9 @@ const Step6 = () => {
       <Button
         disabled={!values[FIELD_SMOKE]}
         height="small"
-        onClick={() => (values[FIELD_SMOKE] === VALUE_SMOKE_YES ? 7 : 8)}
+        onClick={() =>
+          setFieldValue('step', values[FIELD_SMOKE] === VALUE_SMOKE_YES ? 7 : 8)
+        }
         icon={Icon}
         size="small"
         text="Dalej"

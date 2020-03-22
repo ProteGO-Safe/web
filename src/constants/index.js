@@ -37,6 +37,7 @@ export const FIELD_CHILLS = 'chills';
 export const FIELD_MUSCLE_PAIN = 'musclePain';
 export const FIELD_CONTACTS = 'contacts';
 export const FIELD_SMOKE = 'smoke';
+export const FIELD_SMOKE_NUMBER = 'smokeNumber';
 
 export const VALUE_SYMPTOM_LEVEL_1 = 'level 1';
 export const VALUE_SYMPTOM_LEVEL_2 = 'level 2';
@@ -54,3 +55,8 @@ export const VALUE_BLOOD_GROUP_0MINUS = '0-';
 export const VALUE_BLOOD_GROUP_UNDEFINED = 'undefined';
 export const VALUE_SMOKE_YES = 'yes';
 export const VALUE_SMOKE_NO = 'no';
+export const VALUE_SMOKE_NUMBER_1 = '1-5 sztuk';
+export const VALUE_SMOKE_NUMBER_2 = '6-10 sztuk';
+export const VALUE_SMOKE_NUMBER_3 = '11-20 sztuk';
+export const VALUE_SMOKE_NUMBER_4 = '20-40 sztuk';
+export const VALUE_SMOKE_NUMBER_5 = 'ponad 40';

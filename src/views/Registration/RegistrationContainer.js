@@ -48,7 +48,7 @@ const RegistrationContainer = () => {
     [FIELD_CHRONIC_SICK_7_DESC]: '',
     [FIELD_BLOOD_GROUP]: '',
     installApp: true,
-    step: 6,
+    step: 7,
     term1: false,
     term2: false
   };
