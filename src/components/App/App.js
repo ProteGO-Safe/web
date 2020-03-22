@@ -7,6 +7,7 @@ import {
   Diagnosis,
   Home,
   HowItWorks,
+  Information,
   RiskTest,
   RiskInformation,
   Numbers,
@@ -30,6 +31,7 @@ function App() {
       <div className="app__inner">
         <Switch>
           <Route exact path="/" component={name ? Home : Registration} />
+          <Route exact path="/information" component={Information} />
           {name && (
             <>
               <Route exact path="/daily" component={Daily} />

@@ -20,7 +20,6 @@ import Banner4 from '../../assets/img/banners/banner-4.png';
 import Banner5 from '../../assets/img/banners/banner-5.png';
 import Banner6 from '../../assets/img/banners/banner-6.png';
 import Banner7 from '../../assets/img/banners/banner-7.png';
-import Banner8 from '../../assets/img/banners/banner-8.png';
 
 const banners = {
   1: Banner1,
@@ -30,9 +29,7 @@ const banners = {
   4: Banner4,
   5: Banner5,
   6: Banner6,
-  7: Banner7,
-  8: Banner8,
-  9: Banner8
+  7: Banner7
 };
 
 const Registration = () => {
@@ -46,28 +43,27 @@ const Registration = () => {
     }
   }, [step]);
 
-  if (step === 'install_app') {
-    return <InstallApp />;
+  switch (step) {
+    case 'install_app':
+      return <InstallApp />;
+    case 8:
+      return <Summary />;
+    default:
+      return (
+        <div className="view view__registration">
+          <div className={`registration registration__step--${step}`}>
+            <Banner background={banners[step]} size="small" />
+            {step === 1 && <Step1 />}
+            {step === 2 && <Step2 />}
+            {step === 3 && <Step3 />}
+            {step === 4 && <Step4 />}
+            {step === 5 && <Step5 />}
+            {step === 6 && <Step6 />}
+            {step === 7 && <Step7 />}
+          </div>
+        </div>
+      );
   }
-
-  if (step === 8) {
-    return <Summary />;
-  }
-
-  return (
-    <div className="view view__registration">
-      <div className={`registration registration__step--${step}`}>
-        <Banner background={banners[step]} size="small" />
-        {step === 1 && <Step1 />}
-        {step === 2 && <Step2 />}
-        {step === 3 && <Step3 />}
-        {step === 4 && <Step4 />}
-        {step === 5 && <Step5 />}
-        {step === 6 && <Step6 />}
-        {step === 7 && <Step7 />}
-      </div>
-    </div>
-  );
 };
 
 export default Registration;

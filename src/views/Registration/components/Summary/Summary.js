@@ -1,6 +1,6 @@
 import React from 'react';
 import { useFormikContext } from 'formik';
-import Background from '../../../../assets/img/banners/banner-1.png';
+import Background from '../../../../assets/img/banners/banner-8.png';
 import {
   Banner,
   Brand,
@@ -28,7 +28,7 @@ import {
 } from '../../../../constants';
 
 const Summary = () => {
-  const { setFieldValue, values } = useFormikContext();
+  const { handleSubmit, setFieldValue, values } = useFormikContext();
 
   return (
     <div className="view view__registration-summary">
@@ -103,7 +103,7 @@ const Summary = () => {
         <FieldSet>
           <Button
             icon={AngleRightIcon}
-            onClick={() => setFieldValue('step', 9)}
+            onClick={handleSubmit}
             text="Zapisz metrykę"
           />
           <Button
