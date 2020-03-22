@@ -1,18 +1,20 @@
 import React, { useEffect } from 'react';
 import { useFormikContext } from 'formik';
-import { InstallApp, Step1, Step2, Step3, Step4 } from './components';
+import { InstallApp, Step1, Step2, Step3, Step4, Step5 } from './components';
 import { Banner } from '../../components';
 
 import Banner1 from '../../assets/img/banners/banner-1.png';
 import Banner2 from '../../assets/img/banners/banner-2.png';
 import Banner3 from '../../assets/img/banners/banner-3.png';
 import Banner4 from '../../assets/img/banners/banner-4.png';
+import Banner5 from '../../assets/img/banners/banner-5.png';
 
 const banners = {
   1: Banner1,
   2: Banner2,
   3: Banner3,
-  4: Banner4
+  4: Banner4,
+  5: Banner5
 };
 
 const Registration = () => {
@@ -38,6 +40,7 @@ const Registration = () => {
         {step === 2 && <Step2 />}
         {step === 3 && <Step3 />}
         {step === 4 && <Step4 />}
+        {step === 5 && <Step5 />}
       </div>
     </div>
   );

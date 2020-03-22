@@ -21,7 +21,7 @@ import {
   FIELD_CHRONIC_SICK_6_DESC,
   FIELD_CHRONIC_SICK_7_DESC,
   FIELD_SEX,
-  FIELD_NAME
+  FIELD_NAME, FIELD_BLOOD_GROUP
 } from '../../constants';
 import Registration from './Registration';
 
@@ -46,8 +46,9 @@ const RegistrationContainer = () => {
     [FIELD_CHRONIC_SICK_5_DESC]: '',
     [FIELD_CHRONIC_SICK_6_DESC]: '',
     [FIELD_CHRONIC_SICK_7_DESC]: '',
+    [FIELD_BLOOD_GROUP]: '',
     installApp: true,
-    step: 4,
+    step: 5,
     term1: false,
     term2: false
   };

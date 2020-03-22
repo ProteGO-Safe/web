@@ -16,19 +16,14 @@ import {
   FIELD_CHRONIC_SICK_4,
   FIELD_CHRONIC_SICK_5,
   FIELD_CHRONIC_SICK_6,
-  FIELD_CHRONIC_SICK_7,
+  FIELD_CHRONIC_SICK_7
 } from '../../../../constants';
 
 import './Step4.scss';
 import Icon from '../../../../assets/img/icons/angle-right-white.svg';
 
 const Step4 = () => {
-  const {
-    handleChange,
-    setFieldValue,
-    submitForm,
-    values
-  } = useFormikContext();
+  const { handleChange, setFieldValue, values } = useFormikContext();
 
   const fields = [
     {
@@ -73,9 +68,7 @@ const Step4 = () => {
         checked={values[checkbox]}
         description={description}
         name={checkbox}
-        onChange={() =>
-          setFieldValue(checkbox, !values[checkbox])
-        }
+        onChange={() => setFieldValue(checkbox, !values[checkbox])}
         size="big"
         value={values[checkbox]}
       />
@@ -101,12 +94,10 @@ const Step4 = () => {
         Czy jesteś na coś
         <br /> przewlekle chory?
       </h3>
-      <FieldSet>
-        {fields}
-      </FieldSet>
+      <FieldSet>{fields}</FieldSet>
       <Button
         height="small"
-        onClick={submitForm}
+        onClick={() => setFieldValue('step', 5)}
         icon={Icon}
         size="small"
         text="Dalej"

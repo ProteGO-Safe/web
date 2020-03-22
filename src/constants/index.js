@@ -15,6 +15,7 @@ export const FIELD_CHRONIC_SICK_4_DESC = 'chronic_sick_4_desc';
 export const FIELD_CHRONIC_SICK_5_DESC = 'chronic_sick_5_desc';
 export const FIELD_CHRONIC_SICK_6_DESC = 'chronic_sick_6_desc';
 export const FIELD_CHRONIC_SICK_7_DESC = 'chronic_sick_7_desc';
+export const FIELD_BLOOD_GROUP = 'bloodGroup';
 
 export const VALUE_MAN = 'male';
 export const VALUE_WOMAN = 'female';
@@ -40,3 +41,13 @@ export const VALUE_SYMPTOM_LEVEL_1 = 'level 1';
 export const VALUE_SYMPTOM_LEVEL_2 = 'level 2';
 export const VALUE_SYMPTOM_LEVEL_3 = 'level 3';
 export const VALUE_SYMPTOM_LEVEL_4 = 'level 4';
+
+export const VALUE_BLOOD_GROUP_ABPLUS = 'AB+';
+export const VALUE_BLOOD_GROUP_ABMINUS = 'AB-';
+export const VALUE_BLOOD_GROUP_APLUS = 'A+';
+export const VALUE_BLOOD_GROUP_AMINUS = 'A-';
+export const VALUE_BLOOD_GROUP_BPLUS = 'B+';
+export const VALUE_BLOOD_GROUP_BMINUS = 'B-';
+export const VALUE_BLOOD_GROUP_0PLUS = '0+';
+export const VALUE_BLOOD_GROUP_0MINUS = '0-';
+export const VALUE_BLOOD_GROUP_UNDEFINED = 'undefined';
