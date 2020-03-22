@@ -30,6 +30,12 @@
     color: $white;
   }
 
+  &--outline {
+    background-color: $white;
+    color: $primary_2;
+    border: 1px solid $primary_2;
+  }
+
   &--secondary {
     background-color: $white;
     border: 1px solid $primary_1;

@@ -28,18 +28,18 @@
     position: relative;
     width: 16px;
     height: 16px;
-    border-radius: 50%;
-    border: 2px solid $gray_1;
-    margin-right: 10px;
+    border-radius: 5px;
+    border: 1px solid $gray_1;
+    margin-right: 9px;
 
     &:after {
       position: absolute;
       top: 2px;
       left: 2px;
-      width: 8px;
-      height: 8px;
+      width: 10px;
+      height: 10px;
       content: '';
-      border-radius: 50%;
+      border-radius: 3px;
       background-color: $primary_2;
       display: none;
     }
@@ -51,6 +51,12 @@
     font-size: 8px;
     letter-spacing: 0;
     line-height: 10px;
+
+    span {
+      color: $primary_2;
+      text-decoration: underline;
+      cursor: pointer;
+    }
   }
 
   &__field {

@@ -7,6 +7,12 @@
     grid-column-gap: 20px;
   }
 
+  .input {
+    + .checkbox {
+      margin-top: 12px;
+    }
+  }
+
   .checkbox {
     + .checkbox {
       margin-top: 2px;

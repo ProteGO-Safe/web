@@ -4,7 +4,7 @@
     grid-template-areas:
             "banner"
             "container";
-    grid-template-rows: minmax(auto, 163px) auto;
+    grid-template-rows: 95px auto;
     width: 100%;
     height: 100vh;
 
@@ -14,13 +14,14 @@
 
     .container {
       grid-area: container;
+      align-items: start;
 
       .fieldset {
-        margin: 18px 0 11px;
+        margin: 18px 0 13px;
       }
 
       .button {
-        margin: auto 0 33px;
+        margin: auto 0 20px;
       }
     }
   }

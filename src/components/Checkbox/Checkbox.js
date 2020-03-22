@@ -32,7 +32,7 @@ Checkbox.defaultProps = {
 
 Checkbox.propTypes = {
   checked: PropTypes.bool,
-  description: PropTypes.string,
+  description: PropTypes.oneOfType([PropTypes.node, PropTypes.string]),
   name: PropTypes.string.isRequired,
   onChange: PropTypes.func,
   type: PropTypes.oneOf(['checkbox', 'radio']),

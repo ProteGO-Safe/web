@@ -1,6 +1,6 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import { Route, Switch } from 'react-router-dom';
+import { Redirect, Route, Switch } from 'react-router-dom';
 import {
   Daily,
   DailyData,
@@ -53,6 +53,7 @@ function App() {
               <Route exact path="/diagnosis" component={Diagnosis} />
             </>
           )}
+          <Route render={() => <Redirect to="/" />} />
         </Switch>
         <Menu />
       </div>

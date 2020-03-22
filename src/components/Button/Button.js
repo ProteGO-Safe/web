@@ -45,6 +45,7 @@ Button.propTypes = {
     'black',
     'blank',
     'gray',
+    'outline',
     'primary',
     'secondary',
     'success',
