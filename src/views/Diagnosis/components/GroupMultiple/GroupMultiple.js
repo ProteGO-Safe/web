@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { useFormikContext } from 'formik';
 
@@ -11,8 +11,10 @@ import { itemsPropType } from '../../prop-types';
 
 const GroupMultiple = ({ text, items }) => {
   const { setFieldValue, values, submitForm } = useFormikContext();
+  const [otherSelected, setOtherSelected] = useState(false);
 
   const handleChange = itemId => {
+    setOtherSelected(false);
     if (values[itemId] === VALUE_PRESENT) {
       setFieldValue(itemId, VALUE_ABSENT);
       return;
@@ -21,6 +23,11 @@ const GroupMultiple = ({ text, items }) => {
     if (values[itemId] === VALUE_ABSENT) {
       setFieldValue(itemId, VALUE_PRESENT);
     }
+  };
+
+  const handelSelectOther = () => {
+    setOtherSelected(true);
+    items.forEach(item => setFieldValue(item.id, VALUE_ABSENT));
   };
 
   return (
@@ -39,6 +46,14 @@ const GroupMultiple = ({ text, items }) => {
             value={values[item.id]}
           />
         ))}
+        <Option
+          color="white"
+          checked={otherSelected}
+          name="żadne z powyższych"
+          onChange={handelSelectOther}
+          text="żadne z powyższych"
+          type="checkbox"
+        />
       </FieldSet>
       <Button
         height="small"
