@@ -15,11 +15,12 @@ const Step3 = () => {
     }
   };
 
-  const disabled = !values[FIELD_AGE] || values[FIELD_AGE] > 150 || values[FIELD_AGE] < 1;
+  const disabled =
+    !values[FIELD_AGE] || values[FIELD_AGE] > 150 || values[FIELD_AGE] < 1;
 
   return (
     <Container>
-      <h3>Ile masz?</h3>
+      <h3>Ile masz lat?</h3>
       <Input
         placeholder="wiek"
         onChange={handleChange}
