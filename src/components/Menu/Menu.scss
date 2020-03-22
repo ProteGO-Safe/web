@@ -76,6 +76,14 @@
       color: $black;
       text-transform: uppercase;
       text-decoration: none;
+
+      &.disable {
+        pointer-events: none;
+      }
+    }
+
+    &.disable {
+      opacity: 0.5;
     }
 
     &.bottom {

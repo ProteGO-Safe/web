@@ -10,15 +10,16 @@ const Menu = ({ items, userName }) => {
   const handleClose = () => startHiding();
 
   const renderItems = items.map(item => {
-    const { bottom, bold, icon, path, slug, title } = item;
+    const { bottom, bold, disable, icon, path, slug, title } = item;
 
     const isBottom = bottom ? 'bottom' : '';
     const isBold = bold ? 'text-bold' : '';
+    const isDisable = disable ? 'disable' : '';
 
     return (
-      <li className={`menu__item ${isBottom}`} key={slug}>
+      <li className={`menu__item ${isBottom} ${isDisable}`} key={slug}>
         <Link
-          className={`menu__item__link ${isBold}`}
+          className={`menu__item__link ${isBold} ${isDisable}`}
           onClick={handleClose}
           to={path}
         >
