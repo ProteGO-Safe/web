@@ -31,8 +31,8 @@ const MenuContainer = () => {
     {
       icon: Icon2,
       path: '/risk-test',
-      slug: 'test oceny ryzyka',
-      title: 'Test oceny ryzyka'
+      slug: 'ankieta',
+      title: 'Ankieta oceny ryzyka'
     },
     {
       icon: Icon3,
