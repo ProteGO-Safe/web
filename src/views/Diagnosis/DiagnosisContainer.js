@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
 import { getDiagnosis, clearDiagnosis } from '../../store/actions/diagnosis';
@@ -8,10 +8,12 @@ import Diagnosis from './Diagnosis';
 import { Summary } from './components/Summary';
 
 import './Diagnosis.scss';
+import { Information } from '../Information';
 
 const DiagnosisContainer = () => {
   const dispatch = useDispatch();
   const { sex, age } = useSelector(state => state.user);
+  const [showInformation, setShowInformation] = useState(true);
 
   const {
     evidence,
@@ -48,6 +50,10 @@ const DiagnosisContainer = () => {
   }
 
   const onClearDiagnosis = () => dispatch(clearDiagnosis());
+
+  if (showInformation) {
+    return <Information hideInformation={() => setShowInformation(false)} />;
+  }
 
   return (
     <Diagnosis
