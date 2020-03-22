@@ -17,6 +17,10 @@
     + .checkbox {
       margin-top: 2px;
     }
+
+    &.big + .checkbox {
+      margin-top: 7px;
+    }
   }
 
   .option {

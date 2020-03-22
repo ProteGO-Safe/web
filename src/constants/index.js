@@ -1,15 +1,23 @@
 export const FIELD_AGE = 'age';
 export const FIELD_SEX = 'sex';
 export const FIELD_NAME = 'name';
-export const FIELD_CHRONIC_SICK = 'chronic_sick';
-export const FIELD_CHRONIC_SICK_OTHER = 'chronic_sick_other';
+export const FIELD_CHRONIC_SICK_1 = 'chronic_sick_1';
+export const FIELD_CHRONIC_SICK_2 = 'chronic_sick_2';
+export const FIELD_CHRONIC_SICK_3 = 'chronic_sick_3';
+export const FIELD_CHRONIC_SICK_4 = 'chronic_sick_4';
+export const FIELD_CHRONIC_SICK_5 = 'chronic_sick_5';
+export const FIELD_CHRONIC_SICK_6 = 'chronic_sick_6';
+export const FIELD_CHRONIC_SICK_7 = 'chronic_sick_7';
+export const FIELD_CHRONIC_SICK_1_DESC = 'chronic_sick_1_desc';
+export const FIELD_CHRONIC_SICK_2_DESC = 'chronic_sick_2_desc';
+export const FIELD_CHRONIC_SICK_3_DESC = 'chronic_sick_3_desc';
+export const FIELD_CHRONIC_SICK_4_DESC = 'chronic_sick_4_desc';
+export const FIELD_CHRONIC_SICK_5_DESC = 'chronic_sick_5_desc';
+export const FIELD_CHRONIC_SICK_6_DESC = 'chronic_sick_6_desc';
+export const FIELD_CHRONIC_SICK_7_DESC = 'chronic_sick_7_desc';
 
 export const VALUE_MAN = 'male';
 export const VALUE_WOMAN = 'female';
-
-export const VALUE_CHRONIC_SICK_1 = '1';
-export const VALUE_CHRONIC_SICK_2 = '2';
-export const VALUE_CHRONIC_SICK_3 = '3';
 
 export const FIELD_CHOICE_ID = 'choice_id';
 export const FIELD_ITEM_ID = 'item_id';

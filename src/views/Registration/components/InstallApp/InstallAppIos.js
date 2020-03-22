@@ -18,6 +18,13 @@ const InstallAppAndroid = ({ onLeave }) => (
       <h4 className="h1 text-center medium">
         Zainstaluj aplikację na swoim iPhonie
       </h4>
+      <div className="content">
+        <p className="small text-center">
+          W ten sposób uzyskasz łatwy dostęp
+          <br />
+          do aplikacji z głównego ekranu telefonu.
+        </p>
+      </div>
       <div className="instruction instruction__ios">
         <div />
         <div>

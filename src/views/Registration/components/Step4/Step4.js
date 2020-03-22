@@ -1,26 +1,99 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import { useFormikContext } from 'formik';
 import {
   Button,
+  Checkbox,
   Container,
   FieldSet,
-  Input,
-  Option
+  Input
 } from '../../../../components';
 
 import {
-  FIELD_CHRONIC_SICK,
-  FIELD_CHRONIC_SICK_OTHER,
-  VALUE_CHRONIC_SICK_1,
-  VALUE_CHRONIC_SICK_2,
-  VALUE_CHRONIC_SICK_3
+  FIELD_CHRONIC_SICK_1,
+  FIELD_CHRONIC_SICK_1_DESC,
+  FIELD_CHRONIC_SICK_2,
+  FIELD_CHRONIC_SICK_3,
+  FIELD_CHRONIC_SICK_4,
+  FIELD_CHRONIC_SICK_5,
+  FIELD_CHRONIC_SICK_6,
+  FIELD_CHRONIC_SICK_7,
 } from '../../../../constants';
 
 import './Step4.scss';
 import Icon from '../../../../assets/img/icons/angle-right-white.svg';
 
 const Step4 = () => {
-  const { handleChange, setFieldValue, submitForm, values } = useFormikContext();
+  const {
+    handleChange,
+    setFieldValue,
+    submitForm,
+    values
+  } = useFormikContext();
+
+  const fields = [
+    {
+      checkbox: FIELD_CHRONIC_SICK_1,
+      input: FIELD_CHRONIC_SICK_1_DESC,
+      description: 'nadciśnienie tętnicze'
+    },
+    {
+      checkbox: FIELD_CHRONIC_SICK_2,
+      input: FIELD_CHRONIC_SICK_2,
+      description: 'przewlekłe choroby układu oddechowego'
+    },
+    {
+      checkbox: FIELD_CHRONIC_SICK_3,
+      input: FIELD_CHRONIC_SICK_3,
+      description: 'choroby układu krążenia'
+    },
+    {
+      checkbox: FIELD_CHRONIC_SICK_4,
+      input: FIELD_CHRONIC_SICK_4,
+      description: 'cukrzyca'
+    },
+    {
+      checkbox: FIELD_CHRONIC_SICK_5,
+      input: FIELD_CHRONIC_SICK_5,
+      description: 'choroby układu immunologicznego'
+    },
+    {
+      checkbox: FIELD_CHRONIC_SICK_6,
+      input: FIELD_CHRONIC_SICK_6,
+      description:
+        'stosowanie leków obniżających odporność (immunosupresyjnych)'
+    },
+    {
+      checkbox: FIELD_CHRONIC_SICK_7,
+      input: FIELD_CHRONIC_SICK_7,
+      description: 'choroby onkologiczne'
+    }
+  ].map(({ checkbox, input, description }) => (
+    <Fragment key={checkbox}>
+      <Checkbox
+        checked={values[checkbox]}
+        description={description}
+        name={checkbox}
+        onChange={() =>
+          setFieldValue(checkbox, !values[checkbox])
+        }
+        size="big"
+        value={values[checkbox]}
+      />
+      {values[checkbox] && (
+        <Input
+          label="jak długo?"
+          name={input}
+          max={150}
+          min={0}
+          onChange={handleChange}
+          placeholder="podać w latach z dokładnością do 0.25 roku"
+          size="small"
+          type="number"
+          value={values[input]}
+        />
+      )}
+    </Fragment>
+  ));
 
   return (
     <Container>
@@ -29,44 +102,9 @@ const Step4 = () => {
         <br /> przewlekle chory?
       </h3>
       <FieldSet>
-        <Option
-          checked={values[FIELD_CHRONIC_SICK] === VALUE_CHRONIC_SICK_1}
-          name={FIELD_CHRONIC_SICK}
-          onChange={() =>
-            setFieldValue(FIELD_CHRONIC_SICK, VALUE_CHRONIC_SICK_1)
-          }
-          text="Problemy z ciśnieniem"
-          value={values[FIELD_CHRONIC_SICK]}
-        />
-        <Option
-          checked={values[FIELD_CHRONIC_SICK] === VALUE_CHRONIC_SICK_2}
-          name={FIELD_CHRONIC_SICK}
-          onChange={() =>
-            setFieldValue(FIELD_CHRONIC_SICK, VALUE_CHRONIC_SICK_2)
-          }
-          text="Problemy z sercem"
-          value={values[FIELD_CHRONIC_SICK]}
-        />
-        <Option
-          checked={values[FIELD_CHRONIC_SICK] === VALUE_CHRONIC_SICK_3}
-          name={FIELD_CHRONIC_SICK}
-          onChange={() =>
-            setFieldValue(FIELD_CHRONIC_SICK, VALUE_CHRONIC_SICK_3)
-          }
-          text="Choroba płuc"
-          value={values[FIELD_CHRONIC_SICK]}
-        />
+        {fields}
       </FieldSet>
-      <Input
-        placeholder="Inne"
-        onChange={handleChange}
-        name={FIELD_CHRONIC_SICK_OTHER}
-        value={values[FIELD_CHRONIC_SICK_OTHER]}
-      />
       <Button
-        disabled={
-          !values[FIELD_CHRONIC_SICK] && !values[FIELD_CHRONIC_SICK_OTHER]
-        }
         height="small"
         onClick={submitForm}
         icon={Icon}

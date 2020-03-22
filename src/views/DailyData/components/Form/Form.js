@@ -57,7 +57,6 @@ const Form = ({ isViewMode }) => {
           label="Z kim się spotkałem, gdzie byłem - wpisz"
           name={FIELD_CONTACTS}
           onChange={handleChange}
-          size="small"
           value={values[FIELD_CONTACTS]}
         />
       </FieldSet>

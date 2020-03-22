@@ -24,6 +24,8 @@ const Step1 = () => {
     setFieldValue('step', system && installApp ? 'install_app' : 2);
   };
 
+  const disabled = !values.name || !values.term1 || !values.term2;
+
   return (
     <Container>
       <Brand />
@@ -57,7 +59,7 @@ const Step1 = () => {
           value={values[FIELD_NAME]}
         />
         <Checkbox
-          checked={values.term1 === 'term1'}
+          checked={values.term1}
           description={
             <div>
               Oświadczam, że zapoznałem/am się z <span>Regulaminem</span>{' '}
@@ -66,11 +68,11 @@ const Step1 = () => {
             </div>
           }
           name="term1"
-          onChange={() => setFieldValue('term1', 'term1')}
+          onChange={() => setFieldValue('term1', !values.term1)}
           value="term1"
         />
         <Checkbox
-          checked={values.term2 === 'term2'}
+          checked={values.term2}
           description={
             <div>
               Wyrażam zgodę na przetwarzanie przez Tytani24 sp. z o.o. danych
@@ -81,12 +83,12 @@ const Step1 = () => {
             </div>
           }
           name="term2"
-          onChange={() => setFieldValue('term2', 'term2')}
+          onChange={() => setFieldValue('term2', !values.term2)}
           value="term2"
         />
       </FieldSet>
       <Button
-        disabled={!values.name}
+        disabled={disabled}
         onClick={handleClick}
         icon={Icon}
         text="Przejdź dalej"

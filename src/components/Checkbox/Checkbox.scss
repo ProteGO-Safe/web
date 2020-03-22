@@ -21,6 +21,7 @@
     &__wrapper {
       position: relative;
       display: flex;
+      width: 100%;
     }
   }
 
@@ -65,6 +66,18 @@
 
       &:after {
         display: block;
+      }
+    }
+  }
+
+  &.big {
+    .checkbox {
+      &__description {
+        width: calc(100% - 31px);
+        color: $primary_2;
+        font-size: 16px;
+        letter-spacing: 0;
+        line-height: 21px;
       }
     }
   }
