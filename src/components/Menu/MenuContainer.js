@@ -67,6 +67,7 @@ const MenuContainer = () => {
       title: 'Polityka prywatności'
     },
     {
+      disable: true,
       icon: Icon8,
       path: '',
       slug: 'ustawienia',
