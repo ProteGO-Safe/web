@@ -50,7 +50,7 @@ const Form = ({ isViewMode }) => {
           disable={isViewMode}
         />
       </FieldSet>
-      <h4 className="big">Kontakty</h4>
+      <h4 className="big">Miejsca i kontakty</h4>
       <FieldSet>
         <Textarea
           disabled={isViewMode}
