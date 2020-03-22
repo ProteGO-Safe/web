@@ -29,15 +29,12 @@ const DailyContainer = () => {
 
   const fill = () => history.push('/daily-data');
 
-  const goToHome = () => history.push('/');
-
   const goToHistory = timestamp => history.push(`/daily/${timestamp}`);
 
   return (
     <Daily
       previousDays={daysInDaily}
       onFill={fill}
-      onBack={goToHome}
       goToHistory={goToHistory}
       today={today}
     />

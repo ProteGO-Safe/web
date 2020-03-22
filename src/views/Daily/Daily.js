@@ -2,23 +2,14 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import Background from '../../assets/img/banners/banner-1.png';
-import {
-  Back,
-  Banner,
-  Brand,
-  Button,
-  Container,
-  FieldSet
-} from '../../components';
+import { Button, Container, FieldSet } from '../../components';
+import { Header } from '../components';
 import './Daily.scss';
 
-const Daily = ({ goToHistory, onBack, onFill, today, previousDays }) => {
+const Daily = ({ goToHistory, onFill, today, previousDays }) => {
   return (
     <div className="view view__risk-test">
-      <Banner background={Background}>
-        <Back onClick={onBack} />
-        <Brand content={false} small white />
-      </Banner>
+      <Header background={Background} prevUrl="/" />
       <Container>
         <h4 className="h1 text-center medium">Moje zdrowie</h4>
         <div className="today">
@@ -49,7 +40,6 @@ const Daily = ({ goToHistory, onBack, onFill, today, previousDays }) => {
 
 Daily.propTypes = {
   goToHistory: PropTypes.func.isRequired,
-  onBack: PropTypes.func.isRequired,
   onFill: PropTypes.func.isRequired
 };
 
