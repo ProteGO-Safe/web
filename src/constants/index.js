@@ -29,8 +29,7 @@ export const VALUE_ABSENT = 'absent';
 export const ANDROID = 'Android';
 export const IOS = 'iOS';
 
-export const FIELD_TEMPERATURE_MORNING = 'temperatureMorning';
-export const FIELD_TEMPERATURE_EVENING = 'temperatureEvening';
+export const FIELD_TEMPERATURE = 'temperature';
 export const FIELD_RUNNY_NOSE = 'runnyNose';
 export const FIELD_COUGH = 'cough';
 export const FIELD_CHILLS = 'chills';

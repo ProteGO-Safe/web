@@ -29,6 +29,7 @@ const SummaryContainer = () => {
   useEffect(() => {
     setLoader(true);
     setTimeout(() => setLoader(false), 5000);
+    // eslint-disable-next-line
   }, []);
 
   return <Summary onSave={save} />;

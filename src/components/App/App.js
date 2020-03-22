@@ -1,4 +1,6 @@
 import React from 'react';
+import moment from 'moment';
+import 'moment/locale/pl';
 import { useSelector } from 'react-redux';
 import { Redirect, Route, Switch } from 'react-router-dom';
 import {
@@ -16,12 +18,14 @@ import {
   Regulations,
   RiskTestData
 } from '../../views';
-import { Menu } from '../Menu';
 
+import { Menu } from '../Menu';
 import './App.scss';
 import useMenuContext from '../../hooks/useMenuContext';
 
 function App() {
+  moment.locale('pl');
+
   const { name } = useSelector(state => state.user);
   const { inProgress, visible } = useMenuContext();
   const menuVisible = visible && !inProgress ? 'menu-visible' : '';
