@@ -23,18 +23,23 @@ const PrivacyPolicy = () => {
       <Container>
         <h4 className="medium">Polityka prywatności</h4>
         <div className="content">
-          <p className="p1 small text-bold">Privacy by Design & Privacy by Default</p>
+          <p className="p1 small text-bold">
+            Privacy by Design & Privacy by Default
+          </p>
           <p className="p1 small">
-            Chcemy przeciwdziałać Koronawirusowi, ale nie za wszelką cenę. Twoja
-            prywatność jest dla nas równie ważna. Wszystkie informacje dotyczące
-            Twojego stanu zdrowia, które przekazujesz do SafeSafe są zapisywane
-            w postaci plików cookies i pozostają na Twoim urządzeniu. Nie mamy
-            do nich wglądu. Widzimy tylko ID Twojego urządzenia, Twoje imię,
-            wiek, a w przyszłości być może Twoją lokalizację. Jeśli będziemy
-            planowali zmiany, poinformujemy Cię o tym i poprosimy o Twoją zgodę
-            przed wprowadzeniem zmian. Szczegóły dotyczące SafeSafe i tego jak
-            przetwarzamy Twoje dane znajdziesz w naszym Regulaminie i Polityce
-            Prywatności.
+            Wspólnie chcemy przeciwdziałać Koronawirusowi. Twoja prywatność jest
+            dla nas tak samo ważna. Aplikację zaprojektowaliśmy tak, aby
+            wszystkie informacje, które przekazujesz do SafeSafe uniemożliwiały
+            Twoją identyfikację. Dlatego nie musisz rejestrować konta, nie
+            prosimy Cię o adres e-mail, ani połączenie SafeSafe z kontem w
+            mediach społecznościowych.
+          </p>
+          <p className="p1 small">
+            Jeśli będziemy planowali zmiany, poinformujemy Cię o tym i poprosimy
+            o Twoją zgodę. Możemy udostępnić część informacji, które wprowadzisz
+            do aplikacji naszym partnerom w celu przeciwdziałania
+            koronawirusowi. Szczegóły dotyczące SafeSafe i tego jak przetwarzamy
+            Twoje dane znajdziesz w naszym Regulaminie i Polityce Prywatności.
           </p>
           <p className="p2 small text-center">
             Poniżej możesz zapoznać się ze szczegółami:
@@ -46,9 +51,11 @@ const PrivacyPolicy = () => {
             type="secondary"
             text="Regulamin"
           />
-          <Button onClick={() => null} type="secondary" text="RODO" />
-          <Button onClick={() => null} type="secondary" text="Moje dane" />
-          <Button onClick={() => null} type="secondary" text="Bezpieczeństwo" />
+          <Button
+            onClick={() => null}
+            type="secondary"
+            text="Polityka prywatności"
+          />
         </FieldSet>
       </Container>
     </div>
