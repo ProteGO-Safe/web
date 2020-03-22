@@ -1,8 +1,9 @@
 import React from 'react';
 import { useHistory, useParams } from 'react-router-dom';
+import moment from 'moment';
 import { useDispatch, useSelector } from 'react-redux';
-
 import { Formik } from 'formik';
+
 import DailyData from './DailyData';
 import {
   FIELD_CHILLS,
@@ -14,6 +15,8 @@ import {
   VALUE_SYMPTOM_LEVEL_1
 } from '../../constants';
 import { addDaily } from '../../store/actions/daily';
+
+const dateFormat = 'D-MM-YYYY';
 
 const DailyDataContainer = () => {
   const history = useHistory();
@@ -28,10 +31,11 @@ const DailyDataContainer = () => {
   };
 
   const dailyData = daily[[id]];
+  const date =
+    (id && moment.unix(id).format(dateFormat)) || moment().format(dateFormat);
 
   const initialValues = {
-    [FIELD_TEMPERATURE]:
-      (dailyData && dailyData.data[FIELD_TEMPERATURE]) || '',
+    [FIELD_TEMPERATURE]: (dailyData && dailyData.data[FIELD_TEMPERATURE]) || '',
     [FIELD_RUNNY_NOSE]:
       (dailyData && dailyData.data[FIELD_RUNNY_NOSE]) || VALUE_SYMPTOM_LEVEL_1,
     [FIELD_COUGH]:
@@ -45,7 +49,7 @@ const DailyDataContainer = () => {
 
   return (
     <Formik initialValues={initialValues} onSubmit={handleSubmit}>
-      <DailyData onBack={goBack} isViewMode={!!dailyData} />
+      <DailyData onBack={goBack} isViewMode={!!dailyData} date={date} />
     </Formik>
   );
 };
