@@ -7,28 +7,34 @@ const Button = ({
   disabled,
   height,
   icon,
+  iconLeft,
   onClick,
   size,
   text,
   type
-}) => (
-  <button
-    disabled={disabled}
-    className={`button button--${type} button--${height} button--size--${size}`}
-    onClick={onClick}
-    type="button"
-  >
-    {children}
-    {text}
-    {icon && <img alt="icon" className="button__icon" src={icon} />}
-  </button>
-);
+}) => {
+  const iconPosition = iconLeft ? 'left' : 'right';
+
+  return (
+    <button
+      disabled={disabled}
+      className={`button button--${type} button--${height} button--size--${size} button--icon-${iconPosition}`}
+      onClick={onClick}
+      type="button"
+    >
+      {children}
+      {text}
+      {icon && <img alt="icon" className="button__icon" src={icon} />}
+    </button>
+  );
+};
 
 Button.defaultProps = {
   children: null,
   disabled: false,
   height: 'normal',
   icon: '',
+  iconLeft: false,
   size: 'normal',
   type: 'primary'
 };
@@ -38,6 +44,7 @@ Button.propTypes = {
   disabled: PropTypes.bool,
   height: PropTypes.oneOf(['small', 'normal']),
   icon: PropTypes.string,
+  iconLeft: PropTypes.bool,
   onClick: PropTypes.func.isRequired,
   size: PropTypes.oneOf(['small', 'normal']),
   text: PropTypes.string.isRequired,

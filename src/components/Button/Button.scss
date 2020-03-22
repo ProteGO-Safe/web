@@ -88,4 +88,13 @@
     height: 15px;
     margin-left: 12px;
   }
+
+  &--icon-left {
+    flex-direction: row-reverse;
+
+    .button__icon {
+      margin-left: 0;
+      margin-right: 12px;
+    }
+  }
 }

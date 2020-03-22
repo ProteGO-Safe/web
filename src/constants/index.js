@@ -1,13 +1,13 @@
 export const FIELD_AGE = 'age';
 export const FIELD_SEX = 'sex';
 export const FIELD_NAME = 'name';
-export const FIELD_CHRONIC_SICK_1 = 'chronic_sick_1';
-export const FIELD_CHRONIC_SICK_2 = 'chronic_sick_2';
-export const FIELD_CHRONIC_SICK_3 = 'chronic_sick_3';
-export const FIELD_CHRONIC_SICK_4 = 'chronic_sick_4';
-export const FIELD_CHRONIC_SICK_5 = 'chronic_sick_5';
-export const FIELD_CHRONIC_SICK_6 = 'chronic_sick_6';
-export const FIELD_CHRONIC_SICK_7 = 'chronic_sick_7';
+export const FIELD_CHRONIC_SICK_1 = 'nadciśnienie tętnicze';
+export const FIELD_CHRONIC_SICK_2 = 'przewlekłe choroby układu oddechowego';
+export const FIELD_CHRONIC_SICK_3 = 'choroby układu krążenia';
+export const FIELD_CHRONIC_SICK_4 = 'cukrzyca';
+export const FIELD_CHRONIC_SICK_5 = 'choroby układu immunologicznego';
+export const FIELD_CHRONIC_SICK_6 = 'stosowanie leków obniżających odporność (immunosupresyjnych)';
+export const FIELD_CHRONIC_SICK_7 = 'choroby onkologiczne';
 export const FIELD_CHRONIC_SICK_1_DESC = 'chronic_sick_1_desc';
 export const FIELD_CHRONIC_SICK_2_DESC = 'chronic_sick_2_desc';
 export const FIELD_CHRONIC_SICK_3_DESC = 'chronic_sick_3_desc';
@@ -17,8 +17,8 @@ export const FIELD_CHRONIC_SICK_6_DESC = 'chronic_sick_6_desc';
 export const FIELD_CHRONIC_SICK_7_DESC = 'chronic_sick_7_desc';
 export const FIELD_BLOOD_GROUP = 'bloodGroup';
 
-export const VALUE_MAN = 'male';
-export const VALUE_WOMAN = 'female';
+export const VALUE_MAN = 'Mężczyzna';
+export const VALUE_WOMAN = 'Kobieta';
 
 export const FIELD_CHOICE_ID = 'choice_id';
 export const FIELD_ITEM_ID = 'item_id';

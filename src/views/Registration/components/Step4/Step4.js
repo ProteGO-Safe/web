@@ -28,45 +28,37 @@ const Step4 = () => {
   const fields = [
     {
       checkbox: FIELD_CHRONIC_SICK_1,
-      input: FIELD_CHRONIC_SICK_1_DESC,
-      description: 'nadciśnienie tętnicze'
+      input: FIELD_CHRONIC_SICK_1_DESC
     },
     {
       checkbox: FIELD_CHRONIC_SICK_2,
-      input: FIELD_CHRONIC_SICK_2,
-      description: 'przewlekłe choroby układu oddechowego'
+      input: FIELD_CHRONIC_SICK_2
     },
     {
       checkbox: FIELD_CHRONIC_SICK_3,
-      input: FIELD_CHRONIC_SICK_3,
-      description: 'choroby układu krążenia'
+      input: FIELD_CHRONIC_SICK_3
     },
     {
       checkbox: FIELD_CHRONIC_SICK_4,
-      input: FIELD_CHRONIC_SICK_4,
-      description: 'cukrzyca'
+      input: FIELD_CHRONIC_SICK_4
     },
     {
       checkbox: FIELD_CHRONIC_SICK_5,
-      input: FIELD_CHRONIC_SICK_5,
-      description: 'choroby układu immunologicznego'
+      input: FIELD_CHRONIC_SICK_5
     },
     {
       checkbox: FIELD_CHRONIC_SICK_6,
-      input: FIELD_CHRONIC_SICK_6,
-      description:
-        'stosowanie leków obniżających odporność (immunosupresyjnych)'
+      input: FIELD_CHRONIC_SICK_6
     },
     {
       checkbox: FIELD_CHRONIC_SICK_7,
-      input: FIELD_CHRONIC_SICK_7,
-      description: 'choroby onkologiczne'
+      input: FIELD_CHRONIC_SICK_7
     }
-  ].map(({ checkbox, input, description }) => (
+  ].map(({ checkbox, input }) => (
     <Fragment key={checkbox}>
       <Checkbox
         checked={values[checkbox]}
-        description={description}
+        description={checkbox}
         name={checkbox}
         onChange={() => setFieldValue(checkbox, !values[checkbox])}
         size="big"
