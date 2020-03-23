@@ -38,7 +38,7 @@ const Summary = () => {
             iconLeft
             onClick={resetForm}
             text=""
-            type="outline"
+            type="white"
             size="small"
           >
             Rozpocznij
