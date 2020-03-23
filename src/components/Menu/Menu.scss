@@ -11,17 +11,26 @@
   }
 
   &__wrapper {
-    position: absolute;
+    position: fixed;
     top: 0;
     right: -259px;
     z-index: 2;
     width: 259px;
-    min-height: 100vmax;
+    min-height: 100vh;
     display: grid;
     grid-template-areas: "user" "menu";
     grid-template-rows: 85px 1fr;
     background-color: $white;
-    box-shadow: -3px 3px 6px #00000029;
+
+    @media(min-width: 992px) {
+      box-shadow: -3px 3px 6px #00000029;
+    }
+
+    @media(max-width: 991px) {
+      &.visible {
+        box-shadow: -3px 3px 6px #00000029;
+      }
+    }
   }
 
   &__user {

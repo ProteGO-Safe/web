@@ -9,6 +9,8 @@ const Menu = ({ items, userName }) => {
   const { visible, startHiding } = useMenuContext();
   const handleClose = () => startHiding();
 
+  const isVisible = visible ? 'visible' : '';
+
   const renderItems = items.map(item => {
     const { bottom, bold, disable, icon, path, slug, title } = item;
 
@@ -33,7 +35,7 @@ const Menu = ({ items, userName }) => {
   return (
     <>
       {visible && <div className="menu__overlay" onClick={handleClose} />}
-      <div className="menu menu__wrapper">
+      <div className={`menu menu__wrapper ${isVisible}`}>
         <div className="menu__user">
           <img src={UserIcon} alt="Użytkownik" />
           <p>{userName}</p>

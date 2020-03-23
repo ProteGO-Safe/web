@@ -13,9 +13,22 @@
     transition: 200ms transform linear;
   }
 
-  &.menu-visible {
-    .app__inner {
-      transform: translate(-259px, 0);
+  @media(min-width: 992px) {
+    .menu__wrapper {
+      position: fixed;
+      right: 0;
+    }
+  }
+
+  @media (max-width: 991px) {
+    &.menu-visible {
+      .app__inner {
+        transform: translate(-259px, 0);
+      }
+    }
+
+    .menu__wrapper {
+      position: absolute;
     }
   }
 
