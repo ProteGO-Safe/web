@@ -6,7 +6,6 @@ import { useSelector } from 'react-redux';
 import Background from '../../assets/img/banners/banner-1.png';
 import { Back, Banner, Brand, Container } from '../../components';
 import './RiskInformation.scss';
-import triageLevelResolver from '../../utills/triage';
 
 import { RiskInfoLevel1 } from './components/RiskInfoLevel1';
 import { RiskInfoLevel2 } from './components/RiskInfoLevel2';
@@ -17,7 +16,6 @@ import { RiskInfoLevel5 } from './components/RiskInfoLevel5';
 const RiskInformation = () => {
   const history = useHistory();
   const { triageLevel } = useSelector(state => state.triage);
-  //const triageLevelInformation = triageLevelResolver(triageLevel);
 
   const renderRiskHeader = (() => {
     switch (triageLevel) {
