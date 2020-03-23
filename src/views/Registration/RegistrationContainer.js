@@ -77,7 +77,7 @@ const RegistrationContainer = () => {
     if (form[FIELD_CHRONIC_SICK_7]) chronicSicks.push({ name: FIELD_CHRONIC_SICK_7, time: form[FIELD_CHRONIC_SICK_7_DESC] });
 
     const data = {
-      name: form[FIELD_AGE],
+      name: form[FIELD_NAME],
       sex: resolveSex(form[FIELD_SEX]),
       age: form[FIELD_AGE],
       chronicSicks: [...chronicSicks],
