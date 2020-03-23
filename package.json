@@ -25,7 +25,10 @@
   },
   "scripts": {
     "start": "PORT=3001 react-scripts start",
-    "build": "react-scripts build",
+    "clean-cra-sw": "rm -f build/precache-manifest.*.js && rm -f build/service-worker.js",
+    "build-sw": "node ./src/sw-build.js",
+    "fix-asset-manifest": "node ./src/fixAssetManifest.js",
+    "build": "react-scripts build && npm run build-sw && npm run clean-cra-sw && npm run fix-asset-manifest",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "lint": "eslint .",
@@ -67,6 +70,7 @@
     "eslint-plugin-react": "^7.19.0",
     "husky": "^4.2.3",
     "lint-staged": "^10.0.8",
-    "prettier": "^1.19.1"
+    "prettier": "^1.19.1",
+    "workbox-build": "^5.1.1"
   }
 }
