@@ -10,6 +10,7 @@ export { Input } from './Input';
 export { Loader } from './Loader';
 export { Menu } from './Menu';
 export { MenuButton } from './MenuButton';
+export { Modal } from './Modal';
 export { Option } from './Option';
 export { Ok } from './Ok';
 export { Range } from './Range';
