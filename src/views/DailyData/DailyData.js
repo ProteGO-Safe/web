@@ -8,7 +8,7 @@ import { Header } from '../components';
 import { Form } from './components';
 import './DailyData.scss';
 
-const DailyData = ({ date, onBack, isViewMode }) => {
+const DailyData = ({ date, isViewMode }) => {
   const { dirty, submitForm } = useFormikContext();
 
   return (
@@ -23,9 +23,10 @@ const DailyData = ({ date, onBack, isViewMode }) => {
         <Container className="container__footer">
           <FieldSet>
             <Button
-              onClick={!dirty || isViewMode ? onBack : submitForm}
-              text={!dirty || isViewMode ? 'Powrót' : 'Zapisz'}
+              onClick={submitForm}
+              text="Zapisz"
               type="primary"
+              disabled={!dirty}
             />
           </FieldSet>
         </Container>
