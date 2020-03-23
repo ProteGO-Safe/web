@@ -9,9 +9,11 @@ import { Summary } from './components/Summary';
 
 import './Diagnosis.scss';
 import { Information } from '../Information';
+import useLoaderContext from '../../hooks/useLoaderContext';
 
 const DiagnosisContainer = () => {
   const dispatch = useDispatch();
+  const { setLoader } = useLoaderContext();
   const { sex, age } = useSelector(state => state.user);
   const [showInformation, setShowInformation] = useState(true);
 
@@ -22,6 +24,15 @@ const DiagnosisContainer = () => {
     isResetting,
     inProgress
   } = useSelector(state => state.diagnosis);
+
+  useEffect(() => {
+    if (isLoading) {
+      setLoader(true);
+      return;
+    }
+    setLoader(false);
+    // eslint-disable-next-line
+  }, [isLoading]);
 
   useEffect(() => {
     const data = {
