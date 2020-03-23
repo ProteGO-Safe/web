@@ -53,6 +53,7 @@ const Registration = () => {
         <div className="view view__registration">
           <div className={`registration registration__step--${step}`}>
             <Banner background={banners[step]} size="small" />
+            <p>test6</p>
             {step === 1 && <Step1 />}
             {step === 2 && <Step2 />}
             {step === 3 && <Step3 />}

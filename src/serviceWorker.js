@@ -54,15 +54,41 @@ export function register(config) {
   }
 }
 
+let newWorker;
+
+function showUpdateBar() {
+  let snackbar = document.getElementById('snackbar');
+  snackbar.className = 'show';
+}
+
+document.getElementById('reload').addEventListener('click', function(){
+  newWorker.postMessage({ action: 'skipWaiting' });
+});
+
 function registerValidSW(swUrl, config) {
   navigator.serviceWorker
     .register(swUrl)
     .then(registration => {
+      registration.addEventListener('updatefound', () => {
+        console.log('New update found.');
+        newWorker = registration.installing;
+        newWorker.addEventListener('statechange', () => {
+          switch (newWorker.state) {
+            case 'installed':
+              if (navigator.serviceWorker.controller) {
+                console.log('Install new version prompt');
+                showUpdateBar();
+              }
+              break;
+          }
+        });
+      });
       registration.onupdatefound = () => {
         const installingWorker = registration.installing;
         if (installingWorker == null) {
           return;
         }
+        console.log('Service worker was installed.');
         installingWorker.onstatechange = () => {
           if (installingWorker.state === 'installed') {
             if (navigator.serviceWorker.controller) {
@@ -96,6 +122,12 @@ function registerValidSW(swUrl, config) {
     .catch(error => {
       console.error('Error during service worker registration:', error);
     });
+  let refreshing;
+  navigator.serviceWorker.addEventListener('controllerchange', function () {
+    if (refreshing) return;
+    window.location.reload();
+    refreshing = true;
+  });
 }
 
 function checkValidServiceWorker(swUrl, config) {
