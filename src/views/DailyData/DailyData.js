@@ -23,9 +23,10 @@ const DailyData = ({ date, onBack, isViewMode }) => {
         <Container className="container__footer">
           <FieldSet>
             <Button
-              onClick={!dirty || isViewMode ? onBack : submitForm}
-              text={!dirty || isViewMode ? 'Powrót' : 'Zapisz'}
+              onClick={submitForm}
+              text="Zapisz"
               type="primary"
+              disabled={!dirty}
             />
           </FieldSet>
         </Container>
