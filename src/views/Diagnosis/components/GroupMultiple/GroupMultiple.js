@@ -51,7 +51,7 @@ const GroupMultiple = ({ text, items }) => {
           checked={otherSelected}
           name="żadne z powyższych"
           onChange={handelSelectOther}
-          text="żadne z powyższych"
+          text="Żadne z powyższych"
           type="checkbox"
         />
       </FieldSet>
