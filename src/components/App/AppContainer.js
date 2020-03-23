@@ -1,12 +1,15 @@
 import React from 'react';
-import { MenuProvider } from '../../context/MenuContext';
 import { LoaderProvider } from '../../context/LoaderContext';
+import { MenuProvider } from '../../context/MenuContext';
+import { ModalProvider } from '../../context/ModalContext';
 import App from './App';
 
 const AppContainer = () => (
   <MenuProvider>
     <LoaderProvider>
-      <App />
+      <ModalProvider>
+        <App />
+      </ModalProvider>
     </LoaderProvider>
   </MenuProvider>
 );

@@ -13,9 +13,13 @@ import Icon from '../../../../assets/img/icons/angle-right.svg';
 
 import './Step1.scss';
 import getMobileOperatingSystem from '../../../../services/getMobileOperationSystem';
+import useModalContext from '../../../../hooks/useModalContext';
+import PrivacyPolicyContent from '../../../PrivacyPolicyDetails/component/PrivacyPolicyContent/PrivacyPolicyContent';
+import RegulationsContent from '../../../Regulations/component/RegulationsContent/RegulationsContent';
 
 const Step1 = () => {
   const { handleChange, setFieldValue, values } = useFormikContext();
+  const { openModal } = useModalContext();
 
   const handleClick = () => {
     const system = getMobileOperatingSystem();
@@ -62,9 +66,21 @@ const Step1 = () => {
           checked={values.term1}
           description={
             <div>
-              Oświadczam, że zapoznałem/am się z <span>Regulaminem</span>{' '}
-              SafeSafe oraz <span>Polityką Prywatności</span> i akceptuję ich
-              postanowienia.
+              Oświadczam, że zapoznałem/am się z{' '}
+              <span
+                onClick={() => openModal(<RegulationsContent />)}
+                role="button"
+              >
+                Regulaminem
+              </span>{' '}
+              SafeSafe oraz{' '}
+              <span
+                onClick={() => openModal(<PrivacyPolicyContent />)}
+                role="button"
+              >
+                Polityką Prywatności
+              </span>{' '}
+              i akceptuję ich postanowienia.
             </div>
           }
           name="term1"
@@ -79,7 +95,14 @@ const Step1 = () => {
               dotyczących zdrowia w celu korzystania z aplikacji SafeSafe, która
               umożliwia profilaktykę i zapobieganie zarażeniem wirusem
               SARS-CoV-2. Szczegóły na temat tego jak przetwarzamy Twoje dane
-              osobowe znajdziesz w <span>Polityce Prywatności</span>.
+              osobowe znajdziesz w{' '}
+              <span
+                onClick={() => openModal(<PrivacyPolicyContent />)}
+                role="button"
+              >
+                Polityce Prywatności
+              </span>
+              .
             </div>
           }
           name="term2"

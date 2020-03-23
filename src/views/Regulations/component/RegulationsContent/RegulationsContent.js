@@ -426,7 +426,7 @@ const RegulationsContent = () => (
     <p> </p>
 
     <p>
-      <blockquote>Załącznik nr 1 do Regulaminu</blockquote>
+      <span>Załącznik nr 1 do Regulaminu</span>
     </p>
     <p>
       <strong> </strong>
