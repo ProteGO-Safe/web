@@ -2,7 +2,6 @@ import React from 'react';
 import { useHistory } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 
-
 import Background from '../../assets/img/banners/banner-1.png';
 import { Back, Banner, Brand, Container } from '../../components';
 import './RiskInformation.scss';

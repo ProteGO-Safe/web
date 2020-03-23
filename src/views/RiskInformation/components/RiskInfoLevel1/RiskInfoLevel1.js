@@ -1,4 +1,5 @@
 import React, { Fragment } from 'react';
+import { Link } from 'react-router-dom';
 
 const RiskInfoLevel1 = () => (
   <Fragment>
@@ -27,11 +28,11 @@ const RiskInfoLevel1 = () => (
           <li>Zaniechaj wszelkich spotkań – wykorzystaj telefon lub internet do kontaktu z innymi osobami, nawet jeśli jest to sąsiad lub bliski krewny</li>
         </ul>
       </li>
-      <li><strong>Zadzwoń do rodziców i krewnych</strong> w podeszłym wieku. Pomóż im korzystać z <span className="primary-2">SafeSafe</span> na ich telefonie. Zrób dla nich zakupy. Unikaj kontaktu osobistego.</li>
+      <li><strong>Zadzwoń do rodziców i krewnych</strong> w podeszłym wieku. Pomóż im korzystać z <span className="primary-2"><strong>SafeSafe</strong></span> na ich telefonie. Zrób dla nich zakupy. Unikaj kontaktu osobistego.</li>
       <li>Jeśli przyjechałeś/aś z zagranicy – skontaktuj się z Sanepidem i poddaj się kwarantannie przez 14 dni.</li>
-      <li><strong>Monitoruj stan swojego zdrowia i zapisuj go w <span className="primary-2">MÓJ DZIENNIK ZDROWIA</span></strong> w tej aplikacji.</li>
+      <li><strong>Monitoruj stan swojego zdrowia i zapisuj go w <Link to="/daily">MÓJ DZIENNIK ZDROWIA</Link></strong> w tej aplikacji.</li>
     </ol>
-    <p><strong>Jeśli wystąpią u ciebie lub twoich bliskich objawy infekcji COVID-19 kontaktuj się z infolinią Rządową: 800 190 590 lub lokalną placówką służby zdrowia.</strong></p>
+    <p><strong>Jeśli wystąpią u ciebie lub twoich bliskich objawy infekcji COVID-19 kontaktuj się z infolinią Rządową: <a href="tel:800190590">800 190 590</a> lub lokalną placówką służby zdrowia.</strong></p>
     <p>&nbsp;</p>
     <p>GIS* - Główny Inspektorat Sanitarny w RP.</p>
   </Fragment>
