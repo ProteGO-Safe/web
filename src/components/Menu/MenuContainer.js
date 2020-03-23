@@ -11,9 +11,16 @@ import Icon7 from '../../assets/img/icons/007-contract.svg';
 import Icon8 from '../../assets/img/icons/008-settings.svg';
 
 import Menu from './Menu';
+import useMenuContext from '../../hooks/useMenuContext';
 
 const MenuContainer = () => {
   const userName = useSelector(state => state.user.name);
+
+  const { visible } = useMenuContext();
+
+  if (!visible) {
+    return null
+  }
 
   const items = [
     {
