@@ -1,6 +1,5 @@
 import React from 'react';
 import useMenuContext from '../../hooks/useMenuContext';
-import Icon from '../../assets/img/icons/menu-white.svg';
 import './MenuButton.scss';
 
 const MenuButton = () => {
@@ -14,8 +13,13 @@ const MenuButton = () => {
   };
 
   return (
-    <button className="menu__button" onClick={handleClick} type="button">
-      <img src={Icon} alt="Menu" />
+    <button
+      className="menu__button"
+      onClick={handleClick}
+      type="button">
+      <div className="menu__button__line" />
+      <div className="menu__button__line" />
+      <div className="menu__button__line" />
     </button>
   );
 };
