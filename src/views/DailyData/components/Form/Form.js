@@ -12,16 +12,17 @@ import {
 import { FieldSet, Input, Range, Textarea } from '../../../../components';
 
 const Form = ({ isViewMode }) => {
-  const { handleChange, values } = useFormikContext();
+  const { handleChange, values, errors } = useFormikContext();
   return (
     <div className="form">
       <h4 className="big">Temperatura</h4>
       <FieldSet horizontal>
         <Input
+          error={errors[FIELD_TEMPERATURE]}
           disabled={isViewMode}
           name={FIELD_TEMPERATURE}
-          max={50}
-          min={1}
+          max={45}
+          min={25}
           onChange={handleChange}
           type="number"
           value={values[FIELD_TEMPERATURE]}

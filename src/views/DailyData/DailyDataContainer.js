@@ -3,6 +3,7 @@ import { useHistory, useParams } from 'react-router-dom';
 import moment from 'moment';
 import { useDispatch, useSelector } from 'react-redux';
 import { Formik } from 'formik';
+import * as Yup from 'yup';
 
 import DailyData from './DailyData';
 import {
@@ -34,6 +35,12 @@ const DailyDataContainer = () => {
   const date =
     (id && moment.unix(id).format(dateFormat)) || moment().format(dateFormat);
 
+  const validationSchema = Yup.object().shape({
+    [FIELD_TEMPERATURE]: Yup.number()
+      .min(25, 'Za niska wartość temperatury')
+      .max(45, 'Za wysoka wartość temperatury')
+  });
+
   const initialValues = {
     [FIELD_TEMPERATURE]: (dailyData && dailyData.data[FIELD_TEMPERATURE]) || '',
     [FIELD_RUNNY_NOSE]:
@@ -48,7 +55,11 @@ const DailyDataContainer = () => {
   };
 
   return (
-    <Formik initialValues={initialValues} onSubmit={handleSubmit}>
+    <Formik
+      initialValues={initialValues}
+      onSubmit={handleSubmit}
+      validationSchema={validationSchema}
+    >
       <DailyData onBack={goBack} isViewMode={!!dailyData} date={date} />
     </Formik>
   );
