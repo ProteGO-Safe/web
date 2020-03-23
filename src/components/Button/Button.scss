@@ -36,6 +36,11 @@
     border: 1px solid $primary_2;
   }
 
+  &--white {
+    background-color: $white;
+    color: $primary_2;
+  }
+
   &--secondary {
     background-color: $white;
     border: 1px solid $primary_1;

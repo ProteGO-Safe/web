@@ -56,7 +56,8 @@ Button.propTypes = {
     'primary',
     'secondary',
     'success',
-    'success-blank'
+    'success-blank',
+    'white'
   ])
 };
 

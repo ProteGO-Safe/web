@@ -1,13 +1,22 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Icon from '../../assets/img/icons/angle-left-white.svg';
+import Icon from '../../assets/img/icons/angle-left.svg';
+import { Button } from '../Button';
 
 import './Back.scss';
 
 const Back = ({ onClick }) => (
-  <button className="back-btn" onClick={onClick} type="button">
-    <img src={Icon} alt="Wstecz" />
-  </button>
+  <div className="back-btn">
+    <Button
+      height="small"
+      icon={Icon}
+      iconLeft
+      onClick={onClick}
+      size="small"
+      text="Cofnij"
+      type="white"
+    />
+  </div>
 );
 
 Back.propTypes = {

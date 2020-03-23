@@ -1,20 +1,21 @@
 .back-btn {
   position: absolute !important;
-  top: 15px;
+  top: 0;
   left: 21px;
-  padding: 0;
-  background: none;
-  border: none;
-  -webkit-appearance: none;
-  cursor: pointer;
+  display: flex;
+  align-items: center;
+  height: 100%;
   z-index: 4 !important;
 
   &:focus {
     outline: none;
   }
 
-  img {
-    width: 24px;
-    height: 21px;
+  .button {
+    padding: 7px 11px;
+
+    &__icon {
+      margin-right: 4px;
+    }
   }
 }
