@@ -9,6 +9,21 @@
 
   .banner {
     grid-area: banner;
+
+    .reset-registration{
+      position: absolute;
+      top: 28px;
+      left: 18px;
+      z-index: 10;
+
+      .button {
+        padding: 3px;
+
+        &__icon {
+          margin-right: 3px;
+        }
+      }
+    }
   }
 
   .container {
@@ -52,8 +67,8 @@
         &:empty {
           &:after {
             display: list-item;
-            font-size: 12px;
-            line-height: 16px;
+            font-size: 16px;
+            line-height: 21px;
             content: attr(data-empty);
           }
         }

@@ -8,8 +8,7 @@ import {
   Container,
   FieldSet
 } from '../../../../components';
-import AngleLeftIcon from '../../../../assets/img/icons/angle-left-white.svg';
-import AngleRightIcon from '../../../../assets/img/icons/angle-right-white.svg';
+import AngleLeftIcon from '../../../../assets/img/icons/angle-left.svg';
 import UserImg from '../../../../assets/img/icons/user.svg';
 import {
   FIELD_AGE,
@@ -28,91 +27,94 @@ import {
 } from '../../../../constants';
 
 const Summary = () => {
-  const { handleSubmit, setFieldValue, values } = useFormikContext();
+  const { handleSubmit, resetForm, values } = useFormikContext();
   return (
     <div className="view view__registration-summary">
       <Banner background={Background}>
+        <div className="reset-registration">
+          <Button
+            height="small"
+            icon={AngleLeftIcon}
+            iconLeft
+            onClick={resetForm}
+            text=""
+            type="outline"
+            size="small"
+          >
+            Rozpocznij
+            <br />
+            od nowa
+          </Button>
+        </div>
         <Brand content={false} small white />
       </Banner>
       <Container>
         <div className="user">
           <img src={UserImg} alt="Avatar" />
-          <h5>Podsumujmy:</h5>
+          <h5 className="big">Podsumujmy:</h5>
         </div>
         <div className="content">
-          <p className="medium text-bold">
+          <p className="big text-bold">
             <span>Płeć:</span> {values[FIELD_SEX]}
           </p>
-          <p className="medium text-bold">
+          <p className="big text-bold">
             <span>Wiek:</span> {values[FIELD_AGE]}
           </p>
-          <p className="medium text-bold">Dolegliwości:</p>
+          <p className="big text-bold">Dolegliwości:</p>
           <ul data-empty="Brak przewlekłych chorób">
             {values[FIELD_CHRONIC_SICK_1] && (
               <li>
-                <p className="small">{FIELD_CHRONIC_SICK_1}</p>
+                <p className="medium-2">{FIELD_CHRONIC_SICK_1}</p>
               </li>
             )}
             {values[FIELD_CHRONIC_SICK_2] && (
               <li>
-                <p className="small">{FIELD_CHRONIC_SICK_2}</p>
+                <p className="medium-2">{FIELD_CHRONIC_SICK_2}</p>
               </li>
             )}
             {values[FIELD_CHRONIC_SICK_3] && (
               <li>
-                <p className="small">{FIELD_CHRONIC_SICK_3}</p>
+                <p className="medium-2">{FIELD_CHRONIC_SICK_3}</p>
               </li>
             )}
             {values[FIELD_CHRONIC_SICK_4] && (
               <li>
-                <p className="small">{FIELD_CHRONIC_SICK_4}</p>
+                <p className="medium-2">{FIELD_CHRONIC_SICK_4}</p>
               </li>
             )}
             {values[FIELD_CHRONIC_SICK_5] && (
               <li>
-                <p className="small">{FIELD_CHRONIC_SICK_4}</p>
+                <p className="medium-2">{FIELD_CHRONIC_SICK_4}</p>
               </li>
             )}
             {values[FIELD_CHRONIC_SICK_6] && (
               <li>
-                <p className="small">{FIELD_CHRONIC_SICK_5}</p>
+                <p className="medium-2">{FIELD_CHRONIC_SICK_5}</p>
               </li>
             )}
             {values[FIELD_CHRONIC_SICK_7] && (
               <li>
-                <p className="small">{FIELD_CHRONIC_SICK_6}</p>
+                <p className="medium-2">{FIELD_CHRONIC_SICK_6}</p>
               </li>
             )}
           </ul>
-          <p className="medium text-bold">
+          <p className="big text-bold">
             <span>Grupa krwi:</span> {values[FIELD_BLOOD_GROUP]}
           </p>
-          <p className="medium text-bold">
+          <p className="big text-bold">
             <span>Papierosy:</span> {values[FIELD_SMOKE]}
           </p>
           {values[FIELD_SMOKE] === VALUE_SMOKE_YES && (
             <ul>
               <li>
-                <p className="small">{values[FIELD_SMOKE_NUMBER]}</p>
+                <p className="medium-2">{values[FIELD_SMOKE_NUMBER]}</p>
               </li>
             </ul>
           )}
         </div>
 
         <FieldSet>
-          <Button
-            icon={AngleRightIcon}
-            onClick={handleSubmit}
-            text="Zapisz metrykę"
-          />
-          <Button
-            height="small"
-            icon={AngleLeftIcon}
-            iconLeft
-            onClick={() => setFieldValue('step', 1)}
-            text="Cofnij"
-            size="small"
-          />
+          <Button onClick={handleSubmit} text="Zapisz metrykę" />
         </FieldSet>
       </Container>
     </div>
