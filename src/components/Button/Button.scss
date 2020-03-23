@@ -69,7 +69,7 @@
   }
 
   &--small {
-    height: 29px;
+    min-height: 29px;
   }
 
   &--normal {
@@ -78,8 +78,10 @@
 
   &--size {
     &--small {
-      width: 74px;
+      min-width: 74px;
+      max-width: min-content;
       padding: 5px 10px;
+      text-align: left;
     }
   }
 
