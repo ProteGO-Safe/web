@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 
@@ -23,14 +23,10 @@ const SummaryContainer = () => {
       description
     };
     dispatch(addRiskTest(data));
-    history.push('/');
-  };
-
-  useEffect(() => {
     setLoader(true);
     setTimeout(() => setLoader(false), 5000);
-    // eslint-disable-next-line
-  }, []);
+    history.push('/');
+  };
 
   return <Summary onSave={save} />;
 };
