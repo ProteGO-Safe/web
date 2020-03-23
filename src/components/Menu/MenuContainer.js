@@ -19,7 +19,7 @@ const MenuContainer = () => {
   const { visible } = useMenuContext();
 
   if (!visible) {
-    return null
+    return null;
   }
 
   const items = [

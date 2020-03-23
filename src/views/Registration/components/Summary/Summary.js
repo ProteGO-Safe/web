@@ -23,8 +23,15 @@ import {
   FIELD_SEX,
   FIELD_SMOKE,
   FIELD_SMOKE_NUMBER,
-  VALUE_SMOKE_YES
+  VALUE_MAN,
+  VALUE_SMOKE_YES,
+  VALUE_WOMAN
 } from '../../../../constants';
+
+const tSex = {
+  [VALUE_MAN]: 'Mężczyzna',
+  [VALUE_WOMAN]: 'Kobieta'
+};
 
 const Summary = () => {
   const { handleSubmit, resetForm, values } = useFormikContext();
@@ -55,7 +62,7 @@ const Summary = () => {
         </div>
         <div className="content">
           <p className="big text-bold">
-            <span>Płeć:</span> {values[FIELD_SEX]}
+            <span>Płeć:</span> {tSex[values[FIELD_SEX]]}
           </p>
           <p className="big text-bold">
             <span>Wiek:</span> {values[FIELD_AGE]}
