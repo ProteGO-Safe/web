@@ -15,12 +15,12 @@ const Complete = ({ hideInformation }) => {
           <p className="p1 medium-2">
             Jedną z głównych funkcji tej aplikacji jest{' '}
             <span className="text-bold">
-              Kwestionariusz oceny ryzyka zarażanie COVID-19 zgodnie
+              Ankieta Oceny Ryzyka infekcji COVID-19. Jest stworzona w 100% zgodnie
               z&nbsp;wytycznymi WHO
             </span>{' '}
             (Światowej Organizacji Zdrowia).
           </p>
-          <h4 className="medium">Ważne, Kwestionariusz:</h4>
+          <h4 className="medium">WAŻNE - Ankieta Oceny Ryzyka:</h4>
           <p className="p2 medium-2">
             - NIE JEST DIAGNOZĄ. Diagnozę może postawić wyłącznie lekarz i test
             medyczny na obecność wirusa.
