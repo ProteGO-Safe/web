@@ -24,8 +24,7 @@ const Complete = ({ hideInformation }) => {
           <p className="p2 medium-2">
             - NIE JEST DIAGNOZĄ. Diagnozę może postawić wyłącznie lekarz i test
             medyczny na obecność wirusa.
-            <br />- Pomaga monitorować swój stan zdrowia - Musi zostać
-            wypełniony w 100% zgodnie z prawdą
+            <br />- Pomaga monitorować swój stan zdrowia
           </p>
           <p className="p3 medium-2 primary-2 text-bold">
             - Musi zostać wypełniony w 100% zgodnie z prawdą
