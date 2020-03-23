@@ -48,7 +48,7 @@ const GroupMultiple = ({ text, items }) => {
         ))}
         <Checkbox
           checked={otherSelected}
-          name="żadne z powyższych"
+          name="Żadne z powyższych"
           onChange={handelSelectOther}
           description="Żadne z powyższych"
           type="checkbox"
