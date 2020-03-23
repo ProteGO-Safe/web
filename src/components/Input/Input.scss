@@ -61,4 +61,11 @@
     letter-spacing: 0;
     color: $black;
   }
+
+  &__error {
+    font-size: 10px;
+    line-height: 13px;
+    letter-spacing: 0;
+    color: $red;
+  }
 }

@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import './Input.scss';
 
 const Input = ({
+  error,
   description,
   disabled,
   label,
@@ -32,10 +33,12 @@ const Input = ({
       value={value}
     />
     {description && <span className="input__description">{description}</span>}
+    {error && <span className="input__error">{error}</span>}
   </div>
 );
 
 Input.defaultProps = {
+  error: undefined,
   description: undefined,
   disabled: false,
   label: undefined,
@@ -50,6 +53,7 @@ Input.defaultProps = {
 };
 
 Input.propTypes = {
+  error: PropTypes.string,
   description: PropTypes.string,
   disabled: PropTypes.bool,
   label: PropTypes.string,
