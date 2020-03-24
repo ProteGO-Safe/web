@@ -18,6 +18,10 @@ const Menu = ({ items, userName }) => {
     const isBold = bold ? 'text-bold' : '';
     const isDisable = disable ? 'disable' : '';
 
+    if (!title) {
+      return <li className="menu__item menu__item--empty" key={slug} />
+    }
+
     return (
       <li className={`menu__item ${isBottom} ${isDisable}`} key={slug}>
         <Link

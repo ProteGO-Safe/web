@@ -77,7 +77,6 @@ const Step5 = () => {
       <FieldSet horizontal>{fields}</FieldSet>
       <Button
         disabled={!values[FIELD_BLOOD_GROUP]}
-        height="small"
         onClick={() => setFieldValue('step', 6)}
         icon={Icon}
         size="medium"

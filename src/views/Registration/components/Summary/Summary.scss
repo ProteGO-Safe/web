@@ -51,12 +51,13 @@
       align-self: start;
 
       p {
+        display: flex;
+        align-items: center;
         margin-top: 13px;
 
         span {
-          display: inline-block;
-          vertical-align: middle;
-          margin-right: 13px;
+          width: 50%;
+          max-width: 150px;
         }
       }
 

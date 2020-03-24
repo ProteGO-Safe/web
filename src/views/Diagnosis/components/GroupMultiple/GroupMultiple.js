@@ -56,7 +56,6 @@ const GroupMultiple = ({ text, items }) => {
         />
       </FieldSet>
       <Button
-        height="small"
         onClick={submitForm}
         icon={Icon}
         size="medium"

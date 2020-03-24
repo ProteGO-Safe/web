@@ -36,7 +36,6 @@ const Step2 = () => {
       </FieldSet>
       <Button
         disabled={disabled}
-        height="small"
         onClick={() => setFieldValue('step', 3)}
         icon={Icon}
         size="medium"

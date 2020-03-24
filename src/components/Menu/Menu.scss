@@ -56,6 +56,14 @@
   &__item {
     border-top: 1px solid $gray_4;
 
+    &--empty {
+      height: 50px;
+
+      +.menu__item:not(.menu__item--empty) {
+        border-top: 0;
+      }
+    }
+
     &:first-child {
       border-top-width: 0;
     }
