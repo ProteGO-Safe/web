@@ -38,19 +38,19 @@ const Home = () => {
   const renderRiskInfo = (() => {
     switch (triageLevel) {
       case 'no_risk': {
-        return <Fragment><p className="text-level-1">PRZESTRZEGAJ PROFILAKTYKI.</p></Fragment>;
+        return <Fragment><p className="text-level-1">PRZESTRZEGAJ PROFILAKTYKI</p></Fragment>;
       }
       case 'self_monitoring': {
-        return <Fragment><p className="text-level-2">SAMOOBSERWACJA - POZOSTAŃ W DOMU I MONITORUJ STAN ZDROWIA.</p></Fragment>;
+        return <Fragment><p className="text-level-2">SAMOOBSERWACJA - POZOSTAŃ W DOMU I MONITORUJ STAN ZDROWIA</p></Fragment>;
       }
       case 'quarantine': {
-        return <Fragment><p>ODOSOBNIENIE DOMOWE. UNIKAJ KONTAKTU Z DOMOWNIKAMI.</p><p>OBSERWUJ SWÓJ STAN ZDROWIA.</p></Fragment>;
+        return <Fragment><p>ODOSOBNIENIE DOMOWE. UNIKAJ KONTAKTU Z DOMOWNIKAMI.</p><p>OBSERWUJ SWÓJ STAN ZDROWIA</p></Fragment>;
       }
       case 'isolation_call': {
-        return <Fragment><p>IZOLACJA DOMOWA. UNIKAJ KONTAKTU Z DOMOWNIKAMI.</p><p>SKONTAKTUJ SIĘ Z NUMEREM ALARMOWYM.</p></Fragment>;
+        return <Fragment><p>IZOLACJA DOMOWA. UNIKAJ KONTAKTU Z DOMOWNIKAMI.</p><p>SKONTAKTUJ SIĘ Z NUMEREM ALARMOWYM</p></Fragment>;
       }
       case 'isolation_ambulance': {
-        return <Fragment><p className="text-error">BEZWZGLĘDNIE NIE OPUSZCZAJ DOMU.</p><p>ZABRONIONY KONTAKT Z INNYMI LUDŹMI/DOMOWNIKAMI.</p><p className="text-error">OBOWIĄZKOWY KONTAKT Z NUMEREM ALARMOWYM.</p></Fragment>;
+        return <Fragment><p className="text-error">BEZWZGLĘDNIE NIE OPUSZCZAJ DOMU.</p><p>ZABRONIONY KONTAKT Z INNYMI LUDŹMI/DOMOWNIKAMI.</p><p className="text-error">OBOWIĄZKOWY KONTAKT Z NUMEREM ALARMOWYM</p></Fragment>;
       }
       default: {
         return null;

@@ -1,9 +1,14 @@
+@import '../../assets/styles/colors';
+
 .menu__button {
   position: absolute !important;
-  top: 18px;
-  right: 12px;
-  width: 18px;
-  height: auto;
+  top: 10px;
+  right: 13px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 32px;
+  height: 30px;
   cursor: pointer;
   -webkit-appearance: none;
   border: none;
@@ -15,7 +20,10 @@
     outline: none;
   }
 
-  img {
-    width: 100%;
+  &__line {
+    display: block;
+    width: 32px;
+    height: 4px;
+    background-color: $white;
   }
 }

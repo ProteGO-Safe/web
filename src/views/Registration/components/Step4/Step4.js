@@ -75,6 +75,25 @@ const Step4 = () => {
     setFieldValue(field, value);
   };
 
+  const isAnyFieldSelected = () => {
+    return (
+      otherSelected ||
+      values[FIELD_CHRONIC_SICK_1] ||
+      values[FIELD_CHRONIC_SICK_2] ||
+      values[FIELD_CHRONIC_SICK_3] ||
+      values[FIELD_CHRONIC_SICK_4] ||
+      values[FIELD_CHRONIC_SICK_5] ||
+      values[FIELD_CHRONIC_SICK_6] ||
+      values[FIELD_CHRONIC_SICK_7]
+    );
+  };
+
+  const goToNextStep = () => {
+    if (isAnyFieldSelected()) {
+      setFieldValue('step', 5);
+    }
+  };
+
   const fieldsToRender = fields.map(({ checkbox, input }) => (
     <Fragment key={checkbox}>
       <Checkbox
@@ -119,10 +138,11 @@ const Step4 = () => {
       </FieldSet>
       <Button
         height="small"
-        onClick={() => setFieldValue('step', 5)}
+        onClick={goToNextStep}
         icon={Icon}
         size="small"
         text="Dalej"
+        disabled={!isAnyFieldSelected()}
       />
     </Container>
   );
