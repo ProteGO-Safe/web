@@ -7,9 +7,13 @@ const ModalContext = createContext(null);
 export const ModalProvider = ({ children }) => {
   const [modal, setModal] = useState(false);
   const [content, setContent] = useState(null);
+  const [type, setType] = useState('');
 
   const onClose = () => setContent(null);
-  const openModal = value => setContent(value);
+  const openModal = (value, modalType) => {
+    setContent(value);
+    setType(modalType || '');
+  };
 
   useEffect(() => {
     setModal(!!content);
@@ -20,7 +24,8 @@ export const ModalProvider = ({ children }) => {
       value={{
         content,
         onClose,
-        openModal
+        openModal,
+        type
       }}
     >
       {children}

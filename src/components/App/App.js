@@ -16,7 +16,8 @@ import {
   PrivacyPolicyDetails,
   Registration,
   Regulations,
-  RiskTestData
+  RiskTestData,
+  UserData, UserDataSettings
 } from '../../views';
 
 import { Menu } from '../Menu';
@@ -53,6 +54,8 @@ function App() {
               />
               <Route exact path="/regulations" component={Regulations} />
               <Route exact path="/diagnosis" component={Diagnosis} />
+              <Route exact path="/user-data" component={UserData} />
+              <Route exact path="/user-data/settings" component={UserDataSettings} />
             </>
           )}
           <Route render={() => <Redirect to="/" />} />

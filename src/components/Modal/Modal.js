@@ -5,7 +5,7 @@ import useModalContext from '../../hooks/useModalContext';
 import './Modal.scss';
 
 const Modal = () => {
-  const { content, onClose } = useModalContext();
+  const { content, onClose, type } = useModalContext();
   const scrollRef = useRef(null);
 
   useEffect(() => {
@@ -16,7 +16,7 @@ const Modal = () => {
   }, [scrollRef]);
 
   return (
-    <div className="modal">
+    <div className={`modal ${type}`}>
       {/* eslint-disable-next-line */}
       <div className="modal__overlay" onClick={onClose} />
       <div className="modal__wrapper">
