@@ -17,20 +17,22 @@ const RiskTestData = ({
     <Container>
       <div className="title">
         <h4 className="h1 text-center medium">Test oceny ryzyka</h4>
-        <h6 className="text-center">
+        <br/>
+        <p className="text-center">
           {isToday && 'DZIŚ'} {day}
-        </h6>
+        </p>
+        <br/>
       </div>
       <div className="data">
         {questions.map(question => (
           <div key={question.text} className="data__single">
-            <p className="text-bold small">{question.text}</p>
+            <p className="text-bold">{question.text}</p>
             {question.items.map(item => (
               <div key={item.name}>
                 {question.type !== 'single' && (
-                  <p className="small">{item.name}</p>
+                  <p>{item.name}</p>
                 )}
-                <p className="small">
+                <p>
                   {idToChoiceResolver(item.id, item.choices)}
                 </p>
               </div>
@@ -38,8 +40,8 @@ const RiskTestData = ({
           </div>
         ))}
         <div className="data__single">
-          <p className="text-bold small">Przyznana grupa</p>
-          <p className="small">{triageLevelInformation}</p>
+          <p className="text-bold">Przyznana grupa</p>
+          <p>{triageLevelInformation}</p>
         </div>
       </div>
     </Container>
