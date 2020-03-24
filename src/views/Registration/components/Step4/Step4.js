@@ -170,10 +170,9 @@ const Step4 = () => {
         />
       </FieldSet>
       <Button
-        height="small"
         onClick={goToNextStep}
         icon={Icon}
-        size="small"
+        size="medium"
         text="Dalej"
         disabled={!isAnyFieldSelected()}
       />

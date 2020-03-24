@@ -60,10 +60,9 @@ const GroupMultiple = ({ text, items }) => {
       </FieldSet>
       <Button
         disabled={!someSelected}
-        height="small"
         onClick={submitForm}
         icon={Icon}
-        size="small"
+        size="medium"
         text="Dalej"
       />
     </>

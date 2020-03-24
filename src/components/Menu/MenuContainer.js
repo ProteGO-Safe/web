@@ -54,8 +54,10 @@ const MenuContainer = () => {
       title: 'Numery alarmowe'
     },
     {
+      slug: 'empty_1'
+    },
+    {
       bold: true,
-      bottom: true,
       icon: Icon6,
       path: '',
       slug: 'co_zrobic',

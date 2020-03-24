@@ -26,10 +26,9 @@ const Step3 = () => {
       />
       <Button
         disabled={disabled}
-        height="small"
         onClick={() => setFieldValue('step', 4)}
         icon={Icon}
-        size="small"
+        size="medium"
         text="Dalej"
       />
     </Container>

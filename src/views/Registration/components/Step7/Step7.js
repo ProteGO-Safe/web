@@ -40,10 +40,9 @@ const Step7 = () => {
       <FieldSet>{fields}</FieldSet>
       <Button
         disabled={!values[FIELD_SMOKE_NUMBER]}
-        height="small"
         onClick={() => setFieldValue('step', 8)}
         icon={Icon}
-        size="small"
+        size="medium"
         text="Dalej"
       />
     </Container>

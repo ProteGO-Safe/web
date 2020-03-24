@@ -32,10 +32,9 @@ const Single = ({ text, choices }) => {
       </FieldSet>
       <Button
         disabled={!values[FIELD_CHOICE_ID]}
-        height="small"
         onClick={submitForm}
         icon={Icon}
-        size="small"
+        size="medium"
         text="Dalej"
       />
     </>
