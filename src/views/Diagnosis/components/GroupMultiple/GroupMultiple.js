@@ -59,7 +59,7 @@ const GroupMultiple = ({ text, items }) => {
         height="small"
         onClick={submitForm}
         icon={Icon}
-        size="small"
+        size="medium"
         text="Dalej"
       />
     </>

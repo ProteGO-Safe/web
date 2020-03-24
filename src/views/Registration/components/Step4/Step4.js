@@ -140,7 +140,7 @@ const Step4 = () => {
         height="small"
         onClick={goToNextStep}
         icon={Icon}
-        size="small"
+        size="medium"
         text="Dalej"
         disabled={!isAnyFieldSelected()}
       />

@@ -46,7 +46,7 @@ Button.propTypes = {
   icon: PropTypes.string,
   iconLeft: PropTypes.bool,
   onClick: PropTypes.func.isRequired,
-  size: PropTypes.oneOf(['small', 'normal']),
+  size: PropTypes.oneOf(['small', 'medium', 'normal']),
   text: PropTypes.string.isRequired,
   type: PropTypes.oneOf([
     'black',

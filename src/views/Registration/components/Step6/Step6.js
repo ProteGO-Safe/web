@@ -43,7 +43,7 @@ const Step6 = () => {
           setFieldValue('step', values[FIELD_SMOKE] === VALUE_SMOKE_YES ? 7 : 8)
         }
         icon={Icon}
-        size="small"
+        size="medium"
         text="Dalej"
       />
     </Container>

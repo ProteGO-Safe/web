@@ -29,7 +29,7 @@ const Step3 = () => {
         height="small"
         onClick={() => setFieldValue('step', 4)}
         icon={Icon}
-        size="small"
+        size="medium"
         text="Dalej"
       />
     </Container>
