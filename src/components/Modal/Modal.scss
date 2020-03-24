@@ -80,6 +80,24 @@
       }
     }
   }
+
+  &.dialog {
+    .modal{
+      &__header {
+        display: none;
+      }
+
+      &__wrapper {
+        height: auto;
+      }
+
+      &__content {
+        &__inner {
+          padding-right: 0;
+        }
+      }
+    }
+  }
 }
 
 .scrollbar-container {

@@ -18,7 +18,9 @@
       transform: translate(-259px, 0);
     }
   }
+}
 
+body {
   * {
     box-sizing: border-box;
   }
@@ -49,6 +51,11 @@
       font-size: 18px;
       line-height: 24px;
       letter-spacing: 0;
+    }
+
+    &.medium-2 {
+      font-size: 16px;
+      line-height: 21px;
     }
 
     &.big {
