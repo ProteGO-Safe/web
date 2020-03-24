@@ -5,13 +5,14 @@ import Background from '../../assets/img/banners/banner-1.png';
 import { Button, Container, FieldSet } from '../../components';
 import { Header } from '../components';
 
-import { calendarPropType } from '../../utills/calendar';
+import { daysDetailsPropType } from '../../utills/calendar';
 
 const RiskTest = ({
   goToHistory,
   isFilledToday,
   onFill,
-  calendar: { today, previousDays }
+  today,
+  previousDays
 }) => (
   <div className="view view__risk-test">
     <Header background={Background} prevUrl="/" />
@@ -28,7 +29,6 @@ const RiskTest = ({
       <FieldSet>
         {previousDays.map(_obj => (
           <Button
-            disabled={!_obj.isFilled}
             key={_obj.day}
             onClick={() => goToHistory(_obj.timestamp)}
             text=""
@@ -47,7 +47,8 @@ RiskTest.propTypes = {
   onFill: PropTypes.func.isRequired,
   goToHistory: PropTypes.func.isRequired,
   isFilledToday: PropTypes.bool.isRequired,
-  calendar: calendarPropType
+  today: PropTypes.string.isRequired,
+  previousDays: daysDetailsPropType
 };
 
 export default RiskTest;

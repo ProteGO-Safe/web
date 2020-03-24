@@ -1,41 +1,28 @@
 import moment from 'moment';
 import PropTypes from 'prop-types';
 
-const dateFormat = 'D-MM-YYYY';
 const dayWeekFormat = 'dddd';
-const todayFormat = 'D-MM-YYYY';
+const dateFormat = 'D-MM-YYYY HH:mm';
 
 // filledDays contains moments
-const createCalendar = (filledDays = []) => {
+const createDaysDetails = (filledDays = []) => {
+  const descending = (a, b) => b - a;
 
-  const day = moment();
-  const today = day.format(todayFormat);
-
-  const previousDays = [];
-
-  for (let index = 0; index < 14; index++) {
-    const dayBefore = day.subtract(1, 'days');
-    const filledDay = filledDays.find(value => value.isSame(dayBefore, 'day'));
-    previousDays.push({
-      day: dayBefore.format(dateFormat),
-      dayWeek: dayBefore.format(dayWeekFormat),
-      isFilled: !!filledDay,
-      timestamp: filledDay && filledDay.unix()
-    });
-  }
-
-  return { today, previousDays };
+  return filledDays.sort(descending).map(_timestamp => {
+    return {
+      day: moment.unix(_timestamp).format(dateFormat),
+      dayWeek: moment.unix(_timestamp).format(dayWeekFormat),
+      timestamp: _timestamp
+    };
+  });
 };
 
-export default createCalendar;
+export default createDaysDetails;
 
-export const calendarPropType = PropTypes.shape({
-  previousDays: PropTypes.arrayOf(
-    PropTypes.shape({
-      day: PropTypes.string.isRequired,
-      isFilled: PropTypes.bool.isRequired,
-      timestamp: PropTypes.number
-    })
-  ).isRequired,
-  today: PropTypes.string.isRequired
-}).isRequired;
+export const daysDetailsPropType = PropTypes.arrayOf(
+  PropTypes.shape({
+    day: PropTypes.string.isRequired,
+    dayWeek: PropTypes.string.isRequired,
+    timestamp: PropTypes.string.isRequired
+  })
+).isRequired;
