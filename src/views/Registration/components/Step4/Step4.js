@@ -8,22 +8,7 @@ import {
   Input
 } from '../../../../components';
 
-import {
-  FIELD_CHRONIC_SICK_1,
-  FIELD_CHRONIC_SICK_1_DESC,
-  FIELD_CHRONIC_SICK_2,
-  FIELD_CHRONIC_SICK_2_DESC,
-  FIELD_CHRONIC_SICK_3,
-  FIELD_CHRONIC_SICK_3_DESC,
-  FIELD_CHRONIC_SICK_4,
-  FIELD_CHRONIC_SICK_4_DESC,
-  FIELD_CHRONIC_SICK_5,
-  FIELD_CHRONIC_SICK_5_DESC,
-  FIELD_CHRONIC_SICK_6,
-  FIELD_CHRONIC_SICK_6_DESC,
-  FIELD_CHRONIC_SICK_7,
-  FIELD_CHRONIC_SICK_7_DESC
-} from '../../../../constants';
+import * as constants from '../../../../constants';
 
 import './Step4.scss';
 import Icon from '../../../../assets/img/icons/angle-right-white.svg';
@@ -34,32 +19,74 @@ const Step4 = () => {
 
   const fields = [
     {
-      checkbox: FIELD_CHRONIC_SICK_1,
-      input: FIELD_CHRONIC_SICK_1_DESC
+      checkbox: constants.FIELD_CHRONIC_SICK_1,
+      input: constants.FIELD_CHRONIC_SICK_1_DESC,
+      placeholder: constants.FIELD_CHRONIC_SICK_1_PH
     },
     {
-      checkbox: FIELD_CHRONIC_SICK_2,
-      input: FIELD_CHRONIC_SICK_2_DESC
+      checkbox: constants.FIELD_CHRONIC_SICK_2,
+      input: constants.FIELD_CHRONIC_SICK_2_DESC,
+      placeholder: constants.FIELD_CHRONIC_SICK_2_PH
     },
     {
-      checkbox: FIELD_CHRONIC_SICK_3,
-      input: FIELD_CHRONIC_SICK_3_DESC
+      checkbox: constants.FIELD_CHRONIC_SICK_3,
+      input: constants.FIELD_CHRONIC_SICK_3_DESC
     },
     {
-      checkbox: FIELD_CHRONIC_SICK_4,
-      input: FIELD_CHRONIC_SICK_4_DESC
+      checkbox: constants.FIELD_CHRONIC_SICK_4,
+      input: constants.FIELD_CHRONIC_SICK_4_DESC
     },
     {
-      checkbox: FIELD_CHRONIC_SICK_5,
-      input: FIELD_CHRONIC_SICK_5_DESC
+      checkbox: constants.FIELD_CHRONIC_SICK_5,
+      input: constants.FIELD_CHRONIC_SICK_5_DESC
     },
     {
-      checkbox: FIELD_CHRONIC_SICK_6,
-      input: FIELD_CHRONIC_SICK_6_DESC
+      checkbox: constants.FIELD_CHRONIC_SICK_6,
+      input: constants.FIELD_CHRONIC_SICK_6_DESC,
+      placeholder: constants.FIELD_CHRONIC_SICK_6_PH
     },
     {
-      checkbox: FIELD_CHRONIC_SICK_7,
-      input: FIELD_CHRONIC_SICK_7_DESC
+      checkbox: constants.FIELD_CHRONIC_SICK_7,
+      input: constants.FIELD_CHRONIC_SICK_7_DESC
+    },
+    {
+      checkbox: constants.FIELD_CHRONIC_SICK_8,
+      input: constants.FIELD_CHRONIC_SICK_8_DESC
+    },
+    {
+      checkbox: constants.FIELD_CHRONIC_SICK_9,
+      input: constants.FIELD_CHRONIC_SICK_9_DESC,
+      placeholder: constants.FIELD_CHRONIC_SICK_9_PH
+    },
+    {
+      checkbox: constants.FIELD_CHRONIC_SICK_10,
+      input: constants.FIELD_CHRONIC_SICK_10_DESC,
+      placeholder: constants.FIELD_CHRONIC_SICK_10_PH
+    },
+    {
+      checkbox: constants.FIELD_CHRONIC_SICK_11,
+      input: constants.FIELD_CHRONIC_SICK_11_DESC,
+      placeholder: constants.FIELD_CHRONIC_SICK_11_PH
+    },
+    {
+      checkbox: constants.FIELD_CHRONIC_SICK_12,
+      input: constants.FIELD_CHRONIC_SICK_12_DESC,
+      placeholder: constants.FIELD_CHRONIC_SICK_12_PH
+    },
+    {
+      checkbox: constants.FIELD_CHRONIC_SICK_13,
+      input: constants.FIELD_CHRONIC_SICK_13_DESC,
+      placeholder: constants.FIELD_CHRONIC_SICK_13_PH
+    },
+    {
+      checkbox: constants.FIELD_CHRONIC_SICK_14,
+      input: constants.FIELD_CHRONIC_SICK_14_DESC,
+      placeholder: constants.FIELD_CHRONIC_SICK_14_PH
+    },
+    {
+      checkbox: constants.FIELD_CHRONIC_SICK_15,
+      input: constants.FIELD_CHRONIC_SICK_15_DESC,
+      placeholder: constants.FIELD_CHRONIC_SICK_15_PH
     }
   ];
 
@@ -78,13 +105,21 @@ const Step4 = () => {
   const isAnyFieldSelected = () => {
     return (
       otherSelected ||
-      values[FIELD_CHRONIC_SICK_1] ||
-      values[FIELD_CHRONIC_SICK_2] ||
-      values[FIELD_CHRONIC_SICK_3] ||
-      values[FIELD_CHRONIC_SICK_4] ||
-      values[FIELD_CHRONIC_SICK_5] ||
-      values[FIELD_CHRONIC_SICK_6] ||
-      values[FIELD_CHRONIC_SICK_7]
+      values[constants.FIELD_CHRONIC_SICK_1] ||
+      values[constants.FIELD_CHRONIC_SICK_2] ||
+      values[constants.FIELD_CHRONIC_SICK_3] ||
+      values[constants.FIELD_CHRONIC_SICK_4] ||
+      values[constants.FIELD_CHRONIC_SICK_5] ||
+      values[constants.FIELD_CHRONIC_SICK_6] ||
+      values[constants.FIELD_CHRONIC_SICK_7] ||
+      values[constants.FIELD_CHRONIC_SICK_8] ||
+      values[constants.FIELD_CHRONIC_SICK_9] ||
+      values[constants.FIELD_CHRONIC_SICK_10] ||
+      values[constants.FIELD_CHRONIC_SICK_11] ||
+      values[constants.FIELD_CHRONIC_SICK_12] ||
+      values[constants.FIELD_CHRONIC_SICK_13] ||
+      values[constants.FIELD_CHRONIC_SICK_14] ||
+      values[constants.FIELD_CHRONIC_SICK_15]
     );
   };
 
@@ -94,7 +129,7 @@ const Step4 = () => {
     }
   };
 
-  const fieldsToRender = fields.map(({ checkbox, input }) => (
+  const fieldsToRender = fields.map(({ checkbox, input, placeholder }) => (
     <Fragment key={checkbox}>
       <Checkbox
         checked={values[checkbox]}
@@ -104,16 +139,14 @@ const Step4 = () => {
         size="big"
         value={values[checkbox]}
       />
-      {values[checkbox] && (
+      {values[checkbox] && placeholder && (
         <Input
-          label="jak długo?"
+          label={placeholder}
           name={input}
           max={150}
           min={0}
           onChange={handleChange}
-          placeholder="podać w latach z dokładnością do 0.25 roku"
           size="small"
-          type="number"
           value={values[input]}
         />
       )}
