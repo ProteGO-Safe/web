@@ -14,12 +14,19 @@ import {
   FIELD_AGE,
   FIELD_BLOOD_GROUP,
   FIELD_CHRONIC_SICK_1,
+  FIELD_CHRONIC_SICK_1_DESC,
   FIELD_CHRONIC_SICK_2,
+  FIELD_CHRONIC_SICK_2_DESC,
   FIELD_CHRONIC_SICK_3,
+  FIELD_CHRONIC_SICK_3_DESC,
   FIELD_CHRONIC_SICK_4,
+  FIELD_CHRONIC_SICK_4_DESC,
   FIELD_CHRONIC_SICK_5,
+  FIELD_CHRONIC_SICK_5_DESC,
   FIELD_CHRONIC_SICK_6,
+  FIELD_CHRONIC_SICK_6_DESC,
   FIELD_CHRONIC_SICK_7,
+  FIELD_CHRONIC_SICK_7_DESC,
   FIELD_SEX,
   FIELD_SMOKE,
   FIELD_SMOKE_NUMBER,
@@ -71,37 +78,37 @@ const Summary = () => {
           <ul data-empty="Brak przewlekłych chorób">
             {values[FIELD_CHRONIC_SICK_1] && (
               <li>
-                <p className="medium-2">{FIELD_CHRONIC_SICK_1}</p>
+                <p className="medium-2">{`${FIELD_CHRONIC_SICK_1} ${values[FIELD_CHRONIC_SICK_1_DESC]}`}</p>
               </li>
             )}
             {values[FIELD_CHRONIC_SICK_2] && (
               <li>
-                <p className="medium-2">{FIELD_CHRONIC_SICK_2}</p>
+                <p className="medium-2">{`${FIELD_CHRONIC_SICK_2} ${values[FIELD_CHRONIC_SICK_2_DESC]}`}</p>
               </li>
             )}
             {values[FIELD_CHRONIC_SICK_3] && (
               <li>
-                <p className="medium-2">{FIELD_CHRONIC_SICK_3}</p>
+                <p className="medium-2">{`${FIELD_CHRONIC_SICK_3} ${values[FIELD_CHRONIC_SICK_3_DESC]}`}</p>
               </li>
             )}
             {values[FIELD_CHRONIC_SICK_4] && (
               <li>
-                <p className="medium-2">{FIELD_CHRONIC_SICK_4}</p>
+                <p className="medium-2">{`${FIELD_CHRONIC_SICK_4} ${values[FIELD_CHRONIC_SICK_4_DESC]}`}</p>
               </li>
             )}
             {values[FIELD_CHRONIC_SICK_5] && (
               <li>
-                <p className="medium-2">{FIELD_CHRONIC_SICK_4}</p>
+                <p className="medium-2">{`${FIELD_CHRONIC_SICK_5} ${values[FIELD_CHRONIC_SICK_5_DESC]}`}</p>
               </li>
             )}
             {values[FIELD_CHRONIC_SICK_6] && (
               <li>
-                <p className="medium-2">{FIELD_CHRONIC_SICK_5}</p>
+                <p className="medium-2">{`${FIELD_CHRONIC_SICK_6} ${values[FIELD_CHRONIC_SICK_6_DESC]}`}</p>
               </li>
             )}
             {values[FIELD_CHRONIC_SICK_7] && (
               <li>
-                <p className="medium-2">{FIELD_CHRONIC_SICK_6}</p>
+                <p className="medium-2">{`${FIELD_CHRONIC_SICK_7} ${values[FIELD_CHRONIC_SICK_7_DESC]}`}</p>
               </li>
             )}
           </ul>
