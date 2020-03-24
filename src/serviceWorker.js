@@ -57,11 +57,10 @@ export function register(config) {
 let newWorker;
 
 function showUpdateBar() {
-  let snackbar = document.getElementById('snackbar');
-  snackbar.className = 'show';
+  document.getElementById('reload').className = 'show';
 }
 
-document.getElementById('reload').addEventListener('click', function(){
+document.getElementById('reload').addEventListener('click', () => {
   newWorker.postMessage({ action: 'skipWaiting' });
 });
 
@@ -70,15 +69,15 @@ function registerValidSW(swUrl, config) {
     .register(swUrl)
     .then(registration => {
       registration.addEventListener('updatefound', () => {
-        console.log('New update found.');
         newWorker = registration.installing;
         newWorker.addEventListener('statechange', () => {
           switch (newWorker.state) {
             case 'installed':
               if (navigator.serviceWorker.controller) {
-                console.log('Install new version prompt');
                 showUpdateBar();
               }
+              break;
+            default:
               break;
           }
         });
@@ -88,7 +87,6 @@ function registerValidSW(swUrl, config) {
         if (installingWorker == null) {
           return;
         }
-        console.log('Service worker was installed.');
         installingWorker.onstatechange = () => {
           if (installingWorker.state === 'installed') {
             if (navigator.serviceWorker.controller) {
@@ -122,8 +120,9 @@ function registerValidSW(swUrl, config) {
     .catch(error => {
       console.error('Error during service worker registration:', error);
     });
+
   let refreshing;
-  navigator.serviceWorker.addEventListener('controllerchange', function () {
+  navigator.serviceWorker.addEventListener('controllerchange', () => {
     if (refreshing) return;
     window.location.reload();
     refreshing = true;
