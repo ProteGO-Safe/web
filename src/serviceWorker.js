@@ -32,7 +32,7 @@ export function register(config) {
     }
 
     window.addEventListener('load', () => {
-      const swUrl = `${process.env.PUBLIC_URL}/service-worker.js`;
+      const swUrl = `${process.env.PUBLIC_URL}/sw.js`;
 
       if (isLocalhost) {
         // This is running on localhost. Let's check if a service worker still exists or not.
@@ -54,10 +54,34 @@ export function register(config) {
   }
 }
 
+let newWorker;
+
+function showUpdateBar() {
+  document.getElementById('reload').className = 'show';
+}
+
+document.getElementById('reload').addEventListener('click', () => {
+  newWorker.postMessage({ action: 'skipWaiting' });
+});
+
 function registerValidSW(swUrl, config) {
   navigator.serviceWorker
     .register(swUrl)
     .then(registration => {
+      registration.addEventListener('updatefound', () => {
+        newWorker = registration.installing;
+        newWorker.addEventListener('statechange', () => {
+          switch (newWorker.state) {
+            case 'installed':
+              if (navigator.serviceWorker.controller) {
+                showUpdateBar();
+              }
+              break;
+            default:
+              break;
+          }
+        });
+      });
       registration.onupdatefound = () => {
         const installingWorker = registration.installing;
         if (installingWorker == null) {
@@ -96,6 +120,13 @@ function registerValidSW(swUrl, config) {
     .catch(error => {
       console.error('Error during service worker registration:', error);
     });
+
+  let refreshing;
+  navigator.serviceWorker.addEventListener('controllerchange', () => {
+    if (refreshing) return;
+    window.location.reload();
+    refreshing = true;
+  });
 }
 
 function checkValidServiceWorker(swUrl, config) {

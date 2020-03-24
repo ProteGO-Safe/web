@@ -1,8 +1,9 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
+import './RiskInfoLevel1.scss';
 
 const RiskInfoLevel1 = () => (
-  <Fragment>
+  <div className="view__risk_info_level_1">
     <p>Jesteś w niskiej grupie ryzyka, żeby tak pozostało przestrzegaj zasad:</p>
     <ol>
       <li><strong>Jak dostosować codziene życie?</strong>
@@ -35,7 +36,7 @@ const RiskInfoLevel1 = () => (
     <p><strong>Jeśli wystąpią u ciebie lub twoich bliskich objawy infekcji COVID-19 kontaktuj się z infolinią Rządową: <a href="tel:800190590">800 190 590</a> lub lokalną placówką służby zdrowia.</strong></p>
     <p>&nbsp;</p>
     <p>GIS* - Główny Inspektorat Sanitarny w RP.</p>
-  </Fragment>
+  </div>
 );
 
 export default RiskInfoLevel1;
