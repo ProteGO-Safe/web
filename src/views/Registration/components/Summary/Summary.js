@@ -10,38 +10,31 @@ import {
 } from '../../../../components';
 import AngleLeftIcon from '../../../../assets/img/icons/angle-left.svg';
 import UserImg from '../../../../assets/img/icons/user.svg';
-import {
-  FIELD_AGE,
-  FIELD_BLOOD_GROUP,
-  FIELD_CHRONIC_SICK_1,
-  FIELD_CHRONIC_SICK_1_DESC,
-  FIELD_CHRONIC_SICK_2,
-  FIELD_CHRONIC_SICK_2_DESC,
-  FIELD_CHRONIC_SICK_3,
-  FIELD_CHRONIC_SICK_3_DESC,
-  FIELD_CHRONIC_SICK_4,
-  FIELD_CHRONIC_SICK_4_DESC,
-  FIELD_CHRONIC_SICK_5,
-  FIELD_CHRONIC_SICK_5_DESC,
-  FIELD_CHRONIC_SICK_6,
-  FIELD_CHRONIC_SICK_6_DESC,
-  FIELD_CHRONIC_SICK_7,
-  FIELD_CHRONIC_SICK_7_DESC,
-  FIELD_SEX,
-  FIELD_SMOKE,
-  FIELD_SMOKE_NUMBER,
-  VALUE_MAN,
-  VALUE_SMOKE_YES,
-  VALUE_WOMAN
-} from '../../../../constants';
-
-const tSex = {
-  [VALUE_MAN]: 'Mężczyzna',
-  [VALUE_WOMAN]: 'Kobieta'
-};
+import * as constants from '../../../../constants';
+import { Imprint } from '../../../Imprint';
 
 const Summary = () => {
   const { handleSubmit, resetForm, values } = useFormikContext();
+
+  const chronicSicks = (() => {
+    const chronicSicks = [];
+    if (values[constants.FIELD_CHRONIC_SICK_1]) chronicSicks.push({name: constants.FIELD_CHRONIC_SICK_1, description: values[constants.FIELD_CHRONIC_SICK_1_DESC]});
+    if (values[constants.FIELD_CHRONIC_SICK_2]) chronicSicks.push({name: constants.FIELD_CHRONIC_SICK_2, description: values[constants.FIELD_CHRONIC_SICK_2_DESC]});
+    if (values[constants.FIELD_CHRONIC_SICK_3]) chronicSicks.push({name: constants.FIELD_CHRONIC_SICK_3, description: values[constants.FIELD_CHRONIC_SICK_3_DESC]});
+    if (values[constants.FIELD_CHRONIC_SICK_4]) chronicSicks.push({name: constants.FIELD_CHRONIC_SICK_4, description: values[constants.FIELD_CHRONIC_SICK_4_DESC]});
+    if (values[constants.FIELD_CHRONIC_SICK_5]) chronicSicks.push({name: constants.FIELD_CHRONIC_SICK_5, description: values[constants.FIELD_CHRONIC_SICK_5_DESC]});
+    if (values[constants.FIELD_CHRONIC_SICK_6]) chronicSicks.push({name: constants.FIELD_CHRONIC_SICK_6, description: values[constants.FIELD_CHRONIC_SICK_6_DESC]});
+    if (values[constants.FIELD_CHRONIC_SICK_7]) chronicSicks.push({name: constants.FIELD_CHRONIC_SICK_7, description: values[constants.FIELD_CHRONIC_SICK_7_DESC]});
+    if (values[constants.FIELD_CHRONIC_SICK_8]) chronicSicks.push({name: constants.FIELD_CHRONIC_SICK_8, description: values[constants.FIELD_CHRONIC_SICK_8_DESC]});
+    if (values[constants.FIELD_CHRONIC_SICK_9]) chronicSicks.push({name: constants.FIELD_CHRONIC_SICK_9, description: values[constants.FIELD_CHRONIC_SICK_9_DESC]});
+    if (values[constants.FIELD_CHRONIC_SICK_10]) chronicSicks.push({name: constants.FIELD_CHRONIC_SICK_10, description: values[constants.FIELD_CHRONIC_SICK_10_DESC]});
+    if (values[constants.FIELD_CHRONIC_SICK_11]) chronicSicks.push({name: constants.FIELD_CHRONIC_SICK_11, description: values[constants.FIELD_CHRONIC_SICK_11_DESC]});
+    if (values[constants.FIELD_CHRONIC_SICK_12]) chronicSicks.push({name: constants.FIELD_CHRONIC_SICK_12, description: values[constants.FIELD_CHRONIC_SICK_12_DESC]});
+    if (values[constants.FIELD_CHRONIC_SICK_13]) chronicSicks.push({name: constants.FIELD_CHRONIC_SICK_13, description: values[constants.FIELD_CHRONIC_SICK_13_DESC]});
+    if (values[constants.FIELD_CHRONIC_SICK_14]) chronicSicks.push({name: constants.FIELD_CHRONIC_SICK_14, description: values[constants.FIELD_CHRONIC_SICK_14_DESC]});
+    if (values[constants.FIELD_CHRONIC_SICK_15]) chronicSicks.push({name: constants.FIELD_CHRONIC_SICK_15, description: values[constants.FIELD_CHRONIC_SICK_15_DESC]});
+    return chronicSicks;
+  })();
   return (
     <div className="view view__registration-summary">
       <Banner background={Background}>
@@ -67,66 +60,13 @@ const Summary = () => {
           <img src={UserImg} alt="Avatar" />
           <h5 className="big">Podsumujmy:</h5>
         </div>
-        <div className="content">
-          <p className="big text-bold">
-            <span>Płeć:</span> {tSex[values[FIELD_SEX]]}
-          </p>
-          <p className="big text-bold">
-            <span>Wiek:</span> {values[FIELD_AGE]}
-          </p>
-          <p className="big text-bold">Dolegliwości:</p>
-          <ul data-empty="Brak przewlekłych chorób">
-            {values[FIELD_CHRONIC_SICK_1] && (
-              <li>
-                <p className="medium-2">{`${FIELD_CHRONIC_SICK_1} ${values[FIELD_CHRONIC_SICK_1_DESC]}`}</p>
-              </li>
-            )}
-            {values[FIELD_CHRONIC_SICK_2] && (
-              <li>
-                <p className="medium-2">{`${FIELD_CHRONIC_SICK_2} ${values[FIELD_CHRONIC_SICK_2_DESC]}`}</p>
-              </li>
-            )}
-            {values[FIELD_CHRONIC_SICK_3] && (
-              <li>
-                <p className="medium-2">{`${FIELD_CHRONIC_SICK_3} ${values[FIELD_CHRONIC_SICK_3_DESC]}`}</p>
-              </li>
-            )}
-            {values[FIELD_CHRONIC_SICK_4] && (
-              <li>
-                <p className="medium-2">{`${FIELD_CHRONIC_SICK_4} ${values[FIELD_CHRONIC_SICK_4_DESC]}`}</p>
-              </li>
-            )}
-            {values[FIELD_CHRONIC_SICK_5] && (
-              <li>
-                <p className="medium-2">{`${FIELD_CHRONIC_SICK_5} ${values[FIELD_CHRONIC_SICK_5_DESC]}`}</p>
-              </li>
-            )}
-            {values[FIELD_CHRONIC_SICK_6] && (
-              <li>
-                <p className="medium-2">{`${FIELD_CHRONIC_SICK_6} ${values[FIELD_CHRONIC_SICK_6_DESC]}`}</p>
-              </li>
-            )}
-            {values[FIELD_CHRONIC_SICK_7] && (
-              <li>
-                <p className="medium-2">{`${FIELD_CHRONIC_SICK_7} ${values[FIELD_CHRONIC_SICK_7_DESC]}`}</p>
-              </li>
-            )}
-          </ul>
-          <p className="big text-bold">
-            <span>Grupa krwi:</span> {values[FIELD_BLOOD_GROUP]}
-          </p>
-          <p className="big text-bold">
-            <span>Papierosy:</span> {values[FIELD_SMOKE]}
-          </p>
-          {values[FIELD_SMOKE] === VALUE_SMOKE_YES && (
-            <ul>
-              <li>
-                <p className="medium-2">{values[FIELD_SMOKE_NUMBER]}</p>
-              </li>
-            </ul>
-          )}
-        </div>
-
+        <Imprint
+          smokeNumber={values[constants.FIELD_SMOKE_NUMBER]}
+          sex={values[constants.FIELD_SEX]}
+          bloodGroup={values[constants.FIELD_BLOOD_GROUP]}
+          age={values[constants.FIELD_AGE]}
+          chronicSicks={chronicSicks}
+        />
         <FieldSet>
           <Button onClick={handleSubmit} text="Zapisz metrykę" />
         </FieldSet>

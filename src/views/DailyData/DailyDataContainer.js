@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import { useHistory, useParams } from 'react-router-dom';
 import moment from 'moment';
 import { useDispatch, useSelector } from 'react-redux';
@@ -16,6 +16,7 @@ import {
   VALUE_SYMPTOM_LEVEL_1
 } from '../../constants';
 import { addDaily } from '../../store/actions/daily';
+import { Imprint } from '../Imprint';
 
 const dateFormat = 'D-MM-YYYY';
 
@@ -23,6 +24,9 @@ const DailyDataContainer = () => {
   const history = useHistory();
   const dispatch = useDispatch();
   const daily = useSelector(state => state.daily);
+  const { age, bloodGroup, chronicSicks, sex, smokeNumber } = useSelector(
+    state => state.user
+  );
   const { id } = useParams();
 
   const goBack = () => history.push('/daily');
@@ -55,13 +59,22 @@ const DailyDataContainer = () => {
   };
 
   return (
-    <Formik
-      initialValues={initialValues}
-      onSubmit={handleSubmit}
-      validationSchema={validationSchema}
-    >
-      <DailyData onBack={goBack} isViewMode={!!dailyData} date={date} />
-    </Formik>
+    <Fragment>
+      <Formik
+        initialValues={initialValues}
+        onSubmit={handleSubmit}
+        validationSchema={validationSchema}
+      >
+        <DailyData onBack={goBack} isViewMode={!!dailyData} date={date} />
+      </Formik>
+      <Imprint
+        age={age}
+        bloodGroup={bloodGroup}
+        chronicSicks={chronicSicks}
+        sex={sex}
+        smokeNumber={smokeNumber}
+      />
+    </Fragment>
   );
 };
 
