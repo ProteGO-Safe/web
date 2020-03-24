@@ -12,9 +12,11 @@ import { itemsPropType } from '../../prop-types';
 const GroupMultiple = ({ text, items }) => {
   const { setFieldValue, values, submitForm } = useFormikContext();
   const [otherSelected, setOtherSelected] = useState(false);
+  const [someSelected, setSomeSelected] = useState(false);
 
   const handleChange = itemId => {
     setOtherSelected(false);
+    setSomeSelected(true);
     if (values[itemId] === VALUE_PRESENT) {
       setFieldValue(itemId, VALUE_ABSENT);
       return;
@@ -27,6 +29,7 @@ const GroupMultiple = ({ text, items }) => {
 
   const handelSelectOther = () => {
     setOtherSelected(true);
+    setSomeSelected(true);
     items.forEach(item => setFieldValue(item.id, VALUE_ABSENT));
   };
 
@@ -56,6 +59,7 @@ const GroupMultiple = ({ text, items }) => {
         />
       </FieldSet>
       <Button
+        disabled={!someSelected}
         height="small"
         onClick={submitForm}
         icon={Icon}
