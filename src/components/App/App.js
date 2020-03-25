@@ -38,7 +38,7 @@ function App() {
       <div className="app__inner">
         <Switch>
           <Route exact path="/" component={name ? Home : Registration} />
-          <Route exact path="/install" component={InstallApp} />
+          {!name && <Route exact path="/install" component={InstallApp} />}
           {name && (
             <>
               <Route exact path="/daily" component={Daily} />
