@@ -1,0 +1,29 @@
+@import '../../assets/styles/colors';
+
+.imprint {
+  p {
+    display: flex;
+    align-items: center;
+    margin-top: 13px;
+
+    span {
+      width: 60%;
+      max-width: 180px;
+    }
+  }
+
+  ul {
+    padding-left: 20px;
+    margin: 7px 0;
+
+    &:empty {
+      &:after {
+        display: list-item;
+        font-size: 16px;
+        line-height: 21px;
+        content: attr(data-empty);
+        color: $black;
+      }
+    }
+  }
+}

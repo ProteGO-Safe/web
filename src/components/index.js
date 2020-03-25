@@ -6,6 +6,7 @@ export { Button } from './Button';
 export { Checkbox } from './Checkbox';
 export { Container } from './Container';
 export { FieldSet } from './FieldSet';
+export { Imprint } from './Imprint';
 export { Input } from './Input';
 export { Loader } from './Loader';
 export { Menu } from './Menu';

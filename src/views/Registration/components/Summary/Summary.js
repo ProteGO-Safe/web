@@ -8,40 +8,26 @@ import {
   Container,
   FieldSet
 } from '../../../../components';
+import Imprint from '../../../../components/Imprint/Imprint';
 import AngleLeftIcon from '../../../../assets/img/icons/angle-left.svg';
 import UserImg from '../../../../assets/img/icons/user.svg';
 import {
+  chronicSickValues,
   FIELD_AGE,
   FIELD_BLOOD_GROUP,
-  FIELD_CHRONIC_SICK_1,
-  FIELD_CHRONIC_SICK_1_DESC,
-  FIELD_CHRONIC_SICK_2,
-  FIELD_CHRONIC_SICK_2_DESC,
-  FIELD_CHRONIC_SICK_3,
-  FIELD_CHRONIC_SICK_3_DESC,
-  FIELD_CHRONIC_SICK_4,
-  FIELD_CHRONIC_SICK_4_DESC,
-  FIELD_CHRONIC_SICK_5,
-  FIELD_CHRONIC_SICK_5_DESC,
-  FIELD_CHRONIC_SICK_6,
-  FIELD_CHRONIC_SICK_6_DESC,
-  FIELD_CHRONIC_SICK_7,
-  FIELD_CHRONIC_SICK_7_DESC,
   FIELD_SEX,
-  FIELD_SMOKE,
-  FIELD_SMOKE_NUMBER,
-  VALUE_MAN,
-  VALUE_SMOKE_YES,
-  VALUE_WOMAN
+  FIELD_SMOKE_NUMBER
 } from '../../../../constants';
-
-const tSex = {
-  [VALUE_MAN]: 'Mężczyzna',
-  [VALUE_WOMAN]: 'Kobieta'
-};
 
 const Summary = () => {
   const { handleSubmit, resetForm, values } = useFormikContext();
+
+  const chronicSicks = chronicSickValues
+    .filter(sick => values[sick.field])
+    .map(sick => {
+      return { name: sick.field, description: values[sick.description] };
+    });
+
   return (
     <div className="view view__registration-summary">
       <Banner background={Background}>
@@ -67,66 +53,15 @@ const Summary = () => {
           <img src={UserImg} alt="Avatar" />
           <h5 className="big">Podsumujmy:</h5>
         </div>
-        <div className="content">
-          <p className="big text-bold">
-            <span>Płeć:</span> {tSex[values[FIELD_SEX]]}
-          </p>
-          <p className="big text-bold">
-            <span>Wiek:</span> {values[FIELD_AGE]}
-          </p>
-          <p className="big text-bold">Dolegliwości:</p>
-          <ul data-empty="Brak przewlekłych chorób">
-            {values[FIELD_CHRONIC_SICK_1] && (
-              <li>
-                <p className="medium-2">{`${FIELD_CHRONIC_SICK_1} ${values[FIELD_CHRONIC_SICK_1_DESC]}`}</p>
-              </li>
-            )}
-            {values[FIELD_CHRONIC_SICK_2] && (
-              <li>
-                <p className="medium-2">{`${FIELD_CHRONIC_SICK_2} ${values[FIELD_CHRONIC_SICK_2_DESC]}`}</p>
-              </li>
-            )}
-            {values[FIELD_CHRONIC_SICK_3] && (
-              <li>
-                <p className="medium-2">{`${FIELD_CHRONIC_SICK_3} ${values[FIELD_CHRONIC_SICK_3_DESC]}`}</p>
-              </li>
-            )}
-            {values[FIELD_CHRONIC_SICK_4] && (
-              <li>
-                <p className="medium-2">{`${FIELD_CHRONIC_SICK_4} ${values[FIELD_CHRONIC_SICK_4_DESC]}`}</p>
-              </li>
-            )}
-            {values[FIELD_CHRONIC_SICK_5] && (
-              <li>
-                <p className="medium-2">{`${FIELD_CHRONIC_SICK_5} ${values[FIELD_CHRONIC_SICK_5_DESC]}`}</p>
-              </li>
-            )}
-            {values[FIELD_CHRONIC_SICK_6] && (
-              <li>
-                <p className="medium-2">{`${FIELD_CHRONIC_SICK_6} ${values[FIELD_CHRONIC_SICK_6_DESC]}`}</p>
-              </li>
-            )}
-            {values[FIELD_CHRONIC_SICK_7] && (
-              <li>
-                <p className="medium-2">{`${FIELD_CHRONIC_SICK_7} ${values[FIELD_CHRONIC_SICK_7_DESC]}`}</p>
-              </li>
-            )}
-          </ul>
-          <p className="big text-bold">
-            <span>Grupa krwi:</span> {values[FIELD_BLOOD_GROUP]}
-          </p>
-          <p className="big text-bold">
-            <span>Papierosy:</span> {values[FIELD_SMOKE]}
-          </p>
-          {values[FIELD_SMOKE] === VALUE_SMOKE_YES && (
-            <ul>
-              <li>
-                <p className="medium-2">{values[FIELD_SMOKE_NUMBER]}</p>
-              </li>
-            </ul>
-          )}
-        </div>
-
+        <Imprint
+          user={{
+            age: values[FIELD_AGE],
+            bloodGroup: values[FIELD_BLOOD_GROUP],
+            chronicSicks,
+            sex: values[FIELD_SEX],
+            smokeNumber: values[FIELD_SMOKE_NUMBER]
+          }}
+        />
         <FieldSet>
           <Button onClick={handleSubmit} text="Zapisz metrykę" />
         </FieldSet>
