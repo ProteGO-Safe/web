@@ -85,11 +85,12 @@ const Step1 = () => {
           checked={values.term2}
           description={
             <div>
-              Wyrażam zgodę na przetwarzanie przez Tytani24 sp. z o.o. danych
-              dotyczących zdrowia w celu korzystania z aplikacji SafeSafe, która
-              umożliwia profilaktykę i zapobieganie zarażeniem wirusem
-              SARS-CoV-2. Szczegóły na temat tego jak przetwarzamy Twoje dane
-              osobowe znajdziesz w{' '}
+              Zdaję sobie sprawę, że umieszczenie w SafeSafe informacji
+              dotyczących mojego stanu zdrowia oznacza wyrażenie zgody na
+              przetwarzanie moich danych dotyczących zdrowia przez Tytani24 Sp.
+              z o.o. w celu korzystania z niektórych funkcji SafeSafe, w
+              szczególności analizy ryzyka zarażenia wirusem SARS-CoV-2.
+              Szczegóły dotyczące przetwarzania moich danych mogę odnaleźć w{' '}
               <span
                 onClick={() => openModal(<PrivacyPolicyContent />)}
                 role="button"
