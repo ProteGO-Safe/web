@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
 import { useFormikContext } from 'formik';
 import {
-  InstallApp,
   Step1,
   Step2,
   Step3,
@@ -23,7 +22,6 @@ import Banner7 from '../../assets/img/banners/banner-7.png';
 
 const banners = {
   1: Banner1,
-  install_app: Banner1,
   2: Banner2,
   3: Banner3,
   4: Banner4,
@@ -43,27 +41,24 @@ const Registration = () => {
     }
   }, [step]);
 
-  switch (step) {
-    case 'install_app':
-      return <InstallApp />;
-    case 8:
-      return <Summary />;
-    default:
-      return (
-        <div className="view view__registration">
-          <div className={`registration registration__step--${step}`}>
-            <Banner background={banners[step]} size="small" />
-            {step === 1 && <Step1 />}
-            {step === 2 && <Step2 />}
-            {step === 3 && <Step3 />}
-            {step === 4 && <Step4 />}
-            {step === 5 && <Step5 />}
-            {step === 6 && <Step6 />}
-            {step === 7 && <Step7 />}
-          </div>
-        </div>
-      );
+  if (step === 8) {
+    return <Summary />;
   }
+
+  return (
+    <div className="view view__registration">
+      <div className={`registration registration__step--${step}`}>
+        <Banner background={banners[step]} size="small" />
+        {step === 1 && <Step1 />}
+        {step === 2 && <Step2 />}
+        {step === 3 && <Step3 />}
+        {step === 4 && <Step4 />}
+        {step === 5 && <Step5 />}
+        {step === 6 && <Step6 />}
+        {step === 7 && <Step7 />}
+      </div>
+    </div>
+  );
 };
 
 export default Registration;
