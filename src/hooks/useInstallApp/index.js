@@ -21,6 +21,7 @@ const useInstallApp = () => {
         system
       }
     });
+    // eslint-disable-next-line
   }, []);
 };
 
