@@ -9,11 +9,12 @@ import { ANDROID, IOS } from '../../constants';
 const InstallApp = () => {
   const history = useHistory();
   const location = useLocation();
-  const { system } = location.state;
 
-  if (!system) {
+  if (!location.state || !location.state.system) {
     return <Redirect to="/" />;
   }
+
+  const { system } = location.state;
 
   const handleClick = () => {
     switch (system) {
