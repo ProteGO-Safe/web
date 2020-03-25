@@ -7,9 +7,12 @@ import { saveUser } from '../../store/actions/user';
 import * as constants from '../../constants';
 import Registration from './Registration';
 import { chronicSickValues } from '../../constants';
+import useInstallApp from '../../hooks/useInstallApp';
 
 const RegistrationContainer = () => {
   const dispatch = useDispatch();
+
+  useInstallApp();
 
   const initialValues = {
     [constants.FIELD_AGE]: '',
