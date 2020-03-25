@@ -16,7 +16,6 @@ const RegistrationContainer = () => {
     [constants.FIELD_SEX]: '',
     [constants.FIELD_NAME]: '',
     [constants.FIELD_BLOOD_GROUP]: '',
-    installApp: true,
     step: 1,
     term1: false,
     term2: false
