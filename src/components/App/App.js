@@ -9,6 +9,7 @@ import {
   Diagnosis,
   Home,
   HowItWorks,
+  InstallApp,
   RiskTest,
   RiskInformation,
   Numbers,
@@ -43,6 +44,7 @@ function App() {
               <Route exact path="/daily/:id" component={DailyData} />
               <Route exact path="/daily-data" component={DailyData} />
               <Route exact path="/how-it-works" component={HowItWorks} />
+              <Route exact path="/install" component={InstallApp} />
               <Route exact path="/risk-test" component={RiskTest} />
               <Route exact path="/risk-test-data/:id" component={RiskTestData} />
               <Route exact path="/risk-information" component={RiskInformation} />
