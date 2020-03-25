@@ -25,4 +25,25 @@
       }
     }
   }
+
+  .container {
+    display: grid;
+    grid-template-areas: "user" "content";
+    grid-template-rows: 48px 1fr;
+    grid-area: container;
+    align-items: baseline;
+    padding: 30px 0;
+
+    .user {
+      grid-area: user;
+      align-self: end;
+      justify-self: start;
+      display: flex;
+      align-items: center;
+
+      img {
+        margin-right: 15px;
+      }
+    }
+  }
 }

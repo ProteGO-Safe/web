@@ -6,12 +6,12 @@ import {
   Brand,
   Button,
   Container,
-  FieldSet
+  FieldSet,
+  Imprint
 } from '../../../../components';
 import AngleLeftIcon from '../../../../assets/img/icons/angle-left.svg';
 import UserImg from '../../../../assets/img/icons/user.svg';
 import * as constants from '../../../../constants';
-import { Imprint } from '../../../Imprint';
 
 const Summary = () => {
   const { handleSubmit, resetForm, values } = useFormikContext();

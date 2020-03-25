@@ -17,7 +17,8 @@ import {
   Registration,
   Regulations,
   RiskTestData,
-  UserData, UserDataSettings
+  UserData,
+  UserDataSettings
 } from '../../views';
 
 import { Menu } from '../Menu';
