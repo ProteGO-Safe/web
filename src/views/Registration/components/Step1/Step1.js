@@ -12,7 +12,6 @@ import { FIELD_NAME } from '../../../../constants';
 import Icon from '../../../../assets/img/icons/angle-right.svg';
 
 import './Step1.scss';
-import getMobileOperatingSystem from '../../../../services/getMobileOperationSystem';
 import useModalContext from '../../../../hooks/useModalContext';
 import PrivacyPolicyContent from '../../../PrivacyPolicyDetails/component/PrivacyPolicyContent/PrivacyPolicyContent';
 import RegulationsContent from '../../../Regulations/component/RegulationsContent/RegulationsContent';
@@ -21,12 +20,7 @@ const Step1 = () => {
   const { handleChange, setFieldValue, values } = useFormikContext();
   const { openModal } = useModalContext();
 
-  const handleClick = () => {
-    const system = getMobileOperatingSystem();
-    const { installApp } = values;
-
-    setFieldValue('step', system && installApp ? 'install_app' : 2);
-  };
+  const handleClick = () => setFieldValue('step', 2);
 
   const disabled = !values.name || !values.term1 || !values.term2;
 
