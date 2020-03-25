@@ -13,16 +13,32 @@
 
   .container {
     display: grid;
-    grid-template-areas: 'title' 'content';
-    grid-template-rows: 50px 1fr;
+    grid-template-areas: 'brand' 'content' 'buttons';
+    grid-template-rows: 165px min-content auto ;
     grid-area: container;
     align-items: baseline;
-    padding: 30px 0;
+    padding: 30px 0 20px;
 
-    .top {
-      padding-top: 100px;
-      font-size: 16px;
-      color: $primary_1;
+    .brand {
+      grid-area: brand;
+      margin: 0;
+    }
+
+    .content {
+      grid-area: content;
+      margin-bottom: 55px;
+
+      .title {
+        margin-bottom: 10px;
+      }
+
+      .p1 {
+        margin-bottom: 15px;
+      }
+    }
+
+    .fieldset {
+      grid-area: buttons;
     }
   }
 }

@@ -4,7 +4,6 @@ import getMobileOperatingSystem from '../../../../services/getMobileOperationSys
 import { ANDROID, IOS } from '../../../../constants';
 import InstallAppAndroid from './InstallAppAndroid';
 import InstallAppIos from './InstallAppIos';
-import './InstallApp.scss';
 
 const InstallAppContainer = () => {
   const system = getMobileOperatingSystem();

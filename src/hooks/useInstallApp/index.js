@@ -13,9 +13,7 @@ const useInstallApp = () => {
 
     const isPWA = checkPWA();
 
-    if (!isPWA) return undefined;
-
-    console.warn('history push');
+    if (isPWA) return undefined;
 
     history.push({
       pathname: '/install',
