@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { useFormikContext } from 'formik';
 
 import Background from '../../assets/img/banners/banner-1.png';
-import { Button, Container, FieldSet } from '../../components';
+import { Button, Container, FieldSet, Imprint } from '../../components';
 import { Header } from '../components';
 import { Form } from './components';
 import './DailyData.scss';
@@ -18,6 +18,7 @@ const DailyData = ({ date, isViewMode }) => {
         <h4 className="title medium">Dziennik zdrowia</h4>
         <p className="date medium">{date}</p>
         <Form isViewMode={isViewMode} />
+        <Imprint />
       </Container>
       <div className="footer">
         <Container className="container__footer">
