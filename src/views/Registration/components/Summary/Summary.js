@@ -11,90 +11,23 @@ import {
 import Imprint from '../../../../components/Imprint/Imprint';
 import AngleLeftIcon from '../../../../assets/img/icons/angle-left.svg';
 import UserImg from '../../../../assets/img/icons/user.svg';
-import * as constants from '../../../../constants';
+import {
+  chronicSickValues,
+  FIELD_AGE,
+  FIELD_BLOOD_GROUP,
+  FIELD_SEX,
+  FIELD_SMOKE_NUMBER
+} from '../../../../constants';
 
 const Summary = () => {
   const { handleSubmit, resetForm, values } = useFormikContext();
 
-  const chronicSicks = (() => {
-    const chronicSicks = [];
-    if (values[constants.FIELD_CHRONIC_SICK_1])
-      chronicSicks.push({
-        name: constants.FIELD_CHRONIC_SICK_1,
-        description: values[constants.FIELD_CHRONIC_SICK_1_DESC]
-      });
-    if (values[constants.FIELD_CHRONIC_SICK_2])
-      chronicSicks.push({
-        name: constants.FIELD_CHRONIC_SICK_2,
-        description: values[constants.FIELD_CHRONIC_SICK_2_DESC]
-      });
-    if (values[constants.FIELD_CHRONIC_SICK_3])
-      chronicSicks.push({
-        name: constants.FIELD_CHRONIC_SICK_3,
-        description: values[constants.FIELD_CHRONIC_SICK_3_DESC]
-      });
-    if (values[constants.FIELD_CHRONIC_SICK_4])
-      chronicSicks.push({
-        name: constants.FIELD_CHRONIC_SICK_4,
-        description: values[constants.FIELD_CHRONIC_SICK_4_DESC]
-      });
-    if (values[constants.FIELD_CHRONIC_SICK_5])
-      chronicSicks.push({
-        name: constants.FIELD_CHRONIC_SICK_5,
-        description: values[constants.FIELD_CHRONIC_SICK_5_DESC]
-      });
-    if (values[constants.FIELD_CHRONIC_SICK_6])
-      chronicSicks.push({
-        name: constants.FIELD_CHRONIC_SICK_6,
-        description: values[constants.FIELD_CHRONIC_SICK_6_DESC]
-      });
-    if (values[constants.FIELD_CHRONIC_SICK_7])
-      chronicSicks.push({
-        name: constants.FIELD_CHRONIC_SICK_7,
-        description: values[constants.FIELD_CHRONIC_SICK_7_DESC]
-      });
-    if (values[constants.FIELD_CHRONIC_SICK_8])
-      chronicSicks.push({
-        name: constants.FIELD_CHRONIC_SICK_8,
-        description: values[constants.FIELD_CHRONIC_SICK_8_DESC]
-      });
-    if (values[constants.FIELD_CHRONIC_SICK_9])
-      chronicSicks.push({
-        name: constants.FIELD_CHRONIC_SICK_9,
-        description: values[constants.FIELD_CHRONIC_SICK_9_DESC]
-      });
-    if (values[constants.FIELD_CHRONIC_SICK_10])
-      chronicSicks.push({
-        name: constants.FIELD_CHRONIC_SICK_10,
-        description: values[constants.FIELD_CHRONIC_SICK_10_DESC]
-      });
-    if (values[constants.FIELD_CHRONIC_SICK_11])
-      chronicSicks.push({
-        name: constants.FIELD_CHRONIC_SICK_11,
-        description: values[constants.FIELD_CHRONIC_SICK_11_DESC]
-      });
-    if (values[constants.FIELD_CHRONIC_SICK_12])
-      chronicSicks.push({
-        name: constants.FIELD_CHRONIC_SICK_12,
-        description: values[constants.FIELD_CHRONIC_SICK_12_DESC]
-      });
-    if (values[constants.FIELD_CHRONIC_SICK_13])
-      chronicSicks.push({
-        name: constants.FIELD_CHRONIC_SICK_13,
-        description: values[constants.FIELD_CHRONIC_SICK_13_DESC]
-      });
-    if (values[constants.FIELD_CHRONIC_SICK_14])
-      chronicSicks.push({
-        name: constants.FIELD_CHRONIC_SICK_14,
-        description: values[constants.FIELD_CHRONIC_SICK_14_DESC]
-      });
-    if (values[constants.FIELD_CHRONIC_SICK_15])
-      chronicSicks.push({
-        name: constants.FIELD_CHRONIC_SICK_15,
-        description: values[constants.FIELD_CHRONIC_SICK_15_DESC]
-      });
-    return chronicSicks;
-  })();
+  const chronicSicks = chronicSickValues
+    .filter(sick => values[sick.field])
+    .map(sick => {
+      return { name: sick.field, description: values[sick.description] };
+    });
+
   return (
     <div className="view view__registration-summary">
       <Banner background={Background}>
@@ -122,11 +55,11 @@ const Summary = () => {
         </div>
         <Imprint
           user={{
-            age: values[constants.FIELD_AGE],
-            bloodGroup: values[constants.FIELD_BLOOD_GROUP],
+            age: values[FIELD_AGE],
+            bloodGroup: values[FIELD_BLOOD_GROUP],
             chronicSicks,
-            sex: values[constants.FIELD_SEX],
-            smokeNumber: values[constants.FIELD_SMOKE_NUMBER]
+            sex: values[FIELD_SEX],
+            smokeNumber: values[FIELD_SMOKE_NUMBER]
           }}
         />
         <FieldSet>

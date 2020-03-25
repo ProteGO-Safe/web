@@ -29,7 +29,9 @@ const Imprint = ({ user }) => {
       <ul data-empty="Brak przewlekłych chorób">
         {chronicSicks.map(sick => (
           <li key={sick.name}>
-            <p className="medium-2">{`${sick.name} ${sick.description}`}</p>
+            <p className="medium-2">{`${sick.name} ${
+              sick.description ? sick.description : ''
+            }`}</p>
           </li>
         ))}
       </ul>
@@ -52,7 +54,7 @@ const Imprint = ({ user }) => {
 
 Imprint.propTypes = {
   user: PropTypes.shape({
-    age: PropTypes.string.isRequired,
+    age: PropTypes.number.isRequired,
     bloodGroup: PropTypes.string.isRequired,
     chronicSicks: PropTypes.arrayOf(
       PropTypes.shape({
@@ -61,7 +63,7 @@ Imprint.propTypes = {
       })
     ),
     sex: PropTypes.oneOf([VALUE_MAN, VALUE_WOMAN]),
-    smokeNumber: PropTypes.string.isRequired
+    smokeNumber: PropTypes.string
   }).isRequired
 };
 

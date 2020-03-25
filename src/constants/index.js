@@ -1,46 +1,105 @@
 export const FIELD_AGE = 'age';
 export const FIELD_SEX = 'sex';
 export const FIELD_NAME = 'name';
-export const FIELD_CHRONIC_SICK_1 = 'nadciśnienie tętnicze';
-export const FIELD_CHRONIC_SICK_1_PH = 'jak długo? podać w latach z dokładnością do 0.25 roku';
-export const FIELD_CHRONIC_SICK_2 = 'przewlekłe choroby układu oddechowego';
-export const FIELD_CHRONIC_SICK_2_PH = 'proszę wpisać jakie';
-export const FIELD_CHRONIC_SICK_3 = 'choroby układu krążenia - choroba niedokrwienna serca';
-export const FIELD_CHRONIC_SICK_4 = 'choroby układu krążenia - wady zastawkowe serca';
-export const FIELD_CHRONIC_SICK_5 = 'choroby układu krążenia - niewydolność serca';
-export const FIELD_CHRONIC_SICK_6 = 'choroby układu krążenia - inne';
-export const FIELD_CHRONIC_SICK_6_PH = 'proszę wpisać jakie';
-export const FIELD_CHRONIC_SICK_7 = 'cukrzyca - insulinozależna';
-export const FIELD_CHRONIC_SICK_8 = 'cukrzyca - insulinoniezależna';
-export const FIELD_CHRONIC_SICK_9 = 'choroby układu immunologicznego';
-export const FIELD_CHRONIC_SICK_9_PH = 'proszę wpisać jakie';
-export const FIELD_CHRONIC_SICK_10 = 'stosowanie leków obniżających odporność (immunosupresyjnych)';
-export const FIELD_CHRONIC_SICK_10_PH = 'proszę wpisać jakie';
-export const FIELD_CHRONIC_SICK_11 = 'choroby onkologiczne';
-export const FIELD_CHRONIC_SICK_11_PH = 'proszę wpisać jakie podać w latach z dokładnością do 0.25 roku';
-export const FIELD_CHRONIC_SICK_12 = 'nietolerancje/alergie/nadwrażliwość na leki';
-export const FIELD_CHRONIC_SICK_12_PH = 'proszę wpisać jakie podać w latach z dokładnością do <=1 , <3, <5, <10 <15 lub więcej niż 15 >lat';
-export const FIELD_CHRONIC_SICK_13 = 'nietolerancje/alergie - pokarmowe';
-export const FIELD_CHRONIC_SICK_13_PH = 'proszę wpisać jakie';
-export const FIELD_CHRONIC_SICK_14 = 'nietolerancje/alergie - oddechowe';
-export const FIELD_CHRONIC_SICK_14_PH = 'proszę wpisać jakie';
-export const FIELD_CHRONIC_SICK_15 = 'nietolerancje/alergie - inne';
-export const FIELD_CHRONIC_SICK_15_PH = 'proszę wpisać jakie';
-export const FIELD_CHRONIC_SICK_1_DESC = 'chronic_sick_1_desc';
-export const FIELD_CHRONIC_SICK_2_DESC = 'chronic_sick_2_desc';
-export const FIELD_CHRONIC_SICK_3_DESC = 'chronic_sick_3_desc';
-export const FIELD_CHRONIC_SICK_4_DESC = 'chronic_sick_4_desc';
-export const FIELD_CHRONIC_SICK_5_DESC = 'chronic_sick_5_desc';
-export const FIELD_CHRONIC_SICK_6_DESC = 'chronic_sick_6_desc';
-export const FIELD_CHRONIC_SICK_7_DESC = 'chronic_sick_8_desc';
-export const FIELD_CHRONIC_SICK_8_DESC = 'chronic_sick_9_desc';
-export const FIELD_CHRONIC_SICK_9_DESC = 'chronic_sick_10_desc';
-export const FIELD_CHRONIC_SICK_10_DESC = 'chronic_sick_11_desc';
-export const FIELD_CHRONIC_SICK_11_DESC = 'chronic_sick_12_desc';
-export const FIELD_CHRONIC_SICK_12_DESC = 'chronic_sick_13_desc';
-export const FIELD_CHRONIC_SICK_13_DESC = 'chronic_sick_14_desc';
-export const FIELD_CHRONIC_SICK_14_DESC = 'chronic_sick_15_desc';
-export const FIELD_CHRONIC_SICK_15_DESC = 'chronic_sick_16_desc';
+const FIELD_CHRONIC_SICK_1 = 'nadciśnienie tętnicze';
+const FIELD_CHRONIC_SICK_1_PH = 'jak długo? podać w latach z dokładnością do 0.25 roku';
+const FIELD_CHRONIC_SICK_2 = 'przewlekłe choroby układu oddechowego';
+const FIELD_CHRONIC_SICK_2_PH = 'proszę wpisać jakie';
+const FIELD_CHRONIC_SICK_3 = 'choroby układu krążenia - choroba niedokrwienna serca';
+const FIELD_CHRONIC_SICK_4 = 'choroby układu krążenia - wady zastawkowe serca';
+const FIELD_CHRONIC_SICK_5 = 'choroby układu krążenia - niewydolność serca';
+const FIELD_CHRONIC_SICK_6 = 'choroby układu krążenia - inne';
+const FIELD_CHRONIC_SICK_6_PH = 'proszę wpisać jakie';
+const FIELD_CHRONIC_SICK_7 = 'cukrzyca - insulinozależna';
+const FIELD_CHRONIC_SICK_8 = 'cukrzyca - insulinoniezależna';
+const FIELD_CHRONIC_SICK_9 = 'choroby układu immunologicznego';
+const FIELD_CHRONIC_SICK_9_PH = 'proszę wpisać jakie';
+const FIELD_CHRONIC_SICK_10 = 'stosowanie leków obniżających odporność (immunosupresyjnych)';
+const FIELD_CHRONIC_SICK_10_PH = 'proszę wpisać jakie';
+const FIELD_CHRONIC_SICK_11 = 'choroby onkologiczne';
+const FIELD_CHRONIC_SICK_11_PH = 'proszę wpisać jakie podać w latach z dokładnością do 0.25 roku';
+const FIELD_CHRONIC_SICK_12 = 'nietolerancje/alergie/nadwrażliwość na leki';
+const FIELD_CHRONIC_SICK_12_PH = 'proszę wpisać jakie podać w latach z dokładnością do <=1 , <3, <5, <10 <15 lub więcej niż 15 >lat';
+const FIELD_CHRONIC_SICK_13 = 'nietolerancje/alergie - pokarmowe';
+const FIELD_CHRONIC_SICK_13_PH = 'proszę wpisać jakie';
+const FIELD_CHRONIC_SICK_14 = 'nietolerancje/alergie - oddechowe';
+const FIELD_CHRONIC_SICK_14_PH = 'proszę wpisać jakie';
+const FIELD_CHRONIC_SICK_15 = 'nietolerancje/alergie - inne';
+const FIELD_CHRONIC_SICK_15_PH = 'proszę wpisać jakie';
+const FIELD_CHRONIC_SICK_1_DESC = 'chronic_sick_1_desc';
+const FIELD_CHRONIC_SICK_2_DESC = 'chronic_sick_2_desc';
+const FIELD_CHRONIC_SICK_3_DESC = 'chronic_sick_3_desc';
+const FIELD_CHRONIC_SICK_4_DESC = 'chronic_sick_4_desc';
+const FIELD_CHRONIC_SICK_5_DESC = 'chronic_sick_5_desc';
+const FIELD_CHRONIC_SICK_6_DESC = 'chronic_sick_6_desc';
+const FIELD_CHRONIC_SICK_7_DESC = 'chronic_sick_7_desc';
+const FIELD_CHRONIC_SICK_8_DESC = 'chronic_sick_8_desc';
+const FIELD_CHRONIC_SICK_9_DESC = 'chronic_sick_9_desc';
+const FIELD_CHRONIC_SICK_10_DESC = 'chronic_sick_10_desc';
+const FIELD_CHRONIC_SICK_11_DESC = 'chronic_sick_11_desc';
+const FIELD_CHRONIC_SICK_12_DESC = 'chronic_sick_12_desc';
+const FIELD_CHRONIC_SICK_13_DESC = 'chronic_sick_13_desc';
+const FIELD_CHRONIC_SICK_14_DESC = 'chronic_sick_14_desc';
+const FIELD_CHRONIC_SICK_15_DESC = 'chronic_sick_15_desc';
+
+export const chronicSickValues = [
+  {
+    field: FIELD_CHRONIC_SICK_1,
+    description: FIELD_CHRONIC_SICK_1_DESC,
+    placeholder: FIELD_CHRONIC_SICK_1_PH
+  },
+  {
+    field: FIELD_CHRONIC_SICK_2,
+    description: FIELD_CHRONIC_SICK_2_DESC,
+    placeholder: FIELD_CHRONIC_SICK_2_PH
+  },
+  { field: FIELD_CHRONIC_SICK_3, description: FIELD_CHRONIC_SICK_3_DESC },
+  { field: FIELD_CHRONIC_SICK_4, description: FIELD_CHRONIC_SICK_4_DESC },
+  { field: FIELD_CHRONIC_SICK_5, description: FIELD_CHRONIC_SICK_5_DESC },
+  {
+    field: FIELD_CHRONIC_SICK_6,
+    description: FIELD_CHRONIC_SICK_6_DESC,
+    placeholder: FIELD_CHRONIC_SICK_6_PH
+  },
+  { field: FIELD_CHRONIC_SICK_7, description: FIELD_CHRONIC_SICK_7_DESC },
+  { field: FIELD_CHRONIC_SICK_8, description: FIELD_CHRONIC_SICK_8_DESC },
+  {
+    field: FIELD_CHRONIC_SICK_9,
+    description: FIELD_CHRONIC_SICK_9_DESC,
+    placeholder: FIELD_CHRONIC_SICK_9_PH
+  },
+  {
+    field: FIELD_CHRONIC_SICK_10,
+    description: FIELD_CHRONIC_SICK_10_DESC,
+    placeholder: FIELD_CHRONIC_SICK_10_PH
+  },
+  {
+    field: FIELD_CHRONIC_SICK_11,
+    description: FIELD_CHRONIC_SICK_11_DESC,
+    placeholder: FIELD_CHRONIC_SICK_11_PH
+  },
+  {
+    field: FIELD_CHRONIC_SICK_12,
+    description: FIELD_CHRONIC_SICK_12_DESC,
+    placeholder: FIELD_CHRONIC_SICK_12_PH
+  },
+  {
+    field: FIELD_CHRONIC_SICK_13,
+    description: FIELD_CHRONIC_SICK_13_DESC,
+    placeholder: FIELD_CHRONIC_SICK_13_PH
+  },
+  {
+    field: FIELD_CHRONIC_SICK_14,
+    description: FIELD_CHRONIC_SICK_14_DESC,
+    placeholder: FIELD_CHRONIC_SICK_14_PH
+  },
+  {
+    field: FIELD_CHRONIC_SICK_15,
+    description: FIELD_CHRONIC_SICK_15_DESC,
+    placeholder: FIELD_CHRONIC_SICK_15_PH
+  }
+];
+
 export const FIELD_BLOOD_GROUP = 'bloodGroup';
 
 export const VALUE_MAN = 'male';

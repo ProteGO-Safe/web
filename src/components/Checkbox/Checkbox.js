@@ -36,7 +36,7 @@ Checkbox.defaultProps = {
   onChange: undefined,
   size: 'normal',
   type: 'checkbox',
-  value: null
+  value: ''
 };
 
 Checkbox.propTypes = {
