@@ -32,7 +32,8 @@ const RegulationsContent = () => (
         Usługodawcą jest Administrator SafeSafe (zwany dalej: „
         <strong>Administratorem</strong>” lub „<strong>Usługodawcą</strong>”)
         tj. TYTANI24 Spółka z ograniczoną odpowiedzialnością z siedzibą we
-        Wrocławiu, ul. Ząbkowicka 55, 50 – 511 Wrocław, wpisana do rejestru
+        Wrocławiu, ul. Ząbkowicka 55, 50 – 511 Wrocław (adres biura: ul.
+        Kościerzyńska 32A, Wrocław, 51 – 410), wpisana do rejestru
         przedsiębiorców Krajowego Rejestru Sądowego prowadzonego przez Sąd
         Rejonowy we Wrocławiu, VI Wydział Gospodarczy Krajowego Rejestru
         Sądowego, pod numerem KRS 0000725465, REGON 369879064, NIP 8992843182, o
@@ -58,12 +59,13 @@ const RegulationsContent = () => (
       <li>
         <strong>Administratorze </strong>- rozumie się przez to TYTANI24 Spółka
         z ograniczoną odpowiedzialnością z siedzibą we Wrocławiu, ul. Ząbkowicka
-        55, 50 – 511 Wrocław, wpisana do rejestru przedsiębiorców Krajowego
-        Rejestru Sądowego prowadzonego przez Sąd Rejonowy we Wrocławiu, VI
-        Wydział Gospodarczy Krajowego Rejestru Sądowego, pod numerem KRS
-        0000725465, REGON 369879064, NIP 8992843182, o kapitale zakładowym
-        opłaconym w całości w wysokości 20 000,00 zł. Przez Administratora
-        należy rozumieć także Administratora Danych Osobowych.
+        55, 50 – 511 Wrocław (adres biura: ul. Kościerzyńska 32A, Wrocław,
+        51 – 410), wpisana do rejestru przedsiębiorców Krajowego Rejestru
+        Sądowego prowadzonego przez Sąd Rejonowy we Wrocławiu, VI Wydział
+        Gospodarczy Krajowego Rejestru Sądowego, pod numerem KRS 0000725465,
+        REGON 369879064, NIP 8992843182, o kapitale zakładowym opłaconym w
+        całości w wysokości 20.000,00zł. Przez Administratora należy rozumieć
+        także Administratora Danych Osobowych.
       </li>
       <li>
         <strong>Danych Osobowych </strong>- rozumie się przez to dane o
@@ -103,15 +105,29 @@ const RegulationsContent = () => (
         akceptacji Regulaminu.{' '}
       </li>
       <li>
-        <strong>Inframedica</strong> - rozumie się przez to
+        <strong>Infermedica</strong> - rozumie się przez to Infermedica Sp. z
+        o.o. z siedzibą we Wrocławiu, Plac Solny 14/3, 50-062 Wrocław, wpisana
+        do rejestru przedsiębiorców Krajowego Rejestru Sądowego prowadzonego
+        przez Sąd Rejonowy we Wrocławiu, VI Wydział Gospodarczy Krajowego
+        Rejestru Sądowego, pod numerem KRS 0000429183, REGON 021889810, NIP
+        8971782877.
       </li>
       <li>
-        <strong>Usługach </strong>– rozumie się przez to usługi świadczone drogą
-        elektroniczną w rozumieniu ustawy z dnia 18 lipca 2002 r. o świadczeniu
-        usług drogą elektroniczną (Dz.U. z 2020 r. poz. 344) bezpłatnie,
-        oferowane Użytkownikom w ramach SafeSafe, w tym w szczególności Usługi o
-        których mowa w §3 ust. 1 oraz <i>newsletter </i>tj. usługa dostarczania
-        przez Administratora informacji dotyczących SafeSafe.
+        <strong>Usługach/Usłudze </strong>– rozumie się przez to usługi
+        świadczone drogą elektroniczną w rozumieniu ustawy z dnia 18 lipca 2002
+        r. o świadczeniu usług drogą elektroniczną (Dz.U. z 2020 r. poz. 344)
+        bezpłatnie, oferowane Użytkownikom w ramach SafeSafe, w tym w
+        szczególności Usługi o których mowa w §3 ust. 1 oraz <i>newsletter </i>
+        tj. usługa dostarczania przez Administratora informacji dotyczących
+        SafeSafe.
+      </li>
+      <li>
+        <strong>WHO</strong> - rozumie się przez to Światową Organizację Zdrowia
+        (World Health Organisation).
+      </li>
+      <li>
+        <strong>GIS</strong> - rozumie się przez to Głównego Inspektora
+        Sanitarnego.
       </li>
     </ol>
     <p> </p>
@@ -123,35 +139,44 @@ const RegulationsContent = () => (
     </p>
     <ol>
       <li>
-        Aplikacja SafeSafe jest dostępna za pośrednictwem strony{' '}
+        Aplikacja SafeSafe, dostępna za pośrednictwem strony{' '}
         <u>https://safesafe.app</u>, jest bezpłatna i obejmuje swym zakresem
-        test oceny ryzyka zarażenia wirusem SARS-CoV-2, TRIAGE (samoocena ryzyka
-        infekcji wirusem, stworzona na podstawie kwestionariusza WHO), dziennik
-        zdrowia Użytkownika, wsparcie w profilaktyce i zapobieganiu zarażeniem,
-        wczesne ostrzeganie Użytkownika potencjalnie zagrożonego zarażeniem,
-        informowanie o istotnych informacjach związanych z pandemią wirusa
-        SARS-CoV-2, przypominacz bezpiecznych zachowań i nawyków codziennej
-        higieny<strong>. </strong>W ramach Usług świadczonych za pośrednictwem
-        SafeSafe możliwe jest ustalenie czynników ryzyka infekcji, tworzenie i
-        prowadzenie historii medycznej, istniejących schorzeń, aktualnej
-        farmakoterapii, prowadzenie dziennika profilaktyki.{' '}
+        Triaż (samoocenę ryzyka infekcji wirusem SARS-CoV-2, stworzoną na
+        podstawie kwestionariusza WHO), dziennik zdrowia Użytkownika, wsparcie w
+        profilaktyce i zapobieganiu zarażeniem, wczesne ostrzeganie Użytkownika
+        potencjalnie zagrożonego zarażeniem, informowanie o istotnych
+        informacjach związanych z pandemią wirusa SARS-CoV-2 oraz przypominacz
+        bezpiecznych zachowań i nawyków codziennej higieny<strong>. </strong>W
+        ramach Usług świadczonych za pośrednictwem SafeSafe możliwe jest
+        ustalenie czynników ryzyka infekcji, tworzenie i prowadzenie historii
+        medycznej, istniejących schorzeń, aktualnej farmakoterapii oraz
+        prowadzenie dziennika profilaktyki. SafeSafe przekazuje informacje i
+        wytyczne WHO oraz GIS, ale przekazywane informacje nie mają charakteru
+        konsultacji medycznej lub świadczenia zdrowotnego (w tym w szczególności
+        medycznego lub farmaceutycznego).
       </li>
       <li>
-        Usługa świadczona jest z momentem rozpoczęcia korzystania z SafeSafe, co
-        jest równoznaczne z zaakceptowaniem niniejszego Regulaminu. Wcześniej
-        Użytkownik powinien zaakceptować Regulamin poprzez zaznaczenie
-        odpowiedniego checkboxa. Zaprzestanie świadczenia Usługi następuje z
-        opuszczeniem SafeSafe przez Użytkownika oraz usunięciem plików cookies z
-        przeglądarki, z zastrzeżeniem ust. 3 niniejszego paragrafu.
+        Usługa Triage (samooceny ryzyka zarażenia wirusem SARS-CoV-2) świadczona
+        jest za pośrednictwem aplikacji stworzonej przez Inframedica, o której
+        więcej tutaj:{' '}
+        <u>https://developer.infermedica.com/docs/covid-19#triage</u>.
+      </li>
+      <li>
+        Usługi świadczone są z momentem rozpoczęcia korzystania z SafeSafe.
+        Przed przystąpieniem do korzystania z SafeSafe, Użytkownik powinien
+        zaakceptować Regulamin poprzez zaznaczenie odpowiedniego checkboxa.
+        Zaprzestanie świadczenia Usługi następuje z opuszczeniem SafeSafe przez
+        Użytkownika oraz usunięciem plików cookies z przeglądarki, z
+        zastrzeżeniem ust. 4 niniejszego paragrafu.
       </li>
       <li>
         W przypadku wyrażenia przez Użytkownika zgody na otrzymywanie informacji
         o SafeSafe oraz podania swojego adresu e-mail, Usługa obejmuje również
-        przesyłanie informacji o SafeSafe, a także związanych z pandemią wirusa
-        SARS-CoV-2 dotyczących usług świadczonych przez Administratora. W
-        przypadku takim zaprzestanie świadczenia Usługi w tym zakresie,
-        następuje z chwilą cofnięcia zgody na otrzymywanie informacji o SafeSafe
-        przez Użytkownika.
+        przesyłanie informacji o SafeSafe, a także informacji związanych z
+        pandemią wirusa SARS-CoV-2 dotyczących usług świadczonych przez
+        Administratora. W przypadku takim, zaprzestanie świadczenia Usługi w tym
+        zakresie, następuje z chwilą cofnięcia zgody na otrzymywanie informacji
+        o SafeSafe przez Użytkownika.
       </li>
       <li>
         Administrator jest uprawniony do dokonywania zmian funkcjonalności
@@ -160,7 +185,7 @@ const RegulationsContent = () => (
         działania SafeSafe, wszystkie jego elementy graficzne, interfejs
         podlegają ochronie prawnej. Oprogramowanie, na którym opiera się
         SafeSafe oraz kod źródłowy oddawany jest przez Administratora w oparciu
-        o licencję MIT, której szczegóły można odnaleźć tutaj:{' '}
+        o licencję MIT, której szczegóły zawarte są pod adresem:{' '}
         <u>https://opensource.org/licenses/MIT</u>.{' '}
       </li>
     </ol>
@@ -174,18 +199,17 @@ const RegulationsContent = () => (
     <ol>
       <li>
         Warunkiem korzystania z SafeSafe jest posiadanie przez Użytkownika
-        Urządzenia podłączonego do sieci Internet oraz aktualnego
-        Oprogramowania, powiązanych w sieci Internet przez usługę sieciową z
-        włączonym wykonywaniem Java Script oraz zapisywaniem Plików Cookies.
+        Urządzenia podłączonego do sieci Internet oraz aktualnego Oprogramowania
+        z aktywnym zapisywaniem Plików Cookies.
       </li>
       <li>
         Korzystanie z SafeSafe możliwe jest bez ograniczeń terytorialnych.
       </li>
       <li>
         Administrator nie ponosi odpowiedzialności za utrudnienia w korzystaniu
-        z usługi wynikające z niespełnienia wymagań technicznych wskazanych w
-        ust. 1, w tym z błędnej konfiguracji oprogramowania lub sprzętu
-        Użytkownika, bądź wynikające z problemów ze sprzętem lub łączem
+        z Usług wynikające z niespełnienia wymagań technicznych wskazanych w
+        ust. 1, w tym z błędnej konfiguracji Oprogramowania lub Urządzenia
+        Użytkownika, bądź wynikające z problemów z Urządzeniem lub łączem
         internetowym Użytkownika.{' '}
       </li>
     </ol>
@@ -201,8 +225,7 @@ const RegulationsContent = () => (
         Użytkownik może przesyłać uwagi związane z nienależytym działaniem
         SafeSafe pocztą elektroniczną na adres mailowy: info@safesafe.app.
         Odpowiedź zostanie udzielona w terminie 14 dni od daty otrzymania
-        zgłoszenia, w formie, w jakiej Administrator SafeSafe otrzymał
-        zgłoszenie, na adres podany w zgłoszeniu.{' '}
+        zgłoszenia na adres podany w zgłoszeniu.{' '}
       </li>
       <li>
         W szczególnych przypadkach, tj. gdy rozpatrzenie zgłoszenia wymaga
@@ -260,20 +283,14 @@ const RegulationsContent = () => (
     <p>
       <strong>Odpowiedzialność Użytkownika</strong>
     </p>
-    <ol>
-      <li>
-        Korzystanie z SafeSafe jest równoznaczne z akceptacją niniejszego
-        Regulaminu.
-      </li>
-      <li>
-        Wszelkie materiały wykonane lub wyświetlane za pomocą SafeSafe, m.in.
-        tekst, grafika, dane, artykuły, zdjęcia, obrazy, ilustracje, logo są
-        chronione prawami autorskimi lub innymi prawami własności intelektualnej
-        oraz udostępniane użytkownikowi na podstawie licencji MIT, której
-        szczegóły można odnaleźć tutaj:{' '}
-        <u>https://opensource.org/licenses/MIT</u>.
-      </li>
-    </ol>
+    <p>
+      Wszelkie materiały wykonane lub wyświetlane za pomocą SafeSafe m.in.
+      tekst, grafika, dane, artykuły, zdjęcia, obrazy, ilustracje, logo są
+      chronione prawami autorskimi lub innymi prawami własności intelektualnej
+      oraz udostępniane użytkownikowi na podstawie licencji MIT, której
+      szczegóły zawarte są pod adresem:{' '}
+      <u>https://opensource.org/licenses/MIT</u>.
+    </p>
     <p> </p>
     <p>
       <strong>§8</strong>
@@ -284,27 +301,36 @@ const RegulationsContent = () => (
     <ol>
       <li>
         Administrator zobowiązuje się do dołożenia wszelkich starań celem
-        zapewnienia działania SafeSafe bez jakichkolwiek zakłóceń.
+        zapewnienia działania SafeSafe bez jakichkolwiek zakłóceń, a także
+        przekazania najbardziej aktualnych wytycznych WHO i/lub GIS.
+      </li>
+      <li>
+        Usługa ma charakter informacyjny. Administrator nie świadczy usług
+        zdrowotnych, świadczeń zdrowotnych (w tym w szczególności medycznych lub
+        farmaceutycznych), nie jest pośrednikiem powyższych usług oraz
+        świadczeń. W związku z powyższym Administrator nie ponosi
+        odpowiedzialności za jakiekolwiek skutki wynikające z korzystania przez
+        Użytkownika z SafeSafe w obszarze zdrowia.
       </li>
       <li>
         W przypadkach szczególnych, mających wpływ na bezpieczeństwo lub
         stabilność systemu teleinformatycznego, Administrator ma prawo do
-        czasowego zaprzestania bądź ograniczenia świadczenia Usług
-        elektronicznych, bez wcześniejszego powiadomienia o tym Użytkowników. W
-        szczególności Administrator jest uprawniony do przeprowadzenia prac
-        konserwacyjnych mających na celu przywrócenie bezpieczeństwa i
-        stabilności systemu teleinformatycznego. Użytkownikowi SafeSafe nie
-        przysługują żadne roszczenia w związku z przerwą lub zaprzestaniem
-        świadczenia Usług elektronicznych przez Administratora.
+        czasowego zaprzestania bądź ograniczenia świadczenia Usług, bez
+        wcześniejszego powiadomienia o tym Użytkowników. W szczególności
+        Administrator jest uprawniony do przeprowadzenia prac konserwacyjnych
+        mających na celu przywrócenie bezpieczeństwa i stabilności systemu
+        teleinformatycznego. Użytkownikowi SafeSafe nie przysługują żadne
+        roszczenia w związku z przerwą lub zaprzestaniem świadczenia Usług przez
+        Administratora.
       </li>
       <li>
-        Administrator ma prawo również zaprzestać świadczenia Usług
-        elektronicznych w każdym czasie, jeżeli takie uzasadnione żądanie
-        zostanie zgłoszone wobec niego przez dostawcę Internetu lub inny
-        uprawniony podmiot. Z zastrzeżeniem odpowiednich przepisów prawa oraz
-        niniejszego Regulaminu, Administrator nie odpowiada za szkody
-        spowodowane wadliwym działaniem systemu transmisji, w tym awariami
-        sprzętu, opóźnieniami i zakłóceniami przesyłu informacji.
+        Administrator ma prawo również zaprzestać świadczenia Usług w każdym
+        czasie, jeżeli takie uzasadnione żądanie zostanie zgłoszone wobec niego
+        przez dostawcę Internetu lub inny uprawniony podmiot. Z zastrzeżeniem
+        odpowiednich przepisów prawa oraz niniejszego Regulaminu, Administrator
+        nie odpowiada za szkody spowodowane wadliwym działaniem systemu
+        transmisji, w tym awariami sprzętu, opóźnieniami i zakłóceniami przesyłu
+        informacji.
       </li>
     </ol>
     <p> </p>
@@ -312,28 +338,45 @@ const RegulationsContent = () => (
       <strong>§9</strong>
     </p>
     <p>
-      <strong>Warunki rozwiązania umowy o świadczenie Usług</strong>
+      <strong>Warunki rozwiązania Umowy o świadczenie Usług</strong>
     </p>
     <ol>
       <li>
         Użytkownik może wypowiedzieć Umowę ze skutkiem natychmiastowym i bez
         wskazywania przyczyn poprzez usunięcie SafeSafe oraz usunięcia plików
         Cookies ze swojego Urządzenia. Można tego dokonać także poprzez
-        przesłanie oświadczenia o treści za pośrednictwem poczty elektronicznej
-        na adres: info@safesafe.app lub też pisemnie na adres siedziby
-        Administratora.
+        przesłanie oświadczenia za pośrednictwem poczty elektronicznej na adres:
+        info@safesafe.app lub też pisemnie na adres siedziby Administratora.
       </li>
       <li>
-        Administrator może wypowiedzieć umowę o świadczenie Usług ze skutkiem
-        natychmiastowym i bez wskazywania przyczyn poprzez przesłanie
-        Użytkownikowi stosownego oświadczenia za pośrednictwem aplikacji.
+        Administrator może wypowiedzieć Umowę ze skutkiem natychmiastowym i bez
+        wskazywania przyczyn poprzez przesłanie Użytkownikowi stosownego
+        oświadczenia za pośrednictwem aplikacji.
       </li>
     </ol>
-    <p>
-      <strong> </strong>
-    </p>
+
     <p>
       <strong>§10</strong>
+    </p>
+    <p>
+      <strong>Siła Wyższa</strong>
+    </p>
+    <p>
+      Administrator nie będzie ponosić odpowiedzialności za niewypełnienie
+      swoich zobowiązań z tytułu niniejszej Umowy (włączając w to świadczenie
+      Usług) w czasie, w którym ich wypełnienie jest opóźnione lub niemożliwe z
+      powodu okoliczności lub wydarzeń niezależnych od Administratora, co
+      uniemożliwia lub znacząco utrudnia Administratorowi działanie zgodne z
+      warunkami Umowy, w tym, między innymi: pożar, powódź, nałożenie embargo,
+      strajk, zamieszki, niemożność zabezpieczenia materiałów i infrastruktury,
+      awaria lub przerwanie pracy maszyn, w każdym przypadku z przyczyn leżących
+      poza kontrolą Administratora lub spowodowane działaniami rządowymi lub
+      legislacyjnymi. Jeżeli takie opóźnienie trwać będzie dłużej niż 30
+      (trzydzieści) dni, Administrator oraz Użytkownik będą mieli prawo
+      rozwiązać niniejszą Umowę w trybie natychmiastowym. <strong> </strong>
+    </p>
+    <p>
+      <strong>§11</strong>
     </p>
     <p>
       <strong>Reklamacje</strong>
@@ -347,9 +390,7 @@ const RegulationsContent = () => (
         Reklamację Usług można zgłosić poprzez wiadomość e-mail przesłaną na
         adres info@safesafe.app. W celu przyspieszenia rozpatrzenia reklamacji
         należy w zgłoszeniu reklamacyjnym podać krótko przyczyny uzasadniające
-        reklamację oraz dane kontaktowe osoby zgłaszającej reklamację, w tym
-        imię i nazwisko, numer telefonu oraz adres zamieszkania lub adres
-        e-mail.
+        reklamację oraz dane kontaktowe osoby zgłaszającej reklamację.
       </li>
       <li>
         Administrator niezwłocznie, lecz nie później niż w terminie 30
@@ -359,17 +400,17 @@ const RegulationsContent = () => (
     </ol>
     <p> </p>
     <p>
-      <strong>§11</strong>
+      <strong>§12</strong>
     </p>
     <p>
       <strong>Pozasądowe sposoby rozpatrywania reklamacji</strong>
     </p>
     <p>
-      Klient może skorzystać z pozasądowych sposobów rozpatrywania reklamacji i
-      dochodzenia roszczeń. Chcąc skorzystać z możliwości polubownego
-      rozwiązywania sporów dotyczących zakupów internetowych, Klient może złożyć
-      swoją skargę np. za pośrednictwem unijnej platformy internetowej ODR,
-      dostępnej pod adresem:{' '}
+      Użytkownik może skorzystać z pozasądowych sposobów rozpatrywania
+      reklamacji i dochodzenia roszczeń. Chcąc skorzystać z możliwości
+      polubownego rozwiązywania sporów dotyczących zakupów internetowych,
+      Użytkownik może złożyć swoją skargę np. za pośrednictwem unijnej platformy
+      internetowej ODR, dostępnej pod adresem:{' '}
       <u>
         <a href="http://ec.europa.eu/consumers/odr/" rel="nofollow">
           http://ec.europa.eu/consumers/odr/
@@ -381,7 +422,7 @@ const RegulationsContent = () => (
       <strong> </strong>
     </p>
     <p>
-      <strong>§12</strong>
+      <strong>§13</strong>
     </p>
     <p>
       <strong>Ochrona Danych Osobowych</strong>
@@ -399,14 +440,14 @@ const RegulationsContent = () => (
     </ol>
 
     <p>
-      <strong>§13</strong>
+      <strong>§14</strong>
     </p>
     <p>
       <strong>Postanowienia końcowe</strong>
     </p>
     <ol>
       <li>
-        Usługodawca zastrzega sobie możliwość wprowadzania zmian w niniejszym.
+        Usługodawca zastrzega sobie możliwość wprowadzania zmian w Regulaminie.
         Aktualna wersja Regulaminu będzie dostępna w SafeSafe.
       </li>
       <li>
@@ -418,15 +459,12 @@ const RegulationsContent = () => (
         Użytkownikiem właściwe jest prawo polskie, a sądem właściwym miejscowo
         jest sąd powszechny dla siedziby Administratora.
       </li>
-      <li>
-        W sprawach nieuregulowanych Regulaminem zastosowanie mają odpowiednie
-        przepisy prawa polskiego.
-      </li>
     </ol>
+
     <p> </p>
 
     <p>
-      <span>Załącznik nr 1 do Regulaminu</span>
+      <blockquote>Załącznik nr 1 do Regulaminu</blockquote>
     </p>
     <p>
       <strong> </strong>
