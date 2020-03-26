@@ -8,6 +8,7 @@ export { Container } from './Container';
 export { FieldSet } from './FieldSet';
 export { Imprint } from './Imprint';
 export { Input } from './Input';
+export { Instruction } from './Instruction';
 export { Loader } from './Loader';
 export { Menu } from './Menu';
 export { MenuButton } from './MenuButton';

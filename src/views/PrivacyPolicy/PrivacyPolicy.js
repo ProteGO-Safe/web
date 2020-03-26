@@ -47,6 +47,11 @@ const PrivacyPolicy = () => {
             type="secondary"
             text="Polityka prywatności"
           />
+          <Button
+            onClick={() => history.push('/user-data')}
+            type="secondary"
+            text="Dane"
+          />
         </FieldSet>
       </Container>
     </div>

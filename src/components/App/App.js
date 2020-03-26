@@ -19,7 +19,9 @@ import {
   Regulations,
   RiskTestData,
   UserData,
-  UserDataSettings
+  UserDataSettings,
+  InstallAppAndroid,
+  InstallAppIOS
 } from '../../views';
 
 import { Menu } from '../Menu';
@@ -39,6 +41,16 @@ function App() {
         <Switch>
           <Route exact path="/" component={name ? Home : Registration} />
           {!name && <Route exact path="/install" component={InstallApp} />}
+          {!name && (
+            <Route
+              exact
+              path="/install/android"
+              component={InstallAppAndroid}
+            />
+          )}
+          {!name && (
+            <Route exact path="/install/ios" component={InstallAppIOS} />
+          )}
           {name && (
             <>
               <Route exact path="/daily" component={Daily} />
@@ -53,7 +65,7 @@ function App() {
               />
               <Route
                 exact
-                path="/risk-information"
+                path="/risk-information/:triage"
                 component={RiskInformation}
               />
               <Route exact path="/numbers" component={Numbers} />

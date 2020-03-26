@@ -21,23 +21,19 @@ const Summary = ({ onSave }) => (
       <div className="content content--1">
         <h4 className="medium">Gratulacje,</h4>
         <p className="big">
-          Twój pierwszy Kwestionariusz Oceny Ryzyka przygotowany zgodnie z
-          wytycznymi WHO został uzupełniony. Nasz system sprawdzi teraz do
-          jakiej grupy kwalifikują się Twoje odpowiedzi.
+          Twoja pierwsza Ankieta Oceny Ryzyka przygotowana zgodnie z wytycznymi
+          WHO została uzupełniona. Nasz system sprawdzi teraz do jakiej grupy
+          kwalifikują się Twoje odpowiedzi.
         </p>
       </div>
       <div className="content content--2">
         <h4 className="medium">
-          Pamiętaj, żeby test wypełniać regularnie - wtedy Twoja ocena ryzyka
-          będzie aktualna.
+          Pamiętaj, żeby Ankietę Oceny Ryzyka wypełniać regularnie - najlepiej
+          1x na dobę - wtedy Twoja ocena ryzyka będzie aktualna.
         </h4>
       </div>
       <FieldSet>
-        <Button
-          onClick={onSave}
-          text="Ok, wyświetl wynik"
-          type="primary"
-        />
+        <Button onClick={onSave} text="Ok, wyświetl wynik" type="primary" />
       </FieldSet>
     </Container>
   </div>

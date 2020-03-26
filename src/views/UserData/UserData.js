@@ -15,7 +15,7 @@ const UserData = () => {
       <Container>
         <h4 className="text-center medium">Dane</h4>
         <div className="content">
-          <p className="p1 medium">Opis</p>
+          <p className="p1 medium">W tym miejscu możesz zarządzać swoimi danymi</p>
         </div>
         <FieldSet>
           <Button onClick={handleClick} text="Zarządzaj danymi" />

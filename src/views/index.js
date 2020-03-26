@@ -4,6 +4,7 @@ export { Diagnosis } from './Diagnosis';
 export { Home } from './Home';
 export { HowItWorks } from './HowItWorks';
 export { InstallApp } from './InstallApp';
+export { InstallAppAndroid, InstallAppIOS } from './InstallAppInstruction';
 export { RiskTest } from './RiskTest';
 export { RiskTestData } from './RiskTestData';
 export { RiskInformation } from './RiskInformation';
