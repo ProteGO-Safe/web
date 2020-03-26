@@ -10,10 +10,11 @@
   }
 
   .container {
+    grid-area: container;
     display: grid;
     grid-template-areas: "subtitle" "title" "content";
     grid-template-rows: 40px 52px 1fr;
-    grid-area: container;
+    max-width: 320px;
 
     .p2 {
       grid-area: subtitle;
@@ -27,6 +28,7 @@
 
     .content {
       grid-area: content;
+      padding-bottom: 30px;
     }
   }
 }
