@@ -303,9 +303,18 @@ const PrivacyPolicyContent = () => (
           prowadzonego przez Sąd Rejonowy we Wrocławiu, VI Wydział Gospodarczy
           Krajowego Rejestru Sądowego, pod numerem KRS 0000429183, REGON
           021889810, NIP 8971782877, która świadczy Usługę Triażu (polityka
-          prywatności Inframedica: <u>https://infermedica.com/privacy-policy</u>
+          prywatności Inframedica:{' '}
+          <a href="https://infermedica.com/privacy-policy" target="_blank">
+            https://infermedica.com/privacy-policy
+          </a>
           , informacje o Usłudze Triażu:{' '}
-          <u>https://developer.infermedica.com/docs/covid-19#triage</u>);
+          <a
+            href="https://developer.infermedica.com/docs/covid-19#triage"
+            target="_blank"
+          >
+            https://developer.infermedica.com/docs/covid-19#triage
+          </a>
+          );
         </li>
         <li>
           podmioty, którym dane przekazywane są na zasadzie powierzenia, o ile

@@ -11,7 +11,7 @@ const InstallAppInstructionAndroidContainer = () => {
       icon: Icon1,
       key: 1,
       text:
-        'Odszukaj w przeglądarce symbol "menu" (trzy kropki) na&nbsp;górnym pasku przeglądarki'
+        'Odszukaj w przeglądarce symbol "menu" (trzy kropki) na górnym pasku przeglądarki'
     },
     {
       icon: Icon2,
