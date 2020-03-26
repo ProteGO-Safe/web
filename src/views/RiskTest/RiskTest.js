@@ -17,7 +17,9 @@ const RiskTest = ({
   <div className="view view__risk-test">
     <Header background={Background} prevUrl="/" />
     <Container>
-      <h4 className="h1 text-center medium">Test oceny ryzyka</h4>
+      <h4 className="h1 text-center medium">
+        Ankiety Oceny Ryzyka - wypełniaj ankietę 1x dziennie
+      </h4>
       <div className="today">
         <Button
           onClick={onFill}
