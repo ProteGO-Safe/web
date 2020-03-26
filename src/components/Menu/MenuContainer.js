@@ -59,7 +59,7 @@ const MenuContainer = () => {
     {
       bold: true,
       icon: Icon6,
-      path: '/risk-information/self_monitoring',
+      path: '/risk-information/quarantine',
       slug: 'co_zrobic',
       title: 'Czuję się źle, co zrobić?'
     },
