@@ -70,8 +70,9 @@ const MenuContainer = () => {
       title: 'Polityka prywatności'
     },
     {
+      disable: true,
       icon: Icon8,
-      path: '/user-data',
+      path: '',
       slug: 'ustawienia',
       title: 'Ustawienia'
     }
