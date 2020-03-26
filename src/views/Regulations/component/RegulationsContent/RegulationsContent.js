@@ -266,7 +266,7 @@ const RegulationsContent = () => (
         Administrator zastrzega, że korzystanie z Usług świadczonych drogą
         elektroniczną może wiązać się z ryzykiem. Ewentualne zagrożenia związane
         z korzystaniem z tych Usług, a także środki techniczne dostępne w celu
-        ich zminimalizowania, opisane zostały w <u>Załączniku</u> do niniejszego
+        ich zminimalizowania, opisane zostały w <u><a href="#attachment_1">Załączniku</a></u> do niniejszego
         Regulaminu.
       </li>
       <li>
@@ -461,9 +461,7 @@ const RegulationsContent = () => (
       </li>
     </ol>
 
-    <p> </p>
-
-    <p>
+    <p id="attachment_1">
       <blockquote>Załącznik nr 1 do Regulaminu</blockquote>
     </p>
     <p>
