@@ -24,7 +24,7 @@ const UserDataSettings = () => {
           </p>
         </div>
         <FieldSet>
-          <Button onClick={handleClick} text="Wymarz moje dane" />
+          <Button onClick={handleClick} text="Wymaż moje dane" />
         </FieldSet>
       </Container>
     </div>
