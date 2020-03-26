@@ -1,6 +1,5 @@
 import React from 'react';
-import { useHistory } from 'react-router-dom';
-import { useSelector } from 'react-redux';
+import { useHistory, useParams } from 'react-router-dom';
 
 import Background from '../../assets/img/banners/banner-1.png';
 import { Back, Banner, Brand, Container } from '../../components';
@@ -14,10 +13,10 @@ import { RiskInfoLevel5 } from './components/RiskInfoLevel5';
 
 const RiskInformation = () => {
   const history = useHistory();
-  const { triageLevel } = useSelector(state => state.triage);
+  const { triage } = useParams();
 
   const renderRiskHeader = (() => {
-    switch (triageLevel) {
+    switch (triage) {
       case 'no_risk': {
         return 'PRZESTRZEGAJ PROFILAKTYKI';
       }
@@ -40,7 +39,7 @@ const RiskInformation = () => {
   })();
 
   const renderRiskHeaderColor = (() => {
-    switch (triageLevel) {
+    switch (triage) {
       case 'no_risk': {
         return 'blue';
       }
@@ -63,7 +62,7 @@ const RiskInformation = () => {
   })();
 
   const renderRiskInformation = (() => {
-    switch (triageLevel) {
+    switch (triage) {
       case 'no_risk': {
         return <RiskInfoLevel1 />;
       }

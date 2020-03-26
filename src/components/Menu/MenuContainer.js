@@ -43,7 +43,7 @@ const MenuContainer = () => {
     },
     {
       icon: Icon4,
-      path: '',
+      path: '/risk-information/no_risk',
       slug: 'jak_sie_chronic',
       title: 'Jak się chronić?'
     },
@@ -59,7 +59,7 @@ const MenuContainer = () => {
     {
       bold: true,
       icon: Icon6,
-      path: '',
+      path: '/risk-information/self_monitoring',
       slug: 'co_zrobic',
       title: 'Czuję się źle, co zrobić?'
     },

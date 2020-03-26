@@ -65,7 +65,7 @@ function App() {
               />
               <Route
                 exact
-                path="/risk-information"
+                path="/risk-information/:triage"
                 component={RiskInformation}
               />
               <Route exact path="/numbers" component={Numbers} />

@@ -58,6 +58,9 @@ const Home = () => {
     }
   })();
 
+  const goToRiskInformation = () =>
+    history.push(`/risk-information/${triageLevel}`);
+
   return (
     <div className="view view__home">
       <Header background={Background} />
@@ -74,7 +77,7 @@ const Home = () => {
           {renderRiskInfo}
         </div>
         <Button
-          onClick={() => history.push('/risk-information')}
+          onClick={goToRiskInformation}
           type="primary"
           text="Co mam zrobić?"
         />
