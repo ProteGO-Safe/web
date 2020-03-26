@@ -21,8 +21,8 @@ const ModalContent = () => {
         podać jeszcze raz wszystkie swoje dane.
       </p>
       <div className="buttons">
-        <Button onClick={onClose} text="Nie" />
         <Button onClick={handleSubmit} text="Tak" />
+        <Button onClick={onClose} text="Nie" />
       </div>
     </div>
   );
