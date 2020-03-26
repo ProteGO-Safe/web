@@ -1,17 +1,31 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import ReactGA from 'react-ga';
+import { useHistory } from 'react-router-dom';
+
 import { LoaderProvider } from '../../context/LoaderContext';
 import { MenuProvider } from '../../context/MenuContext';
 import { ModalProvider } from '../../context/ModalContext';
 import App from './App';
 
-const AppContainer = () => (
-  <MenuProvider>
-    <LoaderProvider>
-      <ModalProvider>
-        <App />
-      </ModalProvider>
-    </LoaderProvider>
-  </MenuProvider>
-);
+const AppContainer = () => {
+  const history = useHistory();
+
+  useEffect(() => {
+    ReactGA.initialize('UA-143293519-2');
+    history.listen(location => {
+      ReactGA.pageview(location.pathname);
+    });
+  }, []);
+
+  return (
+    <MenuProvider>
+      <LoaderProvider>
+        <ModalProvider>
+          <App />
+        </ModalProvider>
+      </LoaderProvider>
+    </MenuProvider>
+  );
+};
 
 export default AppContainer;
