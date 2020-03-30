@@ -16,14 +16,15 @@ const GroupMultiple = ({ text, items }) => {
 
   const handleChange = itemId => {
     setOtherSelected(false);
-    setSomeSelected(true);
     if (values[itemId] === VALUE_PRESENT) {
       setFieldValue(itemId, VALUE_ABSENT);
+      setSomeSelected(false);
       return;
     }
 
     if (values[itemId] === VALUE_ABSENT) {
       setFieldValue(itemId, VALUE_PRESENT);
+      setSomeSelected(true);
     }
   };
 
