@@ -50,7 +50,7 @@ const Step1 = () => {
       </div>
       <FieldSet>
         <Input
-          description="Jak się nazywasz?"
+          description="Jak masz na imię?"
           placeholder="imię"
           onChange={handleChange}
           name={FIELD_NAME}
