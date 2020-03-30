@@ -1,12 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import TextareaAutosize from 'react-textarea-autosize';
 
 import './Textarea.scss';
 
 const Textarea = ({ disabled, label, name, onChange, value }) => (
   <div className="textarea textarea__wrapper">
     {label && <span className="textarea__label">{label}</span>}
-    <textarea
+    <TextareaAutosize
+      minRows={7}
       className="textarea__field"
       disabled={disabled}
       name={name}

@@ -45,8 +45,7 @@
       .button {
         position: relative;
         :first-child {
-          position: absolute;
-          left: 15px;
+          padding-right: 10px;
         }
       }
     }
