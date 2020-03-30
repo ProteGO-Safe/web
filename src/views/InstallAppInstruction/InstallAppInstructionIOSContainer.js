@@ -22,7 +22,7 @@ const InstallAppInstructionAndroidContainer = () => {
       icon: Icon3,
       key: 3,
       text:
-        'Po naciśnięciu i akceptacji aplikacja zainstaluj się na Twoim telefonie.'
+        'Po naciśnięciu i akceptacji aplikacja zainstaluje się na Twoim telefonie.'
     },
     {
       icon: Icon4,
