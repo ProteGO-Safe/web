@@ -38,7 +38,7 @@ const InstallApp = () => {
           <h5 className="title text-center medium">Cześć,</h5>
           <p className="p1 text-center medium text-bold">
             Ciężko pracowaliśmy, żeby aplikację udało się ściągnąć ze sklepów
-            Android i iOS. Bez&nbsp;wsparcia ministerstwa jest to nie możliwe.
+            Android i iOS. Bez&nbsp;wsparcia ministerstwa jest to niemożliwe.
             Dlatego aplikację należy zainstalować z przeglądarki.
           </p>
           <h4 className="text-center medium-2">
