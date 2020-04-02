@@ -16,6 +16,19 @@
       grid-area: container;
       align-items: start;
 
+      .worth-it {
+        padding-top: 10px;
+
+        p {
+          font-size: 15px;
+        }
+        li {
+          &:before {
+            top: 6px;
+          }
+        }
+      }
+
       .fieldset {
         margin: 18px 0;
       }
