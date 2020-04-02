@@ -1,13 +1,14 @@
 import React from 'react';
 import { Formik } from 'formik';
+import * as Yup from 'yup';
 import { useDispatch } from 'react-redux';
 
 import { saveUser } from '../../store/actions/user';
-
 import * as constants from '../../constants';
 import Registration from './Registration';
 import { chronicSickValues } from '../../constants';
 import useInstallApp from '../../hooks/useInstallApp';
+import { FIELD_AGE } from '../../constants';
 
 const RegistrationContainer = () => {
   const dispatch = useDispatch();
@@ -20,9 +21,22 @@ const RegistrationContainer = () => {
     [constants.FIELD_NAME]: '',
     [constants.FIELD_BLOOD_GROUP]: '',
     step: 1,
-    term1: false,
-    term2: false
+    [constants.FIELD_TERM1]: false,
+    [constants.FIELD_TERM2]: false
   };
+
+  const validationSchema = Yup.object().shape({
+    [constants.FIELD_NAME]: Yup.string()
+      .min(3, 'Za krótkie imię')
+      .max(20, 'Za długie imię')
+      .required('Imię jest wymagane'),
+    [constants.FIELD_TERM1]: Yup.boolean().oneOf([true], 'Proszę zaznaczyć zgodę'),
+    [constants.FIELD_TERM2]: Yup.boolean().oneOf([true], 'Proszę zaznaczyć zgodę'),
+    [constants.FIELD_AGE]: Yup.number()
+      .min(1, 'Za mały wiek')
+      .max(150, 'Za duży wiek')
+      .required('Wiek jest wymagany')
+  });
 
   const resolveSex = field => {
     switch (field) {
@@ -55,7 +69,12 @@ const RegistrationContainer = () => {
   };
 
   return (
-    <Formik initialValues={initialValues} onSubmit={handleSubmit}>
+    <Formik
+      initialValues={initialValues}
+      onSubmit={handleSubmit}
+      validationSchema={validationSchema}
+      validateOnChange={false}
+    >
       <Registration />
     </Formik>
   );

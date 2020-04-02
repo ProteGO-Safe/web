@@ -5,33 +5,46 @@ import './Checkbox.scss';
 
 const Checkbox = ({
   checked,
+  error,
   description,
   name,
   onChange,
   size,
   type,
   value
-}) => (
-  <div className={`checkbox checkbox__wrapper ${size}`}>
-    <div className="checkbox__field__wrapper">
-      <input
-        checked={checked}
-        className="checkbox__field"
-        name={name}
-        onChange={onChange}
-        type={type}
-        value={value}
-      />
-      <div className="checkbox__btn" />
-      {description && (
-        <span className="checkbox__description">{description}</span>
-      )}
+}) => {
+  const errorClass = (() => {
+    if (error) {
+      return 'checkbox__error';
+    }
+    return '';
+  })();
+  return (
+    <div className={`checkbox checkbox__wrapper ${size}`}>
+      <div className="checkbox__field__wrapper">
+        <input
+          checked={checked}
+          className="checkbox__field"
+          name={name}
+          onChange={onChange}
+          type={type}
+          value={value}
+        />
+        <span className="checkbox__description__wrapper">
+          <div className={`checkbox__btn ${errorClass}`} />
+          {description && (
+            <span className="checkbox__description">{description}</span>
+          )}
+        </span>
+        {error && <span className="checkbox__error_description">{error}</span>}
+      </div>
     </div>
-  </div>
-);
+  );
+};
 
 Checkbox.defaultProps = {
   checked: false,
+  error: undefined,
   description: undefined,
   onChange: undefined,
   size: 'normal',
@@ -41,6 +54,7 @@ Checkbox.defaultProps = {
 
 Checkbox.propTypes = {
   checked: PropTypes.bool,
+  error: PropTypes.string,
   description: PropTypes.oneOfType([PropTypes.node, PropTypes.string]),
   name: PropTypes.string.isRequired,
   onChange: PropTypes.func,

@@ -1,6 +1,8 @@
 export const FIELD_AGE = 'age';
 export const FIELD_SEX = 'sex';
 export const FIELD_NAME = 'name';
+export const FIELD_TERM1 = 'term1';
+export const FIELD_TERM2 = 'term2';
 const FIELD_CHRONIC_SICK_1 = 'nadciśnienie tętnicze';
 const FIELD_CHRONIC_SICK_1_PH = 'jak długo? podać w latach z dokładnością do 0.25 roku';
 const FIELD_CHRONIC_SICK_2 = 'przewlekłe choroby układu oddechowego';
