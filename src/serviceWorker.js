@@ -56,14 +56,6 @@ export function register(config) {
 
 let newWorker;
 
-function showUpdateBar() {
-  document.getElementById('reload').className = 'show';
-}
-
-document.getElementById('reload').addEventListener('click', () => {
-  newWorker.postMessage({ action: 'skipWaiting' });
-});
-
 function registerValidSW(swUrl, config) {
   navigator.serviceWorker
     .register(swUrl)
@@ -74,7 +66,8 @@ function registerValidSW(swUrl, config) {
           switch (newWorker.state) {
             case 'installed':
               if (navigator.serviceWorker.controller) {
-                showUpdateBar();
+                newWorker.postMessage({ action: 'skipWaiting' });
+                window.location.reload();
               }
               break;
             default:
@@ -120,13 +113,6 @@ function registerValidSW(swUrl, config) {
     .catch(error => {
       console.error('Error during service worker registration:', error);
     });
-
-  let refreshing;
-  navigator.serviceWorker.addEventListener('controllerchange', () => {
-    if (refreshing) return;
-    window.location.reload();
-    refreshing = true;
-  });
 }
 
 function checkValidServiceWorker(swUrl, config) {
