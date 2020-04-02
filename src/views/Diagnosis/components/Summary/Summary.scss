@@ -1,10 +1,8 @@
 @import '../../../../assets/styles/colors';
+@import '../../../../assets/styles/mixins';
 
 .view__summary {
-  display: grid;
-  grid-template-areas: "banner" "container";
-  grid-template-rows: 100px 1fr;
-  height: 100vh;
+  @include viewBaseStyles(100px);
 
   .banner {
     grid-area: banner;
@@ -12,7 +10,7 @@
 
   .container {
     display: grid;
-    grid-template-areas: "content1" "content2" "buttons";
+    grid-template-areas: 'content1' 'content2' 'buttons';
     grid-area: container;
 
     .content {

@@ -1,11 +1,8 @@
 @import '../../assets/styles/colors';
+@import '../../assets/styles/mixins';
 
 .view__home {
-  display: grid;
-  grid-template-areas: "banner" "container";
-  grid-template-rows: 143px 1fr;
-  width: 100%;
-  height: 100vh;
+  @include viewBaseStyles(143px);
 
   .banner {
     grid-area: banner;
@@ -13,20 +10,20 @@
 
   .container {
     display: grid;
-    grid-template-areas: "header" "content" "button";
+    grid-template-areas: 'header' 'content' 'button';
     grid-template-rows: 200px 1fr 150px;
     grid-area: container;
 
     .header {
       grid-area: header;
-      
+
       display: grid;
-      grid-template-areas: "icon user" "icon info";
+      grid-template-areas: 'icon user' 'icon info';
       grid-template-columns: 70px 1fr;
       grid-template-rows: min-content 120px;
       grid-column-gap: 15px;
       grid-row-gap: 10px;
-      
+
       svg {
         grid-area: icon;
         width: 100%;
@@ -40,7 +37,7 @@
       }
       p {
         grid-area: info;
-      
+
         width: 100%;
         font-weight: bold;
       }

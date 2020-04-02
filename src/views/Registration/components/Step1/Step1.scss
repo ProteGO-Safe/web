@@ -1,12 +1,8 @@
-.registration{
+@import '../../../../assets/styles/mixins';
+
+.registration {
   &__step--1 {
-    display: grid;
-    grid-template-areas:
-            "banner"
-            "container";
-    grid-template-rows: 95px min-content;
-    width: 100%;
-    height: 100vh;
+    @include viewBaseStyles(95px);
 
     .banner {
       grid-area: banner;
