@@ -10,7 +10,8 @@ import {
   Step7,
   Summary
 } from './components';
-import { Banner } from '../../components';
+import { Back, Banner } from '../../components';
+import './Registration.scss';
 
 import Banner1 from '../../assets/img/banners/banner-1.png';
 import Banner2 from '../../assets/img/banners/banner-2.png';
@@ -32,7 +33,8 @@ const banners = {
 
 const Registration = () => {
   const {
-    values: { step }
+    values: { step },
+    setFieldValue
   } = useFormikContext();
 
   useEffect(() => {
@@ -45,10 +47,19 @@ const Registration = () => {
     return <Summary />;
   }
 
+  const onBack = () => {
+    const previousStep = step - 1;
+    setFieldValue('step', previousStep);
+  };
+
   return (
     <div className="view view__registration">
       <div className={`registration registration__step--${step}`}>
-        <Banner background={banners[step]} size="small" />
+        <Banner background={banners[step]} size="small">
+          {step !== 1 && (
+            <Back className="registration__back" onClick={onBack} />
+          )}
+        </Banner>
         {step === 1 && <Step1 />}
         {step === 2 && <Step2 />}
         {step === 3 && <Step3 />}

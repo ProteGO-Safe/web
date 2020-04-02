@@ -5,8 +5,8 @@ import { Button } from '../Button';
 
 import './Back.scss';
 
-const Back = ({ onClick }) => (
-  <div className="back-btn">
+const Back = ({ className, onClick }) => (
+  <div className={`back-btn ${className}`}>
     <Button
       height="small"
       icon={Icon}
@@ -19,7 +19,12 @@ const Back = ({ onClick }) => (
   </div>
 );
 
+Back.defaultProps = {
+  className: ''
+};
+
 Back.propTypes = {
+  className: PropTypes.string,
   onClick: PropTypes.func.isRequired
 };
 
