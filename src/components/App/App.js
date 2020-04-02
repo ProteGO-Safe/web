@@ -1,5 +1,6 @@
 import React from 'react';
 import moment from 'moment';
+import classNames from 'classnames';
 import 'moment/locale/pl';
 import { useSelector } from 'react-redux';
 import { Redirect, Route, Switch } from 'react-router-dom';
@@ -36,7 +37,12 @@ function App() {
   const menuVisible = visible && !inProgress ? 'menu-visible' : '';
 
   return (
-    <div className={`app ${menuVisible}`}>
+    <div
+      className={classNames({
+        app: true,
+        menuVisible
+      })}
+    >
       <div className="app__inner">
         <Switch>
           <Route exact path="/" component={name ? Home : Registration} />
