@@ -13,10 +13,12 @@ const persistConfig = {
 
 const persisted = persistReducer(persistConfig, reducers);
 
-const store = createStore(
-  persisted,
-  composeWithDevTools(applyMiddleware(thunk))
-);
+const devTools =
+  process.env.NODE_ENV === 'production'
+    ? applyMiddleware(thunk)
+    : composeWithDevTools(applyMiddleware(thunk));
+
+const store = createStore(persisted, devTools);
 
 const persistor = persistStore(store);
 
