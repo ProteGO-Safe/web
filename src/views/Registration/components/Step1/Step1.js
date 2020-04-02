@@ -8,7 +8,7 @@ import {
   Container,
   Input
 } from '../../../../components';
-import { FIELD_NAME } from '../../../../constants';
+import { FIELD_NAME, FIELD_TERM1, FIELD_TERM2 } from '../../../../constants';
 import Icon from '../../../../assets/img/icons/angle-right.svg';
 
 import './Step1.scss';
@@ -17,12 +17,26 @@ import PrivacyPolicyContent from '../../../PrivacyPolicyDetails/component/Privac
 import RegulationsContent from '../../../Regulations/component/RegulationsContent/RegulationsContent';
 
 const Step1 = () => {
-  const { handleChange, setFieldValue, values } = useFormikContext();
+  const {
+    errors,
+    handleChange,
+    setErrors,
+    setFieldValue,
+    values,
+    validateForm
+  } = useFormikContext();
   const { openModal } = useModalContext();
 
-  const handleClick = () => setFieldValue('step', 2);
+  const fields = [FIELD_NAME, FIELD_TERM1, FIELD_TERM2];
 
-  const disabled = !values.name || !values.term1 || !values.term2;
+  const handleClick = () => {
+    validateForm().then(error => {
+      if (!fields.some(field => Object.keys(error).includes(field))) {
+        setFieldValue('step', 2);
+        setErrors({});
+      }
+    });
+  };
 
   return (
     <Container>
@@ -50,6 +64,7 @@ const Step1 = () => {
       </div>
       <FieldSet>
         <Input
+          error={errors[FIELD_NAME]}
           description="Jak masz na imię?"
           placeholder="imię"
           onChange={handleChange}
@@ -57,7 +72,7 @@ const Step1 = () => {
           value={values[FIELD_NAME]}
         />
         <Checkbox
-          checked={values.term1}
+          checked={values[FIELD_TERM1]}
           description={
             <div>
               Oświadczam, że zapoznałem/am się z{' '}
@@ -77,12 +92,13 @@ const Step1 = () => {
               i akceptuję ich postanowienia.
             </div>
           }
-          name="term1"
-          onChange={() => setFieldValue('term1', !values.term1)}
-          value="term1"
+          error={errors[FIELD_TERM1]}
+          name={FIELD_TERM1}
+          onChange={() => setFieldValue(FIELD_TERM1, !values[FIELD_TERM1])}
+          value={FIELD_TERM1}
         />
         <Checkbox
-          checked={values.term2}
+          checked={values[FIELD_TERM2]}
           description={
             <div>
               Zdaję sobie sprawę, że umieszczenie w SafeSafe informacji
@@ -100,13 +116,13 @@ const Step1 = () => {
               .
             </div>
           }
-          name="term2"
-          onChange={() => setFieldValue('term2', !values.term2)}
-          value="term2"
+          error={errors[FIELD_TERM2]}
+          name={FIELD_TERM2}
+          onChange={() => setFieldValue(FIELD_TERM2, !values[FIELD_TERM2])}
+          value={FIELD_TERM2}
         />
       </FieldSet>
       <Button
-        disabled={disabled}
         onClick={handleClick}
         icon={Icon}
         text="Przejdź dalej"

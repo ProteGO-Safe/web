@@ -21,6 +21,7 @@
     &__wrapper {
       position: relative;
       display: flex;
+      flex-direction: column;
       width: 100%;
     }
   }
@@ -46,11 +47,19 @@
     }
   }
 
+  &__error {
+    border: 1px solid $red;
+  }
+
   &__description {
     width: calc(100% - 26px);
     color: $gray_2;
     font-size: 12px;
     letter-spacing: 0;
+
+    &__wrapper {
+      display: flex;
+    }
 
     span {
       position: relative;
@@ -62,13 +71,22 @@
   }
 
   &__field {
-    &:checked + .checkbox__btn {
-      border-color: $primary_2;
-
-      &:after {
-        display: block;
+    &:checked + .checkbox__description__wrapper {
+      .checkbox__btn {
+        border-color: $primary_2;
+        &:after {
+          display: block;
+        }
       }
     }
+  }
+
+  &__error_description {
+    font-size: 10px;
+    line-height: 13px;
+    margin-left: 24px;
+    letter-spacing: 0;
+    color: #F23131;
   }
 
   &.big {
