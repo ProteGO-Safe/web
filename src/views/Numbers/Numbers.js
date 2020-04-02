@@ -32,6 +32,7 @@ const Numbers = () => (
             <a
               href="https://www.gov.pl/web/koronawirus/lista-szpitali"
               target="_blank"
+              rel="noopener noreferrer"
             >
               https://www.gov.pl/web/koronawirus/lista-szpitali
             </a>
