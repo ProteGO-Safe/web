@@ -33,14 +33,13 @@ function App() {
   moment.locale('pl');
 
   const { name } = useSelector(state => state.user);
-  const { inProgress, visible } = useMenuContext();
-  const menuVisible = visible && !inProgress ? 'menu-visible' : '';
+  const { inProgress, visible: menuIsVisible } = useMenuContext();
 
   return (
     <div
       className={classNames({
         app: true,
-        menuVisible
+        'menu-visible': menuIsVisible && !inProgress
       })}
     >
       <div className="app__inner">
