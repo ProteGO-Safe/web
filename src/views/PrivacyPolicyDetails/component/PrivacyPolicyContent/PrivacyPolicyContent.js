@@ -304,13 +304,18 @@ const PrivacyPolicyContent = () => (
           Krajowego Rejestru Sądowego, pod numerem KRS 0000429183, REGON
           021889810, NIP 8971782877, która świadczy Usługę Triażu (polityka
           prywatności Inframedica:{' '}
-          <a href="https://infermedica.com/privacy-policy" target="_blank">
+          <a
+            href="https://infermedica.com/privacy-policy"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             https://infermedica.com/privacy-policy
           </a>
           , informacje o Usłudze Triażu:{' '}
           <a
             href="https://developer.infermedica.com/docs/covid-19#triage"
             target="_blank"
+            rel="noopener noreferrer"
           >
             https://developer.infermedica.com/docs/covid-19#triage
           </a>
