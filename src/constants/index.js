@@ -4,10 +4,12 @@ export const FIELD_NAME = 'name';
 export const FIELD_TERM1 = 'term1';
 export const FIELD_TERM2 = 'term2';
 const FIELD_CHRONIC_SICK_1 = 'nadciśnienie tętnicze';
-const FIELD_CHRONIC_SICK_1_PH = 'jak długo? podać w latach z dokładnością do 0.25 roku';
+const FIELD_CHRONIC_SICK_1_PH =
+  'jak długo? podać w latach z dokładnością do 0.25 roku';
 const FIELD_CHRONIC_SICK_2 = 'przewlekłe choroby układu oddechowego';
 const FIELD_CHRONIC_SICK_2_PH = 'proszę wpisać jakie';
-const FIELD_CHRONIC_SICK_3 = 'choroby układu krążenia - choroba niedokrwienna serca';
+const FIELD_CHRONIC_SICK_3 =
+  'choroby układu krążenia - choroba niedokrwienna serca';
 const FIELD_CHRONIC_SICK_4 = 'choroby układu krążenia - wady zastawkowe serca';
 const FIELD_CHRONIC_SICK_5 = 'choroby układu krążenia - niewydolność serca';
 const FIELD_CHRONIC_SICK_6 = 'choroby układu krążenia - inne';
@@ -16,12 +18,15 @@ const FIELD_CHRONIC_SICK_7 = 'cukrzyca - insulinozależna';
 const FIELD_CHRONIC_SICK_8 = 'cukrzyca - insulinoniezależna';
 const FIELD_CHRONIC_SICK_9 = 'choroby układu immunologicznego';
 const FIELD_CHRONIC_SICK_9_PH = 'proszę wpisać jakie';
-const FIELD_CHRONIC_SICK_10 = 'stosowanie leków obniżających odporność (immunosupresyjnych)';
+const FIELD_CHRONIC_SICK_10 =
+  'stosowanie leków obniżających odporność (immunosupresyjnych)';
 const FIELD_CHRONIC_SICK_10_PH = 'proszę wpisać jakie';
 const FIELD_CHRONIC_SICK_11 = 'choroby onkologiczne';
-const FIELD_CHRONIC_SICK_11_PH = 'proszę wpisać jakie podać w latach z dokładnością do 0.25 roku';
+const FIELD_CHRONIC_SICK_11_PH =
+  'proszę wpisać jakie podać w latach z dokładnością do 0.25 roku';
 const FIELD_CHRONIC_SICK_12 = 'nietolerancje/alergie/nadwrażliwość na leki';
-const FIELD_CHRONIC_SICK_12_PH = 'proszę wpisać jakie podać w latach z dokładnością do <=1 , <3, <5, <10 <15 lub więcej niż 15 >lat';
+const FIELD_CHRONIC_SICK_12_PH =
+  'proszę wpisać jakie podać w latach z dokładnością do <=1 , <3, <5, <10 <15 lub więcej niż 15 >lat';
 const FIELD_CHRONIC_SICK_13 = 'nietolerancje/alergie - pokarmowe';
 const FIELD_CHRONIC_SICK_13_PH = 'proszę wpisać jakie';
 const FIELD_CHRONIC_SICK_14 = 'nietolerancje/alergie - oddechowe';
@@ -115,6 +120,13 @@ export const VALUE_ABSENT = 'absent';
 
 export const ANDROID = 'Android';
 export const IOS = 'iOS';
+
+export const BROWSER = {
+  FIREFOX: 'firefox',
+  SAFARI: 'safari',
+  CHROME: 'chrome',
+  SAMSUNG_BROWSER: 'samsung-browser'
+};
 
 export const FIELD_TEMPERATURE = 'temperature';
 export const FIELD_RUNNY_NOSE = 'runnyNose';

@@ -1,16 +1,17 @@
 import { useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 import isWebview from 'is-ua-webview';
-import getMobileOperatingSystem from '../../services/getMobileOperationSystem';
 import checkPWA from '../../services/checkPWA';
+import parseUserAgent from '../../services/parseUserAgent';
+import { ANDROID, IOS } from '../../constants';
 
 const useInstallApp = () => {
   const history = useHistory();
-  const system = getMobileOperatingSystem();
+  const { os, browser } = parseUserAgent();
 
   // eslint-disable-next-line
   useEffect(() => {
-    if (!system) return undefined;
+    if (![ANDROID, IOS].includes(os.name)) return undefined;
 
     const isPWA = checkPWA();
 
@@ -20,7 +21,8 @@ const useInstallApp = () => {
     history.push({
       pathname: '/install',
       state: {
-        system
+        system: os.name,
+        browser: browser.name.toLowerCase().replace(' ', '-')
       }
     });
     // eslint-disable-next-line
