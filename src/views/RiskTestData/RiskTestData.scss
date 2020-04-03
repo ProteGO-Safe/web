@@ -1,11 +1,8 @@
 @import '../../assets/styles/colors';
+@import '../../assets/styles/mixins';
 
 .view__risk-test-data {
-  display: grid;
-  grid-template-areas: "banner" "container";
-  grid-template-rows: 100px 1fr;
-  width: 100%;
-  height: 100vh;
+  @include viewBaseStyles(100px);
 
   .banner {
     grid-area: banner;
@@ -13,7 +10,7 @@
 
   .container {
     display: grid;
-    grid-template-areas: "title" "data";
+    grid-template-areas: 'title' 'data';
     grid-template-rows: 78px auto;
     grid-area: container;
 

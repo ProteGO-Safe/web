@@ -1,12 +1,8 @@
 @import '../../assets/styles/colors';
+@import '../../assets/styles/mixins';
 
 .view__risk-information {
-  display: grid;
-  grid-template-areas: "banner" "container";
-  grid-template-rows: 102px 1fr;
-  
-  width: 100%;
-  height: 100vh;
+  @include viewBaseStyles();
 
   .banner {
     grid-area: banner;
@@ -14,18 +10,18 @@
 
   .container {
     grid-area: container;
-    
+
     display: grid;
-    grid-template-areas: "title" "content";
+    grid-template-areas: 'title' 'content';
     grid-template-rows: 120px 1fr;
-    
+
     min-width: 296px;
     font-size: 16px;
     line-height: 1.5em;
 
     h4 {
       grid-area: title;
-  
+
       align-content: center;
       text-align: center;
       font-size: 16px;
@@ -41,7 +37,7 @@
 
       ol {
         padding-inline-start: 15px;
-        
+
         ul {
           padding-inline-start: 15px;
           font-weight: unset;
