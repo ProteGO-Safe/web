@@ -15,7 +15,7 @@ const AppContainer = () => {
     history.listen(location => {
       ReactGA.pageview(location.pathname);
     });
-  }, []);
+  }, [history]);
 
   return (
     <MenuProvider>

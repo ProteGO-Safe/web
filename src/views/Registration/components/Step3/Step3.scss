@@ -2,7 +2,7 @@
 
 .registration {
   &__step--3 {
-    @include viewBaseStyles(minmax(auto, 302px));
+    @include viewBaseStyles(minmax(auto, 202px));
 
     .banner {
       grid-area: banner;

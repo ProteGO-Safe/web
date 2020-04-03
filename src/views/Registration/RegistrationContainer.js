@@ -8,7 +8,6 @@ import * as constants from '../../constants';
 import Registration from './Registration';
 import { chronicSickValues } from '../../constants';
 import useInstallApp from '../../hooks/useInstallApp';
-import { FIELD_AGE } from '../../constants';
 
 const RegistrationContainer = () => {
   const dispatch = useDispatch();
@@ -30,8 +29,14 @@ const RegistrationContainer = () => {
       .min(3, 'Za krótkie imię')
       .max(20, 'Za długie imię')
       .required('Imię jest wymagane'),
-    [constants.FIELD_TERM1]: Yup.boolean().oneOf([true], 'Proszę zaznaczyć zgodę'),
-    [constants.FIELD_TERM2]: Yup.boolean().oneOf([true], 'Proszę zaznaczyć zgodę'),
+    [constants.FIELD_TERM1]: Yup.boolean().oneOf(
+      [true],
+      'Proszę zaznaczyć zgodę'
+    ),
+    [constants.FIELD_TERM2]: Yup.boolean().oneOf(
+      [true],
+      'Proszę zaznaczyć zgodę'
+    ),
     [constants.FIELD_AGE]: Yup.number()
       .min(1, 'Za mały wiek')
       .max(150, 'Za duży wiek')
