@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
+import isWebview from 'is-ua-webview';
 import getMobileOperatingSystem from '../../services/getMobileOperationSystem';
 import checkPWA from '../../services/checkPWA';
 
@@ -14,6 +15,7 @@ const useInstallApp = () => {
     const isPWA = checkPWA();
 
     if (isPWA) return undefined;
+    if (isWebview) return undefined;
 
     history.push({
       pathname: '/install',
