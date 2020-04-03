@@ -6,8 +6,12 @@ import Summary from './Summary';
 import { addRiskTest } from '../../../../store/actions/risktest';
 import useLoaderContext from '../../../../hooks/useLoaderContext';
 
+import useMenuContext from '../../../../hooks/useMenuContext';
+
 const SummaryContainer = () => {
   const history = useHistory();
+  const isDesktop = window.innerWidth > 768;
+  const { setVisible } = useMenuContext();
   const { setLoader } = useLoaderContext();
   const { allQuestions, evidence } = useSelector(state => state.diagnosis);
   const { triageLevel, label, description } = useSelector(
@@ -22,6 +26,10 @@ const SummaryContainer = () => {
       label,
       description
     };
+
+    if ( isDesktop ) {
+      setVisible(true);
+    }
     dispatch(addRiskTest(data));
     setLoader(true);
     setTimeout(() => setLoader(false), 5000);
