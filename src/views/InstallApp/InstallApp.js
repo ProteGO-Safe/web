@@ -1,10 +1,11 @@
 import React from 'react';
 import { Redirect, useHistory, useLocation } from 'react-router-dom';
+
 import Container from '../../components/Container/Container';
 import { Banner, Brand, Button, FieldSet } from '../../components';
 import Background from '../../assets/img/banners/banner-1.png';
-import './InstallApp.scss';
 import { ANDROID, IOS } from '../../constants';
+import './InstallApp.scss';
 
 const InstallApp = () => {
   const history = useHistory();
@@ -14,15 +15,15 @@ const InstallApp = () => {
     return <Redirect to="/" />;
   }
 
-  const { system } = location.state;
+  const { system, browser } = location.state;
 
   const handleClick = () => {
     switch (system) {
       case IOS:
-        history.push('/install/ios');
+        history.push(`/install/ios/${browser}`);
         break;
       case ANDROID:
-        history.push('/install/android');
+        history.push(`/install/android/${browser}`);
         break;
       default:
         history.push('/');
