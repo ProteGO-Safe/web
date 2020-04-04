@@ -12,6 +12,7 @@ import Icon8 from '../../assets/img/icons/008-settings.svg';
 
 import Menu from './Menu';
 import useMenuContext from '../../hooks/useMenuContext';
+import Routes from '../../routes';
 
 const MenuContainer = () => {
   const userName = useSelector(state => state.user.name);
@@ -25,31 +26,37 @@ const MenuContainer = () => {
   const items = [
     {
       icon: Icon1,
-      path: '/daily',
+      path: Routes.Daily,
       slug: 'dziennik',
       title: 'Mój dziennik zdrowia'
     },
     {
       icon: Icon2,
-      path: '/risk-test',
+      path: Routes.RiskTest,
       slug: 'ankieta',
       title: 'Ankieta oceny ryzyka'
     },
     {
+      icon: Icon2,
+      path: Routes.MatchedDevices,
+      slug: 'devices',
+      title: 'Spotkanie urządzenia'
+    },
+    {
       icon: Icon3,
-      path: '/how-it-works',
+      path: Routes.HowItWorks,
       slug: 'jak_to_dziala',
       title: 'Jak to działa?'
     },
     {
       icon: Icon4,
-      path: '/risk-information/no_risk',
+      path: Routes.NoRiskInformation,
       slug: 'jak_sie_chronic',
       title: 'Jak się chronić?'
     },
     {
       icon: Icon5,
-      path: '/numbers',
+      path: Routes.EmergencyNumbers,
       slug: 'numery_alarmowe',
       title: 'Numery alarmowe'
     },
@@ -59,20 +66,20 @@ const MenuContainer = () => {
     {
       bold: true,
       icon: Icon6,
-      path: '/risk-information/quarantine',
+      path: Routes.QuarantineInformation,
       slug: 'co_zrobic',
       title: 'Czuję się źle, co zrobić?'
     },
     {
       icon: Icon7,
-      path: '/privacy-policy',
+      path: Routes.QuarantineInformation,
       slug: 'polityka_prywatnosci',
       title: 'Polityka prywatności'
     },
     {
       disable: true,
       icon: Icon8,
-      path: '',
+      path: Routes.Settings,
       slug: 'ustawienia',
       title: 'Ustawienia'
     }

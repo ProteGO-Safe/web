@@ -22,12 +22,14 @@ import {
   UserData,
   UserDataSettings,
   InstallAppAndroid,
-  InstallAppIOS
+  InstallAppIOS,
+  MatchedDevices
 } from '../../views';
 
-import { Menu } from '../Menu';
-import './App.scss';
 import useMenuContext from '../../hooks/useMenuContext';
+import { Menu } from '../Menu';
+import Routes from '../../routes';
+import './App.scss';
 
 function App() {
   moment.locale('pl');
@@ -35,34 +37,44 @@ function App() {
   const { name } = useSelector(state => state.user);
   const { inProgress, visible: menuIsVisible } = useMenuContext();
 
+  const className = classNames({
+    app: true,
+    'menu-visible': menuIsVisible && !inProgress
+  });
+
   return (
-    <div
-      className={classNames({
-        app: true,
-        'menu-visible': menuIsVisible && !inProgress
-      })}
-    >
+    <div className={className}>
       <div className="app__inner">
         <Switch>
-          <Route exact path="/" component={name ? Home : Registration} />
-          {!name && <Route exact path="/install" component={InstallApp} />}
+          <Route
+            exact
+            path={Routes.Home}
+            component={name ? Home : Registration}
+          />
+          {!name && (
+            <Route exact path={Routes.Install} component={InstallApp} />
+          )}
           {!name && (
             <Route
               exact
-              path="/install/android"
+              path={Routes.InstallAndroid}
               component={InstallAppAndroid}
             />
           )}
           {!name && (
-            <Route exact path="/install/ios" component={InstallAppIOS} />
+            <Route
+              exact
+              path={Routes.InstallAppIOS}
+              component={InstallAppIOS}
+            />
           )}
           {name && (
             <>
-              <Route exact path="/daily" component={Daily} />
+              <Route exact path={Routes.Daily} component={Daily} />
               <Route exact path="/daily/:id" component={DailyData} />
               <Route exact path="/daily-data" component={DailyData} />
-              <Route exact path="/how-it-works" component={HowItWorks} />
-              <Route exact path="/risk-test" component={RiskTest} />
+              <Route exact path={Routes.HowItWorks} component={HowItWorks} />
+              <Route exact path={Routes.RiskTest} component={RiskTest} />
               <Route
                 exact
                 path="/risk-test-data/:id"
@@ -70,27 +82,36 @@ function App() {
               />
               <Route
                 exact
-                path="/risk-information/:triage"
+                path={Routes.RiskInoformationTriage}
                 component={RiskInformation}
               />
-              <Route exact path="/numbers" component={Numbers} />
-              <Route exact path="/privacy-policy" component={PrivacyPolicy} />
+              <Route exact path={Routes.EmergencyNumbers} component={Numbers} />
               <Route
                 exact
-                path="/privacy-policy-details"
+                path={Routes.PrivacyPolicy}
+                component={PrivacyPolicy}
+              />
+              <Route
+                exact
+                path={Routes.PrivacyPolicyDetails}
                 component={PrivacyPolicyDetails}
               />
-              <Route exact path="/regulations" component={Regulations} />
-              <Route exact path="/diagnosis" component={Diagnosis} />
-              <Route exact path="/user-data" component={UserData} />
+              <Route exact path={Routes.Regulations} component={Regulations} />
+              <Route exact path={Routes.Diagnosis} component={Diagnosis} />
+              <Route exact path={Routes.UserData} component={UserData} />
               <Route
                 exact
-                path="/user-data/settings"
+                path={Routes.MatchedDevices}
+                component={MatchedDevices}
+              />
+              <Route
+                exact
+                path={Routes.UserDataSettings}
                 component={UserDataSettings}
               />
             </>
           )}
-          <Route render={() => <Redirect to="/" />} />
+          <Route render={() => <Redirect to={Routes.Home} />} />
         </Switch>
         <Menu />
       </div>

@@ -8,6 +8,7 @@ import {
   Step5,
   Step6,
   Step7,
+  Step8,
   Summary
 } from './components';
 import { Back, Banner } from '../../components';
@@ -20,15 +21,41 @@ import Banner4 from '../../assets/img/banners/banner-4.png';
 import Banner5 from '../../assets/img/banners/banner-5.png';
 import Banner6 from '../../assets/img/banners/banner-6.png';
 import Banner7 from '../../assets/img/banners/banner-7.png';
+import Banner8 from '../../assets/img/banners/banner-8.png';
 
-const banners = {
-  1: Banner1,
-  2: Banner2,
-  3: Banner3,
-  4: Banner4,
-  5: Banner5,
-  6: Banner6,
-  7: Banner7
+const steps = {
+  1: {
+    bannerUrl: Banner1,
+    Component: Step1
+  },
+  2: {
+    bannerUrl: Banner8,
+    Component: Step8
+  },
+  3: {
+    bannerUrl: Banner2,
+    Component: Step2
+  },
+  4: {
+    bannerUrl: Banner3,
+    Component: Step3
+  },
+  5: {
+    bannerUrl: Banner4,
+    Component: Step4
+  },
+  6: {
+    bannerUrl: Banner5,
+    Component: Step5
+  },
+  7: {
+    bannerUrl: Banner6,
+    Component: Step6
+  },
+  8: {
+    bannerUrl: Banner7,
+    Component: Step7
+  }
 };
 
 const Registration = () => {
@@ -43,30 +70,31 @@ const Registration = () => {
     }
   }, [step]);
 
-  if (step === 8) {
+  if (step === 9) {
     return <Summary />;
   }
 
   const onBack = () => {
-    const previousStep = step - 1;
+    let previousStep;
+    if (step === 8) {
+      previousStep = step - 2;
+    } else {
+      previousStep = step - 1;
+    }
     setFieldValue('step', previousStep);
   };
+
+  const StepComponent = steps[step].Component;
 
   return (
     <div className="view view__registration">
       <div className={`registration registration__step--${step}`}>
-        <Banner background={banners[step]} size="small">
+        <Banner background={steps[step].bannerUrl} size="small">
           {step !== 1 && (
             <Back className="registration__back" onClick={onBack} />
           )}
         </Banner>
-        {step === 1 && <Step1 />}
-        {step === 2 && <Step2 />}
-        {step === 3 && <Step3 />}
-        {step === 4 && <Step4 />}
-        {step === 5 && <Step5 />}
-        {step === 6 && <Step6 />}
-        {step === 7 && <Step7 />}
+        <StepComponent />
       </div>
     </div>
   );

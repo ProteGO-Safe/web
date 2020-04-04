@@ -1,6 +1,7 @@
 export const FIELD_AGE = 'age';
 export const FIELD_SEX = 'sex';
 export const FIELD_NAME = 'name';
+export const FIELD_PHONE = 'phone';
 export const FIELD_TERM1 = 'term1';
 export const FIELD_TERM2 = 'term2';
 const FIELD_CHRONIC_SICK_1 = 'nadciśnienie tętnicze';

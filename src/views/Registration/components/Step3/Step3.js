@@ -21,7 +21,7 @@ const Step3 = () => {
   const handleClick = () => {
     validateForm().then(error => {
       if (!fields.some(field => Object.keys(error).includes(field))) {
-        setFieldValue('step', 4);
+        setFieldValue('step', 5);
         setErrors({});
       }
     });

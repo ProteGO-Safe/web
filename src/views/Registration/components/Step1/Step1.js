@@ -41,7 +41,7 @@ const Step1 = () => {
   return (
     <Container>
       <Brand />
-      <div class="worth-it">
+      <div className="worth-it">
         <p className="small text-bold">Dlaczego warto?</p>
         <ul className="text-list">
           <li>

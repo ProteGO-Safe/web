@@ -35,7 +35,7 @@ const Step4 = () => {
 
   const goToNextStep = () => {
     if (isAnyFieldSelected()) {
-      setFieldValue('step', 5);
+      setFieldValue('step', 6);
     }
   };
 
