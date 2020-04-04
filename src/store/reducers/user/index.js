@@ -14,7 +14,7 @@ const diagnosisReducer = (state = INITIAL_STATE, action) => {
     case USER_SAVE:
       return (() => {
         const {
-          data: { name, sex, age, chronicSicks, bloodGroup, smokeNumber }
+          data: { name, sex, age, phone, chronicSicks, bloodGroup, smokeNumber }
         } = action;
 
         return {
@@ -22,6 +22,7 @@ const diagnosisReducer = (state = INITIAL_STATE, action) => {
           name,
           sex,
           age,
+          phone,
           chronicSicks: [...chronicSicks],
           bloodGroup,
           smokeNumber

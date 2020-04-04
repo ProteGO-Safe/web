@@ -15,7 +15,7 @@ const tSex = {
 };
 
 const Imprint = ({ user }) => {
-  const { sex, age, chronicSicks, bloodGroup, smokeNumber } = user;
+  const { sex, age, chronicSicks, bloodGroup, smokeNumber, phone } = user;
 
   return (
     <div className="imprint">
@@ -48,6 +48,9 @@ const Imprint = ({ user }) => {
           </li>
         </ul>
       )}
+      <p className="big text-bold">
+        <span>Numer telefonu:</span> {phone}
+      </p>
     </div>
   );
 };
@@ -63,7 +66,8 @@ Imprint.propTypes = {
       })
     ),
     sex: PropTypes.oneOf([VALUE_MAN, VALUE_WOMAN]),
-    smokeNumber: PropTypes.string
+    smokeNumber: PropTypes.string,
+    phone: PropTypes.number.isRequired
   }).isRequired
 };
 

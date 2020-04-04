@@ -15,3 +15,4 @@ export { Registration } from './Registration';
 export { Regulations } from './Regulations';
 export { UserData } from './UserData';
 export { UserDataSettings } from './UserDataSettings';
+export { MatchedDevices } from './MatchedDevices';

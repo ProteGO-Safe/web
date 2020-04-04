@@ -39,7 +39,7 @@ const Step6 = () => {
       <Button
         disabled={!values[FIELD_SMOKE]}
         onClick={() =>
-          setFieldValue('step', values[FIELD_SMOKE] === VALUE_SMOKE_YES ? 7 : 8)
+          setFieldValue('step', values[FIELD_SMOKE] === VALUE_SMOKE_YES ? 8 : 9)
         }
         icon={Icon}
         size="medium"

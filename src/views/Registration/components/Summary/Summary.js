@@ -14,7 +14,7 @@ import UserImg from '../../../../assets/img/icons/user.svg';
 import {
   chronicSickValues,
   FIELD_AGE,
-  FIELD_BLOOD_GROUP,
+  FIELD_BLOOD_GROUP, FIELD_PHONE,
   FIELD_SEX,
   FIELD_SMOKE_NUMBER
 } from '../../../../constants';
@@ -59,7 +59,8 @@ const Summary = () => {
             bloodGroup: values[FIELD_BLOOD_GROUP],
             chronicSicks,
             sex: values[FIELD_SEX],
-            smokeNumber: values[FIELD_SMOKE_NUMBER]
+            smokeNumber: values[FIELD_SMOKE_NUMBER],
+            phone: values[FIELD_PHONE]
           }}
         />
         <FieldSet>

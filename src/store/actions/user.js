@@ -1,4 +1,5 @@
 import * as types from '../types/user';
+import { saveHashedPhoneNumber } from './nativeData';
 
 export const saveUserRequested = data => ({
   data,
@@ -7,6 +8,7 @@ export const saveUserRequested = data => ({
 
 export function saveUser(data) {
   return dispatch => {
+    dispatch(saveHashedPhoneNumber(data.phone));
     dispatch(saveUserRequested(data));
   };
 }
