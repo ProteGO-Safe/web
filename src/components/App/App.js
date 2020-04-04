@@ -49,16 +49,12 @@ function App() {
           {!name && (
             <Route
               exact
-              path="/install/android/:browser"
+              path="/install/android"
               component={InstallAppAndroid}
             />
           )}
           {!name && (
-            <Route
-              exact
-              path="/install/ios/:browser"
-              component={InstallAppIOS}
-            />
+            <Route exact path="/install/ios" component={InstallAppIOS} />
           )}
           {name && (
             <>
