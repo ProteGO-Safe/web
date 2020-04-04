@@ -27,12 +27,12 @@ build:prod:
     - triggers
 
 .deploy: &deploy
-  image: casao/lftp-ssh
+  image: dockito/lftp-client
   stage: deploy
 
 deploy:stage:
   <<: *deploy
   script:
-      - lftp -e 'cd /test; mput build/* ; bye' -u $STAGE_FTP_USER,$STAGE_FTP_PASS $STAGE__FTP_HOST
+    - lftp -e 'cd /safesafe; mput -e build/* ; bye' -u $STAGE_FTP_USER,$STAGE_FTP_PASS $STAGE__FTP_HOST
   only:
     - master
