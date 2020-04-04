@@ -72,7 +72,7 @@ const MenuContainer = () => {
     },
     {
       icon: Icon7,
-      path: Routes.QuarantineInformation,
+      path: Routes.PrivacyPolicy,
       slug: 'polityka_prywatnosci',
       title: 'Polityka prywatności'
     },
