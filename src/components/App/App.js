@@ -28,6 +28,7 @@ import {
 
 import useMenuContext from '../../hooks/useMenuContext';
 import { Menu } from '../Menu';
+import { PanicButton } from '../PanicButton';
 import Routes from '../../routes';
 import './App.scss';
 
@@ -114,6 +115,7 @@ function App() {
           <Route render={() => <Redirect to={Routes.Home} />} />
         </Switch>
         <Menu />
+        <PanicButton />
       </div>
     </div>
   );
