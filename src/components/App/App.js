@@ -23,7 +23,8 @@ import {
   UserDataSettings,
   InstallAppAndroid,
   InstallAppIOS,
-  MatchedDevices
+  MatchedDevices,
+  HospitalsList
 } from '../../views';
 
 import useMenuContext from '../../hooks/useMenuContext';
@@ -100,6 +101,7 @@ function App() {
               <Route exact path={Routes.Regulations} component={Regulations} />
               <Route exact path={Routes.Diagnosis} component={Diagnosis} />
               <Route exact path={Routes.UserData} component={UserData} />
+              <Route exact path={Routes.HospitalsList} component={HospitalsList} />
               <Route
                 exact
                 path={Routes.MatchedDevices}

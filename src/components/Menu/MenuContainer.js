@@ -9,6 +9,7 @@ import Icon5 from '../../assets/img/icons/005-panel.svg';
 import Icon6 from '../../assets/img/icons/006-idea-1.svg';
 import Icon7 from '../../assets/img/icons/007-contract.svg';
 import Icon8 from '../../assets/img/icons/008-settings.svg';
+import Icon9 from '../../assets/img/icons/Group 464__grey.svg';
 
 import Menu from './Menu';
 import useMenuContext from '../../hooks/useMenuContext';
@@ -59,6 +60,13 @@ const MenuContainer = () => {
       path: Routes.EmergencyNumbers,
       slug: 'numery_alarmowe',
       title: 'Numery alarmowe'
+    },
+    {
+      bold: false,
+      icon: Icon9,
+      path: Routes.HospitalsList,
+      slug: 'lista_szpitali',
+      title: 'Szpitale zakaźne w Polsce'
     },
     {
       slug: 'empty_1'
