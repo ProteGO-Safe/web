@@ -4,7 +4,6 @@ import PropTypes from 'prop-types';
 import useModalContext from '../../hooks/useModalContext';
 import { Help } from '../../views/Help';
 import { Button } from '../Button';
-import './PanicButton.scss';
 
 const PanicButton = ({ disabled, height, size, type }) => {
   const { openModal } = useModalContext();
