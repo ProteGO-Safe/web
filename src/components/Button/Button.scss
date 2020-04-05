@@ -29,6 +29,10 @@
     background-color: $button_primary;
     color: $white;
 
+    &:hover {
+      background-color: $button_hover;
+    }
+
     &:disabled {
       background: $button_disabled;
       color: white;
@@ -41,6 +45,11 @@
     color: $button_primary;
     border: 2px solid $button_primary;
 
+    &:hover {
+      color: $button_hover;
+      border-color: $button_hover;
+    }
+
     &:disabled {
       background: $button_disabled_bg;
       color: $button_disabled;
@@ -52,6 +61,10 @@
   &--tertiary {
     text-transform: none;
     color: $button_primary;
+
+    &:hover {
+      color: $button_hover;
+    }
 
     &:disabled {
       color: $button_disabled;
