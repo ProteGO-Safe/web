@@ -26,7 +26,7 @@ PanicButton.defaultProps = {
   disabled: false,
   height: 'small',
   size: 'small',
-  type: 'secondary'
+  type: 'outline'
 };
 
 PanicButton.propTypes = {
