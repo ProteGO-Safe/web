@@ -1,5 +1,6 @@
 import React from 'react';
 import Background from '../../assets/img/banners/banner-1.png';
+import Background__fakemap from '../../assets/img/fake/fake___numbers-map.webp';
 import { Container } from '../../components';
 import { Header } from '../components';
 import './Numbers.scss';
@@ -7,7 +8,7 @@ import './Numbers.scss';
 const Numbers = () => (
   <div className="view view__numbers">
     <Header background={Background} prevUrl="/" />
-    <Container>
+    <Container background={Background__fakemap}>
       <h4 className="h1 text-center medium">Numery alarmowe</h4>
       <div className="content">
         <div className="address">
