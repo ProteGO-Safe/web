@@ -44,3 +44,10 @@
     border-top: 1px solid $black;
   }
 }
+
+.matched-devices__active {
+  height: 15px;
+  width: 15px;
+  background-color: $green;
+  border-radius: 50%;
+}
