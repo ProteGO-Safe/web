@@ -17,7 +17,7 @@ const DailyData = ({ date, isViewMode, onBack }) => {
         <h4 className="title medium">Dziennik zdrowia</h4>
         <p className="date medium">{date}</p>
         <Form isViewMode={isViewMode} />
-        <Imprint />
+        <Imprint hidePhoneNumber={true} />
       </Container>
       <div className="footer">
         <Container className="container__footer">
