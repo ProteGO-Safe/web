@@ -20,7 +20,7 @@ const RegistrationContainer = () => {
     [constants.FIELD_NAME]: '',
     [constants.FIELD_PHONE]: '',
     [constants.FIELD_BLOOD_GROUP]: '',
-    step: 1,
+    step: 0,
     [constants.FIELD_TERM1]: false,
     [constants.FIELD_TERM2]: false
   };

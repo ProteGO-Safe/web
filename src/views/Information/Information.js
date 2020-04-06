@@ -1,22 +1,20 @@
 import React from 'react';
 
-import Background from '../../assets/img/banners/banner-8.png';
-import { Banner, Brand, Button, Container, FieldSet } from '../../components';
+import { Button, Container, FieldSet } from '../../components';
+import { Header } from '../../components/Header';
 import './Information.scss';
 
 const Complete = ({ hideInformation }) => {
   return (
     <div className="view view__information">
-      <Banner background={Background}>
-        <Brand content={false} small white />
-      </Banner>
+      <Header hideBackButton hideMenuButton />
       <Container>
         <div className="content">
           <p className="p1 medium-2">
             Jedną z głównych funkcji tej aplikacji jest{' '}
             <span className="text-bold">
-              Ankieta Oceny Ryzyka infekcji COVID-19. Jest stworzona w 100% zgodnie
-              z&nbsp;wytycznymi WHO
+              Ankieta Oceny Ryzyka infekcji COVID-19. Jest stworzona w 100%
+              zgodnie z&nbsp;wytycznymi WHO
             </span>{' '}
             (Światowej Organizacji Zdrowia).
           </p>

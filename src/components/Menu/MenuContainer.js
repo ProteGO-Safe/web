@@ -90,6 +90,12 @@ const MenuContainer = () => {
       path: Routes.Settings,
       slug: 'ustawienia',
       title: 'Ustawienia'
+    },
+    {
+      icon: Icon8,
+      path: Routes.ReportBug,
+      slug: 'zglos-blad',
+      title: 'Zgłoś błąd'
     }
   ];
 

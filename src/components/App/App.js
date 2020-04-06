@@ -24,12 +24,12 @@ import {
   InstallAppAndroid,
   InstallAppIOS,
   MatchedDevices,
-  HospitalsList
+  HospitalsList,
+  ReportBug
 } from '../../views';
 
 import useMenuContext from '../../hooks/useMenuContext';
 import { Menu } from '../Menu';
-import { PanicButton } from '../PanicButton';
 import Routes from '../../routes';
 import './App.scss';
 
@@ -102,6 +102,7 @@ function App() {
               <Route exact path={Routes.Diagnosis} component={Diagnosis} />
               <Route exact path={Routes.UserData} component={UserData} />
               <Route exact path={Routes.HospitalsList} component={HospitalsList} />
+              <Route exact path={Routes.ReportBug} component={ReportBug} />
               <Route
                 exact
                 path={Routes.MatchedDevices}
@@ -117,7 +118,6 @@ function App() {
           <Route render={() => <Redirect to={Routes.Home} />} />
         </Switch>
         <Menu />
-        <PanicButton />
       </div>
     </div>
   );
