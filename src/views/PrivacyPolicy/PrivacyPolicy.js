@@ -1,16 +1,16 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
-import Background from '../../assets/img/banners/banner-1.png';
 import { Button, Container, FieldSet } from '../../components';
 import './PrivacyPolicy.scss';
-import { Header } from '../components';
+import Routes from '../../routes';
+import Header from '../../components/Header/Header';
 
 const PrivacyPolicy = () => {
   const history = useHistory();
 
   return (
     <div className="view view__privacy-policy">
-      <Header background={Background} prevUrl="/" />
+      <Header onBackClick={() => history.push(Routes.Home)} />
       <Container>
         <h4 className="medium">Polityka prywatności</h4>
         <div className="content">

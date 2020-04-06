@@ -1,19 +1,19 @@
 import React from 'react';
 
-import Background from '../../assets/img/banners/banner-1.png';
 import { Container } from '../../components';
-import { Header } from '../components';
 import './RiskTestData.scss';
+import Header from '../../components/Header/Header';
 
 const RiskTestData = ({
   day,
+  onBack,
   questions,
   idToChoiceResolver,
   isToday,
   triageLevelInformation
 }) => (
   <div className="view view__risk-test-data">
-    <Header background={Background} prevUrl="/risk-test" />
+    <Header onBackClick={onBack} />
     <Container>
       <div className="title">
         <h4 className="h1 text-center medium">Test oceny ryzyka</h4>

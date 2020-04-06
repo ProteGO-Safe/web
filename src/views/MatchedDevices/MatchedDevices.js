@@ -1,17 +1,21 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import moment from 'moment';
+import { useHistory } from 'react-router-dom';
 
+import moment from 'moment';
 import Container from '../../components/Container/Container';
-import Background from '../../assets/img/banners/banner-1.png';
 import { fetchDevicesList } from '../../store/actions/nativeData';
 import { selectMatchedDevices } from '../../store/selectors/nativeData';
-import { Header } from '../components/Header';
 import './MatchedDevices.scss';
+import Routes from '../../routes';
+import Header from '../../components/Header/Header';
 
 const MatchedDevices = () => {
+  const history = useHistory();
   const dispatch = useDispatch();
   const matchedDevices = useSelector(selectMatchedDevices);
+
+  const goBack = () => history.push(Routes.Home);
 
   useEffect(() => {
     dispatch(fetchDevicesList());
@@ -37,7 +41,7 @@ const MatchedDevices = () => {
 
   return (
     <div className="view matched-devices">
-      <Header background={Background} prevUrl="/" />
+      <Header onBackClick={goBack} />
       <Container className="matched-devices__container">
         <h4 className="h1 text-center medium">Spotkane urządzenia</h4>
         <div className="content">

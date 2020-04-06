@@ -2,9 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import { Button, Container, FieldSet } from '../../../../components';
-import { Header } from '../../../components';
 
 import './Summary.scss';
+import Header from '../../../../components/Header/Header';
 
 const Summary = ({ onSave }) => (
   <div className="view view__summary">

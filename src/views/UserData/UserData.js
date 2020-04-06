@@ -1,17 +1,17 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
-import Background from '../../assets/img/banners/banner-1.png';
 import { Button, Container, FieldSet } from '../../components';
-import { Header } from '../components';
 import './UserData.scss';
+import Routes from '../../routes';
+import Header from '../../components/Header/Header';
 
 const UserData = () => {
   const history = useHistory();
-  const handleClick = () => history.push('/user-data/settings');
+  const handleClick = () => history.push(Routes.UserDataSettings);
 
   return (
     <div className="view view__user-data">
-      <Header background={Background} prevUrl="/" />
+      <Header onBackClick={() => history.push(Routes.PrivacyPolicy)} />
       <Container>
         <h4 className="text-center medium">Dane</h4>
         <div className="content">
