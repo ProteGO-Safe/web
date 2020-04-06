@@ -41,7 +41,7 @@ const MenuContainer = () => {
       icon: Icon2,
       path: Routes.MatchedDevices,
       slug: 'devices',
-      title: 'Spotkanie urządzenia'
+      title: 'Spotkane urządzenia'
     },
     {
       icon: Icon3,
