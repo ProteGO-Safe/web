@@ -27,13 +27,15 @@ const MatchedDevices = () => {
 
   const renderMatchedDevicesList = () => (
     <ul className="matched-devices__list">
-      {matchedDevices.map(({ name, timestamp, duration }) => (
+      {matchedDevices.map(({ name, timestamp, duration, status }) => (
         <li key={name} className="matched-devices__list-item">
           <b>{name}</b>
           {moment(timestamp).format('YYYY-MM-DD HH:mm')}
           <br />
           {Math.floor(moment.duration(duration, 'seconds').asMinutes())}{' '}
           minut(y)
+          <br />
+          {status ? '✔️' : '❌'}
         </li>
       ))}
     </ul>
