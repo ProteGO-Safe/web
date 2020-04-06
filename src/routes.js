@@ -4,7 +4,7 @@ const Routes = {
   Install: '/install',
   InstallAndroid: '/install/android/:browser',
   InstallIOS: '/install/ios/:browser',
-  Daily: '/dziennik',
+  Daily: '/daily',
   RiskTest: '/risk-test',
   HowItWorks: '/how-it-works',
   EmergencyNumbers: '/numbers',
