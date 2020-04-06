@@ -1,53 +1,80 @@
 import React from 'react';
-import Background from '../../assets/img/banners/banner-1.png';
+
+import { useHistory } from 'react-router-dom';
+
 import { Container } from '../../components';
 import { Header } from '../components';
+import { Button } from '../../components/Button';
+
+import Background from '../../assets/img/banners/banner-1.png';
+import Background__fakemap from '../../assets/img/fake/fake___numbers-map.webp';
+import icoPhone from '../../assets/img/icons/phone.svg';
+import icoNavigation from '../../assets/img/icons/navigation.svg';
+import icoRight from '../../assets/img/icons/angle-right.svg';
+
 import './Numbers.scss';
 
-const Numbers = () => (
-  <div className="view view__numbers">
-    <Header background={Background} prevUrl="/" />
-    <Container>
-      <h4 className="h1 text-center medium">Numery alarmowe</h4>
-      <div className="content">
-        <div className="address">
-          <p className="p1 text-bold">Czuję się źle, gdzie szukać porady?</p>
-          <p className="p1 answer">
-            Skontaktuj się telefonicznie z lekarzem rodzinnym lub lokalnym
-            ośrodkiem zdrowia. Postępuj zgodnie z zaleceniami lekarza
-          </p>
-          <p className="p1 text-bold">
-            Podejrzewam, że mogę być chory na Koronowirusa, gdzie dzwonić?
-          </p>
-          <p className="p1 answer">
-            <a className="phone" href="tel:800190590">
-              800 190 590
-            </a>{' '}
-            dzwoń na Infolinię rządową. Jeżeli nie uda Ci się dodzwonić{' '}
-            <span className="text-bold">
-              skontaktuj się telefonicznie (jeżeli zdrowie na to pozwala - dzwoń
-              nie idź osobiście)
-            </span>{' '}
-            z najbliższym szpitalem zakaźnym, listę szpitali znajdziesz tutaj:{' '}
-            <a
-              href="https://www.gov.pl/web/koronawirus/lista-szpitali"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              https://www.gov.pl/web/koronawirus/lista-szpitali
-            </a>
-          </p>
-          <p className="p1 text-bold">Stan zagrożenia życia, gdzie dzwonić?</p>
-          <p className="p1 answer">
-            <a className="phone" href="tel:112">
-              112
-            </a>{' '}
-            - telefon ratunkowy ratujący życie
-          </p>
+const Numbers = () => {
+  const history = useHistory();
+
+  const goToHospitalsList = () =>
+    history.push(`/hospitals-list`);
+
+  const callEmergency = () => {
+    window.open( 'tel:800190590' );
+    return null;
+  }
+
+  return (
+    <div className="view view__numbers">
+      <Header background={Background} prevUrl="/" />
+      <Container background={Background__fakemap}>
+        <div className="content">
+          <h3>Szukaj pomocy w Twojej okolicy</h3>
+          <Button
+            icon={icoPhone}
+            text='Zadzwoń na infolinię 800 190 590'
+            onClick={callEmergency}
+            height="normal"
+            iconLeft
+            type="white"
+          />
+          <Button
+            icon={icoNavigation}
+            text='Pokaż najbliższe szpitale zakaźne i sanepidy w okolicy'
+            disabled
+            onClick={() => {}}
+            height="normal"
+            iconLeft
+            type="white"
+          />
+          <Button
+            icon={icoRight}
+            text='Pokaż adresy szpitali zakaźnych'
+            onClick={goToHospitalsList}
+            height="small"
+            type="blank"
+          />
+          <Button
+            icon={icoRight}
+            text='Pokaż adresy sanepidów'
+            disabled
+            onClick={() => {}}
+            height="small"
+            type="blank"
+          />
+          <Button
+            icon={icoRight}
+            text='Teleporady'
+            disabled
+            onClick={() => {}}
+            height="small"
+            type="blank"
+          />
         </div>
-      </div>
-    </Container>
-  </div>
-);
+      </Container>
+    </div>
+  );
+}
 
 export default Numbers;
