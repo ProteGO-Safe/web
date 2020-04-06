@@ -9,7 +9,7 @@ const Routes = {
   HowItWorks: '/how-it-works',
   EmergencyNumbers: '/numbers',
   RiskInoformationTriage: '/risk-information/:triage',
-  NoRiskInformation: '/risk-information/no-risk',
+  NoRiskInformation: '/risk-information/no_risk',
   QuarantineInformation: '/risk-information/quarantine',
   PrivacyPolicy: '/privacy-policy',
   PrivacyPolicyDetails: '/privacy-policy-details',
