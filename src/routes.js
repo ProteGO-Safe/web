@@ -17,7 +17,8 @@ const Routes = {
   Diagnosis: '/diagnosis',
   UserData: '/user-data',
   UserDataSettings: '/user-data/settings',
-  MatchedDevices: '/matched-devices'
+  MatchedDevices: '/matched-devices',
+  HospitalsList: '/hospitals-list'
 };
 
 export default Routes;

@@ -1,0 +1,565 @@
+{
+  "voivodeships": [
+    {
+      "name": "dolnośląskie",
+      "items": [
+        {
+          "city": "Wałbrzych",
+          "address": "Specjalistyczny szpital im. dra Alfreda Sokołowskiego, ul. Batorego 4",
+          "phones": ["(74) 648 98 06"]
+        },
+        {
+          "city": "Wrocław",
+          "address": "Śródmieście, Uniwersytecki Szpital Kliniczny im. Jana Mikulicza-Radeckiego, ul. Chałubińskiego 2-2A",
+          "phones": ["(71) 770 31 51"]
+        },
+        {
+          "city": "Wrocław",
+          "address": "Psie Pole, Wojewódzki Szpital Specjalistyczny im. Jerzego Gromkowskiego, ul. Koszarowa 5",
+          "phones": ["519 338 486"]
+        },
+        {
+          "city": "Bolesławiec",
+          "address": "Zespół Opieki Zdrowotnej, ul. Jeleniogórska 4",
+          "phones": ["(75) 738 01 20"]
+        }
+      ]
+    },
+    {
+      "name": "kujawsko-pomorskie",
+      "items": [
+        {
+          "city": "Bydgoszcz",
+          "address": "Wojewódzki Szpital Obserwacyjno-Zakaźny im. Tadeusza Browicza, ul. Św. Floriana 12",
+          "phones": ["(52) 325 56 34, (52)325 56 03"]
+        },
+        {
+          "city": "Grudziądz",
+          "address": "Regionalny Szpital Specjalistyczny im. dra Władysława Biegańskiego, ul. L. Rydygiera 15-17",
+          "phones": ["(56) 641 44 44"]
+        },
+        {
+          "city": "Toruń",
+          "address": "Wojewódzki Szpital Zespolony im. Ludwika Rydygiera, ul. Krasińskiego 4/4a",
+          "phones": ["(56) 679 55 27"]
+        },
+        {
+          "city": "Świecie",
+          "address": "NZOZ „Nowy Szpital Sp. z o.o.” Prowadzony przez Nowy Szpital Sp. z o.o., ul. Wojska Polskiego 126",
+          "phones": ["(51) 240 16 32"]
+        }
+      ]
+    },
+    {
+      "name": "lubelskie",
+      "items": [
+        {
+          "city": "Biłgoraj",
+          "address": "Arion Szpitale Sp. z o.o., ul. Pojaska 5",
+          "phones": ["(84) 688 22 55"]
+        },
+        {
+          "city": "Lublin",
+          "address": "Samodzielny Nr 1, ul. Staszica 16",
+          "phones": ["(81) 534 94 16"]
+        },
+        {
+          "city": "Lublin",
+          "address": "Samodzielny Publiczny Szpital Wojewódzki im. Jana Bożego, ul. Mieczysława Biernackiego 9",
+          "phones": ["(81) 740 42 75"]
+        },
+        {
+          "city": "Chełm",
+          "address": "Samodzielny Publiczny Wojewódzki Szpital Specjalistyczny, ul. Szpitalna 53b/Paw.B",
+          "phones": ["(82) 562 33 61"]
+        },
+        {
+          "city": "Łuków",
+          "address": "Samodzielny Publiczny Zakład Opieki Zdrowotnej, ul. dra Andrzeja Rogalińskiego 3",
+          "phones": ["(25) 798 20 01 wew. 292"]
+        },
+        {
+          "city": "Puławy",
+          "address": "Samodzielny Publiczny Zakład Opieki Zdrowotnej, ul. Józefa Bema 1",
+          "phones": ["(81) 450 22 77"]
+        },
+        {
+          "city": "Tomaszów Lubelski",
+          "address": "Samodzielny Publiczny Zespół Opieki Zdrowotnej, Al. Grunwaldzkie 1",
+          "phones": ["(84) 664 44 11"]
+        },
+        {
+          "city": "Biała Podlaska",
+          "address": "Wojewódzki Szpital Specjalistyczny, ul. Terebelska 57-65",
+          "phones": ["(83) 414 73 16, (83) 414 71 16"]
+        }
+      ]
+    },
+    {
+      "name": "lubuskie",
+      "items": [
+        {
+          "city": "Zielona Góra",
+          "address": "Szpital Uniwersytecki im. K. Marcinkowskiego Sp. z o.o., ul. Zyty 26",
+          "phones": ["(68) 329 64 78", "(68) 329 64 81"]
+        },
+        {
+          "city": "Gorzów Wielkopolski",
+          "address": "Wielospecjalistyczny Szpital Wojewódzki Sp.z o.o., ul. Walczaka 42",
+          "phones": []
+        }
+      ]
+    },
+    {
+      "name": "łódzkie",
+      "items": [
+        {
+          "city": "Radomsko",
+          "address": "Szpital Powiatowy, ul. Jagiellońska 36",
+          "phones": [
+            "(44) 681 08 31",
+            "(44) 681 08 22 (SOR)",
+            "(44) 681 08 23 (SOR)"
+          ]
+        },
+        {
+          "city": "Bełchatów",
+          "address": "Szpital Wojewódzki im. Jana Pawła II, ul. Czapliniecka 123",
+          "phones": ["512 030 463"]
+        },
+        {
+          "city": "Tomaszów Mazowiecki",
+          "address": "Tomaszowskie Centrum Zdrowia, ul. Jana Pawła II 35",
+          "phones": ["(44) 725 72 09"]
+        },
+        {
+          "city": "Łódź - Bałuty",
+          "address": "Wojewódzki Specjalistyczny Szpital im. dra Wł. Biegańskiego, ul. Gen. Kniaziewicza 1/5",
+          "phones": ["887 877 690"]
+        },
+        {
+          "city": "Zgierz",
+          "address": "Wojewódzki Szpital Specjalistyczny im. M. Skłodowskiej-Curie, ul. Parzęczewska 35",
+          "phones": ["(42) 714 45 00"]
+        }
+      ]
+    },
+    {
+      "name": "małopolskie",
+      "items": [
+        {
+          "city": "Kraków",
+          "address": "Samodzielny Publiczny Zakład Opieki Zdrowotnej - Szpital Uniwersytecki, ul. Macieja Jakubowskiego 2",
+          "phones": ["(12) 400 20 00", "(12) 400 20 21", "(12) 400 20 06"]
+        },
+        {
+          "city": "Kraków",
+          "address": "Szpital Specjalistyczny im. Stefana Żeromskiego, Samodzielny Publiczny Zakład Opieki Zdrowotnej, os. Na Skarpie 66",
+          "phones": [
+            {
+              "type": "dorośli",
+              "items": ["(12) 622 94 03", "(12) 622 93 90", "(12) 622 94 07"]
+            },
+            {
+              "type": "dzieci",
+              "items": ["(12) 622 95 03", "(12) 622 93 44"]
+            }
+          ]
+        },
+        {
+          "city": "Kraków",
+          "address": "Szpital Specjalistyczny im. Jana Pawła II, ul. Prądnicka 80",
+          "phones": ["(12) 614 23 23", "(12) 614 23 22", "(12) 614 23 27"]
+        },
+        {
+          "city": "Olkusz",
+          "address": "Nowy Szpital w Olkuszu Sp. Z o.o., ul. 1000-Lecia 13",
+          "phones": ["(41) 240 12 72", "(41) 240 12 76"]
+        },
+        {
+          "city": "Myślenice",
+          "address": "Samodzielny Publiczny Zakład Opieki Zdrowotnej, ul. Szpitalna 2",
+          "phones": ["(12) 273 03 54", "(12) 273 30 50", "(12) 273 03 03"]
+        },
+        {
+          "city": "Tarnów",
+          "address": "Specjalistyczny Szpital im. E. Szczeklika, ul. Szpitalna 13",
+          "phones": ["(14) 631 03 92", "(14) 631 03 67", "(14) 631 03 10"]
+        },
+        {
+          "city": "Wielogłowy",
+          "address": "Szpital Specjalistyczny im. Jędrzeja Śniadeckiego w Nowym Sączu, ul. Dąbrowa 1",
+          "phones": ["(18) 433 21 23"]
+        },
+        {
+          "city": "Miechów",
+          "address": "Szpital Św. Anny, ul. Szpitalna 3",
+          "phones": ["(41) 382 03 64", "(41) 382 02 99"]
+        },
+        {
+          "city": "Dąbrowa Tarnowska",
+          "address": "Zespół Opieki Zdrowotnej, ul. Szpitalna 1",
+          "phones": ["(14) 644 32 88", "(14) 644 32 86"]
+        },
+        {
+          "city": "Proszowice",
+          "address": "Samodzielny Publiczny Zespół Opieki Zdrowotnej w Proszowicach, ul. Kopernika 13",
+          "phones": ["(12) 386 52 10", "(12) 386 52 11", "(12) 386 52 03"]
+        }
+      ]
+    },
+    {
+      "name": "mazowieckie",
+      "items": [
+        {
+          "city": "Ostrołęka",
+          "address": "Mazowiecki Szpital Specjalistyczny im. dra Józef Psarskiego, al. Jana Pawła II 120A",
+          "phones": ["(29) 765 12 63", "(29) 765 12 54", "(29)765 21 18"]
+        },
+        {
+          "city": "Radom",
+          "address": "Radomski Szpital Specjalistyczny im. dra Tytusa Chałubińskiego, ul. Tochtermana 1",
+          "phones": ["(48) 361 52 20"]
+        },
+        {
+          "city": "Siedlce",
+          "address": "Samodzielny Publiczny Zakład Opieki Zdrowotnej ul. Starowiejska 15",
+          "phones": ["(25) 632 20 61 do 68 wew. 213"]
+        },
+        {
+          "city": "Kozienice",
+          "address": "Samodzielny Publiczny Zespół Zakładów Opieki Zdrowotnej, Al. W. Sikorskiego 10",
+          "phones": ["(48) 679 72 89", "(48) 679 97 96"]
+        },
+        {
+          "city": "Ciechanów",
+          "address": "Specjalistyczny Szpital Wojewódzki, ul. Powstańców Wielkopolskich 2",
+          "phones": ["(23) 673 02 77"]
+        },
+        {
+          "city": "Płock",
+          "address": "Wojewódzki Szpital Zespolony, ul. Medyczna 19",
+          "phones": ["(24) 364 68 71", "(24) 364 64 03"]
+        },
+        {
+          "city": "Warszawa",
+          "address": "Wojewódzki Szpital Zakaźny, ul. Wolska 37",
+          "phones": ["(22) 335 52 61"]
+        },
+        {
+          "city": "Warszawa",
+          "address": "Wojskowy Instytut Medyczny, ul. Szaserów 128",
+          "phones": ["261 817 519", "810 80 89"]
+        },
+        {
+          "city": "Warszawa",
+          "address": "Centralny Szpital Kliniczny MSWiA, ul. Wołoska 137",
+          "phones": ["(22) 508 20 00"]
+        },
+        {
+          "city": "Warszawa",
+          "address": "Ochota, Uniwersyteckie Centrum Kliniczne Warszawskiego Uniwersytetu Medycznego - Dziecięcy Szpital Kliniczny im. Józefa Polikarpa Brudzińskiego w Warszawie, ul. Żwirki i Wigury 63A",
+          "phones": ["(22) 317 92 31"]
+        }
+      ]
+    },
+    {
+      "name": "opolskie",
+      "items": [
+        {
+          "city": "Kędzierzyn-Koźle",
+          "address": "Samodzielny Publiczny Zespół Opieki Zdrowotnej, ul. Kwietnia 5",
+          "phones": ["(77) 406 25 45"]
+        },
+        {
+          "city": "Opole",
+          "address": "Szpital Wojewódzki w Opolu Sp. z o.o., ul. Kośnego 53",
+          "phones": ["(77) 443 30 43", "(77) 443 30 44"]
+        },
+        {
+          "city": "Nysa",
+          "address": "Oddział Obserwacyjno-Zakaźny, Zespół Opieki Zdrowotnej, ul. Bohaterów Warszawy 23",
+          "phones": ["(77) 408 79 56"]
+        }
+      ]
+    },
+    {
+      "name": "podkarpackie",
+      "items": [
+        {
+          "city": "Łańcut",
+          "address": "Centrum Medyczne w Łańcucie Sp. z o. o., ul. Ignacego Paderewskiego 5",
+          "phones": ["(17) 224 02 92", "(17) 224 01 12"]
+        },
+        {
+          "city": "Jarosław",
+          "address": "Centrum Opieki Medycznej, ul. 3 Maja 70",
+          "phones": ["(16) 624 51 19"]
+        },
+        {
+          "city": "Sanok",
+          "address": "Samodzielny Publiczny Zespół Opieki Zdrowotnej, ul. 800-lecia 26",
+          "phones": ["(13) 465 62 24"]
+        },
+        {
+          "city": "Mielec",
+          "address": "Szpital Specjalistyczny im. Edmunda Biernackiego, ul. Żeromskiego 22",
+          "phones": ["(17) 780 03 90"]
+        },
+        {
+          "city": "Jasło",
+          "address": "Szpital Specjalistyczny, ul. Lwowska 22",
+          "phones": ["(13) 443 75 29"]
+        },
+        {
+          "city": "Przemyśl",
+          "address": "Wojewódzki Szpital im. Św. Ojca Pio, ul. Rogozińskiego 30",
+          "phones": ["(16) 670 61 07"]
+        },
+        {
+          "city": "Dębica",
+          "address": "Zespół Opieki Zdrowotnej, ul. Krakowska 91",
+          "phones": ["(14) 680 83 87"]
+        }
+      ]
+    },
+    {
+      "name": "podlaskie",
+      "items": [
+        {
+          "city": "Augustów",
+          "address": "Samodzielny Publiczny Zakład Opieki Zdrowotnej w Augustowie, ul. Szpitalna 12",
+          "phones": ["(87) 644 43 48", "(87) 644 42 00"]
+        },
+        {
+          "city": "Bielsk Podlaski",
+          "address": "Samodzielny Publiczny Zakład Opieki Zdrowotnej w Bielsku Podlaskim, ul. Kleszczelowskiego 1",
+          "phones": ["(85) 833 43 02"]
+        },
+        {
+          "city": "Hajnówka",
+          "address": "Samodzielny Publiczny Zakład Opieki Zdrowotnej w Hajnówce, ul. doc. Adama Dowgirda 9",
+          "phones": ["kom. 606 996 889"]
+        },
+        {
+          "city": "Grajewo",
+          "address": "Szpital Ogólny im. dra Witolda Ginela, ul. Konstytucji 3 Maja 34",
+          "phones": ["(86) 272 32 71 wew. 233"]
+        },
+        {
+          "city": "Suwałki",
+          "address": "Szpital Wojewódzki im. dra Ludwika Rydygiera, ul. Szpitalna 60",
+          "phones": ["(87) 562 92 15"]
+        },
+        {
+          "city": "Łomża",
+          "address": "Szpital Wojewódzki im. Kardynała Stefana Wyszyńskiego, Al. Marsz. Józefa Piłsudskiego 11",
+          "phones": ["(85) 473 33 58", "(85) 473 33 36"]
+        },
+        {
+          "city": "Białystok",
+          "address": "Uniwersytecki Dziecięcy Szpital Kliniczny im. Ludwika Zamenhofa, ul. Waszyngtona 17",
+          "phones": ["(85) 745 06 93"]
+        },
+        {
+          "city": "Białystok",
+          "address": "Uniwersytecki Szpital Kliniczny, ul. Żurawia 14",
+          "phones": ["(85) 740 95 73"]
+        }
+      ]
+    },
+    {
+      "name": "pomorskie",
+      "items": [
+        {
+          "city": "Gdańsk",
+          "address": "Pomorskie Centrum Chorób Zakaźnych i Gruźlicy, ul. Mariana Smoluchowskiego 18",
+          "phones": ["(58) 341 55 47"]
+        },
+        {
+          "city": "Gdańsk",
+          "address": "7 Szpital Marynarki Wojennej z Przychodnią SPZOZ im. kontradm. prof. W. Łasińskiego, ul. Polanki 117",
+          "phones": ["(58) 552 63 18", "785 773 020"]
+        },
+        {
+          "city": "Gdynia",
+          "address": "Uniwersyteckie Centrum Medycyny Morskiej i Tropikalnej, ul. Powstania Styczniowego 9B",
+          "phones": []
+        },
+        {
+          "city": "Kościerzyna",
+          "address": "Szpital Specjalistyczny w Kościerzynie Sp. zo.o., ul. Alojzego Piechowskiego 36",
+          "phones": ["(58) 686 01 01", "(58) 686 00 00"]
+        },
+        {
+          "city": "Wejherowo",
+          "address": "Szpitale Pomorskie Sp z o.o. Szpital Specjalistyczny im. F. Ceynowy, ul. dr. Alojzego Jagalskiego 10",
+          "phones": []
+        }
+      ]
+    },
+    {
+      "name": "śląskie",
+      "items": [
+        {
+          "city": "Tychy",
+          "address": "Megrez Sp. z o. o., ul. Edukacji 102",
+          "phones": ["(32) 325 53 04"]
+        },
+        {
+          "city": "Zawiercie",
+          "address": "Szpital Powiatowy, ul. Miodowa 14",
+          "phones": ["(32) 674 02 89", "(32) 674 02 91"]
+        },
+        {
+          "city": "Racibórz",
+          "address": "Szpital Rejonowy im. dr Józefa Rostka, ul. Gamowska 3",
+          "phones": ["(32) 755 53 72"]
+        },
+        {
+          "city": "Bytom",
+          "address": "Szpital Specjalistyczny nr 1, al. Legionów 49",
+          "phones": ["(32) 281 92 41 wew. 230"]
+        },
+        {
+          "city": "Chorzów",
+          "address": "Szpital Specjalistyczny, ul. Zjednoczenia 10",
+          "phones": ["797 189 603", " (32) 346 36 41"]
+        },
+        {
+          "city": "Częstochowa",
+          "address": "Wojewódzki Szpital Specjalistyczny im. N.M.P., ul. Polskiego Czerwonego Krzyża 7",
+          "phones": ["(34) 367 38 72 lub 73"]
+        },
+        {
+          "city": "Cieszyn",
+          "address": "Zespół Zakładów Opieki Zdrowotnej, ul. Bielska 4",
+          "phones": ["(32) 854 92 00 wew. 492 lub 493"]
+        }
+      ]
+    },
+    {
+      "name": "świętokrzyskie",
+      "items": [
+        {
+          "city": "Starachowice",
+          "address": "Powiatowy Zakład Opieki Zdrowotnej, ul. Radomska 70",
+          "phones": ["(41) 273 91 45 lub 99-11"]
+        },
+        {
+          "city": "Kielce",
+          "address": "Wojewódzki Szpital Zespolony, ul. Radiowa 7",
+          "phones": ["(41) 363 71 33"]
+        },
+        {
+          "city": "Busko-Zdrój",
+          "address": "Zespół Opieki Zdrowotnej, ul. Bohaterów Warszawy 67",
+          "phones": [
+            "(41) 378 24 01 wew. 335 (rejestracja)",
+            "(41) 378 24 01 wew. 237"
+          ]
+        },
+        {
+          "city": "Kielce",
+          "address": "Wojewódzki Szpital Zaspolony Oddział Zakaźny Dziecięcy, ul. Grunwaldzka 45",
+          "phones": [
+            "(41) 303 32 30 (p. pielęgniarski)",
+            "(41) 303 32 29 (p. lekarski)",
+            "(41) 303 32 31 (sekretariat)"
+          ]
+        },
+        {
+          "city": "Kielce",
+          "address": "Świętokrzyskie Centrum Pediatrii działające przy Szpitalu Zespolonym w Kielcach, ul Radiowa 7",
+          "phones": ["(41) 363 71 33"]
+        }
+      ]
+    },
+    {
+      "name": "warmińsko-mazurskie",
+      "items": [
+        {
+          "city": "Giżycko",
+          "address": "„Szpital Giżycki” Sp. z o. o., ul. Warszawska 41",
+          "phones": ["(87) 429 66 91", "(87) 429 66 92"]
+        },
+        {
+          "city": "Pisz",
+          "address": "Samodzielny Publiczny Zakład Opieki Zdrowotnej Szpital Powiatowy, ul. Sienkiewicza 2",
+          "phones": ["(87) 425 45 65", "(87) 425 46 44"]
+        },
+        {
+          "city": "Ostróda",
+          "address": "Szpital w Ostródzie S.A., ul. Jagiełły 1",
+          "phones": [
+            "(89) 646 06 47 (lekarze)",
+            "(89) 646 06 22 (pielęgniarki)"
+          ]
+        },
+        {
+          "city": "Elbląg",
+          "address": "Szpital miejski św. Jana Pawła II, ul. Żeromskiego 22",
+          "phones": ["(55) 230 42 58"]
+        },
+        {
+          "city": "Olsztyn",
+          "address": "Wojewódzki Specjalistyczny Szpital Dziecięcy im. prof. dr Stanisława Popowskiego, ul. Żołnierska 18A",
+          "phones": [
+            "(89) 539 34 21 (lekarze)",
+            "(89) 539 34 25 (pielęgniarki)"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "wielkopolskie",
+      "items": [
+        {
+          "city": "Poznań",
+          "address": "Stare Miasto, Specjalistyczny Zespół Opieki Zdrowotnej nad Matką i Dzieckiem, ul. Nowowiejskiego 56/58",
+          "phones": ["(61) 859 03 36", "539 524 935"]
+        },
+        {
+          "city": "Poznań",
+          "address": "Jeżyce, Szpital kliniczny im. Karola Jonschera Uniwersytetu Medycznego im. Karola Marcinkowskiego, ul. Szpitalna 27/33",
+          "phones": ["kom. 504 907 994"]
+        },
+        {
+          "city": "Poznań",
+          "address": "Nowe Miasto, Wielospecjalistyczny Szpital Miejski im. Józefa Strusia z Zakładem Opiekuńczo-Leczniczym. Samodzielny Publiczny Zakład Opieki Zdrowotnej z siedzibą w Poznaniu, ul. Szwajcarska 3",
+          "phones": ["(61) 873 92 95"]
+        },
+        {
+          "city": "Konin",
+          "address": "Wojewódzki Szpital Zespolony im. dr Romana Ostrzyckiego, ul. Szpitalna 45",
+          "phones": ["(63) 240 44 02"]
+        },
+        {
+          "city": "Kalisz",
+          "address": "Wojewódzki Szpital Zespolony im. Ludwika Perzyny, ul. Toruńska 7",
+          "phones": ["(62) 757 91 84"]
+        }
+      ]
+    },
+    {
+      "name": "zachodniopomorskie",
+      "items": [
+        {
+          "city": "Wałcz",
+          "address": "107 Szpital Wojskowy z Przychodnią Samodzielny Publiczny Zakład Opieki Zdrowotnej, ul. Kołobrzeska 44",
+          "phones": ["261 472 912"]
+        },
+        {
+          "city": "Szczecin",
+          "address": "Samodzielny Publiczny Wojewódzki Szpital Zespolony, ul. Arkońska 4",
+          "phones": ["(91) 813 94 43", "(91) 813 94 54"]
+        },
+        {
+          "city": "Koszalin",
+          "address": "Szpital Wojewódzki im. Mikołaja Kopernika, ul. Chałubińskiego 7",
+          "phones": ["(94) 348 84 00"]
+        }
+      ]
+    }
+  ]
+}

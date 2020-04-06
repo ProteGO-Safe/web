@@ -16,3 +16,4 @@ export { Regulations } from './Regulations';
 export { UserData } from './UserData';
 export { UserDataSettings } from './UserDataSettings';
 export { MatchedDevices } from './MatchedDevices';
+export {HospitalsList} from "./HospitalsList";
