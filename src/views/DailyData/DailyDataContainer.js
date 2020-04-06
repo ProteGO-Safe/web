@@ -16,6 +16,7 @@ import {
   VALUE_SYMPTOM_LEVEL_1
 } from '../../constants';
 import { addDaily } from '../../store/actions/daily';
+import Routes from '../../routes';
 
 const dateFormat = 'D-MM-YYYY';
 
@@ -25,7 +26,7 @@ const DailyDataContainer = () => {
   const daily = useSelector(state => state.daily);
   const { id } = useParams();
 
-  const goBack = () => history.push('/daily');
+  const goBack = () => history.push(Routes.Daily);
 
   const handleSubmit = form => {
     dispatch(addDaily({ data: form })).then(goBack);
