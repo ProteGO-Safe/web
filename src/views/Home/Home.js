@@ -90,7 +90,7 @@ const Home = () => {
 
   return (
     <div className="view view__home">
-      <Header />
+      <Header hideBackButton={true} />
       <Container>
         <div className="header">
           {renderRiskLevel}

@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 
 import { ReactComponent as LogoSVG } from '../../assets/img/logo/SafeSafe_white.svg';
 import { ReactComponent as ArrowIcon } from '../../assets/img/icons/angle-left.svg';
@@ -12,12 +12,6 @@ export const Container = styled.header`
   display: flex;
   align-items: center;
   justify-content: center;
-
-  ${({ hideBackButton }) =>
-    hideBackButton &&
-    css`
-      justify-content: flex-start;
-    `}
 `;
 
 export const Logo = styled(LogoSVG)`
