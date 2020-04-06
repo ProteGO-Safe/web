@@ -1,21 +1,21 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import Background from '../../assets/img/banners/banner-1.png';
 import { Button, Container, FieldSet } from '../../components';
-import { Header } from '../components';
 
 import { daysDetailsPropType } from '../../utills/calendar';
+import Header from '../../components/Header/Header';
 
 const RiskTest = ({
   goToHistory,
   isFilledToday,
+  onBack,
   onFill,
   today,
   previousDays
 }) => (
   <div className="view view__risk-test">
-    <Header background={Background} prevUrl="/" />
+    <Header onBackClick={onBack} />
     <Container>
       <h4 className="h1 text-center medium">
         Ankiety Oceny Ryzyka - wypełniaj ankietę 1x dziennie
@@ -46,6 +46,7 @@ const RiskTest = ({
 );
 
 RiskTest.propTypes = {
+  onBack: PropTypes.func.isRequired,
   onFill: PropTypes.func.isRequired,
   goToHistory: PropTypes.func.isRequired,
   isFilledToday: PropTypes.bool.isRequired,

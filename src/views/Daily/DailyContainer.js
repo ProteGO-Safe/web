@@ -5,6 +5,7 @@ import moment from 'moment';
 
 import createDaysDetails from '../../utills/calendar';
 import Daily from './Daily';
+import Routes from '../../routes';
 
 const todayFormat = 'D-MM-YYYY';
 
@@ -18,11 +19,14 @@ const DailyContainer = () => {
 
   const fill = () => history.push('/daily-data');
 
+  const goBack = () => history.push(Routes.Home);
+
   const goToHistory = timestamp => history.push(`/daily/${timestamp}`);
 
   return (
     <Daily
       previousDays={daysInDaily}
+      onBack={goBack}
       onFill={fill}
       goToHistory={goToHistory}
       today={today}

@@ -2,18 +2,17 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { useFormikContext } from 'formik';
 
-import Background from '../../assets/img/banners/banner-1.png';
 import { Button, Container, FieldSet, Imprint } from '../../components';
-import { Header } from '../components';
 import { Form } from './components';
 import './DailyData.scss';
+import Header from '../../components/Header/Header';
 
-const DailyData = ({ date, isViewMode }) => {
+const DailyData = ({ date, isViewMode, onBack }) => {
   const { dirty, submitForm } = useFormikContext();
 
   return (
     <div className="view view__data">
-      <Header background={Background} prevUrl="/daily" />
+      <Header onBackClick={onBack} />
       <Container className="container__content">
         <h4 className="title medium">Dziennik zdrowia</h4>
         <p className="date medium">{date}</p>

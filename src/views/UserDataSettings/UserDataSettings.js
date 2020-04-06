@@ -1,18 +1,20 @@
 import React from 'react';
-import Background from '../../assets/img/banners/banner-1.png';
+import { useHistory } from 'react-router-dom';
 import { Button, Container, FieldSet } from '../../components';
-import { Header } from '../components';
 import { ModalContent } from './components';
 import '../UserData/UserData.scss';
 import useModalContext from '../../hooks/useModalContext';
+import Routes from '../../routes';
+import Header from '../../components/Header/Header';
 
 const UserDataSettings = () => {
+  const history = useHistory();
   const { openModal } = useModalContext();
   const handleClick = () => openModal(<ModalContent />, 'dialog');
 
   return (
     <div className="view view__user-data">
-      <Header background={Background} prevUrl="/user-data" />
+      <Header onBackClick={() => history.push(Routes.UserData)} />
       <Container>
         <h4 className="text-center medium">Zarządzaj danymi</h4>
         <div className="content">

@@ -2,10 +2,9 @@ import React from 'react';
 
 import { useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
-import Background from '../../assets/img/banners/banner-1.png';
 import { Button, Container, Ok, Warning } from '../../components';
-import { Header } from '../components/Header';
 import './Home.scss';
+import Header from '../../components/Header/Header';
 
 const Home = () => {
   const history = useHistory();
@@ -91,7 +90,7 @@ const Home = () => {
 
   return (
     <div className="view view__home">
-      <Header background={Background} />
+      <Header />
       <Container>
         <div className="header">
           {renderRiskLevel}
