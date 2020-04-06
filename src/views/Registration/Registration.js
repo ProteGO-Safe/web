@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useCallback } from 'react';
 import { useFormikContext } from 'formik';
 import {
   Step1,
@@ -11,7 +11,6 @@ import {
   Step8,
   Summary
 } from './components';
-import { Back, Banner } from '../../components';
 import './Registration.scss';
 
 import Banner1 from '../../assets/img/banners/banner-1.png';
@@ -22,6 +21,8 @@ import Banner5 from '../../assets/img/banners/banner-5.png';
 import Banner6 from '../../assets/img/banners/banner-6.png';
 import Banner7 from '../../assets/img/banners/banner-7.png';
 import Banner8 from '../../assets/img/banners/banner-8.png';
+import { Header } from '../../components/Header';
+import { StartScreen } from '../StartScreen';
 
 const steps = {
   1: {
@@ -70,11 +71,7 @@ const Registration = () => {
     }
   }, [step]);
 
-  if (step === 9) {
-    return <Summary />;
-  }
-
-  const onBack = () => {
+  const onBack = useCallback(() => {
     let previousStep;
     if (step === 8) {
       previousStep = step - 2;
@@ -82,18 +79,26 @@ const Registration = () => {
       previousStep = step - 1;
     }
     setFieldValue('step', previousStep);
-  };
+  }, [step, setFieldValue]);
+
+  if (!step) {
+    return <StartScreen onStartClick={() => setFieldValue('step', 1)} />;
+  }
+
+  if (step === 9) {
+    return <Summary />;
+  }
 
   const StepComponent = steps[step].Component;
 
   return (
     <div className="view view__registration">
       <div className={`registration registration__step--${step}`}>
-        <Banner background={steps[step].bannerUrl} size="small">
-          {step !== 1 && (
-            <Back className="registration__back" onClick={onBack} />
-          )}
-        </Banner>
+        <Header
+          hideMenuButton
+          hideBackButton={step === 1}
+          onBackClick={onBack}
+        />
         <StepComponent />
       </div>
     </div>

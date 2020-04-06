@@ -8,8 +8,8 @@ import Diagnosis from './Diagnosis';
 import { Summary } from './components/Summary';
 
 import './Diagnosis.scss';
-import { Information } from '../Information';
 import useLoaderContext from '../../hooks/useLoaderContext';
+import { Information } from '../Information/index';
 
 const DiagnosisContainer = () => {
   const dispatch = useDispatch();

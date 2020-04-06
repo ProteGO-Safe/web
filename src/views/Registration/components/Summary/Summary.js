@@ -1,23 +1,17 @@
 import React from 'react';
 import { useFormikContext } from 'formik';
-import Background from '../../../../assets/img/banners/banner-8.png';
-import {
-  Banner,
-  Brand,
-  Button,
-  Container,
-  FieldSet
-} from '../../../../components';
+import { Button, Container, FieldSet } from '../../../../components';
 import Imprint from '../../../../components/Imprint/Imprint';
-import AngleLeftIcon from '../../../../assets/img/icons/angle-left.svg';
 import UserImg from '../../../../assets/img/icons/user.svg';
 import {
   chronicSickValues,
   FIELD_AGE,
-  FIELD_BLOOD_GROUP, FIELD_PHONE,
+  FIELD_BLOOD_GROUP,
+  FIELD_PHONE,
   FIELD_SEX,
   FIELD_SMOKE_NUMBER
 } from '../../../../constants';
+import { Header } from '../../../../components/Header';
 
 const Summary = () => {
   const { handleSubmit, resetForm, values } = useFormikContext();
@@ -30,24 +24,7 @@ const Summary = () => {
 
   return (
     <div className="view view__registration-summary">
-      <Banner background={Background}>
-        <div className="reset-registration">
-          <Button
-            height="small"
-            icon={AngleLeftIcon}
-            iconLeft
-            onClick={resetForm}
-            text=""
-            type="white"
-            size="small"
-          >
-            Rozpocznij
-            <br />
-            od nowa
-          </Button>
-        </div>
-        <Brand content={false} small white />
-      </Banner>
+      <Header onBackClick={resetForm} />
       <Container>
         <div className="user">
           <img src={UserImg} alt="Avatar" />

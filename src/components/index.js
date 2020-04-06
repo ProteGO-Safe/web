@@ -1,6 +1,4 @@
 export { App } from './App';
-export { Back } from './Back';
-export { Banner } from './Banner';
 export { Brand } from './Brand';
 export { Button } from './Button';
 export { Checkbox } from './Checkbox';

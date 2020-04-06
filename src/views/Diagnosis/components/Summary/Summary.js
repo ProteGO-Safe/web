@@ -1,22 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import {
-  Banner,
-  Brand,
-  Button,
-  Container,
-  FieldSet
-} from '../../../../components';
-import Background from '../../../../assets/img/banners/banner-1.png';
+import { Button, Container, FieldSet } from '../../../../components';
+import { Header } from '../../../components';
 
 import './Summary.scss';
 
 const Summary = ({ onSave }) => (
   <div className="view view__summary">
-    <Banner background={Background}>
-      <Brand white small content={false} />
-    </Banner>
+    <Header />
     <Container>
       <div className="content content--1">
         <h4 className="medium">Gratulacje,</h4>

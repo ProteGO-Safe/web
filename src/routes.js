@@ -1,5 +1,6 @@
 const Routes = {
   Home: '/',
+  Start: '/start',
   Install: '/install',
   InstallAndroid: '/install/android/:browser',
   InstallIOS: '/install/ios/:browser',
@@ -18,7 +19,8 @@ const Routes = {
   UserData: '/user-data',
   UserDataSettings: '/user-data/settings',
   MatchedDevices: '/matched-devices',
-  HospitalsList: '/hospitals-list'
+  HospitalsList: '/hospitals-list',
+  ReportBug: '/report-bug'
 };
 
 export default Routes;

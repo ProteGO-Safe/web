@@ -1,7 +1,6 @@
 import React from 'react';
 import { useFormikContext } from 'formik';
 import {
-  Brand,
   Button,
   Checkbox,
   FieldSet,
@@ -40,7 +39,6 @@ const Step1 = () => {
 
   return (
     <Container>
-      <Brand />
       <div className="worth-it">
         <p className="small text-bold">Dlaczego warto?</p>
         <ul className="text-list">
