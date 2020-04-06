@@ -14,7 +14,7 @@ const tSex = {
   [VALUE_WOMAN]: 'Kobieta'
 };
 
-const Imprint = ({ user }) => {
+const Imprint = ({ hidePhoneNumber, user }) => {
   const { sex, age, chronicSicks, bloodGroup, smokeNumber, phone } = user;
 
   return (
@@ -48,14 +48,23 @@ const Imprint = ({ user }) => {
           </li>
         </ul>
       )}
-      <p className="big text-bold">
-        <span>Numer telefonu:</span> {phone}
-      </p>
+      {hidePhoneNumber ? (
+        ''
+      ) : (
+        <p className="big text-bold">
+          <span>Numer telefonu:</span> {phone}
+        </p>
+      )}
     </div>
   );
 };
 
+Imprint.defaultProps = {
+  hidePhoneNumber: false
+};
+
 Imprint.propTypes = {
+  hidePhoneNumber: PropTypes.bool,
   user: PropTypes.shape({
     age: PropTypes.number.isRequired,
     bloodGroup: PropTypes.string.isRequired,
