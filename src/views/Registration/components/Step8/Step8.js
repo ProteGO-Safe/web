@@ -51,25 +51,27 @@ const Step8 = () => {
   return (
     <Container>
       <FieldSet>
-        <h3>Podaj swój numer telefonu:</h3>
+        <h3>Zacznij chronić siebie i innych!</h3>
+        <div className="description">
+          Twój numer telefonu jest potrzebny aby poinformować Cię, jeżeli
+          byłeś/aś w pobliży osób chorych na COVID-19.
+        </div>
+        <div className="description">
+          Podaj swój główny numer telefonu. Twój numer jest zapisywany tylko na
+          Twoim telefonie i pozostaje anonimowy.
+        </div>
         <IntlTelInput
           defaultCountry="pl"
           autoHideDialCode
           value={values[FIELD_PHONE]}
-          inputClassName="input__field input__field--normal"
+          inputClassName="input__field input__field--normal input__phone_number"
           onPhoneNumberChange={handlePhoneChange}
           fieldName={FIELD_PHONE}
+          placeholder="xxx xxx xxx"
         />
-        <div className="input__description">
-          Wpisz swój główny numer telefonu komórkowego.
-        </div>
         {errors[FIELD_PHONE] && (
           <div className="input__error">{errors[FIELD_PHONE]}</div>
         )}
-        <div className="input__description">
-          Powiadomimy Cię jeżeli system wykryje, że miałeś/aś kontakt z osobą
-          zarażoną COVID-19. Twój numer pozostaje anonimowy.
-        </div>
       </FieldSet>
       <Button onClick={handleClick} icon={Icon} size="medium" text="Dalej" />
     </Container>

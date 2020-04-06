@@ -1,6 +1,6 @@
 @import '../../../../assets/styles/mixins';
 .registration {
-  &__step--8 {
+  &__step--2 {
     @include viewBaseStyles();
 
     .banner {
@@ -23,6 +23,10 @@
 
       .fieldset {
         margin-bottom: 43px;
+
+        .description {
+          margin-bottom: 10px;
+        }
       }
 
       .input__field {
