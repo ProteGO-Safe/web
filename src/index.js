@@ -4,6 +4,8 @@ import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
 import { PersistGate } from 'redux-persist/integration/react';
 import 'react-perfect-scrollbar/dist/css/styles.css';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 import './index.css';
 import { App } from './components';
 import * as serviceWorker from './serviceWorker';

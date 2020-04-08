@@ -12,6 +12,41 @@ code {
     monospace;
 }
 
+.slick-arrow {
+  display: none !important;
+}
+
+.slick-dots {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  bottom: auto;
+  margin: 40px 0 55px;
+}
+
+.slick-dots li {
+  width: 14px;
+  height: 14px;
+  margin: 0 7px;
+}
+
+.slick-dots li button {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background-color: #d8d8d8;
+}
+
+.slick-dots li.slick-active button {
+  background-color: #0052a5;
+}
+
+.slick-dots li button:before {
+  content: none;
+}
+
+
 .view__update_snackbar {
   visibility: hidden;
   min-width: 250px;

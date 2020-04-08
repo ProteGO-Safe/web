@@ -21,6 +21,10 @@ import Banner5 from '../../assets/img/banners/banner-5.png';
 import Banner6 from '../../assets/img/banners/banner-6.png';
 import Banner7 from '../../assets/img/banners/banner-7.png';
 import Banner8 from '../../assets/img/banners/banner-8.png';
+
+import { STEP_EXPLAINER } from '../../constants';
+
+import { Explainer } from './components/Explainer';
 import { Header } from '../../components/Header';
 import { StartScreen } from '../StartScreen';
 
@@ -83,6 +87,10 @@ const Registration = () => {
 
   if (!step) {
     return <StartScreen onStartClick={() => setFieldValue('step', 1)} />;
+  }
+
+  if (step === STEP_EXPLAINER) {
+    return <Explainer />;
   }
 
   if (step === 9) {
