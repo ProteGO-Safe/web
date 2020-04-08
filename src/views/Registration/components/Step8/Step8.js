@@ -5,7 +5,7 @@ import 'react-intl-tel-input/dist/main.css';
 
 import { Button, Container, FieldSet } from '../../../../components';
 
-import { FIELD_PHONE } from '../../../../constants';
+import { FIELD_PHONE, STEP_EXPLAINER } from '../../../../constants';
 import './Step8.scss';
 import Icon from '../../../../assets/img/icons/angle-right-white.svg';
 
@@ -28,7 +28,7 @@ const Step8 = () => {
         if (!isValid) {
           setFieldError(FIELD_PHONE, 'Wpisz poprawny numer');
         } else {
-          setFieldValue('step', 3);
+          setFieldValue('step', STEP_EXPLAINER);
           setErrors({});
         }
       }

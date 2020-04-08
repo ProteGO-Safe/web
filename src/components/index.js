@@ -4,6 +4,8 @@ export { Button } from './Button';
 export { Checkbox } from './Checkbox';
 export { Container } from './Container';
 export { FieldSet } from './FieldSet';
+export { GovFooter } from './GovFooter';
+export { Header } from './Header';
 export { Imprint } from './Imprint';
 export { Input } from './Input';
 export { Instruction } from './Instruction';

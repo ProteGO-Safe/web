@@ -1,5 +1,8 @@
 import styled from 'styled-components';
 
+import govPLBlackUrl from '../../assets/img/logo/Logo-govpl.svg';
+import govTechBlackUrl from '../../assets/img/logo/govtech_black.svg';
+
 import govPLWhiteUrl from '../../assets/img/logo/Logo-govpl-WHITE.svg';
 import govTechWhiteUrl from '../../assets/img/logo/govtech_white.svg';
 
@@ -16,6 +19,14 @@ export const Container = styled.footer`
 const GovLogo = styled.img`
   height: 31px;
 `;
+
+export const GovPLBlackLogo = styled(GovLogo).attrs({
+  src: govPLBlackUrl
+})``;
+
+export const GovTechBlackLogo = styled(GovLogo).attrs({
+  src: govTechBlackUrl
+})``;
 
 export const GovPLWhiteLogo = styled(GovLogo).attrs({
   src: govPLWhiteUrl
