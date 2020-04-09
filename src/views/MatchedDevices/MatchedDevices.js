@@ -35,7 +35,7 @@ const MatchedDevices = () => {
           {Math.floor(moment.duration(duration, 'seconds').asMinutes())}{' '}
           minut(y)
           <br />
-          {status === '1' ? <div className="matched-devices__active" /> : ''}
+          {status === 1 ? <div className="matched-devices__active" /> : ''}
         </li>
       ))}
     </ul>
