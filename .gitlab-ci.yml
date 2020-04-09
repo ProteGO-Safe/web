@@ -1,0 +1,32 @@
+stages:
+  - build
+  - deploy
+
+.build: &build
+  image: node:13
+  stage: build
+  script:
+    - yarn install
+    - yarn build
+  artifacts:
+    expire_in: 15 minutes
+    paths:
+      - build
+
+build:latest:
+  <<: *build
+
+.deploy: &deploy
+  image: dockito/lftp-client
+  stage: deploy
+  when: manual
+
+deploy:dev:
+  <<: *deploy
+  script:
+    - lftp -e 'cd /safesafe-dev; mput -e build/* ; bye' -u $STAGE_FTP_USER,$STAGE_FTP_PASS $STAGE__FTP_HOST
+
+deploy:stage:
+  <<: *deploy
+  script:
+    - lftp -e 'cd /safesafe; mput -e build/* ; bye' -u $STAGE_FTP_USER,$STAGE_FTP_PASS $STAGE__FTP_HOST
