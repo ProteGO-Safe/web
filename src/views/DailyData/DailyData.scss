@@ -14,6 +14,7 @@
 
   .container {
     &__content {
+      padding-top: 20px;
       display: grid;
       grid-template-areas: "title date" "form form";
 
