@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef, useState } from 'react';
 import { useFormikContext } from 'formik';
 
 import IconChat from '../../../../assets/img/explainer/chat.svg';
@@ -10,6 +10,9 @@ import { ExplainerItem } from './components';
 
 const ExplainerContainer = () => {
   const { setFieldValue } = useFormikContext();
+
+  const carouselRef = useRef(null);
+  const [activeSlide, setActiveSlide] = useState(0);
 
   const items = [
     {
@@ -44,9 +47,31 @@ const ExplainerContainer = () => {
     <ExplainerItem content={content} icon={icon} key={slug} />
   ));
 
-  const handleButtonClick = () => setFieldValue('step', 3);
+  const settings = {
+    afterChange: currentSlide => setActiveSlide(currentSlide),
+    dots: true,
+    slidesToShow: 1,
+    swipe: true,
+    swipeToSlide: true
+  };
 
-  return <Explainer items={items} onClick={handleButtonClick} />;
+  const handleButtonClick = () => {
+    if (activeSlide < 2) {
+      carouselRef.current.slickGoTo(activeSlide + 1);
+      return;
+    }
+
+    setFieldValue('step', 3);
+  };
+
+  return (
+    <Explainer
+      carouselRef={carouselRef}
+      items={items}
+      onClick={handleButtonClick}
+      settings={settings}
+    />
+  );
 };
 
 export default ExplainerContainer;

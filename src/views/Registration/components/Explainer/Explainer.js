@@ -6,14 +6,7 @@ import { Button, Container, GovFooter, Header } from '../../../../components';
 import { Content, SliderWrapper, Title } from './Explainer.styled';
 import { LOGO_COLOR_BLACK } from '../../../../constants';
 
-const settings = {
-  dots: true,
-  slidesToShow: 1,
-  swipe: true,
-  swipeToSlide: true
-};
-
-const Explainer = ({ items, onClick }) => (
+const Explainer = ({ carouselRef, items, onClick, settings }) => (
   <div className="view view__explainer">
     <Header hideBackButton hideMenuButton />
     <Container>
@@ -24,7 +17,9 @@ const Explainer = ({ items, onClick }) => (
           przeciwko koronawirusowi
         </Title>
         <SliderWrapper>
-          <Slider {...settings}>{items}</Slider>
+          <Slider ref={carouselRef} {...settings}>
+            {items}
+          </Slider>
         </SliderWrapper>
         <Button onClick={onClick} text="Dalej" />
       </Content>
@@ -34,8 +29,12 @@ const Explainer = ({ items, onClick }) => (
 );
 
 Explainer.propTypes = {
+  // eslint-disable-next-line
+  carouselRef: PropTypes.object.isRequired,
   items: PropTypes.arrayOf(PropTypes.node).isRequired,
-  onClick: PropTypes.func.isRequired
+  onClick: PropTypes.func.isRequired,
+  // eslint-disable-next-line
+  settings: PropTypes.object.isRequired
 };
 
 export default Explainer;
