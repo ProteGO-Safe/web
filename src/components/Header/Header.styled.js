@@ -44,7 +44,7 @@ export const Arrow = styled(ArrowIcon)`
 `;
 
 export const Burger = styled(MenuIcon)`
-  height: 16px;
+  height: 32px;
   width: auto;
   fill: currentColor;
 `;
