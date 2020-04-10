@@ -1,12 +1,15 @@
 import React from 'react';
+import { useHistory } from 'react-router-dom';
 
 import { Header } from '../../components/Header';
 import { Container, Content, Email } from './ReportBug.styled';
+import Routes from '../../routes';
 
 const ReportBug = () => {
+  const history = useHistory();
   return (
     <Container>
-      <Header />
+      <Header onBackClick={() => history.push(Routes.Home)} />
       <Content>
         SafeSafe to darmowa aplikacja, dzięki której możesz oceniać ryzyko
         infekcji koronawirusem na podstawie wytycznych Światowej Organizacji

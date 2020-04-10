@@ -9,7 +9,7 @@ import Header from '../../components/Header/Header';
 
 const HospitalsList = () => {
   const history = useHistory();
-  const [activeItem, setActiveItem] = useState(0);
+  const [activeItem, setActiveItem] = useState(null);
 
   const { voivodeships } = Hospitals;
 
