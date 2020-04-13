@@ -5,7 +5,6 @@ import moment from 'moment';
 
 import createCalendar from '../../utills/calendar';
 import RiskTest from './RiskTest';
-import Routes from '../../routes';
 
 const todayFormat = 'D-MM-YYYY';
 
@@ -32,12 +31,9 @@ const RiskTestContainer = () => {
 
   const goToHistory = timestamp => history.push(`/risk-test-data/${timestamp}`);
 
-  const goBack = () => history.push(Routes.Home);
-
   return (
     <RiskTest
       previousDays={daysDetails}
-      onBack={goBack}
       onFill={goToDiagnosis}
       goToHistory={goToHistory}
       isFilledToday={!!riskFilledToday}

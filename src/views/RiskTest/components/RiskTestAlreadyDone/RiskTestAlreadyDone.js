@@ -1,7 +1,6 @@
 import React from 'react';
-import Background from '../../../../assets/img/banners/banner-1.png';
 import { Header } from '../../../../components/Header';
-import { Back, Banner, Brand, Container } from '../../../../components';
+import { Container } from '../../../../components';
 import './RiskTestAlreadyDone.scss';
 
 const RiskTestAlreadyDone = ({ goBack }) => {

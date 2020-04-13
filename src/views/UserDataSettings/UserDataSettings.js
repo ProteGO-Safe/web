@@ -1,21 +1,18 @@
 import React from 'react';
-import { useHistory } from 'react-router-dom';
 import { Button, Container, FieldSet } from '../../components';
 import { ModalContent } from './components';
 import '../UserData/UserData.scss';
 import useModalContext from '../../hooks/useModalContext';
-import Routes from '../../routes';
 import Header from '../../components/Header/Header';
 import { BottomNavigation } from '../../components/BottomNavigation';
 
 const UserDataSettings = () => {
-  const history = useHistory();
   const { openModal } = useModalContext();
   const handleClick = () => openModal(<ModalContent />, 'dialog');
 
   return (
     <div className="view view__user-data">
-      <Header onBackClick={() => history.push(Routes.UserData)} />
+      <Header />
       <Container>
         <h4 className="text-center medium">Zarządzaj danymi</h4>
         <div className="content">

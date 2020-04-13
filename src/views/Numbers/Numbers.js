@@ -5,7 +5,7 @@ import { useHistory } from 'react-router-dom';
 import { Container } from '../../components';
 import { Button } from '../../components/Button';
 
-import Background__fakemap from '../../assets/img/fake/fake___numbers-map.webp';
+import BackgroundFakemap from '../../assets/img/fake/fake___numbers-map.webp';
 import icoPhone from '../../assets/img/icons/phone.svg';
 import icoNavigation from '../../assets/img/icons/navigation.svg';
 import icoRight from '../../assets/img/icons/angle-right.svg';
@@ -20,8 +20,6 @@ const Numbers = () => {
 
   const goToHospitalsList = () => history.push(Routes.HospitalsList);
 
-  const goBack = () => history.push(Routes.Home);
-
   const callEmergency = () => {
     window.open('tel:800190590');
     return null;
@@ -29,8 +27,8 @@ const Numbers = () => {
 
   return (
     <div className="view view__numbers">
-      <Header onBackClick={goBack} />
-      <Container background={Background__fakemap}>
+      <Header />
+      <Container background={BackgroundFakemap}>
         <div className="content">
           <h3>Szukaj pomocy w Twojej okolicy</h3>
           <Button

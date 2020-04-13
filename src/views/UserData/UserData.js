@@ -12,7 +12,7 @@ const UserData = () => {
 
   return (
     <div className="view view__user-data">
-      <Header onBackClick={() => history.push(Routes.PrivacyPolicy)} />
+      <Header />
       <Container>
         <h4 className="text-center medium">Dane</h4>
         <div className="content">

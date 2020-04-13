@@ -1,24 +1,19 @@
 import React, { useState } from 'react';
-import { useHistory } from 'react-router-dom';
 
 import Hospitals from './Hospitals.json';
 import './HospitalsList.scss';
 import Collapsible from './components/Collapsible/Collapsible';
-import Routes from '../../routes';
 import Header from '../../components/Header/Header';
 import { BottomNavigation } from '../../components/BottomNavigation';
 
 const HospitalsList = () => {
-  const history = useHistory();
   const [activeItem, setActiveItem] = useState(null);
 
   const { voivodeships } = Hospitals;
 
-  const goBack = () => history.push(Routes.Home);
-
   return (
     <div className="view view__hospitals-list">
-      <Header onBackClick={goBack} />
+      <Header />
       <div className="container">
         <h4 className="h1 text-center medium">Szpitale zakaźne w Polsce</h4>
         {voivodeships.map((voivodeship, index) => (
