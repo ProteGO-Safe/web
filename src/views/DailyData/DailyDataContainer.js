@@ -61,7 +61,7 @@ const DailyDataContainer = () => {
       onSubmit={handleSubmit}
       validationSchema={validationSchema}
     >
-      <DailyData onBack={goBack} isViewMode={!!dailyData} date={date} />
+      <DailyData isViewMode={!!dailyData} date={date} />
     </Formik>
   );
 };

@@ -1,17 +1,17 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
+
 import { Button, Container, FieldSet } from '../../components';
 import './PrivacyPolicy.scss';
-import Routes from '../../routes';
 import Header from '../../components/Header/Header';
 import { BottomNavigation } from '../../components/BottomNavigation';
+import Routes from '../../routes';
 
 const PrivacyPolicy = () => {
   const history = useHistory();
-
   return (
     <div className="view view__privacy-policy">
-      <Header onBackClick={() => history.push(Routes.Home)} />
+      <Header />
       <Container>
         <h4 className="medium">Polityka prywatności</h4>
         <div className="content">
@@ -39,17 +39,17 @@ const PrivacyPolicy = () => {
         </div>
         <FieldSet>
           <Button
-            onClick={() => history.push('/regulations')}
+            onClick={() => history.push(Routes.Regulations)}
             type="secondary"
             text="Regulamin"
           />
           <Button
-            onClick={() => history.push('/privacy-policy-details')}
+            onClick={() => history.push(Routes.PrivacyPolicyDetails)}
             type="secondary"
             text="Polityka prywatności"
           />
           <Button
-            onClick={() => history.push('/user-data')}
+            onClick={() => history.push(Routes.UserData)}
             type="secondary"
             text="Dane"
           />

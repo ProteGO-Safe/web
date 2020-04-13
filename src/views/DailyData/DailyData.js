@@ -8,12 +8,12 @@ import './DailyData.scss';
 import Header from '../../components/Header/Header';
 import { BottomNavigation } from '../../components/BottomNavigation';
 
-const DailyData = ({ date, isViewMode, onBack }) => {
+const DailyData = ({ date, isViewMode }) => {
   const { dirty, submitForm } = useFormikContext();
 
   return (
     <div className="view view__data">
-      <Header onBackClick={onBack} />
+      <Header />
       <Container className="container__content">
         <h4 className="title medium">Dziennik zdrowia</h4>
         <p className="date medium">{date}</p>
@@ -38,8 +38,7 @@ const DailyData = ({ date, isViewMode, onBack }) => {
 };
 
 DailyData.propTypes = {
-  isViewMode: PropTypes.bool.isRequired,
-  onBack: PropTypes.func.isRequired
+  isViewMode: PropTypes.bool.isRequired
 };
 
 export default DailyData;

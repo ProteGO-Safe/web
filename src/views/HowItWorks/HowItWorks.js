@@ -1,20 +1,14 @@
 import React from 'react';
-import { useHistory } from 'react-router-dom';
 
 import { Container } from '../../components';
 import './HowItWorks.scss';
-import Routes from '../../routes';
 import Header from '../../components/Header/Header';
 import { BottomNavigation } from '../../components/BottomNavigation';
 
 const HowItWorks = () => {
-  const history = useHistory();
-
-  const goBack = () => history.push(Routes.Home);
-
   return (
     <div className="view view__regulations">
-      <Header onBackClick={goBack} />
+      <Header />
       <Container>
         <h4 className="text-center medium">Jak to działa</h4>
         <div className="content">

@@ -10,13 +10,12 @@ import { BottomNavigation } from '../../components/BottomNavigation';
 const RiskTest = ({
   goToHistory,
   isFilledToday,
-  onBack,
   onFill,
   today,
   previousDays
 }) => (
   <div className="view view__risk-test">
-    <Header onBackClick={onBack} />
+    <Header />
     <Container>
       <h4 className="h1 text-center medium">
         Ankiety Oceny Ryzyka - wypełniaj ankietę 1x dziennie
@@ -48,7 +47,6 @@ const RiskTest = ({
 );
 
 RiskTest.propTypes = {
-  onBack: PropTypes.func.isRequired,
   onFill: PropTypes.func.isRequired,
   goToHistory: PropTypes.func.isRequired,
   isFilledToday: PropTypes.bool.isRequired,
