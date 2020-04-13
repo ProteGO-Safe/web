@@ -5,6 +5,7 @@ import { Container } from '../../components';
 import './HowItWorks.scss';
 import Routes from '../../routes';
 import Header from '../../components/Header/Header';
+import { BottomNavigation } from '../../components/BottomNavigation';
 
 const HowItWorks = () => {
   const history = useHistory();
@@ -79,6 +80,7 @@ const HowItWorks = () => {
           <p>* w przygotowaniu</p>
         </div>
       </Container>
+      <BottomNavigation />
     </div>
   );
 };

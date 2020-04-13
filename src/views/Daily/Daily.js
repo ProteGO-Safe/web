@@ -5,6 +5,7 @@ import { daysDetailsPropType } from '../../utills/calendar';
 import { Button, Container, FieldSet } from '../../components';
 import './Daily.scss';
 import Header from '../../components/Header/Header';
+import { BottomNavigation } from '../../components/BottomNavigation';
 
 const Daily = ({ goToHistory, onBack, onFill, today, previousDays }) => {
   return (
@@ -34,6 +35,7 @@ const Daily = ({ goToHistory, onBack, onFill, today, previousDays }) => {
           ))}
         </FieldSet>
       </Container>
+      <BottomNavigation />
     </div>
   );
 };

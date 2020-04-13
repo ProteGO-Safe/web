@@ -10,6 +10,7 @@ import { RiskInfoLevel3 } from './components/RiskInfoLevel3';
 import { RiskInfoLevel4 } from './components/RiskInfoLevel4';
 import { RiskInfoLevel5 } from './components/RiskInfoLevel5';
 import { Header } from '../../components/Header';
+import { BottomNavigation } from '../../components/BottomNavigation';
 
 const RiskInformation = () => {
   const history = useHistory();
@@ -91,6 +92,7 @@ const RiskInformation = () => {
         <h4 className={`text-${renderRiskHeaderColor}`}>{renderRiskHeader}</h4>
         <div className="content">{renderRiskInformation}</div>
       </Container>
+      <BottomNavigation />
     </div>
   );
 };

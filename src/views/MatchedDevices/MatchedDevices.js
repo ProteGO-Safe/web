@@ -9,6 +9,7 @@ import { selectMatchedDevices } from '../../store/selectors/nativeData';
 import './MatchedDevices.scss';
 import Routes from '../../routes';
 import Header from '../../components/Header/Header';
+import { BottomNavigation } from '../../components/BottomNavigation';
 
 const MatchedDevices = () => {
   const history = useHistory();
@@ -52,6 +53,7 @@ const MatchedDevices = () => {
             : renderEmptyState()}
         </div>
       </Container>
+      <BottomNavigation />
     </div>
   );
 };

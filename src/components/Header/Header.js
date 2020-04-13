@@ -60,7 +60,7 @@ const Header = ({ hideBackButton, hideMenuButton, onBackClick }) => {
 Header.defaultProps = {
   hideBackButton: false,
   hideMenuButton: false,
-  onBackClick: Function.prototype
+  onBackClick: null
 };
 
 Header.propTypes = {

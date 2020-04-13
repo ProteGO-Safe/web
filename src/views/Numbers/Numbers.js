@@ -13,6 +13,7 @@ import icoRight from '../../assets/img/icons/angle-right.svg';
 import './Numbers.scss';
 import Routes from '../../routes';
 import Header from '../../components/Header/Header';
+import { BottomNavigation } from '../../components/BottomNavigation';
 
 const Numbers = () => {
   const history = useHistory();
@@ -74,6 +75,7 @@ const Numbers = () => {
           />
         </div>
       </Container>
+      <BottomNavigation />
     </div>
   );
 };

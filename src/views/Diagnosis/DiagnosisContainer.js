@@ -15,6 +15,7 @@ const DiagnosisContainer = () => {
   const dispatch = useDispatch();
   const { setLoader } = useLoaderContext();
   const { sex, age } = useSelector(state => state.user);
+  const riskTest = useSelector(state => state.riskTest);
   const [showInformation, setShowInformation] = useState(true);
 
   const {
@@ -68,6 +69,7 @@ const DiagnosisContainer = () => {
 
   return (
     <Diagnosis
+      showNavigation={!!Object.keys(riskTest).length}
       isLoading={isLoading}
       question={question}
       evidence={evidence}

@@ -3,6 +3,7 @@ import React from 'react';
 import { Container } from '../../components';
 import './RiskTestData.scss';
 import Header from '../../components/Header/Header';
+import { BottomNavigation } from '../../components/BottomNavigation';
 
 const RiskTestData = ({
   day,
@@ -17,11 +18,11 @@ const RiskTestData = ({
     <Container>
       <div className="title">
         <h4 className="h1 text-center medium">Test oceny ryzyka</h4>
-        <br/>
+        <br />
         <p className="text-center">
           {isToday && 'DZIŚ'} {day}
         </p>
-        <br/>
+        <br />
       </div>
       <div className="data">
         {questions.map(question => (
@@ -29,12 +30,8 @@ const RiskTestData = ({
             <p className="text-bold">{question.text}</p>
             {question.items.map(item => (
               <div key={item.name}>
-                {question.type !== 'single' && (
-                  <p>{item.name}</p>
-                )}
-                <p>
-                  {idToChoiceResolver(item.id, item.choices)}
-                </p>
+                {question.type !== 'single' && <p>{item.name}</p>}
+                <p>{idToChoiceResolver(item.id, item.choices)}</p>
               </div>
             ))}
           </div>
@@ -45,6 +42,7 @@ const RiskTestData = ({
         </div>
       </div>
     </Container>
+    <BottomNavigation />
   </div>
 );
 

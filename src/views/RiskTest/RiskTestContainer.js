@@ -17,11 +17,11 @@ const RiskTestContainer = () => {
 
   const today = moment().format(todayFormat);
 
-  const _12HoursAgo = moment().subtract(12, 'h');
+  const halfDayAgoMoment = moment().subtract(12, 'h');
 
   const riskFilledToday = daysDetails
     .map(value => moment.unix(value.timestamp))
-    .find(value => _12HoursAgo.diff(value) <= 0);
+    .find(value => halfDayAgoMoment.diff(value) <= 0);
 
   const goToDiagnosis = () => {
     if (riskFilledToday) {
