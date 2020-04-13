@@ -4,6 +4,7 @@ import { Button, Container, FieldSet } from '../../components';
 import './PrivacyPolicy.scss';
 import Routes from '../../routes';
 import Header from '../../components/Header/Header';
+import { BottomNavigation } from '../../components/BottomNavigation';
 
 const PrivacyPolicy = () => {
   const history = useHistory();
@@ -54,6 +55,7 @@ const PrivacyPolicy = () => {
           />
         </FieldSet>
       </Container>
+      <BottomNavigation />
     </div>
   );
 };

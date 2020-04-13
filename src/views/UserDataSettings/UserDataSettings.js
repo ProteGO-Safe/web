@@ -6,6 +6,7 @@ import '../UserData/UserData.scss';
 import useModalContext from '../../hooks/useModalContext';
 import Routes from '../../routes';
 import Header from '../../components/Header/Header';
+import { BottomNavigation } from '../../components/BottomNavigation';
 
 const UserDataSettings = () => {
   const history = useHistory();
@@ -29,6 +30,7 @@ const UserDataSettings = () => {
           <Button onClick={handleClick} text="Wymaż moje dane" />
         </FieldSet>
       </Container>
+      <BottomNavigation />
     </div>
   );
 };

@@ -6,6 +6,7 @@ import './HospitalsList.scss';
 import Collapsible from './components/Collapsible/Collapsible';
 import Routes from '../../routes';
 import Header from '../../components/Header/Header';
+import { BottomNavigation } from '../../components/BottomNavigation';
 
 const HospitalsList = () => {
   const history = useHistory();
@@ -60,6 +61,7 @@ const HospitalsList = () => {
           </Collapsible>
         ))}
       </div>
+      <BottomNavigation />
     </div>
   );
 };

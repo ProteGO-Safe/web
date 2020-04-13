@@ -5,6 +5,7 @@ import './PrivacyPolicyDetails.scss';
 import { PrivacyPolicyContent } from './component/PrivacyPolicyContent';
 import Header from '../../components/Header/Header';
 import Routes from '../../routes';
+import { BottomNavigation } from '../../components/BottomNavigation';
 
 const PrivacyPolicyDetails = () => {
   const history = useHistory();
@@ -20,6 +21,7 @@ const PrivacyPolicyDetails = () => {
           </p>
         </div>
       </Container>
+      <BottomNavigation />
     </div>
   );
 };

@@ -6,6 +6,7 @@ import { RegulationsContent } from './component/RegulationsContent';
 import './Regulations.scss';
 import Routes from '../../routes';
 import Header from '../../components/Header/Header';
+import { BottomNavigation } from '../../components/BottomNavigation';
 
 const Regulations = () => {
   const history = useHistory();
@@ -21,6 +22,7 @@ const Regulations = () => {
           </p>
         </div>
       </Container>
+      <BottomNavigation />
     </div>
   );
 };

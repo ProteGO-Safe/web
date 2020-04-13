@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { LOGO_COLOR_BLACK, LOGO_COLOR_WHITE } from '../../constants';
+import { renderWhenTrue } from '../../helpers/rendering';
 import {
   Container,
   GovPLBlackLogo,
@@ -10,20 +11,24 @@ import {
 } from './GovFooter.styled';
 
 const GovFooter = ({ className, type }) => {
+  const renderBlackVariant = renderWhenTrue(() => (
+    <>
+      <GovPLBlackLogo />
+      <GovTechBlackLogo />
+    </>
+  ));
+
+  const renderWhiteVariant = renderWhenTrue(() => (
+    <>
+      <GovPLWhiteLogo />
+      <GovTechWhiteLogo />
+    </>
+  ));
+
   return (
     <Container className={className}>
-      {type === LOGO_COLOR_BLACK && (
-        <>
-          <GovPLBlackLogo />
-          <GovTechBlackLogo />
-        </>
-      )}
-      {type === LOGO_COLOR_WHITE && (
-        <>
-          <GovPLWhiteLogo />
-          <GovTechWhiteLogo />
-        </>
-      )}
+      {renderBlackVariant(type === LOGO_COLOR_BLACK)}
+      {renderWhiteVariant(type === LOGO_COLOR_WHITE)}
     </Container>
   );
 };

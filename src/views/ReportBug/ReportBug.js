@@ -4,6 +4,7 @@ import { useHistory } from 'react-router-dom';
 import { Header } from '../../components/Header';
 import { Container, Content, Email } from './ReportBug.styled';
 import Routes from '../../routes';
+import { BottomNavigation } from '../../components/BottomNavigation';
 
 const ReportBug = () => {
   const history = useHistory();
@@ -23,6 +24,7 @@ const ReportBug = () => {
         <br />
         <Email href="mailto:info@safesafe.app">info@safesafe.app</Email>
       </Content>
+      <BottomNavigation />
     </Container>
   );
 };

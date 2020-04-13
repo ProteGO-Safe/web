@@ -7,6 +7,7 @@ export const Container = styled.section`
 
   /* Temp solution - because of invalid DOM structure */
   width: 100%;
+  min-height: 100vh;
 `;
 
 export const Content = styled.p`

@@ -6,6 +6,7 @@ import { Button, Container, FieldSet, Imprint } from '../../components';
 import { Form } from './components';
 import './DailyData.scss';
 import Header from '../../components/Header/Header';
+import { BottomNavigation } from '../../components/BottomNavigation';
 
 const DailyData = ({ date, isViewMode, onBack }) => {
   const { dirty, submitForm } = useFormikContext();
@@ -17,7 +18,7 @@ const DailyData = ({ date, isViewMode, onBack }) => {
         <h4 className="title medium">Dziennik zdrowia</h4>
         <p className="date medium">{date}</p>
         <Form isViewMode={isViewMode} />
-        <Imprint hidePhoneNumber={true} />
+        <Imprint hidePhoneNumber />
       </Container>
       <div className="footer">
         <Container className="container__footer">
@@ -31,6 +32,7 @@ const DailyData = ({ date, isViewMode, onBack }) => {
           </FieldSet>
         </Container>
       </div>
+      <BottomNavigation />
     </div>
   );
 };

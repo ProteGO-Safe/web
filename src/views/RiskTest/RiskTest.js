@@ -5,6 +5,7 @@ import { Button, Container, FieldSet } from '../../components';
 
 import { daysDetailsPropType } from '../../utills/calendar';
 import Header from '../../components/Header/Header';
+import { BottomNavigation } from '../../components/BottomNavigation';
 
 const RiskTest = ({
   goToHistory,
@@ -42,6 +43,7 @@ const RiskTest = ({
         ))}
       </FieldSet>
     </Container>
+    <BottomNavigation />
   </div>
 );
 

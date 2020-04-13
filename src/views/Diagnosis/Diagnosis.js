@@ -2,11 +2,18 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import { Header } from '../../components/Header';
-import { Container } from '../../components';
+import { BottomNavigation } from '../../components/BottomNavigation';
 import { GroupMultiple, GroupSingle, Single } from './components';
+import { DiagnosisWrapper, Container } from './Diagnosis.styled';
 
-const Diagnosis = ({ clearDiagnosis, isLoading, inProgress, question }) => (
-  <div className="view view__diagnosis view__diagnosis--single">
+const Diagnosis = ({
+  clearDiagnosis,
+  isLoading,
+  inProgress,
+  question,
+  showNavigation
+}) => (
+  <DiagnosisWrapper className="view view__diagnosis view__diagnosis--single">
     <Header onBackClick={clearDiagnosis} />
     <Container>
       {!isLoading && inProgress && question && question.type === 'single' && (
@@ -23,7 +30,8 @@ const Diagnosis = ({ clearDiagnosis, isLoading, inProgress, question }) => (
           <GroupMultiple question={question} />
         )}
     </Container>
-  </div>
+    {showNavigation && <BottomNavigation />}
+  </DiagnosisWrapper>
 );
 
 Diagnosis.propTypes = {

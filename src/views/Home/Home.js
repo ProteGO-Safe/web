@@ -3,8 +3,9 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import { Button, Container, Ok, Warning } from '../../components';
-import './Home.scss';
 import Header from '../../components/Header/Header';
+import { BottomNavigation } from '../../components/BottomNavigation';
+import './Home.scss';
 
 const Home = () => {
   const history = useHistory();
@@ -90,7 +91,7 @@ const Home = () => {
 
   return (
     <div className="view view__home">
-      <Header hideBackButton={true} />
+      <Header hideBackButton />
       <Container>
         <div className="header">
           {renderRiskLevel}
@@ -107,6 +108,7 @@ const Home = () => {
           text="Co mam zrobić?"
         />
       </Container>
+      <BottomNavigation />
     </div>
   );
 };
