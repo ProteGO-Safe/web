@@ -5,7 +5,7 @@
   align-items: center;
   justify-content: center;
   width: 100%;
-  max-width: 286px;
+  max-width: 338px;
   height: 44px;
   padding: 0 12px;
   line-height: 1.5;
@@ -16,9 +16,10 @@
   letter-spacing: 0;
   -webkit-appearance: none;
   border-style: none;
-  border-radius: 4px;
+  border-radius: 8px;
   cursor: pointer;
   text-transform: uppercase;
+  font-family: 'Open Sans';
 
   &:hover,
   &:focus {

@@ -3,17 +3,17 @@ import PropTypes from 'prop-types';
 import {
   FormControl,
   FormControlLabel,
-  Checkbox as MuiCheckbox
+  Radio as MuiRadio
 } from '@material-ui/core';
 
-import { CheckboxWrapper } from './Checkbox.styled';
+import { RadioWrapper } from './Radio.styled';
 
-const Checkbox = ({ checked, error, label, name, onChange }) => (
-  <CheckboxWrapper>
+const Radio = ({ checked, error, label, name, onChange }) => (
+  <RadioWrapper>
     <FormControl error={error}>
       <FormControlLabel
         control={
-          <MuiCheckbox
+          <MuiRadio
             checked={checked}
             color="primary"
             onChange={onChange}
@@ -26,15 +26,15 @@ const Checkbox = ({ checked, error, label, name, onChange }) => (
         label={label}
       />
     </FormControl>
-  </CheckboxWrapper>
+  </RadioWrapper>
 );
 
-Checkbox.defaultProps = {
+Radio.defaultProps = {
   checked: false,
   error: undefined
 };
 
-Checkbox.propTypes = {
+Radio.propTypes = {
   checked: PropTypes.bool,
   error: PropTypes.string,
   label: PropTypes.oneOfType([PropTypes.node, PropTypes.string]).isRequired,
@@ -42,4 +42,4 @@ Checkbox.propTypes = {
   onChange: PropTypes.func.isRequired
 };
 
-export default Checkbox;
+export default Radio;

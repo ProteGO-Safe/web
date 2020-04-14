@@ -12,6 +12,7 @@ export const Container = styled.footer`
   justify-content: space-between;
   height: 70px;
   overflow: hidden;
+  margin-top: auto;
   padding: 22px 15px;
   width: 100%;
 `;

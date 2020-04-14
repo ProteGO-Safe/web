@@ -50,6 +50,7 @@
 
   &__phone_number {
     padding-left: 100px!important;
+    max-width: 100%;
   }
 
   &__label {
@@ -72,4 +73,8 @@
     letter-spacing: 0;
     color: $red;
   }
+}
+
+.intl-tel-input {
+  max-width: 100%;
 }

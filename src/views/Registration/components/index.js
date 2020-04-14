@@ -1,9 +1,9 @@
-export { Step1 } from './Step1';
-export { Step2 } from './Step2';
-export { Step3 } from './Step3';
-export { Step4 } from './Step4';
-export { Step5 } from './Step5';
-export { Step6 } from './Step6';
-export { Step7 } from './Step7';
-export { Step8 } from './Step8';
+export { Age } from './Age';
+export { BloodGroup } from './BloodGroup';
+export { ChronicSick } from './ChronicSick';
+export { Explainer } from './Explainer';
+export { Name } from './Name';
+export { PhoneNumber } from './PhoneNumber';
+export { Sex } from './Sex';
+export { Smoke } from './Smoke';
 export { Summary } from './Summary';

@@ -4,6 +4,11 @@ export const FIELD_NAME = 'name';
 export const FIELD_PHONE = 'phone';
 export const FIELD_TERM1 = 'term1';
 export const FIELD_TERM2 = 'term2';
+
+export const FIELD_IS_CHRONIC_SICK = 'is_chronic_sick';
+export const VALUE_IS_CHRONIC_SICK_YES = 'yes';
+export const VALUE_IS_CHRONIC_SICK_NO = 'no';
+
 const FIELD_CHRONIC_SICK_1 = 'nadciśnienie tętnicze';
 const FIELD_CHRONIC_SICK_1_PH =
   'jak długo? podać w latach z dokładnością do 0.25 roku';
@@ -25,14 +30,14 @@ const FIELD_CHRONIC_SICK_10_PH = 'proszę wpisać jakie';
 const FIELD_CHRONIC_SICK_11 = 'choroby onkologiczne';
 const FIELD_CHRONIC_SICK_11_PH =
   'proszę wpisać jakie podać w latach z dokładnością do 0.25 roku';
-const FIELD_CHRONIC_SICK_12 = 'nietolerancje/alergie/nadwrażliwość na leki';
+const FIELD_CHRONIC_SICK_12 = 'nietolerancje / alergie / nadwrażliwość na leki';
 const FIELD_CHRONIC_SICK_12_PH =
   'proszę wpisać jakie podać w latach z dokładnością do <=1 , <3, <5, <10 <15 lub więcej niż 15 >lat';
-const FIELD_CHRONIC_SICK_13 = 'nietolerancje/alergie - pokarmowe';
+const FIELD_CHRONIC_SICK_13 = 'nietolerancje / alergie - pokarmowe';
 const FIELD_CHRONIC_SICK_13_PH = 'proszę wpisać jakie';
-const FIELD_CHRONIC_SICK_14 = 'nietolerancje/alergie - oddechowe';
+const FIELD_CHRONIC_SICK_14 = 'nietolerancje / alergie - oddechowe';
 const FIELD_CHRONIC_SICK_14_PH = 'proszę wpisać jakie';
-const FIELD_CHRONIC_SICK_15 = 'nietolerancje/alergie - inne';
+const FIELD_CHRONIC_SICK_15 = 'nietolerancje / alergie - inne';
 const FIELD_CHRONIC_SICK_15_PH = 'proszę wpisać jakie';
 const FIELD_CHRONIC_SICK_1_DESC = 'chronic_sick_1_desc';
 const FIELD_CHRONIC_SICK_2_DESC = 'chronic_sick_2_desc';
