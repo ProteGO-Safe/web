@@ -3,10 +3,14 @@
   flex-direction: column;
   align-items: center;
   width: 100%;
-  max-width: 286px;
+  max-width: 338px;
   margin: 0 auto;
 
   background-size: auto;
   background-repeat: no-repeat;
   background-position: center top;
+
+  @media(max-width: 320px) {
+    max-width: 290px;
+  }
 }

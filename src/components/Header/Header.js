@@ -5,15 +5,23 @@ import PropTypes from 'prop-types';
 import useMenuContext from '../../hooks/useMenuContext';
 import Routes from '../../routes';
 import {
+  Arrow,
+  ArrowButton,
+  Burger,
   Container,
   Logo,
+  LogoWrapper,
   MenuButton,
-  ArrowButton,
-  Arrow,
-  Burger
+  Title
 } from './Header.styled';
 
-const Header = ({ hideBackButton, hideMenuButton, onBackClick }) => {
+const Header = ({
+  hideBackButton,
+  hideMenuButton,
+  logoPosition,
+  onBackClick,
+  title
+}) => {
   const history = useHistory();
   const { visible, setVisible, startHiding } = useMenuContext();
 
@@ -51,7 +59,13 @@ const Header = ({ hideBackButton, hideMenuButton, onBackClick }) => {
   return (
     <Container hideBackButton={hideBackButton}>
       {!hideBackButton ? renderBackButton() : null}
-      <Logo />
+      {title ? (
+        <Title>{title}</Title>
+      ) : (
+        <LogoWrapper logoPosition={logoPosition}>
+          <Logo />
+        </LogoWrapper>
+      )}
       {!hideMenuButton ? renderMenuButton() : null}
     </Container>
   );
@@ -60,13 +74,17 @@ const Header = ({ hideBackButton, hideMenuButton, onBackClick }) => {
 Header.defaultProps = {
   hideBackButton: false,
   hideMenuButton: false,
-  onBackClick: null
+  logoPosition: undefined,
+  onBackClick: null,
+  title: undefined
 };
 
 Header.propTypes = {
   hideBackButton: PropTypes.bool,
   hideMenuButton: PropTypes.bool,
-  onBackClick: PropTypes.func
+  logoPosition: PropTypes.oneOf(['left']),
+  onBackClick: PropTypes.func,
+  title: PropTypes.string
 };
 
 export default Header;
