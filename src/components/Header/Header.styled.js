@@ -57,6 +57,7 @@ export const Burger = styled(MenuIcon)`
 `;
 
 export const Title = styled.p`
+  margin-right: ${({ titlePosition }) => (titlePosition === 'left' ? 'auto' : 0)};
   color: ${Color.white};
   font-size: 18px;
   font-weight: ${FontWeight.Normal}

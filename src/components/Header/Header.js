@@ -20,7 +20,8 @@ const Header = ({
   hideMenuButton,
   logoPosition,
   onBackClick,
-  title
+  title,
+  titlePosition
 }) => {
   const history = useHistory();
   const { visible, setVisible, startHiding } = useMenuContext();
@@ -60,7 +61,7 @@ const Header = ({
     <Container hideBackButton={hideBackButton}>
       {!hideBackButton ? renderBackButton() : null}
       {title ? (
-        <Title>{title}</Title>
+        <Title titlePosition={titlePosition}>{title}</Title>
       ) : (
         <LogoWrapper logoPosition={logoPosition}>
           <Logo />
@@ -76,7 +77,8 @@ Header.defaultProps = {
   hideMenuButton: false,
   logoPosition: undefined,
   onBackClick: null,
-  title: undefined
+  title: undefined,
+  titlePosition: undefined
 };
 
 Header.propTypes = {
@@ -84,7 +86,8 @@ Header.propTypes = {
   hideMenuButton: PropTypes.bool,
   logoPosition: PropTypes.oneOf(['left']),
   onBackClick: PropTypes.func,
-  title: PropTypes.string
+  title: PropTypes.string,
+  titlePosition: PropTypes.oneOf(['left'])
 };
 
 export default Header;

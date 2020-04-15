@@ -1,12 +1,9 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
-import moment from 'moment';
 
 import createCalendar from '../../utills/calendar';
 import RiskTest from './RiskTest';
-
-const todayFormat = 'D-MM-YYYY';
 
 const RiskTestContainer = () => {
   const history = useHistory();
@@ -14,18 +11,7 @@ const RiskTestContainer = () => {
 
   const daysDetails = createCalendar(Object.keys(riskTest));
 
-  const today = moment().format(todayFormat);
-
-  const halfDayAgoMoment = moment().subtract(12, 'h');
-
-  const riskFilledToday = daysDetails
-    .map(value => moment.unix(value.timestamp))
-    .find(value => halfDayAgoMoment.diff(value) <= 0);
-
   const goToDiagnosis = () => {
-    if (riskFilledToday) {
-      return;
-    }
     history.push('/diagnosis');
   };
 
@@ -36,8 +22,6 @@ const RiskTestContainer = () => {
       previousDays={daysDetails}
       onFill={goToDiagnosis}
       goToHistory={goToHistory}
-      isFilledToday={!!riskFilledToday}
-      today={today}
     />
   );
 };
