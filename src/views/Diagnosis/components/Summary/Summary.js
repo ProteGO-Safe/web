@@ -2,30 +2,26 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import { Button, Container, FieldSet } from '../../../../components';
-
 import './Summary.scss';
+import success from '../../../../assets/img/icons/success-icon.svg';
 import Header from '../../../../components/Header/Header';
 
 const Summary = ({ onSave }) => (
   <div className="view view__summary">
     <Header />
     <Container>
-      <div className="content content--1">
-        <h4 className="medium">Gratulacje,</h4>
+      <div className="content">
+        <img className="icon" src={success} alt="Gratulacje"/>
+        <h4 className="medium">Gratulacje!</h4>
         <p className="big">
-          Twoja pierwsza Ankieta Oceny Ryzyka przygotowana zgodnie z wytycznymi
-          WHO została uzupełniona. Nasz system sprawdzi teraz do jakiej grupy
-          kwalifikują się Twoje odpowiedzi.
+          Twój pierwszy Test Oceny Ryzyka przygotowany zgodnie z wytycznymi WHO został uzupełniony. Nasz system sprawdzi teraz do jakiej grupy kwalifikują się Twoje odpowiedzi.
         </p>
-      </div>
-      <div className="content content--2">
-        <h4 className="medium">
-          Pamiętaj, żeby Ankietę Oceny Ryzyka wypełniać regularnie - najlepiej
-          1x na dobę - wtedy Twoja ocena ryzyka będzie aktualna.
-        </h4>
+        <small>
+          Aby Twoja ocena ryzyka była aktualna, będziemy wysyłać Ci powiadomienia o kolejnych terminach wypełnienia testu.
+        </small>
       </div>
       <FieldSet>
-        <Button onClick={onSave} text="Ok, wyświetl wynik" type="primary" />
+        <Button onClick={onSave} text="Sprawdź wynik" type="primary" />
       </FieldSet>
     </Container>
   </div>
