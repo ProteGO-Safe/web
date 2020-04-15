@@ -3,20 +3,10 @@ import { useHistory } from 'react-router-dom';
 
 import Header from '../../components/Header/Header';
 import { BottomNavigation } from '../../components/BottomNavigation';
-import {
-  IconButton,
-  Content,
-  Info,
-  Map,
-  Navigation,
-  Phone,
-  Text,
-  ArrowButton,
-  Text2,
-  AngleRight,
-  Line
-} from './Numbers.styled';
+import { Content, Info, Map, Navigation, Phone, Line } from './Numbers.styled';
 import Routes from '../../routes';
+import { BordersButton } from '../../components/BordersButton';
+import { LineItem } from '../../components/LineItem';
 
 const Numbers = () => {
   const history = useHistory();
@@ -27,38 +17,36 @@ const Numbers = () => {
   };
 
   return (
-    <div className="view view__numbers">
+    <>
       <Header />
       <Map />
       <Content>
         <Info>Szukaj pomocy w Twojej okolicy</Info>
-        <IconButton onClick={phoneClick}>
-          <Phone />
-          <Text>Zadzwoń na infolinię</Text>
-        </IconButton>
-        <IconButton>
-          <Navigation />
-          <Text>
-            Pokaż najbliższe szpitale zakaźne
-            <br />i sanepidy w okolicy
-          </Text>
-        </IconButton>
-        <ArrowButton onClick={goToHospitalsList}>
-          <Text2>Pokaż adresy szpitali zakaźnych</Text2>
-          <AngleRight />
-        </ArrowButton>
-        <ArrowButton>
-          <Text2>Pokaż adresy sanepidów</Text2>
-          <AngleRight />
-        </ArrowButton>
-        <ArrowButton>
-          <Text2>Teleporady</Text2>
-          <AngleRight />
-        </ArrowButton>
+        <BordersButton
+          onClick={phoneClick}
+          text="Zadzwoń na infolinię"
+          icon={<Phone />}
+        />
+        <BordersButton
+          onClick={() => null}
+          text={
+            <>
+              Pokaż najbliższe szpitale zakaźne
+              <br />i sanepidy w okolicy"
+            </>
+          }
+          icon={<Navigation />}
+        />
+        <LineItem
+          onClick={goToHospitalsList}
+          text="Pokaż adresy szpitali zakaźnych"
+        />
+        <LineItem onClick={() => null} text="Pokaż adresy sanepidów" />
+        <LineItem onClick={() => null} text="Teleporady" />
         <Line />
       </Content>
       <BottomNavigation />
-    </div>
+    </>
   );
 };
 

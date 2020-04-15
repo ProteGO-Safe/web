@@ -2,7 +2,7 @@ import moment from 'moment';
 import PropTypes from 'prop-types';
 
 const dayWeekFormat = 'dddd';
-const dateFormat = 'D-MM-YYYY HH:mm';
+const dateFormat = 'D-MM-YYYY';
 
 // filledDays contains moments
 const createDaysDetails = (filledDays = []) => {

@@ -1,56 +1,37 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
-
-import { Button, Container, FieldSet } from '../../components';
 
 import { daysDetailsPropType } from '../../utills/calendar';
 import Header from '../../components/Header/Header';
 import { BottomNavigation } from '../../components/BottomNavigation';
+import { Container, Icon, ListTitle, Title } from './RiskTest.styled';
+import { BordersButton } from '../../components/BordersButton';
+import LineItem from '../../components/LineItem/LineItem';
 
-const RiskTest = ({
-  goToHistory,
-  isFilledToday,
-  onFill,
-  today,
-  previousDays
-}) => (
-  <div className="view view__risk-test">
-    <Header />
+const RiskTest = ({ goToHistory, onFill, previousDays }) => (
+  <Fragment>
+    <Header title="Dziennik zdrowia" hideBackButton titlePosition="left" />
     <Container>
-      <h4 className="h1 text-center medium">
-        Ankiety Oceny Ryzyka - wypełniaj ankietę 1x dziennie
-      </h4>
-      <div className="today">
-        <Button
-          onClick={onFill}
-          text={`DZIŚ ${today}${!isFilledToday ? ' - WYKONAJ TEST' : ''}`}
-          type={isFilledToday ? 'gray' : 'primary'}
-        />
-      </div>
-      <div className="line" />
-      <FieldSet>
-        {previousDays.map(_obj => (
-          <Button
-            key={_obj.day}
-            onClick={() => goToHistory(_obj.timestamp)}
-            text=""
-            type="gray"
-          >
-            <span>{_obj.dayWeek}</span>
-            <span className="text-bold">{_obj.day}</span>
-          </Button>
-        ))}
-      </FieldSet>
+      <Title>Przygotowaliśmy dla Ciebie nowy test na dzisiaj.</Title>
+      <BordersButton
+        onClick={onFill}
+        text="Wykonaj TEST oceny ryzyka"
+        icon={<Icon />}
+      />
+      <ListTitle>Wykonane testy:</ListTitle>
+      {previousDays.map(previousDay => {
+        const { day, dayWeek, timestamp } = previousDay;
+        const text = `Test: ${dayWeek} (${day} r.)`;
+        return <LineItem onClick={() => goToHistory(timestamp)} text={text} />;
+      })}
     </Container>
     <BottomNavigation />
-  </div>
+  </Fragment>
 );
 
 RiskTest.propTypes = {
   onFill: PropTypes.func.isRequired,
   goToHistory: PropTypes.func.isRequired,
-  isFilledToday: PropTypes.bool.isRequired,
-  today: PropTypes.string.isRequired,
   previousDays: daysDetailsPropType
 };
 
