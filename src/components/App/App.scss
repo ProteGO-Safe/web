@@ -2,20 +2,16 @@
 
 .app {
   position: relative;
-  min-width: 320px;
+  left: 0;
   overflow-x: hidden;
-
-  &__inner {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    width: 100%;
-    transition: 200ms transform linear;
-  }
+  min-width: 320px;
+  transition: all 0.2s linear;
 
   &.menu-visible {
-    .app__inner {
-      transform: translate(-259px, 0);
+    left: calc(-100% + 59px);
+
+    header {
+      left: calc(-100% + 59px);
     }
   }
 }

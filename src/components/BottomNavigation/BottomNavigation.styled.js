@@ -14,6 +14,8 @@ export const Container = styled(BottomNavigationBase)`
     backdrop-filter: blur(10px);
     box-shadow: inset 0 0.5px 0 0 ${hexToRgba(Color.black, 0.25)};
     background-color: rgba(250, 250, 250, 0.9);
+    height: auto;
+    z-index: 999;
   }
 `;
 
@@ -22,6 +24,13 @@ export const MenuItem = styled(BottomNavigationActionBase)`
     svg {
       width: 21px;
       stroke: currentColor;
+      path,
+      circle,
+      line,
+      polyline,
+      path {
+        stroke: currentColor;
+      }
     }
   }
 `;

@@ -1,7 +1,8 @@
 import Routes from '../../routes';
-import { ReactComponent as HomeIcon } from '../../assets/img/icons/menu-home.svg';
-import { ReactComponent as InfoIcon } from '../../assets/img/icons/menu-info.svg';
-import { ReactComponent as SearchIcon } from '../../assets/img/icons/menu-search.svg';
+import { ReactComponent as HomeIcon } from '../../assets/img/icons/SafeSafe-dolne-menu-Home-white.svg';
+import { ReactComponent as FAQIcon } from '../../assets/img/icons/SafeSafe-dolne-menu-FAQ-white.svg';
+import { ReactComponent as InfoIcon } from '../../assets/img/icons/SafeSafe-dolne-menu-Info-white.svg';
+import { ReactComponent as BurgerIcon } from '../../assets/img/icons/SafeSafe-dolne-menu-More-white.svg';
 
 export const HomeItem = {
   label: 'Home',
@@ -9,18 +10,22 @@ export const HomeItem = {
   path: Routes.Home
 };
 
-export const SearchItem = {
-  label: 'Porady',
-  Icon: SearchIcon,
-  disabled: true
+export const FAQItem = {
+  label: 'Pytania i odp.',
+  Icon: FAQIcon
   // path: Routes.Home
 };
 
 export const InfoItem = {
-  label: 'Aktualności',
-  Icon: InfoIcon,
-  disabled: true
+  label: 'Porady',
+  Icon: InfoIcon
   // path: Routes.Home
 };
 
-export const menuItems = [HomeItem, SearchItem, InfoItem];
+export const BurgerItem = {
+  label: 'Więcej',
+  Icon: BurgerIcon,
+  openMenu: true
+};
+
+export const menuItems = [HomeItem, FAQItem, InfoItem, BurgerItem];
