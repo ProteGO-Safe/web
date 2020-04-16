@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
-import LogoSafeSafe from '../../assets/img/logo/SafeSafe_white.svg';
+import LogoSafeSafe from '../../assets/img/logo/ProteGoSafe_white.svg';
 import './Menu.scss';
 import useMenuContext from '../../hooks/useMenuContext';
 
@@ -42,7 +42,7 @@ const Menu = ({ items }) => {
       {visible && <div className="menu__overlay" onClick={handleClose} />}
       <div className={`menu menu__wrapper ${isVisible} ${isHidden}`}>
         <div className="menu__user">
-          <img src={LogoSafeSafe} alt="SafeSafe" />
+          <img src={LogoSafeSafe} alt="ProteGO Safe" />
         </div>
         <ul className="menu__items">{renderItems}</ul>
       </div>

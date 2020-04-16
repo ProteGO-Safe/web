@@ -29,7 +29,7 @@ const RiskInfoLevel1 = () => (
           <li>Zaniechaj wszelkich spotkań – wykorzystaj telefon lub internet do kontaktu z innymi osobami, nawet jeśli jest to sąsiad lub bliski krewny.</li>
         </ul>
       </li>
-      <li><strong>Zadzwoń do rodziców i krewnych</strong> w podeszłym wieku. Pomóż im korzystać z <span className="primary-2"><strong>SafeSafe</strong></span> na ich telefonie. Zrób dla nich zakupy. Unikaj kontaktu osobistego.</li>
+      <li><strong>Zadzwoń do rodziców i krewnych</strong> w podeszłym wieku. Pomóż im korzystać z <span className="primary-2"><strong>ProteGO Safe</strong></span> na ich telefonie. Zrób dla nich zakupy. Unikaj kontaktu osobistego.</li>
       <li>Jeśli przyjechałeś/aś z zagranicy – skontaktuj się z sanepidem i poddaj się kwarantannie przez 14 dni.</li>
       <li><strong>Monitoruj stan swojego zdrowia i zapisuj go w zakładce <Link to="/daily">MÓJ DZIENNIK ZDROWIA</Link></strong> w tej aplikacji.</li>
     </ol>

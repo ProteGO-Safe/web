@@ -22,16 +22,16 @@ const PrivacyPolicy = () => {
           <Paragraph>
             Wspólnie chcemy przeciwdziałać Koronawirusowi. Twoja prywatność jest
             dla nas tak samo ważna. Aplikację zaprojektowaliśmy tak, aby
-            wszystkie informacje, które przekazujesz do SafeSafe uniemożliwiały
+            wszystkie informacje, które przekazujesz do ProteGO Safe uniemożliwiały
             Twoją identyfikację. Dlatego nie musisz rejestrować konta, nie
-            prosimy Cię o adres e-mail, ani połączenie SafeSafe z kontem w
+            prosimy Cię o adres e-mail, ani połączenie ProteGO Safe z kontem w
             mediach społecznościowych.
           </Paragraph>
           <Paragraph>
             Jeśli będziemy planowali zmiany, poinformujemy Cię o tym i poprosimy
             o Twoją zgodę. Możemy udostępnić część informacji, które wprowadzisz
             do aplikacji naszym partnerom w celu przeciwdziałania
-            koronawirusowi. Szczegóły dotyczące SafeSafe i tego jak przetwarzamy
+            koronawirusowi. Szczegóły dotyczące ProteGO Safe i tego jak przetwarzamy
             Twoje dane znajdziesz w naszym Regulaminie i Polityce Prywatności.
           </Paragraph>
           <Paragraph>Poniżej możesz zapoznać się ze szczegółami:</Paragraph>

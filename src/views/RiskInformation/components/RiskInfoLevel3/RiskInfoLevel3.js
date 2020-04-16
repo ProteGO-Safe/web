@@ -12,7 +12,7 @@ const RiskInfoLevel3 = () => (
       <li><strong>NIE wychodź do sklepu.</strong></li>
       <li><strong>NIE spaceruj z psem po swojej okolicy.</strong></li>
       <li><strong>NIE spotykaj się z innymi osobami.</strong></li>
-      <li><strong>Zadzwoń do rodziców i krewnych</strong> w podeszłym wieku. <strong>Zdalnie</strong> pomóż im korzystać z <span className="primary-2"><strong>SafeSafe</strong></span> na ich telefonie. <strong>Zadbaj, by ktoś inny zrobił dla nich zakupy.</strong></li>
+      <li><strong>Zadzwoń do rodziców i krewnych</strong> w podeszłym wieku. <strong>Zdalnie</strong> pomóż im korzystać z <span className="primary-2"><strong>ProteGO Safe</strong></span> na ich telefonie. <strong>Zadbaj, by ktoś inny zrobił dla nich zakupy.</strong></li>
       <li>Jeśli przyjechałeś/aś z zagranicy – skontaktuj się z sanepidem i poddaj się 14-dniowej kwarantannie.</li>
       <li><strong>Jeżeli wystąpią lub nasilą się objawy infekcji, ponów kontakt z infolinią rządową <a href="tel:800190590">800 190 590</a> lub <span className="primary-2">zadzwoń (nie idź!)</span> do lokalnej placówki służby zdrowia.</strong></li>
     </ol>

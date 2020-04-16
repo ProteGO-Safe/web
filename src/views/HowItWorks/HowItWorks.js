@@ -14,7 +14,7 @@ const HowItWorks = () => {
         <div className="content">
           <p>
             <span className="primary-2">
-              <strong>SafeSafe</strong>
+              <strong>ProteGO Safe</strong>
             </span>{' '}
             to darmowa aplikacja, dzięki której możesz oceniać ryzyko infekcji
             koronawirusem na podstawie wytycznych{' '}
@@ -26,7 +26,7 @@ const HowItWorks = () => {
           </p>
           <ul>
             <li>
-              <strong>Ankieta Oceny Ryzyka</strong> opracowaną przez firmę
+              <strong>Test Oceny Ryzyka</strong> opracowaną przez firmę
               Infermedica na bazie wytycznych Światowej Organizacji Zdrowia
               (WHO). Dzięki niej łatwiej jest podjąć odpowiednie decyzje dot.
               dalszych kroków działania w przypadku podejrzenia infekcji.
