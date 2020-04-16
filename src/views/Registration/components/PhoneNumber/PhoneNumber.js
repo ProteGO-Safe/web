@@ -3,7 +3,7 @@ import { useFormikContext } from 'formik';
 import IntlTelInput from 'react-intl-tel-input';
 import 'react-intl-tel-input/dist/main.css';
 
-import { FIELD_PHONE, STEP_EXPLAINER } from '../../../../constants';
+import { FIELD_PHONE } from '../../../../constants';
 import { Button, FieldSet } from '../../../../components';
 
 import { Paragraph } from '../../../../theme/typography';
@@ -29,7 +29,7 @@ const PhoneNumber = () => {
         if (!isValid) {
           setFieldError(FIELD_PHONE, 'Wpisz poprawny numer');
         } else {
-          setFieldValue('step', STEP_EXPLAINER);
+          setFieldValue('step', 3);
           setErrors({});
         }
       }
