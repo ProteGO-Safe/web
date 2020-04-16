@@ -20,7 +20,8 @@ const Routes = {
   UserDataSettings: '/user-data/settings',
   MatchedDevices: '/matched-devices',
   HospitalsList: '/hospitals-list',
-  ReportBug: '/report-bug'
+  ReportBug: '/report-bug',
+  AdviceInformation: '/advice'
 };
 
 export default Routes;
