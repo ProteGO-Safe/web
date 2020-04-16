@@ -9,22 +9,37 @@
 
   .container {
     display: grid;
-    grid-template-areas: "title" "content";
-    grid-template-rows: 71px min-content;
+    grid-template-areas: "title" "content" "buttons";
     grid-area: container;
 
     h4 {
       grid-area: title;
-      padding-bottom: 20px;
+      align-self: baseline;
+      padding: 18px 0;
     }
 
     .content {
       grid-area: content;
-      align-self: start;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-self: flex-start;
+
+      h3 {
+        align-self: baseline;
+        margin: 0;
+        padding: 0;
+      }
+
+      p.medium {
+        padding: 20px 0 30px;
+      }
     }
 
     .fieldset {
-      padding: 53px 0;
+      grid-area: buttons;
+      padding: 30px 0;
+      align-self: flex-end;
     }
   }
 }

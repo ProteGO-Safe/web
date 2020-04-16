@@ -50,8 +50,8 @@ const Imprint = ({ user }) => {
           <SmallText>{bloodGroup}</SmallText>
         </Grid>
 
-        <Grid item xs={6}>
-          <Paragraph color={Color.lightBlack} fontWeight={FontWeight.Bold}>Choroby:</Paragraph>
+        <Grid item>
+          <Paragraph fontWeight={FontWeight.Bold}>Dolegliwości:</Paragraph>
           {chronicSicks && chronicSicks.length ? (
             chronicSicks.map((sick, index) => (
               <SmallText key={sick.name}>
