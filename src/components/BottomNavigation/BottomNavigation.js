@@ -2,7 +2,6 @@ import React, { useCallback, useState, useEffect, useRef } from 'react';
 import { useHistory, useLocation } from 'react-router-dom';
 import { menuItems } from './BottomNavigation.constants';
 import useMenuContext from '../../hooks/useMenuContext';
-import Routes from '../../routes';
 import { Container, MenuItem } from './BottomNavigation.styled';
 
 const BottomNavigation = ({ className }) => {
@@ -18,7 +17,7 @@ const BottomNavigation = ({ className }) => {
 
   useEffect(() => {
     const activeItemIndex = menuItems.findIndex(({ path, disabled }) => {
-      if (location.pathname === Routes.Home && path === Routes.Home) {
+      if (location.pathname === path) {
         return true;
       }
       return disabled && path && location.pathname.startsWith(path);
