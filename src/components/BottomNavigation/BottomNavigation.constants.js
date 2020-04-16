@@ -18,8 +18,8 @@ export const FAQItem = {
 
 export const InfoItem = {
   label: 'Porady',
-  Icon: InfoIcon
-  // path: Routes.Home
+  Icon: InfoIcon,
+  path: Routes.AdviceInformation
 };
 
 export const BurgerItem = {

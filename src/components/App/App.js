@@ -25,7 +25,8 @@ import {
   InstallAppIOS,
   MatchedDevices,
   HospitalsList,
-  ReportBug
+  ReportBug,
+  AdviceInformation
 } from '../../views';
 
 import useInterval from '../../hooks/useInterval';
@@ -122,6 +123,7 @@ function App() {
                 path={Routes.UserDataSettings}
                 component={UserDataSettings}
               />
+              <Route exact path={Routes.AdviceInformation} component={AdviceInformation} />
             </>
           )}
           <Route render={() => <Redirect to={Routes.Home} />} />
