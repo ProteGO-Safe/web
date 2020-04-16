@@ -21,8 +21,8 @@ const tSex = {
   [VALUE_WOMAN]: 'Kobieta'
 };
 
-const Imprint = ({ hidePhoneNumber, user }) => {
-  const { sex, age, chronicSicks, bloodGroup, smokeNumber, phone } = user;
+const Imprint = ({ user }) => {
+  const { sex, age, chronicSicks, bloodGroup, smokeNumber } = user;
 
   return (
     <ImprintWrapper className="metrics-paragraph">
@@ -50,7 +50,7 @@ const Imprint = ({ hidePhoneNumber, user }) => {
           <SmallText>{bloodGroup}</SmallText>
         </Grid>
 
-        <Grid item xs={hidePhoneNumber ? 12 : 6}>
+        <Grid item xs={6}>
           <Paragraph color={Color.lightBlack} fontWeight={FontWeight.Bold}>Choroby:</Paragraph>
           {chronicSicks && chronicSicks.length ? (
             chronicSicks.map((sick, index) => (
@@ -64,26 +64,12 @@ const Imprint = ({ hidePhoneNumber, user }) => {
             <SmallText>Brak dolegliwości</SmallText>
           )}
         </Grid>
-
-        {hidePhoneNumber ? (
-          ''
-        ) : (
-          <Grid item xs={6}>
-            <Paragraph color={Color.lightBlack} fontWeight={FontWeight.Bold}>Numer telefonu:</Paragraph>
-            <SmallText>{phone}</SmallText>
-          </Grid>
-        )}
       </Grid>
     </ImprintWrapper>
   );
 };
 
-Imprint.defaultProps = {
-  hidePhoneNumber: false
-};
-
 Imprint.propTypes = {
-  hidePhoneNumber: PropTypes.bool,
   user: PropTypes.shape({
     age: PropTypes.number.isRequired,
     bloodGroup: PropTypes.string.isRequired,

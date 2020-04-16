@@ -13,11 +13,6 @@ export function fetchDevicesList() {
     dispatch(fetchDevicesListSuccess(matchedDevices));
   };
 }
-export function saveHashedPhoneNumber(number) {
-  return () => {
-    nativeBridge.setPhoneNumber(number);
-  };
-}
 
 export function saveInfoAboutFilledDiagnosis() {
   const timestamp = moment().unix();

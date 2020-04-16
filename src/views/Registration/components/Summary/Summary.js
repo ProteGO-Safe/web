@@ -6,7 +6,6 @@ import {
   chronicSickValues,
   FIELD_AGE,
   FIELD_BLOOD_GROUP,
-  FIELD_PHONE,
   FIELD_SEX,
   FIELD_SMOKE_NUMBER
 } from '../../../../constants';
@@ -42,7 +41,7 @@ const Summary = () => {
             chronicSicks,
             sex: values[FIELD_SEX],
             smokeNumber: values[FIELD_SMOKE_NUMBER],
-            phone: values[FIELD_PHONE]
+            // phone: values[FIELD_PHONE]
           }}
         />
         <Actions>

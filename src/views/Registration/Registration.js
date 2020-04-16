@@ -10,7 +10,6 @@ import {
   ChronicSick,
   Explainer,
   Name,
-  PhoneNumber,
   Sex,
   Smoke,
   Summary
@@ -26,21 +25,18 @@ const steps = {
     Component: Name
   },
   2: {
-    Component: PhoneNumber
-  },
-  3: {
     Component: Sex
   },
-  4: {
+  3: {
     Component: Age
   },
-  5: {
+  4: {
     Component: ChronicSick
   },
-  6: {
+  5: {
     Component: BloodGroup
   },
-  7: {
+  6: {
     Component: Smoke
   }
 };
@@ -67,7 +63,7 @@ const Registration = () => {
     return <Explainer />;
   }
 
-  if (step === 8) {
+  if (step === 7) {
     return <Summary />;
   }
 

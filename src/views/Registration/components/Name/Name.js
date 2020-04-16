@@ -2,7 +2,11 @@ import React from 'react';
 import { useFormikContext } from 'formik';
 import { FormGroup } from '@material-ui/core';
 import { Button, Checkbox, TextField } from '../../../../components';
-import { FIELD_NAME, FIELD_TERM1, FIELD_TERM2 } from '../../../../constants';
+import {
+  FIELD_NAME,
+  FIELD_TERM1,
+  FIELD_TERM2,
+} from '../../../../constants';
 
 import useModalContext from '../../../../hooks/useModalContext';
 import PrivacyPolicyContent from '../../../PrivacyPolicyDetails/component/PrivacyPolicyContent/PrivacyPolicyContent';

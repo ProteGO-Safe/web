@@ -22,7 +22,7 @@ const Age = () => {
   const handleClick = () => {
     validateForm().then(error => {
       if (!fields.some(field => Object.keys(error).includes(field))) {
-        setFieldValue('step', 5);
+        setFieldValue('step', 4);
         setErrors({});
       }
     });
