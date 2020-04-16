@@ -1,3 +1,4 @@
+import moment from 'moment';
 import nativeBridge from '../../services/nativeBridge';
 import * as types from '../types/nativeData';
 
@@ -15,5 +16,13 @@ export function fetchDevicesList() {
 export function saveHashedPhoneNumber(number) {
   return () => {
     nativeBridge.setPhoneNumber(number);
+  };
+}
+
+export function saveInfoAboutFilledDiagnosis() {
+  const timestamp = moment().unix();
+
+  return () => {
+    nativeBridge.setDiagnosisTimestamp(timestamp);
   };
 }
