@@ -76,7 +76,7 @@ const BloodGroup = () => {
       <Actions>
         <Button
           disabled={!values[FIELD_BLOOD_GROUP]}
-          onClick={() => setFieldValue('step', 7)}
+          onClick={() => setFieldValue('step', 6)}
           icon={Icon}
           size="medium"
           text="Dalej"

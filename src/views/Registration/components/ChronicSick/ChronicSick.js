@@ -51,7 +51,7 @@ const ChronicSick = () => {
 
   const goToNextStep = () => {
     if (isAnyFieldSelected()) {
-      setFieldValue('step', 6);
+      setFieldValue('step', 5);
     }
   };
 

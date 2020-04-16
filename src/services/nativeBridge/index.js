@@ -1,11 +1,5 @@
 import invoke from 'lodash.invoke';
-import bcrypt from 'bcryptjs';
 import { filledDiagnosis } from './dataType';
-
-const setPhoneNumber = phoneNumber => {
-  const hash = bcrypt.hashSync(phoneNumber, 10);
-  invoke(window.NativeBridge, 'setPhoneNumberHash', hash);
-};
 
 const getMatchedDevices = () => {
   try {
@@ -24,6 +18,5 @@ const setDiagnosisTimestamp = timestamp => {
 
 export default {
   setDiagnosisTimestamp,
-  setPhoneNumber,
   getMatchedDevices
 };
