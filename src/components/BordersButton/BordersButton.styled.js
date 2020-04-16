@@ -14,7 +14,8 @@ export const IconButton = styled.div`
 
 export const Text = styled.div`
   font-size: 14px;
-  line-height: 1.71;
+  font-weight: bold;
+  line-height: 1.57;
   color: #0052a5;
   margin: auto 0 auto 0;
 `;

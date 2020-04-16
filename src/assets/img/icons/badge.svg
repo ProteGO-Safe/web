@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 24.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Warstwa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 100 100" style="enable-background:new 0 0 100 100;" xml:space="preserve">
+<style type="text/css">
+	.badge_st0{fill-rule:evenodd;clip-rule:evenodd;fill:#FFFFFF;}
+	.badge_st1{fill:none;stroke:#FFFFFF;stroke-width:4;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+	.badge_st2{fill:none;stroke:#598527;stroke-width:2.4952;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+</style>
+<path class="badge_st0" d="M95.6,73.2c0,10.9-8.8,19.7-19.7,19.7s-19.7-8.8-19.7-19.7S65,53.4,75.9,53.4S95.6,62.3,95.6,73.2"/>
+<path class="badge_st1" d="M92.9,33.8c0-13.6-10.1-24.7-22.6-24.7c-1.7,0-3.3,0.2-4.9,0.6c-6.9,1.7-12.5,6.7-15.5,13.5
+	C47,16.4,41.3,11.3,34.4,9.7c-1.6-0.4-3.2-0.6-4.9-0.6C17.8,9.1,8.2,18.8,7,31.2c-0.1,0.8-0.1,1.7-0.1,2.5c0,6.1,1.1,11.4,7.4,17.9
+	l35.5,35.2l0.1,0.1l0,0l0,0l0.1-0.1l35.5-35.2C91.9,45.2,92.9,39.8,92.9,33.8z"/>
+<path class="badge_st2" d="M66.5,81.1c-1.4-1.5-2.4-3.5-2.8-5.6c-1.3-6.6,3.2-12.9,10-14.1c3.2-0.6,6.4,0,8.9,1.5 M70.1,83.6
+	c2.4,1.4,5.4,2,8.4,1.4c6.6-1.3,11-7.9,9.7-14.8 M69.2,71.5l5,5.4l12.4-11.6"/>
+</svg>
