@@ -32,6 +32,7 @@ const Daily = ({ goToHistory, onFill, today, previousDays }) => {
             {previousDays.map(_obj => (
               <div
                 className="diary__history--item"
+                key={_obj.timestamp}
                 onClick={() => goToHistory(_obj.timestamp)}
               >
                 <span>

@@ -9,7 +9,7 @@ import {
 
 import './Range.scss';
 
-const levels = {
+export const levels = {
   [VALUE_SYMPTOM_LEVEL_1]: 'Brak',
   [VALUE_SYMPTOM_LEVEL_2]: 'Słaby',
   [VALUE_SYMPTOM_LEVEL_3]: 'Umiarkowany',
