@@ -8,21 +8,14 @@
     grid-area: banner;
   }
 
-  .usun-mnie {
-    height: 100px;
-    width: 100px;
-    border: 1px solid black;
-  }
-
   .container {
     display: grid;
-    grid-template-areas: 'header' 'content' 'button';
-    grid-template-rows: 200px 1fr 150px;
+    grid-template-areas: 'badge' 'header' 'content' 'button';
+    grid-template-rows: auto 200px 1fr 150px;
     grid-area: container;
 
     .header {
       grid-area: header;
-
       display: grid;
       grid-template-areas: 'icon user' 'icon info';
       grid-template-columns: 70px 1fr;

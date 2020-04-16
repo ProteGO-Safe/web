@@ -7,17 +7,27 @@ import { hideNotification } from '../../store/actions/nativeData';
 import Header from '../../components/Header/Header';
 import { BottomNavigation } from '../../components/BottomNavigation';
 import './Home.scss';
+import hasBadge from '../../utills/badge';
+import { Badge } from '../../components/Badge';
 
 const Home = () => {
   const dispatch = useDispatch();
   const history = useHistory();
   const { triageLevel } = useSelector(state => state.triage);
-  const userName = useSelector(state => state.user.name);
+  const { name: userName } = useSelector(state => state.user);
   const { notification } = useSelector(state => state.nativeData);
+  const riskTest = useSelector(state => state.riskTest);
 
   const onHideNotification = () => {
     dispatch(hideNotification());
   };
+
+  const renderBadge = (() => {
+    if (hasBadge(Object.keys(riskTest))) {
+      return <Badge />;
+    }
+    return null;
+  })();
 
   const renderRiskLevel = (() => {
     switch (triageLevel) {
@@ -117,6 +127,7 @@ const Home = () => {
     <div className="view view__home">
       <Header hideBackButton />
       <Container>
+        {renderBadge}
         <div className="header">
           {renderRiskLevel}
           <h3 className="primary-2">{userName}</h3>
