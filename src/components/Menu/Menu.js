@@ -1,15 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
-import UserIcon from '../../assets/img/icons/user-white.svg';
+import LogoSafeSafe from '../../assets/img/logo/SafeSafe_white.svg';
 import './Menu.scss';
 import useMenuContext from '../../hooks/useMenuContext';
 
-const Menu = ({ items, userName }) => {
-  const { visible, startHiding } = useMenuContext();
+const Menu = ({ items }) => {
+  const { visible, startHiding, inProgress } = useMenuContext();
   const handleClose = () => startHiding();
 
   const isVisible = visible ? 'visible' : '';
+  const isHidden = inProgress ? 'hidden' : '';
 
   const renderItems = items.map(item => {
     const { bottom, bold, disable, icon, path, slug, title } = item;
@@ -39,10 +40,9 @@ const Menu = ({ items, userName }) => {
   return (
     <>
       {visible && <div className="menu__overlay" onClick={handleClose} />}
-      <div className={`menu menu__wrapper ${isVisible}`}>
+      <div className={`menu menu__wrapper ${isVisible} ${isHidden}`}>
         <div className="menu__user">
-          <img src={UserIcon} alt="Użytkownik" />
-          <p>{userName}</p>
+          <img src={LogoSafeSafe} alt="SafeSafe" />
         </div>
         <ul className="menu__items">{renderItems}</ul>
       </div>
