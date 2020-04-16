@@ -1,24 +1,22 @@
 import React from 'react';
-import { Container } from '../../components';
-import './PrivacyPolicyDetails.scss';
 import { PrivacyPolicyContent } from './component/PrivacyPolicyContent';
 import Header from '../../components/Header/Header';
 import { BottomNavigation } from '../../components/BottomNavigation';
+import { Content, Container, View } from '../../theme/grid';
+import { Title } from '../../theme/typography';
 
 const PrivacyPolicyDetails = () => {
   return (
-    <div className="view view__privacy-policy-details">
+    <View>
       <Header />
-      <Container>
-        <h4 className="text-center medium">Polityka prywatności</h4>
-        <div className="content">
-          <p className="p1 small">
-            <PrivacyPolicyContent />
-          </p>
-        </div>
-      </Container>
+      <Content>
+        <Container>
+          <Title>Polityka prywatności</Title>
+          <PrivacyPolicyContent />
+        </Container>
+      </Content>
       <BottomNavigation />
-    </div>
+    </View>
   );
 };
 

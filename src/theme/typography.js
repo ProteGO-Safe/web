@@ -33,7 +33,7 @@ export const H4 = styled.h4`
   font-weight: ${FontWeight.Bold};
   font-size: 24px;
   line-height: 1.25;
-  color: ${Color.darkGray};
+  color: ${resolveDefaultColor(Color.darkGray)};
 `;
 
 export const H5 = styled.h5`
@@ -47,7 +47,7 @@ export const Paragraph = styled.p`
   font-size: 16px;
   font-weight: ${resolveDefaultFontWeight(FontWeight.Normal)};
   line-height: 1.5;
-  color: ${resolveDefaultColor(Color.darkGray)};
+  color: ${resolveDefaultColor(Color.black)};
 
   &:not(:last-child) {
     margin-bottom: 6px;
@@ -94,4 +94,9 @@ export const ListItem = styled(Paragraph)`
     width: 10px;
     height: 10px;
   }
+`;
+
+export const Title = styled(H4)`
+  margin-bottom: 32px;
+  color: ${Color.black};
 `;

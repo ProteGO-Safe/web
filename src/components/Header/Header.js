@@ -13,7 +13,7 @@ import {
   MenuButton
 } from './Header.styled';
 
-const Header = ({ hideBackButton, hideMenuButton, onBackClick, title }) => {
+const Header = ({ hideBackButton, hideMenuButton, onBackClick }) => {
   const history = useHistory();
   const { visible, setVisible, startHiding } = useMenuContext();
 
