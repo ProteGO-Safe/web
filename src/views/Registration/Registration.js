@@ -58,7 +58,9 @@ const Registration = () => {
   }, [step]);
 
   if (!step) {
-    return <StartScreen onStartClick={() => setFieldValue('step', 1)} />;
+    return (
+      <StartScreen onStartClick={() => setFieldValue('step', STEP_EXPLAINER)} />
+    );
   }
 
   if (step === STEP_EXPLAINER) {

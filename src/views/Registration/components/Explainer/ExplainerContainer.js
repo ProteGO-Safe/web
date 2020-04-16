@@ -61,7 +61,7 @@ const ExplainerContainer = () => {
       return;
     }
 
-    setFieldValue('step', 3);
+    setFieldValue('step', 1);
   };
 
   return (
