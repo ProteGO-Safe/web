@@ -54,8 +54,12 @@ const Form = ({ isViewMode }) => {
   );
 };
 
+Form.defaultProps = {
+  isViewMode: false
+};
+
 Form.propTypes = {
-  isViewMode: PropTypes.bool.isRequired
+  isViewMode: PropTypes.bool
 };
 
 export default Form;

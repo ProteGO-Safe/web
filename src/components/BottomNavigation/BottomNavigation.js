@@ -10,7 +10,11 @@ const BottomNavigation = ({ className }) => {
   const location = useLocation();
   const containerRef = useRef();
   const [value, setValue] = useState(null);
-  const { setVisible: setMenuVisible } = useMenuContext();
+  const {
+    setVisible: setMenuVisible,
+    startHiding: hideMenu,
+    visible: menuVisible
+  } = useMenuContext();
 
   useEffect(() => {
     const activeItemIndex = menuItems.findIndex(({ path, disabled }) => {
@@ -34,15 +38,20 @@ const BottomNavigation = ({ className }) => {
     (event, newValue) => {
       const menuItem = menuItems[newValue];
 
-      if (menuItem.openMenu) {
-        setMenuVisible(true);
+      if (!menuItem.openMenu) {
+        history.push(menuItem.path);
         return;
       }
 
-      history.push(menuItem.path);
+      if (menuVisible) {
+        hideMenu();
+        return;
+      }
+
+      setMenuVisible(true);
     },
     // eslint-disable-next-line
-    [history]
+    [history, menuVisible]
   );
 
   const renderMenuItem = ({ label, disabled, Icon }) => (
