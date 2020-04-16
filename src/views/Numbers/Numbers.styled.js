@@ -1,17 +1,6 @@
 import styled from 'styled-components';
 
-import BackgroundFakeMap from '../../assets/img/fake/fake___numbers-map.webp';
 import { ReactComponent as PhoneIcon } from '../../assets/img/icons/phone.svg';
-import { ReactComponent as NavigationIcon } from '../../assets/img/icons/navigation.svg';
-
-const BackgroundMap = styled.img`
-  height: 166px;
-  width: 100%;
-`;
-
-export const Map = styled(BackgroundMap).attrs({
-  src: BackgroundFakeMap
-})``;
 
 export const Content = styled.div`
   width: 100%;
@@ -26,11 +15,6 @@ export const Info = styled.div`
 `;
 
 export const Phone = styled(PhoneIcon)`
-  height: 44px;
-  width: 44px;
-`;
-
-export const Navigation = styled(NavigationIcon)`
   height: 44px;
   width: 44px;
 `;
