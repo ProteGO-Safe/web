@@ -13,6 +13,7 @@ export { Loader } from './Loader';
 export { Menu } from './Menu';
 export { MenuButton } from './MenuButton';
 export { Modal } from './Modal';
+export { Notification } from './Notification';
 export { Option } from './Option';
 export { Ok } from './Ok';
 export { Radio } from './Radio';

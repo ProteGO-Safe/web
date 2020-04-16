@@ -1,16 +1,23 @@
 import React from 'react';
 
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
-import { Button, Container, Ok, Warning } from '../../components';
+import { Button, Container, Notification, Ok, Warning } from '../../components';
+import { hideNotification } from '../../store/actions/nativeData';
 import Header from '../../components/Header/Header';
 import { BottomNavigation } from '../../components/BottomNavigation';
 import './Home.scss';
 
 const Home = () => {
+  const dispatch = useDispatch();
   const history = useHistory();
   const { triageLevel } = useSelector(state => state.triage);
   const userName = useSelector(state => state.user.name);
+  const { notification } = useSelector(state => state.nativeData);
+
+  const onHideNotification = () => {
+    dispatch(hideNotification());
+  };
 
   const renderRiskLevel = (() => {
     switch (triageLevel) {
@@ -89,6 +96,23 @@ const Home = () => {
   const goToRiskInformation = () =>
     history.push(`/risk-information/${triageLevel}`);
 
+  const renderNotification = (() => {
+    if (notification) {
+      const { isVisible, title, content, status } = notification;
+      if (isVisible) {
+        return (
+          <Notification
+            title={title}
+            content={content}
+            status={status}
+            onClick={onHideNotification}
+          />
+        );
+      }
+    }
+    return null;
+  })();
+
   return (
     <div className="view view__home">
       <Header hideBackButton />
@@ -102,6 +126,7 @@ const Home = () => {
           </p>
         </div>
         <div className="content">{renderRiskInfo}</div>
+        {renderNotification}
         <Button
           onClick={goToRiskInformation}
           type="primary"
