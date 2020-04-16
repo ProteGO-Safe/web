@@ -41,8 +41,6 @@ const Numbers = () => {
           onClick={goToHospitalsList}
           text="Pokaż adresy szpitali zakaźnych"
         />
-        <LineItem onClick={() => null} text="Pokaż adresy sanepidów" />
-        <LineItem onClick={() => null} text="Teleporady" />
         <Line />
       </Content>
       <BottomNavigation />
