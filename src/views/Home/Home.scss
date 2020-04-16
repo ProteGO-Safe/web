@@ -8,6 +8,12 @@
     grid-area: banner;
   }
 
+  .usun-mnie {
+    height: 100px;
+    width: 100px;
+    border: 1px solid black;
+  }
+
   .container {
     display: grid;
     grid-template-areas: 'header' 'content' 'button';

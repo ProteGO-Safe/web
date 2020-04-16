@@ -2,7 +2,7 @@ import React from 'react';
 import moment from 'moment';
 import classNames from 'classnames';
 import 'moment/locale/pl';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { Redirect, Route, Switch } from 'react-router-dom';
 import {
   Daily,
@@ -28,6 +28,8 @@ import {
   ReportBug
 } from '../../views';
 
+import useInterval from '../../hooks/useInterval';
+import { fetchNotification } from '../../store/actions/nativeData';
 import useMenuContext from '../../hooks/useMenuContext';
 import { Menu } from '../Menu';
 import Routes from '../../routes';
@@ -35,9 +37,12 @@ import './App.scss';
 
 function App() {
   moment.locale('pl');
+  const dispatch = useDispatch();
 
   const { name } = useSelector(state => state.user);
   const { inProgress, visible: menuIsVisible } = useMenuContext();
+
+  useInterval(() => dispatch(fetchNotification()), 10000);
 
   const className = classNames({
     app: true,
@@ -101,7 +106,11 @@ function App() {
               <Route exact path={Routes.Regulations} component={Regulations} />
               <Route exact path={Routes.Diagnosis} component={Diagnosis} />
               <Route exact path={Routes.UserData} component={UserData} />
-              <Route exact path={Routes.HospitalsList} component={HospitalsList} />
+              <Route
+                exact
+                path={Routes.HospitalsList}
+                component={HospitalsList}
+              />
               <Route exact path={Routes.ReportBug} component={ReportBug} />
               <Route
                 exact

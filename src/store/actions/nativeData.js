@@ -21,3 +21,27 @@ export function saveInfoAboutFilledDiagnosis() {
     nativeBridge.setDiagnosisTimestamp(timestamp);
   };
 }
+
+export const fetchNotificationSuccess = notification => ({
+  notification,
+  type: types.NATIVE_DATA_FETCH_NOTIFICATION_SUCCESS
+});
+
+export function fetchNotification() {
+  return dispatch => {
+    const notification = nativeBridge.getNotification();
+    if (notification) {
+      dispatch(fetchNotificationSuccess(notification));
+    }
+  };
+}
+
+export const hideNotificationSuccess = () => ({
+  type: types.NATIVE_DATA_HIDE_NOTIFICATION_SUCCESS
+});
+
+export function hideNotification() {
+  return dispatch => {
+    dispatch(hideNotificationSuccess());
+  };
+}
