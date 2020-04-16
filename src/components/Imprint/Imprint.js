@@ -10,8 +10,11 @@ import {
 } from '../../constants';
 
 import { FontWeight } from '../../theme/fonts';
+import { Color } from '../../theme/colors';
 import { Paragraph, SmallText } from '../../theme/typography';
 import { ImprintWrapper } from './Imprint.styled';
+
+import './Imprint.scss';
 
 const tSex = {
   [VALUE_MAN]: 'Mężczyzna',
@@ -22,20 +25,20 @@ const Imprint = ({ hidePhoneNumber, user }) => {
   const { sex, age, chronicSicks, bloodGroup, smokeNumber, phone } = user;
 
   return (
-    <ImprintWrapper>
-      <Grid container spacing={4}>
+    <ImprintWrapper className="metrics-paragraph">
+      <Grid container>
         <Grid item xs={6}>
-          <Paragraph fontWeight={FontWeight.Bold}>Płeć:</Paragraph>
+          <Paragraph color={Color.lightBlack} fontWeight={FontWeight.Bold}>Płeć:</Paragraph>
           <SmallText>{tSex[sex]}</SmallText>
         </Grid>
 
         <Grid item xs={6}>
-          <Paragraph fontWeight={FontWeight.Bold}>Wiek:</Paragraph>
+          <Paragraph color={Color.lightBlack} fontWeight={FontWeight.Bold}>Wiek:</Paragraph>
           <SmallText>{age}</SmallText>
         </Grid>
 
         <Grid item xs={6}>
-          <Paragraph fontWeight={FontWeight.Bold}>Palenie:</Paragraph>
+          <Paragraph color={Color.lightBlack} fontWeight={FontWeight.Bold}>Palenie:</Paragraph>
           <SmallText>
             {smokeNumber ? VALUE_SMOKE_YES : VALUE_SMOKE_NO}
             {smokeNumber && ` (${smokeNumber})`}
@@ -43,12 +46,12 @@ const Imprint = ({ hidePhoneNumber, user }) => {
         </Grid>
 
         <Grid item xs={6}>
-          <Paragraph fontWeight={FontWeight.Bold}>Grupa krwi:</Paragraph>
+          <Paragraph color={Color.lightBlack} fontWeight={FontWeight.Bold}>Grupa krwi:</Paragraph>
           <SmallText>{bloodGroup}</SmallText>
         </Grid>
 
-        <Grid item xs={6}>
-          <Paragraph fontWeight={FontWeight.Bold}>Dolegliwości:</Paragraph>
+        <Grid item xs={hidePhoneNumber ? 12 : 6}>
+          <Paragraph color={Color.lightBlack} fontWeight={FontWeight.Bold}>Choroby:</Paragraph>
           {chronicSicks && chronicSicks.length ? (
             chronicSicks.map((sick, index) => (
               <SmallText key={sick.name}>
@@ -66,7 +69,7 @@ const Imprint = ({ hidePhoneNumber, user }) => {
           ''
         ) : (
           <Grid item xs={6}>
-            <Paragraph fontWeight={FontWeight.Bold}>Numer telefonu:</Paragraph>
+            <Paragraph color={Color.lightBlack} fontWeight={FontWeight.Bold}>Numer telefonu:</Paragraph>
             <SmallText>{phone}</SmallText>
           </Grid>
         )}

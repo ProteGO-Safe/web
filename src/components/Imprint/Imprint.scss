@@ -27,3 +27,15 @@
     }
   }
 }
+
+.metrics-paragraph {
+  p {
+    margin-bottom: 0!important;
+
+    &:last-child {
+      font-size: 12px;
+      line-height: 1.33;
+      margin-bottom: 15px!important;
+    }
+  }
+}

@@ -16,10 +16,11 @@ const Form = ({ isViewMode }) => {
   return (
     <div className="form">
       <h4 className="big">Temperatura</h4>
-      <FieldSet horizontal>
+      <FieldSet>
         <Input
           error={errors[FIELD_TEMPERATURE]}
           disabled={isViewMode}
+          label="Podaj aktualną temperaturę ciała"
           name={FIELD_TEMPERATURE}
           max={45}
           min={25}
