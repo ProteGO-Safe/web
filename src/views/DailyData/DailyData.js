@@ -8,7 +8,7 @@ import './DailyData.scss';
 import Header from '../../components/Header/Header';
 import { BottomNavigation } from '../../components/BottomNavigation';
 
-const DailyData = ({ date, isViewMode }) => {
+const DailyData = ({ isViewMode }) => {
   const { dirty, submitForm } = useFormikContext();
 
   return (
@@ -16,8 +16,8 @@ const DailyData = ({ date, isViewMode }) => {
       <Header />
       <Container className="container__content">
         <h4 className="title medium">Dziennik zdrowia</h4>
-        <p className="date medium">{date}</p>
         <Form isViewMode={isViewMode} />
+        <h4 className="metrics">Metryka</h4>
         <Imprint hidePhoneNumber />
       </Container>
       <div className="footer">

@@ -47,7 +47,7 @@ export const Paragraph = styled.p`
   font-size: 16px;
   font-weight: ${resolveDefaultFontWeight(FontWeight.Normal)};
   line-height: 1.5;
-  color: ${Color.darkGray};
+  color: ${resolveDefaultColor(Color.darkGray)};
 
   &:not(:last-child) {
     margin-bottom: 12px;

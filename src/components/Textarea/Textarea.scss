@@ -8,16 +8,16 @@
   }
 
   &__field {
-    height: 145px;
+    height: 132px;
     resize: none;
-    border: 1px solid $primary_2;
-    font-size: 14px;
-    line-height: 19px;
-    padding: 4px;
+    border: 1px solid $gray_form;
+    font-size: 16px;
+    line-height: 1.25;
+    padding: 10px;
     color: $black;
     letter-spacing: 0;
     -webkit-appearance: none;
-    border-radius: 0;
+    border-radius: 4px;
 
     &:focus {
       outline: none;
@@ -25,12 +25,9 @@
   }
 
   &__label {
-    font-size: 16px;
-    line-height: 19px;
+    font-size: 14px;
+    line-height: 1.43;
     letter-spacing: 0;
-    padding-bottom: 8.5px;
-    border-bottom: 2px solid $primary_2;
-    margin-bottom: 18.5px;
-    width: 80%;
+    margin-bottom: 5px;
   }
 }
