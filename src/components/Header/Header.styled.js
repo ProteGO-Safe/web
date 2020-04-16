@@ -1,11 +1,8 @@
 import styled from 'styled-components';
 
-import { ReactComponent as LogoSVG } from '../../assets/img/logo/SafeSafe_white.svg';
+import { ReactComponent as LogoSVG } from '../../assets/img/logo/protegosafe_logo_white.svg';
 import { ReactComponent as ArrowIcon } from '../../assets/img/icons/angle-left.svg';
 import { ReactComponent as MenuIcon } from '../../assets/img/icons/menu-white.svg';
-
-import { Color } from '../../theme/colors';
-import { FontWeight } from '../../theme/fonts';
 
 export const Container = styled.header`
   height: 50px;
@@ -15,10 +12,6 @@ export const Container = styled.header`
   display: flex;
   align-items: center;
   justify-content: center;
-`;
-
-export const LogoWrapper = styled.div`
-  margin-right: ${({ logoPosition }) => (logoPosition === 'left' ? 'auto' : 0)};
 `;
 
 export const Logo = styled(LogoSVG)`
@@ -54,12 +47,4 @@ export const Burger = styled(MenuIcon)`
   height: 32px;
   width: auto;
   fill: currentColor;
-`;
-
-export const Title = styled.p`
-  margin-right: ${({ titlePosition }) => (titlePosition === 'left' ? 'auto' : 0)};
-  color: ${Color.white};
-  font-size: 18px;
-  font-weight: ${FontWeight.Normal}
-  line-height: 24px;
 `;

@@ -10,19 +10,10 @@ import {
   Burger,
   Container,
   Logo,
-  LogoWrapper,
-  MenuButton,
-  Title
+  MenuButton
 } from './Header.styled';
 
-const Header = ({
-  hideBackButton,
-  hideMenuButton,
-  logoPosition,
-  onBackClick,
-  title,
-  titlePosition
-}) => {
+const Header = ({ hideBackButton, hideMenuButton, onBackClick, title }) => {
   const history = useHistory();
   const { visible, setVisible, startHiding } = useMenuContext();
 
@@ -60,13 +51,7 @@ const Header = ({
   return (
     <Container hideBackButton={hideBackButton}>
       {!hideBackButton ? renderBackButton() : null}
-      {title ? (
-        <Title titlePosition={titlePosition}>{title}</Title>
-      ) : (
-        <LogoWrapper logoPosition={logoPosition}>
-          <Logo />
-        </LogoWrapper>
-      )}
+      <Logo />
       {!hideMenuButton ? renderMenuButton() : null}
     </Container>
   );
@@ -75,19 +60,13 @@ const Header = ({
 Header.defaultProps = {
   hideBackButton: false,
   hideMenuButton: false,
-  logoPosition: undefined,
-  onBackClick: null,
-  title: undefined,
-  titlePosition: undefined
+  onBackClick: null
 };
 
 Header.propTypes = {
   hideBackButton: PropTypes.bool,
   hideMenuButton: PropTypes.bool,
-  logoPosition: PropTypes.oneOf(['left']),
-  onBackClick: PropTypes.func,
-  title: PropTypes.string,
-  titlePosition: PropTypes.oneOf(['left'])
+  onBackClick: PropTypes.func
 };
 
 export default Header;

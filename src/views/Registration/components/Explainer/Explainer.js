@@ -9,7 +9,7 @@ import { LOGO_COLOR_BLACK } from '../../../../constants';
 
 const Explainer = ({ carouselRef, items, onClick, settings }) => (
   <div className="view view__explainer">
-    <Header hideBackButton hideMenuButton logoPosition="left" />
+    <Header hideBackButton hideMenuButton />
     <Container>
       <Content>
         <Title>

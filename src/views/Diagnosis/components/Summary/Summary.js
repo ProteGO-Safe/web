@@ -8,7 +8,7 @@ import Header from '../../../../components/Header/Header';
 
 const Summary = ({ onSave }) => (
   <div className="view view__summary">
-    <Header />
+    <Header hideBackButton hideMenuButton />
     <Container>
       <div className="content">
         <img className="icon" src={success} alt="Gratulacje"/>
