@@ -38,6 +38,12 @@ body {
     font-weight: bold;
     letter-spacing: 0;
     line-height: 26px;
+
+    &.medium {
+      font-size: 18px;
+      line-height: 24px;
+      letter-spacing: 0;
+    }
   }
 
   h4 {
@@ -137,6 +143,10 @@ body {
   }
 
   .primary-2 {
+    color: $primary_2;
+  }
+
+  .primary-3 {
     color: $primary_2;
   }
 
