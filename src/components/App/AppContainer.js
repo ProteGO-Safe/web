@@ -13,6 +13,7 @@ const AppContainer = () => {
   useEffect(() => {
     ReactGA.initialize('UA-143293519-2');
     history.listen(location => {
+      window.scroll(0, 0);
       ReactGA.pageview(location.pathname);
     });
   }, [history]);

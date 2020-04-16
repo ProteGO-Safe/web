@@ -16,6 +16,7 @@ export const Container = styled.header`
 
 export const Logo = styled(LogoSVG)`
   height: 30px;
+  width: auto;
 `;
 
 const Button = styled.div`
