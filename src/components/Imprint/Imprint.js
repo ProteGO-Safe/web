@@ -80,8 +80,7 @@ Imprint.propTypes = {
       })
     ),
     sex: PropTypes.oneOf([VALUE_MAN, VALUE_WOMAN]),
-    smokeNumber: PropTypes.string,
-    phone: PropTypes.number.isRequired
+    smokeNumber: PropTypes.string
   }).isRequired
 };
 
