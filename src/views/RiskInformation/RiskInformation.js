@@ -1,5 +1,5 @@
 import React from 'react';
-import { useHistory, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 
 import { Container } from '../../components';
 import './RiskInformation.scss';
@@ -11,10 +11,8 @@ import { RiskInfoLevel4 } from './components/RiskInfoLevel4';
 import { RiskInfoLevel5 } from './components/RiskInfoLevel5';
 import { Header } from '../../components/Header';
 import { BottomNavigation } from '../../components/BottomNavigation';
-import Routes from '../../routes';
 
 const RiskInformation = () => {
-  const history = useHistory();
   const { triage } = useParams();
 
   const renderRiskHeader = (() => {
@@ -88,7 +86,7 @@ const RiskInformation = () => {
 
   return (
     <div className="view view__risk-information">
-      <Header onBackClick={() => history.push(Routes.Home)} />
+      <Header />
       <Container>
         <h4 className={`text-${renderRiskHeaderColor}`}>{renderRiskHeader}</h4>
         <div className="content">{renderRiskInformation}</div>

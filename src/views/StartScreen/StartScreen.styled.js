@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { ReactComponent as LogoSVG } from '../../assets/img/logo/SafeSafe_white.svg';
+import { ReactComponent as LogoSVG } from '../../assets/img/logo/protegosafe_logo_white.svg';
 import GovFooter from '../../components/GovFooter/GovFooter';
 
 export const Container = styled.section`

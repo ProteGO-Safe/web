@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 
 import { daysDetailsPropType } from '../../utills/calendar';
@@ -9,8 +9,8 @@ import { BordersButton } from '../../components/BordersButton';
 import LineItem from '../../components/LineItem/LineItem';
 
 const RiskTest = ({ goToHistory, onFill, previousDays }) => (
-  <Fragment>
-    <Header title="Dziennik zdrowia" hideBackButton titlePosition="left" />
+  <>
+    <Header />
     <Container>
       <Title>Przygotowaliśmy dla Ciebie nowy test na dzisiaj.</Title>
       <BordersButton
@@ -22,11 +22,17 @@ const RiskTest = ({ goToHistory, onFill, previousDays }) => (
       {previousDays.map(previousDay => {
         const { day, dayWeek, timestamp } = previousDay;
         const text = `Test: ${dayWeek} (${day} r.)`;
-        return <LineItem onClick={() => goToHistory(timestamp)} text={text} />;
+        return (
+          <LineItem
+            key={timestamp}
+            onClick={() => goToHistory(timestamp)}
+            text={text}
+          />
+        );
       })}
     </Container>
     <BottomNavigation />
-  </Fragment>
+  </>
 );
 
 RiskTest.propTypes = {

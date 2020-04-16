@@ -30,7 +30,7 @@ const Summary = () => {
 
   return (
     <View>
-      <Header hideBackButton hideMenuButton title="Rejestracja" />
+      <Header hideBackButton hideMenuButton />
       <Container>
         <Stepper currentStep={step} numberOfSteps={NUMBER_OF_STEPS} />
         <Title>Sprawdź czy dane są prawidłowe</Title>

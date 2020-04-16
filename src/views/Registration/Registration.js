@@ -71,7 +71,7 @@ const Registration = () => {
 
   return (
     <View>
-      <Header hideMenuButton hideBackButton title="Rejestracja" />
+      <Header hideMenuButton hideBackButton />
       <Container>
         <Stepper currentStep={step} numberOfSteps={NUMBER_OF_STEPS} />
         <StepComponent />
