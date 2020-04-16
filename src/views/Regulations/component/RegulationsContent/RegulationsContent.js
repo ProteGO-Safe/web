@@ -7,7 +7,7 @@ const RegulationsContent = () => (
       <strong>Regulamin</strong>
     </Paragraph>
     <Paragraph>
-      <strong>SafeSafe</strong>
+      <strong>ProteGO Safe</strong>
     </Paragraph>
     <Paragraph> </Paragraph>
     <Paragraph>
@@ -19,18 +19,18 @@ const RegulationsContent = () => (
     <List>
       <ListItem>
         Niniejszy regulamin (zwany dalej: „<strong>Regulaminem</strong>”)
-        normuje zasady i warunki korzystania z aplikacji SafeSafe (zwanej dalej:
-        „SafeSafe”).{' '}
+        normuje zasady i warunki korzystania z aplikacji ProteGO Safe (zwanej dalej:
+        „ProteGO Safe”).{' '}
       </ListItem>
       <ListItem>
         Regulamin stanowi wykonanie obowiązku wynikłego z normy zawartej w art.
         8 ust. 1 pkt 1 ustawy z dnia 18 lipca 2002r. o świadczeniu usług drogą
         elektroniczną (Dz.U. z 2020 r. poz. 344), dalej również jako{' '}
         <strong>UŚDE</strong> i jest udostępniany Użytkownikom nieodpłatnie za
-        pośrednictwem SafeSafe.{' '}
+        pośrednictwem ProteGO Safe.{' '}
       </ListItem>
       <ListItem>
-        Usługodawcą jest Administrator SafeSafe (zwany dalej: „
+        Usługodawcą jest Administrator ProteGO Safe (zwany dalej: „
         <strong>Administratorem</strong>” lub „<strong>Usługodawcą</strong>”)
         tj. TYTANI24 Spółka z ograniczoną odpowiedzialnością z siedzibą we
         Wrocławiu, ul. Ząbkowicka 55, 50 – 511 Wrocław (adres biura: ul.
@@ -77,7 +77,7 @@ const RegulationsContent = () => (
       <ListItem>
         <strong>Oprogramowaniu</strong> – rozumie się przez to przeglądarki
         internetowe z których może korzystać Użytkownik, w celu przeglądania
-        SafeSafe. Przykładowymi przeglądarkami internetowymi są: Opera, Chrom,
+        ProteGO Safe. Przykładowymi przeglądarkami internetowymi są: Opera, Chrom,
         Mozilla Firefox, Internet Explorer czy Safari. Sugeruje się aby
         Oprogramowanie było zaktualizowane do najnowszej wersji.
       </ListItem>
@@ -85,19 +85,19 @@ const RegulationsContent = () => (
         <strong>Plikach Cookies</strong> (tzw. ciasteczka) – rozumie się przez
         to dane informatyczne stanowiące, w szczególności pliki tekstowe, które
         przechowywane są w Urządzeniu Użytkownika i przeznaczone są do
-        korzystania z SafeSafe.
+        korzystania z ProteGO Safe.
       </ListItem>
       <ListItem>
-        <strong>SafeSafe</strong> – rozumie się przez to aplikację SafeSafe.
+        <strong>ProteGO Safe</strong> – rozumie się przez to aplikację ProteGO Safe.
       </ListItem>
       <ListItem>
         <strong>Urządzeniu </strong>– rozumie się przez to elektroniczne
         Urządzenie za pośrednictwem, którego Użytkownik uzyskuje dostęp do
-        SafeSafe (komputer, tablet, smatphone itp.).
+        ProteGO Safe (komputer, tablet, smatphone itp.).
       </ListItem>
       <ListItem>
         <strong>Użytkowniku </strong>- rozumie się przez to osobę, która
-        dokonała korzysta z SafeSafe.
+        dokonała korzysta z ProteGO Safe.
       </ListItem>
       <ListItem>
         <strong>Umowie </strong>– rozumie się przez to stosunek prawny między
@@ -117,10 +117,10 @@ const RegulationsContent = () => (
         <strong>Usługach/Usłudze </strong>– rozumie się przez to usługi
         świadczone drogą elektroniczną w rozumieniu ustawy z dnia 18 lipca 2002
         r. o świadczeniu usług drogą elektroniczną (Dz.U. z 2020 r. poz. 344)
-        bezpłatnie, oferowane Użytkownikom w ramach SafeSafe, w tym w
+        bezpłatnie, oferowane Użytkownikom w ramach ProteGO Safe, w tym w
         szczególności Usługi o których mowa w §3 ust. 1 oraz <i>newsletter </i>
         tj. usługa dostarczania przez Administratora informacji dotyczących
-        SafeSafe.
+        ProteGO Safe.
       </ListItem>
       <ListItem>
         <strong>WHO</strong> - rozumie się przez to Światową Organizację Zdrowia
@@ -140,7 +140,7 @@ const RegulationsContent = () => (
     </Paragraph>
     <List>
       <ListItem>
-        Aplikacja SafeSafe, dostępna za pośrednictwem strony{' '}
+        Aplikacja ProteGO Safe, dostępna za pośrednictwem strony{' '}
         <u>https://safesafe.app</u>, jest bezpłatna i obejmuje swym zakresem
         Triaż (samoocenę ryzyka infekcji wirusem SARS-CoV-2, stworzoną na
         podstawie kwestionariusza WHO), dziennik zdrowia Użytkownika, wsparcie w
@@ -148,10 +148,10 @@ const RegulationsContent = () => (
         potencjalnie zagrożonego zarażeniem, informowanie o istotnych
         informacjach związanych z pandemią wirusa SARS-CoV-2 oraz przypominacz
         bezpiecznych zachowań i nawyków codziennej higieny<strong>. </strong>W
-        ramach Usług świadczonych za pośrednictwem SafeSafe możliwe jest
+        ramach Usług świadczonych za pośrednictwem ProteGO Safe możliwe jest
         ustalenie czynników ryzyka infekcji, tworzenie i prowadzenie historii
         medycznej, istniejących schorzeń, aktualnej farmakoterapii oraz
-        prowadzenie dziennika profilaktyki. SafeSafe przekazuje informacje i
+        prowadzenie dziennika profilaktyki. ProteGO Safe przekazuje informacje i
         wytyczne WHO oraz GIS, ale przekazywane informacje nie mają charakteru
         konsultacji medycznej lub świadczenia zdrowotnego (w tym w szczególności
         medycznego lub farmaceutycznego).
@@ -163,29 +163,29 @@ const RegulationsContent = () => (
         <u>https://developer.infermedica.com/docs/covid-19#triage</u>.
       </ListItem>
       <ListItem>
-        Usługi świadczone są z momentem rozpoczęcia korzystania z SafeSafe.
-        Przed przystąpieniem do korzystania z SafeSafe, Użytkownik powinien
+        Usługi świadczone są z momentem rozpoczęcia korzystania z ProteGO Safe.
+        Przed przystąpieniem do korzystania z ProteGO Safe, Użytkownik powinien
         zaakceptować Regulamin poprzez zaznaczenie odpowiedniego checkboxa.
-        Zaprzestanie świadczenia Usługi następuje z opuszczeniem SafeSafe przez
+        Zaprzestanie świadczenia Usługi następuje z opuszczeniem ProteGO Safe przez
         Użytkownika oraz usunięciem plików cookies z przeglądarki, z
         zastrzeżeniem ust. 4 niniejszego paragrafu.
       </ListItem>
       <ListItem>
         W przypadku wyrażenia przez Użytkownika zgody na otrzymywanie informacji
-        o SafeSafe oraz podania swojego adresu e-mail, Usługa obejmuje również
-        przesyłanie informacji o SafeSafe, a także informacji związanych z
+        o ProteGO Safe oraz podania swojego adresu e-mail, Usługa obejmuje również
+        przesyłanie informacji o ProteGO Safe, a także informacji związanych z
         pandemią wirusa SARS-CoV-2 dotyczących usług świadczonych przez
         Administratora. W przypadku takim, zaprzestanie świadczenia Usługi w tym
         zakresie, następuje z chwilą cofnięcia zgody na otrzymywanie informacji
-        o SafeSafe przez Użytkownika.
+        o ProteGO Safe przez Użytkownika.
       </ListItem>
       <ListItem>
         Administrator jest uprawniony do dokonywania zmian funkcjonalności
-        SafeSafe, celem poprawy jakości świadczonych usług oraz do zmiany
-        interfejsu SafeSafe w całości lub w części. Nazwa SafeSafe, logo, zasady
-        działania SafeSafe, wszystkie jego elementy graficzne, interfejs
+        ProteGO Safe, celem poprawy jakości świadczonych usług oraz do zmiany
+        interfejsu ProteGO Safe w całości lub w części. Nazwa ProteGO Safe, logo, zasady
+        działania ProteGO Safe, wszystkie jego elementy graficzne, interfejs
         podlegają ochronie prawnej. Oprogramowanie, na którym opiera się
-        SafeSafe oraz kod źródłowy oddawany jest przez Administratora w oparciu
+        ProteGO Safe oraz kod źródłowy oddawany jest przez Administratora w oparciu
         o licencję MIT, której szczegóły zawarte są pod adresem:{' '}
         <u>https://opensource.org/licenses/MIT</u>.{' '}
       </ListItem>
@@ -199,12 +199,12 @@ const RegulationsContent = () => (
     </Paragraph>
     <List>
       <ListItem>
-        Warunkiem korzystania z SafeSafe jest posiadanie przez Użytkownika
+        Warunkiem korzystania z ProteGO Safe jest posiadanie przez Użytkownika
         Urządzenia podłączonego do sieci Internet oraz aktualnego Oprogramowania
         z aktywnym zapisywaniem Plików Cookies.
       </ListItem>
       <ListItem>
-        Korzystanie z SafeSafe możliwe jest bez ograniczeń terytorialnych.
+        Korzystanie z ProteGO Safe możliwe jest bez ograniczeń terytorialnych.
       </ListItem>
       <ListItem>
         Administrator nie ponosi odpowiedzialności za utrudnienia w korzystaniu
@@ -219,12 +219,12 @@ const RegulationsContent = () => (
       <strong>§ 5</strong>
     </Paragraph>
     <Paragraph>
-      <strong>Uwagi dotyczące funkcjonowania SafeSafe</strong>
+      <strong>Uwagi dotyczące funkcjonowania ProteGO Safe</strong>
     </Paragraph>
     <List>
       <ListItem>
         Użytkownik może przesyłać uwagi związane z nienależytym działaniem
-        SafeSafe pocztą elektroniczną na adres mailowy: info@safesafe.app.
+        ProteGO Safe pocztą elektroniczną na adres mailowy: info@safesafe.app.
         Odpowiedź zostanie udzielona w terminie 14 dni od daty otrzymania
         zgłoszenia na adres podany w zgłoszeniu.{' '}
       </ListItem>
@@ -254,7 +254,7 @@ const RegulationsContent = () => (
     <List>
       <ListItem>
         Administrator zapewnia działanie systemu teleinformatycznego, którym się
-        posługuje w taki sposób, że każdy Użytkownik SafeSafe może nieodpłatnie
+        posługuje w taki sposób, że każdy Użytkownik ProteGO Safe może nieodpłatnie
         zakończyć w każdej chwili korzystanie z Usługi.
       </ListItem>
       <ListItem>
@@ -288,7 +288,7 @@ const RegulationsContent = () => (
       <strong>Odpowiedzialność Użytkownika</strong>
     </Paragraph>
     <Paragraph>
-      Wszelkie materiały wykonane lub wyświetlane za pomocą SafeSafe m.in.
+      Wszelkie materiały wykonane lub wyświetlane za pomocą ProteGO Safe m.in.
       tekst, grafika, dane, artykuły, zdjęcia, obrazy, ilustracje, logo są
       chronione prawami autorskimi lub innymi prawami własności intelektualnej
       oraz udostępniane użytkownikowi na podstawie licencji MIT, której
@@ -305,7 +305,7 @@ const RegulationsContent = () => (
     <List>
       <ListItem>
         Administrator zobowiązuje się do dołożenia wszelkich starań celem
-        zapewnienia działania SafeSafe bez jakichkolwiek zakłóceń, a także
+        zapewnienia działania ProteGO Safe bez jakichkolwiek zakłóceń, a także
         przekazania najbardziej aktualnych wytycznych WHO i/lub GIS.
       </ListItem>
       <ListItem>
@@ -314,7 +314,7 @@ const RegulationsContent = () => (
         farmaceutycznych), nie jest pośrednikiem powyższych usług oraz
         świadczeń. W związku z powyższym Administrator nie ponosi
         odpowiedzialności za jakiekolwiek skutki wynikające z korzystania przez
-        Użytkownika z SafeSafe w obszarze zdrowia.
+        Użytkownika z ProteGO Safe w obszarze zdrowia.
       </ListItem>
       <ListItem>
         W przypadkach szczególnych, mających wpływ na bezpieczeństwo lub
@@ -323,7 +323,7 @@ const RegulationsContent = () => (
         wcześniejszego powiadomienia o tym Użytkowników. W szczególności
         Administrator jest uprawniony do przeprowadzenia prac konserwacyjnych
         mających na celu przywrócenie bezpieczeństwa i stabilności systemu
-        teleinformatycznego. Użytkownikowi SafeSafe nie przysługują żadne
+        teleinformatycznego. Użytkownikowi ProteGO Safe nie przysługują żadne
         roszczenia w związku z przerwą lub zaprzestaniem świadczenia Usług przez
         Administratora.
       </ListItem>
@@ -347,7 +347,7 @@ const RegulationsContent = () => (
     <List>
       <ListItem>
         Użytkownik może wypowiedzieć Umowę ze skutkiem natychmiastowym i bez
-        wskazywania przyczyn poprzez usunięcie SafeSafe oraz usunięcia plików
+        wskazywania przyczyn poprzez usunięcie ProteGO Safe oraz usunięcia plików
         Cookies ze swojego Urządzenia. Można tego dokonać także poprzez
         przesłanie oświadczenia za pośrednictwem poczty elektronicznej na adres:
         info@safesafe.app lub też pisemnie na adres siedziby Administratora.
@@ -387,7 +387,7 @@ const RegulationsContent = () => (
     </Paragraph>
     <List>
       <ListItem>
-        Użytkownik SafeSafe ma prawo do zgłoszenia reklamacji Usług świadczonych
+        Użytkownik ProteGO Safe ma prawo do zgłoszenia reklamacji Usług świadczonych
         przez Administratora.
       </ListItem>
       <ListItem>

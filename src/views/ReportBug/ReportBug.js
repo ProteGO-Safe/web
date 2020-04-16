@@ -9,7 +9,7 @@ const ReportBug = () => {
     <Container>
       <Header />
       <Content>
-        SafeSafe to darmowa aplikacja, dzięki której możesz oceniać ryzyko
+        ProteGO Safe to darmowa aplikacja, dzięki której możesz oceniać ryzyko
         infekcji koronawirusem na podstawie wytycznych Światowej Organizacji
         Zdrowia (WHO), prowadzić dziennik stanu zdrowia oraz lepiej poznać
         profilaktykę. Obserwując wyniki oraz stosując środki zaradcze

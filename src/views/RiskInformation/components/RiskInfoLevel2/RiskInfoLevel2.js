@@ -32,7 +32,7 @@ const RiskInfoLevel2 = () => (
           <li>Zaniechaj wszelkich spotkań – wykorzystaj telefon lub internet do kontaktu z innymi osobami, nawet jeśli jest to sąsiad lub bliski krewny.</li>
         </ul>
       </li>
-      <li><strong>Zadzwoń do rodziców i krewnych</strong> w podeszłym wieku. <strong>Zdalnie</strong> pomóż im korzystać z <span className="primary-2"><strong>SafeSafe</strong></span> na ich telefonie. <strong>, by ktoś inny zrobił dla nich zakupy.</strong></li>
+      <li><strong>Zadzwoń do rodziców i krewnych</strong> w podeszłym wieku. <strong>Zdalnie</strong> pomóż im korzystać z <span className="primary-2"><strong>ProteGO Safe</strong></span> na ich telefonie. <strong>, by ktoś inny zrobił dla nich zakupy.</strong></li>
       <li>Jeśli przyjechałeś/aś z zagranicy – skontaktuj się z sanepidem i poddaj się 14-dniowej kwarantannie.</li>
       <li><strong>Jeśli u Ciebie lub Twoich bliskich wystąpią objawy infekcji COVID-19, skontaktuj się z infolinią rządową: <a href="tel:800190590">800 190 590</a> lub lokalną placówką służby zdrowia.</strong></li>
     </ol>

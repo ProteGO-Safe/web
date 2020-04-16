@@ -7,14 +7,14 @@ const PrivacyPolicyContent = () => (
       <strong>POLITYKA PRYWATNOŚCI </strong>
     </Paragraph>
     <Paragraph>
-      <strong>SafeSafe</strong>
+      <strong>ProteGO Safe</strong>
     </Paragraph>
 
     <Paragraph>
-      Zaprojektowaliśmy aplikację SafeSafe zgodnie z zasadami Privacy by Default
+      Zaprojektowaliśmy aplikację ProteGO Safe zgodnie z zasadami Privacy by Default
       oraz Privacy by Design. Oznacza to, że domyślnie stosujemy ochronę Twojej
       prywatności i staraliśmy się ograniczyć przetwarzanie Twoich danych już na
-      etapie projektowania i tworzenia aplikacji SafeSafe. Staramy się nie
+      etapie projektowania i tworzenia aplikacji ProteGO Safe. Staramy się nie
       pozyskiwać od Ciebie informacji, które umożliwią Twoją identyfikację (tj.
       danych osobowych), ale może się zdarzyć tak, że podczas korzystania z
       aplikacji podasz nam tyle informacji, że będziemy w stanie Cię
@@ -25,7 +25,7 @@ const PrivacyPolicyContent = () => (
     <Paragraph>
       Jeśli przekażesz nam informacje dotyczące Twojego zdrowia, wyrażasz
       zgodę na przetwarzanie przez nas tych danych. W każdej chwili możesz
-      wycofać tą zgodę za pośrednictwem SafeSafe, bez wpływu na zgodność z
+      wycofać tą zgodę za pośrednictwem ProteGO Safe, bez wpływu na zgodność z
       prawem przetwarzania dokonanego przed jej wycofaniem.
     </Paragraph>
 
@@ -43,7 +43,7 @@ const PrivacyPolicyContent = () => (
     <List>
       <ListItem>
         Niniejsza Polityka Prywatności określa zasady zbierania, przetwarzania i
-        ochrony Danych Osobowych w związku z korzystaniem z aplikacji SafeSafe.
+        ochrony Danych Osobowych w związku z korzystaniem z aplikacji ProteGO Safe.
       </ListItem>
       <ListItem>
         Niniejszy dokument jest przygotowany w oparciu o postanowienia
@@ -112,25 +112,25 @@ const PrivacyPolicyContent = () => (
       <ListItem>
         <strong>Danych Osobowych</strong> – rozumie się przez to podstawowe dane
         o Użytkowniku, m.in. nazwa Użytkownika, adres e-mail oraz inne dane
-        podawane podczas korzystania z SafeSafe, dzięki którym możliwe jest
+        podawane podczas korzystania z ProteGO Safe, dzięki którym możliwe jest
         określenie tożsamości w sposób bezpośredni lub pośredni;
       </ListItem>
       <ListItem>
-        <strong>SafeSafe</strong> – rozumie się przez to aplikację SafeSafe;
+        <strong>ProteGO Safe</strong> – rozumie się przez to aplikację ProteGO Safe;
       </ListItem>
       <ListItem>
         <strong>Usługach </strong>– rozumie się przez to usługi świadczone drogą
-        elektroniczną oferowane Użytkownikom w ramach SafeSafe o których mowa w
+        elektroniczną oferowane Użytkownikom w ramach ProteGO Safe o których mowa w
         §3 ust. 1 Regulaminu;
       </ListItem>
       <ListItem>
         <strong>Koncie </strong>– przypisany do Użytkownika zbiór zasobów i
-        uprawnień w SafeSafe oraz umożliwiający korzystanie z SafeSafe;
+        uprawnień w ProteGO Safe oraz umożliwiający korzystanie z ProteGO Safe;
       </ListItem>
       <ListItem>
         <strong>Oprogramowaniu</strong> – rozumie się przez to przeglądarki
         internetowe, z których może korzystać Użytkownik, w celu korzystania z
-        SafeSafe. Przykładowymi przeglądarkami internetowymi są: Opera, Chrome,
+        ProteGO Safe. Przykładowymi przeglądarkami internetowymi są: Opera, Chrome,
         Mozilla Firefox, Internet Explorer czy Safari;
       </ListItem>
       <ListItem>
@@ -140,7 +140,7 @@ const PrivacyPolicyContent = () => (
         </strong>{' '}
         (tzw. ciasteczkach) – rozumie się przez to dane informatyczne
         stanowiące, w szczególności pliki tekstowe, które przechowywane są w
-        Urządzeniu Użytkownika i przeznaczone są do korzystania z SafeSafe;{' '}
+        Urządzeniu Użytkownika i przeznaczone są do korzystania z ProteGO Safe;{' '}
       </ListItem>
       <ListItem>
         <strong>Przetwarzaniu Danych Osobowych</strong> – rozumie się przez to
@@ -162,7 +162,7 @@ const PrivacyPolicyContent = () => (
       </ListItem>
       <ListItem>
         <strong>Regulaminie</strong> – rozumie się przez to dokument, który
-        określa warunki korzystania z SafeSafe, a także prawa i obowiązki
+        określa warunki korzystania z ProteGO Safe, a także prawa i obowiązki
         Administratora oraz Użytkowników;
       </ListItem>
       <ListItem>
@@ -175,13 +175,13 @@ const PrivacyPolicyContent = () => (
       <ListItem>
         <strong>Urządzeniu</strong> – rozumie się przez to elektroniczne
         Urządzenie za pośrednictwem, którego Użytkownik uzyskuje dostęp do
-        SafeSafe, a w szczególności: komputery klasy PC, laptopy, tablety,
+        ProteGO Safe, a w szczególności: komputery klasy PC, laptopy, tablety,
         smartfony;
       </ListItem>
       <ListItem>
         <strong>Użytkowniku</strong> – rozumie się przez to osobę (Ciebie), na
         rzecz której zgodnie z Regulaminem i przepisami prawa są świadczone
-        Usługi (SafeSafe);
+        Usługi (ProteGO Safe);
       </ListItem>
       <ListItem>
         <strong>Zgodzie</strong> – rozumie się przez to dobrowolne, konkretne,
@@ -208,7 +208,7 @@ const PrivacyPolicyContent = () => (
           elektroniczną) w tym w oparciu o zgodę na przetwarzanie danych
           dotyczących zdrowia;
         </ListItem>
-        <ListItem>analiza, organizowanie i ulepszanie SafeSafe;</ListItem>
+        <ListItem>analiza, organizowanie i ulepszanie ProteGO Safe;</ListItem>
         <ListItem>
           profilowanie w celu przeciwdziałania pandemii wirusa SARS-CoV-2;
         </ListItem>
@@ -278,7 +278,7 @@ const PrivacyPolicyContent = () => (
         Administrator może przetwarzać następujące Dane Osobowe: identyfikator
         Urządzenia Użytkownika, nazwa Użytkownika (imię), dane dotyczące
         zdrowia, płeć, wiek, dane dotyczące palenia papierosów i inne, które
-        Użytkownik zdecyduje się podać w SafeSafe lub których podanie będzie
+        Użytkownik zdecyduje się podać w ProteGO Safe lub których podanie będzie
         wymagane, a które umożliwią identyfikację Użytkownika.{' '}
       </ListItem>
       <ListItem>

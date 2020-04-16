@@ -28,7 +28,7 @@ const InstallAppInstructionAndroidContainer = () => {
       icon: Icon4,
       key: 4,
       text:
-        'Na głównym ekranie telefonu znajdź i naciśnij ikonę aplikacji "SafeSafe"'
+        'Na głównym ekranie telefonu znajdź i naciśnij ikonę aplikacji "ProteGO Safe"'
     }
   ];
 

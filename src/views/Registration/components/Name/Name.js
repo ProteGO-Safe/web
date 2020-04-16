@@ -80,7 +80,7 @@ const Name = () => {
               >
                 Regulaminem
               </TextLink>{' '}
-              SafeSafe oraz{' '}
+              ProteGO Safe oraz{' '}
               <TextLink
                 onClick={() => openModal(<PrivacyPolicyContent />)}
                 role="button"
@@ -98,10 +98,10 @@ const Name = () => {
           checked={values[FIELD_TERM2]}
           label={
             <Annotation>
-              Zdaję sobie sprawę, że umieszczenie w SafeSafe informacji
+              Zdaję sobie sprawę, że umieszczenie w ProteGO Safe informacji
               dotyczących mojego stanu zdrowia oznacza wyrażenie zgody na
               przetwarzanie moich danych dotyczących zdrowia przez Tytani24 Sp.
-              z o.o. w celu korzystania z niektórych funkcji SafeSafe, w
+              z o.o. w celu korzystania z niektórych funkcji ProteGO Safe, w
               szczególności analizy ryzyka zarażenia wirusem SARS-CoV-2.
               Szczegóły dotyczące przetwarzania moich danych mogę odnaleźć w{' '}
               <TextLink

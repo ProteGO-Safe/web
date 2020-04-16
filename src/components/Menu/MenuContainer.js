@@ -31,7 +31,7 @@ const MenuContainer = () => {
     {
       icon: Icon2,
       path: Routes.RiskTest,
-      slug: 'ankieta',
+      slug: 'test_oceny_ryzyka',
       title: 'test oceny ryzyka'
     },
     {
