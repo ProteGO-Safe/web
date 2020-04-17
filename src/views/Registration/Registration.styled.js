@@ -3,7 +3,7 @@ import { H5, Paragraph, SmallText } from '../../theme/typography';
 import { Color } from '../../theme/colors';
 
 export const Title = styled(H5)`
-  margin-bottom: 40px;
+  margin: 10px 0 30px;
 `;
 
 export const Actions = styled.div`

@@ -10,6 +10,8 @@ import { Content, Container, View } from '../../theme/grid';
 import { Actions } from '../Registration/Registration.styled';
 import { Paragraph, Title } from '../../theme/typography';
 
+import './UserData.scss';
+
 const UserData = () => {
   const history = useHistory();
   const userName = useSelector(state => state.user.name);
