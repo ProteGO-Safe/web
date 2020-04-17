@@ -1,10 +1,10 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
     <g fill="none" fill-rule="evenodd">
         <path d="M0 0H20V20H0z"/>
-        <g transform="translate(3 3)">
-            <circle cx="7" cy="7" r="7" stroke="#0052A5" stroke-width="1.167"/>
-            <text fill="#0052A5" font-family="OpenSans-Bold, Open Sans" font-size="10" font-weight="bold">
-                <tspan x="5.474" y="11">i</tspan>
+        <g>
+            <path stroke="#D5233F" stroke-width="1.077" d="M7 0L14 13 0 13z" transform="translate(3 4)"/>
+            <text fill="#D5233F" font-family="OpenSans-Bold, Open Sans" font-size="9" font-weight="bold" transform="translate(3 4)">
+                <tspan x="6.212" y="11">!</tspan>
             </text>
         </g>
     </g>
