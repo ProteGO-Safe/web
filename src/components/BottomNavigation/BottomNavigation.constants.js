@@ -10,16 +10,16 @@ export const HomeItem = {
   path: Routes.Home
 };
 
-export const FAQItem = {
-  label: 'Pytania i odp.',
-  Icon: FAQIcon,
-  path: Routes.FaqPage
-};
-
 export const InfoItem = {
   label: 'Porady',
   Icon: InfoIcon,
   path: Routes.AdviceInformation
+};
+
+export const FAQItem = {
+  label: 'Pytania i odp.',
+  Icon: FAQIcon,
+  path: Routes.FaqPage
 };
 
 export const BurgerItem = {
@@ -28,4 +28,4 @@ export const BurgerItem = {
   openMenu: true
 };
 
-export const menuItems = [HomeItem, FAQItem, InfoItem, BurgerItem];
+export const menuItems = [HomeItem, InfoItem, FAQItem, BurgerItem];
