@@ -8,7 +8,7 @@ import './Information.scss';
 const Complete = ({ hideInformation }) => {
   return (
     <div className="view view__information">
-      <Header hideBackButton hideMenuButton />
+      <Header hideMenuButton />
       <Container>
         <div className="content">
           <h3 className="h3">
