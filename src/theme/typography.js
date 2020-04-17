@@ -100,4 +100,5 @@ export const Title = styled(H4)`
   font-size: 18px;
   color: ${Color.primary};
   text-align: center;
+  padding-bottom: 30px;
 `;
