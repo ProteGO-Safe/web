@@ -1,5 +1,9 @@
 @import '../../assets/styles/colors';
 
+@mixin normalPlaceholder() {
+  color: $gray_form;
+};
+
 .textarea {
   &__wrapper {
     display: flex;
@@ -8,29 +12,39 @@
   }
 
   &__field {
-    height: 145px;
+    height: 132px;
     resize: none;
-    border: 1px solid $primary_2;
-    font-size: 14px;
-    line-height: 19px;
-    padding: 4px;
-    color: $black;
+    border: 1px solid $gray_form;
+    font-size: 16px;
+    line-height: 1.25;
+    padding: 10px;
+    color: $black_2;
     letter-spacing: 0;
     -webkit-appearance: none;
-    border-radius: 0;
+    border-radius: 4px;
 
     &:focus {
       outline: none;
     }
+
+    &::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+      @include normalPlaceholder;
+    }
+    &::-moz-placeholder { /* Firefox 19+ */
+      @include normalPlaceholder;
+    }
+    &:-ms-input-placeholder { /* IE 10+ */
+      @include normalPlaceholder;
+    }
+    &:-moz-placeholder { /* Firefox 18- */
+      @include normalPlaceholder;
+    }
   }
 
   &__label {
-    font-size: 16px;
-    line-height: 19px;
+    font-size: 14px;
+    line-height: 1.43;
     letter-spacing: 0;
-    padding-bottom: 8.5px;
-    border-bottom: 2px solid $primary_2;
-    margin-bottom: 18.5px;
-    width: 80%;
+    margin-bottom: 5px;
   }
 }

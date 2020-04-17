@@ -2,7 +2,7 @@
 @import '../../assets/styles/mixins';
 
 .view__home {
-  @include viewBaseStyles(143px);
+  @include viewBaseStyles();
 
   .banner {
     grid-area: banner;
@@ -10,63 +10,10 @@
 
   .container {
     display: grid;
-    grid-template-areas: 'header' 'content' 'button';
-    grid-template-rows: 200px 1fr 150px;
+    grid-template-areas: 'badge' 'smile' 'test' 'info' 'list';
+    grid-template-rows: auto auto auto auto auto;
     grid-area: container;
-
-    .header {
-      grid-area: header;
-
-      display: grid;
-      grid-template-areas: 'icon user' 'icon info';
-      grid-template-columns: 70px 1fr;
-      grid-template-rows: min-content 120px;
-      grid-column-gap: 15px;
-      grid-row-gap: 10px;
-
-      svg {
-        grid-area: icon;
-        width: 100%;
-      }
-      h3 {
-        grid-area: user;
-        align-self: end;
-
-        line-height: 1em;
-        margin: unset;
-      }
-      p {
-        grid-area: info;
-
-        width: 100%;
-        font-weight: bold;
-      }
-    }
-
-    .content {
-      grid-area: content;
-      justify-self: center;
-
-      color: $black;
-      font-size: 1.35em;
-      line-height: 1.4em;
-
-      font-weight: bold;
-      text-align: center;
-
-      p {
-        padding-bottom: 1em;
-
-        &.text-level-1 {
-          font-size: 1.5em;
-          line-height: 1.5em;
-        }
-        &.text-level-2 {
-          font-size: 1.25em;
-          line-height: 1.5em;
-        }
-      }
-    }
+    align-self: start;
 
     button {
       grid-area: button;

@@ -4,7 +4,7 @@ import TextareaAutosize from 'react-textarea-autosize';
 
 import './Textarea.scss';
 
-const Textarea = ({ disabled, label, name, onChange, value }) => (
+const Textarea = ({ disabled, label, name, onChange, placeholder, value }) => (
   <div className="textarea textarea__wrapper">
     {label && <span className="textarea__label">{label}</span>}
     <TextareaAutosize
@@ -13,6 +13,7 @@ const Textarea = ({ disabled, label, name, onChange, value }) => (
       disabled={disabled}
       name={name}
       onChange={onChange}
+      placeholder={placeholder}
       value={value}
     />
   </div>
@@ -30,6 +31,7 @@ Textarea.propTypes = {
   label: PropTypes.string,
   name: PropTypes.string.isRequired,
   onChange: PropTypes.func,
+  placeholder: PropTypes.string,
   value: PropTypes.oneOfType([PropTypes.number, PropTypes.string])
 };
 

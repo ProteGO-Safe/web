@@ -1,38 +1,47 @@
 import React from 'react';
 
-import Background from '../../assets/img/banners/banner-8.png';
-import { Banner, Brand, Button, Container, FieldSet } from '../../components';
+import { Button, Container, FieldSet } from '../../components';
+import { Header } from '../../components/Header';
+import warning from '../../assets/img/icons/warning.svg';
 import './Information.scss';
 
 const Complete = ({ hideInformation }) => {
   return (
     <div className="view view__information">
-      <Banner background={Background}>
-        <Brand content={false} small white />
-      </Banner>
+      <Header hideMenuButton />
       <Container>
         <div className="content">
-          <p className="p1 medium-2">
-            Jedną z głównych funkcji tej aplikacji jest{' '}
-            <span className="text-bold">
-              Ankieta Oceny Ryzyka infekcji COVID-19. Jest stworzona w 100% zgodnie
-              z&nbsp;wytycznymi WHO
-            </span>{' '}
-            (Światowej Organizacji Zdrowia).
+          <h3 className="h3">
+            Test oceny ryzyka <br /> zarażenia COVID-19
+          </h3>
+          <p className="p1">
+            Jedną z głównych funkcji tej aplikacji jest Test oceny ryzyka
+            zarażenia COVID-19 zgodnie z wytycznymi WHO (Światowej Organizacji
+            Zdrowia)
           </p>
-          <h4 className="medium">WAŻNE - Ankieta Oceny Ryzyka:</h4>
-          <p className="p2 medium-2">
-            - NIE JEST DIAGNOZĄ. Diagnozę może postawić wyłącznie lekarz i test
-            medyczny na obecność wirusa.
-            <br />- Pomaga monitorować swój stan zdrowia
-          </p>
-          <p className="p3 medium-2 primary-2 text-bold">
-            - Musi zostać wypełniony w 100% zgodnie z prawdą
-          </p>
+          <div className="warning--content">
+            <span className="warning--label">
+              <img src={warning} alt="Ważne" />
+              Ważne
+            </span>
+            <p className="p2">Test:</p>
+            <ul className="warning--list">
+              <li>
+                <strong>Nie jest diagnozą.</strong> Diagnozę może postawić
+                wyłącznie lekarz i test medyczny na obecność wirusa.
+              </li>
+              <li>
+                Pomaga <strong>monitorować</strong> swój stan zdrowia
+              </li>
+              <li>
+                Musi zostać wypełniony w <strong>100% z prawdą.</strong>
+              </li>
+            </ul>
+          </div>
         </div>
 
         <FieldSet>
-          <Button onClick={hideInformation} text="Ok, zaczynamy" />
+          <Button onClick={hideInformation} text="DALEJ" />
         </FieldSet>
       </Container>
     </div>

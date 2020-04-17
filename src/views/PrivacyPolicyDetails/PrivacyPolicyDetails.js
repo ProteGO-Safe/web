@@ -1,22 +1,23 @@
 import React from 'react';
-import Background from '../../assets/img/banners/banner-1.png';
-import { Container } from '../../components';
-import { Header } from '../components';
-import './PrivacyPolicyDetails.scss';
 import { PrivacyPolicyContent } from './component/PrivacyPolicyContent';
+import Header from '../../components/Header/Header';
+import { BottomNavigation } from '../../components/BottomNavigation';
+import { Content, Container, View } from '../../theme/grid';
+import { Title } from '../../theme/typography';
 
-const PrivacyPolicyDetails = () => (
-  <div className="view view__privacy-policy-details">
-    <Header background={Background} prevUrl="/privacy-policy" />
-    <Container>
-      <h4 className="text-center medium">Polityka prywatności</h4>
-      <div className="content">
-        <p className="p1 small">
+const PrivacyPolicyDetails = () => {
+  return (
+    <View>
+      <Header />
+      <Content>
+        <Container>
+          <Title>Polityka prywatności</Title>
           <PrivacyPolicyContent />
-        </p>
-      </div>
-    </Container>
-  </div>
-);
+        </Container>
+      </Content>
+      <BottomNavigation />
+    </View>
+  );
+};
 
 export default PrivacyPolicyDetails;

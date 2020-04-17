@@ -1,11 +1,11 @@
-import DiagnosisRepository from "./DiagnosisRepository";
-import TriageRepository from "./TriageRepository";
+import DiagnosisRepository from './DiagnosisRepository';
+import TriageRepository from './TriageRepository';
 
 const repositories = {
-    diagnosis: DiagnosisRepository,
-    triage: TriageRepository
+  diagnosis: DiagnosisRepository,
+  triage: TriageRepository
 };
 
 export default {
-    get: name => repositories[name]
+  get: name => repositories[name]
 };

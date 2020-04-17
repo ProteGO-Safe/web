@@ -8,13 +8,14 @@ import Diagnosis from './Diagnosis';
 import { Summary } from './components/Summary';
 
 import './Diagnosis.scss';
-import { Information } from '../Information';
 import useLoaderContext from '../../hooks/useLoaderContext';
+import { Information } from '../Information/index';
 
 const DiagnosisContainer = () => {
   const dispatch = useDispatch();
   const { setLoader } = useLoaderContext();
   const { sex, age } = useSelector(state => state.user);
+  // const riskTest = useSelector(state => state.riskTest);
   const [showInformation, setShowInformation] = useState(true);
 
   const {
@@ -68,6 +69,7 @@ const DiagnosisContainer = () => {
 
   return (
     <Diagnosis
+      showNavigation={false}
       isLoading={isLoading}
       question={question}
       evidence={evidence}

@@ -1,0 +1,37 @@
+@import '../../../../assets/styles/mixins';
+
+.registration {
+  &__step--1 {
+    @include viewBaseStyles();
+
+    .banner {
+      grid-area: banner;
+    }
+
+    .container {
+      grid-area: container;
+      align-items: start;
+
+      .worth-it {
+        padding-top: 20px;
+
+        p {
+          font-size: 15px;
+        }
+        li {
+          &:before {
+            top: 6px;
+          }
+        }
+      }
+
+      .fieldset {
+        margin: 18px 0;
+      }
+
+      .button {
+        margin: auto 0 auto;
+      }
+    }
+  }
+}
