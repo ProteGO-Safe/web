@@ -13,6 +13,14 @@
     header {
       left: calc(-100% + 59px);
     }
+
+    @media screen and (min-width: 375px) {
+      left: -320px;
+
+      header {
+        left: -320px;
+      }
+    }
   }
 }
 
