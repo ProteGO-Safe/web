@@ -52,7 +52,11 @@ function App() {
   });
 
   useEffect(() => {
-    setTimeout(() => document.getElementById('nav_menu_button').blur(), 100);
+    const navMenuButton = document.getElementById('nav_menu_button');
+
+    if (navMenuButton) {
+      setTimeout(() => navMenuButton.blur(), 100);
+    }
   }, [menuIsVisible]);
 
   const className = classNames({
