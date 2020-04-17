@@ -17,7 +17,7 @@ export const Title = styled.span`
   padding: 10px 44px 10px 10px;
   font-size: 16px;
   font-weight: bold;
-  line-height: 1.2;
+  line-height: 1.33;
   color: #0052a5;
   border-top: solid 1px #cbcbcb;
   border-bottom: solid 1px #cbcbcb;
@@ -26,8 +26,8 @@ export const Title = styled.span`
     top: 50%;
     right: 10px;
     display: block;
-    max-height: 20px;
-    margin-top: -10px;
+    max-height: 14px;
+    margin-top: -7px;
     transition: all 0.2s linear;
   }
   &.open {
