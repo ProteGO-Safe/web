@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React, { useEffect } from 'react';
 import moment from 'moment';
 import classNames from 'classnames';
 import 'moment/locale/pl';
@@ -43,20 +43,12 @@ function App() {
   const history = useHistory();
 
   const { name } = useSelector(state => state.user);
-  const {
-    inProgress,
-    startHiding: hideMenu,
-    visible: menuIsVisible
-  } = useMenuContext();
+  const { inProgress, visible: menuIsVisible } = useMenuContext();
 
   useInterval(() => dispatch(fetchNotification()), 10000);
 
   history.listen(() => {
     window.scroll(0, 0);
-
-    if (menuIsVisible) {
-      hideMenu();
-    }
   });
 
   useEffect(() => {

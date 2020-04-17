@@ -21,7 +21,7 @@ const Collapse = ({ children, title }) => {
 
 Collapse.propTypes = {
   children: PropTypes.node,
-  title: PropTypes.bool
+  title: PropTypes.string
 };
 
 export default Collapse;
