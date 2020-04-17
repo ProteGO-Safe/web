@@ -36,7 +36,7 @@ const Daily = ({ goToHistory, onFill, today, previousDays }) => {
                 onClick={() => goToHistory(_obj.timestamp)}
               >
                 <span>
-                  Wpis z dnia:&nbsp;{_obj.dayWeek}&nbsp;({_obj.day})
+                  Wpis z dnia:&nbsp;{_obj.dayWeek}&nbsp;({_obj.day}&nbsp;r.)
                 </span>
 
                 <img src={arrowRight} alt="arrow" />
