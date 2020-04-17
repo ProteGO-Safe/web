@@ -26,7 +26,8 @@ import {
   MatchedDevices,
   HospitalsList,
   ReportBug,
-  AdviceInformation
+  AdviceInformation,
+  FaqPage
 } from '../../views';
 
 import useInterval from '../../hooks/useInterval';
@@ -124,6 +125,7 @@ function App() {
                 component={UserDataSettings}
               />
               <Route exact path={Routes.AdviceInformation} component={AdviceInformation} />
+              <Route exact path={Routes.FaqPage} component={FaqPage} />
             </>
           )}
           <Route render={() => <Redirect to={Routes.Home} />} />

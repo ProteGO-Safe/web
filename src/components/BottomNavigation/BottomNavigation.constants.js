@@ -12,8 +12,8 @@ export const HomeItem = {
 
 export const FAQItem = {
   label: 'Pytania i odp.',
-  Icon: FAQIcon
-  // path: Routes.Home
+  Icon: FAQIcon,
+  path: Routes.FaqPage
 };
 
 export const InfoItem = {

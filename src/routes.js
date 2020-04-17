@@ -21,7 +21,8 @@ const Routes = {
   MatchedDevices: '/matched-devices',
   HospitalsList: '/hospitals-list',
   ReportBug: '/report-bug',
-  AdviceInformation: '/advice'
+  AdviceInformation: '/advice',
+  FaqPage: '/faq'
 };
 
 export default Routes;
