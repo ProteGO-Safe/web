@@ -70,7 +70,7 @@ const Data = () => {
             <Paragraph color={Color.lightBlack} fontWeight={FontWeight.Bold}>
               Miejsce i kontakty
             </Paragraph>
-            <SmallText>{levels[values[FIELD_CONTACTS]]}</SmallText>
+            <SmallText>{values[FIELD_CONTACTS]}</SmallText>
           </Grid>
         </Grid>
       </ImprintWrapper>
