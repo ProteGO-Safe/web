@@ -13,7 +13,8 @@ const Numbers = () => {
 
   const goToHospitalsList = () => history.push(Routes.HospitalsList);
   const phoneClick = () => {
-    window.open('tel:800190590');
+    //window.open('tel:800190590');
+    window.location.href="tel:800190590";
   };
 
   return (
@@ -23,7 +24,7 @@ const Numbers = () => {
         <Info>Szukaj pomocy w Twojej okolicy</Info>
         <BordersButton
           onClick={phoneClick}
-          text="Zadzwoń na infolinię"
+          text="Zadzwoń na infolinię - 800190590"
           icon={<Phone />}
         />
         <LineItem
