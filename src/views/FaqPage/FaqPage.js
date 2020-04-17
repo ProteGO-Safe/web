@@ -15,7 +15,7 @@ const FaqPage = () => {
           
           <div className="article-area main-container ">
             <article className="article-area__article " id="main-content">
-                <p className="intro">Szanowni Państwo! Niecodzienna sytuacja związana z epidemią nasuwa nam wszystkim wiele pytań – jak funkcjonuje transport publiczny, do kiedy są kontrole na granicy, komu przysługuje dodatkowy zasiłek opiekuńczy na dziecko. Odpowiedzi na te i inne pytania zbieramy w jednym miejscu, a zakładka jest na bieżąco aktualizowana. Pytania są podzielone tematycznie, a interesujące nas sprawy można zlokalizować, korzystając z <span className="link">https://www.gov.pl/web/koronawirus/pytania-i-odpowiedzi</span> wyszukiwarki.</p>
+                <p className="intro">Szanowni Państwo! Niecodzienna sytuacja związana z epidemią nasuwa nam wszystkim wiele pytań – jak funkcjonuje transport publiczny, do kiedy są kontrole na granicy, komu przysługuje dodatkowy zasiłek opiekuńczy na dziecko. Odpowiedzi na te i inne pytania zbieramy w jednym miejscu, a zakładka jest na bieżąco aktualizowana. Pytania są podzielone tematycznie.</p>
                 <div className="editor-content">
                     <h3>Wychodzisz z domu? Zasłoń usta i nos!</h3>
                     <div>
@@ -1150,8 +1150,8 @@ const FaqPage = () => {
                     </div>
                 </div>
             </article>
-        </div>
-
+          </div>
+          <p className="watermark faq">2020.04.17 - https://www.gov.pl/web/koronawirus/pytania-i-odpowiedzi</p>
         </div>
       </Container>
       <BottomNavigation />
