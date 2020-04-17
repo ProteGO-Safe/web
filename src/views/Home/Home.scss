@@ -8,6 +8,33 @@
     grid-area: banner;
   }
 
+  .more-information {
+    display: flex;
+    flex-flow: wrap column;
+    width: 100%;
+    margin-top: 32px;
+    margin-bottom: 32px;
+
+    h4 {
+      margin-bottom: 12px;
+      font-size: 20px;
+      font-weight: bold;
+      line-height: 1.5;
+      color: #1b1b1b;
+    }
+
+    p {
+      margin-bottom: 12px;
+      font-size: 16px;
+      line-height: 1.44;
+      color: #1b1b1b;
+    }
+
+    small {
+
+    }
+  }
+
   .container {
     display: grid;
     grid-template-areas: 'badge' 'smile' 'test' 'info' 'list';
