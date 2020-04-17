@@ -11,6 +11,7 @@ import {
   Home,
   HowItWorks,
   InstallApp,
+  IAmSick,
   RiskTest,
   Numbers,
   PrivacyPolicy,
@@ -82,6 +83,7 @@ function App() {
               <Route exact path="/daily/:id" component={DailyData} />
               <Route exact path="/daily-data" component={DailyData} />
               <Route exact path={Routes.HowItWorks} component={HowItWorks} />
+              <Route exact path={Routes.IAmSick} component={IAmSick} />
               <Route exact path={Routes.RiskTest} component={RiskTest} />
               <Route
                 exact

@@ -42,7 +42,7 @@ const MenuContainer = () => {
     },
     {
       icon: Icon4,
-      path: Routes.QuarantineInformation,
+      path: Routes.IAmSick,
       slug: 'co_zrobic',
       title: 'czuję się źle, co zrobić?'
     },
