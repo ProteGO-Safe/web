@@ -35,12 +35,6 @@ const UserData = () => {
               onClick={() => history.push(Routes.UserDataSettings)}
               text="Zarządzaj danymi"
             />
-            <Button
-              onClick={() => history.push(Routes.UserData)}
-              disabled
-              type="secondary"
-              text="Zmień dane"
-            />
           </Actions>
         </Container>
       </Content>
