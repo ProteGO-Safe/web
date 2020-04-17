@@ -29,13 +29,18 @@
 }
 
 .metrics-paragraph {
-  p {
-    margin-bottom: 0!important;
+  margin-top: 10px;
 
+  p {
+    font-size: 12px;
+    
+    &:first-child {
+      font-size: 14px;
+      line-height: 1.2;
+      margin: 6px 0 3px;
+    }
     &:last-child {
-      font-size: 12px;
-      line-height: 1.33;
-      margin-bottom: 15px!important;
+      margin-bottom: 10px;
     }
   }
 }
