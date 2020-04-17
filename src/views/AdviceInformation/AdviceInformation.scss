@@ -12,6 +12,7 @@
     display: grid;
     grid-template-areas: "title" "content" "buttons";
     grid-area: container;
+    align-self: start;
 
     h4 {
       grid-area: title;
