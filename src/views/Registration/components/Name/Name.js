@@ -4,8 +4,7 @@ import { FormGroup } from '@material-ui/core';
 import { Button, Checkbox, TextField } from '../../../../components';
 import {
   FIELD_NAME,
-  FIELD_TERM1,
-  FIELD_TERM2,
+  FIELD_TERM1
 } from '../../../../constants';
 
 import useModalContext from '../../../../hooks/useModalContext';
@@ -32,7 +31,7 @@ const Name = () => {
   } = useFormikContext();
   const { openModal } = useModalContext();
 
-  const fields = [FIELD_NAME, FIELD_TERM1, FIELD_TERM2];
+  const fields = [FIELD_NAME, FIELD_TERM1];
 
   const handleClick = () => {
     validateForm().then(error => {
@@ -44,7 +43,7 @@ const Name = () => {
   };
 
   const disabled =
-    !values[FIELD_NAME] || !values[FIELD_TERM1] || !values[FIELD_TERM2];
+    !values[FIELD_NAME] || !values[FIELD_TERM1];
 
   return (
     <>
@@ -93,29 +92,6 @@ const Name = () => {
           error={errors[FIELD_TERM1]}
           name={FIELD_TERM1}
           onChange={() => setFieldValue(FIELD_TERM1, !values[FIELD_TERM1])}
-        />
-        <Checkbox
-          checked={values[FIELD_TERM2]}
-          label={
-            <Annotation>
-              Zdaję sobie sprawę, że umieszczenie w ProteGO Safe informacji
-              dotyczących mojego stanu zdrowia oznacza wyrażenie zgody na
-              przetwarzanie moich danych dotyczących zdrowia przez Tytani24 Sp.
-              z o.o. w celu korzystania z niektórych funkcji ProteGO Safe, w
-              szczególności analizy ryzyka zarażenia wirusem SARS-CoV-2.
-              Szczegóły dotyczące przetwarzania moich danych mogę odnaleźć w{' '}
-              <TextLink
-                onClick={() => openModal(<PrivacyPolicyContent />)}
-                role="button"
-              >
-                Polityce Prywatności
-              </TextLink>
-              .
-            </Annotation>
-          }
-          error={errors[FIELD_TERM2]}
-          name={FIELD_TERM2}
-          onChange={() => setFieldValue(FIELD_TERM2, !values[FIELD_TERM2])}
         />
       </FormGroup>
       <Actions>
