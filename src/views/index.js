@@ -7,7 +7,6 @@ export { InstallApp } from './InstallApp';
 export { InstallAppAndroid, InstallAppIOS } from './InstallAppInstruction';
 export { RiskTest } from './RiskTest';
 export { RiskTestData } from './RiskTestData';
-export { RiskInformation } from './RiskInformation';
 export { Numbers } from './Numbers';
 export { PrivacyPolicy } from './PrivacyPolicy';
 export { PrivacyPolicyDetails } from './PrivacyPolicyDetails';

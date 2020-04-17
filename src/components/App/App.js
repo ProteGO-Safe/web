@@ -12,7 +12,6 @@ import {
   HowItWorks,
   InstallApp,
   RiskTest,
-  RiskInformation,
   Numbers,
   PrivacyPolicy,
   PrivacyPolicyDetails,
@@ -88,11 +87,6 @@ function App() {
                 exact
                 path="/risk-test-data/:id"
                 component={RiskTestData}
-              />
-              <Route
-                exact
-                path={Routes.RiskInoformationTriage}
-                component={RiskInformation}
               />
               <Route exact path={Routes.EmergencyNumbers} component={Numbers} />
               <Route

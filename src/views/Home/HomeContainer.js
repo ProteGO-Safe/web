@@ -11,6 +11,11 @@ import smileRed from '../../assets/img/icons/buzka-czerwona.svg';
 import smileBlue from '../../assets/img/icons/buzka-niebieska.svg';
 import smileYellow from '../../assets/img/icons/buzka-zolta.svg';
 import hasBadge from '../../utills/badge';
+import { RiskInfoLevel1 } from '../RiskInformation/components/RiskInfoLevel1';
+import { RiskInfoLevel2 } from '../RiskInformation/components/RiskInfoLevel2';
+import { RiskInfoLevel3 } from '../RiskInformation/components/RiskInfoLevel3';
+import { RiskInfoLevel4 } from '../RiskInformation/components/RiskInfoLevel4';
+import { RiskInfoLevel5 } from '../RiskInformation/components/RiskInfoLevel5';
 
 const HomeContainer = () => {
   const history = useHistory();
@@ -66,6 +71,29 @@ const HomeContainer = () => {
       }
       case 'isolation_ambulance': {
         return 'Bezzwłocznie telefonicznie powiadom powiatową stację sanitarno-epidemiologiczną i zgłoś się bezpośrednio do oddziału zakaźnego lub oddziału obserwacyjno-zakaźnego. Unikaj kontaktu z innymi osobami.';
+      }
+      default: {
+        return null;
+      }
+    }
+  })();
+
+  const renderRiskInfo = (() => {
+    switch (triageLevel) {
+      case 'no_risk': {
+        return <RiskInfoLevel1 />;
+      }
+      case 'self_monitoring': {
+        return <RiskInfoLevel2 />;
+      }
+      case 'quarantine': {
+        return <RiskInfoLevel3 />;
+      }
+      case 'isolation_call': {
+        return <RiskInfoLevel4 />;
+      }
+      case 'isolation_ambulance': {
+        return <RiskInfoLevel5 />;
       }
       default: {
         return null;
@@ -135,6 +163,7 @@ const HomeContainer = () => {
       riskColor={resolveRiskColor}
       riskDescription={description}
       riskGroup={resolveRiskGroup}
+      riskInfo={renderRiskInfo}
       riskLevel={renderRiskLevel}
       seriousNames={seriousNames}
       showBadge={showBadge}

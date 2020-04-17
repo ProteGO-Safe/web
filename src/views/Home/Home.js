@@ -21,6 +21,7 @@ const Home = ({
   riskColor,
   riskDescription,
   riskGroup,
+  riskInfo,
   riskLevel,
   showBadge,
   showNotification,
@@ -52,6 +53,7 @@ const Home = ({
             items={seriousNames}
           />
         )}
+        {riskInfo}
       </Container>
       {showNotification && <Notification />}
       <BottomNavigation />

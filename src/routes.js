@@ -8,7 +8,6 @@ const Routes = {
   RiskTest: '/risk-test',
   HowItWorks: '/how-it-works',
   EmergencyNumbers: '/numbers',
-  RiskInoformationTriage: '/risk-information/:triage',
   NoRiskInformation: '/risk-information/no_risk',
   QuarantineInformation: '/risk-information/quarantine',
   PrivacyPolicy: '/privacy-policy',
