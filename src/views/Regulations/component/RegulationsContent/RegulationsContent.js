@@ -160,7 +160,7 @@ const RegulationsContent = () => (
         Usługa Triage (samooceny ryzyka zarażenia wirusem SARS-CoV-2) świadczona
         jest za pośrednictwem aplikacji stworzonej przez Inframedica, o której
         więcej tutaj:{' '}
-        <u>https://developer.infermedica.com/docs/covid-19#triage</u>.
+        <u style={{'word-break': 'break-all'}}>https://developer.infermedica.com/docs/covid-19#triage</u>.
       </ListItem>
       <ListItem>
         Usługi świadczone są z momentem rozpoczęcia korzystania z ProteGO Safe.
