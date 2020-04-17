@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { useHistory } from 'react-router-dom';
 import { useFormikContext } from 'formik';
 
-import { Button } from '../../components';
+import { Button, Imprint } from '../../components';
 import { Data, Form } from './components';
 import './DailyData.scss';
 import Header from '../../components/Header/Header';
@@ -24,6 +24,8 @@ const DailyData = ({ isViewMode }) => {
         <Container className="container__content">
           <Title>Dziennik zdrowia</Title>
           {isViewMode ? <Data /> : <Form />}
+          <Title className="medium title-4 text-left">Metryka</Title>
+          <Imprint hidePhoneNumber />
           <Actions>
             {isViewMode ? (
               <Button

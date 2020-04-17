@@ -9,7 +9,7 @@ export const Title = styled(H5)`
 export const Actions = styled.div`
   display: grid;
   grid-row-gap: 24px;
-  margin-top: 40px;
+  margin: 40px 0;
   width: 100%;
 `;
 
