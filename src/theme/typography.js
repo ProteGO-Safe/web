@@ -98,7 +98,6 @@ export const ListItem = styled(Paragraph)`
 
 export const Title = styled(H4)`
   font-size: 18px;
-  margin-bottom: 20px;
   color: ${Color.primary};
   text-align: center;
 `;

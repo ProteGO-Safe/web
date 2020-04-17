@@ -53,6 +53,23 @@ body {
       font-size: 18px;
       line-height: 24px;
       letter-spacing: 0;
+
+      &.title {
+        color: $black_2;
+        padding: 15px 0;
+      }
+      &.title-2 {
+        color: $black_2;
+        padding: 35px 0 15px;
+      }
+      &.title-3 {
+        color: $black_2;
+        padding: 40px 0 15px;
+      }
+      &.title-4 {
+        color: $black_2;
+        padding: 40px 0 0px;
+      }
     }
 
     &.medium-2 {
@@ -156,6 +173,9 @@ body {
 
   .text-center {
     text-align: center;
+  }
+  .text-left {
+    text-align: left;
   }
 
   .text-warning {
