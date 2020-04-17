@@ -37,7 +37,7 @@ const HowItWorks = () => {
               stanie lepiej obserwować i dokumentować objawy.
             </li>
             <li>
-              <srtong>Profilaktyka</srtong> – otrzymasz wskazówki gdzie szukać
+              <strong>Profilaktyka</strong> – otrzymasz wskazówki gdzie szukać
               pomocy specjalistycznej i o czym pamiętać.
             </li>
             <li>

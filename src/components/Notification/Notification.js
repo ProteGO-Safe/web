@@ -23,7 +23,7 @@ const Notification = ({ title, content, status, onClick }) => {
         return bad;
       }
       default: {
-        return bad;
+        return info;
       }
     }
   })();

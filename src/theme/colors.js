@@ -1,5 +1,6 @@
 export const Color = {
   danger: '#d5233f',
+  info: '#eba828',
   white: '#ffffff',
   black: '#000000',
   primary: '#0052a5',

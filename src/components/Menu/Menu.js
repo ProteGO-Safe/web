@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
-import LogoSafeSafe from '../../assets/img/logo/ProteGoSafe_white.svg';
+import LogoSafeSafe from '../../assets/img/logo/protegosafe_logo_white.svg';
 import './Menu.scss';
 import useMenuContext from '../../hooks/useMenuContext';
 
@@ -20,7 +20,7 @@ const Menu = ({ items }) => {
     const isDisable = disable ? 'disable' : '';
 
     if (!title) {
-      return <li className="menu__item menu__item--empty" key={slug} />
+      return <li className="menu__item menu__item--empty" key={slug} />;
     }
 
     return (
