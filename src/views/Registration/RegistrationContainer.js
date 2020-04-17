@@ -21,8 +21,7 @@ const RegistrationContainer = () => {
     // [constants.FIELD_PHONE]: '',
     [constants.FIELD_BLOOD_GROUP]: '',
     step: 0,
-    [constants.FIELD_TERM1]: false,
-    [constants.FIELD_TERM2]: false
+    [constants.FIELD_TERM1]: false
   };
 
   const validationSchema = Yup.object().shape({
@@ -34,10 +33,6 @@ const RegistrationContainer = () => {
     //   'Numer telefonu jest wymagany'
     // ),
     [constants.FIELD_TERM1]: Yup.boolean().oneOf(
-      [true],
-      'Proszę zaznaczyć zgodę'
-    ),
-    [constants.FIELD_TERM2]: Yup.boolean().oneOf(
       [true],
       'Proszę zaznaczyć zgodę'
     ),

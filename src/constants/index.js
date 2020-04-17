@@ -3,7 +3,6 @@ export const FIELD_SEX = 'sex';
 export const FIELD_NAME = 'name';
 export const FIELD_PHONE = 'phone';
 export const FIELD_TERM1 = 'term1';
-export const FIELD_TERM2 = 'term2';
 
 export const FIELD_IS_CHRONIC_SICK = 'is_chronic_sick';
 export const VALUE_IS_CHRONIC_SICK_YES = 'yes';
