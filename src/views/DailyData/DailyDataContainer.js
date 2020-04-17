@@ -26,7 +26,7 @@ const DailyDataContainer = () => {
   const daily = useSelector(state => state.daily);
   const { id } = useParams();
 
-  const goHome = () => history.push(Routes.Home);
+  const goHome = () => history.push(Routes.Daily);
 
   const handleSubmit = form => {
     dispatch(addDaily({ data: form })).then(goHome);
