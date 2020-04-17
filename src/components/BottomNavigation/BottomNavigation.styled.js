@@ -32,5 +32,17 @@ export const MenuItem = styled(BottomNavigationActionBase)`
         stroke: currentColor;
       }
     }
+
+    &:focus {
+      background-color: ${Color.primary};
+      color: ${Color.white};
+
+      svg {
+        stroke: ${Color.white};
+        path: {
+          stroke: ${Color.white};
+        }
+      }
+    }
   }
 `;

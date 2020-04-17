@@ -1,9 +1,9 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import moment from 'moment';
 import classNames from 'classnames';
 import 'moment/locale/pl';
 import { useDispatch, useSelector } from 'react-redux';
-import { Redirect, Route, Switch } from 'react-router-dom';
+import { Redirect, Route, Switch, useHistory } from 'react-router-dom';
 import {
   Daily,
   DailyData,
@@ -40,11 +40,28 @@ import './App.scss';
 function App() {
   moment.locale('pl');
   const dispatch = useDispatch();
+  const history = useHistory();
 
   const { name } = useSelector(state => state.user);
-  const { inProgress, visible: menuIsVisible } = useMenuContext();
+  const {
+    inProgress,
+    startHiding: hideMenu,
+    visible: menuIsVisible
+  } = useMenuContext();
 
   useInterval(() => dispatch(fetchNotification()), 10000);
+
+  history.listen(() => {
+    window.scroll(0, 0);
+
+    if (menuIsVisible) {
+      hideMenu();
+    }
+  });
+
+  useEffect(() => {
+    setTimeout(() => document.getElementById('nav_menu_button').blur(), 100);
+  }, [menuIsVisible]);
 
   const className = classNames({
     app: true,
@@ -120,7 +137,11 @@ function App() {
                 path={Routes.UserDataSettings}
                 component={UserDataSettings}
               />
-              <Route exact path={Routes.AdviceInformation} component={AdviceInformation} />
+              <Route
+                exact
+                path={Routes.AdviceInformation}
+                component={AdviceInformation}
+              />
               <Route exact path={Routes.FaqPage} component={FaqPage} />
             </>
           )}

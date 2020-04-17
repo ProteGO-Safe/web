@@ -111,6 +111,11 @@
       &.disable {
         pointer-events: none;
       }
+
+      &.active {
+        color: $button_primary;
+        background-color: $gray_3;
+      }
     }
 
     &.disable {
