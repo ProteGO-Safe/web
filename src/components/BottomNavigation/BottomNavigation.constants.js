@@ -5,24 +5,28 @@ import { ReactComponent as InfoIcon } from '../../assets/img/icons/SafeSafe-doln
 import { ReactComponent as BurgerIcon } from '../../assets/img/icons/SafeSafe-dolne-menu-More-white.svg';
 
 export const HomeItem = {
+  id: 'home',
   label: 'Home',
   Icon: HomeIcon,
   path: Routes.Home
 };
 
 export const InfoItem = {
+  id: 'porady',
   label: 'Porady',
   Icon: InfoIcon,
   path: Routes.AdviceInformation
 };
 
 export const FAQItem = {
+  id: 'questions',
   label: 'Pytania i odp.',
   Icon: FAQIcon,
   path: Routes.FaqPage
 };
 
 export const BurgerItem = {
+  id: 'nav_menu_button',
   label: 'Więcej',
   Icon: BurgerIcon,
   openMenu: true

@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import LogoSafeSafe from '../../assets/img/logo/protegosafe_logo_white.svg';
 import './Menu.scss';
 import useMenuContext from '../../hooks/useMenuContext';
@@ -25,14 +25,14 @@ const Menu = ({ items }) => {
 
     return (
       <li className={`menu__item ${isBottom} ${isDisable}`} key={slug}>
-        <Link
+        <NavLink
           className={`menu__item__link ${isBold} ${isDisable}`}
           onClick={handleClose}
           to={path}
         >
           <img className="menu__item__icon" src={icon} alt={title} />
           {title}
-        </Link>
+        </NavLink>
       </li>
     );
   });

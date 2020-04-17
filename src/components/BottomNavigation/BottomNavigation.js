@@ -53,8 +53,9 @@ const BottomNavigation = ({ className }) => {
     [history, menuVisible]
   );
 
-  const renderMenuItem = ({ label, disabled, Icon }) => (
+  const renderMenuItem = ({ id, label, disabled, Icon }) => (
     <MenuItem
+      id={id}
       key={label}
       label={label}
       disabled={disabled}
