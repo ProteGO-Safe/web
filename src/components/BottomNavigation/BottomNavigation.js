@@ -39,6 +39,11 @@ const BottomNavigation = ({ className }) => {
 
       if (!menuItem.openMenu) {
         history.push(menuItem.path);
+
+        if (menuVisible) {
+          hideMenu();
+        }
+
         return;
       }
 
