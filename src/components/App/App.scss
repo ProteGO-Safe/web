@@ -133,6 +133,16 @@ body {
       margin-top: 8px;
     }
 
+    &.watermark {
+      text-align: right;
+      font-size: 7px;
+      
+      &.faq {
+        margin-top: -20px;
+        padding-bottom: 20px;
+      }
+    }
+
     &.smaller {
       font-size: 10px;
       line-height: 13px;
