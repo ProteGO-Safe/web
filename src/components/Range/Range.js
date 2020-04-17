@@ -9,11 +9,11 @@ import {
 
 import './Range.scss';
 
-const levels = {
-  [VALUE_SYMPTOM_LEVEL_1]: 'brak',
-  [VALUE_SYMPTOM_LEVEL_2]: 'słaby',
-  [VALUE_SYMPTOM_LEVEL_3]: 'umiarkowany',
-  [VALUE_SYMPTOM_LEVEL_4]: 'silny'
+export const levels = {
+  [VALUE_SYMPTOM_LEVEL_1]: 'Brak',
+  [VALUE_SYMPTOM_LEVEL_2]: 'Słaby',
+  [VALUE_SYMPTOM_LEVEL_3]: 'Umiarkowany',
+  [VALUE_SYMPTOM_LEVEL_4]: 'Silny'
 };
 
 const Range = ({ disable, label, onClick, value }) => {

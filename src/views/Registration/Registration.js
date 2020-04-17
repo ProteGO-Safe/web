@@ -1,34 +1,44 @@
 import React, { useEffect } from 'react';
 import { useFormikContext } from 'formik';
+
+import { STEP_EXPLAINER } from '../../constants';
+import { NUMBER_OF_STEPS } from './Registration.constants';
+
 import {
-  Step1,
-  Step2,
-  Step3,
-  Step4,
-  Step5,
-  Step6,
-  Step7,
+  Age,
+  BloodGroup,
+  ChronicSick,
+  Explainer,
+  Name,
+  Sex,
+  Smoke,
   Summary
 } from './components';
-import { Back, Banner } from '../../components';
-import './Registration.scss';
+import { GovFooter, Stepper } from '../../components';
+import { Header } from '../../components/Header';
+import { StartScreen } from '../StartScreen';
 
-import Banner1 from '../../assets/img/banners/banner-1.png';
-import Banner2 from '../../assets/img/banners/banner-2.png';
-import Banner3 from '../../assets/img/banners/banner-3.png';
-import Banner4 from '../../assets/img/banners/banner-4.png';
-import Banner5 from '../../assets/img/banners/banner-5.png';
-import Banner6 from '../../assets/img/banners/banner-6.png';
-import Banner7 from '../../assets/img/banners/banner-7.png';
+import { Container, View } from '../../theme/grid';
 
-const banners = {
-  1: Banner1,
-  2: Banner2,
-  3: Banner3,
-  4: Banner4,
-  5: Banner5,
-  6: Banner6,
-  7: Banner7
+const steps = {
+  1: {
+    Component: Name
+  },
+  2: {
+    Component: Sex
+  },
+  3: {
+    Component: Age
+  },
+  4: {
+    Component: ChronicSick
+  },
+  5: {
+    Component: BloodGroup
+  },
+  6: {
+    Component: Smoke
+  }
 };
 
 const Registration = () => {
@@ -43,32 +53,31 @@ const Registration = () => {
     }
   }, [step]);
 
-  if (step === 8) {
+  if (!step) {
+    return (
+      <StartScreen onStartClick={() => setFieldValue('step', STEP_EXPLAINER)} />
+    );
+  }
+
+  if (step === STEP_EXPLAINER) {
+    return <Explainer />;
+  }
+
+  if (step === 7) {
     return <Summary />;
   }
 
-  const onBack = () => {
-    const previousStep = step - 1;
-    setFieldValue('step', previousStep);
-  };
+  const StepComponent = steps[step].Component;
 
   return (
-    <div className="view view__registration">
-      <div className={`registration registration__step--${step}`}>
-        <Banner background={banners[step]} size="small">
-          {step !== 1 && (
-            <Back className="registration__back" onClick={onBack} />
-          )}
-        </Banner>
-        {step === 1 && <Step1 />}
-        {step === 2 && <Step2 />}
-        {step === 3 && <Step3 />}
-        {step === 4 && <Step4 />}
-        {step === 5 && <Step5 />}
-        {step === 6 && <Step6 />}
-        {step === 7 && <Step7 />}
-      </div>
-    </div>
+    <View>
+      <Header hideMenuButton hideBackButton />
+      <Container>
+        <Stepper currentStep={step} numberOfSteps={NUMBER_OF_STEPS} />
+        <StepComponent />
+        <GovFooter type="black" />
+      </Container>
+    </View>
   );
 };
 

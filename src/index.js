@@ -3,11 +3,17 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
 import { PersistGate } from 'redux-persist/integration/react';
+import { ThemeProvider } from '@material-ui/core';
 import 'react-perfect-scrollbar/dist/css/styles.css';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 import './index.css';
+
 import { App } from './components';
 import * as serviceWorker from './serviceWorker';
 import _store from './store';
+import { GlobalStyle } from './theme/global';
+import { materialTheme } from './theme/materialTheme';
 
 ReactDOM.render(
   (() => {
@@ -16,7 +22,10 @@ ReactDOM.render(
       <BrowserRouter>
         <Provider store={store}>
           <PersistGate loading={null} persistor={persistor}>
-            <App />
+            <ThemeProvider theme={materialTheme}>
+              <GlobalStyle />
+              <App />
+            </ThemeProvider>
           </PersistGate>
         </Provider>
       </BrowserRouter>

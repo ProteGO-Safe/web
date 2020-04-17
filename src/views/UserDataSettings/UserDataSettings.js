@@ -1,33 +1,44 @@
 import React from 'react';
-import Background from '../../assets/img/banners/banner-1.png';
-import { Button, Container, FieldSet } from '../../components';
-import { Header } from '../components';
+import { Button } from '../../components';
 import { ModalContent } from './components';
-import '../UserData/UserData.scss';
 import useModalContext from '../../hooks/useModalContext';
+import Header from '../../components/Header/Header';
+import { BottomNavigation } from '../../components/BottomNavigation';
+import { Actions } from '../Registration/Registration.styled';
+import { Container, Content, View } from '../../theme/grid';
+import { Paragraph, Title } from '../../theme/typography';
+import { Box, BoxTitle } from './userDataSettings.styled';
+import warning from '../../assets/img/icons/warning.svg';
 
 const UserDataSettings = () => {
   const { openModal } = useModalContext();
   const handleClick = () => openModal(<ModalContent />, 'dialog');
 
   return (
-    <div className="view view__user-data">
-      <Header background={Background} prevUrl="/user-data" />
-      <Container>
-        <h4 className="text-center medium">Zarządzaj danymi</h4>
-        <div className="content">
-          <p className="p1 medium">
-            Jeżeli wymażesz swoje dane, aplikacja stanie się bezużyteczna. W
-            takim przypadku będzie trzeba ponownie uzupełnić wszystkie dane.
-            Archiwum Ankiet Oceny Ryzyka i Mój Dziennik Zdrowia zostanie
-            bezpowrotnie usunięte.
-          </p>
-        </div>
-        <FieldSet>
-          <Button onClick={handleClick} text="Wymaż moje dane" />
-        </FieldSet>
-      </Container>
-    </div>
+    <View>
+      <Header />
+      <Content>
+        <Container>
+          <Title>Zarządzaj danymi</Title>
+          <Box>
+            <BoxTitle>
+              <img src={warning} alt="Ważne" />
+              Ważne
+            </BoxTitle>
+            <Paragraph>
+              Jeżeli wymażesz swoje dane, aplikacja stanie się bezużyteczna. W
+              takim przypadku będzie trzeba ponownie uzupełnić wszystkie dane.
+              Archiwum Testów Oceny Ryzyka i Mój Dziennik Zdrowia zostanie
+              bezpowrotnie usunięte.
+            </Paragraph>
+          </Box>
+          <Actions>
+            <Button onClick={handleClick} text="Wymaż dane" type="secondary" />
+          </Actions>
+        </Container>
+      </Content>
+      <BottomNavigation />
+    </View>
   );
 };
 

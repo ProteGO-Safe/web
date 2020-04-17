@@ -2,8 +2,7 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { useFormikContext } from 'formik';
 
-import Checkbox from '../../../../components/Checkbox/Checkbox';
-import { FieldSet } from '../../../../components/FieldSet';
+import { Checkbox, FieldSet } from '../../../../components';
 import { Button } from '../../../../components/Button';
 import { VALUE_ABSENT, VALUE_PRESENT } from '../../../../constants';
 import Icon from '../../../../assets/img/icons/angle-right-white.svg';
@@ -40,11 +39,11 @@ const GroupMultiple = ({ text, items }) => {
       <FieldSet>
         {items.map(item => (
           <Checkbox
-            key={item.id}
             checked={values[item.id] === VALUE_PRESENT}
+            key={item.id}
+            label={item.name}
             name={item.id}
             onChange={() => handleChange(item.id)}
-            description={item.name}
             type="checkbox"
             value={values[item.id]}
             size="big"
@@ -52,9 +51,9 @@ const GroupMultiple = ({ text, items }) => {
         ))}
         <Checkbox
           checked={otherSelected}
+          label="Żadne z powyższych"
           name="Żadne z powyższych"
           onChange={handelSelectOther}
-          description="Żadne z powyższych"
           type="checkbox"
           size="big"
         />

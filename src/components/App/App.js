@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import moment from 'moment';
 import classNames from 'classnames';
 import 'moment/locale/pl';
-import { useSelector } from 'react-redux';
-import { Redirect, Route, Switch } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { Redirect, Route, Switch, useHistory } from 'react-router-dom';
 import {
   Daily,
   DailyData,
@@ -11,8 +11,8 @@ import {
   Home,
   HowItWorks,
   InstallApp,
+  IAmSick,
   RiskTest,
-  RiskInformation,
   Numbers,
   PrivacyPolicy,
   PrivacyPolicyDetails,
@@ -22,75 +22,122 @@ import {
   UserData,
   UserDataSettings,
   InstallAppAndroid,
-  InstallAppIOS
+  InstallAppIOS,
+  MatchedDevices,
+  HospitalsList,
+  ReportBug,
+  AdviceInformation,
+  FaqPage
 } from '../../views';
 
-import { Menu } from '../Menu';
-import './App.scss';
+import useInterval from '../../hooks/useInterval';
+import { fetchNotification } from '../../store/actions/nativeData';
 import useMenuContext from '../../hooks/useMenuContext';
+import { Menu } from '../Menu';
+import Routes from '../../routes';
+import './App.scss';
 
 function App() {
   moment.locale('pl');
+  const dispatch = useDispatch();
+  const history = useHistory();
 
   const { name } = useSelector(state => state.user);
   const { inProgress, visible: menuIsVisible } = useMenuContext();
 
+  useInterval(() => dispatch(fetchNotification()), 10000);
+
+  history.listen(() => {
+    window.scroll(0, 0);
+  });
+
+  useEffect(() => {
+    setTimeout(() => document.getElementById('nav_menu_button').blur(), 100);
+  }, [menuIsVisible]);
+
+  const className = classNames({
+    app: true,
+    'menu-visible': menuIsVisible && !inProgress
+  });
+
   return (
-    <div
-      className={classNames({
-        app: true,
-        'menu-visible': menuIsVisible && !inProgress
-      })}
-    >
+    <div className={className}>
       <div className="app__inner">
         <Switch>
-          <Route exact path="/" component={name ? Home : Registration} />
-          {!name && <Route exact path="/install" component={InstallApp} />}
+          <Route
+            exact
+            path={Routes.Home}
+            component={name ? Home : Registration}
+          />
+          {!name && (
+            <Route exact path={Routes.Install} component={InstallApp} />
+          )}
           {!name && (
             <Route
               exact
-              path="/install/android"
+              path={Routes.InstallAndroid}
               component={InstallAppAndroid}
             />
           )}
           {!name && (
-            <Route exact path="/install/ios" component={InstallAppIOS} />
+            <Route
+              exact
+              path={Routes.InstallAppIOS}
+              component={InstallAppIOS}
+            />
           )}
           {name && (
             <>
-              <Route exact path="/daily" component={Daily} />
+              <Route exact path={Routes.Daily} component={Daily} />
               <Route exact path="/daily/:id" component={DailyData} />
               <Route exact path="/daily-data" component={DailyData} />
-              <Route exact path="/how-it-works" component={HowItWorks} />
-              <Route exact path="/risk-test" component={RiskTest} />
+              <Route exact path={Routes.HowItWorks} component={HowItWorks} />
+              <Route exact path={Routes.IAmSick} component={IAmSick} />
+              <Route exact path={Routes.RiskTest} component={RiskTest} />
               <Route
                 exact
                 path="/risk-test-data/:id"
                 component={RiskTestData}
               />
+              <Route exact path={Routes.EmergencyNumbers} component={Numbers} />
               <Route
                 exact
-                path="/risk-information/:triage"
-                component={RiskInformation}
+                path={Routes.PrivacyPolicy}
+                component={PrivacyPolicy}
               />
-              <Route exact path="/numbers" component={Numbers} />
-              <Route exact path="/privacy-policy" component={PrivacyPolicy} />
               <Route
                 exact
-                path="/privacy-policy-details"
+                path={Routes.PrivacyPolicyDetails}
                 component={PrivacyPolicyDetails}
               />
-              <Route exact path="/regulations" component={Regulations} />
-              <Route exact path="/diagnosis" component={Diagnosis} />
-              <Route exact path="/user-data" component={UserData} />
+              <Route exact path={Routes.Regulations} component={Regulations} />
+              <Route exact path={Routes.Diagnosis} component={Diagnosis} />
+              <Route exact path={Routes.UserData} component={UserData} />
               <Route
                 exact
-                path="/user-data/settings"
+                path={Routes.HospitalsList}
+                component={HospitalsList}
+              />
+              <Route exact path={Routes.ReportBug} component={ReportBug} />
+              <Route
+                exact
+                path={Routes.MatchedDevices}
+                component={MatchedDevices}
+              />
+              <Route
+                exact
+                path={Routes.UserDataSettings}
                 component={UserDataSettings}
               />
+              <Route
+                exact
+                path={Routes.AdviceInformation}
+                component={AdviceInformation}
+              />
+              <Route exact path={Routes.FaqPage} component={FaqPage} />
             </>
           )}
-          <Route render={() => <Redirect to="/" />} />
+          <Route render={() => <Redirect to={Routes.Home} />} />
         </Switch>
         <Menu />
       </div>

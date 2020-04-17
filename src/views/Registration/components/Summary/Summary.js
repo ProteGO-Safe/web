@@ -1,16 +1,7 @@
 import React from 'react';
 import { useFormikContext } from 'formik';
-import Background from '../../../../assets/img/banners/banner-8.png';
-import {
-  Banner,
-  Brand,
-  Button,
-  Container,
-  FieldSet
-} from '../../../../components';
+import { Button, GovFooter, Stepper } from '../../../../components';
 import Imprint from '../../../../components/Imprint/Imprint';
-import AngleLeftIcon from '../../../../assets/img/icons/angle-left.svg';
-import UserImg from '../../../../assets/img/icons/user.svg';
 import {
   chronicSickValues,
   FIELD_AGE,
@@ -18,9 +9,18 @@ import {
   FIELD_SEX,
   FIELD_SMOKE_NUMBER
 } from '../../../../constants';
+import { NUMBER_OF_STEPS } from '../../Registration.constants';
+
+import { Header } from '../../../../components/Header';
+import { Color } from '../../../../theme/colors';
+import { Container, View } from '../../../../theme/grid';
+import { SmallText } from '../../../../theme/typography';
+import { Actions, Title } from '../../Registration.styled';
+import { FontWeight } from '../../../../theme/fonts';
 
 const Summary = () => {
   const { handleSubmit, resetForm, values } = useFormikContext();
+  const { step } = values;
 
   const chronicSicks = chronicSickValues
     .filter(sick => values[sick.field])
@@ -29,44 +29,36 @@ const Summary = () => {
     });
 
   return (
-    <div className="view view__registration-summary">
-      <Banner background={Background}>
-        <div className="reset-registration">
-          <Button
-            height="small"
-            icon={AngleLeftIcon}
-            iconLeft
-            onClick={resetForm}
-            text=""
-            type="white"
-            size="small"
-          >
-            Rozpocznij
-            <br />
-            od nowa
-          </Button>
-        </div>
-        <Brand content={false} small white />
-      </Banner>
+    <View>
+      <Header hideBackButton hideMenuButton />
       <Container>
-        <div className="user">
-          <img src={UserImg} alt="Avatar" />
-          <h5 className="big">Podsumujmy:</h5>
-        </div>
+        <Stepper currentStep={step} numberOfSteps={NUMBER_OF_STEPS} />
+        <Title>Sprawdź czy dane są prawidłowe</Title>
         <Imprint
           user={{
             age: values[FIELD_AGE],
             bloodGroup: values[FIELD_BLOOD_GROUP],
             chronicSicks,
             sex: values[FIELD_SEX],
-            smokeNumber: values[FIELD_SMOKE_NUMBER]
+            smokeNumber: values[FIELD_SMOKE_NUMBER],
+            // phone: values[FIELD_PHONE]
           }}
         />
-        <FieldSet>
-          <Button onClick={handleSubmit} text="Zapisz metrykę" />
-        </FieldSet>
+        <Actions>
+          <Button onClick={handleSubmit} text="">
+            <SmallText color={Color.white} fontWeight={FontWeight.Bold}>
+              Zapisz metrykę i przejdź do aplikacji
+            </SmallText>
+          </Button>
+          <Button onClick={resetForm} text="" type="outline">
+            <SmallText color={Color.primary} fontWeight={FontWeight.Bold}>
+              Zmień dane
+            </SmallText>
+          </Button>
+        </Actions>
       </Container>
-    </div>
+      <GovFooter type="black" />
+    </View>
   );
 };
 

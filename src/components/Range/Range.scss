@@ -18,10 +18,11 @@
     &:after {
       position: absolute;
       top: 14px;
-      left: 30px;
-      width: calc(100% - 60px);
-      height: 2px;
-      background-color: $primary_2;
+      left: 10px;
+      width: calc(100% - 20px);
+      height: 5px;
+      border-radius: 2px;
+      background-color: $gray_range;
       content: '';
     }
   }
@@ -31,8 +32,9 @@
     z-index: 1;
     display: flex;
     justify-content: space-between;
-    padding: 0 15px;
-    margin-top: -34px;
+    padding: 0;
+    margin-top: -33px;
+    margin-bottom: 32px;
   }
 
   &__option {
@@ -44,19 +46,20 @@
     -webkit-appearance: none;
     border: none;
     background: none;
-    height: 39px;
+    height: 54px;
     padding: 0;
     font-size: 14px;
     line-height: 13px;
-    text-transform: uppercase;
-    color: $gray_2;
+    font-weight: bold;
+    color: rgba($black_2, .8);
     cursor: pointer;
 
     &:before {
       opacity: 0;
-      width: 18px;
-      height: 18px;
-      border: 2px solid $primary_1;
+      width: 20px;
+      height: 20px;
+      margin-bottom: 14px;
+      border: 2px solid $gray_form;
       background-color: $white;
       content: '';
       border-radius: 50%;
