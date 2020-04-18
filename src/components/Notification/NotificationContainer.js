@@ -14,17 +14,15 @@ const NotificationContainer = () => {
   };
 
   if (notification) {
-    const { isVisible, title, content, status } = notification;
-    if (isVisible) {
-      return (
-        <Notification
-          title={title}
-          content={content}
-          status={status}
-          onClick={hide}
-        />
-      );
-    }
+    const { title, content, status } = notification;
+    return (
+      <Notification
+        title={title}
+        content={content}
+        status={status}
+        onClick={hide}
+      />
+    );
   }
   return null;
 };

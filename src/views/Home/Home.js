@@ -3,7 +3,6 @@ import React from 'react';
 import {
   Badge,
   Container,
-  Notification,
   Smile,
   Info,
   InfoBorder,
@@ -24,7 +23,6 @@ const Home = ({
   riskInfo,
   riskLevel,
   showBadge,
-  showNotification,
   triage,
   userName,
   onClickGoToDiagnosis
@@ -67,7 +65,6 @@ const Home = ({
           </small>
         </div>
       </Container>
-      {showNotification && <Notification />}
       <BottomNavigation />
     </div>
   );

@@ -6,12 +6,7 @@ import {
 
 const INITIAL_STATE = {
   matchedDevices: [],
-  notification: {
-    isVisible: false,
-    title: undefined,
-    content: undefined,
-    status: undefined // OK, INFO, WARNING, BAD
-  }
+  notification: undefined
 };
 
 const fetchMatchedDevicesListSuccess = (state, action) => {
@@ -30,8 +25,6 @@ const nativeBridgeReducer = (state = INITIAL_STATE, action) => {
         return {
           ...state,
           notification: {
-            ...state.notification,
-            isVisible: true,
             title,
             content,
             status
@@ -41,10 +34,7 @@ const nativeBridgeReducer = (state = INITIAL_STATE, action) => {
     case NATIVE_DATA_HIDE_NOTIFICATION_SUCCESS:
       return {
         ...state,
-        notification: {
-          ...state.notification,
-          isVisible: false
-        }
+        notification: undefined
       };
     default:
       return state;

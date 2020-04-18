@@ -24,7 +24,6 @@ const HomeContainer = () => {
     state => state.triage
   );
   const { name: userName } = useSelector(state => state.user);
-  const { notification } = useSelector(state => state.nativeData);
 
   const filledDays = Object.keys(riskTest);
 
@@ -167,7 +166,6 @@ const HomeContainer = () => {
       riskLevel={renderRiskLevel}
       seriousNames={seriousNames}
       showBadge={showBadge}
-      showNotification={notification && notification.isVisible}
       triage={triage}
       userName={userName}
     />
