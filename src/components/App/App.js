@@ -30,12 +30,12 @@ import {
   FaqPage
 } from '../../views';
 
-import useInterval from '../../hooks/useInterval';
 import { fetchNotification } from '../../store/actions/nativeData';
 import useMenuContext from '../../hooks/useMenuContext';
 import { Menu } from '../Menu';
 import Routes from '../../routes';
 import './App.scss';
+import { Notification } from '../Notification';
 
 function App() {
   moment.locale('pl');
@@ -43,9 +43,16 @@ function App() {
   const history = useHistory();
 
   const { name } = useSelector(state => state.user);
+  const { notification } = useSelector(state => state.nativeData);
   const { inProgress, visible: menuIsVisible } = useMenuContext();
 
-  useInterval(() => dispatch(fetchNotification()), 10000);
+  useEffect(() => {
+    if (!notification) {
+      const interval = setInterval(() => dispatch(fetchNotification()), 1000);
+      return () => clearInterval(interval);
+    }
+    return () => null;
+  }, [notification, dispatch]);
 
   history.listen(() => {
     window.scroll(0, 0);
@@ -144,6 +151,7 @@ function App() {
           <Route render={() => <Redirect to={Routes.Home} />} />
         </Switch>
         <Menu />
+        {notification && <Notification />}
       </div>
     </div>
   );
