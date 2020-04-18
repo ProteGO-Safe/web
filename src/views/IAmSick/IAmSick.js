@@ -20,7 +20,7 @@ const Complete = () => {
               <strong>
                 <span className="primary-2">Zostań w domu</span> i monitoruj
                 stan swojego zdrowia. Skontaktuj się z infolinią rządową{' '}
-                <a href="tel:800190590">800 190 590</a> lub{' '}
+                800 190 590 lub{' '}
                 <span className="primary-2">zadzwoń (nie idź!)</span> do
                 lokalnej placówki służby zdrowia.
               </strong>
@@ -78,7 +78,7 @@ const Complete = () => {
             <li>
               <strong>
                 Jeżeli wystąpią lub nasilą się objawy infekcji, ponów kontakt z
-                infolinią rządową <a href="tel:800190590">800 190 590</a> lub{' '}
+                infolinią rządową 800 190 590 lub{' '}
                 <span className="primary-2">zadzwoń (nie idź!)</span> do
                 lokalnej placówki służby zdrowia.
               </strong>

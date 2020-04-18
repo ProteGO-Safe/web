@@ -43,7 +43,7 @@ const AdviceInformation = () => {
           <div className="warning">
             <img src={IconWarning} alt="warning icon" />
             <h3 className="text-error">Ważne</h3>
-            <p className="medium">Jeśli u Ciebie lub Twoich bliskich wystąpią objawy infekcji COVID-19, skontaktuj się z infolinią rządową: <a href="tel:800190590">800 190 590</a> lub lokalną placówką służby zdrowia.</p>
+            <p className="medium">Jeśli u Ciebie lub Twoich bliskich wystąpią objawy infekcji COVID-19, skontaktuj się z infolinią rządową: 800 190 590 lub lokalną placówką służby zdrowia.</p>
           </div>
         </div>
         <FieldSet>
