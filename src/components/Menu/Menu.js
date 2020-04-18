@@ -1,16 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { NavLink } from 'react-router-dom';
-import LogoSafeSafe from '../../assets/img/logo/protegosafe_logo_white.svg';
+import { Link } from 'react-router-dom';
+import UserIcon from '../../assets/img/icons/user-white.svg';
 import './Menu.scss';
 import useMenuContext from '../../hooks/useMenuContext';
 
-const Menu = ({ items }) => {
-  const { visible, startHiding, inProgress } = useMenuContext();
+const Menu = ({ items, userName }) => {
+  const { visible, startHiding } = useMenuContext();
   const handleClose = () => startHiding();
 
   const isVisible = visible ? 'visible' : '';
-  const isHidden = inProgress ? 'hidden' : '';
 
   const renderItems = items.map(item => {
     const { bottom, bold, disable, icon, path, slug, title } = item;
@@ -20,19 +19,19 @@ const Menu = ({ items }) => {
     const isDisable = disable ? 'disable' : '';
 
     if (!title) {
-      return <li className="menu__item menu__item--empty" key={slug} />;
+      return <li className="menu__item menu__item--empty" key={slug} />
     }
 
     return (
       <li className={`menu__item ${isBottom} ${isDisable}`} key={slug}>
-        <NavLink
+        <Link
           className={`menu__item__link ${isBold} ${isDisable}`}
           onClick={handleClose}
           to={path}
         >
           <img className="menu__item__icon" src={icon} alt={title} />
           {title}
-        </NavLink>
+        </Link>
       </li>
     );
   });
@@ -40,9 +39,10 @@ const Menu = ({ items }) => {
   return (
     <>
       {visible && <div className="menu__overlay" onClick={handleClose} />}
-      <div className={`menu menu__wrapper ${isVisible} ${isHidden}`}>
+      <div className={`menu menu__wrapper ${isVisible}`}>
         <div className="menu__user">
-          <img src={LogoSafeSafe} alt="ProteGO Safe" />
+          <img src={UserIcon} alt="Użytkownik" />
+          <p>{userName}</p>
         </div>
         <ul className="menu__items">{renderItems}</ul>
       </div>

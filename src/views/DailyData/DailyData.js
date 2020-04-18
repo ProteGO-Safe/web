@@ -1,56 +1,44 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { useHistory } from 'react-router-dom';
 import { useFormikContext } from 'formik';
 
-import { Button, Imprint } from '../../components';
-import { Data, Form } from './components';
+import Background from '../../assets/img/banners/banner-1.png';
+import { Button, Container, FieldSet, Imprint } from '../../components';
+import { Header } from '../components';
+import { Form } from './components';
 import './DailyData.scss';
-import Header from '../../components/Header/Header';
-import { BottomNavigation } from '../../components/BottomNavigation';
-import { Actions } from '../Registration/Registration.styled';
-import { Content, Container, View } from '../../theme/grid';
-import { Title } from '../../theme/typography';
-import Routes from '../../routes';
 
-const DailyData = ({ isViewMode }) => {
+const DailyData = ({ date, isViewMode }) => {
   const { dirty, submitForm } = useFormikContext();
-  const history = useHistory();
 
   return (
-    <View>
-      <Header />
-      <Content>
-        <Container className="container__content">
-          <Title>Dziennik zdrowia</Title>
-          {isViewMode ? <Data /> : <Form />}
-          <Title className="medium title-4 text-left">Metryka</Title>
-          <Imprint hidePhoneNumber />
-          <Actions>
-            {isViewMode ? (
-              <Button
-                onClick={() => history.push(Routes.Daily)}
-                text="Powrót"
-                type="primary"
-              />
-            ) : (
-              <Button
-                onClick={submitForm}
-                text="Zapisz"
-                type="primary"
-                disabled={!dirty}
-              />
-            )}
-          </Actions>
+    <div className="view view__data">
+      <Header background={Background} prevUrl="/daily" />
+      <Container className="container__content">
+        <h4 className="title medium">Dziennik zdrowia</h4>
+        <p className="date medium">{date}</p>
+        <Form isViewMode={isViewMode} />
+        <Imprint />
+      </Container>
+      <div className="footer">
+        <Container className="container__footer">
+          <FieldSet>
+            <Button
+              onClick={submitForm}
+              text="Zapisz"
+              type="primary"
+              disabled={!dirty}
+            />
+          </FieldSet>
         </Container>
-      </Content>
-      <BottomNavigation />
-    </View>
+      </div>
+    </div>
   );
 };
 
 DailyData.propTypes = {
-  isViewMode: PropTypes.bool.isRequired
+  isViewMode: PropTypes.bool.isRequired,
+  onBack: PropTypes.func.isRequired
 };
 
 export default DailyData;

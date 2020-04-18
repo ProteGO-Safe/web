@@ -18,10 +18,10 @@ const RegistrationContainer = () => {
     [constants.FIELD_AGE]: '',
     [constants.FIELD_SEX]: '',
     [constants.FIELD_NAME]: '',
-    // [constants.FIELD_PHONE]: '',
     [constants.FIELD_BLOOD_GROUP]: '',
-    step: 0,
-    [constants.FIELD_TERM1]: false
+    step: 1,
+    [constants.FIELD_TERM1]: false,
+    [constants.FIELD_TERM2]: false
   };
 
   const validationSchema = Yup.object().shape({
@@ -29,10 +29,11 @@ const RegistrationContainer = () => {
       .min(3, 'Za krótkie imię')
       .max(20, 'Za długie imię')
       .required('Imię jest wymagane'),
-    // [constants.FIELD_PHONE]: Yup.string().required(
-    //   'Numer telefonu jest wymagany'
-    // ),
     [constants.FIELD_TERM1]: Yup.boolean().oneOf(
+      [true],
+      'Proszę zaznaczyć zgodę'
+    ),
+    [constants.FIELD_TERM2]: Yup.boolean().oneOf(
       [true],
       'Proszę zaznaczyć zgodę'
     ),
@@ -62,7 +63,6 @@ const RegistrationContainer = () => {
 
     const data = {
       name: form[constants.FIELD_NAME],
-      // phone: form[constants.FIELD_PHONE],
       sex: resolveSex(form[constants.FIELD_SEX]),
       age: form[constants.FIELD_AGE],
       chronicSicks: [...chronicSicks],

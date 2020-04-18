@@ -27,7 +27,7 @@ const SummaryContainer = () => {
       description
     };
 
-    if (isDesktop) {
+    if ( isDesktop ) {
       setVisible(true);
     }
     dispatch(addRiskTest(data));

@@ -2,50 +2,39 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import { daysDetailsPropType } from '../../utills/calendar';
-import { Container } from '../../components';
+import Background from '../../assets/img/banners/banner-1.png';
+import { Button, Container, FieldSet } from '../../components';
+import { Header } from '../components';
 import './Daily.scss';
-import Header from '../../components/Header/Header';
-import { BottomNavigation } from '../../components/BottomNavigation';
-
-import notebook from '../../assets/img/icons/welcome-screen.svg';
-import arrowRight from '../../assets/img/icons/angle-right.svg';
 
 const Daily = ({ goToHistory, onFill, today, previousDays }) => {
   return (
     <div className="view view__risk-test">
-      <Header />
+      <Header background={Background} prevUrl="/" />
       <Container>
-        <h4 className="diary__title">
-          Uzupełnij dzisiejszy wpis do <br />
-          swojego dziennika zdrowia
-        </h4>
-        <div className="diary__data" onClick={onFill}>
-          <img src={notebook} alt="Dziennik zdrowia" />
-          <div className="diary__data--text">
-            Dziś, {today} <br />
-            Kliknij i uzupełnij dane.
-          </div>
+        <h4 className="h1 text-center medium">Moje zdrowie</h4>
+        <div className="today">
+          <Button
+            onClick={onFill}
+            text={`DZIŚ ${today} - KLIKNIJ I UZUPEŁNIJ DANE`}
+            type="primary"
+          />
         </div>
-        <div className="diary__history">
-          <div className="diary__history--label">Dotychczasowe wpisy</div>
-          <div className="diary__history--list">
-            {previousDays.map(_obj => (
-              <div
-                className="diary__history--item"
-                key={_obj.timestamp}
-                onClick={() => goToHistory(_obj.timestamp)}
-              >
-                <span>
-                  Wpis z dnia:&nbsp;{_obj.dayWeek}&nbsp;({_obj.day}&nbsp;r.)
-                </span>
-
-                <img src={arrowRight} alt="arrow" />
-              </div>
-            ))}
-          </div>
-        </div>
+        <div className="line" />
+        <FieldSet>
+          {previousDays.map(_obj => (
+            <Button
+              key={_obj.timestamp}
+              onClick={() => goToHistory(_obj.timestamp)}
+              text=""
+              type="gray"
+            >
+              <span>{_obj.dayWeek}</span>
+              <span className="text-bold">{_obj.day}</span>
+            </Button>
+          ))}
+        </FieldSet>
       </Container>
-      <BottomNavigation />
     </div>
   );
 };

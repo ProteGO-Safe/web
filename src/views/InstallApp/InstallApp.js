@@ -1,10 +1,10 @@
 import React from 'react';
 import { Redirect, useHistory, useLocation } from 'react-router-dom';
 import Container from '../../components/Container/Container';
-import { Brand, Button, FieldSet } from '../../components';
+import { Banner, Brand, Button, FieldSet } from '../../components';
+import Background from '../../assets/img/banners/banner-1.png';
 import './InstallApp.scss';
 import { ANDROID, IOS } from '../../constants';
-import { Header } from '../../components/Header';
 
 const InstallApp = () => {
   const history = useHistory();
@@ -31,7 +31,7 @@ const InstallApp = () => {
 
   return (
     <div className="view view__install-app">
-      <Header />
+      <Banner background={Background} />
       <Container>
         <Brand content={false} />
         <div className="content">

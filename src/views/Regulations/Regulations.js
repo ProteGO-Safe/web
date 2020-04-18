@@ -1,24 +1,22 @@
 import React from 'react';
-
+import Background from '../../assets/img/banners/banner-1.png';
+import { Container } from '../../components';
 import { RegulationsContent } from './component/RegulationsContent';
-import Header from '../../components/Header/Header';
-import { BottomNavigation } from '../../components/BottomNavigation';
-import { Container, Content, View } from '../../theme/grid';
-import { Title } from '../../theme/typography';
+import { Header } from '../components';
+import './Regulations.scss';
 
-const Regulations = () => {
-  return (
-    <View>
-      <Header />
-      <Content>
-        <Container>
-          <Title>Regulamin</Title>
+const Regulations = () => (
+  <div className="view view__regulations">
+    <Header background={Background} prevUrl="/privacy-policy" />
+    <Container>
+      <h4 className="text-center medium">Regulamin</h4>
+      <div className="content">
+        <p className="p1 small">
           <RegulationsContent />
-        </Container>
-        <BottomNavigation />
-      </Content>
-    </View>
-  );
-};
+        </p>
+      </div>
+    </Container>
+  </div>
+);
 
 export default Regulations;

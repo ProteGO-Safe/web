@@ -15,14 +15,12 @@ const Form = ({ isViewMode }) => {
   const { handleChange, values, errors } = useFormikContext();
   return (
     <div className="form">
-      <h4 className="medium title-2">Temperatura</h4>
-      <FieldSet>
+      <h4 className="big">Temperatura</h4>
+      <FieldSet horizontal>
         <Input
           error={errors[FIELD_TEMPERATURE]}
           disabled={isViewMode}
-          label="Podaj aktualną temperaturę ciała"
           name={FIELD_TEMPERATURE}
-          placeholder="36.6"
           max={45}
           min={25}
           onChange={handleChange}
@@ -30,7 +28,7 @@ const Form = ({ isViewMode }) => {
           value={values[FIELD_TEMPERATURE]}
         />
       </FieldSet>
-      <h4 className="medium title-3">Objawy</h4>
+      <h4 className="big">Objawy</h4>
       <FieldSet>
         <Range field={FIELD_RUNNY_NOSE} label="Katar" disable={isViewMode} />
         <Range field={FIELD_COUGH} label="Kaszel" disable={isViewMode} />
@@ -41,14 +39,13 @@ const Form = ({ isViewMode }) => {
           disable={isViewMode}
         />
       </FieldSet>
-      <h4 className="medium title-2">Miejsca i kontakty</h4>
+      <h4 className="big">Miejsca i kontakty</h4>
       <FieldSet>
         <Textarea
           disabled={isViewMode}
-          label="Z kim się spotkałem, gdzie byłem"
+          label="Z kim się spotkałem, gdzie byłem - wpisz"
           name={FIELD_CONTACTS}
           onChange={handleChange}
-          placeholder='wpisz'
           value={values[FIELD_CONTACTS]}
         />
       </FieldSet>
@@ -56,12 +53,8 @@ const Form = ({ isViewMode }) => {
   );
 };
 
-Form.defaultProps = {
-  isViewMode: false
-};
-
 Form.propTypes = {
-  isViewMode: PropTypes.bool
+  isViewMode: PropTypes.bool.isRequired
 };
 
 export default Form;

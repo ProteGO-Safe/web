@@ -2,7 +2,7 @@
 @import '../../../../assets/styles/mixins';
 
 .view__summary {
-  @include viewBaseStyles();
+  @include viewBaseStyles(100px);
 
   .banner {
     grid-area: banner;
@@ -14,30 +14,6 @@
     grid-area: container;
 
     .content {
-      .icon {
-        display: block;
-        max-width: 48px;
-        margin-bottom: 28px;
-      }
-
-      h4 {
-        font-size: 20px;
-        font-weight: bold;
-        color: $black_2;
-        margin: 0 0 24px 0;
-      }
-
-      p {
-        font-size: 16px;
-        color: $black_2;
-        margin: 0 0 24px 0;
-      }
-
-      small {
-        font-size: 12px;
-        color: $black_2;
-      }
-
       &--1 {
         grid-area: content1;
         align-self: end;
@@ -56,6 +32,15 @@
     .fieldset {
       grid-area: buttons;
       padding: 18px 0;
+      border-top: 1px solid $gray_4;
+
+      &:after {
+        display: block;
+        content: '';
+        height: 1px;
+        width: 100%;
+        background-color: $gray_4;
+      }
     }
   }
 }

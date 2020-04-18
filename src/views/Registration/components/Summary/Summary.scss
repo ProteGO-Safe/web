@@ -2,7 +2,7 @@
 @import '../../../../assets/styles/mixins';
 
 .view__registration-summary {
-  @include viewBaseStyles();
+  @include viewBaseStyles(100px);
 
   .banner {
     grid-area: banner;

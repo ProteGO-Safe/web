@@ -4,7 +4,7 @@
   p {
     display: flex;
     align-items: center;
-    margin-top: 10px;
+    margin-top: 13px;
 
     span {
       width: 60%;
@@ -24,23 +24,6 @@
         content: attr(data-empty);
         color: $black;
       }
-    }
-  }
-}
-
-.metrics-paragraph {
-  margin-top: 10px;
-
-  p {
-    font-size: 12px;
-    
-    &:first-child {
-      font-size: 14px;
-      line-height: 1.2;
-      margin: 6px 0 3px;
-    }
-    &:last-child {
-      margin-bottom: 10px;
     }
   }
 }

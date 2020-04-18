@@ -1,6 +1,7 @@
 @import '../../assets/styles/colors';
 
 .view__data {
+  padding-top: 75px;
   padding-bottom: 52px;
 
   .banner {
@@ -14,17 +15,11 @@
 
   .container {
     &__content {
-      padding-top: 20px;
       display: grid;
-      grid-template-areas:
-              "title date"
-              "form form"
-              "title_metrics title_metrics"
-              "metrics metrics";
+      grid-template-areas: "title date" "form form";
 
       .title {
         grid-area: title;
-        margin-bottom: 32px;
       }
 
       .date {
@@ -32,28 +27,16 @@
         justify-self: end;
       }
 
-      .metrics {
-        grid-area: title_metrics;
-        margin-top: 40px;
-        margin-bottom: 15px;
-        font-size: 20px;
-        font-weight: bold;
-        color: #1b1b1b;
-      }
-
       .form {
         grid-area: form;
 
         h4 {
-          margin-bottom: 17px;
-          font-size: 20px;
-          font-weight: bold;
-          color: $black_2;
+          margin-bottom: 7px;
         }
 
         .fieldset {
           + h4 {
-            margin-top: 38px
+            margin-top: 30px
           }
         }
       }
@@ -61,6 +44,7 @@
   }
 
   .footer {
+    position: fixed;
     bottom: 0;
     left: 0;
     width: 100%;
@@ -68,7 +52,7 @@
     z-index: 2;
 
     .fieldset {
-      padding: 37px 0 24px;
+      padding: 18px 0 24px;
       border-top: 1px solid $gray_4;
     }
   }

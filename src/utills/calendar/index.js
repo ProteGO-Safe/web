@@ -2,12 +2,12 @@ import moment from 'moment';
 import PropTypes from 'prop-types';
 
 const dayWeekFormat = 'dddd';
-const dateFormat = 'D-MM-YYYY';
-
-const descending = (a, b) => b - a;
+const dateFormat = 'D-MM-YYYY HH:mm';
 
 // filledDays contains moments
-export const createDaysDetails = (filledDays = []) => {
+const createDaysDetails = (filledDays = []) => {
+  const descending = (a, b) => b - a;
+
   return filledDays.sort(descending).map(_timestamp => {
     return {
       day: moment.unix(_timestamp).format(dateFormat),
@@ -17,16 +17,7 @@ export const createDaysDetails = (filledDays = []) => {
   });
 };
 
-export const getLastDate = (filledDays = []) => {
-  const sortedDays = filledDays
-    .sort(descending)
-    .map(_timestamp => moment.unix(_timestamp).format(dateFormat));
-
-  if (sortedDays.length > 0) {
-    return sortedDays[0];
-  }
-  return '';
-};
+export default createDaysDetails;
 
 export const daysDetailsPropType = PropTypes.arrayOf(
   PropTypes.shape({

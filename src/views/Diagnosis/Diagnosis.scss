@@ -1,4 +1,10 @@
 .view__diagnosis {
+  display: grid;
+  grid-template-areas: "banner" "container";
+  grid-row-gap: 37px;
+  grid-template-rows: 77px minmax(min-content, 3fr);
+  min-height: 100vh;
+
   .banner {
     grid-area: banner;
   }

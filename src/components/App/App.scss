@@ -2,16 +2,20 @@
 
 .app {
   position: relative;
-  left: 0;
-  overflow-x: hidden;
   min-width: 320px;
-  transition: all 0.2s linear;
+  overflow-x: hidden;
+
+  &__inner {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    transition: 200ms transform linear;
+  }
 
   &.menu-visible {
-    left: calc(-100% + 59px);
-
-    header {
-      left: calc(-100% + 59px);
+    .app__inner {
+      transform: translate(-259px, 0);
     }
   }
 }
@@ -34,12 +38,6 @@ body {
     font-weight: bold;
     letter-spacing: 0;
     line-height: 26px;
-
-    &.medium {
-      font-size: 18px;
-      line-height: 24px;
-      letter-spacing: 0;
-    }
   }
 
   h4 {
@@ -53,23 +51,6 @@ body {
       font-size: 18px;
       line-height: 24px;
       letter-spacing: 0;
-
-      &.title {
-        color: $black_2;
-        padding: 15px 0;
-      }
-      &.title-2 {
-        color: $black_2;
-        padding: 35px 0 15px;
-      }
-      &.title-3 {
-        color: $black_2;
-        padding: 40px 0 15px;
-      }
-      &.title-4 {
-        color: $black_2;
-        padding: 40px 0 0px;
-      }
     }
 
     &.medium-2 {
@@ -159,23 +140,12 @@ body {
     color: $primary_2;
   }
 
-  .primary-3 {
-    color: $primary_2;
-  }
-
   .text-bold {
     font-weight: bold;
   }
 
-  .no-wrap {
-    white-space: nowrap;
-  }
-
   .text-center {
     text-align: center;
-  }
-  .text-left {
-    text-align: left;
   }
 
   .text-warning {

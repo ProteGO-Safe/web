@@ -3,24 +3,17 @@ import PropTypes from 'prop-types';
 
 import './Container.scss';
 
-const Container = ({ background, children, className }) => (
-  <div
-    className={`container ${className}`}
-    style={{ backgroundImage: `url(${background})` }}
-  >
-    {children}
-  </div>
+const Container = ({ children, className }) => (
+  <div className={`container ${className}`}>{children}</div>
 );
 
 Container.defaultProps = {
-  className: '',
-  background: ''
+  className: ''
 };
 
 Container.propTypes = {
   children: PropTypes.node.isRequired,
-  className: PropTypes.string,
-  background: PropTypes.string
+  className: PropTypes.string
 };
 
 export default Container;

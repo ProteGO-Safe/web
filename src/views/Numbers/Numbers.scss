@@ -1,0 +1,43 @@
+@import '../../assets/styles/colors';
+@import '../../assets/styles/mixins';
+
+.view__numbers {
+  @include viewBaseStyles();
+
+  .banner {
+    grid-area: banner;
+  }
+
+  .container {
+    display: grid;
+    grid-template-areas: 'title' 'content';
+    grid-template-rows: 50px 1fr;
+    grid-area: container;
+
+    .h1 {
+      grid-area: title;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 50px;
+    }
+
+    .content {
+      grid-area: content;
+      align-self: start;
+      padding-top: 30px;
+
+      .address {
+        font-size: 16px;
+
+        .answer {
+          padding-bottom: 10px;
+        }
+
+        .phone {
+          color: $primary_2;
+        }
+      }
+    }
+  }
+}

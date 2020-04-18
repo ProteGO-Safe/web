@@ -1,0 +1,45 @@
+@import '../../assets/styles/colors';
+@import '../../assets/styles/mixins';
+
+.view__risk-test-data {
+  @include viewBaseStyles(100px);
+
+  .banner {
+    grid-area: banner;
+  }
+
+  .container {
+    display: grid;
+    grid-template-areas: 'title' 'data';
+    grid-template-rows: 78px auto;
+    grid-area: container;
+
+    .title {
+      grid-area: title;
+      align-self: self-end;
+
+      h6 {
+        margin: 8px 0;
+      }
+    }
+
+    .data {
+      grid-area: data;
+      align-self: start;
+
+      &__single {
+        + .data__single {
+          margin-top: 8px;
+        }
+      }
+
+      p {
+        margin: 0;
+
+        ~ p {
+          padding-left: 15px;
+        }
+      }
+    }
+  }
+}

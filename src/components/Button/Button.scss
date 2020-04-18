@@ -5,81 +5,50 @@
   align-items: center;
   justify-content: center;
   width: 100%;
-  max-width: 338px;
-  height: 44px;
+  max-width: 286px;
   padding: 0 12px;
-  line-height: 1.5;
+  line-height: 16px;
   font-size: 16px;
-  font-weight: bold;
-  font-stretch: normal;
-  font-style: normal;
   letter-spacing: 0;
   -webkit-appearance: none;
+  box-shadow: 0 3px 6px #00000029;
   border-style: none;
-  border-radius: 8px;
+  border-radius: 6px;
   cursor: pointer;
-  text-transform: uppercase;
-  font-family: 'Open Sans';
 
   &:hover,
   &:focus {
     outline: none;
   }
 
+  &:disabled {
+    opacity: 0.6;
+  }
+
   &--primary {
-    background-color: $button_primary;
+    background-color: $primary_2;
     color: $white;
-
-    &:hover {
-      background-color: $button_hover;
-    }
-
-    &:disabled {
-      background: $button_disabled;
-      color: white;
-    }
   }
 
-  &--outline,
-  &--secondary {
+  &--outline {
     background-color: $white;
-    color: $button_primary;
-    border: 2px solid $button_primary;
-
-    &:hover {
-      color: $button_hover;
-      border-color: $button_hover;
-    }
-
-    &:disabled {
-      background: $button_disabled_bg;
-      color: $button_disabled;
-      border: 2px solid $button_disabled;
-    }
-  }
-
-  &--ghost,
-  &--tertiary {
-    text-transform: none;
-    color: $button_primary;
-
-    &:hover {
-      color: $button_hover;
-    }
-
-    &:disabled {
-      color: $button_disabled;
-    }
+    color: $primary_2;
+    border: 1px solid $primary_2;
   }
 
   &--white {
     background-color: $white;
-    color: $button_primary;
+    color: $primary_2;
+  }
+
+  &--secondary {
+    background-color: $white;
+    border: 1px solid $primary_1;
   }
 
   &--blank {
     background: none;
-    color: #dcdcdc;
+    color: #DCDCDC;
     box-shadow: none;
   }
 
@@ -108,12 +77,20 @@
     min-height: 29px;
   }
 
+  &--normal {
+    height: 42px;
+  }
+
   &--size {
     &--small {
       min-width: 74px;
       max-width: min-content;
       padding: 5px 10px;
       text-align: left;
+    }
+
+    &--medium {
+      width: 50%;
     }
   }
 

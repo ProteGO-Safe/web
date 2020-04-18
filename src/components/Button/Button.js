@@ -6,6 +6,7 @@ const Button = ({
   children,
   disabled,
   height,
+  icon,
   iconLeft,
   onClick,
   size,
@@ -23,6 +24,7 @@ const Button = ({
     >
       {children}
       {text}
+      {icon && <img alt="icon" className="button__icon" src={icon} />}
     </button>
   );
 };
@@ -41,6 +43,7 @@ Button.propTypes = {
   children: PropTypes.node,
   disabled: PropTypes.bool,
   height: PropTypes.oneOf(['small', 'normal']),
+  icon: PropTypes.string,
   iconLeft: PropTypes.bool,
   onClick: PropTypes.func.isRequired,
   size: PropTypes.oneOf(['small', 'medium', 'normal']),
@@ -52,7 +55,6 @@ Button.propTypes = {
     'outline',
     'primary',
     'secondary',
-    'tertiary',
     'success',
     'success-blank',
     'white'

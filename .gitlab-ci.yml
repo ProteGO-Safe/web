@@ -19,15 +19,14 @@ build:latest:
 .deploy: &deploy
   image: dockito/lftp-client
   stage: deploy
+  when: manual
 
 deploy:dev:
   <<: *deploy
   script:
-    - lftp -e 'mirror -R build /safesafe-dev; bye' -u $STAGE_FTP_USER,$STAGE_FTP_PASS $STAGE__FTP_HOST
-  when: manual
+    - lftp -e 'cd /safesafe-dev; mput -e build/* ; bye' -u $STAGE_FTP_USER,$STAGE_FTP_PASS $STAGE__FTP_HOST
 
 deploy:stage:
   <<: *deploy
   script:
-    - lftp -e 'mirror -R build /safesafe; ; bye' -u $STAGE_FTP_USER,$STAGE_FTP_PASS $STAGE__FTP_HOST
-  when: manual
+    - lftp -e 'cd /safesafe; mput -e build/* ; bye' -u $STAGE_FTP_USER,$STAGE_FTP_PASS $STAGE__FTP_HOST
