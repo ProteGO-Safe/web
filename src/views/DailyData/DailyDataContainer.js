@@ -38,7 +38,7 @@ const DailyDataContainer = () => {
 
   const validationSchema = Yup.object().shape({
     [FIELD_TEMPERATURE]: Yup.number()
-      .min(25, 'Za niska wartość temperatury')
+      .min(35, 'Za niska wartość temperatury')
       .max(45, 'Za wysoka wartość temperatury')
   });
 
