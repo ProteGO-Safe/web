@@ -37,6 +37,14 @@
       ul {
         padding-inline-start: 15px;
         font-weight: unset;
+
+        li {
+          margin-bottom: 8px;
+
+          &:last-child {
+            margin-bottom: 0;
+          }
+        }
       }
     }
   }

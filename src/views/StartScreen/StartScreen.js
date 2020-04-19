@@ -18,7 +18,7 @@ const StartScreen = ({ onStartClick = Function.prototype }) => {
       <Content>
         <Logo />
         <Message>
-          Aplikacja do przeciwdziałania rozprzestrze­niania się COVID-19
+          Pokonajmy razem koronawirusa!
         </Message>
         <Button onClick={handleStartClick}>Rozpocznij</Button>
       </Content>

@@ -5,12 +5,12 @@ const RiskInfoLevel1 = () => (
   <>
     <Collapse title="Często myj ręce">
       <p>
-        Regularnie myj ręce mydłem i wodą, lub dezynfekuj je środkiem na bazie
-        alkoholu (min. 60%). Mycie rąk powinno trwać 30 sekund. Zapoznaj się z
-        instrukcją mycia rąk na stronie Głównego Inspektoratu Sanitarnego.
+        Regularnie myj ręce mydłem i wodą lub dezynfekuj je środkiem na bazie
+        alkoholu (min. 60%). Mycie rąk powinno trwać 30 sekund. Sprawdź
+        instrukcję.
       </p>
     </Collapse>
-    <Collapse title="Zasłoń usta i nos gdy kaszlesz lub kichasz">
+    <Collapse title="Zasłaniaj usta i nos, gdy kaszlesz lub kichasz">
       <p>
         Gdy kaszlesz lub kichasz, zakrywaj usta i nos chusteczką jednorazową lub
         zgięciem łokcia. Chusteczkę jak najszybciej wyrzuć do kosza i dokładnie
@@ -23,11 +23,9 @@ const RiskInfoLevel1 = () => (
     <Collapse title="Unikaj dotykania oczu, nosa i ust">
       <p>
         Wirus przedostaje się do organizmu przez usta, nos i oczy. Możesz go
-        przenieść z zanieczyszczonej powierzchni. Wirusy mogą utrzymywać się do
-        kilku godzin lub dni na przedmiotach, na których znajdują się
-        wydzieliny, np. ślina. Zgodnie z obecnym stanem wiedzy, koronawirus może
-        przetrwać do 3 godzin w formie aerozolu, do 24 godzin na powierzchni
-        kartonowej i do 72 godzin na stali nierdzewnej lub plastiku.
+        przenieść z zanieczyszczonej powierzchni. Na przedmiotach, na których
+        znajdują się wydzieliny, np. ślina może utrzymywać się do kilku godzin
+        lub dni.
       </p>
     </Collapse>
     <Collapse title="#ZostańWDomu">
@@ -38,10 +36,7 @@ const RiskInfoLevel1 = () => (
       </p>
     </Collapse>
     <Collapse title="Obserwuj swój stan zdrowia">
-      <p>
-        Przejdź przez ten wywiad ponownie w przypadku pojawienia się nowych
-        objawów lub kontaktu z osobą chorą.
-      </p>
+      <p>Regularnie wypełniaj Dziennik Zdrowia. Dbaj o siebie!</p>
     </Collapse>
   </>
 );

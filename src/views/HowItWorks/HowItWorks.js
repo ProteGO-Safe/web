@@ -16,62 +16,60 @@ const HowItWorks = () => {
             <span className="primary-2">
               <strong>ProteGO Safe</strong>
             </span>{' '}
-            to darmowa aplikacja, dzięki której możesz oceniać ryzyko infekcji
-            koronawirusem na podstawie wytycznych{' '}
-            <strong>Światowej Organizacji Zdrowia (WHO)</strong>, prowadzić
-            dziennik stanu zdrowia oraz lepiej poznać profilaktykę. Obserwując
-            wyniki oraz stosując środki zaradcze minimalizujesz ryzyko
-            zachorowania na COVID-19. Aplikacja umożliwi Ci trzymać rękę na
-            pulsie! Jakie są jej funkcje?
+            to darmowa, oficjalna i bezpieczna aplikacja, dzięki której - na
+            podstawie wytycznych{' '}
+            <strong>Światowej Organizacji Zdrowia (WHO)</strong> - możesz
+            oceniać ryzyko infekcji koronawirusem, prowadzić dziennik stanu
+            zdrowia oraz dowiedzieć się jak unikać zakażenia. Obserwując wyniki
+            oraz stosując środki zaradcze minimalizujesz ryzyko zachorowania.
+            Dzięki aplikacji trzymasz rękę na pulsie - dbasz o swoje i swoich
+            bliskich zdrowie. Oto jej funkcje:
           </p>
           <ul>
             <li>
-              <strong>Test Oceny Ryzyka</strong> opracowaną przez firmę
-              Infermedica na bazie wytycznych Światowej Organizacji Zdrowia
-              (WHO). Dzięki niej łatwiej jest podjąć odpowiednie decyzje dot.
-              dalszych kroków działania w przypadku podejrzenia infekcji.
+              <strong>Test Oceny Ryzyka</strong> - opracowaliśmy go na bazie
+              wytycznych Światowej Organizacji Zdrowia (WHO). Dzięki niemu m.in.
+              dowiesz się jak dbać o swoje zdrowie i jak działać w przypadku
+              podejrzenia zakażenia.
             </li>
             <li>
-              <strong>Mój dziennik zdrowia</strong> – ułatwimy Ci prowadzenie
+              <strong>Mój dziennik zdrowia</strong> – ułatwia prowadzenie
               codziennych zapisków o stanie zdrowia, dzięki czemu będziesz w
               stanie lepiej obserwować i dokumentować objawy.
             </li>
             <li>
-              <strong>Profilaktyka</strong> – otrzymasz wskazówki gdzie szukać
-              pomocy specjalistycznej i o czym pamiętać.
+              <strong>Profilaktyka</strong> – wskazówki, gdzie - w razie
+              potrzeby - szukać specjalistycznej pomocy, aktualne informacje i
+              zalecenia.
             </li>
             <li>
-              <strong>Dokumentacja dla personelu medycznego</strong> –
-              informacje o rozwoju objawów, podanych schorzeniach pozwolą
-              lekarzom na szybszą diagnozę.
+              <strong>Pomoc w diagnozie</strong> - regularnie uzupełniane przez
+              Ciebie infomacje - w razie konieczności - pomogą lekarzom wystawić
+              diagnozę. Tylko oni mogą to zrobić.
+              <strong>Ważne! Test Oceny Ryzyka NIE jest diagnozą.</strong>
             </li>
             <li>
               <strong>* Komunikacja z użytkownikiem</strong> – wysyłanie
               zweryfikowanych wiadomości od WHO i Ministerstwa Zdrowia.
             </li>
-            <li>
-              * Budowanie <strong>BIG DATA</strong> i modelowanie scenariuszy
-              zakażeń oraz lokalizowanie ognisk zakażeń.
-            </li>
           </ul>
           <p>
-            Każdy z nas może zminimalizować ryzyko infekcji stosując się do
-            wytycznych profilaktyki zdrowia w myśl zasady, że im więcej wiesz,
-            tym lepiej je chronisz!
+            To od naszej postawy zależy, jak szybko pokonamy koronawirusa i
+            wrócimy do normalnego życia. Korzystaj z naszej aplikacji, stosuj
+            się do wytycznych!
           </p>
           <p>
-            Pamiętaj! Tylko codzienne, odpowiedzialne decyzje i środki zaradcze
-            przybliżają nas do zahamowania rozprzestrzeniania się wirusa
-            SARS-CoV-2 i powrotu do normalności.
+            Prowadzenie dziennika zdrowia jest bardzo proste i nie zajmuje wiele
+            czasu.
+            <br />
+            Zacznij od dziś – zadbaj o siebie i swoich bliskich.
           </p>
           <p>
-            Prowadzenie dziennika i regularna ocena stanu zdrowia jest bardzo
-            prosta i nie angażuje wiele czasu – wystarczy Ci mniej niż 15 min
-            dziennie.
+            Masz pytania? Przejdź do zakładki Pomoc. Znajdziesz tam odpowiedzi
+            na najczęściej pojawiąjące się pytania dotyczące działania naszej
+            aplikacji *
           </p>
-          <p>Zacznij od dziś – zadbaj o siebie i swoich bliskich.</p>
-          <p>Masz pytania? Przejdź do Pomocy i najczęstszych pytań *</p>
-          <p>* w przygotowaniu</p>
+          <small>* w przygotowaniu</small>
         </div>
       </Container>
       <BottomNavigation />

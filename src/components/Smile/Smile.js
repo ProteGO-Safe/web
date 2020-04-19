@@ -15,9 +15,10 @@ const Smile = ({ userName, lastDate, riskGroup, icon }) => {
       <TextWrapper>
         <Text>
           <p>
-            Przeanalizowaliśmy Twoje odpowiedzi na podstawie wytycznych WHO.
+            przeanalizowaliśmy Twoje odpowiedzi.
             <br />
-            Wynik testu z <strong>{lastDate}</strong> kwalifikuje Cię do grupy:{' '}
+            Wynik testu z <strong>{lastDate}</strong> kwalifikuje Cię do
+            grupy:&nbsp;
             <strong>{riskGroup}</strong>.
           </p>
         </Text>

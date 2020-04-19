@@ -66,10 +66,10 @@ const HomeContainer = () => {
         return 'Jeśli twoje objawy wydają się niepokojące – reaguj. Przeczytaj poniżej, jakich zasad powinieneś|powinnaś przestrzegać i na czyją pomoc możesz liczyć.';
       }
       case 'isolation_call': {
-        return 'Bezzwłocznie telefonicznie powiadom powiatową stację sanitarno-epidemiologiczną i zgłoś się bezpośrednio do oddziału zakaźnego lub oddziału obserwacyjno-zakaźnego. Unikaj kontaktu z innymi osobami.';
+        return 'Bezzwłocznie zadzwoń do Powiatowej Stacji Sanitarno-Epidemiologiczną i zgłoś się do najbliższego szpitalnego oddziału zakaźnego lub obserwacyjno-zakaźnego. Unikaj kontaktu z innymi osobami.';
       }
       case 'isolation_ambulance': {
-        return 'Bezzwłocznie telefonicznie powiadom powiatową stację sanitarno-epidemiologiczną i zgłoś się bezpośrednio do oddziału zakaźnego lub oddziału obserwacyjno-zakaźnego. Unikaj kontaktu z innymi osobami.';
+        return 'Bezzwłocznie zadzwoń do Powiatowej Stacji Sanitarno-Epidemiologiczną i zgłoś się do najbliższego szpitalnego oddziału zakaźnego lub obserwacyjno-zakaźnego. Unikaj kontaktu z innymi osobami.';
       }
       default: {
         return null;

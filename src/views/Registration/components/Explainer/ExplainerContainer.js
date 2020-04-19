@@ -17,9 +17,7 @@ const ExplainerContainer = () => {
   const items = [
     {
       content: (
-        <>
-          Na bieżąco sprawdzaj czy jesteś w&nbsp;grupie ryzyka (zalecenia WHO)
-        </>
+        <>Dbaj o siebie! Regularnie sprawdzaj, czy jesteś w grupie ryzyka</>
       ),
       icon: IconInfo,
       slug: 'information'
@@ -34,12 +32,7 @@ const ExplainerContainer = () => {
       slug: 'diary'
     },
     {
-      content: (
-        <>
-          Wszystkie ważne informacje o{' '}
-          <span className="text-bold no-wrap">COVID-19</span> w 1 miejscu
-        </>
-      ),
+      content: <>Wszystkie najważniejsze informacje w jednym miejscu</>,
       icon: IconChat,
       slug: 'chat'
     }

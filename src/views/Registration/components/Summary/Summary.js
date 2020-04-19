@@ -33,7 +33,7 @@ const Summary = () => {
       <Header hideBackButton hideMenuButton />
       <Container>
         <Stepper currentStep={step} numberOfSteps={NUMBER_OF_STEPS} />
-        <Title>Sprawdź czy dane są prawidłowe</Title>
+        <Title>Sprawdź, czy dane są prawidłowe</Title>
         <Imprint
           user={{
             age: values[FIELD_AGE],
