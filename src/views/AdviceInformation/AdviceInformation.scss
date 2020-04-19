@@ -47,6 +47,8 @@
 
         li {
           position: relative;
+          display: flex;
+          align-items: center;
           list-style-type: none;
           padding: 0 0 20px 70px;
           min-height: 70px;

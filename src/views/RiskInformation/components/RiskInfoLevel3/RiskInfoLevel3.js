@@ -33,14 +33,15 @@ const RiskInfoLevel3 = () => (
         <li>
           <div className="bold">Często myj ręce</div>
           <div className="normal">
-            Regularnie myj ręce mydłem i wodą, lub dezynfekuj je środkiem na
+            Regularnie myj ręce mydłem i wodą lub dezynfekuj je środkiem na
             bazie alkoholu (min. 60%). Mycie rąk powinno trwać 30 sekund.
-            Zapoznaj się z instrukcją mycia rąk na stronie Głównego Inspektoratu
-            Sanitarnego.
+            Sprawdź instrukcję.
           </div>
         </li>
         <li>
-          <div className="bold">Zasłoń usta i nos gdy kaszlesz lub kichasz</div>
+          <div className="bold">
+            Zasłaniaj usta i nos, gdy kaszlesz lub kichasz
+          </div>
           <div className="normal">
             Gdy kaszlesz lub kichasz, zakrywaj usta i nos chusteczką jednorazową
             lub zgięciem łokcia. Chusteczkę jak najszybciej wyrzuć do kosza i
@@ -57,12 +58,9 @@ const RiskInfoLevel3 = () => (
           <div className="bold">Unikaj dotykania oczu, nosa i ust</div>
           <div className="normal">
             Wirus przedostaje się do organizmu przez usta, nos i oczy. Możesz go
-            przenieść z zanieczyszczonej powierzchni. Wirusy mogą utrzymywać się
-            do kilku godzin lub dni na przedmiotach, na których znajdują się
-            wydzieliny, np. ślina. Zgodnie z obecnym stanem wiedzy, koronawirus
-            może przetrwać do 3 godzin w formie aerozolu, do 24 godzin na
-            powierzchni kartonowej i do 72 godzin na stali nierdzewnej lub
-            plastiku.
+            przenieść z zanieczyszczonej powierzchni. Na przedmiotach, na
+            których znajdują się wydzieliny, np. ślina może utrzymywać się do
+            kilku godzin lub dni.
           </div>
         </li>
         <li>

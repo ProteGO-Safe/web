@@ -11,13 +11,18 @@ const Summary = ({ onSave }) => (
     <Header hideBackButton hideMenuButton />
     <Container>
       <div className="content">
-        <img className="icon" src={success} alt="Gratulacje"/>
+        <img className="icon" src={success} alt="Gratulacje" />
         <h4 className="medium">Gratulacje!</h4>
         <p className="big">
-          Twój pierwszy Test Oceny Ryzyka przygotowany zgodnie z wytycznymi WHO został uzupełniony. Nasz system sprawdzi teraz do jakiej grupy kwalifikują się Twoje odpowiedzi.
+          Dziękujemy za wypełnienie Twojego Pierwszego Testu Oceny Ryzyka.
+        </p>
+        <p className="big">
+          Na podstawie Twoich odpowiedzi, nasz system sprawdzi teraz do jakiej
+          grupy Cię zakwalifikować.
         </p>
         <small>
-          Aby Twoja ocena ryzyka była aktualna, będziemy wysyłać Ci powiadomienia o kolejnych terminach wypełnienia testu.
+          To bardzo ważne, abyś wypełniała testy regularnie. Będziemy Ci o tym
+          przypominać :)
         </small>
       </div>
       <FieldSet>

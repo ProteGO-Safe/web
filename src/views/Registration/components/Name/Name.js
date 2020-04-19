@@ -2,21 +2,13 @@ import React from 'react';
 import { useFormikContext } from 'formik';
 import { FormGroup } from '@material-ui/core';
 import { Button, Checkbox, TextField } from '../../../../components';
-import {
-  FIELD_NAME,
-  FIELD_TERM1
-} from '../../../../constants';
+import { FIELD_NAME, FIELD_TERM1 } from '../../../../constants';
 
 import useModalContext from '../../../../hooks/useModalContext';
 import PrivacyPolicyContent from '../../../PrivacyPolicyDetails/component/PrivacyPolicyContent/PrivacyPolicyContent';
 import RegulationsContent from '../../../Regulations/component/RegulationsContent/RegulationsContent';
 
-import {
-  Annotation,
-  List,
-  ListItem,
-  TextLink
-} from '../../../../theme/typography';
+import { Annotation, TextLink } from '../../../../theme/typography';
 import { Actions, Title } from '../../Registration.styled';
 import './Name.scss';
 
@@ -42,22 +34,14 @@ const Name = () => {
     });
   };
 
-  const disabled =
-    !values[FIELD_NAME] || !values[FIELD_TERM1];
+  const disabled = !values[FIELD_NAME] || !values[FIELD_TERM1];
 
   return (
     <>
       <div className="worth-it">
-        <Title>Dlaczego warto?</Title>
-        <List>
-          <ListItem>
-            Na bieżąco sprawdzaj w jakiej jesteś grupie ryzyka (wytyczne WHO)
-          </ListItem>
-          <ListItem>Uzupełniaj Dziennik Zdrowia</ListItem>
-          <ListItem>
-            Wszystkie ważne informacje o COVID-19 w jednym miejscu
-          </ListItem>
-        </List>
+        <Title>
+          Pomóż sobie i innym. <br /> Zaczynamy!
+        </Title>
       </div>
       <TextField
         error={errors[FIELD_NAME]}
