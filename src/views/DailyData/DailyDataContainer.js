@@ -16,6 +16,7 @@ import {
   VALUE_SYMPTOM_LEVEL_1
 } from '../../constants';
 import { addDaily } from '../../store/actions/daily';
+import Routes from '../../routes';
 
 const dateFormat = 'D-MM-YYYY';
 
@@ -25,10 +26,10 @@ const DailyDataContainer = () => {
   const daily = useSelector(state => state.daily);
   const { id } = useParams();
 
-  const goBack = () => history.push('/daily');
+  const goHome = () => history.push(Routes.Daily);
 
   const handleSubmit = form => {
-    dispatch(addDaily({ data: form })).then(goBack);
+    dispatch(addDaily({ data: form })).then(goHome);
   };
 
   const dailyData = daily[[id]];
@@ -37,7 +38,7 @@ const DailyDataContainer = () => {
 
   const validationSchema = Yup.object().shape({
     [FIELD_TEMPERATURE]: Yup.number()
-      .min(25, 'Za niska wartość temperatury')
+      .min(35, 'Za niska wartość temperatury')
       .max(45, 'Za wysoka wartość temperatury')
   });
 
@@ -60,7 +61,7 @@ const DailyDataContainer = () => {
       onSubmit={handleSubmit}
       validationSchema={validationSchema}
     >
-      <DailyData onBack={goBack} isViewMode={!!dailyData} date={date} />
+      <DailyData isViewMode={!!dailyData} date={date} />
     </Formik>
   );
 };

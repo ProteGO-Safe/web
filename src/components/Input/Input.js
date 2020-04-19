@@ -30,6 +30,7 @@ const Input = ({
       onKeyPress={onKeyPress}
       placeholder={placeholder}
       type={type}
+      step="0.1"
       value={value}
     />
     {description && <span className="input__description">{description}</span>}

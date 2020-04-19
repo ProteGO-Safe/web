@@ -1,6 +1,6 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  font-family: 'Open Sans', 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -11,6 +11,41 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.slick-arrow {
+  display: none !important;
+}
+
+.slick-dots {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  bottom: auto;
+  margin: 40px 0 55px;
+}
+
+.slick-dots li {
+  width: 14px;
+  height: 14px;
+  margin: 0 7px;
+}
+
+.slick-dots li button {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background-color: #d8d8d8;
+}
+
+.slick-dots li.slick-active button {
+  background-color: #0052a5;
+}
+
+.slick-dots li button:before {
+  content: none;
+}
+
 
 .view__update_snackbar {
   visibility: hidden;

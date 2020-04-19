@@ -1,23 +1,61 @@
-import React, { Fragment } from 'react';
-import { Link } from 'react-router-dom';
+import React from 'react';
+import { Collapse } from '../../../../components';
 
 const RiskInfoLevel5 = () => (
-  <Fragment>
-    <ol>
-      <li><strong><span className="text-error">Bezwzględnie zostań w domu</span> i monitoruj stan swojego zdrowia. Powiadom służby medyczne pod numerem <a href="tel:800190590">800 190 590</a> i ściśle podporządkuj się zaleceniom. Pozostań w kontakcie.</strong></li>
-      <li><strong><span className="primary-2">Przygotuj swoje leki i najpotrzebniejsze rzeczy osobiste na wypadek ewentualnej hospitalizacji.</span></strong></li>
-      <li><strong>Bezwzględnie pozostań w domu i <span className="primary-2">unikaj wszelkich kontaktów także z domownikami.</span></strong></li>
-      <li><strong><span className="text-error">Musisz przebywać w oddzielnym pomieszczeniu i w odosobnieniu spożywać posiłki, używaj przy tym tylko swoich naczyń i sztućców. Dezynfekuj toaletę.</span></strong></li>
-      <li><strong>Minimum dwa razy dziennie uzupełniaj w tej aplikacji zakładkę <Link to="/daily">MÓJ DZIENNIK ZDROWIA</Link>: monitoruj stan swojego zdrowia, zapisuj objawy i temperaturę ciała, notuj spotkane osoby.</strong></li>
-      <li><strong><span className="primary-2">Ściśle przestrzegaj zasad higieny</span>, zasłaniaj usta podczas kaszlu i kichania - używaj chusteczki bądź zagięcia łokcia, wyrzucaj zużyte chusteczki oraz często i bardzo dokładnie myj ręce.</strong></li>
-      <li><strong>NIE opuszczaj domu.</strong></li>
-      <li><strong>NIE wychodź do sklepu.</strong></li>
-      <li><strong>NIE spaceruj z psem po swojej okolicy.</strong></li>
-      <li><strong>NIE spotykaj się z innymi osobami.</strong></li>
-      <li><strong>Zadzwoń do rodziców i krewnych</strong> w podeszłym wieku. <strong>Zdalnie</strong> pomóż im korzystać z <span className="primary-2"><strong>SafeSafe</strong></span> na ich telefonie. <strong>Zadbaj, by ktoś inny zrobił dla nich zakupy.</strong></li>
-      <li><strong>Jeżeli wystąpią lub nasilą się objawy infekcji, ponów kontakt z infolinią rządową <a href="tel:800190590">800 190 590</a> lub <span className="primary-2">zadzwoń (nie idź!)</span> do lokalnej placówki służby zdrowia.</strong></li>
-    </ol>
-  </Fragment>
+  <>
+    <Collapse title="Bezzwłocznie zadzwoń do Powiatowej Stacji Sanitarno-Epidemiologiczną i zgłoś się do najbliższego szpitalnego oddziału zakaźnego lub obserwacyjno-zakaźnego.">
+      <p>
+        Przed udaniem się na oddział, telefonicznie skonsultuj się ze szpitalem
+        lub - jeśli jest to możliwe - zadzwoń do lekarza podstawowej opieki
+        zdrowotnej (POZ).
+      </p>
+      <p>
+        Listę placówek POZ udzielających teleporad znajdziesz na stronie
+        Narodowego Funduszu Zdrowia (www.nfz.gov.pl). Wybierz najbliższą.
+      </p>
+    </Collapse>
+    <Collapse title="Zgłoś się do najbliższego szpitalnego oddziału zakaźnego lub obserwacyjno-zakaźnego.">
+      <p>
+        W trakcie przemieszczania się koniecznie załóż maseczkę i zawsze
+        zakrywaj usta i nos podczas kaszlu lub kichania.
+      </p>
+      <p>
+        Udając się do szpitala, nie korzystaj z transportu zbiorowego. Jeśli nie
+        posiadasz własnego transportu, inspektor sanitarny ma możliwość wysłania
+        po Ciebie pojazdu.
+      </p>
+      <p>
+        W stanie zagrażającym życiu lub zdrowiu (np. duszność), wezwij pogotowie
+        (zadzwoń na numer alarmowy 999 lub 112). Koniecznie uprzedź, że jesteś
+        pacjentem z podejrzeniem zakażenia koronawirusem.
+      </p>
+    </Collapse>
+    <Collapse title="Noś maseczkę ochronną">
+      <p>
+        Zakładaj ją za każdym razem, gdy ktoś z zewnątrz ma wejść do
+        pomieszczenia lub pojazdu, w którym przebywasz oraz wchodząc do placówek
+        medycznych. Osoby w Twoim pobliżu również powinny nosić maseczkę,
+        szczególnie jeżeli Ty nie możesz jej założyć (np. gdy powoduje trudności
+        w oddychaniu).
+      </p>
+    </Collapse>
+    <Collapse title="Ściśle przestrzegaj zasad higieny">
+      <p>
+        Kilka prostych zasad, dzięki którym możesz zdecydowanie zmniejszyć
+        ryzyko przeniesienia infekcji na innych:
+      </p>
+      <ul>
+        <li>Unikaj dotykania twarzy, zwłaszcza oczu, nosa i ust.</li>
+        <li>
+          Gdy kaszlesz lub kichasz, zasłaniaj usta i nos chusteczką jednorazową
+          lub zgięciem łokcia. Dezynfekuj dłonie po tym, jak kichniesz.
+        </li>
+        <li>
+          Nie korzystaj z tych samych przyborów kuchennych, co inni domownicy.
+        </li>
+      </ul>
+    </Collapse>
+  </>
 );
 
 export default RiskInfoLevel5;

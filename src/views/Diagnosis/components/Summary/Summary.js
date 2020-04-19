@@ -1,39 +1,32 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import {
-  Banner,
-  Brand,
-  Button,
-  Container,
-  FieldSet
-} from '../../../../components';
-import Background from '../../../../assets/img/banners/banner-1.png';
-
+import { Button, Container, FieldSet } from '../../../../components';
 import './Summary.scss';
+import success from '../../../../assets/img/icons/success-icon.svg';
+import Header from '../../../../components/Header/Header';
 
 const Summary = ({ onSave }) => (
   <div className="view view__summary">
-    <Banner background={Background}>
-      <Brand white small content={false} />
-    </Banner>
+    <Header hideBackButton hideMenuButton />
     <Container>
-      <div className="content content--1">
-        <h4 className="medium">Gratulacje,</h4>
+      <div className="content">
+        <img className="icon" src={success} alt="Gratulacje" />
+        <h4 className="medium">Gratulacje!</h4>
         <p className="big">
-          Twoja pierwsza Ankieta Oceny Ryzyka przygotowana zgodnie z wytycznymi
-          WHO została uzupełniona. Nasz system sprawdzi teraz do jakiej grupy
-          kwalifikują się Twoje odpowiedzi.
+          Dziękujemy za wypełnienie Twojego Pierwszego Testu Oceny Ryzyka.
         </p>
-      </div>
-      <div className="content content--2">
-        <h4 className="medium">
-          Pamiętaj, żeby Ankietę Oceny Ryzyka wypełniać regularnie - najlepiej
-          1x na dobę - wtedy Twoja ocena ryzyka będzie aktualna.
-        </h4>
+        <p className="big">
+          Na podstawie Twoich odpowiedzi, nasz system sprawdzi teraz do jakiej
+          grupy Cię zakwalifikować.
+        </p>
+        <small>
+          To bardzo ważne, abyś wypełniała testy regularnie. Będziemy Ci o tym
+          przypominać :)
+        </small>
       </div>
       <FieldSet>
-        <Button onClick={onSave} text="Ok, wyświetl wynik" type="primary" />
+        <Button onClick={onSave} text="Sprawdź wynik" type="primary" />
       </FieldSet>
     </Container>
   </div>

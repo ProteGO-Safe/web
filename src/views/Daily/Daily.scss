@@ -10,39 +10,88 @@
 
   .container {
     display: grid;
-    grid-template-areas: "title" "today" "line" "list";
-    grid-template-rows: 65px auto 25px 1fr;
+    grid-template-areas: "title" "today" "list";
+    grid-template-rows: 52px 156px 1fr;
     grid-area: container;
+    padding-top: 12px;
 
-    .h1 {
-      grid-area: title;
-    }
-
-    .line {
-      grid-area: line;
-      align-self: center;
-
-      &:after {
-        display: block;
-        content: '';
-        height: 1px;
-        width: 100%;
-        background-color: $gray_4;
+    .diary {
+      &__title {
+        grid-area: title;
+        font-size: 20px;
+        font-weight: bold;
+        line-height: 1.3;
+        color: $black_2;
       }
-    }
 
-    .today {
-      grid-area: today;
-    }
+      &__data {
+        display: flex;
+        flex-flow: wrap row;
+        align-items: center;
+        width: 100%;
+        margin: 28px 0;
+        padding: 24px 26px;
+        grid-area: today;
+        border: 1px solid $gray_form;
+        border-radius: 4px;
+        cursor : pointer;
 
-    .fieldset {
-      grid-area: list;
-      align-self: baseline;
+        img {
+          display: block;
+          width: auto;
+          max-height: 50px;
+          margin-right: 28px;
+        }
 
-      .button {
-        position: relative;
-        :first-child {
-          padding-right: 10px;
+        &--text {
+          font-size: 14px;
+          font-weight: bold;
+          line-height: 1.57;
+          color: $blue_2;
+
+        }
+      }
+
+      &__history {
+        grid-area: list;
+        align-self: start;
+
+        &--label {
+          display: flex;
+          width: 100%;
+          padding-bottom: 8px;
+          font-size: 14px;
+          line-height: 1.71;
+          color: $button_disabled;
+          border-bottom: 1px solid $gray_line;
+        }
+
+        &--list {
+          display: flex;
+          flex-flow: wrap column;
+          width: 100%;
+        }
+
+        &--item {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          height: 55px;
+          padding: 0 6px;
+          border-bottom: 1px solid $gray_line;
+
+          span {
+            font-size: 14px;
+            font-weight: bold;
+            line-height: 1.14;
+            color: $black_2;
+          }
+
+          img {
+            display: block;
+            width: auto;
+            max-height: 16px;
+          }
         }
       }
     }

@@ -8,7 +8,6 @@ const ModalContent = () => {
 
   const handleSubmit = () => {
     openModal(<ModalConfirmation />, 'dialog');
-    localStorage.clear();
   };
 
   return (

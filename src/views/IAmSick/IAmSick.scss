@@ -1,0 +1,61 @@
+@import '../../assets/styles/colors';
+@import '../../assets/styles/mixins';
+
+.view__risk-information {
+  @include viewBaseStyles();
+
+  .banner {
+    grid-area: banner;
+  }
+
+  .container {
+    grid-area: container;
+
+    display: grid;
+    grid-template-areas: 'title' 'content';
+    grid-template-rows: 120px 1fr;
+
+    min-width: 296px;
+    font-size: 16px;
+    line-height: 1.5em;
+
+    h4 {
+      grid-area: title;
+
+      align-content: center;
+      text-align: center;
+      font-size: 16px;
+      line-height: 1.5em;
+      margin-top: 10px;
+    }
+
+    .content {
+      grid-area: content;
+      align-self: start;
+
+      padding-bottom: 50px;
+      color: $black;
+
+      ol {
+        padding-inline-start: 15px;
+
+        li {
+          margin-bottom: 8px;
+
+          &:last-child {
+            margin-bottom: 0;
+          }
+        }
+
+        ul {
+          padding-inline-start: 15px;
+          font-weight: unset;
+        }
+      }
+
+      a {
+        color: $primary-2;
+      }
+    }
+  }
+}

@@ -1,9 +1,13 @@
 @import '../../assets/styles/colors';
 
 @mixin smallPlaceholder() {
-  color: $black;
+  color: $white;
   font-size: 10px;
   line-height: 13px;
+};
+
+@mixin normalPlaceholder() {
+  color: $gray_form;
 };
 
 .input {
@@ -14,20 +18,36 @@
   }
 
   &__field {
-    height: 28px;
+    width: 100%;
+    height: 44px;
+    padding: 2px 11px;
     border-style: solid;
-    border-width: 0 0 2px;
-    border-color: $primary_2;
+    border-width: 1px;
+    border-color: $gray_form;
     font-size: 18px;
     line-height: 24px;
-    padding: 2px;
-    color: $black;
+    color: $black_2;
     letter-spacing: 0;
     -webkit-appearance: none;
-    border-radius: 0;
+    border-radius: 4px;
 
     &:focus {
       outline: none;
+    }
+
+    &--normal {
+      &::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+        @include normalPlaceholder;
+      }
+      &::-moz-placeholder { /* Firefox 19+ */
+        @include normalPlaceholder;
+      }
+      &:-ms-input-placeholder { /* IE 10+ */
+        @include normalPlaceholder;
+      }
+      &:-moz-placeholder { /* Firefox 18- */
+        @include normalPlaceholder;
+      }
     }
 
     &--small {
@@ -48,11 +68,16 @@
     }
   }
 
+  &__phone_number {
+    padding-left: 100px!important;
+    max-width: 100%;
+  }
+
   &__label {
-    font-size: 12px;
-    line-height: 16px;
+    font-size: 14px;
+    line-height: 1.43;
     letter-spacing: 0;
-    margin-bottom: 9px;
+    margin-bottom: 5px;
   }
 
   &__description {
@@ -68,4 +93,8 @@
     letter-spacing: 0;
     color: $red;
   }
+}
+
+.intl-tel-input {
+  max-width: 100%;
 }

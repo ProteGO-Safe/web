@@ -1,21 +1,20 @@
 import React from 'react';
 
-import { useSelector } from 'react-redux';
 import Icon1 from '../../assets/img/icons/001-care.svg';
 import Icon2 from '../../assets/img/icons/002-laptop.svg';
 import Icon3 from '../../assets/img/icons/003-idea.svg';
-import Icon4 from '../../assets/img/icons/004-group.svg';
-import Icon5 from '../../assets/img/icons/005-panel.svg';
-import Icon6 from '../../assets/img/icons/006-idea-1.svg';
-import Icon7 from '../../assets/img/icons/007-contract.svg';
-import Icon8 from '../../assets/img/icons/008-settings.svg';
+import Icon4 from '../../assets/img/icons/006-idea-1.svg';
+import Icon5 from '../../assets/img/icons/menu-boczne-numery-alarm.svg';
+import Icon6 from '../../assets/img/icons/007-contract.svg';
+import Icon7 from '../../assets/img/icons/008-settings.svg';
+import Icon8 from '../../assets/img/icons/009-gear.svg';
+import Icon9 from '../../assets/img/icons/menu-boczne-moje-dane.svg';
 
 import Menu from './Menu';
 import useMenuContext from '../../hooks/useMenuContext';
+import Routes from '../../routes';
 
 const MenuContainer = () => {
-  const userName = useSelector(state => state.user.name);
-
   const { visible } = useMenuContext();
 
   if (!visible) {
@@ -25,60 +24,62 @@ const MenuContainer = () => {
   const items = [
     {
       icon: Icon1,
-      path: '/daily',
+      path: Routes.Daily,
       slug: 'dziennik',
-      title: 'Mój dziennik zdrowia'
+      title: 'dziennik zdrowia'
     },
     {
       icon: Icon2,
-      path: '/risk-test',
-      slug: 'ankieta',
-      title: 'Ankieta oceny ryzyka'
+      path: Routes.RiskTest,
+      slug: 'test_oceny_ryzyka',
+      title: 'test oceny ryzyka'
     },
     {
       icon: Icon3,
-      path: '/how-it-works',
+      path: Routes.HowItWorks,
       slug: 'jak_to_dziala',
-      title: 'Jak to działa?'
+      title: 'jak to działa?'
     },
     {
       icon: Icon4,
-      path: '/risk-information/no_risk',
-      slug: 'jak_sie_chronic',
-      title: 'Jak się chronić?'
+      path: Routes.IAmSick,
+      slug: 'co_zrobic',
+      title: 'czuję się źle, co zrobić?'
     },
     {
       icon: Icon5,
-      path: '/numbers',
+      path: Routes.EmergencyNumbers,
       slug: 'numery_alarmowe',
-      title: 'Numery alarmowe'
+      title: 'numery alarmowe'
     },
     {
-      slug: 'empty_1'
-    },
-    {
-      bold: true,
       icon: Icon6,
-      path: '/risk-information/quarantine',
-      slug: 'co_zrobic',
-      title: 'Czuję się źle, co zrobić?'
-    },
-    {
-      icon: Icon7,
-      path: '/privacy-policy',
+      path: Routes.PrivacyPolicy,
       slug: 'polityka_prywatnosci',
-      title: 'Polityka prywatności'
+      title: 'polityka prywatności'
     },
     {
       disable: true,
-      icon: Icon8,
-      path: '',
+      icon: Icon7,
+      path: Routes.Settings,
       slug: 'ustawienia',
-      title: 'Ustawienia'
+      title: 'ustawienia'
+    },
+    {
+      icon: Icon8,
+      path: Routes.ReportBug,
+      slug: 'zglos_blad',
+      title: 'zgłoś błąd'
+    },
+    {
+      icon: Icon9,
+      path: Routes.UserData,
+      slug: 'moje_dane',
+      title: 'moje dane'
     }
   ];
 
-  return <Menu items={items} userName={userName} />;
+  return <Menu items={items} />;
 };
 
 export default MenuContainer;
