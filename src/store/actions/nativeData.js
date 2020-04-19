@@ -29,10 +29,11 @@ export const fetchNotificationSuccess = notification => ({
 
 export function fetchNotification() {
   return dispatch => {
-    const notification = nativeBridge.getNotification();
-    if (notification) {
-      dispatch(fetchNotificationSuccess(notification));
-    }
+    nativeBridge.getNotification().then(notification => {
+      if (notification) {
+        dispatch(fetchNotificationSuccess(notification));
+      }
+    });
   };
 }
 

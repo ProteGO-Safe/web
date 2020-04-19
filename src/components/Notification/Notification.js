@@ -7,9 +7,8 @@ import close from '../../assets/img/icons/notifi_close.svg';
 import './Notification.scss';
 
 const Notification = ({ title, content, status, onClick }) => {
-  const lowerCaseStatus = status.toLowerCase();
   const renderIconStatus = (() => {
-    switch (lowerCaseStatus) {
+    switch (status) {
       case 'ok': {
         return ok;
       }
@@ -31,11 +30,11 @@ const Notification = ({ title, content, status, onClick }) => {
   return (
     <div className="notification">
       <div className="notification__overlay" onClick={onClick} />
-      <div className={`notification__wrapper notification__${lowerCaseStatus}`}>
+      <div className={`notification__wrapper notification__${status}`}>
         <span className="notification__close" onClick={onClick}>
           <img src={close} alt="Close" />
         </span>
-        <img src={renderIconStatus} alt={lowerCaseStatus} />
+        <img src={renderIconStatus} alt={status} />
         <div className="notification__text">
           <h4>{title}</h4>
           <p>{content}</p>
