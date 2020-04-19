@@ -51,6 +51,7 @@ const ExplainerContainer = () => {
     afterChange: currentSlide => setActiveSlide(currentSlide),
     dots: true,
     slidesToShow: 1,
+    infinite: false,
     swipe: true,
     swipeToSlide: true
   };
