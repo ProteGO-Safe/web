@@ -24,7 +24,7 @@ const Form = ({ isViewMode }) => {
           name={FIELD_TEMPERATURE}
           placeholder="36.6"
           max={45}
-          min={25}
+          min={35}
           onChange={handleChange}
           type="number"
           value={values[FIELD_TEMPERATURE]}
@@ -48,7 +48,7 @@ const Form = ({ isViewMode }) => {
           label="Z kim się spotkałem, gdzie byłem"
           name={FIELD_CONTACTS}
           onChange={handleChange}
-          placeholder='wpisz'
+          placeholder="wpisz"
           value={values[FIELD_CONTACTS]}
         />
       </FieldSet>
