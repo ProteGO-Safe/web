@@ -221,8 +221,7 @@ const FaqPage = () => {
                                 <summary>Od kiedy obowiązują ograniczenia w funkcjonowaniu salonów fryzjerskich, kosmetycznych,
                                     tatuażu i piercingu?</summary>
                                 <p>Ograniczenia obowiązują od 1 kwietnia do odwołania.</p>
-                                <p>Bieżące daty obowiązywania zasad bezpieczeństwa dostępne są na <a
-                                        href="https://www.gov.pl/web/koronawirus/aktualne-zasady-i-ograniczenia">gov.pl/web/koronawirus/aktualne-zasady-i-ograniczenia</a>
+                                <p>Bieżące daty obowiązywania zasad bezpieczeństwa dostępne są na <span className="link">gov.pl/web/koronawirus/aktualne-zasady-i-ograniczenia</span>
                                 </p>
                             </details>
                             <details>
@@ -269,14 +268,13 @@ const FaqPage = () => {
                                 tym, aby Polacy nie narażali siebie i innych na zakażenie koronawirusem.&nbsp;</p>
                             <hr />
                             <h4>Podstawa prawna</h4>
-                            <p><a href="http://dziennikustaw.gov.pl/DU/2020/522">Rozporządzenie Ministra Zdrowia z dnia 24 marca
+                            <p><span className="link">Rozporządzenie Ministra Zdrowia z dnia 24 marca
                                     2020 r. zmieniające rozporządzenie w sprawie ogłoszenia na obszarze Rzeczypospolitej
-                                    Polskiej stanu epidemii</a></p>
+                                    Polskiej stanu epidemii</span></p>
                             <details>
                                 <summary>Do kiedy będą obowiązywać dodatkowe ograniczenia?</summary>
                                 <p>Do odwołania.</p>
-                                <p>Bieżące daty obowiązywania zasad bezpieczeństwa dostępne są na <a
-                                        href="https://www.gov.pl/web/koronawirus/aktualne-zasady-i-ograniczenia">gov.pl/web/koronawirus/aktualne-zasady-i-ograniczenia</a>
+                                <p>Bieżące daty obowiązywania zasad bezpieczeństwa dostępne są na <span className="link">gov.pl/web/koronawirus/aktualne-zasady-i-ograniczenia</span>
                                 </p>
                             </details>
                             <details>
@@ -438,8 +436,7 @@ const FaqPage = () => {
                                 <p><span className="color-gray">Lekcje i zajęcia nie odbywają się stacjonarnie, a przez Internet
                                         za pomocą platform e-learningowych. Lekcje na odległość prowadzone są według określonych
                                         zasad. <span className="color-white"><span className="color-gray">Nauczyciele i
-                                                uczniowie na stronie </span></span></span><a
-                                        href="http://www.gov.pl/zdalnelekcje">www.gov.pl/zdalnelekcje</a><span
+                                                uczniowie na stronie </span></span></span><span className="link">www.gov.pl/zdalnelekcje</span><span
                                         className="color-gray"><span className="color-white"><span className="color-gray">
                                                 mogą znaleźć materiały dydaktyczne zgodne z aktualną podstawą
                                                 programową.</span></span></span></p>
@@ -490,8 +487,7 @@ const FaqPage = () => {
                                 </summary>
                                 <p>Wszystkie szkoły i uczelnie w&nbsp;Polsce są zamknięte. Lekcje i zajęcia nie odbywają się
                                     stacjonarnie, a przez Internet za pomocą platform e-learningowych. Lekcje na odległość
-                                    prowadzone są według określonych zasad.&nbsp;Nauczyciele i uczniowie na stronie&nbsp;<a
-                                        href="http://www.gov.pl/zdalnelekcje">www.gov.pl/zdalnelekcje</a>&nbsp;mogą znaleźć
+                                    prowadzone są według określonych zasad.&nbsp;Nauczyciele i uczniowie na stronie&nbsp;<span className="link">www.gov.pl/zdalnelekcje</span>&nbsp;mogą znaleźć
                                     materiały dydaktyczne zgodne z aktualną podstawą programową.</p>
                                 <p><strong>Ważne!</strong>&nbsp;Rodzicom dzieci w wieku do lat 8, przysługuje dodatkowy zasiłek
                                     opiekuńczy w przypadku zamknięcia żłobka, przedszkola, szkoły lub klubu
@@ -540,7 +536,7 @@ const FaqPage = () => {
                             <details>
                                 <summary>Jak uzyskać dodatkowy zasiłek opiekuńczy?</summary>
                                 <p>Wystarczy złożyć oświadczenie do swojego pracodawcy. Wzór oświadczenia można pobrać na
-                                    stronie internetowej ZUS <a href="http://www.zus.pl">www.zus.pl</a>&nbsp;<br />
+                                    stronie internetowej ZUS <span className="link">www.zus.pl</span>&nbsp;<br />
                                     Osoby prowadzące działalność pozarolniczą składają oświadczenie w ZUS.</p>
                             </details>
                             <details>
@@ -668,9 +664,8 @@ const FaqPage = () => {
                         <h3>Dla studentów i uczelni</h3>
                         <div>
                             <p>Od 12 marca 2020 r. do 26 kwietnia 2020 r. zostają również zawieszone&nbsp;zajęcia na uczelniach.
-                                Szczegółowe informacje dostępne są na stronie <a
-                                    href="https://www.gov.pl/web/nauka/funkcjonowanie-uczelni-w-polsce-zawieszone-do-10-kwietnia">Ministerstwa
-                                    Nauki i Szkolnictwa Wyższego</a>.</p>
+                                Szczegółowe informacje dostępne są na stronie <span className="link">Ministerstwa
+                                    Nauki i Szkolnictwa Wyższego</span>.</p>
                             <details>
                                 <summary>&#8203;&#8203;&#8203;Od kiedy zostają zawieszone zajęcia na uczelniach?</summary>
                                 <p>Od czwartku 12 marca 2020 r.&nbsp;do 26 kwietnia 2020 r.</p>
@@ -724,8 +719,7 @@ const FaqPage = () => {
                             <details>
                                 <summary>Do kiedy obowiązuje ograniczenie ruchu międzynarodowego?</summary>
                                 <p>Do 26 kwietnia 2020 r.</p>
-                                <p>Bieżące daty obowiązywania zasad bezpieczeństwa dostępne są na <a
-                                        href="https://www.gov.pl/web/koronawirus/aktualne-zasady-i-ograniczenia">gov.pl/web/koronawirus/aktualne-zasady-i-ograniczenia</a>
+                                <p>Bieżące daty obowiązywania zasad bezpieczeństwa dostępne są na <span className="link">gov.pl/web/koronawirus/aktualne-zasady-i-ograniczenia</span>
                                 </p>
                             </details>
                             <details>
@@ -836,25 +830,22 @@ const FaqPage = () => {
                                 <summary>Jak mogę wrócić z Wielkiej Brytanii do Polski?</summary>
                                 <p>Na chwilę obecną istnieje możliwość podróży autem drogą lądową – planując wyjazd, proszę
                                     zapoznać się z ograniczeniami obowiązującymi w poszczególnych krajach w związku z epidemią
-                                    zamieszczonymi <a
-                                        href="https://www.gov.pl/web/dyplomacja/media-spolecznosciowe-i-zdjecia">na stronach
-                                        polskich ambasad</a> w krajach, przez które nastąpi tranzyt.</p>
+                                    zamieszczonymi <span className="link">na stronach
+                                        polskich ambasad</span> w krajach, przez które nastąpi tranzyt.</p>
                             </details>
                             <details>
                                 <summary>Gdzie mogę się zwrócić o pomoc w powrocie do Polski, jeśli przebywam w kraju, w którym
                                     nie ma polskiej ambasady?</summary>
                                 <p>Należy nawiązać kontakt z konsulem RP akredytowanym na terytorium danego kraju, podać mu dane
                                     osobowe, kontaktowe i dotyczące aktualnej sytuacji oraz miejsca pobytu. Dane kontaktowe
-                                    znajdziesz <a
-                                        href="https://www.gov.pl/web/dyplomacja/polskie-przedstawicielstwa-na-swiecie">tutaj</a>.
+                                    znajdziesz <span className="link">tutaj</span>.
                                 </p>
                             </details>
                             <details>
                                 <summary>Gdzie powinienem się zgłosić, jeśli utraciłem swój paszport/dowód osobisty, a przebywam
                                     za granicą i chciałbym wrócić do Polski?</summary>
                                 <p>Należy nawiązać kontakt z najbliższym polskim urzędem konsularnym i zwrócić się o wydanie
-                                    paszportu tymczasowego na powrót do Polski. Dane kontaktowe znajdziesz <a
-                                        href="https://www.gov.pl/web/dyplomacja/polskie-przedstawicielstwa-na-swiecie">tutaj</a>.
+                                    paszportu tymczasowego na powrót do Polski. Dane kontaktowe znajdziesz <span className="link">tutaj</span>.
                                 </p>
                             </details>
                             <details>
@@ -947,9 +938,7 @@ const FaqPage = () => {
                                     ma polskiej ambasady?</summary>
                                 <p>Należy nawiązać kontakt z konsulem RP akredytowanym na terytorium danego kraju, podać mu dane
                                     osobowe, kontaktowe i dotyczące aktualnej sytuacji oraz miejsca pobytu. Dane kontaktowe
-                                    znajdziesz <span className="color-blue"><u><span className="f11"><a
-                                                    href="https://www.gov.pl/web/dyplomacja/polskie-przedstawicielstwa-na-swiecie"
-                                                    className="color-blue">tutaj</a></span></u></span><span
+                                    znajdziesz <span className="color-blue"><u><span className="f11"><span className="link">tutaj</span></span></u></span><span
                                         className="f11">.</span></p>
                             </details>
                             <details>
@@ -957,19 +946,15 @@ const FaqPage = () => {
                                     za granicą i chciałbym wrócić do Polski?</summary>
                                 <p>Należy nawiązać kontakt z najbliższym polskim urzędem konsularnym i zwrócić się o wydanie
                                     paszportu tymczasowego na powrót do Polski. Dane kontaktowe znajdziesz&nbsp;<span
-                                        className="color-blue"><u><span className="f11"><a
-                                                    href="https://www.gov.pl/web/dyplomacja/polskie-przedstawicielstwa-na-swiecie"
-                                                    className="color-blue">tutaj</a></span></u></span><span
+                                        className="color-blue"><u><span className="f11"><span className="link">tutaj</span></span></u></span><span
                                         className="f11">.</span></p>
                             </details>
                             <details>
                                 <summary>Jak mogę wrócić z Wielkiej Brytanii do Polski?</summary>
                                 <p>Na chwilę obecną istnieje możliwość podróży autem drogą lądową – planując wyjazd proszę
                                     zapoznać się z ograniczeniami obowiązującymi w poszczególnych krajach w związku z epidemią
-                                    zamieszczonymi na <span className="color-blue"><u><span className="f11"><a
-                                                    href="https://www.gov.pl/web/dyplomacja/media-spolecznosciowe-i-zdjecia"
-                                                    className="color-blue">na stronach polskich
-                                                    ambasad</a></span></u></span> w krajach, przez które nastąpi tranzyt.</p>
+                                    zamieszczonymi na <span className="color-blue"><u><span className="f11"><span className="link">na stronach polskich
+                                                    ambasad</span></span></u></span> w krajach, przez które nastąpi tranzyt.</p>
                             </details>
                             <details>
                                 <summary>Jak wygląda wjazd do i wyjazd z Polski dla osób zatrudnionych w państwach
@@ -1019,9 +1004,7 @@ const FaqPage = () => {
                                     odbywaniu obowiązkowej kwarantanny po przekroczeniu granicy. <strong>Dotyczy to osób, które
                                         odbywają obowiązkową kwarantannę po przekroczeniu granicy państwowej, która rozpoczęła
                                         się po 15 marca 2020 r.</strong> Oświadczenie należy złożyć w terminie 3 dni roboczych
-                                    od dnia zakończenia obowiązkowej kwarantanny. Więcej informacji <a
-                                        href="https://www.zus.pl/o-zus/aktualnosci/-/publisher/aktualnosc/1/swiadczenia-chorobowe-dla-osob-objetych-obowiazkowa-kwarantanna-po-przekroczeniu-granicy/2548001#1"
-                                        className="color-blue">na stronach ZUS-u</a>.</p>
+                                    od dnia zakończenia obowiązkowej kwarantanny. Więcej informacji <span className="link">na stronach ZUS-u</span>.</p>
                             </details>
                             <details>
                                 <summary>Jeżeli osoba powracająca z zagranicy nie chce przechodzić kwarantanny w domu (nie chce
@@ -1195,8 +1178,7 @@ const FaqPage = () => {
                                 <p>zadzwoń do najbliższej stacji sanitarno-epidemiologicznej lub skorzystaj z teleporady u
                                     swojego lekarza POZ.</p>
                                 <p>Nie jedź na SOR, nie korzystaj z komunikacji miejskiej.</p>
-                                <p>Więcej informacji znajdziesz: <a
-                                        href="https://www.gov.pl/web/koronawirus/podejrzewasz-u-siebie-koronawirusa">https://www.gov.pl/web/koronawirus/podejrzewasz-u-siebie-koronawirusa</a><br />
+                                <p>Więcej informacji znajdziesz: <span className="link">https://www.gov.pl/web/koronawirus/podejrzewasz-u-siebie-koronawirusa</span><br />
                                     &#8203;&#8203;&#8203;&#8203;&#8203;&#8203;</p>
                                 <p>tagi: choroba, chory, chora, gorączka, ból głowy, zarażenie, zakażenie, zakażony, zarażony,
                                     wirus, COVID-19, SARS, koronawirus, szpital, epidemia, gorączka, kaszel, duszność, ból, ból
@@ -1214,9 +1196,8 @@ const FaqPage = () => {
                             <details>
                                 <summary>Czy istnieją wytyczne / procedury dla personelu medycznego pracującego w szpitalu?
                                 </summary>
-                                <p>Tak, odpowiednie służby wydały <a
-                                        href="https://gis.gov.pl/aktualnosci/komunikat-krajowego-konsultanta-w-dziedzinie-chorych-zakaznych/">zalecenia
-                                        dla personelu medycznego</a>.</p>
+                                <p>Tak, odpowiednie służby wydały <span className="link">zalecenia
+                                        dla personelu medycznego</span>.</p>
                             </details>
                             <details>
                                 <summary>Co mogę uzyskać, korzystając z teleporady?</summary>
@@ -1465,7 +1446,7 @@ const FaqPage = () => {
                             </details>
                             <details>
                                 <summary>W jaki sposób będzie można załatwić sprawy w Narodowym Funduszu Zdrowia, który działa
-                                    obecnie w ograniczonym zakresie?</summary>
+                                    obecnie w ograniczonym zakresie?</summary><span className="link"></span>
                                 <p>W związku ze stanem epidemii&nbsp;od<strong> 27 marca 2020 r. </strong>zwiększamy
                                     ograniczenia w bezpośrednich kontaktach w salach obsługi klientów NFZ. Oto szczegółowe
                                     informacje na temat możliwości kontaktu w tym czasie.<br />
@@ -1484,9 +1465,8 @@ const FaqPage = () => {
                                     Jeśli potwierdzenie będzie w formie papierowej, to trzeba je dodatkowo potwierdzić w NFZ.
                                     Obecnie robimy to drogą elektroniczną (skan przekazany e-mailem) lub poprzez wymianę
                                     korespondencji za pomocą skrzynki.<br />
-                                    <a
-                                        href="https://www.nfz.gov.pl/aktualnosci/aktualnosci-centrali/komunikat-dotyczacy-wystawiania-potwierdzania-i-realizacji-zlecen-na-zaopatrzenie-w-wyroby-medyczne,7651.html">Wyroby
-                                        medyczne - szczegółowe informacje</a><br />
+                                    <span className="link">Wyroby
+                                        medyczne - szczegółowe informacje</span><br />
                                     <br />
                                     <strong>Leczenie uzdrowiskowe</strong><br />
                                     Zawieszamy rozpatrywanie korespondencji w sprawie leczenia uzdrowiskowego. Dokumenty w tej
@@ -1525,8 +1505,8 @@ const FaqPage = () => {
                                 <summary>Gdzie mogę złożyć ofertę na wyroby medyczne?</summary>
                                 <p>Aby usprawić proces składania i realizacji zleceń na wyroby medyczne i środki ochrony
                                     indywidualnej wykorzystywanych podczas zwalczania COVID-19,&nbsp;na stronie internetowej
-                                    Ministerstwa Zdrowia uruchomiono <a href="https://platformazakupowa.pl/pn/mz">Platformę
-                                        Zakupową</a>, która umożliwi proste złożenie oferty.&nbsp;Wykonawcy mogą tam złożyć
+                                    Ministerstwa Zdrowia uruchomiono <span className="link">Platformę
+                                        Zakupową</span>, która umożliwi proste złożenie oferty.&nbsp;Wykonawcy mogą tam złożyć
                                     oferty bezpośrednio na stronach zapytań ofertowych oraz aukcji elektronicznych.</p>
                             </details>
                             <details>
@@ -1617,7 +1597,7 @@ const FaqPage = () => {
                                     Może skorzystać ze świadczenia lub poprosić o wyznaczenie innego terminu (w zależności od
                                     dostępnych terminów może być to termin odległy).</p>
                                 <h4>W sytuacji gdy pacjent nie może się zapisać</h4>
-                                <p>Proszę skorzystać z <a href="https://terminyleczenia.nfz.gov.pl/#">wyszukiwarki</a>&nbsp;i
+                                <p>Proszę skorzystać z <span className="link">wyszukiwarki</span>&nbsp;i
                                     znaleźć inny termin (może być on odległy).</p>
                             </details>
                             <details>
@@ -1660,13 +1640,11 @@ const FaqPage = () => {
                                             osoba wskaże we wniosku. </span></span><span className="f11"><span
                                             className="color-blue">Minimalny okres zawieszenia działalności gospodarczej wynosi
                                             30 dni. Działalność może być zawieszona bezterminowo. </span></span></p>
-                                <p><span className="f11"><span className="color-blue">Jak zawiesić działalność online?<a
-                                                href="https://www.biznes.gov.pl/pl/firma/zawieszenie-wznowienie-i-zamkniecie-firmy/chce-zawiesic-firme-jednoosobowa/proc_885-zawieszenie-dzialalnosci-gospodarcze">
-                                                Informacje na biznes.gov.pl - tutaj. </a>&nbsp; </span></span><span
+                                <p><span className="f11"><span className="color-blue">Jak zawiesić działalność online?<span className="link">
+                                                Informacje na biznes.gov.pl - tutaj. </span>&nbsp; </span></span><span
                                         className="f11"> </span><br />
-                                    <a
-                                        href="https://www.biznes.gov.pl/pl/koronawirus-najwazniejsze-informacje-dla-przedsiebiorcow"><span
-                                            className="f11">Więcej informacji na stronie Biznes.gov.pl</span></a></p>
+                                        <span className="link"><span
+                                            className="f11">Więcej informacji na stronie Biznes.gov.pl</span></span></p>
                             </details>
                             <details>
                                 <summary>Kiedy mogę uzyskać prawo do zasiłku chorobowego?</summary>
@@ -1795,9 +1773,8 @@ const FaqPage = () => {
                                     <li>Zawsze pamiętaj&nbsp;o separacji produktów surowych i produktów już przygotowanych do
                                         spożycia, tak aby uniknąć&nbsp;zanieczyszczeń krzyżowych w kuchni.</li>
                                 </ul>
-                                <p>WHO zaleca przestrzeganie zasad <a
-                                        href="https://gis.gov.pl/wp-content/uploads/2018/04/5-krok%C3%B3w-do-bezpieczniejszej-%C5%BCywno%C5%9Bci.pdf">PIĘCIU&nbsp;KROKÓW
-                                        DO BEZPIECZNIEJSZEJ ŻYWNOŚCI</a></p>
+                                <p>WHO zaleca przestrzeganie zasad <span className="link">PIĘCIU&nbsp;KROKÓW
+                                        DO BEZPIECZNIEJSZEJ ŻYWNOŚCI</span></p>
                             </details>
                             <details>
                                 <summary>Czy mogę zamawiać jedzenie do domu?</summary>
@@ -1868,9 +1845,8 @@ const FaqPage = () => {
                                 <summary>Czy wirus może przenosić się za pomocą żywności?</summary>
                                 <p>Europejski Urząd ds. Bezpieczeństwa Żywności (EFSA) opublikował w dniu 9 marca 2020 r.
                                     stanowisko, iż zgodnie z aktualną wiedzą nie ma dowodów na to, że żywność może być źródłem
-                                    lub pośrednim ogniwem transmisji wirusa SARS COV-2. <a
-                                        href="https://www.efsa.europa.eu/en/news/coronavirus-no-evidence-food-source-or-transmission-route EFSA">Informacja
-                                        EFSA (w języku angielskim).</a></p>
+                                    lub pośrednim ogniwem transmisji wirusa SARS COV-2. <span className="link">Informacja
+                                        EFSA (w języku angielskim).</span></p>
                                 <p>EFSA podkreśla, że na podstawie doświadczeń z wirusami SARS i MERS można sądzić, że nie
                                     dochodzi do infekcji człowieka poprzez żywność wirusem SARS COV-2. Tak więc jest mało
                                     prawdopodobne, aby wirus przenosił się przez żywność, i nie ma dotychczas dowodów,&nbsp;aby
@@ -1882,9 +1858,8 @@ const FaqPage = () => {
                             </details>
                             <details>
                                 <summary>Jak dbać o bezpieczną żywność?</summary>
-                                <p>Stosuj <a
-                                        href="https://gis.gov.pl/wp-content/uploads/2018/04/5-krok%C3%B3w-do-bezpieczniejszej-%C5%BCywno%C5%9Bci.pdf">PIĘĆ
-                                        KROKÓW DO BEZPIECZNIEJSZEJ ŻYWNOŚCI</a>, zalecane przez WHO.</p>
+                                <p>Stosuj <span className="link">PIĘĆ
+                                        KROKÓW DO BEZPIECZNIEJSZEJ ŻYWNOŚCI</span>, zalecane przez WHO.</p>
                             </details>
                             <details>
                                 <summary>Czy obróbka termiczna niszczy koronawirusa?</summary>
