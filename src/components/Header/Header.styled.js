@@ -4,7 +4,6 @@ import { FontWeight } from '../../theme/fonts';
 
 import { ReactComponent as LogoSVG } from '../../assets/img/logo/protegosafe_logo_white.svg';
 import { ReactComponent as ArrowIcon } from '../../assets/img/icons/angle-left.svg';
-import { ReactComponent as MenuIcon } from '../../assets/img/icons/menu-trybik.svg';
 
 export const Container = styled.header`
   height: 50px;
@@ -36,21 +35,11 @@ export const ArrowButton = styled(Button)`
   left: 15px;
 `;
 
-export const MenuButton = styled(Button)`
-  right: 15px;
-`;
-
 export const Arrow = styled(ArrowIcon)`
   height: 15px;
   width: auto;
   fill: currentColor;
   margin-right: 10px;
-`;
-
-export const Burger = styled(MenuIcon)`
-  height: 24px;
-  width: auto;
-  fill: currentColor;
 `;
 
 export const Title = styled.p`
