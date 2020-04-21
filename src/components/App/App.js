@@ -18,6 +18,7 @@ import {
   Registration,
   Regulations,
   RiskTestData,
+  Settings,
   UserData,
   UserDataSettings,
   HospitalsList,
@@ -84,6 +85,7 @@ function App() {
               <Route exact path={Routes.HowItWorks} component={HowItWorks} />
               <Route exact path={Routes.IAmSick} component={IAmSick} />
               <Route exact path={Routes.RiskTest} component={RiskTest} />
+              <Route exact path={Routes.Settings} component={Settings} />
               <Route
                 exact
                 path="/risk-test-data/:id"
