@@ -51,7 +51,7 @@ const ExplainerContainer = () => {
 
   const handleButtonClick = () => {
     if (activeSlide < 2) {
-      carouselRef.current.slickGoTo(activeSlide + 1);
+      carouselRef.current.slickNext();
       return;
     }
 
