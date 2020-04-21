@@ -10,7 +10,6 @@ import {
   Diagnosis,
   Home,
   HowItWorks,
-  InstallApp,
   IAmSick,
   RiskTest,
   Numbers,
@@ -21,9 +20,6 @@ import {
   RiskTestData,
   UserData,
   UserDataSettings,
-  InstallAppAndroid,
-  InstallAppIOS,
-  MatchedDevices,
   HospitalsList,
   ReportBug,
   AdviceInformation,
@@ -80,23 +76,6 @@ function App() {
             path={Routes.Home}
             component={name ? Home : Registration}
           />
-          {!name && (
-            <Route exact path={Routes.Install} component={InstallApp} />
-          )}
-          {!name && (
-            <Route
-              exact
-              path={Routes.InstallAndroid}
-              component={InstallAppAndroid}
-            />
-          )}
-          {!name && (
-            <Route
-              exact
-              path={Routes.InstallAppIOS}
-              component={InstallAppIOS}
-            />
-          )}
           {name && (
             <>
               <Route exact path={Routes.Daily} component={Daily} />
@@ -130,11 +109,6 @@ function App() {
                 component={HospitalsList}
               />
               <Route exact path={Routes.ReportBug} component={ReportBug} />
-              <Route
-                exact
-                path={Routes.MatchedDevices}
-                component={MatchedDevices}
-              />
               <Route
                 exact
                 path={Routes.UserDataSettings}

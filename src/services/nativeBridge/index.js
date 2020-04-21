@@ -30,15 +30,6 @@ const receiveNativeResponse = (body, dataType, requestId) => {
 
 window.bridgeDataResponse = receiveNativeResponse;
 
-const getMatchedDevices = () => {
-  try {
-    return JSON.parse(invoke(window.NativeBridge, 'getMatchedDevices'));
-  } catch (error) {
-    console.error('Error while parsing native response', error);
-  }
-  return [];
-};
-
 const callNativeFunction = async (functionName, dataType, data) => {
   const args = [dataType];
   if (data) {
@@ -77,6 +68,5 @@ const setDiagnosisTimestamp = async timestamp => {
 
 export default {
   setDiagnosisTimestamp,
-  getMatchedDevices,
   getNotification
 };
