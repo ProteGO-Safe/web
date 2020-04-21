@@ -106,7 +106,7 @@
         {
           "city": "Gorzów Wielkopolski",
           "address": "Wielospecjalistyczny Szpital Wojewódzki Sp.z o.o., ul. Walczaka 42",
-          "phones": []
+          "phones": ["(68) 329 64 78", "(68) 329 64 81"]
         }
       ]
     },
@@ -224,7 +224,7 @@
         {
           "city": "Siedlce",
           "address": "Samodzielny Publiczny Zakład Opieki Zdrowotnej ul. Starowiejska 15",
-          "phones": ["(25) 632 20 61 do 68 wew. 213"]
+          "phones": ["(25) 632 20 61 do 68 wew. 213", "(48) 361 52 20"]
         },
         {
           "city": "Kozienice",
@@ -269,7 +269,7 @@
         {
           "city": "Kędzierzyn-Koźle",
           "address": "Samodzielny Publiczny Zespół Opieki Zdrowotnej, ul. Kwietnia 5",
-          "phones": ["(77) 406 25 45"]
+          "phones": ["(77) 406 24 82"]
         },
         {
           "city": "Opole",
@@ -372,9 +372,9 @@
       "name": "pomorskie",
       "items": [
         {
-          "city": "Gdańsk",
-          "address": "Pomorskie Centrum Chorób Zakaźnych i Gruźlicy, ul. Mariana Smoluchowskiego 18",
-          "phones": ["(58) 341 55 47"]
+          "city": "Gdynia",
+          "address": "Uniwersyteckie Centrum Medycyny Morskiej i Tropikalnej, ul. Powstania Styczniowego 9B",
+          "phones": ["(85) 740 95 73"]
         },
         {
           "city": "Gdańsk",
@@ -382,9 +382,9 @@
           "phones": ["(58) 552 63 18", "785 773 020"]
         },
         {
-          "city": "Gdynia",
-          "address": "Uniwersyteckie Centrum Medycyny Morskiej i Tropikalnej, ul. Powstania Styczniowego 9B",
-          "phones": []
+          "city": "Gdańsk",
+          "address": "Pomorskie Centrum Chorób Zakaźnych i Gruźlicy, ul. Mariana Smoluchowskiego 18",
+          "phones": ["(58) 341 55 47"]
         },
         {
           "city": "Kościerzyna",
@@ -394,7 +394,7 @@
         {
           "city": "Wejherowo",
           "address": "Szpitale Pomorskie Sp z o.o. Szpital Specjalistyczny im. F. Ceynowy, ul. dr. Alojzego Jagalskiego 10",
-          "phones": []
+          "phones": ["(58) 686 01 01", "(58) 686 00 00"]
         }
       ]
     },
