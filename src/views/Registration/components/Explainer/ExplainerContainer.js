@@ -1,5 +1,4 @@
 import React, { useRef, useState } from 'react';
-import { useFormikContext } from 'formik';
 
 import IconChat from '../../../../assets/img/explainer/chat.svg';
 import IconDiary from '../../../../assets/img/explainer/diary.svg';
@@ -8,9 +7,7 @@ import IconInfo from '../../../../assets/img/explainer/info.svg';
 import Explainer from './Explainer';
 import { ExplainerItem } from './components';
 
-const ExplainerContainer = () => {
-  const { setFieldValue } = useFormikContext();
-
+const ExplainerContainer = ({ onFinishClick }) => {
   const carouselRef = useRef(null);
   const [activeSlide, setActiveSlide] = useState(0);
 
@@ -55,7 +52,7 @@ const ExplainerContainer = () => {
       return;
     }
 
-    setFieldValue('step', 1);
+    onFinishClick();
   };
 
   return (

@@ -1,83 +1,96 @@
-import React, { useEffect } from 'react';
-import { useFormikContext } from 'formik';
+import React, { useState } from 'react';
+import { Formik } from 'formik';
+import * as Yup from 'yup';
+import { useDispatch } from 'react-redux';
 
-import { STEP_EXPLAINER } from '../../constants';
-import { NUMBER_OF_STEPS } from './Registration.constants';
-
-import {
-  Age,
-  BloodGroup,
-  ChronicSick,
-  Explainer,
-  Name,
-  Sex,
-  Smoke,
-  Summary
-} from './components';
-import { GovFooter, Stepper } from '../../components';
-import { Header } from '../../components/Header';
+import { saveUser } from '../../store/actions/user';
+import * as constants from '../../constants';
+import { chronicSickValues } from '../../constants';
+import { EXPLAINER_STEP, SPLASH_SCREEN_STEP } from './Registration.constants';
 import { StartScreen } from '../StartScreen';
-
-import { Container, View } from '../../theme/grid';
-
-const steps = {
-  1: {
-    Component: Name
-  },
-  2: {
-    Component: Sex
-  },
-  3: {
-    Component: Age
-  },
-  4: {
-    Component: ChronicSick
-  },
-  5: {
-    Component: BloodGroup
-  },
-  6: {
-    Component: Smoke
-  }
-};
+import { Explainer } from './components/Explainer';
+import { ImprintFiller } from '../../components/ImprintFiller';
 
 const Registration = () => {
-  const {
-    values: { step },
-    setFieldValue
-  } = useFormikContext();
+  const dispatch = useDispatch();
+  const [step, setStep] = useState(SPLASH_SCREEN_STEP);
 
-  useEffect(() => {
-    if (window && window.scrollTo) {
-      window.scrollTo(0, 0);
+  if (step === SPLASH_SCREEN_STEP) {
+    return <StartScreen onStartClick={() => setStep(EXPLAINER_STEP)} />;
+  }
+
+  if (step === EXPLAINER_STEP) {
+    return <Explainer onFinishClick={() => setStep(undefined)} />;
+  }
+
+  const initialValues = {
+    [constants.FIELD_AGE]: '',
+    [constants.FIELD_SEX]: '',
+    [constants.FIELD_NAME]: '',
+    // [constants.FIELD_PHONE]: '',
+    [constants.FIELD_BLOOD_GROUP]: '',
+    step: 1,
+    [constants.FIELD_TERM1]: false
+  };
+
+  const validationSchema = Yup.object().shape({
+    [constants.FIELD_NAME]: Yup.string()
+      .min(3, 'Za krótkie imię')
+      .max(20, 'Za długie imię')
+      .required('Imię jest wymagane'),
+    // [constants.FIELD_PHONE]: Yup.string().required(
+    //   'Numer telefonu jest wymagany'
+    // ),
+    [constants.FIELD_TERM1]: Yup.boolean().oneOf(
+      [true],
+      'Proszę zaznaczyć zgodę'
+    ),
+    [constants.FIELD_AGE]: Yup.number()
+      .min(1, 'Za mały wiek')
+      .max(150, 'Za duży wiek')
+      .required('Wiek jest wymagany')
+  });
+
+  const resolveSex = field => {
+    switch (field) {
+      case constants.VALUE_MAN:
+        return 'male';
+      case constants.VALUE_WOMAN:
+        return 'female';
+      default:
+        return '';
     }
-  }, [step]);
+  };
 
-  if (!step) {
-    return (
-      <StartScreen onStartClick={() => setFieldValue('step', STEP_EXPLAINER)} />
-    );
-  }
+  const handleSubmit = form => {
+    const chronicSicks = chronicSickValues
+      .filter(sick => form[sick.field])
+      .map(sick => {
+        return { name: sick.field, description: form[sick.description] };
+      });
 
-  if (step === STEP_EXPLAINER) {
-    return <Explainer />;
-  }
+    const data = {
+      name: form[constants.FIELD_NAME],
+      // phone: form[constants.FIELD_PHONE],
+      sex: resolveSex(form[constants.FIELD_SEX]),
+      age: form[constants.FIELD_AGE],
+      chronicSicks: [...chronicSicks],
+      bloodGroup: form[constants.FIELD_BLOOD_GROUP],
+      smokeNumber: form[constants.FIELD_SMOKE_NUMBER]
+    };
 
-  if (step === 7) {
-    return <Summary />;
-  }
-
-  const StepComponent = steps[step].Component;
+    dispatch(saveUser(data));
+  };
 
   return (
-    <View>
-      <Header hideMenuButton hideBackButton />
-      <Container>
-        <Stepper currentStep={step} numberOfSteps={NUMBER_OF_STEPS} />
-        <StepComponent />
-        <GovFooter type="black" />
-      </Container>
-    </View>
+    <Formik
+      initialValues={initialValues}
+      onSubmit={handleSubmit}
+      validationSchema={validationSchema}
+      validateOnChange={false}
+    >
+      <ImprintFiller />
+    </Formik>
   );
 };
 

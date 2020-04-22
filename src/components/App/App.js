@@ -19,6 +19,7 @@ import {
   Regulations,
   RiskTestData,
   UserData,
+  UserDataChange,
   UserDataSettings,
   HospitalsList,
   ReportBug,
@@ -109,6 +110,11 @@ function App() {
                 component={HospitalsList}
               />
               <Route exact path={Routes.ReportBug} component={ReportBug} />
+              <Route
+                exact
+                path={Routes.UserDataChange}
+                component={UserDataChange}
+              />
               <Route
                 exact
                 path={Routes.UserDataSettings}

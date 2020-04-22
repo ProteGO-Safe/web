@@ -12,6 +12,7 @@ export { PrivacyPolicyDetails } from './PrivacyPolicyDetails';
 export { Registration } from './Registration';
 export { Regulations } from './Regulations';
 export { UserData } from './UserData';
+export { UserDataChange } from './UserDataChange';
 export { UserDataSettings } from './UserDataSettings';
 export { HospitalsList } from './HospitalsList';
 export { StartScreen } from './StartScreen';

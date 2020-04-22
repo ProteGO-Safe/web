@@ -16,6 +16,9 @@ export const Container = styled(BottomNavigationBase)`
     background-color: rgba(250, 250, 250, 0.9);
     height: auto;
     z-index: 999;
+    .MuiBottomNavigationAction-root {
+      min-width: auto;
+    }
   }
 `;
 
@@ -35,6 +38,10 @@ export const MenuItem = styled(BottomNavigationActionBase)`
       path {
         stroke: currentColor;
       }
+    }
+
+    .MuiBottomNavigationAction-label {
+      white-space: nowrap;
     }
 
     &:focus {

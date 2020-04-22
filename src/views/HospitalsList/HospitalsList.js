@@ -15,7 +15,7 @@ const HospitalsList = () => {
     <div className="view view__hospitals-list">
       <Header />
       <div className="container">
-        <h4 className="h1 text-center medium">Szpitale zakaźne w Polsce</h4>
+        <h4 className="h1 text-center medium">Szpitale zakaźne:</h4>
         {voivodeships.map((voivodeship, index) => (
           <Collapsible
             open={index === activeItem}

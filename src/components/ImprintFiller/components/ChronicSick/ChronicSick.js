@@ -14,7 +14,7 @@ import {
   Checkbox,
   Radio,
   TextField
-} from '../../../../components';
+} from '../../..';
 
 import Icon from '../../../../assets/img/icons/angle-right-white.svg';
 
@@ -25,7 +25,7 @@ import {
   Label,
   SubContainer,
   Title
-} from '../../Registration.styled';
+} from '../../ImprintFiller.styled';
 
 const ChronicSick = () => {
   const { handleChange, setFieldValue, values } = useFormikContext();
