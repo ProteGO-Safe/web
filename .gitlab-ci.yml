@@ -10,12 +10,25 @@ stages:
     - yarn install
     - yarn build
   artifacts:
-    expire_in: 15 minutes
+    expire_in: 30 minutes
     paths:
       - build
 
 build:latest:
   <<: *build
+  except:
+    - master
+    - /^release/
+
+build:release:
+  <<: *build
+  artifacts:
+    expire_in: 12 hours
+    paths:
+      - build
+  only:
+    - master
+    - /^release/
 
 .deploy: &deploy
   image: dockito/lftp-client
@@ -30,5 +43,7 @@ deploy:dev:
 deploy:stage:
   <<: *deploy
   script:
-    - lftp -e 'mirror -R build /safesafe; ; bye' -u $STAGE_FTP_USER,$STAGE_FTP_PASS $STAGE__FTP_HOST
-  when: manual
+    - lftp -e 'mirror -R build /safesafe-stage; ; bye' -u $STAGE_FTP_USER,$STAGE_FTP_PASS $STAGE__FTP_HOST
+  only:
+    - master
+    - /^release/
