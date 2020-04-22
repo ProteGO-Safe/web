@@ -18,3 +18,16 @@ export const Text = styled.p`
   line-height: 1.57;
   color: #1b1b1b;
 `;
+
+export const ItemWrapper = styled.div`
+  display: flex;
+  flex-flow: wrap column;
+  margin-top: 16px;
+  > * {
+    padding: 12px 4px;
+    border-top: 1px solid #e4e4e4;
+    &:last-child {
+      border-bottom: 1px solid #e4e4e4;
+    }
+  }
+`;
