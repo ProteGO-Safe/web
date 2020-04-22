@@ -2,7 +2,7 @@ import React from 'react';
 import { FormGroup } from '@material-ui/core';
 import { useFormikContext } from 'formik';
 
-import { Button, Radio, Select } from '../../../../components';
+import { Button, Radio, Select } from '../../..';
 import {
   FIELD_SMOKE,
   FIELD_SMOKE_NUMBER,
@@ -16,7 +16,7 @@ import {
 } from '../../../../constants';
 import Icon from '../../../../assets/img/icons/angle-right-white.svg';
 
-import { Actions, Label, Title } from '../../Registration.styled';
+import { Actions, Label, Title } from '../../ImprintFiller.styled';
 
 const Smoke = () => {
   const { setFieldValue, values } = useFormikContext();

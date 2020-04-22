@@ -6,7 +6,7 @@ export const saveUserRequested = data => ({
 });
 
 export function saveUser(data) {
-  return dispatch => {
+  return async dispatch => {
     dispatch(saveUserRequested(data));
   };
 }

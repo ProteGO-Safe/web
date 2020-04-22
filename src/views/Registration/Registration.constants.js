@@ -1,1 +1,2 @@
-export const NUMBER_OF_STEPS = 6;
+export const SPLASH_SCREEN_STEP = 'splashScreen';
+export const EXPLAINER_STEP = 'explainer';

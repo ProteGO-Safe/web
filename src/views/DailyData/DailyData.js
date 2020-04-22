@@ -8,7 +8,7 @@ import { Data, Form } from './components';
 import './DailyData.scss';
 import Header from '../../components/Header/Header';
 import { BottomNavigation } from '../../components/BottomNavigation';
-import { Actions } from '../Registration/Registration.styled';
+import { Actions } from '../../components/ImprintFiller/ImprintFiller.styled';
 import { Content, Container, View } from '../../theme/grid';
 import { Title } from '../../theme/typography';
 import Routes from '../../routes';

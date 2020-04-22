@@ -15,9 +15,9 @@ import {
   VALUE_BLOOD_GROUP_UNDEFINED
 } from '../../../../constants';
 import Icon from '../../../../assets/img/icons/angle-right-white.svg';
-import { Button, Radio } from '../../../../components';
+import { Button, Radio } from '../../..';
 
-import { Actions, Label, Title } from '../../Registration.styled';
+import { Actions, Label, Title } from '../../ImprintFiller.styled';
 
 const BloodGroup = () => {
   const { setFieldValue, values } = useFormikContext();

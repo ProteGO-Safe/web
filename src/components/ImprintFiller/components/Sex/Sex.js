@@ -3,10 +3,10 @@ import { useFormikContext } from 'formik';
 import { FormGroup } from '@material-ui/core';
 
 import { FIELD_SEX, VALUE_MAN, VALUE_WOMAN } from '../../../../constants';
-import { Button, Radio } from '../../../../components';
+import { Button, Radio } from '../../..';
 import Icon from '../../../../assets/img/icons/angle-right-white.svg';
 
-import { Actions, Label, Title } from '../../Registration.styled';
+import { Actions, Label, Title } from '../../ImprintFiller.styled';
 
 const Sex = () => {
   const { setFieldValue, values } = useFormikContext();

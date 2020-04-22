@@ -1,7 +1,7 @@
 import React from 'react';
 import { useFormikContext } from 'formik';
-import { Button, GovFooter, Stepper } from '../../../../components';
-import Imprint from '../../../../components/Imprint/Imprint';
+import { Button, Header, GovFooter, Stepper } from '../../..';
+import Imprint from '../../../Imprint/Imprint';
 import {
   chronicSickValues,
   FIELD_AGE,
@@ -9,13 +9,12 @@ import {
   FIELD_SEX,
   FIELD_SMOKE_NUMBER
 } from '../../../../constants';
-import { NUMBER_OF_STEPS } from '../../Registration.constants';
+import { NUMBER_OF_STEPS } from '../../ImprintFiller.constants';
 
-import { Header } from '../../../../components/Header';
 import { Color } from '../../../../theme/colors';
 import { Container, View } from '../../../../theme/grid';
 import { SmallText } from '../../../../theme/typography';
-import { Actions, Title } from '../../Registration.styled';
+import { Actions, Title } from '../../ImprintFiller.styled';
 import { FontWeight } from '../../../../theme/fonts';
 
 const Summary = () => {
@@ -40,7 +39,7 @@ const Summary = () => {
             bloodGroup: values[FIELD_BLOOD_GROUP],
             chronicSicks,
             sex: values[FIELD_SEX],
-            smokeNumber: values[FIELD_SMOKE_NUMBER],
+            smokeNumber: values[FIELD_SMOKE_NUMBER]
             // phone: values[FIELD_PHONE]
           }}
         />
