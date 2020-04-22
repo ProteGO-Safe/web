@@ -2,10 +2,10 @@ import React from 'react';
 import { useFormikContext } from 'formik';
 
 import { FIELD_AGE } from '../../../../constants';
-import { Button, TextField } from '../../../../components';
+import { Button, TextField } from '../../..';
 import Icon from '../../../../assets/img/icons/angle-right-white.svg';
 
-import { Actions, Title } from '../../Registration.styled';
+import { Actions, Title } from '../../ImprintFiller.styled';
 
 const Age = () => {
   const {
