@@ -4,6 +4,10 @@ import { Header } from '../../components/Header';
 import { Container, Content, Email } from './ReportBug.styled';
 import { BottomNavigation } from '../../components/BottomNavigation';
 
+import { Paragraph } from '../../theme/typography';
+import { Color } from '../../theme/colors';
+import { FontWeight } from '../../theme/fonts';
+
 const ReportBug = () => {
   return (
     <Container>
@@ -19,7 +23,9 @@ const ReportBug = () => {
         Masz pytania? Znalazłeś błąd? Skontaktuj się z nami!
         <br />
         <br />
-        <Email href="mailto:info@safesafe.app">info@safesafe.app</Email>
+        <Paragraph color={Color.primary} fontWeight={FontWeight.Bold}>
+          info@safesafe.app
+        </Paragraph>
       </Content>
       <BottomNavigation />
     </Container>
