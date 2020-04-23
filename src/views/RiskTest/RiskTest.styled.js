@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { ReactComponent as RiskTestIcon } from '../../assets/img/icons/risk-test.svg';
+import { ReactComponent as RiskTestIcon } from '../../assets/img/icons/wykonaj-test.svg';
 
 export const Container = styled.div`
   width: 100%;
