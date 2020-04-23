@@ -23,6 +23,10 @@ export const Container = styled(BottomNavigationBase)`
 `;
 
 export const MenuItem = styled(BottomNavigationActionBase)`
+  &.MuiButtonBase-root {
+    margin-bottom: constant(safe-area-inset-bottom);
+    margin-bottom: env(safe-area-inset-bottom);
+  }
   && {
     svg {
       width: 21px;
