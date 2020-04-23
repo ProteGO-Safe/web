@@ -1,9 +1,9 @@
 import React from 'react';
 import { IconButton, Text } from './BordersButton.styled';
 
-const BordersButton = ({ icon, onClick, text }) => {
+const BordersButton = ({ className, icon, onClick, text }) => {
   return (
-    <IconButton onClick={onClick}>
+    <IconButton className={className} onClick={onClick}>
       {icon}
       <Text>{text}</Text>
     </IconButton>

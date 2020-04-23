@@ -2,8 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Header from '../../components/Header/Header';
 import { BottomNavigation } from '../../components/BottomNavigation';
-import { Content, View } from '../../theme/grid';
-import { Container, ItemWrapper, Text, Title } from './Settings.styled';
+import { Container, Content, View } from '../../theme/grid';
+import { ItemWrapper, Text, Title } from './Settings.styled';
 import { Switcher } from '../../components';
 
 const Settings = ({ children, items, onBack, title }) => {
