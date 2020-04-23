@@ -14,6 +14,7 @@ export const StepperInner = styled.div`
   display: flex;
   align-items: center;
   padding-bottom: 25px;
+  transition: all 0.4s linear;
 `;
 
 export const StepWrapper = styled.div`
