@@ -19,3 +19,4 @@ export { StartScreen } from './StartScreen';
 export { ReportBug } from './ReportBug';
 export { AdviceInformation } from './AdviceInformation';
 export { FaqPage } from './FaqPage';
+export { BluetoothModule } from './BluetoothModule';
