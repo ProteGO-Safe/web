@@ -19,7 +19,7 @@ const Checkbox = ({ checked, error, label, name, onChange }) => (
             onChange={onChange}
             name={name}
             style={{
-              marginRight: `35px`
+              marginRight: `25px`
             }}
           />
         }
