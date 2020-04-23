@@ -23,7 +23,7 @@ export const Description = styled(SmallText)`
 `;
 
 export const SubContainer = styled.div`
-  padding-left: 65px;
+  padding-left: 56px;
   width: 100%;
 `;
 
