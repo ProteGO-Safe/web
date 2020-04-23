@@ -76,7 +76,7 @@ export const TextLink = styled.span`
 
 export const List = styled.ul`
   list-style-type: none;
-  margin: 0 0 40px;
+  margin: 12px 0 40px;
   padding: 0;
 `;
 
@@ -101,4 +101,20 @@ export const Title = styled(H4)`
   color: ${Color.primary};
   text-align: center;
   padding-bottom: 30px;
+`;
+
+export const ListNumber = styled.ol`
+  padding-left: 35px;
+  margin-top: 0;
+`;
+
+export const ListNumberItem = styled.li`
+  margin-bottom: 16px;
+  font-size: 16px;
+  font-weight: normal;
+  line-height: 1.5;
+  color: #1b1b1b;
+  &:last-child {
+    margin-bottom: 0;
+  }
 `;

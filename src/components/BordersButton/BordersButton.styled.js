@@ -14,9 +14,13 @@ export const IconButton = styled.div`
     height: auto;
     margin-right: 24px;
   }
+  &.small {
+    padding: 11px;
+  }
 `;
 
 export const Text = styled.div`
+  width: calc(100% - 64px);
   font-size: 14px;
   font-weight: bold;
   line-height: 1.57;
