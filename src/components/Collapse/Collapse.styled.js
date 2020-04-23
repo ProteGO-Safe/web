@@ -17,7 +17,7 @@ export const Title = styled.span`
   padding: 12px 40px 12px 7px;
   font-size: 14px;
   font-weight: bold;
-  line-height: 1.14;
+  line-height: 1.2;
   color: #0052a5;
   border-top: solid 1px #cbcbcb;
   border-bottom: solid 1px #cbcbcb;
