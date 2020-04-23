@@ -14,21 +14,21 @@ export const Title = styled.span`
   align-items: center;
   width: 100%;
   min-height: 54px;
-  padding: 10px 44px 10px 10px;
-  font-size: 16px;
+  padding: 12px 40px 12px 7px;
+  font-size: 14px;
   font-weight: bold;
-  line-height: 1.33;
+  line-height: 1.14;
   color: #0052a5;
   border-top: solid 1px #cbcbcb;
   border-bottom: solid 1px #cbcbcb;
   img {
     position: absolute;
     top: 50%;
-    right: 10px;
+    right: 7px;
     display: block;
     max-height: 14px;
     margin-top: -7px;
-    transition: all 0.2s linear;
+    transform: rotate(90deg);
   }
   &.open {
     border-bottom: 0;
@@ -42,5 +42,13 @@ export const Description = styled.div`
   display: flex;
   flex-flow: wrap row;
   width: 100%;
-  padding: 10px;
+  padding: 0 7px 10px 7px;
+  font-size: 14px;
+  line-height: 1.61;
+  color: #1b1b1b;
+  * {
+    font-size: 14px;
+    line-height: 1.61;
+    color: #1b1b1b;
+  }
 `;
