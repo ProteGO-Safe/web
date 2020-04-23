@@ -5,6 +5,7 @@ import 'moment/locale/pl';
 import { useDispatch, useSelector } from 'react-redux';
 import { Redirect, Route, Switch, useHistory } from 'react-router-dom';
 import {
+  BluetoothModule,
   Daily,
   DailyData,
   Diagnosis,
@@ -126,6 +127,11 @@ function App() {
                 component={AdviceInformation}
               />
               <Route exact path={Routes.FaqPage} component={FaqPage} />
+              <Route
+                exact
+                path={Routes.BluetoothModule}
+                component={BluetoothModule}
+              />
             </>
           )}
           <Route render={() => <Redirect to={Routes.Home} />} />

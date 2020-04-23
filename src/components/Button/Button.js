@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import './Button.scss';
 
 const Button = ({
+  border,
   children,
   disabled,
   height,
@@ -17,7 +18,9 @@ const Button = ({
   return (
     <button
       disabled={disabled}
-      className={`button button--${type} button--${height} button--size--${size} button--icon-${iconPosition}`}
+      className={`button button--${type} button--${height} button--size--${size} button--icon-${iconPosition} ${
+        border ? 'button--border' : ''
+      }`}
       onClick={onClick}
       type="button"
     >
@@ -28,6 +31,7 @@ const Button = ({
 };
 
 Button.defaultProps = {
+  border: false,
   children: null,
   disabled: false,
   height: 'normal',
@@ -38,6 +42,7 @@ Button.defaultProps = {
 };
 
 Button.propTypes = {
+  border: PropTypes.bool,
   children: PropTypes.node,
   disabled: PropTypes.bool,
   height: PropTypes.oneOf(['small', 'normal']),

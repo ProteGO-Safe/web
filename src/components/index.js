@@ -1,5 +1,6 @@
 export { App } from './App';
 export { Badge } from './Badge';
+export { BluetoothContent } from './BluetoothContent';
 export { BordersButton } from './BordersButton';
 export { Button } from './Button';
 export { Checkbox } from './Checkbox';

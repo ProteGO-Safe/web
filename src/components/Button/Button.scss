@@ -58,6 +58,26 @@
     }
   }
 
+  &--border {
+    height: auto;
+    min-height: 44px;
+    padding: 7px;
+    border-radius: 8px;
+    border: solid 2px #0452a4;
+    background: transparent;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 1.5;
+    text-align: center;
+    color: #0452a4;
+
+    &:hover,
+    &:focus {
+      background-color: transparent;
+      outline: none;
+    }
+  }
+
   &--ghost,
   &--tertiary {
     text-transform: none;
