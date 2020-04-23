@@ -1,5 +1,5 @@
 import React from 'react';
-import { Icon1, Icon2, Icon3 } from './BluetoothModule.styled';
+import { Icon1 } from './BluetoothModule.styled';
 import { Content, Container, View } from '../../theme/grid';
 import { BluetoothContent, Button, GovFooter } from '../../components';
 import Header from '../../components/Header/Header';
@@ -21,7 +21,7 @@ const BluetoothModule = ({ buttons }) => {
       <Content>
         <Container className="full-height">
           <BluetoothContent
-            icon={<Icon3 />}
+            icon={<Icon1 />}
             title="Nie udzieliłeś zgody na korzystanie z bluetootha."
             buttons={renderButton}
           >
