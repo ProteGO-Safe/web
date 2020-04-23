@@ -59,7 +59,6 @@ const MenuContainer = () => {
       title: 'Polityka prywatności'
     },
     {
-      disable: true,
       icon: Icon7,
       path: Routes.Settings,
       slug: 'ustawienia',

@@ -6,6 +6,7 @@ export { HowItWorks } from './HowItWorks';
 export { IAmSick } from './IAmSick';
 export { RiskTest } from './RiskTest';
 export { RiskTestData } from './RiskTestData';
+export { Settings } from './Settings';
 export { Numbers } from './Numbers';
 export { PrivacyPolicy } from './PrivacyPolicy';
 export { PrivacyPolicyDetails } from './PrivacyPolicyDetails';
