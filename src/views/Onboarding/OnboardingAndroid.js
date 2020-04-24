@@ -2,7 +2,10 @@ import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import Onboarding from './Onboarding';
 import { Icon2, Icon3, Icon4 } from './Onboarding.styled';
-import { disagreeModuleBluetooth } from '../../store/actions/app';
+import {
+  disagreeModuleBluetooth,
+  finishOnboarding
+} from '../../store/actions/app';
 import {
   showNativeBatteryOptimizationPermission,
   showNativeBluetoothPermission,
@@ -22,6 +25,10 @@ const OnboardingAndroid = () => {
   } = useSelector(state => state.nativeData);
 
   useEffect(() => {
+    if (isLocationEnabled && isBtOn && !isBatteryOptimizationOn) {
+      dispatch(finishOnboarding());
+    }
+
     if (!isLocationEnabled) {
       setScreen('location');
       return;
@@ -86,7 +93,7 @@ const OnboardingAndroid = () => {
         },
         {
           text: 'Nie powiadamiaj mnie o zagrożeniach',
-          type: "tertiary",
+          type: 'tertiary',
           onClick: locationNo
         }
       ]
@@ -114,7 +121,7 @@ const OnboardingAndroid = () => {
         },
         {
           text: 'Nie powiadamiaj mnie o zagrożeniach',
-          type: "tertiary",
+          type: 'tertiary',
           onClick: bluetoothNo
         }
       ]
@@ -143,7 +150,7 @@ const OnboardingAndroid = () => {
           onClick: batteryYes
         },
         {
-          type: "tertiary",
+          type: 'tertiary',
           text: 'Nie powiadamiaj mnie o zagrożeniach',
           onClick: batteryNo
         }

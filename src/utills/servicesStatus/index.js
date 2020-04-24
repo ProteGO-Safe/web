@@ -2,6 +2,7 @@ import { isAndroidWebView, isIOSWebView } from '../native';
 
 export const showOnboarding = (
   servicesStatus = {},
+  onboardingFinished = false
   // onboardingBluetoothPermissionShowed = false,
   // onboardingNotificationPermissionShowed = false,
   // iosBluetoothSummaryShowed = false
@@ -19,7 +20,7 @@ export const showOnboarding = (
     return false;
   }
   if (isAndroidWebView()) {
-    if (!!isLocationEnabled && !!isBtOn && !isBatteryOptimizationOn) {
+    if (!!isLocationEnabled && !!isBtOn && !isBatteryOptimizationOn && onboardingFinished) {
       return false;
     }
   }
@@ -38,6 +39,13 @@ export const showOnboarding = (
     // ) {
     //   return false;
     // }
+  }
+
+  console.log(`onboardingFinished: ${onboardingFinished}`)
+
+
+  if (!onboardingFinished) {
+    return true;
   }
 
   if (!isBtServiceOn) {
