@@ -38,7 +38,6 @@ import { Menu } from '../Menu';
 import Routes from '../../routes';
 import './App.scss';
 import { Notification } from '../Notification';
-import { resetOnboardingInformationShowed } from '../../store/actions/app';
 import { showOnboarding } from '../../utills/servicesStatus';
 import { isWebView } from '../../utills/native';
 
@@ -50,7 +49,6 @@ function App() {
   const { name } = useSelector(state => state.user);
   const { servicesStatus } = useSelector(state => state.nativeData);
   const {
-    onboardingInformationShowed,
     onboardingNotificationPermissionShowed,
     onboardingBluetoothPermissionShowed,
     iosBluetoothSummaryShowed
@@ -68,7 +66,6 @@ function App() {
 
   useEffect(() => {
     dispatch(fetchNativeServicesStatus());
-    dispatch(resetOnboardingInformationShowed());
   }, [dispatch]);
 
   history.listen(() => {
@@ -91,7 +88,6 @@ function App() {
   const resolveHomeComponent = (() => {
     if (
       isWebView() &&
-      !onboardingInformationShowed &&
       showOnboarding(
         servicesStatus,
         onboardingBluetoothPermissionShowed,

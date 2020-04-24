@@ -73,3 +73,17 @@ export function showNativeNotificationPermission() {
     nativeBridge.showNotificationPermission();
   };
 }
+
+export function enableBluetoothModule() {
+  const data = { enableBtService: true };
+  return () => {
+    nativeBridge.setBluetoothModuleState(data);
+  };
+}
+
+export function disableBluetoothModule() {
+  const data = { enableBtService: false };
+  return () => {
+    nativeBridge.setBluetoothModuleState(data);
+  };
+}

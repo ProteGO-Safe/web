@@ -1,16 +1,28 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import Settings from './Settings';
+import {
+  disableBluetoothModule,
+  enableBluetoothModule
+} from '../../store/actions/nativeData';
 
 const SettingsContainer = () => {
-  const [checked, setChecked] = useState(false);
+  const dispatch = useDispatch();
+  const {
+    servicesStatus: { isBtServiceOn = false }
+  } = useSelector(state => state.nativeData);
 
   const toggleChecked = () => {
-    setChecked(prev => !prev);
+    if (isBtServiceOn) {
+      dispatch(disableBluetoothModule());
+    } else {
+      dispatch(enableBluetoothModule());
+    }
   };
 
   const items = [
     {
-      checked,
+      checked: isBtServiceOn,
       disabled: true,
       onChange: toggleChecked,
       label: 'Zgoda na użycie przez aplikację funkcji Bluetooth',

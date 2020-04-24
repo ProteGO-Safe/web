@@ -1,32 +1,18 @@
 import * as types from '../types/app';
-
-export const onboardingInformationShowed = () => ({
-  type: types.ONBOARDING_INFORMATION_SHOWED
-});
+import { disableBluetoothModule } from './nativeData';
 
 export const onboardingIOSBluetoothSummaryShowed = () => ({
   type: types.ONBOARDING_IOS_BLUETOOTH_SUMMARY_SHOWED
 });
 
-export const onboardingInformationShowReseted = () => ({
-  type: types.ONBOARDING_INFORMATION_SHOW_RESETED
-});
-
-export function resetOnboardingInformationShowed() {
-  return dispatch => {
-    dispatch(onboardingInformationShowReseted());
-  };
-}
-
 export function disagreeModuleBluetooth() {
   return dispatch => {
-    dispatch(onboardingInformationShowed());
+    dispatch(disableBluetoothModule());
   };
 }
 
 export function finishOnboarding() {
   return dispatch => {
-    dispatch(onboardingInformationShowed());
     dispatch(onboardingIOSBluetoothSummaryShowed());
   };
 }

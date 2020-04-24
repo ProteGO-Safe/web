@@ -75,6 +75,10 @@ const setDiagnosisTimestamp = async timestamp => {
   });
 };
 
+const setBluetoothModuleState = async data => {
+  await callNativeFunction('setBridgeData', DATA_TYPE.BT_MODULE, data);
+};
+
 const handleServicesStatus = data => {
   const store = StoreRegistry.getStore();
   store.dispatch({
@@ -137,6 +141,7 @@ window.bridgeDataResponse = receiveNativeResponse;
 
 export default {
   setDiagnosisTimestamp,
+  setBluetoothModuleState,
   showBatteryOptimizationPermission,
   showBtPermission,
   showLocationPermission,
