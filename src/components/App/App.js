@@ -20,6 +20,7 @@ import {
   Regulations,
   RiskTestData,
   Settings,
+  StartScreen,
   UserData,
   UserDataChange,
   UserDataSettings,
@@ -52,7 +53,8 @@ function App() {
     onboardingFinished,
     onboardingNotificationPermissionShowed,
     onboardingBluetoothPermissionShowed,
-    iosBluetoothSummaryShowed
+    iosBluetoothSummaryShowed,
+    startScreenShowed
   } = useSelector(state => state.app);
   const { notification } = useSelector(state => state.nativeData);
   const { inProgress, visible: menuIsVisible } = useMenuContext();
@@ -87,6 +89,9 @@ function App() {
   });
 
   const resolveHomeComponent = (() => {
+    if (!startScreenShowed) {
+      return StartScreen;
+    }
     if (
       isWebView() &&
       showOnboarding(
