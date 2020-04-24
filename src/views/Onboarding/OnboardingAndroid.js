@@ -74,20 +74,19 @@ const OnboardingAndroid = () => {
           </p>
           <br />
           <p>
-            Włącz w swoim urządzeniu usługę lokalizacji i pozwół ProteGO Safe
+            Włącz w swoim urządzeniu usługę lokalizacji i pozwól ProteGO Safe
             zatroszczyć się o Twoje zdrowie
           </p>
         </>
       ),
       buttons: [
         {
-          border: false,
           text: 'WŁĄCZ LOKALIZACJĘ',
           onClick: locationYes
         },
         {
-          border: true,
-          text: 'rozmyśliłem się, nie chce korzystać w Modułu Bluetooth',
+          text: 'Nie powiadamiaj mnie o zagrożeniach',
+          type: "tertiary",
           onClick: locationNo
         }
       ]
@@ -98,7 +97,7 @@ const OnboardingAndroid = () => {
       content: (
         <>
           <p>
-            Korzystamy z Modułu Bluetooth, rejestrować anonimowo urządzenia
+            Korzystamy z Modułu Bluetooth aby rejestrować anonimowo urządzenia
             użykowników, znajdujących się dookoła Ciebie.
           </p>
           <br />
@@ -110,13 +109,12 @@ const OnboardingAndroid = () => {
       ),
       buttons: [
         {
-          border: false,
           text: 'WŁĄCZ BLUETOOTH',
           onClick: bluetoothYes
         },
         {
-          border: true,
-          text: 'rozmyśliłem się, nie chce korzystać w Modułu Bluetooth',
+          text: 'Nie powiadamiaj mnie o zagrożeniach',
+          type: "tertiary",
           onClick: bluetoothNo
         }
       ]
@@ -132,22 +130,21 @@ const OnboardingAndroid = () => {
           </p>
           <br />
           <p>
-            Optymalizacja zużycia energii ogranicza funckjonalności ProteGO
+            Optymalizacja zużycia energii ogranicza funkcjonalności ProteGO
             Safe, uniemożliwiając połączenia z urządzeniami dookoła. Kliknij
-            poniżej i&nbsp;wyłącz optymalizaję zużcia energii.
+            poniżej i&nbsp;wyłącz optymalizację zużycia energii.
           </p>
         </>
       ),
       buttons: [
         {
-          border: false,
           text:
-            'Wyłącz optymalizaję zużcia energii (Przejdź do ustawień systemowych)',
+            'Wyłącz optymalizację zużycia energii (Przejdź do ustawień systemowych)',
           onClick: batteryYes
         },
         {
-          border: true,
-          text: 'rozmyśliłem się, nie chce korzystać w Modułu Bluetooth',
+          type: "tertiary",
+          text: 'Nie powiadamiaj mnie o zagrożeniach',
           onClick: batteryNo
         }
       ]
