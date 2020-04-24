@@ -1,6 +1,5 @@
 export { App } from './App';
 export { Badge } from './Badge';
-export { BluetoothContent } from './BluetoothContent';
 export { BordersButton } from './BordersButton';
 export { Button } from './Button';
 export { Checkbox } from './Checkbox';
@@ -18,6 +17,7 @@ export { Menu } from './Menu';
 export { MenuButton } from './MenuButton';
 export { Modal } from './Modal';
 export { Notification } from './Notification';
+export { OnboardingContent } from './OnboardingContent';
 export { Option } from './Option';
 export { Radio } from './Radio';
 export { Range } from './Range';
