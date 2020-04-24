@@ -1,4 +1,6 @@
 
+# - *- coding: utf- 8 - *-
+
 import urllib2
 import json
 from bs4 import BeautifulSoup
@@ -15,11 +17,11 @@ def faq_item( item_type, text, reply ):
         prev_item = faq[-1]
         if prev_item['type'] == 'details':
             if text == '':
-                prev_item['content']['reply'] = prev_item['content']['reply'] + ' ' + reply + " \n "
+                prev_item['content']['reply'] = prev_item['content']['reply'] + reply + "\n"
                 return
         if prev_item['type'] == item_type:
             if item_type == 'subtitle' or item_type == 'title':
-                prev_item['content']['text'] = prev_item['content']['text'] + ' ' + text + " \n "
+                prev_item['content']['text'] = prev_item['content']['text'] + text + "\n"
                 return
     # insert new
     faq.append( 
@@ -35,9 +37,13 @@ def faq_item( item_type, text, reply ):
 if __name__ == "__main__":
     response = urllib2.urlopen(url)
     if 200 == response.getcode():
-        soup = BeautifulSoup(response, 'html.parser')
-        soup.prettify(formatter=lambda s: s.replace('&nbsp', ' '))
 
+        # source
+        html = response.read()
+        html = html.replace('&nbsp;', ' ')
+        html = html.replace(', a interesujące nas sprawy można zlokalizować, korzystając z wyszukiwarki', '')
+        soup = BeautifulSoup(html, 'html.parser')
+        
         # intro
         element = soup.select("#main-content p.intro")
         faq_item( 'intro', element[0].text, '' )
@@ -55,7 +61,7 @@ if __name__ == "__main__":
 
                     elif element.name == 'details' or element.find_parent('details'):
                         if element.find('summary'):
-                            faq_item( 'details', element.find('summary').getText(), '' )
+                            faq_item( 'details', element.find('summary').getText(strip=True), '' )
                         else:
                             faq_item( 'details', '', element.getText() )
                     
