@@ -34,3 +34,42 @@ export function hideNotification() {
     dispatch(hideNotificationSuccess());
   };
 }
+
+export const fetchNativeServicesStatusSuccess = servicesStatus => {
+  return {
+    servicesStatus,
+    type: types.NATIVE_DATA_FETCH_NATIVE_SERVICES_STATUS_SUCCESS
+  };
+};
+
+export function fetchNativeServicesStatus() {
+  return dispatch => {
+    nativeBridge.getNativeServicesStatus().then(data => {
+      dispatch(fetchNativeServicesStatusSuccess(data));
+    });
+  };
+}
+
+export function showNativeLocationPermission() {
+  return () => {
+    nativeBridge.showLocationPermission();
+  };
+}
+
+export function showNativeBluetoothPermission() {
+  return () => {
+    nativeBridge.showBtPermission();
+  };
+}
+
+export function showNativeBatteryOptimizationPermission() {
+  return () => {
+    nativeBridge.showBatteryOptimizationPermission();
+  };
+}
+
+export function showNativeNotificationPermission() {
+  return () => {
+    nativeBridge.showNotificationPermission();
+  };
+}

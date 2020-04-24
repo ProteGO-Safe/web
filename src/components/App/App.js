@@ -5,7 +5,6 @@ import 'moment/locale/pl';
 import { useDispatch, useSelector } from 'react-redux';
 import { Redirect, Route, Switch, useHistory } from 'react-router-dom';
 import {
-  BluetoothModule,
   Daily,
   DailyData,
   Diagnosis,
@@ -14,6 +13,7 @@ import {
   IAmSick,
   RiskTest,
   Numbers,
+  Onboarding,
   PrivacyPolicy,
   PrivacyPolicyDetails,
   Registration,
@@ -29,12 +29,18 @@ import {
   FaqPage
 } from '../../views';
 
-import { fetchNotification } from '../../store/actions/nativeData';
+import {
+  fetchNativeServicesStatus,
+  fetchNotification
+} from '../../store/actions/nativeData';
 import useMenuContext from '../../hooks/useMenuContext';
 import { Menu } from '../Menu';
 import Routes from '../../routes';
 import './App.scss';
 import { Notification } from '../Notification';
+import { resetOnboardingInformationShowed } from '../../store/actions/app';
+import { showOnboarding } from '../../utills/servicesStatus';
+import { isWebView } from '../../utills/native';
 
 function App() {
   moment.locale('pl');
@@ -42,6 +48,13 @@ function App() {
   const history = useHistory();
 
   const { name } = useSelector(state => state.user);
+  const { servicesStatus } = useSelector(state => state.nativeData);
+  const {
+    onboardingInformationShowed,
+    onboardingNotificationPermissionShowed,
+    onboardingBluetoothPermissionShowed,
+    iosBluetoothSummaryShowed
+  } = useSelector(state => state.app);
   const { notification } = useSelector(state => state.nativeData);
   const { inProgress, visible: menuIsVisible } = useMenuContext();
 
@@ -52,6 +65,11 @@ function App() {
     }
     return () => null;
   }, [notification, dispatch]);
+
+  useEffect(() => {
+    dispatch(fetchNativeServicesStatus());
+    dispatch(resetOnboardingInformationShowed());
+  }, [dispatch]);
 
   history.listen(() => {
     window.scroll(0, 0);
@@ -70,16 +88,31 @@ function App() {
     'menu-visible': menuIsVisible && !inProgress
   });
 
+  const resolveHomeComponent = (() => {
+    if (
+      isWebView() &&
+      !onboardingInformationShowed &&
+      showOnboarding(
+        servicesStatus,
+        onboardingBluetoothPermissionShowed,
+        onboardingNotificationPermissionShowed,
+        iosBluetoothSummaryShowed
+      )
+    ) {
+      return Onboarding;
+    }
+    if (!name) {
+      return Registration;
+    }
+    return Home;
+  })();
+
   return (
     <div className={className}>
       <div className="app__inner">
         <Switch>
-          <Route
-            exact
-            path={Routes.Home}
-            component={name ? Home : Registration}
-          />
-          {name && (
+          <Route exact path={Routes.Home} component={resolveHomeComponent} />
+          {name && true && (
             <>
               <Route exact path={Routes.Daily} component={Daily} />
               <Route exact path="/daily/:id" component={DailyData} />
@@ -129,11 +162,6 @@ function App() {
                 component={AdviceInformation}
               />
               <Route exact path={Routes.FaqPage} component={FaqPage} />
-              <Route
-                exact
-                path={Routes.BluetoothModule}
-                component={BluetoothModule}
-              />
             </>
           )}
           <Route render={() => <Redirect to={Routes.Home} />} />

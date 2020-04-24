@@ -6,9 +6,9 @@ import {
   IconWrapper,
   Text,
   Title
-} from './BluetoothContent.styled';
+} from './OnboardingContent.styled';
 
-const BluetoothContent = ({ buttons, children, icon, title }) => {
+const OnboardingContent = ({ buttons, children, icon, title }) => {
   return (
     <BluetoothWrapper>
       <IconWrapper>{icon}</IconWrapper>
@@ -19,15 +19,15 @@ const BluetoothContent = ({ buttons, children, icon, title }) => {
   );
 };
 
-BluetoothContent.defaultProps = {
+OnboardingContent.defaultProps = {
   buttons: []
 };
 
-BluetoothContent.propTypes = {
+OnboardingContent.propTypes = {
   buttons: PropTypes.array,
   children: PropTypes.node.isRequired,
-  icon: PropTypes.string.isRequired,
+  icon: PropTypes.object.isRequired,
   title: PropTypes.string.isRequired
 };
 
-export default BluetoothContent;
+export default OnboardingContent;

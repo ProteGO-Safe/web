@@ -1,6 +1,8 @@
 import {
+  NATIVE_DATA_FETCH_NATIVE_SERVICES_STATUS_SUCCESS,
   NATIVE_DATA_FETCH_NOTIFICATION_SUCCESS,
   NATIVE_DATA_HIDE_NOTIFICATION_SUCCESS,
+  NATIVE_DATA_SET_REJECTED_SERVICE_SUCCESS,
   NATIVE_DATA_SET_SERVICES_STATUS_SUCCESS
 } from '../../types/nativeData';
 
@@ -12,10 +14,14 @@ const INITIAL_STATE = {
 const setServicesStatusSuccess = (state, { servicesStatus = {} }) => {
   return {
     ...state,
-    servicesStatus: {
-      ...(state.servicesStatus || {}),
-      ...servicesStatus
-    }
+    ...servicesStatus
+  };
+};
+
+const setRejectedServiceSuccess = (state, { rejectedService = '' }) => {
+  return {
+    ...state,
+    ...rejectedService
   };
 };
 
@@ -42,6 +48,10 @@ const nativeBridgeReducer = (state = INITIAL_STATE, action) => {
       };
     case NATIVE_DATA_SET_SERVICES_STATUS_SUCCESS:
       return setServicesStatusSuccess(state, action);
+    case NATIVE_DATA_FETCH_NATIVE_SERVICES_STATUS_SUCCESS:
+      return setServicesStatusSuccess(state, action);
+    case NATIVE_DATA_SET_REJECTED_SERVICE_SUCCESS:
+      return setRejectedServiceSuccess(state, action);
     default:
       return state;
   }

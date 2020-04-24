@@ -18,8 +18,7 @@ const Routes = {
   HospitalsList: '/hospitals-list',
   ReportBug: '/report-bug',
   AdviceInformation: '/advice',
-  FaqPage: '/faq',
-  BluetoothModule: '/bluetooth-module'
+  FaqPage: '/faq'
 };
 
 export default Routes;

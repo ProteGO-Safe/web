@@ -3,10 +3,12 @@ import uniqueId from 'lodash.uniqueid';
 import { cond, equals, always } from 'ramda';
 
 import StoreRegistry from '../../store/storeRegistry';
-import { NATIVE_DATA_SET_SERVICES_STATUS_SUCCESS } from '../../store/types/nativeData';
+import {
+  NATIVE_DATA_SET_REJECTED_SERVICE_SUCCESS,
+  NATIVE_DATA_SET_SERVICES_STATUS_SUCCESS
+} from '../../store/types/nativeData';
 import { DATA_TYPE } from './nativeBridge.constants';
-
-const isAndroidWebView = () => !!window.NativeBridge;
+import { isAndroidWebView } from '../../utills/native';
 
 const nativeRequests = {};
 
@@ -46,13 +48,10 @@ const callNativeFunction = async (functionName, dataType, data) => {
   return result;
 };
 
-const getNotification = async () => {
+const callGetBridgeData = async dataType => {
   try {
-    const json = await callNativeFunction(
-      'getBridgeData',
-      DATA_TYPE.NOTIFICATION
-    );
-
+    const json = await callNativeFunction('getBridgeData', dataType);
+    console.log(json);
     if (json) {
       return JSON.parse(json);
     }
@@ -60,6 +59,14 @@ const getNotification = async () => {
     console.error('Error while parsing native response', error);
   }
   return '';
+};
+
+const getNativeServicesStatus = async () => {
+  return callGetBridgeData(DATA_TYPE.NATIVE_SERVICES_STATUS);
+};
+
+const getNotification = async () => {
+  return callGetBridgeData(DATA_TYPE.NOTIFICATION);
 };
 
 const setDiagnosisTimestamp = async timestamp => {
@@ -76,8 +83,16 @@ const handleServicesStatus = data => {
   });
 };
 
+const handleRejectedService = data => {
+  const store = StoreRegistry.getStore();
+  store.dispatch({
+    rejectedService: data,
+    type: NATIVE_DATA_SET_REJECTED_SERVICE_SUCCESS
+  });
+};
+
 const callBridgeDataHandler = cond([
-  [equals(DATA_TYPE.APP_STATE), always(handleServicesStatus)],
+  [equals(DATA_TYPE.NATIVE_SERVICES_STATUS), always(handleServicesStatus)],
   [
     equals(DATA_TYPE.BATTERY_PERFORMANCE_PERMISSION),
     always(handleServicesStatus)
@@ -85,7 +100,8 @@ const callBridgeDataHandler = cond([
   [equals(DATA_TYPE.BT_PERMISSION), always(handleServicesStatus)],
   [equals(DATA_TYPE.LOCATION_PERMISSION), always(handleServicesStatus)],
   [equals(DATA_TYPE.NOTIFICATION_PERMISSION), always(handleServicesStatus)],
-  [equals(DATA_TYPE.OPEN_TRACE), always(handleServicesStatus)]
+  [equals(DATA_TYPE.BT_MODULE), always(handleServicesStatus)],
+  [equals(DATA_TYPE.REJECTED_SERVICE), always(handleRejectedService)]
 ]);
 
 const onBridgeData = (dataType, dataString) => {
@@ -97,10 +113,34 @@ const onBridgeData = (dataType, dataString) => {
   }
 };
 
+const showBatteryOptimizationPermission = async () => {
+  await callNativeFunction(
+    'setBridgeData',
+    DATA_TYPE.BATTERY_PERFORMANCE_PERMISSION
+  );
+};
+
+const showBtPermission = async () => {
+  await callNativeFunction('setBridgeData', DATA_TYPE.BT_PERMISSION);
+};
+
+const showLocationPermission = async () => {
+  await callNativeFunction('setBridgeData', DATA_TYPE.LOCATION_PERMISSION);
+};
+
+const showNotificationPermission = async () => {
+  await callNativeFunction('setBridgeData', DATA_TYPE.NOTIFICATION_PERMISSION);
+};
+
 window.onBridgeData = onBridgeData;
 window.bridgeDataResponse = receiveNativeResponse;
 
 export default {
   setDiagnosisTimestamp,
+  showBatteryOptimizationPermission,
+  showBtPermission,
+  showLocationPermission,
+  showNotificationPermission,
+  getNativeServicesStatus,
   getNotification
 };
