@@ -1,4 +1,5 @@
 import { isAndroidWebView, isIOSWebView } from '../native';
+import { isVersionCompatibilityWithBluetoothModule } from '../version';
 
 export const showOnboarding = (
   servicesStatus = {},
@@ -16,11 +17,20 @@ export const showOnboarding = (
     isBtServiceOn
   } = servicesStatus;
 
+  if (!isVersionCompatibilityWithBluetoothModule(servicesStatus)) {
+    return false;
+  }
+
   if (!isBtSupported) {
     return false;
   }
   if (isAndroidWebView()) {
-    if (!!isLocationEnabled && !!isBtOn && !isBatteryOptimizationOn && onboardingFinished) {
+    if (
+      !!isLocationEnabled &&
+      !!isBtOn &&
+      !isBatteryOptimizationOn &&
+      onboardingFinished
+    ) {
       return false;
     }
   }
@@ -40,9 +50,6 @@ export const showOnboarding = (
     //   return false;
     // }
   }
-
-  console.log(`onboardingFinished: ${onboardingFinished}`)
-
 
   if (!onboardingFinished) {
     return true;
