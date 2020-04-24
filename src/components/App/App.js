@@ -49,6 +49,7 @@ function App() {
   const { name } = useSelector(state => state.user);
   const { servicesStatus } = useSelector(state => state.nativeData);
   const {
+    onboardingFinished,
     onboardingNotificationPermissionShowed,
     onboardingBluetoothPermissionShowed,
     iosBluetoothSummaryShowed
@@ -90,6 +91,7 @@ function App() {
       isWebView() &&
       showOnboarding(
         servicesStatus,
+        onboardingFinished,
         onboardingBluetoothPermissionShowed,
         onboardingNotificationPermissionShowed,
         iosBluetoothSummaryShowed
