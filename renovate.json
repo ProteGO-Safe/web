@@ -1,5 +1,9 @@
 {
   "extends": [
-    "config:preserveSemverRanges"
+    "config:base"
   ]
+},
+  "preserveSemverRanges": {
+    "description": "Preserve (but continue to upgrade) any existing semver ranges",
+    "rangeStrategy": "replace"
 }
