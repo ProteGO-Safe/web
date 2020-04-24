@@ -43,3 +43,14 @@ export function showOnboardingBluetoothPermission() {
     dispatch(onboardingBluetoothPermissionShowed());
   };
 }
+
+export const startScreenShowed = () => ({
+  type: types.START_SCREEN_SHOWED
+});
+
+export function showStartScreenSuccess() {
+  return dispatch => {
+    dispatch(startScreenShowed());
+  };
+}
+

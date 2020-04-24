@@ -6,18 +6,13 @@ import { useDispatch } from 'react-redux';
 import { saveUser } from '../../store/actions/user';
 import * as constants from '../../constants';
 import { chronicSickValues } from '../../constants';
-import { EXPLAINER_STEP, SPLASH_SCREEN_STEP } from './Registration.constants';
-import { StartScreen } from '../StartScreen';
+import { EXPLAINER_STEP } from './Registration.constants';
 import { Explainer } from './components/Explainer';
 import { ImprintFiller } from '../../components/ImprintFiller';
 
 const Registration = () => {
   const dispatch = useDispatch();
-  const [step, setStep] = useState(SPLASH_SCREEN_STEP);
-
-  if (step === SPLASH_SCREEN_STEP) {
-    return <StartScreen onStartClick={() => setStep(EXPLAINER_STEP)} />;
-  }
+  const [step, setStep] = useState(EXPLAINER_STEP);
 
   if (step === EXPLAINER_STEP) {
     return <Explainer onFinishClick={() => setStep(undefined)} />;
