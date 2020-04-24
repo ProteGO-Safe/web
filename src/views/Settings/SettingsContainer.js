@@ -9,7 +9,7 @@ import {
 const SettingsContainer = () => {
   const dispatch = useDispatch();
   const {
-    servicesStatus: { isBtServiceOn = false }
+    servicesStatus: { isBtServiceOn = false, isBtSupported = false }
   } = useSelector(state => state.nativeData);
 
   const toggleChecked = () => {
@@ -23,7 +23,7 @@ const SettingsContainer = () => {
   const items = [
     {
       checked: isBtServiceOn,
-      disabled: true,
+      disabled: !isBtSupported,
       onChange: toggleChecked,
       label: 'Zgoda na użycie przez aplikację funkcji Bluetooth',
       name: 'bluetooth'
