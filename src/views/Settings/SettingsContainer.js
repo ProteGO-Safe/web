@@ -20,8 +20,8 @@ const SettingsContainer = () => {
 
   return (
     <Settings items={items} title="Ustawienia">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-      tempor incididunt ut labore et dolore magna aliqua.
+      Włącz Moduł Bluetooth. Umożliwia on informowanie o potencjalnym
+      zagrożeniu.
     </Settings>
   );
 };
