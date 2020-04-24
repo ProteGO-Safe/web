@@ -101,7 +101,7 @@ const OnboardingAndroid = () => {
     },
     3: {
       icon: <Icon4 />,
-      title: 'Włącz optymalizację zużycia energii',
+      title: 'Wyłącz optymalizację zużycia energii',
       content: (
         <>
           <p>
