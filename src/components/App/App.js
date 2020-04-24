@@ -89,7 +89,7 @@ function App() {
   });
 
   const resolveHomeComponent = (() => {
-    if (!startScreenShowed) {
+    if (!startScreenShowed && !name) {
       return StartScreen;
     }
     if (
