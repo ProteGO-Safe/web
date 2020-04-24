@@ -35,13 +35,12 @@ const Information = ({ onNext }) => {
           >
             <>
               <p>
-                Korzystamy z Modułu Bluetooth oraz udostępniania lokalizacji,
-                aby zbierać anonimowe dane na temat innych użytkowników
-                aplikacji, którzy znajdują się w pobliżu Ciebie.
+                Korzystamy z Modułu Bluetooth aby móc chronić się wzajemnie i
+                umożliwić aplikacji informowanie o zagrożeniach.
               </p>
               <br />
               <p>
-                Za chwilę zapytamy Cię, czy ProteGO Safe może skoczystać z
+                Za chwilę zapytamy Cię, czy ProteGO Safe może skorzystać z
                 udostępniania lokalizacji oraz Modułu Bluetooth.
                 <strong>
                   Odpowiedz "Zezwól" lub "OK" na kolejnych ekranach.

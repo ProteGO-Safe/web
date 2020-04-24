@@ -63,25 +63,25 @@ const OnboardingAndroid = () => {
       content: (
         <>
           <p>
-            Nie korzystamy w żaden sposób z GPS i nie jesteśmy w stanie
-            stwierdzić, gdzie jesteś lub byłeś.
+            Usługi lokalizacyjne w systemie wspomagają działanie Bluetooth,
+            który będzie w stanie odszukać inne urządzenia ProteGO Safe w
+            okolicy.
           </p>
           <br />
           <p>
-            Usługi lokalizacyjne w systemie wspomagają działanie Bluetooth,
-            który bedzie w stanie odszukać inne urządzenia ProteGO Safe w
-            okolicy
+            Korzystamy tylko z Bluetooth. Nie korzystamy w żaden sposób z GPS i
+            aplikacja nie wie gdzie jesteś lub byłeś.
           </p>
           <br />
           <p>
             Włącz w swoim urządzeniu usługę lokalizacji i pozwól ProteGO Safe
-            zatroszczyć się o Twoje zdrowie
+            wspierać ochronę zdrowia każdego z nas.
           </p>
         </>
       ),
       buttons: [
         {
-          text: 'WŁĄCZ LOKALIZACJĘ',
+          text: 'włącz lokalizację',
           onClick: locationYes
         },
         {
@@ -97,13 +97,13 @@ const OnboardingAndroid = () => {
       content: (
         <>
           <p>
-            Korzystamy z Modułu Bluetooth aby rejestrować anonimowo urządzenia
-            użykowników, znajdujących się dookoła Ciebie.
+            Korzystając z modułu Bluetooth dbasz o siebie i bliskich. Włącz go,
+            żeby aplikacja mogła ostrzegać Cię o zagrożeniach.
           </p>
           <br />
           <p>
-            Włącz w swoim urządzeniu Bluetooth i pozwól ProteGO Safe zatroszczyć
-            się o Twoje zdrowie.
+            Włącz w swoim urządzeniu Bluetooth i pozwól ProteGO Safe wspierać
+            ochronę zdrowia każdego z nas.
           </p>
         </>
       ),
@@ -125,21 +125,19 @@ const OnboardingAndroid = () => {
       content: (
         <>
           <p>
-            Aby aplikacja zbierała informację o spotkanych urządzeniach,
-            pozostaw ją włączoną
+            Optymalizacja zużycia energii ogranicza funkcjonalności ProteGO
+            Safe, uniemożliwiając poprawne funkcjonowanie aplikacji.
           </p>
           <br />
           <p>
-            Optymalizacja zużycia energii ogranicza funkcjonalności ProteGO
-            Safe, uniemożliwiając połączenia z urządzeniami dookoła. Kliknij
-            poniżej i&nbsp;wyłącz optymalizację zużycia energii.
+            Czy chcesz wyłączyć optymalizację zużycia energii żeby aplikacja
+            mogła powiadamiać o zagrożeniach?
           </p>
         </>
       ),
       buttons: [
         {
-          text:
-            'Wyłącz optymalizację zużycia energii (Przejdź do ustawień systemowych)',
+          text: 'wyłącz',
           onClick: batteryYes
         },
         {

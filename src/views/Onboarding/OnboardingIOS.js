@@ -73,12 +73,10 @@ const OnboardingIOS = () => {
       title: 'Włącz powiadomienia',
       content: (
         <>
-          <p>Włącz powiadomienia</p>
-          <br />
           <p>
             Do prawidłowego działania aplikacji potrzebna jest Twoja zgoda na
-            wyświetlanie powiadomień. Kliknij poniżej i pozwók ProteGO Safe
-            chronić zdrowie Twoje i Twoich bliskich
+            wyświetlanie powiadomień. Kliknij poniżej i pozwól ProteGO Safe
+            wspierać ochronę zdrowia każdego z nas.
           </p>
         </>
       ),
@@ -90,7 +88,7 @@ const OnboardingIOS = () => {
         },
         {
           border: true,
-          text: 'nie włączaj teraz powiadomień',
+          text: 'nie powiadamiaj mnie o zagrożeniach',
           onClick: notificationNo
         }
       ]
@@ -101,25 +99,25 @@ const OnboardingIOS = () => {
       content: (
         <>
           <p>
-            Korzystamy z Modułu Bluetooth, rejestrować anonimowo urządzenia
-            użykowników, znajdujących się dookoła Ciebie.
+            KKorzystając z modułu Bluetooth dbasz o siebie i bliskich. Włącz go,
+            żeby aplikacja mogła ostrzegać Cię o zagrożeniach.
           </p>
           <br />
           <p>
-            Włącz w swoim urządzeniu Bluetooth i pozwól ProteGO Safe zatroszczyć
-            się o Twoje zdrowie.
+            Włącz w swoim urządzeniu Bluetooth i pozwól ProteGO Safe wspierać
+            ochronę zdrowia każdego z nas..
           </p>
         </>
       ),
       buttons: [
         {
           border: false,
-          text: 'WŁĄCZ BLUETOOTH',
+          text: 'włącz bluetooth',
           onClick: bluetoothYes
         },
         {
           border: true,
-          text: 'rozmyśliłem się, nie chce korzystać w Modułu Bluetooth',
+          text: 'nie powiadamiaj mnie o zagrożeniach',
           onClick: bluetoothNo
         }
       ]
