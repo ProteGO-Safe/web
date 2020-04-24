@@ -8,12 +8,13 @@ import { Switcher } from '../../components';
 
 const Settings = ({ children, items, onBack, title }) => {
   const renderSettings = items.map(item => {
-    const { checked, onChange, label, name } = item;
+    const { checked, disabled, onChange, label, name } = item;
 
     return (
       <Switcher
         key={label}
         checked={checked}
+        disabled={disabled}
         onChange={onChange}
         label={label}
         name={name}

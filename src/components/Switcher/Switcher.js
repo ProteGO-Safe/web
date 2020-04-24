@@ -1,23 +1,18 @@
-import React, { useState } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import { FormControlLabel, Switch } from '@material-ui/core';
 import { SwitcherWrapper } from './Switcher.styled';
 
-const Switcher = ({ label, name }) => {
-  const [checked, setChecked] = useState(false);
-
-  const toggleChecked = () => {
-    setChecked(prev => !prev);
-  };
-
+const Switcher = ({ checked, disabled, label, name, onChange }) => {
   return (
     <SwitcherWrapper>
       <FormControlLabel
+        disabled={disabled}
         control={
           <Switch
             size="medium"
             checked={checked}
-            onChange={toggleChecked}
+            onChange={onChange}
             name={name}
           />
         }
@@ -28,11 +23,13 @@ const Switcher = ({ label, name }) => {
 };
 
 Switcher.defaultProps = {
-  checked: false
+  checked: false,
+  disabled: false
 };
 
 Switcher.propTypes = {
   checked: PropTypes.bool,
+  disabled: PropTypes.bool,
   label: PropTypes.oneOfType([PropTypes.node, PropTypes.string]).isRequired,
   name: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired
