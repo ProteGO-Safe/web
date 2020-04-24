@@ -2,10 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import Onboarding from './Onboarding';
 import { Icon2, Icon3, Icon4 } from './Onboarding.styled';
-import {
-  finishOnboarding,
-  disagreeModuleBluetooth
-} from '../../store/actions/app';
+import { disagreeModuleBluetooth } from '../../store/actions/app';
 import {
   showNativeBatteryOptimizationPermission,
   showNativeBluetoothPermission,
@@ -14,28 +11,53 @@ import {
 
 const OnboardingAndroid = () => {
   const dispatch = useDispatch();
-  const [screen, setScreen] = useState(1);
+  const [screen, setScreen] = useState('');
 
   const {
-    servicesStatus: { isLocationEnabled, isBtOn, isBatteryOptimizationOn } = {}
+    servicesStatus: {
+      isLocationEnabled = false,
+      isBtOn = false,
+      isBatteryOptimizationOn = true
+    } = {}
   } = useSelector(state => state.nativeData);
 
   useEffect(() => {
-    if (isBatteryOptimizationOn && isLocationEnabled && isBtOn) {
-      dispatch(finishOnboarding());
+    if (!isLocationEnabled) {
+      setScreen('location');
       return;
     }
-    if (isLocationEnabled && isBtOn) {
-      setScreen(3);
+    if (!isBtOn) {
+      setScreen('bluetooth');
       return;
     }
-    if (isLocationEnabled) {
-      setScreen(2);
+    if (isBatteryOptimizationOn) {
+      setScreen('battery');
     }
   }, [isLocationEnabled, isBtOn, isBatteryOptimizationOn, dispatch]);
 
+  const locationYes = () => {
+    dispatch(showNativeLocationPermission());
+  };
+  const locationNo = () => {
+    dispatch(disagreeModuleBluetooth());
+  };
+
+  const bluetoothYes = () => {
+    dispatch(showNativeBluetoothPermission());
+  };
+  const bluetoothNo = () => {
+    dispatch(disagreeModuleBluetooth());
+  };
+
+  const batteryYes = () => {
+    dispatch(showNativeBatteryOptimizationPermission());
+  };
+  const batteryNo = () => {
+    dispatch(disagreeModuleBluetooth());
+  };
+
   const screens = {
-    1: {
+    location: {
       icon: <Icon2 />,
       title: 'Włącz usługę lokalizacji',
       content: (
@@ -61,16 +83,16 @@ const OnboardingAndroid = () => {
         {
           border: false,
           text: 'WŁĄCZ LOKALIZACJĘ',
-          onClick: () => dispatch(showNativeLocationPermission())
+          onClick: locationYes
         },
         {
           border: true,
           text: 'rozmyśliłem się, nie chce korzystać w Modułu Bluetooth',
-          onClick: () => dispatch(disagreeModuleBluetooth())
+          onClick: locationNo
         }
       ]
     },
-    2: {
+    bluetooth: {
       icon: <Icon3 />,
       title: 'Włącz bluetooth',
       content: (
@@ -90,16 +112,16 @@ const OnboardingAndroid = () => {
         {
           border: false,
           text: 'WŁĄCZ BLUETOOTH',
-          onClick: () => dispatch(showNativeBluetoothPermission())
+          onClick: bluetoothYes
         },
         {
           border: true,
           text: 'rozmyśliłem się, nie chce korzystać w Modułu Bluetooth',
-          onClick: () => dispatch(disagreeModuleBluetooth())
+          onClick: bluetoothNo
         }
       ]
     },
-    3: {
+    battery: {
       icon: <Icon4 />,
       title: 'Wyłącz optymalizację zużycia energii',
       content: (
@@ -121,16 +143,20 @@ const OnboardingAndroid = () => {
           border: false,
           text:
             'Wyłącz optymalizaję zużcia energii (Przejdź do ustawień systemowych)',
-          onClick: () => dispatch(showNativeBatteryOptimizationPermission())
+          onClick: batteryYes
         },
         {
           border: true,
           text: 'rozmyśliłem się, nie chce korzystać w Modułu Bluetooth',
-          onClick: () => dispatch(disagreeModuleBluetooth())
+          onClick: batteryNo
         }
       ]
     }
   };
+
+  if (screen === '') {
+    return null;
+  }
 
   return <Onboarding screen={screens[screen]} />;
 };
