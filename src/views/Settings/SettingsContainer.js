@@ -11,6 +11,7 @@ const SettingsContainer = () => {
   const items = [
     {
       checked,
+      disabled: true,
       onChange: toggleChecked,
       label: 'Zgoda na użycie przez aplikację funkcji Bluetooth',
       name: 'bluetooth'
