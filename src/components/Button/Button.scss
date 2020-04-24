@@ -81,7 +81,12 @@
   &--ghost,
   &--tertiary {
     text-transform: none;
-    color: $button_primary;
+    
+    border: none;
+    background-color: transparent;
+    color: $black;
+    font-size: 13px;
+    font-weight: unset;
 
     &:hover {
       color: $button_hover;
