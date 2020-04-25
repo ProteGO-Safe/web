@@ -1,5 +1,4 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
 
 import Icon1 from '../../assets/img/icons/menu-boczne-dziennik_BLUE.svg';
 import Icon2 from '../../assets/img/icons/menu-boczne-kwestionariusz_BLUE.svg';
@@ -14,10 +13,8 @@ import Icon9 from '../../assets/img/icons/menu-boczne-zglos-blad_BLUE.svg';
 import Menu from './Menu';
 import useMenuContext from '../../hooks/useMenuContext';
 import Routes from '../../routes';
-import { isVersionCompatibilityWithBluetoothModule } from '../../utills/version';
 
 const MenuContainer = () => {
-  const { servicesStatus } = useSelector(state => state.nativeData);
   const { visible } = useMenuContext();
 
   if (!visible) {
@@ -65,8 +62,7 @@ const MenuContainer = () => {
       icon: Icon7,
       path: Routes.Settings,
       slug: 'ustawienia',
-      title: 'Ustawienia',
-      disable: !isVersionCompatibilityWithBluetoothModule(servicesStatus)
+      title: 'Ustawienia'
     },
     {
       icon: Icon9,

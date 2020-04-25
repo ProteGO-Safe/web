@@ -3,21 +3,25 @@ import { isVersionCompatibilityWithBluetoothModule } from '../version';
 
 export const showOnboarding = (
   servicesStatus = {},
-  onboardingFinished = false
-  // onboardingBluetoothPermissionShowed = false,
-  // onboardingNotificationPermissionShowed = false,
-  // iosBluetoothSummaryShowed = false
+  onboardingFinished = false,
+  onboardingBluetoothPermissionShowed = false,
+  onboardingNotificationPermissionShowed = false,
+  iosBluetoothSummaryShowed = false
 ) => {
   const {
     isBtSupported,
     isLocationEnabled,
     isBtOn,
     isBatteryOptimizationOn,
-    // isNotificationEnabled,
+    isNotificationEnabled,
     isBtServiceOn
   } = servicesStatus;
 
   if (!isVersionCompatibilityWithBluetoothModule(servicesStatus)) {
+    return false;
+  }
+
+  if (onboardingFinished) {
     return false;
   }
 
@@ -36,19 +40,21 @@ export const showOnboarding = (
   }
 
   if (isIOSWebView()) {
-    return false;
-    // if (!!isBtOn && !iosBluetoothSummaryShowed) {
-    //   return true;
-    // }
-    // if (!!isBtOn && !!isNotificationEnabled) {
-    //   return false;
-    // }
-    // if (
-    //   onboardingBluetoothPermissionShowed &&
-    //   onboardingNotificationPermissionShowed
-    // ) {
-    //   return false;
-    // }
+    if (!!isBtOn && !!isNotificationEnabled && onboardingFinished) {
+      return false;
+    }
+    if (!!isBtOn && !iosBluetoothSummaryShowed) {
+      return true;
+    }
+    if (!!isBtOn && !!isNotificationEnabled) {
+      return false;
+    }
+    if (
+      onboardingBluetoothPermissionShowed &&
+      onboardingNotificationPermissionShowed
+    ) {
+      return false;
+    }
   }
 
   if (!onboardingFinished) {
