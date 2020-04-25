@@ -57,7 +57,7 @@ const OnboardingIOS = () => {
     dispatch(showNativeNotificationPermission());
   };
   const notificationNo = () => {
-    setScreen('bluetooth');
+    dispatch(disagreeModuleBluetooth());
   };
 
   const bluetoothYes = () => {
@@ -82,14 +82,13 @@ const OnboardingIOS = () => {
       ),
       buttons: [
         {
-          border: false,
           text: 'Włącz powiadomienia',
           onClick: notificationYes
         },
         {
-          border: true,
           text: 'nie powiadamiaj mnie o zagrożeniach',
-          onClick: notificationNo
+          onClick: notificationNo,
+          type: 'tertiary'
         }
       ]
     },
@@ -111,14 +110,13 @@ const OnboardingIOS = () => {
       ),
       buttons: [
         {
-          border: false,
           text: 'włącz bluetooth',
           onClick: bluetoothYes
         },
         {
-          border: true,
           text: 'nie powiadamiaj mnie o zagrożeniach',
-          onClick: bluetoothNo
+          onClick: bluetoothNo,
+          type: 'tertiary'
         }
       ]
     },
@@ -140,7 +138,6 @@ const OnboardingIOS = () => {
       ),
       buttons: [
         {
-          border: false,
           text: 'OK',
           onClick: () => dispatch(finishOnboarding())
         }
