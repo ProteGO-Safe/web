@@ -10,10 +10,15 @@ import { BottomNavigation } from '../../components/BottomNavigation';
 import notebook from '../../assets/img/icons/welcome-screen.svg';
 import arrowRight from '../../assets/img/icons/angle-right.svg';
 
+import { useHistory } from 'react-router-dom';
+import Routes from '../../routes';
+
 const Daily = ({ goToHistory, onFill, today, previousDays }) => {
+  const history = useHistory();
+
   return (
     <div className="view view__risk-test">
-      <Header />
+      <Header onBackClick={() => history.push(Routes.Home)} />
       <Container>
         <h4 className="diary__title">
           Uzupełnij dzisiejszy wpis do <br />

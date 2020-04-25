@@ -29,7 +29,7 @@ const DailyData = ({ isViewMode }) => {
           <Actions>
             {isViewMode ? (
               <Button
-                onClick={() => history.push(Routes.Daily)}
+                onClick={() => history.push( Routes.Daily)}
                 text="Powrót"
                 type="primary"
               />
