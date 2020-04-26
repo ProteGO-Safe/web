@@ -75,7 +75,7 @@ const OnboardingIOS = () => {
         <>
           <p>
             Do prawidłowego działania aplikacji potrzebna jest Twoja zgoda na
-            wyświetlanie powiadomień. Kliknij poniżej i pozwól ProteGO Safe
+            wyświetlanie powiadomień. Włącz powiadomienia i pozwól ProteGO Safe
             wspierać ochronę zdrowia każdego z nas.
           </p>
         </>
@@ -98,7 +98,7 @@ const OnboardingIOS = () => {
       content: (
         <>
           <p>
-            KKorzystając z modułu Bluetooth dbasz o siebie i bliskich. Włącz go,
+            Korzystając z modułu Bluetooth dbasz o siebie i bliskich. Włącz go,
             żeby aplikacja mogła ostrzegać Cię o zagrożeniach.
           </p>
           <br />
