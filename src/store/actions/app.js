@@ -34,6 +34,16 @@ export function showOnboardingNotificationPermission() {
   };
 }
 
+export const iosOnboardingScreenNotificationShowed = () => ({
+  type: types.IOS_ONBOARDING_SCREEN_NOTIFICATION_SHOWED
+});
+
+export function discardIOSNotification() {
+  return dispatch => {
+    dispatch(iosOnboardingScreenNotificationShowed());
+  };
+}
+
 export const onboardingBluetoothPermissionShowed = () => ({
   type: types.ONBOARDING_BLUETOOTH_PERMISSION_SHOWED
 });
