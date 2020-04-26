@@ -1,4 +1,5 @@
 import React from 'react';
+import Email from '../../../../components/Email';
 
 const RegulationsContent = () => (
   <>
@@ -319,7 +320,7 @@ const RegulationsContent = () => (
       </li>
       <li>
         Reklamacje związane z funkcjonowaniem aplikacji mogą być składane
-        elektronicznie na adres: protego@mc.gov.pl.
+        elektronicznie na adres: <Email>protego@mc.gov.pl</Email>.
       </li>
     </ol>
   </>
