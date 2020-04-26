@@ -15,7 +15,7 @@ export const Container = styled(BottomNavigationBase)`
     box-shadow: inset 0 0.5px 0 0 ${hexToRgba(Color.black, 0.25)};
     background-color: rgba(250, 250, 250, 0.9);
     height: auto;
-    z-index: 999;
+    z-index: 998;
     .MuiBottomNavigationAction-root {
       min-width: auto;
     }

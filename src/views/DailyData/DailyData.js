@@ -3,15 +3,15 @@ import PropTypes from 'prop-types';
 import { useHistory } from 'react-router-dom';
 import { useFormikContext } from 'formik';
 
-import { Button, Imprint } from '../../components';
-import { Data, Form } from './components';
-import './DailyData.scss';
+import Routes from '../../routes';
 import Header from '../../components/Header/Header';
 import { BottomNavigation } from '../../components/BottomNavigation';
+import { Button, Imprint } from '../../components';
+import { Data, Form } from './components';
 import { Actions } from '../../components/ImprintFiller/ImprintFiller.styled';
 import { Content, Container, View } from '../../theme/grid';
-import { Title } from '../../theme/typography';
-import Routes from '../../routes';
+import { Title, TitleBox } from './DailyData.styled';
+import './DailyData.scss';
 
 const DailyData = ({ isViewMode }) => {
   const { dirty, submitForm } = useFormikContext();
@@ -21,15 +21,15 @@ const DailyData = ({ isViewMode }) => {
     <View>
       <Header />
       <Content>
-        <Container className="container__content">
+        <Container className="full-height">
           <Title>Dziennik zdrowia</Title>
           {isViewMode ? <Data /> : <Form />}
-          <Title className="medium title-4 text-left">Metryka</Title>
+          <TitleBox className="medium title-4 text-left">Metryka</TitleBox>
           <Imprint hidePhoneNumber />
           <Actions>
             {isViewMode ? (
               <Button
-                onClick={() => history.push( Routes.Daily)}
+                onClick={() => history.push(Routes.Daily)}
                 text="Powrót"
                 type="primary"
               />
@@ -43,8 +43,8 @@ const DailyData = ({ isViewMode }) => {
             )}
           </Actions>
         </Container>
+        <BottomNavigation />
       </Content>
-      <BottomNavigation />
     </View>
   );
 };
