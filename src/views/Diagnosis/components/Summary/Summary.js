@@ -21,7 +21,7 @@ const Summary = ({ onSave }) => (
           grupy Cię zakwalifikować.
         </p>
         <small>
-          To bardzo ważne, abyś wypełniała testy regularnie. Będziemy Ci o tym
+          To bardzo ważne, abyś wypełniał/-a testy regularnie. Będziemy Ci o tym
           przypominać :)
         </small>
       </div>
