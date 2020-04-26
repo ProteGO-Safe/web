@@ -35,6 +35,12 @@
       background-color: $button_hover;
     }
 
+    @media (max-width: 767px) {
+      &:hover {
+        background-color: $button_primary;
+      }
+    }
+
     &:disabled {
       background: $button_disabled;
       color: white;
@@ -50,6 +56,13 @@
     &:hover {
       color: $button_hover;
       border-color: $button_hover;
+    }
+
+    @media (max-width: 767px) {
+      &:hover {
+        color: $button_primary;
+        border-color: $button_primary;
+      }
     }
 
     &:disabled {
@@ -91,6 +104,12 @@
 
     &:hover {
       color: $button_hover;
+    }
+
+    @media (max-width: 767px) {
+      &:hover {
+        color: $black;
+      }
     }
 
     &:disabled {
