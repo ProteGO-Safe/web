@@ -26,7 +26,7 @@ const AdviceInformation = () => {
           <List>
             <ListItem>
               <img src={IconAdviceHome} alt="advice icon" />
-              <p>Zostań w domu</p>
+              <p>Zostań w domu.</p>
             </ListItem>
             <ListItem>
               <img src={IconAdvicePhone} alt="advice icon" />
