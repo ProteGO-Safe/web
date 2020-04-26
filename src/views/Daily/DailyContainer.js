@@ -7,12 +7,13 @@ import { createDaysDetails } from '../../utills/calendar';
 import Daily from './Daily';
 
 const todayFormat = 'D-MM-YYYY';
+const dateFormat = 'HH:mm D-MM-YYYY';
 
 const DailyContainer = () => {
   const history = useHistory();
   const daily = useSelector(state => state.daily);
 
-  const daysInDaily = createDaysDetails(Object.keys(daily));
+  const daysInDaily = createDaysDetails(Object.keys(daily), dateFormat);
 
   const today = moment().format(todayFormat);
 
