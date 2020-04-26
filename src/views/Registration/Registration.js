@@ -9,6 +9,7 @@ import { chronicSickValues } from '../../constants';
 import { EXPLAINER_STEP } from './Registration.constants';
 import { Explainer } from './components/Explainer';
 import { ImprintFiller } from '../../components/ImprintFiller';
+import { AGE_VALIDATOR } from '../../utills/validationSchemas';
 
 const Registration = () => {
   const dispatch = useDispatch();
@@ -40,10 +41,7 @@ const Registration = () => {
       [true],
       'Proszę zaznaczyć zgodę'
     ),
-    [constants.FIELD_AGE]: Yup.number()
-      .min(1, 'Za mały wiek')
-      .max(150, 'Za duży wiek')
-      .required('Wiek jest wymagany')
+    [constants.FIELD_AGE]: AGE_VALIDATOR
   });
 
   const resolveSex = field => {
