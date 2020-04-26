@@ -63,7 +63,7 @@ const Smoke = () => {
       {isSmoking && (
         <Select
           changeHandler={setFieldValue}
-          label="Liczba wypalanych papierosów"
+          label="Liczba wypalanych dziennie papierosów"
           name={FIELD_SMOKE_NUMBER}
           options={options}
           required

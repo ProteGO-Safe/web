@@ -25,15 +25,15 @@ const SettingsContainer = () => {
       checked: isBtServiceOn,
       disabled: !isBtSupported,
       onChange: toggleChecked,
-      label: 'Zgoda na użycie przez aplikację funkcji Bluetooth',
+      label: 'Zgoda na używanie Bluetooth w celu wykrycia zagrożeń',
       name: 'bluetooth'
     }
   ];
 
   return (
     <Settings items={items} title="Ustawienia">
-      Włącz Moduł Bluetooth. Umożliwia on informowanie o potencjalnym
-      zagrożeniu.
+      Korzystamy z Modułu Bluetooth aby móc chronić się wzajemnie i umożliwić
+      aplikacji informowanie o zagrożeniach.
     </Settings>
   );
 };
