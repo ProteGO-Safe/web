@@ -41,7 +41,7 @@ const Information = ({ onNext }) => {
               <br />
               <p>
                 Za chwilę zapytamy Cię, czy ProteGO Safe może skorzystać z
-                udostępniania lokalizacji oraz Modułu Bluetooth.
+                udostępniania lokalizacji oraz Modułu Bluetooth.{' '}
                 <strong>
                   Odpowiedz "Zezwól" lub "OK" na kolejnych ekranach.
                 </strong>
