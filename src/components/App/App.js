@@ -51,9 +51,6 @@ function App() {
   const { servicesStatus } = useSelector(state => state.nativeData);
   const {
     onboardingFinished,
-    onboardingNotificationPermissionShowed,
-    onboardingBluetoothPermissionShowed,
-    iosBluetoothSummaryShowed,
     startScreenShowed
   } = useSelector(state => state.app);
   const { notification } = useSelector(state => state.nativeData);
@@ -66,6 +63,14 @@ function App() {
     }
     return () => null;
   }, [notification, dispatch]);
+
+  useEffect(() => {
+    const interval = setInterval(
+      () => dispatch(fetchNativeServicesStatus()),
+      1000
+    );
+    return () => clearInterval(interval);
+  }, [dispatch]);
 
   useEffect(() => {
     dispatch(fetchNativeServicesStatus());
@@ -94,13 +99,8 @@ function App() {
     }
     if (
       isWebView() &&
-      showOnboarding(
-        servicesStatus,
-        onboardingFinished,
-        onboardingBluetoothPermissionShowed,
-        onboardingNotificationPermissionShowed,
-        iosBluetoothSummaryShowed
-      )
+      !onboardingFinished &&
+      showOnboarding(servicesStatus, onboardingFinished)
     ) {
       return Onboarding;
     }

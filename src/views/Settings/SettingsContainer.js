@@ -3,50 +3,63 @@ import { useDispatch, useSelector } from 'react-redux';
 import Settings from './Settings';
 import {
   disableBluetoothModule,
-  enableBluetoothModule
+  enableBluetoothModule,
+  showNativeBatteryOptimizationPermission,
+  showNativeBluetoothPermission,
+  showNativeLocationPermission
 } from '../../store/actions/nativeData';
-import { Text } from './Settings.styled';
+import { isAndroidWebView, isIOSWebView } from '../../utills/native';
 
 const SettingsContainer = () => {
   const dispatch = useDispatch();
   const {
-    rejectedService,
-    servicesStatus: { isBtServiceOn = false, isBtSupported = false }
+    servicesStatus: {
+      isBtServiceOn = false,
+      isBtSupported = false,
+      isBtOn = false,
+      isLocationEnabled = false,
+      isBatteryOptimizationOn = true
+    }
   } = useSelector(state => state.nativeData);
 
+  const isModuleBluetoothEnable = (() => {
+    if (isIOSWebView()) {
+      return isBtServiceOn && isBtOn;
+    }
+
+    if (isAndroidWebView()) {
+      return (
+        isBtServiceOn && isBtOn && isLocationEnabled && !isBatteryOptimizationOn
+      );
+    }
+    return false;
+  })();
+
   const toggleChecked = () => {
-    if (isBtServiceOn) {
+    if (isModuleBluetoothEnable) {
       dispatch(disableBluetoothModule());
     } else {
+      dispatch(showNativeBluetoothPermission());
+      if (isAndroidWebView()) {
+        dispatch(showNativeLocationPermission());
+        dispatch(showNativeBatteryOptimizationPermission());
+      }
       dispatch(enableBluetoothModule());
     }
   };
 
   const items = [
     {
-      checked: isBtServiceOn,
-      disabled: !isBtSupported || rejectedService === 'bluetooth',
+      checked: isModuleBluetoothEnable,
+      disabled: !isBtSupported,
       onChange: toggleChecked,
       label: 'Zgoda na używanie Bluetooth w celu wykrycia zagrożeń',
       name: 'bluetooth'
     }
   ];
 
-  const info = (() => {
-    if (rejectedService === 'bluetooth') {
-      return (
-        <Text>
-          Udziel aplikacji ProteGO Safe zgody na użycie bluetooth w
-          &lt;ustawieniach systemu&gt; aby korzystać z ochrony, jaką daje Moduł
-          Bluetooth.
-        </Text>
-      );
-    }
-    return null;
-  })();
-
   return (
-    <Settings items={items} title="Ustawienia" info={info}>
+    <Settings items={items} title="Ustawienia">
       Korzystamy z Modułu Bluetooth aby móc chronić się wzajemnie i umożliwić
       aplikacji informowanie o zagrożeniach.
     </Settings>

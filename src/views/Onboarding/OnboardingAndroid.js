@@ -4,7 +4,7 @@ import Onboarding from './Onboarding';
 import { Icon2, Icon3, Icon4 } from './Onboarding.styled';
 import {
   disagreeModuleBluetooth,
-  finishOnboarding
+  finishOnboardingAndEnableBluetoothModule
 } from '../../store/actions/app';
 import {
   showNativeBatteryOptimizationPermission,
@@ -23,12 +23,9 @@ const OnboardingAndroid = () => {
       isBatteryOptimizationOn = true
     } = {}
   } = useSelector(state => state.nativeData);
+  const { onboardingFinished } = useSelector(state => state.app);
 
   useEffect(() => {
-    if (isLocationEnabled && isBtOn && !isBatteryOptimizationOn) {
-      dispatch(finishOnboarding());
-    }
-
     if (!isLocationEnabled) {
       setScreen('location');
       return;
@@ -39,8 +36,18 @@ const OnboardingAndroid = () => {
     }
     if (isBatteryOptimizationOn) {
       setScreen('battery');
+      return;
     }
-  }, [isLocationEnabled, isBtOn, isBatteryOptimizationOn, dispatch]);
+    if (!onboardingFinished) {
+      dispatch(finishOnboardingAndEnableBluetoothModule());
+    }
+  }, [
+    onboardingFinished,
+    isLocationEnabled,
+    isBtOn,
+    isBatteryOptimizationOn,
+    dispatch
+  ]);
 
   const locationYes = () => {
     dispatch(showNativeLocationPermission());
