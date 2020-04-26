@@ -6,7 +6,8 @@ import {
   finishOnboarding,
   disagreeModuleBluetooth,
   showOnboardingNotificationPermission,
-  showOnboardingBluetoothPermission
+  showOnboardingBluetoothPermission,
+  discardIOSNotification
 } from '../../store/actions/app';
 import {
   showNativeBluetoothPermission,
@@ -22,7 +23,8 @@ const OnboardingIOS = () => {
   } = useSelector(state => state.nativeData);
   const {
     onboardingNotificationPermissionShowed,
-    onboardingBluetoothPermissionShowed
+    onboardingBluetoothPermissionShowed,
+    iosOnboardingScreenNotificationShowed
   } = useSelector(state => state.app);
   const [screen, setScreen] = useState('');
 
@@ -33,16 +35,20 @@ const OnboardingIOS = () => {
     if (rejectedService === 'bluetooth' || isBtOn) {
       dispatch(showOnboardingBluetoothPermission());
     }
-    if (!isNotificationEnabled && !onboardingNotificationPermissionShowed) {
-      setScreen('notification');
-      return;
-    }
-    if (!isBtOn && !onboardingBluetoothPermissionShowed) {
+    if (
+      !isBtOn &&
+      !onboardingBluetoothPermissionShowed &&
+      iosOnboardingScreenNotificationShowed
+    ) {
       setScreen('bluetooth');
       return;
     }
-    if (isBtOn) {
+    if (isBtOn && iosOnboardingScreenNotificationShowed) {
       setScreen('bluetoothSummary');
+      return;
+    }
+    if (!isNotificationEnabled && !onboardingNotificationPermissionShowed) {
+      setScreen('notification');
     }
   }, [
     isNotificationEnabled,
@@ -50,6 +56,7 @@ const OnboardingIOS = () => {
     rejectedService,
     onboardingNotificationPermissionShowed,
     onboardingBluetoothPermissionShowed,
+    iosOnboardingScreenNotificationShowed,
     dispatch
   ]);
 
@@ -57,7 +64,7 @@ const OnboardingIOS = () => {
     dispatch(showNativeNotificationPermission());
   };
   const notificationNo = () => {
-    dispatch(disagreeModuleBluetooth());
+    dispatch(discardIOSNotification());
   };
 
   const bluetoothYes = () => {

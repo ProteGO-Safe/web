@@ -3,13 +3,15 @@ import {
   ONBOARDING_IOS_BLUETOOTH_SUMMARY_SHOWED,
   ONBOARDING_NOTIFICATION_PERMISSION_SHOWED,
   ONBOARDING_FINISHED,
-  START_SCREEN_SHOWED
+  START_SCREEN_SHOWED,
+  IOS_ONBOARDING_SCREEN_NOTIFICATION_SHOWED
 } from '../../types/app';
 
 const INITIAL_STATE = {
   onboardingFinished: false,
   onboardingNotificationPermissionShowed: false,
   onboardingBluetoothPermissionShowed: false,
+  iosOnboardingScreenNotificationShowed: false,
   iosBluetoothSummaryShowed: false,
   startScreenShowed: false
 };
@@ -24,6 +26,11 @@ const appReducer = (state = INITIAL_STATE, action) => {
       return {
         ...state,
         onboardingNotificationPermissionShowed: true
+      };
+    case IOS_ONBOARDING_SCREEN_NOTIFICATION_SHOWED:
+      return {
+        ...state,
+        iosOnboardingScreenNotificationShowed: true
       };
     case ONBOARDING_BLUETOOTH_PERMISSION_SHOWED:
       return {
