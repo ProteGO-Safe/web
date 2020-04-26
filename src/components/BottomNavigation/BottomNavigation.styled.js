@@ -1,6 +1,7 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import BottomNavigationBase from '@material-ui/core/BottomNavigation';
 import BottomNavigationActionBase from '@material-ui/core/BottomNavigationAction';
+
 import { hexToRgba } from '../../helpers/colors';
 import { Color } from '../../theme/colors';
 
@@ -18,6 +19,18 @@ export const Container = styled(BottomNavigationBase)`
     z-index: 998;
     .MuiBottomNavigationAction-root {
       min-width: auto;
+    }
+  }
+`;
+
+const activeMenuItemStyles = css`
+  background-color: ${Color.primary};
+  color: ${Color.white};
+
+  svg {
+    stroke: ${Color.white};
+    path: {
+      stroke: ${Color.white};
     }
   }
 `;
@@ -45,15 +58,7 @@ export const MenuItem = styled(BottomNavigationActionBase)`
     }
 
     &:focus {
-      background-color: ${Color.primary};
-      color: ${Color.white};
-
-      svg {
-        stroke: ${Color.white};
-        path: {
-          stroke: ${Color.white};
-        }
-      }
+      ${activeMenuItemStyles}
     }
   }
 `;
