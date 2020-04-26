@@ -1,4 +1,5 @@
 import React from 'react';
+import Email from '../../../../components/Email';
 
 const PrivacyPolicyContent = () => (
   <>
@@ -45,7 +46,6 @@ const PrivacyPolicyContent = () => (
       Infermedica. Infermedica także nie będzie miała możliwości
       zidentyfikowania Cię.
     </p>
-    ​
     <p>
       <strong>§1.</strong>
     </p>
@@ -75,8 +75,9 @@ const PrivacyPolicyContent = () => (
       <li>
         W razie ogólnych pytań dotyczących prywatności, a także pytań
         dotyczących niniejszej Polityki prywatności lub wykorzystania Danych
-        Osobowych zachęcamy do kontaktu pod adresem: <u>protego@mc.gov.p</u>l
-        lub <u>iod@gis.gov.pl</u>.
+        Osobowych zachęcamy do kontaktu pod adresem:{' '}
+        <Email>protego@mc.gov.p</Email>
+        lub <Email>iod@gis.gov.pl</Email>.
       </li>
       <li>
         Administrator Danych powołał inspektora ochrony danych. Z inspektorem
@@ -84,7 +85,7 @@ const PrivacyPolicyContent = () => (
         przetwarzania danych osobowych przez Administratora Danych oraz
         korzystania z praw związanych z przetwarzaniem tych danych. Inspektorem
         Ochrony Danych jest Renata Wągrodzka z którą możesz skontaktować się za
-        pośrednictwem adresu e-mail: iod@gis.gov.pl.
+        pośrednictwem adresu e-mail: <Email>iod@gis.gov.pl</Email>.
       </li>
       <li>
         Administrator Danych zapewnia, iż dokłada wszelkich starań, by
@@ -274,8 +275,8 @@ const PrivacyPolicyContent = () => (
             <ol>
               <li>
                 Minister Cyfryzacji z siedzibą w Warszawie, ul. Królewska 27, 00
-                – 060 Warszawa, e-mail: <u>mc@mc.gov.pl</u> (Administrator
-                Systemu);
+                – 060 Warszawa, e-mail: <Email>mc@mc.gov.pl</Email>{' '}
+                (Administrator Systemu);
               </li>
               <li>
                 TYTANI24 Spółka z ograniczoną odpowiedzialnością z siedzibą we
@@ -311,8 +312,8 @@ const PrivacyPolicyContent = () => (
       <li>
         Podmiot dostarczający w przyszłości dodatkowe funkcjonalności: Centrum
         Systemów Informacyjnych Ochrony Zdrowia z siedzibą w Warszawie, ul.
-        Stanisława Dubois 5a, 00-184 Warszawa, e-mail: <u>biuro@csioz.gov.pl</u>
-        ;
+        Stanisława Dubois 5a, 00-184 Warszawa, e-mail:{' '}
+        <Email>biuro@csioz.gov.pl</Email>;
       </li>
       <li>
         Minister Zdrowia z siedzibą w Warszawie, ul. Miodowa 15. 00-952

@@ -8,6 +8,7 @@ import { BordersButton } from '../../components/BordersButton';
 import { LineItem } from '../../components/LineItem';
 import { Info, Phone, Line } from './Numbers.styled';
 import { Container, Content, View } from '../../theme/grid';
+import PhoneNumber from '../../components/PhoneNumber';
 
 const Numbers = () => {
   const history = useHistory();
@@ -20,11 +21,15 @@ const Numbers = () => {
       <Content>
         <Container className="full-height">
           <Info>Szukaj pomocy w Twojej okolicy</Info>
-          <BordersButton
-            className="small"
-            text="Zadzwoń na infolinię - 800190590"
-            icon={<Phone />}
-          />
+          <PhoneNumber value="800190590">
+            <BordersButton
+              className="small"
+              text="Zadzwoń na infolinię - 800190590"
+              icon={<Phone />}
+            >
+              Zadzwoń na infolinię - 800190590
+            </BordersButton>
+          </PhoneNumber>
           <LineItem
             onClick={goToHospitalsList}
             text="Pokaż adresy szpitali zakaźnych"

@@ -6,6 +6,7 @@ export const ArrowButton = styled.div`
   display: flex;
   height: 54px;
   border-top: solid 1px #cbcbcb;
+  cursor: pointer;
 `;
 
 export const Text = styled.div`
