@@ -20,13 +20,11 @@ const Single = ({ text, choices }) => {
       <FieldSet>
         {choices.map(choice => (
           <Radio
-            color="white"
             key={choice.id}
             checked={values[FIELD_CHOICE_ID] === choice.id}
             name={FIELD_CHOICE_ID}
             onChange={() => handleChange(FIELD_CHOICE_ID, choice.id)}
             label={choice.label}
-            value={values[FIELD_CHOICE_ID]}
           />
         ))}
       </FieldSet>
