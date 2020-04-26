@@ -86,7 +86,7 @@ const OnboardingIOS = () => {
           onClick: notificationYes
         },
         {
-          text: 'nie powiadamiaj mnie o zagrożeniach',
+          text: 'nie włączaj powiadomień',
           onClick: notificationNo,
           type: 'tertiary'
         }

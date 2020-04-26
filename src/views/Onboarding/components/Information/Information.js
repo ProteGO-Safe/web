@@ -35,17 +35,11 @@ const Information = ({ onNext }) => {
           >
             <>
               <p>
-                Korzystamy z Modułu Bluetooth aby móc chronić się wzajemnie i
-                umożliwić aplikacji informowanie o zagrożeniach.
+                Nowa wersja aplikacji pozwala na korzystanie z funkcji
+                Bluetooth.
               </p>
               <br />
-              <p>
-                Za chwilę zapytamy Cię, czy ProteGO Safe może skorzystać z
-                udostępniania lokalizacji oraz Modułu Bluetooth.{' '}
-                <strong>
-                  Odpowiedz "Zezwól" lub "OK" na kolejnych ekranach.
-                </strong>
-              </p>
+              <p>Pozwól aplikacji na informowanie Cię o zagrożeniach.</p>
             </>
           </OnboardingContent>
           <GovFooter type="black" />
