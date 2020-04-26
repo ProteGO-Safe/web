@@ -88,7 +88,7 @@ const ChronicSick = () => {
           checked={values[FIELD_IS_CHRONIC_SICK] === VALUE_IS_CHRONIC_SICK_NO}
           label={
             <Label>
-              Nie, jestem zdrowy i nie cierpię na przewlekłe choroby
+              Nie, jestem zdrowy/-a i nie cierpię na przewlekłe choroby
             </Label>
           }
           onChange={handleSelectNoChronicSick}
@@ -96,7 +96,7 @@ const ChronicSick = () => {
         />
         <Radio
           checked={values[FIELD_IS_CHRONIC_SICK] === VALUE_IS_CHRONIC_SICK_YES}
-          label={<Label>Tak, jestem przewlekle chory</Label>}
+          label={<Label>Tak, jestem przewlekle chory/-a</Label>}
           onChange={handleSelectChronicSick}
           name={FIELD_IS_CHRONIC_SICK}
         />
