@@ -51,6 +51,7 @@ export const onboardingBluetoothPermissionShowed = () => ({
 export function showOnboardingBluetoothPermission() {
   return dispatch => {
     dispatch(onboardingBluetoothPermissionShowed());
+    dispatch(onboardingFinished());
   };
 }
 
