@@ -52,7 +52,7 @@ const FaqPage = () => {
 
   return (
     <View>
-      <Header />
+      <Header hideBackButton />
       <Content>
         <Container className="full-height">
           <Title>Pytania i odpowiedzi</Title>
