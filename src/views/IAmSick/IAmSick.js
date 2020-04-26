@@ -18,10 +18,9 @@ const Complete = () => {
           </Title>
           <ListNumber>
             <ListNumberItem>
-              <span className="primary-2"><strong>Zostań w domu</strong></span> i monitoruj stan
-              swojego zdrowia. Zadzwoń na infolinię Narodowego Funduszu zdrowia
-              800 190 590 lub do lokalnej placówki służby zdrowia. Ważne! Nie
-              idź tam.
+              <strong>Zostań w domu</strong> i monitoruj stan swojego zdrowia.
+              Zadzwoń na infolinię Narodowego Funduszu zdrowia 800 190 590 lub
+              do lokalnej placówki służby zdrowia. Ważne! Nie idź tam.
             </ListNumberItem>
             <ListNumberItem>
               Do minimum <strong>ogranicz kontakt</strong> z innymi ludźmi.

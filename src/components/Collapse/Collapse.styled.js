@@ -31,7 +31,7 @@ export const Title = styled.span`
     transform: rotate(90deg);
   }
   &.open {
-    border-bottom: 0;
+    border-bottom: solid 1px transparent;
     img {
       transform: rotate(-90deg);
     }

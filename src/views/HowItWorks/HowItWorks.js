@@ -14,11 +14,8 @@ const HowItWorks = () => {
         <Container className="full-height">
           <Title>Jak to działa</Title>
           <Paragraph>
-            <span className="primary-2">
-              <strong>ProteGO Safe</strong>
-            </span>{' '}
-            to darmowa, oficjalna i bezpieczna aplikacja, dzięki której - na
-            podstawie wytycznych{' '}
+            <strong>ProteGO Safe</strong> to darmowa, oficjalna i bezpieczna
+            aplikacja, dzięki której - na podstawie wytycznych{' '}
             <strong>Światowej Organizacji Zdrowia (WHO)</strong> - możesz
             oceniać ryzyko infekcji koronawirusem, prowadzić dziennik stanu
             zdrowia oraz dowiedzieć się jak unikać zakażenia. Obserwując wyniki
