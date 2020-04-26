@@ -122,7 +122,7 @@ const OnboardingIOS = () => {
     },
     bluetoothSummary: {
       icon: <Icon6 />,
-      title: 'Nie zamykaj aplikacji',
+      title: 'Moduł Bluetooth już działa, nie zamykaj aplikacji',
       content: (
         <>
           <p>
