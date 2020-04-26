@@ -4,7 +4,6 @@ import { cond, equals, always } from 'ramda';
 
 import StoreRegistry from '../../store/storeRegistry';
 import {
-  NATIVE_DATA_SET_REJECTED_SERVICE_SUCCESS,
   NATIVE_DATA_SET_SERVICES_STATUS_SUCCESS
 } from '../../store/types/nativeData';
 import { DATA_TYPE } from './nativeBridge.constants';
@@ -87,14 +86,6 @@ const handleServicesStatus = data => {
   });
 };
 
-const handleRejectedService = data => {
-  const store = StoreRegistry.getStore();
-  store.dispatch({
-    rejectedService: data,
-    type: NATIVE_DATA_SET_REJECTED_SERVICE_SUCCESS
-  });
-};
-
 const callBridgeDataHandler = cond([
   [equals(DATA_TYPE.NATIVE_SERVICES_STATUS), always(handleServicesStatus)],
   [
@@ -105,7 +96,6 @@ const callBridgeDataHandler = cond([
   [equals(DATA_TYPE.LOCATION_PERMISSION), always(handleServicesStatus)],
   [equals(DATA_TYPE.NOTIFICATION_PERMISSION), always(handleServicesStatus)],
   [equals(DATA_TYPE.BT_MODULE), always(handleServicesStatus)],
-  [equals(DATA_TYPE.REJECTED_SERVICE), always(handleRejectedService)]
 ]);
 
 const onBridgeData = (dataType, dataString) => {

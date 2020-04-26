@@ -39,13 +39,6 @@ function setBridgeData
 | 36     | toggle bt module                                    |`"enableBtService": true/false`            |
 
 
-function onBridgeData-
-
-|Data type|Description|JSON format|
-| ------ | --- | --- |
-| 37     | get rejected service //only IOS  |`"rejectedService": bluetooth/notification`            |
-
-
 Application uses API https://api.safesafe.app as proxy to send and retrieve data from infermedica.com [Documentation](https://developer.infermedica.com/docs/covid-19)
 
 ## debug

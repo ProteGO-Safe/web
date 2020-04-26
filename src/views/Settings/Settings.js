@@ -6,7 +6,7 @@ import { Container, Content, View } from '../../theme/grid';
 import { ItemWrapper, Text, Title } from './Settings.styled';
 import { Switcher } from '../../components';
 
-const Settings = ({ children, info, items, onBack, title }) => {
+const Settings = ({ children, items, onBack, title }) => {
   const renderSettings = items.map(item => {
     const { checked, disabled, onChange, label, name } = item;
 
@@ -30,7 +30,6 @@ const Settings = ({ children, info, items, onBack, title }) => {
           <Title>{title}</Title>
           <Text>{children}</Text>
           <ItemWrapper>{renderSettings}</ItemWrapper>
-          {info}
         </Container>
       </Content>
       <BottomNavigation />

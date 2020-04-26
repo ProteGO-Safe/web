@@ -1,7 +1,6 @@
 import moment from 'moment';
 import nativeBridge from '../../services/nativeBridge';
 import * as types from '../types/nativeData';
-import { iosOnboardingScreenNotificationShowed } from './app';
 
 export function saveInfoAboutFilledDiagnosis() {
   const timestamp = moment().unix();
@@ -70,8 +69,7 @@ export function showNativeBatteryOptimizationPermission() {
 }
 
 export function showNativeNotificationPermission() {
-  return dispatch => {
-    dispatch(iosOnboardingScreenNotificationShowed());
+  return () => {
     nativeBridge.showNotificationPermission();
   };
 }

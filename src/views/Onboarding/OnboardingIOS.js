@@ -3,11 +3,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import Onboarding from './Onboarding';
 import { Icon3, Icon5, Icon6 } from './Onboarding.styled';
 import {
-  finishOnboarding,
-  disagreeModuleBluetooth,
-  showOnboardingNotificationPermission,
-  showOnboardingBluetoothPermission,
-  discardIOSNotification
+  finishOnboardingAndEnableBluetoothModule,
+  disagreeModuleBluetooth
 } from '../../store/actions/app';
 import {
   showNativeBluetoothPermission,
@@ -18,45 +15,29 @@ const OnboardingIOS = () => {
   const dispatch = useDispatch();
 
   const {
-    rejectedService,
     servicesStatus: { isNotificationEnabled, isBtOn } = {}
   } = useSelector(state => state.nativeData);
-  const {
-    onboardingNotificationPermissionShowed,
-    onboardingBluetoothPermissionShowed,
-    iosOnboardingScreenNotificationShowed
-  } = useSelector(state => state.app);
+  const { onboardingFinished } = useSelector(state => state.app);
   const [screen, setScreen] = useState('');
+  const [discardedNotification, setDiscardedNotification] = useState(false);
 
   useEffect(() => {
-    if (rejectedService === 'notification' || isNotificationEnabled) {
-      dispatch(showOnboardingNotificationPermission());
+    if (!isNotificationEnabled && !discardedNotification) {
+      setScreen('notification');
+      return;
     }
-    if (rejectedService === 'bluetooth' || isBtOn) {
-      dispatch(showOnboardingBluetoothPermission());
-    }
-    if (
-      !isBtOn &&
-      !onboardingBluetoothPermissionShowed &&
-      iosOnboardingScreenNotificationShowed
-    ) {
+    if (!isBtOn) {
       setScreen('bluetooth');
       return;
     }
-    if (isBtOn && iosOnboardingScreenNotificationShowed) {
+    if (!onboardingFinished) {
       setScreen('bluetoothSummary');
-      return;
-    }
-    if (!isNotificationEnabled && !onboardingNotificationPermissionShowed) {
-      setScreen('notification');
     }
   }, [
+    onboardingFinished,
     isNotificationEnabled,
     isBtOn,
-    rejectedService,
-    onboardingNotificationPermissionShowed,
-    onboardingBluetoothPermissionShowed,
-    iosOnboardingScreenNotificationShowed,
+    discardedNotification,
     dispatch
   ]);
 
@@ -64,14 +45,16 @@ const OnboardingIOS = () => {
     dispatch(showNativeNotificationPermission());
   };
   const notificationNo = () => {
-    dispatch(discardIOSNotification());
+    setDiscardedNotification(true);
   };
-
   const bluetoothYes = () => {
     dispatch(showNativeBluetoothPermission());
   };
   const bluetoothNo = () => {
     dispatch(disagreeModuleBluetooth());
+  };
+  const bluetoothSummaryOk = () => {
+    dispatch(finishOnboardingAndEnableBluetoothModule());
   };
 
   const screens = {
@@ -146,7 +129,7 @@ const OnboardingIOS = () => {
       buttons: [
         {
           text: 'OK',
-          onClick: () => dispatch(finishOnboarding())
+          onClick: bluetoothSummaryOk
         }
       ]
     }
