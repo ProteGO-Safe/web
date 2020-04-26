@@ -10,6 +10,7 @@ import { chronicSickValues } from '../../constants';
 import Routes from '../../routes';
 import useLoaderContext from '../../hooks/useLoaderContext';
 import { ImprintFiller } from '../../components/ImprintFiller';
+import { AGE_VALIDATOR } from '../../utills/validationSchemas';
 
 const UserDataChange = () => {
   const dispatch = useDispatch();
@@ -62,10 +63,7 @@ const UserDataChange = () => {
       [true],
       'Proszę zaznaczyć zgodę'
     ),
-    [constants.FIELD_AGE]: Yup.number()
-      .min(1, 'Za mały wiek')
-      .max(150, 'Za duży wiek')
-      .required('Wiek jest wymagany')
+    [constants.FIELD_AGE]: AGE_VALIDATOR
   });
 
   const resolveSex = field => {
