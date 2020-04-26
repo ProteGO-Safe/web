@@ -21,7 +21,7 @@ export const showOnboarding = (
     return false;
   }
 
-  if (onboardingFinished) {
+  if (onboardingFinished && isIOSWebView()) {
     return false;
   }
 
