@@ -41,4 +41,4 @@ jobs:
         with:
           args: deploy --only hosting
         env:
-          GCP_SA_KEY: ${{ secrets.FIREBASE_HOSTING_SAFE }}
+          GCP_SA_KEY: ${{ secrets.FIREBASE_HOSTING_SAFE
