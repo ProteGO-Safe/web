@@ -4,6 +4,7 @@ import Routes from '../../routes';
 import Header from '../../components/Header/Header';
 import { BottomNavigation } from '../../components/BottomNavigation';
 import { Button, FieldSet } from '../../components';
+import PhoneNumber from '../../components/PhoneNumber';
 import { Container, Content, View } from '../../theme/grid';
 import { Title, List, ListItem } from './AdviceInformation.styled';
 import './AdviceInformation.scss';
@@ -60,7 +61,7 @@ const AdviceInformation = () => {
             <p>
               Jeśli u Ciebie lub Twoich bliskich wystąpią objawy zakażenia
               koronawirusem, zadzwoń na infolinię Narodowego Funduszu Zdrowia
-              (NFZ) 800 190 590 lub do lokalnej placówki służby zdrowia.
+              (NFZ) <PhoneNumber value="800190590">800 190 590</PhoneNumber> lub do lokalnej placówki służby zdrowia.
             </p>
           </div>
           <FieldSet>
