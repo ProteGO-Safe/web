@@ -55,7 +55,7 @@ const Home = ({
         <div className="more-information">
           <h4>Więcej informacji</h4>
           <p>
-            aktualne informacje na temat sytuacji epidemicznej oraz inne porady
+            Aktualne informacje na temat sytuacji epidemicznej oraz inne porady
             i wskazówki, znajdziesz na www.gov.pl/koronawirus
           </p>
           <small>
