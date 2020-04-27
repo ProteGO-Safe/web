@@ -1,20 +1,30 @@
 import React, { useRef, useState } from 'react';
-import { useFormikContext } from 'formik';
 
 import IconChat from '../../../../assets/img/explainer/chat.svg';
 import IconDiary from '../../../../assets/img/explainer/diary.svg';
 import IconInfo from '../../../../assets/img/explainer/info.svg';
+import IconBluetooth from '../../../../assets/img/explainer/bluetooth.svg';
 
 import Explainer from './Explainer';
 import { ExplainerItem } from './components';
 
-const ExplainerContainer = () => {
-  const { setFieldValue } = useFormikContext();
-
+const ExplainerContainer = ({ onFinishClick }) => {
   const carouselRef = useRef(null);
   const [activeSlide, setActiveSlide] = useState(0);
 
   const items = [
+    {
+      content: (
+        <>
+          Funkcja działa w kontakcie z osobami, które wyraziły na to zgodę i
+          korzystają z aplikacji. Zachęć innych do korzystania.
+          <br />
+          <br />W ten sposób wzajemnie się chronimy!
+        </>
+      ),
+      icon: IconBluetooth,
+      slug: 'bluetooth'
+    },
     {
       content: (
         <>Dbaj o siebie! Regularnie sprawdzaj, czy jesteś w grupie ryzyka</>
@@ -50,12 +60,12 @@ const ExplainerContainer = () => {
   };
 
   const handleButtonClick = () => {
-    if (activeSlide < 2) {
-      carouselRef.current.slickGoTo(activeSlide + 1);
+    if (activeSlide < 3) {
+      carouselRef.current.slickNext();
       return;
     }
 
-    setFieldValue('step', 1);
+    onFinishClick();
   };
 
   return (

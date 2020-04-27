@@ -10,32 +10,37 @@ import {
   Diagnosis,
   Home,
   HowItWorks,
-  InstallApp,
   IAmSick,
   RiskTest,
   Numbers,
+  Onboarding,
   PrivacyPolicy,
   PrivacyPolicyDetails,
   Registration,
   Regulations,
   RiskTestData,
+  Settings,
+  StartScreen,
   UserData,
+  UserDataChange,
   UserDataSettings,
-  InstallAppAndroid,
-  InstallAppIOS,
-  MatchedDevices,
   HospitalsList,
   ReportBug,
   AdviceInformation,
   FaqPage
 } from '../../views';
 
-import { fetchNotification } from '../../store/actions/nativeData';
+import {
+  fetchNativeServicesStatus,
+  fetchNotification
+} from '../../store/actions/nativeData';
 import useMenuContext from '../../hooks/useMenuContext';
 import { Menu } from '../Menu';
 import Routes from '../../routes';
 import './App.scss';
 import { Notification } from '../Notification';
+import { showOnboarding } from '../../utills/servicesStatus';
+import { isWebView } from '../../utills/native';
 
 function App() {
   moment.locale('pl');
@@ -43,6 +48,11 @@ function App() {
   const history = useHistory();
 
   const { name } = useSelector(state => state.user);
+  const { servicesStatus } = useSelector(state => state.nativeData);
+  const {
+    onboardingFinished,
+    startScreenShowed
+  } = useSelector(state => state.app);
   const { notification } = useSelector(state => state.nativeData);
   const { inProgress, visible: menuIsVisible } = useMenuContext();
 
@@ -53,6 +63,18 @@ function App() {
     }
     return () => null;
   }, [notification, dispatch]);
+
+  useEffect(() => {
+    const interval = setInterval(
+      () => dispatch(fetchNativeServicesStatus()),
+      1000
+    );
+    return () => clearInterval(interval);
+  }, [dispatch]);
+
+  useEffect(() => {
+    dispatch(fetchNativeServicesStatus());
+  }, [dispatch]);
 
   history.listen(() => {
     window.scroll(0, 0);
@@ -71,33 +93,29 @@ function App() {
     'menu-visible': menuIsVisible && !inProgress
   });
 
+  const resolveHomeComponent = (() => {
+    if (!startScreenShowed && !name) {
+      return StartScreen;
+    }
+    if (
+      isWebView() &&
+      !onboardingFinished &&
+      showOnboarding(servicesStatus, onboardingFinished)
+    ) {
+      return Onboarding;
+    }
+    if (!name) {
+      return Registration;
+    }
+    return Home;
+  })();
+
   return (
     <div className={className}>
       <div className="app__inner">
         <Switch>
-          <Route
-            exact
-            path={Routes.Home}
-            component={name ? Home : Registration}
-          />
-          {!name && (
-            <Route exact path={Routes.Install} component={InstallApp} />
-          )}
-          {!name && (
-            <Route
-              exact
-              path={Routes.InstallAndroid}
-              component={InstallAppAndroid}
-            />
-          )}
-          {!name && (
-            <Route
-              exact
-              path={Routes.InstallAppIOS}
-              component={InstallAppIOS}
-            />
-          )}
-          {name && (
+          <Route exact path={Routes.Home} component={resolveHomeComponent} />
+          {name && true && (
             <>
               <Route exact path={Routes.Daily} component={Daily} />
               <Route exact path="/daily/:id" component={DailyData} />
@@ -105,6 +123,7 @@ function App() {
               <Route exact path={Routes.HowItWorks} component={HowItWorks} />
               <Route exact path={Routes.IAmSick} component={IAmSick} />
               <Route exact path={Routes.RiskTest} component={RiskTest} />
+              <Route exact path={Routes.Settings} component={Settings} />
               <Route
                 exact
                 path="/risk-test-data/:id"
@@ -132,8 +151,8 @@ function App() {
               <Route exact path={Routes.ReportBug} component={ReportBug} />
               <Route
                 exact
-                path={Routes.MatchedDevices}
-                component={MatchedDevices}
+                path={Routes.UserDataChange}
+                component={UserDataChange}
               />
               <Route
                 exact

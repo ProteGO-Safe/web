@@ -7,6 +7,7 @@ import { BottomNavigation } from '../../components/BottomNavigation';
 import { Paragraph } from '../../theme/typography';
 import { Color } from '../../theme/colors';
 import { FontWeight } from '../../theme/fonts';
+import Email from '../../components/Email';
 
 const ReportBug = () => {
   return (
@@ -25,7 +26,7 @@ const ReportBug = () => {
         <br />
       </Content>
       <Paragraph color={Color.primary} fontWeight={FontWeight.Bold}>
-        info@safesafe.app
+        <Email>info@safesafe.app</Email>
       </Paragraph>
       <BottomNavigation />
     </Container>

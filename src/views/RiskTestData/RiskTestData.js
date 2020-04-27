@@ -2,7 +2,8 @@ import React from 'react';
 
 import Header from '../../components/Header/Header';
 import { BottomNavigation } from '../../components/BottomNavigation';
-import { List, ListItem, Paragraph, Title } from '../../theme/typography';
+import { List, ListItem, Paragraph } from '../../theme/typography';
+import { Title } from './RiskTestData.styled';
 import { Content, Container, View } from '../../theme/grid';
 import { FontWeight } from '../../theme/fonts';
 
@@ -18,7 +19,7 @@ const RiskTestData = ({
     <Header onBackClick={onBack} />
     <Content>
       <Container>
-        <Title style={{ marginBottom: 0 }}>Test oceny ryzyka</Title>
+        <Title>Test oceny ryzyka</Title>
         <Paragraph>
           {isToday && 'DZIŚ'} {day} r.
         </Paragraph>

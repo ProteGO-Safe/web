@@ -7,12 +7,10 @@ import { saveUser } from '../../store/actions/user';
 import * as constants from '../../constants';
 import Registration from './Registration';
 import { chronicSickValues } from '../../constants';
-import useInstallApp from '../../hooks/useInstallApp';
+import { AGE_VALIDATOR } from '../../utills/validationSchemas';
 
 const RegistrationContainer = () => {
   const dispatch = useDispatch();
-
-  useInstallApp();
 
   const initialValues = {
     [constants.FIELD_AGE]: '',
@@ -36,10 +34,7 @@ const RegistrationContainer = () => {
       [true],
       'Proszę zaznaczyć zgodę'
     ),
-    [constants.FIELD_AGE]: Yup.number()
-      .min(1, 'Za mały wiek')
-      .max(150, 'Za duży wiek')
-      .required('Wiek jest wymagany')
+    [constants.FIELD_AGE]: AGE_VALIDATOR
   });
 
   const resolveSex = field => {

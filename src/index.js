@@ -12,8 +12,11 @@ import './index.css';
 import { App } from './components';
 import * as serviceWorker from './serviceWorker';
 import _store from './store';
+import StoreRegistry from './store/storeRegistry';
 import { GlobalStyle } from './theme/global';
 import { materialTheme } from './theme/materialTheme';
+
+StoreRegistry.setStore(_store.store);
 
 ReactDOM.render(
   (() => {

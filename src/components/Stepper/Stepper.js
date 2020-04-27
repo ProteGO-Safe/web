@@ -13,7 +13,7 @@ import {
   StepWrapper
 } from './Stepper.styled';
 
-const MINIMUM_STEPS_TO_DISPLAY = 3;
+const MINIMUM_STEPS_TO_DISPLAY = 1;
 
 const Stepper = ({ currentStep, numberOfSteps }) => {
   const renderSteps = Array.from({ length: numberOfSteps }, (_, index) => {

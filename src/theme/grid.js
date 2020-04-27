@@ -21,4 +21,6 @@ export const View = styled.div`
   grid-template-rows: 50px 1fr;
   width: 100%;
   min-height: 100vh;
+  min-height: calc(100vh - constant(safe-area-inset-top));
+  min-height: calc(100vh - env(safe-area-inset-top));
 `;

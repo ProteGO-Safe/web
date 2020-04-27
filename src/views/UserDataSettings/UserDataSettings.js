@@ -4,7 +4,7 @@ import { ModalContent } from './components';
 import useModalContext from '../../hooks/useModalContext';
 import Header from '../../components/Header/Header';
 import { BottomNavigation } from '../../components/BottomNavigation';
-import { Actions } from '../Registration/Registration.styled';
+import { Actions } from '../../components/ImprintFiller/ImprintFiller.styled';
 import { Container, Content, View } from '../../theme/grid';
 import { Paragraph, Title } from '../../theme/typography';
 import { Box, BoxTitle } from './userDataSettings.styled';

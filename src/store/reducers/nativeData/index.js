@@ -1,22 +1,24 @@
 import {
-  NATIVE_DATA_FETCH_DEVICES_LIST_SUCCESS,
+  NATIVE_DATA_FETCH_NATIVE_SERVICES_STATUS_SUCCESS,
   NATIVE_DATA_FETCH_NOTIFICATION_SUCCESS,
-  NATIVE_DATA_HIDE_NOTIFICATION_SUCCESS
+  NATIVE_DATA_HIDE_NOTIFICATION_SUCCESS,
+  NATIVE_DATA_SET_SERVICES_STATUS_SUCCESS
 } from '../../types/nativeData';
 
 const INITIAL_STATE = {
-  matchedDevices: [],
-  notification: undefined
+  notification: undefined,
+  servicesStatus: {}
 };
 
-const fetchMatchedDevicesListSuccess = (state, action) => {
-  return { ...state, matchedDevices: action.matchedDevices };
+const setServicesStatusSuccess = (state, { servicesStatus = {} }) => {
+  return {
+    ...state,
+    ...servicesStatus
+  };
 };
 
 const nativeBridgeReducer = (state = INITIAL_STATE, action) => {
   switch (action.type) {
-    case NATIVE_DATA_FETCH_DEVICES_LIST_SUCCESS:
-      return fetchMatchedDevicesListSuccess(state, action);
     case NATIVE_DATA_FETCH_NOTIFICATION_SUCCESS:
       return (() => {
         const {
@@ -36,6 +38,10 @@ const nativeBridgeReducer = (state = INITIAL_STATE, action) => {
         ...state,
         notification: undefined
       };
+    case NATIVE_DATA_SET_SERVICES_STATUS_SUCCESS:
+      return setServicesStatusSuccess(state, action);
+    case NATIVE_DATA_FETCH_NATIVE_SERVICES_STATUS_SUCCESS:
+      return setServicesStatusSuccess(state, action);
     default:
       return state;
   }

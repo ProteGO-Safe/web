@@ -20,8 +20,8 @@ const Collapse = ({ children, title }) => {
 };
 
 Collapse.propTypes = {
-  children: PropTypes.node,
-  title: PropTypes.string
+  children: PropTypes.node.isRequired,
+  title: PropTypes.string.isRequired
 };
 
 export default Collapse;

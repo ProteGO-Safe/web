@@ -2,18 +2,6 @@ import moment from 'moment';
 import nativeBridge from '../../services/nativeBridge';
 import * as types from '../types/nativeData';
 
-export const fetchDevicesListSuccess = matchedDevices => ({
-  matchedDevices,
-  type: types.NATIVE_DATA_FETCH_DEVICES_LIST_SUCCESS
-});
-
-export function fetchDevicesList() {
-  return dispatch => {
-    const matchedDevices = nativeBridge.getMatchedDevices();
-    dispatch(fetchDevicesListSuccess(matchedDevices));
-  };
-}
-
 export function saveInfoAboutFilledDiagnosis() {
   const timestamp = moment().unix();
 
@@ -44,5 +32,58 @@ export const hideNotificationSuccess = () => ({
 export function hideNotification() {
   return dispatch => {
     dispatch(hideNotificationSuccess());
+  };
+}
+
+export const fetchNativeServicesStatusSuccess = servicesStatus => {
+  return {
+    servicesStatus,
+    type: types.NATIVE_DATA_FETCH_NATIVE_SERVICES_STATUS_SUCCESS
+  };
+};
+
+export function fetchNativeServicesStatus() {
+  return dispatch => {
+    nativeBridge.getNativeServicesStatus().then(data => {
+      dispatch(fetchNativeServicesStatusSuccess(data));
+    });
+  };
+}
+
+export function showNativeLocationPermission() {
+  return () => {
+    nativeBridge.showLocationPermission();
+  };
+}
+
+export function showNativeBluetoothPermission() {
+  return () => {
+    nativeBridge.showBtPermission();
+  };
+}
+
+export function showNativeBatteryOptimizationPermission() {
+  return () => {
+    nativeBridge.showBatteryOptimizationPermission();
+  };
+}
+
+export function showNativeNotificationPermission() {
+  return () => {
+    nativeBridge.showNotificationPermission();
+  };
+}
+
+export function enableBluetoothModule() {
+  const data = { enableBtService: true };
+  return () => {
+    nativeBridge.setBluetoothModuleState(data);
+  };
+}
+
+export function disableBluetoothModule() {
+  const data = { enableBtService: false };
+  return () => {
+    nativeBridge.setBluetoothModuleState(data);
   };
 }

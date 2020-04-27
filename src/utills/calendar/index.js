@@ -7,10 +7,13 @@ const dateFormat = 'D-MM-YYYY';
 const descending = (a, b) => b - a;
 
 // filledDays contains moments
-export const createDaysDetails = (filledDays = []) => {
+export const createDaysDetails = (
+  filledDays = [],
+  dateFormatIn = dateFormat
+) => {
   return filledDays.sort(descending).map(_timestamp => {
     return {
-      day: moment.unix(_timestamp).format(dateFormat),
+      day: moment.unix(_timestamp).format(dateFormatIn),
       dayWeek: moment.unix(_timestamp).format(dayWeekFormat),
       timestamp: _timestamp
     };

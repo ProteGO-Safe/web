@@ -1,11 +1,5 @@
 import styled from 'styled-components';
-import { ReactComponent as RiskTestIcon } from '../../assets/img/icons/risk-test.svg';
-
-export const Container = styled.div`
-  width: 100%;
-  padding: 19px 17px 10px 17px;
-  min-height: 100vh;
-`;
+import { ReactComponent as RiskTestIcon } from '../../assets/img/icons/wykonaj-test.svg';
 
 export const Title = styled.div`
   font-size: 20px;
