@@ -15,9 +15,7 @@ const ModalConfirmation = () => {
   const { setLoader } = useLoaderContext();
 
   const handleClose = () => {
-    dispatch(clearBluetoothData());
     localStorage.clear();
-
     onClose();
 
     setLoader(true);
@@ -25,7 +23,10 @@ const ModalConfirmation = () => {
     history.push(Routes.Home);
   };
 
-  useEffect(() => () => window.location.reload(), []);
+  useEffect(() => {
+    dispatch(clearBluetoothData());
+    return () => window.location.reload();
+  }, [dispatch]);
 
   return (
     <div className="user-data__modal-confirmation">
