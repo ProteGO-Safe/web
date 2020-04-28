@@ -43,7 +43,7 @@ const HowItWorks = () => {
             <ListItem>
               <strong>Pomoc w diagnozie</strong> - regularnie uzupełniane przez
               Ciebie infomacje - w razie konieczności - pomogą lekarzom wystawić
-              diagnozę. Tylko oni mogą to zrobić.
+              diagnozę. Tylko oni mogą to zrobić.{' '}
               <strong>Ważne! Test Oceny Ryzyka NIE jest diagnozą.</strong>
             </ListItem>
             <ListItem>

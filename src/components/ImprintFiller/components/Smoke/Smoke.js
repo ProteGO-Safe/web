@@ -66,7 +66,6 @@ const Smoke = () => {
           label="Liczba wypalanych dziennie papierosów"
           name={FIELD_SMOKE_NUMBER}
           options={options}
-          required
           value={values[FIELD_SMOKE_NUMBER]}
         />
       )}

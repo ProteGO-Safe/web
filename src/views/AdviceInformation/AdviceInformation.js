@@ -48,8 +48,10 @@ const AdviceInformation = () => {
               <img src={IconAdviceNote} alt="advice icon" />
               <p>
                 Regularnie uzupełniaj zakładkę{' '}
-                <Link to="/daily">MÓJ DZIENNIK ZDROWIA</Link>: zapisuj w
-                aplikacji objawy i temperaturę ciała.
+                <Link to="/daily">
+                  <strong>MÓJ DZIENNIK ZDROWIA</strong>
+                </Link>
+                : zapisuj w aplikacji objawy i temperaturę ciała.
               </p>
             </ListItem>
           </List>
@@ -61,7 +63,8 @@ const AdviceInformation = () => {
             <p>
               Jeśli u Ciebie lub Twoich bliskich wystąpią objawy zakażenia
               koronawirusem, zadzwoń na infolinię Narodowego Funduszu Zdrowia
-              (NFZ) <PhoneNumber value="800190590">800 190 590</PhoneNumber> lub do lokalnej placówki służby zdrowia.
+              (NFZ) <PhoneNumber value="800190590">800 190 590</PhoneNumber> lub
+              do lokalnej placówki służby zdrowia.
             </p>
           </div>
           <FieldSet>

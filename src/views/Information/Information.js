@@ -28,14 +28,14 @@ const Complete = ({ hideInformation }) => {
             <p className="p2">Test:</p>
             <ul className="warning--list">
               <li>
-                <strong>Test nie jest diagnozą.</strong> Tę mogą postawić
-                wyłącznie lekarz i test medyczny na obecność wirusa.
+                <strong>nie jest diagnozą.</strong> Tę mogą postawić wyłącznie
+                lekarz i test medyczny na obecność wirusa.
               </li>
               <li>
-                Pomaga <strong>monitorować</strong> swój stan zdrowia.
+                pomaga <strong>monitorować</strong> swój stan zdrowia.
               </li>
               <li>
-                Wypełnij go <strong>zgodnie z prawdą</strong> - robisz to dla
+                wypełnij go <strong>zgodnie z prawdą</strong> - robisz to dla
                 własnego <strong>bezpieczeństwa.</strong>
               </li>
             </ul>
