@@ -120,8 +120,8 @@ const RegulationsContent = () => (
         stworzoną na podstawie kwestionariusza WHO), dziennik zdrowia
         Użytkownika, wsparcie w profilaktyce i zapobieganiu zarażeniu,
         informowanie o istotnych informacjach związanych z pandemią{' '}
-        <Url value="https://www.gov.pl/web/koronawirus">COVID-19</Url>
-        oraz przypominacz bezpiecznych zachowań i nawyków codziennej higieny
+        <Url value="https://www.gov.pl/web/koronawirus">COVID-19</Url> oraz
+        przypominacz bezpiecznych zachowań i nawyków codziennej higieny
         <strong>. </strong>W ramach ProteGO Safe możliwe jest ustalenie
         czynników ryzyka infekcji, tworzenie i prowadzenie historii medycznej,
         istniejących schorzeń, aktualnej farmakoterapii oraz prowadzenie
