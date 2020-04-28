@@ -87,3 +87,10 @@ export function disableBluetoothModule() {
     nativeBridge.setBluetoothModuleState(data);
   };
 }
+
+export function clearBluetoothData() {
+  const data = { clearBtData: true };
+  return () => {
+    nativeBridge.clearBluetoothData(data);
+  };
+}

@@ -3,9 +3,7 @@ import uniqueId from 'lodash.uniqueid';
 import { cond, equals, always } from 'ramda';
 
 import StoreRegistry from '../../store/storeRegistry';
-import {
-  NATIVE_DATA_SET_SERVICES_STATUS_SUCCESS
-} from '../../store/types/nativeData';
+import { NATIVE_DATA_SET_SERVICES_STATUS_SUCCESS } from '../../store/types/nativeData';
 import { DATA_TYPE } from './nativeBridge.constants';
 import { isAndroidWebView } from '../../utills/native';
 
@@ -95,7 +93,7 @@ const callBridgeDataHandler = cond([
   [equals(DATA_TYPE.BT_PERMISSION), always(handleServicesStatus)],
   [equals(DATA_TYPE.LOCATION_PERMISSION), always(handleServicesStatus)],
   [equals(DATA_TYPE.NOTIFICATION_PERMISSION), always(handleServicesStatus)],
-  [equals(DATA_TYPE.BT_MODULE), always(handleServicesStatus)],
+  [equals(DATA_TYPE.BT_MODULE), always(handleServicesStatus)]
 ]);
 
 const onBridgeData = (dataType, dataString) => {
@@ -126,6 +124,10 @@ const showNotificationPermission = async () => {
   await callNativeFunction('setBridgeData', DATA_TYPE.NOTIFICATION_PERMISSION);
 };
 
+const clearBluetoothData = async data => {
+  await callNativeFunction('setBridgeData', DATA_TYPE.CLEAR_BT_DATA, data);
+};
+
 window.onBridgeData = onBridgeData;
 window.bridgeDataResponse = receiveNativeResponse;
 
@@ -137,5 +139,6 @@ export default {
   showLocationPermission,
   showNotificationPermission,
   getNativeServicesStatus,
-  getNotification
+  getNotification,
+  clearBluetoothData
 };
