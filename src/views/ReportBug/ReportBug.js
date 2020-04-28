@@ -8,6 +8,7 @@ import { Paragraph } from '../../theme/typography';
 import { Color } from '../../theme/colors';
 import { FontWeight } from '../../theme/fonts';
 import Email from '../../components/Email';
+import Url from '../../components/Url';
 
 const ReportBug = () => {
   return (
@@ -18,7 +19,8 @@ const ReportBug = () => {
         infekcji koronawirusem na podstawie wytycznych Światowej Organizacji
         Zdrowia (WHO), prowadzić dziennik stanu zdrowia oraz lepiej poznać
         profilaktykę. Obserwując wyniki oraz stosując środki zaradcze
-        minimalizujesz ryzyko zachorowania na COVID-19.
+        minimalizujesz ryzyko zachorowania na{' '}
+        <Url value="https://www.gov.pl/web/koronawirus">COVID-19</Url>.
         <br />
         <br />
         Masz pytania? Znalazłeś błąd? Skontaktuj się z nami!
