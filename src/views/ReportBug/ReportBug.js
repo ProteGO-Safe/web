@@ -1,38 +1,42 @@
 import React from 'react';
 
 import { Header } from '../../components/Header';
-import { Container, Content } from './ReportBug.styled';
 import { BottomNavigation } from '../../components/BottomNavigation';
 
-import { Paragraph } from '../../theme/typography';
+import { Container, Content, View } from '../../theme/grid';
+import { Title } from './ReportBug.styled';
 import { Color } from '../../theme/colors';
 import { FontWeight } from '../../theme/fonts';
+import { Paragraph } from '../../theme/typography';
 import Email from '../../components/Email';
+import Url from '../../components/Url';
 
 const ReportBug = () => {
   return (
-    <Container>
+    <View>
       <Header />
       <Content>
-        ProteGO Safe to darmowa aplikacja, dzięki której możesz oceniać ryzyko
-        infekcji koronawirusem na podstawie wytycznych Światowej Organizacji
-        Zdrowia (WHO), prowadzić dziennik stanu zdrowia oraz lepiej poznać
-        profilaktykę. Obserwując wyniki oraz stosując środki zaradcze
-        minimalizujesz ryzyko zachorowania na COVID-19.
-        <br />
-        <br />
-        Masz pytania? Znalazłeś błąd? Skontaktuj się z nami!
-        <br />
-        <br />
+        <Container>
+          <Title>Zgłoś błąd</Title>
+          <Paragraph>
+            ProteGO Safe to darmowa aplikacja, dzięki której możesz oceniać
+            ryzyko infekcji koronawirusem na podstawie wytycznych Światowej
+            Organizacji Zdrowia (WHO), prowadzić dziennik stanu zdrowia oraz
+            lepiej poznać profilaktykę. Obserwując wyniki oraz stosując środki
+            zaradcze minimalizujesz ryzyko zachorowania na{' '}
+            <Url value="https://www.gov.pl/web/koronawirus">COVID-19</Url>.
+          </Paragraph>
+          <Paragraph>
+            Masz pytania? Znalazłeś błąd? Skontaktuj się z nami!
+          </Paragraph>
+          <Paragraph color={Color.primary} fontWeight={FontWeight.Bold}>
+            <Email>info@safesafe.app</Email>
+          </Paragraph>
+        </Container>
+        <BottomNavigation />
       </Content>
-      <Paragraph color={Color.primary} fontWeight={FontWeight.Bold}>
-        <Email>info@safesafe.app</Email>
-      </Paragraph>
-      <BottomNavigation />
-    </Container>
+    </View>
   );
 };
-
-ReportBug.propTypes = {};
 
 export default ReportBug;

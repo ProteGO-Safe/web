@@ -49,10 +49,9 @@ function App() {
 
   const { name } = useSelector(state => state.user);
   const { servicesStatus } = useSelector(state => state.nativeData);
-  const {
-    onboardingFinished,
-    startScreenShowed
-  } = useSelector(state => state.app);
+  const { onboardingFinished, startScreenShowed } = useSelector(
+    state => state.app
+  );
   const { notification } = useSelector(state => state.nativeData);
   const { inProgress, visible: menuIsVisible } = useMenuContext();
 

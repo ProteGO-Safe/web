@@ -1,5 +1,6 @@
 import React from 'react';
 import Email from '../../../../components/Email';
+import Url from '../../../../components/Url';
 
 const PrivacyPolicyContent = () => (
   <>
@@ -199,7 +200,8 @@ const PrivacyPolicyContent = () => (
       <li>
         Dane Osobowe osób, których dane dotyczą, są przetwarzane na podstawie{' '}
         <strong>art. 6 ust. 1 lit. c RODO</strong> w zw. z zadaniem publicznym
-        polegającym na zapobieganiu, przeciwdziałaniu i zwalczaniu COVID-19
+        polegającym na zapobieganiu, przeciwdziałaniu i zwalczaniu{' '}
+        <Url value="https://www.gov.pl/web/koronawirus">COVID-19</Url>{' '}
         wynikającym z art. 1, 2, 3, 6 oraz 8a ust. 1, 4 i 5 ustawy z dnia 14
         marca 1985 r o Państwowej Inspekcji Sanitarnej (Dz.U. z 2019 r. poz.
         59).
@@ -207,10 +209,11 @@ const PrivacyPolicyContent = () => (
       <li>
         Dane Osobowe dotyczące stanu zdrowia Użytkownika są przetwarzane także
         na podstawie <strong>art. 9 ust. 2 lit. i RODO </strong>w zw. z zadaniem
-        publicznym polegającym na zapobieganiu, przeciwdziałaniu i zwalczaniu
-        COVID-19 wynikającym z art. 1, 2, 3, 6 oraz 8a ust. 1, 4 i 5 ustawy z
-        dnia 14 marca 1985 r o Państwowej Inspekcji Sanitarnej (Dz.U. z 2019 r.
-        poz. 59), gdyż przetwarzanie jest niezbędne ze względów związanych z
+        publicznym polegającym na zapobieganiu, przeciwdziałaniu i zwalczaniu{' '}
+        <Url value="https://www.gov.pl/web/koronawirus">COVID-19</Url>{' '}
+        wynikającym z art. 1, 2, 3, 6 oraz 8a ust. 1, 4 i 5 ustawy z dnia 14
+        marca 1985 r o Państwowej Inspekcji Sanitarnej (Dz.U. z 2019 r. poz.
+        59), gdyż przetwarzanie jest niezbędne ze względów związanych z
         interesem publicznym w dziedzinie zdrowia publicznego, takich jak
         ochrona przed poważnymi transgranicznymi zagrożeniami zdrowotnymi na
         podstawie prawa państwa członkowskiego. Przetwarzanie danych dotyczących
@@ -294,14 +297,14 @@ const PrivacyPolicyContent = () => (
       </li>
       <li>
         Podmiot, który dostarcza narzędzie umożliwiające samoocenę ryzyka
-        zarażenia COVID-19: Infermedica Sp. z o.o. z siedzibą we Wrocławiu, Plac
-        Solny 14/3, 50-062 Wrocław, wpisana do rejestru przedsiębiorców
-        Krajowego Rejestru Sądowego prowadzonego przez Sąd Rejonowy we
-        Wrocławiu, VI Wydział Gospodarczy Krajowego Rejestru Sądowego, pod
-        numerem KRS 0000429183, REGON 021889810, NIP 8971782877 (polityka
-        prywatności Infermedica: <u>https://infermedica.com/privacy-policy</u>,
-        informacje o Usłudze Triażu:{' '}
-        <u>https://developer.infermedica.com/docs/covid-19#triage</u>);
+        zarażenia <Url value="https://www.gov.pl/web/koronawirus">COVID-19</Url>{' '}
+        : Infermedica Sp. z o.o. z siedzibą we Wrocławiu, Plac Solny 14/3,
+        50-062 Wrocław, wpisana do rejestru przedsiębiorców Krajowego Rejestru
+        Sądowego prowadzonego przez Sąd Rejonowy we Wrocławiu, VI Wydział
+        Gospodarczy Krajowego Rejestru Sądowego, pod numerem KRS 0000429183,
+        REGON 021889810, NIP 8971782877 (polityka prywatności Infermedica:{' '}
+        <u>https://infermedica.com/privacy-policy</u>, informacje o Usłudze
+        Triażu: <u>https://developer.infermedica.com/docs/covid-19#triage</u>);
       </li>
       <li>
         Podmiot dostarczający infrastrukturę umożliwiającą pobranie i

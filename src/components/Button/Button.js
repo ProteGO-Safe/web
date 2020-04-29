@@ -35,7 +35,6 @@ Button.defaultProps = {
   children: null,
   disabled: false,
   height: 'normal',
-  icon: '',
   iconLeft: false,
   size: 'normal',
   type: 'primary'

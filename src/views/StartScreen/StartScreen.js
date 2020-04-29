@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import {
   Container,
   Logo,
+  LogoWrapper,
   Message,
   Content,
   Footer,
@@ -16,7 +17,10 @@ const StartScreen = ({ onStartClick = Function.prototype }) => {
   return (
     <Container>
       <Content>
-        <Logo />
+        <LogoWrapper>
+          <Logo />
+        </LogoWrapper>
+
         <Message>Pokonajmy razem koronawirusa!</Message>
         <Button onClick={handleStartClick}>Rozpocznij</Button>
       </Content>
