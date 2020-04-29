@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { useFormikContext } from 'formik';
-
 import { Button, FieldSet, Radio } from '../../../../components';
+import { Title } from '../../Diagnosis.styled';
 
 import {
   FIELD_CHOICE_ID,
@@ -23,7 +23,7 @@ const GroupSingle = ({ text, items }) => {
 
   return (
     <>
-      <h3>{text}</h3>
+      <Title>{text}</Title>
       <FieldSet>
         {items.map(item => (
           <Radio

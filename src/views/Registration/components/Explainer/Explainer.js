@@ -8,7 +8,7 @@ import { SliderWrapper, Title } from './Explainer.styled';
 
 const Explainer = ({ carouselRef, items, onClick, settings }) => (
   <View>
-    <Header hideBackButton hideMenuButton />
+    <Header hideBackButton />
     <Content>
       <Container className="full-height">
         <Title>

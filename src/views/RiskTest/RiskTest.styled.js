@@ -1,7 +1,9 @@
 import styled from 'styled-components';
 import { ReactComponent as RiskTestIcon } from '../../assets/img/icons/wykonaj-test.svg';
 
-export const Title = styled.div`
+export const Title = styled.h1`
+  margin-top: 0;
+  margin-bottom: 24px;
   font-size: 20px;
   font-weight: bold;
   font-stretch: normal;
@@ -9,7 +11,6 @@ export const Title = styled.div`
   line-height: 1.3;
   letter-spacing: normal;
   color: #1b1b1b;
-  margin-bottom: 20px;
 `;
 
 export const Icon = styled(RiskTestIcon)`

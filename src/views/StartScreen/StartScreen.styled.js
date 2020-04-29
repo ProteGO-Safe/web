@@ -25,6 +25,15 @@ export const Content = styled.div`
   flex: 1;
 `;
 
+export const LogoWrapper = styled.h1`
+  display: flex;
+  flex-flow: wrap row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: 0;
+`;
+
 export const Logo = styled(LogoSVG)`
   width: 100%;
   max-width: 227px;

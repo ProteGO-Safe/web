@@ -50,7 +50,7 @@ export const Paragraph = styled.p`
   color: ${resolveDefaultColor(Color.black)};
 
   &:not(:last-child) {
-    margin-bottom: 6px;
+    margin-bottom: 24px;
   }
 `;
 

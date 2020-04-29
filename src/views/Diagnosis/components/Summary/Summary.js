@@ -2,17 +2,18 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import { Button, Container, FieldSet } from '../../../../components';
-import './Summary.scss';
 import success from '../../../../assets/img/icons/success-icon.svg';
 import Header from '../../../../components/Header/Header';
+import { Title } from '../../Diagnosis.styled';
+import './Summary.scss';
 
 const Summary = ({ onSave }) => (
   <div className="view view__summary">
-    <Header hideBackButton hideMenuButton />
+    <Header hideBackButton />
     <Container>
       <div className="content">
         <img className="icon" src={success} alt="Gratulacje" />
-        <h4 className="medium">Gratulacje!</h4>
+        <Title>Gratulacje!</Title>
         <p className="big">
           Dziękujemy za wypełnienie Twojego Pierwszego Testu Oceny Ryzyka.
         </p>

@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const BluetoothWrapper = styled.div`
+export const OnboardingWrapper = styled.div`
   display: flex;
   flex-flow: wrap row;
   width: 100%;

@@ -1,5 +1,6 @@
 import React from 'react';
 import Email from '../../../../components/Email';
+import Url from '../../../../components/Url';
 
 const RegulationsContent = () => (
   <>
@@ -114,23 +115,26 @@ const RegulationsContent = () => (
     <ol>
       <li>
         Korzystanie z Aplikacji ProteGO Safe, jest bezpłatne i obejmuje swym
-        zakresem Triaż (samoocenę ryzyka infekcji COVID-19, stworzoną na
-        podstawie kwestionariusza WHO), dziennik zdrowia Użytkownika, wsparcie w
-        profilaktyce i zapobieganiu zarażeniu, informowanie o istotnych
-        informacjach związanych z pandemią COVID-19 oraz przypominacz
-        bezpiecznych zachowań i nawyków codziennej higieny<strong>. </strong>W
-        ramach ProteGO Safe możliwe jest ustalenie czynników ryzyka infekcji,
-        tworzenie i prowadzenie historii medycznej, istniejących schorzeń,
-        aktualnej farmakoterapii oraz prowadzenie dziennika profilaktyki.
-        ProteGO Safe przekazuje informacje i wytyczne WHO oraz GIS, ale
-        przekazywane informacje nie mają charakteru konsultacji medycznej lub
-        świadczenia zdrowotnego (w tym w szczególności medycznego lub
-        farmaceutycznego).
+        zakresem Triaż (samoocenę ryzyka infekcji{' '}
+        <Url value="https://www.gov.pl/web/koronawirus">COVID-19</Url>,
+        stworzoną na podstawie kwestionariusza WHO), dziennik zdrowia
+        Użytkownika, wsparcie w profilaktyce i zapobieganiu zarażeniu,
+        informowanie o istotnych informacjach związanych z pandemią{' '}
+        <Url value="https://www.gov.pl/web/koronawirus">COVID-19</Url>
+        oraz przypominacz bezpiecznych zachowań i nawyków codziennej higieny
+        <strong>. </strong>W ramach ProteGO Safe możliwe jest ustalenie
+        czynników ryzyka infekcji, tworzenie i prowadzenie historii medycznej,
+        istniejących schorzeń, aktualnej farmakoterapii oraz prowadzenie
+        dziennika profilaktyki. ProteGO Safe przekazuje informacje i wytyczne
+        WHO oraz GIS, ale przekazywane informacje nie mają charakteru
+        konsultacji medycznej lub świadczenia zdrowotnego (w tym w szczególności
+        medycznego lub farmaceutycznego).
       </li>
       <li>
-        Funkcjonalność triaż (samoocena ryzyka zarażenia COVID-19) świadczona
-        jest za pośrednictwem aplikacji stworzonej przez Infermedica, o której
-        więcej tutaj:{' '}
+        Funkcjonalność triaż (samoocena ryzyka zarażenia{' '}
+        <Url value="https://www.gov.pl/web/koronawirus">COVID-19</Url>)
+        świadczona jest za pośrednictwem aplikacji stworzonej przez Infermedica,
+        o której więcej tutaj:{' '}
         <u>https://developer.infermedica.com/docs/covid-19#triage</u>.
       </li>
       <li>
