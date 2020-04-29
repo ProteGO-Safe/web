@@ -57,7 +57,7 @@ const ImprintFiller = ({ editMode }) => {
 
   return (
     <View>
-      <Header hideMenuButton hideBackButton />
+      <Header hideBackButton />
       <Container>
         <Stepper currentStep={step} numberOfSteps={NUMBER_OF_STEPS} />
         <StepComponent editMode={editMode} />

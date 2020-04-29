@@ -8,3 +8,8 @@ export const Title = styled.h1`
   line-height: 1.4;
   color: #1b1b1b;
 `;
+
+export const LinkStyle = styled.span`
+  color: #0052a5;
+  font-weight: bold;
+`;

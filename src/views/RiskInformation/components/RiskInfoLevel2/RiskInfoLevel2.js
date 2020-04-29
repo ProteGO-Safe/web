@@ -1,5 +1,6 @@
 import React from 'react';
 import { Collapse } from '../../../../components';
+import Url from '../../../../components/Url';
 
 const RiskInfoLevel2 = () => (
   <>
@@ -14,8 +15,10 @@ const RiskInfoLevel2 = () => (
     <Collapse title="Często myj ręce">
       <p>
         Regularnie myj ręce mydłem i wodą lub dezynfekuj je środkiem na bazie
-        alkoholu (min. 60%). Mycie rąk powinno trwać 30 sekund. Sprawdź
-        instrukcję.
+        alkoholu (min. 60%). Mycie rąk powinno trwać 30 sekund.{' '}
+        <Url value="https://gis.gov.pl/zdrowie/zasady-prawidlowego-mycia-rak/">
+          Sprawdź instrukcję.
+        </Url>
       </p>
     </Collapse>
     <Collapse title="Zasłaniaj usta i nos, gdy kaszlesz lub kichasz">

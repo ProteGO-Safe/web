@@ -14,7 +14,7 @@ export const Text = styled.div`
   font-weight: bold;
   line-height: 1.14;
   color: #1b1b1b;
-  margin: auto auto auto 16px;
+  margin: auto auto auto 6px;
 `;
 
 export const AngleRight = styled(AngleRightIcon)`

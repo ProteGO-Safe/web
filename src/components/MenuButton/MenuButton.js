@@ -13,10 +13,7 @@ const MenuButton = () => {
   };
 
   return (
-    <button
-      className="menu__button"
-      onClick={handleClick}
-      type="button">
+    <button className="menu__button" onClick={handleClick} type="button">
       <div className="menu__button__line" />
       <div className="menu__button__line" />
       <div className="menu__button__line" />

@@ -1,8 +1,12 @@
 import styled from 'styled-components';
-import { H5, Paragraph, SmallText } from '../../theme/typography';
+import { Paragraph, SmallText } from '../../theme/typography';
 import { Color } from '../../theme/colors';
 
-export const Title = styled(H5)`
+export const Title = styled.h1`
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1.25;
+  color: #1b1b1b;
   margin: 10px 0 30px;
 `;
 

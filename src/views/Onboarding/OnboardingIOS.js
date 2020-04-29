@@ -122,7 +122,7 @@ const OnboardingIOS = () => {
           <br />
           <p>
             Możesz odwrócić urządzenie <strong>ekranem do dołu</strong>, lub
-            trzymać je w kieszeni do <strong>góry nogami.</strong>
+            trzymać je w kieszeni <strong>do góry nogami.</strong>
           </p>
         </>
       ),
