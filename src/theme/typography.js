@@ -61,6 +61,13 @@ export const SmallText = styled.p`
   color: ${resolveDefaultColor(Color.darkGray)};
 `;
 
+export const Small = styled.p`
+  font-size: 12px;
+  font-weight: ${resolveDefaultFontWeight(FontWeight.Normal)};
+  line-height: 1.5;
+  color: ${resolveDefaultColor(Color.darkGray)};
+`;
+
 export const Annotation = styled.p`
   font-size: 12px;
   font-weight: ${resolveDefaultFontWeight(FontWeight.Normal)};

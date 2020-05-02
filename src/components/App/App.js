@@ -27,6 +27,7 @@ import {
   HospitalsList,
   ReportBug,
   AdviceInformation,
+  UploadHistoricalData,
   FaqPage
 } from '../../views';
 
@@ -164,6 +165,11 @@ function App() {
                 component={AdviceInformation}
               />
               <Route exact path={Routes.FaqPage} component={FaqPage} />
+              <Route
+                exact
+                path={Routes.UploadHistoricalData}
+                component={UploadHistoricalData}
+              />
             </>
           )}
           <Route render={() => <Redirect to={Routes.Home} />} />

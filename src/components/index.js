@@ -11,6 +11,7 @@ export { Header } from './Header';
 export { Imprint } from './Imprint';
 export { Info } from './Info';
 export { InfoBorder } from './InfoBorder';
+export { InfoIcon } from './InfoIcon';
 export { Input } from './Input';
 export { Loader } from './Loader';
 export { Menu } from './Menu';
