@@ -13,6 +13,7 @@ export { Info } from './Info';
 export { InfoBorder } from './InfoBorder';
 export { InfoIcon } from './InfoIcon';
 export { Input } from './Input';
+export { InputSlider } from './InputSlider';
 export { Loader } from './Loader';
 export { Menu } from './Menu';
 export { MenuButton } from './MenuButton';

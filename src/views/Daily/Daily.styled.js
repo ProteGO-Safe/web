@@ -48,6 +48,8 @@ export const DiaryListItem = styled.div`
   height: 54px;
   padding: 0 6px;
   border-bottom: 1px solid #e4e4e4;
+  cursor: pointer;
+
   span {
     font-size: 14px;
     font-weight: bold;

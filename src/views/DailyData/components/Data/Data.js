@@ -15,7 +15,7 @@ import {
   FIELD_RUNNY_NOSE,
   FIELD_TEMPERATURE
 } from '../../../../constants';
-import { levels } from '../../../../components/Range/Range';
+import { levels } from '../Form/constants';
 
 const Data = () => {
   const { values } = useFormikContext();
