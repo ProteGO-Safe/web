@@ -76,7 +76,7 @@ const OnboardingIOS = () => {
           onClick: notificationYes
         },
         {
-          text: 'nie włączaj powiadomień',
+          text: 'Nie włączaj powiadomień',
           onClick: notificationNo,
           type: 'tertiary'
         }
@@ -104,7 +104,7 @@ const OnboardingIOS = () => {
           onClick: bluetoothYes
         },
         {
-          text: 'nie powiadamiaj mnie o zagrożeniach',
+          text: 'Nie powiadamiaj mnie o zagrożeniach',
           onClick: bluetoothNo,
           type: 'tertiary'
         }
