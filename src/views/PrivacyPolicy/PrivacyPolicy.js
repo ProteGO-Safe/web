@@ -16,7 +16,7 @@ const PrivacyPolicy = () => {
       <Header />
       <Container>
         <Content>
-          <Title>Regulamin i Polityka prywatności.</Title>
+          <Title>Regulamin i Polityka prywatności</Title>
           <Paragraph>
             Wspólnie chcemy przeciwdziałać Koronawirusowi. Twoja prywatność jest
             dla nas tak samo ważna. Aplikację zaprojektowaliśmy tak, aby

@@ -12,7 +12,7 @@ const HowItWorks = () => {
       <Header />
       <Content>
         <Container className="full-height">
-          <Title>Jak to działa</Title>
+          <Title>Jak to działa?</Title>
           <Paragraph>
             <strong>ProteGO Safe</strong> to darmowa, oficjalna i bezpieczna
             aplikacja, dzięki której - na podstawie wytycznych{' '}
