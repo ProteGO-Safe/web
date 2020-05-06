@@ -14,7 +14,7 @@ const RiskTest = ({ goToHistory, onFill, previousDays }) => (
     <Header />
     <Content>
       <Container>
-        <Title>Przygotowaliśmy dla Ciebie nowy test na dzisiaj.</Title>
+        <Title>Przygotowaliśmy dla Ciebie nowy test na dzisiaj</Title>
         <BordersButton
           onClick={onFill}
           text="Wykonaj TEST oceny ryzyka"
