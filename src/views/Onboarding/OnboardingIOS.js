@@ -94,7 +94,7 @@ const OnboardingIOS = () => {
           <br />
           <p>
             Włącz w swoim urządzeniu Bluetooth i pozwól ProteGO Safe wspierać
-            ochronę zdrowia każdego z nas..
+            ochronę zdrowia każdego z nas.
           </p>
         </>
       ),
