@@ -59,8 +59,8 @@ const MenuContainer = () => {
     {
       icon: Icon6,
       path: Routes.PrivacyPolicy,
-      slug: 'polityka_prywatnosci',
-      title: 'Polityka prywatności'
+      slug: 'regulamin_i_polityka_prywatności',
+      title: 'Regulamin i Polityka prywatności'
     },
     {
       icon: Icon7,
