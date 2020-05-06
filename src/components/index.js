@@ -22,7 +22,6 @@ export { Notification } from './Notification';
 export { OnboardingContent } from './OnboardingContent';
 export { Option } from './Option';
 export { Radio } from './Radio';
-export { Range } from './Range';
 export { Select } from './Select';
 export { Switcher } from './Switcher';
 export { Smile } from './Smile';

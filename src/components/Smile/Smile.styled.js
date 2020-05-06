@@ -31,6 +31,9 @@ export const Text = styled.div`
     font-size: 16px;
     line-height: 1.44;
     color: #1b1b1b;
+    .nowrap {
+      white-space: nowrap;
+    }
   }
 `;
 
