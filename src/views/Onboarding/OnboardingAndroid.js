@@ -155,8 +155,8 @@ const OnboardingAndroid = () => {
           onClick: batteryYes
         },
         {
-          type: 'tertiary',
           text: 'Nie powiadamiaj mnie o zagrożeniach',
+          type: 'tertiary',
           onClick: batteryNo
         }
       ]
