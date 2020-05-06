@@ -45,7 +45,7 @@ const Complete = ({ hideInformation }) => {
                 pomaga <strong>monitorować</strong> swój stan zdrowia.
               </WarningListItem>
               <WarningListItem>
-                pypełnij go <strong>zgodnie z prawdą</strong> - robisz to dla
+                wypełnij go <strong>zgodnie z prawdą</strong> - robisz to dla
                 własnego <strong>bezpieczeństwa.</strong>
               </WarningListItem>
             </WarningList>

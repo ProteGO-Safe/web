@@ -26,7 +26,8 @@ export const UserName = styled.div`
 export const Text = styled.div`
   display: flex;
   flex-flow: wrap row;
-  width: 216px;
+  width: calc(100% - 132px);
+  margin-right: 10px;
   p {
     font-size: 16px;
     line-height: 1.44;
@@ -39,7 +40,7 @@ export const Text = styled.div`
 
 export const IconSmile = styled.div`
   display: flex;
-  width: calc(100% - 216px);
+  width: 122px;
   justify-content: center;
   align-items: center;
   img {
