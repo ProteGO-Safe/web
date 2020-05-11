@@ -125,3 +125,12 @@ export const ListNumberItem = styled.li`
     margin-bottom: 0;
   }
 `;
+
+export const Name = styled.h1`
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-size: 20px;
+  font-weight: ${FontWeight.Bold};
+  line-height: 1.4;
+  color: ${Color.lightBlack};
+`;

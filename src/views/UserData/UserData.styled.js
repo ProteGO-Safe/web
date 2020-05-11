@@ -1,10 +1,15 @@
 import styled from 'styled-components';
 
-export const Title = styled.h1`
-  margin-top: 0;
+export const ButtonWrapper = styled.div`
+  display: flex;
+  flex-flow: wrap row;
+  width: 100%;
+  margin-top: 24px;
   margin-bottom: 24px;
-  font-size: 20px;
-  font-weight: bold;
-  line-height: 1.4;
-  color: #1b1b1b;
+  * {
+    margin-bottom: 24px;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
 `;
