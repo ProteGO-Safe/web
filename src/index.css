@@ -60,32 +60,32 @@ code {
   z-index: 1;
   left: 50%;
   bottom: 30px;
+}
 
-  .show {
-    visibility: visible;
-    -webkit-animation: fadein 0.5s;
-    animation: fadein 0.5s;
+.view__update_snackbar.show {
+  visibility: visible;
+  -webkit-animation: fadein 0.5s;
+  animation: fadein 0.5s;
+}
+
+@-webkit-keyframes fadein {
+  from {
+    bottom: 0;
+    opacity: 0;
   }
-
-  @-webkit-keyframes fadein {
-    from {
-      bottom: 0;
-      opacity: 0;
-    }
-    to {
-      bottom: 30px;
-      opacity: 1;
-    }
+  to {
+    bottom: 30px;
+    opacity: 1;
   }
+}
 
-  @keyframes fadein {
-    from {
-      bottom: 0;
-      opacity: 0;
-    }
-    to {
-      bottom: 30px;
-      opacity: 1;
-    }
+@keyframes fadein {
+  from {
+    bottom: 0;
+    opacity: 0;
+  }
+  to {
+    bottom: 30px;
+    opacity: 1;
   }
 }
