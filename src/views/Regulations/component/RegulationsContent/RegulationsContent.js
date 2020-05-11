@@ -8,6 +8,7 @@ import {
   ListNumber,
   ListItem
 } from './RegulationsContent.styled';
+import PhoneNumber from '../../../../components/PhoneNumber';
 
 const RegulationsContent = () => (
   <>
@@ -189,17 +190,18 @@ const RegulationsContent = () => (
         konieczności konsultacji z lekarzem lub właściwą stacją sanitarno -
         epidemiologiczną. Jeżeli Użytkownik dostrzega jakiekolwiek pogorszenie
         stanu zdrowia lub ma wątpliwości co do swojego stanu zdrowia powinien
-        niezwłocznie skontaktować się z numerem alarmowym 112 w celu wezwania
-        pogotowia ratunkowego lub poinformować właściwą stację sanitarno -
-        epidemiologiczną lub udać się do najbliższej placówki służby zdrowia.
+        niezwłocznie skontaktować się z numerem alarmowym{' '}
+        <PhoneNumber>112</PhoneNumber> w celu wezwania pogotowia ratunkowego lub
+        poinformować właściwą stację sanitarno - epidemiologiczną lub udać się
+        do najbliższej placówki służby zdrowia.
       </ListItem>
       <ListItem>
         Jeśli korzystanie z ProteGO Safe nie jest możliwe, jest utrudnione lub
         trwa zbyt długo, a stan zdrowia lub samopoczucie Użytkownika pogarsza
         się, Użytkownik powinien niezwłocznie skontaktować się z numerem
-        alarmowym 112 w celu wezwania pogotowia ratunkowego lub poinformować
-        właściwą stację sanitarno - epidemiologiczną lub udać się do najbliższej
-        placówki służby zdrowia.
+        alarmowym <PhoneNumber>112</PhoneNumber> w celu wezwania pogotowia
+        ratunkowego lub poinformować właściwą stację sanitarno -
+        epidemiologiczną lub udać się do najbliższej placówki służby zdrowia.
       </ListItem>
       <ListItem>
         W przypadkach szczególnych, mających wpływ na bezpieczeństwo lub

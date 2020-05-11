@@ -1,6 +1,7 @@
 import React from 'react';
 import { Collapse } from '../../../../components';
 import Url from '../../../../components/Url';
+import PhoneNumber from '../../../../components/PhoneNumber';
 
 const RiskInfoLevel3 = () => (
   <>
@@ -111,8 +112,9 @@ const RiskInfoLevel3 = () => (
       </p>
       <p>
         W stanie zagrażającym życiu lub zdrowiu (np. duszność), wezwij
-        pogotowie, dzwoniąc na numer alarmowy 999 lub 112. Koniecznie uprzedź,
-        że może chodzić o pacjenta z koronawirusem.{' '}
+        pogotowie, dzwoniąc na numer alarmowy <PhoneNumber>999</PhoneNumber> lub{' '}
+        <PhoneNumber>112</PhoneNumber>. Koniecznie uprzedź, że może chodzić o
+        pacjenta z koronawirusem.{' '}
       </p>
     </Collapse>
     <Collapse title="Nie bój się prosić o pomoc">
