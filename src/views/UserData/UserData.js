@@ -5,33 +5,30 @@ import { Button, Imprint } from '../../components';
 import Routes from '../../routes';
 import Header from '../../components/Header/Header';
 import { BottomNavigation } from '../../components/BottomNavigation';
+import { getUserName } from '../../store/selectors/user';
 
 import { Content, Container, View } from '../../theme/grid';
-import { Actions } from '../../components/ImprintFiller/ImprintFiller.styled';
-import { Paragraph } from '../../theme/typography';
-import { Title } from './UserData.styled';
+import { Name, Paragraph } from '../../theme/typography';
+import { ButtonWrapper } from './UserData.styled';
 
 import './UserData.scss';
 
 const UserData = () => {
   const history = useHistory();
-  const userName = useSelector(state => state.user.name);
+  const userName = useSelector(getUserName);
 
   return (
     <View>
       <Header />
       <Content>
         <Container>
-          <Title>Moje dane</Title>
-          <Paragraph>
-            <strong>{userName}</strong>
-          </Paragraph>
+          <Name>{userName},</Name>
           <Paragraph>
             Poniżej znajdują się dane, które podałeś w trakcie rejestracji
             swojego konta.
           </Paragraph>
           <Imprint hidePhoneNumber />
-          <Actions>
+          <ButtonWrapper>
             <Button
               onClick={() => history.push(Routes.UserDataSettings)}
               text="Zarządzaj danymi"
@@ -41,7 +38,14 @@ const UserData = () => {
               type="secondary"
               text="Zmień dane"
             />
-          </Actions>
+          </ButtonWrapper>
+          <ButtonWrapper>
+            <Button
+              onClick={() => history.push(Routes.UploadHistoricalData)}
+              type="secondary"
+              text="Przekaż dane"
+            />
+          </ButtonWrapper>
         </Container>
       </Content>
       <BottomNavigation />

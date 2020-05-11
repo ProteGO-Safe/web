@@ -6,6 +6,7 @@ import StoreRegistry from '../../store/storeRegistry';
 import { NATIVE_DATA_SET_SERVICES_STATUS_SUCCESS } from '../../store/types/nativeData';
 import { DATA_TYPE } from './nativeBridge.constants';
 import { isAndroidWebView } from '../../utills/native';
+import { UPLOAD_HISTORICAL_DATA_FINISHED } from '../../store/types/app';
 
 const nativeRequests = {};
 
@@ -48,7 +49,6 @@ const callNativeFunction = async (functionName, dataType, data) => {
 const callGetBridgeData = async dataType => {
   try {
     const json = await callNativeFunction('getBridgeData', dataType);
-    console.log(json);
     if (json) {
       return JSON.parse(json);
     }
@@ -72,6 +72,12 @@ const setDiagnosisTimestamp = async timestamp => {
   });
 };
 
+const setPin = async pin => {
+  await callNativeFunction('setBridgeData', DATA_TYPE.HISTORICAL_DATA, {
+    pin
+  });
+};
+
 const setBluetoothModuleState = async data => {
   await callNativeFunction('setBridgeData', DATA_TYPE.BT_MODULE, data);
 };
@@ -84,6 +90,14 @@ const handleServicesStatus = data => {
   });
 };
 
+const handleUploadHistoricalDataResponse = ({ result }) => {
+  const store = StoreRegistry.getStore();
+  store.dispatch({
+    result,
+    type: UPLOAD_HISTORICAL_DATA_FINISHED
+  });
+};
+
 const callBridgeDataHandler = cond([
   [equals(DATA_TYPE.NATIVE_SERVICES_STATUS), always(handleServicesStatus)],
   [
@@ -93,7 +107,11 @@ const callBridgeDataHandler = cond([
   [equals(DATA_TYPE.BT_PERMISSION), always(handleServicesStatus)],
   [equals(DATA_TYPE.LOCATION_PERMISSION), always(handleServicesStatus)],
   [equals(DATA_TYPE.NOTIFICATION_PERMISSION), always(handleServicesStatus)],
-  [equals(DATA_TYPE.BT_MODULE), always(handleServicesStatus)]
+  [equals(DATA_TYPE.BT_MODULE), always(handleServicesStatus)],
+  [
+    equals(DATA_TYPE.HISTORICAL_DATA),
+    always(handleUploadHistoricalDataResponse)
+  ]
 ]);
 
 const onBridgeData = (dataType, dataString) => {
@@ -133,6 +151,7 @@ window.bridgeDataResponse = receiveNativeResponse;
 
 export default {
   setDiagnosisTimestamp,
+  setPin,
   setBluetoothModuleState,
   showBatteryOptimizationPermission,
   showBtPermission,

@@ -1,6 +1,10 @@
 import moment from 'moment';
 import nativeBridge from '../../services/nativeBridge';
 import * as types from '../types/nativeData';
+import {
+  UPLOAD_HISTORICAL_DATA_ENDED,
+  UPLOAD_HISTORICAL_DATA_REQUESTED
+} from '../types/app';
 
 export function saveInfoAboutFilledDiagnosis() {
   const timestamp = moment().unix();
@@ -92,5 +96,26 @@ export function clearBluetoothData() {
   const data = { clearBtData: true };
   return () => {
     nativeBridge.clearBluetoothData(data);
+  };
+}
+
+export const uploadHistoricalDataRequested = () => ({
+  type: UPLOAD_HISTORICAL_DATA_REQUESTED
+});
+
+export function uploadHistoricalData({ pin }) {
+  return dispatch => {
+    dispatch(uploadHistoricalDataRequested());
+    nativeBridge.setPin(pin);
+  };
+}
+
+export const uploadHistoricalDataEnded = () => ({
+  type: UPLOAD_HISTORICAL_DATA_ENDED
+});
+
+export function endUploadHistoricalData() {
+  return async dispatch => {
+    dispatch(uploadHistoricalDataEnded());
   };
 }
