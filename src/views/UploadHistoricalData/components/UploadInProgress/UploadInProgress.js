@@ -19,7 +19,7 @@ const UploadInProgress = () => {
         <Container className="full-height">
           <Name>{userName},</Name>
           <Paragraph>
-            Zaczekaj proszę, twoje diagnosis keys są właśnie wysyłane na serwer.
+            Zaczekaj proszę, Twoje diagnosis keys są właśnie wysyłane na serwer.
           </Paragraph>
           <LoaderWrapper>
             <Loader />
