@@ -29,3 +29,4 @@ export { Smile } from './Smile';
 export { Stepper } from './Stepper';
 export { Textarea } from './Textarea';
 export { TextField } from './TextField';
+export { VersionApp } from './VersionApp';

@@ -14,14 +14,14 @@
     position: fixed;
     top: 0;
     right: -100%;
-    z-index: 2;
-    width: 100%;
-    min-height: calc(100vh - 50px);
     display: flex;
     flex-flow: wrap column;
+    width: 100%;
+    min-height: calc(100vh - 50px);
     background-color: $white;
     box-shadow: -3px -3px 6px #00000029;
     transition: all 0.2s linear;
+    z-index: 2;
 
     @media screen and (min-width: 556px) {
       width: 320px;
@@ -81,7 +81,7 @@
     flex-direction: column;
     list-style-type: none;
     margin: 0;
-    padding: 0 12px;
+    padding: 0;
   }
 
   &__item {
@@ -106,7 +106,7 @@
       display: flex;
       align-items: center;
       height: 50px;
-      padding: 0 12px;
+      padding: 0 24px;
       text-decoration: none;
       font-size: 16px;
       font-weight: bold;

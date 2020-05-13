@@ -2,10 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { NavLink } from 'react-router-dom';
 import LogoSafeSafe from '../../assets/img/logo/protegosafe_logo_white.svg';
-import './Menu.scss';
 import useMenuContext from '../../hooks/useMenuContext';
+import { VersionApp } from '../index';
+import './Menu.scss';
 
-const Menu = ({ items }) => {
+const Menu = ({ items, version }) => {
   const { visible, startHiding, inProgress } = useMenuContext();
   const handleClose = () => startHiding();
 
@@ -45,6 +46,7 @@ const Menu = ({ items }) => {
           <img src={LogoSafeSafe} alt="ProteGO Safe" />
         </div>
         <ul className="menu__items">{renderItems}</ul>
+        <VersionApp version={version} />
       </div>
     </>
   );
@@ -57,7 +59,8 @@ Menu.defaultProps = {
 
 Menu.propTypes = {
   items: PropTypes.array,
-  userName: PropTypes.string
+  userName: PropTypes.string,
+  version: PropTypes.string
 };
 
 export default Menu;
