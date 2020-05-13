@@ -1,5 +1,8 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
+import packageJson from '../../../package.json';
+import Menu from './Menu';
+import useMenuContext from '../../hooks/useMenuContext';
 
 import Icon1 from '../../assets/img/icons/menu-boczne-dziennik_BLUE.svg';
 import Icon2 from '../../assets/img/icons/menu-boczne-kwestionariusz_BLUE.svg';
@@ -9,10 +12,7 @@ import Icon5 from '../../assets/img/icons/menu-boczne-numery-alarm_BLUE.svg';
 import Icon6 from '../../assets/img/icons/menu-boczne-polityka-prywatnosci_BLUE.svg';
 import Icon7 from '../../assets/img/icons/menu-boczne-ustawienia_BLUE.svg';
 import Icon8 from '../../assets/img/icons/menu-boczne-moje-dane_BLUE.svg';
-
 import Icon9 from '../../assets/img/icons/menu-boczne-zglos-blad_BLUE.svg';
-import Menu from './Menu';
-import useMenuContext from '../../hooks/useMenuContext';
 
 import Routes from '../../routes';
 import { isVersionCompatibilityWithBluetoothModule } from '../../utills/version';
@@ -83,7 +83,7 @@ const MenuContainer = () => {
     }
   ];
 
-  return <Menu items={items} />;
+  return <Menu items={items} version={packageJson.version} />;
 };
 
 export default MenuContainer;
