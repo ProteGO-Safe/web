@@ -70,13 +70,13 @@ const MenuContainer = () => {
       disable: !isVersionCompatibilityWithBluetoothModule(servicesStatus)
     },
     {
-      icon: Icon9,
+      icon: Icon8,
       path: Routes.UserData,
       slug: 'moje_dane',
       title: 'Moje dane'
     },
     {
-      icon: Icon8,
+      icon: Icon9,
       path: Routes.ReportBug,
       slug: 'zglos_blad',
       title: 'Zgłoś błąd'
