@@ -8,6 +8,7 @@ import {
   finishOnboarding
 } from '../../store/actions/app';
 import { NotificationOnboarding } from './components/NotificationOnboarding';
+import { fetchServicesStatus } from '../../store/actions/nativeData';
 
 const OnboardingContainer = () => {
   const dispatch = useDispatch();
@@ -16,18 +17,38 @@ const OnboardingContainer = () => {
   );
   const {
     servicesStatus: {
-      exposureNotificationStatus = EXPOSURE_NOTIFICATION_STATUS.NOT_SUPPORTED
+      exposureNotificationStatus = EXPOSURE_NOTIFICATION_STATUS.NOT_SUPPORTED,
+      servicesStatusSetByNative = false
     } = {}
   } = useSelector(state => state.nativeData);
 
   useEffect(() => {
+    dispatch(fetchServicesStatus());
+  }, [dispatch]);
+
+  useEffect(() => {
+    if (
+      servicesStatusSetByNative &&
+      exposureNotificationStatus === EXPOSURE_NOTIFICATION_STATUS.OFF
+    ) {
+      dispatch(finishExposureOnboarding());
+      return;
+    }
+
     if (exposureNotificationStatus === EXPOSURE_NOTIFICATION_STATUS.ON) {
       dispatch(finishExposureOnboarding());
+      return;
     }
+
     if (exposureOnboardingFinished && !isIOSWebView()) {
       dispatch(finishOnboarding());
     }
-  }, [exposureOnboardingFinished, exposureNotificationStatus, dispatch]);
+  }, [
+    exposureOnboardingFinished,
+    exposureNotificationStatus,
+    servicesStatusSetByNative,
+    dispatch
+  ]);
 
   if (!exposureOnboardingFinished) {
     return <ExposureOnboarding />;

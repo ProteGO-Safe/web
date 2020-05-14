@@ -62,6 +62,10 @@ const getNotification = async () => {
   return callGetBridgeData(DATA_TYPE.NOTIFICATION);
 };
 
+const getServicesStatus = async () => {
+  return callGetBridgeData(DATA_TYPE.NATIVE_SERVICES_STATUS);
+};
+
 const setDiagnosisTimestamp = async timestamp => {
   await callNativeFunction('setBridgeData', DATA_TYPE.FILLED_DIAGNOSIS, {
     timestamp
@@ -82,7 +86,7 @@ const setServicesState = async data => {
   );
 };
 
-const handleServicesStatus = ({ servicesStatus }) => {
+const handleServicesStatus = servicesStatus => {
   const store = StoreRegistry.getStore();
   store.dispatch({
     servicesStatus,
@@ -123,6 +127,7 @@ window.onBridgeData = onBridgeData;
 window.bridgeDataResponse = receiveNativeResponse;
 
 export default {
+  getServicesStatus,
   setDiagnosisTimestamp,
   setPin,
   setServicesState,
