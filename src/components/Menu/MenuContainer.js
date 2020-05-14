@@ -15,7 +15,7 @@ import Icon8 from '../../assets/img/icons/menu-boczne-moje-dane_BLUE.svg';
 import Icon9 from '../../assets/img/icons/menu-boczne-zglos-blad_BLUE.svg';
 
 import Routes from '../../routes';
-import { isVersionCompatibilityWithBluetoothModule } from '../../utills/version';
+import { isVersionCompatibilityWithBluetoothModule } from '../../utils/version';
 
 const MenuContainer = () => {
   const { servicesStatus } = useSelector(state => state.nativeData);

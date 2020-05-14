@@ -31,17 +31,12 @@ import {
   FaqPage
 } from '../../views';
 
-import {
-  fetchNativeServicesStatus,
-  fetchNotification
-} from '../../store/actions/nativeData';
+import { fetchNotification } from '../../store/actions/nativeData';
 import useMenuContext from '../../hooks/useMenuContext';
 import { Menu } from '../Menu';
 import Routes from '../../routes';
 import './App.scss';
 import { Notification } from '../Notification';
-import { showOnboarding } from '../../utills/servicesStatus';
-import { isWebView } from '../../utills/native';
 
 function App() {
   moment.locale('pl');
@@ -49,8 +44,7 @@ function App() {
   const history = useHistory();
 
   const { name } = useSelector(state => state.user);
-  const { servicesStatus } = useSelector(state => state.nativeData);
-  const { onboardingFinished, startScreenShowed } = useSelector(
+  const { onboardingFinished = false, startScreenShowed } = useSelector(
     state => state.app
   );
   const { notification } = useSelector(state => state.nativeData);
@@ -63,18 +57,6 @@ function App() {
     }
     return () => null;
   }, [notification, dispatch]);
-
-  useEffect(() => {
-    const interval = setInterval(
-      () => dispatch(fetchNativeServicesStatus()),
-      1000
-    );
-    return () => clearInterval(interval);
-  }, [dispatch]);
-
-  useEffect(() => {
-    dispatch(fetchNativeServicesStatus());
-  }, [dispatch]);
 
   history.listen(() => {
     window.scroll(0, 0);
@@ -97,11 +79,7 @@ function App() {
     if (!startScreenShowed && !name) {
       return StartScreen;
     }
-    if (
-      isWebView() &&
-      !onboardingFinished &&
-      showOnboarding(servicesStatus, onboardingFinished)
-    ) {
+    if (!onboardingFinished) {
       return Onboarding;
     }
     if (!name) {
@@ -115,7 +93,7 @@ function App() {
       <div className="app__inner">
         <Switch>
           <Route exact path={Routes.Home} component={resolveHomeComponent} />
-          {name && true && (
+          {name && (
             <>
               <Route exact path={Routes.Daily} component={Daily} />
               <Route exact path="/daily/:id" component={DailyData} />

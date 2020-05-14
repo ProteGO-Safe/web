@@ -4,7 +4,7 @@ import { useParams } from 'react-router-dom';
 import moment from 'moment';
 
 import RiskTestData from './RiskTestData';
-import triageLevelResolver from '../../utills/triage';
+import triageLevelResolver from '../../utils/triage';
 
 const dateFormat = 'D-MM-YYYY';
 

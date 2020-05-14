@@ -1,27 +1,40 @@
-import React, { useState } from 'react';
-
-import { Information } from './components/Information';
-import { isAndroidWebView, isIOSWebView } from '../../utills/native';
-import OnboardingAndroid from './OnboardingAndroid';
-import OnboardingIOS from './OnboardingIOS';
+import React, { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { EXPOSURE_NOTIFICATION_STATUS } from '../../utils/servicesStatus/servicesStatus.constants';
+import ExposureOnboarding from './components/ExposureOnboarding/ExposureOnboarding';
+import { isIOSWebView } from '../../utils/native';
+import {
+  finishExposureOnboarding,
+  finishOnboarding
+} from '../../store/actions/app';
+import { NotificationOnboarding } from './components/NotificationOnboarding';
 
 const OnboardingContainer = () => {
-  const [isInformationShowed, setIsInformationShowed] = useState(false);
+  const dispatch = useDispatch();
+  const { exposureOnboardingFinished = false } = useSelector(
+    state => state.app
+  );
+  const {
+    servicesStatus: {
+      exposureNotificationStatus = EXPOSURE_NOTIFICATION_STATUS.NOT_SUPPORTED
+    } = {}
+  } = useSelector(state => state.nativeData);
 
-  const nextInformation = () => {
-    setIsInformationShowed(true);
-  };
+  useEffect(() => {
+    if (exposureNotificationStatus === EXPOSURE_NOTIFICATION_STATUS.ON) {
+      dispatch(finishExposureOnboarding());
+    }
+    if (exposureOnboardingFinished && !isIOSWebView()) {
+      dispatch(finishOnboarding());
+    }
+  }, [exposureOnboardingFinished, exposureNotificationStatus, dispatch]);
 
-  if (!isInformationShowed) {
-    return <Information onNext={nextInformation} />;
-  }
-
-  if (isAndroidWebView()) {
-    return <OnboardingAndroid />;
+  if (!exposureOnboardingFinished) {
+    return <ExposureOnboarding />;
   }
 
   if (isIOSWebView()) {
-    return <OnboardingIOS />;
+    return <NotificationOnboarding />;
   }
 
   return null;

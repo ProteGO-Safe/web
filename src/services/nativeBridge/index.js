@@ -5,7 +5,7 @@ import { cond, equals, always } from 'ramda';
 import StoreRegistry from '../../store/storeRegistry';
 import { NATIVE_DATA_SET_SERVICES_STATUS_SUCCESS } from '../../store/types/nativeData';
 import { DATA_TYPE } from './nativeBridge.constants';
-import { isAndroidWebView } from '../../utills/native';
+import { isAndroidWebView } from '../../utils/native';
 import { UPLOAD_HISTORICAL_DATA_FINISHED } from '../../store/types/app';
 
 const nativeRequests = {};
@@ -58,10 +58,6 @@ const callGetBridgeData = async dataType => {
   return '';
 };
 
-const getNativeServicesStatus = async () => {
-  return callGetBridgeData(DATA_TYPE.NATIVE_SERVICES_STATUS);
-};
-
 const getNotification = async () => {
   return callGetBridgeData(DATA_TYPE.NOTIFICATION);
 };
@@ -78,14 +74,18 @@ const setPin = async pin => {
   });
 };
 
-const setBluetoothModuleState = async data => {
-  await callNativeFunction('setBridgeData', DATA_TYPE.BT_MODULE, data);
+const setServicesState = async data => {
+  await callNativeFunction(
+    'setBridgeData',
+    DATA_TYPE.NATIVE_SERVICES_STATE,
+    data
+  );
 };
 
-const handleServicesStatus = data => {
+const handleServicesStatus = ({ servicesStatus }) => {
   const store = StoreRegistry.getStore();
   store.dispatch({
-    servicesStatus: data,
+    servicesStatus,
     type: NATIVE_DATA_SET_SERVICES_STATUS_SUCCESS
   });
 };
@@ -101,14 +101,6 @@ const handleUploadHistoricalDataResponse = ({ result }) => {
 const callBridgeDataHandler = cond([
   [equals(DATA_TYPE.NATIVE_SERVICES_STATUS), always(handleServicesStatus)],
   [
-    equals(DATA_TYPE.BATTERY_PERFORMANCE_PERMISSION),
-    always(handleServicesStatus)
-  ],
-  [equals(DATA_TYPE.BT_PERMISSION), always(handleServicesStatus)],
-  [equals(DATA_TYPE.LOCATION_PERMISSION), always(handleServicesStatus)],
-  [equals(DATA_TYPE.NOTIFICATION_PERMISSION), always(handleServicesStatus)],
-  [equals(DATA_TYPE.BT_MODULE), always(handleServicesStatus)],
-  [
     equals(DATA_TYPE.HISTORICAL_DATA),
     always(handleUploadHistoricalDataResponse)
   ]
@@ -123,25 +115,6 @@ const onBridgeData = (dataType, dataString) => {
   }
 };
 
-const showBatteryOptimizationPermission = async () => {
-  await callNativeFunction(
-    'setBridgeData',
-    DATA_TYPE.BATTERY_PERFORMANCE_PERMISSION
-  );
-};
-
-const showBtPermission = async () => {
-  await callNativeFunction('setBridgeData', DATA_TYPE.BT_PERMISSION);
-};
-
-const showLocationPermission = async () => {
-  await callNativeFunction('setBridgeData', DATA_TYPE.LOCATION_PERMISSION);
-};
-
-const showNotificationPermission = async () => {
-  await callNativeFunction('setBridgeData', DATA_TYPE.NOTIFICATION_PERMISSION);
-};
-
 const clearBluetoothData = async data => {
   await callNativeFunction('setBridgeData', DATA_TYPE.CLEAR_BT_DATA, data);
 };
@@ -152,12 +125,7 @@ window.bridgeDataResponse = receiveNativeResponse;
 export default {
   setDiagnosisTimestamp,
   setPin,
-  setBluetoothModuleState,
-  showBatteryOptimizationPermission,
-  showBtPermission,
-  showLocationPermission,
-  showNotificationPermission,
-  getNativeServicesStatus,
+  setServicesState,
   getNotification,
   clearBluetoothData
 };
