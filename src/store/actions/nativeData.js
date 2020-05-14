@@ -29,6 +29,21 @@ export function fetchNotification() {
   };
 }
 
+export const fetchServicesStatusSuccess = serviceStatus => ({
+  serviceStatus,
+  type: types.NATIVE_DATA_FETCH_SERVICES_STATUS_SUCCESS
+});
+
+export function fetchServicesStatus() {
+  return dispatch => {
+    nativeBridge.getServicesStatus().then(serviceStatus => {
+      if (serviceStatus) {
+        dispatch(fetchServicesStatusSuccess(serviceStatus));
+      }
+    });
+  };
+}
+
 export const hideNotificationSuccess = () => ({
   type: types.NATIVE_DATA_HIDE_NOTIFICATION_SUCCESS
 });
