@@ -1,4 +1,5 @@
 import {
+  EXPOSURE_ONBOARDING_FINISHED,
   ONBOARDING_FINISHED,
   START_SCREEN_SHOWED,
   UPLOAD_HISTORICAL_DATA_ENDED,
@@ -8,6 +9,7 @@ import {
 import { UPLOAD_HISTORICAL_DATA_STATE as uploadState } from './app.constants';
 
 const INITIAL_STATE = {
+  exposureOnboardingFinished: false,
   onboardingFinished: false,
   startScreenShowed: false,
   uploadHistoricalDataState: uploadState.EMPTY
@@ -19,6 +21,12 @@ const appReducer = (state = INITIAL_STATE, action) => {
         ...state,
         onboardingFinished: true
       };
+    case EXPOSURE_ONBOARDING_FINISHED:
+      return {
+        ...state,
+        exposureOnboardingFinished: true
+      };
+
     case START_SCREEN_SHOWED:
       return {
         ...state,

@@ -1,57 +1,13 @@
 import React from 'react';
-import { useDispatch, useSelector } from 'react-redux';
 import Settings from './Settings';
-import {
-  disableBluetoothModule,
-  enableBluetoothModule,
-  showNativeBatteryOptimizationPermission,
-  showNativeBluetoothPermission,
-  showNativeLocationPermission
-} from '../../store/actions/nativeData';
-import { isAndroidWebView, isIOSWebView } from '../../utills/native';
 
 const SettingsContainer = () => {
-  const dispatch = useDispatch();
-  const {
-    servicesStatus: {
-      isBtServiceOn = false,
-      isBtSupported = false,
-      isBtOn = false,
-      isLocationEnabled = false,
-      isBatteryOptimizationOn = true
-    }
-  } = useSelector(state => state.nativeData);
-
-  const isModuleBluetoothEnable = (() => {
-    if (isIOSWebView()) {
-      return isBtServiceOn && isBtOn;
-    }
-
-    if (isAndroidWebView()) {
-      return (
-        isBtServiceOn && isBtOn && isLocationEnabled && !isBatteryOptimizationOn
-      );
-    }
-    return false;
-  })();
-
-  const toggleChecked = () => {
-    if (isModuleBluetoothEnable) {
-      dispatch(disableBluetoothModule());
-    } else {
-      dispatch(showNativeBluetoothPermission());
-      if (isAndroidWebView()) {
-        dispatch(showNativeLocationPermission());
-        dispatch(showNativeBatteryOptimizationPermission());
-      }
-      dispatch(enableBluetoothModule());
-    }
-  };
+  const toggleChecked = () => {};
 
   const items = [
     {
-      checked: isModuleBluetoothEnable,
-      disabled: !isBtSupported,
+      checked: false,
+      disabled: false,
       onChange: toggleChecked,
       label: 'Zgoda na używanie Bluetooth w celu wykrycia zagrożeń',
       name: 'bluetooth'

@@ -9,7 +9,7 @@ import { chronicSickValues } from '../../constants';
 import { EXPLAINER_STEP } from './Registration.constants';
 import { Explainer } from './components/Explainer';
 import { ImprintFiller } from '../../components/ImprintFiller';
-import { AGE_VALIDATOR } from '../../utills/validationSchemas';
+import { AGE_VALIDATOR } from '../../utils/validationSchemas';
 
 const Registration = () => {
   const dispatch = useDispatch();

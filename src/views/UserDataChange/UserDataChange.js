@@ -10,7 +10,7 @@ import { chronicSickValues } from '../../constants';
 import Routes from '../../routes';
 import useLoaderContext from '../../hooks/useLoaderContext';
 import { ImprintFiller } from '../../components/ImprintFiller';
-import { AGE_VALIDATOR } from '../../utills/validationSchemas';
+import { AGE_VALIDATOR } from '../../utils/validationSchemas';
 
 const UserDataChange = () => {
   const dispatch = useDispatch();

@@ -5,7 +5,7 @@ import { useHistory } from 'react-router-dom';
 import Routes from '../../routes';
 import Header from '../../components/Header/Header';
 import { BottomNavigation } from '../../components/BottomNavigation';
-import { daysDetailsPropType } from '../../utills/calendar';
+import { daysDetailsPropType } from '../../utils/calendar';
 import { BordersButton } from '../../components';
 
 import arrowRight from '../../assets/img/icons/angle-right.svg';

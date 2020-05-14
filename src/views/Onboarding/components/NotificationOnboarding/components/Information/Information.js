@@ -1,8 +1,12 @@
 import React from 'react';
 import './Information.scss';
-import { OnboardingContent, Button, GovFooter } from '../../../../components';
-import { View, Container, Content } from '../../../../theme/grid';
-import Header from '../../../../components/Header/Header';
+import {
+  OnboardingContent,
+  Button,
+  GovFooter
+} from '../../../../../../components';
+import { View, Container, Content } from '../../../../../../theme/grid';
+import Header from '../../../../../../components/Header/Header';
 import { Icon } from './Information.styled';
 
 const Information = ({ onNext }) => {
@@ -30,16 +34,11 @@ const Information = ({ onNext }) => {
         <Container className="full-height">
           <OnboardingContent
             icon={<Icon />}
-            title="Skonfiguruj uprawnienia ProteGO Safe"
+            title="Włącz notifikcaje"
             buttons={renderButton}
           >
             <>
-              <p>
-                Nowa wersja aplikacji pozwala na korzystanie z funkcji
-                Bluetooth.
-              </p>
-              <br />
-              <p>Pozwól aplikacji na informowanie Cię o zagrożeniach.</p>
+              <p>Włącz notifikcaje</p>
             </>
           </OnboardingContent>
           <GovFooter type="black" />

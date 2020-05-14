@@ -1,5 +1,4 @@
 import {
-  NATIVE_DATA_FETCH_NATIVE_SERVICES_STATUS_SUCCESS,
   NATIVE_DATA_FETCH_NOTIFICATION_SUCCESS,
   NATIVE_DATA_HIDE_NOTIFICATION_SUCCESS,
   NATIVE_DATA_SET_SERVICES_STATUS_SUCCESS
@@ -40,8 +39,7 @@ const nativeBridgeReducer = (state = INITIAL_STATE, action) => {
       };
     case NATIVE_DATA_SET_SERVICES_STATUS_SUCCESS:
       return setServicesStatusSuccess(state, action);
-    case NATIVE_DATA_FETCH_NATIVE_SERVICES_STATUS_SUCCESS:
-      return setServicesStatusSuccess(state, action);
+
     default:
       return state;
   }

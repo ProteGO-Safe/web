@@ -2,7 +2,7 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 
-import { createDaysDetails } from '../../utills/calendar';
+import { createDaysDetails } from '../../utils/calendar';
 import RiskTest from './RiskTest';
 
 const RiskTestContainer = () => {

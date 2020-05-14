@@ -1,0 +1,5 @@
+export const EXPOSURE_NOTIFICATION_STATUS = {
+  ON: 1,
+  OFF: 2,
+  NOT_SUPPORTED: 3
+};

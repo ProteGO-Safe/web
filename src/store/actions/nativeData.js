@@ -39,56 +39,31 @@ export function hideNotification() {
   };
 }
 
-export const fetchNativeServicesStatusSuccess = servicesStatus => {
-  return {
-    servicesStatus,
-    type: types.NATIVE_DATA_FETCH_NATIVE_SERVICES_STATUS_SUCCESS
-  };
-};
-
-export function fetchNativeServicesStatus() {
-  return dispatch => {
-    nativeBridge.getNativeServicesStatus().then(data => {
-      dispatch(fetchNativeServicesStatusSuccess(data));
-    });
+export function enableBt() {
+  const data = { enableBt: true };
+  return () => {
+    nativeBridge.setServicesState(data);
   };
 }
 
-export function showNativeLocationPermission() {
+export function enableLocation() {
+  const data = { enableLocation: true };
   return () => {
-    nativeBridge.showLocationPermission();
+    nativeBridge.setServicesState(data);
   };
 }
 
-export function showNativeBluetoothPermission() {
+export function enableExposureNotificationService() {
+  const data = { enableExposureNotificationService: true };
   return () => {
-    nativeBridge.showBtPermission();
+    nativeBridge.setServicesState(data);
   };
 }
 
-export function showNativeBatteryOptimizationPermission() {
+export function enableNotification() {
+  const data = { enableNotification: true };
   return () => {
-    nativeBridge.showBatteryOptimizationPermission();
-  };
-}
-
-export function showNativeNotificationPermission() {
-  return () => {
-    nativeBridge.showNotificationPermission();
-  };
-}
-
-export function enableBluetoothModule() {
-  const data = { enableBtService: true };
-  return () => {
-    nativeBridge.setBluetoothModuleState(data);
-  };
-}
-
-export function disableBluetoothModule() {
-  const data = { enableBtService: false };
-  return () => {
-    nativeBridge.setBluetoothModuleState(data);
+    nativeBridge.setServicesState(data);
   };
 }
 
