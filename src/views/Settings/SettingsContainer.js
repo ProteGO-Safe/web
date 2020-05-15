@@ -1,7 +1,11 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import Settings from './Settings';
-import { fetchServicesStatus } from '../../store/actions/nativeData';
+import {
+  disableExposureNotificationService,
+  enableExposureNotificationService,
+  fetchServicesStatus
+} from '../../store/actions/nativeData';
 import { EXPOSURE_NOTIFICATION_STATUS } from '../../utils/servicesStatus/servicesStatus.constants';
 
 const SettingsContainer = () => {
@@ -20,7 +24,13 @@ const SettingsContainer = () => {
     return exposureNotificationStatus === EXPOSURE_NOTIFICATION_STATUS.ON;
   })();
 
-  const toggleChecked = () => {};
+  const toggleChecked = () => {
+    if (isExposureNotificationOn) {
+      dispatch(disableExposureNotificationService());
+    } else {
+      dispatch(enableExposureNotificationService());
+    }
+  };
 
   const items = [
     {
