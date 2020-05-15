@@ -24,7 +24,7 @@ const ExposureOnboarding = () => {
   };
 
   const nextInformation = () => {
-    dispatch(enableExposureNotificationService());
+    enableExposureNotificationService();
   };
 
   if (!showOnboarding(servicesStatus)) {

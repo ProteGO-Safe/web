@@ -1,6 +1,5 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
-
 import { useSelector } from 'react-redux';
 import Home from './Home';
 import { Diagnosis } from '../Diagnosis';

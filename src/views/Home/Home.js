@@ -7,10 +7,10 @@ import {
   Info,
   InfoBorder,
   BordersButton,
-  BottomNavigation,
-  Warning
+  BottomNavigation
 } from '../../components';
 import './Home.scss';
+import { ExposureNotificationWarning } from './components';
 
 import { Icon } from '../RiskTest/RiskTest.styled';
 
@@ -32,12 +32,7 @@ const Home = ({
     <div className="view view__home">
       <Header hideBackButton />
       <Container>
-        <Warning
-          onClick={null}
-          status="error"
-          title="Powiadamianie o narażeniu jest nieaktywne"
-          content="Kliknij, aby włączyć powiadamianie o narażeniu na kontakt COVID-19"
-        />
+        <ExposureNotificationWarning />
         {showBadge && <Badge />}
         <Smile
           userName={userName}
