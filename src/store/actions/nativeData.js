@@ -75,6 +75,13 @@ export function enableExposureNotificationService() {
   };
 }
 
+export function disableExposureNotificationService() {
+  const data = { enableExposureNotificationService: false };
+  return () => {
+    nativeBridge.setServicesState(data);
+  };
+}
+
 export function enableNotification() {
   const data = { enableNotification: true };
   return () => {
