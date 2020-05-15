@@ -10,6 +10,7 @@ export const Container = styled.div`
   align-items: center;
   width: 100%;
   min-height: 130px;
+  margin-top: 22px;
   padding: 24px;
   border-radius: 4px;
   border: solid 1px ${Color.green};

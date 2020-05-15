@@ -1,16 +1,17 @@
 import React from 'react';
-
 import {
+  Header,
   Badge,
   Container,
   Smile,
   Info,
   InfoBorder,
-  BordersButton
+  BordersButton,
+  BottomNavigation,
+  Warning
 } from '../../components';
-import Header from '../../components/Header/Header';
-import { BottomNavigation } from '../../components/BottomNavigation';
 import './Home.scss';
+
 import { Icon } from '../RiskTest/RiskTest.styled';
 
 const Home = ({
@@ -31,6 +32,12 @@ const Home = ({
     <div className="view view__home">
       <Header hideBackButton />
       <Container>
+        <Warning
+          onClick={null}
+          status="error"
+          title="Powiadamianie o narażeniu jest nieaktywne"
+          content="Kliknij, aby włączyć powiadamianie o narażeniu na kontakt COVID-19"
+        />
         {showBadge && <Badge />}
         <Smile
           userName={userName}
