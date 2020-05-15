@@ -29,16 +29,16 @@ export function fetchNotification() {
   };
 }
 
-export const fetchServicesStatusSuccess = serviceStatus => ({
-  serviceStatus,
+export const fetchServicesStatusSuccess = servicesStatus => ({
+  servicesStatus,
   type: types.NATIVE_DATA_FETCH_SERVICES_STATUS_SUCCESS
 });
 
 export function fetchServicesStatus() {
   return dispatch => {
-    nativeBridge.getServicesStatus().then(serviceStatus => {
-      if (serviceStatus) {
-        dispatch(fetchServicesStatusSuccess(serviceStatus));
+    nativeBridge.getServicesStatus().then(servicesStatus => {
+      if (servicesStatus) {
+        dispatch(fetchServicesStatusSuccess(servicesStatus));
       }
     });
   };
