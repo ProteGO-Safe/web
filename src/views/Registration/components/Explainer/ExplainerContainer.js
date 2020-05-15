@@ -1,29 +1,29 @@
 import React, { useRef, useState } from 'react';
+import Explainer from './Explainer';
+import { ExplainerItem } from './components';
+import Url from '../../../../components/Url';
 
 import IconChat from '../../../../assets/img/explainer/chat.svg';
 import IconDiary from '../../../../assets/img/explainer/diary.svg';
 import IconInfo from '../../../../assets/img/explainer/info.svg';
-import IconBluetooth from '../../../../assets/img/explainer/bluetooth.svg';
-
-import Explainer from './Explainer';
-import { ExplainerItem } from './components';
+import IconDiagnostic from '../../../../assets/img/explainer/diagnostic.svg';
 
 const ExplainerContainer = ({ onFinishClick }) => {
   const carouselRef = useRef(null);
   const [activeSlide, setActiveSlide] = useState(0);
+  const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
 
   const items = [
     {
       content: (
         <>
-          Funkcja działa w kontakcie z osobami, które wyraziły na to zgodę i
-          korzystają z aplikacji. Zachęć innych do korzystania.
-          <br />
-          <br />W ten sposób wzajemnie się chronimy!
+          Wszystkie ważne informacje o{' '}
+          <Url value="https://www.gov.pl/web/koronawirus">COVID-19</Url>
+          <br /> w 1 miejscu
         </>
       ),
-      icon: IconBluetooth,
-      slug: 'bluetooth'
+      icon: IconDiagnostic,
+      slug: 'diagnostic_apple_google'
     },
     {
       content: (
@@ -52,6 +52,9 @@ const ExplainerContainer = ({ onFinishClick }) => {
 
   const settings = {
     afterChange: currentSlide => setActiveSlide(currentSlide),
+    beforeChange: (oldIndex, newIndex) => {
+      setCurrentSlideIndex(newIndex);
+    },
     dots: true,
     slidesToShow: 1,
     infinite: false,
@@ -70,6 +73,7 @@ const ExplainerContainer = ({ onFinishClick }) => {
 
   return (
     <Explainer
+      index={currentSlideIndex}
       carouselRef={carouselRef}
       items={items}
       onClick={handleButtonClick}

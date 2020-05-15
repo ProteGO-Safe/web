@@ -6,27 +6,37 @@ import { Button, GovFooter, Header } from '../../../../components';
 import { Container, Content, View } from '../../../../theme/grid';
 import { SliderWrapper, Title } from './Explainer.styled';
 
-const Explainer = ({ carouselRef, items, onClick, settings }) => (
-  <View>
-    <Header hideBackButton />
-    <Content>
-      <Container className="full-height">
-        <Title>
-          Włącz się do wspólnej walki
-          <br />
-          przeciwko koronawirusowi
-        </Title>
-        <SliderWrapper>
-          <Slider ref={carouselRef} {...settings}>
-            {items}
-          </Slider>
-        </SliderWrapper>
-        <Button onClick={onClick} text="Dalej" />
-        <GovFooter type="black" />
-      </Container>
-    </Content>
-  </View>
-);
+const Explainer = ({ carouselRef, index, items, onClick, settings }) => {
+  return (
+    <View>
+      <Header hideBackButton />
+      <Content>
+        <Container className="full-height">
+          {index < 1 ? (
+            <Title>
+              Diagnosic Key
+              <br />
+              od Apple/Google
+            </Title>
+          ) : (
+            <Title>
+              Włącz się do wspólnej walki
+              <br />
+              przeciwko koronawirusowi
+            </Title>
+          )}
+          <SliderWrapper>
+            <Slider ref={carouselRef} {...settings}>
+              {items}
+            </Slider>
+          </SliderWrapper>
+          <Button onClick={onClick} text="Dalej" />
+          <GovFooter type="black" />
+        </Container>
+      </Content>
+    </View>
+  );
+};
 
 Explainer.propTypes = {
   // eslint-disable-next-line
