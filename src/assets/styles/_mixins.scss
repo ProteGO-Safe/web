@@ -1,4 +1,4 @@
-@mixin viewBaseStyles($bannerRowsValue: 60px) {
+@mixin viewBaseStyles($bannerRowsValue: 50px) {
   display: grid;
   grid-template-areas: 'banner' 'container';
   grid-template-rows: $bannerRowsValue 1fr;

@@ -1,6 +1,7 @@
 export { App } from './App';
 export { Badge } from './Badge';
 export { BordersButton } from './BordersButton';
+export { BottomNavigation } from './BottomNavigation';
 export { Button } from './Button';
 export { Checkbox } from './Checkbox';
 export { Collapse } from './Collapse';
@@ -30,3 +31,4 @@ export { Stepper } from './Stepper';
 export { Textarea } from './Textarea';
 export { TextField } from './TextField';
 export { VersionApp } from './VersionApp';
+export { Warning } from './Warning';
