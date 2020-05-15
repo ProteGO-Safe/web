@@ -1,12 +1,30 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import Settings from './Settings';
+import { fetchServicesStatus } from '../../store/actions/nativeData';
+import { EXPOSURE_NOTIFICATION_STATUS } from '../../utils/servicesStatus/servicesStatus.constants';
 
 const SettingsContainer = () => {
+  const {
+    servicesStatus: {
+      exposureNotificationStatus = EXPOSURE_NOTIFICATION_STATUS.OFF
+    } = {}
+  } = useSelector(state => state.nativeData);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(fetchServicesStatus());
+  }, [dispatch]);
+
+  const isExposureNotificationOn = (() => {
+    return exposureNotificationStatus === EXPOSURE_NOTIFICATION_STATUS.ON;
+  })();
+
   const toggleChecked = () => {};
 
   const items = [
     {
-      checked: false,
+      checked: isExposureNotificationOn,
       disabled: false,
       onChange: toggleChecked,
       label: 'Zgoda na używanie Bluetooth w celu wykrycia zagrożeń',
