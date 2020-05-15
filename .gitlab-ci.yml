@@ -6,7 +6,6 @@ stages:
   image: node:13
   stage: build
   script:
-    - yarn audit
     - yarn install
     - yarn build
   artifacts:
