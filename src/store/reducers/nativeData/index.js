@@ -45,11 +45,9 @@ const nativeBridgeReducer = (state = INITIAL_STATE, action) => {
         notification: undefined
       };
     case NATIVE_DATA_FETCH_SERVICES_STATUS_SUCCESS:
-      setServicesStatusSuccess(state, action, false);
-      break;
+      return setServicesStatusSuccess(state, action, false);
     case NATIVE_DATA_SET_SERVICES_STATUS_SUCCESS:
-      setServicesStatusSuccess(state, action, true);
-      break;
+      return setServicesStatusSuccess(state, action, true);
     default:
       return state;
   }
