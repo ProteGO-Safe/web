@@ -26,9 +26,9 @@ const SettingsContainer = () => {
 
   const toggleChecked = () => {
     if (isExposureNotificationOn) {
-      dispatch(disableExposureNotificationService());
+      disableExposureNotificationService();
     } else {
-      dispatch(enableExposureNotificationService());
+      enableExposureNotificationService();
     }
   };
 

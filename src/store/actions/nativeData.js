@@ -89,6 +89,12 @@ export function enableNotification() {
   };
 }
 
+export function enableServices(data) {
+  return () => {
+    nativeBridge.setServicesState(data);
+  };
+}
+
 export function clearBluetoothData() {
   const data = { clearBtData: true };
   return () => {
