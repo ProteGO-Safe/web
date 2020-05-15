@@ -54,32 +54,14 @@ export function hideNotification() {
   };
 }
 
-export function enableBt() {
-  const data = { enableBt: true };
-  return () => {
-    nativeBridge.setServicesState(data);
-  };
-}
-
-export function enableLocation() {
-  const data = { enableLocation: true };
-  return () => {
-    nativeBridge.setServicesState(data);
-  };
-}
-
 export function enableExposureNotificationService() {
   const data = { enableExposureNotificationService: true };
-  return () => {
-    nativeBridge.setServicesState(data);
-  };
+  nativeBridge.setServicesState(data);
 }
 
 export function disableExposureNotificationService() {
   const data = { enableExposureNotificationService: false };
-  return () => {
-    nativeBridge.setServicesState(data);
-  };
+  nativeBridge.setServicesState(data);
 }
 
 export function enableNotification() {
@@ -90,9 +72,7 @@ export function enableNotification() {
 }
 
 export function enableServices(data) {
-  return () => {
-    nativeBridge.setServicesState(data);
-  };
+  nativeBridge.setServicesState(data);
 }
 
 export function clearBluetoothData() {
