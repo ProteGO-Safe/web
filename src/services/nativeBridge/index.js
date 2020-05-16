@@ -16,7 +16,10 @@ const sendNativeRequest = (functionName, dataType, data) => {
   const requestId = uniqueId('request-');
   return new Promise((resolve, reject) => {
     nativeRequests[requestId] = { resolve, reject };
-    invoke(windowObject, `messageHandlers.${functionName}.postMessage`, {
+    const functionParameter = isAndroidWebView()
+      ? functionName
+      : `messageHandlers.${functionName}.postMessage`;
+    invoke(windowObject, functionParameter, {
       type: dataType,
       data,
       requestId
