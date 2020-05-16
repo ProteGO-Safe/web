@@ -66,10 +66,12 @@ export function disableExposureNotificationService() {
 
 export function enableNotification() {
   const data = { enableNotification: true };
-  return () => {
-    nativeBridge.setServicesState(data);
-  };
+  nativeBridge.setServicesState(data);
 }
+
+export const resetSourceSetServicesStatus = () => ({
+  type: types.NATIVE_DATA_SET_SERVICE_STATUS_SOURCE_RESETED
+});
 
 export function enableServices(data) {
   nativeBridge.setServicesState(data);

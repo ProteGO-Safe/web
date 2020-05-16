@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { EXPOSURE_NOTIFICATION_STATUS } from '../../utils/servicesStatus/servicesStatus.constants';
 import ExposureOnboarding from './components/ExposureOnboarding/ExposureOnboarding';
 import { isIOSWebView } from '../../utils/native';
 import {
@@ -15,12 +14,7 @@ const OnboardingContainer = () => {
   const { exposureOnboardingFinished = false } = useSelector(
     state => state.app
   );
-  const {
-    servicesStatus: {
-      exposureNotificationStatus = EXPOSURE_NOTIFICATION_STATUS.NOT_SUPPORTED
-    } = {},
-    servicesStatusSetByNative = false
-  } = useSelector(state => state.nativeData);
+  const { servicesStatusSetByNative } = useSelector(state => state.nativeData);
 
   useEffect(() => {
     dispatch(fetchServicesStatus());
@@ -31,23 +25,10 @@ const OnboardingContainer = () => {
       dispatch(finishOnboarding());
       return;
     }
-    if (
-      servicesStatusSetByNative &&
-      exposureNotificationStatus === EXPOSURE_NOTIFICATION_STATUS.OFF
-    ) {
-      dispatch(finishExposureOnboarding());
-      return;
-    }
-
-    if (exposureNotificationStatus === EXPOSURE_NOTIFICATION_STATUS.ON) {
+    if (servicesStatusSetByNative) {
       dispatch(finishExposureOnboarding());
     }
-  }, [
-    exposureOnboardingFinished,
-    exposureNotificationStatus,
-    servicesStatusSetByNative,
-    dispatch
-  ]);
+  }, [exposureOnboardingFinished, servicesStatusSetByNative, dispatch]);
 
   if (!exposureOnboardingFinished) {
     return <ExposureOnboarding />;
