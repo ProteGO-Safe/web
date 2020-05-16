@@ -21,11 +21,7 @@ const sendNativeRequest = (functionName, dataType, data) => {
         requestId
       });
     } else if (isAndroidWebView()) {
-      invoke(window.NativeBridge, functionName, {
-        type: dataType,
-        data,
-        requestId
-      });
+      invoke(window.NativeBridge, functionName, dataType, data, requestId);
     }
   });
 };
