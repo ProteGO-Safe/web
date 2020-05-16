@@ -6,24 +6,27 @@ import StoreRegistry from '../../store/storeRegistry';
 import { NATIVE_DATA_SET_SERVICES_STATUS_SUCCESS } from '../../store/types/nativeData';
 import { DATA_TYPE } from './nativeBridge.constants';
 import { UPLOAD_HISTORICAL_DATA_FINISHED } from '../../store/types/app';
-import { isAndroidWebView } from '../../utils/native';
+import { isAndroidWebView, isIOSWebView } from '../../utils/native';
 
 const nativeRequests = {};
-
-const windowObject = isAndroidWebView() ? window.NativeBridge : window.webkit;
 
 const sendNativeRequest = (functionName, dataType, data) => {
   const requestId = uniqueId('request-');
   return new Promise((resolve, reject) => {
     nativeRequests[requestId] = { resolve, reject };
-    const functionParameter = isAndroidWebView()
-      ? functionName
-      : `messageHandlers.${functionName}.postMessage`;
-    invoke(windowObject, functionParameter, {
-      type: dataType,
-      data,
-      requestId
-    });
+    if (isIOSWebView()) {
+      invoke(window.webkit, `messageHandlers.${functionName}.postMessage`, {
+        type: dataType,
+        data,
+        requestId
+      });
+    } else if (isAndroidWebView()) {
+      invoke(window.NativeBridge, functionName, {
+        type: dataType,
+        data,
+        requestId
+      });
+    }
   });
 };
 
