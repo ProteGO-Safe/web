@@ -1,4 +1,5 @@
 import * as types from '../types/app';
+import { resetSourceSetServicesStatus } from './nativeData';
 
 export const onboardingFinished = () => ({
   type: types.ONBOARDING_FINISHED
@@ -10,12 +11,14 @@ export const exposureOnboardingFinished = () => ({
 
 export function finishExposureOnboarding() {
   return dispatch => {
+    dispatch(resetSourceSetServicesStatus());
     dispatch(exposureOnboardingFinished());
   };
 }
 
 export function finishOnboarding() {
   return dispatch => {
+    dispatch(resetSourceSetServicesStatus());
     dispatch(onboardingFinished());
   };
 }

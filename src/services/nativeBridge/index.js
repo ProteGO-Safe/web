@@ -1,20 +1,22 @@
 import invoke from 'lodash.invoke';
 import uniqueId from 'lodash.uniqueid';
-import { cond, equals, always } from 'ramda';
+import { always, cond, equals } from 'ramda';
 
 import StoreRegistry from '../../store/storeRegistry';
 import { NATIVE_DATA_SET_SERVICES_STATUS_SUCCESS } from '../../store/types/nativeData';
 import { DATA_TYPE } from './nativeBridge.constants';
-import { isAndroidWebView } from '../../utils/native';
 import { UPLOAD_HISTORICAL_DATA_FINISHED } from '../../store/types/app';
+import { isAndroidWebView } from '../../utils/native';
 
 const nativeRequests = {};
+
+const windowObject = isAndroidWebView() ? window.NativeBridge : window.webkit;
 
 const sendNativeRequest = (functionName, dataType, data) => {
   const requestId = uniqueId('request-');
   return new Promise((resolve, reject) => {
     nativeRequests[requestId] = { resolve, reject };
-    invoke(window.webkit, `messageHandlers.${functionName}.postMessage`, {
+    invoke(windowObject, `messageHandlers.${functionName}.postMessage`, {
       type: dataType,
       data,
       requestId
@@ -38,12 +40,7 @@ const callNativeFunction = async (functionName, dataType, data) => {
     args.push(JSON.stringify(data));
   }
 
-  if (isAndroidWebView()) {
-    return invoke(window.NativeBridge, functionName, ...args);
-  }
-
-  const result = await sendNativeRequest(functionName, ...args);
-  return result;
+  return sendNativeRequest(functionName, ...args);
 };
 
 const callGetBridgeData = async dataType => {

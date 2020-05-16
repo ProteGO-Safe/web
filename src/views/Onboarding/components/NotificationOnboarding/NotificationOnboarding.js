@@ -6,18 +6,20 @@ import { enableNotification } from '../../../../store/actions/nativeData';
 
 const NotificationOnboarding = () => {
   const dispatch = useDispatch();
-  const { servicesStatus } = useSelector(state => state.nativeData);
+  const { servicesStatus, servicesStatusSetByNative } = useSelector(
+    state => state.nativeData
+  );
 
   useEffect(() => {
     const { isNotificationEnabled } = servicesStatus;
 
-    if (isNotificationEnabled) {
+    if (isNotificationEnabled || servicesStatusSetByNative) {
       dispatch(finishOnboarding());
     }
-  }, [servicesStatus, dispatch]);
+  }, [servicesStatus, servicesStatusSetByNative, dispatch]);
 
   const nextInformation = () => {
-    dispatch(enableNotification());
+    enableNotification();
   };
 
   return <Information onNext={nextInformation} />;
