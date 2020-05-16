@@ -42,6 +42,10 @@ const callNativeFunction = async (functionName, dataType, data) => {
     args.push(JSON.stringify(data));
   }
 
+  if (isAndroidWebView() && functionName === 'setBridgeData') {
+    return invoke(window.NativeBridge, functionName, ...args);
+  }
+
   return sendNativeRequest(functionName, ...args);
 };
 
