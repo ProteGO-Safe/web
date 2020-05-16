@@ -12,7 +12,10 @@ const INITIAL_STATE = {
   exposureOnboardingFinished: false,
   onboardingFinished: false,
   startScreenShowed: false,
-  uploadHistoricalDataState: uploadState.EMPTY
+  uploadHistoricalDataState: {
+    status: uploadState.EMPTY,
+    unsuccessfulAttempts: []
+  }
 };
 const appReducer = (state = INITIAL_STATE, action) => {
   switch (action.type) {
@@ -35,19 +38,35 @@ const appReducer = (state = INITIAL_STATE, action) => {
     case UPLOAD_HISTORICAL_DATA_REQUESTED:
       return {
         ...state,
-        uploadHistoricalDataState: uploadState.REQUESTED
+        uploadHistoricalDataState: {
+          ...state.uploadHistoricalDataState,
+          status: uploadState.REQUESTED
+        }
       };
     case UPLOAD_HISTORICAL_DATA_ENDED:
       return {
         ...state,
-        uploadHistoricalDataState: uploadState.EMPTY
+        uploadHistoricalDataState: {
+          ...state.uploadHistoricalDataState,
+          status: uploadState.EMPTY
+        }
       };
     case UPLOAD_HISTORICAL_DATA_FINISHED:
       return (() => {
         const { result } = action;
 
         const uploadHistoricalDataState =
-          result === 1 ? uploadState.SUCCESS : uploadState.FAILED;
+          result === 1
+            ? {
+                status: uploadState.SUCCESS,
+                unsuccessfulAttempts: []
+              }
+            : {
+                status: uploadState.FAILED,
+                unsuccessfulAttempts: state.uploadHistoricalDataState.unsuccessfulAttempts.concat(
+                  new Date().getTime()
+                )
+              };
         return {
           ...state,
           uploadHistoricalDataState

@@ -1,26 +1,46 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
-import { UploadFailed } from './components/UploadFailed';
+import { UploadData } from './components/UploadData';
 import {
   endUploadHistoricalData,
   uploadHistoricalData
 } from '../../store/actions/nativeData';
-import { UploadData } from './components/UploadData';
 import { UploadSuccess } from './components/UploadSuccess';
 import { UPLOAD_HISTORICAL_DATA_STATE as uploadState } from '../../store/reducers/app/app.constants';
 import Routes from '../../routes';
 import UploadInProgress from './components/UploadInProgress/UploadInProgress';
+import { getBanData, createErrorMessage } from './helpers/ban-pin-tries';
 
 const UploadHistoricalData = () => {
   const dispatch = useDispatch();
   const history = useHistory();
   const { name: userName } = useSelector(state => state.user);
-  const { uploadHistoricalDataState = uploadState.EMPTY } = useSelector(
-    state => state.app
-  );
+  const {
+    uploadHistoricalDataState: { status, unsuccessfulAttempts } = {
+      status: uploadState.EMPTY
+    }
+  } = useSelector(state => state.app);
 
   const [pin, setPin] = useState('');
+  const [banData, setBanData] = useState(null);
+
+  useEffect(() => {
+    if (unsuccessfulAttempts) {
+      const banInfo = getBanData(unsuccessfulAttempts);
+      setBanData(banInfo);
+    }
+  }, [unsuccessfulAttempts]);
+
+  useEffect(() => {
+    if (banData && banData.lockdownTime) {
+      const timer = setTimeout(() => {
+        setBanData(getBanData(unsuccessfulAttempts));
+      }, banData.lockdownTime);
+      return () => clearTimeout(timer);
+    }
+    return () => {};
+  }, [banData, unsuccessfulAttempts]);
 
   const uploadData = () => {
     const data = {
@@ -33,38 +53,28 @@ const UploadHistoricalData = () => {
     dispatch(endUploadHistoricalData()).then(history.push(Routes.Home));
   };
 
-  if (uploadHistoricalDataState === uploadState.EMPTY) {
-    return (
-      <UploadData
-        userName={userName}
-        pin={pin}
-        setPin={setPin}
-        onUploadData={uploadData}
-        disableButton={uploadHistoricalDataState === uploadState.REQUESTED}
-      />
-    );
-  }
-
-  if (uploadHistoricalDataState === uploadState.REQUESTED) {
+  if (status === uploadState.REQUESTED) {
     return <UploadInProgress />;
   }
 
-  if (uploadHistoricalDataState === uploadState.FAILED) {
-    return (
-      <UploadFailed
-        userName={userName}
-        pin={pin}
-        setPin={setPin}
-        onUploadData={uploadData}
-      />
-    );
-  }
-
-  if (uploadHistoricalDataState === uploadState.SUCCESS) {
+  if (status === uploadState.SUCCESS) {
     return <UploadSuccess finishUpload={finishUpload} />;
   }
-
-  return null;
+  const getErrorMessage = () =>
+    banData && createErrorMessage(banData, unsuccessfulAttempts.length);
+  return (
+    <>
+      <UploadData
+        disableButton={status === uploadState.REQUESTED}
+        disablePinInput={Boolean(banData && banData.lockdownTime)}
+        errorMessage={getErrorMessage()}
+        onUploadData={uploadData}
+        pin={pin}
+        setPin={setPin}
+        userName={userName}
+      />
+    </>
+  );
 };
 
 export default UploadHistoricalData;
