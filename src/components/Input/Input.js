@@ -7,6 +7,7 @@ const Input = ({
   error,
   description,
   disabled,
+  icon,
   label,
   min,
   max,
@@ -19,9 +20,14 @@ const Input = ({
   value
 }) => (
   <div className="input input__wrapper">
+    {icon && (
+      <span className="input__icon">
+        <img src={icon} alt={placeholder} />
+      </span>
+    )}
     {label && <span className="input__label">{label}</span>}
     <input
-      className={`input__field input__field--${size}`}
+      className={`input__field input__field--${size} ${icon && 'padding'}`}
       max={max}
       disabled={disabled}
       min={min}

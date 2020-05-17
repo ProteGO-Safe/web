@@ -7,7 +7,7 @@ export const CollapseWrapper = styled.div`
   margin-top: -1px;
 `;
 
-export const Title = styled.span`
+export const Title = styled.div`
   position: relative;
   display: flex;
   flex-flow: wrap row;

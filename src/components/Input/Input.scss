@@ -12,6 +12,7 @@
 
 .input {
   &__wrapper {
+    position: relative;
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -30,6 +31,10 @@
     letter-spacing: 0;
     -webkit-appearance: none;
     border-radius: 4px;
+
+    &.padding {
+      padding-right: 40px;
+    }
 
     &:focus {
       outline: none;
@@ -92,6 +97,23 @@
     line-height: 13px;
     letter-spacing: 0;
     color: $red;
+  }
+
+  &__icon {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: flex;
+    flex-flow: wrap row;
+    justify-content: center;
+    align-items: center;
+    width: 44px;
+    height: 44px;
+    img {
+      display: block;
+      width: 24px;
+      height: 24px;
+    }
   }
 }
 
