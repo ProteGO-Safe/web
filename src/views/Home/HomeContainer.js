@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import Home from './Home';
 import { Diagnosis } from '../Diagnosis';
 import { getLastDate } from '../../utils/calendar';
@@ -15,8 +15,10 @@ import { RiskInfoLevel2 } from '../RiskInformation/components/RiskInfoLevel2';
 import { RiskInfoLevel3 } from '../RiskInformation/components/RiskInfoLevel3';
 import { RiskInfoLevel4 } from '../RiskInformation/components/RiskInfoLevel4';
 import { RiskInfoLevel5 } from '../RiskInformation/components/RiskInfoLevel5';
+import { fetchServicesStatus } from '../../store/actions/nativeData';
 
 const HomeContainer = () => {
+  const dispatch = useDispatch();
   const history = useHistory();
   const riskTest = useSelector(state => state.riskTest);
   const { serious = [], triageLevel, description } = useSelector(
@@ -25,6 +27,10 @@ const HomeContainer = () => {
   const { name: userName } = useSelector(state => state.user);
 
   const filledDays = Object.keys(riskTest);
+
+  useEffect(() => {
+    dispatch(fetchServicesStatus());
+  }, [dispatch]);
 
   if (filledDays.length === 0) {
     return <Diagnosis />;
