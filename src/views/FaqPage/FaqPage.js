@@ -25,13 +25,21 @@ const FaqPage = () => {
   const { elements } = FaqList;
   const { watermark } = FaqList;
 
+  const highlightedText = (text, highlight) => {
+    const parts = text.split(new RegExp(`(${highlight})`, 'gi'));
+    return parts.map((part, key) => {
+      const test = part.toLowerCase() === highlight.toLowerCase();
+      return test ? <Highlight key={key}>{part}</Highlight> : part;
+    });
+  };
+
   const parseUrl = phrases =>
     phrases.map((phrase, index) => {
       const part = phrase.split(/\|/);
 
       return part.length > 1 ? (
         <Url key={index} value={part[1]}>
-          {part[0]}
+          {filterText ? highlightedText(part[0], filterText) : part[0]}
         </Url>
       ) : (
         part
@@ -42,14 +50,6 @@ const FaqPage = () => {
     const phrases = line.split(/\[url\]/);
 
     return parseUrl(phrases);
-  };
-
-  const highlightedText = (text, highlight) => {
-    const parts = text.split(new RegExp(`(${highlight})`, 'gi'));
-    return parts.map((part, key) => {
-      const test = part.toLowerCase() === highlight.toLowerCase();
-      return test ? <Highlight key={key}>{part}</Highlight> : part;
-    });
   };
 
   const renderElement = (line, index) => {
@@ -87,9 +87,7 @@ const FaqPage = () => {
       case 'paragraph': {
         return (
           <FaqParagraph key={index}>
-            {filterText
-              ? highlightedText(line.content.text, filterText)
-              : renderLine(line.content.text)}
+            {renderLine(line.content.text)}
           </FaqParagraph>
         );
       }
@@ -97,9 +95,7 @@ const FaqPage = () => {
         const title = filterText
           ? highlightedText(line.content.text, filterText)
           : line.content.text;
-        const details = filterText
-          ? highlightedText(line.content.reply, filterText)
-          : renderLine(line.content.reply);
+        const details = renderLine(line.content.reply);
         return (
           <Collapse
             key={index}

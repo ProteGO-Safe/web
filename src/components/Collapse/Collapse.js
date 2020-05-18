@@ -26,7 +26,7 @@ Collapse.defaultProps = {
 Collapse.propTypes = {
   children: PropTypes.node.isRequired,
   className: PropTypes.string,
-  title: PropTypes.string.isRequired
+  title: PropTypes.node.isRequired
 };
 
 export default Collapse;
