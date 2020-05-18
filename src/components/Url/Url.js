@@ -12,7 +12,7 @@ const Url = ({ children, value = children }) => {
 };
 
 Url.propTypes = {
-  children: PropTypes.string.isRequired,
+  children: PropTypes.node.isRequired,
   value: PropTypes.string
 };
 
