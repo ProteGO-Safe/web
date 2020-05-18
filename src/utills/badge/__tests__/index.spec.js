@@ -3,7 +3,7 @@ import hasBadge from '../index';
 import moment from 'moment';
 
 describe('badge checker', () => {
-  it('should has badge when 3 days in a raw was filled', () => {
+  it('should does not have badge when 3 days in a raw was filled', () => {
     const today = moment();
 
     const _1dayAgo = today.subtract(1, 'days').unix();
@@ -11,10 +11,10 @@ describe('badge checker', () => {
     const _3dayAgo = today.subtract(1, 'days').unix();
     const filledDays = [_1dayAgo, _2dayAgo, _3dayAgo];
     const itHasBadge = hasBadge(filledDays);
-    expect(itHasBadge).toEqual(true);
+    expect(itHasBadge).toEqual(false);
   });
 
-  it('should has badge when 3 days multiple in a raw was filled', () => {
+  it('should does not have when 3 days multiple in a raw was filled', () => {
     const today = moment();
 
     const _1dayAgoA = today.subtract(1, 'days').unix();
@@ -36,10 +36,10 @@ describe('badge checker', () => {
       _3dayAgo
     ];
     const itHasBadge = hasBadge(filledDays);
-    expect(itHasBadge).toEqual(true);
+    expect(itHasBadge).toEqual(false);
   });
 
-  it('should not have badge when 2 days in a raw was filled', () => {
+  it('should does not have badge when 2 days in a raw was filled', () => {
     const today = moment();
 
     const _1dayAgo = today.subtract(1, 'days').unix();
@@ -49,7 +49,7 @@ describe('badge checker', () => {
     expect(itHasBadge).toEqual(false);
   });
 
-  it('should not have badge when 3 days in a raw was filled but same times ago', () => {
+  it('should does not have badge when 3 days in a raw was filled but same times ago', () => {
     const today = moment();
 
     const _2dayAgo = today.subtract(2, 'days').unix();
@@ -60,7 +60,7 @@ describe('badge checker', () => {
     expect(itHasBadge).toEqual(false);
   });
 
-  it('should not have badge when has one day off', () => {
+  it('should does not have badge when has one day off', () => {
     const today = moment();
 
     const _1dayAgo = today.subtract(1, 'days').unix();
@@ -70,18 +70,57 @@ describe('badge checker', () => {
     expect(itHasBadge).toEqual(false);
   });
 
-  it('should not have badge when no filled days', () => {
+  it('should does not have badge when no filled days', () => {
     const filledDays = [];
     const itHasBadge = hasBadge(filledDays);
     expect(itHasBadge).toEqual(false);
   });
 
-  it('should not have badge when filled only day ago', () => {
+  it('should does not have badge when filled only day ago', () => {
     const today = moment();
 
     const _1dayAgo = today.subtract(1, 'days').unix();
     const filledDays = [_1dayAgo];
     const itHasBadge = hasBadge(filledDays);
+    expect(itHasBadge).toEqual(false);
+  });
+
+  it('should has badge when filled in third day', () => {
+    const now = moment();
+
+    const _1hourAgo = now.subtract(1, 'hours').unix();
+    const _1dayAgo = now.subtract(1, 'days').unix();
+    const _2dayAgo = now.subtract(1, 'days').unix();
+    const filledDays = [_1dayAgo, _2dayAgo, _1hourAgo];
+    const itHasBadge = hasBadge(filledDays);
+
+    expect(itHasBadge).toEqual(true);
+  });
+
+  it('should has badge when filled in two days in row and multiple times today', () => {
+    const now = moment();
+
+    const _1hourAgo = now.subtract(1, 'hours').unix();
+    const _2hourAgo = now.subtract(1, 'hours').unix();
+    const _5hourAgo = now.subtract(3, 'hours').unix();
+    const _1dayAgo = now.subtract(1, 'days').unix();
+    const _2dayAgo = now.subtract(1, 'days').unix();
+    const filledDays = [_1dayAgo, _2dayAgo, _1hourAgo, _2hourAgo, _5hourAgo];
+    const itHasBadge = hasBadge(filledDays);
+
+    expect(itHasBadge).toEqual(true);
+  });
+
+  it('should does not have badge when filled yesterday and multiple times today', () => {
+    const now = moment();
+
+    const _1hourAgo = now.subtract(1, 'hours').unix();
+    const _2hourAgo = now.subtract(1, 'hours').unix();
+    const _5hourAgo = now.subtract(3, 'hours').unix();
+    const _1dayAgo = now.subtract(1, 'days').unix();
+    const filledDays = [_1dayAgo, _1hourAgo, _2hourAgo, _5hourAgo];
+    const itHasBadge = hasBadge(filledDays);
+
     expect(itHasBadge).toEqual(false);
   });
 });
