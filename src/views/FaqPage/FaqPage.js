@@ -147,7 +147,7 @@ const FaqPage = () => {
             {elementsToDisplay
               .filter(line => line.type !== 'intro')
               .map((line, index) => renderElement(line, index))}
-            <p className="watermark faq">{watermark}</p>
+            <p className="watermark details">{watermark}</p>
           </FaqWrapper>
         </Container>
         <BottomNavigation />

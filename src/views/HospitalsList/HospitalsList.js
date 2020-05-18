@@ -1,5 +1,5 @@
 import React from 'react';
-import { cond, is, T } from 'ramda';
+import reactStringReplace from 'react-string-replace';
 
 import Hospitals from './Hospitals.json';
 import Header from '../../components/Header/Header';
@@ -13,29 +13,14 @@ import './HospitalsList.scss';
 
 const HospitalsList = () => {
   const { voivodeships } = Hospitals;
+  const { watermark } = Hospitals;
+  const phoneRegex = /([+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s./0-9]{9,})/g;
 
-  const renderSimpleNumber = phone => (
-    <li key={phone}>
-      <PhoneNumber>{phone}</PhoneNumber>
-    </li>
-  );
-
-  const renderComplexNumber = phone => (
-    <li key={`phones-${phone.type}`}>
-      <strong>{phone.type}</strong>:{' '}
-      {phone.items.map((number, index) => (
-        <>
-          <PhoneNumber key={number}>{number}</PhoneNumber>
-          {phone.items.length - 1 !== index ? ', ' : ''}
-        </>
-      ))}
-    </li>
-  );
-
-  const renderPhoneNumber = cond([
-    [is(String), renderSimpleNumber],
-    [T, renderComplexNumber]
-  ]);
+  const renderAddressLine = address => {
+    return reactStringReplace(address, phoneRegex, (match, i) => (
+      <PhoneNumber key={i}>{match}</PhoneNumber>
+    ));
+  };
 
   return (
     <View>
@@ -51,18 +36,13 @@ const HospitalsList = () => {
                     key={`${voivodeship.name}-${item.city}-${item.address}`}
                   >
                     <strong>{item.city}</strong>
-                    <p>{item.address}</p>
-                    {item.phones.length ? (
-                      <>
-                        <div className="phone">Telefon:</div>
-                        <ul>{item.phones.map(renderPhoneNumber)}</ul>
-                      </>
-                    ) : null}
+                    <p>{renderAddressLine(item.address)}</p>
                   </ListItem>
                 ))}
               </List>
             </Collapse>
           ))}
+          <p className="watermark details">{watermark}</p>
         </Container>
         <BottomNavigation />
       </Content>
