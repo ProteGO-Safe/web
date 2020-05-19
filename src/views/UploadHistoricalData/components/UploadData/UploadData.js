@@ -32,8 +32,10 @@ const UploadData = ({
         <Container className="full-height">
           <Name>{userName},</Name>
           <Paragraph>
-            aby potwierdzić Operatorowi Centrum Kontaktu swój stan zdrowia wpisz
-            poniżej KOD PIN który otrzymałeś od niego w wiadomości SMS
+            wprowadź kod PIN otrzymany od Operatora Centrum Kontaktu. Dzięki
+            temu potwierdzisz swój stan zdrowia i dasz innym znać, że mogli mieć
+            kontakt z koronawirusem. Nie martw się, informacje są w pełni
+            anonimowe.
           </Paragraph>
           <PinWrapper>
             <PinInput
@@ -54,7 +56,7 @@ const UploadData = ({
           <ButtonWrapper>
             <Button
               onClick={onUploadData}
-              text="Przekaż dane"
+              text="Przekaż informacje"
               disabled={
                 pin.length !== 6 || disableSubmitButton || disablePinInput
               }
@@ -63,7 +65,7 @@ const UploadData = ({
           {errorMessage ? (
             <InfoIcon icon={InformationIcon}>
               <Paragraph>
-                <strong>Potrzebna pomoc?</strong>
+                <strong>Potrzebujesz pomocy?</strong>
                 <br /> Skontaktuj się z Centrum Pomocy:{' '}
                 <PhoneNumber value="800123123">800 123 123</PhoneNumber>
               </Paragraph>

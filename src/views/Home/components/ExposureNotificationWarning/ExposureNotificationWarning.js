@@ -6,8 +6,8 @@ const ExposureNotificationWarning = ({ enableServices }) => {
     <Warning
       onClick={enableServices}
       status="error"
-      title="Powiadamianie o narażeniu jest nieaktywne"
-      content="Kliknij, aby włączyć powiadamianie o narażeniu na kontakt COVID-19"
+      title="Powiadamianie o możliwym kontakcie z koronawirusem jest nieaktywne"
+      content="Kliknij, aby je włączyć."
     />
   );
 };

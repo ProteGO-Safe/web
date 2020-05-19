@@ -38,8 +38,9 @@ const NotSupported = ({ onNext }) => {
             buttons={renderButton}
           >
             <p>
-              Twoja wersja systemu nie jest zgodna z funkcjonalnością Contact
-              Tracing etc.
+              Coś jest nie tak. Zaktualizuj wersję systemu swojego telefonu lub
+              sprawdź swoje urządzenie. To konieczne, jeśli chcesz w pełni
+              korzystać ze wszystkich funkcjonalności aplikacji.
             </p>
           </OnboardingContent>
           <GovFooter type="black" />

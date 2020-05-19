@@ -19,14 +19,18 @@ const UploadInProgress = () => {
         <Container className="full-height">
           <Name>{userName},</Name>
           <Paragraph>
-            Zaczekaj proszę, Twoje diagnosis keys są właśnie wysyłane na serwer.
+            dziękujemy, że myślisz o innych. Jesteś odpowiedzialna/-y i
+            solidarna/-y. Informacja o ryzyku kontaktu z koronawirusem trafi na
+            urządzenia osób, z którymi się widziałaś/widziałeś.
           </Paragraph>
           <LoaderWrapper>
             <Loader />
           </LoaderWrapper>
           <Information>
-            Nie przekazujemy informacji, które umożliwią Twoją identyfikację.
-            Szczegóły dotyczące tego procesu znajdziesz w&nbsp;
+            Dbamy o Twoją prywatność i bezpieczeństwo Twoich danych.
+            Przekazujesz informacje w pełni anonimowo. Nie ma możliwości, by
+            ktokolwiek mógł Cię zidentyfikować. Więcej informacji znajdziesz
+            w&nbsp;
             <Link to={Routes.PrivacyPolicy}>
               <TextLink>Polityce prywatności</TextLink>.
             </Link>
