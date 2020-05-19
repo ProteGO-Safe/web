@@ -121,6 +121,10 @@ const FaqPage = () => {
     setFilterText(value.toLocaleLowerCase());
   };
 
+  const handleResetInput = () => {
+    setFilterText('');
+  };
+
   const elementsToDisplay =
     filterText.length >= '3' ? filteredElements : elements;
 
@@ -136,6 +140,7 @@ const FaqPage = () => {
               .map((line, index) => renderElement(line, index))}
             <SearchWrapper>
               <Input
+                reset={handleResetInput}
                 icon={SearchIcon}
                 type="text"
                 name="search"
