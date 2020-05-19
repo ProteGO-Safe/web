@@ -1,7 +1,6 @@
 import React, { useRef, useState } from 'react';
 import Explainer from './Explainer';
 import { ExplainerItem } from './components';
-import Url from '../../../../components/Url';
 
 import IconChat from '../../../../assets/img/explainer/chat.svg';
 import IconDiary from '../../../../assets/img/explainer/diary.svg';
@@ -17,9 +16,8 @@ const ExplainerContainer = ({ onFinishClick }) => {
     {
       content: (
         <>
-          Wszystkie ważne informacje o{' '}
-          <Url value="https://www.gov.pl/web/koronawirus">COVID-19</Url>
-          <br /> w 1 miejscu
+          <strong>Nowość w aplikacji:</strong> powiadomienia o możliwym
+          kontakcie z koronawirusem.
         </>
       ),
       icon: IconDiagnostic,

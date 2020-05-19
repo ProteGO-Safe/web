@@ -19,8 +19,8 @@ const UploadSuccess = ({ finishUpload }) => {
       <Content>
         <Container className="full-height">
           <ResultView
-            title="Przesyłanie danych zakończyło się powodzeniem."
-            text="Udało Ci się zwiększyć bezpieczeństwo na wszystkich - dziękujemy Ci za to."
+            title="Dziękujemy,"
+            text="że myślisz o bezpieczeństwie innych. Informacje zostały przesłane. "
             icon={PositiveIcon}
             buttons={buttons}
           />

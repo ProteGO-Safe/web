@@ -43,15 +43,12 @@ export const createErrorMessage = (
   }
   if (lockdownTime) {
     const lockdownTimeInMinutes = lockdownTime / MINUTE;
-    return `${numberOfTries}-krotnie wpisałeś nieprawidłowy PIN, odczekaj ${lockdownTimeInMinutes}min aby spróbować ponownie.`;
+    return `PIN trzykrotnie został wpisany niepoprawnie. Odczekaj ${lockdownTimeInMinutes} minut i spróbuj ponownie.`;
   }
   return (
     <>
-      KOD PIN jest wprowadzony niepoprawnie lub wygasł. Sprawdź poprawność KODU
-      PIN i spróbuj ponownie.{' '}
-      <strong>
-        (Próba {numberOfTries} z {currentLimitOfTries})
-      </strong>
+      Twój PIN jest niepoprawny lub wygasł. Sprawdź poprawność kodu PIN i
+      spróbuj ponownie. (Próba {numberOfTries} z {currentLimitOfTries})
     </>
   );
 };
