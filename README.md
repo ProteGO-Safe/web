@@ -7,11 +7,11 @@
 ## build application
 - yarn build
 
-Application can be start in environments:
+Application can be started in following environments:
  - browser
  - web view in Android or IOS
 
-When application is running as WebView in Android or IOS device, it uses NativeBridge to exchange data with native. [Documentation](https://docs.google.com/document/d/1WLMfbxlOxuY8By32iK_ILvmVjiq24kQARDNWBNy9TV4)
+When application is running as WebView on mobile devices (Android/iOS), it uses NativeBridge to exchange data with native thread. [Documentation](https://docs.google.com/document/d/1WLMfbxlOxuY8By32iK_ILvmVjiq24kQARDNWBNy9TV4)
 
 Native API contract:
 
