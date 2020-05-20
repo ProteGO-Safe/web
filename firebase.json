@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "site": "safesafe-app",
+    "site": "site_to_sed",
     "public": "build",
     "ignore": [
       "firebase.json",
