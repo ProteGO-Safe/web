@@ -12,6 +12,10 @@ export const Name = styled.h1`
 export const PinWrapper = styled.div`
   display: flex;
   width: 100%;
+  margin-bottom: 24px;
+  + .errorMessage {
+    margin-top: 0;
+  }
   .pincode-input-container {
     display: flex;
     flex-flow: nowrap row;
