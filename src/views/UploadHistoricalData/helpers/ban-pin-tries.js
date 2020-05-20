@@ -43,7 +43,7 @@ export const createErrorMessage = (
   }
   if (lockdownTime) {
     const lockdownTimeInMinutes = lockdownTime / MINUTE;
-    return `PIN trzykrotnie został wpisany niepoprawnie. Odczekaj ${lockdownTimeInMinutes} minut i spróbuj ponownie.`;
+    return `PIN ${currentLimitOfTries}-krotnie został wpisany niepoprawnie. Odczekaj ${lockdownTimeInMinutes} minut i spróbuj ponownie.`;
   }
   return (
     <>
