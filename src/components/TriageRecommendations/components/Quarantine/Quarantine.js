@@ -3,18 +3,27 @@ import { Collapse } from '../../../../components';
 import Url from '../../../../components/Url';
 import PhoneNumber from '../../../../components/PhoneNumber';
 
-const RiskInfoLevel3 = () => (
+const Quarantine = () => (
   <>
-    <Collapse title="Pozostań w domu">
+    <Collapse title="Pozostań w domu przez 14 dni">
       <p>
         Kwarantannę musisz odbywać w domu, pod adresem, który wcześniej
-        wskażesz. Nie możesz zmienić miejsca kwarantanny. Jeśli nie możesz
-        zostać w domu, odpowiednie służby wskażą ci miejsce odbywania
-        kwarantanny.
+        wskażesz. Nie możesz zmienić miejsca kwarantanny. Jeśli nie masz
+        możliwości odbywania kwarantanny w domu, możesz ją odbyć we wskazanym
+        przez odpowiednie służby ośrodku.
       </p>
     </Collapse>
     <Collapse title="Stosuj się do zasad kwarantanny">
       <ul>
+        <li>
+          W żadnym wypadku nie opuszczaj domu. Nie wolno ci wychodzić do sklepu,
+          na spacer z psem, ani do lekarza.
+        </li>
+        <li>
+          Jeśli masz pod swoją opieką zwierzęta, w miarę możliwości na czas
+          trwania kwarantanny przekaż je pod opiekę rodzinie lub znajomym. Jeśli
+          nie masz takiej możliwości, zwróć się telefonicznie o pomoc do gminy.
+        </li>
         <li>
           Nie spotykaj się z innymi osobami i nie zapraszaj ludzi do domu.
         </li>
@@ -35,17 +44,17 @@ const RiskInfoLevel3 = () => (
         <li>
           <div className="bold">Często myj ręce</div>
           <div className="normal">
-            Regularnie myj ręce mydłem i wodą lub dezynfekuj je środkiem na
-            bazie alkoholu (min. 60%). Mycie rąk powinno trwać 30 sekund.{' '}
+            Regularnie myj ręce mydłem i wodą, lub dezynfekuj je środkiem na
+            bazie alkoholu (min. 60%). Mycie rąk powinno trwać 30 sekund.
+            Zapoznaj się z{' '}
             <Url value="https://gis.gov.pl/zdrowie/zasady-prawidlowego-mycia-rak/">
-              Sprawdź instrukcję.
-            </Url>
+              instrukcją mycia rąk
+            </Url>{' '}
+            na stronie Głównego Inspektoratu Sanitarnego.
           </div>
         </li>
         <li>
-          <div className="bold">
-            Zasłaniaj usta i nos, gdy kaszlesz lub kichasz
-          </div>
+          <div className="bold">Zasłoń usta i nos gdy kaszlesz lub kichasz</div>
           <div className="normal">
             Gdy kaszlesz lub kichasz, zakrywaj usta i nos chusteczką jednorazową
             lub zgięciem łokcia. Chusteczkę jak najszybciej wyrzuć do kosza i
@@ -53,18 +62,23 @@ const RiskInfoLevel3 = () => (
           </div>
         </li>
         <li>
-          <div className="bold">Zachowaj bezpieczną odległość</div>
+          <div className="bold">Zachowaj bezpieczną odległość od innych</div>
           <div className="normal">
             Unikaj bliskiego (mniej niż 2 metry) kontaktu z innymi osobami.
           </div>
         </li>
         <li>
-          <div className="bold">Unikaj dotykania oczu, nosa i ust</div>
+          <div className="bold">
+            Unikaj dotykania twarzy, szczególnie oczu, nosa i ust
+          </div>
           <div className="normal">
             Wirus przedostaje się do organizmu przez usta, nos i oczy. Możesz go
-            przenieść z zanieczyszczonej powierzchni. Na przedmiotach, na
-            których znajdują się wydzieliny, np. ślina może utrzymywać się do
-            kilku godzin lub dni.
+            przenieść z zanieczyszczonej powierzchni. Wirusy mogą utrzymywać się
+            do kilku godzin lub dni na przedmiotach, na których znajdują się
+            wydzieliny, np. ślina. Zgodnie z obecnym stanem wiedzy, koronawirus
+            może przetrwać do 3 godzin w formie aerozolu, do 24 godzin na
+            powierzchni kartonowej i do 72 godzin na stali nierdzewnej lub
+            plastiku.
           </div>
         </li>
         <li>
@@ -102,6 +116,14 @@ const RiskInfoLevel3 = () => (
         bezzwłocznie, telefonicznie powiadom powiatową stację
         sanitarno-epidemiologiczną i zgłoś się bezpośrednio do oddziału
         zakaźnego lub oddziału obserwacyjno-zakaźnego.
+      </p>
+      <p>
+        <Url value="https://pacjent.gov.pl/podejrzewasz-ze-masz-koronawirusa#znajdz-stacje-sanitarno-epidemiologiczna">
+          Znajdź numer najbliższej stacji
+        </Url>{' '}
+        <Url value="https://pacjent.gov.pl/podejrzewasz-ze-masz-koronawirusa#szpitale-z-oddzialami-zakaznymi">
+          Sprawdź, gdzie jest szpital z oddziałem zakaźnym
+        </Url>
       </p>
       <p>
         W trakcie przemieszczania się do szpitala zakaźnego koniecznie załóż
@@ -151,9 +173,9 @@ const RiskInfoLevel3 = () => (
           </p>
           <p>
             Jeśli nie jesteś w stanie sam|sama zapewnić sobie gorącego posiłku
-            lub żywności i nie możesz liczyć na pomoc rodziny, takiej pomocy
-            udzieli gmina. Posiłki i produkty żywnościowe będą dostarczane przez
-            osoby wyznaczone we współpracy z wolontariuszami organizacji
+            lub żywności i nie możesz liczyć na pomoc rodziny, pomocy udzieli ci
+            gmina. Posiłki i produkty żywnościowe będą dostarczane przez osoby
+            wyznaczone we współpracy z wolontariuszami organizacji
             pozarządowych.
           </p>
         </li>
@@ -172,4 +194,4 @@ const RiskInfoLevel3 = () => (
   </>
 );
 
-export default RiskInfoLevel3;
+export default Quarantine;
