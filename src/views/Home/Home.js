@@ -4,54 +4,31 @@ import {
   Badge,
   Container,
   Smile,
-  Info,
-  InfoBorder,
-  BordersButton
+  TriageRiskInformation,
+  TriageInfoBorder,
+  BordersButton,
+  TriageRecommendations
 } from '../../components';
 import Header from '../../components/Header/Header';
 import { BottomNavigation } from '../../components/BottomNavigation';
 import './Home.scss';
 import { Icon } from '../RiskTest/RiskTest.styled';
 
-const Home = ({
-  lastDate,
-  infoContent,
-  seriousNames,
-  riskColor,
-  riskDescription,
-  riskGroup,
-  riskInfo,
-  riskLevel,
-  showBadge,
-  triage,
-  userName,
-  onClickGoToDiagnosis
-}) => {
+const Home = ({ onClickGoToDiagnosis }) => {
   return (
     <div className="view view__home">
       <Header hideBackButton />
       <Container>
-        {showBadge && <Badge />}
-        <Smile
-          userName={userName}
-          lastDate={lastDate}
-          riskGroup={riskGroup}
-          icon={riskLevel}
-        />
+        <Badge />
+        <Smile />
         <BordersButton
           onClick={onClickGoToDiagnosis}
           text="Wykonaj TEST oceny ryzyka"
           icon={<Icon />}
         />
-        {triage && <Info color={riskColor} content={infoContent} />}
-        {triage && (
-          <InfoBorder
-            content={riskDescription}
-            color={riskColor}
-            items={seriousNames}
-          />
-        )}
-        {riskInfo}
+        <TriageRiskInformation />
+        <TriageInfoBorder />
+        <TriageRecommendations />
         <div className="more-information">
           <h4>Więcej informacji</h4>
           <p>
