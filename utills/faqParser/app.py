@@ -1,13 +1,13 @@
-
 # - *- coding: utf- 8 - *-
 
-import urllib2
 import json
 from bs4 import BeautifulSoup
 from datetime import date
+from urllib import request
 
 faq = []
-url = "https://www.gov.pl/web/koronawirus/pytania-i-odpowiedzi"
+source = "https://www.gov.pl/web/koronawirus/pytania-i-odpowiedzi"
+
 
 def faq_item( item_type, text, reply ):
     global faq
@@ -24,7 +24,7 @@ def faq_item( item_type, text, reply ):
                 prev_item['content']['text'] = prev_item['content']['text'] + text + "\n"
                 return
     # insert new
-    faq.append( 
+    faq.append(
         {
             'content': {
                 'text': text,
@@ -34,26 +34,27 @@ def faq_item( item_type, text, reply ):
         }
     )
 
+
 if __name__ == "__main__":
-    response = urllib2.urlopen(url)
+    response = request.urlopen(source)
     if 200 == response.getcode():
 
         # source
-        html = response.read()
+        html = response.read().decode('utf-8')
         html = html.replace('&nbsp;', ' ')
         html = html.replace(', a interesujące nas sprawy można zlokalizować, korzystając z wyszukiwarki', '')
         soup = BeautifulSoup(html, 'html.parser')
-        
+
         # intro
         element = soup.select("#main-content p.intro")
         faq_item( 'intro', element[0].text, '' )
-        
+
         # sections
         sections = soup.select("#main-content div.editor-content")
         for section in sections:
-        
+
             #  elements
-            elements = section.find_all(['h3', 'h4', 'p', 'ul', 'details'])
+            elements = section.find_all(['h3', 'h4', 'p', 'ul', 'ol', 'details'])
             for i, element in enumerate(elements):
                 if element.getText().strip():
                     if element.name == 'h3':
@@ -63,8 +64,15 @@ if __name__ == "__main__":
                         if element.find('summary'):
                             faq_item( 'details', element.find('summary').getText(strip=True), '' )
                         else:
-                            faq_item( 'details', '', element.getText() )
-                    
+                            text = element.getText()
+                            text = text.replace( 'COVID-19', '[url]COVID-19|https://www.gov.pl/web/koronawirus[url]' )
+                            links = element.find_all('a')
+                            for j, link in enumerate(links):
+                                label = link.getText()
+                                url = link.get('href')
+                                text = text.replace( label, '[url]' + label + '|' + url + '[url]' )
+                            faq_item( 'details', '', text )
+
                     elif element.name == 'h4':
                         faq_item( 'paragraph_strong', element.getText(), '' )
 
@@ -74,12 +82,13 @@ if __name__ == "__main__":
                     else:
                         faq_item( 'paragraph', element.getText(), '' )
 
-        # lines + watermark
+        # faq: lines + watermark
         elements = {}
         elements['elements'] = faq
-        elements['watermark'] = date.today().strftime("%Y-%m-%d") + ' - ' + url
+        elements['watermark'] = date.today().strftime("%Y-%m-%d") + ' - ' + source
 
         # json
         file = open("faq.json", mode="w")
-        file.write(json.dumps(elements, ensure_ascii=False).encode('utf-8'))
+        json_string = json.dumps(elements, ensure_ascii=False)
+        file.write(json_string)
         file.close()

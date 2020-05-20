@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import Routes from '../../routes';
 import { Arrow, ArrowButton, Container, Logo } from './Header.styled';
 
-const Header = ({ hideBackButton, hideMenuButton, onBackClick }) => {
+const Header = ({ hideBackButton, onBackClick }) => {
   const history = useHistory();
 
   const handleBackClick = useCallback(() => {
@@ -35,13 +35,11 @@ const Header = ({ hideBackButton, hideMenuButton, onBackClick }) => {
 
 Header.defaultProps = {
   hideBackButton: false,
-  hideMenuButton: false,
   onBackClick: null
 };
 
 Header.propTypes = {
   hideBackButton: PropTypes.bool,
-  hideMenuButton: PropTypes.bool,
   onBackClick: PropTypes.func
 };
 

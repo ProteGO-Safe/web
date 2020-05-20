@@ -2,6 +2,12 @@
 @import '../../assets/styles/mixins';
 
 .tips {
+  a {
+    cursor : pointer;
+    strong {
+      color: $button_primary;
+    }
+  }
   .warning {
     &--content {
       margin-bottom: 33px;

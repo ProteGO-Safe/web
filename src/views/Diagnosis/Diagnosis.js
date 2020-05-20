@@ -14,7 +14,7 @@ const Diagnosis = ({
   showNavigation
 }) => (
   <DiagnosisWrapper className="view view__diagnosis view__diagnosis--single">
-    <Header onBackClick={clearDiagnosis} hideMenuButton hideBackButton />
+    <Header onBackClick={clearDiagnosis} hideBackButton />
     <Container>
       {!isLoading && inProgress && question && question.type === 'single' && (
         <Single question={question} />

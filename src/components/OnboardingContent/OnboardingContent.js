@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {
-  BluetoothWrapper,
+  OnboardingWrapper,
   ButtonWrapper,
   IconWrapper,
   Text,
@@ -10,12 +10,12 @@ import {
 
 const OnboardingContent = ({ buttons, children, icon, title }) => {
   return (
-    <BluetoothWrapper>
+    <OnboardingWrapper>
       <IconWrapper>{icon}</IconWrapper>
       <Title>{title}</Title>
       <Text>{children}</Text>
       <ButtonWrapper>{buttons}</ButtonWrapper>
-    </BluetoothWrapper>
+    </OnboardingWrapper>
   );
 };
 

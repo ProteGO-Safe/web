@@ -14,10 +14,27 @@ import {
 } from './FaqPage.styled';
 
 import FaqList from './faq.json';
+import Url from '../../components/Url';
 
 const FaqPage = () => {
   const { elements } = FaqList;
   const { watermark } = FaqList;
+  
+  const parseUrl = (phrases) => phrases.map((phrase, index) => {
+    const part = phrase.split(/\|/);
+
+    return (
+      part.length > 1 ? <Url key={index} value={part[1]}>{part[0]}</Url> : part
+    )
+  });
+
+  const renderLine = ( line ) => {
+    const phrases = line.split(/\[url\]/);
+
+    return (
+      parseUrl(phrases)
+    );
+  }
 
   const renderElement = (line, index) => {
     switch (line.type) {
@@ -37,11 +54,9 @@ const FaqPage = () => {
         return <FaqParagraph key={index}>{line.content.text}</FaqParagraph>;
       }
       case 'details': {
-        const string = line.content.text;
-        const stringParse = string.split(/\s+/).join(' ');
         return (
-          <Collapse key={index} title={stringParse}>
-            {line.content.reply}
+          <Collapse key={index} title={line.content.text}>
+            {renderLine(line.content.reply)}
           </Collapse>
         );
       }

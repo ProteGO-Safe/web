@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { useSelector } from 'react-redux';
 import {
   TextWrapper,
   SmileContainer,
@@ -7,8 +7,15 @@ import {
   Text,
   IconSmile
 } from './Smile.styled';
+import { getLastDate } from '../../utills/calendar';
+import useFilledDays from '../../hooks/useFilledDays';
+import useTriage from '../../hooks/useTriage';
 
-const Smile = ({ userName, lastDate, riskGroup, icon }) => {
+const Smile = () => {
+  const { name: userName } = useSelector(state => state.user);
+  const filledDays = useFilledDays();
+  const lastDate = getLastDate(filledDays);
+  const { riskGroup, icon } = useTriage();
   return (
     <SmileContainer>
       <UserName>{userName},</UserName>

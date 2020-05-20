@@ -29,7 +29,7 @@ const Summary = () => {
 
   return (
     <View>
-      <Header hideBackButton hideMenuButton />
+      <Header hideBackButton />
       <Container>
         <Stepper currentStep={step} numberOfSteps={NUMBER_OF_STEPS} />
         <Title>Sprawdź, czy dane są prawidłowe</Title>

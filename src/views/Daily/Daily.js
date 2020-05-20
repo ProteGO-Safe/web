@@ -1,57 +1,62 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { useHistory } from 'react-router-dom';
 
-import { daysDetailsPropType } from '../../utills/calendar';
-import { Container } from '../../components';
-import './Daily.scss';
+import Routes from '../../routes';
 import Header from '../../components/Header/Header';
 import { BottomNavigation } from '../../components/BottomNavigation';
+import { daysDetailsPropType } from '../../utills/calendar';
+import { BordersButton } from '../../components';
 
-import notebook from '../../assets/img/icons/welcome-screen.svg';
 import arrowRight from '../../assets/img/icons/angle-right.svg';
-
-import { useHistory } from 'react-router-dom';
-import Routes from '../../routes';
+import { Container, Content, View } from '../../theme/grid';
+import {
+  DiaryHistory,
+  DiaryLabel,
+  Diarylist,
+  DiaryListItem,
+  Title,
+  NotebookIcon
+} from './Daily.styled';
 
 const Daily = ({ goToHistory, onFill, today, previousDays }) => {
   const history = useHistory();
+  const renderDairyDays = previousDays.map(_obj => (
+    <DiaryListItem
+      key={_obj.timestamp}
+      onClick={() => goToHistory(_obj.timestamp)}
+    >
+      <span>
+        Wpis z dnia:
+        <br />
+        {_obj.dayWeek}&nbsp;({_obj.day}&nbsp;r.)
+      </span>
+
+      <img src={arrowRight} alt="arrow" />
+    </DiaryListItem>
+  ));
 
   return (
-    <div className="view view__risk-test">
+    <View>
       <Header onBackClick={() => history.push(Routes.Home)} />
-      <Container>
-        <h4 className="diary__title">
-          Uzupełnij dzisiejszy wpis do <br />
-          swojego dziennika zdrowia
-        </h4>
-        <div className="diary__data" onClick={onFill}>
-          <img src={notebook} alt="Dziennik zdrowia" />
-          <div className="diary__data--text">
+      <Content>
+        <Container className="full-height">
+          <Title>
+            Uzupełnij dzisiejszy wpis do <br />
+            swojego dziennika zdrowia
+          </Title>
+          <BordersButton onClick={onFill} icon={<NotebookIcon />}>
             Dziś, {today} <br />
             Kliknij i uzupełnij dane.
-          </div>
-        </div>
-        <div className="diary__history">
-          <div className="diary__history--label">Dotychczasowe wpisy</div>
-          <div className="diary__history--list">
-            {previousDays.map(_obj => (
-              <div
-                className="diary__history--item"
-                key={_obj.timestamp}
-                onClick={() => goToHistory(_obj.timestamp)}
-              >
-                <span>
-                  Wpis z dnia:&nbsp;{_obj.dayWeek}&nbsp;({_obj.day}&nbsp;r.)
-                </span>
-
-                <img src={arrowRight} alt="arrow" />
-              </div>
-            ))}
-          </div>
-        </div>
-      </Container>
-      <BottomNavigation />
-    </div>
+          </BordersButton>
+          <DiaryHistory>
+            <DiaryLabel>Dotychczasowe wpisy:</DiaryLabel>
+            <Diarylist>{renderDairyDays}</Diarylist>
+          </DiaryHistory>
+        </Container>
+        <BottomNavigation />
+      </Content>
+    </View>
   );
 };
 

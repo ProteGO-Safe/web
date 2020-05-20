@@ -28,17 +28,23 @@ const Imprint = ({ user }) => {
     <ImprintWrapper className="metrics-paragraph">
       <Grid container>
         <Grid item xs={6}>
-          <Paragraph color={Color.lightBlack} fontWeight={FontWeight.Bold}>Płeć:</Paragraph>
+          <Paragraph color={Color.lightBlack} fontWeight={FontWeight.Bold}>
+            Płeć:
+          </Paragraph>
           <SmallText>{tSex[sex]}</SmallText>
         </Grid>
 
         <Grid item xs={6}>
-          <Paragraph color={Color.lightBlack} fontWeight={FontWeight.Bold}>Wiek:</Paragraph>
+          <Paragraph color={Color.lightBlack} fontWeight={FontWeight.Bold}>
+            Wiek:
+          </Paragraph>
           <SmallText>{age}</SmallText>
         </Grid>
 
         <Grid item xs={6}>
-          <Paragraph color={Color.lightBlack} fontWeight={FontWeight.Bold}>Palenie:</Paragraph>
+          <Paragraph color={Color.lightBlack} fontWeight={FontWeight.Bold}>
+            Palenie:
+          </Paragraph>
           <SmallText>
             {smokeNumber ? VALUE_SMOKE_YES : VALUE_SMOKE_NO}
             {smokeNumber && ` (${smokeNumber})`}
@@ -46,18 +52,22 @@ const Imprint = ({ user }) => {
         </Grid>
 
         <Grid item xs={6}>
-          <Paragraph color={Color.lightBlack} fontWeight={FontWeight.Bold}>Grupa krwi:</Paragraph>
+          <Paragraph color={Color.lightBlack} fontWeight={FontWeight.Bold}>
+            Grupa krwi:
+          </Paragraph>
           <SmallText>{bloodGroup}</SmallText>
         </Grid>
 
         <Grid item>
-          <Paragraph color={Color.lightBlack} fontWeight={FontWeight.Bold}>Dolegliwości:</Paragraph>
+          <Paragraph color={Color.lightBlack} fontWeight={FontWeight.Bold}>
+            Dolegliwości:
+          </Paragraph>
           {chronicSicks && chronicSicks.length ? (
             chronicSicks.map((sick, index) => (
               <SmallText key={sick.name}>
-                {`${sick.name}${sick.description ? ': ' + sick.description : ''}${
-                  index === chronicSicks.length - 1 ? '' : ','
-                }`}
+                {`${sick.name}${
+                  sick.description ? `: ${sick.description}` : ''
+                }${index === chronicSicks.length - 1 ? '' : ','}`}
               </SmallText>
             ))
           ) : (

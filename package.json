@@ -14,7 +14,7 @@
     "lodash.invoke": "^4.5.2",
     "lodash.uniqueid": "^4.0.1",
     "moment": "^2.24.0",
-    "node-sass": "^4.13.1",
+    "node-sass": "^4.14.1",
     "prop-types": "^15.7.2",
     "ramda": "^0.27.0",
     "react": "^16.13.0",
@@ -22,7 +22,6 @@
     "react-perfect-scrollbar": "^1.5.8",
     "react-redux": "^7.2.0",
     "react-router-dom": "^5.1.2",
-    "react-scripts": "3.4.1",
     "react-slick": "^0.25.2",
     "react-textarea-autosize": "^7.1.2",
     "redux": "^4.0.5",
@@ -81,6 +80,7 @@
     "husky": "^4.2.3",
     "lint-staged": "^10.0.8",
     "prettier": "^1.19.1",
+    "react-scripts": "3.4.1",
     "workbox-build": "^5.1.1"
   }
 }

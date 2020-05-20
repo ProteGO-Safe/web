@@ -7,6 +7,7 @@ import { Button } from '../../../../components/Button';
 import { VALUE_ABSENT, VALUE_PRESENT } from '../../../../constants';
 import Icon from '../../../../assets/img/icons/angle-right-white.svg';
 import { itemsPropType } from '../../prop-types';
+import { Title } from '../../Diagnosis.styled';
 
 const GroupMultiple = ({ text, items }) => {
   const { setFieldValue, values, submitForm } = useFormikContext();
@@ -35,7 +36,7 @@ const GroupMultiple = ({ text, items }) => {
 
   return (
     <>
-      <h3>{text}</h3>
+      <Title>{text}</Title>
       <FieldSet>
         {items.map(item => (
           <Checkbox
