@@ -54,7 +54,8 @@ const appReducer = (state = INITIAL_STATE, action) => {
     case UPLOAD_HISTORICAL_DATA_FINISHED:
       return (() => {
         const { result } = action;
-
+        const unsuccessfulAttempts =
+          state.uploadHistoricalDataState.unsuccessfulAttempts || [];
         const uploadHistoricalDataState =
           result === 1
             ? {
@@ -63,7 +64,7 @@ const appReducer = (state = INITIAL_STATE, action) => {
               }
             : {
                 status: uploadState.FAILED,
-                unsuccessfulAttempts: state.uploadHistoricalDataState.unsuccessfulAttempts.concat(
+                unsuccessfulAttempts: unsuccessfulAttempts.concat(
                   new Date().getTime()
                 )
               };
