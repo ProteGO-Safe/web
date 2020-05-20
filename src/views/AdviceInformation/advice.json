@@ -1,4 +1,5 @@
 {
+  "watermark": "2020-05-20 - https://www.gov.pl/web/koronawirus/porady",
   "advices": [
     {
       "title": "Czym jest koronawirus?",
@@ -51,7 +52,7 @@
     {
       "title": "Gdzie znajdę aktualne informacje dotyczące liczby chorych w Polsce?",
       "replies": [
-        "Na stronie gov.pl/koronawirus znajdziesz mapę zarażeń koronawirusem. Dane tam zamieszczane pochodzą z Ministerstwa Zdrowia i są na bieżąco aktualizowane."
+        "Na stronie gov.pl/koronawirus znajdziesz [url]mapę zarażeń koronawirusem|https://www.gov.pl/web/koronawirus/wykaz-zarazen-koronawirusem-sars-cov-2[url]. Dane tam zamieszczane pochodzą z Ministerstwa Zdrowia i są na bieżąco aktualizowane."
       ]
     },
     {
@@ -84,7 +85,7 @@
     {
       "title": "Jakie płyny dezynfekujące ręce są rekomendowane?",
       "replies": [
-        "Światowa Organizacja Zdrowia (WHO) zaleca stosowanie płynów dezynfekujących na bazie alkoholu (min. 60%). Ponadto, należy pamiętać o prawidłowym myciu rąk wodą z mydłem przez minimum 30 sekund.\nZapoznaj sie z dokładną instrukcją mycia rąk."
+        "Światowa Organizacja Zdrowia (WHO) zaleca stosowanie płynów dezynfekujących na bazie alkoholu (min. 60%). Ponadto, należy pamiętać o prawidłowym myciu rąk wodą z mydłem przez minimum 30 sekund.\n[url]Zapoznaj sie z dokładną instrukcją mycia rąk.|https://www.gov.pl/attachment/9acc87e5-08ed-4dc7-9985-829930c0d5c2[url]"
       ]
     },
     {
@@ -114,9 +115,8 @@
     {
       "title": "Gdzie do tej pory na świecie stwierdzono przypadki zakażenia koronawirusem?",
       "replies": [
-        "Najwięcej potwierdzonych przypadków zakażenia nowym koronawirusem zarejestrowano w Chinach (99%), głównie w prowincji Hubei, a także w Korei Południowej oraz we Włoszech. Aktualne informacje możesz znaleźć na stronie Światowej Organizacji Zdrowia (WHO)."
+        "Najwięcej potwierdzonych przypadków zakażenia nowym koronawirusem zarejestrowano w Chinach (99%), głównie w prowincji Hubei, a także w Korei Południowej oraz we Włoszech. Aktualne informacje możesz znaleźć na stronie [url]Światowej Organizacji Zdrowia (WHO).|https://experience.arcgis.com/experience/685d0ace521648f8a5beeeee1b9125cd[url]"
       ]
     }
-  ],
-  "watermark": "2020-05-19 - https://www.gov.pl/web/koronawirus/porady"
+  ]
 }
