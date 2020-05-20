@@ -12,5 +12,7 @@ export const Color = {
   gray: '#767676',
   lightGray: '#b7b7b7',
   lighterGray: '#f1f1f1',
-  green: '#598527'
+  veryLightGrey: '#cbcbcb',
+  green: '#598527',
+  watermark: '#605E5E'
 };

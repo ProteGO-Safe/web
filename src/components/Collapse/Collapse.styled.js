@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Color } from "../../theme/colors";
 
 export const CollapseWrapper = styled.div`
   display: flex;
@@ -18,9 +19,9 @@ export const Title = styled.div`
   font-size: 14px;
   font-weight: bold;
   line-height: 1.2;
-  color: #0052a5;
-  border-top: solid 1px #cbcbcb;
-  border-bottom: solid 1px #cbcbcb;
+  color: ${Color.primary};
+  border-top: solid 1px ${Color.veryLightGrey};
+  border-bottom: solid 1px ${Color.veryLightGrey};
   img {
     position: absolute;
     top: 50%;
@@ -44,11 +45,14 @@ export const Description = styled.div`
   padding: 0 7px 10px 7px;
   font-size: 14px;
   line-height: 1.61;
-  color: #1b1b1b;
+  color: ${Color.lightBlack};
   white-space: pre-line;
   * {
     font-size: 14px;
     line-height: 1.61;
-    color: #1b1b1b;
+    color: ${Color.lightBlack};
+  }
+  a {
+    color: ${Color.primary};
   }
 `;
