@@ -49,7 +49,7 @@ const UploadData = ({
             />
           </PinWrapper>
           {errorMessage ? (
-            <InfoIcon icon={WarningIcon}>
+            <InfoIcon icon={WarningIcon} className="errorMessage">
               <Paragraph color={Color.danger}>{errorMessage}</Paragraph>
             </InfoIcon>
           ) : null}
