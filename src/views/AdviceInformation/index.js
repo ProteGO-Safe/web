@@ -1,1 +1,1 @@
-export { default as AdviceInformation } from './AdviceInformation';
+export { default as AdviceInformation } from './AdviceInformationContainer';

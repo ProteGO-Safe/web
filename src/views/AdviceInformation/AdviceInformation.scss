@@ -3,44 +3,8 @@
 
 .tips {
   a {
-    cursor : pointer;
-    strong {
-      color: $button_primary;
-    }
+    text-decoration: none;
   }
-  .warning {
-    &--content {
-      margin-bottom: 33px;
-      padding: 14px 14px 20px 14px;
-      border-radius: 2px;
-      border: solid 1px #b7b7b7;
-
-      p {
-        font-size: 14px;
-        line-height: 1.5;
-        color: #1b1b1b;
-      }
-    }
-
-    &--label {
-      display: inline-flex;
-      align-items: center;
-      width: 100%;
-      margin-bottom: 10px;
-      font-size: 20px;
-      font-weight: bold;
-      line-height: 1.7;
-      color: $warning;
-
-      img {
-        display: block;
-        width: 35px;
-        height: 35px;
-        margin-right: 6px;
-      }
-    }
-  }
-
   .fieldset  {
     margin-bottom: 44px;
   }
