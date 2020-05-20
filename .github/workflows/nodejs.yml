@@ -20,9 +20,9 @@ jobs:
       - run: yarn install
       - run: yarn build
       - run: cp firebase.json build/
-        if: ${{ startsWith(github.ref, 'refs/heads/dev-') || startsWith(github.ref, 'refs/tags/release-') }}
+        if: ${{ startsWith(github.ref, 'refs/heads/dev-') || startsWith(github.ref, 'refs/tags/pre-') }}
       - name: Archive Artifact
-        if: ${{ startsWith(github.ref, 'refs/heads/dev-') || startsWith(github.ref, 'refs/tags/release-') }}
+        if: ${{ startsWith(github.ref, 'refs/heads/dev-') || startsWith(github.ref, 'refs/tags/pre-') }}
         uses: actions/upload-artifact@master
         with:
           name: build
@@ -47,15 +47,15 @@ jobs:
   deploy:
     needs: build
     runs-on: ubuntu-latest
-    if: ${{ startsWith(github.ref, 'refs/tags/release-') || startsWith(github.ref, 'refs/heads/dev-') }}
+    if: ${{ startsWith(github.ref, 'refs/tags/pre-') || startsWith(github.ref, 'refs/heads/dev-') }}
     steps:
 
       - name: Set env to STAGE
-        if: startsWith(github.ref, 'refs/tags/release-') && !contains(github.ref, 'dev')
+        if: startsWith(github.ref, 'refs/tags/pre-') && !contains(github.ref, 'dev')
         run: |
           echo "::set-env name=ENVIRONMENT::STAGE"
       - name: Set env to DEV
-        if: startsWith(github.ref, 'refs/heads/dev-') && !contains(github.ref, 'release')
+        if: startsWith(github.ref, 'refs/heads/dev-') && !contains(github.ref, 'pre')
         run: |
           echo "::set-env name=ENVIRONMENT::DEV"
       - name: Checkout Repo
