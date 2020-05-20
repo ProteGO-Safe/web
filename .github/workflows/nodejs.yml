@@ -82,7 +82,7 @@ jobs:
         run: sed -ie 's|site_to_sed|${{ env.SITE_PROJECT }}|g' firebase.json
 
       - name: Deploy to Firebase
-        if: ( env.ENVIRONMENT == 'STAGE' && env.SOURCE_BRANCH == 'master' ) || env.ENVIRONMENT == 'DEV'
+        if: env.ENVIRONMENT == 'STAGE' || env.ENVIRONMENT == 'DEV'
         uses: w9jds/firebase-action@master
         with:
           args: deploy --only hosting --project $SECRET_PROJECT
