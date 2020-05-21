@@ -7,6 +7,7 @@ import user from './user';
 import riskTest from './risktest';
 import daily from './daily';
 import nativeData from './nativeData';
+import externalData from './externalData';
 
 const reducers = combineReducers({
   app,
@@ -15,7 +16,8 @@ const reducers = combineReducers({
   user,
   riskTest,
   daily,
-  nativeData
+  nativeData,
+  externalData
 });
 
 export default reducers;

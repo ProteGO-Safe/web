@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const baseDomain = 'https://api-v4.safesafe.app';
+const baseDomain = process.env.REACT_APP_DIAGNOSIS_API_DOMAIN;
 const baseURL = `${baseDomain}/covid19`;
 
 const Repository = axios.create({ baseURL });

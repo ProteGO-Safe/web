@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { Container, Content, View } from '../../theme/grid';
 import { Header, BottomNavigation } from '../../components';
 import AdviceInformation from './AdviceInformation';
@@ -7,12 +8,28 @@ import IconAdviceHome from '../../assets/img/icons/zostan-w-domu.svg';
 import IconAdvicePhone from '../../assets/img/icons/seniorzy.svg';
 import IconAdviceCountry from '../../assets/img/icons/przyjazd.svg';
 import IconAdviceNote from '../../assets/img/icons/dziennik.svg';
-
-import AdviceList from './advice.json';
+import { fetchAdvices } from '../../store/actions/externalData';
+import useLoaderContext from '../../hooks/useLoaderContext';
 
 const AdviceInformationContainer = () => {
-  const { advices } = AdviceList;
-  const { watermark } = AdviceList;
+  const { advicesData, isFetching } = useSelector(state => state.externalData);
+  const { setLoader } = useLoaderContext();
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    if (isFetching) {
+      setLoader(true);
+      return;
+    }
+    setLoader(false);
+  }, [isFetching, setLoader]);
+
+  useEffect(() => {
+    if (!advicesData) {
+      dispatch(fetchAdvices());
+    }
+  }, [advicesData, dispatch]);
+
   const tipsStatic = [
     {
       icon: IconAdviceHome,
@@ -34,6 +51,12 @@ const AdviceInformationContainer = () => {
         'Regularnie uzupełniaj zakładkę [url]MÓJ DZIENNIK ZDROWIA|/daily[url]: zapisuj w aplikacji objawy i temperaturę ciała.'
     }
   ];
+
+  if (!advicesData) {
+    return null;
+  }
+
+  const { advices, watermark } = advicesData;
   return (
     <View>
       <Header hideBackButton />

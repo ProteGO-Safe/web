@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import Header from '../../components/Header/Header';
 import { BottomNavigation } from '../../components/BottomNavigation';
 import { Collapse, Input } from '../../components';
@@ -14,16 +15,32 @@ import {
   Title,
   SearchWrapper
 } from './FaqPage.styled';
-
+import { fetchFaq } from '../../store/actions/externalData';
 import SearchIcon from '../../assets/img/icons/lupa.svg';
-
-import FaqList from './faq.json';
 import Url from '../../components/Url';
+import useLoaderContext from '../../hooks/useLoaderContext';
 
 const FaqPage = () => {
+  const { faqData, isFetching } = useSelector(
+    state => state.externalData
+  );
+  const { setLoader } = useLoaderContext();
+  const dispatch = useDispatch();
   const [filterText, setFilterText] = useState('');
-  const { elements } = FaqList;
-  const { watermark } = FaqList;
+
+  useEffect(() => {
+    if (isFetching) {
+      setLoader(true);
+      return;
+    }
+    setLoader(false);
+  }, [isFetching, setLoader]);
+
+  useEffect(() => {
+    if (!faqData) {
+      dispatch(fetchFaq());
+    }
+  }, [faqData, dispatch]);
 
   const highlightedText = (text, highlight) => {
     const parts = text.split(new RegExp(`(${highlight})`, 'gi'));
@@ -111,11 +128,12 @@ const FaqPage = () => {
         return null;
     }
   };
-  const filteredElements = elements.filter(
-    line =>
-      line.content.text.toLocaleLowerCase().includes(filterText) ||
-      line.content.reply.toLocaleLowerCase().includes(filterText)
-  );
+  const getFilteredElements = elements =>
+    elements.filter(
+      line =>
+        line.content.text.toLocaleLowerCase().includes(filterText) ||
+        line.content.reply.toLocaleLowerCase().includes(filterText)
+    );
   const handleChangeInput = e => {
     const { value } = e.target;
     setFilterText(value.toLocaleLowerCase());
@@ -125,9 +143,14 @@ const FaqPage = () => {
     setFilterText('');
   };
 
-  const elementsToDisplay =
-    filterText.length >= '3' ? filteredElements : elements;
+  if (!faqData) {
+    return null;
+  }
 
+  const { watermark, elements = [] } = faqData;
+
+  const elementsToDisplay =
+    filterText.length >= '3' ? getFilteredElements(elements) : elements;
   return (
     <View>
       <Header hideBackButton />

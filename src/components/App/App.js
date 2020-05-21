@@ -37,6 +37,7 @@ import { Menu } from '../Menu';
 import Routes from '../../routes';
 import './App.scss';
 import { Notification } from '../Notification';
+import { resetExternalData } from '../../store/actions/externalData';
 
 function App() {
   moment.locale('pl');
@@ -61,6 +62,10 @@ function App() {
   history.listen(() => {
     window.scroll(0, 0);
   });
+
+  useEffect(() => {
+    dispatch(resetExternalData());
+  }, [dispatch]);
 
   useEffect(() => {
     const navMenuButton = document.getElementById('nav_menu_button');
