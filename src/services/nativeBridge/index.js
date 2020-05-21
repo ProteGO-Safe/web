@@ -3,7 +3,10 @@ import uniqueId from 'lodash.uniqueid';
 import { always, cond, equals } from 'ramda';
 
 import StoreRegistry from '../../store/storeRegistry';
-import { NATIVE_DATA_SET_SERVICES_STATUS_SUCCESS } from '../../store/types/nativeData';
+import {
+  EXPOSURE_SUMMARY_FETCHED,
+  NATIVE_DATA_SET_SERVICES_STATUS_SUCCESS
+} from '../../store/types/nativeData';
 import { DATA_TYPE } from './nativeBridge.constants';
 import { UPLOAD_HISTORICAL_DATA_FINISHED } from '../../store/types/app';
 import { isAndroidWebView, isIOSWebView } from '../../utils/native';
@@ -105,12 +108,21 @@ const handleUploadHistoricalDataResponse = ({ result }) => {
   });
 };
 
+const handleExposureSummary = ({ exposureSummary }) => {
+  const store = StoreRegistry.getStore();
+  store.dispatch({
+    exposureSummary,
+    type: EXPOSURE_SUMMARY_FETCHED
+  });
+};
+
 const callBridgeDataHandler = cond([
   [equals(DATA_TYPE.NATIVE_SERVICES_STATUS), always(handleServicesStatus)],
   [
     equals(DATA_TYPE.HISTORICAL_DATA),
     always(handleUploadHistoricalDataResponse)
-  ]
+  ],
+  [equals(DATA_TYPE.EXPOSURE_SUMMARY), always(handleExposureSummary)]
 ]);
 
 const onBridgeData = (dataType, dataString) => {
