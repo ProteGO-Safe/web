@@ -23,17 +23,17 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Set env to DEV
-        if: ( startsWith(github.ref, 'refs/heads/dev-') && !contains(github.ref, 'pre') && github.repository_owner != 'SafeSafe-app' )
+        if: ( startsWith(github.ref, 'refs/heads/dev-') && !contains(github.ref, 'pre') && github.repository_owner != 'ProteGO-Safe' )
         run: |
           echo "::set-env name=ENVIRONMENT::DEV"
 
       - name: Set env to STAGE
-        if: ( startsWith(github.ref, 'refs/tags/pre-') && !contains(github.ref, 'dev') && github.repository_owner != 'SafeSafe-app' && github.event.release.target_commitish == 'master' )
+        if: ( startsWith(github.ref, 'refs/tags/pre-') && !contains(github.ref, 'dev') && github.repository_owner != 'ProteGO-Safe' && github.event.release.target_commitish == 'master' )
         run: |
           echo "::set-env name=ENVIRONMENT::STAGE"
 
       - name: Set env to PROD
-        if: ( startsWith(github.ref, 'refs/tags/release-') && !contains(github.ref, 'pre') && !contains(github.ref, 'dev') && github.repository_owner == 'SafeSafe-app' && github.event.release.target_commitish == 'master' )
+        if: ( startsWith(github.ref, 'refs/tags/release-') && !contains(github.ref, 'pre') && !contains(github.ref, 'dev') && github.repository_owner == 'ProteGO-Safe' && github.event.release.target_commitish == 'master' )
         run: |
           echo "::set-env name=ENVIRONMENT::PROD"
 
@@ -72,17 +72,17 @@ jobs:
     steps:
 
       - name: Set env to DEV
-        if: ( startsWith(github.ref, 'refs/heads/dev-') && !contains(github.ref, 'pre') && github.repository_owner != 'SafeSafe-app' )
+        if: ( startsWith(github.ref, 'refs/heads/dev-') && !contains(github.ref, 'pre') && github.repository_owner != 'ProteGO-Safe' )
         run: |
           echo "::set-env name=ENVIRONMENT::DEV"
 
       - name: Set env to STAGE
-        if: ( startsWith(github.ref, 'refs/tags/pre-') && !contains(github.ref, 'dev') && github.repository_owner != 'SafeSafe-app' && github.event.release.target_commitish == 'master' )
+        if: ( startsWith(github.ref, 'refs/tags/pre-') && !contains(github.ref, 'dev') && github.repository_owner != 'ProteGO-Safe' && github.event.release.target_commitish == 'master' )
         run: |
           echo "::set-env name=ENVIRONMENT::STAGE"
 
       - name: Set env to PROD
-        if: ( startsWith(github.ref, 'refs/tags/release-') && !contains(github.ref, 'pre') && !contains(github.ref, 'dev') && github.repository_owner == 'SafeSafe-app' && github.event.release.target_commitish == 'master' )
+        if: ( startsWith(github.ref, 'refs/tags/release-') && !contains(github.ref, 'pre') && !contains(github.ref, 'dev') && github.repository_owner == 'ProteGO-Safe' && github.event.release.target_commitish == 'master' )
         run: |
           echo "::set-env name=ENVIRONMENT::PROD"
 
