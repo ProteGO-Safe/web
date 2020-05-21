@@ -102,9 +102,11 @@ jobs:
           echo "::set-env name=SOURCE_TAG::${GITHUB_REF#refs/tags/}"
           echo "::set-env name=GCP_SA_KEY::${{ secrets[env.SECRET_ENV] }}"
           echo "::set-env name=SECRET_PROJECT::${{ secrets[env.PROJECT_ENV] }}"
+          echo "::set-env name=SITE_PROJECT::${{ secrets[env.SITE_ENV] }}"
         env:
           SECRET_ENV: "${{ env.ENVIRONMENT }}_FIREBASE_HOSTING_SAFE"
           PROJECT_ENV: "${{ env.ENVIRONMENT }}_FIREBASE_PROJECT"
+          SITE_ENV: "${{ env.ENVIRONMENT }}_FIREBASE_SITE"
 
       - name: Sed Firebase.json
         run: sed -ie 's|site_to_sed|${{ env.SECRET_PROJECT }}|g' firebase.json
