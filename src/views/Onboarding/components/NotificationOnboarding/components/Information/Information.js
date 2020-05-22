@@ -34,11 +34,15 @@ const Information = ({ onNext }) => {
         <Container className="full-height">
           <OnboardingContent
             icon={<Icon />}
-            title="Włącz notifikcaje"
+            title="Włącz powiadomienia"
             buttons={renderButton}
           >
             <>
-              <p>Włącz notifikcaje</p>
+              <p>
+                Do prawidłowego działania aplikacji potrzebna jest Twoja zgoda
+                na wyświetlanie powiadomień. Kliknij poniżej i pozwól ProteGO
+                Safe wspierać ochronę zdrowia każdego z nas.
+              </p>
             </>
           </OnboardingContent>
           <GovFooter type="black" />
