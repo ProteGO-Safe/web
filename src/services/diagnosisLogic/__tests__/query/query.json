@@ -1302,5 +1302,75 @@
 				"choice_id": "present"
 			}
 		]
+	},
+	"fever_nothing_else": {
+		"age": 70,
+		"sex": "female",
+		"evidence": [
+			{
+				"id": "p_18",
+				"choice_id": "absent"
+			},
+			{
+				"id": "p_19",
+				"choice_id": "absent"
+			},
+			{
+				"id": "p_24",
+				"choice_id": "absent"
+			},
+			{
+				"id": "p_22",
+				"choice_id": "absent"
+			},
+			{
+				"id": "p_23",
+				"choice_id": "absent"
+			},
+			{
+				"id": "p_17",
+				"choice_id": "absent"
+			},
+			{
+				"id": "p_16",
+				"choice_id": "absent"
+			},
+			{
+				"id": "p_20",
+				"choice_id": "absent"
+			},
+			{
+				"id": "p_21",
+				"choice_id": "absent"
+			},
+			{
+				"id": "s_0",
+				"choice_id": "present"
+			},
+			{
+				"id": "s_1",
+				"choice_id": "absent"
+			},
+			{
+				"id": "s_2",
+				"choice_id": "absent"
+			},
+			{
+				"id": "s_4",
+				"choice_id": "present"
+			},
+			{
+				"id": "s_12",
+				"choice_id": "absent"
+			},
+			{
+				"id": "s_13",
+				"choice_id": "absent"
+			},
+			{
+				"id": "s_14",
+				"choice_id": "absent"
+			}
+		]
 	}
 }
