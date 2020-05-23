@@ -84,7 +84,14 @@ const decisions: Decisions = {
       's_13',
       's_14'
     ]);
-
+    if (
+      isPresent(fever) 
+      && isPresent(feverTemp) 
+      && isAbsent(rapidly)
+      && isAbsent(fastBreathing) 
+      && isAbsent(bloodCough)) {
+      return 's21';
+    }
     if (
       isPresent(feverTemp) ||
       isPresent(rapidly) ||

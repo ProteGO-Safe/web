@@ -57,4 +57,15 @@ describe('Second diagnosi path', () => {
     // Then
     expect(nextQuestion).toEqual(firstAnswer.multi_single);
   });
+
+  it('should return symptoms when hav fever and nothing else', () => {
+    // Given
+    const data = query.fever_nothing_else;
+
+    // When
+    const nextQuestion = getDiagnosis(data);
+
+    // Then
+    expect(nextQuestion).toEqual(firstAnswer.no_fever_nothing_else);
+  });
 });
