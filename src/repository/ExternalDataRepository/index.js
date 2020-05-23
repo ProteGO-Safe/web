@@ -2,12 +2,12 @@ import ExternalDataConfigurationRepository from '../ExternalDataConfigurationRep
 
 export default {
   getFaq() {
-    return ExternalDataConfigurationRepository.get(`faq.json?alt=media`);
+    return ExternalDataConfigurationRepository.get(`faq.json`);
   },
   getHospitals() {
-    return ExternalDataConfigurationRepository.get(`hospitals.json?alt=media`);
+    return ExternalDataConfigurationRepository.get(`hospitals.json`);
   },
   getAdvices() {
-    return ExternalDataConfigurationRepository.get(`advices.json?alt=media`);
+    return ExternalDataConfigurationRepository.get(`advices.json`);
   }
 };
