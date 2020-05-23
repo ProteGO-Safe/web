@@ -1,8 +1,6 @@
 import * as types from '../types/diagnosis';
 
-import RepositoryFactory from '../../repository/RepositoryFactory';
-
-const DiagnosisRepository = RepositoryFactory.get('diagnosis');
+import { getDiagnosis as getPath } from '../../services/diagnosisLogic/diagnosisLogic.ts';
 
 export const diagnosisFetchRequested = ({ data }) => ({
   data,
@@ -23,9 +21,8 @@ export const diagnosisFetchError = ({ message, status }) => ({
 export function getDiagnosis(data) {
   return async dispatch => {
     dispatch(diagnosisFetchRequested({ data }));
-    DiagnosisRepository.getDiagnosis(data)
-      .then(_data => dispatch(diagnosisFetchSuccess(_data)))
-      .catch(error => dispatch(diagnosisFetchError(error)));
+    const result = getPath(data);
+    dispatch(diagnosisFetchSuccess({ data: result }));
   };
 }
 
