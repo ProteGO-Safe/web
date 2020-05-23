@@ -1,0 +1,1306 @@
+{
+	"symptoms": {
+		"sex": "female",
+		"age": 12,
+		"evidence": [
+			{
+				"id": "p_16",
+				"choice_id": "absent"
+			},
+			{
+				"id": "p_17",
+				"choice_id": "absent"
+			},
+			{
+				"id": "p_18",
+				"choice_id": "absent"
+			},
+			{
+				"id": "p_19",
+				"choice_id": "absent"
+			},
+			{
+				"id": "p_20",
+				"choice_id": "absent"
+			},
+			{
+				"id": "p_21",
+				"choice_id": "absent"
+			},
+			{
+				"id": "p_22",
+				"choice_id": "absent"
+			}
+		]
+	},
+	"nonspecificSymptoms": {
+		"sex": "female",
+		"age": 12,
+		"evidence": [
+			{
+				"id": "p_16",
+				"choice_id": "absent"
+			},
+			{
+				"id": "p_17",
+				"choice_id": "absent"
+			},
+			{
+				"id": "p_18",
+				"choice_id": "absent"
+			},
+			{
+				"id": "p_19",
+				"choice_id": "absent"
+			},
+			{
+				"id": "p_20",
+				"choice_id": "absent"
+			},
+			{
+				"id": "p_21",
+				"choice_id": "absent"
+			},
+			{
+				"id": "p_22",
+				"choice_id": "absent"
+			},
+			{
+				"id": "s_0",
+				"choice_id": "absent"
+			},
+			{
+				"id": "s_1",
+				"choice_id": "absent"
+			},
+			{
+				"id": "s_2",
+				"choice_id": "absent"
+			}
+		]
+	},
+	"contact": {
+		"sex": "female",
+		"age": 12,
+		"evidence": [
+			{
+				"id": "p_16",
+				"choice_id": "absent"
+			},
+			{
+				"id": "p_17",
+				"choice_id": "absent"
+			},
+			{
+				"id": "p_18",
+				"choice_id": "absent"
+			},
+			{
+				"id": "p_19",
+				"choice_id": "absent"
+			},
+			{
+				"id": "p_20",
+				"choice_id": "absent"
+			},
+			{
+				"id": "p_21",
+				"choice_id": "absent"
+			},
+			{
+				"id": "p_22",
+				"choice_id": "absent"
+			},
+			{
+				"id": "s_0",
+				"choice_id": "absent"
+			},
+			{
+				"id": "s_1",
+				"choice_id": "absent"
+			},
+			{
+				"id": "s_2",
+				"choice_id": "absent"
+			},
+			{
+				"id": "s_15",
+				"choice_id": "absent"
+			},
+			{
+				"id": "s_16",
+				"choice_id": "absent"
+			},
+			{
+				"id": "s_17",
+				"choice_id": "absent"
+			},
+			{
+				"id": "s_18",
+				"choice_id": "absent"
+			},
+			{
+				"id": "s_19",
+				"choice_id": "absent"
+			},
+			{
+				"id": "s_20",
+				"choice_id": "absent"
+			},
+			{
+				"id": "s_21",
+				"choice_id": "absent"
+			}
+		]
+	},
+	"fatique": {
+		"sex": "female",
+		"age": 12,
+		"evidence": [
+			{
+				"id": "p_16",
+				"choice_id": "absent"
+			},
+			{
+				"id": "p_17",
+				"choice_id": "absent"
+			},
+			{
+				"id": "p_18",
+				"choice_id": "absent"
+			},
+			{
+				"id": "p_19",
+				"choice_id": "absent"
+			},
+			{
+				"id": "p_20",
+				"choice_id": "absent"
+			},
+			{
+				"id": "p_21",
+				"choice_id": "absent"
+			},
+			{
+				"id": "p_22",
+				"choice_id": "absent"
+			},
+			{
+				"id": "s_0",
+				"choice_id": "absent"
+			},
+			{
+				"id": "s_1",
+				"choice_id": "absent"
+			},
+			{
+				"id": "s_2",
+				"choice_id": "absent"
+			},
+			{
+				"id": "s_15",
+				"choice_id": "absent"
+			},
+			{
+				"id": "s_16",
+				"choice_id": "present"
+			},
+			{
+				"id": "s_17",
+				"choice_id": "absent"
+			},
+			{
+				"id": "s_18",
+				"choice_id": "absent"
+			},
+			{
+				"id": "s_19",
+				"choice_id": "absent"
+			},
+			{
+				"id": "s_20",
+				"choice_id": "absent"
+			},
+			{
+				"id": "s_21",
+				"choice_id": "absent"
+			}
+		]
+	},
+	"end": {
+		"sex": "female",
+		"age": 12,
+		"evidence": [
+			{
+				"id": "p_16",
+				"choice_id": "absent"
+			},
+			{
+				"id": "p_17",
+				"choice_id": "absent"
+			},
+			{
+				"id": "p_18",
+				"choice_id": "absent"
+			},
+			{
+				"id": "p_19",
+				"choice_id": "absent"
+			},
+			{
+				"id": "p_20",
+				"choice_id": "absent"
+			},
+			{
+				"id": "p_21",
+				"choice_id": "absent"
+			},
+			{
+				"id": "p_22",
+				"choice_id": "absent"
+			},
+			{
+				"id": "s_0",
+				"choice_id": "absent"
+			},
+			{
+				"id": "s_1",
+				"choice_id": "absent"
+			},
+			{
+				"id": "s_2",
+				"choice_id": "absent"
+			},
+			{
+				"id": "s_15",
+				"choice_id": "absent"
+			},
+			{
+				"id": "s_16",
+				"choice_id": "present"
+			},
+			{
+				"id": "s_17",
+				"choice_id": "absent"
+			},
+			{
+				"id": "s_18",
+				"choice_id": "absent"
+			},
+			{
+				"id": "s_19",
+				"choice_id": "absent"
+			},
+			{
+				"id": "s_20",
+				"choice_id": "absent"
+			},
+			{
+				"id": "s_21",
+				"choice_id": "absent"
+			},
+			{
+				"id": "p_15",
+				"choice_id": "present"
+			}
+		]
+	},
+	"fever_cought": {
+		"sex": "female",
+		"age": 12,
+		"evidence": [
+			{
+				"id": "p_16",
+				"choice_id": "absent"
+			},
+			{
+				"id": "p_17",
+				"choice_id": "absent"
+			},
+			{
+				"id": "p_18",
+				"choice_id": "absent"
+			},
+			{
+				"id": "p_19",
+				"choice_id": "absent"
+			},
+			{
+				"id": "p_20",
+				"choice_id": "absent"
+			},
+			{
+				"id": "p_21",
+				"choice_id": "absent"
+			},
+			{
+				"id": "p_22",
+				"choice_id": "absent"
+			},
+			{
+				"id": "s_0",
+				"choice_id": "present"
+			},
+			{
+				"id": "s_1",
+				"choice_id": "present"
+			},
+			{
+				"id": "s_2",
+				"choice_id": "absent"
+			}
+		]
+	},
+	"temperature": {
+		"sex": "female",
+		"age": 12,
+		"evidence": [
+			{
+				"id": "p_16",
+				"choice_id": "absent"
+			},
+			{
+				"id": "p_17",
+				"choice_id": "absent"
+			},
+			{
+				"id": "p_18",
+				"choice_id": "absent"
+			},
+			{
+				"id": "p_19",
+				"choice_id": "absent"
+			},
+			{
+				"id": "p_20",
+				"choice_id": "absent"
+			},
+			{
+				"id": "p_21",
+				"choice_id": "absent"
+			},
+			{
+				"id": "p_22",
+				"choice_id": "absent"
+			},
+			{
+				"id": "s_0",
+				"choice_id": "present"
+			},
+			{
+				"id": "s_1",
+				"choice_id": "present"
+			},
+			{
+				"id": "s_2",
+				"choice_id": "absent"
+			},
+			{
+				"id": "s_5",
+				"choice_id": "present"
+			}
+		]
+	},
+	"rapidly": {
+		"sex": "female",
+		"age": 12,
+		"evidence": [
+			{
+				"id": "p_16",
+				"choice_id": "absent"
+			},
+			{
+				"id": "p_17",
+				"choice_id": "absent"
+			},
+			{
+				"id": "p_18",
+				"choice_id": "absent"
+			},
+			{
+				"id": "p_19",
+				"choice_id": "absent"
+			},
+			{
+				"id": "p_20",
+				"choice_id": "absent"
+			},
+			{
+				"id": "p_21",
+				"choice_id": "absent"
+			},
+			{
+				"id": "p_22",
+				"choice_id": "absent"
+			},
+			{
+				"id": "s_0",
+				"choice_id": "present"
+			},
+			{
+				"id": "s_1",
+				"choice_id": "present"
+			},
+			{
+				"id": "s_2",
+				"choice_id": "absent"
+			},
+			{
+				"id": "s_5",
+				"choice_id": "present"
+			},
+			{
+				"id": "s_12",
+				"choice_id": "absent"
+			}
+		]
+	},
+	"fast_breatching": {
+		"sex": "female",
+		"age": 12,
+		"evidence": [
+			{
+				"id": "p_16",
+				"choice_id": "absent"
+			},
+			{
+				"id": "p_17",
+				"choice_id": "absent"
+			},
+			{
+				"id": "p_18",
+				"choice_id": "absent"
+			},
+			{
+				"id": "p_19",
+				"choice_id": "absent"
+			},
+			{
+				"id": "p_20",
+				"choice_id": "absent"
+			},
+			{
+				"id": "p_21",
+				"choice_id": "absent"
+			},
+			{
+				"id": "p_22",
+				"choice_id": "absent"
+			},
+			{
+				"id": "s_0",
+				"choice_id": "present"
+			},
+			{
+				"id": "s_1",
+				"choice_id": "present"
+			},
+			{
+				"id": "s_2",
+				"choice_id": "absent"
+			},
+			{
+				"id": "s_5",
+				"choice_id": "present"
+			},
+			{
+				"id": "s_12",
+				"choice_id": "absent"
+			},
+			{
+				"id": "s_13",
+				"choice_id": "absent"
+			}
+		]
+	},
+	"no_blood": {
+		"sex": "female",
+		"age": 12,
+		"evidence": [
+			{
+				"id": "p_16",
+				"choice_id": "absent"
+			},
+			{
+				"id": "p_17",
+				"choice_id": "absent"
+			},
+			{
+				"id": "p_18",
+				"choice_id": "absent"
+			},
+			{
+				"id": "p_19",
+				"choice_id": "absent"
+			},
+			{
+				"id": "p_20",
+				"choice_id": "absent"
+			},
+			{
+				"id": "p_21",
+				"choice_id": "absent"
+			},
+			{
+				"id": "p_22",
+				"choice_id": "absent"
+			},
+			{
+				"id": "s_0",
+				"choice_id": "present"
+			},
+			{
+				"id": "s_1",
+				"choice_id": "present"
+			},
+			{
+				"id": "s_2",
+				"choice_id": "absent"
+			},
+			{
+				"id": "s_5",
+				"choice_id": "present"
+			},
+			{
+				"id": "s_12",
+				"choice_id": "absent"
+			},
+			{
+				"id": "s_13",
+				"choice_id": "absent"
+			},
+			{
+				"id": "s_14",
+				"choice_id": "absent"
+			}
+		]
+	},
+	"symptoms_true": {
+		"sex": "female",
+		"age": 12,
+		"evidence": [
+			{
+				"id": "p_16",
+				"choice_id": "absent"
+			},
+			{
+				"id": "p_17",
+				"choice_id": "absent"
+			},
+			{
+				"id": "p_18",
+				"choice_id": "absent"
+			},
+			{
+				"id": "p_19",
+				"choice_id": "absent"
+			},
+			{
+				"id": "p_20",
+				"choice_id": "absent"
+			},
+			{
+				"id": "p_21",
+				"choice_id": "absent"
+			},
+			{
+				"id": "p_22",
+				"choice_id": "absent"
+			},
+			{
+				"id": "s_0",
+				"choice_id": "present"
+			},
+			{
+				"id": "s_1",
+				"choice_id": "present"
+			},
+			{
+				"id": "s_2",
+				"choice_id": "absent"
+			},
+			{
+				"id": "s_3",
+				"choice_id": "present"
+			},
+			{
+				"id": "s_12",
+				"choice_id": "absent"
+			},
+			{
+				"id": "s_13",
+				"choice_id": "absent"
+			},
+			{
+				"id": "s_14",
+				"choice_id": "absent"
+			},
+			{
+				"id": "s_15",
+				"choice_id": "absent"
+			},
+			{
+				"id": "s_16",
+				"choice_id": "present"
+			},
+			{
+				"id": "s_17",
+				"choice_id": "absent"
+			},
+			{
+				"id": "s_18",
+				"choice_id": "absent"
+			},
+			{
+				"id": "s_19",
+				"choice_id": "absent"
+			},
+			{
+				"id": "s_20",
+				"choice_id": "absent"
+			},
+			{
+				"id": "s_21",
+				"choice_id": "absent"
+			}
+		]
+	},
+	"symptoms_false": {
+		"sex": "female",
+		"age": 12,
+		"evidence": [
+			{
+				"id": "p_16",
+				"choice_id": "absent"
+			},
+			{
+				"id": "p_17",
+				"choice_id": "absent"
+			},
+			{
+				"id": "p_18",
+				"choice_id": "absent"
+			},
+			{
+				"id": "p_19",
+				"choice_id": "absent"
+			},
+			{
+				"id": "p_20",
+				"choice_id": "absent"
+			},
+			{
+				"id": "p_21",
+				"choice_id": "absent"
+			},
+			{
+				"id": "p_22",
+				"choice_id": "absent"
+			},
+			{
+				"id": "s_0",
+				"choice_id": "present"
+			},
+			{
+				"id": "s_1",
+				"choice_id": "present"
+			},
+			{
+				"id": "s_2",
+				"choice_id": "absent"
+			},
+			{
+				"id": "s_5",
+				"choice_id": "present"
+			},
+			{
+				"id": "s_12",
+				"choice_id": "absent"
+			},
+			{
+				"id": "s_13",
+				"choice_id": "absent"
+			},
+			{
+				"id": "s_14",
+				"choice_id": "absent"
+			},
+			{
+				"id": "s_15",
+				"choice_id": "present"
+			},
+			{
+				"id": "s_16",
+				"choice_id": "absent"
+			},
+			{
+				"id": "s_17",
+				"choice_id": "absent"
+			},
+			{
+				"id": "s_18",
+				"choice_id": "absent"
+			},
+			{
+				"id": "s_19",
+				"choice_id": "absent"
+			},
+			{
+				"id": "s_20",
+				"choice_id": "absent"
+			},
+			{
+				"id": "s_21",
+				"choice_id": "absent"
+			}
+		]
+	},
+	"travel": {
+		"sex": "female",
+		"age": 12,
+		"evidence": [
+			{
+				"id": "p_16",
+				"choice_id": "absent"
+			},
+			{
+				"id": "p_17",
+				"choice_id": "absent"
+			},
+			{
+				"id": "p_18",
+				"choice_id": "absent"
+			},
+			{
+				"id": "p_19",
+				"choice_id": "absent"
+			},
+			{
+				"id": "p_20",
+				"choice_id": "absent"
+			},
+			{
+				"id": "p_21",
+				"choice_id": "absent"
+			},
+			{
+				"id": "p_22",
+				"choice_id": "absent"
+			},
+			{
+				"id": "s_0",
+				"choice_id": "present"
+			},
+			{
+				"id": "s_1",
+				"choice_id": "present"
+			},
+			{
+				"id": "s_2",
+				"choice_id": "absent"
+			},
+			{
+				"id": "s_5",
+				"choice_id": "present"
+			},
+			{
+				"id": "s_12",
+				"choice_id": "absent"
+			},
+			{
+				"id": "s_13",
+				"choice_id": "absent"
+			},
+			{
+				"id": "s_14",
+				"choice_id": "absent"
+			},
+			{
+				"id": "s_15",
+				"choice_id": "present"
+			},
+			{
+				"id": "s_16",
+				"choice_id": "absent"
+			},
+			{
+				"id": "s_17",
+				"choice_id": "absent"
+			},
+			{
+				"id": "s_18",
+				"choice_id": "absent"
+			},
+			{
+				"id": "s_19",
+				"choice_id": "absent"
+			},
+			{
+				"id": "s_20",
+				"choice_id": "absent"
+			},
+			{
+				"id": "s_21",
+				"choice_id": "absent"
+			},
+			{
+				"id": "p_5",
+				"choice_id": "present"
+			}
+		]
+	},
+	"travel_no": {
+		"sex": "female",
+		"age": 12,
+		"evidence": [
+			{
+				"id": "p_16",
+				"choice_id": "absent"
+			},
+			{
+				"id": "p_17",
+				"choice_id": "absent"
+			},
+			{
+				"id": "p_18",
+				"choice_id": "absent"
+			},
+			{
+				"id": "p_19",
+				"choice_id": "absent"
+			},
+			{
+				"id": "p_20",
+				"choice_id": "absent"
+			},
+			{
+				"id": "p_21",
+				"choice_id": "absent"
+			},
+			{
+				"id": "p_22",
+				"choice_id": "absent"
+			},
+			{
+				"id": "s_0",
+				"choice_id": "present"
+			},
+			{
+				"id": "s_1",
+				"choice_id": "present"
+			},
+			{
+				"id": "s_2",
+				"choice_id": "absent"
+			},
+			{
+				"id": "s_5",
+				"choice_id": "present"
+			},
+			{
+				"id": "s_12",
+				"choice_id": "absent"
+			},
+			{
+				"id": "s_13",
+				"choice_id": "absent"
+			},
+			{
+				"id": "s_14",
+				"choice_id": "absent"
+			},
+			{
+				"id": "s_15",
+				"choice_id": "present"
+			},
+			{
+				"id": "s_16",
+				"choice_id": "absent"
+			},
+			{
+				"id": "s_17",
+				"choice_id": "absent"
+			},
+			{
+				"id": "s_18",
+				"choice_id": "absent"
+			},
+			{
+				"id": "s_19",
+				"choice_id": "absent"
+			},
+			{
+				"id": "s_20",
+				"choice_id": "absent"
+			},
+			{
+				"id": "s_21",
+				"choice_id": "absent"
+			},
+			{
+				"id": "p_5",
+				"choice_id": "absent"
+			}
+		]
+	},
+	"end_travel_no": {
+		"sex": "female",
+		"age": 12,
+		"evidence": [
+			{
+				"id": "p_16",
+				"choice_id": "absent"
+			},
+			{
+				"id": "p_17",
+				"choice_id": "absent"
+			},
+			{
+				"id": "p_18",
+				"choice_id": "absent"
+			},
+			{
+				"id": "p_19",
+				"choice_id": "absent"
+			},
+			{
+				"id": "p_20",
+				"choice_id": "absent"
+			},
+			{
+				"id": "p_21",
+				"choice_id": "absent"
+			},
+			{
+				"id": "p_22",
+				"choice_id": "absent"
+			},
+			{
+				"id": "s_0",
+				"choice_id": "present"
+			},
+			{
+				"id": "s_1",
+				"choice_id": "present"
+			},
+			{
+				"id": "s_2",
+				"choice_id": "absent"
+			},
+			{
+				"id": "s_5",
+				"choice_id": "present"
+			},
+			{
+				"id": "s_12",
+				"choice_id": "absent"
+			},
+			{
+				"id": "s_13",
+				"choice_id": "absent"
+			},
+			{
+				"id": "s_14",
+				"choice_id": "absent"
+			},
+			{
+				"id": "s_15",
+				"choice_id": "present"
+			},
+			{
+				"id": "s_16",
+				"choice_id": "absent"
+			},
+			{
+				"id": "s_17",
+				"choice_id": "absent"
+			},
+			{
+				"id": "s_18",
+				"choice_id": "absent"
+			},
+			{
+				"id": "s_19",
+				"choice_id": "absent"
+			},
+			{
+				"id": "s_20",
+				"choice_id": "absent"
+			},
+			{
+				"id": "s_21",
+				"choice_id": "absent"
+			},
+			{
+				"id": "p_5",
+				"choice_id": "absent"
+			},
+			{
+				"id": "p_15",
+				"choice_id": "present"
+			}
+		]
+	},
+	"fever_shortness": {
+		"sex": "female",
+		"age": 12,
+		"evidence": [
+			{
+				"id": "p_16",
+				"choice_id": "absent"
+			},
+			{
+				"id": "p_17",
+				"choice_id": "absent"
+			},
+			{
+				"id": "p_18",
+				"choice_id": "absent"
+			},
+			{
+				"id": "p_19",
+				"choice_id": "absent"
+			},
+			{
+				"id": "p_20",
+				"choice_id": "absent"
+			},
+			{
+				"id": "p_21",
+				"choice_id": "absent"
+			},
+			{
+				"id": "p_22",
+				"choice_id": "absent"
+			},
+			{
+				"id": "s_0",
+				"choice_id": "present"
+			},
+			{
+				"id": "s_1",
+				"choice_id": "absent"
+			},
+			{
+				"id": "s_2",
+				"choice_id": "present"
+			}
+		]
+	},
+	"fever_shortness_nothing_else": {
+		"sex": "female",
+		"age": 12,
+		"evidence": [
+			{
+				"id": "p_16",
+				"choice_id": "absent"
+			},
+			{
+				"id": "p_17",
+				"choice_id": "absent"
+			},
+			{
+				"id": "p_18",
+				"choice_id": "absent"
+			},
+			{
+				"id": "p_19",
+				"choice_id": "absent"
+			},
+			{
+				"id": "p_20",
+				"choice_id": "absent"
+			},
+			{
+				"id": "p_21",
+				"choice_id": "absent"
+			},
+			{
+				"id": "p_22",
+				"choice_id": "absent"
+			},
+			{
+				"id": "s_0",
+				"choice_id": "present"
+			},
+			{
+				"id": "s_1",
+				"choice_id": "absent"
+			},
+			{
+				"id": "s_2",
+				"choice_id": "present"
+			},
+			{
+				"id": "s_5",
+				"choice_id": "present"
+			},
+			{
+				"id": "s_12",
+				"choice_id": "absent"
+			},
+			{
+				"id": "s_13",
+				"choice_id": "absent"
+			},
+			{
+				"id": "s_14",
+				"choice_id": "absent"
+			}
+		]
+	},
+	"no_fever": {
+		"sex": "female",
+		"age": 12,
+		"evidence": [
+			{
+				"id": "p_16",
+				"choice_id": "absent"
+			},
+			{
+				"id": "p_17",
+				"choice_id": "absent"
+			},
+			{
+				"id": "p_18",
+				"choice_id": "absent"
+			},
+			{
+				"id": "p_19",
+				"choice_id": "absent"
+			},
+			{
+				"id": "p_20",
+				"choice_id": "absent"
+			},
+			{
+				"id": "p_21",
+				"choice_id": "absent"
+			},
+			{
+				"id": "p_22",
+				"choice_id": "absent"
+			},
+			{
+				"id": "s_0",
+				"choice_id": "absent"
+			},
+			{
+				"id": "s_1",
+				"choice_id": "present"
+			},
+			{
+				"id": "s_2",
+				"choice_id": "absent"
+			}
+		]
+	},
+	"no_fever_nothing_else": {
+		"sex": "female",
+		"age": 12,
+		"evidence": [
+			{
+				"id": "p_16",
+				"choice_id": "absent"
+			},
+			{
+				"id": "p_17",
+				"choice_id": "absent"
+			},
+			{
+				"id": "p_18",
+				"choice_id": "absent"
+			},
+			{
+				"id": "p_19",
+				"choice_id": "absent"
+			},
+			{
+				"id": "p_20",
+				"choice_id": "absent"
+			},
+			{
+				"id": "p_21",
+				"choice_id": "absent"
+			},
+			{
+				"id": "p_22",
+				"choice_id": "absent"
+			},
+			{
+				"id": "s_0",
+				"choice_id": "absent"
+			},
+			{
+				"id": "s_1",
+				"choice_id": "present"
+			},
+			{
+				"id": "s_2",
+				"choice_id": "absent"
+			},
+			{
+				"id": "s_12",
+				"choice_id": "absent"
+			},
+			{
+				"id": "s_13",
+				"choice_id": "absent"
+			},
+			{
+				"id": "s_14",
+				"choice_id": "absent"
+			}
+		]
+	},
+	"multi_single": {
+		"sex": "female",
+		"age": 76,
+		"evidence": [
+			{
+				"id": "p_16",
+				"choice_id": "absent"
+			},
+			{
+				"id": "p_17",
+				"choice_id": "absent"
+			},
+			{
+				"id": "p_18",
+				"choice_id": "absent"
+			},
+			{
+				"id": "p_19",
+				"choice_id": "absent"
+			},
+			{
+				"id": "p_20",
+				"choice_id": "absent"
+			},
+			{
+				"id": "p_21",
+				"choice_id": "absent"
+			},
+			{
+				"id": "p_22",
+				"choice_id": "absent"
+			},
+			{
+				"id": "s_0",
+				"choice_id": "present"
+			},
+			{
+				"id": "s_1",
+				"choice_id": "absent"
+			},
+			{
+				"id": "s_2",
+				"choice_id": "absent"
+			},
+			{
+				"id": "s_4",
+				"choice_id": "present"
+			}
+		]
+	}
+}
