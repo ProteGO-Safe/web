@@ -15,6 +15,9 @@ const triageLevelResolver = triageLevel => {
     case 'isolation_ambulance': {
       return 'BEZWZGLĘDNIE NIE OPUSZCZAJ DOMU. ZABRONIONY KONTAKT Z INNYMI LUDŹMI/DOMOWNIKAMI. OBOWIĄZKOWY KONTAKT Z NUMEREM ALARMOWYM.';
     }
+    case 'call_doctor': {
+      return 'TWOJE OBJAWY SĄ NIEPOKOJĄCE, SKONSULTUJ SIĘ Z LEKARZEM.';
+    }
     default: {
       return null;
     }
