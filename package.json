@@ -9,6 +9,7 @@
     "@testing-library/user-event": "^7.1.2",
     "axios": "^0.19.2",
     "classnames": "^2.2.6",
+    "flat": "^5.0.0",
     "formik": "^2.1.4",
     "is-ua-webview": "^1.0.1",
     "lodash.invoke": "^4.5.2",

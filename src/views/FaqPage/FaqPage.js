@@ -1,29 +1,27 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import Header from '../../components/Header/Header';
-import { BottomNavigation } from '../../components/BottomNavigation';
-import { Collapse, Input } from '../../components';
 import { Container, Content, View } from '../../theme/grid';
+import { Header, BottomNavigation, Collapse, Input } from '../../components';
 import {
-  FaqWrapper,
   FaqIntro,
-  FaqParagraph,
-  FaqSubtitle,
   FaqTitle,
+  FaqItem,
+  FaqContent,
   FaqUppercase,
-  Highlight,
+  FaqWrapper,
+  SearchWrapper,
   Title,
-  SearchWrapper
+  Watermark,
+  Highlight
 } from './FaqPage.styled';
 import { fetchFaq } from '../../store/actions/externalData';
 import SearchIcon from '../../assets/img/icons/lupa.svg';
 import Url from '../../components/Url';
 import useLoaderContext from '../../hooks/useLoaderContext';
+import search from '../../utils/faqSearcher';
 
 const FaqPage = () => {
-  const { faqData, isFetching } = useSelector(
-    state => state.externalData
-  );
+  const { faqData, isFetching } = useSelector(state => state.externalData);
   const { setLoader } = useLoaderContext();
   const dispatch = useDispatch();
   const [filterText, setFilterText] = useState('');
@@ -42,115 +40,80 @@ const FaqPage = () => {
     }
   }, [faqData, dispatch]);
 
-  const highlightedText = (text, highlight) => {
-    const parts = text.split(new RegExp(`(${highlight})`, 'gi'));
-    return parts.map((part, key) => {
-      const test = part.toLowerCase() === highlight.toLowerCase();
+  if (!faqData) {
+    return null;
+  }
+
+  const { watermark, elements = [], intro } = faqData;
+
+  const findAndMarkTexts = (element, valueToSearch) => {
+    const inArray = element.split(new RegExp(`(${valueToSearch})`, 'gi'));
+    return inArray.map((part, key) => {
+      const test = part.toLowerCase() === valueToSearch.toLowerCase();
       return test ? <Highlight key={key}>{part}</Highlight> : part;
     });
-  };
-
-  const parseUrl = phrases =>
-    phrases.map((phrase, index) => {
-      const part = phrase.split(/\|/);
-
-      return part.length > 1 ? (
-        <Url key={index} value={part[1]}>
-          {filterText ? highlightedText(part[0], filterText) : part[0]}
-        </Url>
-      ) : (
-        part
-      );
-    });
-
-  const renderLine = line => {
-    const phrases = line.split(/\[url\]/);
-
-    return parseUrl(phrases);
-  };
-
-  const renderElement = (line, index) => {
-    switch (line.type) {
-      case 'intro': {
-        return <FaqIntro key={index}>{line.content.text}</FaqIntro>;
-      }
-      case 'title': {
-        return (
-          <FaqTitle key={index} className="title">
-            {filterText
-              ? highlightedText(line.content.text, filterText)
-              : line.content.text}
-          </FaqTitle>
-        );
-      }
-      case 'subtitle': {
-        return (
-          <FaqSubtitle>
-            {filterText
-              ? highlightedText(line.content.text, filterText)
-              : line.content.text}
-          </FaqSubtitle>
-        );
-      }
-      case 'paragraph_strong': {
-        return (
-          <FaqUppercase key={index}>
-            {filterText
-              ? highlightedText(line.content.text, filterText)
-              : line.content.text}
-          </FaqUppercase>
-        );
-      }
-      case 'paragraph': {
-        return (
-          <FaqParagraph key={index}>
-            {renderLine(line.content.text)}
-          </FaqParagraph>
-        );
-      }
-      case 'details': {
-        const title = filterText
-          ? highlightedText(line.content.text, filterText)
-          : line.content.text;
-        const details = renderLine(line.content.reply);
-        return (
-          <Collapse
-            key={index}
-            title={title}
-            className="collapse"
-            forceOpen={filterText.length >= '3'}
-          >
-            {details}
-          </Collapse>
-        );
-      }
-      default:
-        return null;
-    }
-  };
-  const getFilteredElements = elements =>
-    elements.filter(
-      line =>
-        line.content.text.toLocaleLowerCase().includes(filterText) ||
-        line.content.reply.toLocaleLowerCase().includes(filterText)
-    );
-  const handleChangeInput = e => {
-    const { value } = e.target;
-    setFilterText(value.toLocaleLowerCase());
   };
 
   const handleResetInput = () => {
     setFilterText('');
   };
 
-  if (!faqData) {
-    return null;
-  }
+  const handleChangeInput = e => {
+    const { value } = e.target;
+    setFilterText(value.toLocaleLowerCase());
+  };
 
-  const { watermark, elements = [] } = faqData;
+  const parseUrl = phrases =>
+    phrases.map((phrase, index) => {
+      const part = phrase.split(/\|/);
+      return part.length > 1 ? (
+        <Url key={index} value={part[1]}>
+          {filterText.length >= '3'
+            ? findAndMarkTexts(part[0], filterText)
+            : part[0]}
+        </Url>
+      ) : filterText.length >= '3' ? (
+        findAndMarkTexts(part[0], filterText)
+      ) : (
+        part[0]
+      );
+    });
 
-  const elementsToDisplay =
-    filterText.length >= '3' ? getFilteredElements(elements) : elements;
+  const renderLine = line => {
+    const phrases = line.split(/\[url\]/);
+    return parseUrl(phrases);
+  };
+
+  const elementsToDisplay = search(filterText, elements).map(
+    (element, elementId) => {
+      return (
+        <FaqItem key={elementId}>
+          {element.show && <FaqTitle>{renderLine(element.title)}</FaqTitle>}
+          {element.paragraphs.map((paragraph, paragraphId) => {
+            const p = paragraph.paragraph;
+            return (
+              <FaqContent key={paragraphId}>
+                {paragraph.show && <FaqUppercase>{renderLine(p)}</FaqUppercase>}
+                {paragraph.collapses.map((collapse, collapseId) => {
+                  return (
+                    <Collapse
+                      key={collapseId}
+                      title={renderLine(collapse.text)}
+                      className="collapse"
+                      forceOpen={collapse.forceOpen}
+                    >
+                      {renderLine(collapse.description)}
+                    </Collapse>
+                  );
+                })}
+              </FaqContent>
+            );
+          })}
+        </FaqItem>
+      );
+    }
+  );
+
   return (
     <View>
       <Header hideBackButton />
@@ -158,9 +121,7 @@ const FaqPage = () => {
         <Container className="full-height">
           <Title>Pytania i odpowiedzi</Title>
           <FaqWrapper>
-            {elements
-              .filter(line => line.type === 'intro')
-              .map((line, index) => renderElement(line, index))}
+            <FaqIntro>{intro}</FaqIntro>
             <SearchWrapper>
               <Input
                 reset={handleResetInput}
@@ -172,10 +133,8 @@ const FaqPage = () => {
                 onChange={handleChangeInput}
               />
             </SearchWrapper>
-            {elementsToDisplay
-              .filter(line => line.type !== 'intro')
-              .map((line, index) => renderElement(line, index))}
-            <p className="watermark details">{watermark}</p>
+            {elementsToDisplay}
+            <Watermark>{watermark}</Watermark>
           </FaqWrapper>
         </Container>
         <BottomNavigation />
