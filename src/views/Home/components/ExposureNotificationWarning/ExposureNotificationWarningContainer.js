@@ -15,9 +15,9 @@ const ExposureNotificationWarningContainer = () => {
     }
   } = useSelector(state => state.nativeData);
   const showServiceWarning =
-    !(isIOSWebView() || isLocationOn) ||
-    !isBtOn ||
-    !isNotificationEnabled ||
+    (!isIOSWebView() && isLocationOn === false) ||
+    isBtOn === false ||
+    isNotificationEnabled === false ||
     exposureNotificationStatus === EXPOSURE_NOTIFICATION_STATUS.OFF;
 
   const handleEnableServices = () => {
