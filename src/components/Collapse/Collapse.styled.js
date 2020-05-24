@@ -18,7 +18,7 @@ export const Title = styled.div`
   padding: 12px 40px 12px 7px;
   font-size: 14px;
   font-weight: bold;
-  line-height: 1.2;
+  line-height: 1.3;
   color: ${Color.primary};
   border-top: solid 1px ${Color.veryLightGrey};
   border-bottom: solid 1px ${Color.veryLightGrey};
