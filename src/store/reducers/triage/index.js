@@ -1,7 +1,6 @@
 import {
   TRIAGE_FETCH_REQUESTED,
   TRIAGE_FETCH_SUCCESS,
-  TRIAGE_FETCH_ERROR
 } from '../../types/triage';
 
 const INITIAL_STATE = {
@@ -27,18 +26,13 @@ const triageReducer = (state = INITIAL_STATE, action) => {
 
         return {
           ...state,
-          triageLevel: triage_level, // no_risk || self_monitoring ||  quarantine || isolation_call || isolation_ambulance
+          triageLevel: triage_level,
           label,
           description,
           serious,
           isLoading: false
         };
       })();
-    case TRIAGE_FETCH_ERROR:
-      return {
-        ...state,
-        isLoading: false
-      };
     default:
       return state;
   }

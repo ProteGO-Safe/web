@@ -1,0 +1,2279 @@
+[
+  {
+    "extras": {
+      "country_iso_code": "AC",
+      "has_local_covid_transmission": false
+    },
+    "id": "l_ac",
+    "name": "Wyspa Wniebowstąpienia",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "AD",
+      "has_local_covid_transmission": true
+    },
+    "id": "l_ad",
+    "name": "Andora",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "AE",
+      "has_local_covid_transmission": true
+    },
+    "id": "l_ae",
+    "name": "Zjednoczone Emiraty Arabskie",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "AF",
+      "has_local_covid_transmission": true
+    },
+    "id": "l_af",
+    "name": "Afganistan",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "AG",
+      "has_local_covid_transmission": true
+    },
+    "id": "l_ag",
+    "name": "Antigua i Barbuda",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "AI",
+      "has_local_covid_transmission": true
+    },
+    "id": "l_ai",
+    "name": "Anguilla",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "AL",
+      "has_local_covid_transmission": true
+    },
+    "id": "l_al",
+    "name": "Albania",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "AM",
+      "has_local_covid_transmission": true
+    },
+    "id": "l_am",
+    "name": "Armenia",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "AO",
+      "has_local_covid_transmission": false
+    },
+    "id": "l_ao",
+    "name": "Angola",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "AQ",
+      "has_local_covid_transmission": false
+    },
+    "id": "l_aq",
+    "name": "Antarktyda",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "AR",
+      "has_local_covid_transmission": true
+    },
+    "id": "l_ar",
+    "name": "Argentyna",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "AS",
+      "has_local_covid_transmission": false
+    },
+    "id": "l_as",
+    "name": "Samoa Amerykańskie",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "AT",
+      "has_local_covid_transmission": true
+    },
+    "id": "l_at",
+    "name": "Austria",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "AU",
+      "has_local_covid_transmission": true
+    },
+    "id": "l_au",
+    "name": "Australia",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "AW",
+      "has_local_covid_transmission": true
+    },
+    "id": "l_aw",
+    "name": "Aruba",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "AX",
+      "has_local_covid_transmission": false
+    },
+    "id": "l_ax",
+    "name": "Wyspy Alandzkie",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "AZ",
+      "has_local_covid_transmission": true
+    },
+    "id": "l_az",
+    "name": "Azerbejdżan",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "BA",
+      "has_local_covid_transmission": true
+    },
+    "id": "l_ba",
+    "name": "Bośnia i Hercegowina",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "BB",
+      "has_local_covid_transmission": true
+    },
+    "id": "l_bb",
+    "name": "Barbados",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "BD",
+      "has_local_covid_transmission": true
+    },
+    "id": "l_bd",
+    "name": "Bangladesz",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "BE",
+      "has_local_covid_transmission": true
+    },
+    "id": "l_be",
+    "name": "Belgia",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "BF",
+      "has_local_covid_transmission": true
+    },
+    "id": "l_bf",
+    "name": "Burkina Faso",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "BG",
+      "has_local_covid_transmission": true
+    },
+    "id": "l_bg",
+    "name": "Bułgaria",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "BH",
+      "has_local_covid_transmission": true
+    },
+    "id": "l_bh",
+    "name": "Bahrajn",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "BI",
+      "has_local_covid_transmission": true
+    },
+    "id": "l_bi",
+    "name": "Burundi",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "BJ",
+      "has_local_covid_transmission": true
+    },
+    "id": "l_bj",
+    "name": "Benin",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "BL",
+      "has_local_covid_transmission": false
+    },
+    "id": "l_bl",
+    "name": "Saint-Barthélemy",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "BM",
+      "has_local_covid_transmission": true
+    },
+    "id": "l_bm",
+    "name": "Bermudy",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "BN",
+      "has_local_covid_transmission": true
+    },
+    "id": "l_bn",
+    "name": "Brunei",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "BO",
+      "has_local_covid_transmission": true
+    },
+    "id": "l_bo",
+    "name": "Boliwia",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "BQ",
+      "has_local_covid_transmission": false
+    },
+    "id": "l_bq",
+    "name": "Niderlandy Karaibskie",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "BR",
+      "has_local_covid_transmission": true
+    },
+    "id": "l_br",
+    "name": "Brazylia",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "BS",
+      "has_local_covid_transmission": true
+    },
+    "id": "l_bs",
+    "name": "Bahamy",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "BT",
+      "has_local_covid_transmission": false
+    },
+    "id": "l_bt",
+    "name": "Bhutan",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "BW",
+      "has_local_covid_transmission": false
+    },
+    "id": "l_bw",
+    "name": "Botswana",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "BY",
+      "has_local_covid_transmission": true
+    },
+    "id": "l_by",
+    "name": "Białoruś",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "BZ",
+      "has_local_covid_transmission": true
+    },
+    "id": "l_bz",
+    "name": "Belize",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "CA",
+      "has_local_covid_transmission": true
+    },
+    "id": "l_ca",
+    "name": "Kanada",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "CC",
+      "has_local_covid_transmission": false
+    },
+    "id": "l_cc",
+    "name": "Wyspy Kokosowe",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "CD",
+      "has_local_covid_transmission": true
+    },
+    "id": "l_cd",
+    "name": "Demokratyczna Republika Konga",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "CF",
+      "has_local_covid_transmission": true
+    },
+    "id": "l_cf",
+    "name": "Republika Środkowoafrykańska",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "CG",
+      "has_local_covid_transmission": true
+    },
+    "id": "l_cg",
+    "name": "Kongo",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "CH",
+      "has_local_covid_transmission": true
+    },
+    "id": "l_ch",
+    "name": "Szwajcaria",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "CI",
+      "has_local_covid_transmission": true
+    },
+    "id": "l_ci",
+    "name": "Côte d’Ivoire",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "CK",
+      "has_local_covid_transmission": false
+    },
+    "id": "l_ck",
+    "name": "Wyspy Cooka",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "CL",
+      "has_local_covid_transmission": true
+    },
+    "id": "l_cl",
+    "name": "Chile",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "CM",
+      "has_local_covid_transmission": true
+    },
+    "id": "l_cm",
+    "name": "Kamerun",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "CN",
+      "has_local_covid_transmission": true
+    },
+    "id": "l_cn",
+    "name": "Chiny",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "CO",
+      "has_local_covid_transmission": true
+    },
+    "id": "l_co",
+    "name": "Kolumbia",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "CR",
+      "has_local_covid_transmission": true
+    },
+    "id": "l_cr",
+    "name": "Kostaryka",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "CU",
+      "has_local_covid_transmission": true
+    },
+    "id": "l_cu",
+    "name": "Kuba",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "CV",
+      "has_local_covid_transmission": true
+    },
+    "id": "l_cv",
+    "name": "Republika Zielonego Przylądka",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "CW",
+      "has_local_covid_transmission": false
+    },
+    "id": "l_cw",
+    "name": "Curaçao",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "CX",
+      "has_local_covid_transmission": false
+    },
+    "id": "l_cx",
+    "name": "Wyspa Bożego Narodzenia",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "CY",
+      "has_local_covid_transmission": true
+    },
+    "id": "l_cy",
+    "name": "Cypr",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "CZ",
+      "has_local_covid_transmission": true
+    },
+    "id": "l_cz",
+    "name": "Czechy",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "DE",
+      "has_local_covid_transmission": true
+    },
+    "id": "l_de",
+    "name": "Niemcy",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "DG",
+      "has_local_covid_transmission": false
+    },
+    "id": "l_dg",
+    "name": "Diego Garcia",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "DJ",
+      "has_local_covid_transmission": true
+    },
+    "id": "l_dj",
+    "name": "Dżibuti",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "DK",
+      "has_local_covid_transmission": true
+    },
+    "id": "l_dk",
+    "name": "Dania",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "DM",
+      "has_local_covid_transmission": true
+    },
+    "id": "l_dm",
+    "name": "Dominika",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "DO",
+      "has_local_covid_transmission": true
+    },
+    "id": "l_do",
+    "name": "Dominikana",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "DZ",
+      "has_local_covid_transmission": true
+    },
+    "id": "l_dz",
+    "name": "Algieria",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "EA",
+      "has_local_covid_transmission": false
+    },
+    "id": "l_ea",
+    "name": "Ceuta i Melilla",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "EC",
+      "has_local_covid_transmission": true
+    },
+    "id": "l_ec",
+    "name": "Ekwador",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "EE",
+      "has_local_covid_transmission": true
+    },
+    "id": "l_ee",
+    "name": "Estonia",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "EG",
+      "has_local_covid_transmission": true
+    },
+    "id": "l_eg",
+    "name": "Egipt",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "EH",
+      "has_local_covid_transmission": false
+    },
+    "id": "l_eh",
+    "name": "Sahara Zachodnia",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "ER",
+      "has_local_covid_transmission": true
+    },
+    "id": "l_er",
+    "name": "Erytrea",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "ES",
+      "has_local_covid_transmission": true
+    },
+    "id": "l_es",
+    "name": "Hiszpania",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "ET",
+      "has_local_covid_transmission": true
+    },
+    "id": "l_et",
+    "name": "Etiopia",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "FI",
+      "has_local_covid_transmission": true
+    },
+    "id": "l_fi",
+    "name": "Finlandia",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "FJ",
+      "has_local_covid_transmission": true
+    },
+    "id": "l_fj",
+    "name": "Fidżi",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "FK",
+      "has_local_covid_transmission": false
+    },
+    "id": "l_fk",
+    "name": "Falklandy",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "FM",
+      "has_local_covid_transmission": false
+    },
+    "id": "l_fm",
+    "name": "Mikronezja",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "FO",
+      "has_local_covid_transmission": true
+    },
+    "id": "l_fo",
+    "name": "Wyspy Owcze",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "FR",
+      "has_local_covid_transmission": true
+    },
+    "id": "l_fr",
+    "name": "Francja",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "GA",
+      "has_local_covid_transmission": false
+    },
+    "id": "l_ga",
+    "name": "Gabon",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "GB",
+      "has_local_covid_transmission": true
+    },
+    "id": "l_gb",
+    "name": "Wielka Brytania",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "GD",
+      "has_local_covid_transmission": true
+    },
+    "id": "l_gd",
+    "name": "Grenada",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "GE",
+      "has_local_covid_transmission": true
+    },
+    "id": "l_ge",
+    "name": "Gruzja",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "GF",
+      "has_local_covid_transmission": true
+    },
+    "id": "l_gf",
+    "name": "Gujana Francuska",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "GG",
+      "has_local_covid_transmission": true
+    },
+    "id": "l_gg",
+    "name": "Guernsey",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "GH",
+      "has_local_covid_transmission": true
+    },
+    "id": "l_gh",
+    "name": "Ghana",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "GI",
+      "has_local_covid_transmission": true
+    },
+    "id": "l_gi",
+    "name": "Gibraltar",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "GL",
+      "has_local_covid_transmission": false
+    },
+    "id": "l_gl",
+    "name": "Grenlandia",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "GM",
+      "has_local_covid_transmission": false
+    },
+    "id": "l_gm",
+    "name": "Gambia",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "GN",
+      "has_local_covid_transmission": true
+    },
+    "id": "l_gn",
+    "name": "Gwinea",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "GP",
+      "has_local_covid_transmission": true
+    },
+    "id": "l_gp",
+    "name": "Gwadelupa",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "GQ",
+      "has_local_covid_transmission": true
+    },
+    "id": "l_gq",
+    "name": "Gwinea Równikowa",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "GR",
+      "has_local_covid_transmission": true
+    },
+    "id": "l_gr",
+    "name": "Grecja",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "GS",
+      "has_local_covid_transmission": false
+    },
+    "id": "l_gs",
+    "name": "Georgia Południowa i Sandwich Południowy",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "GT",
+      "has_local_covid_transmission": true
+    },
+    "id": "l_gt",
+    "name": "Gwatemala",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "GU",
+      "has_local_covid_transmission": true
+    },
+    "id": "l_gu",
+    "name": "Guam",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "GW",
+      "has_local_covid_transmission": false
+    },
+    "id": "l_gw",
+    "name": "Gwinea Bissau",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "GY",
+      "has_local_covid_transmission": true
+    },
+    "id": "l_gy",
+    "name": "Gujana",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "HK",
+      "has_local_covid_transmission": false
+    },
+    "id": "l_hk",
+    "name": "SRA Hongkong (Chiny)",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "HN",
+      "has_local_covid_transmission": true
+    },
+    "id": "l_hn",
+    "name": "Honduras",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "HR",
+      "has_local_covid_transmission": true
+    },
+    "id": "l_hr",
+    "name": "Chorwacja",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "HT",
+      "has_local_covid_transmission": false
+    },
+    "id": "l_ht",
+    "name": "Haiti",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "HU",
+      "has_local_covid_transmission": true
+    },
+    "id": "l_hu",
+    "name": "Węgry",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "IC",
+      "has_local_covid_transmission": false
+    },
+    "id": "l_ic",
+    "name": "Wyspy Kanaryjskie",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "ID",
+      "has_local_covid_transmission": true
+    },
+    "id": "l_id",
+    "name": "Indonezja",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "IE",
+      "has_local_covid_transmission": true
+    },
+    "id": "l_ie",
+    "name": "Irlandia",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "IL",
+      "has_local_covid_transmission": true
+    },
+    "id": "l_il",
+    "name": "Izrael",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "IM",
+      "has_local_covid_transmission": true
+    },
+    "id": "l_im",
+    "name": "Wyspa Man",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "IN",
+      "has_local_covid_transmission": true
+    },
+    "id": "l_in",
+    "name": "Indie",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "IO",
+      "has_local_covid_transmission": false
+    },
+    "id": "l_io",
+    "name": "Brytyjskie Terytorium Oceanu Indyjskiego",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "IQ",
+      "has_local_covid_transmission": true
+    },
+    "id": "l_iq",
+    "name": "Irak",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "IR",
+      "has_local_covid_transmission": true
+    },
+    "id": "l_ir",
+    "name": "Iran",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "IS",
+      "has_local_covid_transmission": true
+    },
+    "id": "l_is",
+    "name": "Islandia",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "IT",
+      "has_local_covid_transmission": true
+    },
+    "id": "l_it",
+    "name": "Włochy",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "JE",
+      "has_local_covid_transmission": true
+    },
+    "id": "l_je",
+    "name": "Jersey",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "JM",
+      "has_local_covid_transmission": true
+    },
+    "id": "l_jm",
+    "name": "Jamajka",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "JO",
+      "has_local_covid_transmission": true
+    },
+    "id": "l_jo",
+    "name": "Jordania",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "JP",
+      "has_local_covid_transmission": true
+    },
+    "id": "l_jp",
+    "name": "Japonia",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "KE",
+      "has_local_covid_transmission": true
+    },
+    "id": "l_ke",
+    "name": "Kenia",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "KG",
+      "has_local_covid_transmission": true
+    },
+    "id": "l_kg",
+    "name": "Kirgistan",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "KH",
+      "has_local_covid_transmission": true
+    },
+    "id": "l_kh",
+    "name": "Kambodża",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "KI",
+      "has_local_covid_transmission": false
+    },
+    "id": "l_ki",
+    "name": "Kiribati",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "KM",
+      "has_local_covid_transmission": false
+    },
+    "id": "l_km",
+    "name": "Komory",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "KN",
+      "has_local_covid_transmission": false
+    },
+    "id": "l_kn",
+    "name": "Saint Kitts i Nevis",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "KP",
+      "has_local_covid_transmission": false
+    },
+    "id": "l_kp",
+    "name": "Korea Północna",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "KR",
+      "has_local_covid_transmission": true
+    },
+    "id": "l_kr",
+    "name": "Korea Południowa",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "KW",
+      "has_local_covid_transmission": true
+    },
+    "id": "l_kw",
+    "name": "Kuwejt",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "KY",
+      "has_local_covid_transmission": true
+    },
+    "id": "l_ky",
+    "name": "Kajmany",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "KZ",
+      "has_local_covid_transmission": true
+    },
+    "id": "l_kz",
+    "name": "Kazachstan",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "LA",
+      "has_local_covid_transmission": true
+    },
+    "id": "l_la",
+    "name": "Laos",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "LB",
+      "has_local_covid_transmission": true
+    },
+    "id": "l_lb",
+    "name": "Liban",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "LC",
+      "has_local_covid_transmission": true
+    },
+    "id": "l_lc",
+    "name": "Saint Lucia",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "LI",
+      "has_local_covid_transmission": false
+    },
+    "id": "l_li",
+    "name": "Liechtenstein",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "LK",
+      "has_local_covid_transmission": true
+    },
+    "id": "l_lk",
+    "name": "Sri Lanka",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "LR",
+      "has_local_covid_transmission": true
+    },
+    "id": "l_lr",
+    "name": "Liberia",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "LS",
+      "has_local_covid_transmission": false
+    },
+    "id": "l_ls",
+    "name": "Lesotho",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "LT",
+      "has_local_covid_transmission": true
+    },
+    "id": "l_lt",
+    "name": "Litwa",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "LU",
+      "has_local_covid_transmission": true
+    },
+    "id": "l_lu",
+    "name": "Luksemburg",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "LV",
+      "has_local_covid_transmission": true
+    },
+    "id": "l_lv",
+    "name": "Łotwa",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "LY",
+      "has_local_covid_transmission": true
+    },
+    "id": "l_ly",
+    "name": "Libia",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "MA",
+      "has_local_covid_transmission": true
+    },
+    "id": "l_ma",
+    "name": "Maroko",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "MC",
+      "has_local_covid_transmission": true
+    },
+    "id": "l_mc",
+    "name": "Monako",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "MD",
+      "has_local_covid_transmission": true
+    },
+    "id": "l_md",
+    "name": "Mołdawia",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "ME",
+      "has_local_covid_transmission": true
+    },
+    "id": "l_me",
+    "name": "Czarnogóra",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "MF",
+      "has_local_covid_transmission": false
+    },
+    "id": "l_mf",
+    "name": "Saint-Martin",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "MG",
+      "has_local_covid_transmission": true
+    },
+    "id": "l_mg",
+    "name": "Madagaskar",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "MH",
+      "has_local_covid_transmission": false
+    },
+    "id": "l_mh",
+    "name": "Wyspy Marshalla",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "MK",
+      "has_local_covid_transmission": true
+    },
+    "id": "l_mk",
+    "name": "Macedonia Północna",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "ML",
+      "has_local_covid_transmission": true
+    },
+    "id": "l_ml",
+    "name": "Mali",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "MM",
+      "has_local_covid_transmission": true
+    },
+    "id": "l_mm",
+    "name": "Mjanma (Birma)",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "MN",
+      "has_local_covid_transmission": false
+    },
+    "id": "l_mn",
+    "name": "Mongolia",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "MO",
+      "has_local_covid_transmission": false
+    },
+    "id": "l_mo",
+    "name": "SRA Makau (Chiny)",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "MP",
+      "has_local_covid_transmission": true
+    },
+    "id": "l_mp",
+    "name": "Mariany Północne",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "MQ",
+      "has_local_covid_transmission": true
+    },
+    "id": "l_mq",
+    "name": "Martynika",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "MR",
+      "has_local_covid_transmission": false
+    },
+    "id": "l_mr",
+    "name": "Mauretania",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "MS",
+      "has_local_covid_transmission": false
+    },
+    "id": "l_ms",
+    "name": "Montserrat",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "MT",
+      "has_local_covid_transmission": true
+    },
+    "id": "l_mt",
+    "name": "Malta",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "MU",
+      "has_local_covid_transmission": true
+    },
+    "id": "l_mu",
+    "name": "Mauritius",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "MV",
+      "has_local_covid_transmission": true
+    },
+    "id": "l_mv",
+    "name": "Malediwy",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "MW",
+      "has_local_covid_transmission": true
+    },
+    "id": "l_mw",
+    "name": "Malawi",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "MX",
+      "has_local_covid_transmission": true
+    },
+    "id": "l_mx",
+    "name": "Meksyk",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "MY",
+      "has_local_covid_transmission": true
+    },
+    "id": "l_my",
+    "name": "Malezja",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "MZ",
+      "has_local_covid_transmission": true
+    },
+    "id": "l_mz",
+    "name": "Mozambik",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "NA",
+      "has_local_covid_transmission": true
+    },
+    "id": "l_na",
+    "name": "Namibia",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "NC",
+      "has_local_covid_transmission": true
+    },
+    "id": "l_nc",
+    "name": "Nowa Kaledonia",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "NE",
+      "has_local_covid_transmission": true
+    },
+    "id": "l_ne",
+    "name": "Niger",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "NF",
+      "has_local_covid_transmission": false
+    },
+    "id": "l_nf",
+    "name": "Norfolk",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "NG",
+      "has_local_covid_transmission": true
+    },
+    "id": "l_ng",
+    "name": "Nigeria",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "NI",
+      "has_local_covid_transmission": false
+    },
+    "id": "l_ni",
+    "name": "Nikaragua",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "NL",
+      "has_local_covid_transmission": true
+    },
+    "id": "l_nl",
+    "name": "Holandia",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "NO",
+      "has_local_covid_transmission": true
+    },
+    "id": "l_no",
+    "name": "Norwegia",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "NP",
+      "has_local_covid_transmission": true
+    },
+    "id": "l_np",
+    "name": "Nepal",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "NR",
+      "has_local_covid_transmission": false
+    },
+    "id": "l_nr",
+    "name": "Nauru",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "NU",
+      "has_local_covid_transmission": false
+    },
+    "id": "l_nu",
+    "name": "Niue",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "NZ",
+      "has_local_covid_transmission": true
+    },
+    "id": "l_nz",
+    "name": "Nowa Zelandia",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "OM",
+      "has_local_covid_transmission": true
+    },
+    "id": "l_om",
+    "name": "Oman",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "PA",
+      "has_local_covid_transmission": true
+    },
+    "id": "l_pa",
+    "name": "Panama",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "PE",
+      "has_local_covid_transmission": true
+    },
+    "id": "l_pe",
+    "name": "Peru",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "PF",
+      "has_local_covid_transmission": true
+    },
+    "id": "l_pf",
+    "name": "Polinezja Francuska",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "PG",
+      "has_local_covid_transmission": false
+    },
+    "id": "l_pg",
+    "name": "Papua-Nowa Gwinea",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "PH",
+      "has_local_covid_transmission": true
+    },
+    "id": "l_ph",
+    "name": "Filipiny",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "PK",
+      "has_local_covid_transmission": true
+    },
+    "id": "l_pk",
+    "name": "Pakistan",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "PL",
+      "has_local_covid_transmission": true
+    },
+    "id": "l_pl",
+    "name": "Polska",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "PM",
+      "has_local_covid_transmission": false
+    },
+    "id": "l_pm",
+    "name": "Saint-Pierre i Miquelon",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "PN",
+      "has_local_covid_transmission": false
+    },
+    "id": "l_pn",
+    "name": "Pitcairn",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "PR",
+      "has_local_covid_transmission": true
+    },
+    "id": "l_pr",
+    "name": "Portoryko",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "PS",
+      "has_local_covid_transmission": true
+    },
+    "id": "l_ps",
+    "name": "Terytoria Palestyńskie",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "PT",
+      "has_local_covid_transmission": true
+    },
+    "id": "l_pt",
+    "name": "Portugalia",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "PW",
+      "has_local_covid_transmission": false
+    },
+    "id": "l_pw",
+    "name": "Palau",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "PY",
+      "has_local_covid_transmission": true
+    },
+    "id": "l_py",
+    "name": "Paragwaj",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "QA",
+      "has_local_covid_transmission": true
+    },
+    "id": "l_qa",
+    "name": "Katar",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "RE",
+      "has_local_covid_transmission": true
+    },
+    "id": "l_re",
+    "name": "Reunion",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "RO",
+      "has_local_covid_transmission": true
+    },
+    "id": "l_ro",
+    "name": "Rumunia",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "RS",
+      "has_local_covid_transmission": true
+    },
+    "id": "l_rs",
+    "name": "Serbia",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "RU",
+      "has_local_covid_transmission": true
+    },
+    "id": "l_ru",
+    "name": "Rosja",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "RW",
+      "has_local_covid_transmission": true
+    },
+    "id": "l_rw",
+    "name": "Rwanda",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "SA",
+      "has_local_covid_transmission": true
+    },
+    "id": "l_sa",
+    "name": "Arabia Saudyjska",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "SB",
+      "has_local_covid_transmission": false
+    },
+    "id": "l_sb",
+    "name": "Wyspy Salomona",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "SC",
+      "has_local_covid_transmission": false
+    },
+    "id": "l_sc",
+    "name": "Seszele",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "SD",
+      "has_local_covid_transmission": true
+    },
+    "id": "l_sd",
+    "name": "Sudan",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "SE",
+      "has_local_covid_transmission": true
+    },
+    "id": "l_se",
+    "name": "Szwecja",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "SG",
+      "has_local_covid_transmission": true
+    },
+    "id": "l_sg",
+    "name": "Singapur",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "SH",
+      "has_local_covid_transmission": false
+    },
+    "id": "l_sh",
+    "name": "Wyspa Świętej Heleny",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "SI",
+      "has_local_covid_transmission": true
+    },
+    "id": "l_si",
+    "name": "Słowenia",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "SJ",
+      "has_local_covid_transmission": false
+    },
+    "id": "l_sj",
+    "name": "Svalbard i Jan Mayen",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "SK",
+      "has_local_covid_transmission": true
+    },
+    "id": "l_sk",
+    "name": "Słowacja",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "SL",
+      "has_local_covid_transmission": false
+    },
+    "id": "l_sl",
+    "name": "Sierra Leone",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "SM",
+      "has_local_covid_transmission": true
+    },
+    "id": "l_sm",
+    "name": "San Marino",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "SN",
+      "has_local_covid_transmission": true
+    },
+    "id": "l_sn",
+    "name": "Senegal",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "SO",
+      "has_local_covid_transmission": true
+    },
+    "id": "l_so",
+    "name": "Somalia",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "SR",
+      "has_local_covid_transmission": true
+    },
+    "id": "l_sr",
+    "name": "Surinam",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "SS",
+      "has_local_covid_transmission": false
+    },
+    "id": "l_ss",
+    "name": "Sudan Południowy",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "ST",
+      "has_local_covid_transmission": false
+    },
+    "id": "l_st",
+    "name": "Wyspy Świętego Tomasza i Książęca",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "SV",
+      "has_local_covid_transmission": true
+    },
+    "id": "l_sv",
+    "name": "Salwador",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "SX",
+      "has_local_covid_transmission": false
+    },
+    "id": "l_sx",
+    "name": "Sint Maarten",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "SY",
+      "has_local_covid_transmission": true
+    },
+    "id": "l_sy",
+    "name": "Syria",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "SZ",
+      "has_local_covid_transmission": false
+    },
+    "id": "l_sz",
+    "name": "Eswatini",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "TA",
+      "has_local_covid_transmission": false
+    },
+    "id": "l_ta",
+    "name": "Tristan da Cunha",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "TC",
+      "has_local_covid_transmission": true
+    },
+    "id": "l_tc",
+    "name": "Turks i Caicos",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "TD",
+      "has_local_covid_transmission": true
+    },
+    "id": "l_td",
+    "name": "Czad",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "TF",
+      "has_local_covid_transmission": false
+    },
+    "id": "l_tf",
+    "name": "Francuskie Terytoria Południowe i Antarktyczne",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "TG",
+      "has_local_covid_transmission": true
+    },
+    "id": "l_tg",
+    "name": "Togo",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "TH",
+      "has_local_covid_transmission": true
+    },
+    "id": "l_th",
+    "name": "Tajlandia",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "TJ",
+      "has_local_covid_transmission": false
+    },
+    "id": "l_tj",
+    "name": "Tadżykistan",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "TK",
+      "has_local_covid_transmission": false
+    },
+    "id": "l_tk",
+    "name": "Tokelau",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "TL",
+      "has_local_covid_transmission": false
+    },
+    "id": "l_tl",
+    "name": "Timor Wschodni",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "TM",
+      "has_local_covid_transmission": false
+    },
+    "id": "l_tm",
+    "name": "Turkmenistan",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "TN",
+      "has_local_covid_transmission": true
+    },
+    "id": "l_tn",
+    "name": "Tunezja",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "TO",
+      "has_local_covid_transmission": false
+    },
+    "id": "l_to",
+    "name": "Tonga",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "TR",
+      "has_local_covid_transmission": true
+    },
+    "id": "l_tr",
+    "name": "Turcja",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "TT",
+      "has_local_covid_transmission": true
+    },
+    "id": "l_tt",
+    "name": "Trynidad i Tobago",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "TV",
+      "has_local_covid_transmission": false
+    },
+    "id": "l_tv",
+    "name": "Tuvalu",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "TW",
+      "has_local_covid_transmission": false
+    },
+    "id": "l_tw",
+    "name": "Tajwan",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "TZ",
+      "has_local_covid_transmission": true
+    },
+    "id": "l_tz",
+    "name": "Tanzania",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "UA",
+      "has_local_covid_transmission": true
+    },
+    "id": "l_ua",
+    "name": "Ukraina",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "UG",
+      "has_local_covid_transmission": true
+    },
+    "id": "l_ug",
+    "name": "Uganda",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "UM",
+      "has_local_covid_transmission": false
+    },
+    "id": "l_um",
+    "name": "Dalekie Wyspy Mniejsze Stanów Zjednoczonych",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "US",
+      "has_local_covid_transmission": true
+    },
+    "id": "l_us",
+    "name": "Stany Zjednoczone",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "UY",
+      "has_local_covid_transmission": true
+    },
+    "id": "l_uy",
+    "name": "Urugwaj",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "UZ",
+      "has_local_covid_transmission": true
+    },
+    "id": "l_uz",
+    "name": "Uzbekistan",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "VA",
+      "has_local_covid_transmission": false
+    },
+    "id": "l_va",
+    "name": "Watykan",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "VC",
+      "has_local_covid_transmission": false
+    },
+    "id": "l_vc",
+    "name": "Saint Vincent i Grenadyny",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "VE",
+      "has_local_covid_transmission": true
+    },
+    "id": "l_ve",
+    "name": "Wenezuela",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "VG",
+      "has_local_covid_transmission": false
+    },
+    "id": "l_vg",
+    "name": "Brytyjskie Wyspy Dziewicze",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "VI",
+      "has_local_covid_transmission": true
+    },
+    "id": "l_vi",
+    "name": "Wyspy Dziewicze Stanów Zjednoczonych",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "VN",
+      "has_local_covid_transmission": true
+    },
+    "id": "l_vn",
+    "name": "Wietnam",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "VU",
+      "has_local_covid_transmission": false
+    },
+    "id": "l_vu",
+    "name": "Vanuatu",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "WF",
+      "has_local_covid_transmission": false
+    },
+    "id": "l_wf",
+    "name": "Wallis i Futuna",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "WS",
+      "has_local_covid_transmission": false
+    },
+    "id": "l_ws",
+    "name": "Samoa",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "XK",
+      "has_local_covid_transmission": true
+    },
+    "id": "l_xk",
+    "name": "Kosowo",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "YE",
+      "has_local_covid_transmission": false
+    },
+    "id": "l_ye",
+    "name": "Jemen",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "YT",
+      "has_local_covid_transmission": true
+    },
+    "id": "l_yt",
+    "name": "Majotta",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "ZA",
+      "has_local_covid_transmission": true
+    },
+    "id": "l_za",
+    "name": "Republika Południowej Afryki",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "ZM",
+      "has_local_covid_transmission": true
+    },
+    "id": "l_zm",
+    "name": "Zambia",
+    "type": "country"
+  },
+  {
+    "extras": {
+      "country_iso_code": "ZW",
+      "has_local_covid_transmission": true
+    },
+    "id": "l_zw",
+    "name": "Zimbabwe",
+    "type": "country"
+  }
+]

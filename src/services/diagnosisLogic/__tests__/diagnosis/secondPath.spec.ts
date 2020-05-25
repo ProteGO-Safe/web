@@ -1,4 +1,4 @@
-import { getDiagnosis } from '../diagnosisLogic';
+import { getDiagnosis } from '../../diagnosisLogic';
 import firstAnswer from './responses/responses.json';
 import query from './query/query.json';
 
