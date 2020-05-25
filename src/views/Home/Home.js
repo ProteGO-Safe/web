@@ -4,18 +4,16 @@ import {
   Badge,
   Container,
   Smile,
+  MakeDiagnosisButton,
   TriageRiskInformation,
   TriageInfoBorder,
-  BordersButton,
   BottomNavigation,
   TriageRecommendations
 } from '../../components';
 import './Home.scss';
 import { ExposureNotificationWarning } from './components';
 
-import { Icon } from '../RiskTest/RiskTest.styled';
-
-const Home = ({ onClickGoToDiagnosis }) => {
+const Home = () => {
   return (
     <div className="view view__home">
       <Header hideBackButton />
@@ -23,11 +21,7 @@ const Home = ({ onClickGoToDiagnosis }) => {
         <ExposureNotificationWarning />
         <Badge />
         <Smile />
-        <BordersButton
-          onClick={onClickGoToDiagnosis}
-          text="Wykonaj TEST oceny ryzyka"
-          icon={<Icon />}
-        />
+        <MakeDiagnosisButton />
         <TriageRiskInformation />
         <TriageInfoBorder />
         <TriageRecommendations />

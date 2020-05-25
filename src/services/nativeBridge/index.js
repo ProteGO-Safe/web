@@ -1,10 +1,10 @@
 import invoke from 'lodash.invoke';
 import uniqueId from 'lodash.uniqueid';
-import { always, cond, equals } from 'ramda';
 
+import { always, cond, equals } from 'ramda';
 import StoreRegistry from '../../store/storeRegistry';
 import {
-  EXPOSURE_SUMMARY_FETCHED,
+  NATIVE_DATA_FETCH_EXPOSURE_NOTIFICATION_STATISTICS_SUCCESS,
   NATIVE_DATA_SET_SERVICES_STATUS_SUCCESS
 } from '../../store/types/nativeData';
 import { DATA_TYPE } from './nativeBridge.constants';
@@ -72,6 +72,10 @@ const getServicesStatus = async () => {
   return callGetBridgeData(DATA_TYPE.NATIVE_SERVICES_STATUS);
 };
 
+const getExposureNotificationStatistics = async () => {
+  return callGetBridgeData(DATA_TYPE.EXPOSURE_STATISTICS);
+};
+
 const setDiagnosisTimestamp = async timestamp => {
   await callNativeFunction('setBridgeData', DATA_TYPE.FILLED_DIAGNOSIS, {
     timestamp
@@ -108,11 +112,11 @@ const handleUploadHistoricalDataResponse = ({ result }) => {
   });
 };
 
-const handleExposureSummary = ({ exposureSummary }) => {
+const handleExposureSummary = riskLevel => {
   const store = StoreRegistry.getStore();
   store.dispatch({
-    exposureSummary,
-    type: EXPOSURE_SUMMARY_FETCHED
+    riskLevel,
+    type: NATIVE_DATA_FETCH_EXPOSURE_NOTIFICATION_STATISTICS_SUCCESS
   });
 };
 
@@ -122,7 +126,7 @@ const callBridgeDataHandler = cond([
     equals(DATA_TYPE.HISTORICAL_DATA),
     always(handleUploadHistoricalDataResponse)
   ],
-  [equals(DATA_TYPE.EXPOSURE_SUMMARY), always(handleExposureSummary)]
+  [equals(DATA_TYPE.EXPOSURE_STATISTICS), always(handleExposureSummary)]
 ]);
 
 const onBridgeData = (dataType, dataString) => {
@@ -146,6 +150,7 @@ export default {
   setDiagnosisTimestamp,
   setPin,
   setServicesState,
+  getExposureNotificationStatistics,
   getNotification,
   clearBluetoothData
 };
