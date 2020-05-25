@@ -8,6 +8,7 @@ import {
   Daily,
   DailyData,
   Diagnosis,
+  Error,
   Home,
   HowItWorks,
   IAmSick,
@@ -153,6 +154,7 @@ function App() {
                 path={Routes.UploadHistoricalData}
                 component={UploadHistoricalData}
               />
+              <Route exact path={Routes.Error} component={Error} />
             </>
           )}
           <Route render={() => <Redirect to={Routes.Home} />} />

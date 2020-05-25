@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import { useHistory } from 'react-router-dom';
 import { Container, Content, View } from '../../theme/grid';
 import { Header, BottomNavigation, Collapse, Input } from '../../components';
 import {
@@ -14,14 +15,18 @@ import {
   Watermark,
   Highlight
 } from './FaqPage.styled';
-import { fetchFaq } from '../../store/actions/externalData';
+import { fetchFaq, clearError } from '../../store/actions/externalData';
 import SearchIcon from '../../assets/img/icons/lupa.svg';
 import Url from '../../components/Url';
 import useLoaderContext from '../../hooks/useLoaderContext';
 import search from '../../utils/faqSearcher';
+import Routes from '../../routes';
 
 const FaqPage = () => {
-  const { faqData, isFetching } = useSelector(state => state.externalData);
+  const history = useHistory();
+  const { faqData, isFetching, error } = useSelector(
+    state => state.externalData
+  );
   const { setLoader } = useLoaderContext();
   const dispatch = useDispatch();
   const [filterText, setFilterText] = useState('');
@@ -35,10 +40,15 @@ const FaqPage = () => {
   }, [isFetching, setLoader]);
 
   useEffect(() => {
-    if (!faqData) {
+    if (!faqData && !error) {
       dispatch(fetchFaq());
     }
-  }, [faqData, dispatch]);
+  }, [faqData, error, dispatch]);
+
+  if (error) {
+    dispatch(clearError());
+    history.push(Routes.Error);
+  }
 
   if (!faqData) {
     return null;

@@ -8,6 +8,10 @@ export const resetExternalData = () => dispatch => {
   dispatch({ type: types.EXTERNAL_DATA_RESETED });
 };
 
+export const clearError = () => dispatch => {
+  dispatch({ type: types.CLEAR_ERROR });
+};
+
 export const fetchFaq = () => dispatch => {
   dispatch({ type: types.EXTERNAL_DATA_REQUESTED });
 
@@ -61,4 +65,3 @@ export const fetchAdvices = () => dispatch => {
     }
   );
 };
-
