@@ -1,8 +1,9 @@
 import React from 'react';
 import { Button } from '../Button';
+import { Color } from '../../theme/colors';
 import { ButtonWrapper, IconWrapper, Title, Text } from './ResultView.styled';
 
-const ResultView = ({ icon, title, text, buttons }) => {
+const ResultView = ({ icon, title, text, buttons, colorTitle }) => {
   const renderButtons = buttons.map(button => (
     <Button
       key={button.text}
@@ -16,11 +17,15 @@ const ResultView = ({ icon, title, text, buttons }) => {
       <IconWrapper>
         <img src={icon} alt={title} />
       </IconWrapper>
-      <Title>{title}</Title>
+      <Title color={colorTitle}>{title}</Title>
       <Text>{text}</Text>
       <ButtonWrapper>{renderButtons}</ButtonWrapper>
     </>
   );
+};
+
+ResultView.defaultProps = {
+  color: Color.lightBlack
 };
 
 export default ResultView;

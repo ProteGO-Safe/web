@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import reactStringReplace from 'react-string-replace';
 import { useDispatch, useSelector } from 'react-redux';
-
+import { useHistory } from 'react-router-dom';
 import Header from '../../components/Header/Header';
 import { BottomNavigation } from '../../components/BottomNavigation';
 import { Collapse } from '../../components';
@@ -11,12 +11,14 @@ import { Title } from './Hospitals.styled';
 import PhoneNumber from '../../components/PhoneNumber';
 import './HospitalsList.scss';
 import useLoaderContext from '../../hooks/useLoaderContext';
-import { fetchHospitals } from '../../store/actions/externalData';
+import Routes from '../../routes';
+import { fetchHospitals, clearError } from '../../store/actions/externalData';
 
 const HospitalsList = () => {
+  const history = useHistory();
   const dispatch = useDispatch();
 
-  const { hospitalsData, isFetching } = useSelector(
+  const { hospitalsData, isFetching, error } = useSelector(
     state => state.externalData
   );
   const { setLoader } = useLoaderContext();
@@ -32,16 +34,21 @@ const HospitalsList = () => {
   }, [isFetching, setLoader]);
 
   useEffect(() => {
-    if (!hospitalsData) {
+    if (!hospitalsData && !error) {
       dispatch(fetchHospitals());
     }
-  }, [hospitalsData, dispatch]);
+  }, [hospitalsData, error, dispatch]);
 
   const renderAddressLine = address => {
     return reactStringReplace(address, phoneRegex, (match, i) => (
       <PhoneNumber key={i}>{match}</PhoneNumber>
     ));
   };
+
+  if (error) {
+    dispatch(clearError());
+    history.push(Routes.Error);
+  }
 
   if (!hospitalsData) {
     return null;

@@ -4,7 +4,8 @@ import {
   EXTERNAL_DATA_REQUESTED,
   EXTERNAL_DATA_FAILURE,
   FETCH_HOSPITALS_SUCCESS,
-  FETCH_ADVICES_SUCCESS
+  FETCH_ADVICES_SUCCESS,
+  CLEAR_ERROR
 } from '../../types/externalData';
 
 const INITIAL_STATE = {
@@ -20,6 +21,11 @@ const faqReducer = (state = INITIAL_STATE, action) => {
     case EXTERNAL_DATA_RESETED:
       return {
         ...INITIAL_STATE
+      };
+    case CLEAR_ERROR:
+      return {
+        ...state,
+        error: false
       };
     case EXTERNAL_DATA_REQUESTED:
       return {

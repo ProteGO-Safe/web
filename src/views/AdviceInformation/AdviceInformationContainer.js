@@ -1,18 +1,22 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { useHistory } from 'react-router-dom';
 import { Container, Content, View } from '../../theme/grid';
 import { Header, BottomNavigation } from '../../components';
 import AdviceInformation from './AdviceInformation';
-
 import IconAdviceHome from '../../assets/img/icons/zostan-w-domu.svg';
 import IconAdvicePhone from '../../assets/img/icons/seniorzy.svg';
 import IconAdviceCountry from '../../assets/img/icons/przyjazd.svg';
 import IconAdviceNote from '../../assets/img/icons/dziennik.svg';
-import { fetchAdvices } from '../../store/actions/externalData';
+import { fetchAdvices, clearError } from '../../store/actions/externalData';
 import useLoaderContext from '../../hooks/useLoaderContext';
+import Routes from '../../routes';
 
 const AdviceInformationContainer = () => {
-  const { advicesData, isFetching } = useSelector(state => state.externalData);
+  const history = useHistory();
+  const { advicesData, isFetching, error } = useSelector(
+    state => state.externalData
+  );
   const { setLoader } = useLoaderContext();
   const dispatch = useDispatch();
 
@@ -25,10 +29,10 @@ const AdviceInformationContainer = () => {
   }, [isFetching, setLoader]);
 
   useEffect(() => {
-    if (!advicesData) {
+    if (!advicesData && !error) {
       dispatch(fetchAdvices());
     }
-  }, [advicesData, dispatch]);
+  }, [advicesData, error, dispatch]);
 
   const tipsStatic = [
     {
@@ -51,6 +55,11 @@ const AdviceInformationContainer = () => {
         'Regularnie uzupełniaj zakładkę [url]MÓJ DZIENNIK ZDROWIA|/daily[url]: zapisuj w aplikacji objawy i temperaturę ciała.'
     }
   ];
+
+  if (error) {
+    dispatch(clearError());
+    history.push(Routes.Error);
+  }
 
   if (!advicesData) {
     return null;
