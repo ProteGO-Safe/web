@@ -13,17 +13,20 @@ import UploadInProgress from './components/UploadInProgress/UploadInProgress';
 import { getBanData, createErrorMessage } from './helpers/ban-pin-tries';
 
 const UploadHistoricalData = () => {
+  const MAX_UPLOAD_TIME = 60;
   const dispatch = useDispatch();
   const history = useHistory();
   const { name: userName } = useSelector(state => state.user);
   const {
-    uploadHistoricalDataState: { status, unsuccessfulAttempts } = {
-      status: uploadState.EMPTY
+    uploadHistoricalDataState: { status, date, unsuccessfulAttempts } = {
+      status: uploadState.EMPTY,
+      date: null
     }
   } = useSelector(state => state.app);
 
   const [pin, setPin] = useState('');
   const [banData, setBanData] = useState(null);
+  const [isUploading, setIsUploading] = useState(false);
 
   useEffect(() => {
     if (unsuccessfulAttempts) {
@@ -42,6 +45,18 @@ const UploadHistoricalData = () => {
     return () => {};
   }, [banData, unsuccessfulAttempts]);
 
+  useEffect(() => {
+    const dateNow = new Date();
+    const endUpload = date + MAX_UPLOAD_TIME * 1000;
+    setIsUploading(dateNow < endUpload);
+    const timeout = dateNow < endUpload ? endUpload - dateNow : 0;
+    const timer = setTimeout(() => {
+      setIsUploading(false);
+    }, timeout);
+
+    return () => clearTimeout(timer);
+  }, [date]);
+
   const uploadData = () => {
     const data = {
       pin
@@ -53,7 +68,7 @@ const UploadHistoricalData = () => {
     dispatch(endUploadHistoricalData()).then(history.push(Routes.Home));
   };
 
-  if (status === uploadState.REQUESTED) {
+  if (status === uploadState.REQUESTED && isUploading) {
     return <UploadInProgress />;
   }
 
