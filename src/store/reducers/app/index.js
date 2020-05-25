@@ -14,6 +14,7 @@ const INITIAL_STATE = {
   startScreenShowed: false,
   uploadHistoricalDataState: {
     status: uploadState.EMPTY,
+    date: null,
     unsuccessfulAttempts: []
   }
 };
@@ -40,7 +41,8 @@ const appReducer = (state = INITIAL_STATE, action) => {
         ...state,
         uploadHistoricalDataState: {
           ...state.uploadHistoricalDataState,
-          status: uploadState.REQUESTED
+          status: uploadState.REQUESTED,
+          date: new Date().getTime()
         }
       };
     case UPLOAD_HISTORICAL_DATA_ENDED:
