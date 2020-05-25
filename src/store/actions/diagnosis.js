@@ -12,12 +12,6 @@ export const diagnosisFetchSuccess = ({ data }) => ({
   type: types.DIAGNOSIS_FETCH_SUCCESS
 });
 
-export const diagnosisFetchError = ({ message, status }) => ({
-  message,
-  status,
-  type: types.DIAGNOSIS_FETCH_ERROR
-});
-
 export function getDiagnosis(data) {
   return async dispatch => {
     dispatch(diagnosisFetchRequested({ data }));

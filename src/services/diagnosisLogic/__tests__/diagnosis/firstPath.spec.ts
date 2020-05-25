@@ -1,6 +1,6 @@
-import { getDiagnosis } from '../diagnosisLogic';
 import firstAnswer from './responses/responses.json';
 import query from './query/query.json';
+import { getDiagnosis } from '../../diagnosisLogic';
 
 describe('First diagnosi path with no sympoms', () => {
   it('should return disease question', () => {

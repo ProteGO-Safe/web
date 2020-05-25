@@ -69,7 +69,7 @@ const getFirstQuestion = () => {
 
 export const getDiagnosis = (query: QueryObject) => {
   if (!query.sex || !query.age) {
-    return null;
+    throw new Error('sex and age are required');
   }
   if (!query.evidence.length) {
     return getFirstQuestion();

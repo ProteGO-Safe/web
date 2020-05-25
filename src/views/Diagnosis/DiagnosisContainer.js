@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
 import { getDiagnosis, clearDiagnosis } from '../../store/actions/diagnosis';
-import { getTriage } from '../../store/actions/triage';
+import { fetchTriage } from '../../store/actions/triage';
 
 import Diagnosis from './Diagnosis';
 import { Summary } from './components/Summary';
@@ -52,7 +52,7 @@ const DiagnosisContainer = () => {
         age,
         evidence
       };
-      dispatch(getTriage(data));
+      dispatch(fetchTriage(data));
     }
     // eslint-disable-next-line
   }, [inProgress, evidence]);

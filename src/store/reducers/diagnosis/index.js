@@ -1,7 +1,6 @@
 import {
   DIAGNOSIS_FETCH_REQUESTED,
   DIAGNOSIS_FETCH_SUCCESS,
-  DIAGNOSIS_FETCH_ERROR,
   DIAGNOSIS_CLEAR_REQUESTED
 } from '../../types/diagnosis';
 
@@ -46,11 +45,6 @@ const diagnosisReducer = (state = INITIAL_STATE, action) => {
           })
         };
       })();
-    case DIAGNOSIS_FETCH_ERROR:
-      return {
-        ...state,
-        isLoading: false
-      };
     case DIAGNOSIS_CLEAR_REQUESTED:
       return {
         ...state,

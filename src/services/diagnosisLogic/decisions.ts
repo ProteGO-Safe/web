@@ -1,33 +1,9 @@
 import {
   QueryObject,
-  Evidence,
   Decisions,
-  AnswerOption,
   FINISH_FLAG
 } from './diagnosis.types';
-
-const findEvidenceByIds = (
-  evidence: Evidence[],
-  ids: string[]
-): Array<Evidence | undefined> => {
-  return ids.map(id => {
-    return evidence.find(info => info.id === id);
-  });
-};
-
-const isPresent = (answer?: Evidence) => {
-  if (!answer) {
-    return false;
-  }
-  return answer.choice_id === AnswerOption.PRESENT;
-};
-
-const isAbsent = (answer?: Evidence) => {
-  if (!answer) {
-    return false;
-  }
-  return answer.choice_id === AnswerOption.ABSENT;
-};
+import { findEvidenceByIds, isAbsent, isPresent } from './evidenceFinder';
 
 const decisions: Decisions = {
   p22: () => 's2',
@@ -52,7 +28,7 @@ const decisions: Decisions = {
     if (isAbsent(fever) && isPresent(cough) && isAbsent(shortnessBreath)) {
       return 's12';
     }
-    if (isAbsent(fever) && isAbsent(cough)  && isPresent(shortnessBreath)) {
+    if (isAbsent(fever) && isAbsent(cough) && isPresent(shortnessBreath)) {
       return 's12';
     }
     return 's5';
@@ -85,11 +61,12 @@ const decisions: Decisions = {
       's_14'
     ]);
     if (
-      isPresent(fever) 
-      && isPresent(feverTemp) 
-      && isAbsent(rapidly)
-      && isAbsent(fastBreathing) 
-      && isAbsent(bloodCough)) {
+      isPresent(fever) &&
+      isPresent(feverTemp) &&
+      isAbsent(rapidly) &&
+      isAbsent(fastBreathing) &&
+      isAbsent(bloodCough)
+    ) {
       return 's21';
     }
     if (
