@@ -30,9 +30,9 @@ const GroupMultiple = ({ text, items }) => {
     items.forEach(item => setFieldValue(item.id, VALUE_ABSENT));
   };
 
-  const someSelected = Object.keys(values).some(
-    answer => values[answer] === VALUE_PRESENT
-  );
+  const someSelected =
+    Object.keys(values).some(answer => values[answer] === VALUE_PRESENT) ||
+    otherSelected;
 
   return (
     <>
