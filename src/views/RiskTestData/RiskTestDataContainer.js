@@ -4,7 +4,7 @@ import { useParams } from 'react-router-dom';
 import moment from 'moment';
 
 import RiskTestData from './RiskTestData';
-import triageLevelResolver from '../../utils/triage';
+import { TRIAGE_LEVEL } from './RiskTestData.constants';
 
 const dateFormat = 'D-MM-YYYY';
 
@@ -22,13 +22,15 @@ const RiskTestDataContainer = () => {
     return choices.find(_obj => _obj.id === choiceId).label;
   };
 
+  const { riskTestInformation } = TRIAGE_LEVEL[triageLevel];
+
   return (
     <RiskTestData
       day={day.format(dateFormat)}
       questions={allQuestions}
       idToChoiceResolver={idToChoiceResolver}
       isToday={isToday}
-      triageLevelInformation={triageLevelResolver(triageLevel)}
+      triageLevelInformation={riskTestInformation}
     />
   );
 };

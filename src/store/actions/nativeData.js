@@ -44,6 +44,21 @@ export function fetchServicesStatus() {
   };
 }
 
+export const fetchExposureNotificationStatisticsSuccess = riskLevel => ({
+  riskLevel,
+  type: types.NATIVE_DATA_FETCH_EXPOSURE_NOTIFICATION_STATISTICS_SUCCESS
+});
+
+export function fetchExposureNotificationStatistics() {
+  return dispatch => {
+    nativeBridge.getExposureNotificationStatistics().then(riskLevel => {
+      if (riskLevel) {
+        dispatch(fetchExposureNotificationStatisticsSuccess(riskLevel));
+      }
+    });
+  };
+}
+
 export const hideNotificationSuccess = () => ({
   type: types.NATIVE_DATA_HIDE_NOTIFICATION_SUCCESS
 });

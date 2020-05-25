@@ -3,7 +3,7 @@ import { InfoContainer } from './TriageRiskInformation.styled';
 import useTriage from '../../hooks/useTriage';
 
 const TriageRiskInformation = () => {
-  const { isDangerous, color, content } = useTriage();
+  const { isDangerous = false, color, content } = useTriage();
 
   return (
     isDangerous && (
