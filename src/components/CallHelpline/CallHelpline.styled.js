@@ -39,6 +39,7 @@ export const Button = styled.a`
 `;
 
 export const Content = styled.div`
+  position: relative;
   display: flex;
   flex-flow: wrap row;
   width: calc(100% - 78px);
@@ -48,6 +49,14 @@ export const Content = styled.div`
   color: ${resolveDefaultColor(Color.lightBlack)};
   @media screen and (max-width: 370px) {
     width: calc(100% - 56px);
+  }
+  img {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    height: 14px;
+    width: 14px;
+    margin-top: -7px;
   }
 `;
 
@@ -62,6 +71,8 @@ export const Icon = styled(ContactIcon)`
     margin-right: 20px;
   }
   &.small {
+    width: 36px;
+    height: 36px;
     margin-right: 0;
   }
 `;
