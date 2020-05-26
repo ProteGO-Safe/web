@@ -70,7 +70,7 @@ export const Highlight = styled.mark`
 `;
 
 export const Watermark = styled.span`
-  margin-top: -32px;
+  width: 100%;
   font-size: 7px;
   color: ${Color.watermark};
 `;
