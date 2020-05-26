@@ -8,6 +8,7 @@ import useSupportExposureNotificationTracing from '../../../../hooks/useSupportE
 const ExposureNotificationWarningContainer = () => {
   const {
     areEnableAllServices,
+    showServiceWarning,
     handleEnableServices
   } = useSupportExposureNotificationTracing();
 
@@ -17,7 +18,7 @@ const ExposureNotificationWarningContainer = () => {
 
   return (
     <>
-      {!areEnableAllServices && (
+      {showServiceWarning && (
         <ExposureNotificationWarning enableServices={handleEnableServices} />
       )}
       <FakeIcon icon={WifiIcon} />

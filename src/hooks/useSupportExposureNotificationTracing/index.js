@@ -22,6 +22,10 @@ const useSupportExposureNotificationTracing = () => {
   const isExposureNotificationEnabled =
     exposureNotificationStatus === EXPOSURE_NOTIFICATION_STATUS.OFF;
 
+  const showServiceWarning =
+    exposureNotificationStatus !== EXPOSURE_NOTIFICATION_STATUS.NOT_SUPPORTED &&
+    !areEnableAllServices;
+
   const handleEnableServices = () => {
     const servicesState = {};
     if (!(isIOSWebView() || isLocationOn)) {
@@ -41,7 +45,8 @@ const useSupportExposureNotificationTracing = () => {
 
   return {
     areEnableAllServices,
-    handleEnableServices
+    handleEnableServices,
+    showServiceWarning
   };
 };
 
