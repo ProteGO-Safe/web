@@ -50,11 +50,6 @@ jobs:
           GITHUB_CONTEXT: ${{ toJSON(github) }}
         if: env.ENVIRONMENT != 'PROD'
 
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v1
-        with:
-          node-version: ${{ matrix.node-version }}
-
       - run: yarn audit --groups dependencies
       - run: yarn install
       - run: yarn build
@@ -135,7 +130,6 @@ jobs:
       - name: Sed Firebase.json
         run: sed -ie 's|site_to_sed|${{ env.SITE_PROJECT }}|g' firebase.json
         if: ( env.ENVIRONMENT == 'STAGE' || env.ENVIRONMENT == 'PROD' || env.ENVIRONMENT == 'DEV' )
-
 
       - name: Deploy to Firebase
         if: ( env.ENVIRONMENT == 'STAGE' || env.ENVIRONMENT == 'PROD' || env.ENVIRONMENT == 'DEV' )
