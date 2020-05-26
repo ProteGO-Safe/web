@@ -3,6 +3,7 @@
 
 .view__home {
   @include viewBaseStyles();
+  padding-bottom: 104px!important;
 
   .banner {
     grid-area: banner;

@@ -21,7 +21,7 @@
     background-color: $white;
     box-shadow: -3px -3px 6px #00000029;
     transition: all 0.2s linear;
-    z-index: 2;
+    z-index: 99;
 
     @media screen and (min-width: 556px) {
       width: 320px;
