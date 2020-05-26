@@ -4,14 +4,19 @@ import {
   Badge,
   Container,
   Smile,
-  MakeDiagnosisButton,
   TriageRiskInformation,
   TriageInfoBorder,
   BottomNavigation,
   TriageRecommendations
 } from '../../components';
 import './Home.scss';
-import { ExposureNotificationWarning } from './components';
+import {
+  BottomMakeDiagnosisButton,
+  ExposureNotificationWarning,
+  TopMakeDiagnosisButton,
+  MoreInformation,
+  MakeDailyButton
+} from './components';
 
 const Home = () => {
   return (
@@ -21,21 +26,13 @@ const Home = () => {
         <ExposureNotificationWarning />
         <Badge />
         <Smile />
-        <MakeDiagnosisButton />
+        <TopMakeDiagnosisButton />
         <TriageRiskInformation />
         <TriageInfoBorder />
         <TriageRecommendations />
-        <div className="more-information">
-          <h4>Więcej informacji</h4>
-          <p>
-            Aktualne informacje na temat sytuacji epidemicznej oraz inne porady
-            i wskazówki, znajdziesz na www.gov.pl/koronawirus
-          </p>
-          <small>
-            Wyniki Testu służą wyłącznie celom informacyjnym oraz edukacyjnym.
-            Nie traktuj ich jako konsultacji lub diagnozy lekarskiej.
-          </small>
-        </div>
+        <MoreInformation />
+        <BottomMakeDiagnosisButton />
+        <MakeDailyButton />
       </Container>
       <BottomNavigation />
     </div>

@@ -18,7 +18,6 @@ export { InfoIcon } from './InfoIcon';
 export { Input } from './Input';
 export { InputSlider } from './InputSlider';
 export { Loader } from './Loader';
-export { MakeDiagnosisButton } from './MakeDiagnosisButton';
 export { Menu } from './Menu';
 export { MenuButton } from './MenuButton';
 export { Modal } from './Modal';
