@@ -16,7 +16,7 @@ export const IconButton = styled.div`
     height: auto;
     margin-right: 24px;
   }
-  
+
   &.small {
     padding: 11px;
   }
