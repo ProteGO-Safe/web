@@ -6,11 +6,10 @@ on:
     types:
       - created
   push:
-    branches:
-      - '*'
     tags-ignore:
-      - 'pre-*'
-      - 'release-*'
+      - '**'
+    branches:
+      - '**'
 
 jobs:
   build:
@@ -23,17 +22,24 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Set env to DEV
-        if: ( startsWith(github.ref, 'refs/heads/dev-') && !contains(github.ref, 'pre') && github.repository_owner != 'ProteGO-Safe' )
+        if: github.repository_owner != 'ProteGO-Safe'
+            && startsWith(github.ref, 'refs/heads/release/')
+            && github.event_name == 'push'
         run: |
           echo "::set-env name=ENVIRONMENT::DEV"
 
       - name: Set env to STAGE
-        if: ( startsWith(github.ref, 'refs/tags/pre-') && !contains(github.ref, 'dev') && github.repository_owner != 'ProteGO-Safe' && github.event.release.target_commitish == 'master' )
+        if: startsWith(github.ref, 'refs/tags/')
+            && github.repository_owner != 'ProteGO-Safe'
+            && startsWith( github.event.release.target_commitish, 'release' )
+            && github.event_name == 'release'
         run: |
           echo "::set-env name=ENVIRONMENT::STAGE"
 
       - name: Set env to PROD
-        if: ( startsWith(github.ref, 'refs/tags/release-') && !contains(github.ref, 'pre') && !contains(github.ref, 'dev') && github.repository_owner == 'ProteGO-Safe' && github.event.release.target_commitish == 'master' )
+        if: startsWith(github.ref, 'refs/tags/')
+            && ( github.event.release.target_commitish == 'master' || startsWith( github.event.release.target_commitish, 'release/3*' ))
+            && github.event_name == 'release'
         run: |
           echo "::set-env name=ENVIRONMENT::PROD"
 
@@ -50,11 +56,8 @@ jobs:
           node-version: ${{ matrix.node-version }}
 
       - run: yarn audit --groups dependencies
-
       - run: yarn install
-
       - run: yarn build
-
       - run: cp firebase.json build/
         if: ( env.ENVIRONMENT == 'STAGE' || env.ENVIRONMENT == 'PROD' || env.ENVIRONMENT == 'DEV' )
 
@@ -68,26 +71,32 @@ jobs:
   deploy:
     needs: build
     runs-on: ubuntu-latest
-    if: ${{ startsWith(github.ref, 'refs/tags/release-') || startsWith(github.ref, 'refs/tags/rc-')  || startsWith(github.ref, 'refs/heads/dev-') }}
+    if: ${{ startsWith(github.ref, 'refs/tags') || startsWith(github.ref, 'refs/heads/release/') }}
     steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v2
 
       - name: Set env to DEV
-        if: ( startsWith(github.ref, 'refs/heads/dev-') && !contains(github.ref, 'pre') && github.repository_owner != 'ProteGO-Safe' )
+        if: github.repository_owner != 'ProteGO-Safe'
+            && startsWith(github.ref, 'refs/heads/release/')
+            && github.event_name == 'push'
         run: |
           echo "::set-env name=ENVIRONMENT::DEV"
 
       - name: Set env to STAGE
-        if: ( startsWith(github.ref, 'refs/tags/pre-') && !contains(github.ref, 'dev') && github.repository_owner != 'ProteGO-Safe' && github.event.release.target_commitish == 'master' )
+        if: startsWith(github.ref, 'refs/tags/')
+            &&  github.repository_owner != 'ProteGO-Safe'
+            && startsWith( github.event.release.target_commitish, 'release' )
+            && github.event_name == 'release'
         run: |
           echo "::set-env name=ENVIRONMENT::STAGE"
 
       - name: Set env to PROD
-        if: ( startsWith(github.ref, 'refs/tags/release-') && !contains(github.ref, 'pre') && !contains(github.ref, 'dev') && github.repository_owner == 'ProteGO-Safe' && github.event.release.target_commitish == 'master' )
+        if: startsWith(github.ref, 'refs/tags/')
+            && ( github.event.release.target_commitish == 'master' || startsWith( github.event.release.target_commitish, 'release/3*' ))
+            && github.event_name == 'release'
         run: |
           echo "::set-env name=ENVIRONMENT::PROD"
-
-      - name: Checkout Repo
-        uses: actions/checkout@v2
 
       - name: Download Artifact
         uses: actions/download-artifact@master
@@ -107,12 +116,29 @@ jobs:
           SECRET_ENV: "${{ env.ENVIRONMENT }}_FIREBASE_HOSTING_SAFE"
           PROJECT_ENV: "${{ env.ENVIRONMENT }}_FIREBASE_PROJECT"
           SITE_ENV: "${{ env.ENVIRONMENT }}_FIREBASE_SITE"
+        if: env.ENVIRONMENT == 'STAGE' || env.ENVIRONMENT == 'PROD' || env.ENVIRONMENT == 'DEV'
+
+      - name: Set SITE_PROJECT for V4 PROD
+        run: |
+          echo "::set-env name=SITE_PROJECT::${{ secrets[env.SITE_ENV] }}-v4"
+        env:
+          SITE_ENV: "${{ env.ENVIRONMENT }}_FIREBASE_SITE"
+        if: ( env.ENVIRONMENT == 'PROD' && github.event.release.target_commitish == 'master' )
+
+      - name: Set SITE_PROJECT for V3 in PROD
+        run: |
+          echo "::set-env name=SITE_PROJECT::${{ secrets[env.SITE_ENV] }}"
+        env:
+          SITE_ENV: "${{ env.ENVIRONMENT }}_FIREBASE_SITE"
+        if: ( env.ENVIRONMENT == 'PROD' && startsWith( github.event.release.target_commitish, 'release/3*' ) )
 
       - name: Sed Firebase.json
-        run: sed -ie 's|site_to_sed|${{ env.SECRET_PROJECT }}|g' firebase.json
+        run: sed -ie 's|site_to_sed|${{ env.SITE_PROJECT }}|g' firebase.json
+        if: ( env.ENVIRONMENT == 'STAGE' || env.ENVIRONMENT == 'PROD' || env.ENVIRONMENT == 'DEV' )
+
 
       - name: Deploy to Firebase
-        if: env.ENVIRONMENT == 'STAGE' || env.ENVIRONMENT == 'PROD' || env.ENVIRONMENT == 'DEV'
+        if: ( env.ENVIRONMENT == 'STAGE' || env.ENVIRONMENT == 'PROD' || env.ENVIRONMENT == 'DEV' )
         uses: w9jds/firebase-action@master
         with:
           args: deploy --only hosting --project $SECRET_PROJECT
