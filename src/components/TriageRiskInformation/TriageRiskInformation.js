@@ -32,7 +32,7 @@ const TriageRiskInformation = () => {
         <CallHelpline
           hideText={hideText}
           color={color}
-          phoneNumber="0 22 000 111 222"
+          phoneNumber="222 500 115"
         />
       </InfoContainer>
     )
