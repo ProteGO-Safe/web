@@ -1,6 +1,6 @@
-import smileGreen from '../../assets/img/icons/buzka-zielona.svg';
-import smileYellow from '../../assets/img/icons/buzka-zolta.svg';
-import smileRed from '../../assets/img/icons/buzka-czerwona.svg';
+import { GreenSmile } from '../../assets/img/icons/buzka-zielona';
+import { YellowSmile } from '../../assets/img/icons/buzka-zolta';
+import { RedSmile } from '../../assets/img/icons/buzka-czerwona';
 import { Color } from '../../theme/colors';
 import { NoRisk } from '../../components/TriageRecommendations/components/NoRisk';
 import { Quarantine } from '../../components/TriageRecommendations/components/Quarantine';
@@ -14,7 +14,7 @@ export const TRIAGE_LEVEL = {
     content:
       'Jeśli wracasz do Polski z zagranicy lub mieszkasz z osobą skierowaną na kwarantannę po dniu 31.03.2020, zostaniesz automatycznie skierowany|skierowana na kwarantannę (o ile pozwala na to twój stan zdrowia).',
     color: null,
-    icon: smileGreen,
+    IconComponent: GreenSmile,
     riskGroup: 'Niskie ryzyko infekcji',
     riskLevel: 1,
     Recommendation: NoRisk
@@ -23,7 +23,7 @@ export const TRIAGE_LEVEL = {
     content:
       'Jeśli wracasz do Polski z zagranicy lub mieszkasz z osobą skierowaną na kwarantannę po dniu 31.03.2020, zostaniesz automatycznie skierowany|skierowana na kwarantannę (o ile pozwala na to twój stan zdrowia).',
     color: null,
-    icon: smileGreen,
+    IconComponent: GreenSmile,
     riskGroup: 'Niskie ryzyko infekcji',
     riskLevel: 1,
     Recommendation: SelfMonitoring
@@ -31,7 +31,7 @@ export const TRIAGE_LEVEL = {
   quarantine: {
     content: 'Jeśli twoje objawy wydają się niepokojące – reaguj.',
     color: Color.info,
-    icon: smileYellow,
+    IconComponent: YellowSmile,
     riskLevel: 2,
     riskGroup: 'Średnie ryzyko infekcji',
     Recommendation: Quarantine
@@ -40,7 +40,7 @@ export const TRIAGE_LEVEL = {
     content:
       'Bezzwłocznie telefonicznie powiadom powiatową stację sanitarno-epidemiologiczną i zgłoś się bezpośrednio do oddziału zakaźnego lub oddziału obserwacyjno-zakaźnego. Unikaj kontaktu z innymi osobami.',
     color: Color.danger,
-    icon: smileRed,
+    IconComponent: RedSmile,
     riskLevel: 3,
     riskGroup: 'Wysokie ryzyko infekcji',
     Recommendation: IsolationCall
@@ -49,7 +49,7 @@ export const TRIAGE_LEVEL = {
     content:
       'Bezzwłocznie telefonicznie powiadom powiatową stację sanitarno-epidemiologiczną i zgłoś się bezpośrednio do oddziału zakaźnego lub oddziału obserwacyjno-zakaźnego. Unikaj kontaktu z innymi osobami.',
     color: Color.danger,
-    icon: smileRed,
+    IconComponent: RedSmile,
     riskLevel: 3,
     riskGroup: 'Wysokie ryzyko infekcji',
     Recommendation: IsolationAmbulance
@@ -60,7 +60,7 @@ export const TRIAGE_LEVEL = {
       '\n' +
       'Jeśli uważasz, że twój stan zdrowia jest poważny i twoje objawy szybko się pogarszają, udaj się do najbliższego Szpitalnego Oddziału Ratunkowego (zadzwoń tam wcześniej, jeśli to możliwe) lub zadzwoń na numer alarmowy.',
     color: Color.danger,
-    icon: smileRed,
+    IconComponent: RedSmile,
     riskLevel: 3,
     riskGroup: 'Wysokie ryzyko infekcji',
     Recommendation: CallDoctor
@@ -72,7 +72,7 @@ export const EXPOSURE_TRIAGE_LEVEL = {
     color: Color.danger,
     content:
       'Monitoruj swój stan zdrowia - jeśli Twój stan się pogorszy, zgłoś się do oddziału zakaźnego lub oddziału obserwacyjno-zakaźnego. Unikaj kontkatu z innymi osobami',
-    icon: smileRed,
+    IconComponent: RedSmile,
     isDangerous: true,
     isExposure: true,
     riskGroup: 'Średnie ryzyko infekcji',
@@ -82,7 +82,7 @@ export const EXPOSURE_TRIAGE_LEVEL = {
     color: Color.danger,
     content:
       'Bezwłocznie, za pomocą ankiety online lub telefonicznie zgłoś się do oddziału zakaźnego lub oddziału obserwacyjno-zakaźnego. Unikaj kontkatu z innymi osobami',
-    icon: smileRed,
+    IconComponent: RedSmile,
     isDangerous: true,
     isExposure: true,
     riskGroup: 'Wysokie ryzyko infekcji',

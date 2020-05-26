@@ -7,7 +7,7 @@ import {
   IconSmile
 } from './Smile.styled';
 
-const Smile = ({ content, userName, icon }) => {
+const Smile = ({ content, userName, IconComponent }) => {
   return (
     <SmileContainer>
       <UserName>{userName},</UserName>
@@ -16,7 +16,7 @@ const Smile = ({ content, userName, icon }) => {
           <p>{content}</p>
         </Text>
         <IconSmile>
-          <img src={icon} alt={userName} />
+          <IconComponent />
         </IconSmile>
       </TextWrapper>
     </SmileContainer>

@@ -9,7 +9,7 @@ const SmileContainer = () => {
   const { name: userName } = useSelector(state => state.user);
   const filledDays = useFilledDays();
   const lastDate = getLastDate(filledDays);
-  const { isExposure, riskGroup, icon } = useTriage();
+  const { isExposure, riskGroup, IconComponent } = useTriage();
 
   const getContent = () => {
     if (isExposure) {
@@ -32,7 +32,13 @@ const SmileContainer = () => {
       </>
     );
   };
-  return <Smile userName={userName} icon={icon} content={getContent()} />;
+  return (
+    <Smile
+      userName={userName}
+      IconComponent={IconComponent}
+      content={getContent()}
+    />
+  );
 };
 
 export default SmileContainer;
