@@ -7,9 +7,13 @@ import {
 import { EXPOSURE_NOTIFICATION_STATUS } from '../../utils/servicesStatus/servicesStatus.constants';
 
 const defaultTriageLevel = (triageLevel, description, serious) => {
-  const { color, content, icon, Recommendation, riskGroup } = TRIAGE_LEVEL[
-    triageLevel
-  ];
+  const {
+    color,
+    content,
+    IconComponent,
+    Recommendation,
+    riskGroup
+  } = TRIAGE_LEVEL[triageLevel];
 
   const isDangerous =
     triageLevel &&
@@ -18,7 +22,7 @@ const defaultTriageLevel = (triageLevel, description, serious) => {
     color,
     content,
     description,
-    icon,
+    IconComponent,
     isDangerous,
     Recommendation,
     riskGroup,

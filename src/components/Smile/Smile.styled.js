@@ -43,9 +43,7 @@ export const IconSmile = styled.div`
   width: 122px;
   justify-content: center;
   align-items: center;
-  img {
-    display: block;
-    max-width: 100%;
-    height: auto;
+  svg {
+    width: inherit;
   }
 `;
