@@ -70,12 +70,15 @@ const useTriage = () => {
     servicesStatus: { exposureNotificationStatus }
   } = useSelector(state => state.nativeData);
 
-  if (exposureNotificationStatus === !EXPOSURE_NOTIFICATION_STATUS.ON) {
-    return defaultTriageLevel(triageLevel, description, serious);
-  }
-
   const exposureRiskLevel = resolveExposureRiskLevel(riskLevel);
   const triageRiskLevel = resolveTriageRiskLevel(triageLevel);
+
+  if (
+    exposureNotificationStatus === !EXPOSURE_NOTIFICATION_STATUS.ON ||
+    exposureRiskLevel === undefined
+  ) {
+    return defaultTriageLevel(triageLevel, description, serious);
+  }
 
   if (
     triageRiskLevel === RISK_LEVEL_COLOR.GREEN &&
