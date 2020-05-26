@@ -4,14 +4,21 @@ import { InfoBorderContainer } from './TriageInfoBorder.styled';
 import useTriage from '../../hooks/useTriage';
 
 const TriageInfoBorder = () => {
-  const { isDangerous = false, color, description, serious = [] } = useTriage();
+  const {
+    isDangerous = false,
+    isExposure = false,
+    color,
+    description,
+    serious = []
+  } = useTriage();
 
   const renderItem = serious
     .map(_obj => _obj.common_name)
     .map(item => <li key={item}>{item}</li>);
 
   return (
-    isDangerous && (
+    isDangerous &&
+    !isExposure && (
       <InfoBorderContainer color={color}>
         <p className="p1">
           {description}

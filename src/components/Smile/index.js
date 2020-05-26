@@ -1,1 +1,1 @@
-export { default as Smile } from './Smile';
+export { default as Smile } from './SmileContainer';
