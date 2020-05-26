@@ -1,18 +1,20 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useHistory } from 'react-router-dom';
+import { Redirect, useHistory } from 'react-router-dom';
 import { UploadData } from './components/UploadData';
 import {
   endUploadHistoricalData,
   uploadHistoricalData
 } from '../../store/actions/nativeData';
+import UploadInProgress from './components/UploadInProgress/UploadInProgress';
+import useSupportExposureNotificationTracing from '../../hooks/useSupportExposureNotificationTracing';
 import { UploadSuccess } from './components/UploadSuccess';
+import { getBanData, createErrorMessage } from './helpers/ban-pin-tries';
 import { UPLOAD_HISTORICAL_DATA_STATE as uploadState } from '../../store/reducers/app/app.constants';
 import Routes from '../../routes';
-import UploadInProgress from './components/UploadInProgress/UploadInProgress';
-import { getBanData, createErrorMessage } from './helpers/ban-pin-tries';
 
 const UploadHistoricalData = () => {
+  const { areEnableAllServices } = useSupportExposureNotificationTracing();
   const MAX_UPLOAD_TIME = 60;
   const dispatch = useDispatch();
   const history = useHistory();
@@ -79,15 +81,19 @@ const UploadHistoricalData = () => {
     banData && createErrorMessage(banData, unsuccessfulAttempts.length);
   return (
     <>
-      <UploadData
-        disableButton={status === uploadState.REQUESTED}
-        disablePinInput={Boolean(banData && banData.lockdownTime)}
-        errorMessage={getErrorMessage()}
-        onUploadData={uploadData}
-        pin={pin}
-        setPin={setPin}
-        userName={userName}
-      />
+      {areEnableAllServices ? (
+        <UploadData
+          disableButton={status === uploadState.REQUESTED}
+          disablePinInput={Boolean(banData && banData.lockdownTime)}
+          errorMessage={getErrorMessage()}
+          onUploadData={uploadData}
+          pin={pin}
+          setPin={setPin}
+          userName={userName}
+        />
+      ) : (
+        <Redirect to={Routes.Home} />
+      )}
     </>
   );
 };
