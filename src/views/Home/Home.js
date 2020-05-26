@@ -1,7 +1,6 @@
 import React from 'react';
 import {
   Header,
-  Badge,
   Container,
   Smile,
   TriageRiskInformation,
@@ -24,7 +23,6 @@ const Home = () => {
       <Header hideBackButton />
       <Container>
         <ExposureNotificationWarning />
-        <Badge />
         <Smile />
         <TopMakeDiagnosisButton />
         <TriageRiskInformation />
