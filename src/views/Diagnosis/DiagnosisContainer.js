@@ -67,6 +67,10 @@ const DiagnosisContainer = () => {
     return <Information hideInformation={() => setShowInformation(false)} />;
   }
 
+  const isCountryQuestion = () => {
+    return question.items.some(value => value.id === 'p_5');
+  };
+
   return (
     <Diagnosis
       showNavigation={false}
@@ -74,6 +78,7 @@ const DiagnosisContainer = () => {
       question={question}
       evidence={evidence}
       inProgress={inProgress}
+      isCountryQuestion={isCountryQuestion}
       clearDiagnosis={onClearDiagnosis}
     />
   );

@@ -3,7 +3,7 @@ import decisions from './decisions';
 import { RawQuestionObject, QueryObject, FINISH_FLAG } from './diagnosis.types';
 
 enum SpecialQuestion {
-  BEGIN = 'p22'
+  BEGIN = 'p24'
 }
 
 const END_OF_PATH_RESPONSE = {
@@ -13,15 +13,27 @@ const END_OF_PATH_RESPONSE = {
   should_stop: true
 };
 
+const isLocationId = (id: string) => {
+  return id.startsWith('l');
+};
+
+const resolveId = (id: string) => {
+  if (isLocationId(id)) {
+    return 'p5';
+  }
+  return id;
+};
+
 const getQuestionById = (id: string): RawQuestionObject => {
+  const resolvedId = resolveId(id);
   const rawValues = steps.find(question => {
     if (Array.isArray(question.id)) {
-      return question.id.includes(id);
+      return question.id.includes(resolvedId);
     }
-    return question.id === id;
+    return question.id === resolvedId;
   });
   if (!rawValues) {
-    throw new Error(`Step not found. Id: ${id}`);
+    throw new Error(`Step not found. Id: ${resolvedId}`);
   }
   return rawValues;
 };

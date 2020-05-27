@@ -1,4 +1,7 @@
 import { AnswerOption, Evidence } from './diagnosis.types';
+import locations from './locations.json';
+
+const locationsIds = locations.map(value => value.id);
 
 export const findEvidenceByIds = (
   evidences: Evidence[],
@@ -21,4 +24,11 @@ export const isAbsent = (evidence?: Evidence) => {
     return false;
   }
   return evidence.choice_id === AnswerOption.ABSENT;
+};
+
+export const hasPresentAnyLocation = (evidence?: Evidence[]) => {
+  return evidence
+    ?.filter(isPresent)
+    .map(value => value.id)
+    .some(value => locationsIds.includes(value));
 };
