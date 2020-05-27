@@ -28,7 +28,7 @@
 				"choice_id": "absent"
 			},
 			{
-				"id": "p_22",
+				"id": "p_24",
 				"choice_id": "absent"
 			}
 		]
@@ -148,7 +148,7 @@
 				"choice_id": "absent"
 			},
 			{
-				"id": "s_21",
+				"id": "s_24",
 				"choice_id": "absent"
 			}
 		]
@@ -222,7 +222,7 @@
 				"choice_id": "absent"
 			},
 			{
-				"id": "s_21",
+				"id": "s_24",
 				"choice_id": "absent"
 			}
 		]
@@ -660,7 +660,7 @@
 				"choice_id": "absent"
 			},
 			{
-				"id": "s_21",
+				"id": "s_24",
 				"choice_id": "absent"
 			}
 		]
@@ -750,7 +750,7 @@
 				"choice_id": "absent"
 			},
 			{
-				"id": "s_21",
+				"id": "s_24",
 				"choice_id": "absent"
 			}
 		]
@@ -844,7 +844,7 @@
 				"choice_id": "absent"
 			},
 			{
-				"id": "p_5",
+				"id": "l_ac",
 				"choice_id": "present"
 			}
 		]

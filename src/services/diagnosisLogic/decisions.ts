@@ -1,12 +1,13 @@
+import { QueryObject, Decisions, FINISH_FLAG } from './diagnosis.types';
 import {
-  QueryObject,
-  Decisions,
-  FINISH_FLAG
-} from './diagnosis.types';
-import { findEvidenceByIds, isAbsent, isPresent } from './evidenceFinder';
+  findEvidenceByIds,
+  hasPresentAnyLocation,
+  isAbsent,
+  isPresent
+} from './evidenceFinder';
 
 const decisions: Decisions = {
-  p22: () => 's2',
+  p24: () => 's2',
   s2: ({ evidence }: QueryObject) => {
     const [fever, cough, shortnessBreath] = findEvidenceByIds(evidence, [
       's_0',
@@ -14,7 +15,7 @@ const decisions: Decisions = {
       's_2'
     ]);
     if (isAbsent(fever) && isAbsent(cough) && isAbsent(shortnessBreath)) {
-      return 's21';
+      return 's24';
     }
     if (isPresent(fever) && isPresent(cough) && isAbsent(shortnessBreath)) {
       return 's5';
@@ -34,7 +35,7 @@ const decisions: Decisions = {
     return 's5';
   },
   p15: () => FINISH_FLAG,
-  s21: ({ evidence }: QueryObject) => {
+  s24: ({ evidence }: QueryObject) => {
     const [fever, cough] = findEvidenceByIds(evidence, ['s_0', 's_1']);
     if (isPresent(fever) && isPresent(cough)) {
       return 'p5';
@@ -67,7 +68,7 @@ const decisions: Decisions = {
       isAbsent(fastBreathing) &&
       isAbsent(bloodCough)
     ) {
-      return 's21';
+      return 's24';
     }
     if (
       isPresent(feverTemp) ||
@@ -82,11 +83,10 @@ const decisions: Decisions = {
       return FINISH_FLAG;
     }
 
-    return 's21';
+    return 's24';
   },
   p5: ({ evidence }: QueryObject) => {
-    const [travelToCountry] = findEvidenceByIds(evidence, ['p_5']);
-    if (isPresent(travelToCountry)) {
+    if (hasPresentAnyLocation(evidence)) {
       return FINISH_FLAG;
     }
     return 'p15';

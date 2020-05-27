@@ -116,6 +116,36 @@
 					"explanation": null,
 					"id": "p_22",
 					"name": "Długoterminowy pobyt w domu opieki"
+				},
+				{
+					"choices": [
+						{
+							"id": "present",
+							"label": "Tak"
+						},
+						{
+							"id": "absent",
+							"label": "Nie"
+						}
+					],
+					"explanation": null,
+					"id": "p_23",
+					"name": "Cukrzyca"
+				},
+				{
+					"choices": [
+						{
+							"id": "present",
+							"label": "Tak"
+						},
+						{
+							"id": "absent",
+							"label": "Nie"
+						}
+					],
+					"explanation": "Osoba jest uważana za otyłą, gdy jej wskaźnik masy ciała (BMI) przekracza 30.",
+					"id": "p_24",
+					"name": "Otyłość"
 				}
 			],
 			"text": "Zaznacz odpowiedzi, które cię dotyczą",
@@ -292,6 +322,21 @@
 					"explanation": null,
 					"id": "s_21",
 					"name": "Ból gardła"
+				},
+				{
+					"choices": [
+						{
+							"id": "present",
+							"label": "Tak"
+						},
+						{
+							"id": "absent",
+							"label": "Nie"
+						}
+					],
+					"explanation": null,
+					"id": "s_24",
+					"name": "Upośledzony smak lub węch"
 				}
 			],
 			"text": "Czy masz którekolwiek z poniższych objawów?",
@@ -406,8 +451,23 @@
 						}
 					],
 					"explanation": null,
-					"id": "s_3",
-					"name": "Pomiędzy 37.5°C a 40°C"
+					"id": "s_22",
+					"name": "Pomiędzy 37.5°C a 38°C (99.5°F a 100.4°F)"
+				},
+				{
+					"choices": [
+						{
+							"id": "present",
+							"label": "Tak"
+						},
+						{
+							"id": "absent",
+							"label": "Nie"
+						}
+					],
+					"explanation": null,
+					"id": "s_23",
+					"name": "Pomiędzy 38°C a 40°C (100.4°F a 104°F)"
 				},
 				{
 					"choices": [
@@ -422,7 +482,7 @@
 					],
 					"explanation": null,
 					"id": "s_4",
-					"name": "Powyżej 40°C"
+					"name": "Powyżej 40°C (104°F)"
 				},
 				{
 					"choices": [
@@ -465,7 +525,7 @@
 					],
 					"explanation": null,
 					"id": "s_12",
-					"name": "Czy twoje objawy szybko się nasilają?"
+					"name": "Szybkie pogarszanie stanu zdrowia"
 				}
 			],
 			"text": "Czy twoje objawy szybko się nasilają?",
@@ -493,7 +553,7 @@
 					],
 					"explanation": null,
 					"id": "s_13",
-					"name": "Czy masz przyspieszony oddech?"
+					"name": "Przyspieszony oddech"
 				}
 			],
 			"text": "Czy masz przyspieszony oddech?",
@@ -521,7 +581,7 @@
 					],
 					"explanation": null,
 					"id": "s_14",
-					"name": "Czy odkrztuszasz krwistą wydzielinę?"
+					"name": "Odkrztuszanie krwi"
 				}
 			],
 			"text": "Czy odkrztuszasz krwistą wydzielinę?",
@@ -640,6 +700,21 @@
 					"explanation": null,
 					"id": "s_21",
 					"name": "Ból gardła"
+				},
+				{
+					"choices": [
+						{
+							"id": "present",
+							"label": "Tak"
+						},
+						{
+							"id": "absent",
+							"label": "Nie"
+						}
+					],
+					"explanation": null,
+					"id": "s_24",
+					"name": "Upośledzony smak lub węch"
 				}
 			],
 			"text": "Czy masz którekolwiek z poniższych objawów?",
@@ -655,16 +730,7 @@
 			"extras": {},
 			"items": [
 				{
-					"choices": [
-						{
-							"id": "present",
-							"label": "Tak"
-						},
-						{
-							"id": "absent",
-							"label": "Nie"
-						}
-					],
+					"choices": [],
 					"explanation": null,
 					"id": "p_5",
 					"name": "Czy w ciągu ostatnich 14 dni mieszkałaś lub podróżowałaś do kraju z licznymi przypadkami zakażeń koronawirusem?"
@@ -694,8 +760,23 @@
 						}
 					],
 					"explanation": null,
-					"id": "s_3",
-					"name": "Pomiędzy 37.5°C a 40°C"
+					"id": "s_22",
+					"name": "Pomiędzy 37.5°C a 38°C (99.5°F a 100.4°F)"
+				},
+				{
+					"choices": [
+						{
+							"id": "present",
+							"label": "Tak"
+						},
+						{
+							"id": "absent",
+							"label": "Nie"
+						}
+					],
+					"explanation": null,
+					"id": "s_23",
+					"name": "Pomiędzy 38°C a 40°C (100.4°F a 104°F)"
 				},
 				{
 					"choices": [
@@ -710,7 +791,7 @@
 					],
 					"explanation": null,
 					"id": "s_4",
-					"name": "Powyżej 40°C"
+					"name": "Powyżej 40°C (104°F)"
 				},
 				{
 					"choices": [
@@ -753,7 +834,7 @@
 					],
 					"explanation": null,
 					"id": "s_12",
-					"name": "Czy twoje objawy szybko się nasilają?"
+					"name": "Szybkie pogarszanie stanu zdrowia"
 				}
 			],
 			"text": "Czy twoje objawy szybko się nasilają?",
@@ -872,6 +953,21 @@
 					"explanation": null,
 					"id": "s_21",
 					"name": "Ból gardła"
+				},
+				{
+					"choices": [
+						{
+							"id": "present",
+							"label": "Tak"
+						},
+						{
+							"id": "absent",
+							"label": "Nie"
+						}
+					],
+					"explanation": null,
+					"id": "s_24",
+					"name": "Upośledzony smak lub węch"
 				}
 			],
 			"text": "Czy masz którekolwiek z poniższych objawów?",
@@ -899,7 +995,7 @@
 					],
 					"explanation": null,
 					"id": "s_12",
-					"name": "Czy twoje objawy szybko się nasilają?"
+					"name": "Szybkie pogarszanie stanu zdrowia"
 				}
 			],
 			"text": "Czy twoje objawy szybko się nasilają?",
