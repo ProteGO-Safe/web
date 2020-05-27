@@ -6,13 +6,14 @@ import useTriage from '../../../../hooks/useTriage';
 
 const MakeDailyButton = () => {
   const history = useHistory();
-  const { isExposure = false } = useTriage();
+  const { isExposure = false, riskLevel } = useTriage();
   const goToDailyData = () => {
     history.push('/daily-data');
   };
 
   return (
-    isExposure && (
+    isExposure &&
+    riskLevel === 2 && (
       <BordersButtonWithArrow
         onClick={goToDailyData}
         text="Zmierz temperaturę"
