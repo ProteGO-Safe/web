@@ -33,9 +33,8 @@ const UploadData = ({
           <Name>{userName},</Name>
           <Paragraph>
             wprowadź kod PIN otrzymany od Operatora Centrum Kontaktu. Dzięki
-            temu potwierdzisz swój stan zdrowia i dasz innym znać, że mogli mieć
-            kontakt z koronawirusem. Nie martw się, informacje są w pełni
-            anonimowe.
+            temu dasz innym znać, że mogli mieć kontakt z koronawirusem. Nie
+            martw się, informacje są w pełni anonimowe.
           </Paragraph>
           <PinWrapper>
             <PinInput
