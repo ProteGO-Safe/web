@@ -2,13 +2,6 @@ import styled from 'styled-components';
 import { FontWeight } from '../../theme/fonts';
 import { Color } from '../../theme/colors';
 
-export const Name = styled.h1`
-  font-size: 20px;
-  font-weight: ${FontWeight.Bold};
-  line-height: 1.5;
-  color: ${Color.lightBlack};
-`;
-
 export const PinWrapper = styled.div`
   display: flex;
   width: 100%;
