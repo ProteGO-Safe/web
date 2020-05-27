@@ -14,7 +14,7 @@ const Explainer = ({ carouselRef, index, items, onClick, settings }) => {
         <Container className="full-height">
           {index < 1 ? (
             <Title>
-              Diagnosic Key
+              Diagnosis Key
               <br />
               od Apple/Google
             </Title>
