@@ -7,11 +7,7 @@ import PhoneNumber from '../../../../components/PhoneNumber';
 import { Container, Content, View } from '../../../../theme/grid';
 import { Paragraph } from '../../../../theme/typography';
 import { Color } from '../../../../theme/colors';
-import {
-  Name,
-  PinWrapper,
-  ButtonWrapper
-} from '../../UploadHistoricalData.styled';
+import { PinWrapper, ButtonWrapper } from '../../UploadHistoricalData.styled';
 
 import InformationIcon from '../../../../assets/img/icons/bad.svg';
 import WarningIcon from '../../../../assets/img/icons/warning.svg';
@@ -22,7 +18,6 @@ const UploadData = ({
   onUploadData,
   pin,
   setPin,
-  userName,
   disablePinInput
 }) => {
   return (
@@ -30,9 +25,8 @@ const UploadData = ({
       <Header hideBackButton />
       <Content>
         <Container className="full-height">
-          <Name>{userName},</Name>
           <Paragraph>
-            wprowadź kod PIN otrzymany od Operatora Centrum Kontaktu. Dzięki
+            Wprowadź kod PIN otrzymany od Operatora Centrum Kontaktu. Dzięki
             temu dasz innym znać, że mogli mieć kontakt z koronawirusem. Nie
             martw się, informacje są w pełni anonimowe.
           </Paragraph>
