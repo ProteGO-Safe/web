@@ -1,6 +1,6 @@
 {
   "01": {
-    "description": "Twoje odpowiedzi nie wskazują abyś miał COVID-19. Twoje objawy są jednak niepokojące i wymagają konsultacji medycznej.",
+    "description": "Twoje odpowiedzi nie wskazują abyś miał/-ła COVID-19. Twoje objawy są jednak niepokojące i wymagają konsultacji medycznej.",
     "label": "Zadzwoń do lekarza",
     "serious": [
       {
@@ -19,7 +19,7 @@
     "triage_level": "call_doctor"
   },
   "02": {
-    "description": "Twoje odpowiedzi nie wskazują abyś miał COVID-19. Twoje objawy są jednak niepokojące i wymagają konsultacji medycznej.",
+    "description": "Twoje odpowiedzi nie wskazują abyś miał/-ła COVID-19. Twoje objawy są jednak niepokojące i wymagają konsultacji medycznej.",
     "label": "Zadzwoń do lekarza",
     "serious": [
       {
@@ -38,7 +38,7 @@
     "triage_level": "call_doctor"
   },
   "03": {
-    "description": "Twoje odpowiedzi nie wskazują abyś miał COVID-19. Twoje objawy są jednak niepokojące i wymagają konsultacji medycznej.",
+    "description": "Twoje odpowiedzi nie wskazują abyś miał/-ła COVID-19. Twoje objawy są jednak niepokojące i wymagają konsultacji medycznej.",
     "label": "Zadzwoń do lekarza",
     "serious": [
       {
@@ -51,7 +51,7 @@
     "triage_level": "call_doctor"
   },
   "04": {
-    "description": "Twoje odpowiedzi nie wskazują abyś miał COVID-19. Twoje objawy są jednak niepokojące i wymagają konsultacji medycznej.",
+    "description": "Twoje odpowiedzi nie wskazują abyś miał/-ła COVID-19. Twoje objawy są jednak niepokojące i wymagają konsultacji medycznej.",
     "label": "Zadzwoń do lekarza",
     "serious": [
       {
@@ -64,7 +64,7 @@
     "triage_level": "call_doctor"
   },
   "05": {
-    "description": "Twoje odpowiedzi nie wskazują abyś miał COVID-19. Twoje objawy są jednak niepokojące i wymagają konsultacji medycznej.",
+    "description": "Twoje odpowiedzi nie wskazują abyś miał/-ła COVID-19. Twoje objawy są jednak niepokojące i wymagają konsultacji medycznej.",
     "label": "Zadzwoń do lekarza",
     "serious": [
       {
@@ -77,13 +77,13 @@
     "triage_level": "call_doctor"
   },
   "06": {
-    "description": "Twoje odpowiedzi nie wskazują abyś miał COVID-19. Twoje objawy są jednak niepokojące i wymagają konsultacji medycznej.",
+    "description": "Twoje odpowiedzi nie wskazują abyś miał/-ła COVID-19. Twoje objawy są jednak niepokojące i wymagają konsultacji medycznej.",
     "label": "Zadzwoń do lekarza",
     "serious": [],
     "triage_level": "call_doctor"
   },
   "07": {
-    "description": "Twoje odpowiedzi nie wskazują abyś miał COVID-19. Twoje objawy są jednak niepokojące i wymagają konsultacji medycznej.",
+    "description": "Twoje odpowiedzi nie wskazują abyś miał/-ła COVID-19. Twoje objawy są jednak niepokojące i wymagają konsultacji medycznej.",
     "label": "Zadzwoń do lekarza",
     "serious": [
       {
@@ -96,7 +96,7 @@
     "triage_level": "call_doctor"
   },
   "08": {
-    "description": "Twoje odpowiedzi nie wskazują abyś miał COVID-19. Twoje objawy są jednak niepokojące i wymagają konsultacji medycznej.",
+    "description": "Twoje odpowiedzi nie wskazują abyś miał/-ła COVID-19. Twoje objawy są jednak niepokojące i wymagają konsultacji medycznej.",
     "label": "Zadzwoń do lekarza",
     "serious": [
       {
@@ -115,7 +115,7 @@
     "triage_level": "call_doctor"
   },
   "09": {
-    "description": "Twoje odpowiedzi nie wskazują abyś miał COVID-19. Twoje objawy są jednak niepokojące i wymagają konsultacji medycznej.",
+    "description": "Twoje odpowiedzi nie wskazują abyś miał/-ła COVID-19. Twoje objawy są jednak niepokojące i wymagają konsultacji medycznej.",
     "label": "Zadzwoń do lekarza",
     "serious": [
       {
@@ -134,7 +134,7 @@
     "triage_level": "call_doctor"
   },
   "10": {
-    "description": "Twoje odpowiedzi nie wskazują abyś miał COVID-19. Twoje objawy są jednak niepokojące i wymagają konsultacji medycznej.",
+    "description": "Twoje odpowiedzi nie wskazują abyś miał/-ła COVID-19. Twoje objawy są jednak niepokojące i wymagają konsultacji medycznej.",
     "label": "Zadzwoń do lekarza",
     "serious": [
       {

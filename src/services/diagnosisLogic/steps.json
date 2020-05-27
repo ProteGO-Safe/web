@@ -6,7 +6,7 @@
 		"question": {
 			"explanation": null,
 			"extras": {},
-			"text": "Zaznacz odpowiedzi, które cię dotyczą",
+			"text": "Zaznacz odpowiedzi, które Cię dotyczą",
 			"type": "group_multiple",
 			"items": [
 				{
@@ -201,7 +201,7 @@
 					"name": "Duszność"
 				}
 			],
-			"text": "Czy masz któryś z poniższych objawów? Wybierz jedynie nowe objawy, niezwiązane z twoimi przewlekłymi chorobami.",
+			"text": "Czy masz któryś z poniższych objawów? Wybierz jedynie nowe objawy, niezwiązane z Twoimi przewlekłymi chorobami.",
 			"type": "group_multiple"
 		},
 		"should_stop": false
@@ -361,7 +361,7 @@
 					],
 					"explanation": null,
 					"id": "p_12",
-					"name": "Mieszkam lub opiekowałam się osobą z podejrzeniem zakażenia koronawirusem"
+					"name": "Mieszkam lub opiekowałem/-am się osobą z podejrzeniem zakażenia koronawirusem"
 				},
 				{
 					"choices": [
@@ -376,7 +376,7 @@
 					],
 					"explanation": null,
 					"id": "p_13",
-					"name": "Przebywałam w tym samym pomieszczeniu (biuro, klasa, siłownia) lub podróżowałam w bliskiej odległości (poniżej 1 metra) z osobą z podejrzeniem zakażenia koronawirusem"
+					"name": "Przebywałem/-am w tym samym pomieszczeniu (biuro, klasa, siłownia) lub podróżowałem/-am w bliskiej odległości (poniżej 1 metra) z osobą z podejrzeniem zakażenia koronawirusem"
 				},
 				{
 					"choices": [
@@ -391,7 +391,7 @@
 					],
 					"explanation": null,
 					"id": "p_14",
-					"name": "Miałam osobisty kontakt przez dłużej niż 15 minut z osobą podejrzaną o zakażenie koronawirusem"
+					"name": "Miałem/-am osobisty kontakt przez dłużej niż 15 minut z osobą podejrzaną o zakażenie koronawirusem"
 				},
 				{
 					"choices": [
@@ -424,7 +424,7 @@
 					"name": "Żadne z powyższych"
 				}
 			],
-			"text": "Czy w ciągu ostatnich 14 dni miałaś bliski kontakt z osobą z podejrzeniem zakażenia koronawirusem?",
+			"text": "Czy w ciągu ostatnich 14 dni miałeś/-aś bliski kontakt z osobą z podejrzeniem zakażenia koronawirusem?",
 			"type": "group_single"
 		},
 		"should_stop": false
@@ -527,7 +527,7 @@
 					"name": "Szybkie pogarszanie stanu zdrowia"
 				}
 			],
-			"text": "Czy twoje objawy szybko się nasilają?",
+			"text": "Czy Twoje objawy szybko się nasilają?",
 			"type": "single"
 		},
 		"should_stop": false
@@ -602,10 +602,10 @@
 					"choices": [],
 					"explanation": null,
 					"id": "p_5",
-					"name": "Czy w ciągu ostatnich 14 dni mieszkałaś lub podróżowałaś do kraju z licznymi przypadkami zakażeń koronawirusem?"
+					"name": "Czy w ciągu ostatnich 14 dni mieszkałeś/-aś lub podróżowałeś/-aś do kraju z licznymi przypadkami zakażeń koronawirusem?"
 				}
 			],
-			"text": "Czy w ciągu ostatnich 14 dni mieszkałaś lub podróżowałaś do kraju z licznymi przypadkami zakażeń koronawirusem?",
+			"text": "Czy w ciągu ostatnich 14 dni mieszkałeś/-aś lub podróżowałeś/-aś do kraju z licznymi przypadkami zakażeń koronawirusem?",
 			"type": "single"
 		},
 		"should_stop": false
