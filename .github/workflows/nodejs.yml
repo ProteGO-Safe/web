@@ -44,6 +44,17 @@ jobs:
         run: |
           echo "::set-env name=ENVIRONMENT::PROD"
 
+      - name: Set Env's
+        run: echo "::set-env name=PROJECT_ENVS::${{ secrets[env.EV] }}"
+        env:
+          EV: "${{ env.ENVIRONMENT }}_ENV"
+        if: env.ENVIRONMENT == 'STAGE' || env.ENVIRONMENT == 'PROD' || env.ENVIRONMENT == 'DEV'
+
+      - name: Inject ENV's for builds
+        run: 'echo "$PROJECT_ENVS" > .env'
+        shell: bash
+        if: env.ENVIRONMENT == 'STAGE' || env.ENVIRONMENT == 'PROD' || env.ENVIRONMENT == 'DEV'
+
       - name: Show GITHUB_CONTEXT
         run: |
           echo "$GITHUB_CONTEXT"
