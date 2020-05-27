@@ -1,45 +1,38 @@
 # ProteGO Safe - web
 
-## run application at local environment
-- yarn install
-- yarn start
+## Configure application
 
-## build application
-- yarn build
+##### Copy .env.dist file
+
+```shell script
+cp .env.dist .env
+``` 
+
+##### Set values
+
+- **REACT_APP_EXTERNAL_DATA_API_DOMAIN** - url to the CDN with static files 
+
+## Build application
+
+```shell script
+yarn build
+```
+
+## Run application tests
+
+```shell script
+yarn test a
+```
+
+## Run application locally
+```shell script
+yarn install
+yarn start
+```
 
 Application can be started in following environments:
  - browser
- - web view in Android or IOS
+ - web view in Android or iOS
 
-When application is running as WebView on mobile devices (Android/iOS), it uses NativeBridge to exchange data with native thread. [Documentation](https://docs.google.com/document/d/1WLMfbxlOxuY8By32iK_ILvmVjiq24kQARDNWBNy9TV4)
-
-Native API contract:
-
-function getBridgeData
-
-|Data type|Description|JSON format|
-| ------ | --- | --- |
-| 31     | get statuses of services           |`"servicesStatus": {`|
-|        |                                    |`"isBtSupported": true/false,` |
-|        |                                    |`"isLocationEnabled": true/false, //only Android`|
-|        |                                    |`"isBtOn": true/false,`|
-|        |                                    |`"isBatteryOptimizationOn": true/false, //only Android`|
-|        |                                    |`"isNotificationEnabled": true/false, //only IOS`|
-|        |                                    |`"isBtServiceOn": true/false, //OpenTrace status`|
-|        |                                    |`}`|
-
-function setBridgeData
-
-|Data type|Description|JSON format|
-| ------ | --- | --- |
-| 32     | show location permission - only Android             |            |
-| 33     | show bt permission                                  |            |
-| 34     | show battery optimization permission - only Android |            |
-| 35     | show notification permission - only IOS             |            |
-| 36     | toggle bt module                                    |`"enableBtService": true/false`            |
-
-
-Application uses API https://api.safesafe.app as proxy to send and retrieve data from infermedica.com [Documentation](https://developer.infermedica.com/docs/covid-19)
-
-## debug
-When When application is running as WebView you can debug in chrome at chrome://inspect/#devices
+## Debug
+When application is running as WebView you can debug in chrome at chrome://inspect/#devices
