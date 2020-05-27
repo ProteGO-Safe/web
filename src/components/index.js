@@ -1,5 +1,4 @@
 export { App } from './App';
-export { Badge } from './Badge';
 export { BordersButton } from './BordersButton';
 export { BottomNavigation } from './BottomNavigation';
 export { Button } from './Button';
