@@ -15,16 +15,11 @@ const DiagnosisContainer = () => {
   const dispatch = useDispatch();
   const { setLoader } = useLoaderContext();
   const { sex, age } = useSelector(state => state.user);
-  // const riskTest = useSelector(state => state.riskTest);
   const [showInformation, setShowInformation] = useState(true);
 
-  const {
-    evidence,
-    question,
-    isLoading,
-    isResetting,
-    inProgress
-  } = useSelector(state => state.diagnosis);
+  const { evidence, question, isLoading, inProgress } = useSelector(
+    state => state.diagnosis
+  );
 
   useEffect(() => {
     if (isLoading) {
@@ -43,7 +38,7 @@ const DiagnosisContainer = () => {
     };
     dispatch(getDiagnosis(data));
     // eslint-disable-next-line
-  }, [isResetting]);
+  }, [dispatch]);
 
   useEffect(() => {
     if (!inProgress && evidence.length > 0) {

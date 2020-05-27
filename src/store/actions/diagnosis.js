@@ -2,7 +2,7 @@ import * as types from '../types/diagnosis';
 
 import { getDiagnosis as getPath } from '../../services/diagnosisLogic/diagnosisLogic.ts';
 
-export const diagnosisFetchRequested = ({ data }) => ({
+const diagnosisFetchRequested = ({ data }) => ({
   data,
   type: types.DIAGNOSIS_FETCH_REQUESTED
 });
