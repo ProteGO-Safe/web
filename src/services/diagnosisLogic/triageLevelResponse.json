@@ -6,7 +6,7 @@
     "triage_level": "isolation_ambulance"
   },
   "call_doctor": {
-    "description": "Twoje odpowiedzi nie wskazują abyś miał COVID-19. Twoje objawy są jednak niepokojące i wymagają konsultacji medycznej.",
+    "description": "Twoje odpowiedzi nie wskazują abyś miał/-ła COVID-19. Twoje objawy są jednak niepokojące i wymagają konsultacji medycznej.",
     "label": "Zadzwoń do lekarza",
     "serious": [],
     "triage_level": "call_doctor"
@@ -18,13 +18,13 @@
     "triage_level": "isolation_call"
   },
   "self_monitoring": {
-    "description": "Objawy, które zgłosiłeś, nie wskazują na chorobę COVID-19. Mimo to lepiej, żebyś pozostał w domu, dopóki nie wyzdrowiejesz. W ten sposób zmniejszasz ryzyko zakażenia siebie oraz innych. Pamiętaj, że twoje objawy mogą wynikać także z innych chorób i mogą wymagać konsultacji lekarskiej - powyższy wywiad jest ukierunkowany na COVID-19. Jeśli twoje objawy wydają się niepokojące, skontaktuj się z lekarzem.",
+    "description": "Objawy, które zgłosiłeś/-aś, nie wskazują na chorobę COVID-19. Mimo to lepiej, żebyś pozostał/-a w domu, dopóki nie wyzdrowiejesz. W ten sposób zmniejszasz ryzyko zakażenia siebie oraz innych. Pamiętaj, że Twoje objawy mogą wynikać także z innych chorób i mogą wymagać konsultacji lekarskiej - powyższy wywiad jest ukierunkowany na COVID-19. Jeśli twoje objawy wydają się niepokojące, skontaktuj się z lekarzem.",
     "label": "Pozostań w domu i obserwuj swój stan zdrowia.",
     "serious": [],
     "triage_level": "self_monitoring"
   },
   "no_risk": {
-    "description": "Odpowiedzi, których udzieliłeś, nie wskazują na zakażenie koronawirusem (choroba COVID-19). Stosuj poniższe środki zapobiegawcze i zalecenia rządowe, by uniknąć zakażenia. Pamiętaj, że twoje objawy mogą wynikać także z innych chorób i mogą wymagać konsultacji lekarskiej - powyższy wywiad jest ukierunkowany na COVID-19. Jeśli twoje objawy wydają się niepokojące, skontaktuj się z lekarzem.",
+    "description": "Odpowiedzi, których udzieliłeś/-aś, nie wskazują na zakażenie koronawirusem (choroba COVID-19). Stosuj poniższe środki zapobiegawcze i zalecenia rządowe, by uniknąć zakażenia. Pamiętaj, że Twoje objawy mogą wynikać także z innych chorób i mogą wymagać konsultacji lekarskiej - powyższy wywiad jest ukierunkowany na COVID-19. Jeśli Twoje objawy wydają się niepokojące, skontaktuj się z lekarzem.",
     "label": "Postępuj zgodnie z zaleceniami epidemiologicznymi.",
     "serious": [],
     "triage_level": "no_risk"
