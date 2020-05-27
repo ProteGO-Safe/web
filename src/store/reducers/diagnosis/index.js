@@ -8,7 +8,6 @@ const INITIAL_STATE = {
   evidence: [],
   inProgress: false,
   isLoading: false,
-  isResetting: false,
   question: {},
   allQuestions: []
 };
@@ -25,8 +24,7 @@ const diagnosisReducer = (state = INITIAL_STATE, action) => {
           ...state,
           evidence: [...evidence],
           inProgress: true,
-          isLoading: true,
-          isResetting: false
+          isLoading: true
         };
       })();
     case DIAGNOSIS_FETCH_SUCCESS:
@@ -48,8 +46,7 @@ const diagnosisReducer = (state = INITIAL_STATE, action) => {
     case DIAGNOSIS_CLEAR_REQUESTED:
       return {
         ...state,
-        ...INITIAL_STATE,
-        isResetting: true
+        ...INITIAL_STATE
       };
     default:
       return state;
