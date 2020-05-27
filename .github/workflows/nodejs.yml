@@ -38,6 +38,7 @@ jobs:
 
       - name: Set env to PROD
         if: startsWith(github.ref, 'refs/tags/')
+            && github.repository_owner == 'ProteGO-Safe'
             && ( github.event.release.target_commitish == 'master' || startsWith( github.event.release.target_commitish, 'release/3' ))
             && github.event_name == 'release'
         run: |
@@ -88,6 +89,7 @@ jobs:
 
       - name: Set env to PROD
         if: startsWith(github.ref, 'refs/tags/')
+            && github.repository_owner == 'ProteGO-Safe'
             && ( github.event.release.target_commitish == 'master' || startsWith( github.event.release.target_commitish, 'release/3' ))
             && github.event_name == 'release'
         run: |
