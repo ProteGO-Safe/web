@@ -71,7 +71,7 @@ export const EXPOSURE_TRIAGE_LEVEL = {
   2: {
     color: Color.danger,
     content:
-      'Monitoruj swój stan zdrowia - jeśli Twój stan się pogorszy, zgłoś się do oddziału zakaźnego lub oddziału obserwacyjno-zakaźnego. Unikaj kontkatu z innymi osobami',
+      'Monitoruj swój stan zdrowia - jeśli Twój stan się pogorszy, zgłoś się do oddziału zakaźnego lub oddziału obserwacyjno-zakaźnego. Unikaj kontaktu z innymi osobami',
     IconComponent: RedSmile,
     isDangerous: true,
     isExposure: true,
@@ -81,7 +81,7 @@ export const EXPOSURE_TRIAGE_LEVEL = {
   3: {
     color: Color.danger,
     content:
-      'Bezwłocznie, za pomocą ankiety online lub telefonicznie zgłoś się do oddziału zakaźnego lub oddziału obserwacyjno-zakaźnego. Unikaj kontkatu z innymi osobami',
+      'Bezwłocznie, za pomocą ankiety online lub telefonicznie zgłoś się do oddziału zakaźnego lub oddziału obserwacyjno-zakaźnego. Unikaj kontaktu z innymi osobami',
     IconComponent: RedSmile,
     isDangerous: true,
     isExposure: true,
