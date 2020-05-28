@@ -57,9 +57,9 @@ const UserDataChange = () => {
   const validationSchema = Yup.object().shape({
     [constants.FIELD_NAME]: Yup.string()
       .trim()
-      .min(3, 'Za krótkie imię')
-      .max(20, 'Za długie imię')
-      .matches( /^[a-zA-Z0-9wąćęłńóśźżĄĆĘŁŃÓŚŹŻ ]+$/, 'Bez znaków specjalnych'),
+      .min(3, 'Za krótki pseudonim')
+      .max(20, 'Za długi pseudonim')
+      .matches(/^[a-zA-Z0-9wąćęłńóśźżĄĆĘŁŃÓŚŹŻ ]+$/, 'Bez znaków specjalnych'),
     [constants.FIELD_TERM1]: Yup.boolean().oneOf(
       [true],
       'Proszę zaznaczyć zgodę'

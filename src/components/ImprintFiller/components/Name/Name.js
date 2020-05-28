@@ -52,8 +52,8 @@ const Name = ({ editMode }) => {
       )}
       <TextField
         error={errors[FIELD_NAME]}
-        label="Jak masz na imię?"
-        placeholder="imię"
+        label="Podaj pseudonim"
+        placeholder="pseudonim"
         onChange={handleChange}
         name={FIELD_NAME}
         value={values[FIELD_NAME]}

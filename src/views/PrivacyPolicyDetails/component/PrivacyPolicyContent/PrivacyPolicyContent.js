@@ -241,7 +241,7 @@ const PrivacyPolicyContent = () => (
       <ListItem>
         Administrator danych może przetwarzać następujące Dane Osobowe
         (kategorie Danych Osobowych): identyfikator Urządzenia Użytkownika,
-        nazwa Użytkownika (imię), dane dotyczące zdrowia, płeć, wiek, dane
+        nazwa Użytkownika (pseudonim), dane dotyczące zdrowia, płeć, wiek, dane
         dotyczące palenia papierosów i inne, które Użytkownik zdecyduje się
         dobrowolnie wprowadzić do funkcjonalności Dziennik Zdrowia w ProteGO
         Safe.
