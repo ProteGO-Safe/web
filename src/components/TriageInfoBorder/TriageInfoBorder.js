@@ -60,7 +60,7 @@ const TriageInfoBorder = () => {
     isDangerous && (
       <InfoBorderContainer color={color}>
         <span className="p1">{renderContent()}</span>
-        <ul>{renderItem}</ul>
+        {renderItem.length >= 1 && <ul>{renderItem}</ul>}
       </InfoBorderContainer>
     )
   );

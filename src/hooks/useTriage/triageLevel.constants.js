@@ -71,7 +71,7 @@ export const EXPOSURE_TRIAGE_LEVEL = {
   2: {
     color: Color.danger,
     content:
-      'Monitoruj swój stan zdrowia - jeśli Twój stan się pogorszy, zgłoś się do oddziału zakaźnego lub oddziału obserwacyjno-zakaźnego. Unikaj kontaktu z innymi osobami',
+      'Przebywałeś/aś w okolicy osoby chorej na Covid-19. Jesteś w Grupie Średniego Ryzyka. Skontaktuj się z Państwową Inspekcją Sanitarną pod numerem 222 500 115 pracownik infolinii poprowadzi Cię dalej.',
     IconComponent: RedSmile,
     isDangerous: true,
     isExposure: true,
@@ -81,7 +81,7 @@ export const EXPOSURE_TRIAGE_LEVEL = {
   3: {
     color: Color.danger,
     content:
-      'Bezwłocznie, za pomocą ankiety online lub telefonicznie zgłoś się do oddziału zakaźnego lub oddziału obserwacyjno-zakaźnego. Unikaj kontaktu z innymi osobami',
+      'Przebywałeś/aś blisko osoby chorej na Covid-19. Jesteś w Grupie Wysokiego Ryzyka. Niezwłocznie skontaktuj się z Państwową Inspekcją Sanitarną dzwoniąc na specjalny numer: 222 500 115.',
     IconComponent: RedSmile,
     isDangerous: true,
     isExposure: true,
