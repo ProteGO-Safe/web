@@ -36,3 +36,6 @@ yarn start
 
 ## Debug
 When application is running as WebView you can debug in chrome at chrome://inspect/#devices
+
+## Documentation
+[Native bridge](doc/nativeBridge.md)
