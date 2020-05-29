@@ -9,12 +9,17 @@ import { View, Container, Content } from '../../../../../../theme/grid';
 import Header from '../../../../../../components/Header/Header';
 import { Icon } from './Information.styled';
 
-const Information = ({ onNext }) => {
+const Information = ({ onNext, onSkip }) => {
   const buttons = [
     {
       border: false,
       text: 'Dalej',
       onClick: onNext
+    },
+    {
+      text: 'Nie powiadamiaj mnie o zagrożeniach',
+      type: 'tertiary',
+      onClick: onSkip
     }
   ];
 
@@ -24,6 +29,7 @@ const Information = ({ onNext }) => {
       onClick={button.onClick}
       text={button.text}
       border={button.border}
+      type={button.type}
     />
   ));
 
