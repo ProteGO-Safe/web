@@ -78,7 +78,7 @@ const useTriage = () => {
   const triageRiskLevel = resolveTriageRiskLevel(triageLevel);
 
   if (
-    exposureNotificationStatus === !EXPOSURE_NOTIFICATION_STATUS.ON ||
+    exposureNotificationStatus !== EXPOSURE_NOTIFICATION_STATUS.ON ||
     exposureRiskLevel === undefined
   ) {
     return defaultTriageLevel(triageLevel, description, serious);
