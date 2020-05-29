@@ -1,38 +1,38 @@
-# ProteGO Safe - web
+![ProteGo Safe](./doc/img/baner.jpg "ProtegoSafe")
 
-## Configure application
+## General info
+In ProteGO Safe you will find reliable, official and current information on the current situation related to the coronavirus pandemic. You will learn how to use actions and what to do if you suspect you or your loved ones have an infection. All published information is confirmed by the Ministry of Health or the Chief Sanitary Inspectorate, prepared on the basis of data on the Center for Disease Prevention and Control (ECDC) and the World Health Organization (WHO).
 
-##### Copy .env.dist file
+## Screenshots 
+![ProteGo Safe](./doc/img/protego-safe.png "ProtegoSafe")
 
+## Application installation and configuration
+### Copy .env.dist file
 ```shell script
 cp .env.dist .env
 ``` 
-
-##### Set values
+###### Set values
 
 - **REACT_APP_EXTERNAL_DATA_API_DOMAIN** - url to the CDN with static files 
 
-## Build application
-
+### Build application
 ```shell script
 yarn build
 ```
 
-## Run application tests
-
+### Run application tests
 ```shell script
 yarn test a
 ```
 
-## Run application locally
+### Run application locally
 ```shell script
 yarn install
 yarn start
 ```
 
-Application can be started in following environments:
- - browser
- - web view in Android or iOS
+## Technologies
+* React / Redux
 
 ## Debug
 When application is running as WebView you can debug in chrome at chrome://inspect/#devices
