@@ -37,6 +37,24 @@ export const ListNumber = styled.ol`
   }
 `;
 
+export const ListAlpha = styled.ol`
+  list-style-type: lower-alpha;
+  margin-top: 0;
+  padding-left: 24px;
+  ol {
+    margin-top: 12px;
+  }
+`;
+
+export const ListRoman = styled.ol`
+  list-style-type: upper-roman;
+  margin-top: 0;
+  padding-left: 24px;
+  ol {
+    margin-top: 12px;
+  }
+`;
+
 export const ListItem = styled.li`
   font-size: 16px;
   font-weight: ${FontWeight.Normal};
