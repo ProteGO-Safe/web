@@ -5,7 +5,6 @@ export { Button } from './Button';
 export { Checkbox } from './Checkbox';
 export { Collapse } from './Collapse';
 export { Container } from './Container';
-export { Cookie } from './Cookie';
 export { FieldSet } from './FieldSet';
 export { GovFooter } from './GovFooter';
 export { Header } from './Header';

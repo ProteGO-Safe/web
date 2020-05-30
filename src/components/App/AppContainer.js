@@ -3,7 +3,6 @@ import React from 'react';
 import { LoaderProvider } from '../../context/LoaderContext';
 import { MenuProvider } from '../../context/MenuContext';
 import { ModalProvider } from '../../context/ModalContext';
-import { Cookie } from '../Cookie';
 import App from './App';
 
 const AppContainer = () => {
@@ -11,7 +10,6 @@ const AppContainer = () => {
     <MenuProvider>
       <LoaderProvider>
         <ModalProvider>
-          <Cookie />
           <App />
         </ModalProvider>
       </LoaderProvider>
