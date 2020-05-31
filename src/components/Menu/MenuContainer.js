@@ -5,7 +5,6 @@ import Menu from './Menu';
 import useMenuContext from '../../hooks/useMenuContext';
 
 import Icon1 from '../../assets/img/icons/menu-boczne-dziennik_BLUE.svg';
-import Icon2 from '../../assets/img/icons/menu-boczne-kwestionariusz_BLUE.svg';
 import Icon3 from '../../assets/img/icons/menu-boczne-jak-to-dziala_BLUE.svg';
 import Icon4 from '../../assets/img/icons/menu-boczne-zle-sie-czuje_BLUE.svg';
 import Icon5 from '../../assets/img/icons/menu-boczne-numery-alarm_BLUE.svg';
@@ -31,12 +30,6 @@ const MenuContainer = () => {
       path: Routes.Daily,
       slug: 'dziennik',
       title: 'Dziennik zdrowia'
-    },
-    {
-      icon: Icon2,
-      path: Routes.RiskTest,
-      slug: 'test_oceny_ryzyka',
-      title: 'Test oceny ryzyka'
     },
     {
       icon: Icon3,

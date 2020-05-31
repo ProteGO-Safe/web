@@ -14,18 +14,11 @@ const diagnosisReducer = (state = INITIAL_STATE, action) => {
     case USER_SAVE:
       return (() => {
         const {
-          data: { name, sex, age, phone, chronicSicks, bloodGroup, smokeNumber }
+          data: { name }
         } = action;
-
         return {
           ...state,
-          name,
-          sex,
-          age,
-          phone,
-          chronicSicks: [...chronicSicks],
-          bloodGroup,
-          smokeNumber
+          name
         };
       })();
     default:

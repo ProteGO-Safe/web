@@ -1,5 +1,9 @@
-export { BottomMakeDiagnosisButton } from './BottomMakeDiagnosisButton';
 export { ExposureNotificationWarning } from './ExposureNotificationWarning';
 export { MakeDailyButton } from './MakeDailyButton';
+export { MakeDiagnosisButton } from './MakeDiagnosisButton';
 export { MoreInformation } from './MoreInformation';
-export { TopMakeDiagnosisButton } from './TopMakeDiagnosisButton';
+export { Smile } from './Smile';
+export { SmileNoData } from './SmileNoData';
+export { TriageRiskInformation } from './TriageRiskInformation';
+export { TriageInfoBorder } from './TriageInfoBorder';
+export { TriageRecommendations } from './TriageRecommendations';
