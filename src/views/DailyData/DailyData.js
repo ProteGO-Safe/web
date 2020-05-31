@@ -6,11 +6,11 @@ import { useFormikContext } from 'formik';
 import Routes from '../../routes';
 import Header from '../../components/Header/Header';
 import { BottomNavigation } from '../../components/BottomNavigation';
-import { Button, Imprint } from '../../components';
+import { Button } from '../../components';
 import { Data, Form } from './components';
 import { Actions } from '../../components/ImprintFiller/ImprintFiller.styled';
 import { Content, Container, View } from '../../theme/grid';
-import { Title, TitleBox } from './DailyData.styled';
+import { Title } from './DailyData.styled';
 import './DailyData.scss';
 
 const DailyData = ({ isViewMode }) => {
@@ -24,8 +24,6 @@ const DailyData = ({ isViewMode }) => {
         <Container className="full-height">
           <Title>Dziennik zdrowia</Title>
           {isViewMode ? <Data /> : <Form />}
-          <TitleBox className="medium title-4 text-left">Metryka</TitleBox>
-          <Imprint hidePhoneNumber />
           <Actions>
             {isViewMode ? (
               <Button

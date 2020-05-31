@@ -1,36 +1,15 @@
 import React from 'react';
-import {
-  Header,
-  Container,
-  Smile,
-  TriageRiskInformation,
-  TriageInfoBorder,
-  BottomNavigation,
-  TriageRecommendations
-} from '../../components';
+import { Header, Container, BottomNavigation } from '../../components';
 import './Home.scss';
-import {
-  BottomMakeDiagnosisButton,
-  ExposureNotificationWarning,
-  TopMakeDiagnosisButton,
-  MoreInformation,
-  MakeDailyButton
-} from './components';
+import { ExposureNotificationWarning } from './components';
 
-const Home = () => {
+const Home = ({ resolveView }) => {
   return (
     <div className="view view__home">
       <Header hideBackButton />
       <Container>
         <ExposureNotificationWarning />
-        <Smile />
-        <TopMakeDiagnosisButton />
-        <TriageRiskInformation />
-        <TriageInfoBorder />
-        <TriageRecommendations />
-        <MoreInformation />
-        <BottomMakeDiagnosisButton />
-        <MakeDailyButton />
+        {resolveView()}
       </Container>
       <BottomNavigation />
     </div>

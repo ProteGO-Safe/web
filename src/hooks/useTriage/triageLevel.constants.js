@@ -2,12 +2,12 @@ import { GreenSmile } from '../../assets/img/icons/buzka-zielona';
 import { YellowSmile } from '../../assets/img/icons/buzka-zolta';
 import { RedSmile } from '../../assets/img/icons/buzka-czerwona';
 import { Color } from '../../theme/colors';
-import { NoRisk } from '../../components/TriageRecommendations/components/NoRisk';
-import { Quarantine } from '../../components/TriageRecommendations/components/Quarantine';
-import { SelfMonitoring } from '../../components/TriageRecommendations/components/SelfMonitoring';
-import { IsolationCall } from '../../components/TriageRecommendations/components/IsolationCall';
-import { IsolationAmbulance } from '../../components/TriageRecommendations/components/IsolationAmbulance';
-import { CallDoctor } from '../../components/TriageRecommendations/components/CallDoctor';
+import { NoRisk } from '../../views/Home/components/TriageRecommendations/components/NoRisk';
+import { Quarantine } from '../../views/Home/components/TriageRecommendations/components/Quarantine';
+import { SelfMonitoring } from '../../views/Home/components/TriageRecommendations/components/SelfMonitoring';
+import { IsolationCall } from '../../views/Home/components/TriageRecommendations/components/IsolationCall';
+import { IsolationAmbulance } from '../../views/Home/components/TriageRecommendations/components/IsolationAmbulance';
+import { CallDoctor } from '../../views/Home/components/TriageRecommendations/components/CallDoctor';
 
 export const TRIAGE_LEVEL = {
   no_risk: {
@@ -68,6 +68,16 @@ export const TRIAGE_LEVEL = {
 };
 
 export const EXPOSURE_TRIAGE_LEVEL = {
+  1: {
+    color: null,
+    content: null,
+    IconComponent: GreenSmile,
+    isDangerous: false,
+    isExposure: true,
+    riskGroup: 'Niskie ryzyko infekcji',
+    riskLevel: 1,
+    exposureRiskLevel: 1
+  },
   2: {
     color: Color.danger,
     content:
@@ -76,7 +86,8 @@ export const EXPOSURE_TRIAGE_LEVEL = {
     isDangerous: true,
     isExposure: true,
     riskGroup: 'Średnie ryzyko infekcji',
-    riskLevel: 2
+    riskLevel: 2,
+    exposureRiskLevel: 2
   },
   3: {
     color: Color.danger,
@@ -86,8 +97,14 @@ export const EXPOSURE_TRIAGE_LEVEL = {
     isDangerous: true,
     isExposure: true,
     riskGroup: 'Wysokie ryzyko infekcji',
-    riskLevel: 3
+    riskLevel: 3,
+    exposureRiskLevel: 3
   }
+};
+
+export const NO_TRIAGE_LEVEL = {
+  exposureRiskLevel: 0,
+  triageRiskLevel: 0
 };
 
 export const RISK_LEVEL_COLOR = {
