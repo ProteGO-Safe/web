@@ -39,6 +39,7 @@ import Routes from '../../routes';
 import './App.scss';
 import { Notification } from '../Notification';
 import { resetExternalData } from '../../store/actions/externalData';
+import {FirstDiagnosisAsking} from "../../views/FirstDiagnosisAsking";
 
 function App() {
   moment.locale('pl');
@@ -46,9 +47,11 @@ function App() {
   const history = useHistory();
 
   const { name } = useSelector(state => state.user);
-  const { onboardingFinished = false, startScreenShowed } = useSelector(
-    state => state.app
-  );
+  const {
+    onboardingFinished = false,
+    startScreenShowed,
+    firstDiagnosisFinished
+  } = useSelector(state => state.app);
   const { notification } = useSelector(state => state.nativeData);
   const { inProgress, visible: menuIsVisible } = useMenuContext();
 
@@ -90,6 +93,9 @@ function App() {
     }
     if (!name) {
       return Registration;
+    }
+    if (!firstDiagnosisFinished) {
+      return FirstDiagnosisAsking;
     }
     return Home;
   })();

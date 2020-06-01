@@ -1,5 +1,6 @@
 import {
   EXPOSURE_ONBOARDING_FINISHED,
+  FIRST_DIAGNOSIS_FINISHED,
   ONBOARDING_FINISHED,
   START_SCREEN_SHOWED,
   UPLOAD_HISTORICAL_DATA_ENDED,
@@ -52,6 +53,11 @@ const appReducer = (state = INITIAL_STATE, action) => {
           ...state.uploadHistoricalDataState,
           status: uploadState.EMPTY
         }
+      };
+    case FIRST_DIAGNOSIS_FINISHED:
+      return {
+        ...state,
+        firstDiagnosisFinished: true
       };
     case UPLOAD_HISTORICAL_DATA_FINISHED:
       return (() => {
