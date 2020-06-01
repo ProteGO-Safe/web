@@ -14,10 +14,10 @@ import { ImprintWrapper } from './Imprint.styled';
 import './Imprint.scss';
 
 const Imprint = ({ user = {} }) => {
-  const { chronicSicks, bloodGroup, smokeNumber, isFilled } = user;
+  const { chronicSicks, bloodGroup, smokeNumber } = user;
 
   const smokingContent = () => {
-    if (!isFilled) {
+    if (!smokeNumber) {
       return 'brak danych';
     }
     if (smokeNumber) {
@@ -27,7 +27,7 @@ const Imprint = ({ user = {} }) => {
   };
 
   const chronicSicksContent = () => {
-    if (!isFilled) {
+    if (!chronicSicks) {
       return <SmallText>brak danych</SmallText>;
     }
     if (chronicSicks.length === 0) {

@@ -35,8 +35,7 @@ const Summary = () => {
           user={{
             bloodGroup: values[FIELD_BLOOD_GROUP],
             chronicSicks,
-            smokeNumber: values[FIELD_SMOKE_NUMBER],
-            isFilled: true
+            smokeNumber: values[FIELD_SMOKE_NUMBER]
           }}
         />
         <Actions>
