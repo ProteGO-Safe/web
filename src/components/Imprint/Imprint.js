@@ -1,10 +1,7 @@
 import React from 'react';
 import { Grid } from '@material-ui/core';
 
-import {
-  VALUE_SMOKE_NO,
-  VALUE_SMOKE_YES,
-} from '../../constants';
+import { VALUE_SMOKE_NO, VALUE_SMOKE_YES } from '../../constants';
 
 import { FontWeight } from '../../theme/fonts';
 import { Color } from '../../theme/colors';
@@ -14,10 +11,9 @@ import { ImprintWrapper } from './Imprint.styled';
 import './Imprint.scss';
 
 const Imprint = ({ user = {} }) => {
-  const { chronicSicks, bloodGroup, smokeNumber } = user;
-
+  const { chronicSicks, bloodGroup, smokeNumber, isSmoking } = user;
   const smokingContent = () => {
-    if (!smokeNumber) {
+    if (!smokeNumber && isSmoking === undefined) {
       return 'brak danych';
     }
     if (smokeNumber) {

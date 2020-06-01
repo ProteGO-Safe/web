@@ -4,6 +4,7 @@ const INITIAL_STATE = {
   bloodGroup: undefined,
   chronicSicks: undefined,
   name: undefined,
+  isSmoking: undefined,
   smokeNumber: undefined
 };
 
@@ -22,14 +23,15 @@ const diagnosisReducer = (state = INITIAL_STATE, action) => {
     case USER_SAVE:
       return (() => {
         const {
-          data: { bloodGroup, chronicSicks, name, smokeNumber }
+          data: { bloodGroup, chronicSicks, isSmoking, name, smokeNumber }
         } = action;
         return {
           ...state,
           bloodGroup,
           chronicSicks,
           name,
-          smokeNumber
+          smokeNumber,
+          isSmoking
         };
       })();
 

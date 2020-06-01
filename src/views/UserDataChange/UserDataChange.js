@@ -88,7 +88,8 @@ const UserDataChange = () => {
       name: form[constants.FIELD_NAME],
       chronicSicks: [...chronicSicksFromForm],
       bloodGroup: form[constants.FIELD_BLOOD_GROUP],
-      smokeNumber: form[constants.FIELD_SMOKE_NUMBER]
+      smokeNumber: form[constants.FIELD_SMOKE_NUMBER],
+      isSmoking: form[constants.FIELD_SMOKE] === constants.VALUE_SMOKE_YES
     };
 
     const goHome = () => {

@@ -5,7 +5,9 @@ import Imprint from '../../../Imprint/Imprint';
 import {
   chronicSickValues,
   FIELD_BLOOD_GROUP,
-  FIELD_SMOKE_NUMBER
+  FIELD_SMOKE,
+  FIELD_SMOKE_NUMBER,
+  VALUE_SMOKE_YES
 } from '../../../../constants';
 import { NUMBER_OF_STEPS } from '../../ImprintFiller.constants';
 
@@ -35,7 +37,8 @@ const Summary = () => {
           user={{
             bloodGroup: values[FIELD_BLOOD_GROUP],
             chronicSicks,
-            smokeNumber: values[FIELD_SMOKE_NUMBER]
+            smokeNumber: values[FIELD_SMOKE_NUMBER],
+            isSmoking: values[FIELD_SMOKE] === VALUE_SMOKE_YES
           }}
         />
         <Actions>
