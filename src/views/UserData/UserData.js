@@ -29,7 +29,7 @@ const UserData = () => {
             z Analizy Ryzyka Koronawirusem, znajdziesz tu także miejsce na
             podanie numeru PIN.
           </Paragraph>
-          <Imprint hidePhoneNumber />
+          <Imprint />
           <ButtonWrapper>
             <Button
               onClick={() => history.push(Routes.UserDataSettings)}
