@@ -4,6 +4,17 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## 4.1.1
+
+### Added
+- New triage level - no data
+- New triage level - green analysis module
+
+### Changed
+- Simpler application on boarding
+- Removed risk assessment test
+- Removed Health Metric
+
 ## 4.1.0
  
 Here we write creating new onboarding and upload trace history.
