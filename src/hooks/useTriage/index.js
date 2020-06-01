@@ -105,7 +105,7 @@ const resolveExposureLowRiskLevel = (
   if (triageRiskLevel === undefined) {
     return {
       ...EXPOSURE_TRIAGE_LEVEL[RISK_LEVEL_COLOR.GREEN],
-      triageRiskLevel: undefined
+      triageRiskLevel: 0
     };
   }
   return defaultTriageLevel(
