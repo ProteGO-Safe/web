@@ -1,7 +1,7 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
-import { Button, Imprint } from '../../components';
+import { Button } from '../../components';
 import Routes from '../../routes';
 import Header from '../../components/Header/Header';
 import { BottomNavigation } from '../../components/BottomNavigation';
@@ -24,10 +24,11 @@ const UserData = () => {
         <Container>
           <Name>{userName},</Name>
           <Paragraph>
-            Poniżej znajdują się dane, które podałeś w trakcie rejestracji
-            swojego konta.
+            Poniżej znajdziesz przycisk, służący do usuwania danych z aplikacji
+            ProteGO Safe. Jeśli korzystasz z Analizy Ryzyka Koronawirusem,
+            znajdziesz tu także miejsce na podanie numeru PIN.
           </Paragraph>
-          <Imprint hidePhoneNumber />
+          {/* <Imprint hidePhoneNumber /> */}
           <ButtonWrapper>
             <Button
               onClick={() => history.push(Routes.UserDataSettings)}
