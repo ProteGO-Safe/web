@@ -2,7 +2,6 @@ import React from 'react';
 import {
   TriageRecommendations,
   Smile,
-  MakeDiagnosisButton,
   TriageRiskInformation,
   TriageInfoBorder,
   MoreInformation
@@ -16,7 +15,6 @@ const TestYellow = () => {
       <TriageInfoBorder />
       <TriageRecommendations />
       <MoreInformation />
-      <MakeDiagnosisButton />
     </>
   );
 };

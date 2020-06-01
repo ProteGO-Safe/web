@@ -1,11 +1,10 @@
 import React from 'react';
-import { MakeDiagnosisButton, SmileNoData } from '../../components/index';
+import { SmileNoData } from '../../components/index';
 
 const NoData = () => {
   return (
     <>
       <SmileNoData />
-      <MakeDiagnosisButton />
     </>
   );
 };
