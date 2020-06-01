@@ -13,13 +13,9 @@ const SmileNoData = () => {
         <RedSmile />
       </Icons>
       <Title>
-        Aplikacji ProteGo Safe brakuje danych do analizy Twojego ryzyka infekcji
-        COVID-19.
+        Brakuje informacji do analizy Twojego ryzyka zakażenia koronawirusem.
       </Title>
-      <Paragraph>
-        Możesz wykonać wstępną analizę wypełniając poniższy Test Oceny Ryzyka
-        lub czekać na informacje o kontaktach z osobami chorymi na COVID-19.
-      </Paragraph>
+      <Paragraph>Zaczekaj na informacje o kontaktach z zakażonymi.</Paragraph>
     </Wrapper>
   );
 };
