@@ -10,41 +10,52 @@ import { chronicSickValues } from '../../constants';
 import Routes from '../../routes';
 import useLoaderContext from '../../hooks/useLoaderContext';
 import { ImprintFiller } from '../../components/ImprintFiller';
-import { AGE_VALIDATOR } from '../../utils/validationSchemas';
 
 const UserDataChange = () => {
   const dispatch = useDispatch();
   const history = useHistory();
   const { setLoader } = useLoaderContext();
-  const { age, bloodGroup, chronicSicks, name, sex, smokeNumber } = useSelector(
+  const { bloodGroup, chronicSicks, name, smokeNumber } = useSelector(
     state => state.user
   );
 
-  const filledChronicsSicks = {};
-
-  chronicSicks.forEach(_obj => {
-    const { name: filledName, description: filledDescription } = _obj;
-    filledChronicsSicks[filledName] = true;
-    const foundedChronicsSick = chronicSickValues.find(
-      value => value.field === filledName
-    );
-    if (foundedChronicsSick && filledDescription) {
-      filledChronicsSicks[foundedChronicsSick.description] = filledDescription;
+  const filledChronicsSicks = (() => {
+    if (chronicSicks === undefined) {
+      return undefined;
     }
-  });
+    const filledChronicsSicksToReturn = {};
+    chronicSicks.forEach(_obj => {
+      const { name: filledName, description: filledDescription } = _obj;
+      filledChronicsSicksToReturn[filledName] = true;
+      const foundedChronicsSick = chronicSickValues.find(
+        value => value.field === filledName
+      );
+      if (foundedChronicsSick && filledDescription) {
+        filledChronicsSicksToReturn[
+          foundedChronicsSick.description
+        ] = filledDescription;
+      }
+    });
+    return filledChronicsSicksToReturn;
+  })();
 
-  const smoke = smokeNumber
-    ? constants.VALUE_SMOKE_YES
-    : constants.VALUE_SMOKE_NO;
+  const smoke = (() => {
+    if (smokeNumber === undefined) {
+      return undefined;
+    }
+    return smokeNumber ? constants.VALUE_SMOKE_YES : constants.VALUE_SMOKE_NO;
+  })();
 
-  const isChronicSick =
-    chronicSicks.length === 0
+  const isChronicSick = (() => {
+    if (chronicSicks === undefined) {
+      return undefined;
+    }
+    return chronicSicks.length === 0
       ? constants.VALUE_IS_CHRONIC_SICK_NO
       : constants.VALUE_IS_CHRONIC_SICK_YES;
+  })();
 
   const initialValues = {
-    [constants.FIELD_AGE]: age,
-    [constants.FIELD_SEX]: sex,
     [constants.FIELD_NAME]: name,
     [constants.FIELD_BLOOD_GROUP]: bloodGroup,
     [constants.FIELD_SMOKE]: smoke,
@@ -63,20 +74,8 @@ const UserDataChange = () => {
     [constants.FIELD_TERM1]: Yup.boolean().oneOf(
       [true],
       'Proszę zaznaczyć zgodę'
-    ),
-    [constants.FIELD_AGE]: AGE_VALIDATOR
+    )
   });
-
-  const resolveSex = field => {
-    switch (field) {
-      case constants.VALUE_MAN:
-        return 'male';
-      case constants.VALUE_WOMAN:
-        return 'female';
-      default:
-        return '';
-    }
-  };
 
   const handleSubmit = form => {
     const chronicSicksFromForm = chronicSickValues
@@ -87,9 +86,6 @@ const UserDataChange = () => {
 
     const data = {
       name: form[constants.FIELD_NAME],
-      // phone: form[constants.FIELD_PHONE],
-      sex: resolveSex(form[constants.FIELD_SEX]),
-      age: form[constants.FIELD_AGE],
       chronicSicks: [...chronicSicksFromForm],
       bloodGroup: form[constants.FIELD_BLOOD_GROUP],
       smokeNumber: form[constants.FIELD_SMOKE_NUMBER]

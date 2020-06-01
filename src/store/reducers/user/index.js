@@ -1,15 +1,15 @@
-import { USER_SAVE } from '../../types/user';
+import { USER_NAME_SAVE, USER_SAVE } from '../../types/user';
 
 const INITIAL_STATE = {
-  bloodGroup: '',
-  chronicSicks: [], // { name, description }
-  name: '',
-  smokeNumber: ''
+  bloodGroup: undefined,
+  chronicSicks: undefined,
+  name: undefined,
+  smokeNumber: undefined
 };
 
 const diagnosisReducer = (state = INITIAL_STATE, action) => {
   switch (action.type) {
-    case USER_SAVE:
+    case USER_NAME_SAVE:
       return (() => {
         const {
           data: { name }
@@ -19,6 +19,20 @@ const diagnosisReducer = (state = INITIAL_STATE, action) => {
           name
         };
       })();
+    case USER_SAVE:
+      return (() => {
+        const {
+          data: { bloodGroup, chronicSicks, name, smokeNumber }
+        } = action;
+        return {
+          ...state,
+          bloodGroup,
+          chronicSicks,
+          name,
+          smokeNumber
+        };
+      })();
+
     default:
       return state;
   }
