@@ -10,7 +10,6 @@ import { questionPropType } from '../../prop-types';
 const SingleContainer = ({ question }) => {
   const dispatch = useDispatch();
 
-  const { sex, age } = useSelector(state => state.user);
   const { evidence: existingEvidence } = useSelector(state => state.diagnosis);
 
   const initialValues = {
@@ -19,8 +18,6 @@ const SingleContainer = ({ question }) => {
 
   const handleSubmit = values => {
     const data = {
-      sex,
-      age,
       evidence: [
         ...existingEvidence,
         {

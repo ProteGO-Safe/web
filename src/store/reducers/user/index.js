@@ -1,11 +1,9 @@
 import { USER_SAVE } from '../../types/user';
 
 const INITIAL_STATE = {
-  age: '',
   bloodGroup: '',
   chronicSicks: [], // { name, description }
   name: '',
-  sex: '',
   smokeNumber: ''
 };
 
