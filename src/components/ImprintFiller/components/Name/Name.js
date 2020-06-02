@@ -12,27 +12,9 @@ import { Annotation, TextLink } from '../../../../theme/typography';
 import { Actions, Title } from '../../ImprintFiller.styled';
 import './Name.scss';
 
-const Name = ({ editMode }) => {
-  const {
-    errors,
-    handleChange,
-    setErrors,
-    setFieldValue,
-    values,
-    validateForm
-  } = useFormikContext();
+const Name = ({ editMode, handleClick }) => {
+  const { errors, handleChange, setFieldValue, values } = useFormikContext();
   const { openModal } = useModalContext();
-
-  const fields = [FIELD_NAME, FIELD_TERM1];
-
-  const handleClick = () => {
-    validateForm().then(error => {
-      if (!fields.some(field => Object.keys(error).includes(field))) {
-        setFieldValue('step', 2);
-        setErrors({});
-      }
-    });
-  };
 
   const disabled = (() => {
     if (editMode) {
@@ -52,11 +34,12 @@ const Name = ({ editMode }) => {
       )}
       <TextField
         error={errors[FIELD_NAME]}
-        label="Jak masz na imię?"
-        placeholder="imię"
+        label="Jak aplikacja może się do Ciebie zwracać?"
+        placeholder="Twój nick lub pseudonim"
         onChange={handleChange}
         name={FIELD_NAME}
         value={values[FIELD_NAME]}
+        info="Podpowiedź: nie podawaj swojego nazwiska."
       />
       {!editMode && (
         <FormGroup>

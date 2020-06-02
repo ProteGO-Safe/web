@@ -1,9 +1,8 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
-import { Button, Imprint } from '../../components';
+import { Button, Header, Imprint } from '../../components';
 import Routes from '../../routes';
-import Header from '../../components/Header/Header';
 import { BottomNavigation } from '../../components/BottomNavigation';
 import { getUserName } from '../../store/selectors/user';
 import useSupportExposureNotificationTracing from '../../hooks/useSupportExposureNotificationTracing';
@@ -24,10 +23,13 @@ const UserData = () => {
         <Container>
           <Name>{userName},</Name>
           <Paragraph>
-            Poniżej znajdują się dane, które podałeś w trakcie rejestracji
-            swojego konta.
+            Poniżej znajdują się informacje, które podałaś/podałeś. Aplikacja
+            przechowuje je tylko w pamięci Twojego telefonu. W dowolnej chwili
+            możesz je edytować lub usunąć. Jeśli korzystasz z funkcji
+            powiadamiana o narażeniu na koronawirusa, znajdziesz tutaj także
+            miejsce na podanie numeru PIN.
           </Paragraph>
-          <Imprint hidePhoneNumber />
+          <Imprint />
           <ButtonWrapper>
             <Button
               onClick={() => history.push(Routes.UserDataSettings)}
@@ -36,7 +38,7 @@ const UserData = () => {
             <Button
               onClick={() => history.push(Routes.UserDataChange)}
               type="secondary"
-              text="Zmień dane"
+              text="Aktualizuj Metrykę Zdrowia"
             />
           </ButtonWrapper>
           {areEnableAllServices && (

@@ -9,7 +9,7 @@ export const OnboardingWrapper = styled.div`
 export const IconWrapper = styled.div`
   display: flex;
   flex-flow: wrap row;
-  justify-content: flex-start;
+  justify-content: center;
   width: 100%;
   margin-bottom: 26px;
 `;

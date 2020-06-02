@@ -26,10 +26,9 @@ const UserDataSettings = () => {
               Ważne
             </BoxTitle>
             <Paragraph>
-              Jeżeli wymażesz swoje dane, aplikacja stanie się bezużyteczna. W
-              takim przypadku będzie trzeba ponownie uzupełnić wszystkie dane.
-              Archiwum Testów Oceny Ryzyka i Mój Dziennik Zdrowia zostanie
-              bezpowrotnie usunięte.
+              Jeśli wymażesz swoje dane, aplikacja stanie się bezużyteczna.
+              Archiwum Twojego Dziennika Zdrowia przepadnie, a wszelkie dane
+              będzie trzeba podawać ponownie.
             </Paragraph>
           </Box>
           <Actions>

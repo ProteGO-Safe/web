@@ -31,7 +31,9 @@ const ExposureOnboarding = () => {
     return <NotSupported onNext={handleFinishOnboarding} />;
   }
 
-  return <Information onNext={nextInformation} />;
+  return (
+    <Information onNext={nextInformation} onSkip={handleFinishOnboarding} />
+  );
 };
 
 export default ExposureOnboarding;

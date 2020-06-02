@@ -1,1 +1,1 @@
-export { default as MoreInformation } from './MoreInformationContainer';
+export { default as MoreInformation } from './MoreInformation';

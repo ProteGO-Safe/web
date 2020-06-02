@@ -51,7 +51,7 @@ jobs:
         if: env.ENVIRONMENT == 'STAGE' || env.ENVIRONMENT == 'PROD' || env.ENVIRONMENT == 'DEV'
 
       - name: Inject ENV's for builds
-        run: 'echo "$PROJECT_ENVS" > .env'
+        run: 'echo "$PROJECT_ENVS" |base64 --decode > .env'
         shell: bash
         if: env.ENVIRONMENT == 'STAGE' || env.ENVIRONMENT == 'PROD' || env.ENVIRONMENT == 'DEV'
 

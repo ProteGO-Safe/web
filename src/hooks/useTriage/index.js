@@ -2,17 +2,25 @@ import { useSelector } from 'react-redux';
 import {
   TRIAGE_LEVEL,
   RISK_LEVEL_COLOR,
-  EXPOSURE_TRIAGE_LEVEL
+  EXPOSURE_TRIAGE_LEVEL,
+  NO_TRIAGE_LEVEL
 } from './triageLevel.constants';
 import { EXPOSURE_NOTIFICATION_STATUS } from '../../utils/servicesStatus/servicesStatus.constants';
 
-const defaultTriageLevel = (triageLevel, description, serious) => {
+const defaultTriageLevel = (
+  triageLevel,
+  description,
+  serious,
+  triageRiskLevel = 0,
+  exposureRiskLevel = 0
+) => {
   const {
     color,
     content,
     IconComponent,
     Recommendation,
-    riskGroup
+    riskGroup,
+    riskLevel
   } = TRIAGE_LEVEL[triageLevel];
 
   const isDangerous =
@@ -26,6 +34,9 @@ const defaultTriageLevel = (triageLevel, description, serious) => {
     isDangerous,
     Recommendation,
     riskGroup,
+    riskLevel,
+    exposureRiskLevel,
+    triageRiskLevel,
     serious
   };
 };
@@ -65,6 +76,59 @@ const resolveTriageRiskLevel = triageLevel => {
   }
 };
 
+const resolveExposureHighRiskLevel = (triageRiskLevel = 0) => {
+  return {
+    ...EXPOSURE_TRIAGE_LEVEL[RISK_LEVEL_COLOR.RED],
+    triageRiskLevel
+  };
+};
+
+const resolveExposureMidRiskLevel = (triageRiskLevel = 0) => {
+  if (triageRiskLevel === RISK_LEVEL_COLOR.RED) {
+    return {
+      ...EXPOSURE_TRIAGE_LEVEL[RISK_LEVEL_COLOR.RED],
+      triageRiskLevel: RISK_LEVEL_COLOR.RED
+    };
+  }
+  return {
+    ...EXPOSURE_TRIAGE_LEVEL[RISK_LEVEL_COLOR.YELLOW],
+    triageRiskLevel
+  };
+};
+
+const resolveExposureLowRiskLevel = (
+  triageRiskLevel,
+  triageLevel,
+  description,
+  serious
+) => {
+  if (triageRiskLevel === undefined) {
+    return {
+      ...EXPOSURE_TRIAGE_LEVEL[RISK_LEVEL_COLOR.GREEN],
+      triageRiskLevel: 0
+    };
+  }
+  return defaultTriageLevel(
+    triageLevel,
+    description,
+    serious,
+    triageRiskLevel,
+    RISK_LEVEL_COLOR.GREEN
+  );
+};
+
+const resolveUndefinedExposureRiskLevel = (
+  triageRiskLevel,
+  triageLevel,
+  description,
+  serious
+) => {
+  if (triageRiskLevel === undefined) {
+    return NO_TRIAGE_LEVEL;
+  }
+  return defaultTriageLevel(triageLevel, description, serious, triageRiskLevel);
+};
+
 const useTriage = () => {
   const { triageLevel, description, serious } = useSelector(
     state => state.triage
@@ -78,37 +142,35 @@ const useTriage = () => {
   const triageRiskLevel = resolveTriageRiskLevel(triageLevel);
 
   if (
-    exposureNotificationStatus === !EXPOSURE_NOTIFICATION_STATUS.ON ||
+    exposureNotificationStatus !== EXPOSURE_NOTIFICATION_STATUS.ON ||
     exposureRiskLevel === undefined
   ) {
-    return defaultTriageLevel(triageLevel, description, serious);
+    return resolveUndefinedExposureRiskLevel(
+      triageRiskLevel,
+      triageLevel,
+      description,
+      serious
+    );
   }
 
-  if (
-    triageRiskLevel === RISK_LEVEL_COLOR.GREEN &&
-    exposureRiskLevel === RISK_LEVEL_COLOR.GREEN
-  ) {
-    return defaultTriageLevel(triageLevel, description, serious);
+  if (exposureRiskLevel === RISK_LEVEL_COLOR.GREEN) {
+    return resolveExposureLowRiskLevel(
+      triageRiskLevel,
+      triageLevel,
+      description,
+      serious
+    );
   }
-  if (triageRiskLevel === RISK_LEVEL_COLOR.GREEN) {
-    return EXPOSURE_TRIAGE_LEVEL[exposureRiskLevel];
+
+  if (exposureRiskLevel === RISK_LEVEL_COLOR.YELLOW) {
+    return resolveExposureMidRiskLevel(triageRiskLevel);
   }
-  if (
-    triageRiskLevel === RISK_LEVEL_COLOR.YELLOW &&
-    exposureRiskLevel === RISK_LEVEL_COLOR.GREEN
-  ) {
-    return EXPOSURE_TRIAGE_LEVEL[RISK_LEVEL_COLOR.YELLOW];
+
+  if (exposureRiskLevel === RISK_LEVEL_COLOR.RED) {
+    return resolveExposureHighRiskLevel(triageRiskLevel);
   }
-  if (triageRiskLevel === RISK_LEVEL_COLOR.YELLOW) {
-    return EXPOSURE_TRIAGE_LEVEL[exposureRiskLevel];
-  }
-  if (
-    triageRiskLevel === RISK_LEVEL_COLOR.RED &&
-    exposureRiskLevel === RISK_LEVEL_COLOR.GREEN
-  ) {
-    return defaultTriageLevel(triageLevel, description, serious);
-  }
-  return EXPOSURE_TRIAGE_LEVEL[RISK_LEVEL_COLOR.RED];
+
+  throw new Error('illegal exposureRiskLevel');
 };
 
 export default useTriage;

@@ -29,7 +29,7 @@ export const YellowSmile = () => {
 const Smile = styled.svg`
   .yellow-st0 {
     fill: none;
-    stroke: #eba828;
+    stroke: #cc4700;
     stroke-width: 2.5;
     stroke-linecap: round;
     stroke-miterlimit: 10;

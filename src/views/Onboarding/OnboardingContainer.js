@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import ExposureOnboarding from './components/ExposureOnboarding/ExposureOnboarding';
+import { ExposureOnboarding } from './components/ExposureOnboarding';
 import { isIOSWebView } from '../../utils/native';
 import {
   finishExposureOnboarding,

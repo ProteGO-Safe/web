@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import {
   WarningWrapper,
   TitleWrapper,
+  IconArrow,
   Icon,
   Title,
   Content
@@ -13,7 +14,15 @@ import info from '../../assets/img/warning/info.svg';
 import success from '../../assets/img/warning/success.svg';
 import warning from '../../assets/img/warning/warning.svg';
 
-const Warning = ({ content, status, title, onClick }) => {
+const Warning = ({
+  arrow,
+  content,
+  colorFont,
+  borderColor,
+  status,
+  title,
+  onClick
+}) => {
   const renderIcon = (() => {
     switch (status) {
       case 'success': {
@@ -34,24 +43,31 @@ const Warning = ({ content, status, title, onClick }) => {
     }
   })();
   return (
-    <WarningWrapper className={`${status}`} onClick={onClick}>
+    <WarningWrapper className={`${borderColor}`} onClick={onClick}>
+      {arrow && <IconArrow color={colorFont} />}
       <TitleWrapper>
         <Icon>
           <img src={renderIcon} alt="icon" />
         </Icon>
-        <Title>{title}</Title>
+        <Title color={colorFont}>{title}</Title>
+        <Content color={colorFont}>{content}</Content>
       </TitleWrapper>
-      <Content>{content}</Content>
     </WarningWrapper>
   );
 };
 
 Warning.defaultProps = {
+  arrow: false,
+  borderColor: '',
+  colorFont: '',
   status: 'success'
 };
 
 Warning.propTypes = {
+  arrow: PropTypes.bool,
+  borderColor: PropTypes.string,
   content: PropTypes.string.isRequired,
+  colorFont: PropTypes.string,
   status: PropTypes.oneOf(['success', 'warning', 'info', 'error']),
   title: PropTypes.string.isRequired,
   onClick: PropTypes.func.isRequired

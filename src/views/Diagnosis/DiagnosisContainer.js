@@ -10,12 +10,13 @@ import { Summary } from './components/Summary';
 import './Diagnosis.scss';
 import useLoaderContext from '../../hooks/useLoaderContext';
 import { Information } from '../Information/index';
+import { Age } from './components/Age';
 
 const DiagnosisContainer = () => {
   const dispatch = useDispatch();
   const { setLoader } = useLoaderContext();
-  const { sex, age } = useSelector(state => state.user);
   const [showInformation, setShowInformation] = useState(true);
+  const [moreThan65, setMoreThan65] = useState(undefined);
 
   const { evidence, question, isLoading, inProgress } = useSelector(
     state => state.diagnosis
@@ -27,44 +28,44 @@ const DiagnosisContainer = () => {
       return;
     }
     setLoader(false);
-    // eslint-disable-next-line
-  }, [isLoading]);
+  }, [isLoading, setLoader]);
 
   useEffect(() => {
     const data = {
-      sex,
-      age,
       evidence: []
     };
     dispatch(getDiagnosis(data));
-    // eslint-disable-next-line
-  }, [dispatch]);
+  }, [moreThan65, dispatch]);
 
   useEffect(() => {
-    if (!inProgress && evidence.length > 0) {
+    if (!inProgress && evidence.length > 0 && moreThan65 !== undefined) {
       const data = {
-        sex,
-        age,
+        moreThan65,
         evidence
       };
       dispatch(fetchTriage(data));
     }
-    // eslint-disable-next-line
-  }, [inProgress, evidence]);
+  }, [inProgress, evidence, moreThan65, dispatch]);
+
+  const onClearDiagnosis = () => dispatch(clearDiagnosis());
+
+  const isCountryQuestion = () => {
+    return question.items.some(value => value.id === 'p_5');
+  };
 
   if (!inProgress && evidence.length > 0) {
     return <Summary />;
   }
 
-  const onClearDiagnosis = () => dispatch(clearDiagnosis());
-
   if (showInformation) {
     return <Information hideInformation={() => setShowInformation(false)} />;
   }
 
-  const isCountryQuestion = () => {
-    return question.items.some(value => value.id === 'p_5');
-  };
+  if (moreThan65 === undefined) {
+    return (
+      <Age onBack={() => setShowInformation(true)} onNext={setMoreThan65} />
+    );
+  }
 
   return (
     <Diagnosis

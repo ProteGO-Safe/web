@@ -1,1 +1,1 @@
-export { default as ExposureNotificationOnboarding } from './ExposureNotificationOnboarding';
+export { default as ExposureOnboarding } from './ExposureOnboarding';

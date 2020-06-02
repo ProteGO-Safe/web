@@ -22,7 +22,11 @@ const NotificationOnboarding = () => {
     enableNotification();
   };
 
-  return <Information onNext={nextInformation} />;
+  const onSkip = () => {
+    dispatch(finishOnboarding());
+  };
+
+  return <Information onNext={nextInformation} onSkip={onSkip} />;
 };
 
 export default NotificationOnboarding;
