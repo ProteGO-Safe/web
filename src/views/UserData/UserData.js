@@ -23,10 +23,11 @@ const UserData = () => {
         <Container>
           <Name>{userName},</Name>
           <Paragraph>
-            Poniżej znajdziesz przycisk, służący do usuwania danych z aplikacji
-            ProteGO Safe oraz do akutalizacji Metryki Zdrowia. Jeśli korzystasz
-            z Analizy Ryzyka Koronawirusem, znajdziesz tu także miejsce na
-            podanie numeru PIN.
+            Poniżej znajdują się informacje, które podałaś/podałeś. Aplikacja
+            przechowuje je tylko w pamięci Twojego telefonu. W dowolnej chwili
+            możesz je edytować lub usunąć. Jeśli korzystasz z funkcji
+            powiadamiana o narażeniu na koronawirusa, znajdziesz tutaj także
+            miejsce na podanie numeru PIN.
           </Paragraph>
           <Imprint />
           <ButtonWrapper>
