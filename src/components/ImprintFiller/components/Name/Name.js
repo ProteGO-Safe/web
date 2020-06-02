@@ -34,11 +34,12 @@ const Name = ({ editMode, handleClick }) => {
       )}
       <TextField
         error={errors[FIELD_NAME]}
-        label="Jak mamy się do Ciebie zwracać?"
-        placeholder="Pseudonim lub imię"
+        label="Jak aplikacja może się do Ciebie zwracać?"
+        placeholder="Twój nick lub pseudonim"
         onChange={handleChange}
         name={FIELD_NAME}
         value={values[FIELD_NAME]}
+        info="Podpowiedź: nie podawaj swojego nazwiska."
       />
       {!editMode && (
         <FormGroup>
