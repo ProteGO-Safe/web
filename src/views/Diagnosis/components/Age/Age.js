@@ -40,16 +40,16 @@ const Age = ({ onBack, onNext }) => {
           <Title>Ile masz lat?</Title>
           <FormGroup>
             <Radio
-              checked={selectedCheckbox === MORE_THAN_65}
-              label={<Label>65 lub więcej</Label>}
-              name="age"
-              onChange={() => onChange(MORE_THAN_65)}
-            />
-            <Radio
               checked={selectedCheckbox === LESS_THAN_65}
               label={<Label>mniej niż 65</Label>}
               name="age"
               onChange={() => onChange(LESS_THAN_65)}
+            />
+            <Radio
+              checked={selectedCheckbox === MORE_THAN_65}
+              label={<Label>65 lub więcej</Label>}
+              name="age"
+              onChange={() => onChange(MORE_THAN_65)}
             />
             <Radio
               checked={selectedCheckbox === NO_DATA}
