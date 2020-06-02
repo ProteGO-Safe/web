@@ -1,9 +1,8 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
-import { Button } from '../../components';
+import { Button, Header, Imprint } from '../../components';
 import Routes from '../../routes';
-import Header from '../../components/Header/Header';
 import { BottomNavigation } from '../../components/BottomNavigation';
 import { getUserName } from '../../store/selectors/user';
 import useSupportExposureNotificationTracing from '../../hooks/useSupportExposureNotificationTracing';

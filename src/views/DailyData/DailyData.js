@@ -4,13 +4,12 @@ import { useHistory } from 'react-router-dom';
 import { useFormikContext } from 'formik';
 
 import Routes from '../../routes';
-import Header from '../../components/Header/Header';
 import { BottomNavigation } from '../../components/BottomNavigation';
-import { Button } from '../../components';
+import { Button, Header, Imprint } from '../../components';
 import { Data, Form } from './components';
 import { Actions } from '../../components/ImprintFiller/ImprintFiller.styled';
 import { Content, Container, View } from '../../theme/grid';
-import { Title } from './DailyData.styled';
+import { Title, TitleBox } from './DailyData.styled';
 import './DailyData.scss';
 
 const DailyData = ({ isViewMode }) => {
