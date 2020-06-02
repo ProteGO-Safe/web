@@ -55,7 +55,7 @@ const PrivacyPolicyContent = () => (
       urządzenia.
     </Paragraph>
     <Paragraph>
-      Funkcjonalność analizowania narażenia na zarażenie COVID-10 w związku z
+      Funkcjonalność analizowania narażenia na zarażenie COVID-19 w związku z
       kontaktem z innymi Użytkownikami Aplikacji (Moduł Analityczny) jest
       dobrowolna. Masz możliwość analizowania potencjalnego narażenia na
       zarażenie <Url value="https://www.gov.pl/web/koronawirus">COVID-19</Url>{' '}
