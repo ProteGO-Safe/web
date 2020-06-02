@@ -1,5 +1,6 @@
 import * as types from '../types/triage';
 import { getTriage } from '../../services/diagnosisLogic/triageLogic';
+import { firstDiagnosisFinished } from './app';
 
 export const triageFetchRequested = () => ({
   type: types.TRIAGE_FETCH_REQUESTED
@@ -13,6 +14,7 @@ export const triageFetchSuccess = ({ data }) => ({
 export function fetchTriage(data) {
   return dispatch => {
     dispatch(triageFetchRequested());
+    dispatch(firstDiagnosisFinished());
     const result = getTriage(data);
     dispatch(triageFetchSuccess({ data: result }));
   };

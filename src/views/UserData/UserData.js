@@ -1,9 +1,8 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
-import { Button } from '../../components';
+import { Button, Header, Imprint } from '../../components';
 import Routes from '../../routes';
-import Header from '../../components/Header/Header';
 import { BottomNavigation } from '../../components/BottomNavigation';
 import { getUserName } from '../../store/selectors/user';
 import useSupportExposureNotificationTracing from '../../hooks/useSupportExposureNotificationTracing';
@@ -25,14 +24,20 @@ const UserData = () => {
           <Name>{userName},</Name>
           <Paragraph>
             Poniżej znajdziesz przycisk, służący do usuwania danych z aplikacji
-            ProteGO Safe. Jeśli korzystasz z Analizy Ryzyka Koronawirusem,
-            znajdziesz tu także miejsce na podanie numeru PIN.
+            ProteGO Safe oraz do akutalizacji Metryki Zdrowia. Jeśli korzystasz
+            z Analizy Ryzyka Koronawirusem, znajdziesz tu także miejsce na
+            podanie numeru PIN.
           </Paragraph>
-          {/* <Imprint hidePhoneNumber /> */}
+          <Imprint />
           <ButtonWrapper>
             <Button
               onClick={() => history.push(Routes.UserDataSettings)}
               text="Zarządzaj danymi"
+            />
+            <Button
+              onClick={() => history.push(Routes.UserDataChange)}
+              type="secondary"
+              text="Aktualizuj Metrykę Zdrowia"
             />
           </ButtonWrapper>
           {areEnableAllServices && (
