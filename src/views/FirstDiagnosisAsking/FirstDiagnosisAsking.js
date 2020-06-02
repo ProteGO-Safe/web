@@ -11,14 +11,14 @@ const FirstDiagnosisAsking = ({ onYesClick, onNoClick }) => {
       <Content>
         <Container className="full-height">
           <Paragraph>
-            Czy chcesz dowiedzieć się więcej na temat czynników mających wpływ
-            na ryzyko infekcji? Jeśli tak, kliknij poniżej i wykonaj Test oceny
-            ryzyka.
+            Chcesz dowiedzieć się więcej?
+            <br />
+            Kliknij poniżej i wykonaj test oceny ryzyka.
           </Paragraph>
           <Small>
-            Pamiętaj, że wyniki wywiadu służą wyłącznie celom informacyjnym oraz
-            edukacyjnym i nie mogą być w żadnym wypadku interpretowane ani
-            traktowane jako porada, konsultacja lub diagnoza lekarska.
+            Pamiętaj! Wyniki wywiadu służą wyłącznie celom informacyjnym. Nie
+            mogą być interpretowane, ani traktowane jako porada, konsultacja lub
+            diagnoza lekarska.
           </Small>
           <ButtonWrapper>
             <Button text="Wykonaj test oceny ryzyka" onClick={onYesClick} />
