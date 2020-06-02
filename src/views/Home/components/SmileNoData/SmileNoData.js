@@ -15,7 +15,10 @@ const SmileNoData = () => {
       <Title>
         Brakuje informacji do analizy Twojego ryzyka zakażenia koronawirusem.
       </Title>
-      <Paragraph>Zaczekaj na informacje o kontaktach z zakażonymi.</Paragraph>
+      <Paragraph>
+        Wypełnij test oceny ryzyka lub zaczekaj na informacje o kontaktach z
+        zakażonymi.
+      </Paragraph>
     </Wrapper>
   );
 };

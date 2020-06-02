@@ -1,5 +1,6 @@
 import React from 'react';
 import {
+  MakeDiagnosisButton,
   Smile,
   TriageInfoBorder
 } from '../../components/index';
@@ -14,6 +15,7 @@ const ExposureLow = () => {
         Jeśli chcesz dowiedzieć się więcej na temat czynników mających wpływ na
         ryzyko infekcji, kliknij poniżej i wykonaj test oceny ryzyka.
       </Paragraph>
+      <MakeDiagnosisButton />
     </>
   );
 };

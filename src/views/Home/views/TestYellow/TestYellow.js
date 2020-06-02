@@ -4,13 +4,15 @@ import {
   Smile,
   TriageRiskInformation,
   TriageInfoBorder,
-  MoreInformation
+  MoreInformation,
+  MakeDiagnosisButton
 } from '../../components/index';
 
 const TestYellow = () => {
   return (
     <>
       <Smile />
+      <MakeDiagnosisButton />
       <TriageRiskInformation />
       <TriageInfoBorder />
       <TriageRecommendations />

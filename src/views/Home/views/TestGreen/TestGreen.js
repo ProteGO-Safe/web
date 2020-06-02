@@ -1,10 +1,11 @@
 import React from 'react';
-import { Smile } from '../../components/index';
+import { MakeDiagnosisButton, Smile } from '../../components/index';
 
 const TestGreen = () => {
   return (
     <>
       <Smile />
+      <MakeDiagnosisButton />
     </>
   );
 };
