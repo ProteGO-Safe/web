@@ -24,6 +24,8 @@ const DailyData = ({ isViewMode }) => {
         <Container className="full-height">
           <Title>Dziennik zdrowia</Title>
           {isViewMode ? <Data /> : <Form />}
+          <TitleBox className="medium title-4 text-left">Metryka</TitleBox>
+          <Imprint />
           <Actions>
             {isViewMode ? (
               <Button

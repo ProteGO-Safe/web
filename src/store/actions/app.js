@@ -32,3 +32,13 @@ export function showStartScreenSuccess() {
     dispatch(startScreenShowed());
   };
 }
+
+export const firstDiagnosisFinished = () => ({
+  type: types.FIRST_DIAGNOSIS_FINISHED
+});
+
+export function finishFirstDiagnosis() {
+  return async dispatch => {
+    dispatch(firstDiagnosisFinished());
+  };
+}

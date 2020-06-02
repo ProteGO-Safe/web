@@ -30,7 +30,7 @@ export const TRIAGE_LEVEL = {
   },
   quarantine: {
     content: 'Jeśli twoje objawy wydają się niepokojące – reaguj.',
-    color: Color.info,
+    color: Color.orange,
     IconComponent: YellowSmile,
     riskLevel: 2,
     riskGroup: 'Średnie ryzyko infekcji',
@@ -79,7 +79,7 @@ export const EXPOSURE_TRIAGE_LEVEL = {
     exposureRiskLevel: 1
   },
   2: {
-    color: Color.danger,
+    color: Color.orange,
     content:
       'Przebywałeś/aś w okolicy osoby chorej na Covid-19. Jesteś w Grupie Średniego Ryzyka. Skontaktuj się z Państwową Inspekcją Sanitarną pod numerem 222 500 115 pracownik infolinii poprowadzi Cię dalej.',
     IconComponent: RedSmile,

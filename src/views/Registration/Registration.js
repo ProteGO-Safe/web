@@ -3,7 +3,7 @@ import { Formik } from 'formik';
 import * as Yup from 'yup';
 import { useDispatch } from 'react-redux';
 
-import { saveUser } from '../../store/actions/user';
+import { saveUserName } from '../../store/actions/user';
 import * as constants from '../../constants';
 import { EXPLAINER_STEP } from './Registration.constants';
 import { Explainer } from './components/Explainer';
@@ -39,7 +39,7 @@ const Registration = () => {
       name: form[constants.FIELD_NAME]
     };
 
-    dispatch(saveUser(data));
+    dispatch(saveUserName(data));
   };
 
   return (

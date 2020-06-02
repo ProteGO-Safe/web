@@ -25,14 +25,20 @@ const UserData = () => {
           <Name>{userName},</Name>
           <Paragraph>
             Poniżej znajdziesz przycisk, służący do usuwania danych z aplikacji
-            ProteGO Safe. Jeśli korzystasz z Analizy Ryzyka Koronawirusem,
-            znajdziesz tu także miejsce na podanie numeru PIN.
+            ProteGO Safe oraz do akutalizacji Metryki Zdrowia. Jeśli korzystasz
+            z Analizy Ryzyka Koronawirusem, znajdziesz tu także miejsce na
+            podanie numeru PIN.
           </Paragraph>
-          {/* <Imprint hidePhoneNumber /> */}
+          <Imprint />
           <ButtonWrapper>
             <Button
               onClick={() => history.push(Routes.UserDataSettings)}
               text="Zarządzaj danymi"
+            />
+            <Button
+              onClick={() => history.push(Routes.UserDataChange)}
+              type="secondary"
+              text="Aktualizuj Metrykę Zdrowia"
             />
           </ButtonWrapper>
           {areEnableAllServices && (
