@@ -5,11 +5,13 @@ import { always, cond, equals } from 'ramda';
 import StoreRegistry from '../../store/storeRegistry';
 import {
   NATIVE_DATA_FETCH_EXPOSURE_NOTIFICATION_STATISTICS_SUCCESS,
+  NATIVE_DATA_FETCH_NATIVE_STATE,
   NATIVE_DATA_SET_SERVICES_STATUS_SUCCESS
 } from '../../store/types/nativeData';
 import { DATA_TYPE } from './nativeBridge.constants';
 import { UPLOAD_HISTORICAL_DATA_FINISHED } from '../../store/types/app';
 import { isAndroidWebView, isIOSWebView } from '../../utils/native';
+import { fetchExposureNotificationStatistics } from '../../store/actions/nativeData';
 
 const nativeRequests = {};
 
@@ -120,13 +122,26 @@ const handleExposureSummary = riskLevel => {
   });
 };
 
+const handleNativeState = appState => {
+  const store = StoreRegistry.getStore();
+  const { dispatch } = store;
+  dispatch({
+    appState,
+    type: NATIVE_DATA_FETCH_NATIVE_STATE
+  });
+  if (appState.appState === 1) {
+    dispatch(fetchExposureNotificationStatistics());
+  }
+};
+
 const callBridgeDataHandler = cond([
   [equals(DATA_TYPE.NATIVE_SERVICES_STATUS), always(handleServicesStatus)],
   [
     equals(DATA_TYPE.HISTORICAL_DATA),
     always(handleUploadHistoricalDataResponse)
   ],
-  [equals(DATA_TYPE.EXPOSURE_STATISTICS), always(handleExposureSummary)]
+  [equals(DATA_TYPE.EXPOSURE_STATISTICS), always(handleExposureSummary)],
+  [equals(DATA_TYPE.NATIVE_STATE), always(handleNativeState)]
 ]);
 
 const onBridgeData = (dataType, dataString) => {
