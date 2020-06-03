@@ -14,9 +14,7 @@ const Summary = ({ onSave }) => (
       <div className="content">
         <img className="icon" src={success} alt="Gratulacje" />
         <Title>Gratulacje!</Title>
-        <p className="big">
-          Dziękujemy za wypełnienie Twojego Pierwszego Testu Oceny Ryzyka.
-        </p>
+        <p className="big">Dziękujemy za wypełnienie Testu Oceny Ryzyka</p>
         <p className="big">
           Na podstawie Twoich odpowiedzi, nasz system sprawdzi teraz do jakiej
           grupy Cię zakwalifikować.
