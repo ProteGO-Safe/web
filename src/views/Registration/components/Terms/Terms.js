@@ -37,11 +37,6 @@ const Terms = ({ handleClick }) => {
             Dzięki niej dowiesz się, czy istnieje ryzyko, że przebywałeś/aś w
             pobliżu osób chorych na COVID-19.
           </Paragraph>
-          <Paragraph>
-            W następnych krokach będziesz mógł opcjonalnie podać nick
-            wykorzystywany w aplikacji oraz wykononać opcjonalny test oceny
-            ryzyka. Zaakceptuj poniższą zgodę, aby kontynuować:
-          </Paragraph>
           <FormGroup>
             <Checkbox
               checked={values[FIELD_TERM1]}
