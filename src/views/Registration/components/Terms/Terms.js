@@ -35,7 +35,7 @@ const Terms = ({ handleClick }) => {
           </Paragraph>
           <Paragraph>
             Dzięki niej dowiesz się, czy istnieje ryzyko, że przebywałeś/aś w
-            pobliży osób chorych na COVID-19.
+            pobliżu osób chorych na COVID-19.
           </Paragraph>
           <Paragraph>
             W następnych krokach będziesz mógł opcjonalnie podać nick
