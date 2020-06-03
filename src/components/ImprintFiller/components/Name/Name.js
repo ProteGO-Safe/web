@@ -49,14 +49,20 @@ const Name = ({ editMode, handleClick }) => {
               <Annotation>
                 Oświadczam, że zapoznałem/am się z{' '}
                 <TextLink
-                  onClick={() => openModal(<RegulationsContent />)}
+                  onClick={e => {
+                    e.preventDefault();
+                    openModal(<RegulationsContent />);
+                  }}
                   role="button"
                 >
                   Regulaminem
                 </TextLink>{' '}
                 ProteGO Safe oraz{' '}
                 <TextLink
-                  onClick={() => openModal(<PrivacyPolicyContent />)}
+                  onClick={e => {
+                    e.preventDefault();
+                    openModal(<PrivacyPolicyContent />);
+                  }}
                   role="button"
                 >
                   Polityką Prywatności
