@@ -22,7 +22,7 @@ const NameForm = () => {
   })();
 
   const onSkip = () => {
-    setFieldValue(FIELD_NAME, 'Użytowniku');
+    setFieldValue(FIELD_NAME, 'Użytkowniku');
     handleSubmit();
   };
 
