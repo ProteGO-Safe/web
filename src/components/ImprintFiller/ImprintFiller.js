@@ -24,7 +24,7 @@ const steps = {
   }
 };
 
-const ImprintFiller = ({ editMode }) => {
+const ImprintFiller = () => {
   const {
     values: { step }
   } = useFormikContext();
@@ -46,7 +46,7 @@ const ImprintFiller = ({ editMode }) => {
       <Header hideBackButton />
       <Container>
         <Stepper currentStep={step} numberOfSteps={NUMBER_OF_STEPS} />
-        <StepComponent editMode={editMode} />
+        <StepComponent />
         <GovFooter type="black" />
       </Container>
     </View>

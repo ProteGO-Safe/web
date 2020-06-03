@@ -5,7 +5,7 @@ import { FIELD_NAME, FIELD_TERM1 } from '../../../../constants';
 import './Name.scss';
 import Name from './Name';
 
-const NameContainer = ({ editMode }) => {
+const NameContainer = () => {
   const { setErrors, setFieldValue, validateForm } = useFormikContext();
 
   const fields = [FIELD_NAME, FIELD_TERM1];
@@ -19,7 +19,7 @@ const NameContainer = ({ editMode }) => {
     });
   };
 
-  return <Name editMode={editMode} handleClick={handleClick} />;
+  return <Name handleClick={handleClick} />;
 };
 
 export default NameContainer;

@@ -1,16 +1,18 @@
 import React, { useRef, useState } from 'react';
+import { useFormikContext } from 'formik';
 import Explainer from './Explainer';
-import { ExplainerItem } from './components';
 
+import { ExplainerItem } from './components';
 import IconChat from '../../../../assets/img/explainer/chat.svg';
 import IconDiary from '../../../../assets/img/explainer/diary.svg';
 import IconInfo from '../../../../assets/img/explainer/info.svg';
 import IconDiagnostic from '../../../../assets/img/explainer/diagnostic.svg';
 
-const ExplainerContainer = ({ onFinishClick }) => {
+const ExplainerContainer = () => {
   const carouselRef = useRef(null);
   const [activeSlide, setActiveSlide] = useState(0);
   const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
+  const { setFieldValue } = useFormikContext();
 
   const items = [
     {
@@ -66,7 +68,7 @@ const ExplainerContainer = ({ onFinishClick }) => {
       return;
     }
 
-    onFinishClick();
+    setFieldValue('step', 2);
   };
 
   return (

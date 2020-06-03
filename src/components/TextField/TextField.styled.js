@@ -25,7 +25,9 @@ export const Label = styled(SmallText)`
 `;
 
 export const Information = styled.span`
-  margin: 0 14px;
+  display: block;
+  width: 100%;
+  margin: 32px 0 0 0;
   font-size: 12px;
   font-weight: ${FontWeight.Normal};
   color: ${Color.lightBlack};
