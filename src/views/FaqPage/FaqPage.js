@@ -90,7 +90,7 @@ const FaqPage = () => {
     });
 
   const renderLine = line => {
-    const phrases = line.split(/\[url\]/);
+    const phrases = line.replace(/\xa0/gi, ' ').split(/\[url\]/);
     return parseUrl(phrases);
   };
 
