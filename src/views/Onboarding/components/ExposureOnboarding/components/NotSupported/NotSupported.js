@@ -38,7 +38,7 @@ const NotSupported = ({ onNext }) => {
             title="Niezgodna wersja"
             buttons={renderButton}
           >
-            {isIOSWebView() ? (
+            {!isIOSWebView() ? (
               <p>
                 Coś jest nie tak. Sprawdź swoje urządzenie - zaktualizuj wersję
                 systemu swojego telefonu. To konieczne, jeśli chcesz w pełni
