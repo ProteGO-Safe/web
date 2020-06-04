@@ -13,11 +13,7 @@ const Explainer = ({ carouselRef, index, items, onClick, settings }) => {
       <Content>
         <Container className="full-height">
           {index < 1 ? (
-            <Title>
-              Diagnosis Key
-              <br />
-              od Apple/Google
-            </Title>
+            <Title>Powiadomienia o narażeniu na kontakt z COVID-19</Title>
           ) : (
             <Title>
               Włącz się do wspólnej walki

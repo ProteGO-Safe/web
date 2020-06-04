@@ -43,7 +43,7 @@ const MoreInformation = ({ onNext }) => {
               osób.
             </Paragraph>
             <Paragraph>
-              Nasza aplikacja korzysta z API opracowanego przez Apple i Google.
+              Nasza aplikacja korzysta z API opracowanego przez Google i Apple.
             </Paragraph>
             <Paragraph>
               <strong>Jak działa?</strong>
