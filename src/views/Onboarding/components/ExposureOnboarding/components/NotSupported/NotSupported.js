@@ -38,9 +38,12 @@ const NotSupported = ({ onNext }) => {
             buttons={renderButton}
           >
             <p>
-              Coś jest nie tak. Zaktualizuj wersję systemu swojego telefonu lub
-              sprawdź swoje urządzenie. To konieczne, jeśli chcesz w pełni
-              korzystać ze wszystkich funkcjonalności aplikacji.
+              Coś jest nie tak. Sprawdź swoje urządzenie - zaktualizuj wersję
+              systemu swojego telefonu. To konieczne, jeśli chcesz w pełni
+              korzystać ze wszystkich funkcjonalności aplikacji. Wsparcie dla
+              powiadamiania o możliwym kontakcie z koronawirusem posiadają
+              zaktualizowane urządzenia Android i tylko urządzenia iPhone z iOS
+              13.5 i nowszym.
             </p>
           </OnboardingContent>
           <GovFooter type="black" />
