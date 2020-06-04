@@ -5,8 +5,9 @@ import {
   Button,
   GovFooter
 } from '../../../../../../components';
-import { View, Container, Content } from '../../../../../../theme/grid';
+import { isIOSWebView } from '../../../../../../utils/native';
 import Header from '../../../../../../components/Header/Header';
+import { View, Container, Content } from '../../../../../../theme/grid';
 import { Icon } from './NotSupported.styled';
 
 const NotSupported = ({ onNext }) => {
@@ -37,14 +38,23 @@ const NotSupported = ({ onNext }) => {
             title="Niezgodna wersja"
             buttons={renderButton}
           >
-            <p>
-              Coś jest nie tak. Sprawdź swoje urządzenie - zaktualizuj wersję
-              systemu swojego telefonu. To konieczne, jeśli chcesz w pełni
-              korzystać ze wszystkich funkcjonalności aplikacji. Wsparcie dla
-              powiadamiania o możliwym kontakcie z koronawirusem posiadają
-              zaktualizowane urządzenia Android i tylko urządzenia iPhone z iOS
-              13.5 i nowszym.
-            </p>
+            {isIOSWebView() ? (
+              <p>
+                Coś jest nie tak. Sprawdź swoje urządzenie - zaktualizuj wersję
+                systemu swojego telefonu. To konieczne, jeśli chcesz w pełni
+                korzystać ze wszystkich funkcjonalności aplikacji. Wsparcie dla
+                powiadamiania o możliwym kontakcie z koronawirusem posiadają
+                zaktualizowane urządzenia Android.
+              </p>
+            ) : (
+              <p>
+                Wsparcie dla powiadamiania o możliwym kontakcie z koronawirusem
+                posiadają tylko urządzenia iPhone z iOS 13.5 i nowszym. Sprawdź
+                swoje urządzenie - zaktualizuj wersję systemu swojego telefonu.
+                To konieczne, jeśli chcesz w pełni korzystać ze wszystkich
+                funkcjonalności aplikacji.
+              </p>
+            )}
           </OnboardingContent>
           <GovFooter type="black" />
         </Container>
