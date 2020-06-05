@@ -8,6 +8,7 @@ import riskTest from './risktest';
 import daily from './daily';
 import nativeData from './nativeData';
 import externalData from './externalData';
+import { APP_STATE_CLEARED } from '../types/app';
 
 const reducers = combineReducers({
   app,
@@ -20,4 +21,12 @@ const reducers = combineReducers({
   externalData
 });
 
-export default reducers;
+const rootReducer = (state, action) => {
+  if (action.type === APP_STATE_CLEARED) {
+    return reducers(undefined, action);
+  }
+
+  return reducers(state, action);
+};
+
+export default rootReducer;

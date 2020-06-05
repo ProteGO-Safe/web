@@ -1,5 +1,5 @@
 import * as types from '../types/app';
-import { resetSourceSetServicesStatus } from './nativeData';
+import { clearBluetoothData, resetSourceSetServicesStatus } from './nativeData';
 
 export const onboardingFinished = () => ({
   type: types.ONBOARDING_FINISHED
@@ -40,5 +40,16 @@ export const firstDiagnosisFinished = () => ({
 export function finishFirstDiagnosis() {
   return async dispatch => {
     dispatch(firstDiagnosisFinished());
+  };
+}
+
+export const applicationStateCleared = () => ({
+  type: types.APP_STATE_CLEARED
+});
+
+export function clearApplicationState() {
+  return async dispatch => {
+    clearBluetoothData();
+    dispatch(applicationStateCleared());
   };
 }

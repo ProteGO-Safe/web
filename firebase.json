@@ -11,6 +11,10 @@
       {
         "source": "**",
         "destination": "/index.html"
+      },
+      {
+        "source": "**/firebase/**",
+        "destination": "/index.html"
       }
     ],
     "headers": [

@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 
@@ -6,7 +6,7 @@ import { Button } from '../../../../components';
 import useModalContext from '../../../../hooks/useModalContext';
 import Routes from '../../../../routes';
 import useLoaderContext from '../../../../hooks/useLoaderContext';
-import { clearBluetoothData } from '../../../../store/actions/nativeData';
+import { clearApplicationState } from '../../../../store/actions/app';
 
 const ModalConfirmation = () => {
   const dispatch = useDispatch();
@@ -15,18 +15,13 @@ const ModalConfirmation = () => {
   const { setLoader } = useLoaderContext();
 
   const handleClose = () => {
-    localStorage.clear();
+    dispatch(clearApplicationState());
     onClose();
 
     setLoader(true);
-    setTimeout(() => setLoader(false), 5000);
+    setTimeout(() => setLoader(false), 1000);
     history.push(Routes.Home);
   };
-
-  useEffect(() => {
-    dispatch(clearBluetoothData());
-    return () => window.location.reload();
-  }, [dispatch]);
 
   return (
     <div className="user-data__modal-confirmation">
