@@ -27,7 +27,7 @@ const HomeContainer = () => {
   useEffect(() => {
     dispatch(fetchServicesStatus());
     dispatch(fetchExposureNotificationStatistics());
-    if (moment().diff(moment.unix(timeOfConfirmedCovid), 'days') > 14) {
+    if (moment().diff(moment.unix(timeOfConfirmedCovid), 'days') >= 14) {
       dispatch(resetTimeOfConfirmedCovid());
     }
   }, [dispatch, timeOfConfirmedCovid]);
