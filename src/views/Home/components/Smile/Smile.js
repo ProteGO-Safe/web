@@ -15,9 +15,7 @@ const Smile = ({ content, userName, IconComponent }) => {
         <Text>
           <p>{content}</p>
         </Text>
-        <IconSmile>
-          <IconComponent />
-        </IconSmile>
+        <IconSmile>{IconComponent && <IconComponent />}</IconSmile>
       </TextWrapper>
     </SmileContainer>
   );

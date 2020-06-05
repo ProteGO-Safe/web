@@ -1,9 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import { Header } from '../../components/Header';
-import BottomNavigation from '../../components/BottomNavigation/BottomNavigation';
-import PhoneNumber from '../../components/PhoneNumber';
+import { BottomNavigation, Header, PhoneNumber } from '../../components';
 import { Container, Content, View } from '../../theme/grid';
 import { Title, LinkStyle } from './IAmSick.styled';
 import { ListNumber, ListNumberItem } from '../../theme/typography';

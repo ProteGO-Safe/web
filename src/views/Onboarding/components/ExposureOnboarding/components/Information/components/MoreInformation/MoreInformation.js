@@ -1,13 +1,13 @@
 import React from 'react';
 import './MoreInformation.scss';
 import {
-  OnboardingContent,
   Button,
-  GovFooter
+  Email,
+  GovFooter,
+  Header,
+  OnboardingContent
 } from '../../../../../../../../components';
 import { View, Container, Content } from '../../../../../../../../theme/grid';
-import Email from '../../../../../../../../components/Email';
-import Header from '../../../../../../../../components/Header/Header';
 import { Icon, Paragraph } from './MoreInformation.styled';
 
 const MoreInformation = ({ onNext }) => {

@@ -3,10 +3,11 @@ import React from 'react';
 import { InfoBorderContainer, Content } from './TriageInfoBorder.styled';
 import useTriage from '../../../../hooks/useTriage';
 import ArrowIcon from '../../../../assets/img/icons/angle-right.svg';
-import PhoneNumber from '../../../../components/PhoneNumber';
+import { PhoneNumber } from '../../../../components';
 
 const TriageInfoBorder = () => {
   const {
+    isCovid = false,
     isExposure = false,
     color,
     description,
@@ -23,6 +24,14 @@ const TriageInfoBorder = () => {
     .map(item => <li key={item}>{item}</li>);
 
   const renderContent = () => {
+    if (isCovid) {
+      return (
+        <>
+          Bardzo źle się czujesz? Nie czekaj. Zadzwoń na numer alarmowy 112 lub
+          999. Poinformuj o swojej chorobie.
+        </>
+      );
+    }
     if (isExposure && riskLevel === 1) {
       return (
         <>

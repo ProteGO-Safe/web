@@ -2,13 +2,15 @@ import React, { useEffect } from 'react';
 import reactStringReplace from 'react-string-replace';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
-import Header from '../../components/Header/Header';
-import { BottomNavigation } from '../../components/BottomNavigation';
-import { Collapse } from '../../components';
+import {
+  Collapse,
+  BottomNavigation,
+  Header,
+  PhoneNumber
+} from '../../components';
 import { Container, Content, View } from '../../theme/grid';
 import { List, ListItem } from '../../theme/typography';
 import { Title } from './Hospitals.styled';
-import PhoneNumber from '../../components/PhoneNumber';
 import './HospitalsList.scss';
 import useLoaderContext from '../../hooks/useLoaderContext';
 import Routes from '../../routes';

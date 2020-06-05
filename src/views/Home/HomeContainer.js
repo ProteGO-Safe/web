@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
-
+import { useDispatch, useSelector } from 'react-redux';
+import moment from 'moment';
 import Home from './Home';
 import {
   fetchExposureNotificationStatistics,
@@ -14,19 +14,28 @@ import {
   TestGreen,
   TestRed,
   TestYellow,
-  NoData
+  NoData,
+  ExposureSick
 } from './views/index';
+import { resetTimeOfConfirmedCovid } from '../../store/actions/triage';
 
 const HomeContainer = () => {
   const dispatch = useDispatch();
-  const { exposureRiskLevel, triageRiskLevel } = useTriage();
+  const { exposureRiskLevel, isCovid, triageRiskLevel } = useTriage();
+  const { timeOfConfirmedCovid } = useSelector(state => state.triage);
 
   useEffect(() => {
     dispatch(fetchServicesStatus());
     dispatch(fetchExposureNotificationStatistics());
-  }, [dispatch]);
+    if (moment().diff(moment.unix(timeOfConfirmedCovid), 'days') > 14) {
+      dispatch(resetTimeOfConfirmedCovid());
+    }
+  }, [dispatch, timeOfConfirmedCovid]);
 
   const resolveView = () => {
+    if (isCovid) {
+      return <ExposureSick />;
+    }
     if (triageRiskLevel === 0 && exposureRiskLevel === 0) {
       return <NoData />;
     }

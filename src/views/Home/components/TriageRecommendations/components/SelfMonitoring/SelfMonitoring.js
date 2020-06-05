@@ -1,6 +1,5 @@
 import React from 'react';
-import { Collapse } from '../../../../../../components/Collapse';
-import Url from '../../../../../../components/Url';
+import { Collapse, Url } from '../../../../../../components';
 
 const SelfMonitoring = () => (
   <>

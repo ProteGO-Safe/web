@@ -2,7 +2,13 @@ import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import { Container, Content, View } from '../../theme/grid';
-import { Header, BottomNavigation, Collapse, Input } from '../../components';
+import {
+  Header,
+  BottomNavigation,
+  Collapse,
+  Input,
+  Url
+} from '../../components';
 import {
   FaqIntro,
   FaqTitle,
@@ -17,7 +23,6 @@ import {
 } from './FaqPage.styled';
 import { fetchFaq, clearError } from '../../store/actions/externalData';
 import SearchIcon from '../../assets/img/icons/lupa.svg';
-import Url from '../../components/Url';
 import useLoaderContext from '../../hooks/useLoaderContext';
 import search from '../../utils/faqSearcher';
 import Routes from '../../routes';

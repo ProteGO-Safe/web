@@ -1,3 +1,4 @@
+import React from 'react';
 import { GreenSmile } from '../../assets/img/icons/buzka-zielona';
 import { YellowSmile } from '../../assets/img/icons/buzka-zolta';
 import { RedSmile } from '../../assets/img/icons/buzka-czerwona';
@@ -100,6 +101,22 @@ export const EXPOSURE_TRIAGE_LEVEL = {
     riskLevel: 3,
     exposureRiskLevel: 3
   }
+};
+
+export const EXPOSURE_SICK = {
+  color: Color.danger,
+  content: (
+    <>
+      Dbaj o siebie i unikaj kontaktu z innymi osobami! <br />
+      Powiadom bliskich, z którymi spotkałaś/spotkałeś się w ostatnim czasie.
+      <br />
+      Jeśli nie wiesz jak dalej postępować, zadzwoń na infolinię. Uzyskasz tam
+      dalszą pomoc:
+    </>
+  ),
+
+  IconComponent: RedSmile,
+  isCovid: true
 };
 
 export const NO_TRIAGE_LEVEL = {

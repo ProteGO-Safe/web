@@ -1,7 +1,5 @@
 import React from 'react';
-import { Collapse } from '../../../../../../components';
-import Url from '../../../../../../components/Url';
-import PhoneNumber from '../../../../../../components/PhoneNumber';
+import { Collapse, PhoneNumber, Url } from '../../../../../../components';
 
 const Quarantine = () => (
   <>

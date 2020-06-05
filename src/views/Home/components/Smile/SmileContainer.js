@@ -9,9 +9,18 @@ const SmileContainer = () => {
   const { name: userName } = useSelector(state => state.user);
   const filledDays = useFilledDays();
   const lastDate = getLastDate(filledDays);
-  const { isExposure, riskGroup, IconComponent } = useTriage();
+  const { isCovid, isExposure, riskGroup, IconComponent } = useTriage();
 
   const getContent = () => {
+    if (isCovid) {
+      return (
+        <>
+          Dziękujemy, że myślisz o innych! To odpowiedzialna i solidarna
+          decyzja. Przekazana przez Ciebie informacja o ryzyku kontaktu trafi na
+          urządzenia osób, które mogły mieć z Tobą kontakt.
+        </>
+      );
+    }
     if (isExposure) {
       return (
         <>

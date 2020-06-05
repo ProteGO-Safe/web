@@ -1,6 +1,5 @@
 import React from 'react';
-import Email from '../../../../components/Email';
-import Url from '../../../../components/Url';
+import { Email, Url } from '../../../../components';
 import {
   Annotation,
   Paragraph,

@@ -1,3 +1,1 @@
-import PhoneNumber from './PhoneNumber';
-
-export default PhoneNumber;
+export { default as PhoneNumber } from './PhoneNumber';

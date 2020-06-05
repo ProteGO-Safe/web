@@ -19,3 +19,13 @@ export function fetchTriage(data) {
     dispatch(triageFetchSuccess({ data: result }));
   };
 }
+
+export const timeOfConfirmedCovidReseted = () => ({
+  type: types.TIME_OF_CONFIRMED_COVID_RESETED
+});
+
+export function resetTimeOfConfirmedCovid() {
+  return dispatch => {
+    dispatch(timeOfConfirmedCovidReseted());
+  };
+}

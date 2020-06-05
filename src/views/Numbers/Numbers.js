@@ -2,13 +2,15 @@ import React from 'react';
 import { useHistory } from 'react-router-dom';
 
 import Routes from '../../routes';
-import Header from '../../components/Header/Header';
-import { BottomNavigation } from '../../components/BottomNavigation';
-import { BordersButton } from '../../components/BordersButton';
-import { LineItem } from '../../components/LineItem';
+import {
+  BottomNavigation,
+  BordersButton,
+  Header,
+  LineItem,
+  PhoneNumber
+} from '../../components';
 import { Info, Phone, Line } from './Numbers.styled';
 import { Container, Content, View } from '../../theme/grid';
-import PhoneNumber from '../../components/PhoneNumber';
 
 const Numbers = () => {
   const history = useHistory();

@@ -1,6 +1,5 @@
 import React from 'react';
-import Email from '../../../../components/Email';
-import Url from '../../../../components/Url';
+import { Email, Url, PhoneNumber } from '../../../../components';
 import {
   Annotation,
   Paragraph,
@@ -8,7 +7,6 @@ import {
   ListNumber,
   ListItem
 } from './RegulationsContent.styled';
-import PhoneNumber from '../../../../components/PhoneNumber';
 
 const RegulationsContent = () => (
   <>

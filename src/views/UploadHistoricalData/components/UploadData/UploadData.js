@@ -1,9 +1,12 @@
 import React from 'react';
 import PinInput from 'react-pin-input';
 import Header from '../../../../components/Header/Header';
-import { BottomNavigation } from '../../../../components/BottomNavigation';
-import { Button, InfoIcon } from '../../../../components';
-import PhoneNumber from '../../../../components/PhoneNumber';
+import {
+  BottomNavigation,
+  Button,
+  InfoIcon,
+  PhoneNumber
+} from '../../../../components';
 import { Container, Content, View } from '../../../../theme/grid';
 import { Paragraph } from '../../../../theme/typography';
 import { Color } from '../../../../theme/colors';

@@ -63,7 +63,9 @@ const appReducer = (state = INITIAL_STATE, action) => {
       return (() => {
         const { result } = action;
         const unsuccessfulAttempts =
-          state.uploadHistoricalDataState.unsuccessfulAttempts || [];
+          (state.uploadHistoricalDataState &&
+            state.uploadHistoricalDataState.unsuccessfulAttempts) ||
+          [];
         const uploadHistoricalDataState =
           result === 1
             ? {

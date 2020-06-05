@@ -1,9 +1,7 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
 import Routes from '../../routes';
-import Url from '../../components/Url';
-import PhoneNumber from '../../components/PhoneNumber';
-import { Collapse, Button, FieldSet } from '../../components';
+import { Collapse, Button, FieldSet, PhoneNumber, Url } from '../../components';
 import {
   CollapseWrapper,
   List,

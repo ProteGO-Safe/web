@@ -1,3 +1,1 @@
-import Url from './Url';
-
-export default Url;
+export { default as Url } from './Url';
