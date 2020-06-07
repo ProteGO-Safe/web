@@ -35,7 +35,7 @@ const DiagnosisContainer = () => {
       evidence: []
     };
     dispatch(getDiagnosis(data));
-  }, [moreThan65, dispatch]);
+  }, [dispatch]);
 
   useEffect(() => {
     if (!inProgress && evidence.length > 0 && moreThan65 !== undefined) {
