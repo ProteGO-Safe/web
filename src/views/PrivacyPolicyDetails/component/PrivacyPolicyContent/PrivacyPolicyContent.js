@@ -364,7 +364,7 @@ const PrivacyPolicyContent = () => (
               <ListItem>Historia wpisów do Dziennika Zdrowia,</ListItem>
               <ListItem>Historia wpisów do Modułu Triażu,</ListItem>
               <ListItem>
-                Temporarary_exposure_keys_upload_status - informacja czy
+                Temporary_exposure_keys_upload_status - informacja czy
                 przesłanie informacji w ramach Modułu Analitycznego zakończyło
                 się pomyślnie czy też z błędem,
               </ListItem>

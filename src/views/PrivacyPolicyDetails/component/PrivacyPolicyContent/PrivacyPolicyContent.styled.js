@@ -60,6 +60,7 @@ export const ListItem = styled.li`
   font-weight: ${FontWeight.Normal};
   line-height: 1.5;
   color: ${Color.lightBlack};
+  word-break: break-word;
   &:not(:last-child) {
     margin-bottom: 8px;
   }
