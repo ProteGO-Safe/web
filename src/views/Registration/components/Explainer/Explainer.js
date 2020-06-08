@@ -3,31 +3,36 @@ import PropTypes from 'prop-types';
 import Slider from 'react-slick';
 
 import { Button, GovFooter, Header } from '../../../../components';
-import { Container } from '../../../../theme/grid';
-import { Content, SliderWrapper, Title } from './Explainer.styled';
-import { LOGO_COLOR_BLACK } from '../../../../constants';
+import { Container, Content, View } from '../../../../theme/grid';
+import { SliderWrapper, Title } from './Explainer.styled';
 
-const Explainer = ({ carouselRef, items, onClick, settings }) => (
-  <div className="view view__explainer">
-    <Header hideBackButton hideMenuButton />
-    <Container>
+const Explainer = ({ carouselRef, index, items, onClick, settings }) => {
+  return (
+    <View>
+      <Header hideBackButton />
       <Content>
-        <Title>
-          Włącz się do wspólnej walki
-          <br />
-          przeciwko koronawirusowi
-        </Title>
-        <SliderWrapper>
-          <Slider ref={carouselRef} {...settings}>
-            {items}
-          </Slider>
-        </SliderWrapper>
-        <Button onClick={onClick} text="Dalej" />
+        <Container className="full-height">
+          {index < 1 ? (
+            <Title>Powiadomienia o narażeniu na kontakt z COVID-19</Title>
+          ) : (
+            <Title>
+              Włącz się do wspólnej walki
+              <br />
+              przeciwko koronawirusowi
+            </Title>
+          )}
+          <SliderWrapper>
+            <Slider ref={carouselRef} {...settings}>
+              {items}
+            </Slider>
+          </SliderWrapper>
+          <Button onClick={onClick} text="Dalej" />
+          <GovFooter type="black" />
+        </Container>
       </Content>
-      <GovFooter type={LOGO_COLOR_BLACK} />
-    </Container>
-  </div>
-);
+    </View>
+  );
+};
 
 Explainer.propTypes = {
   // eslint-disable-next-line

@@ -1,94 +1,11 @@
 @import '../../assets/styles/colors';
 @import '../../assets/styles/mixins';
 
-.view__user-data {
-  @include viewBaseStyles();
-
-  .banner {
-    grid-area: banner;
+.tips {
+  a {
+    text-decoration: none;
   }
-
-  .container {
-    display: grid;
-    grid-template-areas: "title" "content" "buttons";
-    grid-area: container;
-    align-self: start;
-
-    h4 {
-      grid-area: title;
-      align-self: baseline;
-      padding: 18px 0;
-    }
-
-    .content {
-      grid-area: content;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      align-self: flex-start;
-
-      a {
-        font-weight: bold;
-        color: $primary-2;
-      }
-      h3, p {
-        color: $black_2;
-        line-height: 1.5em;
-      }
-
-      h3 {
-        align-self: baseline;
-        margin: 0;
-        padding: 0;
-      }
-
-      ul {
-        padding: 10px 0;
-
-        li {
-          position: relative;
-          display: flex;
-          align-items: center;
-          list-style-type: none;
-          padding: 0 0 20px 70px;
-          min-height: 70px;
-
-          img {
-            position: absolute;
-            left: 0;
-          }
-
-          .pl-10 {
-            padding-right: 10px;
-          }
-        }
-      }
-
-      .warning {
-        position: relative;
-        width: 100%;
-        padding: 15px;
-        border: 1px solid $gray_6;
-        border-radius: 2px;
-
-        img {
-          position: absolute;
-          top: 5px;
-          left: 10px;
-          height: 50px;
-        }
-
-        h3 {
-          padding: 5px 0 10px 50px;
-          color: $warning;
-        }
-      }
-    }
-
-    .fieldset {
-      grid-area: buttons;
-      padding: 30px 0;
-      align-self: flex-end;
-    }
+  .fieldset  {
+    margin-bottom: 44px;
   }
 }

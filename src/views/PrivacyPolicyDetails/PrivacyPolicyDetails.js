@@ -3,7 +3,7 @@ import { PrivacyPolicyContent } from './component/PrivacyPolicyContent';
 import Header from '../../components/Header/Header';
 import { BottomNavigation } from '../../components/BottomNavigation';
 import { Content, Container, View } from '../../theme/grid';
-import { Title } from '../../theme/typography';
+import { Title } from './PrivacyPolicyDetails.styled';
 
 const PrivacyPolicyDetails = () => {
   return (

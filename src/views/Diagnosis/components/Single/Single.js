@@ -4,7 +4,8 @@ import { useFormikContext } from 'formik';
 
 import { FIELD_CHOICE_ID } from '../../../../constants';
 import Icon from '../../../../assets/img/icons/angle-right-white.svg';
-import { Button, FieldSet, Option } from '../../../../components';
+import { Button, FieldSet, Radio } from '../../../../components';
+import { Title } from '../../Diagnosis.styled';
 import { choicesPropType } from '../../prop-types';
 
 const Single = ({ text, choices }) => {
@@ -16,17 +17,15 @@ const Single = ({ text, choices }) => {
 
   return (
     <>
-      <h3>{text}</h3>
+      <Title>{text}</Title>
       <FieldSet>
         {choices.map(choice => (
-          <Option
-            color="white"
+          <Radio
             key={choice.id}
             checked={values[FIELD_CHOICE_ID] === choice.id}
             name={FIELD_CHOICE_ID}
             onChange={() => handleChange(FIELD_CHOICE_ID, choice.id)}
-            text={choice.label}
-            value={values[FIELD_CHOICE_ID]}
+            label={choice.label}
           />
         ))}
       </FieldSet>

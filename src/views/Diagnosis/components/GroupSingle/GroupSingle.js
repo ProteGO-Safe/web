@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { useFormikContext } from 'formik';
-
-import { Button, FieldSet, Option } from '../../../../components';
+import { Button, FieldSet, Radio } from '../../../../components';
+import { Title } from '../../Diagnosis.styled';
 
 import {
   FIELD_CHOICE_ID,
@@ -23,17 +23,15 @@ const GroupSingle = ({ text, items }) => {
 
   return (
     <>
-      <h3>{text}</h3>
+      <Title>{text}</Title>
       <FieldSet>
         {items.map(item => (
-          <Option
-            color="white"
+          <Radio
             key={item.id}
             checked={values[FIELD_ITEM_ID] === item.id}
             name={FIELD_ITEM_ID}
             onChange={() => handleChange(item.id)}
-            text={item.name}
-            value={values[FIELD_ITEM_ID]}
+            label={item.name}
           />
         ))}
       </FieldSet>

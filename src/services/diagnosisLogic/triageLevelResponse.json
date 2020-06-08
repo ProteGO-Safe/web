@@ -1,0 +1,38 @@
+{
+  "isolation_ambulance": {
+    "description": "Twoje objawy są bardzo poważne i mogą wskazywać na zakażenie koronawirusem (choroba COVID-19).",
+    "label": "Zadzwoń pod numer alarmowy. Unikaj wszelkiego kontaktu z innymi.",
+    "serious": [],
+    "triage_level": "isolation_ambulance"
+  },
+  "call_doctor": {
+    "description": "Twoje odpowiedzi nie wskazują abyś miał/-ła COVID-19. Twoje objawy są jednak niepokojące i wymagają konsultacji medycznej.",
+    "label": "Zadzwoń do lekarza",
+    "serious": [],
+    "triage_level": "call_doctor"
+  },
+  "isolation_call": {
+    "description": "Twoje objawy są niepokojące i mogą mieć związek z koronawirusem. Zadzwoń na lokalną infolinię dotyczącą COVID-19. W zależności od kraju może to być infolinia stworzona przez ministerstwo zdrowia lub sanepid.",
+    "label": "Zadzwoń na infolinię COVID-19. Unikaj kontaktu z innymi osobami.",
+    "serious": [],
+    "triage_level": "isolation_call"
+  },
+  "self_monitoring": {
+    "description": "Objawy, które zgłosiłeś/-aś, nie wskazują na chorobę COVID-19. Mimo to lepiej, żebyś pozostał/-a w domu, dopóki nie wyzdrowiejesz. W ten sposób zmniejszasz ryzyko zakażenia siebie oraz innych. Pamiętaj, że Twoje objawy mogą wynikać także z innych chorób i mogą wymagać konsultacji lekarskiej - powyższy wywiad jest ukierunkowany na COVID-19. Jeśli twoje objawy wydają się niepokojące, skontaktuj się z lekarzem.",
+    "label": "Pozostań w domu i obserwuj swój stan zdrowia.",
+    "serious": [],
+    "triage_level": "self_monitoring"
+  },
+  "no_risk": {
+    "description": "Odpowiedzi, których udzieliłeś/-aś, nie wskazują na zakażenie koronawirusem (choroba COVID-19). Stosuj poniższe środki zapobiegawcze i zalecenia rządowe, by uniknąć zakażenia. Pamiętaj, że Twoje objawy mogą wynikać także z innych chorób i mogą wymagać konsultacji lekarskiej - powyższy wywiad jest ukierunkowany na COVID-19. Jeśli Twoje objawy wydają się niepokojące, skontaktuj się z lekarzem.",
+    "label": "Postępuj zgodnie z zaleceniami epidemiologicznymi.",
+    "serious": [],
+    "triage_level": "no_risk"
+  },
+  "quarantine": {
+    "description": "Twoje objawy nie wskazują na COVID-19, jednak zgodnie z zaleceniami WHO i CDC zalecana jest izolacja na okres następnych 14 dni.",
+    "label": "Kwarantanna",
+    "serious": [],
+    "triage_level": "quarantine"
+  }
+}

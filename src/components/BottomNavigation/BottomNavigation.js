@@ -16,15 +16,19 @@ const BottomNavigation = ({ className }) => {
   } = useMenuContext();
 
   useEffect(() => {
-    const activeItemIndex = menuItems.findIndex(({ path, disabled }) => {
-      if (location.pathname === path) {
-        return true;
-      }
-      return disabled && path && location.pathname.startsWith(path);
-    });
+    if (menuVisible) {
+      setValue(menuItems.length - 1);
+    } else {
+      const activeItemIndex = menuItems.findIndex(({ path, disabled }) => {
+        if (location.pathname === path) {
+          return true;
+        }
+        return disabled && path && location.pathname.startsWith(path);
+      });
 
-    setValue(activeItemIndex !== -1 ? activeItemIndex : null);
-  }, [location.pathname]);
+      setValue(activeItemIndex !== -1 ? activeItemIndex : null);
+    }
+  }, [location.pathname, menuVisible]);
 
   useEffect(() => {
     if (containerRef.current) {
@@ -43,16 +47,9 @@ const BottomNavigation = ({ className }) => {
         if (menuVisible) {
           hideMenu();
         }
-
-        return;
+      } else {
+        setMenuVisible(!menuVisible);
       }
-
-      if (menuVisible) {
-        hideMenu();
-        return;
-      }
-
-      setMenuVisible(true);
     },
     // eslint-disable-next-line
     [history, menuVisible]

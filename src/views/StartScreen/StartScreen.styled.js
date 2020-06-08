@@ -12,6 +12,8 @@ export const Container = styled.section`
   /* Temp solution - because of invalid DOM structure */
   width: 100vw;
   height: 100vh;
+  height: calc(100vh - constant(safe-area-inset-top));
+  height: calc(100vh - env(safe-area-inset-top));
 `;
 
 export const Content = styled.div`
@@ -21,6 +23,15 @@ export const Content = styled.div`
   flex-direction: column;
   padding: 0 40px;
   flex: 1;
+`;
+
+export const LogoWrapper = styled.h1`
+  display: flex;
+  flex-flow: wrap row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: 0;
 `;
 
 export const Logo = styled(LogoSVG)`
@@ -43,6 +54,8 @@ export const Message = styled.p`
 
 export const Footer = styled(GovFooter)`
   max-width: 375px;
+  padding-bottom: constant(safe-area-inset-bottom);
+  padding-bottom: env(safe-area-inset-bottom);
 `;
 
 // TODO: In the future should be replaced with predefined Button component

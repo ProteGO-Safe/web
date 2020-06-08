@@ -2,15 +2,12 @@ import styled from 'styled-components';
 
 import { ReactComponent as PhoneIcon } from '../../assets/img/icons/phone.svg';
 
-export const Content = styled.div`
-  width: 100%;
-  padding: 13px 17px 10px 18px;
-`;
-
-export const Info = styled.div`
+export const Info = styled.h1`
+  margin-top: 0;
+  margin-bottom: 24px;
   font-size: 20px;
-  padding-left: 6px;
-  padding-bottom: 20px;
+  font-weight: bold;
+  line-height: 1.5;
   color: #1b1b1b;
 `;
 

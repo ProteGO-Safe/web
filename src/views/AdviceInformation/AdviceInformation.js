@@ -1,71 +1,91 @@
 import React from 'react';
-import { useHistory, Link } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import Routes from '../../routes';
-import Header from '../../components/Header/Header';
-import { BottomNavigation } from '../../components/BottomNavigation';
-import { Button, Container, FieldSet } from '../../components';
+import { Collapse, Button, FieldSet, PhoneNumber, Url } from '../../components';
+import {
+  CollapseWrapper,
+  List,
+  ListItem,
+  Paragraph,
+  RepliesList,
+  RepliesListItem,
+  Title,
+  Warning,
+  WarningLabel,
+  Watermark
+} from './AdviceInformation.styled';
 import './AdviceInformation.scss';
 
-import IconAdviceHome from '../../assets/img/fake/icon-advice-home.png';
-import IconAdvicePhone from '../../assets/img/fake/icon-advice-phone.png';
-import IconAdviceCountry from '../../assets/img/fake/icon-advice-country.png';
-import IconAdviceNote from '../../assets/img/fake/icon-advice-note.png';
 import IconWarning from '../../assets/img/icons/warning.svg';
 
-const AdviceInformation = () => {
+const AdviceInformation = ({ collapse, tips, title, watermark }) => {
   const history = useHistory();
 
+  const parseUrl = phrases =>
+    phrases.map((phrase, index) => {
+      const part = phrase.split(/\|/);
+      return part.length > 1 ? (
+        <Url key={index} value={part[1]}>
+          <strong>{part[0]}</strong>
+        </Url>
+      ) : (
+        part
+      );
+    });
+  const renderLine = line => {
+    const phrases = line.split(/\[url\]/);
+    return parseUrl(phrases);
+  };
+  const renderListItem = tips.map((item, i) => (
+    <ListItem key={i}>
+      <img src={item.icon} alt="Ikonka" />
+      <p>{renderLine(item.text)}</p>
+    </ListItem>
+  ));
+
+  const renderCollapse = collapse.map((item, i) => {
+    const repliesLength = item.replies.length;
+    return (
+      <Collapse key={i} title={item.title}>
+        {repliesLength > '1' ? (
+          <RepliesList>
+            {item.replies.map((reply, key) => (
+              <RepliesListItem key={key}>{renderLine(reply)}</RepliesListItem>
+            ))}
+          </RepliesList>
+        ) : (
+          <>
+            {item.replies.map((reply, key) => (
+              <Paragraph key={key}>{renderLine(reply)}</Paragraph>
+            ))}
+          </>
+        )}
+      </Collapse>
+    );
+  });
+
   return (
-    <div className="view view__user-data">
-      <Header />
-      <Container>
-        <div className="content">
-          <h3 className="medium">Porady</h3>
-          <ul>
-            <li>
-              <img src={IconAdviceHome} alt="advice icon" />
-              <p className="medium">Zostań w domu</p>
-            </li>
-            <li>
-              <img src={IconAdvicePhone} alt="advice icon" />
-              <p className="medium pl-10">
-                Zadzwoń do rodziców i krewnych w podeszłym wieku. Pomóż im
-                korzystać z ProteGo Safe na ich telefonie. Zrób dla nich zakupy.
-                Unikaj kontaktu osobistego.
-              </p>
-            </li>
-            <li>
-              <img src={IconAdviceCountry} alt="advice icon" />
-              <p className="medium">
-                Jeśli przyjechałeś/-aś z zagranicy – skontaktuj się z sanepidem
-                i poddaj obowiązkowej 14-dniowej kwarantannie.
-              </p>
-            </li>
-            <li>
-              <img src={IconAdviceNote} alt="advice icon" />
-              <p className="medium">
-                Regularnie uzupełniaj zakładkę{' '}
-                <Link to="/daily">MÓJ DZIENNIK ZDROWIA</Link>: zapisuj w
-                aplikacji objawy i temperaturę ciała.
-              </p>
-            </li>
-          </ul>
-          <div className="warning">
-            <img src={IconWarning} alt="warning icon" />
-            <h3 className="text-error">Ważne</h3>
-            <p className="medium">
-              Jeśli u Ciebie lub Twoich bliskich wystąpią objawy zakażenia
-              koronawirusem, zadzwoń na infolinię Narodowego Funduszu Zdrowia
-              (NFZ) 800 190 590 lub do lokalnej placówki służby zdrowia.
-            </p>
-          </div>
-        </div>
-        <FieldSet>
-          <Button onClick={() => history.push(Routes.Home)} text="OK" />
-        </FieldSet>
-      </Container>
-      <BottomNavigation />
-    </div>
+    <>
+      <Title>{title}</Title>
+      <List>{renderListItem}</List>
+      <CollapseWrapper>{renderCollapse}</CollapseWrapper>
+      <Watermark>{watermark}</Watermark>
+      <Warning>
+        <WarningLabel>
+          <img src={IconWarning} alt="Ważne" />
+          Ważne
+        </WarningLabel>
+        <Paragraph>
+          Jeśli u Ciebie lub Twoich bliskich wystąpią objawy zakażenia
+          koronawirusem, zadzwoń na infolinię Narodowego Funduszu Zdrowia (NFZ){' '}
+          <PhoneNumber value="800190590">800 190 590</PhoneNumber> lub do
+          lokalnej placówki służby zdrowia.
+        </Paragraph>
+      </Warning>
+      <FieldSet>
+        <Button onClick={() => history.push(Routes.Home)} text="OK" />
+      </FieldSet>
+    </>
   );
 };
 

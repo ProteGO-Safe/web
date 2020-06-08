@@ -14,16 +14,16 @@
     position: fixed;
     top: 0;
     right: -100%;
-    z-index: 2;
-    width: calc(100% - 59px);
-    min-height: calc(100vh - 50px);
     display: flex;
     flex-flow: wrap column;
+    width: 100%;
+    min-height: calc(100vh - 50px);
     background-color: $white;
     box-shadow: -3px -3px 6px #00000029;
     transition: all 0.2s linear;
+    z-index: 99;
 
-    @media screen and (min-width: 375px) {
+    @media screen and (min-width: 556px) {
       width: 320px;
     }
 
@@ -54,14 +54,17 @@
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    height: 50px;
+    min-height: 50px;
     padding: 0 24px;
+    padding-top: constant(safe-area-inset-top);
+    padding-top: env(safe-area-inset-top);
     background-color: $blue_2;
 
     img {
       display: block;
       width: auto;
       height: 30px;
+      margin: 10px 0;
     }
 
     p {
@@ -77,8 +80,8 @@
     display: flex;
     flex-direction: column;
     list-style-type: none;
-    padding: 8px 0;
     margin: 0;
+    padding: 0;
   }
 
   &__item {
@@ -103,14 +106,12 @@
       display: flex;
       align-items: center;
       height: 50px;
-      padding: 0 32px;
-      font-size: 12px;
-      line-height: 16px;
-      letter-spacing: 0;
-      color: $gray_7;
-      font-weight: 600;
-      text-transform: uppercase;
+      padding: 0 24px;
       text-decoration: none;
+      font-size: 16px;
+      font-weight: bold;
+      line-height: 20px;
+      color: #0052a5;
 
       &.disable {
         pointer-events: none;
@@ -134,6 +135,10 @@
       ~ .menu__item {
         margin-bottom: 0;
       }
+    }
+
+    &:not(:last-child) {
+      border-bottom: 1px solid #e4e4e4;
     }
   }
 

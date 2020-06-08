@@ -5,9 +5,8 @@ import { Button, FieldSet } from '../../components';
 import Header from '../../components/Header/Header';
 import { BottomNavigation } from '../../components/BottomNavigation';
 import Routes from '../../routes';
-import { Content } from './PrivacyPolicy.styled';
-import { Color } from '../../theme/colors';
-import { Paragraph, H4, H5 } from '../../theme/typography';
+import { Content, Title } from './PrivacyPolicy.styled';
+import { Paragraph } from '../../theme/typography';
 import { Container, View } from '../../theme/grid';
 
 const PrivacyPolicy = () => {
@@ -17,22 +16,23 @@ const PrivacyPolicy = () => {
       <Header />
       <Container>
         <Content>
-          <H4 color={Color.black}>Polityka prywatności</H4>
-          <H5>Privacy by Design & Privacy by Default</H5>
+          <Title>Regulamin i Polityka prywatności</Title>
           <Paragraph>
             Wspólnie chcemy przeciwdziałać Koronawirusowi. Twoja prywatność jest
             dla nas tak samo ważna. Aplikację zaprojektowaliśmy tak, aby
-            wszystkie informacje, które przekazujesz do ProteGO Safe uniemożliwiały
-            Twoją identyfikację. Dlatego nie musisz rejestrować konta, nie
-            prosimy Cię o adres e-mail, ani połączenie ProteGO Safe z kontem w
-            mediach społecznościowych.
+            wszystkie informacje które przekazujesz do ProteGO Safe
+            uniemożliwiały Twoją identyfikację. Dlatego nie musisz rejestrować
+            konta, nie prosimy Cię o adres e-mail, ani połączenie ProteGO Safe z
+            kontem w mediach społecznościowych.
           </Paragraph>
           <Paragraph>
-            Jeśli będziemy planowali zmiany, poinformujemy Cię o tym i poprosimy
-            o Twoją zgodę. Możemy udostępnić część informacji, które wprowadzisz
-            do aplikacji naszym partnerom w celu przeciwdziałania
-            koronawirusowi. Szczegóły dotyczące ProteGO Safe i tego jak przetwarzamy
-            Twoje dane znajdziesz w naszym Regulaminie i Polityce Prywatności.
+            Jeżeli będziemy planowali zmiany, poinformujemy Cię o tym. Z
+            większości nowych funkcjonalności będziesz mógł korzystać na
+            zasadzie opt-in. Oznacza to, że możesz dobrowolnie skorzystać z
+            nowej funkcjonalności lub nie korzystać z niej. Szczegóły dotyczące
+            aplikacji ProteGO Safe znajdziesz w Regulaminie, a informacje
+            dotyczące przetwarzania Twoich danych znajdziesz w Polityce
+            prywatności.
           </Paragraph>
           <Paragraph>Poniżej możesz zapoznać się ze szczegółami:</Paragraph>
         </Content>

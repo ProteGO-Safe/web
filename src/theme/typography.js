@@ -50,7 +50,7 @@ export const Paragraph = styled.p`
   color: ${resolveDefaultColor(Color.black)};
 
   &:not(:last-child) {
-    margin-bottom: 6px;
+    margin-bottom: 24px;
   }
 `;
 
@@ -58,6 +58,13 @@ export const SmallText = styled.p`
   font-size: 14px;
   font-weight: ${resolveDefaultFontWeight(FontWeight.Normal)};
   line-height: 20px;
+  color: ${resolveDefaultColor(Color.darkGray)};
+`;
+
+export const Small = styled.p`
+  font-size: 12px;
+  font-weight: ${resolveDefaultFontWeight(FontWeight.Normal)};
+  line-height: 1.5;
   color: ${resolveDefaultColor(Color.darkGray)};
 `;
 
@@ -76,7 +83,7 @@ export const TextLink = styled.span`
 
 export const List = styled.ul`
   list-style-type: none;
-  margin: 0 0 40px;
+  margin: 12px 0 40px;
   padding: 0;
 `;
 
@@ -101,4 +108,29 @@ export const Title = styled(H4)`
   color: ${Color.primary};
   text-align: center;
   padding-bottom: 30px;
+`;
+
+export const ListNumber = styled.ol`
+  padding-left: 35px;
+  margin-top: 0;
+`;
+
+export const ListNumberItem = styled.li`
+  margin-bottom: 16px;
+  font-size: 16px;
+  font-weight: normal;
+  line-height: 1.5;
+  color: #1b1b1b;
+  &:last-child {
+    margin-bottom: 0;
+  }
+`;
+
+export const Name = styled.h1`
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-size: 20px;
+  font-weight: ${FontWeight.Bold};
+  line-height: 1.4;
+  color: ${Color.lightBlack};
 `;

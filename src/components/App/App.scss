@@ -5,13 +5,16 @@
   left: 0;
   overflow-x: hidden;
   min-width: 320px;
-  transition: all 0.2s linear;
+  transition: all 0.16s linear;
+  background-image: linear-gradient(#0052a5 50px, #ffffff 50px);
+  padding-top: constant(safe-area-inset-top);
+  padding-top: env(safe-area-inset-top);
 
   &.menu-visible {
-    left: calc(-100% + 59px);
+    left: -100%;
 
     header {
-      left: calc(-100% + 59px);
+      left: -100%;
     }
 
     @media screen and (min-width: 375px) {
@@ -37,7 +40,7 @@ body {
   }
 
   h3 {
-    color: $black;
+    color: $black_2;
     font-size: 20px;
     font-weight: bold;
     letter-spacing: 0;
@@ -136,10 +139,9 @@ body {
     &.watermark {
       text-align: right;
       font-size: 7px;
-      
-      &.faq {
-        margin-top: -20px;
-        padding-bottom: 20px;
+
+      &.details {
+        margin-bottom: 10px;
       }
     }
 

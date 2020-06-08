@@ -1,27 +1,27 @@
-import React, { useEffect } from 'react';
+import React from 'react';
+import { useDispatch } from 'react-redux';
+import { useHistory } from 'react-router-dom';
+
 import { Button } from '../../../../components';
 import useModalContext from '../../../../hooks/useModalContext';
-
 import Routes from '../../../../routes';
-import { useHistory } from 'react-router-dom';
 import useLoaderContext from '../../../../hooks/useLoaderContext';
+import { clearApplicationState } from '../../../../store/actions/app';
 
 const ModalConfirmation = () => {
+  const dispatch = useDispatch();
   const { onClose } = useModalContext();
   const history = useHistory();
   const { setLoader } = useLoaderContext();
 
   const handleClose = () => {
-    localStorage.clear();
-
+    dispatch(clearApplicationState());
     onClose();
 
     setLoader(true);
-    setTimeout(() => setLoader(false), 5000);
+    setTimeout(() => setLoader(false), 1000);
     history.push(Routes.Home);
   };
-
-  useEffect(() => () => window.location.reload(), []);
 
   return (
     <div className="user-data__modal-confirmation">

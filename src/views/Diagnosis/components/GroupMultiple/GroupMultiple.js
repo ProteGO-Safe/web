@@ -7,35 +7,36 @@ import { Button } from '../../../../components/Button';
 import { VALUE_ABSENT, VALUE_PRESENT } from '../../../../constants';
 import Icon from '../../../../assets/img/icons/angle-right-white.svg';
 import { itemsPropType } from '../../prop-types';
+import { Title } from '../../Diagnosis.styled';
 
 const GroupMultiple = ({ text, items }) => {
   const { setFieldValue, values, submitForm } = useFormikContext();
   const [otherSelected, setOtherSelected] = useState(false);
-  const [someSelected, setSomeSelected] = useState(false);
 
   const handleChange = itemId => {
     setOtherSelected(false);
     if (values[itemId] === VALUE_PRESENT) {
       setFieldValue(itemId, VALUE_ABSENT);
-      setSomeSelected(false);
       return;
     }
 
     if (values[itemId] === VALUE_ABSENT) {
       setFieldValue(itemId, VALUE_PRESENT);
-      setSomeSelected(true);
     }
   };
 
   const handelSelectOther = () => {
     setOtherSelected(true);
-    setSomeSelected(true);
     items.forEach(item => setFieldValue(item.id, VALUE_ABSENT));
   };
 
+  const someSelected =
+    Object.keys(values).some(answer => values[answer] === VALUE_PRESENT) ||
+    otherSelected;
+
   return (
     <>
-      <h3>{text}</h3>
+      <Title>{text}</Title>
       <FieldSet>
         {items.map(item => (
           <Checkbox

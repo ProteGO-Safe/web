@@ -6,6 +6,7 @@ export const renderWhen = (pred, fn, otherwise = always(null)) =>
 export const renderWhenNotNil = fn => renderWhen(complement(isNil), fn);
 
 export const renderWhenTrue = fn => renderWhen(equals(true), fn);
+export const renderWhenFalse = fn => renderWhen(equals(false), fn);
 
 export const styleWhenTrue = (pred, style) => props =>
   renderWhen(equals(true), always(style))(pred(props));

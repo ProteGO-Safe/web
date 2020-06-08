@@ -1,42 +1,56 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
+import Close from '../../assets/img/icons/notifi_close.svg';
 import './Input.scss';
 
 const Input = ({
-  error,
   description,
   disabled,
+  error,
+  icon,
   label,
-  min,
   max,
+  min,
   name,
   onChange,
   onKeyPress,
   placeholder,
+  reset,
   size,
   type,
   value
-}) => (
-  <div className="input input__wrapper">
-    {label && <span className="input__label">{label}</span>}
-    <input
-      className={`input__field input__field--${size}`}
-      max={max}
-      disabled={disabled}
-      min={min}
-      name={name}
-      onChange={onChange}
-      onKeyPress={onKeyPress}
-      placeholder={placeholder}
-      type={type}
-      step="0.1"
-      value={value}
-    />
-    {description && <span className="input__description">{description}</span>}
-    {error && <span className="input__error">{error}</span>}
-  </div>
-);
+}) => {
+  return (
+    <div className="input input__wrapper">
+      {icon && value.length < 1 && (
+        <span className="input__icon">
+          <img src={icon} alt={placeholder} />
+        </span>
+      )}
+      {value.length >= 1 && (
+        <span className="input__reset" onClick={reset}>
+          <img src={Close} alt="Resetuj" />
+        </span>
+      )}
+      {label && <span className="input__label">{label}</span>}
+      <input
+        className={`input__field input__field--${size} ${icon && 'padding'}`}
+        max={max}
+        disabled={disabled}
+        min={min}
+        name={name}
+        onChange={onChange}
+        onKeyPress={onKeyPress}
+        placeholder={placeholder}
+        type={type}
+        step="0.1"
+        value={value}
+      />
+      {description && <span className="input__description">{description}</span>}
+      {error && <span className="input__error">{error}</span>}
+    </div>
+  );
+};
 
 Input.defaultProps = {
   error: undefined,

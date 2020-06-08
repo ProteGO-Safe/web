@@ -1,13 +1,7 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { Grid } from '@material-ui/core';
 
-import {
-  VALUE_MAN,
-  VALUE_SMOKE_NO,
-  VALUE_SMOKE_YES,
-  VALUE_WOMAN
-} from '../../constants';
+import { VALUE_SMOKE_NO, VALUE_SMOKE_YES } from '../../constants';
 
 import { FontWeight } from '../../theme/fonts';
 import { Color } from '../../theme/colors';
@@ -16,72 +10,60 @@ import { ImprintWrapper } from './Imprint.styled';
 
 import './Imprint.scss';
 
-const tSex = {
-  [VALUE_MAN]: 'Mężczyzna',
-  [VALUE_WOMAN]: 'Kobieta'
-};
+const Imprint = ({ user = {} }) => {
+  const { chronicSicks, bloodGroup, smokeNumber, isSmoking } = user;
+  const smokingContent = () => {
+    if (!smokeNumber && isSmoking === undefined) {
+      return 'brak danych';
+    }
+    if (smokeNumber) {
+      return `${VALUE_SMOKE_YES} ${smokeNumber}`;
+    }
+    return VALUE_SMOKE_NO;
+  };
 
-const Imprint = ({ user }) => {
-  const { sex, age, chronicSicks, bloodGroup, smokeNumber } = user;
+  const chronicSicksContent = () => {
+    if (!chronicSicks) {
+      return <SmallText>brak danych</SmallText>;
+    }
+    if (chronicSicks.length === 0) {
+      return <SmallText>Brak dolegliwości</SmallText>;
+    }
+    return chronicSicks.map((sick, index) => (
+      <SmallText key={sick.name}>
+        {`${sick.name}${sick.description ? `: ${sick.description}` : ''}${
+          index === chronicSicks.length - 1 ? '' : ','
+        }`}
+      </SmallText>
+    ));
+  };
 
   return (
     <ImprintWrapper className="metrics-paragraph">
       <Grid container>
         <Grid item xs={6}>
-          <Paragraph color={Color.lightBlack} fontWeight={FontWeight.Bold}>Płeć:</Paragraph>
-          <SmallText>{tSex[sex]}</SmallText>
+          <Paragraph color={Color.lightBlack} fontWeight={FontWeight.Bold}>
+            Palenie:
+          </Paragraph>
+          <SmallText>{smokingContent()}</SmallText>
         </Grid>
 
         <Grid item xs={6}>
-          <Paragraph color={Color.lightBlack} fontWeight={FontWeight.Bold}>Wiek:</Paragraph>
-          <SmallText>{age}</SmallText>
-        </Grid>
-
-        <Grid item xs={6}>
-          <Paragraph color={Color.lightBlack} fontWeight={FontWeight.Bold}>Palenie:</Paragraph>
-          <SmallText>
-            {smokeNumber ? VALUE_SMOKE_YES : VALUE_SMOKE_NO}
-            {smokeNumber && ` (${smokeNumber})`}
-          </SmallText>
-        </Grid>
-
-        <Grid item xs={6}>
-          <Paragraph color={Color.lightBlack} fontWeight={FontWeight.Bold}>Grupa krwi:</Paragraph>
-          <SmallText>{bloodGroup}</SmallText>
+          <Paragraph color={Color.lightBlack} fontWeight={FontWeight.Bold}>
+            Grupa krwi:
+          </Paragraph>
+          <SmallText>{bloodGroup || 'brak danych'}</SmallText>
         </Grid>
 
         <Grid item>
-          <Paragraph color={Color.lightBlack} fontWeight={FontWeight.Bold}>Dolegliwości:</Paragraph>
-          {chronicSicks && chronicSicks.length ? (
-            chronicSicks.map((sick, index) => (
-              <SmallText key={sick.name}>
-                {`${sick.name}${sick.description ? ': ' + sick.description : ''}${
-                  index === chronicSicks.length - 1 ? '' : ','
-                }`}
-              </SmallText>
-            ))
-          ) : (
-            <SmallText>Brak dolegliwości</SmallText>
-          )}
+          <Paragraph color={Color.lightBlack} fontWeight={FontWeight.Bold}>
+            Dolegliwości:
+          </Paragraph>
+          {chronicSicksContent()}
         </Grid>
       </Grid>
     </ImprintWrapper>
   );
-};
-
-Imprint.propTypes = {
-  user: PropTypes.shape({
-    age: PropTypes.number.isRequired,
-    bloodGroup: PropTypes.string.isRequired,
-    chronicSicks: PropTypes.arrayOf(
-      PropTypes.shape({
-        description: PropTypes.string,
-        name: PropTypes.string
-      })
-    ),
-    sex: PropTypes.oneOf([VALUE_MAN, VALUE_WOMAN]),
-    smokeNumber: PropTypes.string
-  }).isRequired
 };
 
 export default Imprint;

@@ -1,20 +1,30 @@
 import React, { useRef, useState } from 'react';
 import { useFormikContext } from 'formik';
+import Explainer from './Explainer';
 
+import { ExplainerItem } from './components';
 import IconChat from '../../../../assets/img/explainer/chat.svg';
 import IconDiary from '../../../../assets/img/explainer/diary.svg';
 import IconInfo from '../../../../assets/img/explainer/info.svg';
-
-import Explainer from './Explainer';
-import { ExplainerItem } from './components';
+import IconDiagnostic from '../../../../assets/img/explainer/diagnostic.svg';
 
 const ExplainerContainer = () => {
-  const { setFieldValue } = useFormikContext();
-
   const carouselRef = useRef(null);
   const [activeSlide, setActiveSlide] = useState(0);
+  const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
+  const { setFieldValue } = useFormikContext();
 
   const items = [
+    {
+      content: (
+        <>
+          <strong>Nowość w aplikacji:</strong> powiadomienia o możliwym
+          kontakcie z koronawirusem.
+        </>
+      ),
+      icon: IconDiagnostic,
+      slug: 'diagnostic_apple_google'
+    },
     {
       content: (
         <>Dbaj o siebie! Regularnie sprawdzaj, czy jesteś w grupie ryzyka</>
@@ -42,6 +52,9 @@ const ExplainerContainer = () => {
 
   const settings = {
     afterChange: currentSlide => setActiveSlide(currentSlide),
+    beforeChange: (oldIndex, newIndex) => {
+      setCurrentSlideIndex(newIndex);
+    },
     dots: true,
     slidesToShow: 1,
     infinite: false,
@@ -50,16 +63,17 @@ const ExplainerContainer = () => {
   };
 
   const handleButtonClick = () => {
-    if (activeSlide < 2) {
-      carouselRef.current.slickGoTo(activeSlide + 1);
+    if (activeSlide < 3) {
+      carouselRef.current.slickNext();
       return;
     }
 
-    setFieldValue('step', 1);
+    setFieldValue('step', 2);
   };
 
   return (
     <Explainer
+      index={currentSlideIndex}
       carouselRef={carouselRef}
       items={items}
       onClick={handleButtonClick}

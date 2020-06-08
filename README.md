@@ -1,19 +1,41 @@
-# ProteGO Safe - web
+![ProteGo Safe](./doc/img/baner.jpg "ProtegoSafe")
 
-## run application at local environment
-- yarn install
-- yarn start
+## General info
+In ProteGO Safe you will find reliable, official and current information on the current situation related to the coronavirus pandemic. You will learn how to use actions and what to do if you suspect you or your loved ones have an infection. All published information is confirmed by the Ministry of Health or the Chief Sanitary Inspectorate, prepared on the basis of data on the Center for Disease Prevention and Control (ECDC) and the World Health Organization (WHO).
 
-## build application
-- yarn build
+## Screenshots 
+![ProteGo Safe](./doc/img/protego-safe.png "ProtegoSafe")
 
-Application can be start in environments:
- - browser
- - web view in Android or IOS
+## Application installation and configuration
+### Copy .env.dist file
+```shell script
+cp .env.dist .env
+``` 
+###### Set values
 
-When application is running as WebView in Android or IOS device, it uses NativeBridge to exchange data with native. [Documentation](https://docs.google.com/document/d/1WLMfbxlOxuY8By32iK_ILvmVjiq24kQARDNWBNy9TV4)
+- **REACT_APP_EXTERNAL_DATA_API_DOMAIN** - url to the CDN with static files 
 
-Application uses API https://api.safesafe.app as proxy to send and retrieve data from infermedica.com [Documentation](https://developer.infermedica.com/docs/covid-19)
+### Build application
+```shell script
+yarn build
+```
 
-## debug
-When When application is running as WebView you can debug in chrome at chrome://inspect/#devices
+### Run application tests
+```shell script
+yarn test a
+```
+
+### Run application locally
+```shell script
+yarn install
+yarn start
+```
+
+## Technologies
+* React / Redux
+
+## Debug
+When application is running as WebView you can debug in chrome at chrome://inspect/#devices
+
+## Documentation
+[Native bridge](doc/nativeBridge.md)

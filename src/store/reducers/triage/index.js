@@ -1,15 +1,25 @@
+import moment from "moment";
 import {
   TRIAGE_FETCH_REQUESTED,
   TRIAGE_FETCH_SUCCESS,
-  TRIAGE_FETCH_ERROR
+  TIME_OF_CONFIRMED_COVID_RESETED
 } from '../../types/triage';
+import { UPLOAD_HISTORICAL_DATA_FINISHED } from '../../types/app';
 
 const INITIAL_STATE = {
   isLoading: false,
   triageLevel: '',
   label: '',
   description: '',
-  serious: []
+  serious: [],
+  timeOfConfirmedCovid: undefined
+};
+
+const obtainTimeOfConfirmedCovid = (result, currentTimeOfConfirmedCovid) => {
+  if (result === 1 && currentTimeOfConfirmedCovid === undefined) {
+    return moment().unix();
+  }
+  return currentTimeOfConfirmedCovid;
 };
 
 const triageReducer = (state = INITIAL_STATE, action) => {
@@ -27,17 +37,31 @@ const triageReducer = (state = INITIAL_STATE, action) => {
 
         return {
           ...state,
-          triageLevel: triage_level, // no_risk || self_monitoring ||  quarantine || isolation_call || isolation_ambulance
+          triageLevel: triage_level,
           label,
           description,
           serious,
           isLoading: false
         };
       })();
-    case TRIAGE_FETCH_ERROR:
+    case UPLOAD_HISTORICAL_DATA_FINISHED:
+      return (() => {
+        const { result } = action;
+        const { timeOfConfirmedCovid: currentTimeOfConfirmedCovid } = state;
+
+        const timeOfConfirmedCovid = obtainTimeOfConfirmedCovid(
+          result,
+          currentTimeOfConfirmedCovid
+        );
+        return {
+          ...state,
+          timeOfConfirmedCovid
+        };
+      })();
+    case TIME_OF_CONFIRMED_COVID_RESETED:
       return {
         ...state,
-        isLoading: false
+        timeOfConfirmedCovid: undefined
       };
     default:
       return state;

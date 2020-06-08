@@ -8,25 +8,27 @@ import {
   Daily,
   DailyData,
   Diagnosis,
+  Error,
   Home,
   HowItWorks,
-  InstallApp,
   IAmSick,
   RiskTest,
   Numbers,
+  Onboarding,
   PrivacyPolicy,
   PrivacyPolicyDetails,
   Registration,
   Regulations,
   RiskTestData,
+  Settings,
+  StartScreen,
   UserData,
+  UserDataChange,
   UserDataSettings,
-  InstallAppAndroid,
-  InstallAppIOS,
-  MatchedDevices,
   HospitalsList,
   ReportBug,
   AdviceInformation,
+  UploadHistoricalData,
   FaqPage
 } from '../../views';
 
@@ -36,6 +38,8 @@ import { Menu } from '../Menu';
 import Routes from '../../routes';
 import './App.scss';
 import { Notification } from '../Notification';
+import { resetExternalData } from '../../store/actions/externalData';
+import {FirstDiagnosisAsking} from "../../views/FirstDiagnosisAsking";
 
 function App() {
   moment.locale('pl');
@@ -43,6 +47,11 @@ function App() {
   const history = useHistory();
 
   const { name } = useSelector(state => state.user);
+  const {
+    onboardingFinished = false,
+    startScreenShowed,
+    firstDiagnosisFinished
+  } = useSelector(state => state.app);
   const { notification } = useSelector(state => state.nativeData);
   const { inProgress, visible: menuIsVisible } = useMenuContext();
 
@@ -59,6 +68,10 @@ function App() {
   });
 
   useEffect(() => {
+    dispatch(resetExternalData());
+  }, [dispatch]);
+
+  useEffect(() => {
     const navMenuButton = document.getElementById('nav_menu_button');
 
     if (navMenuButton) {
@@ -71,32 +84,27 @@ function App() {
     'menu-visible': menuIsVisible && !inProgress
   });
 
+  const resolveHomeComponent = (() => {
+    if (!startScreenShowed && !name) {
+      return StartScreen;
+    }
+    if (!onboardingFinished) {
+      return Onboarding;
+    }
+    if (!name) {
+      return Registration;
+    }
+    if (!firstDiagnosisFinished) {
+      return FirstDiagnosisAsking;
+    }
+    return Home;
+  })();
+
   return (
     <div className={className}>
       <div className="app__inner">
         <Switch>
-          <Route
-            exact
-            path={Routes.Home}
-            component={name ? Home : Registration}
-          />
-          {!name && (
-            <Route exact path={Routes.Install} component={InstallApp} />
-          )}
-          {!name && (
-            <Route
-              exact
-              path={Routes.InstallAndroid}
-              component={InstallAppAndroid}
-            />
-          )}
-          {!name && (
-            <Route
-              exact
-              path={Routes.InstallAppIOS}
-              component={InstallAppIOS}
-            />
-          )}
+          <Route exact path={Routes.Home} component={resolveHomeComponent} />
           {name && (
             <>
               <Route exact path={Routes.Daily} component={Daily} />
@@ -105,6 +113,7 @@ function App() {
               <Route exact path={Routes.HowItWorks} component={HowItWorks} />
               <Route exact path={Routes.IAmSick} component={IAmSick} />
               <Route exact path={Routes.RiskTest} component={RiskTest} />
+              <Route exact path={Routes.Settings} component={Settings} />
               <Route
                 exact
                 path="/risk-test-data/:id"
@@ -132,8 +141,8 @@ function App() {
               <Route exact path={Routes.ReportBug} component={ReportBug} />
               <Route
                 exact
-                path={Routes.MatchedDevices}
-                component={MatchedDevices}
+                path={Routes.UserDataChange}
+                component={UserDataChange}
               />
               <Route
                 exact
@@ -146,6 +155,12 @@ function App() {
                 component={AdviceInformation}
               />
               <Route exact path={Routes.FaqPage} component={FaqPage} />
+              <Route
+                exact
+                path={Routes.UploadHistoricalData}
+                component={UploadHistoricalData}
+              />
+              <Route exact path={Routes.Error} component={Error} />
             </>
           )}
           <Route render={() => <Redirect to={Routes.Home} />} />

@@ -1,7 +1,9 @@
-@mixin viewBaseStyles($bannerRowsValue: 60px) {
+@mixin viewBaseStyles($bannerRowsValue: 50px) {
   display: grid;
   grid-template-areas: 'banner' 'container';
   grid-template-rows: $bannerRowsValue 1fr;
   width: 100%;
   min-height: 100vh;
+  min-height: calc(100vh - constant(safe-area-inset-top));
+  min-height: calc(100vh - env(safe-area-inset-top));
 }

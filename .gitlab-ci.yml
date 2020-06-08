@@ -6,7 +6,7 @@ stages:
   image: node:13
   stage: build
   script:
-    - yarn audit
+    - yarn audit --groups dependencies
     - yarn install
     - yarn build
   artifacts:
@@ -16,6 +16,8 @@ stages:
 
 build:latest:
   <<: *build
+  before_script:
+    - echo "$STAGE_ENV" > .env
   except:
     - master
     - /^release/
@@ -26,6 +28,8 @@ build:release:
     expire_in: 12 hours
     paths:
       - build
+  before_script:
+    - echo "$STAGE_ENV" > .env
   only:
     - master
     - /^release/

@@ -7,7 +7,8 @@ export const Icon = styled.img`
 `;
 
 export const Content = styled.p`
-  text-align: center;
   font-size: 16px;
-  line-height: 21px;
+  line-height: 1.31;
+  text-align: center;
+  color: #737373;
 `;

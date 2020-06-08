@@ -1,7 +1,4 @@
-export const FIELD_AGE = 'age';
-export const FIELD_SEX = 'sex';
 export const FIELD_NAME = 'name';
-export const FIELD_PHONE = 'phone';
 export const FIELD_TERM1 = 'term1';
 
 export const FIELD_IS_CHRONIC_SICK = 'is_chronic_sick';
@@ -114,17 +111,11 @@ export const chronicSickValues = [
 
 export const FIELD_BLOOD_GROUP = 'bloodGroup';
 
-export const VALUE_MAN = 'male';
-export const VALUE_WOMAN = 'female';
-
 export const FIELD_CHOICE_ID = 'choice_id';
 export const FIELD_ITEM_ID = 'item_id';
 
 export const VALUE_PRESENT = 'present';
 export const VALUE_ABSENT = 'absent';
-
-export const ANDROID = 'Android';
-export const IOS = 'iOS';
 
 export const FIELD_TEMPERATURE = 'temperature';
 export const FIELD_RUNNY_NOSE = 'runnyNose';

@@ -4,7 +4,7 @@ import { ModalContent } from './components';
 import useModalContext from '../../hooks/useModalContext';
 import Header from '../../components/Header/Header';
 import { BottomNavigation } from '../../components/BottomNavigation';
-import { Actions } from '../Registration/Registration.styled';
+import { Actions } from '../../components/ImprintFiller/ImprintFiller.styled';
 import { Container, Content, View } from '../../theme/grid';
 import { Paragraph, Title } from '../../theme/typography';
 import { Box, BoxTitle } from './userDataSettings.styled';
@@ -26,10 +26,9 @@ const UserDataSettings = () => {
               Ważne
             </BoxTitle>
             <Paragraph>
-              Jeżeli wymażesz swoje dane, aplikacja stanie się bezużyteczna. W
-              takim przypadku będzie trzeba ponownie uzupełnić wszystkie dane.
-              Archiwum Testów Oceny Ryzyka i Mój Dziennik Zdrowia zostanie
-              bezpowrotnie usunięte.
+              Jeśli wymażesz swoje dane, aplikacja stanie się bezużyteczna.
+              Archiwum Twojego Dziennika Zdrowia przepadnie, a wszelkie dane
+              będzie trzeba podawać ponownie.
             </Paragraph>
           </Box>
           <Actions>

@@ -1,6 +1,7 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import BottomNavigationBase from '@material-ui/core/BottomNavigation';
 import BottomNavigationActionBase from '@material-ui/core/BottomNavigationAction';
+
 import { hexToRgba } from '../../helpers/colors';
 import { Color } from '../../theme/colors';
 
@@ -15,11 +16,30 @@ export const Container = styled(BottomNavigationBase)`
     box-shadow: inset 0 0.5px 0 0 ${hexToRgba(Color.black, 0.25)};
     background-color: rgba(250, 250, 250, 0.9);
     height: auto;
-    z-index: 999;
+    z-index: 998;
+    .MuiBottomNavigationAction-root {
+      min-width: auto;
+    }
+  }
+`;
+
+const activeMenuItemStyles = css`
+  background-color: ${Color.primary};
+  color: ${Color.white};
+
+  svg {
+    stroke: ${Color.white};
+    path: {
+      stroke: ${Color.white};
+    }
   }
 `;
 
 export const MenuItem = styled(BottomNavigationActionBase)`
+  &.MuiButtonBase-root {
+    margin-bottom: constant(safe-area-inset-bottom);
+    margin-bottom: env(safe-area-inset-bottom);
+  }
   && {
     svg {
       width: 21px;
@@ -33,16 +53,12 @@ export const MenuItem = styled(BottomNavigationActionBase)`
       }
     }
 
-    &:focus {
-      background-color: ${Color.primary};
-      color: ${Color.white};
+    .MuiBottomNavigationAction-label {
+      white-space: nowrap;
+    }
 
-      svg {
-        stroke: ${Color.white};
-        path: {
-          stroke: ${Color.white};
-        }
-      }
+    &:focus {
+      ${activeMenuItemStyles}
     }
   }
 `;
