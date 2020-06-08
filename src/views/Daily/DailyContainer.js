@@ -3,7 +3,7 @@ import { useHistory } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import moment from 'moment';
 
-import { createDaysDetails } from '../../utills/calendar';
+import { createDaysDetails } from '../../utils/calendar';
 import Daily from './Daily';
 
 const todayFormat = 'D-MM-YYYY';

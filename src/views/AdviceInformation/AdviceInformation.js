@@ -1,79 +1,91 @@
 import React from 'react';
-import { useHistory, Link } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import Routes from '../../routes';
-import Header from '../../components/Header/Header';
-import { BottomNavigation } from '../../components/BottomNavigation';
-import { Button, FieldSet } from '../../components';
-import PhoneNumber from '../../components/PhoneNumber';
-import { Container, Content, View } from '../../theme/grid';
-import { Title, List, ListItem } from './AdviceInformation.styled';
+import { Collapse, Button, FieldSet, PhoneNumber, Url } from '../../components';
+import {
+  CollapseWrapper,
+  List,
+  ListItem,
+  Paragraph,
+  RepliesList,
+  RepliesListItem,
+  Title,
+  Warning,
+  WarningLabel,
+  Watermark
+} from './AdviceInformation.styled';
 import './AdviceInformation.scss';
 
-import IconAdviceHome from '../../assets/img/icons/zostan-w-domu.svg';
-import IconAdvicePhone from '../../assets/img/icons/seniorzy.svg';
-import IconAdviceCountry from '../../assets/img/icons/przyjazd.svg';
-import IconAdviceNote from '../../assets/img/icons/dziennik.svg';
 import IconWarning from '../../assets/img/icons/warning.svg';
 
-const AdviceInformation = () => {
+const AdviceInformation = ({ collapse, tips, title, watermark }) => {
   const history = useHistory();
 
+  const parseUrl = phrases =>
+    phrases.map((phrase, index) => {
+      const part = phrase.split(/\|/);
+      return part.length > 1 ? (
+        <Url key={index} value={part[1]}>
+          <strong>{part[0]}</strong>
+        </Url>
+      ) : (
+        part
+      );
+    });
+  const renderLine = line => {
+    const phrases = line.split(/\[url\]/);
+    return parseUrl(phrases);
+  };
+  const renderListItem = tips.map((item, i) => (
+    <ListItem key={i}>
+      <img src={item.icon} alt="Ikonka" />
+      <p>{renderLine(item.text)}</p>
+    </ListItem>
+  ));
+
+  const renderCollapse = collapse.map((item, i) => {
+    const repliesLength = item.replies.length;
+    return (
+      <Collapse key={i} title={item.title}>
+        {repliesLength > '1' ? (
+          <RepliesList>
+            {item.replies.map((reply, key) => (
+              <RepliesListItem key={key}>{renderLine(reply)}</RepliesListItem>
+            ))}
+          </RepliesList>
+        ) : (
+          <>
+            {item.replies.map((reply, key) => (
+              <Paragraph key={key}>{renderLine(reply)}</Paragraph>
+            ))}
+          </>
+        )}
+      </Collapse>
+    );
+  });
+
   return (
-    <View>
-      <Header hideBackButton />
-      <Content>
-        <Container className="full-height tips">
-          <Title>Porady</Title>
-          <List>
-            <ListItem>
-              <img src={IconAdviceHome} alt="advice icon" />
-              <p>Zostań w domu.</p>
-            </ListItem>
-            <ListItem>
-              <img src={IconAdvicePhone} alt="advice icon" />
-              <p>
-                Zadzwoń do rodziców i krewnych w podeszłym wieku. Pomóż im
-                korzystać z ProteGo Safe na ich telefonie. Zrób dla nich zakupy.
-                Unikaj kontaktu osobistego.
-              </p>
-            </ListItem>
-            <ListItem>
-              <img src={IconAdviceCountry} alt="advice icon" />
-              <p>
-                Jeśli przyjechałeś/-aś z zagranicy – skontaktuj się z sanepidem
-                i poddaj obowiązkowej 14-dniowej kwarantannie.
-              </p>
-            </ListItem>
-            <ListItem>
-              <img src={IconAdviceNote} alt="advice icon" />
-              <p>
-                Regularnie uzupełniaj zakładkę{' '}
-                <Link to="/daily">
-                  <strong>MÓJ DZIENNIK ZDROWIA</strong>
-                </Link>
-                : zapisuj w aplikacji objawy i temperaturę ciała.
-              </p>
-            </ListItem>
-          </List>
-          <div className="warning--content">
-            <span className="warning--label">
-              <img src={IconWarning} alt="Ważne" />
-              Ważne
-            </span>
-            <p>
-              Jeśli u Ciebie lub Twoich bliskich wystąpią objawy zakażenia
-              koronawirusem, zadzwoń na infolinię Narodowego Funduszu Zdrowia
-              (NFZ) <PhoneNumber value="800190590">800 190 590</PhoneNumber> lub
-              do lokalnej placówki służby zdrowia.
-            </p>
-          </div>
-          <FieldSet>
-            <Button onClick={() => history.push(Routes.Home)} text="OK" />
-          </FieldSet>
-        </Container>
-        <BottomNavigation />
-      </Content>
-    </View>
+    <>
+      <Title>{title}</Title>
+      <List>{renderListItem}</List>
+      <CollapseWrapper>{renderCollapse}</CollapseWrapper>
+      <Watermark>{watermark}</Watermark>
+      <Warning>
+        <WarningLabel>
+          <img src={IconWarning} alt="Ważne" />
+          Ważne
+        </WarningLabel>
+        <Paragraph>
+          Jeśli u Ciebie lub Twoich bliskich wystąpią objawy zakażenia
+          koronawirusem, zadzwoń na infolinię Narodowego Funduszu Zdrowia (NFZ){' '}
+          <PhoneNumber value="800190590">800 190 590</PhoneNumber> lub do
+          lokalnej placówki służby zdrowia.
+        </Paragraph>
+      </Warning>
+      <FieldSet>
+        <Button onClick={() => history.push(Routes.Home)} text="OK" />
+      </FieldSet>
+    </>
   );
 };
 

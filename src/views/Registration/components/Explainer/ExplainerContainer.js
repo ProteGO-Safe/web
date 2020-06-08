@@ -1,29 +1,29 @@
 import React, { useRef, useState } from 'react';
+import { useFormikContext } from 'formik';
+import Explainer from './Explainer';
 
+import { ExplainerItem } from './components';
 import IconChat from '../../../../assets/img/explainer/chat.svg';
 import IconDiary from '../../../../assets/img/explainer/diary.svg';
 import IconInfo from '../../../../assets/img/explainer/info.svg';
-import IconBluetooth from '../../../../assets/img/explainer/bluetooth.svg';
+import IconDiagnostic from '../../../../assets/img/explainer/diagnostic.svg';
 
-import Explainer from './Explainer';
-import { ExplainerItem } from './components';
-
-const ExplainerContainer = ({ onFinishClick }) => {
+const ExplainerContainer = () => {
   const carouselRef = useRef(null);
   const [activeSlide, setActiveSlide] = useState(0);
+  const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
+  const { setFieldValue } = useFormikContext();
 
   const items = [
     {
       content: (
         <>
-          Funkcja działa w kontakcie z osobami, które wyraziły na to zgodę i
-          korzystają z aplikacji. Zachęć innych do korzystania.
-          <br />
-          <br />W ten sposób wzajemnie się chronimy!
+          <strong>Nowość w aplikacji:</strong> powiadomienia o możliwym
+          kontakcie z koronawirusem.
         </>
       ),
-      icon: IconBluetooth,
-      slug: 'bluetooth'
+      icon: IconDiagnostic,
+      slug: 'diagnostic_apple_google'
     },
     {
       content: (
@@ -52,6 +52,9 @@ const ExplainerContainer = ({ onFinishClick }) => {
 
   const settings = {
     afterChange: currentSlide => setActiveSlide(currentSlide),
+    beforeChange: (oldIndex, newIndex) => {
+      setCurrentSlideIndex(newIndex);
+    },
     dots: true,
     slidesToShow: 1,
     infinite: false,
@@ -65,11 +68,12 @@ const ExplainerContainer = ({ onFinishClick }) => {
       return;
     }
 
-    onFinishClick();
+    setFieldValue('step', 2);
   };
 
   return (
     <Explainer
+      index={currentSlideIndex}
       carouselRef={carouselRef}
       items={items}
       onClick={handleButtonClick}

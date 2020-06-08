@@ -61,6 +61,13 @@ export const SmallText = styled.p`
   color: ${resolveDefaultColor(Color.darkGray)};
 `;
 
+export const Small = styled.p`
+  font-size: 12px;
+  font-weight: ${resolveDefaultFontWeight(FontWeight.Normal)};
+  line-height: 1.5;
+  color: ${resolveDefaultColor(Color.darkGray)};
+`;
+
 export const Annotation = styled.p`
   font-size: 12px;
   font-weight: ${resolveDefaultFontWeight(FontWeight.Normal)};
@@ -117,4 +124,13 @@ export const ListNumberItem = styled.li`
   &:last-child {
     margin-bottom: 0;
   }
+`;
+
+export const Name = styled.h1`
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-size: 20px;
+  font-weight: ${FontWeight.Bold};
+  line-height: 1.4;
+  color: ${Color.lightBlack};
 `;

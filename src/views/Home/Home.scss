@@ -3,6 +3,7 @@
 
 .view__home {
   @include viewBaseStyles();
+  padding-bottom: 104px!important;
 
   .banner {
     grid-area: banner;
@@ -37,7 +38,7 @@
 
   .container {
     display: grid;
-    grid-template-areas: 'badge' 'smile' 'test' 'info' 'list';
+    grid-template-areas: 'smile' 'test' 'info' 'list';
     grid-template-rows: auto auto auto auto auto;
     grid-area: container;
     align-self: start;

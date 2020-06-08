@@ -1,6 +1,7 @@
 export { Daily } from './Daily';
 export { DailyData } from './DailyData';
 export { Diagnosis } from './Diagnosis';
+export { Error } from './Error';
 export { Home } from './Home';
 export { HowItWorks } from './HowItWorks';
 export { IAmSick } from './IAmSick';
@@ -18,6 +19,7 @@ export { UserDataChange } from './UserDataChange';
 export { UserDataSettings } from './UserDataSettings';
 export { HospitalsList } from './HospitalsList';
 export { StartScreen } from './StartScreen';
+export { UploadHistoricalData } from './UploadHistoricalData';
 export { ReportBug } from './ReportBug';
 export { AdviceInformation } from './AdviceInformation';
 export { FaqPage } from './FaqPage';

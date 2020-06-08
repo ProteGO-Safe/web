@@ -1,11 +1,17 @@
 import invoke from 'lodash.invoke';
 import uniqueId from 'lodash.uniqueid';
-import { cond, equals, always } from 'ramda';
 
+import { always, cond, equals } from 'ramda';
 import StoreRegistry from '../../store/storeRegistry';
-import { NATIVE_DATA_SET_SERVICES_STATUS_SUCCESS } from '../../store/types/nativeData';
+import {
+  NATIVE_DATA_FETCH_EXPOSURE_NOTIFICATION_STATISTICS_SUCCESS,
+  NATIVE_DATA_FETCH_NATIVE_STATE,
+  NATIVE_DATA_SET_SERVICES_STATUS_SUCCESS
+} from '../../store/types/nativeData';
 import { DATA_TYPE } from './nativeBridge.constants';
-import { isAndroidWebView } from '../../utills/native';
+import { UPLOAD_HISTORICAL_DATA_FINISHED } from '../../store/types/app';
+import { isAndroidWebView, isIOSWebView } from '../../utils/native';
+import { fetchExposureNotificationStatistics } from '../../store/actions/nativeData';
 
 const nativeRequests = {};
 
@@ -13,11 +19,15 @@ const sendNativeRequest = (functionName, dataType, data) => {
   const requestId = uniqueId('request-');
   return new Promise((resolve, reject) => {
     nativeRequests[requestId] = { resolve, reject };
-    invoke(window.webkit, `messageHandlers.${functionName}.postMessage`, {
-      type: dataType,
-      data,
-      requestId
-    });
+    if (isIOSWebView()) {
+      invoke(window.webkit, `messageHandlers.${functionName}.postMessage`, {
+        type: dataType,
+        data,
+        requestId
+      });
+    } else if (isAndroidWebView()) {
+      invoke(window.NativeBridge, functionName, dataType, data, requestId);
+    }
   });
 };
 
@@ -37,18 +47,16 @@ const callNativeFunction = async (functionName, dataType, data) => {
     args.push(JSON.stringify(data));
   }
 
-  if (isAndroidWebView()) {
+  if (isAndroidWebView() && functionName === 'setBridgeData') {
     return invoke(window.NativeBridge, functionName, ...args);
   }
 
-  const result = await sendNativeRequest(functionName, ...args);
-  return result;
+  return sendNativeRequest(functionName, ...args);
 };
 
 const callGetBridgeData = async dataType => {
   try {
     const json = await callNativeFunction('getBridgeData', dataType);
-    console.log(json);
     if (json) {
       return JSON.parse(json);
     }
@@ -58,12 +66,16 @@ const callGetBridgeData = async dataType => {
   return '';
 };
 
-const getNativeServicesStatus = async () => {
+const getNotification = async () => {
+  return callGetBridgeData(DATA_TYPE.NOTIFICATION);
+};
+
+const getServicesStatus = async () => {
   return callGetBridgeData(DATA_TYPE.NATIVE_SERVICES_STATUS);
 };
 
-const getNotification = async () => {
-  return callGetBridgeData(DATA_TYPE.NOTIFICATION);
+const getExposureNotificationStatistics = async () => {
+  return callGetBridgeData(DATA_TYPE.EXPOSURE_STATISTICS);
 };
 
 const setDiagnosisTimestamp = async timestamp => {
@@ -72,28 +84,64 @@ const setDiagnosisTimestamp = async timestamp => {
   });
 };
 
-const setBluetoothModuleState = async data => {
-  await callNativeFunction('setBridgeData', DATA_TYPE.BT_MODULE, data);
+const setPin = async pin => {
+  await callNativeFunction('setBridgeData', DATA_TYPE.HISTORICAL_DATA, {
+    pin
+  });
 };
 
-const handleServicesStatus = data => {
+const setServicesState = async data => {
+  await callNativeFunction(
+    'setBridgeData',
+    DATA_TYPE.NATIVE_SERVICES_STATE,
+    data
+  );
+};
+
+const handleServicesStatus = servicesStatus => {
   const store = StoreRegistry.getStore();
   store.dispatch({
-    servicesStatus: data,
+    servicesStatus,
     type: NATIVE_DATA_SET_SERVICES_STATUS_SUCCESS
   });
+};
+
+const handleUploadHistoricalDataResponse = ({ result }) => {
+  const store = StoreRegistry.getStore();
+  store.dispatch({
+    result,
+    type: UPLOAD_HISTORICAL_DATA_FINISHED
+  });
+};
+
+const handleExposureSummary = riskLevel => {
+  const store = StoreRegistry.getStore();
+  store.dispatch({
+    riskLevel,
+    type: NATIVE_DATA_FETCH_EXPOSURE_NOTIFICATION_STATISTICS_SUCCESS
+  });
+};
+
+const handleNativeState = appState => {
+  const store = StoreRegistry.getStore();
+  const { dispatch } = store;
+  dispatch({
+    appState,
+    type: NATIVE_DATA_FETCH_NATIVE_STATE
+  });
+  if (appState.appState === 1) {
+    dispatch(fetchExposureNotificationStatistics());
+  }
 };
 
 const callBridgeDataHandler = cond([
   [equals(DATA_TYPE.NATIVE_SERVICES_STATUS), always(handleServicesStatus)],
   [
-    equals(DATA_TYPE.BATTERY_PERFORMANCE_PERMISSION),
-    always(handleServicesStatus)
+    equals(DATA_TYPE.HISTORICAL_DATA),
+    always(handleUploadHistoricalDataResponse)
   ],
-  [equals(DATA_TYPE.BT_PERMISSION), always(handleServicesStatus)],
-  [equals(DATA_TYPE.LOCATION_PERMISSION), always(handleServicesStatus)],
-  [equals(DATA_TYPE.NOTIFICATION_PERMISSION), always(handleServicesStatus)],
-  [equals(DATA_TYPE.BT_MODULE), always(handleServicesStatus)]
+  [equals(DATA_TYPE.EXPOSURE_STATISTICS), always(handleExposureSummary)],
+  [equals(DATA_TYPE.NATIVE_STATE), always(handleNativeState)]
 ]);
 
 const onBridgeData = (dataType, dataString) => {
@@ -105,25 +153,6 @@ const onBridgeData = (dataType, dataString) => {
   }
 };
 
-const showBatteryOptimizationPermission = async () => {
-  await callNativeFunction(
-    'setBridgeData',
-    DATA_TYPE.BATTERY_PERFORMANCE_PERMISSION
-  );
-};
-
-const showBtPermission = async () => {
-  await callNativeFunction('setBridgeData', DATA_TYPE.BT_PERMISSION);
-};
-
-const showLocationPermission = async () => {
-  await callNativeFunction('setBridgeData', DATA_TYPE.LOCATION_PERMISSION);
-};
-
-const showNotificationPermission = async () => {
-  await callNativeFunction('setBridgeData', DATA_TYPE.NOTIFICATION_PERMISSION);
-};
-
 const clearBluetoothData = async data => {
   await callNativeFunction('setBridgeData', DATA_TYPE.CLEAR_BT_DATA, data);
 };
@@ -132,13 +161,11 @@ window.onBridgeData = onBridgeData;
 window.bridgeDataResponse = receiveNativeResponse;
 
 export default {
+  getServicesStatus,
   setDiagnosisTimestamp,
-  setBluetoothModuleState,
-  showBatteryOptimizationPermission,
-  showBtPermission,
-  showLocationPermission,
-  showNotificationPermission,
-  getNativeServicesStatus,
+  setPin,
+  setServicesState,
+  getExposureNotificationStatistics,
   getNotification,
   clearBluetoothData
 };

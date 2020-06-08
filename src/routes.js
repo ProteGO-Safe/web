@@ -18,7 +18,9 @@ const Routes = {
   HospitalsList: '/hospitals-list',
   ReportBug: '/report-bug',
   AdviceInformation: '/advice',
-  FaqPage: '/faq'
+  FaqPage: '/faq',
+  UploadHistoricalData: '/upload-historical-data',
+  Error: '/error'
 };
 
 export default Routes;

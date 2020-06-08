@@ -1,6 +1,10 @@
 import moment from 'moment';
 import nativeBridge from '../../services/nativeBridge';
 import * as types from '../types/nativeData';
+import {
+  UPLOAD_HISTORICAL_DATA_ENDED,
+  UPLOAD_HISTORICAL_DATA_REQUESTED
+} from '../types/app';
 
 export function saveInfoAboutFilledDiagnosis() {
   const timestamp = moment().unix();
@@ -25,6 +29,36 @@ export function fetchNotification() {
   };
 }
 
+export const fetchServicesStatusSuccess = servicesStatus => ({
+  servicesStatus,
+  type: types.NATIVE_DATA_FETCH_SERVICES_STATUS_SUCCESS
+});
+
+export function fetchServicesStatus() {
+  return dispatch => {
+    nativeBridge.getServicesStatus().then(servicesStatus => {
+      if (servicesStatus) {
+        dispatch(fetchServicesStatusSuccess(servicesStatus));
+      }
+    });
+  };
+}
+
+export const fetchExposureNotificationStatisticsSuccess = riskLevel => ({
+  riskLevel,
+  type: types.NATIVE_DATA_FETCH_EXPOSURE_NOTIFICATION_STATISTICS_SUCCESS
+});
+
+export function fetchExposureNotificationStatistics() {
+  return dispatch => {
+    nativeBridge.getExposureNotificationStatistics().then(riskLevel => {
+      if (riskLevel) {
+        dispatch(fetchExposureNotificationStatisticsSuccess(riskLevel));
+      }
+    });
+  };
+}
+
 export const hideNotificationSuccess = () => ({
   type: types.NATIVE_DATA_HIDE_NOTIFICATION_SUCCESS
 });
@@ -35,62 +69,53 @@ export function hideNotification() {
   };
 }
 
-export const fetchNativeServicesStatusSuccess = servicesStatus => {
-  return {
-    servicesStatus,
-    type: types.NATIVE_DATA_FETCH_NATIVE_SERVICES_STATUS_SUCCESS
-  };
-};
-
-export function fetchNativeServicesStatus() {
-  return dispatch => {
-    nativeBridge.getNativeServicesStatus().then(data => {
-      dispatch(fetchNativeServicesStatusSuccess(data));
-    });
-  };
+export function enableExposureNotificationService() {
+  const data = { enableExposureNotificationService: true };
+  nativeBridge.setServicesState(data);
 }
 
-export function showNativeLocationPermission() {
-  return () => {
-    nativeBridge.showLocationPermission();
-  };
+export function disableExposureNotificationService() {
+  const data = { enableExposureNotificationService: false };
+  nativeBridge.setServicesState(data);
 }
 
-export function showNativeBluetoothPermission() {
-  return () => {
-    nativeBridge.showBtPermission();
-  };
+export function enableNotification() {
+  const data = { enableNotification: true };
+  nativeBridge.setServicesState(data);
 }
 
-export function showNativeBatteryOptimizationPermission() {
-  return () => {
-    nativeBridge.showBatteryOptimizationPermission();
-  };
-}
+export const resetSourceSetServicesStatus = () => ({
+  type: types.NATIVE_DATA_SET_SERVICE_STATUS_SOURCE_RESETED
+});
 
-export function showNativeNotificationPermission() {
-  return () => {
-    nativeBridge.showNotificationPermission();
-  };
-}
-
-export function enableBluetoothModule() {
-  const data = { enableBtService: true };
-  return () => {
-    nativeBridge.setBluetoothModuleState(data);
-  };
-}
-
-export function disableBluetoothModule() {
-  const data = { enableBtService: false };
-  return () => {
-    nativeBridge.setBluetoothModuleState(data);
-  };
+export function enableServices(data) {
+  nativeBridge.setServicesState(data);
 }
 
 export function clearBluetoothData() {
   const data = { clearBtData: true };
   return () => {
     nativeBridge.clearBluetoothData(data);
+  };
+}
+
+export const uploadHistoricalDataRequested = () => ({
+  type: UPLOAD_HISTORICAL_DATA_REQUESTED
+});
+
+export function uploadHistoricalData({ pin }) {
+  return dispatch => {
+    dispatch(uploadHistoricalDataRequested());
+    nativeBridge.setPin(pin);
+  };
+}
+
+export const uploadHistoricalDataEnded = () => ({
+  type: UPLOAD_HISTORICAL_DATA_ENDED
+});
+
+export function endUploadHistoricalData() {
+  return async dispatch => {
+    dispatch(uploadHistoricalDataEnded());
   };
 }

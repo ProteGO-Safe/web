@@ -3,15 +3,7 @@ import { useFormikContext } from 'formik';
 
 import { NUMBER_OF_STEPS } from './ImprintFiller.constants';
 
-import {
-  Age,
-  BloodGroup,
-  ChronicSick,
-  Name,
-  Sex,
-  Smoke,
-  Summary
-} from './components';
+import { BloodGroup, ChronicSick, Name, Smoke, Summary } from './components';
 import { GovFooter, Stepper } from '..';
 import { Header } from '../Header';
 
@@ -22,23 +14,17 @@ const steps = {
     Component: Name
   },
   2: {
-    Component: Sex
-  },
-  3: {
-    Component: Age
-  },
-  4: {
     Component: ChronicSick
   },
-  5: {
+  3: {
     Component: BloodGroup
   },
-  6: {
+  4: {
     Component: Smoke
   }
 };
 
-const ImprintFiller = ({ editMode }) => {
+const ImprintFiller = () => {
   const {
     values: { step }
   } = useFormikContext();
@@ -49,7 +35,7 @@ const ImprintFiller = ({ editMode }) => {
     }
   }, [step]);
 
-  if (step === 7) {
+  if (step === 5) {
     return <Summary />;
   }
 
@@ -60,7 +46,7 @@ const ImprintFiller = ({ editMode }) => {
       <Header hideBackButton />
       <Container>
         <Stepper currentStep={step} numberOfSteps={NUMBER_OF_STEPS} />
-        <StepComponent editMode={editMode} />
+        <StepComponent />
         <GovFooter type="black" />
       </Container>
     </View>

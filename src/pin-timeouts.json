@@ -1,0 +1,6 @@
+[
+  {"numberOfTries":3,"intervalInMinutes":1,"lockdownInMinutes":1},
+  {"numberOfTries":5,"intervalInMinutes":2, "lockdownInMinutes":5},
+  {"numberOfTries":10,"intervalInMinutes":10, "lockdownInMinutes":60},
+  {"numberOfTries":30,"intervalInMinutes":120, "lockdownInMinutes":1440}
+]

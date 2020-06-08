@@ -8,6 +8,7 @@ import {
   Daily,
   DailyData,
   Diagnosis,
+  Error,
   Home,
   HowItWorks,
   IAmSick,
@@ -27,20 +28,18 @@ import {
   HospitalsList,
   ReportBug,
   AdviceInformation,
+  UploadHistoricalData,
   FaqPage
 } from '../../views';
 
-import {
-  fetchNativeServicesStatus,
-  fetchNotification
-} from '../../store/actions/nativeData';
+import { fetchNotification } from '../../store/actions/nativeData';
 import useMenuContext from '../../hooks/useMenuContext';
 import { Menu } from '../Menu';
 import Routes from '../../routes';
 import './App.scss';
 import { Notification } from '../Notification';
-import { showOnboarding } from '../../utills/servicesStatus';
-import { isWebView } from '../../utills/native';
+import { resetExternalData } from '../../store/actions/externalData';
+import {FirstDiagnosisAsking} from "../../views/FirstDiagnosisAsking";
 
 function App() {
   moment.locale('pl');
@@ -48,10 +47,11 @@ function App() {
   const history = useHistory();
 
   const { name } = useSelector(state => state.user);
-  const { servicesStatus } = useSelector(state => state.nativeData);
-  const { onboardingFinished, startScreenShowed } = useSelector(
-    state => state.app
-  );
+  const {
+    onboardingFinished = false,
+    startScreenShowed,
+    firstDiagnosisFinished
+  } = useSelector(state => state.app);
   const { notification } = useSelector(state => state.nativeData);
   const { inProgress, visible: menuIsVisible } = useMenuContext();
 
@@ -63,21 +63,13 @@ function App() {
     return () => null;
   }, [notification, dispatch]);
 
-  useEffect(() => {
-    const interval = setInterval(
-      () => dispatch(fetchNativeServicesStatus()),
-      1000
-    );
-    return () => clearInterval(interval);
-  }, [dispatch]);
-
-  useEffect(() => {
-    dispatch(fetchNativeServicesStatus());
-  }, [dispatch]);
-
   history.listen(() => {
     window.scroll(0, 0);
   });
+
+  useEffect(() => {
+    dispatch(resetExternalData());
+  }, [dispatch]);
 
   useEffect(() => {
     const navMenuButton = document.getElementById('nav_menu_button');
@@ -96,15 +88,14 @@ function App() {
     if (!startScreenShowed && !name) {
       return StartScreen;
     }
-    if (
-      isWebView() &&
-      !onboardingFinished &&
-      showOnboarding(servicesStatus, onboardingFinished)
-    ) {
+    if (!onboardingFinished) {
       return Onboarding;
     }
     if (!name) {
       return Registration;
+    }
+    if (!firstDiagnosisFinished) {
+      return FirstDiagnosisAsking;
     }
     return Home;
   })();
@@ -114,7 +105,7 @@ function App() {
       <div className="app__inner">
         <Switch>
           <Route exact path={Routes.Home} component={resolveHomeComponent} />
-          {name && true && (
+          {name && (
             <>
               <Route exact path={Routes.Daily} component={Daily} />
               <Route exact path="/daily/:id" component={DailyData} />
@@ -164,6 +155,12 @@ function App() {
                 component={AdviceInformation}
               />
               <Route exact path={Routes.FaqPage} component={FaqPage} />
+              <Route
+                exact
+                path={Routes.UploadHistoricalData}
+                component={UploadHistoricalData}
+              />
+              <Route exact path={Routes.Error} component={Error} />
             </>
           )}
           <Route render={() => <Redirect to={Routes.Home} />} />

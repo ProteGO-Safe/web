@@ -9,11 +9,14 @@ export const IconButton = styled.div`
   margin-bottom: 24px;
   padding: 20px 28px;
   border: solid 1px #cbcbcb;
+  cursor: pointer;
+
   > svg {
     width: 40px;
     height: auto;
     margin-right: 24px;
   }
+
   &.small {
     padding: 11px;
   }

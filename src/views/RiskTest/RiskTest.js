@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { daysDetailsPropType } from '../../utills/calendar';
+import { daysDetailsPropType } from '../../utils/calendar';
 import Header from '../../components/Header/Header';
 import LineItem from '../../components/LineItem/LineItem';
 import { BottomNavigation } from '../../components/BottomNavigation';
@@ -14,7 +14,7 @@ const RiskTest = ({ goToHistory, onFill, previousDays }) => (
     <Header />
     <Content>
       <Container>
-        <Title>Przygotowaliśmy dla Ciebie nowy test na dzisiaj.</Title>
+        <Title>Przygotowaliśmy dla Ciebie nowy test na dzisiaj</Title>
         <BordersButton
           onClick={onFill}
           text="Wykonaj TEST oceny ryzyka"

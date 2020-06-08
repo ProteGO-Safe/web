@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { TextField as MuiTextField } from '@material-ui/core';
 
-import { Label, TextFieldWrapper } from './TextField.styled';
+import { Label, TextFieldWrapper, Information } from './TextField.styled';
 
 const TextField = ({
   error,
@@ -11,6 +11,7 @@ const TextField = ({
   name,
   onChange,
   placeholder,
+  info,
   type,
   value
 }) => (
@@ -27,6 +28,7 @@ const TextField = ({
       value={value}
       variant="outlined"
     />
+    {info && <Information>{info}</Information>}
   </TextFieldWrapper>
 );
 
@@ -36,10 +38,12 @@ TextField.defaultProps = {
   label: undefined,
   placeholder: '',
   type: 'text',
-  value: null
+  value: null,
+  info: ''
 };
 
 TextField.propTypes = {
+  info: PropTypes.string,
   error: PropTypes.string,
   disabled: PropTypes.bool,
   label: PropTypes.string,

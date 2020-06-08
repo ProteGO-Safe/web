@@ -9,10 +9,12 @@ import {
   FIELD_RUNNY_NOSE,
   FIELD_TEMPERATURE
 } from '../../../../constants';
-import { FieldSet, Input, Range, Textarea } from '../../../../components';
+import { marks } from './constants';
+import { FieldSet, Input, Textarea, InputSlider } from '../../../../components';
 
 const Form = ({ isViewMode }) => {
-  const { handleChange, values, errors } = useFormikContext();
+  const { handleChange, setFieldValue, values, errors } = useFormikContext();
+
   return (
     <div className="form">
       <h4 className="medium title-2">Temperatura</h4>
@@ -32,13 +34,37 @@ const Form = ({ isViewMode }) => {
       </FieldSet>
       <h4 className="medium title-3">Objawy</h4>
       <FieldSet>
-        <Range field={FIELD_RUNNY_NOSE} label="Katar" disable={isViewMode} />
-        <Range field={FIELD_COUGH} label="Kaszel" disable={isViewMode} />
-        <Range field={FIELD_CHILLS} label="Dreszcze" disable={isViewMode} />
-        <Range
-          field={FIELD_MUSCLE_PAIN}
+        <InputSlider
+          label="Katar"
+          marks={marks}
+          min={1}
+          max={4}
+          onChange={(e, value) =>
+            setFieldValue(FIELD_RUNNY_NOSE, `level ${value}`)
+          }
+        />
+        <InputSlider
+          label="Kaszel"
+          marks={marks}
+          min={1}
+          max={4}
+          onChange={(e, value) => setFieldValue(FIELD_COUGH, `level ${value}`)}
+        />
+        <InputSlider
+          label="Dreszcze"
+          marks={marks}
+          min={1}
+          max={4}
+          onChange={(e, value) => setFieldValue(FIELD_CHILLS, `level ${value}`)}
+        />
+        <InputSlider
           label="Ból mięśni"
-          disable={isViewMode}
+          marks={marks}
+          min={1}
+          max={4}
+          onChange={(e, value) =>
+            setFieldValue(FIELD_MUSCLE_PAIN, `level ${value}`)
+          }
         />
       </FieldSet>
       <h4 className="medium title-2">Miejsca i kontakty</h4>

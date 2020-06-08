@@ -117,6 +117,13 @@
     }
   }
 
+  &--tertiary {
+    color: $button_primary;
+    &:hover {
+      color: $button_hover;
+    }
+  }
+
   &--white {
     background-color: $white;
     color: $button_primary;

@@ -1,57 +1,41 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import Settings from './Settings';
 import {
-  disableBluetoothModule,
-  enableBluetoothModule,
-  showNativeBatteryOptimizationPermission,
-  showNativeBluetoothPermission,
-  showNativeLocationPermission
+  disableExposureNotificationService,
+  enableExposureNotificationService,
+  fetchServicesStatus
 } from '../../store/actions/nativeData';
-import { isAndroidWebView, isIOSWebView } from '../../utills/native';
+import { EXPOSURE_NOTIFICATION_STATUS } from '../../utils/servicesStatus/servicesStatus.constants';
 
 const SettingsContainer = () => {
-  const dispatch = useDispatch();
   const {
     servicesStatus: {
-      isBtServiceOn = false,
-      isBtSupported = false,
-      isBtOn = false,
-      isLocationEnabled = false,
-      isBatteryOptimizationOn = true
-    }
+      exposureNotificationStatus = EXPOSURE_NOTIFICATION_STATUS.OFF
+    } = {}
   } = useSelector(state => state.nativeData);
+  const dispatch = useDispatch();
 
-  const isModuleBluetoothEnable = (() => {
-    if (isIOSWebView()) {
-      return isBtServiceOn && isBtOn;
-    }
+  useEffect(() => {
+    dispatch(fetchServicesStatus());
+  }, [dispatch]);
 
-    if (isAndroidWebView()) {
-      return (
-        isBtServiceOn && isBtOn && isLocationEnabled && !isBatteryOptimizationOn
-      );
-    }
-    return false;
+  const isExposureNotificationOn = (() => {
+    return exposureNotificationStatus === EXPOSURE_NOTIFICATION_STATUS.ON;
   })();
 
   const toggleChecked = () => {
-    if (isModuleBluetoothEnable) {
-      dispatch(disableBluetoothModule());
+    if (isExposureNotificationOn) {
+      disableExposureNotificationService();
     } else {
-      dispatch(showNativeBluetoothPermission());
-      if (isAndroidWebView()) {
-        dispatch(showNativeLocationPermission());
-        dispatch(showNativeBatteryOptimizationPermission());
-      }
-      dispatch(enableBluetoothModule());
+      enableExposureNotificationService();
     }
   };
 
   const items = [
     {
-      checked: isModuleBluetoothEnable,
-      disabled: !isBtSupported,
+      checked: isExposureNotificationOn,
+      disabled: false,
       onChange: toggleChecked,
       label: 'Zgoda na używanie Bluetooth w celu wykrycia zagrożeń',
       name: 'bluetooth'

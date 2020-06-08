@@ -1,41 +1,62 @@
-import React from 'react';
-import { cond, is, T } from 'ramda';
-
-import Hospitals from './Hospitals.json';
-import Header from '../../components/Header/Header';
-import { BottomNavigation } from '../../components/BottomNavigation';
-import { Collapse } from '../../components';
+import React, { useEffect } from 'react';
+import reactStringReplace from 'react-string-replace';
+import { useDispatch, useSelector } from 'react-redux';
+import { useHistory } from 'react-router-dom';
+import {
+  Collapse,
+  BottomNavigation,
+  Header,
+  PhoneNumber
+} from '../../components';
 import { Container, Content, View } from '../../theme/grid';
 import { List, ListItem } from '../../theme/typography';
 import { Title } from './Hospitals.styled';
-import PhoneNumber from '../../components/PhoneNumber';
 import './HospitalsList.scss';
+import useLoaderContext from '../../hooks/useLoaderContext';
+import Routes from '../../routes';
+import { fetchHospitals, clearError } from '../../store/actions/externalData';
 
 const HospitalsList = () => {
-  const { voivodeships } = Hospitals;
+  const history = useHistory();
+  const dispatch = useDispatch();
 
-  const renderSimpleNumber = phone => (
-    <li key={phone}>
-      <PhoneNumber>{phone}</PhoneNumber>
-    </li>
+  const { hospitalsData, isFetching, error } = useSelector(
+    state => state.externalData
   );
+  const { setLoader } = useLoaderContext();
 
-  const renderComplexNumber = phone => (
-    <li key={`phones-${phone.type}`}>
-      <strong>{phone.type}</strong>:{' '}
-      {phone.items.map((number, index) => (
-        <>
-          <PhoneNumber key={number}>{number}</PhoneNumber>
-          {phone.items.length - 1 !== index ? ', ' : ''}
-        </>
-      ))}
-    </li>
-  );
+  const phoneRegex = /([+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s./0-9]{9,})/g;
 
-  const renderPhoneNumber = cond([
-    [is(String), renderSimpleNumber],
-    [T, renderComplexNumber]
-  ]);
+  useEffect(() => {
+    if (isFetching) {
+      setLoader(true);
+      return;
+    }
+    setLoader(false);
+  }, [isFetching, setLoader]);
+
+  useEffect(() => {
+    if (!hospitalsData && !error) {
+      dispatch(fetchHospitals());
+    }
+  }, [hospitalsData, error, dispatch]);
+
+  const renderAddressLine = address => {
+    return reactStringReplace(address, phoneRegex, (match, i) => (
+      <PhoneNumber key={i}>{match}</PhoneNumber>
+    ));
+  };
+
+  if (error) {
+    dispatch(clearError());
+    history.push(Routes.Error);
+  }
+
+  if (!hospitalsData) {
+    return null;
+  }
+
+  const { elements: voivodeships = [], watermark } = hospitalsData;
 
   return (
     <View>
@@ -51,18 +72,13 @@ const HospitalsList = () => {
                     key={`${voivodeship.name}-${item.city}-${item.address}`}
                   >
                     <strong>{item.city}</strong>
-                    <p>{item.address}</p>
-                    {item.phones.length ? (
-                      <>
-                        <div className="phone">Telefon:</div>
-                        <ul>{item.phones.map(renderPhoneNumber)}</ul>
-                      </>
-                    ) : null}
+                    <p>{renderAddressLine(item.address)}</p>
                   </ListItem>
                 ))}
               </List>
             </Collapse>
           ))}
+          <p className="watermark details">{watermark}</p>
         </Container>
         <BottomNavigation />
       </Content>

@@ -1,5 +1,3 @@
-export const FIELD_AGE = 'age';
-export const FIELD_SEX = 'sex';
 export const FIELD_NAME = 'name';
 export const FIELD_TERM1 = 'term1';
 
@@ -112,9 +110,6 @@ export const chronicSickValues = [
 ];
 
 export const FIELD_BLOOD_GROUP = 'bloodGroup';
-
-export const VALUE_MAN = 'male';
-export const VALUE_WOMAN = 'female';
 
 export const FIELD_CHOICE_ID = 'choice_id';
 export const FIELD_ITEM_ID = 'item_id';

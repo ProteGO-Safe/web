@@ -1,0 +1,241 @@
+{
+  "01": {
+    "description": "Twoje objawy są bardzo poważne i mogą wskazywać na zakażenie koronawirusem (choroba COVID-19).",
+    "label": "Zadzwoń pod numer alarmowy. Unikaj wszelkiego kontaktu z innymi.",
+    "serious": [
+      {
+        "common_name": "Duszność",
+        "id": "s_2",
+        "is_emergency": true,
+        "name": "Duszność"
+      },
+      {
+        "common_name": "Szybkie pogarszanie stanu zdrowia",
+        "id": "s_12",
+        "is_emergency": true,
+        "name": "Szybkie pogarszanie stanu zdrowia"
+      }
+    ],
+    "triage_level": "isolation_ambulance"
+  },
+  "02": {
+    "description": "Twoje objawy są bardzo poważne i mogą wskazywać na zakażenie koronawirusem (choroba COVID-19).",
+    "label": "Zadzwoń pod numer alarmowy. Unikaj wszelkiego kontaktu z innymi.",
+    "serious": [
+      {
+        "common_name": "Kaszel",
+        "id": "s_1",
+        "is_emergency": true,
+        "name": "Kaszel"
+      },
+      {
+        "common_name": "Duszność",
+        "id": "s_2",
+        "is_emergency": true,
+        "name": "Duszność"
+      },
+      {
+        "common_name": "Szybkie pogarszanie stanu zdrowia",
+        "id": "s_12",
+        "is_emergency": true,
+        "name": "Szybkie pogarszanie stanu zdrowia"
+      }
+    ],
+    "triage_level": "isolation_ambulance"
+  },
+  "03": {
+    "description": "Twoje objawy są bardzo poważne i mogą wskazywać na zakażenie koronawirusem (choroba COVID-19).",
+    "label": "Zadzwoń pod numer alarmowy. Unikaj wszelkiego kontaktu z innymi.",
+    "serious": [
+      {
+        "common_name": "Kaszel",
+        "id": "s_1",
+        "is_emergency": true,
+        "name": "Kaszel"
+      },
+      {
+        "common_name": "Duszność",
+        "id": "s_2",
+        "is_emergency": true,
+        "name": "Duszność"
+      },
+      {
+        "common_name": "Szybkie pogarszanie stanu zdrowia",
+        "id": "s_12",
+        "is_emergency": true,
+        "name": "Szybkie pogarszanie stanu zdrowia"
+      },
+      {
+        "common_name": "Przyspieszony oddech",
+        "id": "s_13",
+        "is_emergency": true,
+        "name": "Przyspieszony oddech"
+      },
+      {
+        "common_name": "Odkrztuszanie krwi",
+        "id": "s_14",
+        "is_emergency": true,
+        "name": "Odkrztuszanie krwi"
+      }
+    ],
+    "triage_level": "isolation_ambulance"
+  },
+  "04": {
+    "description": "Twoje objawy są bardzo poważne i mogą wskazywać na zakażenie koronawirusem (choroba COVID-19).",
+    "label": "Zadzwoń pod numer alarmowy. Unikaj wszelkiego kontaktu z innymi.",
+    "serious": [
+      {
+        "common_name": "Kaszel",
+        "id": "s_1",
+        "is_emergency": true,
+        "name": "Kaszel"
+      },
+      {
+        "common_name": "Duszność",
+        "id": "s_2",
+        "is_emergency": true,
+        "name": "Duszność"
+      }
+    ],
+    "triage_level": "isolation_ambulance"
+  },
+  "05": {
+    "description": "Twoje objawy są bardzo poważne i mogą wskazywać na zakażenie koronawirusem (choroba COVID-19).",
+    "label": "Zadzwoń pod numer alarmowy. Unikaj wszelkiego kontaktu z innymi.",
+    "serious": [
+      {
+        "common_name": "Kaszel",
+        "id": "s_1",
+        "is_emergency": true,
+        "name": "Kaszel"
+      },
+      {
+        "common_name": "Duszność",
+        "id": "s_2",
+        "is_emergency": true,
+        "name": "Duszność"
+      }
+    ],
+    "triage_level": "isolation_ambulance"
+  },
+  "06": {
+    "description": "Twoje objawy są bardzo poważne i mogą wskazywać na zakażenie koronawirusem (choroba COVID-19).",
+    "label": "Zadzwoń pod numer alarmowy. Unikaj wszelkiego kontaktu z innymi.",
+    "serious": [
+      {
+        "common_name": "Gorączka powyżej 40°C (104°F)",
+        "id": "s_4",
+        "is_emergency": true,
+        "name": "Gorączka powyżej 40°C (104°F)"
+      }
+    ],
+    "triage_level": "isolation_ambulance"
+  },
+  "07": {
+    "description": "Twoje objawy są bardzo poważne i mogą wskazywać na zakażenie koronawirusem (choroba COVID-19).",
+    "label": "Zadzwoń pod numer alarmowy. Unikaj wszelkiego kontaktu z innymi.",
+    "serious": [
+      {
+        "common_name": "Gorączka powyżej 40°C (104°F)",
+        "id": "s_4",
+        "is_emergency": true,
+        "name": "Gorączka powyżej 40°C (104°F)"
+      }
+    ],
+    "triage_level": "isolation_ambulance"
+  },
+  "08": {
+    "description": "Twoje objawy są bardzo poważne i mogą wskazywać na zakażenie koronawirusem (choroba COVID-19).",
+    "label": "Zadzwoń pod numer alarmowy. Unikaj wszelkiego kontaktu z innymi.",
+    "serious": [
+      {
+        "common_name": "Duszność",
+        "id": "s_2",
+        "is_emergency": true,
+        "name": "Duszność"
+      },
+      {
+        "common_name": "Gorączka powyżej 40°C (104°F)",
+        "id": "s_4",
+        "is_emergency": true,
+        "name": "Gorączka powyżej 40°C (104°F)"
+      }
+    ],
+    "triage_level": "isolation_ambulance"
+  },
+  "09": {
+    "description": "Twoje objawy są bardzo poważne i mogą wskazywać na zakażenie koronawirusem (choroba COVID-19).",
+    "label": "Zadzwoń pod numer alarmowy. Unikaj wszelkiego kontaktu z innymi.",
+    "serious": [
+      {
+        "common_name": "Kaszel",
+        "id": "s_1",
+        "is_emergency": true,
+        "name": "Kaszel"
+      },
+      {
+        "common_name": "Duszność",
+        "id": "s_2",
+        "is_emergency": true,
+        "name": "Duszność"
+      }
+    ],
+    "triage_level": "isolation_ambulance"
+  },
+  "10": {
+    "description": "Twoje objawy są bardzo poważne i mogą wskazywać na zakażenie koronawirusem (choroba COVID-19).",
+    "label": "Zadzwoń pod numer alarmowy. Unikaj wszelkiego kontaktu z innymi.",
+    "serious": [
+      {
+        "common_name": "Kaszel",
+        "id": "s_1",
+        "is_emergency": true,
+        "name": "Kaszel"
+      },
+      {
+        "common_name": "Gorączka powyżej 40°C (104°F)",
+        "id": "s_4",
+        "is_emergency": true,
+        "name": "Gorączka powyżej 40°C (104°F)"
+      }
+    ],
+    "triage_level": "isolation_ambulance"
+  },
+  "11": {
+    "description": "Twoje objawy są bardzo poważne i mogą wskazywać na zakażenie koronawirusem (choroba COVID-19).",
+    "label": "Zadzwoń pod numer alarmowy. Unikaj wszelkiego kontaktu z innymi.",
+    "serious": [
+      {
+        "common_name": "Kaszel",
+        "id": "s_1",
+        "is_emergency": true,
+        "name": "Kaszel"
+      },
+      {
+        "common_name": "Gorączka pomiędzy 37.5°C a 38°C (99.5°F a 100.4°F)",
+        "id": "s_22",
+        "is_emergency": true,
+        "name": "Gorączka pomiędzy 37.5°C a 38°C (99.5°F a 100.4°F)"
+      },
+      {
+        "common_name": "Szybkie pogarszanie stanu zdrowia",
+        "id": "s_12",
+        "is_emergency": true,
+        "name": "Szybkie pogarszanie stanu zdrowia"
+      },
+      {
+        "common_name": "Przyspieszony oddech",
+        "id": "s_13",
+        "is_emergency": true,
+        "name": "Przyspieszony oddech"
+      },
+      {
+        "common_name": "Odkrztuszanie krwi",
+        "id": "s_14",
+        "is_emergency": true,
+        "name": "Odkrztuszanie krwi"
+      }
+    ],
+    "triage_level": "isolation_ambulance"
+  }
+}

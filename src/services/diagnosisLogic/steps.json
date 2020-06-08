@@ -1,0 +1,613 @@
+[
+	{
+		"id": "p24",
+		"conditions": [],
+		"extras": {},
+		"question": {
+			"explanation": null,
+			"extras": {},
+			"text": "Zaznacz odpowiedzi, które Cię dotyczą",
+			"type": "group_multiple",
+			"items": [
+				{
+					"choices": [
+						{
+							"id": "present",
+							"label": "Tak"
+						},
+						{
+							"id": "absent",
+							"label": "Nie"
+						}
+					],
+					"explanation": "Przewlekłe choroby płuc to zaburzenia, które wpływają na płuca i inne części układu oddechowego. Choroby: przewlekła obturacyjna choroba płuc, umiarkowana i ciężka astma oraz inne choroby płuc.",
+					"id": "p_16",
+					"name": "Zdiagnozowana przewlekła choroba płuc"
+				},
+				{
+					"choices": [
+						{
+							"id": "present",
+							"label": "Tak"
+						},
+						{
+							"id": "absent",
+							"label": "Nie"
+						}
+					],
+					"explanation": "Niewydolność serca to przewlekła, postępująca choroba, w której serce nie jest w stanie skutecznie pompować krew w związku np. z chorobą wieńcową czy nadciśnieniem.",
+					"id": "p_17",
+					"name": "Zdiagnozowana niewydolność serca"
+				},
+				{
+					"choices": [
+						{
+							"id": "present",
+							"label": "Tak"
+						},
+						{
+							"id": "absent",
+							"label": "Nie"
+						}
+					],
+					"explanation": null,
+					"id": "p_18",
+					"name": "Trwająca choroba nowotworowa"
+				},
+				{
+					"choices": [
+						{
+							"id": "present",
+							"label": "Tak"
+						},
+						{
+							"id": "absent",
+							"label": "Nie"
+						}
+					],
+					"explanation": "Osłabiony układ odpornościowy może być spowodowany wieloma czynnikami, np. leczeniem nowotworów, przeszczepem szpiku kostnego lub narządów, źle kontrolowanym zakażeniem HIV / AIDS, przedłużonym stosowaniem leków immunosupresyjnych, takich jak kortykosteroidy lub leki stosowane w reumatoidalnym zapaleniu stawów oraz niektórymi chorobami wrodzonymi.",
+					"id": "p_19",
+					"name": "Choroby lub leki obniżające odporność"
+				},
+				{
+					"choices": [
+						{
+							"id": "present",
+							"label": "Tak"
+						},
+						{
+							"id": "absent",
+							"label": "Nie"
+						}
+					],
+					"explanation": "Długotrwała choroba wątroby spowodowana alkoholizmem, infekcjami lub chorobami wrodzonymi, prowadząca do utraty funkcji, marskości wątroby i innych powikłań.",
+					"id": "p_20",
+					"name": "Zdiagnozowana przewlekła choroba wątroby"
+				},
+				{
+					"choices": [
+						{
+							"id": "present",
+							"label": "Tak"
+						},
+						{
+							"id": "absent",
+							"label": "Nie"
+						}
+					],
+					"explanation": "Schyłkowa choroba nerek jest stanem, w którym czynność nerek jest znacznie zmniejszona.",
+					"id": "p_21",
+					"name": "Zdiagnozowana niewydolność nerek"
+				},
+				{
+					"choices": [
+						{
+							"id": "present",
+							"label": "Tak"
+						},
+						{
+							"id": "absent",
+							"label": "Nie"
+						}
+					],
+					"explanation": null,
+					"id": "p_22",
+					"name": "Długoterminowy pobyt w domu opieki"
+				},
+				{
+					"choices": [
+						{
+							"id": "present",
+							"label": "Tak"
+						},
+						{
+							"id": "absent",
+							"label": "Nie"
+						}
+					],
+					"explanation": null,
+					"id": "p_23",
+					"name": "Cukrzyca"
+				},
+				{
+					"choices": [
+						{
+							"id": "present",
+							"label": "Tak"
+						},
+						{
+							"id": "absent",
+							"label": "Nie"
+						}
+					],
+					"explanation": "Osoba jest uważana za otyłą, gdy jej wskaźnik masy ciała (BMI) przekracza 30.",
+					"id": "p_24",
+					"name": "Otyłość"
+				}
+			]
+		}
+	},
+	{
+		"id": "s2",
+		"conditions": [],
+		"extras": {},
+		"question": {
+			"explanation": null,
+			"extras": {},
+			"items": [
+				{
+					"choices": [
+						{
+							"id": "present",
+							"label": "Tak"
+						},
+						{
+							"id": "absent",
+							"label": "Nie"
+						}
+					],
+					"explanation": null,
+					"id": "s_0",
+					"name": "Gorączka"
+				},
+				{
+					"choices": [
+						{
+							"id": "present",
+							"label": "Tak"
+						},
+						{
+							"id": "absent",
+							"label": "Nie"
+						}
+					],
+					"explanation": null,
+					"id": "s_1",
+					"name": "Kaszel"
+				},
+				{
+					"choices": [
+						{
+							"id": "present",
+							"label": "Tak"
+						},
+						{
+							"id": "absent",
+							"label": "Nie"
+						}
+					],
+					"explanation": "Duszności: Problemy z oddychaniem i nabraniem do płuc odpowiedniej ilości powietrza. Często towarzyszy im ucisk w klatce piersiowej, brak tchu i uczucie duszenia się.",
+					"id": "s_2",
+					"name": "Duszność"
+				}
+			],
+			"text": "Czy masz któryś z poniższych objawów? Wybierz jedynie nowe objawy, niezwiązane z Twoimi przewlekłymi chorobami.",
+			"type": "group_multiple"
+		},
+		"should_stop": false
+	},
+	{
+		"id": "s24",
+		"conditions": [],
+		"extras": {},
+		"question": {
+			"explanation": null,
+			"extras": {},
+			"items": [
+				{
+					"choices": [
+						{
+							"id": "present",
+							"label": "Tak"
+						},
+						{
+							"id": "absent",
+							"label": "Nie"
+						}
+					],
+					"explanation": null,
+					"id": "s_15",
+					"name": "Osłabienie"
+				},
+				{
+					"choices": [
+						{
+							"id": "present",
+							"label": "Tak"
+						},
+						{
+							"id": "absent",
+							"label": "Nie"
+						}
+					],
+					"explanation": null,
+					"id": "s_16",
+					"name": "Bóle mięśni"
+				},
+				{
+					"choices": [
+						{
+							"id": "present",
+							"label": "Tak"
+						},
+						{
+							"id": "absent",
+							"label": "Nie"
+						}
+					],
+					"explanation": null,
+					"id": "s_17",
+					"name": "Dreszcze"
+				},
+				{
+					"choices": [
+						{
+							"id": "present",
+							"label": "Tak"
+						},
+						{
+							"id": "absent",
+							"label": "Nie"
+						}
+					],
+					"explanation": null,
+					"id": "s_18",
+					"name": "Ból głowy"
+				},
+				{
+					"choices": [
+						{
+							"id": "present",
+							"label": "Tak"
+						},
+						{
+							"id": "absent",
+							"label": "Nie"
+						}
+					],
+					"explanation": null,
+					"id": "s_19",
+					"name": "Biegunka"
+				},
+				{
+					"choices": [
+						{
+							"id": "present",
+							"label": "Tak"
+						},
+						{
+							"id": "absent",
+							"label": "Nie"
+						}
+					],
+					"explanation": null,
+					"id": "s_20",
+					"name": "Mdłości"
+				},
+				{
+					"choices": [
+						{
+							"id": "present",
+							"label": "Tak"
+						},
+						{
+							"id": "absent",
+							"label": "Nie"
+						}
+					],
+					"explanation": null,
+					"id": "s_21",
+					"name": "Ból gardła"
+				},
+				{
+					"choices": [
+						{
+							"id": "present",
+							"label": "Tak"
+						},
+						{
+							"id": "absent",
+							"label": "Nie"
+						}
+					],
+					"explanation": null,
+					"id": "s_24",
+					"name": "Upośledzony smak lub węch"
+				}
+			],
+			"text": "Czy masz którekolwiek z poniższych objawów?",
+			"type": "group_multiple"
+		},
+		"should_stop": false
+	},
+	{
+		"id": ["p11", "p12","p13","p14","p15"],
+		"conditions": [],
+		"extras": {},
+		"question": {
+			"explanation": "Osoba z podejrzeniem zakażenia koronawirusem to ktoś z potwierdzonym laboratoryjnie zakażeniem, lub będący w trakcie diagnostyki.",
+			"extras": {},
+			"items": [
+				{
+					"choices": [
+						{
+							"id": "present",
+							"label": "Tak"
+						},
+						{
+							"id": "absent",
+							"label": "Nie"
+						}
+					],
+					"explanation": null,
+					"id": "p_12",
+					"name": "Mieszkam lub opiekowałem/-am się osobą z podejrzeniem zakażenia koronawirusem"
+				},
+				{
+					"choices": [
+						{
+							"id": "present",
+							"label": "Tak"
+						},
+						{
+							"id": "absent",
+							"label": "Nie"
+						}
+					],
+					"explanation": null,
+					"id": "p_13",
+					"name": "Przebywałem/-am w tym samym pomieszczeniu (biuro, klasa, siłownia) lub podróżowałem/-am w bliskiej odległości (poniżej 1 metra) z osobą z podejrzeniem zakażenia koronawirusem"
+				},
+				{
+					"choices": [
+						{
+							"id": "present",
+							"label": "Tak"
+						},
+						{
+							"id": "absent",
+							"label": "Nie"
+						}
+					],
+					"explanation": null,
+					"id": "p_14",
+					"name": "Miałem/-am osobisty kontakt przez dłużej niż 15 minut z osobą podejrzaną o zakażenie koronawirusem"
+				},
+				{
+					"choices": [
+						{
+							"id": "present",
+							"label": "Tak"
+						},
+						{
+							"id": "absent",
+							"label": "Nie"
+						}
+					],
+					"explanation": null,
+					"id": "p_11",
+					"name": "Inny rodzaj kontaktu"
+				},
+				{
+					"choices": [
+						{
+							"id": "present",
+							"label": "Tak"
+						},
+						{
+							"id": "absent",
+							"label": "Nie"
+						}
+					],
+					"explanation": null,
+					"id": "p_15",
+					"name": "Żadne z powyższych"
+				}
+			],
+			"text": "Czy w ciągu ostatnich 14 dni miałeś/-aś bliski kontakt z osobą z podejrzeniem zakażenia koronawirusem?",
+			"type": "group_single"
+		},
+		"should_stop": false
+	},
+	{
+		"id": ["s22", "s23", "s4", "s5"],
+		"conditions": [],
+		"extras": {},
+		"question": {
+			"explanation": null,
+			"extras": {},
+			"items": [
+				{
+					"choices": [
+						{
+							"id": "present",
+							"label": "Tak"
+						},
+						{
+							"id": "absent",
+							"label": "Nie"
+						}
+					],
+					"explanation": null,
+					"id": "s_22",
+					"name": "Pomiędzy 37.5°C a 38°C (99.5°F a 100.4°F)"
+				},
+				{
+					"choices": [
+						{
+							"id": "present",
+							"label": "Tak"
+						},
+						{
+							"id": "absent",
+							"label": "Nie"
+						}
+					],
+					"explanation": null,
+					"id": "s_23",
+					"name": "Pomiędzy 38°C a 40°C (100.4°F a 104°F)"
+				},
+				{
+					"choices": [
+						{
+							"id": "present",
+							"label": "Tak"
+						},
+						{
+							"id": "absent",
+							"label": "Nie"
+						}
+					],
+					"explanation": null,
+					"id": "s_4",
+					"name": "Powyżej 40°C (104°F)"
+				},
+				{
+					"choices": [
+						{
+							"id": "present",
+							"label": "Tak"
+						},
+						{
+							"id": "absent",
+							"label": "Nie"
+						}
+					],
+					"explanation": null,
+					"id": "s_5",
+					"name": "Nie mierzyłam temperatury"
+				}
+			],
+			"text": "Jak wysoką masz gorączkę?",
+			"type": "group_single"
+		},
+		"should_stop": false
+	},
+	{
+		"id": "s12",
+		"conditions": [],
+		"extras": {},
+		"question": {
+			"explanation": "Czujesz się znacznie gorzej niż godzinę temu. Twoje objawy nie ustępują mimo twoich starań.",
+			"extras": {},
+			"items": [
+				{
+					"choices": [
+						{
+							"id": "present",
+							"label": "Tak"
+						},
+						{
+							"id": "absent",
+							"label": "Nie"
+						}
+					],
+					"explanation": null,
+					"id": "s_12",
+					"name": "Szybkie pogarszanie stanu zdrowia"
+				}
+			],
+			"text": "Czy Twoje objawy szybko się nasilają?",
+			"type": "single"
+		},
+		"should_stop": false
+	},
+	{
+		"id": "s13",
+		"conditions": [],
+		"extras": {},
+		"question": {
+			"explanation": "Przyspieszony oddech: Powyżej 20 oddechów w ciągu jednej minuty.",
+			"extras": {},
+			"items": [
+				{
+					"choices": [
+						{
+							"id": "present",
+							"label": "Tak"
+						},
+						{
+							"id": "absent",
+							"label": "Nie"
+						}
+					],
+					"explanation": null,
+					"id": "s_13",
+					"name": "Przyspieszony oddech"
+				}
+			],
+			"text": "Czy masz przyspieszony oddech?",
+			"type": "single"
+		},
+		"should_stop": false
+	},
+	{
+		"id": "s14",
+		"conditions": [],
+		"extras": {},
+		"question": {
+			"explanation": null,
+			"extras": {},
+			"items": [
+				{
+					"choices": [
+						{
+							"id": "present",
+							"label": "Tak"
+						},
+						{
+							"id": "absent",
+							"label": "Nie"
+						}
+					],
+					"explanation": null,
+					"id": "s_14",
+					"name": "Odkrztuszanie krwi"
+				}
+			],
+			"text": "Czy odkrztuszasz krwistą wydzielinę?",
+			"type": "single"
+		},
+		"should_stop": false
+	},
+	{
+		"id": "p5",
+		"conditions": [],
+		"extras": {},
+		"question": {
+			"explanation": null,
+			"extras": {},
+			"items": [
+				{
+					"choices": [],
+					"explanation": null,
+					"id": "p_5",
+					"name": "Czy w ciągu ostatnich 14 dni mieszkałeś/-aś lub podróżowałeś/-aś do kraju z licznymi przypadkami zakażeń koronawirusem?"
+				}
+			],
+			"text": "Czy w ciągu ostatnich 14 dni mieszkałeś/-aś lub podróżowałeś/-aś do kraju z licznymi przypadkami zakażeń koronawirusem?",
+			"type": "single"
+		},
+		"should_stop": false
+	}
+]

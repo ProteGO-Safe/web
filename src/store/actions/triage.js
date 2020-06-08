@@ -1,8 +1,6 @@
 import * as types from '../types/triage';
-
-import RepositoryFactory from '../../repository/RepositoryFactory';
-
-const TriageRepository = RepositoryFactory.get('triage');
+import { getTriage } from '../../services/diagnosisLogic/triageLogic';
+import { firstDiagnosisFinished } from './app';
 
 export const triageFetchRequested = () => ({
   type: types.TRIAGE_FETCH_REQUESTED
@@ -13,17 +11,21 @@ export const triageFetchSuccess = ({ data }) => ({
   type: types.TRIAGE_FETCH_SUCCESS
 });
 
-export const triageFetchError = ({ message, status }) => ({
-  message,
-  status,
-  type: types.TRIAGE_FETCH_ERROR
-});
-
-export function getTriage(data) {
+export function fetchTriage(data) {
   return dispatch => {
     dispatch(triageFetchRequested());
-    TriageRepository.getTriage(data)
-      .then(_data => dispatch(triageFetchSuccess(_data)))
-      .catch(error => dispatch(triageFetchError(error)));
+    dispatch(firstDiagnosisFinished());
+    const result = getTriage(data);
+    dispatch(triageFetchSuccess({ data: result }));
+  };
+}
+
+export const timeOfConfirmedCovidReseted = () => ({
+  type: types.TIME_OF_CONFIRMED_COVID_RESETED
+});
+
+export function resetTimeOfConfirmedCovid() {
+  return dispatch => {
+    dispatch(timeOfConfirmedCovidReseted());
   };
 }

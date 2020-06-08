@@ -1,15 +1,12 @@
 import React from 'react';
 
-import { Header } from '../../components/Header';
-import { BottomNavigation } from '../../components/BottomNavigation';
+import { BottomNavigation, Email, Header, Url } from '../../components';
 
 import { Container, Content, View } from '../../theme/grid';
 import { Title } from './ReportBug.styled';
 import { Color } from '../../theme/colors';
 import { FontWeight } from '../../theme/fonts';
 import { Paragraph } from '../../theme/typography';
-import Email from '../../components/Email';
-import Url from '../../components/Url';
 
 const ReportBug = () => {
   return (

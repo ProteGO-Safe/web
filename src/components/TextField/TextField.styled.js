@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import { SmallText } from '../../theme/typography';
 import { Color } from '../../theme/colors';
+import { FontWeight } from '../../theme/fonts';
 
 export const TextFieldWrapper = styled.div`
   width: 100%;
@@ -21,4 +22,13 @@ export const TextFieldWrapper = styled.div`
 export const Label = styled(SmallText)`
   color: ${Color.black};
   margin-bottom: 4px;
+`;
+
+export const Information = styled.span`
+  display: block;
+  width: 100%;
+  margin: 32px 0 0 0;
+  font-size: 12px;
+  font-weight: ${FontWeight.Normal};
+  color: ${Color.lightBlack};
 `;
