@@ -3,9 +3,9 @@ import PropTypes from 'prop-types';
 
 import { Link } from './Url.styled';
 
-const Url = ({ children, value = children }) => {
+const Url = ({ children, value = children, underlineOff }) => {
   return (
-    <Link href={value} target="_blank">
+    <Link href={value} target="_blank" underlineOff={underlineOff}>
       {children}
     </Link>
   );
