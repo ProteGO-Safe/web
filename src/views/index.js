@@ -7,6 +7,7 @@ export { IAmSick } from './IAmSick';
 export { RiskTest } from './RiskTest';
 export { RiskTestData } from './RiskTestData';
 export { Settings } from './Settings';
+export { NotSupported } from './NotSupported';
 export { Numbers } from './Numbers';
 export { Onboarding } from './Onboarding';
 export { PrivacyPolicy } from './PrivacyPolicy';

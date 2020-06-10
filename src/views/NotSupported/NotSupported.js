@@ -1,10 +1,10 @@
 import React from 'react';
 
-import { Button, GovFooter } from '../../../../components';
-import Header from '../../../../components/Header/Header';
-import Url from '../../../../components/Url';
+import { Button, GovFooter } from '../../components';
+import Header from '../../components/Header/Header';
+import Url from '../../components/Url';
 import { Logo, Title, Paragraph } from './NotSupported.styled';
-import { Container, Content, View } from '../../../../theme/grid';
+import { Container, Content, View } from '../../theme/grid';
 
 const NotSupported = () => {
   return (
@@ -15,12 +15,12 @@ const NotSupported = () => {
           <Logo />
           <Title>Wymagana aktualizacja</Title>
           <Paragraph>
-            Nowa wersja aplikacji pozwala lepiej chronić się przed
-            Koronawirusem. od 09.06.2020 wspierana jest tylko nowa wersja
-            aplikacji 4.1 dalsze korzystanie z aplikacji wymaga aktualizację do
-            nowej wersji po aktualizacji dotychczasowy dziennik zdrowia i
-            wypełnione testy zostaną usunięte. Nie przejmuj się - wypełniaj je
-            dalej w nowej, finalnej wersji aplikacji.
+            Nowa wersja aplikacji ProteGO Safe pozwala lepiej chronić Cię przed
+            Koronawirusem. Od 09.06.2020 wspierana jest tylko aplikacja w wersji
+            4.1 - dalsze korzystanie z aplikacji wymaga aktualizacji. Po
+            aktualizacji dotychczasowy dziennik zdrowia i wypełnione testy
+            zostaną usunięte. Nie przejmuj się - wypełniaj je dalej w nowej,
+            finalnej wersji aplikacji.
           </Paragraph>
 
           <Url

@@ -1,7 +1,7 @@
 import styled from 'styled-components';
-import logo from '../../../../assets/img/logo/not_supported_logo.svg';
-import { FontWeight } from '../../../../theme/fonts';
-import { Color } from '../../../../theme/colors';
+import logo from '../../assets/img/logo/not_supported_logo.svg';
+import { FontWeight } from '../../theme/fonts';
+import { Color } from '../../theme/colors';
 
 const CenterLogo = styled.img`
   height: 105px;
