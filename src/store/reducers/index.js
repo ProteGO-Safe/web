@@ -7,7 +7,6 @@ import user from './user';
 import riskTest from './risktest';
 import daily from './daily';
 import nativeData from './nativeData';
-import externalData from './externalData';
 import { APP_STATE_CLEARED } from '../types/app';
 
 const reducers = combineReducers({
@@ -17,8 +16,7 @@ const reducers = combineReducers({
   user,
   riskTest,
   daily,
-  nativeData,
-  externalData
+  nativeData
 });
 
 const rootReducer = (state, action) => {

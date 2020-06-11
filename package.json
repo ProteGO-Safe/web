@@ -1,11 +1,11 @@
 {
   "name": "ProteGoSafe",
   "version": "4.1.0",
+  "homepage": "./",
   "private": true,
   "dependencies": {
     "@material-ui/core": "^4.9.9",
     "@types/jest": "^25.2.3",
-    "axios": "^0.19.2",
     "classnames": "^2.2.6",
     "flat": "^5.0.0",
     "formik": "^2.1.4",
@@ -40,7 +40,7 @@
     "clean-cra-sw": "rm -f build/precache-manifest.*.js && rm -f build/service-worker.js",
     "build-sw": "node ./src/sw-build.js",
     "fix-asset-manifest": "node ./src/fixAssetManifest.js",
-    "build": "react-scripts build && npm run build-sw && npm run clean-cra-sw && npm run fix-asset-manifest",
+    "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "lint": "eslint . --ext .js,.ts",

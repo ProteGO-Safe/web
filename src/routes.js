@@ -19,8 +19,7 @@ const Routes = {
   ReportBug: '/report-bug',
   AdviceInformation: '/advice',
   FaqPage: '/faq',
-  UploadHistoricalData: '/upload-historical-data',
-  Error: '/error'
+  UploadHistoricalData: '/upload-historical-data'
 };
 
 export default Routes;

@@ -8,7 +8,6 @@ import {
   Daily,
   DailyData,
   Diagnosis,
-  Error,
   Home,
   HowItWorks,
   IAmSick,
@@ -38,8 +37,7 @@ import { Menu } from '../Menu';
 import Routes from '../../routes';
 import './App.scss';
 import { Notification } from '../Notification';
-import { resetExternalData } from '../../store/actions/externalData';
-import {FirstDiagnosisAsking} from "../../views/FirstDiagnosisAsking";
+import { FirstDiagnosisAsking } from '../../views/FirstDiagnosisAsking';
 
 function App() {
   moment.locale('pl');
@@ -66,10 +64,6 @@ function App() {
   history.listen(() => {
     window.scroll(0, 0);
   });
-
-  useEffect(() => {
-    dispatch(resetExternalData());
-  }, [dispatch]);
 
   useEffect(() => {
     const navMenuButton = document.getElementById('nav_menu_button');
@@ -160,7 +154,6 @@ function App() {
                 path={Routes.UploadHistoricalData}
                 component={UploadHistoricalData}
               />
-              <Route exact path={Routes.Error} component={Error} />
             </>
           )}
           <Route render={() => <Redirect to={Routes.Home} />} />
