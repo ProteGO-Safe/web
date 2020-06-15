@@ -53,3 +53,15 @@ export function clearApplicationState() {
     dispatch(applicationStateCleared());
   };
 }
+
+export const dataFromNewestVersionMarked = () => ({
+  type: types.DATA_FROM_NEWEST_VERSION_MARKED
+});
+
+export function markDataFromNewestVersion() {
+  return dispatch => {
+    dispatch(onboardingFinished());
+    dispatch(firstDiagnosisFinished());
+    dispatch(dataFromNewestVersionMarked());
+  };
+}

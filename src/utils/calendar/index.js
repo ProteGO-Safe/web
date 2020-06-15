@@ -20,17 +20,6 @@ export const createDaysDetails = (
   });
 };
 
-export const getLastDate = (filledDays = []) => {
-  const sortedDays = filledDays
-    .sort(descending)
-    .map(_timestamp => moment.unix(_timestamp).format(dateFormat));
-
-  if (sortedDays.length > 0) {
-    return sortedDays[0];
-  }
-  return '';
-};
-
 export const daysDetailsPropType = PropTypes.arrayOf(
   PropTypes.shape({
     day: PropTypes.string.isRequired,
