@@ -62,7 +62,7 @@ jobs:
         if: env.ENVIRONMENT == 'STAGE' || env.ENVIRONMENT == 'PROD' || env.ENVIRONMENT == 'DEV'
 
       - name: Exec correct curl
-        run: 'base64 -D <<< $CURL_COMMAND | sh'
+        run: 'base64 -d <<< $CURL_COMMAND | sh'
         shell: bash
         if: env.ENVIRONMENT == 'STAGE' || env.ENVIRONMENT == 'PROD' || env.ENVIRONMENT == 'DEV'
 
