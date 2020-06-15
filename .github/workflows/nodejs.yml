@@ -49,9 +49,20 @@ jobs:
         env:
           EV: "${{ env.ENVIRONMENT }}_ENV"
         if: env.ENVIRONMENT == 'STAGE' || env.ENVIRONMENT == 'PROD' || env.ENVIRONMENT == 'DEV'
+        
+      - name: Setu Correct curl for static assets from cdn
+        run: echo "::set-env name=CURL_COMMAND::${{ secrets[env.CURL] }}"
+        env:
+          CURL: "${{ env.ENVIRONMENT }}_CURL"
+        if: env.ENVIRONMENT == 'STAGE' || env.ENVIRONMENT == 'PROD' || env.ENVIRONMENT == 'DEV'
 
       - name: Inject ENV's for builds
         run: 'echo "$PROJECT_ENVS" |base64 --decode > .env'
+        shell: bash
+        if: env.ENVIRONMENT == 'STAGE' || env.ENVIRONMENT == 'PROD' || env.ENVIRONMENT == 'DEV'
+
+      - name: Exec correct curl
+        run: 'base64 -D <<< $CURL_COMMAND | sh'
         shell: bash
         if: env.ENVIRONMENT == 'STAGE' || env.ENVIRONMENT == 'PROD' || env.ENVIRONMENT == 'DEV'
 
