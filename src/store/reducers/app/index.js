@@ -1,4 +1,5 @@
 import {
+  DATA_FROM_NEWEST_VERSION_MARKED,
   EXPOSURE_ONBOARDING_FINISHED,
   FIRST_DIAGNOSIS_FINISHED,
   ONBOARDING_FINISHED,
@@ -11,6 +12,7 @@ import { UPLOAD_HISTORICAL_DATA_STATE as uploadState } from './app.constants';
 
 const INITIAL_STATE = {
   exposureOnboardingFinished: false,
+  dataFromNewestVersionMarked: false,
   onboardingFinished: false,
   startScreenShowed: false,
   uploadHistoricalDataState: {
@@ -83,6 +85,12 @@ const appReducer = (state = INITIAL_STATE, action) => {
           uploadHistoricalDataState
         };
       })();
+    case DATA_FROM_NEWEST_VERSION_MARKED: {
+      return {
+        ...state,
+        dataFromNewestVersionMarked: true
+      };
+    }
     default:
       return state;
   }

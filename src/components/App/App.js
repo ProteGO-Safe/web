@@ -8,6 +8,7 @@ import {
   Daily,
   DailyData,
   Diagnosis,
+  FirstDiagnosisAsking,
   Home,
   HowItWorks,
   IAmSick,
@@ -37,7 +38,8 @@ import { Menu } from '../Menu';
 import Routes from '../../routes';
 import './App.scss';
 import { Notification } from '../Notification';
-import { FirstDiagnosisAsking } from '../../views/FirstDiagnosisAsking';
+import useFilledDiagnosis from '../../hooks/useFilledDiagnosis';
+import { markDataFromNewestVersion } from '../../store/actions/app';
 
 function App() {
   moment.locale('pl');
@@ -46,12 +48,14 @@ function App() {
 
   const { name } = useSelector(state => state.user);
   const {
+    dataFromNewestVersionMarked = false,
     onboardingFinished = false,
     startScreenShowed,
     firstDiagnosisFinished
   } = useSelector(state => state.app);
   const { notification } = useSelector(state => state.nativeData);
   const { inProgress, visible: menuIsVisible } = useMenuContext();
+  const { hasFilledAnyDiagnosis } = useFilledDiagnosis();
 
   useEffect(() => {
     if (!notification) {
@@ -72,6 +76,12 @@ function App() {
       setTimeout(() => navMenuButton.blur(), 100);
     }
   }, [menuIsVisible]);
+
+  useEffect(() => {
+    if (!dataFromNewestVersionMarked && hasFilledAnyDiagnosis) {
+      dispatch(markDataFromNewestVersion());
+    }
+  }, [dataFromNewestVersionMarked, hasFilledAnyDiagnosis, dispatch]);
 
   const className = classNames({
     app: true,
