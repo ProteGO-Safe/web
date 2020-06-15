@@ -10,6 +10,8 @@ export const Button = styled.a`
   position: fixed;
   right: 50%;
   bottom: 60px;
+  bottom: calc(60px + constant(safe-area-inset-top));
+  bottom: calc(60px + env(safe-area-inset-top));
   display: flex;
   flex-flow: wrap row;
   align-items: center;
