@@ -68,18 +68,29 @@ const appReducer = (state = INITIAL_STATE, action) => {
           (state.uploadHistoricalDataState &&
             state.uploadHistoricalDataState.unsuccessfulAttempts) ||
           [];
-        const uploadHistoricalDataState =
-          result === 1
-            ? {
-                status: uploadState.SUCCESS,
-                unsuccessfulAttempts: []
-              }
-            : {
-                status: uploadState.FAILED,
-                unsuccessfulAttempts: unsuccessfulAttempts.concat(
-                  new Date().getTime()
-                )
-              };
+
+        let uploadHistoricalDataState;
+
+        uploadHistoricalDataState = {
+          status: uploadState.FAILED,
+          unsuccessfulAttempts: unsuccessfulAttempts.concat(
+              new Date().getTime()
+          )
+        }
+
+        if (result === 1) {
+          uploadHistoricalDataState = {
+            status: uploadState.SUCCESS,
+            unsuccessfulAttempts: []
+          }
+        }
+
+        if (result === 3) {
+          uploadHistoricalDataState = {
+            status: uploadState.EMPTY
+          }
+        }
+
         return {
           ...state,
           uploadHistoricalDataState
