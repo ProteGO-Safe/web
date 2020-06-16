@@ -87,6 +87,7 @@ const appReducer = (state = INITIAL_STATE, action) => {
 
         if (result === 3) {
           uploadHistoricalDataState = {
+            ...state.uploadHistoricalDataState,
             status: uploadState.EMPTY
           }
         }
