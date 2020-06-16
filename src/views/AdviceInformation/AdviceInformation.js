@@ -1,5 +1,5 @@
 import React from 'react';
-import { useHistory } from 'react-router-dom';
+import { useHistory, Link } from 'react-router-dom';
 import Routes from '../../routes';
 import { Collapse, Button, FieldSet, PhoneNumber, Url } from '../../components';
 import {
@@ -12,13 +12,18 @@ import {
   Title,
   Warning,
   WarningLabel,
-  Watermark
+  Watermark,
+  LinkStyle
 } from './AdviceInformation.styled';
 import './AdviceInformation.scss';
 
 import IconWarning from '../../assets/img/icons/warning.svg';
+import IconAdviceHome from '../../assets/img/icons/zostan-w-domu.svg';
+import IconAdvicePhone from '../../assets/img/icons/seniorzy.svg';
+import IconAdviceCountry from '../../assets/img/icons/przyjazd.svg';
+import IconAdviceNote from '../../assets/img/icons/dziennik.svg';
 
-const AdviceInformation = ({ collapse, tips, title, watermark }) => {
+const AdviceInformation = ({ collapse, title, watermark }) => {
   const history = useHistory();
 
   const parseUrl = phrases =>
@@ -36,12 +41,6 @@ const AdviceInformation = ({ collapse, tips, title, watermark }) => {
     const phrases = line.split(/\[url\]/);
     return parseUrl(phrases);
   };
-  const renderListItem = tips.map((item, i) => (
-    <ListItem key={i}>
-      <img src={item.icon} alt="Ikonka" />
-      <p>{renderLine(item.text)}</p>
-    </ListItem>
-  ));
 
   const renderCollapse = collapse.map((item, i) => {
     const repliesLength = item.replies.length;
@@ -67,7 +66,37 @@ const AdviceInformation = ({ collapse, tips, title, watermark }) => {
   return (
     <>
       <Title>{title}</Title>
-      <List>{renderListItem}</List>
+      <List>
+        <ListItem>
+          <img src={IconAdviceHome} alt="Ikonka" />
+          <p>Zostań w domu.</p>
+        </ListItem>
+        <ListItem>
+          <img src={IconAdvicePhone} alt="Ikonka" />
+          <p>
+            Zadzwoń do rodziców i krewnych w podeszłym wieku. Pomóż im korzystać
+            z ProteGo Safe na ich telefonie. Zrób dla nich zakupy. Unikaj
+            kontaktu osobistego.
+          </p>
+        </ListItem>
+        <ListItem>
+          <img src={IconAdviceCountry} alt="Ikonka" />
+          <p>
+            Jeśli przyjechałeś/-aś z zagranicy – skontaktuj się z sanepidem i
+            poddaj obowiązkowej 14-dniowej kwarantannie.
+          </p>
+        </ListItem>
+        <ListItem>
+          <img src={IconAdviceNote} alt="Ikonka" />
+          <p>
+            Regularnie uzupełniaj zakładkę{' '}
+            <Link to="/daily">
+              <LinkStyle>MÓJ DZIENNIK ZDROWIA</LinkStyle>
+            </Link>
+            : zapisuj w aplikacji objawy i temperaturę ciała.
+          </p>
+        </ListItem>
+      </List>
       <CollapseWrapper>{renderCollapse}</CollapseWrapper>
       <Watermark>{watermark}</Watermark>
       <Warning>

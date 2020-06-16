@@ -92,3 +92,8 @@ export const RepliesListItem = styled.li`
   line-height: 1.5;
   color: ${Color.lightBlack};
 `;
+
+export const LinkStyle = styled.span`
+  color: #0052a5;
+  font-weight: bold;
+`;
