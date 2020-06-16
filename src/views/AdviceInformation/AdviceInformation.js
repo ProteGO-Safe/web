@@ -1,5 +1,5 @@
 import React from 'react';
-import { useHistory, Link } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import Routes from '../../routes';
 import { Collapse, Button, FieldSet, PhoneNumber, Url } from '../../components';
 import {
@@ -90,9 +90,9 @@ const AdviceInformation = ({ collapse, title, watermark }) => {
           <img src={IconAdviceNote} alt="Ikonka" />
           <p>
             Regularnie uzupełniaj zakładkę{' '}
-            <Link to="/daily">
-              <LinkStyle>MÓJ DZIENNIK ZDROWIA</LinkStyle>
-            </Link>
+            <LinkStyle onClick={() => history.push(Routes.Daily)}>
+              MÓJ DZIENNIK ZDROWIA
+            </LinkStyle>
             : zapisuj w aplikacji objawy i temperaturę ciała.
           </p>
         </ListItem>
