@@ -19,7 +19,7 @@ export const List = styled.ul`
 export const ListItem = styled.li`
   display: flex;
   flex-flow: wrap row;
-  align-items: center;
+  align-items: flex-start;
   width: 100%;
   margin-bottom: 32px;
   &:last-child {
