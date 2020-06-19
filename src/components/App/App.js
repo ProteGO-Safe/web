@@ -12,6 +12,7 @@ import {
   HowItWorks,
   IAmSick,
   RiskTest,
+  NotSupported,
   Numbers,
   Onboarding,
   PrivacyPolicy,
@@ -40,7 +41,7 @@ import Routes from '../../routes';
 import './App.scss';
 import { Notification } from '../Notification';
 import { showOnboarding } from '../../utills/servicesStatus';
-import { isWebView } from '../../utills/native';
+import { isAndroidWebView, isWebView } from '../../utills/native';
 
 function App() {
   moment.locale('pl');
@@ -93,6 +94,9 @@ function App() {
   });
 
   const resolveHomeComponent = (() => {
+    if (isAndroidWebView()) {
+      return NotSupported;
+    }
     if (!startScreenShowed && !name) {
       return StartScreen;
     }

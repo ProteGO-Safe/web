@@ -1,5 +1,5 @@
 import styled from 'styled-components';
 
 export const Link = styled.a`
-  text-decoration: underline;
+  text-decoration: ${props => (props.underlineOff ? '' : 'underline')};
 `;
