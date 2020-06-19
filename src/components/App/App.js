@@ -41,7 +41,7 @@ import Routes from '../../routes';
 import './App.scss';
 import { Notification } from '../Notification';
 import { showOnboarding } from '../../utills/servicesStatus';
-import { isAndroidWebView, isWebView } from '../../utills/native';
+import { isAndroidWebView, isIOSWebView, isWebView } from '../../utills/native';
 
 function App() {
   moment.locale('pl');
@@ -95,8 +95,18 @@ function App() {
 
   const resolveHomeComponent = (() => {
     if (isAndroidWebView()) {
-      return NotSupported;
+      return NotSupported(
+        '09.06.2020',
+        'https://play.google.com/store/apps/details?id=pl.gov.mc.protegosafe'
+      );
     }
+    if (isIOSWebView()) {
+      return NotSupported(
+        '15.06.2020',
+        'https://apps.apple.com/pl/app/protego-safe/id1508481566'
+      );
+    }
+
     if (!startScreenShowed && !name) {
       return StartScreen;
     }
