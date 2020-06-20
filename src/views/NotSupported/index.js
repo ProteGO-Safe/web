@@ -1,1 +1,1 @@
-export { default as NotSupported } from './NotSupported';
+export { default as NotSupported } from './NotSupportedContainer';
