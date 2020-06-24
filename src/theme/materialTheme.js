@@ -40,6 +40,23 @@ export const materialTheme = createMuiTheme({
           fontSize: 10
         }
       }
+    },
+    MuiFormControlLabel: {
+      root: {
+        alignItems: 'flex-start !important'
+      }
+    },
+    MuiCheckbox: {
+      root: {
+        marginTop: '-9px !important',
+        paddingBottom: '0 !important'
+      }
+    },
+    MuiRadio: {
+      root: {
+        marginTop: '-9px !important',
+        paddingBottom: '0 !important'
+      }
     }
   }
 });

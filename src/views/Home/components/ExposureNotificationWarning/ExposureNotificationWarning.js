@@ -15,4 +15,4 @@ const ExposureNotificationWarning = ({ enableServices }) => {
   );
 };
 
-export { ExposureNotificationWarning };
+export default ExposureNotificationWarning;

@@ -8,7 +8,7 @@ import {
   Daily,
   DailyData,
   Diagnosis,
-  Error,
+  FirstDiagnosisAsking,
   Home,
   HowItWorks,
   IAmSick,
@@ -38,8 +38,8 @@ import { Menu } from '../Menu';
 import Routes from '../../routes';
 import './App.scss';
 import { Notification } from '../Notification';
-import { resetExternalData } from '../../store/actions/externalData';
-import {FirstDiagnosisAsking} from "../../views/FirstDiagnosisAsking";
+import useFilledDiagnosis from '../../hooks/useFilledDiagnosis';
+import { markDataFromNewestVersion } from '../../store/actions/app';
 
 function App() {
   moment.locale('pl');
@@ -48,12 +48,14 @@ function App() {
 
   const { name } = useSelector(state => state.user);
   const {
+    dataFromNewestVersionMarked = false,
     onboardingFinished = false,
     startScreenShowed,
     firstDiagnosisFinished
   } = useSelector(state => state.app);
   const { notification } = useSelector(state => state.nativeData);
   const { inProgress, visible: menuIsVisible } = useMenuContext();
+  const { hasFilledAnyDiagnosis } = useFilledDiagnosis();
 
   useEffect(() => {
     if (!notification) {
@@ -68,16 +70,18 @@ function App() {
   });
 
   useEffect(() => {
-    dispatch(resetExternalData());
-  }, [dispatch]);
-
-  useEffect(() => {
     const navMenuButton = document.getElementById('nav_menu_button');
 
     if (navMenuButton) {
       setTimeout(() => navMenuButton.blur(), 100);
     }
   }, [menuIsVisible]);
+
+  useEffect(() => {
+    if (!dataFromNewestVersionMarked && hasFilledAnyDiagnosis) {
+      dispatch(markDataFromNewestVersion());
+    }
+  }, [dataFromNewestVersionMarked, hasFilledAnyDiagnosis, dispatch]);
 
   const className = classNames({
     app: true,
@@ -160,7 +164,6 @@ function App() {
                 path={Routes.UploadHistoricalData}
                 component={UploadHistoricalData}
               />
-              <Route exact path={Routes.Error} component={Error} />
             </>
           )}
           <Route render={() => <Redirect to={Routes.Home} />} />

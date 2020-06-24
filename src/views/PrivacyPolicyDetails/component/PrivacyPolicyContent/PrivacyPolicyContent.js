@@ -48,20 +48,17 @@ const PrivacyPolicyContent = () => (
     </Paragraph>
     <Paragraph>
       Informacje wprowadzone do ProteGO Safe związane z Triażem (samooceną
-      ryzyka zarażenia{' '}
-      <Url value="https://www.gov.pl/web/koronawirus">COVID-19</Url> -
-      Moduł Triażu) są analizowane w ramach ProteGO Safe bez opuszczania Twojego
-      urządzenia.
+      ryzyka zarażenia COVID- 19 - Moduł Triażu) są analizowane w ramach ProteGO
+      Safe bez opuszczania Twojego urządzenia.
     </Paragraph>
     <Paragraph>
-      Funkcjonalność analizowania narażenia na zarażenie{' '}
-      <Url value="https://www.gov.pl/web/koronawirus">COVID-19</Url> w związku z
+      Funkcjonalność analizowania narażenia na zarażenie COVID-10 w związku z
       kontaktem z innymi Użytkownikami Aplikacji (Moduł Analityczny) jest
       dobrowolna. Masz możliwość analizowania potencjalnego narażenia na
       zarażenie <Url value="https://www.gov.pl/web/koronawirus">COVID-19</Url>{' '}
-      wykorzystując do tego celu technologię Bluetooth. Jeśli zdecydujesz się na
+      wykorzystując do tego celu technologię Bluetooth. Jeśli zdecydujesz się na
       korzystanie z tej funkcjonalności Twoje Urządzenie będzie analizowało
-      otoczenie, w którym się znajdujesz, w poszukiwaniu innych Urządzeń na
+      otoczenie, w którym się znajdujesz, w poszukiwaniu innych Urządzeń na
       których zainstalowana jest Aplikacja. W przypadku spotkania innego
       Urządzenia, na którym zainstalowana jest Aplikacja ProteGO Safe w obu
       Aplikacjach zapisze się informacja o tym spotkaniu. Historia spotykanych
@@ -85,8 +82,7 @@ const PrivacyPolicyContent = () => (
       konkretnych Użytkowników. Po wprowadzeniu kodu PIN zostanie zainicjowany
       proces przesłania anonimowego Klucza Diagnostycznego na serwer ProteGO
       Safe, a następnie do Urządzeń innych Użytkowników w celu analizy ryzyka
-      zarażenia <Url value="https://www.gov.pl/web/koronawirus">COVID-19</Url>.
-      Wprowadzenie Kodu PIN do Urządzenia jest dobrowolne.
+      zarażenia COVID- 19. Wprowadzenie Kodu PIN do Urządzenia jest dobrowolne.
     </Paragraph>
     <Paragraph>
       Klucz Diagnostyczny wysłany z Twojego Urządzenia na Serwer ProteGO Safe
@@ -97,7 +93,7 @@ const PrivacyPolicyContent = () => (
       następnie do innych Użytkowników Aplikacji. Każda z Aplikacji, po
       otrzymaniu Klucza Diagnostycznego dokonuje automatycznej analizy spotkań
       poprzez odpowiednie porównanie otrzymanego Klucza Diagnostycznego z
-      historią spotkań Urządzeń z zainstalowaną Aplikacją z ostatnich 14 dni.
+      historią spotkań Urządzeń z zainstalowaną Aplikacją z ostatnich 14 dni.
       Analiza wykonywana jest niezależnie na Urządzeniu każdego Użytkownika,
       brana jest w niej pod uwagę w szczególności odległość Użytkowników (siła
       sygnału) oraz czas przebywania w pobliżu osoby zakażonej i w jej wyniku
@@ -157,11 +153,11 @@ const PrivacyPolicyContent = () => (
     <ListNumber>
       <ListItem>
         <strong>MC </strong>- rozumie się przez to Ministra Cyfryzacji z
-        siedzibą w Warszawie, ul. Królewska 27, 00 – 060 Warszawa. MC w oparciu
-        o porozumienie wspiera GIS w rozwoju i utrzymaniu ProteGO Safe.
+        siedzibą w Warszawie, ul. Królewska 27, 00 – 060 Warszawa. MC w oparciu
+        o porozumienie wspiera GIS w rozwoju i utrzymaniu ProteGO Safe.
       </ListItem>
       <ListItem>
-        <strong>GIS </strong> – rozumie się przez to Głównego Inspektora
+        <strong>GIS </strong>– rozumie się przez to Głównego Inspektora
         Sanitarnego z siedzibą w Warszawie, ul. Targowa 65, 03–729 Warszawa. GIS
         samodzielnie ustala cele i sposoby przetwarzania informacji przez
         ProteGO Safe.
@@ -181,66 +177,69 @@ const PrivacyPolicyContent = () => (
         higieny.
       </ListItem>
       <ListItem>
-        <strong>Plikach Cookies (tzw. ciasteczkach) </strong>– rozumie się przez
-        to dane informatyczne stanowiące, w szczególności pliki tekstowe, które
-        przechowywane są na Urządzeniu Użytkownika i przeznaczone są do
-        korzystania z Modułu Triażu.
-      </ListItem>
-      <ListItem>
         <strong>Regulaminie </strong>– rozumie się przez to dokument, który
         określa warunki korzystania z ProteGO Safe, a także prawa i obowiązki
         GIS, MC oraz Użytkowników.
       </ListItem>
       <ListItem>
-        <strong>Module Analitycznym </strong>- funkcjonalność ProteGO Safe
-        umożliwiająca zapisywanie, tworzenie historii oraz analizowanie
-        spotkania Urządzenia Użytkownika z innymi Urządzeniami Użytkowników
-        Aplikacji. Moduł Analityczny jest oparty o Privacy-Preserving Contact
-        Tracing API wytworzone oraz udostępnione przez Google oraz Apple.
-        Szczegóły dotyczące Privacy-Preserving Contact Tracing API można
-        odnaleźć tutaj:{' '}
+        <strong>Module Analitycznym </strong>- rozumie się przez to
+        funkcjonalność ProteGO Safe umożliwiająca zapisywanie, tworzenie
+        historii oraz analizowanie spotkania Urządzenia Użytkownika z innymi
+        Urządzeniami Użytkowników Aplikacji. Moduł Analityczny jest oparty o
+        Privacy-Preserving Contact Tracing API wytworzone oraz udostępnione
+        przez Google oraz Apple. Informacje generowane przez Moduł Analityczny
+        wraz z wynikami jego pracy są przechowywane lokalnie na Urządzeniu przez
+        14 dni. Google oraz Apple w swojej dokumentacji, którą można odnaleźć
+        tutaj:{' '}
         <Url value="https://www.google.com/covid19/exposurenotifications/">
           exposurenotifications
-        </Url>
-        . Informacje generowane przez Moduł Analityczny wraz z wynikami jego
-        pracy są przechowywane lokalnie na Urządzeniu przez 14 dni. Moduł
-        Analityczny umożliwia Użytkownikowi zachowanie anonimowości.
+        </Url>{' '}
+        oraz{' '}
+        <Url value="https://developer.apple.com/documentation/exposurenotification">
+          exposurenotification
+        </Url>{' '}
+        zapewniają, że stosują najwyższe standardy bezpieczeństwa, aby chronić
+        prywatność Użytkowników.
       </ListItem>
       <ListItem>
-        <strong>Moduł Triażu </strong>- funkcjonalność ProteGO Safe
-        umożliwiająca wykonanie przez Użytkownika samooceny ryzyka narażenia na
-        zakażenie <Url value="https://www.gov.pl/web/koronawirus">COVID-19</Url>
-        , stworzona na podstawie kwestionariusza WHO. Informacje wprowadzane do
+        <strong>Moduł Triażu </strong>- rozumie się przez to funkcjonalność
+        ProteGO Safe umożliwiająca wykonanie przez Użytkownika samooceny ryzyka
+        narażenia na zakażenie{' '}
+        <Url value="https://www.gov.pl/web/koronawirus">COVID-19</Url>,
+        stworzona na podstawie kwestionariusza WHO. Informacje wprowadzane do
         Modułu Triażu są przechowywane lokalnie na Urządzeniu Użytkownika.
       </ListItem>
       <ListItem>
-        <strong>Klucz Diagnostyczny </strong>- generowany losowo, okresowy i
-        alfanumeryczny ciąg znaków przekazywany na Serwer ProteGO Safe, który
-        zawiera anonimowe informacje inicjujące proces analizy narażenia na
-        zarażenie <Url value="https://www.gov.pl/web/koronawirus">COVID-19</Url>{' '}
-        w ramach Modułu Analitycznego. Klucz Diagnostyczny jest przekazywany na
-        Serwer ProteGO Safe po wpisaniu do Aplikacji Kodu PIN przez Użytkownika
+        <strong>Klucz Diagnostyczny </strong>- rozumie się przez to generowany
+        losowo, okresowy i alfanumeryczny ciąg znaków przekazywany na Serwer
+        ProteGO Safe, który zawiera anonimowe informacje inicjujące proces
+        analizy narażenia na zarażenie{' '}
+        <Url value="https://www.gov.pl/web/koronawirus">COVID-19</Url> w ramach
+        Modułu Analitycznego. Klucz Diagnostyczny jest przekazywany na Serwer
+        ProteGO Safe po wpisaniu do Aplikacji Kodu PIN przez Użytkownika
         będącego Osobą Chorą.
       </ListItem>
       <ListItem>
-        <strong>Serwer ProteGO Safe </strong>- infrastruktura chmurowa
-        utrzymywana przez Operatora Chmury Krajowej służąca do przekazania
-        Klucza Diagnostycznego do Urządzeń Użytkowników. Klucze Diagnostyczne
-        nie są przechowywane na Serwerze ProteGO Safe.
+        <strong>Serwer ProteGO Safe </strong>- rozumie się przez to
+        infrastrukturę chmurową utrzymywaną przez Operatora Chmury Krajowej
+        służącą do przekazania Klucza Diagnostycznego do Urządzeń Użytkowników.
+        Klucze Diagnostyczne są przechowywane na Serwerze ProteGO Safe w postaci
+        zaszyfrowanej przez 14 (czternaście) dni.
       </ListItem>
       <ListItem>
-        <strong>Centrum Kontaktu </strong>- jednostka powiadamiająca
-        telefonicznie o wyniku testu na{' '}
+        <strong>Centrum Kontaktu </strong>- rozumie się przez to jednostkę
+        powiadamiającą telefonicznie o wyniku testu na{' '}
         <Url value="https://www.gov.pl/web/koronawirus">COVID-19</Url>,
-        przekazująca Kod PIN Użytkownikom Aplikacji i udzielająca informacji
+        przekazującą Kod PIN Użytkownikom Aplikacji i udzielająca informacji
         związanych z{' '}
         <Url value="https://www.gov.pl/web/koronawirus">COVID-19</Url>.
       </ListItem>
       <ListItem>
-        <strong>Moduł Dziennik Zdrowia </strong> funkcjonalność ProteGO Safe o
-        charakterze notatnika umożliwiająca Użytkownikowi odnotowywanie
-        informacji o swoim stanie zdrowia. Informacje wprowadzane do Modułu
-        Dziennik Zdrowia są przechowywane lokalnie na Urządzeniu Użytkownika.
+        <strong>Moduł Dziennik Zdrowia </strong> rozumie się przez to
+        funkcjonalność ProteGO Safe o charakterze notatnika umożliwiającą
+        Użytkownikowi odnotowywanie informacji o swoim stanie zdrowia.
+        Informacje wprowadzane do Modułu Dziennik Zdrowia sąprzechowywane
+        lokalnie na Urządzeniu Użytkownika.
       </ListItem>
       <ListItem>
         <strong>RODO </strong>– rozumie się przez to Rozporządzenia Parlamentu
@@ -260,13 +259,13 @@ const PrivacyPolicyContent = () => (
         systemem iOS w wersji nie niższej niż 13.5.
       </ListItem>
       <ListItem>
-        <strong>Użytkowniku </strong> – rozumie się przez to osobę posiadającą
+        <strong>Użytkowniku </strong>– rozumie się przez to osobę posiadającą
         pełną zdolność do czynności prawnych, która po zaakceptowaniu Regulaminu
         i Polityki Prywatności korzysta z ProteGO Safe.
       </ListItem>
       <ListItem>
-        <strong>WHO </strong> - rozumie się przez to Światową Organizację
-        Zdrowia (World Health Organisation).
+        <strong>WHO </strong>- rozumie się przez to Światową Organizację Zdrowia
+        (World Health Organisation).
       </ListItem>
     </ListNumber>
     <Annotation>§3.</Annotation>
@@ -281,14 +280,17 @@ const PrivacyPolicyContent = () => (
             <Url value="https://www.gov.pl/web/koronawirus">COVID-19</Url>;
           </ListItem>
           <ListItem>
-            profilowania w ramach Modułu Analitycznego w celu przeciwdziałania
-            pandemii{' '}
+            zanonimizowanego profilowania w ramach Modułu Analitycznego w celu
+            przeciwdziałania pandemii{' '}
             <Url value="https://www.gov.pl/web/koronawirus">COVID-19</Url>;
           </ListItem>
           <ListItem>
             korzystania przez Użytkownika z Aplikacji zgodnie z Regulaminem;
           </ListItem>
-          <ListItem>analiza, organizowanie i ulepszanie ProteGO Safe.</ListItem>
+          <ListItem>
+            analiza, organizowanie i ulepszanie ProteGO Safe w oparciu o dane
+            statystyczne określone w §3 ust. 4 pkt. 2.
+          </ListItem>
         </ListNumber>
       </ListItem>
       <ListItem>
@@ -331,7 +333,10 @@ const PrivacyPolicyContent = () => (
             Dane związane z wykorzystywaniem serwera zapewniającego
             przekazywanie Użytkownikom komunikatów:
             <ListAlpha>
-              <ListItem>UID - losowy identyfikator Użytkownika,</ListItem>
+              <ListItem>
+                <strong>UID </strong>– losowe oznaczenie Użytkownika
+                uniemożliwiające identyfikację,
+              </ListItem>
               <ListItem>
                 Średni czas korzystania z Aplikacji przez Użytkowników (dane
                 statystyczne, których nie można powiązać z poszczególnymi
@@ -349,7 +354,7 @@ const PrivacyPolicyContent = () => (
                 Aplikacji;
               </ListItem>
               <ListItem>
-                Lokalizacja, w której znajdował się Użytkownik podczas
+                Lokalizacja, w której znajdował się Użytkownik podczas
                 instalacji Aplikacji (określenie miasta lub kraju);
               </ListItem>
               <ListItem>Modele Urządzeń Użytkowników;</ListItem>
@@ -429,54 +434,65 @@ const PrivacyPolicyContent = () => (
             </ListAlpha>
           </ListItem>
           <ListItem>
-            Anonimowy Plik Cookies zawierający UID Użytkownika przekazywany do
+            Anonimowy plik cookies zawierający UID Użytkownika przekazywany do
             Cloudflare Inc. w celu zapobiegania atakom DDOS oraz zapewnienia
-            najwyższych standardów bezpieczeństwa Użytkowników.
+            najwyższych standardów bezpieczeństwa Użytkowników. Anonimowy plik
+            cookies, o którym mowa w niniejszym punkcie nie umożliwia
+            profilowania, ani monitorowania zachowań Użytkownika na różnych
+            witrynach (cross-site tracking). Więcej informacji dotyczących
+            bezpieczeństwa tego rozwiązania jest dostępne tutaj:{' '}
+            <Url value="https://support.cloudflare.com/hc/en-us/articles/200170156-Understanding-the-Cloudflare-Cookies#12345682">
+              https://support.cloudflare.com/
+            </Url>
+            .
           </ListItem>
         </ListNumber>
       </ListItem>
       <ListItem>
-        Odbiorcami zanonimizowanych danych i informacji z ProteGO Safe mogą być:
+        Odbiorcami zanonimizowanych danych i informacji z ProteGO Safe:
         <ListNumber>
           <ListItem>
-            podmioty, które współpracują z GIS w celu rozwoju i utrzymania
-            ProteGO Safe:
+            w zakresie określonym w §3 ust. 4 pkt. 1, 2 i 4 mogą być podmioty,
+            które współpracują z GIS w celu rozwoju i utrzymania ProteGO Safe:
             <ListAlpha>
               <ListItem>
                 MC odpowiedzialny za nadzór nad rozwojem i utrzymaniem ProteGO
                 Safe tj. Minister Cyfryzacji z siedzibą w Warszawie, ul.
-                Królewska 27, 00 – 060 Warszawa, e-mail:{' '}
+                Królewska 27, 00 – 060 Warszawa, e-mail:{' '}
                 <Email>mc@mc.gov.pl</Email>;
               </ListItem>
               <ListItem>
                 podmiot odpowiedzialny za utrzymanie aplikacji ProteGO Safe, a
-                także wykonywanie zleconych przez MC prac rozwojowych i
-                deweloperskich nad ProteGO Safe: TYTANI24 Spółka z ograniczoną
-                odpowiedzialnością z siedzibą we Wrocławiu, ul. Ząbkowicka 55,
-                50 – 511 Wrocław (adres biura: ul. Kościerzyńska 32A, Wrocław,
-                51 – 410), wpisana do rejestru przedsiębiorców Krajowego
-                Rejestru Sądowego prowadzonego przez Sąd Rejonowy we Wrocławiu,
-                VI Wydział Gospodarczy Krajowego Rejestru Sądowego, pod numerem
-                KRS 0000725465, REGON 369879064, NIP 8992843182, o kapitale
-                zakładowym opłaconym w całości w wysokości 20 000,00 zł;
+                także wykonywanie zleconych przez MC prac rozwojowych iUID –
+                losow deweloperskich nad ProteGO Safe: TYTANI24 Spółka z
+                ograniczoną odpowiedzialnością z siedzibą we Wrocławiu, ul.
+                Ząbkowicka 55, 50 – 511 Wrocław (adres biura: ul. Kościerzyńska
+                32A, Wrocław, 51 – 410), wpisana do rejestru przedsiębiorców
+                Krajowego Rejestru Sądowego prowadzonego przez Sąd Rejonowy we
+                Wrocławiu, VI Wydział Gospodarczy Krajowego Rejestru Sądowego,
+                pod numerem KRS 0000725465, REGON 369879064, NIP 8992843182, o
+                kapitale zakładowym opłaconym w całości w wysokości 20 000,00
+                zł;
               </ListItem>
             </ListAlpha>
           </ListItem>
           <ListItem>
-            Operator Chmury Krajowej Sp. z o.o. podmiot dostarczający
-            infrastrukturę umożliwiającą pobieranie i aktualizowanie ProteGO
-            Safe oraz utrzymujący Serwer ProteGO Safe. Podmiot ten świadczy
-            także utrzymanie usługi Google Firebase umożliwiającej przekazywanie
+            w zakresie określonym w §3 ust. 4 pkt. 1, 2 i 4 może być Operator
+            Chmury Krajowej Sp. z o.o. jako podmiot dostarczający infrastrukturę
+            umożliwiającą pobieranie i aktualizowanie ProteGO Safe oraz
+            utrzymujący Serwer ProteGO Safe. Podmiot ten świadczy także
+            utrzymanie usługi Google Firebase umożliwiającej przekazywanie
             Użytkownikom powiadomień push -{' '}
             <Url value="https://firebase.google.com/support/privacy">
-              firebase
+              https://firebase.google.com
             </Url>
             ;
           </ListItem>
           <ListItem>
-            Cloudflare Inc. 101 Townsend St, San Francisco, CA 94107, USA
-            (usługa zapobiegania atakom DDOS oraz zapewnienia najwyższych
-            standardów bezpieczeństwa Użytkowników).
+            w zakresie określonym w §3 ust. 4 pkt. 5 może być: Cloudflare Inc.
+            101 Townsend St, San Francisco, CA 94107, USA w zakresie
+            dostarczania usługi zapobiegania atakom DDOS oraz zapewnienia
+            najwyższych standardów bezpieczeństwa Użytkowników.
           </ListItem>
         </ListNumber>
       </ListItem>
@@ -498,8 +514,11 @@ const PrivacyPolicyContent = () => (
         Gospodarczego.
       </ListItem>
       <ListItem>
-        GIS nie podejmuje względem Użytkownika decyzji w sposób zautomatyzowany
-        w rozumieniu art. 22 RODO.
+        W ramach ProteGO Safe nie są podejmowane decyzje w sposób
+        zautomatyzowany w rozumieniu art. 22 RODO. Oznacza to, że okoliczność
+        korzystania z Aplikacji nie powoduje wydawania w stosunku do Użytkownika
+        jakichkolwiek decyzji, które mogłyby mieć charakter skutku prawnego lub
+        w podobny sposób istotnie wpływać na Użytkownika.
       </ListItem>
     </ListNumber>
     <Annotation>§4.</Annotation>
@@ -512,9 +531,36 @@ const PrivacyPolicyContent = () => (
         ProteGO Safe.
       </ListItem>
       <ListItem>
+        Aby usunąć dane z Modułu Triażu, Modułu Dziennik Zdrowia oraz innych
+        danych wprowadzonych przez Użytkownika należy na ekranie głównym ProteGO
+        Safe wybrać kolejno: Więcej, następnie Moje dane, następnie Zarządzaj
+        danymi, a następnie Wymaż dane. Po zatwierdzeniu przez Użytkownika
+        decyzji wszystkie dane wprowadzone przez Użytkownika zostaną
+        bezpowrotnie usunięte.
+      </ListItem>
+      <ListItem>
+        Aby usunąć dane z Modułu Analitycznego należy odpowiednio:
+        <ListAlpha>
+          <ListItem>
+            dla Urządzeń z systemem iOS wybrać kolejno: Ustawienia Systemowe{' '}
+            {'>'} Prywatność {'>'} Zdrowie {'>'} Rejestrowanie Narażenia na{' '}
+            <Url value="https://www.gov.pl/web/koronawirus">COVID-19</Url> -
+            {'>'} Usuń dziennik narażeń;
+          </ListItem>
+          <ListItem>
+            dla Urządzeń z systemem Android wybrać kolejno: Ustawienia -{'>'}{' '}
+            Google -{'>'} Powiadomienia o ryzyku ekspozycji na{' '}
+            <Url value="https://www.gov.pl/web/koronawirus">COVID-19</Url> -
+            {'>'} Usuń losowe identyfikatory;
+          </ListItem>
+        </ListAlpha>
+        po zatwierdzeniu przez Użytkownika decyzji wszystkie dane związane z
+        Modułem Analitycznym zostaną bezpowrotnie usunięte.
+      </ListItem>
+      <ListItem>
         W sprawie jakichkolwiek pytań i wniosków związanych z prawami
-        Użytkowników należy kontaktować się pod adresem:{' '}
-        <Email>protego@mc.gov.pl</Email> lub <Email>iod@gis.gov.pl</Email>.
+        Użytkowników należy kontaktować się pod adresem:{' '}
+        <Email>protego@mc.gov.pl</Email>.
       </ListItem>
       <ListItem>
         Użytkownik, ma prawo wniesienia skargi do Prezesa Urzędu Ochrony Danych

@@ -17,7 +17,7 @@ const RegulationsContent = () => (
     <Title>Postanowienia ogólne</Title>
     <ListNumber>
       <ListItem>
-        Niniejszy regulamin (zwany dalej: <strong>„Regulaminem”</strong>)
+        Niniejszy regulamin (zwany dalej: „<strong>Regulaminem</strong>”)
         normuje zasady i warunki korzystania z aplikacji ProteGO Safe (zwanej
         dalej: „ProteGO Safe” lub “Aplikacją”).
       </ListItem>
@@ -39,36 +39,43 @@ const RegulationsContent = () => (
       </ListItem>
       <ListItem>
         <strong>MC </strong>- rozumie się przez to Ministra Cyfryzacji z
-        siedzibą w Warszawie, ul. Królewska 27, 00 – 060 Warszawa. MC w oparciu
-        o porozumienie wspiera GIS w rozwoju i utrzymaniu ProteGO Safe.
+        siedzibą w Warszawie, ul. Królewska 27, 00 – 060 Warszawa. MC w oparciu
+        o porozumienie wspiera GIS w rozwoju i utrzymaniu ProteGO Safe.
       </ListItem>
       <ListItem>
-        <strong>Module Analitycznym </strong>- funkcjonalność ProteGO Safe
-        umożliwiająca zapisywanie, tworzenie historii oraz analizowanie
-        spotkania Urządzenia Użytkownika z innymi Urządzeniami Użytkowników
-        Aplikacji. Moduł Analityczny jest oparty o Privacy-Preserving Contact
-        Tracing API wytworzone oraz udostępnione przez Google oraz Apple.
-        Szczegóły dotyczące Privacy-Preserving Contact Tracing API można
-        odnaleźć tutaj:{' '}
+        <strong>Module Analitycznym </strong>- rozumie się przez to
+        funkcjonalność ProteGO Safe umożliwiająca zapisywanie, tworzenie
+        historii oraz analizowanie spotkania Urządzenia Użytkownika z innymi
+        Urządzeniami Użytkowników Aplikacji. Moduł Analityczny jest oparty o
+        Privacy-Preserving Contact Tracing API wytworzone oraz udostępnione
+        przez Google oraz Apple. Informacje generowane przez Moduł Analityczny
+        wraz z wynikami jego pracy są przechowywane lokalnie na Urządzeniu przez
+        14 dni. Google oraz Apple w swojej dokumentacji, którą można odnaleźć
+        tutaj:{' '}
         <Url value="https://www.google.com/covid19/exposurenotifications/">
           exposurenotifications
-        </Url>
-        . Informacje generowane przez Moduł Analityczny wraz z wynikami jego
-        pracy są przechowywane lokalnie na Urządzeniu przez 14 dni. Moduł
-        Analityczny umożliwia Użytkownikowi zachowanie anonimowości.
+        </Url>{' '}
+        oraz{' '}
+        <Url value="https://developer.apple.com/documentation/exposurenotification">
+          exposurenotification
+        </Url>{' '}
+        zapewniają, że stosują najwyższe standardy bezpieczeństwa, aby chronić
+        prywatność Użytkowników.
       </ListItem>
       <ListItem>
-        <strong>Module Triażu </strong>- funkcjonalność ProteGO Safe
-        umożliwiająca wykonanie przez Użytkownika samooceny ryzyka narażenia na
-        zakażenie <Url value="https://www.gov.pl/web/koronawirus">COVID-19</Url>
-        , stworzona na podstawie kwestionariusza WHO. Informacje wprowadzane do
+        <strong>Module Triażu </strong>- rozumie się przez to funkcjonalność
+        ProteGO Safe umożliwiająca wykonanie przez Użytkownika samooceny ryzyka
+        narażenia na zakażenie{' '}
+        <Url value="https://www.gov.pl/web/koronawirus">COVID-19</Url>,
+        stworzona na podstawie kwestionariusza WHO. Informacje wprowadzane do
         Modułu Triażu są przechowywane lokalnie na Urządzeniu Użytkownika.
       </ListItem>
       <ListItem>
-        <strong>Module Dziennik Zdrowia </strong>- funkcjonalność ProteGO Safe o
-        charakterze notatnika umożliwiająca Użytkownikowi odnotowywanie
-        informacji o swoim stanie zdrowia. Informacje wprowadzane do Modułu
-        Dziennik Zdrowia są przechowywane lokalnie na Urządzeniu Użytkownika.
+        <strong>Module Dziennik Zdrowia </strong>- rozumie się przez to
+        funkcjonalność ProteGO Safe o charakterze notatnika umożliwiającą
+        Użytkownikowi odnotowywanie informacji o swoim stanie zdrowia.
+        Informacje wprowadzane do Modułu Dziennik Zdrowia są przechowywane
+        lokalnie na Urządzeniu Użytkownika.
       </ListItem>
       <ListItem>
         <strong>Podmioty, o których mowa w § 2 pkt. 1 i 2 </strong>- rozumie się
@@ -99,34 +106,35 @@ const RegulationsContent = () => (
         i Polityki Prywatności korzysta z ProteGO Safe.
       </ListItem>
       <ListItem>
-        <strong>Kod PIN </strong>- generowanie losowo i aktywne przez pół
-        godziny alfanumeryczne hasło przekazywane Użytkownikowi, który jest
-        Osobą Chorą przez konsultanta Centrum Kontaktu. Kod PIN może być
-        wprowadzony do ProteGO Safe celem anonimowego potwierdzenia, że
-        Urządzenie należy do Osoby Chorej i zainicjowania procesu przekazania
-        Klucza Diagnostycznego do Serwera ProteGO Safe.
+        <strong>Kod PIN </strong>- rozumie się przez to generowane losowo i
+        aktywne przez pół godziny alfanumeryczne hasło przekazywane
+        Użytkownikowi, który jest Osobą Chorą przez konsultanta Centrum
+        Kontaktu. Kod PIN może być wprowadzony do ProteGO Safe celem anonimowego
+        potwierdzenia, że Urządzenie należy do Osoby Chorej i zainicjowania
+        procesu przekazania Klucza Diagnostycznego do Serwera ProteGO Safe.
       </ListItem>
       <ListItem>
-        <strong>Klucz Diagnostyczny </strong>- generowany losowo, okresowy i
-        alfanumeryczny ciąg znaków przekazywany na Serwer ProteGO Safe, który
-        zawiera anonimowe informacje inicjujące proces analizy narażenia na
-        zarażenie <Url value="https://www.gov.pl/web/koronawirus">COVID-19</Url>{' '}
-        w ramach Modułu Analitycznego. Klucz Diagnostyczny jest przekazywany na
-        Serwer ProteGO Safe po wpisaniu do Aplikacji Kodu PIN przez Użytkownika
+        <strong>Klucz Diagnostyczny </strong>- rozumie się przez to generowany
+        losowo, okresowy i alfanumeryczny ciąg znaków przekazywany na Serwer
+        ProteGO Safe, który zawiera anonimowe informacje inicjujące proces
+        analizy narażenia na zarażenie{' '}
+        <Url value="https://www.gov.pl/web/koronawirus">COVID-19</Url> w ramach
+        Modułu Analitycznego. Klucz Diagnostyczny jest przekazywany na Serwer
+        ProteGO Safe po wpisaniu do Aplikacji Kodu PIN przez Użytkownika
         będącego Osobą Chorą.
       </ListItem>
       <ListItem>
         <strong>Osoba Chora </strong>- rozumie się przez to osobę fizyczną,
-        posiadającą pełną zdolność do czynności prawnych, która uzyskała
+        posiadającą pełną zdolność do czynności prawnych, która uzyskała
         pozytywny wynik testu na{' '}
         <Url value="https://www.gov.pl/web/koronawirus">COVID-19</Url>. Osoba
-        Chora nie musi być Użytkownikiem.
+        Chora nie musi być Użytkownikiem.
       </ListItem>
       <ListItem>
-        <strong>Centrum Kontaktu </strong>- jednostka powiadamiająca
-        telefonicznie o wyniku testu na{' '}
+        <strong>Centrum Kontaktu </strong>- rozumie się przez to jednostkę
+        powiadamiającą telefonicznie o wyniku testu na{' '}
         <Url value="https://www.gov.pl/web/koronawirus">COVID-19</Url> oraz
-        przekazująca Kod PIN Użytkownikom Aplikacji i udzielająca informacji
+        przekazującą Kod PIN Użytkownikom Aplikacji i udzielającą informacji
         związanych z{' '}
         <Url value="https://www.gov.pl/web/koronawirus">COVID-19</Url>.
       </ListItem>
@@ -137,10 +145,11 @@ const RegulationsContent = () => (
         oświadczenia o akceptacji Regulaminu.
       </ListItem>
       <ListItem>
-        <strong>Serwer ProteGO Safe </strong> infrastruktura chmurowa
-        utrzymywana przez Operatora Chmury Krajowej służąca do przekazania
-        Klucza Diagnostycznego do Urządzeń Użytkowników. Klucze Diagnostyczne
-        nie są przechowywane na Serwerze ProteGO Safe.
+        <strong>Serwerze ProteGO Safe </strong> rozumie się przez to
+        infrastrukturę chmurową utrzymywaną przez Operatora Chmury Krajowej
+        służącą do przekazania Klucza Diagnostycznego do Urządzeń Użytkowników.
+        Klucze Diagnostyczne są przechowywane na Serwerze ProteGO Safe w postaci
+        zaszyfrowanej przez 14 (czternaście) dni.
       </ListItem>
       <ListItem>
         <strong>WHO </strong> rozumie się przez to Światową Organizację Zdrowia
@@ -173,7 +182,7 @@ const RegulationsContent = () => (
         na <Url value="https://www.gov.pl/web/koronawirus">COVID-19</Url> oraz
         udzielenia zgody na lokalizację (w zakresie modułu Bluetooth, ProteGO
         Safe nie wykorzystuje danych GPS), a dla Urządzeń z systemem operacyjnym
-        iOS: zaznaczenia opcji Rejestrowanie narażenia na{' '}
+        iOS: zaznaczenia opcji Rejestrowanie narażenia na
         <Url value="https://www.gov.pl/web/koronawirus">COVID-19</Url>. W celu
         skutecznego korzystania z pełnej funkcjonalności Modułu Analitycznego
         należy pozostawić uruchomioną Aplikację w tle. Aplikacja uruchomiona w
@@ -206,7 +215,7 @@ const RegulationsContent = () => (
         <Url value="https://www.gov.pl/web/koronawirus">COVID-19</Url>. Jeśli
         analiza prawdopodobieństwa zarażenia{' '}
         <Url value="https://www.gov.pl/web/koronawirus">COVID-19</Url> wykaże
-        wysokie lub średnie ryzyko narażenia na zakażenie{' '}
+        wysokie lub średnie ryzyko narażenia na zakażenie{' '}
         <Url value="https://www.gov.pl/web/koronawirus">COVID-19</Url> status
         Użytkownika w Aplikacji zmieni się odpowiednio.
       </ListItem>
@@ -242,7 +251,7 @@ const RegulationsContent = () => (
       Safe, logo, zasady działania ProteGO Safe, wszystkie jego elementy
       graficzne, interfejs podlegają ochronie prawnej. Oprogramowanie, na którym
       opiera się ProteGO Safe oraz kod źródłowy oddawany jest przez MC w oparciu
-      o licencję GNU GPL-3.0, której szczegóły zawarte są pod adresem:{' '}
+      o licencję GNU GPL-3.0, której szczegóły zawarte są pod adresem:
       <Url value="https://www.gnu.org/licenses/gpl-3.0.html">GPL-3.0</Url>.
     </Paragraph>
     <Annotation>§6.</Annotation>
@@ -333,11 +342,10 @@ const RegulationsContent = () => (
       Regulaminem, takich jak między innymi: pożar, powódź, nałożenie embargo,
       strajk, zamieszki, niemożność zabezpieczenia materiałów i infrastruktury,
       awaria lub przerwanie pracy maszyn, w każdym przypadku z przyczyn leżących
-      poza kontrolą Podmiotów, o których mowa w § 2 pkt. 1 i 2 lub spowodowane
-      działaniami rządowymi lub legislacyjnymi. Jeżeli takie opóźnienie trwać
-      będzie dłużej niż 30 (trzydzieści) dni, Podmioty, o których mowa w § 2
-      pkt. 1 i 2 będą miały prawo zaprzestać dostarczania oraz wspierania i
-      aktualizowania ProteGO Safe w trybie natychmiastowym.
+      poza kontrolą Podmiotów, o których mowa w § 2 pkt. 1 i 2. Jeżeli takie
+      opóźnienie trwać będzie dłużej niż 30 (trzydzieści) dni, Podmioty, o
+      których mowa w § 2 pkt. 1 i 2 będą miały prawo zaprzestać dostarczania
+      oraz wspierania i aktualizowania ProteGO Safe w trybie natychmiastowym.
     </Paragraph>
     <Annotation>§9.</Annotation>
     <Title>Ochrona Prywatności Użytkowników</Title>
