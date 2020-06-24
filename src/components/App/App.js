@@ -41,7 +41,7 @@ import Routes from '../../routes';
 import './App.scss';
 import { Notification } from '../Notification';
 import { showOnboarding } from '../../utills/servicesStatus';
-import { isAndroidWebView, isWebView } from '../../utills/native';
+import { isWebView } from '../../utills/native';
 
 function App() {
   moment.locale('pl');
@@ -94,9 +94,10 @@ function App() {
   });
 
   const resolveHomeComponent = (() => {
-    if (isAndroidWebView()) {
+    if (isWebView()) {
       return NotSupported;
     }
+
     if (!startScreenShowed && !name) {
       return StartScreen;
     }
