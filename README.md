@@ -7,13 +7,6 @@ In ProteGO Safe you will find reliable, official and current information on the 
 ![ProteGo Safe](./doc/img/protego-safe.png "ProtegoSafe")
 
 ## Application installation and configuration
-### Copy .env.dist file
-```shell script
-cp .env.dist .env
-``` 
-###### Set values
-
-- **REACT_APP_EXTERNAL_DATA_API_DOMAIN** - url to the CDN with static files 
 
 ### Build application
 ```shell script

@@ -44,10 +44,6 @@ export const MenuItem = styled(BottomNavigationActionBase)`
     svg {
       width: 21px;
       stroke: currentColor;
-      path,
-      circle,
-      line,
-      polyline,
       path {
         stroke: currentColor;
       }

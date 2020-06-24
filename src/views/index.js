@@ -1,7 +1,7 @@
 export { Daily } from './Daily';
 export { DailyData } from './DailyData';
 export { Diagnosis } from './Diagnosis';
-export { Error } from './Error';
+export { FirstDiagnosisAsking } from './FirstDiagnosisAsking';
 export { Home } from './Home';
 export { HowItWorks } from './HowItWorks';
 export { IAmSick } from './IAmSick';

@@ -1,14 +1,12 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import { getLastDate } from '../../../../utils/calendar';
-import useFilledDays from '../../../../hooks/useFilledDays';
+import useFilledDiagnosis from '../../../../hooks/useFilledDiagnosis';
 import useTriage from '../../../../hooks/useTriage';
 import Smile from './Smile';
 
 const SmileContainer = () => {
   const { name: userName } = useSelector(state => state.user);
-  const filledDays = useFilledDays();
-  const lastDate = getLastDate(filledDays);
+  const { lastDate } = useFilledDiagnosis();
   const { isCovid, isExposure, riskGroup, IconComponent } = useTriage();
 
   const getContent = () => {

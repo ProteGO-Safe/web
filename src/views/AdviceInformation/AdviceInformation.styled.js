@@ -19,7 +19,7 @@ export const List = styled.ul`
 export const ListItem = styled.li`
   display: flex;
   flex-flow: wrap row;
-  align-items: center;
+  align-items: flex-start;
   width: 100%;
   margin-bottom: 32px;
   &:last-child {
@@ -91,4 +91,9 @@ export const RepliesListItem = styled.li`
   font-size: 14px;
   line-height: 1.5;
   color: ${Color.lightBlack};
+`;
+
+export const LinkStyle = styled.span`
+  color: #0052a5;
+  font-weight: bold;
 `;
