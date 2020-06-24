@@ -49,7 +49,7 @@ export const applicationStateCleared = () => ({
 
 export function clearApplicationState() {
   return async dispatch => {
-    clearBluetoothData();
+    dispatch(clearBluetoothData());
     dispatch(applicationStateCleared());
   };
 }
