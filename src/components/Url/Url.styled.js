@@ -2,6 +2,6 @@ import styled from 'styled-components';
 import { Color } from '../../theme/colors';
 
 export const Link = styled.a`
-  text-decoration: underline;
+  text-decoration: ${props => (props.underlineOff ? '' : 'underline')};
   color: ${Color.secondary};
 `;
