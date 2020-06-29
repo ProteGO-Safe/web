@@ -9,6 +9,7 @@ export { RiskTest } from './RiskTest';
 export { RiskTestData } from './RiskTestData';
 export { Settings } from './Settings';
 export { Numbers } from './Numbers';
+export { NotSupported } from './NotSupported';
 export { Onboarding } from './Onboarding';
 export { PrivacyPolicy } from './PrivacyPolicy';
 export { PrivacyPolicyDetails } from './PrivacyPolicyDetails';

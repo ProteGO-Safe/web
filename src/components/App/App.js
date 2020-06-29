@@ -13,6 +13,7 @@ import {
   HowItWorks,
   IAmSick,
   RiskTest,
+  NotSupported,
   Numbers,
   Onboarding,
   PrivacyPolicy,
@@ -40,6 +41,7 @@ import './App.scss';
 import { Notification } from '../Notification';
 import useFilledDiagnosis from '../../hooks/useFilledDiagnosis';
 import { markDataFromNewestVersion } from '../../store/actions/app';
+import { isLocalPWA, isWebView } from '../../utils/native';
 
 function App() {
   moment.locale('pl');
@@ -89,6 +91,9 @@ function App() {
   });
 
   const resolveHomeComponent = (() => {
+    if (isWebView() && !isLocalPWA()) {
+      return NotSupported;
+    }
     if (!startScreenShowed && !name) {
       return StartScreen;
     }
