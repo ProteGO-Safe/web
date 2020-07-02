@@ -31,7 +31,7 @@ jobs:
       - name: Set env to STAGE
         if: startsWith(github.ref, 'refs/tags/')
             && github.repository_owner != 'ProteGO-Safe'
-            && startsWith( github.event.release.target_commitish, 'release' )
+            && ( github.event.release.target_commitish == 'master' || startsWith( github.event.release.target_commitish, 'release' ))
             && github.event_name == 'release'
         run: |
           echo "::set-env name=ENVIRONMENT::STAGE"
@@ -76,8 +76,6 @@ jobs:
       - run: yarn audit --groups dependencies
       - run: yarn install
       - run: yarn build
-      - run: cp firebase.json build/
-        if: ( env.ENVIRONMENT == 'STAGE' || env.ENVIRONMENT == 'PROD' || env.ENVIRONMENT == 'DEV' )
 
       - name: Archive Artifact
         if: ( env.ENVIRONMENT == 'STAGE' || env.ENVIRONMENT == 'PROD' || env.ENVIRONMENT == 'DEV' )
@@ -150,6 +148,9 @@ jobs:
         env:
           SITE_ENV: "${{ env.ENVIRONMENT }}_FIREBASE_SITE"
         if: ( env.ENVIRONMENT == 'PROD' && startsWith( github.event.release.target_commitish, 'release/3' ) )
+
+      - run: cp firebase.json build/
+        if: ( env.ENVIRONMENT == 'STAGE' || env.ENVIRONMENT == 'PROD' || env.ENVIRONMENT == 'DEV' )
 
       - name: Sed Firebase.json
         run: sed -ie 's|site_to_sed|${{ env.SITE_PROJECT }}|g' firebase.json
