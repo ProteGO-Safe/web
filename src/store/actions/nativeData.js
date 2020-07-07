@@ -81,9 +81,7 @@ export function disableExposureNotificationService() {
 
 export function enableNotification() {
   const data = { enableNotification: true };
-  return () => {
-    nativeBridge.clearBluetoothData(data);
-  };
+  nativeBridge.setServicesState(data);
 }
 
 export const resetSourceSetServicesStatus = () => ({
@@ -96,7 +94,9 @@ export function enableServices(data) {
 
 export function clearBluetoothData() {
   const data = { clearBtData: true };
-  nativeBridge.clearBluetoothData(data);
+  return () => {
+    nativeBridge.clearBluetoothData(data);
+  };
 }
 
 export const uploadHistoricalDataRequested = () => ({
