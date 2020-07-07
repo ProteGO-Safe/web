@@ -4,6 +4,20 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+
+## 4.2.2
+ 
+### Changed
+- github action build
+
+### Fixed
+- erase data
+
+## 4.2.1
+ 
+### Added
+- information about the need to update the application
+
 ## 4.2.0
  
 Preparation of the application to work in offline mode.
