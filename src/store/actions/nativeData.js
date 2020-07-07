@@ -81,7 +81,9 @@ export function disableExposureNotificationService() {
 
 export function enableNotification() {
   const data = { enableNotification: true };
-  nativeBridge.setServicesState(data);
+  return () => {
+    nativeBridge.clearBluetoothData(data);
+  };
 }
 
 export const resetSourceSetServicesStatus = () => ({
