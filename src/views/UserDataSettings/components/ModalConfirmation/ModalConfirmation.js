@@ -15,12 +15,12 @@ const ModalConfirmation = () => {
   const { setLoader } = useLoaderContext();
 
   const handleClose = () => {
+    dispatch(clearApplicationState());
     onClose();
+
     setLoader(true);
     setTimeout(() => setLoader(false), 1000);
     history.push(Routes.Home);
-    dispatch(clearApplicationState());
-    localStorage.clear();
   };
 
   return (
