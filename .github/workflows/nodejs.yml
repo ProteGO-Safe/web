@@ -87,7 +87,7 @@ jobs:
   deploy:
     needs: build
     runs-on: ubuntu-latest
-    if: ${{ startsWith(github.ref, 'refs/tags') || startsWith(github.ref, 'refs/heads/release/') }}
+    if: ( startsWith(github.ref, 'refs/tags') && github.event_name == 'release' )  || ( startsWith(github.ref, 'refs/heads/release/') && github.event_name == 'push' && github.repository_owner != 'ProteGO-Safe' )
     steps:
       - name: Checkout Repo
         uses: actions/checkout@v2
