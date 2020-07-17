@@ -32,6 +32,12 @@ const decisions: Decisions = {
     if (isAbsent(fever) && isAbsent(cough) && isPresent(shortnessBreath)) {
       return 's12';
     }
+    if (isAbsent(fever) && isPresent(cough) && isPresent(shortnessBreath)) {
+      return 's12';
+    }
+    if (isPresent(fever) && isAbsent(cough) && isPresent(shortnessBreath)) {
+      return 's5';
+    }
     return 's5';
   },
   p15: () => FINISH_FLAG,
