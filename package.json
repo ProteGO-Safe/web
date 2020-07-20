@@ -1,6 +1,6 @@
 {
   "name": "ProteGoSafe",
-  "version": "4.2.0",
+  "version": "4.2.2",
   "homepage": "./",
   "private": true,
   "dependencies": {
@@ -74,10 +74,10 @@
     ]
   },
   "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "^3.0.0",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
+    "@typescript-eslint/eslint-plugin": "^3.0.0",
     "eslint-config-airbnb": "^18.1.0",
     "eslint-config-prettier": "^6.10.0",
     "eslint-plugin-import": "^2.20.1",
