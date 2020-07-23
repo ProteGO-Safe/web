@@ -33,7 +33,10 @@ import {
   FaqPage
 } from '../../views';
 
-import { fetchNotification } from '../../store/actions/nativeData';
+import {
+  fetchNativeVersion,
+  fetchNotification
+} from '../../store/actions/nativeData';
 import useMenuContext from '../../hooks/useMenuContext';
 import { Menu } from '../Menu';
 import Routes from '../../routes';
@@ -58,6 +61,10 @@ function App() {
   const { notification } = useSelector(state => state.nativeData);
   const { inProgress, visible: menuIsVisible } = useMenuContext();
   const { hasFilledAnyDiagnosis } = useFilledDiagnosis();
+
+  useEffect(() => {
+    dispatch(fetchNativeVersion());
+  }, [dispatch]);
 
   useEffect(() => {
     if (!notification) {

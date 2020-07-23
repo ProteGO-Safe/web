@@ -6,7 +6,7 @@ import useMenuContext from '../../hooks/useMenuContext';
 import { VersionApp } from '../index';
 import './Menu.scss';
 
-const Menu = ({ items, version }) => {
+const Menu = ({ items }) => {
   const { visible, startHiding, inProgress } = useMenuContext();
   const handleClose = () => startHiding();
 
@@ -46,7 +46,7 @@ const Menu = ({ items, version }) => {
           <img src={LogoSafeSafe} alt="ProteGO Safe" />
         </div>
         <ul className="menu__items">{renderItems}</ul>
-        <VersionApp version={version} />
+        <VersionApp />
       </div>
     </>
   );

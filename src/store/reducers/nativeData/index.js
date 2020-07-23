@@ -5,14 +5,16 @@ import {
   NATIVE_DATA_HIDE_NOTIFICATION_SUCCESS,
   NATIVE_DATA_SET_SERVICES_STATUS_SUCCESS,
   NATIVE_DATA_FETCH_EXPOSURE_NOTIFICATION_STATISTICS_SUCCESS,
-  NATIVE_DATA_FETCH_NATIVE_STATE
+  NATIVE_DATA_FETCH_NATIVE_STATE,
+  FETCH_VERSION_SUCCESS
 } from '../../types/nativeData';
 
 const INITIAL_STATE = {
   riskLevel: undefined,
   notification: undefined,
   servicesStatus: {},
-  servicesStatusSetByNative: false
+  servicesStatusSetByNative: false,
+  version: undefined
 };
 
 const setServicesStatusSuccess = (
@@ -69,6 +71,15 @@ const nativeBridgeReducer = (state = INITIAL_STATE, action) => {
       return {
         ...state,
         ...appState
+      };
+    }
+    case FETCH_VERSION_SUCCESS: {
+      const {
+        body: { appVersion }
+      } = action;
+      return {
+        ...state,
+        version: appVersion
       };
     }
     default:
