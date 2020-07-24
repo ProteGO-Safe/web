@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { ExposureOnboarding } from './components/ExposureOnboarding';
 import { isIOSWebView } from '../../utils/native';
 import {
-  finishExposureOnboarding
+  finishOnboarding
 } from '../../store/actions/app';
 import { NotificationOnboarding } from './components/NotificationOnboarding';
 import { fetchServicesStatus } from '../../store/actions/nativeData';
@@ -20,8 +20,8 @@ const OnboardingContainer = () => {
   }, [dispatch]);
 
   useEffect(() => {
-    if (servicesStatusSetByNative) {
-      dispatch(finishExposureOnboarding());
+    if (exposureOnboardingFinished && !isIOSWebView()) {
+      dispatch(finishOnboarding());
     }
   }, [exposureOnboardingFinished, servicesStatusSetByNative, dispatch]);
 
