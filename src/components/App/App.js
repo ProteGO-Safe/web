@@ -64,7 +64,7 @@ function App() {
 
   useEffect(() => {
     dispatch(fetchNativeVersion());
-  }, [dispatch]);
+  }, [dispatch, startScreenShowed]);
 
   useEffect(() => {
     if (!notification) {
