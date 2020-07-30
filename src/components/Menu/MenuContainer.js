@@ -1,6 +1,5 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import packageJson from '../../../package.json';
 import Menu from './Menu';
 import useMenuContext from '../../hooks/useMenuContext';
 
@@ -83,7 +82,7 @@ const MenuContainer = () => {
     }
   ];
 
-  return <Menu items={items} version={packageJson.version} />;
+  return <Menu items={items} />;
 };
 
 export default MenuContainer;

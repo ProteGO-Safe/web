@@ -119,3 +119,18 @@ export function endUploadHistoricalData() {
     dispatch(uploadHistoricalDataEnded());
   };
 }
+
+export const fetchNativeVersionSuccess = body => ({
+  body,
+  type: types.FETCH_VERSION_SUCCESS
+});
+
+export function fetchNativeVersion() {
+  return dispatch => {
+    nativeBridge.getNativeVersion().then(body => {
+      if (body) {
+        dispatch(fetchNativeVersionSuccess(body));
+      }
+    });
+  };
+}
