@@ -4,6 +4,16 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## 4.2.3
+
+### Added
+- information about mobile app version in the menu
+ 
+### Changed
+- copy in the triage summary
+
+### Fixed
+- triage paths
 
 ## 4.2.2
  

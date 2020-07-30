@@ -74,6 +74,10 @@ const getServicesStatus = async () => {
   return callGetBridgeData(DATA_TYPE.NATIVE_SERVICES_STATUS);
 };
 
+const getNativeVersion = async () => {
+  return callGetBridgeData(DATA_TYPE.NATIVE_VERSION);
+};
+
 const getExposureNotificationStatistics = async () => {
   return callGetBridgeData(DATA_TYPE.EXPOSURE_STATISTICS);
 };
@@ -167,5 +171,6 @@ export default {
   setServicesState,
   getExposureNotificationStatistics,
   getNotification,
-  clearBluetoothData
+  clearBluetoothData,
+  getNativeVersion
 };

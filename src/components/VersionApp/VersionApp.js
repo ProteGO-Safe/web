@@ -1,17 +1,14 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import { useSelector } from 'react-redux';
 import { Version, VersionAppWrapper } from './VersionApp.styled';
 
-const VersionApp = ({ version }) => {
+const VersionApp = () => {
+  const { version } = useSelector(state => state.nativeData);
   return (
     <VersionAppWrapper>
       <Version>wersja: {version}</Version>
     </VersionAppWrapper>
   );
-};
-
-VersionApp.propTypes = {
-  version: PropTypes.string.isRequired
 };
 
 export default VersionApp;
