@@ -28,7 +28,7 @@ const Header = ({ hideBackButton, onBackClick }) => {
   return (
     <Container hideBackButton={hideBackButton}>
       {!hideBackButton ? renderBackButton() : null}
-      <Logo />
+      <Logo onClick={() => history.push(Routes.Home)} />
     </Container>
   );
 };
