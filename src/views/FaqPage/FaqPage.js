@@ -23,6 +23,8 @@ import SearchIcon from '../../assets/img/icons/lupa.svg';
 import search from '../../utils/faqSearcher';
 import faqData from './faq.json';
 
+const escapedCharacters = new RegExp('[{}()\\[\\].+*?^$\\\\|]', 'g');
+
 const FaqPage = () => {
   const [filterText, setFilterText] = useState('');
 
@@ -33,7 +35,13 @@ const FaqPage = () => {
   const { watermark, elements = [], intro } = faqData;
 
   const findAndMarkTexts = (element, valueToSearch) => {
-    const inArray = element.split(new RegExp(`(${valueToSearch})`, 'gi'));
+    const escapedValueToSearch = valueToSearch.replace(
+      escapedCharacters,
+      '\\\\$0'
+    );
+    const inArray = element.split(
+      new RegExp(`(${escapedValueToSearch})`, 'gi')
+    );
     return inArray.map((part, key) => {
       const test = part.toLowerCase() === valueToSearch.toLowerCase();
       return test ? <Highlight key={key}>{part}</Highlight> : part;
