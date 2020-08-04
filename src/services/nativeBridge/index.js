@@ -17,6 +17,11 @@ const nativeRequests = {};
 
 const sendNativeRequest = (functionName, dataType, data) => {
   const requestId = uniqueId('request-');
+  if (process.env.NODE_ENV !== 'production') {
+    console.log(
+      `functionName: ${functionName}, dataType: ${dataType}, data: ${data}, requestId: ${requestId}`
+    );
+  }
   return new Promise((resolve, reject) => {
     nativeRequests[requestId] = { resolve, reject };
     if (isIOSWebView()) {
@@ -76,6 +81,10 @@ const getServicesStatus = async () => {
 
 const getNativeVersion = async () => {
   return callGetBridgeData(DATA_TYPE.NATIVE_VERSION);
+};
+
+const getLanguage = async () => {
+  return callGetBridgeData(DATA_TYPE.LANGUAGE);
 };
 
 const getExposureNotificationStatistics = async () => {
@@ -172,5 +181,6 @@ export default {
   getExposureNotificationStatistics,
   getNotification,
   clearBluetoothData,
-  getNativeVersion
+  getNativeVersion,
+  getLanguage
 };

@@ -6,7 +6,8 @@ import {
   NATIVE_DATA_SET_SERVICES_STATUS_SUCCESS,
   NATIVE_DATA_FETCH_EXPOSURE_NOTIFICATION_STATISTICS_SUCCESS,
   NATIVE_DATA_FETCH_NATIVE_STATE,
-  FETCH_VERSION_SUCCESS
+  FETCH_VERSION_SUCCESS,
+  FETCH_LANGUAGE
 } from '../../types/nativeData';
 
 const INITIAL_STATE = {
@@ -14,7 +15,8 @@ const INITIAL_STATE = {
   notification: undefined,
   servicesStatus: {},
   servicesStatusSetByNative: false,
-  version: undefined
+  version: undefined,
+  language: undefined
 };
 
 const setServicesStatusSuccess = (
@@ -80,6 +82,15 @@ const nativeBridgeReducer = (state = INITIAL_STATE, action) => {
       return {
         ...state,
         version: appVersion
+      };
+    }
+    case FETCH_LANGUAGE: {
+      const {
+        body: { language }
+      } = action;
+      return {
+        ...state,
+        language
       };
     }
     default:

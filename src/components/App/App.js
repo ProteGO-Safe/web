@@ -34,6 +34,7 @@ import {
 } from '../../views';
 
 import {
+  fetchLanguage,
   fetchNativeVersion,
   fetchNotification
 } from '../../store/actions/nativeData';
@@ -58,13 +59,19 @@ function App() {
     startScreenShowed,
     firstDiagnosisFinished
   } = useSelector(state => state.app);
-  const { notification } = useSelector(state => state.nativeData);
+  const { language, notification } = useSelector(state => state.nativeData);
   const { inProgress, visible: menuIsVisible } = useMenuContext();
   const { hasFilledAnyDiagnosis } = useFilledDiagnosis();
 
   useEffect(() => {
     dispatch(fetchNativeVersion());
   }, [dispatch, startScreenShowed]);
+
+  useEffect(() => {
+    if (!language) {
+      dispatch(fetchLanguage());
+    }
+  }, [dispatch, language]);
 
   useEffect(() => {
     if (!notification) {

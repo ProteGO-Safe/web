@@ -134,3 +134,18 @@ export function fetchNativeVersion() {
     });
   };
 }
+
+export const fetchLanguageSuccess = body => ({
+  body,
+  type: types.FETCH_LANGUAGE
+});
+
+export function fetchLanguage() {
+  return dispatch => {
+    nativeBridge.getLanguage().then(body => {
+      if (body) {
+        dispatch(fetchLanguageSuccess(body));
+      }
+    });
+  };
+}
