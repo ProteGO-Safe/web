@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import { useFormikContext } from 'formik';
 
 import { FIELD_CHOICE_ID } from '../../../../constants';
-import Icon from '../../../../assets/img/icons/angle-right-white.svg';
 import { Button, FieldSet, Radio } from '../../../../components';
 import { Title } from '../../Diagnosis.styled';
 import { choicesPropType } from '../../prop-types';
@@ -32,9 +31,7 @@ const Single = ({ text, choices }) => {
       <Button
         disabled={!values[FIELD_CHOICE_ID]}
         onClick={submitForm}
-        icon={Icon}
-        size="medium"
-        text="Dalej"
+        label="Dalej"
       />
     </>
   );

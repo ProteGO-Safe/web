@@ -6,7 +6,7 @@ import Routes from '../../routes';
 import Header from '../../components/Header/Header';
 import { BottomNavigation } from '../../components/BottomNavigation';
 import { daysDetailsPropType } from '../../utils/calendar';
-import { BordersButton } from '../../components';
+import { Button } from '../../components';
 
 import arrowRight from '../../assets/img/icons/angle-right.svg';
 import { Container, Content, View } from '../../theme/grid';
@@ -45,10 +45,10 @@ const Daily = ({ goToHistory, onFill, today, previousDays }) => {
             Uzupełnij dzisiejszy wpis do <br />
             swojego dziennika zdrowia
           </Title>
-          <BordersButton onClick={onFill} icon={<NotebookIcon />}>
+          <Button onClick={onFill} type="border" icon={<NotebookIcon />}>
             Dziś, {today} <br />
             Kliknij i uzupełnij dane.
-          </BordersButton>
+          </Button>
           <DiaryHistory>
             <DiaryLabel>Dotychczasowe wpisy:</DiaryLabel>
             <Diarylist>{renderDairyDays}</Diarylist>

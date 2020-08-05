@@ -12,23 +12,21 @@ import { Icon, More } from './Information.styled';
 const Information = ({ onNext, onMore, onSkip }) => {
   const buttons = [
     {
-      border: false,
-      text: 'Dalej',
+      label: 'Dalej',
       onClick: onNext
     },
     {
-      text: 'Nie powiadamiaj mnie o zagrożeniach',
-      type: 'tertiary',
+      label: 'Nie powiadamiaj mnie o zagrożeniach',
+      type: 'blankSmall',
       onClick: onSkip
     }
   ];
 
   const renderButton = buttons.map(button => (
     <Button
-      key={button.text}
+      key={button.label}
       onClick={button.onClick}
-      text={button.text}
-      border={button.border}
+      label={button.label}
       type={button.type}
     />
   ));

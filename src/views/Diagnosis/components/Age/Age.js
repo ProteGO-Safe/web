@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
 import { FormGroup } from '@material-ui/core';
 
-import Icon from '../../../../assets/img/icons/angle-right-white.svg';
-
 import { Button, Header, Radio } from '../../../../components/index';
 import {
   Title,
@@ -69,9 +67,7 @@ const Age = ({ onBack, onNext }) => {
             <Button
               disabled={moreThan65 === undefined}
               onClick={() => onNext(moreThan65)}
-              icon={Icon}
-              size="medium"
-              text="Dalej"
+              label="Dalej"
             />
           </Actions>
         </Container>

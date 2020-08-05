@@ -6,7 +6,6 @@ import { Color } from '../../../../theme/colors';
 
 import './Country.scss';
 import locations from '../../../../services/diagnosisLogic/locations.json';
-import Icon from '../../../../assets/img/icons/angle-right-white.svg';
 
 const Country = ({ handleSubmit, selectedCountries, setSelectedCountries }) => {
   const rootStyle = {
@@ -98,9 +97,7 @@ const Country = ({ handleSubmit, selectedCountries, setSelectedCountries }) => {
       <Button
         disabled={selectedCountries.length === 0}
         onClick={handleSubmit}
-        icon={Icon}
-        size="medium"
-        text="Dalej"
+        label="Dalej"
       />
     </>
   );

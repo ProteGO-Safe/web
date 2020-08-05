@@ -21,9 +21,9 @@ const FirstDiagnosisAsking = ({ onYesClick, onNoClick }) => {
             diagnoza lekarska.
           </Small>
           <ButtonWrapper>
-            <Button text="Wykonaj test oceny ryzyka" onClick={onYesClick} />
+            <Button label="Wykonaj test oceny ryzyka" onClick={onYesClick} />
             <Button
-              text="pomiń test oceny ryzyka"
+              label="pomiń test oceny ryzyka"
               type="outline"
               onClick={onNoClick}
             />

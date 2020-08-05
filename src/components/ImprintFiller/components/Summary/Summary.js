@@ -1,6 +1,6 @@
 import React from 'react';
 import { useFormikContext } from 'formik';
-import { Button, Header, GovFooter, Stepper } from '../../..';
+import { Button, Header, GovFooter, Stepper } from '../../../index';
 import Imprint from '../../../Imprint/Imprint';
 import {
   chronicSickValues,
@@ -42,12 +42,12 @@ const Summary = () => {
           }}
         />
         <Actions>
-          <Button onClick={handleSubmit} text="">
+          <Button onClick={handleSubmit}>
             <SmallText color={Color.white} fontWeight={FontWeight.Bold}>
               Zapisz metrykę
             </SmallText>
           </Button>
-          <Button onClick={resetForm} text="" type="outline">
+          <Button onClick={resetForm} type="outline">
             <SmallText color={Color.primary} fontWeight={FontWeight.Bold}>
               Zmień dane
             </SmallText>

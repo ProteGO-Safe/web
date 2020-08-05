@@ -14,7 +14,6 @@ import {
   VALUE_SMOKE_NUMBER_5,
   VALUE_SMOKE_YES
 } from '../../../../constants';
-import Icon from '../../../../assets/img/icons/angle-right-white.svg';
 
 import { Actions, Label, Title } from '../../ImprintFiller.styled';
 
@@ -73,9 +72,7 @@ const Smoke = () => {
         <Button
           disabled={!values[FIELD_SMOKE]}
           onClick={() => setFieldValue('step', 5)}
-          icon={Icon}
-          size="medium"
-          text="Dalej"
+          label="Dalej"
         />
       </Actions>
     </>

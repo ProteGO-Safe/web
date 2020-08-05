@@ -5,7 +5,7 @@ import { Header } from '../../../../components/Header';
 import { GovFooter } from '../../../../components/GovFooter';
 import { TextField } from '../../../../components/TextField';
 import { FIELD_NAME } from '../../../../constants';
-import { Button } from '../../../../components/Button';
+import { Button } from '../../../../components';
 import { ButtonWrapper, Label } from '../../Registration.styled';
 
 const NameForm = () => {
@@ -41,8 +41,12 @@ const NameForm = () => {
         />
 
         <ButtonWrapper>
-          <Button disabled={disabled} onClick={handleSubmit} text="POTWIERDŹ" />
-          <Button onClick={onSkip} type="outline" text="POMIŃ TEN KROK" />
+          <Button
+            disabled={disabled}
+            onClick={handleSubmit}
+            label="POTWIERDŹ"
+          />
+          <Button onClick={onSkip} type="outline" label="Pomiń ten krok" />
         </ButtonWrapper>
         <GovFooter type="black" />
       </Container>

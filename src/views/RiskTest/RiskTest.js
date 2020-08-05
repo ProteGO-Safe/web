@@ -5,7 +5,7 @@ import { daysDetailsPropType } from '../../utils/calendar';
 import Header from '../../components/Header/Header';
 import LineItem from '../../components/LineItem/LineItem';
 import { BottomNavigation } from '../../components/BottomNavigation';
-import { BordersButton } from '../../components/BordersButton';
+import { Button } from '../../components';
 import { Icon, ListTitle, Title } from './RiskTest.styled';
 import { Container, Content, View } from '../../theme/grid';
 
@@ -15,9 +15,10 @@ const RiskTest = ({ goToHistory, onFill, previousDays }) => (
     <Content>
       <Container>
         <Title>Przygotowaliśmy dla Ciebie nowy test na dzisiaj</Title>
-        <BordersButton
+        <Button
           onClick={onFill}
-          text="Wykonaj TEST oceny ryzyka"
+          label="Wykonaj TEST oceny ryzyka"
+          type="border"
           icon={<Icon />}
         />
         <ListTitle>Wykonane testy:</ListTitle>

@@ -78,3 +78,18 @@ export const Icon = styled(ContactIcon)`
     margin-right: 0;
   }
 `;
+
+export const ArrowRight = styled.span`
+  position: absolute;
+  top: 50%;
+  right: 0;
+  height: 16px;
+  width: 16px;
+  margin-top: -8px;
+  z-index: 10;
+  > svg {
+    display: block;
+    height: 100%;
+    width: 100%;
+  }
+`;

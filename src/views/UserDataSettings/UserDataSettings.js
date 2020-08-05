@@ -32,7 +32,7 @@ const UserDataSettings = () => {
             </Paragraph>
           </Box>
           <Actions>
-            <Button onClick={handleClick} text="Wymaż dane" type="secondary" />
+            <Button onClick={handleClick} label="Wymaż dane" type="outline" />
           </Actions>
         </Container>
       </Content>

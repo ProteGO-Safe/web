@@ -11,8 +11,6 @@ import {
 
 import { Button, Checkbox, Radio, TextField } from '../../..';
 
-import Icon from '../../../../assets/img/icons/angle-right-white.svg';
-
 import {
   Actions,
   Description,
@@ -108,13 +106,7 @@ const ChronicSick = () => {
         </SubContainer>
       )}
       <Actions>
-        <Button
-          disabled={disabled}
-          icon={Icon}
-          onClick={goToNextStep}
-          size="medium"
-          text="Dalej"
-        />
+        <Button disabled={disabled} onClick={goToNextStep} label="Dalej" />
       </Actions>
     </>
   );

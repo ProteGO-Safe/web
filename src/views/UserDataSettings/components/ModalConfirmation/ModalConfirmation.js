@@ -26,7 +26,7 @@ const ModalConfirmation = () => {
   return (
     <div className="user-data__modal-confirmation">
       <h4 className="text-center">Twoje dane zostały wymazane.</h4>
-      <Button onClick={handleClose} text="OK" />
+      <Button onClick={handleClose} label="OK" />
     </div>
   );
 };

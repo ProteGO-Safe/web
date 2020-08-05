@@ -21,8 +21,8 @@ const ModalContent = () => {
         wymazać także dane spotkań.
       </p>
       <div className="buttons">
-        <Button onClick={handleSubmit} text="Tak" />
-        <Button onClick={onClose} text="Nie" />
+        <Button onClick={handleSubmit} label="Tak" />
+        <Button onClick={onClose} label="Nie" />
       </div>
     </div>
   );

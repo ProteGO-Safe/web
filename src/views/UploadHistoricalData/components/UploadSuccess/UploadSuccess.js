@@ -8,7 +8,7 @@ import PositiveIcon from '../../../../assets/img/icons/success-icon.svg';
 const UploadSuccess = ({ finishUpload }) => {
   const buttons = [
     {
-      text: 'ok',
+      label: 'ok',
       onClick: finishUpload
     }
   ];

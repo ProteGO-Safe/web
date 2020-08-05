@@ -2,10 +2,8 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { useFormikContext } from 'formik';
 
-import { Checkbox, FieldSet } from '../../../../components';
-import { Button } from '../../../../components/Button';
+import { Button, Checkbox, FieldSet } from '../../../../components';
 import { VALUE_ABSENT, VALUE_PRESENT } from '../../../../constants';
-import Icon from '../../../../assets/img/icons/angle-right-white.svg';
 import { itemsPropType } from '../../prop-types';
 import { Title } from '../../Diagnosis.styled';
 
@@ -59,13 +57,7 @@ const GroupMultiple = ({ text, items }) => {
           size="big"
         />
       </FieldSet>
-      <Button
-        disabled={!someSelected}
-        onClick={submitForm}
-        icon={Icon}
-        size="medium"
-        text="Dalej"
-      />
+      <Button disabled={!someSelected} onClick={submitForm} label="Dalej" />
     </>
   );
 };

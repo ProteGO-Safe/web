@@ -26,7 +26,7 @@ const Explainer = ({ carouselRef, index, items, onClick, settings }) => {
               {items}
             </Slider>
           </SliderWrapper>
-          <Button onClick={onClick} text="Dalej" />
+          <Button onClick={onClick} label="Dalej" />
           <GovFooter type="black" />
         </Container>
       </Content>

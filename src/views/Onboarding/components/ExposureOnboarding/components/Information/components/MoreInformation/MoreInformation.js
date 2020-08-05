@@ -13,19 +13,13 @@ import { Icon, Paragraph } from './MoreInformation.styled';
 const MoreInformation = ({ onNext }) => {
   const buttons = [
     {
-      border: false,
-      text: 'Dalej',
+      label: 'Dalej',
       onClick: onNext
     }
   ];
 
   const renderButton = buttons.map(button => (
-    <Button
-      key={button.text}
-      onClick={button.onClick}
-      text={button.text}
-      border={button.border}
-    />
+    <Button key={button.label} onClick={button.onClick} label={button.label} />
   ));
 
   return (

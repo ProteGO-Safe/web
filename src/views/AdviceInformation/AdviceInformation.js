@@ -112,7 +112,7 @@ const AdviceInformation = ({ collapse, title, watermark }) => {
         </Paragraph>
       </Warning>
       <FieldSet>
-        <Button onClick={() => history.push(Routes.Home)} text="OK" />
+        <Button onClick={() => history.push(Routes.Home)} label="OK" />
       </FieldSet>
     </>
   );

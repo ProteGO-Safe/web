@@ -4,7 +4,7 @@ import { useHistory } from 'react-router-dom';
 import Routes from '../../routes';
 import {
   BottomNavigation,
-  BordersButton,
+  Button,
   Header,
   LineItem,
   PhoneNumber
@@ -24,13 +24,13 @@ const Numbers = () => {
         <Container className="full-height">
           <Info>Szukaj pomocy w Twojej okolicy</Info>
           <PhoneNumber value="800190590">
-            <BordersButton
+            <Button
+              onClick={() => null}
               className="small"
-              text="Zadzwoń na infolinię - 800190590"
+              label="Zadzwoń na infolinię - 800190590"
+              type="border"
               icon={<Phone />}
-            >
-              Zadzwoń na infolinię - 800190590
-            </BordersButton>
+            />
           </PhoneNumber>
           <LineItem
             onClick={goToHospitalsList}

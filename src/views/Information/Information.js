@@ -51,7 +51,7 @@ const Complete = ({ hideInformation }) => {
             </WarningList>
           </WarningContent>
           <FieldSet>
-            <Button onClick={hideInformation} text="DALEJ" />
+            <Button onClick={hideInformation} label="DALEJ" />
           </FieldSet>
         </Container>
       </Content>

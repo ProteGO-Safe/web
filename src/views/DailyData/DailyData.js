@@ -29,16 +29,10 @@ const DailyData = ({ isViewMode }) => {
             {isViewMode ? (
               <Button
                 onClick={() => history.push(Routes.Daily)}
-                text="Powrót"
-                type="primary"
+                label="Powrót"
               />
             ) : (
-              <Button
-                onClick={submitForm}
-                text="Zapisz"
-                type="primary"
-                disabled={!dirty}
-              />
+              <Button onClick={submitForm} label="Zapisz" disabled={!dirty} />
             )}
           </Actions>
         </Container>

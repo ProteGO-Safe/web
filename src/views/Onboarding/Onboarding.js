@@ -9,7 +9,7 @@ const Onboarding = ({ screen: { buttons, content, icon, title } }) => {
     <Button
       key={button.text}
       onClick={button.onClick}
-      text={button.text}
+      label={button.text}
       type={button.type}
     />
   ));

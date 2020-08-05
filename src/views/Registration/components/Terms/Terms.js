@@ -71,7 +71,7 @@ const Terms = ({ handleClick }) => {
           </FormGroup>
 
           <ButtonWrapper>
-            <Button disabled={disabled} onClick={handleClick} text="Dalej" />
+            <Button disabled={disabled} onClick={handleClick} label="Dalej" />
           </ButtonWrapper>
           <GovFooter type="black" />
         </Container>

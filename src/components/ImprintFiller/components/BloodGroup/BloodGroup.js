@@ -14,8 +14,7 @@ import {
   VALUE_BLOOD_GROUP_BPLUS,
   VALUE_BLOOD_GROUP_UNDEFINED
 } from '../../../../constants';
-import Icon from '../../../../assets/img/icons/angle-right-white.svg';
-import { Button, Radio } from '../../..';
+import { Button, Radio } from '../../../index';
 
 import { Actions, Label, Title } from '../../ImprintFiller.styled';
 
@@ -77,9 +76,7 @@ const BloodGroup = () => {
         <Button
           disabled={!values[FIELD_BLOOD_GROUP]}
           onClick={() => setFieldValue('step', 4)}
-          icon={Icon}
-          size="medium"
-          text="Dalej"
+          label="Dalej"
         />
       </Actions>
     </>

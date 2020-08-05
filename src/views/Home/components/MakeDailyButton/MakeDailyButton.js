@@ -1,7 +1,7 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
 import { Icon } from '../../../RiskTest/RiskTest.styled';
-import { BordersButtonWithArrow } from '../../../../components/BordersButtonWithArrow';
+import { Button } from '../../../../components';
 import useTriage from '../../../../hooks/useTriage';
 
 const MakeDailyButton = () => {
@@ -14,11 +14,12 @@ const MakeDailyButton = () => {
   return (
     isExposure &&
     riskLevel === 2 && (
-      <BordersButtonWithArrow
+      <Button
         onClick={goToDailyData}
-        text="Zmierz temperaturę"
+        label="Zmierz temperaturę"
         description="Zapisz ją w Dzienniku Zdrowia aplikacji"
         icon={<Icon />}
+        type="borderArrow"
       />
     )
   );

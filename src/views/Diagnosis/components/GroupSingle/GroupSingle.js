@@ -10,7 +10,6 @@ import {
   VALUE_PRESENT
 } from '../../../../constants';
 
-import Icon from '../../../../assets/img/icons/angle-right-white.svg';
 import { itemsPropType } from '../../prop-types';
 
 const GroupSingle = ({ text, items }) => {
@@ -38,9 +37,7 @@ const GroupSingle = ({ text, items }) => {
       <Button
         disabled={!values[FIELD_CHOICE_ID]}
         onClick={submitForm}
-        icon={Icon}
-        size="medium"
-        text="Dalej"
+        label="Dalej"
       />
     </>
   );

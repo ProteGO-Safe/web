@@ -52,7 +52,7 @@ const UploadData = ({
           <ButtonWrapper>
             <Button
               onClick={onUploadData}
-              text="Przekaż informacje"
+              label="Przekaż informacje"
               disabled={
                 pin.length !== 6 || disableSubmitButton || disablePinInput
               }

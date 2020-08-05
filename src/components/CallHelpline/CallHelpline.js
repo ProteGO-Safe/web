@@ -1,8 +1,8 @@
 import React from 'react';
-import { Button, Content, Icon } from './CallHelpline.styled';
+import { Button, Content, Icon, ArrowRight } from './CallHelpline.styled';
 
 import IconContact from '../../assets/img/icons/icon-contact.svg';
-import ArrowIcon from '../../assets/img/icons/angle-right-current.svg';
+import { ReactComponent as ArrowIcon } from '../../assets/img/icons/arrow-current-color.svg';
 
 const CallHelpline = ({ phoneNumber, color, hideText }) => {
   const tel = phoneNumber.split(' ').join('');
@@ -17,7 +17,9 @@ const CallHelpline = ({ phoneNumber, color, hideText }) => {
           Zadzwoń na infolinię
           <br />
           {phoneNumber}
-          <img src={ArrowIcon} alt="Zadzwoń na infolinie" />
+          <ArrowRight>
+            <ArrowIcon />
+          </ArrowRight>
         </Content>
       )}
     </Button>

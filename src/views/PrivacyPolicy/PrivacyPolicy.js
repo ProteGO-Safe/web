@@ -39,18 +39,16 @@ const PrivacyPolicy = () => {
         <FieldSet>
           <Button
             onClick={() => history.push(Routes.Regulations)}
-            type="primary"
-            text="Regulamin"
+            label="Regulamin"
           />
           <Button
             onClick={() => history.push(Routes.PrivacyPolicyDetails)}
-            type="primary"
-            text="Polityka prywatności"
+            label="Polityka prywatności"
           />
           <Button
             onClick={() => history.push(Routes.UserData)}
-            type="secondary"
-            text="Dane"
+            type="outline"
+            label="Dane"
           />
         </FieldSet>
       </Container>

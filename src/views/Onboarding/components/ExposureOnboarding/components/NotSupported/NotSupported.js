@@ -13,19 +13,13 @@ import { Icon } from './NotSupported.styled';
 const NotSupported = ({ onNext }) => {
   const buttons = [
     {
-      border: false,
-      text: 'Rozumiem',
+      label: 'Rozumiem',
       onClick: onNext
     }
   ];
 
-  const renderButton = buttons.map(button => (
-    <Button
-      key={button.text}
-      onClick={button.onClick}
-      text={button.text}
-      border={button.border}
-    />
+  const renderButton = buttons.map(({ onClick, label }) => (
+    <Button key={label} onClick={onClick} label={label} />
   ));
 
   return (

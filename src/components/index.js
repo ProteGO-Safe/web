@@ -1,7 +1,6 @@
 export { App } from './App';
-export { BordersButton } from './BordersButton';
 export { BottomNavigation } from './BottomNavigation';
-export { Button } from './Button';
+export { default as Button } from './Button/Button';
 export { Checkbox } from './Checkbox';
 export { Collapse } from './Collapse';
 export { Container } from './Container';

@@ -25,7 +25,7 @@ const Summary = ({ onSave }) => (
         </small>
       </div>
       <FieldSet>
-        <Button onClick={onSave} text="Sprawdź wynik" type="primary" />
+        <Button onClick={onSave} label="Sprawdź wynik" />
       </FieldSet>
     </Container>
   </div>

@@ -33,20 +33,20 @@ const UserData = () => {
           <ButtonWrapper>
             <Button
               onClick={() => history.push(Routes.UserDataSettings)}
-              text="Zarządzaj danymi"
+              label="Zarządzaj danymi"
             />
             <Button
               onClick={() => history.push(Routes.UserDataChange)}
-              type="secondary"
-              text="Aktualizuj Metrykę Zdrowia"
+              type="outline"
+              label="Aktualizuj Metrykę Zdrowia"
             />
           </ButtonWrapper>
           {areEnableAllServices && (
             <ButtonWrapper>
               <Button
                 onClick={() => history.push(Routes.UploadHistoricalData)}
-                type="secondary"
-                text="Przekaż dane"
+                type="outline"
+                label="Przekaż dane"
               />
             </ButtonWrapper>
           )}

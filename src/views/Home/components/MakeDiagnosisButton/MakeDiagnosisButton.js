@@ -1,7 +1,7 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
 import { Icon } from '../../../RiskTest/RiskTest.styled';
-import { BordersButton } from '../../../../components/BordersButton';
+import { Button } from '../../../../components';
 import Routes from '../../../../routes';
 
 const MakeDiagnosisButton = () => {
@@ -11,9 +11,10 @@ const MakeDiagnosisButton = () => {
   };
 
   return (
-    <BordersButton
+    <Button
       onClick={goToDiagnosis}
-      text="Wykonaj TEST oceny ryzyka"
+      label="Wykonaj TEST oceny ryzyka"
+      type="border"
       icon={<Icon />}
     />
   );

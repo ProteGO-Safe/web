@@ -26,7 +26,7 @@ const Name = ({ handleClick }) => {
       />
 
       <Actions>
-        <Button disabled={disabled} onClick={handleClick} text="Dalej" />
+        <Button disabled={disabled} onClick={handleClick} label="Dalej" />
       </Actions>
     </>
   );
