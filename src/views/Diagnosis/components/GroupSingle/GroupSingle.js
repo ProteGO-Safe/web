@@ -23,7 +23,7 @@ const GroupSingle = ({ t, text, items }) => {
 
   return (
     <>
-      <Title>{text}</Title>
+      <Title>{t(text)}</Title>
       <FieldSet>
         {items.map(item => (
           <Radio
@@ -31,7 +31,7 @@ const GroupSingle = ({ t, text, items }) => {
             checked={values[FIELD_ITEM_ID] === item.id}
             name={FIELD_ITEM_ID}
             onChange={() => handleChange(item.id)}
-            label={item.name}
+            label={t(item.name)}
           />
         ))}
       </FieldSet>

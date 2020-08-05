@@ -5,7 +5,7 @@
       "has_local_covid_transmission": false
     },
     "id": "l_ac",
-    "name": "Wyspa Wniebowstąpienia",
+    "name": "country_name_ac",
     "type": "country"
   },
   {
@@ -14,7 +14,7 @@
       "has_local_covid_transmission": true
     },
     "id": "l_ad",
-    "name": "Andora",
+    "name": "country_name_ad",
     "type": "country"
   },
   {
@@ -23,7 +23,7 @@
       "has_local_covid_transmission": true
     },
     "id": "l_ae",
-    "name": "Zjednoczone Emiraty Arabskie",
+    "name": "country_name_ae",
     "type": "country"
   },
   {
@@ -32,7 +32,7 @@
       "has_local_covid_transmission": true
     },
     "id": "l_af",
-    "name": "Afganistan",
+    "name": "country_name_af",
     "type": "country"
   },
   {
@@ -41,7 +41,7 @@
       "has_local_covid_transmission": true
     },
     "id": "l_ag",
-    "name": "Antigua i Barbuda",
+    "name": "country_name_ag",
     "type": "country"
   },
   {
@@ -50,7 +50,7 @@
       "has_local_covid_transmission": true
     },
     "id": "l_ai",
-    "name": "Anguilla",
+    "name": "country_name_ai",
     "type": "country"
   },
   {
@@ -59,7 +59,7 @@
       "has_local_covid_transmission": true
     },
     "id": "l_al",
-    "name": "Albania",
+    "name": "country_name_al",
     "type": "country"
   },
   {
@@ -68,7 +68,7 @@
       "has_local_covid_transmission": true
     },
     "id": "l_am",
-    "name": "Armenia",
+    "name": "country_name_am",
     "type": "country"
   },
   {
@@ -77,7 +77,7 @@
       "has_local_covid_transmission": false
     },
     "id": "l_ao",
-    "name": "Angola",
+    "name": "country_name_ao",
     "type": "country"
   },
   {
@@ -86,7 +86,7 @@
       "has_local_covid_transmission": false
     },
     "id": "l_aq",
-    "name": "Antarktyda",
+    "name": "country_name_aq",
     "type": "country"
   },
   {
@@ -95,7 +95,7 @@
       "has_local_covid_transmission": true
     },
     "id": "l_ar",
-    "name": "Argentyna",
+    "name": "country_name_ar",
     "type": "country"
   },
   {
@@ -104,7 +104,7 @@
       "has_local_covid_transmission": false
     },
     "id": "l_as",
-    "name": "Samoa Amerykańskie",
+    "name": "country_name_as",
     "type": "country"
   },
   {
@@ -113,7 +113,7 @@
       "has_local_covid_transmission": true
     },
     "id": "l_at",
-    "name": "Austria",
+    "name": "country_name_at",
     "type": "country"
   },
   {
@@ -122,7 +122,7 @@
       "has_local_covid_transmission": true
     },
     "id": "l_au",
-    "name": "Australia",
+    "name": "country_name_au",
     "type": "country"
   },
   {
@@ -131,7 +131,7 @@
       "has_local_covid_transmission": true
     },
     "id": "l_aw",
-    "name": "Aruba",
+    "name": "country_name_aw",
     "type": "country"
   },
   {
@@ -140,7 +140,7 @@
       "has_local_covid_transmission": false
     },
     "id": "l_ax",
-    "name": "Wyspy Alandzkie",
+    "name": "country_name_ax",
     "type": "country"
   },
   {
@@ -149,7 +149,7 @@
       "has_local_covid_transmission": true
     },
     "id": "l_az",
-    "name": "Azerbejdżan",
+    "name": "country_name_az",
     "type": "country"
   },
   {
@@ -158,7 +158,7 @@
       "has_local_covid_transmission": true
     },
     "id": "l_ba",
-    "name": "Bośnia i Hercegowina",
+    "name": "country_name_ba",
     "type": "country"
   },
   {
@@ -167,7 +167,7 @@
       "has_local_covid_transmission": true
     },
     "id": "l_bb",
-    "name": "Barbados",
+    "name": "country_name_bb",
     "type": "country"
   },
   {
@@ -176,7 +176,7 @@
       "has_local_covid_transmission": true
     },
     "id": "l_bd",
-    "name": "Bangladesz",
+    "name": "country_name_bd",
     "type": "country"
   },
   {
@@ -185,7 +185,7 @@
       "has_local_covid_transmission": true
     },
     "id": "l_be",
-    "name": "Belgia",
+    "name": "country_name_be",
     "type": "country"
   },
   {
@@ -194,7 +194,7 @@
       "has_local_covid_transmission": true
     },
     "id": "l_bf",
-    "name": "Burkina Faso",
+    "name": "country_name_bf",
     "type": "country"
   },
   {
@@ -203,7 +203,7 @@
       "has_local_covid_transmission": true
     },
     "id": "l_bg",
-    "name": "Bułgaria",
+    "name": "country_name_bg",
     "type": "country"
   },
   {
@@ -212,7 +212,7 @@
       "has_local_covid_transmission": true
     },
     "id": "l_bh",
-    "name": "Bahrajn",
+    "name": "country_name_bh",
     "type": "country"
   },
   {
@@ -221,7 +221,7 @@
       "has_local_covid_transmission": true
     },
     "id": "l_bi",
-    "name": "Burundi",
+    "name": "country_name_bi",
     "type": "country"
   },
   {
@@ -230,7 +230,7 @@
       "has_local_covid_transmission": true
     },
     "id": "l_bj",
-    "name": "Benin",
+    "name": "country_name_bj",
     "type": "country"
   },
   {
@@ -239,7 +239,7 @@
       "has_local_covid_transmission": false
     },
     "id": "l_bl",
-    "name": "Saint-Barthélemy",
+    "name": "country_name_bl",
     "type": "country"
   },
   {
@@ -248,7 +248,7 @@
       "has_local_covid_transmission": true
     },
     "id": "l_bm",
-    "name": "Bermudy",
+    "name": "country_name_bm",
     "type": "country"
   },
   {
@@ -257,7 +257,7 @@
       "has_local_covid_transmission": true
     },
     "id": "l_bn",
-    "name": "Brunei",
+    "name": "country_name_bn",
     "type": "country"
   },
   {
@@ -266,7 +266,7 @@
       "has_local_covid_transmission": true
     },
     "id": "l_bo",
-    "name": "Boliwia",
+    "name": "country_name_bo",
     "type": "country"
   },
   {
@@ -275,7 +275,7 @@
       "has_local_covid_transmission": false
     },
     "id": "l_bq",
-    "name": "Niderlandy Karaibskie",
+    "name": "country_name_bq",
     "type": "country"
   },
   {
@@ -284,7 +284,7 @@
       "has_local_covid_transmission": true
     },
     "id": "l_br",
-    "name": "Brazylia",
+    "name": "country_name_br",
     "type": "country"
   },
   {
@@ -293,7 +293,7 @@
       "has_local_covid_transmission": true
     },
     "id": "l_bs",
-    "name": "Bahamy",
+    "name": "country_name_bs",
     "type": "country"
   },
   {
@@ -302,7 +302,7 @@
       "has_local_covid_transmission": false
     },
     "id": "l_bt",
-    "name": "Bhutan",
+    "name": "country_name_bt",
     "type": "country"
   },
   {
@@ -311,7 +311,7 @@
       "has_local_covid_transmission": false
     },
     "id": "l_bw",
-    "name": "Botswana",
+    "name": "country_name_bw",
     "type": "country"
   },
   {
@@ -320,7 +320,7 @@
       "has_local_covid_transmission": true
     },
     "id": "l_by",
-    "name": "Białoruś",
+    "name": "country_name_by",
     "type": "country"
   },
   {
@@ -329,7 +329,7 @@
       "has_local_covid_transmission": true
     },
     "id": "l_bz",
-    "name": "Belize",
+    "name": "country_name_bz",
     "type": "country"
   },
   {
@@ -338,7 +338,7 @@
       "has_local_covid_transmission": true
     },
     "id": "l_ca",
-    "name": "Kanada",
+    "name": "country_name_ca",
     "type": "country"
   },
   {
@@ -347,7 +347,7 @@
       "has_local_covid_transmission": false
     },
     "id": "l_cc",
-    "name": "Wyspy Kokosowe",
+    "name": "country_name_cc",
     "type": "country"
   },
   {
@@ -356,7 +356,7 @@
       "has_local_covid_transmission": true
     },
     "id": "l_cd",
-    "name": "Demokratyczna Republika Konga",
+    "name": "country_name_cd",
     "type": "country"
   },
   {
@@ -365,7 +365,7 @@
       "has_local_covid_transmission": true
     },
     "id": "l_cf",
-    "name": "Republika Środkowoafrykańska",
+    "name": "country_name_cf",
     "type": "country"
   },
   {
@@ -374,7 +374,7 @@
       "has_local_covid_transmission": true
     },
     "id": "l_cg",
-    "name": "Kongo",
+    "name": "country_name_cg",
     "type": "country"
   },
   {
@@ -383,7 +383,7 @@
       "has_local_covid_transmission": true
     },
     "id": "l_ch",
-    "name": "Szwajcaria",
+    "name": "country_name_ch",
     "type": "country"
   },
   {
@@ -392,7 +392,7 @@
       "has_local_covid_transmission": true
     },
     "id": "l_ci",
-    "name": "Côte d’Ivoire",
+    "name": "country_name_ci",
     "type": "country"
   },
   {
@@ -401,7 +401,7 @@
       "has_local_covid_transmission": false
     },
     "id": "l_ck",
-    "name": "Wyspy Cooka",
+    "name": "country_name_ck",
     "type": "country"
   },
   {
@@ -410,7 +410,7 @@
       "has_local_covid_transmission": true
     },
     "id": "l_cl",
-    "name": "Chile",
+    "name": "country_name_cl",
     "type": "country"
   },
   {
@@ -419,7 +419,7 @@
       "has_local_covid_transmission": true
     },
     "id": "l_cm",
-    "name": "Kamerun",
+    "name": "country_name_cm",
     "type": "country"
   },
   {
@@ -428,7 +428,7 @@
       "has_local_covid_transmission": true
     },
     "id": "l_cn",
-    "name": "Chiny",
+    "name": "country_name_cn",
     "type": "country"
   },
   {
@@ -437,7 +437,7 @@
       "has_local_covid_transmission": true
     },
     "id": "l_co",
-    "name": "Kolumbia",
+    "name": "country_name_co",
     "type": "country"
   },
   {
@@ -446,7 +446,7 @@
       "has_local_covid_transmission": true
     },
     "id": "l_cr",
-    "name": "Kostaryka",
+    "name": "country_name_cr",
     "type": "country"
   },
   {
@@ -455,7 +455,7 @@
       "has_local_covid_transmission": true
     },
     "id": "l_cu",
-    "name": "Kuba",
+    "name": "country_name_cu",
     "type": "country"
   },
   {
@@ -464,7 +464,7 @@
       "has_local_covid_transmission": true
     },
     "id": "l_cv",
-    "name": "Republika Zielonego Przylądka",
+    "name": "country_name_cv",
     "type": "country"
   },
   {
@@ -473,7 +473,7 @@
       "has_local_covid_transmission": false
     },
     "id": "l_cw",
-    "name": "Curaçao",
+    "name": "country_name_cw",
     "type": "country"
   },
   {
@@ -482,7 +482,7 @@
       "has_local_covid_transmission": false
     },
     "id": "l_cx",
-    "name": "Wyspa Bożego Narodzenia",
+    "name": "country_name_cx",
     "type": "country"
   },
   {
@@ -491,7 +491,7 @@
       "has_local_covid_transmission": true
     },
     "id": "l_cy",
-    "name": "Cypr",
+    "name": "country_name_cy",
     "type": "country"
   },
   {
@@ -500,7 +500,7 @@
       "has_local_covid_transmission": true
     },
     "id": "l_cz",
-    "name": "Czechy",
+    "name": "country_name_cz",
     "type": "country"
   },
   {
@@ -509,7 +509,7 @@
       "has_local_covid_transmission": true
     },
     "id": "l_de",
-    "name": "Niemcy",
+    "name": "country_name_de",
     "type": "country"
   },
   {
@@ -518,7 +518,7 @@
       "has_local_covid_transmission": false
     },
     "id": "l_dg",
-    "name": "Diego Garcia",
+    "name": "country_name_dg",
     "type": "country"
   },
   {
@@ -527,7 +527,7 @@
       "has_local_covid_transmission": true
     },
     "id": "l_dj",
-    "name": "Dżibuti",
+    "name": "country_name_dj",
     "type": "country"
   },
   {
@@ -536,7 +536,7 @@
       "has_local_covid_transmission": true
     },
     "id": "l_dk",
-    "name": "Dania",
+    "name": "country_name_dk",
     "type": "country"
   },
   {
@@ -545,7 +545,7 @@
       "has_local_covid_transmission": true
     },
     "id": "l_dm",
-    "name": "Dominika",
+    "name": "country_name_dm",
     "type": "country"
   },
   {
@@ -554,7 +554,7 @@
       "has_local_covid_transmission": true
     },
     "id": "l_do",
-    "name": "Dominikana",
+    "name": "country_name_do",
     "type": "country"
   },
   {
@@ -563,7 +563,7 @@
       "has_local_covid_transmission": true
     },
     "id": "l_dz",
-    "name": "Algieria",
+    "name": "country_name_dz",
     "type": "country"
   },
   {
@@ -572,7 +572,7 @@
       "has_local_covid_transmission": false
     },
     "id": "l_ea",
-    "name": "Ceuta i Melilla",
+    "name": "country_name_ea",
     "type": "country"
   },
   {
@@ -581,7 +581,7 @@
       "has_local_covid_transmission": true
     },
     "id": "l_ec",
-    "name": "Ekwador",
+    "name": "country_name_ec",
     "type": "country"
   },
   {
@@ -590,7 +590,7 @@
       "has_local_covid_transmission": true
     },
     "id": "l_ee",
-    "name": "Estonia",
+    "name": "country_name_ee",
     "type": "country"
   },
   {
@@ -599,7 +599,7 @@
       "has_local_covid_transmission": true
     },
     "id": "l_eg",
-    "name": "Egipt",
+    "name": "country_name_eg",
     "type": "country"
   },
   {
@@ -608,7 +608,7 @@
       "has_local_covid_transmission": false
     },
     "id": "l_eh",
-    "name": "Sahara Zachodnia",
+    "name": "country_name_eh",
     "type": "country"
   },
   {
@@ -617,7 +617,7 @@
       "has_local_covid_transmission": true
     },
     "id": "l_er",
-    "name": "Erytrea",
+    "name": "country_name_er",
     "type": "country"
   },
   {
@@ -626,7 +626,7 @@
       "has_local_covid_transmission": true
     },
     "id": "l_es",
-    "name": "Hiszpania",
+    "name": "country_name_es",
     "type": "country"
   },
   {
@@ -635,7 +635,7 @@
       "has_local_covid_transmission": true
     },
     "id": "l_et",
-    "name": "Etiopia",
+    "name": "country_name_et",
     "type": "country"
   },
   {
@@ -644,7 +644,7 @@
       "has_local_covid_transmission": true
     },
     "id": "l_fi",
-    "name": "Finlandia",
+    "name": "country_name_fi",
     "type": "country"
   },
   {
@@ -653,7 +653,7 @@
       "has_local_covid_transmission": true
     },
     "id": "l_fj",
-    "name": "Fidżi",
+    "name": "country_name_fj",
     "type": "country"
   },
   {
@@ -662,7 +662,7 @@
       "has_local_covid_transmission": false
     },
     "id": "l_fk",
-    "name": "Falklandy",
+    "name": "country_name_fk",
     "type": "country"
   },
   {
@@ -671,7 +671,7 @@
       "has_local_covid_transmission": false
     },
     "id": "l_fm",
-    "name": "Mikronezja",
+    "name": "country_name_fm",
     "type": "country"
   },
   {
@@ -680,7 +680,7 @@
       "has_local_covid_transmission": true
     },
     "id": "l_fo",
-    "name": "Wyspy Owcze",
+    "name": "country_name_fo",
     "type": "country"
   },
   {
@@ -689,7 +689,7 @@
       "has_local_covid_transmission": true
     },
     "id": "l_fr",
-    "name": "Francja",
+    "name": "country_name_fr",
     "type": "country"
   },
   {
@@ -698,7 +698,7 @@
       "has_local_covid_transmission": false
     },
     "id": "l_ga",
-    "name": "Gabon",
+    "name": "country_name_ga",
     "type": "country"
   },
   {
@@ -707,7 +707,7 @@
       "has_local_covid_transmission": true
     },
     "id": "l_gb",
-    "name": "Wielka Brytania",
+    "name": "country_name_gb",
     "type": "country"
   },
   {
@@ -716,7 +716,7 @@
       "has_local_covid_transmission": true
     },
     "id": "l_gd",
-    "name": "Grenada",
+    "name": "country_name_gd",
     "type": "country"
   },
   {
@@ -725,7 +725,7 @@
       "has_local_covid_transmission": true
     },
     "id": "l_ge",
-    "name": "Gruzja",
+    "name": "country_name_ge",
     "type": "country"
   },
   {
@@ -734,7 +734,7 @@
       "has_local_covid_transmission": true
     },
     "id": "l_gf",
-    "name": "Gujana Francuska",
+    "name": "country_name_gf",
     "type": "country"
   },
   {
@@ -743,7 +743,7 @@
       "has_local_covid_transmission": true
     },
     "id": "l_gg",
-    "name": "Guernsey",
+    "name": "country_name_gg",
     "type": "country"
   },
   {
@@ -752,7 +752,7 @@
       "has_local_covid_transmission": true
     },
     "id": "l_gh",
-    "name": "Ghana",
+    "name": "country_name_gh",
     "type": "country"
   },
   {
@@ -761,7 +761,7 @@
       "has_local_covid_transmission": true
     },
     "id": "l_gi",
-    "name": "Gibraltar",
+    "name": "country_name_gi",
     "type": "country"
   },
   {
@@ -770,7 +770,7 @@
       "has_local_covid_transmission": false
     },
     "id": "l_gl",
-    "name": "Grenlandia",
+    "name": "country_name_gl",
     "type": "country"
   },
   {
@@ -779,7 +779,7 @@
       "has_local_covid_transmission": false
     },
     "id": "l_gm",
-    "name": "Gambia",
+    "name": "country_name_gm",
     "type": "country"
   },
   {
@@ -788,7 +788,7 @@
       "has_local_covid_transmission": true
     },
     "id": "l_gn",
-    "name": "Gwinea",
+    "name": "country_name_gn",
     "type": "country"
   },
   {
@@ -797,7 +797,7 @@
       "has_local_covid_transmission": true
     },
     "id": "l_gp",
-    "name": "Gwadelupa",
+    "name": "country_name_gp",
     "type": "country"
   },
   {
@@ -806,7 +806,7 @@
       "has_local_covid_transmission": true
     },
     "id": "l_gq",
-    "name": "Gwinea Równikowa",
+    "name": "country_name_gq",
     "type": "country"
   },
   {
@@ -815,7 +815,7 @@
       "has_local_covid_transmission": true
     },
     "id": "l_gr",
-    "name": "Grecja",
+    "name": "country_name_gr",
     "type": "country"
   },
   {
@@ -824,7 +824,7 @@
       "has_local_covid_transmission": false
     },
     "id": "l_gs",
-    "name": "Georgia Południowa i Sandwich Południowy",
+    "name": "country_name_gs",
     "type": "country"
   },
   {
@@ -833,7 +833,7 @@
       "has_local_covid_transmission": true
     },
     "id": "l_gt",
-    "name": "Gwatemala",
+    "name": "country_name_gt",
     "type": "country"
   },
   {
@@ -842,7 +842,7 @@
       "has_local_covid_transmission": true
     },
     "id": "l_gu",
-    "name": "Guam",
+    "name": "country_name_gu",
     "type": "country"
   },
   {
@@ -851,7 +851,7 @@
       "has_local_covid_transmission": false
     },
     "id": "l_gw",
-    "name": "Gwinea Bissau",
+    "name": "country_name_gw",
     "type": "country"
   },
   {
@@ -860,7 +860,7 @@
       "has_local_covid_transmission": true
     },
     "id": "l_gy",
-    "name": "Gujana",
+    "name": "country_name_gy",
     "type": "country"
   },
   {
@@ -869,7 +869,7 @@
       "has_local_covid_transmission": false
     },
     "id": "l_hk",
-    "name": "SRA Hongkong (Chiny)",
+    "name": "country_name_hk",
     "type": "country"
   },
   {
@@ -878,7 +878,7 @@
       "has_local_covid_transmission": true
     },
     "id": "l_hn",
-    "name": "Honduras",
+    "name": "country_name_hn",
     "type": "country"
   },
   {
@@ -887,7 +887,7 @@
       "has_local_covid_transmission": true
     },
     "id": "l_hr",
-    "name": "Chorwacja",
+    "name": "country_name_hr",
     "type": "country"
   },
   {
@@ -896,7 +896,7 @@
       "has_local_covid_transmission": false
     },
     "id": "l_ht",
-    "name": "Haiti",
+    "name": "country_name_ht",
     "type": "country"
   },
   {
@@ -905,7 +905,7 @@
       "has_local_covid_transmission": true
     },
     "id": "l_hu",
-    "name": "Węgry",
+    "name": "country_name_hu",
     "type": "country"
   },
   {
@@ -914,7 +914,7 @@
       "has_local_covid_transmission": false
     },
     "id": "l_ic",
-    "name": "Wyspy Kanaryjskie",
+    "name": "country_name_ic",
     "type": "country"
   },
   {
@@ -923,7 +923,7 @@
       "has_local_covid_transmission": true
     },
     "id": "l_id",
-    "name": "Indonezja",
+    "name": "country_name_id",
     "type": "country"
   },
   {
@@ -932,7 +932,7 @@
       "has_local_covid_transmission": true
     },
     "id": "l_ie",
-    "name": "Irlandia",
+    "name": "country_name_ie",
     "type": "country"
   },
   {
@@ -941,7 +941,7 @@
       "has_local_covid_transmission": true
     },
     "id": "l_il",
-    "name": "Izrael",
+    "name": "country_name_il",
     "type": "country"
   },
   {
@@ -950,7 +950,7 @@
       "has_local_covid_transmission": true
     },
     "id": "l_im",
-    "name": "Wyspa Man",
+    "name": "country_name_im",
     "type": "country"
   },
   {
@@ -959,7 +959,7 @@
       "has_local_covid_transmission": true
     },
     "id": "l_in",
-    "name": "Indie",
+    "name": "country_name_in",
     "type": "country"
   },
   {
@@ -968,7 +968,7 @@
       "has_local_covid_transmission": false
     },
     "id": "l_io",
-    "name": "Brytyjskie Terytorium Oceanu Indyjskiego",
+    "name": "country_name_io",
     "type": "country"
   },
   {
@@ -977,7 +977,7 @@
       "has_local_covid_transmission": true
     },
     "id": "l_iq",
-    "name": "Irak",
+    "name": "country_name_iq",
     "type": "country"
   },
   {
@@ -986,7 +986,7 @@
       "has_local_covid_transmission": true
     },
     "id": "l_ir",
-    "name": "Iran",
+    "name": "country_name_ir",
     "type": "country"
   },
   {
@@ -995,7 +995,7 @@
       "has_local_covid_transmission": true
     },
     "id": "l_is",
-    "name": "Islandia",
+    "name": "country_name_is",
     "type": "country"
   },
   {
@@ -1004,7 +1004,7 @@
       "has_local_covid_transmission": true
     },
     "id": "l_it",
-    "name": "Włochy",
+    "name": "country_name_it",
     "type": "country"
   },
   {
@@ -1013,7 +1013,7 @@
       "has_local_covid_transmission": true
     },
     "id": "l_je",
-    "name": "Jersey",
+    "name": "country_name_je",
     "type": "country"
   },
   {
@@ -1022,7 +1022,7 @@
       "has_local_covid_transmission": true
     },
     "id": "l_jm",
-    "name": "Jamajka",
+    "name": "country_name_jm",
     "type": "country"
   },
   {
@@ -1031,7 +1031,7 @@
       "has_local_covid_transmission": true
     },
     "id": "l_jo",
-    "name": "Jordania",
+    "name": "country_name_jo",
     "type": "country"
   },
   {
@@ -1040,7 +1040,7 @@
       "has_local_covid_transmission": true
     },
     "id": "l_jp",
-    "name": "Japonia",
+    "name": "country_name_jp",
     "type": "country"
   },
   {
@@ -1049,7 +1049,7 @@
       "has_local_covid_transmission": true
     },
     "id": "l_ke",
-    "name": "Kenia",
+    "name": "country_name_ke",
     "type": "country"
   },
   {
@@ -1058,7 +1058,7 @@
       "has_local_covid_transmission": true
     },
     "id": "l_kg",
-    "name": "Kirgistan",
+    "name": "country_name_kg",
     "type": "country"
   },
   {
@@ -1067,7 +1067,7 @@
       "has_local_covid_transmission": true
     },
     "id": "l_kh",
-    "name": "Kambodża",
+    "name": "country_name_kh",
     "type": "country"
   },
   {
@@ -1076,7 +1076,7 @@
       "has_local_covid_transmission": false
     },
     "id": "l_ki",
-    "name": "Kiribati",
+    "name": "country_name_ki",
     "type": "country"
   },
   {
@@ -1085,7 +1085,7 @@
       "has_local_covid_transmission": false
     },
     "id": "l_km",
-    "name": "Komory",
+    "name": "country_name_km",
     "type": "country"
   },
   {
@@ -1094,7 +1094,7 @@
       "has_local_covid_transmission": false
     },
     "id": "l_kn",
-    "name": "Saint Kitts i Nevis",
+    "name": "country_name_kn",
     "type": "country"
   },
   {
@@ -1103,7 +1103,7 @@
       "has_local_covid_transmission": false
     },
     "id": "l_kp",
-    "name": "Korea Północna",
+    "name": "country_name_kp",
     "type": "country"
   },
   {
@@ -1112,7 +1112,7 @@
       "has_local_covid_transmission": true
     },
     "id": "l_kr",
-    "name": "Korea Południowa",
+    "name": "country_name_kr",
     "type": "country"
   },
   {
@@ -1121,7 +1121,7 @@
       "has_local_covid_transmission": true
     },
     "id": "l_kw",
-    "name": "Kuwejt",
+    "name": "country_name_kw",
     "type": "country"
   },
   {
@@ -1130,7 +1130,7 @@
       "has_local_covid_transmission": true
     },
     "id": "l_ky",
-    "name": "Kajmany",
+    "name": "country_name_ky",
     "type": "country"
   },
   {
@@ -1139,7 +1139,7 @@
       "has_local_covid_transmission": true
     },
     "id": "l_kz",
-    "name": "Kazachstan",
+    "name": "country_name_kz",
     "type": "country"
   },
   {
@@ -1148,7 +1148,7 @@
       "has_local_covid_transmission": true
     },
     "id": "l_la",
-    "name": "Laos",
+    "name": "country_name_la",
     "type": "country"
   },
   {
@@ -1157,7 +1157,7 @@
       "has_local_covid_transmission": true
     },
     "id": "l_lb",
-    "name": "Liban",
+    "name": "country_name_lb",
     "type": "country"
   },
   {
@@ -1166,7 +1166,7 @@
       "has_local_covid_transmission": true
     },
     "id": "l_lc",
-    "name": "Saint Lucia",
+    "name": "country_name_lc",
     "type": "country"
   },
   {
@@ -1175,7 +1175,7 @@
       "has_local_covid_transmission": false
     },
     "id": "l_li",
-    "name": "Liechtenstein",
+    "name": "country_name_li",
     "type": "country"
   },
   {
@@ -1184,7 +1184,7 @@
       "has_local_covid_transmission": true
     },
     "id": "l_lk",
-    "name": "Sri Lanka",
+    "name": "country_name_lk",
     "type": "country"
   },
   {
@@ -1193,7 +1193,7 @@
       "has_local_covid_transmission": true
     },
     "id": "l_lr",
-    "name": "Liberia",
+    "name": "country_name_lr",
     "type": "country"
   },
   {
@@ -1202,7 +1202,7 @@
       "has_local_covid_transmission": false
     },
     "id": "l_ls",
-    "name": "Lesotho",
+    "name": "country_name_ls",
     "type": "country"
   },
   {
@@ -1211,7 +1211,7 @@
       "has_local_covid_transmission": true
     },
     "id": "l_lt",
-    "name": "Litwa",
+    "name": "country_name_lt",
     "type": "country"
   },
   {
@@ -1220,7 +1220,7 @@
       "has_local_covid_transmission": true
     },
     "id": "l_lu",
-    "name": "Luksemburg",
+    "name": "country_name_lu",
     "type": "country"
   },
   {
@@ -1229,7 +1229,7 @@
       "has_local_covid_transmission": true
     },
     "id": "l_lv",
-    "name": "Łotwa",
+    "name": "country_name_lv",
     "type": "country"
   },
   {
@@ -1238,7 +1238,7 @@
       "has_local_covid_transmission": true
     },
     "id": "l_ly",
-    "name": "Libia",
+    "name": "country_name_ly",
     "type": "country"
   },
   {
@@ -1247,7 +1247,7 @@
       "has_local_covid_transmission": true
     },
     "id": "l_ma",
-    "name": "Maroko",
+    "name": "country_name_ma",
     "type": "country"
   },
   {
@@ -1256,7 +1256,7 @@
       "has_local_covid_transmission": true
     },
     "id": "l_mc",
-    "name": "Monako",
+    "name": "country_name_mc",
     "type": "country"
   },
   {
@@ -1265,7 +1265,7 @@
       "has_local_covid_transmission": true
     },
     "id": "l_md",
-    "name": "Mołdawia",
+    "name": "country_name_md",
     "type": "country"
   },
   {
@@ -1274,7 +1274,7 @@
       "has_local_covid_transmission": true
     },
     "id": "l_me",
-    "name": "Czarnogóra",
+    "name": "country_name_me",
     "type": "country"
   },
   {
@@ -1283,7 +1283,7 @@
       "has_local_covid_transmission": false
     },
     "id": "l_mf",
-    "name": "Saint-Martin",
+    "name": "country_name_mf",
     "type": "country"
   },
   {
@@ -1292,7 +1292,7 @@
       "has_local_covid_transmission": true
     },
     "id": "l_mg",
-    "name": "Madagaskar",
+    "name": "country_name_mg",
     "type": "country"
   },
   {
@@ -1301,7 +1301,7 @@
       "has_local_covid_transmission": false
     },
     "id": "l_mh",
-    "name": "Wyspy Marshalla",
+    "name": "country_name_mh",
     "type": "country"
   },
   {
@@ -1310,7 +1310,7 @@
       "has_local_covid_transmission": true
     },
     "id": "l_mk",
-    "name": "Macedonia Północna",
+    "name": "country_name_mk",
     "type": "country"
   },
   {
@@ -1319,7 +1319,7 @@
       "has_local_covid_transmission": true
     },
     "id": "l_ml",
-    "name": "Mali",
+    "name": "country_name_ml",
     "type": "country"
   },
   {
@@ -1328,7 +1328,7 @@
       "has_local_covid_transmission": true
     },
     "id": "l_mm",
-    "name": "Mjanma (Birma)",
+    "name": "country_name_mm",
     "type": "country"
   },
   {
@@ -1337,7 +1337,7 @@
       "has_local_covid_transmission": false
     },
     "id": "l_mn",
-    "name": "Mongolia",
+    "name": "country_name_mn",
     "type": "country"
   },
   {
@@ -1346,7 +1346,7 @@
       "has_local_covid_transmission": false
     },
     "id": "l_mo",
-    "name": "SRA Makau (Chiny)",
+    "name": "country_name_mo",
     "type": "country"
   },
   {
@@ -1355,7 +1355,7 @@
       "has_local_covid_transmission": true
     },
     "id": "l_mp",
-    "name": "Mariany Północne",
+    "name": "country_name_mp",
     "type": "country"
   },
   {
@@ -1364,7 +1364,7 @@
       "has_local_covid_transmission": true
     },
     "id": "l_mq",
-    "name": "Martynika",
+    "name": "country_name_mq",
     "type": "country"
   },
   {
@@ -1373,7 +1373,7 @@
       "has_local_covid_transmission": false
     },
     "id": "l_mr",
-    "name": "Mauretania",
+    "name": "country_name_mr",
     "type": "country"
   },
   {
@@ -1382,7 +1382,7 @@
       "has_local_covid_transmission": false
     },
     "id": "l_ms",
-    "name": "Montserrat",
+    "name": "country_name_ms",
     "type": "country"
   },
   {
@@ -1391,7 +1391,7 @@
       "has_local_covid_transmission": true
     },
     "id": "l_mt",
-    "name": "Malta",
+    "name": "country_name_mt",
     "type": "country"
   },
   {
@@ -1400,7 +1400,7 @@
       "has_local_covid_transmission": true
     },
     "id": "l_mu",
-    "name": "Mauritius",
+    "name": "country_name_mu",
     "type": "country"
   },
   {
@@ -1409,7 +1409,7 @@
       "has_local_covid_transmission": true
     },
     "id": "l_mv",
-    "name": "Malediwy",
+    "name": "country_name_mv",
     "type": "country"
   },
   {
@@ -1418,7 +1418,7 @@
       "has_local_covid_transmission": true
     },
     "id": "l_mw",
-    "name": "Malawi",
+    "name": "country_name_mw",
     "type": "country"
   },
   {
@@ -1427,7 +1427,7 @@
       "has_local_covid_transmission": true
     },
     "id": "l_mx",
-    "name": "Meksyk",
+    "name": "country_name_mx",
     "type": "country"
   },
   {
@@ -1436,7 +1436,7 @@
       "has_local_covid_transmission": true
     },
     "id": "l_my",
-    "name": "Malezja",
+    "name": "country_name_my",
     "type": "country"
   },
   {
@@ -1445,7 +1445,7 @@
       "has_local_covid_transmission": true
     },
     "id": "l_mz",
-    "name": "Mozambik",
+    "name": "country_name_mz",
     "type": "country"
   },
   {
@@ -1454,7 +1454,7 @@
       "has_local_covid_transmission": true
     },
     "id": "l_na",
-    "name": "Namibia",
+    "name": "country_name_na",
     "type": "country"
   },
   {
@@ -1463,7 +1463,7 @@
       "has_local_covid_transmission": true
     },
     "id": "l_nc",
-    "name": "Nowa Kaledonia",
+    "name": "country_name_nc",
     "type": "country"
   },
   {
@@ -1472,7 +1472,7 @@
       "has_local_covid_transmission": true
     },
     "id": "l_ne",
-    "name": "Niger",
+    "name": "country_name_ne",
     "type": "country"
   },
   {
@@ -1481,7 +1481,7 @@
       "has_local_covid_transmission": false
     },
     "id": "l_nf",
-    "name": "Norfolk",
+    "name": "country_name_nf",
     "type": "country"
   },
   {
@@ -1490,7 +1490,7 @@
       "has_local_covid_transmission": true
     },
     "id": "l_ng",
-    "name": "Nigeria",
+    "name": "country_name_ng",
     "type": "country"
   },
   {
@@ -1499,7 +1499,7 @@
       "has_local_covid_transmission": false
     },
     "id": "l_ni",
-    "name": "Nikaragua",
+    "name": "country_name_ni",
     "type": "country"
   },
   {
@@ -1508,7 +1508,7 @@
       "has_local_covid_transmission": true
     },
     "id": "l_nl",
-    "name": "Holandia",
+    "name": "country_name_nl",
     "type": "country"
   },
   {
@@ -1517,7 +1517,7 @@
       "has_local_covid_transmission": true
     },
     "id": "l_no",
-    "name": "Norwegia",
+    "name": "country_name_no",
     "type": "country"
   },
   {
@@ -1526,7 +1526,7 @@
       "has_local_covid_transmission": true
     },
     "id": "l_np",
-    "name": "Nepal",
+    "name": "country_name_np",
     "type": "country"
   },
   {
@@ -1535,7 +1535,7 @@
       "has_local_covid_transmission": false
     },
     "id": "l_nr",
-    "name": "Nauru",
+    "name": "country_name_nr",
     "type": "country"
   },
   {
@@ -1544,7 +1544,7 @@
       "has_local_covid_transmission": false
     },
     "id": "l_nu",
-    "name": "Niue",
+    "name": "country_name_nu",
     "type": "country"
   },
   {
@@ -1553,7 +1553,7 @@
       "has_local_covid_transmission": true
     },
     "id": "l_nz",
-    "name": "Nowa Zelandia",
+    "name": "country_name_nz",
     "type": "country"
   },
   {
@@ -1562,7 +1562,7 @@
       "has_local_covid_transmission": true
     },
     "id": "l_om",
-    "name": "Oman",
+    "name": "country_name_om",
     "type": "country"
   },
   {
@@ -1571,7 +1571,7 @@
       "has_local_covid_transmission": true
     },
     "id": "l_pa",
-    "name": "Panama",
+    "name": "country_name_pa",
     "type": "country"
   },
   {
@@ -1580,7 +1580,7 @@
       "has_local_covid_transmission": true
     },
     "id": "l_pe",
-    "name": "Peru",
+    "name": "country_name_pe",
     "type": "country"
   },
   {
@@ -1589,7 +1589,7 @@
       "has_local_covid_transmission": true
     },
     "id": "l_pf",
-    "name": "Polinezja Francuska",
+    "name": "country_name_pf",
     "type": "country"
   },
   {
@@ -1598,7 +1598,7 @@
       "has_local_covid_transmission": false
     },
     "id": "l_pg",
-    "name": "Papua-Nowa Gwinea",
+    "name": "country_name_pg",
     "type": "country"
   },
   {
@@ -1607,7 +1607,7 @@
       "has_local_covid_transmission": true
     },
     "id": "l_ph",
-    "name": "Filipiny",
+    "name": "country_name_ph",
     "type": "country"
   },
   {
@@ -1616,7 +1616,7 @@
       "has_local_covid_transmission": true
     },
     "id": "l_pk",
-    "name": "Pakistan",
+    "name": "country_name_pk",
     "type": "country"
   },
   {
@@ -1625,7 +1625,7 @@
       "has_local_covid_transmission": true
     },
     "id": "l_pl",
-    "name": "Polska",
+    "name": "country_name_pl",
     "type": "country"
   },
   {
@@ -1634,7 +1634,7 @@
       "has_local_covid_transmission": false
     },
     "id": "l_pm",
-    "name": "Saint-Pierre i Miquelon",
+    "name": "country_name_pm",
     "type": "country"
   },
   {
@@ -1643,7 +1643,7 @@
       "has_local_covid_transmission": false
     },
     "id": "l_pn",
-    "name": "Pitcairn",
+    "name": "country_name_pn",
     "type": "country"
   },
   {
@@ -1652,7 +1652,7 @@
       "has_local_covid_transmission": true
     },
     "id": "l_pr",
-    "name": "Portoryko",
+    "name": "country_name_pr",
     "type": "country"
   },
   {
@@ -1661,7 +1661,7 @@
       "has_local_covid_transmission": true
     },
     "id": "l_ps",
-    "name": "Terytoria Palestyńskie",
+    "name": "country_name_ps",
     "type": "country"
   },
   {
@@ -1670,7 +1670,7 @@
       "has_local_covid_transmission": true
     },
     "id": "l_pt",
-    "name": "Portugalia",
+    "name": "country_name_pt",
     "type": "country"
   },
   {
@@ -1679,7 +1679,7 @@
       "has_local_covid_transmission": false
     },
     "id": "l_pw",
-    "name": "Palau",
+    "name": "country_name_pw",
     "type": "country"
   },
   {
@@ -1688,7 +1688,7 @@
       "has_local_covid_transmission": true
     },
     "id": "l_py",
-    "name": "Paragwaj",
+    "name": "country_name_py",
     "type": "country"
   },
   {
@@ -1697,7 +1697,7 @@
       "has_local_covid_transmission": true
     },
     "id": "l_qa",
-    "name": "Katar",
+    "name": "country_name_qa",
     "type": "country"
   },
   {
@@ -1706,7 +1706,7 @@
       "has_local_covid_transmission": true
     },
     "id": "l_re",
-    "name": "Reunion",
+    "name": "country_name_re",
     "type": "country"
   },
   {
@@ -1715,7 +1715,7 @@
       "has_local_covid_transmission": true
     },
     "id": "l_ro",
-    "name": "Rumunia",
+    "name": "country_name_ro",
     "type": "country"
   },
   {
@@ -1724,7 +1724,7 @@
       "has_local_covid_transmission": true
     },
     "id": "l_rs",
-    "name": "Serbia",
+    "name": "country_name_rs",
     "type": "country"
   },
   {
@@ -1733,7 +1733,7 @@
       "has_local_covid_transmission": true
     },
     "id": "l_ru",
-    "name": "Rosja",
+    "name": "country_name_ru",
     "type": "country"
   },
   {
@@ -1742,7 +1742,7 @@
       "has_local_covid_transmission": true
     },
     "id": "l_rw",
-    "name": "Rwanda",
+    "name": "country_name_rw",
     "type": "country"
   },
   {
@@ -1751,7 +1751,7 @@
       "has_local_covid_transmission": true
     },
     "id": "l_sa",
-    "name": "Arabia Saudyjska",
+    "name": "country_name_sa",
     "type": "country"
   },
   {
@@ -1760,7 +1760,7 @@
       "has_local_covid_transmission": false
     },
     "id": "l_sb",
-    "name": "Wyspy Salomona",
+    "name": "country_name_sb",
     "type": "country"
   },
   {
@@ -1769,7 +1769,7 @@
       "has_local_covid_transmission": false
     },
     "id": "l_sc",
-    "name": "Seszele",
+    "name": "country_name_sc",
     "type": "country"
   },
   {
@@ -1778,7 +1778,7 @@
       "has_local_covid_transmission": true
     },
     "id": "l_sd",
-    "name": "Sudan",
+    "name": "country_name_sd",
     "type": "country"
   },
   {
@@ -1787,7 +1787,7 @@
       "has_local_covid_transmission": true
     },
     "id": "l_se",
-    "name": "Szwecja",
+    "name": "country_name_se",
     "type": "country"
   },
   {
@@ -1796,7 +1796,7 @@
       "has_local_covid_transmission": true
     },
     "id": "l_sg",
-    "name": "Singapur",
+    "name": "country_name_sg",
     "type": "country"
   },
   {
@@ -1805,7 +1805,7 @@
       "has_local_covid_transmission": false
     },
     "id": "l_sh",
-    "name": "Wyspa Świętej Heleny",
+    "name": "country_name_sh",
     "type": "country"
   },
   {
@@ -1814,7 +1814,7 @@
       "has_local_covid_transmission": true
     },
     "id": "l_si",
-    "name": "Słowenia",
+    "name": "country_name_si",
     "type": "country"
   },
   {
@@ -1823,7 +1823,7 @@
       "has_local_covid_transmission": false
     },
     "id": "l_sj",
-    "name": "Svalbard i Jan Mayen",
+    "name": "country_name_sj",
     "type": "country"
   },
   {
@@ -1832,7 +1832,7 @@
       "has_local_covid_transmission": true
     },
     "id": "l_sk",
-    "name": "Słowacja",
+    "name": "country_name_sk",
     "type": "country"
   },
   {
@@ -1841,7 +1841,7 @@
       "has_local_covid_transmission": false
     },
     "id": "l_sl",
-    "name": "Sierra Leone",
+    "name": "country_name_sl",
     "type": "country"
   },
   {
@@ -1850,7 +1850,7 @@
       "has_local_covid_transmission": true
     },
     "id": "l_sm",
-    "name": "San Marino",
+    "name": "country_name_sm",
     "type": "country"
   },
   {
@@ -1859,7 +1859,7 @@
       "has_local_covid_transmission": true
     },
     "id": "l_sn",
-    "name": "Senegal",
+    "name": "country_name_sn",
     "type": "country"
   },
   {
@@ -1868,7 +1868,7 @@
       "has_local_covid_transmission": true
     },
     "id": "l_so",
-    "name": "Somalia",
+    "name": "country_name_so",
     "type": "country"
   },
   {
@@ -1877,7 +1877,7 @@
       "has_local_covid_transmission": true
     },
     "id": "l_sr",
-    "name": "Surinam",
+    "name": "country_name_sr",
     "type": "country"
   },
   {
@@ -1886,7 +1886,7 @@
       "has_local_covid_transmission": false
     },
     "id": "l_ss",
-    "name": "Sudan Południowy",
+    "name": "country_name_ss",
     "type": "country"
   },
   {
@@ -1895,7 +1895,7 @@
       "has_local_covid_transmission": false
     },
     "id": "l_st",
-    "name": "Wyspy Świętego Tomasza i Książęca",
+    "name": "country_name_st",
     "type": "country"
   },
   {
@@ -1904,7 +1904,7 @@
       "has_local_covid_transmission": true
     },
     "id": "l_sv",
-    "name": "Salwador",
+    "name": "country_name_sv",
     "type": "country"
   },
   {
@@ -1913,7 +1913,7 @@
       "has_local_covid_transmission": false
     },
     "id": "l_sx",
-    "name": "Sint Maarten",
+    "name": "country_name_sx",
     "type": "country"
   },
   {
@@ -1922,7 +1922,7 @@
       "has_local_covid_transmission": true
     },
     "id": "l_sy",
-    "name": "Syria",
+    "name": "country_name_sy",
     "type": "country"
   },
   {
@@ -1931,7 +1931,7 @@
       "has_local_covid_transmission": false
     },
     "id": "l_sz",
-    "name": "Eswatini",
+    "name": "country_name_sz",
     "type": "country"
   },
   {
@@ -1940,7 +1940,7 @@
       "has_local_covid_transmission": false
     },
     "id": "l_ta",
-    "name": "Tristan da Cunha",
+    "name": "country_name_ta",
     "type": "country"
   },
   {
@@ -1949,7 +1949,7 @@
       "has_local_covid_transmission": true
     },
     "id": "l_tc",
-    "name": "Turks i Caicos",
+    "name": "country_name_tc",
     "type": "country"
   },
   {
@@ -1958,7 +1958,7 @@
       "has_local_covid_transmission": true
     },
     "id": "l_td",
-    "name": "Czad",
+    "name": "country_name_td",
     "type": "country"
   },
   {
@@ -1967,7 +1967,7 @@
       "has_local_covid_transmission": false
     },
     "id": "l_tf",
-    "name": "Francuskie Terytoria Południowe i Antarktyczne",
+    "name": "country_name_tf",
     "type": "country"
   },
   {
@@ -1976,7 +1976,7 @@
       "has_local_covid_transmission": true
     },
     "id": "l_tg",
-    "name": "Togo",
+    "name": "country_name_tg",
     "type": "country"
   },
   {
@@ -1985,7 +1985,7 @@
       "has_local_covid_transmission": true
     },
     "id": "l_th",
-    "name": "Tajlandia",
+    "name": "country_name_th",
     "type": "country"
   },
   {
@@ -1994,7 +1994,7 @@
       "has_local_covid_transmission": false
     },
     "id": "l_tj",
-    "name": "Tadżykistan",
+    "name": "country_name_tj",
     "type": "country"
   },
   {
@@ -2003,7 +2003,7 @@
       "has_local_covid_transmission": false
     },
     "id": "l_tk",
-    "name": "Tokelau",
+    "name": "country_name_tk",
     "type": "country"
   },
   {
@@ -2012,7 +2012,7 @@
       "has_local_covid_transmission": false
     },
     "id": "l_tl",
-    "name": "Timor Wschodni",
+    "name": "country_name_tl",
     "type": "country"
   },
   {
@@ -2021,7 +2021,7 @@
       "has_local_covid_transmission": false
     },
     "id": "l_tm",
-    "name": "Turkmenistan",
+    "name": "country_name_tm",
     "type": "country"
   },
   {
@@ -2030,7 +2030,7 @@
       "has_local_covid_transmission": true
     },
     "id": "l_tn",
-    "name": "Tunezja",
+    "name": "country_name_tn",
     "type": "country"
   },
   {
@@ -2039,7 +2039,7 @@
       "has_local_covid_transmission": false
     },
     "id": "l_to",
-    "name": "Tonga",
+    "name": "country_name_to",
     "type": "country"
   },
   {
@@ -2048,7 +2048,7 @@
       "has_local_covid_transmission": true
     },
     "id": "l_tr",
-    "name": "Turcja",
+    "name": "country_name_tr",
     "type": "country"
   },
   {
@@ -2057,7 +2057,7 @@
       "has_local_covid_transmission": true
     },
     "id": "l_tt",
-    "name": "Trynidad i Tobago",
+    "name": "country_name_tt",
     "type": "country"
   },
   {
@@ -2066,7 +2066,7 @@
       "has_local_covid_transmission": false
     },
     "id": "l_tv",
-    "name": "Tuvalu",
+    "name": "country_name_tv",
     "type": "country"
   },
   {
@@ -2075,7 +2075,7 @@
       "has_local_covid_transmission": false
     },
     "id": "l_tw",
-    "name": "Tajwan",
+    "name": "country_name_tw",
     "type": "country"
   },
   {
@@ -2084,7 +2084,7 @@
       "has_local_covid_transmission": true
     },
     "id": "l_tz",
-    "name": "Tanzania",
+    "name": "country_name_tz",
     "type": "country"
   },
   {
@@ -2093,7 +2093,7 @@
       "has_local_covid_transmission": true
     },
     "id": "l_ua",
-    "name": "Ukraina",
+    "name": "country_name_ua",
     "type": "country"
   },
   {
@@ -2102,7 +2102,7 @@
       "has_local_covid_transmission": true
     },
     "id": "l_ug",
-    "name": "Uganda",
+    "name": "country_name_ug",
     "type": "country"
   },
   {
@@ -2111,7 +2111,7 @@
       "has_local_covid_transmission": false
     },
     "id": "l_um",
-    "name": "Dalekie Wyspy Mniejsze Stanów Zjednoczonych",
+    "name": "country_name_um",
     "type": "country"
   },
   {
@@ -2120,7 +2120,7 @@
       "has_local_covid_transmission": true
     },
     "id": "l_us",
-    "name": "Stany Zjednoczone",
+    "name": "country_name_us",
     "type": "country"
   },
   {
@@ -2129,7 +2129,7 @@
       "has_local_covid_transmission": true
     },
     "id": "l_uy",
-    "name": "Urugwaj",
+    "name": "country_name_uy",
     "type": "country"
   },
   {
@@ -2138,7 +2138,7 @@
       "has_local_covid_transmission": true
     },
     "id": "l_uz",
-    "name": "Uzbekistan",
+    "name": "country_name_uz",
     "type": "country"
   },
   {
@@ -2147,7 +2147,7 @@
       "has_local_covid_transmission": false
     },
     "id": "l_va",
-    "name": "Watykan",
+    "name": "country_name_va",
     "type": "country"
   },
   {
@@ -2156,7 +2156,7 @@
       "has_local_covid_transmission": false
     },
     "id": "l_vc",
-    "name": "Saint Vincent i Grenadyny",
+    "name": "country_name_vc",
     "type": "country"
   },
   {
@@ -2165,7 +2165,7 @@
       "has_local_covid_transmission": true
     },
     "id": "l_ve",
-    "name": "Wenezuela",
+    "name": "country_name_ve",
     "type": "country"
   },
   {
@@ -2174,7 +2174,7 @@
       "has_local_covid_transmission": false
     },
     "id": "l_vg",
-    "name": "Brytyjskie Wyspy Dziewicze",
+    "name": "country_name_vg",
     "type": "country"
   },
   {
@@ -2183,7 +2183,7 @@
       "has_local_covid_transmission": true
     },
     "id": "l_vi",
-    "name": "Wyspy Dziewicze Stanów Zjednoczonych",
+    "name": "country_name_vi",
     "type": "country"
   },
   {
@@ -2192,7 +2192,7 @@
       "has_local_covid_transmission": true
     },
     "id": "l_vn",
-    "name": "Wietnam",
+    "name": "country_name_vn",
     "type": "country"
   },
   {
@@ -2201,7 +2201,7 @@
       "has_local_covid_transmission": false
     },
     "id": "l_vu",
-    "name": "Vanuatu",
+    "name": "country_name_vu",
     "type": "country"
   },
   {
@@ -2210,7 +2210,7 @@
       "has_local_covid_transmission": false
     },
     "id": "l_wf",
-    "name": "Wallis i Futuna",
+    "name": "country_name_wf",
     "type": "country"
   },
   {
@@ -2219,7 +2219,7 @@
       "has_local_covid_transmission": false
     },
     "id": "l_ws",
-    "name": "Samoa",
+    "name": "country_name_ws",
     "type": "country"
   },
   {
@@ -2228,7 +2228,7 @@
       "has_local_covid_transmission": true
     },
     "id": "l_xk",
-    "name": "Kosowo",
+    "name": "country_name_xk",
     "type": "country"
   },
   {
@@ -2237,7 +2237,7 @@
       "has_local_covid_transmission": false
     },
     "id": "l_ye",
-    "name": "Jemen",
+    "name": "country_name_ye",
     "type": "country"
   },
   {
@@ -2246,7 +2246,7 @@
       "has_local_covid_transmission": true
     },
     "id": "l_yt",
-    "name": "Majotta",
+    "name": "country_name_yt",
     "type": "country"
   },
   {
@@ -2255,7 +2255,7 @@
       "has_local_covid_transmission": true
     },
     "id": "l_za",
-    "name": "Republika Południowej Afryki",
+    "name": "country_name_za",
     "type": "country"
   },
   {
@@ -2264,7 +2264,7 @@
       "has_local_covid_transmission": true
     },
     "id": "l_zm",
-    "name": "Zambia",
+    "name": "country_name_zm",
     "type": "country"
   },
   {
@@ -2273,7 +2273,7 @@
       "has_local_covid_transmission": true
     },
     "id": "l_zw",
-    "name": "Zimbabwe",
+    "name": "country_name_zw",
     "type": "country"
   }
 ]

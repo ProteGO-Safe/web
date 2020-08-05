@@ -22,7 +22,7 @@ const TriageInfoBorder = ({ t }) => {
 
   const renderItem = serious
     .map(_obj => _obj.common_name)
-    .map(item => <li key={item}>{item}</li>);
+    .map(item => <li key={item}>{t(item)}</li>);
 
   const renderContent = () => {
     if (isCovid) {
@@ -49,11 +49,11 @@ const TriageInfoBorder = ({ t }) => {
       );
     }
     if (renderItem.length === 0) {
-      return <>{description}</>;
+      return <>{t(description)}</>;
     }
     return (
       <>
-        {description}
+        {t(description)}
         &nbsp;{t('triage_info_border_text8')}
       </>
     );

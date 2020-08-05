@@ -1,62 +1,62 @@
 {
   "s_1": {
-    "common_name": "Kaszel",
+    "common_name": "seriouses_text1",
     "id": "s_1",
     "is_emergency": true,
-    "name": "Kaszel"
+    "name": "seriouses_text1"
   },
   "s_2": {
-    "common_name": "Duszność",
+    "common_name": "seriouses_text2",
     "id": "s_2",
     "is_emergency": true,
-    "name": "Duszność"
+    "name": "seriouses_text2"
   },
   "s_4": {
-    "common_name": "Gorączka powyżej 40°C (104°F)",
+    "common_name": "seriouses_text3",
     "id": "s_4",
     "is_emergency": true,
-    "name": "Gorączka powyżej 40°C (104°F)"
+    "name": "seriouses_text3"
   },
   "s_12": {
-    "common_name": "Szybkie pogarszanie stanu zdrowia",
+    "common_name": "seriouses_text4",
     "id": "s_12",
     "is_emergency": true,
-    "name": "Szybkie pogarszanie stanu zdrowia"
+    "name": "seriouses_text4"
   },
   "s_13": {
-    "common_name": "Przyspieszony oddech",
+    "common_name": "seriouses_text5",
     "id": "s_13",
     "is_emergency": true,
-    "name": "Przyspieszony oddech"
+    "name": "seriouses_text5"
   },
   "s_14": {
-    "common_name": "Odkrztuszanie krwi",
+    "common_name": "seriouses_text6",
     "id": "s_14",
     "is_emergency": true,
-    "name": "Odkrztuszanie krwi"
+    "name": "seriouses_text6"
   },
   "s_22": {
-    "common_name": "Gorączka pomiędzy 37.5°C a 38°C (99.5°F a 100.4°F)",
+    "common_name": "seriouses_text7",
     "id": "s_22",
     "is_emergency": true,
-    "name": "Gorączka pomiędzy 37.5°C a 38°C (99.5°F a 100.4°F)"
+    "name": "seriouses_text7"
   },
   "s_23": {
-    "common_name": "Gorączka pomiędzy 38°C a 40°C (100.4°F a 104°F)",
+    "common_name": "seriouses_text8",
     "id": "s_23",
     "is_emergency": true,
-    "name": "Gorączka pomiędzy 38°C a 40°C (100.4°F a 104°F)"
+    "name": "seriouses_text8"
   },
   "p_5": {
-    "common_name": "Kraj z transmisją wirusa w społeczeństwie",
+    "common_name": "seriouses_text9",
     "id": "p_5",
     "is_emergency": true,
-    "name": "Kraj z transmisją wirusa w społeczeństwie"
+    "name": "seriouses_text9"
   },
   "p_25": {
-    "common_name": "Opieka nad osobą z podejrzeniem COVID-19 bez środków ochronnych",
+    "common_name": "seriouses_text10",
     "id": "p_5",
     "is_emergency": true,
-    "name": "Opieka nad osobą z podejrzeniem COVID-19 bez środków ochronnych"
+    "name": "seriouses_text10"
   }
 }

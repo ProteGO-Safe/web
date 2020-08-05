@@ -17,7 +17,7 @@ const Single = ({ t, text, choices }) => {
 
   return (
     <>
-      <Title>{text}</Title>
+      <Title>{t(text)}</Title>
       <FieldSet>
         {choices.map(choice => (
           <Radio
@@ -25,7 +25,7 @@ const Single = ({ t, text, choices }) => {
             checked={values[FIELD_CHOICE_ID] === choice.id}
             name={FIELD_CHOICE_ID}
             onChange={() => handleChange(FIELD_CHOICE_ID, choice.id)}
-            label={choice.label}
+            label={t(choice.label)}
           />
         ))}
       </FieldSet>

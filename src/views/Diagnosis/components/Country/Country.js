@@ -61,7 +61,7 @@ const Country = ({
       extras: { has_local_covid_transmission }
     } = location;
     return {
-      name,
+      name: t(name),
       id,
       covid: has_local_covid_transmission
     };

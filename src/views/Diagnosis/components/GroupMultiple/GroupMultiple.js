@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { useFormikContext } from 'formik';
 
-import { Button, Checkbox, FieldSet } from '../../../../components';
 import { withTranslation } from 'react-i18next';
+import { Button, Checkbox, FieldSet } from '../../../../components';
 import { VALUE_ABSENT, VALUE_PRESENT } from '../../../../constants';
 import { itemsPropType } from '../../prop-types';
 import { Title } from '../../Diagnosis.styled';
@@ -35,13 +35,13 @@ const GroupMultiple = ({ t, text, items }) => {
 
   return (
     <>
-      <Title>{text}</Title>
+      <Title>{t(text)}</Title>
       <FieldSet>
         {items.map(item => (
           <Checkbox
             checked={values[item.id] === VALUE_PRESENT}
             key={item.id}
-            label={item.name}
+            label={t(item.name)}
             name={item.id}
             onChange={() => handleChange(item.id)}
             type="checkbox"
@@ -58,7 +58,11 @@ const GroupMultiple = ({ t, text, items }) => {
           size="big"
         />
       </FieldSet>
-      <Button disabled={!someSelected} onClick={submitForm} label={t('button_next')} />
+      <Button
+        disabled={!someSelected}
+        onClick={submitForm}
+        label={t('button_next')}
+      />
     </>
   );
 };
