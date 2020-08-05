@@ -1,7 +1,6 @@
 import React from 'react';
-import { Button, Content, Icon, ArrowRight } from './CallHelpline.styled';
 import { withTranslation } from 'react-i18next';
-import { Button, Content, Icon } from './CallHelpline.styled';
+import { Button, Content, Icon, ArrowRight } from './CallHelpline.styled';
 
 import IconContact from '../../assets/img/icons/icon-contact.svg';
 import { ReactComponent as ArrowIcon } from '../../assets/img/icons/arrow-current-color.svg';
