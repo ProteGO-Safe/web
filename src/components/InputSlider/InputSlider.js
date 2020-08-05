@@ -7,14 +7,12 @@ import {
 } from './InputSlider.styled';
 
 const InputSlider = ({ label, marks, max, min, onChange, step, value }) => {
-
-
   return (
     <InputSliderContainer>
       <Label>{label}</Label>
       <InputSliderWrapper>
         <ProteGoSlider
-          defaultValue={0}
+          defaultValue={value || 0}
           step={step}
           marks={marks}
           max={max}
