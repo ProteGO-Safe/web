@@ -13,15 +13,3 @@ export function addDaily(data) {
     dispatch(dailyAddRequested({ data }));
   };
 }
-
-export const dailyUpdateRequested = ({ data, id }) => ({
-  data,
-  id,
-  type: types.DAILY_UPDATE
-});
-
-export function updateDaily(data, id) {
-  return async dispatch => {
-    dispatch(dailyUpdateRequested({ data, id }));
-  };
-}

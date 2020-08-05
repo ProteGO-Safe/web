@@ -11,7 +11,6 @@ import {
 } from '../../../../constants';
 import { marks } from './constants';
 import { FieldSet, Input, Textarea, InputSlider } from '../../../../components';
-import { getValueFromMark } from './form.helpers';
 
 const Form = ({ isViewMode }) => {
   const { handleChange, setFieldValue, values, errors } = useFormikContext();
@@ -43,7 +42,6 @@ const Form = ({ isViewMode }) => {
           onChange={(e, value) =>
             setFieldValue(FIELD_RUNNY_NOSE, `level ${value}`)
           }
-          value={getValueFromMark(values[FIELD_RUNNY_NOSE])}
         />
         <InputSlider
           label="Kaszel"
@@ -51,7 +49,6 @@ const Form = ({ isViewMode }) => {
           min={1}
           max={4}
           onChange={(e, value) => setFieldValue(FIELD_COUGH, `level ${value}`)}
-          value={getValueFromMark(values[FIELD_COUGH])}
         />
         <InputSlider
           label="Dreszcze"
@@ -59,7 +56,6 @@ const Form = ({ isViewMode }) => {
           min={1}
           max={4}
           onChange={(e, value) => setFieldValue(FIELD_CHILLS, `level ${value}`)}
-          value={getValueFromMark(values[FIELD_CHILLS])}
         />
         <InputSlider
           label="Ból mięśni"
@@ -69,7 +65,6 @@ const Form = ({ isViewMode }) => {
           onChange={(e, value) =>
             setFieldValue(FIELD_MUSCLE_PAIN, `level ${value}`)
           }
-          value={getValueFromMark(values[FIELD_MUSCLE_PAIN])}
         />
       </FieldSet>
       <h4 className="medium title-2">Miejsca i kontakty</h4>
