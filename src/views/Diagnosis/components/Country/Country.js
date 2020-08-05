@@ -1,4 +1,5 @@
 import React from 'react';
+import { withTranslation } from 'react-i18next';
 import { Multiselect } from 'multiselect-react-dropdown';
 import { Button, FieldSet } from '../../../../components';
 import { Title } from '../../Diagnosis.styled';
@@ -7,7 +8,12 @@ import { Color } from '../../../../theme/colors';
 import './Country.scss';
 import locations from '../../../../services/diagnosisLogic/locations.json';
 
-const Country = ({ handleSubmit, selectedCountries, setSelectedCountries }) => {
+const Country = ({
+  t,
+  handleSubmit,
+  selectedCountries,
+  setSelectedCountries
+}) => {
   const rootStyle = {
     multiselectContainer: {
       marginBottom: 32
@@ -80,7 +86,7 @@ const Country = ({ handleSubmit, selectedCountries, setSelectedCountries }) => {
 
   return (
     <>
-      <Title>Zaznacz kraje, które odwiedziłeś w ciągu ostatnich 14 dni.</Title>
+      <Title>{t('country_text1')}</Title>
       <FieldSet>
         <Multiselect
           options={options}
@@ -90,17 +96,17 @@ const Country = ({ handleSubmit, selectedCountries, setSelectedCountries }) => {
           style={rootStyle}
           closeIcon="cancel"
           avoidHighlightFirstOption
-          emptyRecordMsg="brak wyników"
-          placeholder="Zacznij wpisywać..."
+          emptyRecordMsg={t('country_text2')}
+          placeholder={t('country_text3')}
         />
       </FieldSet>
       <Button
         disabled={selectedCountries.length === 0}
         onClick={handleSubmit}
-        label="Dalej"
+        label={t('button_next')}
       />
     </>
   );
 };
 
-export default Country;
+export default withTranslation()(Country);

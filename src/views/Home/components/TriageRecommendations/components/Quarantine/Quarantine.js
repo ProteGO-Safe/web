@@ -1,195 +1,115 @@
 import React from 'react';
+import { withTranslation } from 'react-i18next';
 import { Collapse, PhoneNumber, Url } from '../../../../../../components';
 
-const Quarantine = () => (
+const Quarantine = ({ t }) => (
   <>
-    <Collapse title="Pozostań w domu przez 14 dni">
-      <p>
-        Kwarantannę musisz odbywać w domu, pod adresem, który wcześniej
-        wskażesz. Nie możesz zmienić miejsca kwarantanny. Jeśli nie masz
-        możliwości odbywania kwarantanny w domu, możesz ją odbyć we wskazanym
-        przez odpowiednie służby ośrodku.
-      </p>
+    <Collapse title={t('quarantine_text45')}>
+      <p>{t('quarantine_text1')}</p>
     </Collapse>
-    <Collapse title="Stosuj się do zasad kwarantanny">
+    <Collapse title={t('quarantine_text46')}>
       <ul>
-        <li>
-          W żadnym wypadku nie opuszczaj domu. Nie wolno ci wychodzić do sklepu,
-          na spacer z psem, ani do lekarza.
-        </li>
-        <li>
-          Jeśli masz pod swoją opieką zwierzęta, w miarę możliwości na czas
-          trwania kwarantanny przekaż je pod opiekę rodzinie lub znajomym. Jeśli
-          nie masz takiej możliwości, zwróć się telefonicznie o pomoc do gminy.
-        </li>
-        <li>
-          Nie spotykaj się z innymi osobami i nie zapraszaj ludzi do domu.
-        </li>
-        <li>Jeśli mieszkasz z rodziną, ją również obowiązuje kwarantanna.</li>
-        <li>Monitoruj temperaturę ciała minimum 2 razy dziennie.</li>
-        <li>
-          Udzielaj informacji o swoim stanie zdrowia dzwoniącym do ciebie
-          pracownikom powiatowej stacji sanitarno-epidemiologicznej.
-        </li>
-        <li>
-          Współpracuj z policjantami, którzy będą sprawdzać, czy przestrzegasz
-          kwarantanny.
-        </li>
+        <li>{t('quarantine_text2')}</li>
+        <li>{t('quarantine_text3')}</li>
+        <li>{t('quarantine_text4')}</li>
+        <li>{t('quarantine_text5')}</li>
+        <li>{t('quarantine_text6')}</li>
+        <li>{t('quarantine_text7')}</li>
+        <li>{t('quarantine_text8')}</li>
       </ul>
     </Collapse>
-    <Collapse title="Przestrzegaj zasad higieny">
+    <Collapse title={t('quarantine_text47')}>
       <ul>
         <li>
-          <div className="bold">Często myj ręce</div>
+          <div className="bold">{t('quarantine_text9')}</div>
           <div className="normal">
-            Regularnie myj ręce mydłem i wodą, lub dezynfekuj je środkiem na
-            bazie alkoholu (min. 60%). Mycie rąk powinno trwać 30 sekund.
-            Zapoznaj się z{' '}
+            {t('quarantine_text10')}{' '}
             <Url value="https://gis.gov.pl/zdrowie/zasady-prawidlowego-mycia-rak/">
-              instrukcją mycia rąk
+              {t('quarantine_text11')}
             </Url>{' '}
-            na stronie Głównego Inspektoratu Sanitarnego.
+            {t('quarantine_text48')}
           </div>
         </li>
         <li>
-          <div className="bold">Zasłoń usta i nos gdy kaszlesz lub kichasz</div>
-          <div className="normal">
-            Gdy kaszlesz lub kichasz, zakrywaj usta i nos chusteczką jednorazową
-            lub zgięciem łokcia. Chusteczkę jak najszybciej wyrzuć do kosza i
-            dokładnie umyj ręce.
-          </div>
+          <div className="bold">{t('quarantine_text12')}</div>
+          <div className="normal">{t('quarantine_text13')}</div>
         </li>
         <li>
-          <div className="bold">Zachowaj bezpieczną odległość od innych</div>
-          <div className="normal">
-            Unikaj bliskiego (mniej niż 2 metry) kontaktu z innymi osobami.
-          </div>
+          <div className="bold">{t('quarantine_text14')}</div>
+          <div className="normal">{t('quarantine_text15')}</div>
         </li>
         <li>
-          <div className="bold">
-            Unikaj dotykania twarzy, szczególnie oczu, nosa i ust
-          </div>
-          <div className="normal">
-            Wirus przedostaje się do organizmu przez usta, nos i oczy. Możesz go
-            przenieść z zanieczyszczonej powierzchni. Wirusy mogą utrzymywać się
-            do kilku godzin lub dni na przedmiotach, na których znajdują się
-            wydzieliny, np. ślina. Zgodnie z obecnym stanem wiedzy, koronawirus
-            może przetrwać do 3 godzin w formie aerozolu, do 24 godzin na
-            powierzchni kartonowej i do 72 godzin na stali nierdzewnej lub
-            plastiku.
-          </div>
+          <div className="bold">{t('quarantine_text16')}</div>
+          <div className="normal">{t('quarantine_text17')}</div>
         </li>
         <li>
-          <div className="bold">
-            Używaj oddzielnych naczyń i osobnej łazienki
-          </div>
-          <div className="normal">
-            Jeśli nie masz możliwości korzystania z osobnej łazienki lub
-            toalety, zdezynfekuj ją dostępnym środkiem czystości.
-          </div>
+          <div className="bold">{t('quarantine_text18')}</div>
+          <div className="normal">{t('quarantine_text19')}</div>
         </li>
         <li>
-          <div className="bold">Wietrz mieszkanie kilka razy dziennie</div>
+          <div className="bold">{t('quarantine_text20')}</div>
         </li>
         <li>
-          <div className="bold">Dezynfekuj powierzchnie</div>
-          <div className="normal">
-            Często dezynfekuj powierzchnie takie jak: blaty, klamki czy ekrany
-            telefonów. Myj po sobie urządzenia, z których korzystasz.
-          </div>
+          <div className="bold">{t('quarantine_text21')}</div>
+          <div className="normal">{t('quarantine_text22')}</div>
         </li>
       </ul>
     </Collapse>
-    <Collapse title="Obserwuj swój stan zdrowia. Jeżeli jest niepokojący lub się pogarsza – reaguj.">
-      <p>
-        W przypadku nagłego pogorszenia stanu zdrowia i wystąpienia takich
-        objawów jak:
-      </p>
+    <Collapse title={t('quarantine_text49')}>
+      <p>{t('quarantine_text23')}</p>
       <ul>
-        <li>gorączka powyżej 38°C,</li>
-        <li>kaszel,</li>
-        <li>duszność i problemy z oddychaniem,</li>
+        <li>{t('quarantine_text24')}</li>
+        <li>{t('quarantine_text25')}</li>
+        <li>{t('quarantine_text26')}</li>
       </ul>
-      <p>
-        bezzwłocznie, telefonicznie powiadom powiatową stację
-        sanitarno-epidemiologiczną i zgłoś się bezpośrednio do oddziału
-        zakaźnego lub oddziału obserwacyjno-zakaźnego.
-      </p>
+      <p>{t('quarantine_text27')}</p>
       <p>
         <Url value="https://pacjent.gov.pl/podejrzewasz-ze-masz-koronawirusa#znajdz-stacje-sanitarno-epidemiologiczna">
-          Znajdź numer najbliższej stacji
+          {t('quarantine_text28')}
         </Url>{' '}
         <Url value="https://pacjent.gov.pl/podejrzewasz-ze-masz-koronawirusa#szpitale-z-oddzialami-zakaznymi">
-          Sprawdź, gdzie jest szpital z oddziałem zakaźnym
+          {t('quarantine_text29')}
         </Url>
       </p>
+      <p>{t('quarantine_text30')}</p>
       <p>
-        W trakcie przemieszczania się do szpitala zakaźnego koniecznie załóż
-        maseczkę i zawsze zasłaniaj usta i nos gdy kaszlesz lub kichasz. Udając
-        się do szpitala, nie korzystaj z transportu zbiorowego. Jeśli nie
-        posiadasz własnego transportu, stacja sanitarno-epidemiologiczna ma
-        możliwość wysłania po Ciebie karetki.
-      </p>
-      <p>
-        W stanie zagrażającym życiu lub zdrowiu (np. duszność), wezwij
-        pogotowie, dzwoniąc na numer alarmowy <PhoneNumber>999</PhoneNumber> lub{' '}
-        <PhoneNumber>112</PhoneNumber>. Koniecznie uprzedź, że może chodzić o
-        pacjenta z koronawirusem.{' '}
+        {t('quarantine_text31')}
+        <PhoneNumber>{t('quarantine_text32')}</PhoneNumber>
+        {t('quarantine_text33')}{' '}
+        <PhoneNumber>{t('quarantine_text34')}</PhoneNumber>
+        {t('quarantine_text35')}{' '}
       </p>
     </Collapse>
-    <Collapse title="Nie bój się prosić o pomoc">
-      <p>
-        Podczas odbywania kwarantanny nie jesteś pozostawiony|pozostawiona
-        sam|sama sobie. Wiele miejsc udziela niezbędnych informacji i oferuje
-        dodatkową pomoc, np. pomoc materialną i pomoc w zakupach:
-      </p>
+    <Collapse title={t('quarantine_text50')}>
+      <p>{t('quarantine_text36')}</p>
       <ul>
         <li>
           <p>
-            <strong>Ośrodek pomocy społecznej</strong>
+            <strong>{t('quarantine_text37')}</strong>
           </p>
-          <p>
-            Zadzwoń do ośrodka pomocy społecznej w miejscowości, w której
-            mieszkasz. Pracownik socjalny ośrodka pomocy społecznej skontaktuje
-            się z tobą telefonicznie.
-          </p>
+          <p>{t('quarantine_text38')}</p>
         </li>
         <li>
           <p>
-            <strong>Policja</strong>
+            <strong>{t('quarantine_text39')}</strong>
           </p>
-          <p>
-            Funkcjonariusze policji, którzy sprawdzają, czy przebywasz w domu,
-            szczególną uwagę będą zwracać na osoby samotne, starsze, czy
-            niepełnosprawne. Informacje o takich osobach przekażą do ośrodka
-            pomocy społecznej.
-          </p>
+          <p>{t('quarantine_text40')}</p>
         </li>
         <li>
           <p>
-            <strong>Gmina (ciepłe posiłki i produkty żywnościowe)</strong>
+            <strong>{t('quarantine_text41')}</strong>
           </p>
-          <p>
-            Jeśli nie jesteś w stanie sam|sama zapewnić sobie gorącego posiłku
-            lub żywności i nie możesz liczyć na pomoc rodziny, pomocy udzieli ci
-            gmina. Posiłki i produkty żywnościowe będą dostarczane przez osoby
-            wyznaczone we współpracy z wolontariuszami organizacji
-            pozarządowych.
-          </p>
+          <p>{t('quarantine_text42')}</p>
         </li>
         <li>
           <p>
-            <strong>Psycholog</strong>
+            <strong>{t('quarantine_text43')}</strong>
           </p>
-          <p>
-            Jeśli potrzebujesz pomocy psychologa, zadzwoń do ośrodka pomocy
-            społecznej w swojej gminie bądź powiatowego centrum pomocy rodzinie
-            w swoim powiecie.
-          </p>
+          <p>{t('quarantine_text44')}</p>
         </li>
       </ul>
     </Collapse>
   </>
 );
 
-export default Quarantine;
+export default withTranslation()(Quarantine);

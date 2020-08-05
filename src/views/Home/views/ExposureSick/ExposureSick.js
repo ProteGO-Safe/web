@@ -1,4 +1,5 @@
 import React from 'react';
+import { withTranslation } from 'react-i18next';
 import {
   Smile,
   TriageRiskInformation,
@@ -6,25 +7,29 @@ import {
 } from '../../components/index';
 import { PhoneNumber, Url } from '../../../../components';
 
-const ExposureSick = () => {
+const ExposureSick = ({ t }) => {
   return (
     <>
       <Smile />
       <TriageRiskInformation />
       <TriageInfoBorder />
       <div className="more-information">
-        <h4>Więcej informacji</h4>
+        <h4>{t('exposure_sick_text1')}</h4>
         <p>
-          Jeśli masz dodatkowe pytania lub wątpliwości, wejdź na{' '}
-          <Url value="https://www.gov.pl/koronawirus">gov.pl/koronawirus</Url>{' '}
-          lub <Url value="https://www.pacjent.gov.pl">pacjent.gov.pl</Url>,
-          gdzie na czacie możesz porozmawiać z konsultantem. Do Twojej
-          dyspozycji jest także infolinia NFZ{' '}
-          <PhoneNumber>800-190-590</PhoneNumber>.
+          {t('exposure_sick_text2')}{' '}
+          <Url value="https://www.gov.pl/koronawirus">
+            {t('exposure_sick_text3')}
+          </Url>{' '}
+          lub{' '}
+          <Url value="https://www.pacjent.gov.pl">
+            {t('exposure_sick_text4')}
+          </Url>
+          {t('exposure_sick_text5')}{' '}
+          <PhoneNumber>{t('exposure_sick_text6')}</PhoneNumber>.
         </p>
       </div>
     </>
   );
 };
 
-export default ExposureSick;
+export default withTranslation()(ExposureSick);

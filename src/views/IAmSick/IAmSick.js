@@ -1,4 +1,5 @@
 import React from 'react';
+import { withTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 
 import { BottomNavigation, Header, PhoneNumber } from '../../components';
@@ -6,42 +7,47 @@ import { Container, Content, View } from '../../theme/grid';
 import { Title, LinkStyle } from './IAmSick.styled';
 import { ListNumber, ListNumberItem } from '../../theme/typography';
 
-const Complete = () => {
+const IAmSick = ({ t }) => {
   return (
     <View>
       <Header />
       <Content>
         <Container className="full-height">
-          <Title>
-            Samoobserwacja - pozostań w domu i monitoruj stan zdrowia
-          </Title>
+          <Title>{t('i_am_sick_text1')}</Title>
           <ListNumber>
             <ListNumberItem>
-              <strong>Zostań w domu</strong> i monitoruj stan swojego zdrowia.
-              Zadzwoń na infolinię Narodowego Funduszu zdrowia{' '}
-              <PhoneNumber value="800190590">800 190 590</PhoneNumber> lub do
-              lokalnej placówki służby zdrowia. Ważne! Nie idź tam.
+              <strong>{t('i_am_sick_text2')}</strong>
+              {t('i_am_sick_text3')}{' '}
+              <PhoneNumber value="800190590">
+                {t('i_am_sick_text4')}
+              </PhoneNumber>
+              {t('i_am_sick_text5')}
             </ListNumberItem>
             <ListNumberItem>
-              Do minimum <strong>ogranicz kontakt</strong> z innymi ludźmi.
+              {t('i_am_sick_text6')}
+              <strong>{t('i_am_sick_text7')}</strong>
+              {t('i_am_sick_text8')}
             </ListNumberItem>
             <ListNumberItem>
-              <strong>Minimum raz dziennie</strong> uzupełniaj zakładkę{' '}
+              <strong>{t('i_am_sick_text9')}</strong>
+              {t('i_am_sick_text10')}{' '}
               <Link to="/daily">
-                <LinkStyle>MÓJ DZIENNIK ZDROWIA</LinkStyle>
+                <LinkStyle>{t('i_am_sick_text11')}</LinkStyle>
               </Link>
-              : zapisuj w aplikacji objawy i temperaturę ciała.
+              {t('i_am_sick_text12')}
             </ListNumberItem>
             <ListNumberItem>
-              Ściśle przestrzegaj <strong>zasad higieny</strong>, podczas kaszlu
-              i kichania - zasłaniaj usta i nos. Często i dokładnie myj ręce.
+              {t('i_am_sick_text13')}
+              <strong>{t('i_am_sick_text14')}</strong>
+              {t('i_am_sick_text15')}
             </ListNumberItem>
             <ListNumberItem>
-              Jeżeli pojawią się nowe objawy infekcji lub nasilą się
-              dotychczasowe, ponów kontakt z infolinią NFZ{' '}
-              <PhoneNumber value="800190590">800 190 590</PhoneNumber> lub{' '}
-              <strong>zadzwoń (nie idź!)</strong> do lokalnej placówki służby
-              zdrowia.
+              {t('i_am_sick_text16')}{' '}
+              <PhoneNumber value="800190590">
+                {t('i_am_sick_text17')}
+              </PhoneNumber>
+              {t('i_am_sick_text18')} <strong>{t('i_am_sick_text19')}</strong>
+              {t('i_am_sick_text20')}
             </ListNumberItem>
           </ListNumber>
         </Container>
@@ -51,4 +57,4 @@ const Complete = () => {
   );
 };
 
-export default Complete;
+export default withTranslation()(IAmSick);

@@ -1,4 +1,5 @@
 import React from 'react';
+import { withTranslation } from 'react-i18next';
 import './Information.scss';
 import {
   OnboardingContent,
@@ -9,14 +10,14 @@ import { View, Container, Content } from '../../../../../../theme/grid';
 import Header from '../../../../../../components/Header/Header';
 import { Icon, More } from './Information.styled';
 
-const Information = ({ onNext, onMore, onSkip }) => {
+const Information = ({ t, onNext, onMore, onSkip }) => {
   const buttons = [
     {
-      label: 'Dalej',
+      label: t('button_next'),
       onClick: onNext
     },
     {
-      label: 'Nie powiadamiaj mnie o zagrożeniach',
+      label: t('exposure_onboarding_information_text1'),
       type: 'blankSmall',
       onClick: onSkip
     }
@@ -38,20 +39,15 @@ const Information = ({ onNext, onMore, onSkip }) => {
         <Container className="full-height">
           <OnboardingContent
             icon={<Icon />}
-            title="Wszystko w Twoich rękach. Ta wersja aplikacji korzysta z narzędzi
-              systemów iOS/Android do powiadamiania o możliwym kontakcie z
-              koronawirusem."
+            title={t('exposure_onboarding_information_text2')}
             buttons={renderButton}
           >
             <>
-              <p>
-                Pozwól, by aplikacja anonimowo rejestrowała spotkania z innymi
-                urządzeniami. Dzięki temu, gdy użytkownik, któregoś z nich
-                zachoruje, otrzymasz odpowiednie powiadomienie. Zadbaj o swoje i
-                swoich bliskich zdrowie.
-              </p>
+              <p>{t('exposure_onboarding_information_text3')}</p>
               <br />
-              <More onClick={onMore}>Więcej informacji</More>
+              <More onClick={onMore}>
+                {t('exposure_onboarding_information_text4')}
+              </More>
             </>
           </OnboardingContent>
           <GovFooter type="black" />
@@ -61,4 +57,4 @@ const Information = ({ onNext, onMore, onSkip }) => {
   );
 };
 
-export default Information;
+export default withTranslation()(Information);

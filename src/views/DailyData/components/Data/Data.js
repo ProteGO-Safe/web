@@ -1,6 +1,5 @@
 import React from 'react';
-import { useLocation } from 'react-router-dom';
-import moment from 'moment';
+import { withTranslation } from 'react-i18next';
 import { Grid } from '@material-ui/core';
 import { useFormikContext } from 'formik';
 import { ImprintWrapper } from '../../../../components/Imprint/Imprint.styled';
@@ -17,58 +16,52 @@ import {
 } from '../../../../constants';
 import { levels } from '../Form/constants';
 
-const Data = () => {
+const Data = ({ t }) => {
   const { values } = useFormikContext();
-  const location = useLocation();
-  const date = moment
-    .unix(location.pathname.split('/')[2])
-    .format('DD.MM.YYYYr.');
 
   return (
     <>
-      <SmallText style={{ marginBottom: '19px' }}>
-        Wpis z dnia: {date}
-      </SmallText>
+      <SmallText style={{ marginBottom: '19px' }}>{t('data_text1')}</SmallText>
       <ImprintWrapper className="metrics-paragraph">
         <Grid container>
           <Grid item xs={6}>
             <Paragraph color={Color.lightBlack} fontWeight={FontWeight.Bold}>
-              Temperatura
+              {t('data_text2')}
             </Paragraph>
             <SmallText>{values[FIELD_TEMPERATURE]}</SmallText>
           </Grid>
 
           <Grid item xs={6}>
             <Paragraph color={Color.lightBlack} fontWeight={FontWeight.Bold}>
-              Katar
+              {t('data_text3')}
             </Paragraph>
-            <SmallText>{levels[values[FIELD_RUNNY_NOSE]]}</SmallText>
+            <SmallText>{t(levels[values[FIELD_RUNNY_NOSE]])}</SmallText>
           </Grid>
 
           <Grid item xs={6}>
             <Paragraph color={Color.lightBlack} fontWeight={FontWeight.Bold}>
-              Kaszel
+              {t('data_text4')}
             </Paragraph>
-            <SmallText>{levels[values[FIELD_COUGH]]}</SmallText>
+            <SmallText>{t(levels[values[FIELD_COUGH]])}</SmallText>
           </Grid>
 
           <Grid item xs={6}>
             <Paragraph color={Color.lightBlack} fontWeight={FontWeight.Bold}>
-              Dreszcze
+              {t('data_text5')}
             </Paragraph>
-            <SmallText>{levels[values[FIELD_CHILLS]]}</SmallText>
+            <SmallText>{t(levels[values[FIELD_CHILLS]])}</SmallText>
           </Grid>
 
           <Grid item xs={6}>
             <Paragraph color={Color.lightBlack} fontWeight={FontWeight.Bold}>
-              Ból mięśni
+              {t('data_text6')}
             </Paragraph>
-            <SmallText>{levels[values[FIELD_MUSCLE_PAIN]]}</SmallText>
+            <SmallText>{t(levels[values[FIELD_MUSCLE_PAIN]])}</SmallText>
           </Grid>
 
           <Grid item xs={6}>
             <Paragraph color={Color.lightBlack} fontWeight={FontWeight.Bold}>
-              Miejsce i kontakty
+              {t('data_text7')}
             </Paragraph>
             <SmallText>{values[FIELD_CONTACTS]}</SmallText>
           </Grid>
@@ -78,4 +71,4 @@ const Data = () => {
   );
 };
 
-export default Data;
+export default withTranslation()(Data);

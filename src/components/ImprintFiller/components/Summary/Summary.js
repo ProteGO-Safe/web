@@ -1,4 +1,5 @@
 import React from 'react';
+import { withTranslation } from 'react-i18next';
 import { useFormikContext } from 'formik';
 import { Button, Header, GovFooter, Stepper } from '../../../index';
 import Imprint from '../../../Imprint/Imprint';
@@ -6,8 +7,7 @@ import {
   chronicSickValues,
   FIELD_BLOOD_GROUP,
   FIELD_SMOKE,
-  FIELD_SMOKE_NUMBER,
-  VALUE_SMOKE_YES
+  FIELD_SMOKE_NUMBER
 } from '../../../../constants';
 import { NUMBER_OF_STEPS } from '../../ImprintFiller.constants';
 
@@ -17,7 +17,7 @@ import { SmallText } from '../../../../theme/typography';
 import { Actions, Title } from '../../ImprintFiller.styled';
 import { FontWeight } from '../../../../theme/fonts';
 
-const Summary = () => {
+const Summary = ({ t }) => {
   const { handleSubmit, resetForm, values } = useFormikContext();
   const { step } = values;
 
@@ -32,24 +32,24 @@ const Summary = () => {
       <Header hideBackButton />
       <Container>
         <Stepper currentStep={step} numberOfSteps={NUMBER_OF_STEPS} />
-        <Title>Sprawdź, czy dane są prawidłowe</Title>
+        <Title>{t('imprint_filler_summary_text1')}</Title>
         <Imprint
           user={{
             bloodGroup: values[FIELD_BLOOD_GROUP],
             chronicSicks,
             smokeNumber: values[FIELD_SMOKE_NUMBER],
-            isSmoking: values[FIELD_SMOKE] === VALUE_SMOKE_YES
+            isSmoking: values[FIELD_SMOKE] === t('yes')
           }}
         />
         <Actions>
           <Button onClick={handleSubmit}>
             <SmallText color={Color.white} fontWeight={FontWeight.Bold}>
-              Zapisz metrykę
+              {t('imprint_filler_summary_text2')}
             </SmallText>
           </Button>
           <Button onClick={resetForm} type="outline">
             <SmallText color={Color.primary} fontWeight={FontWeight.Bold}>
-              Zmień dane
+              {t('imprint_filler_summary_text3')}
             </SmallText>
           </Button>
         </Actions>
@@ -59,4 +59,4 @@ const Summary = () => {
   );
 };
 
-export default Summary;
+export default withTranslation()(Summary);

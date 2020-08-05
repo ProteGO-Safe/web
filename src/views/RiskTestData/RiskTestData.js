@@ -1,4 +1,5 @@
 import React from 'react';
+import { withTranslation } from 'react-i18next';
 
 import Header from '../../components/Header/Header';
 import { BottomNavigation } from '../../components/BottomNavigation';
@@ -8,6 +9,7 @@ import { Content, Container, View } from '../../theme/grid';
 import { FontWeight } from '../../theme/fonts';
 
 const RiskTestData = ({
+  t,
   day,
   onBack,
   questions,
@@ -19,9 +21,9 @@ const RiskTestData = ({
     <Header onBackClick={onBack} />
     <Content>
       <Container>
-        <Title>Test oceny ryzyka</Title>
+        <Title>{t('risk_test_data_text1')}</Title>
         <Paragraph>
-          {isToday && 'DZIŚ'} {day} r.
+          {isToday && t('risk_test_data_text3')} {day} r.
         </Paragraph>
         <br />
         <div className="data">
@@ -38,7 +40,9 @@ const RiskTestData = ({
               </List>
             </div>
           ))}
-          <Paragraph fontWeight={FontWeight.Bold}>Przyznana grupa</Paragraph>
+          <Paragraph fontWeight={FontWeight.Bold}>
+            {t('risk_test_data_text2')}
+          </Paragraph>
           <Paragraph>{triageLevelInformation}</Paragraph>
           <br />
         </div>
@@ -48,4 +52,4 @@ const RiskTestData = ({
   </View>
 );
 
-export default RiskTestData;
+export default withTranslation()(RiskTestData);

@@ -1,4 +1,5 @@
 import React from 'react';
+import { withTranslation } from 'react-i18next';
 import PropTypes from 'prop-types';
 import { useHistory } from 'react-router-dom';
 
@@ -19,7 +20,7 @@ import {
   NotebookIcon
 } from './Daily.styled';
 
-const Daily = ({ goToHistory, onFill, today, previousDays }) => {
+const Daily = ({ t, goToHistory, onFill, today, previousDays }) => {
   const history = useHistory();
   const renderDairyDays = previousDays.map(_obj => (
     <DiaryListItem
@@ -27,7 +28,7 @@ const Daily = ({ goToHistory, onFill, today, previousDays }) => {
       onClick={() => goToHistory(_obj.timestamp)}
     >
       <span>
-        Wpis z dnia:
+        {t('daily_text6')}
         <br />
         {_obj.dayWeek}&nbsp;({_obj.day}&nbsp;r.)
       </span>
@@ -42,15 +43,17 @@ const Daily = ({ goToHistory, onFill, today, previousDays }) => {
       <Content>
         <Container className="full-height">
           <Title>
-            Uzupełnij dzisiejszy wpis do <br />
-            swojego dziennika zdrowia
+            {t('daily_text1')}
+            <br />
+            {t('daily_text2')}
           </Title>
           <Button onClick={onFill} type="border" icon={<NotebookIcon />}>
-            Dziś, {today} <br />
-            Kliknij i uzupełnij dane.
+            {t('daily_text3')}
+            {today} <br />
+            {t('daily_text4')}
           </Button>
           <DiaryHistory>
-            <DiaryLabel>Dotychczasowe wpisy:</DiaryLabel>
+            <DiaryLabel>{t('daily_text5')}</DiaryLabel>
             <Diarylist>{renderDairyDays}</Diarylist>
           </DiaryHistory>
         </Container>
@@ -67,4 +70,4 @@ Daily.propTypes = {
   previousDays: daysDetailsPropType
 };
 
-export default Daily;
+export default withTranslation()(Daily);

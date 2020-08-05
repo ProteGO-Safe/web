@@ -2,12 +2,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { useFormikContext } from 'formik';
 
+import { withTranslation } from 'react-i18next';
 import { FIELD_CHOICE_ID } from '../../../../constants';
 import { Button, FieldSet, Radio } from '../../../../components';
 import { Title } from '../../Diagnosis.styled';
 import { choicesPropType } from '../../prop-types';
 
-const Single = ({ text, choices }) => {
+const Single = ({ t, text, choices }) => {
   const { setFieldValue, values, submitForm } = useFormikContext();
 
   const handleChange = (field, value) => {
@@ -31,7 +32,7 @@ const Single = ({ text, choices }) => {
       <Button
         disabled={!values[FIELD_CHOICE_ID]}
         onClick={submitForm}
-        label="Dalej"
+        label={t('button_next')}
       />
     </>
   );
@@ -42,4 +43,4 @@ Single.propTypes = {
   choices: choicesPropType
 };
 
-export default Single;
+export default withTranslation()(Single);

@@ -1,4 +1,5 @@
 import React from 'react';
+import { withTranslation } from 'react-i18next';
 import { useHistory } from 'react-router-dom';
 
 import { Button, FieldSet } from '../../components';
@@ -9,46 +10,31 @@ import { Content, Title } from './PrivacyPolicy.styled';
 import { Paragraph } from '../../theme/typography';
 import { Container, View } from '../../theme/grid';
 
-const PrivacyPolicy = () => {
+const PrivacyPolicy = ({ t }) => {
   const history = useHistory();
   return (
     <View>
       <Header />
       <Container>
         <Content>
-          <Title>Regulamin i Polityka prywatności</Title>
-          <Paragraph>
-            Wspólnie chcemy przeciwdziałać Koronawirusowi. Twoja prywatność jest
-            dla nas tak samo ważna. Aplikację zaprojektowaliśmy tak, aby
-            wszystkie informacje które przekazujesz do ProteGO Safe
-            uniemożliwiały Twoją identyfikację. Dlatego nie musisz rejestrować
-            konta, nie prosimy Cię o adres e-mail, ani połączenie ProteGO Safe z
-            kontem w mediach społecznościowych.
-          </Paragraph>
-          <Paragraph>
-            Jeżeli będziemy planowali zmiany, poinformujemy Cię o tym. Z
-            większości nowych funkcjonalności będziesz mógł korzystać na
-            zasadzie opt-in. Oznacza to, że możesz dobrowolnie skorzystać z
-            nowej funkcjonalności lub nie korzystać z niej. Szczegóły dotyczące
-            aplikacji ProteGO Safe znajdziesz w Regulaminie, a informacje
-            dotyczące przetwarzania Twoich danych znajdziesz w Polityce
-            prywatności.
-          </Paragraph>
-          <Paragraph>Poniżej możesz zapoznać się ze szczegółami:</Paragraph>
+          <Title>{t('privacy_policy_text1')}</Title>
+          <Paragraph>{t('privacy_policy_text2')}</Paragraph>
+          <Paragraph>{t('privacy_policy_text3')}</Paragraph>
+          <Paragraph>{t('privacy_policy_text4')}</Paragraph>
         </Content>
         <FieldSet>
           <Button
             onClick={() => history.push(Routes.Regulations)}
-            label="Regulamin"
+            label={t('privacy_policy_text5')}
           />
           <Button
             onClick={() => history.push(Routes.PrivacyPolicyDetails)}
-            label="Polityka prywatności"
+            label={t('privacy_policy_text6')}
           />
           <Button
             onClick={() => history.push(Routes.UserData)}
             type="outline"
-            label="Dane"
+            label={t('privacy_policy_text7')}
           />
         </FieldSet>
       </Container>
@@ -57,4 +43,4 @@ const PrivacyPolicy = () => {
   );
 };
 
-export default PrivacyPolicy;
+export default withTranslation()(PrivacyPolicy);

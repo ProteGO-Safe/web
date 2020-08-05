@@ -1,11 +1,12 @@
 import React from 'react';
 
+import { withTranslation } from 'react-i18next';
 import { InfoBorderContainer, Content } from './TriageInfoBorder.styled';
 import useTriage from '../../../../hooks/useTriage';
 import ArrowIcon from '../../../../assets/img/icons/angle-right.svg';
 import { PhoneNumber } from '../../../../components';
 
-const TriageInfoBorder = () => {
+const TriageInfoBorder = ({ t }) => {
   const {
     isCovid = false,
     isExposure = false,
@@ -25,52 +26,35 @@ const TriageInfoBorder = () => {
 
   const renderContent = () => {
     if (isCovid) {
-      return (
-        <>
-          Bardzo źle się czujesz? Nie czekaj. Zadzwoń na numer alarmowy 112 lub
-          999. Poinformuj o swojej chorobie.
-        </>
-      );
+      return <>{t('triage_info_border_text1')}</>;
     }
     if (isExposure && riskLevel === 1) {
-      return (
-        <>
-          Pamiętaj, by regularnie myć ręce wodą z mydłem lub dezynfekować dłonie
-          oraz zachowywać dystans społeczny.
-        </>
-      );
+      return <>{t('triage_info_border_text2')}</>;
     }
     if (isExposure && riskLevel === 2) {
-      return (
-        <>
-          Regularnie obserwuj swój stan zdrowia, mierz temperaturę dwa razy
-          dziennie i zapisuj ją w Dzienniku Zdrowia.
-        </>
-      );
+      return <>{t('triage_info_border_text3')}</>;
     }
     if (isExposure && riskLevel === 3) {
       return (
         <>
-          W przypadku pojawienia się objawów takich jak: gorączka, kaszel lub
-          duszność, skontaktuj się telefonicznie ze swoim lekarzem lub
-          skorzystaj z darmowej teleporady z pracownikiem medycznym.
+          {t('triage_info_border_text4')}
           <Content onClick={goToAdvice}>
-            Skorzystaj z teleporady
+            {t('triage_info_border_text5')}
             <img src={ArrowIcon} alt="button" />
           </Content>
-          Twój stan jest ciężki? Nie czekaj. Zadzwoń na numer alarmowy{' '}
-          <PhoneNumber>112</PhoneNumber> lub <PhoneNumber>999</PhoneNumber> i
-          uprzedź, że możesz mieć koronawirusa.
+          {t('triage_info_border_text6')} <PhoneNumber>112</PhoneNumber> lub{' '}
+          <PhoneNumber>999</PhoneNumber>
+          {t('triage_info_border_text7')}
         </>
       );
     }
     if (renderItem.length === 0) {
-        return (<>{description}</>);
+      return <>{description}</>;
     }
     return (
       <>
         {description}
-        &nbsp;Szczególnie niepokojące objawy:
+        &nbsp;{t('triage_info_border_text8')}
       </>
     );
   };
@@ -83,4 +67,4 @@ const TriageInfoBorder = () => {
   );
 };
 
-export default TriageInfoBorder;
+export default withTranslation()(TriageInfoBorder);

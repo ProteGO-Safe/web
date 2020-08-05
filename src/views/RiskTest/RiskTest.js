@@ -8,20 +8,21 @@ import { BottomNavigation } from '../../components/BottomNavigation';
 import { Button } from '../../components';
 import { Icon, ListTitle, Title } from './RiskTest.styled';
 import { Container, Content, View } from '../../theme/grid';
+import {withTranslation} from "react-i18next";
 
-const RiskTest = ({ goToHistory, onFill, previousDays }) => (
+const RiskTest = ({ t, goToHistory, onFill, previousDays }) => (
   <View>
     <Header />
     <Content>
       <Container>
-        <Title>Przygotowaliśmy dla Ciebie nowy test na dzisiaj</Title>
+        <Title>{t('risk_test_text1')}</Title>
         <Button
           onClick={onFill}
-          label="Wykonaj TEST oceny ryzyka"
+          label={t('risk_test_text2')}
           type="border"
           icon={<Icon />}
         />
-        <ListTitle>Wykonane testy:</ListTitle>
+        <ListTitle>{t('risk_test_text3')}</ListTitle>
         {previousDays.map(previousDay => {
           const { day, dayWeek, timestamp } = previousDay;
           const text = `Test: ${dayWeek} (${day} r.)`;
@@ -45,4 +46,4 @@ RiskTest.propTypes = {
   previousDays: daysDetailsPropType
 };
 
-export default RiskTest;
+export default withTranslation()(RiskTest);

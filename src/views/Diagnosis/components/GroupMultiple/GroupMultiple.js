@@ -3,11 +3,12 @@ import PropTypes from 'prop-types';
 import { useFormikContext } from 'formik';
 
 import { Button, Checkbox, FieldSet } from '../../../../components';
+import { withTranslation } from 'react-i18next';
 import { VALUE_ABSENT, VALUE_PRESENT } from '../../../../constants';
 import { itemsPropType } from '../../prop-types';
 import { Title } from '../../Diagnosis.styled';
 
-const GroupMultiple = ({ text, items }) => {
+const GroupMultiple = ({ t, text, items }) => {
   const { setFieldValue, values, submitForm } = useFormikContext();
   const [otherSelected, setOtherSelected] = useState(false);
 
@@ -50,14 +51,14 @@ const GroupMultiple = ({ text, items }) => {
         ))}
         <Checkbox
           checked={otherSelected}
-          label="Żadne z powyższych"
-          name="Żadne z powyższych"
+          label={t('group_multiple_text1')}
+          name={t('group_multiple_text1')}
           onChange={handelSelectOther}
           type="checkbox"
           size="big"
         />
       </FieldSet>
-      <Button disabled={!someSelected} onClick={submitForm} label="Dalej" />
+      <Button disabled={!someSelected} onClick={submitForm} label={t('button_next')} />
     </>
   );
 };
@@ -67,4 +68,4 @@ GroupMultiple.propTypes = {
   items: itemsPropType
 };
 
-export default GroupMultiple;
+export default withTranslation()(GroupMultiple);

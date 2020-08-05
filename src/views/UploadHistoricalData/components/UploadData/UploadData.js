@@ -1,4 +1,5 @@
 import React from 'react';
+import { withTranslation } from 'react-i18next';
 import PinInput from 'react-pin-input';
 import Header from '../../../../components/Header/Header';
 import {
@@ -16,6 +17,7 @@ import InformationIcon from '../../../../assets/img/icons/bad.svg';
 import WarningIcon from '../../../../assets/img/icons/warning.svg';
 
 const UploadData = ({
+  t,
   disableSubmitButton,
   errorMessage,
   onUploadData,
@@ -28,11 +30,7 @@ const UploadData = ({
       <Header hideBackButton />
       <Content>
         <Container className="full-height">
-          <Paragraph>
-            Wprowadź kod PIN otrzymany od Operatora Centrum Kontaktu. Dzięki
-            temu dasz innym znać, że mogli mieć kontakt z koronawirusem. Nie
-            martw się, informacje są w pełni anonimowe.
-          </Paragraph>
+          <Paragraph>{t('upload_data_text1')}</Paragraph>
           <PinWrapper>
             <PinInput
               disabled={disablePinInput}
@@ -52,7 +50,7 @@ const UploadData = ({
           <ButtonWrapper>
             <Button
               onClick={onUploadData}
-              label="Przekaż informacje"
+              label={t('upload_data_text5')}
               disabled={
                 pin.length !== 6 || disableSubmitButton || disablePinInput
               }
@@ -61,8 +59,9 @@ const UploadData = ({
           {errorMessage ? (
             <InfoIcon icon={InformationIcon}>
               <Paragraph>
-                <strong>Potrzebujesz pomocy?</strong>
-                <br /> Skontaktuj się z Centrum Pomocy:{' '}
+                <strong>{t('upload_data_text2')}</strong>
+                <br />
+                {t('upload_data_text3')}{' '}
                 <PhoneNumber value="800123123">800 123 123</PhoneNumber>
               </Paragraph>
             </InfoIcon>
@@ -74,4 +73,4 @@ const UploadData = ({
   );
 };
 
-export default UploadData;
+export default withTranslation()(UploadData);

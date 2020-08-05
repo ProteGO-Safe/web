@@ -28,57 +28,57 @@ const MenuContainer = () => {
     {
       icon: Icon1,
       path: Routes.Daily,
-      slug: 'dziennik',
-      title: 'Dziennik zdrowia'
+      slug: 'menu_container_text1',
+      title: 'menu_container_text1'
     },
     {
       icon: Icon2,
       path: Routes.RiskTest,
-      slug: 'test_oceny_ryzyka',
-      title: 'Test oceny ryzyka'
+      slug: 'menu_container_text2',
+      title: 'menu_container_text2'
     },
     {
       icon: Icon3,
       path: Routes.HowItWorks,
-      slug: 'jak_to_dziala',
-      title: 'Jak to działa?'
+      slug: 'menu_container_text3',
+      title: 'menu_container_text3'
     },
     {
       icon: Icon4,
       path: Routes.IAmSick,
-      slug: 'co_zrobic',
-      title: 'Czuję się źle, co zrobić?'
+      slug: 'menu_container_text4',
+      title: 'menu_container_text4'
     },
     {
       icon: Icon5,
       path: Routes.EmergencyNumbers,
-      slug: 'numery_alarmowe',
-      title: 'Numery alarmowe'
+      slug: 'menu_container_text5',
+      title: 'menu_container_text5'
     },
     {
       icon: Icon6,
       path: Routes.PrivacyPolicy,
-      slug: 'regulamin_i_polityka_prywatności',
-      title: 'Regulamin i Polityka prywatności'
+      slug: 'menu_container_text6',
+      title: 'menu_container_text6'
     },
     {
       icon: Icon7,
       path: Routes.Settings,
-      slug: 'ustawienia',
-      title: 'Ustawienia',
+      slug: 'menu_container_text7',
+      title: 'menu_container_text7',
       disable: !isVersionCompatibilityWithBluetoothModule(servicesStatus)
     },
     {
       icon: Icon8,
       path: Routes.UserData,
-      slug: 'moje_dane',
-      title: 'Moje dane'
+      slug: 'menu_container_text8',
+      title: 'menu_container_text8'
     },
     {
       icon: Icon9,
       path: Routes.ReportBug,
-      slug: 'zglos_blad',
-      title: 'Zgłoś błąd'
+      slug: 'menu_container_text9',
+      title: 'menu_container_text9'
     }
   ];
 

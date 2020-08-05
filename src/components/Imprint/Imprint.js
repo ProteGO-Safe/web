@@ -1,7 +1,6 @@
 import React from 'react';
+import { withTranslation } from 'react-i18next';
 import { Grid } from '@material-ui/core';
-
-import { VALUE_SMOKE_NO, VALUE_SMOKE_YES } from '../../constants';
 
 import { FontWeight } from '../../theme/fonts';
 import { Color } from '../../theme/colors';
@@ -10,24 +9,24 @@ import { ImprintWrapper } from './Imprint.styled';
 
 import './Imprint.scss';
 
-const Imprint = ({ user = {} }) => {
+const Imprint = ({ t, user = {} }) => {
   const { chronicSicks, bloodGroup, smokeNumber, isSmoking } = user;
   const smokingContent = () => {
     if (!smokeNumber && isSmoking === undefined) {
-      return 'brak danych';
+      return t('imprint_text5');
     }
     if (smokeNumber) {
-      return `${VALUE_SMOKE_YES} ${smokeNumber}`;
+      return `${t('yes')} ${smokeNumber}`;
     }
-    return VALUE_SMOKE_NO;
+    return t('no');
   };
 
   const chronicSicksContent = () => {
     if (!chronicSicks) {
-      return <SmallText>brak danych</SmallText>;
+      return <SmallText>{t('imprint_text5')}</SmallText>;
     }
     if (chronicSicks.length === 0) {
-      return <SmallText>Brak dolegliwości</SmallText>;
+      return <SmallText>{t('imprint_text4')}</SmallText>;
     }
     return chronicSicks.map((sick, index) => (
       <SmallText key={sick.name}>
@@ -43,21 +42,21 @@ const Imprint = ({ user = {} }) => {
       <Grid container>
         <Grid item xs={6}>
           <Paragraph color={Color.lightBlack} fontWeight={FontWeight.Bold}>
-            Palenie:
+            {t('imprint_text1')}
           </Paragraph>
           <SmallText>{smokingContent()}</SmallText>
         </Grid>
 
         <Grid item xs={6}>
           <Paragraph color={Color.lightBlack} fontWeight={FontWeight.Bold}>
-            Grupa krwi:
+            {t('imprint_text2')}
           </Paragraph>
-          <SmallText>{bloodGroup || 'brak danych'}</SmallText>
+          <SmallText>{bloodGroup || t('imprint_text5')}</SmallText>
         </Grid>
 
         <Grid item>
           <Paragraph color={Color.lightBlack} fontWeight={FontWeight.Bold}>
-            Dolegliwości:
+            {t('imprint_text3')}
           </Paragraph>
           {chronicSicksContent()}
         </Grid>
@@ -66,4 +65,4 @@ const Imprint = ({ user = {} }) => {
   );
 };
 
-export default Imprint;
+export default withTranslation()(Imprint);

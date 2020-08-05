@@ -1,7 +1,7 @@
 import React from 'react';
 import ExposureNotificationWarning from './ExposureNotificationWarning';
-import { ExposureNotificationInfo } from './ExposureNotificationInfo';
 import ScanningIcon from '../../../../assets/img/icons/scanning.gif';
+import ExposureNotificationInfo from './ExposureNotificationInfo';
 import { FakeIcon } from './FakeIcon';
 import useSupportExposureNotificationTracing from '../../../../hooks/useSupportExposureNotificationTracing';
 import { isWebView } from '../../../../utils/native';

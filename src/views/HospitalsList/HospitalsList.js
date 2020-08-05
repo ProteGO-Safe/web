@@ -1,4 +1,5 @@
 import React from 'react';
+import { withTranslation } from 'react-i18next';
 import reactStringReplace from 'react-string-replace';
 import {
   Collapse,
@@ -12,8 +13,7 @@ import { Title } from './Hospitals.styled';
 import './HospitalsList.scss';
 import hospitalsData from './hospitals.json';
 
-const HospitalsList = () => {
-
+const HospitalsList = ({ t }) => {
   const phoneRegex = /([+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s./0-9]{9,})/g;
 
   const renderAddressLine = address => {
@@ -33,7 +33,7 @@ const HospitalsList = () => {
       <Header />
       <Content>
         <Container className="full-height">
-          <Title>Szpitale zakaźne:</Title>
+          <Title>{t('hospitals_list_text1')}</Title>
           {voivodeships.map((voivodeship, key) => (
             <Collapse key={voivodeship.name} title={voivodeship.name}>
               <List>
@@ -56,4 +56,4 @@ const HospitalsList = () => {
   );
 };
 
-export default HospitalsList;
+export default withTranslation()(HospitalsList);

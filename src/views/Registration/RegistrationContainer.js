@@ -19,9 +19,9 @@ const RegistrationContainer = () => {
   const validationSchema = Yup.object().shape({
     [constants.FIELD_NAME]: Yup.string()
       .trim()
-      .min(3, 'Za krótki pseudonim')
-      .max(20, 'Za długi pseudonim')
-      .matches(/^[a-zA-Z0-9wąćęłńóśźżĄĆĘŁŃÓŚŹŻ ]+$/, 'Bez znaków specjalnych')
+      .min(3, 'name_form_text7')
+      .max(20, 'name_form_text8')
+      .matches(/^[a-zA-Z0-9wąćęłńóśźżĄĆĘŁŃÓŚŹŻ ]+$/, 'name_form_text9')
   });
 
   const handleSubmit = form => {

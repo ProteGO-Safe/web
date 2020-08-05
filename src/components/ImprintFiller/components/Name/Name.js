@@ -5,8 +5,9 @@ import { FIELD_NAME } from '../../../../constants';
 
 import { Actions } from '../../ImprintFiller.styled';
 import './Name.scss';
+import { withTranslation } from 'react-i18next';
 
-const Name = ({ handleClick }) => {
+const Name = ({ t, handleClick }) => {
   const { errors, handleChange, values } = useFormikContext();
 
   const disabled = (() => {
@@ -17,19 +18,19 @@ const Name = ({ handleClick }) => {
     <>
       <TextField
         error={errors[FIELD_NAME]}
-        label="Jak aplikacja może się do Ciebie zwracać?"
-        placeholder="Twój nick lub pseudonim"
+        label={t('name_form_text1')}
+        placeholder={t('name_form_text3')}
         onChange={handleChange}
         name={FIELD_NAME}
         value={values[FIELD_NAME]}
-        info="Podpowiedź: nie podawaj swojego nazwiska."
+        info={t('name_form_text4')}
       />
 
       <Actions>
-        <Button disabled={disabled} onClick={handleClick} label="Dalej" />
+        <Button disabled={disabled} onClick={handleClick} label={t('button_next')} />
       </Actions>
     </>
   );
 };
 
-export default Name;
+export default withTranslation()(Name);

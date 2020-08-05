@@ -4,6 +4,7 @@ import * as Yup from 'yup';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 
+import { withTranslation } from 'react-i18next';
 import { saveUser } from '../../store/actions/user';
 import * as constants from '../../constants';
 import { chronicSickValues } from '../../constants';
@@ -11,7 +12,7 @@ import Routes from '../../routes';
 import useLoaderContext from '../../hooks/useLoaderContext';
 import { ImprintFiller } from '../../components/ImprintFiller';
 
-const UserDataChange = () => {
+const UserDataChange = ({ t }) => {
   const dispatch = useDispatch();
   const history = useHistory();
   const { setLoader } = useLoaderContext();
@@ -43,7 +44,7 @@ const UserDataChange = () => {
     if (smokeNumber === undefined) {
       return undefined;
     }
-    return smokeNumber ? constants.VALUE_SMOKE_YES : constants.VALUE_SMOKE_NO;
+    return smokeNumber ? t('yes') : t('no');
   })();
 
   const isChronicSick = (() => {
@@ -68,13 +69,10 @@ const UserDataChange = () => {
   const validationSchema = Yup.object().shape({
     [constants.FIELD_NAME]: Yup.string()
       .trim()
-      .min(3, 'Za krótki pseudonim')
-      .max(20, 'Za długi pseudonim')
-      .matches(/^[a-zA-Z0-9wąćęłńóśźżĄĆĘŁŃÓŚŹŻ ]+$/, 'Bez znaków specjalnych'),
-    [constants.FIELD_TERM1]: Yup.boolean().oneOf(
-      [true],
-      'Proszę zaznaczyć zgodę'
-    )
+      .min(3, 'name_form_text7')
+      .max(20, 'name_form_text8')
+      .matches(/^[a-zA-Z0-9wąćęłńóśźżĄĆĘŁŃÓŚŹŻ ]+$/, 'name_form_text9'),
+    [constants.FIELD_TERM1]: Yup.boolean().oneOf([true], t('name_form_text10'))
   });
 
   const handleSubmit = form => {
@@ -89,7 +87,7 @@ const UserDataChange = () => {
       chronicSicks: [...chronicSicksFromForm],
       bloodGroup: form[constants.FIELD_BLOOD_GROUP],
       smokeNumber: form[constants.FIELD_SMOKE_NUMBER],
-      isSmoking: form[constants.FIELD_SMOKE] === constants.VALUE_SMOKE_YES
+      isSmoking: form[constants.FIELD_SMOKE] === t('yes')
     };
 
     const goHome = () => {
@@ -113,4 +111,4 @@ const UserDataChange = () => {
   );
 };
 
-export default UserDataChange;
+export default withTranslation()(UserDataChange);

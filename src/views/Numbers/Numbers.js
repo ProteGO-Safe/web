@@ -1,4 +1,5 @@
 import React from 'react';
+import { withTranslation } from 'react-i18next';
 import { useHistory } from 'react-router-dom';
 
 import Routes from '../../routes';
@@ -12,7 +13,7 @@ import {
 import { Info, Phone, Line } from './Numbers.styled';
 import { Container, Content, View } from '../../theme/grid';
 
-const Numbers = () => {
+const Numbers = ({ t }) => {
   const history = useHistory();
 
   const goToHospitalsList = () => history.push(Routes.HospitalsList);
@@ -22,20 +23,17 @@ const Numbers = () => {
       <Header />
       <Content>
         <Container className="full-height">
-          <Info>Szukaj pomocy w Twojej okolicy</Info>
+          <Info>{t('numbers_text1')}</Info>
           <PhoneNumber value="800190590">
             <Button
               onClick={() => null}
               className="small"
-              label="Zadzwoń na infolinię - 800190590"
+              label={t('numbers_text2')}
               type="border"
               icon={<Phone />}
             />
           </PhoneNumber>
-          <LineItem
-            onClick={goToHospitalsList}
-            text="Pokaż adresy szpitali zakaźnych"
-          />
+          <LineItem onClick={goToHospitalsList} text={t('numbers_text3')} />
           <Line />
         </Container>
         <BottomNavigation />
@@ -44,4 +42,4 @@ const Numbers = () => {
   );
 };
 
-export default Numbers;
+export default withTranslation()(Numbers);

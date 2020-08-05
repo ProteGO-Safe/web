@@ -1,4 +1,5 @@
 import React from 'react';
+import { withTranslation } from 'react-i18next';
 import {
   MakeDiagnosisButton,
   Smile,
@@ -6,18 +7,15 @@ import {
 } from '../../components/index';
 import { Paragraph } from '../../../../theme/typography';
 
-const ExposureLow = () => {
+const ExposureLow = ({ t }) => {
   return (
     <>
       <Smile />
       <TriageInfoBorder />
-      <Paragraph>
-        Jeśli chcesz dowiedzieć się więcej na temat czynników mających wpływ na
-        ryzyko infekcji, kliknij poniżej i wykonaj test oceny ryzyka.
-      </Paragraph>
+      <Paragraph>{t('exposure_low_text1')}</Paragraph>
       <MakeDiagnosisButton />
     </>
   );
 };
 
-export default ExposureLow;
+export default withTranslation()(ExposureLow);

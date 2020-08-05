@@ -3,13 +3,14 @@ import { useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import moment from 'moment';
 
+import { withTranslation } from 'react-i18next';
 import RiskTestData from './RiskTestData';
 import { TRIAGE_LEVEL } from './RiskTestData.constants';
 import locations from '../../services/diagnosisLogic/locations.json';
 
 const dateFormat = 'D-MM-YYYY';
 
-const RiskTestDataContainer = () => {
+const RiskTestDataContainer = ({ t }) => {
   const riskTest = useSelector(state => state.riskTest);
   const { id } = useParams();
   const day = moment.unix(id);
@@ -48,9 +49,9 @@ const RiskTestDataContainer = () => {
       questions={allQuestions}
       idToChoiceResolver={idToChoiceResolver}
       isToday={isToday}
-      triageLevelInformation={riskTestInformation}
+      triageLevelInformation={t(riskTestInformation)}
     />
   );
 };
 
-export default RiskTestDataContainer;
+export default withTranslation()(RiskTestDataContainer);

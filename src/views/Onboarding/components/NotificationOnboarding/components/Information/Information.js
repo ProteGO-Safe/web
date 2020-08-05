@@ -1,4 +1,5 @@
 import React from 'react';
+import { withTranslation } from 'react-i18next';
 import './Information.scss';
 import {
   OnboardingContent,
@@ -9,14 +10,14 @@ import { View, Container, Content } from '../../../../../../theme/grid';
 import Header from '../../../../../../components/Header/Header';
 import { Icon } from './Information.styled';
 
-const Information = ({ onNext, onSkip }) => {
+const Information = ({ t, onNext, onSkip }) => {
   const buttons = [
     {
-      label: 'Dalej',
+      label: t('button_next'),
       onClick: onNext
     },
     {
-      label: 'Nie powiadamiaj mnie o zagrożeniach',
+      label: t('notification_onboarding_information_text1'),
       type: 'blankSmall',
       onClick: onSkip
     }
@@ -38,15 +39,11 @@ const Information = ({ onNext, onSkip }) => {
         <Container className="full-height">
           <OnboardingContent
             icon={<Icon />}
-            title="Włącz powiadomienia"
+            title={t('notification_onboarding_information_text3')}
             buttons={renderButton}
           >
             <>
-              <p>
-                Do prawidłowego działania aplikacji potrzebna jest Twoja zgoda
-                na wyświetlanie powiadomień. Kliknij poniżej i pozwól ProteGO
-                Safe wspierać ochronę zdrowia każdego z nas.
-              </p>
+              <p>{t('notification_onboarding_information_text1')}</p>
             </>
           </OnboardingContent>
           <GovFooter type="black" />
@@ -56,4 +53,4 @@ const Information = ({ onNext, onSkip }) => {
   );
 };
 
-export default Information;
+export default withTranslation()(Information);

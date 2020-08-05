@@ -1,4 +1,5 @@
 import React from 'react';
+import { withTranslation } from 'react-i18next';
 
 import { BottomNavigation, Email, Header, Url } from '../../components';
 
@@ -8,26 +9,20 @@ import { Color } from '../../theme/colors';
 import { FontWeight } from '../../theme/fonts';
 import { Paragraph } from '../../theme/typography';
 
-const ReportBug = () => {
+const ReportBug = ({ t }) => {
   return (
     <View>
       <Header />
       <Content>
         <Container>
-          <Title>Zgłoś błąd</Title>
+          <Title>{t('report_bug_text1')}</Title>
           <Paragraph>
-            ProteGO Safe to darmowa aplikacja, dzięki której możesz oceniać
-            ryzyko infekcji koronawirusem na podstawie wytycznych Światowej
-            Organizacji Zdrowia (WHO), prowadzić dziennik stanu zdrowia oraz
-            lepiej poznać profilaktykę. Obserwując wyniki oraz stosując środki
-            zaradcze minimalizujesz ryzyko zachorowania na{' '}
+            {t('report_bug_text2')}{' '}
             <Url value="https://www.gov.pl/web/koronawirus">COVID-19</Url>.
           </Paragraph>
-          <Paragraph>
-            Masz pytania? Znalazłeś błąd? Skontaktuj się z nami!
-          </Paragraph>
+          <Paragraph>{t('report_bug_text3')}</Paragraph>
           <Paragraph color={Color.primary} fontWeight={FontWeight.Bold}>
-            <Email>info@safesafe.app</Email>
+            <Email>{t('report_bug_text4')}</Email>
           </Paragraph>
         </Container>
         <BottomNavigation />
@@ -36,4 +31,4 @@ const ReportBug = () => {
   );
 };
 
-export default ReportBug;
+export default withTranslation()(ReportBug);

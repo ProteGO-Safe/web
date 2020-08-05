@@ -1,4 +1,5 @@
 import React from 'react';
+import { withTranslation } from 'react-i18next';
 import { ProteGoSlider } from './InputSlider.theme';
 import {
   InputSliderContainer,
@@ -6,12 +7,10 @@ import {
   Label
 } from './InputSlider.styled';
 
-const InputSlider = ({ label, marks, max, min, onChange, step, value }) => {
-
-
+const InputSlider = ({ t, label, marks, max, min, onChange, step, value }) => {
   return (
     <InputSliderContainer>
-      <Label>{label}</Label>
+      <Label>{t(label)}</Label>
       <InputSliderWrapper>
         <ProteGoSlider
           defaultValue={0}
@@ -27,4 +26,4 @@ const InputSlider = ({ label, marks, max, min, onChange, step, value }) => {
   );
 };
 
-export default InputSlider;
+export default withTranslation()(InputSlider);

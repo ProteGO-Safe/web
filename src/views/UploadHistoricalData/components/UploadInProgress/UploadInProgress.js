@@ -1,4 +1,5 @@
 import React from 'react';
+import { withTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { getUserName } from '../../../../store/selectors/user';
@@ -9,7 +10,7 @@ import { Name, Paragraph, TextLink } from '../../../../theme/typography';
 import { Information, LoaderWrapper } from './UploadInProgress.styled';
 import Routes from '../../../../routes';
 
-const UploadInProgress = () => {
+const UploadInProgress = ({ t }) => {
   const userName = useSelector(getUserName);
 
   return (
@@ -18,21 +19,14 @@ const UploadInProgress = () => {
       <Content>
         <Container className="full-height">
           <Name>{userName},</Name>
-          <Paragraph>
-            dziękujemy, że myślisz o innych. Jesteś odpowiedzialna/-y i
-            solidarna/-y. Informacja o ryzyku kontaktu z koronawirusem trafi na
-            urządzenia osób, z którymi się widziałaś/widziałeś.
-          </Paragraph>
+          <Paragraph>{t('upload_in_progress_text1')}</Paragraph>
           <LoaderWrapper>
             <Loader />
           </LoaderWrapper>
           <Information>
-            Dbamy o Twoją prywatność i bezpieczeństwo Twoich danych.
-            Przekazujesz informacje w pełni anonimowo. Nie ma możliwości, by
-            ktokolwiek mógł Cię zidentyfikować. Więcej informacji znajdziesz
-            w&nbsp;
+            {t('upload_in_progress_text2')}
             <Link to={Routes.PrivacyPolicy}>
-              <TextLink>Polityce prywatności</TextLink>.
+              <TextLink>{t('upload_in_progress_text3')}</TextLink>.
             </Link>
           </Information>
         </Container>
@@ -42,4 +36,4 @@ const UploadInProgress = () => {
   );
 };
 
-export default UploadInProgress;
+export default withTranslation()(UploadInProgress);

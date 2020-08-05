@@ -1,4 +1,5 @@
 import React from 'react';
+import { withTranslation } from 'react-i18next';
 import PropTypes from 'prop-types';
 import { useHistory } from 'react-router-dom';
 import { useFormikContext } from 'formik';
@@ -12,7 +13,7 @@ import { Content, Container, View } from '../../theme/grid';
 import { Title, TitleBox } from './DailyData.styled';
 import './DailyData.scss';
 
-const DailyData = ({ isViewMode }) => {
+const DailyData = ({ t, isViewMode }) => {
   const { dirty, submitForm } = useFormikContext();
   const history = useHistory();
 
@@ -21,18 +22,24 @@ const DailyData = ({ isViewMode }) => {
       <Header />
       <Content>
         <Container className="full-height">
-          <Title>Dziennik zdrowia</Title>
+          <Title>{t('daily_data_text1')}</Title>
           {isViewMode ? <Data /> : <Form />}
-          <TitleBox className="medium title-4 text-left">Metryka</TitleBox>
+          <TitleBox className="medium title-4 text-left">
+            {t('daily_data_text2')}
+          </TitleBox>
           <Imprint />
           <Actions>
             {isViewMode ? (
               <Button
                 onClick={() => history.push(Routes.Daily)}
-                label="Powrót"
+                label={t('button_back')}
               />
             ) : (
-              <Button onClick={submitForm} label="Zapisz" disabled={!dirty} />
+              <Button
+                onClick={submitForm}
+                label={t('button_save')}
+                disabled={!dirty}
+              />
             )}
           </Actions>
         </Container>
@@ -46,4 +53,4 @@ DailyData.propTypes = {
   isViewMode: PropTypes.bool.isRequired
 };
 
-export default DailyData;
+export default withTranslation()(DailyData);

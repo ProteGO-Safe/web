@@ -1,4 +1,5 @@
 import React from 'react';
+import { withTranslation } from 'react-i18next';
 import PropTypes from 'prop-types';
 import { useFormikContext } from 'formik';
 import {
@@ -12,17 +13,17 @@ import {
 import { marks } from './constants';
 import { FieldSet, Input, Textarea, InputSlider } from '../../../../components';
 
-const Form = ({ isViewMode }) => {
+const Form = ({ t, isViewMode }) => {
   const { handleChange, setFieldValue, values, errors } = useFormikContext();
 
   return (
     <div className="form">
-      <h4 className="medium title-2">Temperatura</h4>
+      <h4 className="medium title-2">{t('form_text1')}</h4>
       <FieldSet>
         <Input
-          error={errors[FIELD_TEMPERATURE]}
+          error={t(errors[FIELD_TEMPERATURE])}
           disabled={isViewMode}
-          label="Podaj aktualną temperaturę ciała"
+          label={t('form_text4')}
           name={FIELD_TEMPERATURE}
           placeholder="36.6"
           max={45}
@@ -32,10 +33,10 @@ const Form = ({ isViewMode }) => {
           value={values[FIELD_TEMPERATURE]}
         />
       </FieldSet>
-      <h4 className="medium title-3">Objawy</h4>
+      <h4 className="medium title-3">{t('form_text2')}</h4>
       <FieldSet>
         <InputSlider
-          label="Katar"
+          label={t('form_text10')}
           marks={marks}
           min={1}
           max={4}
@@ -44,21 +45,21 @@ const Form = ({ isViewMode }) => {
           }
         />
         <InputSlider
-          label="Kaszel"
+          label={t('form_text9')}
           marks={marks}
           min={1}
           max={4}
           onChange={(e, value) => setFieldValue(FIELD_COUGH, `level ${value}`)}
         />
         <InputSlider
-          label="Dreszcze"
+          label={t('form_text8')}
           marks={marks}
           min={1}
           max={4}
           onChange={(e, value) => setFieldValue(FIELD_CHILLS, `level ${value}`)}
         />
         <InputSlider
-          label="Ból mięśni"
+          label={t('form_text7')}
           marks={marks}
           min={1}
           max={4}
@@ -67,14 +68,14 @@ const Form = ({ isViewMode }) => {
           }
         />
       </FieldSet>
-      <h4 className="medium title-2">Miejsca i kontakty</h4>
+      <h4 className="medium title-2">{t('form_text3')}</h4>
       <FieldSet>
         <Textarea
           disabled={isViewMode}
-          label="Z kim się spotkałem, gdzie byłem"
+          label={t('form_text5')}
           name={FIELD_CONTACTS}
           onChange={handleChange}
-          placeholder="wpisz"
+          placeholder={t('form_text6')}
           value={values[FIELD_CONTACTS]}
         />
       </FieldSet>
@@ -90,4 +91,4 @@ Form.propTypes = {
   isViewMode: PropTypes.bool
 };
 
-export default Form;
+export default withTranslation()(Form);

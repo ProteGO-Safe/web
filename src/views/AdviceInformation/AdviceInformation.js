@@ -1,4 +1,5 @@
 import React from 'react';
+import { withTranslation } from 'react-i18next';
 import { useHistory } from 'react-router-dom';
 import Routes from '../../routes';
 import { Collapse, Button, FieldSet, PhoneNumber, Url } from '../../components';
@@ -23,7 +24,7 @@ import IconAdvicePhone from '../../assets/img/icons/seniorzy.svg';
 import IconAdviceCountry from '../../assets/img/icons/przyjazd.svg';
 import IconAdviceNote from '../../assets/img/icons/dziennik.svg';
 
-const AdviceInformation = ({ collapse, title, watermark }) => {
+const AdviceInformation = ({ t, collapse, title, watermark }) => {
   const history = useHistory();
 
   const parseUrl = phrases =>
@@ -68,32 +69,25 @@ const AdviceInformation = ({ collapse, title, watermark }) => {
       <Title>{title}</Title>
       <List>
         <ListItem>
-          <img src={IconAdviceHome} alt="Ikonka" />
-          <p>Zostań w domu.</p>
+          <img src={IconAdviceHome} alt={t('advice_information_text1')} />
+          <p>{t('advice_information_text1')}</p>
         </ListItem>
         <ListItem>
-          <img src={IconAdvicePhone} alt="Ikonka" />
-          <p>
-            Zadzwoń do rodziców i krewnych w podeszłym wieku. Pomóż im korzystać
-            z ProteGo Safe na ich telefonie. Zrób dla nich zakupy. Unikaj
-            kontaktu osobistego.
-          </p>
+          <img src={IconAdvicePhone} alt={t('advice_information_text1')} />
+          <p>{t('advice_information_text2')}</p>
         </ListItem>
         <ListItem>
-          <img src={IconAdviceCountry} alt="Ikonka" />
-          <p>
-            Jeśli przyjechałeś/-aś z zagranicy – skontaktuj się z sanepidem i
-            poddaj obowiązkowej 14-dniowej kwarantannie.
-          </p>
+          <img src={IconAdviceCountry} alt={t('advice_information_text1')} />
+          <p>{t('advice_information_text3')}</p>
         </ListItem>
         <ListItem>
-          <img src={IconAdviceNote} alt="Ikonka" />
+          <img src={IconAdviceNote} alt={t('advice_information_text1')} />
           <p>
-            Regularnie uzupełniaj zakładkę{' '}
+            {t('advice_information_text4')}{' '}
             <LinkStyle onClick={() => history.push(Routes.Daily)}>
-              MÓJ DZIENNIK ZDROWIA
+              {t('advice_information_text5')}
             </LinkStyle>
-            : zapisuj w aplikacji objawy i temperaturę ciała.
+            {t('advice_information_text6')}
           </p>
         </ListItem>
       </List>
@@ -101,14 +95,15 @@ const AdviceInformation = ({ collapse, title, watermark }) => {
       <Watermark>{watermark}</Watermark>
       <Warning>
         <WarningLabel>
-          <img src={IconWarning} alt="Ważne" />
-          Ważne
+          <img src={IconWarning} alt={t('advice_information_text7')} />
+          {t('advice_information_text7')}
         </WarningLabel>
         <Paragraph>
-          Jeśli u Ciebie lub Twoich bliskich wystąpią objawy zakażenia
-          koronawirusem, zadzwoń na infolinię Narodowego Funduszu Zdrowia (NFZ){' '}
-          <PhoneNumber value="800190590">800 190 590</PhoneNumber> lub do
-          lokalnej placówki służby zdrowia.
+          {t('advice_information_text8')}{' '}
+          <PhoneNumber value="800190590">
+            {t('advice_information_text9')}
+          </PhoneNumber>
+          {t('advice_information_text10')}
         </Paragraph>
       </Warning>
       <FieldSet>
@@ -118,4 +113,4 @@ const AdviceInformation = ({ collapse, title, watermark }) => {
   );
 };
 
-export default AdviceInformation;
+export default withTranslation()(AdviceInformation);

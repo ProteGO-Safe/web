@@ -1,4 +1,5 @@
 import React from 'react';
+import { withTranslation } from 'react-i18next';
 import './MoreInformation.scss';
 import {
   Button,
@@ -10,10 +11,10 @@ import {
 import { View, Container, Content } from '../../../../../../../../theme/grid';
 import { Icon, Paragraph } from './MoreInformation.styled';
 
-const MoreInformation = ({ onNext }) => {
+const MoreInformation = ({ t, onNext }) => {
   const buttons = [
     {
-      label: 'Dalej',
+      label: t('button_next'),
       onClick: onNext
     }
   ];
@@ -29,76 +30,29 @@ const MoreInformation = ({ onNext }) => {
         <Container className="full-height">
           <OnboardingContent icon={<Icon />} title="" buttons={renderButton}>
             <Paragraph>
-              <strong>ProteGO Safe</strong> to aplikacja, która pomoże nam w
-              wychodzeniu z najostrzejszych obostrzeń związanych z pandemią. Im
-              więcej z nas będzie z niej korzystać, tym szybciej i skuteczniej
-              ograniczymy tempo i zasięg rozprzestrzeniania się koronawirusa. To
-              także profesjonalna pomoc zarówno dla zdrowych, jak i zakażonych
-              osób.
+              <strong>{t('more_information_text1')}</strong>
+              {t('more_information_text2')}
             </Paragraph>
+            <Paragraph>{t('more_information_text3')}</Paragraph>
             <Paragraph>
-              Nasza aplikacja korzysta z API opracowanego przez Google i Apple.
+              <strong>{t('more_information_text4')}</strong>
             </Paragraph>
-            <Paragraph>
-              <strong>Jak działa?</strong>
-            </Paragraph>
-            <Paragraph>
-              Aplikacja składa się z dwóch modułów. Pierwszy z nich to moduł
-              umożliwiający samokontrolę stanu zdrowia. To swoisty „dziennik”,
-              który na bieżąco pozwala weryfikować, czy i w jakiej grupie ryzyka
-              zakażenia jesteśmy. To rozwiązanie oparte o wytyczne Światowej
-              Organizacji Zdrowia (WHO).
-            </Paragraph>
+            <Paragraph>{t('more_information_text5')}</Paragraph>
 
+            <Paragraph>{t('more_information_text6')}</Paragraph>
+            <Paragraph>{t('more_information_text7')}</Paragraph>
+            <Paragraph>{t('more_information_text8')}</Paragraph>
+            <Paragraph>{t('more_information_text9')}</Paragraph>
+            <Paragraph>{t('more_information_text10')}</Paragraph>
+            <Paragraph>{t('more_information_text11')}</Paragraph>
+            <Paragraph>{t('more_information_text12')}</Paragraph>
+            <Paragraph>{t('more_information_text13')}</Paragraph>
             <Paragraph>
-              Drugi moduł – to skanowanie Twojego otoczenia i komunikowanie w
-              przypadku ryzyka kontaktu z wirusem.
+              <strong>{t('more_information_text14')}</strong>
             </Paragraph>
             <Paragraph>
-              Jeśli włączysz w swoim telefonie Bluetooth, aplikacja będzie
-              komunikowała się z urządzeniami jej innych użytkowników.
-              Spokojnie, nie będzie im przekazywała żadnych danych na Twój
-              temat. Nikt nie dostanie dostępu do zawartości Twojego telefonu.
-            </Paragraph>
-            <Paragraph>
-              Informacje o napotkanych urządzeniach nie zawierają żadnych danych
-              o ich właścicielach, są anonimowe i zakodowane, a do tego
-              przechowywane tylko w telefonie, przez dwa tygodnie. Później są
-              usuwane.
-            </Paragraph>
-            <Paragraph>
-              Do czego przydaje się historia takich spotkań? W momencie, kiedy
-              któryś z użytkowników, z którego telefonem spotkał się Twój
-              telefon, zachoruje – dostaniesz odpowiednią informację. Nie
-              dowiesz się, kto zachorował. Dowiesz się za to, jak się zachować i
-              co zrobić, by zadbać o swoje zdrowie.
-            </Paragraph>
-            <Paragraph>
-              Prywatność użytkowników aplikacji jest naszym priorytetem. ProteGO
-              Safe zbudowaliśmy zgodnie z m.in. wytycznymi Komisji Europejskiej.
-            </Paragraph>
-            <Paragraph>
-              Aplikacja ProteGO Safe nie śledzi użytkowników. Od początku prac
-              nad nią są w pełni otwarte i transparentne. Zdajemy sobie bowiem
-              sprawę, że aby spełniła swoją rolę, musi zyskać zaufanie
-              użytkowników.
-            </Paragraph>
-            <Paragraph>
-              Aplikacja jest w pełni bezpieczna, bezpłatna i dobrowolna.
-            </Paragraph>
-            <Paragraph>
-              Jak pokazują badania skuteczna izolacji zakażonych oraz
-              wykorzystanie aplikacji typu exposure notification (tego typu
-              aplikacją jest ProteGO Safe) o 44% mogą zredukować ryzyko
-              rozprzestrzeniania się koronawirusa. Jest jednak jeden warunek - z
-              aplikacji musi korzystać jak najwięcej osób.
-            </Paragraph>
-            <Paragraph>
-              <strong>Wszystko w Twoich rękach.</strong>
-            </Paragraph>
-            <Paragraph>
-              W razie pytań zapraszamy do kontaktu:{' '}
-              <Email>protego@mc.gov.pl</Email>
+              {t('more_information_text15')}{' '}
+              <Email>{t('more_information_text16')}</Email>
             </Paragraph>
           </OnboardingContent>
           <GovFooter type="black" />
@@ -108,4 +62,4 @@ const MoreInformation = ({ onNext }) => {
   );
 };
 
-export default MoreInformation;
+export default withTranslation()(MoreInformation);

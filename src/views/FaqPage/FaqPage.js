@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { withTranslation } from 'react-i18next';
 import { Container, Content, View } from '../../theme/grid';
 import {
   Header,
@@ -25,7 +26,7 @@ import faqData from './faq.json';
 
 const escapedCharacters = new RegExp('[{}()\\[\\].+*?^$\\\\|]', 'g');
 
-const FaqPage = () => {
+const FaqPage = ({ t }) => {
   const [filterText, setFilterText] = useState('');
 
   if (!faqData) {
@@ -113,7 +114,7 @@ const FaqPage = () => {
       <Header hideBackButton />
       <Content>
         <Container className="full-height">
-          <Title>Pytania i odpowiedzi</Title>
+          <Title>{t('faq_page_text1')}</Title>
           <FaqWrapper>
             <FaqIntro>{intro}</FaqIntro>
             <SearchWrapper>
@@ -122,7 +123,7 @@ const FaqPage = () => {
                 icon={SearchIcon}
                 type="text"
                 name="search"
-                placeholder="Szukaj wśród pytań"
+                placeholder={t('faq_page_text2')}
                 value={filterText}
                 onChange={handleChangeInput}
               />
@@ -137,4 +138,4 @@ const FaqPage = () => {
   );
 };
 
-export default FaqPage;
+export default withTranslation()(FaqPage);

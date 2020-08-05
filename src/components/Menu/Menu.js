@@ -5,8 +5,9 @@ import LogoSafeSafe from '../../assets/img/logo/protegosafe_logo_white.svg';
 import useMenuContext from '../../hooks/useMenuContext';
 import { VersionApp } from '../index';
 import './Menu.scss';
+import {withTranslation} from "react-i18next";
 
-const Menu = ({ items }) => {
+const Menu = ({ t, items }) => {
   const { visible, startHiding, inProgress } = useMenuContext();
   const handleClose = () => startHiding();
 
@@ -31,8 +32,8 @@ const Menu = ({ items }) => {
           onClick={handleClose}
           to={path}
         >
-          <img className="menu__item__icon" src={icon} alt={title} />
-          {title}
+          <img className="menu__item__icon" src={icon} alt={t(title)} />
+          {t(title)}
         </NavLink>
       </li>
     );
@@ -63,4 +64,4 @@ Menu.propTypes = {
   version: PropTypes.string
 };
 
-export default Menu;
+export default withTranslation()(Menu);

@@ -1,13 +1,14 @@
 import React from 'react';
 import { Icon, Container } from './ExposureNotificationInfo.styled';
+import { withTranslation } from 'react-i18next';
 
-const ExposureNotificationInfo = ({ icon }) => {
+const ExposureNotificationInfo = ({ t, icon }) => {
   return (
     <Container>
       <Icon src={icon} />
-      Monitorowanie ryzyka: włączone
+      {t('exposure_notification_info_text1')}
     </Container>
   );
 };
 
-export { ExposureNotificationInfo };
+export default withTranslation()(ExposureNotificationInfo);

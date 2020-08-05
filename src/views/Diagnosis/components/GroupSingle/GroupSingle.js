@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { useFormikContext } from 'formik';
+import { withTranslation } from 'react-i18next';
 import { Button, FieldSet, Radio } from '../../../../components';
 import { Title } from '../../Diagnosis.styled';
 
@@ -12,7 +13,7 @@ import {
 
 import { itemsPropType } from '../../prop-types';
 
-const GroupSingle = ({ text, items }) => {
+const GroupSingle = ({ t, text, items }) => {
   const { setFieldValue, values, submitForm } = useFormikContext();
 
   const handleChange = itemId => {
@@ -37,7 +38,7 @@ const GroupSingle = ({ text, items }) => {
       <Button
         disabled={!values[FIELD_CHOICE_ID]}
         onClick={submitForm}
-        label="Dalej"
+        label={t('button_next')}
       />
     </>
   );
@@ -48,4 +49,4 @@ GroupSingle.propTypes = {
   items: itemsPropType
 };
 
-export default GroupSingle;
+export default withTranslation()(GroupSingle);

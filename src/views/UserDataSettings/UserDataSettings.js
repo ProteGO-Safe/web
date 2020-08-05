@@ -1,4 +1,5 @@
 import React from 'react';
+import { withTranslation } from 'react-i18next';
 import { Button } from '../../components';
 import { ModalContent } from './components';
 import useModalContext from '../../hooks/useModalContext';
@@ -10,7 +11,7 @@ import { Paragraph, Title } from '../../theme/typography';
 import { Box, BoxTitle } from './userDataSettings.styled';
 import warning from '../../assets/img/icons/warning.svg';
 
-const UserDataSettings = () => {
+const UserDataSettings = ({ t }) => {
   const { openModal } = useModalContext();
   const handleClick = () => openModal(<ModalContent />, 'dialog');
 
@@ -19,20 +20,16 @@ const UserDataSettings = () => {
       <Header />
       <Content>
         <Container>
-          <Title>Zarządzaj danymi</Title>
+          <Title>{t('user_data_settings_text1')}</Title>
           <Box>
             <BoxTitle>
-              <img src={warning} alt="Ważne" />
-              Ważne
+              <img src={warning} alt={t('user_data_settings_text2')} />
+              {t('user_data_settings_text2')}
             </BoxTitle>
-            <Paragraph>
-              Jeśli wymażesz swoje dane, aplikacja stanie się bezużyteczna.
-              Archiwum Twojego Dziennika Zdrowia przepadnie, a wszelkie dane
-              będzie trzeba podawać ponownie.
-            </Paragraph>
+            <Paragraph>{t('user_data_settings_text3')}</Paragraph>
           </Box>
           <Actions>
-            <Button onClick={handleClick} label="Wymaż dane" type="outline" />
+            <Button onClick={handleClick} label={t('user_data_settings_text4')} type="outline" />
           </Actions>
         </Container>
       </Content>
@@ -41,4 +38,4 @@ const UserDataSettings = () => {
   );
 };
 
-export default UserDataSettings;
+export default withTranslation()(UserDataSettings);

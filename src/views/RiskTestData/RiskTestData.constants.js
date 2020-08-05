@@ -1,25 +1,20 @@
 export const TRIAGE_LEVEL = {
   no_risk: {
-    riskTestInformation: 'PRZESTRZEGAJ PROFILAKTYKI'
+    riskTestInformation: 'risk_test_data_text4'
   },
   self_monitoring: {
-    riskTestInformation:
-      'SAMOOBSERWACJA - POZOSTAŃ W DOMU I MONITORUJ STAN ZDROWIA'
+    riskTestInformation: 'risk_test_data_text5'
   },
   quarantine: {
-    riskTestInformation:
-      'ODOSOBNIENIE DOMOWE. UNIKAJ KONTAKTU Z DOMOWNIKAMI. OBSERWUJ SWÓJ STAN ZDROWIA.'
+    riskTestInformation: 'risk_test_data_text6'
   },
   isolation_call: {
-    riskTestInformation:
-      'IZOLACJA DOMOWA. UNIKAJ KONTAKTU Z DOMOWNIKAMI. SKONSULTUJ SIĘ Z NUMEREM ALARMOWYM.'
+    riskTestInformation: 'risk_test_data_text7'
   },
   isolation_ambulance: {
-    riskTestInformation:
-      'BEZWZGLĘDNIE NIE OPUSZCZAJ DOMU. ZABRONIONY KONTAKT Z INNYMI LUDŹMI/DOMOWNIKAMI. OBOWIĄZKOWY KONTAKT Z NUMEREM ALARMOWYM.'
+    riskTestInformation: 'risk_test_data_text8'
   },
   call_doctor: {
-    riskTestInformation:
-      'TWOJE OBJAWY SĄ NIEPOKOJĄCE, SKONSULTUJ SIĘ Z LEKARZEM.'
+    riskTestInformation: 'risk_test_data_text9'
   }
 };

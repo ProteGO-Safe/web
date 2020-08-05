@@ -1,10 +1,11 @@
 import React, { useCallback, useState, useEffect, useRef } from 'react';
 import { useHistory, useLocation } from 'react-router-dom';
+import { withTranslation } from 'react-i18next';
 import { menuItems } from './BottomNavigation.constants';
 import useMenuContext from '../../hooks/useMenuContext';
 import { Container, MenuItem } from './BottomNavigation.styled';
 
-const BottomNavigation = ({ className }) => {
+const BottomNavigation = ({ className, t }) => {
   const history = useHistory();
   const location = useLocation();
   const containerRef = useRef();
@@ -59,7 +60,7 @@ const BottomNavigation = ({ className }) => {
     <MenuItem
       id={id}
       key={label}
-      label={label}
+      label={t(label)}
       disabled={disabled}
       icon={<Icon />}
       disableRipple
@@ -79,4 +80,4 @@ const BottomNavigation = ({ className }) => {
   );
 };
 
-export default BottomNavigation;
+export default withTranslation()(BottomNavigation);

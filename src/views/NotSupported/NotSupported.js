@@ -1,27 +1,31 @@
 import React from 'react';
+import { withTranslation } from 'react-i18next';
 
 import { Button, GovFooter, Url } from '../../components';
 import Header from '../../components/Header/Header';
 import { Logo, Title, Paragraph } from './NotSupported.styled';
 import { Container, Content, View } from '../../theme/grid';
 
-const NotSupported = ({ url }) => {
+const NotSupported = ({ t, url }) => {
   return (
     <View>
       <Header hideBackButton />
       <Content>
         <Container className="full-height">
           <Logo />
-          <Title>Wymagana aktualizacja</Title>
+          <Title>{t('not_supported_text1')}</Title>
           <Paragraph>
-            Dostępna jest nowa wersja aplikacji.
+            {t('not_supported_text2')}
             <br />
-            Zaktualizuj aplikację ProteGO Safe, aby korzystać z pełni
-            funkcjonalności.
+            {t('not_supported_text3')}
           </Paragraph>
 
           <Url value={url} underlineOff>
-            <Button onClick={() => null} text="AKTUALIZUJ" type="primary" />
+            <Button
+              onClick={() => null}
+              text={t('not_supported_text4')}
+              type="primary"
+            />
           </Url>
           <GovFooter type="black" />
         </Container>
@@ -30,4 +34,4 @@ const NotSupported = ({ url }) => {
   );
 };
 
-export default NotSupported;
+export default withTranslation()(NotSupported);

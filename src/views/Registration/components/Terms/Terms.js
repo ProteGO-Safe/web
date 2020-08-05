@@ -1,4 +1,5 @@
 import React from 'react';
+import { withTranslation } from 'react-i18next';
 import { useFormikContext } from 'formik';
 import { FormGroup } from '@material-ui/core';
 import { FIELD_TERM1 } from '../../../../constants';
@@ -13,7 +14,7 @@ import { Button, Checkbox, GovFooter } from '../../../../components';
 import { Container, Content, View } from '../../../../theme/grid';
 import { ButtonWrapper, Title, Paragraph } from '../../Registration.styled';
 
-const Terms = ({ handleClick }) => {
+const Terms = ({ t, handleClick }) => {
   const { setFieldValue, values } = useFormikContext();
   const { openModal } = useModalContext();
 
@@ -27,22 +28,19 @@ const Terms = ({ handleClick }) => {
       <Content>
         <Container className="full-height">
           <Title>
-            Pomóż sobie i innym. <br /> Zaczynamy!
+            {t('terms_text1')}
+            <br />
+            {t('terms_text2')}
           </Title>
 
-          <Paragraph>
-            Dobrze, że zdecydowałeś/aś się zainstalować aplikację ProteGO Safe.
-          </Paragraph>
-          <Paragraph>
-            Dzięki niej dowiesz się, czy istnieje ryzyko, że przebywałeś/aś w
-            pobliżu osób chorych na COVID-19.
-          </Paragraph>
+          <Paragraph>{t('terms_text3')}</Paragraph>
+          <Paragraph>{t('terms_text4')}</Paragraph>
           <FormGroup>
             <Checkbox
               checked={values[FIELD_TERM1]}
               label={
                 <Annotation>
-                  Oświadczam, że zapoznałem/am się z{' '}
+                  {t('terms_text5')}{' '}
                   <TextLink
                     onClick={e => {
                       e.preventDefault();
@@ -50,9 +48,9 @@ const Terms = ({ handleClick }) => {
                     }}
                     role="button"
                   >
-                    Regulaminem
+                    {t('terms_text6')}
                   </TextLink>{' '}
-                  ProteGO Safe oraz{' '}
+                  {t('terms_text8')}{' '}
                   <TextLink
                     onClick={e => {
                       e.preventDefault();
@@ -60,9 +58,9 @@ const Terms = ({ handleClick }) => {
                     }}
                     role="button"
                   >
-                    Polityką Prywatności
+                    {t('terms_text7')}
                   </TextLink>{' '}
-                  i akceptuję ich postanowienia.
+                  {t('terms_text9')}
                 </Annotation>
               }
               name={FIELD_TERM1}
@@ -71,7 +69,7 @@ const Terms = ({ handleClick }) => {
           </FormGroup>
 
           <ButtonWrapper>
-            <Button disabled={disabled} onClick={handleClick} label="Dalej" />
+            <Button disabled={disabled} onClick={handleClick} label={t('button_next')} />
           </ButtonWrapper>
           <GovFooter type="black" />
         </Container>
@@ -80,4 +78,4 @@ const Terms = ({ handleClick }) => {
   );
 };
 
-export default Terms;
+export default withTranslation()(Terms);

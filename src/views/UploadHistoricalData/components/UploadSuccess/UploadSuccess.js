@@ -1,14 +1,15 @@
 import React from 'react';
+import { withTranslation } from 'react-i18next';
 import Header from '../../../../components/Header/Header';
 import { BottomNavigation } from '../../../../components/BottomNavigation';
 import { ResultView } from '../../../../components';
 import { Container, Content, View } from '../../../../theme/grid';
 import PositiveIcon from '../../../../assets/img/icons/success-icon.svg';
 
-const UploadSuccess = ({ finishUpload }) => {
+const UploadSuccess = ({ t, finishUpload }) => {
   const buttons = [
     {
-      label: 'ok',
+      label: t('ok'),
       onClick: finishUpload
     }
   ];
@@ -19,8 +20,8 @@ const UploadSuccess = ({ finishUpload }) => {
       <Content>
         <Container className="full-height">
           <ResultView
-            title="Dziękujemy,"
-            text="że myślisz o bezpieczeństwie innych. Informacje zostały przesłane. "
+            title={t('upload_success_text1')}
+            text={t('upload_success_text2')}
             icon={PositiveIcon}
             buttons={buttons}
           />
@@ -31,4 +32,4 @@ const UploadSuccess = ({ finishUpload }) => {
   );
 };
 
-export default UploadSuccess;
+export default withTranslation()(UploadSuccess);

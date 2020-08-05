@@ -1,17 +1,12 @@
 import React from 'react';
+import { withTranslation } from 'react-i18next';
 
-const MoreInformation = () => (
+const MoreInformation = ({ t }) => (
   <div className="more-information">
-    <h4>Więcej informacji</h4>
-    <p>
-      Aktualne informacje na temat sytuacji epidemicznej oraz inne porady i
-      wskazówki, znajdziesz na www.gov.pl/koronawirus
-    </p>
-    <small>
-      Wyniki Testu służą wyłącznie celom informacyjnym oraz edukacyjnym. Nie
-      traktuj ich jako konsultacji lub diagnozy lekarskiej.
-    </small>
+    <h4>{t('home_more_information_text1')}</h4>
+    <p>{t('home_more_information_text2')}</p>
+    <small>{t('home_more_information_text3')}</small>
   </div>
 );
 
-export default MoreInformation;
+export default withTranslation()(MoreInformation);
