@@ -1,31 +1,35 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import { CollapseWrapper, Title, Description } from './Collapse.styled';
+import * as Styled from './Collapse.styled';
 import arrow from '../../assets/img/icons/angle-right.svg';
 
-const Collapse = ({ children, title, className, forceOpen }) => {
+const Collapse = ({ children, className, forceOpen, title }) => {
   const [open, setOpen] = useState(false);
+
+  const isOpen = open || forceOpen;
+
   const handleClick = () => setOpen(prev => !prev);
-  const isOpen = open || forceOpen ? 'open' : '';
 
   return (
-    <CollapseWrapper className={className}>
-      <Title onClick={handleClick} className={isOpen}>
-        <span>{title}</span>
-        <img src={arrow} alt="Arrow" />
-      </Title>
-      {(open || forceOpen) && <Description>{children}</Description>}
-    </CollapseWrapper>
+    <Styled.CollapseWrapper className={className}>
+      <Styled.Header onClick={handleClick} open={isOpen}>
+        <Styled.Title>{title}</Styled.Title>
+        <Styled.Icon alt="Arrow" open={isOpen} src={arrow} />
+      </Styled.Header>
+      {isOpen && <Styled.Description>{children}</Styled.Description>}
+    </Styled.CollapseWrapper>
   );
 };
 
 Collapse.defaultProps = {
-  className: ''
+  className: '',
+  forceOpen: false
 };
 
 Collapse.propTypes = {
   children: PropTypes.node.isRequired,
   className: PropTypes.string,
+  forceOpen: PropTypes.bool,
   title: PropTypes.node.isRequired
 };
 
