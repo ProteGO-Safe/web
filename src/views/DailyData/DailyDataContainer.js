@@ -1,6 +1,5 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useHistory, useParams } from 'react-router-dom';
-import moment from 'moment';
 import { useDispatch, useSelector } from 'react-redux';
 import { Formik } from 'formik';
 import * as Yup from 'yup';
@@ -15,10 +14,10 @@ import {
   FIELD_TEMPERATURE,
   VALUE_SYMPTOM_LEVEL_1
 } from '../../constants';
-import { addDaily } from '../../store/actions/daily';
+import { addDaily, updateDaily } from '../../store/actions/daily';
 import Routes from '../../routes';
-
-const dateFormat = 'D-MM-YYYY';
+import { DAILY_DATA_MODE } from './dailyData.constants';
+import { isEditMode } from './dailyData.helpers';
 
 const DailyDataContainer = () => {
   const history = useHistory();
@@ -28,13 +27,7 @@ const DailyDataContainer = () => {
 
   const goHome = () => history.push(Routes.Daily);
 
-  const handleSubmit = form => {
-    dispatch(addDaily({ data: form })).then(goHome);
-  };
-
   const dailyData = daily[[id]];
-  const date =
-    (id && moment.unix(id).format(dateFormat)) || moment().format(dateFormat);
 
   const validationSchema = Yup.object().shape({
     [FIELD_TEMPERATURE]: Yup.number()
@@ -55,13 +48,26 @@ const DailyDataContainer = () => {
     [FIELD_CONTACTS]: (dailyData && dailyData.data[FIELD_CONTACTS]) || ''
   };
 
+  const [mode, setMode] = useState(
+    dailyData ? DAILY_DATA_MODE.VIEW : DAILY_DATA_MODE.CREATE
+  );
+
+  const handleSubmit = form => {
+    if (!isEditMode(mode)) {
+      dispatch(addDaily({ data: form })).then(goHome);
+      return;
+    }
+
+    dispatch(updateDaily({ data: form }, id)).then(goHome);
+  };
+
   return (
     <Formik
       initialValues={initialValues}
       onSubmit={handleSubmit}
       validationSchema={validationSchema}
     >
-      <DailyData isViewMode={!!dailyData} date={date} />
+      <DailyData mode={mode} setMode={setMode} />
     </Formik>
   );
 };

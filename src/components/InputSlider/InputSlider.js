@@ -13,7 +13,7 @@ const InputSlider = ({ t, label, marks, max, min, onChange, step, value }) => {
       <Label>{t(label)}</Label>
       <InputSliderWrapper>
         <ProteGoSlider
-          defaultValue={0}
+          defaultValue={value || 0}
           step={step}
           marks={marks}
           max={max}
