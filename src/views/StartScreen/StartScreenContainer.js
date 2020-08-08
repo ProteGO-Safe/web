@@ -9,7 +9,21 @@ const StartScreenContainer = () => {
     dispatch(showStartScreenSuccess());
   };
 
-  return <StartScreen onStartClick={onStartClick} />;
+  const handleChangeLang = countryCode => console.log(countryCode);
+
+  return (
+    <StartScreen
+      onStartClick={onStartClick}
+      languages={['PL', 'NO', 'UA']}
+      customLabels={{
+        PL: 'Polski (PL)',
+        NO: 'Norski (NO)',
+        UA: 'Yкраїнська (UA)'
+      }}
+      defaultLang="PL"
+      onSelect={handleChangeLang}
+    />
+  );
 };
 
 export default StartScreenContainer;

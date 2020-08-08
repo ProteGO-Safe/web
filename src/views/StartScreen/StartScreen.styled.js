@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 import { ReactComponent as LogoSVG } from '../../assets/img/logo/protegosafe_logo_white.svg';
 import GovFooter from '../../components/GovFooter/GovFooter';
+import { Color } from '../../theme/colors';
 
 export const Container = styled.section`
   background-image: linear-gradient(to bottom, #0075e2, #003061);
@@ -18,10 +19,11 @@ export const Container = styled.section`
 
 export const Content = styled.div`
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  flex-direction: column;
-  padding: 0 40px;
+  width: 100%;
+  padding: 0 24px;
   flex: 1;
 `;
 
@@ -31,54 +33,74 @@ export const LogoWrapper = styled.h1`
   justify-content: center;
   align-items: center;
   width: 100%;
-  margin: 0;
+  margin: auto 0 0;
 `;
 
 export const Logo = styled(LogoSVG)`
   width: 100%;
-  max-width: 227px;
-  margin: 0 40px;
+  max-width: 302px;
+  margin-bottom: 20px;
 `;
 
-export const Message = styled.p`
-  margin-top: 28px;
-  font-size: 16px;
-  font-weight: normal;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.31;
+export const Subtitle = styled.p`
+  font-size: 20px;
+  line-height: 24px;
+  color: ${Color.white};
   text-align: center;
-  color: #ffffff;
-  max-width: 280px;
+`;
+
+export const ChooseLang = styled.div`
+  display: flex;
+  flex-flow: wrap row;
+  justify-content: center;
+  width: 100%;
+  margin-top: auto;
+  margin-bottom: auto;
+`;
+
+export const Label = styled.div`
+  width: 100%;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 24px;
+  color: ${Color.white};
+  text-align: center;
+`;
+
+export const Info = styled.span`
+  width: 100%;
+  margin-top: 6px;
+  margin-bottom: 36px;
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 24px;
+  color: ${Color.white};
+  text-align: center;
 `;
 
 export const Footer = styled(GovFooter)`
   max-width: 375px;
-  padding-bottom: constant(safe-area-inset-bottom);
-  padding-bottom: env(safe-area-inset-bottom);
+  padding-bottom: calc(32px + constant(safe-area-inset-bottom));
+  padding-bottom: calc(32px + env(safe-area-inset-bottom));
 `;
 
-// TODO: In the future should be replaced with predefined Button component
 export const Button = styled.button`
   outline: none;
   -webkit-appearance: none;
   appearance: none;
-  line-height: 24px;
-  font-size: 16px;
-  text-align: center;
-  text-transform: uppercase;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 232px;
+  height: 52px;
+  margin-bottom: auto;
   border-radius: 4px;
-  color: #0052a5;
-  border: 2px solid currentColor;
-  background: #ffffff;
-  padding: 7px 25px;
-  margin-top: 56px;
-  font-size: 16px;
+  border: 0;
+  font-size: 18px;
+  line-height: 24px;
   font-weight: 700;
-  transition: all 200ms ease-in-out;
+  text-transform: uppercase;
+  color: ${Color.primary};
+  background: #ffffff;
   cursor: pointer;
-
-  &:hover {
-    color: #0075e2;
-  }
 `;
