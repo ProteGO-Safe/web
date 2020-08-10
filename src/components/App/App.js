@@ -46,6 +46,7 @@ import { Notification } from '../Notification';
 import useFilledDiagnosis from '../../hooks/useFilledDiagnosis';
 import { markDataFromNewestVersion } from '../../store/actions/app';
 import { isLocalPWA, isWebView } from '../../utils/native';
+import useMigration from '../../hooks/useMigration';
 
 function App() {
   moment.locale('pl');
@@ -62,6 +63,7 @@ function App() {
   const { language, notification } = useSelector(state => state.nativeData);
   const { inProgress, visible: menuIsVisible } = useMenuContext();
   const { hasFilledAnyDiagnosis } = useFilledDiagnosis();
+  useMigration();
 
   useEffect(() => {
     dispatch(fetchNativeVersion());

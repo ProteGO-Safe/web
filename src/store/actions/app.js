@@ -65,3 +65,14 @@ export function markDataFromNewestVersion() {
     dispatch(dataFromNewestVersionMarked());
   };
 }
+
+export const migrationFinished = data => ({
+  data,
+  type: types.MIGRATION_FINISHED
+});
+
+export function finishMigration(data) {
+  return dispatch => {
+    dispatch(migrationFinished(data));
+  };
+}

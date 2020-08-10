@@ -38,7 +38,7 @@ const RiskTestDataContainer = ({ t }) => {
     const answer = evidence.find(_obj => _obj.id === evidenceId);
     const choiceId = answer ? answer.choice_id : 'absent';
     const choice = choices.find(_obj => _obj.id === choiceId);
-    return choice ? choice.label : '';
+    return choice ? t(choice.label) : '';
   };
 
   const { riskTestInformation } = TRIAGE_LEVEL[triageLevel];

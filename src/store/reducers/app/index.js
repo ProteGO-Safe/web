@@ -2,6 +2,7 @@ import {
   DATA_FROM_NEWEST_VERSION_MARKED,
   EXPOSURE_ONBOARDING_FINISHED,
   FIRST_DIAGNOSIS_FINISHED,
+  MIGRATION_FINISHED,
   ONBOARDING_FINISHED,
   START_SCREEN_SHOWED,
   UPLOAD_HISTORICAL_DATA_ENDED,
@@ -13,6 +14,7 @@ import { UPLOAD_HISTORICAL_DATA_STATE as uploadState } from './app.constants';
 const INITIAL_STATE = {
   exposureOnboardingFinished: false,
   dataFromNewestVersionMarked: false,
+  migrations: [],
   onboardingFinished: false,
   startScreenShowed: false,
   uploadHistoricalDataState: {
@@ -74,22 +76,22 @@ const appReducer = (state = INITIAL_STATE, action) => {
         uploadHistoricalDataState = {
           status: uploadState.FAILED,
           unsuccessfulAttempts: unsuccessfulAttempts.concat(
-              new Date().getTime()
+            new Date().getTime()
           )
-        }
+        };
 
         if (result === 1) {
           uploadHistoricalDataState = {
             status: uploadState.SUCCESS,
             unsuccessfulAttempts: []
-          }
+          };
         }
 
         if (result === 3) {
           uploadHistoricalDataState = {
             ...state.uploadHistoricalDataState,
             status: uploadState.EMPTY
-          }
+          };
         }
 
         return {
@@ -101,6 +103,13 @@ const appReducer = (state = INITIAL_STATE, action) => {
       return {
         ...state,
         dataFromNewestVersionMarked: true
+      };
+    }
+    case MIGRATION_FINISHED: {
+      const { data } = action;
+      return {
+        ...state,
+        migrations: [...(state.migrations || []), data]
       };
     }
     default:

@@ -29,11 +29,11 @@ const RiskTestData = ({
         <div className="data">
           {questions.map(question => (
             <div key={question.text} className="data__single">
-              <Paragraph className="text-bold">{question.text}</Paragraph>
+              <Paragraph className="text-bold">{t(question.text)}</Paragraph>
               <List>
                 {question.items.map(item => (
-                  <ListItem key={item.name}>
-                    {question.type !== 'single' && <p>{item.name}</p>}
+                  <ListItem key={t(item.name)}>
+                    {question.type !== 'single' && <p>{t(item.name)}</p>}
                     <p>{idToChoiceResolver(item.id, item.choices)}</p>
                   </ListItem>
                 ))}
