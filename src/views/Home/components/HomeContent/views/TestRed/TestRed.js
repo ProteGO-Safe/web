@@ -6,17 +6,17 @@ import {
   TriageInfoBorder,
   MoreInformation,
   MakeDiagnosisButton
-} from '../../components/index';
+} from '../../../index';
 
 const TestYellow = () => {
   return (
     <>
       <Smile />
-      <MakeDiagnosisButton />
       <TriageRiskInformation />
       <TriageInfoBorder />
       <TriageRecommendations />
       <MoreInformation />
+      <MakeDiagnosisButton />
     </>
   );
 };

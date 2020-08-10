@@ -4,8 +4,8 @@ import {
   Smile,
   TriageRiskInformation,
   TriageInfoBorder
-} from '../../components/index';
-import { PhoneNumber, Url } from '../../../../components';
+} from '../../../index';
+import { PhoneNumber, Url } from '../../../../../../components';
 
 const ExposureSick = ({ t }) => {
   return (

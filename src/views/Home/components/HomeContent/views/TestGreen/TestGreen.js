@@ -1,5 +1,5 @@
 import React from 'react';
-import { MakeDiagnosisButton, Smile } from '../../components/index';
+import { MakeDiagnosisButton, Smile } from '../../../index';
 
 const TestGreen = () => {
   return (

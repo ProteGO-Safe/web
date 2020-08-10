@@ -1,5 +1,5 @@
 import React from 'react';
-import { SmileNoData, MakeDiagnosisButton } from '../../components/index';
+import { SmileNoData, MakeDiagnosisButton } from '../../../index';
 
 const NoData = () => {
   return (

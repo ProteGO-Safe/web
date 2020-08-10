@@ -1,11 +1,7 @@
 import React from 'react';
 import { withTranslation } from 'react-i18next';
-import {
-  MakeDiagnosisButton,
-  Smile,
-  TriageInfoBorder
-} from '../../components/index';
-import { Paragraph } from '../../../../theme/typography';
+import { MakeDiagnosisButton, Smile, TriageInfoBorder } from '../../../index';
+import { Paragraph } from '../../../../../../theme/typography';
 
 const ExposureLow = ({ t }) => {
   return (

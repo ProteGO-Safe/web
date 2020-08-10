@@ -3,7 +3,7 @@ import {
   Smile,
   TriageInfoBorder,
   TriageRiskInformation
-} from '../../components/index';
+} from '../../../index';
 
 const ExposureHigh = () => {
   return (

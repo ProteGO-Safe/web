@@ -1,0 +1,3431 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test render home component should render with: disable exposure module, no test, no exposure data 1`] = `
+Array [
+  <div
+    className="sc-fzoMdx kygRWu"
+  >
+    <div
+      className="sc-fzoWqW difxXU"
+    >
+      <svg
+        className="sc-AxjAm enNuKk"
+        id="green"
+        style={
+          Object {
+            "enableBackground": "new 0 0 132 132",
+          }
+        }
+        version="1.1"
+        viewBox="0 0 132 132"
+        x="0px"
+        xmlSpace="preserve"
+        y="0px"
+      >
+        <circle
+          className="green-st0"
+          cx="65.8"
+          cy="65.9"
+          r="63.7"
+        />
+        <path
+          className="green-st0"
+          d="M97.5,87.1c-5.9,11.5-17.9,19.4-31.7,19.4c-13.8,0-25.8-7.9-31.7-19.4"
+        />
+        <path
+          className="green-st0"
+          d="M22.9,52.9c3.7-4.9,9.6-8,16.1-8c6.4,0,12.2,3,15.9,7.7"
+        />
+        <path
+          className="green-st0"
+          d="M76.6,52.9c3.7-4.9,9.6-8,16.1-8c6.4,0,12.2,3,15.9,7.7"
+        />
+      </svg>
+      <svg
+        className="sc-AxirZ gZJCiT"
+        id="yellow"
+        style={
+          Object {
+            "enableBackground": "new 0 0 132 132",
+          }
+        }
+        version="1.1"
+        viewBox="0 0 132 132"
+        x="0px"
+        xmlSpace="preserve"
+        y="0px"
+      >
+        <circle
+          className="yellow-st0"
+          cx="66.3"
+          cy="65.5"
+          r="63.7"
+        />
+        <path
+          className="yellow-st0"
+          d="M23.5,52.5c3.7-4.9,9.6-8,16.1-8c6.4,0,12.2,3,15.9,7.7"
+        />
+        <path
+          className="yellow-st0"
+          d="M77.1,52.5c3.7-4.9,9.6-8,16.1-8c6.4,0,12.2,3,15.9,7.7"
+        />
+        <line
+          className="yellow-st0"
+          x1="38.4"
+          x2="94.2"
+          y1="95.1"
+          y2="95.1"
+        />
+      </svg>
+      <svg
+        className="sc-AxiKw izgWNC"
+        id="red"
+        style={
+          Object {
+            "enableBackground": "new 0 0 132 132",
+          }
+        }
+        version="1.1"
+        viewBox="0 0 132 132"
+        x="0px"
+        xmlSpace="preserve"
+        y="0px"
+      >
+        <path
+          className="red-st0"
+          d="M123.7,39.2c3.7,8,5.8,17,5.8,26.5c0,34.9-28.3,63.2-63.2,63.2S3.1,100.5,3.1,65.6S31.4,2.5,66.3,2.5 c8,0,15.6,1.5,22.6,4.2"
+        />
+        <path
+          className="red-st0"
+          d="M90.2,100.3c-5.4-7.3-14.1-12.1-23.9-12.1c-9.9,0-18.6,4.8-24,12.3"
+        />
+        <path
+          className="red-st0"
+          d="M23.8,57.1c3.7-4.8,9.5-8,16-8c6.4,0,12.1,3,15.8,7.6"
+        />
+        <path
+          className="red-st0"
+          d="M77.1,57.1c3.7-4.8,9.5-8,16-8c6.4,0,12.1,3,15.8,7.6"
+        />
+        <path
+          className="red-st0"
+          d="M117.7,25.9c0,6.7-5.4,12.1-12.1,12.1c-6.7,0-12.1-5.4-12.1-12.1S105.6,3,105.6,3S117.7,19.2,117.7,25.9z"
+        />
+      </svg>
+    </div>
+    <h1
+      className="sc-fzplgP hxYiUq"
+    >
+      smile_no_data_text1
+    </h1>
+    <p
+      className="sc-fznzqM cMSJkU"
+    >
+      smile_no_data_text2
+    </p>
+  </div>,
+  <button
+    className="sc-pKMan sc-oVdHe csqSp"
+    disabled={false}
+    onClick={[Function]}
+    type="button"
+  >
+    <svg
+      className="sc-fznyYp dDojAb"
+    >
+      wykonaj-test.svg
+    </svg>
+    <span
+      className="sc-ptRml bTKMWB"
+    >
+      <span
+        className="sc-qWgaf cFhQsd"
+      >
+        make_diagnosis_button_text1
+      </span>
+      <span
+        className="sc-qOjXG lmdAkv"
+      />
+    </span>
+  </button>,
+]
+`;
+
+exports[`test render home component should render with: disabled exposure module, green test (no_risk), no exposure data 1`] = `
+Array [
+  <div
+    className="sc-fznXWL kuywbj"
+  >
+    <div
+      className="sc-fzqzlV cxOwQx"
+    >
+      player
+      ,
+    </div>
+    <div
+      className="sc-fzokvW AEkOy"
+    >
+      <div
+        className="sc-fzqLLg fqTEdm"
+      >
+        <p>
+          smile_container_text4
+           
+          <strong
+            className="nowrap"
+          >
+            
+          </strong>
+          smile_container_text5
+           
+          <strong>
+            triage_level_low_risk
+          </strong>
+          .
+        </p>
+      </div>
+      <div
+        className="sc-fzoxnE buCNXS"
+      >
+        <svg
+          className="sc-AxjAm enNuKk"
+          id="green"
+          style={
+            Object {
+              "enableBackground": "new 0 0 132 132",
+            }
+          }
+          version="1.1"
+          viewBox="0 0 132 132"
+          x="0px"
+          xmlSpace="preserve"
+          y="0px"
+        >
+          <circle
+            className="green-st0"
+            cx="65.8"
+            cy="65.9"
+            r="63.7"
+          />
+          <path
+            className="green-st0"
+            d="M97.5,87.1c-5.9,11.5-17.9,19.4-31.7,19.4c-13.8,0-25.8-7.9-31.7-19.4"
+          />
+          <path
+            className="green-st0"
+            d="M22.9,52.9c3.7-4.9,9.6-8,16.1-8c6.4,0,12.2,3,15.9,7.7"
+          />
+          <path
+            className="green-st0"
+            d="M76.6,52.9c3.7-4.9,9.6-8,16.1-8c6.4,0,12.2,3,15.9,7.7"
+          />
+        </svg>
+      </div>
+    </div>
+  </div>,
+  <button
+    className="sc-pKMan sc-oVdHe csqSp"
+    disabled={false}
+    onClick={[Function]}
+    type="button"
+  >
+    <svg
+      className="sc-fznyYp dDojAb"
+    >
+      wykonaj-test.svg
+    </svg>
+    <span
+      className="sc-ptRml bTKMWB"
+    >
+      <span
+        className="sc-qWgaf cFhQsd"
+      >
+        make_diagnosis_button_text1
+      </span>
+      <span
+        className="sc-qOjXG lmdAkv"
+      />
+    </span>
+  </button>,
+]
+`;
+
+exports[`test render home component should render with: disabled exposure module, green test (self_monitoring), no exposure data 1`] = `
+Array [
+  <div
+    className="sc-fznXWL kuywbj"
+  >
+    <div
+      className="sc-fzqzlV cxOwQx"
+    >
+      player
+      ,
+    </div>
+    <div
+      className="sc-fzokvW AEkOy"
+    >
+      <div
+        className="sc-fzqLLg fqTEdm"
+      >
+        <p>
+          smile_container_text4
+           
+          <strong
+            className="nowrap"
+          >
+            
+          </strong>
+          smile_container_text5
+           
+          <strong>
+            triage_level_low_risk
+          </strong>
+          .
+        </p>
+      </div>
+      <div
+        className="sc-fzoxnE buCNXS"
+      >
+        <svg
+          className="sc-AxjAm enNuKk"
+          id="green"
+          style={
+            Object {
+              "enableBackground": "new 0 0 132 132",
+            }
+          }
+          version="1.1"
+          viewBox="0 0 132 132"
+          x="0px"
+          xmlSpace="preserve"
+          y="0px"
+        >
+          <circle
+            className="green-st0"
+            cx="65.8"
+            cy="65.9"
+            r="63.7"
+          />
+          <path
+            className="green-st0"
+            d="M97.5,87.1c-5.9,11.5-17.9,19.4-31.7,19.4c-13.8,0-25.8-7.9-31.7-19.4"
+          />
+          <path
+            className="green-st0"
+            d="M22.9,52.9c3.7-4.9,9.6-8,16.1-8c6.4,0,12.2,3,15.9,7.7"
+          />
+          <path
+            className="green-st0"
+            d="M76.6,52.9c3.7-4.9,9.6-8,16.1-8c6.4,0,12.2,3,15.9,7.7"
+          />
+        </svg>
+      </div>
+    </div>
+  </div>,
+  <button
+    className="sc-pKMan sc-oVdHe csqSp"
+    disabled={false}
+    onClick={[Function]}
+    type="button"
+  >
+    <svg
+      className="sc-fznyYp dDojAb"
+    >
+      wykonaj-test.svg
+    </svg>
+    <span
+      className="sc-ptRml bTKMWB"
+    >
+      <span
+        className="sc-qWgaf cFhQsd"
+      >
+        make_diagnosis_button_text1
+      </span>
+      <span
+        className="sc-qOjXG lmdAkv"
+      />
+    </span>
+  </button>,
+]
+`;
+
+exports[`test render home component should render with: disabled exposure module, red test (call_doctor), no exposure data 1`] = `
+Array [
+  <div
+    className="sc-fznXWL kuywbj"
+  >
+    <div
+      className="sc-fzqzlV cxOwQx"
+    >
+      player
+      ,
+    </div>
+    <div
+      className="sc-fzokvW AEkOy"
+    >
+      <div
+        className="sc-fzqLLg fqTEdm"
+      >
+        <p>
+          smile_container_text4
+           
+          <strong
+            className="nowrap"
+          >
+            
+          </strong>
+          smile_container_text5
+           
+          <strong>
+            triage_level_high_risk
+          </strong>
+          .
+        </p>
+      </div>
+      <div
+        className="sc-fzoxnE buCNXS"
+      >
+        <svg
+          className="sc-AxiKw izgWNC"
+          id="red"
+          style={
+            Object {
+              "enableBackground": "new 0 0 132 132",
+            }
+          }
+          version="1.1"
+          viewBox="0 0 132 132"
+          x="0px"
+          xmlSpace="preserve"
+          y="0px"
+        >
+          <path
+            className="red-st0"
+            d="M123.7,39.2c3.7,8,5.8,17,5.8,26.5c0,34.9-28.3,63.2-63.2,63.2S3.1,100.5,3.1,65.6S31.4,2.5,66.3,2.5 c8,0,15.6,1.5,22.6,4.2"
+          />
+          <path
+            className="red-st0"
+            d="M90.2,100.3c-5.4-7.3-14.1-12.1-23.9-12.1c-9.9,0-18.6,4.8-24,12.3"
+          />
+          <path
+            className="red-st0"
+            d="M23.8,57.1c3.7-4.8,9.5-8,16-8c6.4,0,12.1,3,15.8,7.6"
+          />
+          <path
+            className="red-st0"
+            d="M77.1,57.1c3.7-4.8,9.5-8,16-8c6.4,0,12.1,3,15.8,7.6"
+          />
+          <path
+            className="red-st0"
+            d="M117.7,25.9c0,6.7-5.4,12.1-12.1,12.1c-6.7,0-12.1-5.4-12.1-12.1S105.6,3,105.6,3S117.7,19.2,117.7,25.9z"
+          />
+        </svg>
+      </div>
+    </div>
+  </div>,
+  <div
+    className="sc-fznOgF bMwtqy"
+    color="#d5233f"
+  >
+    <p>
+      triage_level_call_doctor_content
+    </p>
+    <a
+      className="sc-fznYue jqwrWF"
+      color="#d5233f"
+      href="tel:222500115"
+    >
+      <svg
+        className="sc-fzqzEs dClyAt"
+        color="#d5233f"
+      >
+        icon-contact.svg
+      </svg>
+      <div
+        className="sc-fzonjX cTnQft"
+        color="#d5233f"
+      >
+        call_helpline
+        <br />
+        222 500 115
+        <span
+          className="sc-fzqOul dDeUve"
+        >
+          <svg>
+            arrow-current-color.svg
+          </svg>
+        </span>
+      </div>
+    </a>
+  </div>,
+  <div
+    className="sc-fzoCCn dNgVib"
+    color="#d5233f"
+  >
+    <span
+      className="p1"
+    >
+      diagnosis_text44
+       
+      triage_info_border_text8
+    </span>
+    <ul>
+      <li>
+        seriouses_text1
+      </li>
+      <li>
+        seriouses_text2
+      </li>
+      <li>
+        seriouses_text3
+      </li>
+    </ul>
+  </div>,
+  <div
+    className="sc-pTWqp HeEDr"
+  >
+    <div
+      className="sc-qcrrk iAOnrU"
+      onClick={[Function]}
+      open={false}
+    >
+      <span
+        className="sc-oVpqz fGwbzf"
+      >
+        call_doctor_text30
+      </span>
+      <img
+        alt="Arrow"
+        className="sc-pdKru kDeAVN"
+        open={false}
+        src="angle-right.svg"
+      />
+    </div>
+  </div>,
+  <div
+    className="sc-pTWqp HeEDr"
+  >
+    <div
+      className="sc-qcrrk iAOnrU"
+      onClick={[Function]}
+      open={false}
+    >
+      <span
+        className="sc-oVpqz fGwbzf"
+      >
+        call_doctor_text32
+      </span>
+      <img
+        alt="Arrow"
+        className="sc-pdKru kDeAVN"
+        open={false}
+        src="angle-right.svg"
+      />
+    </div>
+  </div>,
+  <div
+    className="sc-pTWqp HeEDr"
+  >
+    <div
+      className="sc-qcrrk iAOnrU"
+      onClick={[Function]}
+      open={false}
+    >
+      <span
+        className="sc-oVpqz fGwbzf"
+      >
+        call_doctor_text34
+      </span>
+      <img
+        alt="Arrow"
+        className="sc-pdKru kDeAVN"
+        open={false}
+        src="angle-right.svg"
+      />
+    </div>
+  </div>,
+  <div
+    className="more-information"
+  >
+    <h4>
+      home_more_information_text1
+    </h4>
+    <p>
+      home_more_information_text2
+    </p>
+    <small>
+      home_more_information_text3
+    </small>
+  </div>,
+  <button
+    className="sc-pKMan sc-oVdHe csqSp"
+    disabled={false}
+    onClick={[Function]}
+    type="button"
+  >
+    <svg
+      className="sc-fznyYp dDojAb"
+    >
+      wykonaj-test.svg
+    </svg>
+    <span
+      className="sc-ptRml bTKMWB"
+    >
+      <span
+        className="sc-qWgaf cFhQsd"
+      >
+        make_diagnosis_button_text1
+      </span>
+      <span
+        className="sc-qOjXG lmdAkv"
+      />
+    </span>
+  </button>,
+]
+`;
+
+exports[`test render home component should render with: disabled exposure module, red test (isolation_ambulance), no exposure data 1`] = `
+Array [
+  <div
+    className="sc-fznXWL kuywbj"
+  >
+    <div
+      className="sc-fzqzlV cxOwQx"
+    >
+      player
+      ,
+    </div>
+    <div
+      className="sc-fzokvW AEkOy"
+    >
+      <div
+        className="sc-fzqLLg fqTEdm"
+      >
+        <p>
+          smile_container_text4
+           
+          <strong
+            className="nowrap"
+          >
+            
+          </strong>
+          smile_container_text5
+           
+          <strong>
+            triage_level_high_risk
+          </strong>
+          .
+        </p>
+      </div>
+      <div
+        className="sc-fzoxnE buCNXS"
+      >
+        <svg
+          className="sc-AxiKw izgWNC"
+          id="red"
+          style={
+            Object {
+              "enableBackground": "new 0 0 132 132",
+            }
+          }
+          version="1.1"
+          viewBox="0 0 132 132"
+          x="0px"
+          xmlSpace="preserve"
+          y="0px"
+        >
+          <path
+            className="red-st0"
+            d="M123.7,39.2c3.7,8,5.8,17,5.8,26.5c0,34.9-28.3,63.2-63.2,63.2S3.1,100.5,3.1,65.6S31.4,2.5,66.3,2.5 c8,0,15.6,1.5,22.6,4.2"
+          />
+          <path
+            className="red-st0"
+            d="M90.2,100.3c-5.4-7.3-14.1-12.1-23.9-12.1c-9.9,0-18.6,4.8-24,12.3"
+          />
+          <path
+            className="red-st0"
+            d="M23.8,57.1c3.7-4.8,9.5-8,16-8c6.4,0,12.1,3,15.8,7.6"
+          />
+          <path
+            className="red-st0"
+            d="M77.1,57.1c3.7-4.8,9.5-8,16-8c6.4,0,12.1,3,15.8,7.6"
+          />
+          <path
+            className="red-st0"
+            d="M117.7,25.9c0,6.7-5.4,12.1-12.1,12.1c-6.7,0-12.1-5.4-12.1-12.1S105.6,3,105.6,3S117.7,19.2,117.7,25.9z"
+          />
+        </svg>
+      </div>
+    </div>
+  </div>,
+  <div
+    className="sc-fznOgF bMwtqy"
+    color="#d5233f"
+  >
+    <p>
+      triage_level_isolation_ambulance_content
+    </p>
+    <a
+      className="sc-fznYue jqwrWF"
+      color="#d5233f"
+      href="tel:222500115"
+    >
+      <svg
+        className="sc-fzqzEs dClyAt"
+        color="#d5233f"
+      >
+        icon-contact.svg
+      </svg>
+      <div
+        className="sc-fzonjX cTnQft"
+        color="#d5233f"
+      >
+        call_helpline
+        <br />
+        222 500 115
+        <span
+          className="sc-fzqOul dDeUve"
+        >
+          <svg>
+            arrow-current-color.svg
+          </svg>
+        </span>
+      </div>
+    </a>
+  </div>,
+  <div
+    className="sc-fzoCCn dNgVib"
+    color="#d5233f"
+  >
+    <span
+      className="p1"
+    >
+      diagnosis_text43
+       
+      triage_info_border_text8
+    </span>
+    <ul>
+      <li>
+        seriouses_text1
+      </li>
+      <li>
+        seriouses_text2
+      </li>
+      <li>
+        seriouses_text3
+      </li>
+    </ul>
+  </div>,
+  <div
+    className="sc-pTWqp HeEDr"
+  >
+    <div
+      className="sc-qcrrk iAOnrU"
+      onClick={[Function]}
+      open={false}
+    >
+      <span
+        className="sc-oVpqz fGwbzf"
+      >
+        isolation_ambulance_text22
+      </span>
+      <img
+        alt="Arrow"
+        className="sc-pdKru kDeAVN"
+        open={false}
+        src="angle-right.svg"
+      />
+    </div>
+  </div>,
+  <div
+    className="sc-pTWqp HeEDr"
+  >
+    <div
+      className="sc-qcrrk iAOnrU"
+      onClick={[Function]}
+      open={false}
+    >
+      <span
+        className="sc-oVpqz fGwbzf"
+      >
+        isolation_ambulance_text23
+      </span>
+      <img
+        alt="Arrow"
+        className="sc-pdKru kDeAVN"
+        open={false}
+        src="angle-right.svg"
+      />
+    </div>
+  </div>,
+  <div
+    className="sc-pTWqp HeEDr"
+  >
+    <div
+      className="sc-qcrrk iAOnrU"
+      onClick={[Function]}
+      open={false}
+    >
+      <span
+        className="sc-oVpqz fGwbzf"
+      >
+        isolation_ambulance_text24
+      </span>
+      <img
+        alt="Arrow"
+        className="sc-pdKru kDeAVN"
+        open={false}
+        src="angle-right.svg"
+      />
+    </div>
+  </div>,
+  <div
+    className="sc-pTWqp HeEDr"
+  >
+    <div
+      className="sc-qcrrk iAOnrU"
+      onClick={[Function]}
+      open={false}
+    >
+      <span
+        className="sc-oVpqz fGwbzf"
+      >
+        isolation_ambulance_text25
+      </span>
+      <img
+        alt="Arrow"
+        className="sc-pdKru kDeAVN"
+        open={false}
+        src="angle-right.svg"
+      />
+    </div>
+  </div>,
+  <div
+    className="more-information"
+  >
+    <h4>
+      home_more_information_text1
+    </h4>
+    <p>
+      home_more_information_text2
+    </p>
+    <small>
+      home_more_information_text3
+    </small>
+  </div>,
+  <button
+    className="sc-pKMan sc-oVdHe csqSp"
+    disabled={false}
+    onClick={[Function]}
+    type="button"
+  >
+    <svg
+      className="sc-fznyYp dDojAb"
+    >
+      wykonaj-test.svg
+    </svg>
+    <span
+      className="sc-ptRml bTKMWB"
+    >
+      <span
+        className="sc-qWgaf cFhQsd"
+      >
+        make_diagnosis_button_text1
+      </span>
+      <span
+        className="sc-qOjXG lmdAkv"
+      />
+    </span>
+  </button>,
+]
+`;
+
+exports[`test render home component should render with: disabled exposure module, red test (isolation_call), no exposure data 1`] = `
+Array [
+  <div
+    className="sc-fznXWL kuywbj"
+  >
+    <div
+      className="sc-fzqzlV cxOwQx"
+    >
+      player
+      ,
+    </div>
+    <div
+      className="sc-fzokvW AEkOy"
+    >
+      <div
+        className="sc-fzqLLg fqTEdm"
+      >
+        <p>
+          smile_container_text4
+           
+          <strong
+            className="nowrap"
+          >
+            
+          </strong>
+          smile_container_text5
+           
+          <strong>
+            triage_level_high_risk
+          </strong>
+          .
+        </p>
+      </div>
+      <div
+        className="sc-fzoxnE buCNXS"
+      >
+        <svg
+          className="sc-AxiKw izgWNC"
+          id="red"
+          style={
+            Object {
+              "enableBackground": "new 0 0 132 132",
+            }
+          }
+          version="1.1"
+          viewBox="0 0 132 132"
+          x="0px"
+          xmlSpace="preserve"
+          y="0px"
+        >
+          <path
+            className="red-st0"
+            d="M123.7,39.2c3.7,8,5.8,17,5.8,26.5c0,34.9-28.3,63.2-63.2,63.2S3.1,100.5,3.1,65.6S31.4,2.5,66.3,2.5 c8,0,15.6,1.5,22.6,4.2"
+          />
+          <path
+            className="red-st0"
+            d="M90.2,100.3c-5.4-7.3-14.1-12.1-23.9-12.1c-9.9,0-18.6,4.8-24,12.3"
+          />
+          <path
+            className="red-st0"
+            d="M23.8,57.1c3.7-4.8,9.5-8,16-8c6.4,0,12.1,3,15.8,7.6"
+          />
+          <path
+            className="red-st0"
+            d="M77.1,57.1c3.7-4.8,9.5-8,16-8c6.4,0,12.1,3,15.8,7.6"
+          />
+          <path
+            className="red-st0"
+            d="M117.7,25.9c0,6.7-5.4,12.1-12.1,12.1c-6.7,0-12.1-5.4-12.1-12.1S105.6,3,105.6,3S117.7,19.2,117.7,25.9z"
+          />
+        </svg>
+      </div>
+    </div>
+  </div>,
+  <div
+    className="sc-fznOgF bMwtqy"
+    color="#d5233f"
+  >
+    <p>
+      triage_level_isolation_call_content
+    </p>
+    <a
+      className="sc-fznYue jqwrWF"
+      color="#d5233f"
+      href="tel:222500115"
+    >
+      <svg
+        className="sc-fzqzEs dClyAt"
+        color="#d5233f"
+      >
+        icon-contact.svg
+      </svg>
+      <div
+        className="sc-fzonjX cTnQft"
+        color="#d5233f"
+      >
+        call_helpline
+        <br />
+        222 500 115
+        <span
+          className="sc-fzqOul dDeUve"
+        >
+          <svg>
+            arrow-current-color.svg
+          </svg>
+        </span>
+      </div>
+    </a>
+  </div>,
+  <div
+    className="sc-fzoCCn dNgVib"
+    color="#d5233f"
+  >
+    <span
+      className="p1"
+    >
+      diagnosis_text45
+       
+      triage_info_border_text8
+    </span>
+    <ul>
+      <li>
+        seriouses_text1
+      </li>
+      <li>
+        seriouses_text2
+      </li>
+      <li>
+        seriouses_text3
+      </li>
+    </ul>
+  </div>,
+  <div
+    className="sc-pTWqp HeEDr"
+  >
+    <div
+      className="sc-qcrrk iAOnrU"
+      onClick={[Function]}
+      open={false}
+    >
+      <span
+        className="sc-oVpqz fGwbzf"
+      >
+        isolation_call_text22
+      </span>
+      <img
+        alt="Arrow"
+        className="sc-pdKru kDeAVN"
+        open={false}
+        src="angle-right.svg"
+      />
+    </div>
+  </div>,
+  <div
+    className="sc-pTWqp HeEDr"
+  >
+    <div
+      className="sc-qcrrk iAOnrU"
+      onClick={[Function]}
+      open={false}
+    >
+      <span
+        className="sc-oVpqz fGwbzf"
+      >
+        isolation_call_text23
+      </span>
+      <img
+        alt="Arrow"
+        className="sc-pdKru kDeAVN"
+        open={false}
+        src="angle-right.svg"
+      />
+    </div>
+  </div>,
+  <div
+    className="sc-pTWqp HeEDr"
+  >
+    <div
+      className="sc-qcrrk iAOnrU"
+      onClick={[Function]}
+      open={false}
+    >
+      <span
+        className="sc-oVpqz fGwbzf"
+      >
+        isolation_call_text24
+      </span>
+      <img
+        alt="Arrow"
+        className="sc-pdKru kDeAVN"
+        open={false}
+        src="angle-right.svg"
+      />
+    </div>
+  </div>,
+  <div
+    className="sc-pTWqp HeEDr"
+  >
+    <div
+      className="sc-qcrrk iAOnrU"
+      onClick={[Function]}
+      open={false}
+    >
+      <span
+        className="sc-oVpqz fGwbzf"
+      >
+        isolation_call_text25
+      </span>
+      <img
+        alt="Arrow"
+        className="sc-pdKru kDeAVN"
+        open={false}
+        src="angle-right.svg"
+      />
+    </div>
+  </div>,
+  <div
+    className="more-information"
+  >
+    <h4>
+      home_more_information_text1
+    </h4>
+    <p>
+      home_more_information_text2
+    </p>
+    <small>
+      home_more_information_text3
+    </small>
+  </div>,
+  <button
+    className="sc-pKMan sc-oVdHe csqSp"
+    disabled={false}
+    onClick={[Function]}
+    type="button"
+  >
+    <svg
+      className="sc-fznyYp dDojAb"
+    >
+      wykonaj-test.svg
+    </svg>
+    <span
+      className="sc-ptRml bTKMWB"
+    >
+      <span
+        className="sc-qWgaf cFhQsd"
+      >
+        make_diagnosis_button_text1
+      </span>
+      <span
+        className="sc-qOjXG lmdAkv"
+      />
+    </span>
+  </button>,
+]
+`;
+
+exports[`test render home component should render with: disabled exposure module, yellow test (quarantine), no exposure data 1`] = `
+Array [
+  <div
+    className="sc-fznXWL kuywbj"
+  >
+    <div
+      className="sc-fzqzlV cxOwQx"
+    >
+      player
+      ,
+    </div>
+    <div
+      className="sc-fzokvW AEkOy"
+    >
+      <div
+        className="sc-fzqLLg fqTEdm"
+      >
+        <p>
+          smile_container_text4
+           
+          <strong
+            className="nowrap"
+          >
+            
+          </strong>
+          smile_container_text5
+           
+          <strong>
+            triage_level_medium_risk
+          </strong>
+          .
+        </p>
+      </div>
+      <div
+        className="sc-fzoxnE buCNXS"
+      >
+        <svg
+          className="sc-AxirZ gZJCiT"
+          id="yellow"
+          style={
+            Object {
+              "enableBackground": "new 0 0 132 132",
+            }
+          }
+          version="1.1"
+          viewBox="0 0 132 132"
+          x="0px"
+          xmlSpace="preserve"
+          y="0px"
+        >
+          <circle
+            className="yellow-st0"
+            cx="66.3"
+            cy="65.5"
+            r="63.7"
+          />
+          <path
+            className="yellow-st0"
+            d="M23.5,52.5c3.7-4.9,9.6-8,16.1-8c6.4,0,12.2,3,15.9,7.7"
+          />
+          <path
+            className="yellow-st0"
+            d="M77.1,52.5c3.7-4.9,9.6-8,16.1-8c6.4,0,12.2,3,15.9,7.7"
+          />
+          <line
+            className="yellow-st0"
+            x1="38.4"
+            x2="94.2"
+            y1="95.1"
+            y2="95.1"
+          />
+        </svg>
+      </div>
+    </div>
+  </div>,
+  <button
+    className="sc-pKMan sc-oVdHe csqSp"
+    disabled={false}
+    onClick={[Function]}
+    type="button"
+  >
+    <svg
+      className="sc-fznyYp dDojAb"
+    >
+      wykonaj-test.svg
+    </svg>
+    <span
+      className="sc-ptRml bTKMWB"
+    >
+      <span
+        className="sc-qWgaf cFhQsd"
+      >
+        make_diagnosis_button_text1
+      </span>
+      <span
+        className="sc-qOjXG lmdAkv"
+      />
+    </span>
+  </button>,
+  <div
+    className="sc-fznOgF bvRhCU"
+    color="#CC4700"
+  >
+    <p>
+      triage_level_quarantine_content
+    </p>
+    <a
+      className="sc-fznYue jqwrWF"
+      color="#CC4700"
+      href="tel:222500115"
+    >
+      <svg
+        className="sc-fzqzEs dClyAt"
+        color="#CC4700"
+      >
+        icon-contact.svg
+      </svg>
+      <div
+        className="sc-fzonjX lfAbLD"
+        color="#CC4700"
+      >
+        call_helpline
+        <br />
+        222 500 115
+        <span
+          className="sc-fzqOul dDeUve"
+        >
+          <svg>
+            arrow-current-color.svg
+          </svg>
+        </span>
+      </div>
+    </a>
+  </div>,
+  <div
+    className="sc-fzoCCn gbBoVR"
+    color="#CC4700"
+  >
+    <span
+      className="p1"
+    >
+      diagnosis_text48
+       
+      triage_info_border_text8
+    </span>
+    <ul>
+      <li>
+        seriouses_text1
+      </li>
+      <li>
+        seriouses_text2
+      </li>
+      <li>
+        seriouses_text3
+      </li>
+    </ul>
+  </div>,
+  <div
+    className="sc-pTWqp HeEDr"
+  >
+    <div
+      className="sc-qcrrk iAOnrU"
+      onClick={[Function]}
+      open={false}
+    >
+      <span
+        className="sc-oVpqz fGwbzf"
+      >
+        quarantine_text45
+      </span>
+      <img
+        alt="Arrow"
+        className="sc-pdKru kDeAVN"
+        open={false}
+        src="angle-right.svg"
+      />
+    </div>
+  </div>,
+  <div
+    className="sc-pTWqp HeEDr"
+  >
+    <div
+      className="sc-qcrrk iAOnrU"
+      onClick={[Function]}
+      open={false}
+    >
+      <span
+        className="sc-oVpqz fGwbzf"
+      >
+        quarantine_text46
+      </span>
+      <img
+        alt="Arrow"
+        className="sc-pdKru kDeAVN"
+        open={false}
+        src="angle-right.svg"
+      />
+    </div>
+  </div>,
+  <div
+    className="sc-pTWqp HeEDr"
+  >
+    <div
+      className="sc-qcrrk iAOnrU"
+      onClick={[Function]}
+      open={false}
+    >
+      <span
+        className="sc-oVpqz fGwbzf"
+      >
+        quarantine_text47
+      </span>
+      <img
+        alt="Arrow"
+        className="sc-pdKru kDeAVN"
+        open={false}
+        src="angle-right.svg"
+      />
+    </div>
+  </div>,
+  <div
+    className="sc-pTWqp HeEDr"
+  >
+    <div
+      className="sc-qcrrk iAOnrU"
+      onClick={[Function]}
+      open={false}
+    >
+      <span
+        className="sc-oVpqz fGwbzf"
+      >
+        quarantine_text49
+      </span>
+      <img
+        alt="Arrow"
+        className="sc-pdKru kDeAVN"
+        open={false}
+        src="angle-right.svg"
+      />
+    </div>
+  </div>,
+  <div
+    className="sc-pTWqp HeEDr"
+  >
+    <div
+      className="sc-qcrrk iAOnrU"
+      onClick={[Function]}
+      open={false}
+    >
+      <span
+        className="sc-oVpqz fGwbzf"
+      >
+        quarantine_text50
+      </span>
+      <img
+        alt="Arrow"
+        className="sc-pdKru kDeAVN"
+        open={false}
+        src="angle-right.svg"
+      />
+    </div>
+  </div>,
+  <div
+    className="more-information"
+  >
+    <h4>
+      home_more_information_text1
+    </h4>
+    <p>
+      home_more_information_text2
+    </p>
+    <small>
+      home_more_information_text3
+    </small>
+  </div>,
+]
+`;
+
+exports[`test render home component should render with: enabled exposure module, green test (no_risk), green exposure data 1`] = `
+Array [
+  <div
+    className="sc-fznXWL kuywbj"
+  >
+    <div
+      className="sc-fzqzlV cxOwQx"
+    >
+      player
+      ,
+    </div>
+    <div
+      className="sc-fzokvW AEkOy"
+    >
+      <div
+        className="sc-fzqLLg fqTEdm"
+      >
+        <p>
+          smile_container_text4
+           
+          <strong
+            className="nowrap"
+          >
+            
+          </strong>
+          smile_container_text5
+           
+          <strong>
+            triage_level_low_risk
+          </strong>
+          .
+        </p>
+      </div>
+      <div
+        className="sc-fzoxnE buCNXS"
+      >
+        <svg
+          className="sc-AxjAm enNuKk"
+          id="green"
+          style={
+            Object {
+              "enableBackground": "new 0 0 132 132",
+            }
+          }
+          version="1.1"
+          viewBox="0 0 132 132"
+          x="0px"
+          xmlSpace="preserve"
+          y="0px"
+        >
+          <circle
+            className="green-st0"
+            cx="65.8"
+            cy="65.9"
+            r="63.7"
+          />
+          <path
+            className="green-st0"
+            d="M97.5,87.1c-5.9,11.5-17.9,19.4-31.7,19.4c-13.8,0-25.8-7.9-31.7-19.4"
+          />
+          <path
+            className="green-st0"
+            d="M22.9,52.9c3.7-4.9,9.6-8,16.1-8c6.4,0,12.2,3,15.9,7.7"
+          />
+          <path
+            className="green-st0"
+            d="M76.6,52.9c3.7-4.9,9.6-8,16.1-8c6.4,0,12.2,3,15.9,7.7"
+          />
+        </svg>
+      </div>
+    </div>
+  </div>,
+  <button
+    className="sc-pKMan sc-oVdHe csqSp"
+    disabled={false}
+    onClick={[Function]}
+    type="button"
+  >
+    <svg
+      className="sc-fznyYp dDojAb"
+    >
+      wykonaj-test.svg
+    </svg>
+    <span
+      className="sc-ptRml bTKMWB"
+    >
+      <span
+        className="sc-qWgaf cFhQsd"
+      >
+        make_diagnosis_button_text1
+      </span>
+      <span
+        className="sc-qOjXG lmdAkv"
+      />
+    </span>
+  </button>,
+]
+`;
+
+exports[`test render home component should render with: enabled exposure module, green test (no_risk), high exposure data 1`] = `
+Array [
+  <div
+    className="sc-fznXWL kuywbj"
+  >
+    <div
+      className="sc-fzqzlV cxOwQx"
+    >
+      player
+      ,
+    </div>
+    <div
+      className="sc-fzokvW AEkOy"
+    >
+      <div
+        className="sc-fzqLLg fqTEdm"
+      >
+        <p>
+          <strong>
+            smile_container_text2
+          </strong>
+           
+          smile_container_text3
+           
+          <strong>
+            triage_level_high_risk
+          </strong>
+          .
+        </p>
+      </div>
+      <div
+        className="sc-fzoxnE buCNXS"
+      >
+        <svg
+          className="sc-AxiKw izgWNC"
+          id="red"
+          style={
+            Object {
+              "enableBackground": "new 0 0 132 132",
+            }
+          }
+          version="1.1"
+          viewBox="0 0 132 132"
+          x="0px"
+          xmlSpace="preserve"
+          y="0px"
+        >
+          <path
+            className="red-st0"
+            d="M123.7,39.2c3.7,8,5.8,17,5.8,26.5c0,34.9-28.3,63.2-63.2,63.2S3.1,100.5,3.1,65.6S31.4,2.5,66.3,2.5 c8,0,15.6,1.5,22.6,4.2"
+          />
+          <path
+            className="red-st0"
+            d="M90.2,100.3c-5.4-7.3-14.1-12.1-23.9-12.1c-9.9,0-18.6,4.8-24,12.3"
+          />
+          <path
+            className="red-st0"
+            d="M23.8,57.1c3.7-4.8,9.5-8,16-8c6.4,0,12.1,3,15.8,7.6"
+          />
+          <path
+            className="red-st0"
+            d="M77.1,57.1c3.7-4.8,9.5-8,16-8c6.4,0,12.1,3,15.8,7.6"
+          />
+          <path
+            className="red-st0"
+            d="M117.7,25.9c0,6.7-5.4,12.1-12.1,12.1c-6.7,0-12.1-5.4-12.1-12.1S105.6,3,105.6,3S117.7,19.2,117.7,25.9z"
+          />
+        </svg>
+      </div>
+    </div>
+  </div>,
+  <div
+    className="sc-fznOgF bMwtqy"
+    color="#d5233f"
+  >
+    <p>
+      exposure_triage_level_high_risk_content
+    </p>
+    <a
+      className="sc-fznYue jqwrWF"
+      color="#d5233f"
+      href="tel:222500115"
+    >
+      <svg
+        className="sc-fzqzEs dClyAt"
+        color="#d5233f"
+      >
+        icon-contact.svg
+      </svg>
+      <div
+        className="sc-fzonjX cTnQft"
+        color="#d5233f"
+      >
+        call_helpline
+        <br />
+        222 500 115
+        <span
+          className="sc-fzqOul dDeUve"
+        >
+          <svg>
+            arrow-current-color.svg
+          </svg>
+        </span>
+      </div>
+    </a>
+  </div>,
+  <div
+    className="sc-fzoCCn dNgVib"
+    color="#d5233f"
+  >
+    <span
+      className="p1"
+    >
+      triage_info_border_text4
+      <div
+        className="sc-fzoPby kjSDGW"
+        onClick={[Function]}
+      >
+        triage_info_border_text5
+        <img
+          alt="button"
+          src="angle-right.svg"
+        />
+      </div>
+      triage_info_border_text6
+       
+      <a
+        className="sc-qYhTA fEnynt"
+        href="tel:112"
+      >
+        112
+      </a>
+       lub
+       
+      <a
+        className="sc-qYhTA fEnynt"
+        href="tel:999"
+      >
+        999
+      </a>
+      triage_info_border_text7
+    </span>
+  </div>,
+]
+`;
+
+exports[`test render home component should render with: enabled exposure module, green test (no_risk), middle exposure data 1`] = `
+Array [
+  <div
+    className="sc-fznXWL kuywbj"
+  >
+    <div
+      className="sc-fzqzlV cxOwQx"
+    >
+      player
+      ,
+    </div>
+    <div
+      className="sc-fzokvW AEkOy"
+    >
+      <div
+        className="sc-fzqLLg fqTEdm"
+      >
+        <p>
+          <strong>
+            smile_container_text2
+          </strong>
+           
+          smile_container_text3
+           
+          <strong>
+            triage_level_medium_risk
+          </strong>
+          .
+        </p>
+      </div>
+      <div
+        className="sc-fzoxnE buCNXS"
+      >
+        <svg
+          className="sc-AxiKw izgWNC"
+          id="red"
+          style={
+            Object {
+              "enableBackground": "new 0 0 132 132",
+            }
+          }
+          version="1.1"
+          viewBox="0 0 132 132"
+          x="0px"
+          xmlSpace="preserve"
+          y="0px"
+        >
+          <path
+            className="red-st0"
+            d="M123.7,39.2c3.7,8,5.8,17,5.8,26.5c0,34.9-28.3,63.2-63.2,63.2S3.1,100.5,3.1,65.6S31.4,2.5,66.3,2.5 c8,0,15.6,1.5,22.6,4.2"
+          />
+          <path
+            className="red-st0"
+            d="M90.2,100.3c-5.4-7.3-14.1-12.1-23.9-12.1c-9.9,0-18.6,4.8-24,12.3"
+          />
+          <path
+            className="red-st0"
+            d="M23.8,57.1c3.7-4.8,9.5-8,16-8c6.4,0,12.1,3,15.8,7.6"
+          />
+          <path
+            className="red-st0"
+            d="M77.1,57.1c3.7-4.8,9.5-8,16-8c6.4,0,12.1,3,15.8,7.6"
+          />
+          <path
+            className="red-st0"
+            d="M117.7,25.9c0,6.7-5.4,12.1-12.1,12.1c-6.7,0-12.1-5.4-12.1-12.1S105.6,3,105.6,3S117.7,19.2,117.7,25.9z"
+          />
+        </svg>
+      </div>
+    </div>
+  </div>,
+  <div
+    className="sc-fznOgF bvRhCU"
+    color="#CC4700"
+  >
+    <p>
+      exposure_triage_level_medium_risk_content
+    </p>
+    <a
+      className="sc-fznYue jqwrWF"
+      color="#CC4700"
+      href="tel:222500115"
+    >
+      <svg
+        className="sc-fzqzEs dClyAt"
+        color="#CC4700"
+      >
+        icon-contact.svg
+      </svg>
+      <div
+        className="sc-fzonjX lfAbLD"
+        color="#CC4700"
+      >
+        call_helpline
+        <br />
+        222 500 115
+        <span
+          className="sc-fzqOul dDeUve"
+        >
+          <svg>
+            arrow-current-color.svg
+          </svg>
+        </span>
+      </div>
+    </a>
+  </div>,
+  <div
+    className="sc-fzoCCn gbBoVR"
+    color="#CC4700"
+  >
+    <span
+      className="p1"
+    >
+      triage_info_border_text3
+    </span>
+  </div>,
+  <button
+    className="sc-pKMan sc-oVdHe sc-pcZJD wBaLz"
+    disabled={false}
+    onClick={[Function]}
+    type="button"
+  >
+    <svg
+      className="sc-fznyYp dDojAb"
+    >
+      wykonaj-test.svg
+    </svg>
+    <span
+      className="sc-ptRml bTKMWB"
+    >
+      <span
+        className="sc-qWgaf cFhQsd"
+      >
+        make_daily_button_text1
+      </span>
+      <span
+        className="sc-qOjXG lmdAkv"
+      >
+        make_daily_button_text2
+      </span>
+    </span>
+    <span
+      className="sc-plVjM lfrsXU"
+    >
+      <svg>
+        arrow-current-color.svg
+      </svg>
+    </span>
+  </button>,
+]
+`;
+
+exports[`test render home component should render with: enabled exposure module, has covid  1`] = `
+Array [
+  <div
+    className="sc-fznXWL kuywbj"
+  >
+    <div
+      className="sc-fzqzlV cxOwQx"
+    >
+      player
+      ,
+    </div>
+    <div
+      className="sc-fzokvW AEkOy"
+    >
+      <div
+        className="sc-fzqLLg fqTEdm"
+      >
+        <p>
+          smile_container_text1
+        </p>
+      </div>
+      <div
+        className="sc-fzoxnE buCNXS"
+      >
+        <svg
+          className="sc-AxiKw izgWNC"
+          id="red"
+          style={
+            Object {
+              "enableBackground": "new 0 0 132 132",
+            }
+          }
+          version="1.1"
+          viewBox="0 0 132 132"
+          x="0px"
+          xmlSpace="preserve"
+          y="0px"
+        >
+          <path
+            className="red-st0"
+            d="M123.7,39.2c3.7,8,5.8,17,5.8,26.5c0,34.9-28.3,63.2-63.2,63.2S3.1,100.5,3.1,65.6S31.4,2.5,66.3,2.5 c8,0,15.6,1.5,22.6,4.2"
+          />
+          <path
+            className="red-st0"
+            d="M90.2,100.3c-5.4-7.3-14.1-12.1-23.9-12.1c-9.9,0-18.6,4.8-24,12.3"
+          />
+          <path
+            className="red-st0"
+            d="M23.8,57.1c3.7-4.8,9.5-8,16-8c6.4,0,12.1,3,15.8,7.6"
+          />
+          <path
+            className="red-st0"
+            d="M77.1,57.1c3.7-4.8,9.5-8,16-8c6.4,0,12.1,3,15.8,7.6"
+          />
+          <path
+            className="red-st0"
+            d="M117.7,25.9c0,6.7-5.4,12.1-12.1,12.1c-6.7,0-12.1-5.4-12.1-12.1S105.6,3,105.6,3S117.7,19.2,117.7,25.9z"
+          />
+        </svg>
+      </div>
+    </div>
+  </div>,
+  <div
+    className="sc-fznOgF bMwtqy"
+    color="#d5233f"
+  >
+    <p>
+      exposure_sick_content
+    </p>
+    <a
+      className="sc-fznYue jqwrWF"
+      color="#d5233f"
+      href="tel:222500115"
+    >
+      <svg
+        className="sc-fzqzEs dClyAt"
+        color="#d5233f"
+      >
+        icon-contact.svg
+      </svg>
+      <div
+        className="sc-fzonjX cTnQft"
+        color="#d5233f"
+      >
+        call_helpline
+        <br />
+        222 500 115
+        <span
+          className="sc-fzqOul dDeUve"
+        >
+          <svg>
+            arrow-current-color.svg
+          </svg>
+        </span>
+      </div>
+    </a>
+  </div>,
+  <div
+    className="sc-fzoCCn dNgVib"
+    color="#d5233f"
+  >
+    <span
+      className="p1"
+    >
+      triage_info_border_text1
+    </span>
+  </div>,
+  <div
+    className="more-information"
+  >
+    <h4>
+      exposure_sick_text1
+    </h4>
+    <p>
+      exposure_sick_text2
+       
+      <a
+        className="sc-qQKeD gfQxki"
+        href="https://www.gov.pl/koronawirus"
+        target="_blank"
+      >
+        exposure_sick_text3
+      </a>
+       
+      lub
+       
+      <a
+        className="sc-qQKeD gfQxki"
+        href="https://www.pacjent.gov.pl"
+        target="_blank"
+      >
+        exposure_sick_text4
+      </a>
+      exposure_sick_text5
+       
+      <a
+        className="sc-qYhTA fEnynt"
+        href="tel:6"
+      >
+        exposure_sick_text6
+      </a>
+      .
+    </p>
+  </div>,
+]
+`;
+
+exports[`test render home component should render with: enabled exposure module, no test, green exposure data 1`] = `
+Array [
+  <div
+    className="sc-fznXWL kuywbj"
+  >
+    <div
+      className="sc-fzqzlV cxOwQx"
+    >
+      player
+      ,
+    </div>
+    <div
+      className="sc-fzokvW AEkOy"
+    >
+      <div
+        className="sc-fzqLLg fqTEdm"
+      >
+        <p>
+          <strong>
+            smile_container_text2
+          </strong>
+           
+          smile_container_text3
+           
+          <strong>
+            triage_level_low_risk
+          </strong>
+          .
+        </p>
+      </div>
+      <div
+        className="sc-fzoxnE buCNXS"
+      >
+        <svg
+          className="sc-AxjAm enNuKk"
+          id="green"
+          style={
+            Object {
+              "enableBackground": "new 0 0 132 132",
+            }
+          }
+          version="1.1"
+          viewBox="0 0 132 132"
+          x="0px"
+          xmlSpace="preserve"
+          y="0px"
+        >
+          <circle
+            className="green-st0"
+            cx="65.8"
+            cy="65.9"
+            r="63.7"
+          />
+          <path
+            className="green-st0"
+            d="M97.5,87.1c-5.9,11.5-17.9,19.4-31.7,19.4c-13.8,0-25.8-7.9-31.7-19.4"
+          />
+          <path
+            className="green-st0"
+            d="M22.9,52.9c3.7-4.9,9.6-8,16.1-8c6.4,0,12.2,3,15.9,7.7"
+          />
+          <path
+            className="green-st0"
+            d="M76.6,52.9c3.7-4.9,9.6-8,16.1-8c6.4,0,12.2,3,15.9,7.7"
+          />
+        </svg>
+      </div>
+    </div>
+  </div>,
+  <div
+    className="sc-fzoCCn cbqMtK"
+    color={null}
+  >
+    <span
+      className="p1"
+    >
+      triage_info_border_text2
+    </span>
+  </div>,
+  <p
+    className="sc-fzoiQi iINuYW"
+  >
+    exposure_low_text1
+  </p>,
+  <button
+    className="sc-pKMan sc-oVdHe csqSp"
+    disabled={false}
+    onClick={[Function]}
+    type="button"
+  >
+    <svg
+      className="sc-fznyYp dDojAb"
+    >
+      wykonaj-test.svg
+    </svg>
+    <span
+      className="sc-ptRml bTKMWB"
+    >
+      <span
+        className="sc-qWgaf cFhQsd"
+      >
+        make_diagnosis_button_text1
+      </span>
+      <span
+        className="sc-qOjXG lmdAkv"
+      />
+    </span>
+  </button>,
+]
+`;
+
+exports[`test render home component should render with: enabled exposure module, no test, high exposure data 1`] = `
+Array [
+  <div
+    className="sc-fznXWL kuywbj"
+  >
+    <div
+      className="sc-fzqzlV cxOwQx"
+    >
+      player
+      ,
+    </div>
+    <div
+      className="sc-fzokvW AEkOy"
+    >
+      <div
+        className="sc-fzqLLg fqTEdm"
+      >
+        <p>
+          <strong>
+            smile_container_text2
+          </strong>
+           
+          smile_container_text3
+           
+          <strong>
+            triage_level_high_risk
+          </strong>
+          .
+        </p>
+      </div>
+      <div
+        className="sc-fzoxnE buCNXS"
+      >
+        <svg
+          className="sc-AxiKw izgWNC"
+          id="red"
+          style={
+            Object {
+              "enableBackground": "new 0 0 132 132",
+            }
+          }
+          version="1.1"
+          viewBox="0 0 132 132"
+          x="0px"
+          xmlSpace="preserve"
+          y="0px"
+        >
+          <path
+            className="red-st0"
+            d="M123.7,39.2c3.7,8,5.8,17,5.8,26.5c0,34.9-28.3,63.2-63.2,63.2S3.1,100.5,3.1,65.6S31.4,2.5,66.3,2.5 c8,0,15.6,1.5,22.6,4.2"
+          />
+          <path
+            className="red-st0"
+            d="M90.2,100.3c-5.4-7.3-14.1-12.1-23.9-12.1c-9.9,0-18.6,4.8-24,12.3"
+          />
+          <path
+            className="red-st0"
+            d="M23.8,57.1c3.7-4.8,9.5-8,16-8c6.4,0,12.1,3,15.8,7.6"
+          />
+          <path
+            className="red-st0"
+            d="M77.1,57.1c3.7-4.8,9.5-8,16-8c6.4,0,12.1,3,15.8,7.6"
+          />
+          <path
+            className="red-st0"
+            d="M117.7,25.9c0,6.7-5.4,12.1-12.1,12.1c-6.7,0-12.1-5.4-12.1-12.1S105.6,3,105.6,3S117.7,19.2,117.7,25.9z"
+          />
+        </svg>
+      </div>
+    </div>
+  </div>,
+  <div
+    className="sc-fznOgF bMwtqy"
+    color="#d5233f"
+  >
+    <p>
+      exposure_triage_level_high_risk_content
+    </p>
+    <a
+      className="sc-fznYue jqwrWF"
+      color="#d5233f"
+      href="tel:222500115"
+    >
+      <svg
+        className="sc-fzqzEs dClyAt"
+        color="#d5233f"
+      >
+        icon-contact.svg
+      </svg>
+      <div
+        className="sc-fzonjX cTnQft"
+        color="#d5233f"
+      >
+        call_helpline
+        <br />
+        222 500 115
+        <span
+          className="sc-fzqOul dDeUve"
+        >
+          <svg>
+            arrow-current-color.svg
+          </svg>
+        </span>
+      </div>
+    </a>
+  </div>,
+  <div
+    className="sc-fzoCCn dNgVib"
+    color="#d5233f"
+  >
+    <span
+      className="p1"
+    >
+      triage_info_border_text4
+      <div
+        className="sc-fzoPby kjSDGW"
+        onClick={[Function]}
+      >
+        triage_info_border_text5
+        <img
+          alt="button"
+          src="angle-right.svg"
+        />
+      </div>
+      triage_info_border_text6
+       
+      <a
+        className="sc-qYhTA fEnynt"
+        href="tel:112"
+      >
+        112
+      </a>
+       lub
+       
+      <a
+        className="sc-qYhTA fEnynt"
+        href="tel:999"
+      >
+        999
+      </a>
+      triage_info_border_text7
+    </span>
+  </div>,
+]
+`;
+
+exports[`test render home component should render with: enabled exposure module, no test, middle exposure data 1`] = `
+Array [
+  <div
+    className="sc-fznXWL kuywbj"
+  >
+    <div
+      className="sc-fzqzlV cxOwQx"
+    >
+      player
+      ,
+    </div>
+    <div
+      className="sc-fzokvW AEkOy"
+    >
+      <div
+        className="sc-fzqLLg fqTEdm"
+      >
+        <p>
+          <strong>
+            smile_container_text2
+          </strong>
+           
+          smile_container_text3
+           
+          <strong>
+            triage_level_medium_risk
+          </strong>
+          .
+        </p>
+      </div>
+      <div
+        className="sc-fzoxnE buCNXS"
+      >
+        <svg
+          className="sc-AxiKw izgWNC"
+          id="red"
+          style={
+            Object {
+              "enableBackground": "new 0 0 132 132",
+            }
+          }
+          version="1.1"
+          viewBox="0 0 132 132"
+          x="0px"
+          xmlSpace="preserve"
+          y="0px"
+        >
+          <path
+            className="red-st0"
+            d="M123.7,39.2c3.7,8,5.8,17,5.8,26.5c0,34.9-28.3,63.2-63.2,63.2S3.1,100.5,3.1,65.6S31.4,2.5,66.3,2.5 c8,0,15.6,1.5,22.6,4.2"
+          />
+          <path
+            className="red-st0"
+            d="M90.2,100.3c-5.4-7.3-14.1-12.1-23.9-12.1c-9.9,0-18.6,4.8-24,12.3"
+          />
+          <path
+            className="red-st0"
+            d="M23.8,57.1c3.7-4.8,9.5-8,16-8c6.4,0,12.1,3,15.8,7.6"
+          />
+          <path
+            className="red-st0"
+            d="M77.1,57.1c3.7-4.8,9.5-8,16-8c6.4,0,12.1,3,15.8,7.6"
+          />
+          <path
+            className="red-st0"
+            d="M117.7,25.9c0,6.7-5.4,12.1-12.1,12.1c-6.7,0-12.1-5.4-12.1-12.1S105.6,3,105.6,3S117.7,19.2,117.7,25.9z"
+          />
+        </svg>
+      </div>
+    </div>
+  </div>,
+  <div
+    className="sc-fznOgF bvRhCU"
+    color="#CC4700"
+  >
+    <p>
+      exposure_triage_level_medium_risk_content
+    </p>
+    <a
+      className="sc-fznYue jqwrWF"
+      color="#CC4700"
+      href="tel:222500115"
+    >
+      <svg
+        className="sc-fzqzEs dClyAt"
+        color="#CC4700"
+      >
+        icon-contact.svg
+      </svg>
+      <div
+        className="sc-fzonjX lfAbLD"
+        color="#CC4700"
+      >
+        call_helpline
+        <br />
+        222 500 115
+        <span
+          className="sc-fzqOul dDeUve"
+        >
+          <svg>
+            arrow-current-color.svg
+          </svg>
+        </span>
+      </div>
+    </a>
+  </div>,
+  <div
+    className="sc-fzoCCn gbBoVR"
+    color="#CC4700"
+  >
+    <span
+      className="p1"
+    >
+      triage_info_border_text3
+    </span>
+  </div>,
+  <button
+    className="sc-pKMan sc-oVdHe sc-pcZJD wBaLz"
+    disabled={false}
+    onClick={[Function]}
+    type="button"
+  >
+    <svg
+      className="sc-fznyYp dDojAb"
+    >
+      wykonaj-test.svg
+    </svg>
+    <span
+      className="sc-ptRml bTKMWB"
+    >
+      <span
+        className="sc-qWgaf cFhQsd"
+      >
+        make_daily_button_text1
+      </span>
+      <span
+        className="sc-qOjXG lmdAkv"
+      >
+        make_daily_button_text2
+      </span>
+    </span>
+    <span
+      className="sc-plVjM lfrsXU"
+    >
+      <svg>
+        arrow-current-color.svg
+      </svg>
+    </span>
+  </button>,
+]
+`;
+
+exports[`test render home component should render with: enabled exposure module, red test (call_doctor), green exposure data 1`] = `
+Array [
+  <div
+    className="sc-fznXWL kuywbj"
+  >
+    <div
+      className="sc-fzqzlV cxOwQx"
+    >
+      player
+      ,
+    </div>
+    <div
+      className="sc-fzokvW AEkOy"
+    >
+      <div
+        className="sc-fzqLLg fqTEdm"
+      >
+        <p>
+          smile_container_text4
+           
+          <strong
+            className="nowrap"
+          >
+            
+          </strong>
+          smile_container_text5
+           
+          <strong>
+            triage_level_high_risk
+          </strong>
+          .
+        </p>
+      </div>
+      <div
+        className="sc-fzoxnE buCNXS"
+      >
+        <svg
+          className="sc-AxiKw izgWNC"
+          id="red"
+          style={
+            Object {
+              "enableBackground": "new 0 0 132 132",
+            }
+          }
+          version="1.1"
+          viewBox="0 0 132 132"
+          x="0px"
+          xmlSpace="preserve"
+          y="0px"
+        >
+          <path
+            className="red-st0"
+            d="M123.7,39.2c3.7,8,5.8,17,5.8,26.5c0,34.9-28.3,63.2-63.2,63.2S3.1,100.5,3.1,65.6S31.4,2.5,66.3,2.5 c8,0,15.6,1.5,22.6,4.2"
+          />
+          <path
+            className="red-st0"
+            d="M90.2,100.3c-5.4-7.3-14.1-12.1-23.9-12.1c-9.9,0-18.6,4.8-24,12.3"
+          />
+          <path
+            className="red-st0"
+            d="M23.8,57.1c3.7-4.8,9.5-8,16-8c6.4,0,12.1,3,15.8,7.6"
+          />
+          <path
+            className="red-st0"
+            d="M77.1,57.1c3.7-4.8,9.5-8,16-8c6.4,0,12.1,3,15.8,7.6"
+          />
+          <path
+            className="red-st0"
+            d="M117.7,25.9c0,6.7-5.4,12.1-12.1,12.1c-6.7,0-12.1-5.4-12.1-12.1S105.6,3,105.6,3S117.7,19.2,117.7,25.9z"
+          />
+        </svg>
+      </div>
+    </div>
+  </div>,
+  <div
+    className="sc-fznOgF bMwtqy"
+    color="#d5233f"
+  >
+    <p>
+      triage_level_call_doctor_content
+    </p>
+    <a
+      className="sc-fznYue jqwrWF"
+      color="#d5233f"
+      href="tel:222500115"
+    >
+      <svg
+        className="sc-fzqzEs dClyAt"
+        color="#d5233f"
+      >
+        icon-contact.svg
+      </svg>
+      <div
+        className="sc-fzonjX cTnQft"
+        color="#d5233f"
+      >
+        call_helpline
+        <br />
+        222 500 115
+        <span
+          className="sc-fzqOul dDeUve"
+        >
+          <svg>
+            arrow-current-color.svg
+          </svg>
+        </span>
+      </div>
+    </a>
+  </div>,
+  <div
+    className="sc-fzoCCn dNgVib"
+    color="#d5233f"
+  >
+    <span
+      className="p1"
+    >
+      diagnosis_text44
+       
+      triage_info_border_text8
+    </span>
+    <ul>
+      <li>
+        seriouses_text1
+      </li>
+      <li>
+        seriouses_text2
+      </li>
+      <li>
+        seriouses_text3
+      </li>
+    </ul>
+  </div>,
+  <div
+    className="sc-pTWqp HeEDr"
+  >
+    <div
+      className="sc-qcrrk iAOnrU"
+      onClick={[Function]}
+      open={false}
+    >
+      <span
+        className="sc-oVpqz fGwbzf"
+      >
+        call_doctor_text30
+      </span>
+      <img
+        alt="Arrow"
+        className="sc-pdKru kDeAVN"
+        open={false}
+        src="angle-right.svg"
+      />
+    </div>
+  </div>,
+  <div
+    className="sc-pTWqp HeEDr"
+  >
+    <div
+      className="sc-qcrrk iAOnrU"
+      onClick={[Function]}
+      open={false}
+    >
+      <span
+        className="sc-oVpqz fGwbzf"
+      >
+        call_doctor_text32
+      </span>
+      <img
+        alt="Arrow"
+        className="sc-pdKru kDeAVN"
+        open={false}
+        src="angle-right.svg"
+      />
+    </div>
+  </div>,
+  <div
+    className="sc-pTWqp HeEDr"
+  >
+    <div
+      className="sc-qcrrk iAOnrU"
+      onClick={[Function]}
+      open={false}
+    >
+      <span
+        className="sc-oVpqz fGwbzf"
+      >
+        call_doctor_text34
+      </span>
+      <img
+        alt="Arrow"
+        className="sc-pdKru kDeAVN"
+        open={false}
+        src="angle-right.svg"
+      />
+    </div>
+  </div>,
+  <div
+    className="more-information"
+  >
+    <h4>
+      home_more_information_text1
+    </h4>
+    <p>
+      home_more_information_text2
+    </p>
+    <small>
+      home_more_information_text3
+    </small>
+  </div>,
+  <button
+    className="sc-pKMan sc-oVdHe csqSp"
+    disabled={false}
+    onClick={[Function]}
+    type="button"
+  >
+    <svg
+      className="sc-fznyYp dDojAb"
+    >
+      wykonaj-test.svg
+    </svg>
+    <span
+      className="sc-ptRml bTKMWB"
+    >
+      <span
+        className="sc-qWgaf cFhQsd"
+      >
+        make_diagnosis_button_text1
+      </span>
+      <span
+        className="sc-qOjXG lmdAkv"
+      />
+    </span>
+  </button>,
+]
+`;
+
+exports[`test render home component should render with: enabled exposure module, red test (call_doctor), high exposure data 1`] = `
+Array [
+  <div
+    className="sc-fznXWL kuywbj"
+  >
+    <div
+      className="sc-fzqzlV cxOwQx"
+    >
+      player
+      ,
+    </div>
+    <div
+      className="sc-fzokvW AEkOy"
+    >
+      <div
+        className="sc-fzqLLg fqTEdm"
+      >
+        <p>
+          <strong>
+            smile_container_text2
+          </strong>
+           
+          smile_container_text3
+           
+          <strong>
+            triage_level_high_risk
+          </strong>
+          .
+        </p>
+      </div>
+      <div
+        className="sc-fzoxnE buCNXS"
+      >
+        <svg
+          className="sc-AxiKw izgWNC"
+          id="red"
+          style={
+            Object {
+              "enableBackground": "new 0 0 132 132",
+            }
+          }
+          version="1.1"
+          viewBox="0 0 132 132"
+          x="0px"
+          xmlSpace="preserve"
+          y="0px"
+        >
+          <path
+            className="red-st0"
+            d="M123.7,39.2c3.7,8,5.8,17,5.8,26.5c0,34.9-28.3,63.2-63.2,63.2S3.1,100.5,3.1,65.6S31.4,2.5,66.3,2.5 c8,0,15.6,1.5,22.6,4.2"
+          />
+          <path
+            className="red-st0"
+            d="M90.2,100.3c-5.4-7.3-14.1-12.1-23.9-12.1c-9.9,0-18.6,4.8-24,12.3"
+          />
+          <path
+            className="red-st0"
+            d="M23.8,57.1c3.7-4.8,9.5-8,16-8c6.4,0,12.1,3,15.8,7.6"
+          />
+          <path
+            className="red-st0"
+            d="M77.1,57.1c3.7-4.8,9.5-8,16-8c6.4,0,12.1,3,15.8,7.6"
+          />
+          <path
+            className="red-st0"
+            d="M117.7,25.9c0,6.7-5.4,12.1-12.1,12.1c-6.7,0-12.1-5.4-12.1-12.1S105.6,3,105.6,3S117.7,19.2,117.7,25.9z"
+          />
+        </svg>
+      </div>
+    </div>
+  </div>,
+  <div
+    className="sc-fznOgF bMwtqy"
+    color="#d5233f"
+  >
+    <p>
+      exposure_triage_level_high_risk_content
+    </p>
+    <a
+      className="sc-fznYue jqwrWF"
+      color="#d5233f"
+      href="tel:222500115"
+    >
+      <svg
+        className="sc-fzqzEs dClyAt"
+        color="#d5233f"
+      >
+        icon-contact.svg
+      </svg>
+      <div
+        className="sc-fzonjX cTnQft"
+        color="#d5233f"
+      >
+        call_helpline
+        <br />
+        222 500 115
+        <span
+          className="sc-fzqOul dDeUve"
+        >
+          <svg>
+            arrow-current-color.svg
+          </svg>
+        </span>
+      </div>
+    </a>
+  </div>,
+  <div
+    className="sc-fzoCCn dNgVib"
+    color="#d5233f"
+  >
+    <span
+      className="p1"
+    >
+      triage_info_border_text4
+      <div
+        className="sc-fzoPby kjSDGW"
+        onClick={[Function]}
+      >
+        triage_info_border_text5
+        <img
+          alt="button"
+          src="angle-right.svg"
+        />
+      </div>
+      triage_info_border_text6
+       
+      <a
+        className="sc-qYhTA fEnynt"
+        href="tel:112"
+      >
+        112
+      </a>
+       lub
+       
+      <a
+        className="sc-qYhTA fEnynt"
+        href="tel:999"
+      >
+        999
+      </a>
+      triage_info_border_text7
+    </span>
+  </div>,
+]
+`;
+
+exports[`test render home component should render with: enabled exposure module, red test (call_doctor), middle exposure data 1`] = `
+Array [
+  <div
+    className="sc-fznXWL kuywbj"
+  >
+    <div
+      className="sc-fzqzlV cxOwQx"
+    >
+      player
+      ,
+    </div>
+    <div
+      className="sc-fzokvW AEkOy"
+    >
+      <div
+        className="sc-fzqLLg fqTEdm"
+      >
+        <p>
+          <strong>
+            smile_container_text2
+          </strong>
+           
+          smile_container_text3
+           
+          <strong>
+            triage_level_high_risk
+          </strong>
+          .
+        </p>
+      </div>
+      <div
+        className="sc-fzoxnE buCNXS"
+      >
+        <svg
+          className="sc-AxiKw izgWNC"
+          id="red"
+          style={
+            Object {
+              "enableBackground": "new 0 0 132 132",
+            }
+          }
+          version="1.1"
+          viewBox="0 0 132 132"
+          x="0px"
+          xmlSpace="preserve"
+          y="0px"
+        >
+          <path
+            className="red-st0"
+            d="M123.7,39.2c3.7,8,5.8,17,5.8,26.5c0,34.9-28.3,63.2-63.2,63.2S3.1,100.5,3.1,65.6S31.4,2.5,66.3,2.5 c8,0,15.6,1.5,22.6,4.2"
+          />
+          <path
+            className="red-st0"
+            d="M90.2,100.3c-5.4-7.3-14.1-12.1-23.9-12.1c-9.9,0-18.6,4.8-24,12.3"
+          />
+          <path
+            className="red-st0"
+            d="M23.8,57.1c3.7-4.8,9.5-8,16-8c6.4,0,12.1,3,15.8,7.6"
+          />
+          <path
+            className="red-st0"
+            d="M77.1,57.1c3.7-4.8,9.5-8,16-8c6.4,0,12.1,3,15.8,7.6"
+          />
+          <path
+            className="red-st0"
+            d="M117.7,25.9c0,6.7-5.4,12.1-12.1,12.1c-6.7,0-12.1-5.4-12.1-12.1S105.6,3,105.6,3S117.7,19.2,117.7,25.9z"
+          />
+        </svg>
+      </div>
+    </div>
+  </div>,
+  <div
+    className="sc-fznOgF bMwtqy"
+    color="#d5233f"
+  >
+    <p>
+      exposure_triage_level_high_risk_content
+    </p>
+    <a
+      className="sc-fznYue jqwrWF"
+      color="#d5233f"
+      href="tel:222500115"
+    >
+      <svg
+        className="sc-fzqzEs dClyAt"
+        color="#d5233f"
+      >
+        icon-contact.svg
+      </svg>
+      <div
+        className="sc-fzonjX cTnQft"
+        color="#d5233f"
+      >
+        call_helpline
+        <br />
+        222 500 115
+        <span
+          className="sc-fzqOul dDeUve"
+        >
+          <svg>
+            arrow-current-color.svg
+          </svg>
+        </span>
+      </div>
+    </a>
+  </div>,
+  <div
+    className="sc-fzoCCn dNgVib"
+    color="#d5233f"
+  >
+    <span
+      className="p1"
+    >
+      triage_info_border_text4
+      <div
+        className="sc-fzoPby kjSDGW"
+        onClick={[Function]}
+      >
+        triage_info_border_text5
+        <img
+          alt="button"
+          src="angle-right.svg"
+        />
+      </div>
+      triage_info_border_text6
+       
+      <a
+        className="sc-qYhTA fEnynt"
+        href="tel:112"
+      >
+        112
+      </a>
+       lub
+       
+      <a
+        className="sc-qYhTA fEnynt"
+        href="tel:999"
+      >
+        999
+      </a>
+      triage_info_border_text7
+    </span>
+  </div>,
+]
+`;
+
+exports[`test render home component should render with: enabled exposure module, yellow test (quarantine), green exposure data 1`] = `
+Array [
+  <div
+    className="sc-fznXWL kuywbj"
+  >
+    <div
+      className="sc-fzqzlV cxOwQx"
+    >
+      player
+      ,
+    </div>
+    <div
+      className="sc-fzokvW AEkOy"
+    >
+      <div
+        className="sc-fzqLLg fqTEdm"
+      >
+        <p>
+          smile_container_text4
+           
+          <strong
+            className="nowrap"
+          >
+            
+          </strong>
+          smile_container_text5
+           
+          <strong>
+            triage_level_medium_risk
+          </strong>
+          .
+        </p>
+      </div>
+      <div
+        className="sc-fzoxnE buCNXS"
+      >
+        <svg
+          className="sc-AxirZ gZJCiT"
+          id="yellow"
+          style={
+            Object {
+              "enableBackground": "new 0 0 132 132",
+            }
+          }
+          version="1.1"
+          viewBox="0 0 132 132"
+          x="0px"
+          xmlSpace="preserve"
+          y="0px"
+        >
+          <circle
+            className="yellow-st0"
+            cx="66.3"
+            cy="65.5"
+            r="63.7"
+          />
+          <path
+            className="yellow-st0"
+            d="M23.5,52.5c3.7-4.9,9.6-8,16.1-8c6.4,0,12.2,3,15.9,7.7"
+          />
+          <path
+            className="yellow-st0"
+            d="M77.1,52.5c3.7-4.9,9.6-8,16.1-8c6.4,0,12.2,3,15.9,7.7"
+          />
+          <line
+            className="yellow-st0"
+            x1="38.4"
+            x2="94.2"
+            y1="95.1"
+            y2="95.1"
+          />
+        </svg>
+      </div>
+    </div>
+  </div>,
+  <button
+    className="sc-pKMan sc-oVdHe csqSp"
+    disabled={false}
+    onClick={[Function]}
+    type="button"
+  >
+    <svg
+      className="sc-fznyYp dDojAb"
+    >
+      wykonaj-test.svg
+    </svg>
+    <span
+      className="sc-ptRml bTKMWB"
+    >
+      <span
+        className="sc-qWgaf cFhQsd"
+      >
+        make_diagnosis_button_text1
+      </span>
+      <span
+        className="sc-qOjXG lmdAkv"
+      />
+    </span>
+  </button>,
+  <div
+    className="sc-fznOgF bvRhCU"
+    color="#CC4700"
+  >
+    <p>
+      triage_level_quarantine_content
+    </p>
+    <a
+      className="sc-fznYue jqwrWF"
+      color="#CC4700"
+      href="tel:222500115"
+    >
+      <svg
+        className="sc-fzqzEs dClyAt"
+        color="#CC4700"
+      >
+        icon-contact.svg
+      </svg>
+      <div
+        className="sc-fzonjX lfAbLD"
+        color="#CC4700"
+      >
+        call_helpline
+        <br />
+        222 500 115
+        <span
+          className="sc-fzqOul dDeUve"
+        >
+          <svg>
+            arrow-current-color.svg
+          </svg>
+        </span>
+      </div>
+    </a>
+  </div>,
+  <div
+    className="sc-fzoCCn gbBoVR"
+    color="#CC4700"
+  >
+    <span
+      className="p1"
+    >
+      diagnosis_text48
+       
+      triage_info_border_text8
+    </span>
+    <ul>
+      <li>
+        seriouses_text1
+      </li>
+      <li>
+        seriouses_text2
+      </li>
+      <li>
+        seriouses_text3
+      </li>
+    </ul>
+  </div>,
+  <div
+    className="sc-pTWqp HeEDr"
+  >
+    <div
+      className="sc-qcrrk iAOnrU"
+      onClick={[Function]}
+      open={false}
+    >
+      <span
+        className="sc-oVpqz fGwbzf"
+      >
+        quarantine_text45
+      </span>
+      <img
+        alt="Arrow"
+        className="sc-pdKru kDeAVN"
+        open={false}
+        src="angle-right.svg"
+      />
+    </div>
+  </div>,
+  <div
+    className="sc-pTWqp HeEDr"
+  >
+    <div
+      className="sc-qcrrk iAOnrU"
+      onClick={[Function]}
+      open={false}
+    >
+      <span
+        className="sc-oVpqz fGwbzf"
+      >
+        quarantine_text46
+      </span>
+      <img
+        alt="Arrow"
+        className="sc-pdKru kDeAVN"
+        open={false}
+        src="angle-right.svg"
+      />
+    </div>
+  </div>,
+  <div
+    className="sc-pTWqp HeEDr"
+  >
+    <div
+      className="sc-qcrrk iAOnrU"
+      onClick={[Function]}
+      open={false}
+    >
+      <span
+        className="sc-oVpqz fGwbzf"
+      >
+        quarantine_text47
+      </span>
+      <img
+        alt="Arrow"
+        className="sc-pdKru kDeAVN"
+        open={false}
+        src="angle-right.svg"
+      />
+    </div>
+  </div>,
+  <div
+    className="sc-pTWqp HeEDr"
+  >
+    <div
+      className="sc-qcrrk iAOnrU"
+      onClick={[Function]}
+      open={false}
+    >
+      <span
+        className="sc-oVpqz fGwbzf"
+      >
+        quarantine_text49
+      </span>
+      <img
+        alt="Arrow"
+        className="sc-pdKru kDeAVN"
+        open={false}
+        src="angle-right.svg"
+      />
+    </div>
+  </div>,
+  <div
+    className="sc-pTWqp HeEDr"
+  >
+    <div
+      className="sc-qcrrk iAOnrU"
+      onClick={[Function]}
+      open={false}
+    >
+      <span
+        className="sc-oVpqz fGwbzf"
+      >
+        quarantine_text50
+      </span>
+      <img
+        alt="Arrow"
+        className="sc-pdKru kDeAVN"
+        open={false}
+        src="angle-right.svg"
+      />
+    </div>
+  </div>,
+  <div
+    className="more-information"
+  >
+    <h4>
+      home_more_information_text1
+    </h4>
+    <p>
+      home_more_information_text2
+    </p>
+    <small>
+      home_more_information_text3
+    </small>
+  </div>,
+]
+`;
+
+exports[`test render home component should render with: enabled exposure module, yellow test (quarantine), high exposure data 1`] = `
+Array [
+  <div
+    className="sc-fznXWL kuywbj"
+  >
+    <div
+      className="sc-fzqzlV cxOwQx"
+    >
+      player
+      ,
+    </div>
+    <div
+      className="sc-fzokvW AEkOy"
+    >
+      <div
+        className="sc-fzqLLg fqTEdm"
+      >
+        <p>
+          <strong>
+            smile_container_text2
+          </strong>
+           
+          smile_container_text3
+           
+          <strong>
+            triage_level_high_risk
+          </strong>
+          .
+        </p>
+      </div>
+      <div
+        className="sc-fzoxnE buCNXS"
+      >
+        <svg
+          className="sc-AxiKw izgWNC"
+          id="red"
+          style={
+            Object {
+              "enableBackground": "new 0 0 132 132",
+            }
+          }
+          version="1.1"
+          viewBox="0 0 132 132"
+          x="0px"
+          xmlSpace="preserve"
+          y="0px"
+        >
+          <path
+            className="red-st0"
+            d="M123.7,39.2c3.7,8,5.8,17,5.8,26.5c0,34.9-28.3,63.2-63.2,63.2S3.1,100.5,3.1,65.6S31.4,2.5,66.3,2.5 c8,0,15.6,1.5,22.6,4.2"
+          />
+          <path
+            className="red-st0"
+            d="M90.2,100.3c-5.4-7.3-14.1-12.1-23.9-12.1c-9.9,0-18.6,4.8-24,12.3"
+          />
+          <path
+            className="red-st0"
+            d="M23.8,57.1c3.7-4.8,9.5-8,16-8c6.4,0,12.1,3,15.8,7.6"
+          />
+          <path
+            className="red-st0"
+            d="M77.1,57.1c3.7-4.8,9.5-8,16-8c6.4,0,12.1,3,15.8,7.6"
+          />
+          <path
+            className="red-st0"
+            d="M117.7,25.9c0,6.7-5.4,12.1-12.1,12.1c-6.7,0-12.1-5.4-12.1-12.1S105.6,3,105.6,3S117.7,19.2,117.7,25.9z"
+          />
+        </svg>
+      </div>
+    </div>
+  </div>,
+  <div
+    className="sc-fznOgF bMwtqy"
+    color="#d5233f"
+  >
+    <p>
+      exposure_triage_level_high_risk_content
+    </p>
+    <a
+      className="sc-fznYue jqwrWF"
+      color="#d5233f"
+      href="tel:222500115"
+    >
+      <svg
+        className="sc-fzqzEs dClyAt"
+        color="#d5233f"
+      >
+        icon-contact.svg
+      </svg>
+      <div
+        className="sc-fzonjX cTnQft"
+        color="#d5233f"
+      >
+        call_helpline
+        <br />
+        222 500 115
+        <span
+          className="sc-fzqOul dDeUve"
+        >
+          <svg>
+            arrow-current-color.svg
+          </svg>
+        </span>
+      </div>
+    </a>
+  </div>,
+  <div
+    className="sc-fzoCCn dNgVib"
+    color="#d5233f"
+  >
+    <span
+      className="p1"
+    >
+      triage_info_border_text4
+      <div
+        className="sc-fzoPby kjSDGW"
+        onClick={[Function]}
+      >
+        triage_info_border_text5
+        <img
+          alt="button"
+          src="angle-right.svg"
+        />
+      </div>
+      triage_info_border_text6
+       
+      <a
+        className="sc-qYhTA fEnynt"
+        href="tel:112"
+      >
+        112
+      </a>
+       lub
+       
+      <a
+        className="sc-qYhTA fEnynt"
+        href="tel:999"
+      >
+        999
+      </a>
+      triage_info_border_text7
+    </span>
+  </div>,
+]
+`;
+
+exports[`test render home component should render with: enabled exposure module, yellow test (quarantine), middle exposure data 1`] = `
+Array [
+  <div
+    className="sc-fznXWL kuywbj"
+  >
+    <div
+      className="sc-fzqzlV cxOwQx"
+    >
+      player
+      ,
+    </div>
+    <div
+      className="sc-fzokvW AEkOy"
+    >
+      <div
+        className="sc-fzqLLg fqTEdm"
+      >
+        <p>
+          <strong>
+            smile_container_text2
+          </strong>
+           
+          smile_container_text3
+           
+          <strong>
+            triage_level_medium_risk
+          </strong>
+          .
+        </p>
+      </div>
+      <div
+        className="sc-fzoxnE buCNXS"
+      >
+        <svg
+          className="sc-AxiKw izgWNC"
+          id="red"
+          style={
+            Object {
+              "enableBackground": "new 0 0 132 132",
+            }
+          }
+          version="1.1"
+          viewBox="0 0 132 132"
+          x="0px"
+          xmlSpace="preserve"
+          y="0px"
+        >
+          <path
+            className="red-st0"
+            d="M123.7,39.2c3.7,8,5.8,17,5.8,26.5c0,34.9-28.3,63.2-63.2,63.2S3.1,100.5,3.1,65.6S31.4,2.5,66.3,2.5 c8,0,15.6,1.5,22.6,4.2"
+          />
+          <path
+            className="red-st0"
+            d="M90.2,100.3c-5.4-7.3-14.1-12.1-23.9-12.1c-9.9,0-18.6,4.8-24,12.3"
+          />
+          <path
+            className="red-st0"
+            d="M23.8,57.1c3.7-4.8,9.5-8,16-8c6.4,0,12.1,3,15.8,7.6"
+          />
+          <path
+            className="red-st0"
+            d="M77.1,57.1c3.7-4.8,9.5-8,16-8c6.4,0,12.1,3,15.8,7.6"
+          />
+          <path
+            className="red-st0"
+            d="M117.7,25.9c0,6.7-5.4,12.1-12.1,12.1c-6.7,0-12.1-5.4-12.1-12.1S105.6,3,105.6,3S117.7,19.2,117.7,25.9z"
+          />
+        </svg>
+      </div>
+    </div>
+  </div>,
+  <div
+    className="sc-fznOgF bvRhCU"
+    color="#CC4700"
+  >
+    <p>
+      exposure_triage_level_medium_risk_content
+    </p>
+    <a
+      className="sc-fznYue jqwrWF"
+      color="#CC4700"
+      href="tel:222500115"
+    >
+      <svg
+        className="sc-fzqzEs dClyAt"
+        color="#CC4700"
+      >
+        icon-contact.svg
+      </svg>
+      <div
+        className="sc-fzonjX lfAbLD"
+        color="#CC4700"
+      >
+        call_helpline
+        <br />
+        222 500 115
+        <span
+          className="sc-fzqOul dDeUve"
+        >
+          <svg>
+            arrow-current-color.svg
+          </svg>
+        </span>
+      </div>
+    </a>
+  </div>,
+  <div
+    className="sc-fzoCCn gbBoVR"
+    color="#CC4700"
+  >
+    <span
+      className="p1"
+    >
+      triage_info_border_text3
+    </span>
+  </div>,
+  <button
+    className="sc-pKMan sc-oVdHe sc-pcZJD wBaLz"
+    disabled={false}
+    onClick={[Function]}
+    type="button"
+  >
+    <svg
+      className="sc-fznyYp dDojAb"
+    >
+      wykonaj-test.svg
+    </svg>
+    <span
+      className="sc-ptRml bTKMWB"
+    >
+      <span
+        className="sc-qWgaf cFhQsd"
+      >
+        make_daily_button_text1
+      </span>
+      <span
+        className="sc-qOjXG lmdAkv"
+      >
+        make_daily_button_text2
+      </span>
+    </span>
+    <span
+      className="sc-plVjM lfrsXU"
+    >
+      <svg>
+        arrow-current-color.svg
+      </svg>
+    </span>
+  </button>,
+]
+`;

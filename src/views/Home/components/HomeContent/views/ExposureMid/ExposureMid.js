@@ -4,7 +4,7 @@ import {
   MakeDailyButton,
   TriageInfoBorder,
   TriageRiskInformation
-} from '../../components/index';
+} from '../../../index';
 
 const ExposureMid = () => {
   return (
