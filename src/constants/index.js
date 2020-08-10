@@ -137,4 +137,4 @@ export const LOGO_COLOR_BLACK = 'black';
 export const LOGO_COLOR_WHITE = 'white';
 
 // Languages
-export const DEFAULT_LANGUE = 'pl';
+export const DEFAULT_LANGUAGE = 'pl';
