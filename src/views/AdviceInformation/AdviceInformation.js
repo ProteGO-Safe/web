@@ -80,13 +80,6 @@ const AdviceInformation = ({ collapse, title, watermark }) => {
           </p>
         </ListItem>
         <ListItem>
-          <img src={IconAdviceCountry} alt="Ikonka" />
-          <p>
-            Jeśli przyjechałeś/-aś z zagranicy – skontaktuj się z sanepidem i
-            poddaj obowiązkowej 14-dniowej kwarantannie.
-          </p>
-        </ListItem>
-        <ListItem>
           <img src={IconAdviceNote} alt="Ikonka" />
           <p>
             Regularnie uzupełniaj zakładkę{' '}
