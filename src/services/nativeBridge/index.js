@@ -170,6 +170,10 @@ const clearBluetoothData = async data => {
   await callNativeFunction('setBridgeData', DATA_TYPE.CLEAR_BT_DATA, data);
 };
 
+const changeLanguage = async data => {
+  await callNativeFunction('setBridgeData', DATA_TYPE.LANGUAGE, data);
+};
+
 window.onBridgeData = onBridgeData;
 window.bridgeDataResponse = receiveNativeResponse;
 
@@ -181,6 +185,7 @@ export default {
   getExposureNotificationStatistics,
   getNotification,
   clearBluetoothData,
+  changeLanguage,
   getNativeVersion,
   getLanguage
 };
