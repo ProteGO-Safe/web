@@ -76,3 +76,13 @@ export function finishMigration(data) {
     dispatch(migrationFinished(data));
   };
 }
+export const languageChanged = data => ({
+  data,
+  type: types.LANGUAGE_CHANGED
+});
+
+export function changeLanguage(data) {
+  return dispatch => {
+    dispatch(languageChanged(data));
+  };
+}

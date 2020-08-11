@@ -34,7 +34,6 @@ import {
 } from '../../views';
 
 import {
-  fetchLanguage,
   fetchNativeVersion,
   fetchNotification
 } from '../../store/actions/nativeData';
@@ -47,6 +46,7 @@ import useFilledDiagnosis from '../../hooks/useFilledDiagnosis';
 import { markDataFromNewestVersion } from '../../store/actions/app';
 import { isLocalPWA, isWebView } from '../../utils/native';
 import useMigration from '../../hooks/useMigration';
+import useLanguage from '../../hooks/useLanguage';
 
 function App() {
   moment.locale('pl');
@@ -60,20 +60,15 @@ function App() {
     startScreenShowed,
     firstDiagnosisFinished
   } = useSelector(state => state.app);
-  const { language, notification } = useSelector(state => state.nativeData);
+  const { notification } = useSelector(state => state.nativeData);
   const { inProgress, visible: menuIsVisible } = useMenuContext();
   const { hasFilledAnyDiagnosis } = useFilledDiagnosis();
   useMigration();
+  useLanguage();
 
   useEffect(() => {
     dispatch(fetchNativeVersion());
   }, [dispatch, startScreenShowed]);
-
-  useEffect(() => {
-    if (!language) {
-      dispatch(fetchLanguage());
-    }
-  }, [dispatch, language]);
 
   useEffect(() => {
     if (!notification) {

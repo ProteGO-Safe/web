@@ -1,39 +1,28 @@
 import React from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { withTranslation } from 'react-i18next';
 import { showStartScreenSuccess } from '../../store/actions/app';
 import StartScreen from './StartScreen';
 import { resources } from '../../locales/resources';
-import { getLanguage } from '../../store/selectors/nativeData';
-import { DEFAULT_LANGUAGE } from '../../constants';
+import useLanguage from '../../hooks/useLanguage';
 
-const StartScreenContainer = ({ t, i18n }) => {
+const StartScreenContainer = ({ t }) => {
   const dispatch = useDispatch();
-  const languageFromNative = useSelector(getLanguage);
   const onStartClick = () => {
     dispatch(showStartScreenSuccess());
   };
 
+  const { appLanguage, changeAppLanguage, languages } = useLanguage();
+
+  if (!appLanguage) {
+    return null;
+  }
+
   const handleChangeLang = countryCode =>
-    i18n.changeLanguage(countryCode.toLowerCase());
-
-  const languages = (() =>
-    Object.keys(resources).map(item => item.toUpperCase()))();
-
-  const defaultLanguage = (() => {
-    if (
-      languageFromNative &&
-      languages.includes(languageFromNative.toUpperCase())
-    ) {
-      return languageFromNative.toUpperCase();
-    }
-    return DEFAULT_LANGUAGE.toUpperCase();
-  })();
+    changeAppLanguage(countryCode.toLowerCase());
 
   const languagesLabels = () => {
-    return Object.keys(
-      resources[defaultLanguage.toLowerCase()].languages
-    ).reduce((obj, item) => {
+    return Object.keys(resources[appLanguage].languages).reduce((obj, item) => {
       return {
         ...obj,
         [item.toUpperCase()]: t(`languages:${item}`)
@@ -44,9 +33,9 @@ const StartScreenContainer = ({ t, i18n }) => {
   return (
     <StartScreen
       onStartClick={onStartClick}
-      languages={languages}
+      languages={languages.map(value => value.toUpperCase())}
       customLabels={languagesLabels()}
-      defaultLang={defaultLanguage}
+      defaultLang={appLanguage.toUpperCase()}
       onSelect={handleChangeLang}
     />
   );
