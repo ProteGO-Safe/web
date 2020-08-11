@@ -2,6 +2,7 @@ import {
   DATA_FROM_NEWEST_VERSION_MARKED,
   EXPOSURE_ONBOARDING_FINISHED,
   FIRST_DIAGNOSIS_FINISHED,
+  LANGUAGE_CHANGED,
   MIGRATION_FINISHED,
   ONBOARDING_FINISHED,
   START_SCREEN_SHOWED,
@@ -14,6 +15,7 @@ import { UPLOAD_HISTORICAL_DATA_STATE as uploadState } from './app.constants';
 const INITIAL_STATE = {
   exposureOnboardingFinished: false,
   dataFromNewestVersionMarked: false,
+  language: null,
   migrations: [],
   onboardingFinished: false,
   startScreenShowed: false,
@@ -110,6 +112,13 @@ const appReducer = (state = INITIAL_STATE, action) => {
       return {
         ...state,
         migrations: [...(state.migrations || []), data]
+      };
+    }
+    case LANGUAGE_CHANGED: {
+      const { data } = action;
+      return {
+        ...state,
+        language: data
       };
     }
     default:

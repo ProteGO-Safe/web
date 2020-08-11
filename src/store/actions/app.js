@@ -1,5 +1,9 @@
 import * as types from '../types/app';
-import { clearBluetoothData, resetSourceSetServicesStatus } from './nativeData';
+import {
+  changeNativeLanguage,
+  clearBluetoothData,
+  resetSourceSetServicesStatus
+} from './nativeData';
 
 export const onboardingFinished = () => ({
   type: types.ONBOARDING_FINISHED
@@ -74,5 +78,16 @@ export const migrationFinished = data => ({
 export function finishMigration(data) {
   return dispatch => {
     dispatch(migrationFinished(data));
+  };
+}
+export const languageChanged = data => ({
+  data,
+  type: types.LANGUAGE_CHANGED
+});
+
+export function changeLanguage(data) {
+  return dispatch => {
+    dispatch(languageChanged(data));
+    dispatch(changeNativeLanguage(data));
   };
 }

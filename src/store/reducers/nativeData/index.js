@@ -90,7 +90,7 @@ const nativeBridgeReducer = (state = INITIAL_STATE, action) => {
       } = action;
       return {
         ...state,
-        language
+        language: language.toLowerCase()
       };
     }
     default:

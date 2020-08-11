@@ -149,3 +149,10 @@ export function fetchLanguage() {
     });
   };
 }
+
+export function changeNativeLanguage(language) {
+  const data = { language: language.toUpperCase() };
+  return () => {
+    nativeBridge.changeLanguage(data);
+  };
+}
