@@ -1,5 +1,5 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
+import Routes from '../../routes';
 import Menu from './Menu';
 import useMenuContext from '../../hooks/useMenuContext';
 
@@ -13,11 +13,7 @@ import Icon7 from '../../assets/img/icons/menu-boczne-ustawienia_BLUE.svg';
 import Icon8 from '../../assets/img/icons/menu-boczne-moje-dane_BLUE.svg';
 import Icon9 from '../../assets/img/icons/menu-boczne-zglos-blad_BLUE.svg';
 
-import Routes from '../../routes';
-import { isVersionCompatibilityWithBluetoothModule } from '../../utils/version';
-
 const MenuContainer = () => {
-  const { servicesStatus } = useSelector(state => state.nativeData);
   const { visible } = useMenuContext();
 
   if (!visible) {
@@ -65,8 +61,7 @@ const MenuContainer = () => {
       icon: Icon7,
       path: Routes.Settings,
       slug: 'menu_container_text7',
-      title: 'menu_container_text7',
-      disable: !isVersionCompatibilityWithBluetoothModule(servicesStatus)
+      title: 'menu_container_text7'
     },
     {
       icon: Icon8,

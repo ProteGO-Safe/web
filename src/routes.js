@@ -10,6 +10,8 @@ const Routes = {
   PrivacyPolicy: '/privacy-policy',
   PrivacyPolicyDetails: '/privacy-policy-details',
   Settings: '/settings',
+  SettingsBluetooth: '/settings/bluetooth',
+  SettingsLanguages: '/settings/languages',
   Regulations: '/regulations',
   Diagnosis: '/diagnosis',
   UserData: '/user-data',

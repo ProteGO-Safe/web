@@ -1,12 +1,15 @@
 import React from 'react';
 import { withTranslation } from 'react-i18next';
+import { Small, Paragraph } from '../../../../theme/typography';
+import { Color } from '../../../../theme/colors';
+import * as Styled from './MoreInformation.styled';
 
 const MoreInformation = ({ t }) => (
-  <div className="more-information">
-    <h4>{t('home_more_information_text1')}</h4>
-    <p>{t('home_more_information_text2')}</p>
-    <small>{t('home_more_information_text3')}</small>
-  </div>
+  <Styled.MoreInformation>
+    <Styled.Title>{t('home_more_information_text1')}</Styled.Title>
+    <Paragraph color={Color.lightBlack}>{t('home_more_information_text2')}</Paragraph>
+    <Small>{t('home_more_information_text3')}</Small>
+  </Styled.MoreInformation>
 );
 
 export default withTranslation()(MoreInformation);

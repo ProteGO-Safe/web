@@ -1,13 +1,6 @@
 import React, { useState } from 'react';
 import { withTranslation } from 'react-i18next';
-import { Container, Content, View } from '../../theme/grid';
-import {
-  Header,
-  BottomNavigation,
-  Collapse,
-  Input,
-  Url
-} from '../../components';
+import { Collapse, Input, Url, Layout } from '../../components';
 import {
   FaqIntro,
   FaqTitle,
@@ -110,31 +103,25 @@ const FaqPage = ({ t }) => {
   );
 
   return (
-    <View>
-      <Header hideBackButton />
-      <Content>
-        <Container className="full-height">
-          <Title>{t('faq_page_text1')}</Title>
-          <FaqWrapper>
-            <FaqIntro>{intro}</FaqIntro>
-            <SearchWrapper>
-              <Input
-                reset={handleResetInput}
-                icon={SearchIcon}
-                type="text"
-                name="search"
-                placeholder={t('faq_page_text2')}
-                value={filterText}
-                onChange={handleChangeInput}
-              />
-            </SearchWrapper>
-            {elementsToDisplay}
-            <Watermark>{watermark}</Watermark>
-          </FaqWrapper>
-        </Container>
-        <BottomNavigation />
-      </Content>
-    </View>
+    <Layout hideBackButton isNavigation>
+      <Title>{t('faq_page_text1')}</Title>
+      <FaqWrapper>
+        <FaqIntro>{intro}</FaqIntro>
+        <SearchWrapper>
+          <Input
+            reset={handleResetInput}
+            icon={SearchIcon}
+            type="text"
+            name="search"
+            placeholder={t('faq_page_text2')}
+            value={filterText}
+            onChange={handleChangeInput}
+          />
+        </SearchWrapper>
+        {elementsToDisplay}
+        <Watermark>{watermark}</Watermark>
+      </FaqWrapper>
+    </Layout>
   );
 };
 

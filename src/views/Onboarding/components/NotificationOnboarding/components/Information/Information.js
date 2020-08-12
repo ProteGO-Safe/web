@@ -4,10 +4,8 @@ import './Information.scss';
 import {
   OnboardingContent,
   Button,
-  GovFooter
+  Layout
 } from '../../../../../../components';
-import { View, Container, Content } from '../../../../../../theme/grid';
-import Header from '../../../../../../components/Header/Header';
 import { Icon } from './Information.styled';
 
 const Information = ({ t, onNext, onSkip }) => {
@@ -33,23 +31,17 @@ const Information = ({ t, onNext, onSkip }) => {
   ));
 
   return (
-    <View>
-      <Header hideBackButton />
-      <Content>
-        <Container className="full-height">
-          <OnboardingContent
-            icon={<Icon />}
-            title={t('notification_onboarding_information_text3')}
-            buttons={renderButton}
-          >
-            <>
-              <p>{t('notification_onboarding_information_text1')}</p>
-            </>
-          </OnboardingContent>
-          <GovFooter type="black" />
-        </Container>
-      </Content>
-    </View>
+    <Layout hideBackButton isGovFooter>
+      <OnboardingContent
+        icon={<Icon />}
+        title={t('notification_onboarding_information_text3')}
+        buttons={renderButton}
+      >
+        <>
+          <p>{t('notification_onboarding_information_text1')}</p>
+        </>
+      </OnboardingContent>
+    </Layout>
   );
 };
 

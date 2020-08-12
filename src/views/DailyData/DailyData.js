@@ -3,13 +3,10 @@ import { withTranslation } from 'react-i18next';
 import PropTypes from 'prop-types';
 import { useHistory } from 'react-router-dom';
 import { useFormikContext } from 'formik';
-
 import Routes from '../../routes';
-import { BottomNavigation } from '../../components/BottomNavigation';
-import { Button, Header, Imprint } from '../../components';
+import { Button, Imprint, Layout } from '../../components';
 import { Data, Form } from './components';
 import { Actions } from '../../components/ImprintFiller/ImprintFiller.styled';
-import { Content, Container, View } from '../../theme/grid';
 import { DAILY_DATA_MODE as MODE } from './dailyData.constants';
 import { isCreateMode, isEditMode, isViewMode } from './dailyData.helpers';
 import { Title, TitleBox } from './DailyData.styled';
@@ -32,41 +29,33 @@ const DailyData = ({ t, mode, setMode }) => {
   }, [mode]);
 
   return (
-    <View>
-      <Header />
-      <Content>
-        <Container className="full-height">
-          <Title>{t('daily_data_text1')}</Title>
-          {viewMode ? <Data /> : <Form isEditMode={isEditMode} />}
-          <TitleBox className="medium title-4 text-left">
-            {t('daily_data_text2')}
-          </TitleBox>
-          <Imprint />
-          <Actions>
-            {(createMode || editMode) && (
-              <Button
-                onClick={submitForm}
-                label={t('button_save')}
-                disabled={!dirty}
-              />
-            )}
-            {editMode && (
-              <Button onClick={handleCancel} label={t('button_cancel')} />
-            )}
-            {viewMode && (
-              <Button onClick={handleEdit} label={t('button_edit')} />
-            )}
-            {(createMode || viewMode) && (
-              <Button
-                onClick={() => history.push(Routes.Daily)}
-                label={t('button_back')}
-              />
-            )}
-          </Actions>
-        </Container>
-        <BottomNavigation />
-      </Content>
-    </View>
+    <Layout isNavigation>
+      <Title>{t('daily_data_text1')}</Title>
+      {viewMode ? <Data /> : <Form isEditMode={isEditMode} />}
+      <TitleBox className="medium title-4 text-left">
+        {t('daily_data_text2')}
+      </TitleBox>
+      <Imprint />
+      <Actions>
+        {(createMode || editMode) && (
+          <Button
+            onClick={submitForm}
+            label={t('button_save')}
+            disabled={!dirty}
+          />
+        )}
+        {editMode && (
+          <Button onClick={handleCancel} label={t('button_cancel')} />
+        )}
+        {viewMode && <Button onClick={handleEdit} label={t('button_edit')} />}
+        {(createMode || viewMode) && (
+          <Button
+            onClick={() => history.push(Routes.Daily)}
+            label={t('button_back')}
+          />
+        )}
+      </Actions>
+    </Layout>
   );
 };
 

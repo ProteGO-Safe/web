@@ -1,11 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { withTranslation } from 'react-i18next';
 import { NavLink } from 'react-router-dom';
 import LogoSafeSafe from '../../assets/img/logo/protegosafe_logo_white.svg';
 import useMenuContext from '../../hooks/useMenuContext';
 import { VersionApp } from '../index';
 import './Menu.scss';
-import {withTranslation} from "react-i18next";
 
 const Menu = ({ t, items }) => {
   const { visible, startHiding, inProgress } = useMenuContext();

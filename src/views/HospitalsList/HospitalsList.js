@@ -1,13 +1,7 @@
 import React from 'react';
 import { withTranslation } from 'react-i18next';
 import reactStringReplace from 'react-string-replace';
-import {
-  Collapse,
-  BottomNavigation,
-  Header,
-  PhoneNumber
-} from '../../components';
-import { Container, Content, View } from '../../theme/grid';
+import { Collapse, PhoneNumber, Layout } from '../../components';
 import { List, ListItem } from '../../theme/typography';
 import { Title } from './Hospitals.styled';
 import './HospitalsList.scss';
@@ -29,30 +23,24 @@ const HospitalsList = ({ t }) => {
   const { elements: voivodeships = [], watermark } = hospitalsData;
 
   return (
-    <View>
-      <Header />
-      <Content>
-        <Container className="full-height">
-          <Title>{t('hospitals_list_text1')}</Title>
-          {voivodeships.map((voivodeship, key) => (
-            <Collapse key={voivodeship.name} title={voivodeship.name}>
-              <List>
-                {voivodeship.items.map(item => (
-                  <ListItem
-                    key={`${voivodeship.name}-${item.city}-${item.address}`}
-                  >
-                    <strong>{item.city}</strong>
-                    <p>{renderAddressLine(item.address)}</p>
-                  </ListItem>
-                ))}
-              </List>
-            </Collapse>
-          ))}
-          <p className="watermark details">{watermark}</p>
-        </Container>
-        <BottomNavigation />
-      </Content>
-    </View>
+    <Layout isNavigation>
+      <Title>{t('hospitals_list_text1')}</Title>
+      {voivodeships.map((voivodeship, key) => (
+        <Collapse key={voivodeship.name} title={voivodeship.name}>
+          <List>
+            {voivodeship.items.map(item => (
+              <ListItem
+                key={`${voivodeship.name}-${item.city}-${item.address}`}
+              >
+                <strong>{item.city}</strong>
+                <p>{renderAddressLine(item.address)}</p>
+              </ListItem>
+            ))}
+          </List>
+        </Collapse>
+      ))}
+      <p className="watermark details">{watermark}</p>
+    </Layout>
   );
 };
 
