@@ -1,9 +1,11 @@
 import React from 'react';
-
-import { InfoBorderContainer, Content } from './TriageInfoBorder.styled';
 import useTriage from '../../../../hooks/useTriage';
-import ArrowIcon from '../../../../assets/img/icons/angle-right.svg';
 import { PhoneNumber } from '../../../../components';
+import {
+  LinkArrow,
+  Arrow,
+  InfoBorderContainer
+} from './TriageInfoBorder.styled';
 
 const TriageInfoBorder = () => {
   const {
@@ -14,10 +16,6 @@ const TriageInfoBorder = () => {
     serious = [],
     riskLevel
   } = useTriage();
-
-  const goToAdvice = () => {
-    window.open('https://pacjent.gov.pl/teleporada', '_blank');
-  };
 
   const renderItem = serious
     .map(_obj => _obj.common_name)
@@ -54,10 +52,10 @@ const TriageInfoBorder = () => {
           W przypadku pojawienia się objawów takich jak: gorączka, kaszel lub
           duszność, skontaktuj się telefonicznie ze swoim lekarzem lub
           skorzystaj z darmowej teleporady z pracownikiem medycznym.
-          <Content onClick={goToAdvice}>
+          <LinkArrow href="https://pacjent.gov.pl/teleporada" target="_blank">
             Skorzystaj z teleporady
-            <img src={ArrowIcon} alt="button" />
-          </Content>
+            <Arrow />
+          </LinkArrow>
           Twój stan jest ciężki? Nie czekaj. Zadzwoń na numer alarmowy{' '}
           <PhoneNumber>112</PhoneNumber> lub <PhoneNumber>999</PhoneNumber> i
           uprzedź, że możesz mieć koronawirusa.
@@ -65,7 +63,7 @@ const TriageInfoBorder = () => {
       );
     }
     if (renderItem.length === 0) {
-        return (<>{description}</>);
+      return <>{description}</>;
     }
     return (
       <>
