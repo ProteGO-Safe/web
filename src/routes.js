@@ -1,6 +1,7 @@
 const Routes = {
   Home: '/',
   Start: '/start',
+  AddTranslation: '/add-translation',
   Daily: '/daily',
   RiskTest: '/risk-test',
   HowItWorks: '/how-it-works',

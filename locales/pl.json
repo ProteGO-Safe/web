@@ -1092,5 +1092,12 @@
     "menu_settings_item2": "Język aplikacji",
     "settings_languages_text1": "Obecnie wybrany / currently selected:",
     "settings_languages_text2": "Zmień język / change language:",
-    "settings_languages_text3": "Dodaj tłumaczenie / add translation"
+    "settings_languages_text3": "Dodaj tłumaczenie / add translation",
+    "add_translation_title1": "Nie odnajdujesz",
+    "add_translation_title2": "swojego języka?",
+    "add_translation_text1": "Zapraszamy do społecznego tłumaczenia aplikacji na inne języki.",
+    "add_translation_text2": "Jeśli chcesz przetłumaczyć aplikację na swój język, wejdź na",
+    "add_translation_text3": "https://poeditor.com/",
+    "add_translation_text4": "i zarejestruj się jako tłumacz.",
+    "add_translation_button": "OK"
 }

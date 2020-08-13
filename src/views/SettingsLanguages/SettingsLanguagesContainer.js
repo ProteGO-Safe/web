@@ -1,6 +1,7 @@
 import React from 'react';
-import SettingsLanguages from './SettingsLanguages';
+import Routes from '../../routes';
 import { Layout } from '../../components';
+import SettingsLanguages from './SettingsLanguages';
 
 const SettingsLanguagesContainer = () => {
   const LANGUAGES = [
@@ -24,6 +25,7 @@ const SettingsLanguagesContainer = () => {
   return (
     <Layout isNavigation noMargin>
       <SettingsLanguages
+        addTranslationPath={Routes.AddTranslation}
         languages={LANGUAGES}
         selectedLang={{
           shortcutLang: 'pl',

@@ -1,3 +1,4 @@
+export { AddTranslation } from './AddTranslation';
 export { Daily } from './Daily';
 export { DailyData } from './DailyData';
 export { Diagnosis } from './Diagnosis';

@@ -5,6 +5,7 @@ import 'moment/locale/pl';
 import { useDispatch, useSelector } from 'react-redux';
 import { Redirect, Route, Switch, useHistory } from 'react-router-dom';
 import {
+  AddTranslation,
   Daily,
   DailyData,
   Diagnosis,
@@ -127,6 +128,11 @@ function App() {
         <Route exact path={Routes.Home} component={resolveHomeComponent} />
         {name && (
           <>
+            <Route
+              exact
+              path={Routes.AddTranslation}
+              component={AddTranslation}
+            />
             <Route exact path={Routes.Daily} component={Daily} />
             <Route exact path="/daily/:id" component={DailyData} />
             <Route exact path="/daily-data" component={DailyData} />

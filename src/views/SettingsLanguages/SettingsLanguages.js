@@ -3,7 +3,12 @@ import { withTranslation } from 'react-i18next';
 import { AddTranslation } from './components';
 import * as Styled from './SettingsLanguages.styled';
 
-const SettingsLanguages = ({ languages, selectedLang, t }) => {
+const SettingsLanguages = ({
+  addTranslationPath,
+  languages,
+  selectedLang,
+  t
+}) => {
   const renderFlag = flag => require(`../../assets/img/flags/${flag}.svg`);
 
   const renderLanguages = languages.map(({ shortcutLang, label, onClick }) => (
@@ -28,7 +33,10 @@ const SettingsLanguages = ({ languages, selectedLang, t }) => {
       <Styled.Title>{t('settings_languages_text2')}</Styled.Title>
       {renderLanguages}
 
-      <AddTranslation name={t('settings_languages_text3')} path="/" />
+      <AddTranslation
+        name={t('settings_languages_text3')}
+        path={addTranslationPath}
+      />
     </Styled.SettingsLanguages>
   );
 };
