@@ -16,6 +16,7 @@ const INITIAL_STATE = {
   exposureOnboardingFinished: false,
   dataFromNewestVersionMarked: false,
   language: null,
+  languageChangedByUser: false,
   migrations: [],
   onboardingFinished: false,
   startScreenShowed: false,
@@ -118,7 +119,8 @@ const appReducer = (state = INITIAL_STATE, action) => {
       const { data } = action;
       return {
         ...state,
-        language: data
+        language: data,
+        languageChangedByUser: true
       };
     }
     default:

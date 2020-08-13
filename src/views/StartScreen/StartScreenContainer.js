@@ -12,17 +12,13 @@ const StartScreenContainer = ({ t }) => {
     dispatch(showStartScreenSuccess());
   };
 
-  const { appLanguage, changeAppLanguage, languages } = useLanguage();
-
-  if (!appLanguage) {
-    return null;
-  }
+  const { language, changeAppLanguage, languages } = useLanguage();
 
   const handleChangeLang = countryCode =>
     changeAppLanguage(countryCode.toLowerCase());
 
   const languagesLabels = () => {
-    return Object.keys(resources[appLanguage].languages).reduce((obj, item) => {
+    return Object.keys(resources[language].languages).reduce((obj, item) => {
       return {
         ...obj,
         [item.toUpperCase()]: t(`languages:${item}`)
@@ -35,7 +31,7 @@ const StartScreenContainer = ({ t }) => {
       onStartClick={onStartClick}
       languages={languages.map(value => value.toUpperCase())}
       customLabels={languagesLabels()}
-      defaultLang={appLanguage.toUpperCase()}
+      defaultLang={language.toUpperCase()}
       onSelect={handleChangeLang}
     />
   );

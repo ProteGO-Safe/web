@@ -23,12 +23,6 @@ yarn test a
 yarn install
 yarn start
 ```
-After launch app  you have to simulate response from native device, just put in console:
-```shell script
-window.bridgeDataResponse(JSON.stringify({language: 'pl'}), 63, 'request-1')
-```
-where request-1 can be different - you have to check it in console follow with datatype 63.
-
 
 ## Technologies
 * React / Redux

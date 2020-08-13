@@ -3,7 +3,10 @@ import { useCallback, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { fetchLanguage } from '../../store/actions/nativeData';
 import { getNativeLanguage } from '../../store/selectors/nativeData';
-import { getAppLanguage } from '../../store/selectors/app';
+import {
+  getAppLanguage,
+  getLanguageChangedByUser
+} from '../../store/selectors/app';
 import { changeLanguage } from '../../store/actions/app';
 import { resources } from '../../locales/resources';
 import { DEFAULT_LANGUAGE } from '../../constants';
@@ -13,6 +16,7 @@ const useLanguage = () => {
   const { i18n } = useTranslation();
   const nativeLanguage = useSelector(getNativeLanguage);
   const appLanguage = useSelector(getAppLanguage);
+  const isLanguageChangedByUser = useSelector(getLanguageChangedByUser);
 
   const languages = (() => Object.keys(resources).map(item => item))();
 
@@ -24,35 +28,32 @@ const useLanguage = () => {
   })();
 
   const changeAppLanguage = useCallback(
-    language => dispatch(changeLanguage(language)),
-    [dispatch]
+    language => {
+      dispatch(changeLanguage(language));
+      i18n.changeLanguage(defaultLanguage);
+    },
+    [defaultLanguage, dispatch, i18n]
   );
 
   useEffect(() => {
-    if (!appLanguage && !nativeLanguage) {
+    if (!isLanguageChangedByUser) {
       dispatch(fetchLanguage());
-      return;
-    }
-    if (!appLanguage && nativeLanguage) {
-      changeAppLanguage(defaultLanguage);
-      return;
-    }
-    if (appLanguage) {
-      i18n.changeLanguage(appLanguage);
+      if (nativeLanguage) {
+        i18n.changeLanguage(defaultLanguage);
+      }
     }
   }, [
     dispatch,
     i18n,
-    changeAppLanguage,
-    appLanguage,
+    defaultLanguage,
     nativeLanguage,
-    defaultLanguage
+    isLanguageChangedByUser
   ]);
 
   return {
     languages,
     changeAppLanguage,
-    appLanguage
+    language: appLanguage || defaultLanguage
   };
 };
 

@@ -36,10 +36,7 @@ import {
   FaqPage
 } from '../../views';
 import { Menu } from '../index';
-import {
-  fetchNativeVersion,
-  fetchNotification
-} from '../../store/actions/nativeData';
+import { fetchNativeVersion } from '../../store/actions/nativeData';
 import useMenuContext from '../../hooks/useMenuContext';
 import Routes from '../../routes';
 import './App.scss';
@@ -49,6 +46,7 @@ import { markDataFromNewestVersion } from '../../store/actions/app';
 import { isLocalPWA, isWebView } from '../../utils/native';
 import useMigration from '../../hooks/useMigration';
 import useLanguage from '../../hooks/useLanguage';
+import useNotification from '../../hooks/useNotification';
 
 function App() {
   moment.locale('pl');
@@ -62,7 +60,7 @@ function App() {
     startScreenShowed,
     firstDiagnosisFinished
   } = useSelector(state => state.app);
-  const { notification } = useSelector(state => state.nativeData);
+  const { notification } = useNotification();
   const { inProgress, visible: menuIsVisible } = useMenuContext();
   const { hasFilledAnyDiagnosis } = useFilledDiagnosis();
   useMigration();
@@ -71,14 +69,6 @@ function App() {
   useEffect(() => {
     dispatch(fetchNativeVersion());
   }, [dispatch, startScreenShowed]);
-
-  useEffect(() => {
-    if (!notification) {
-      const interval = setInterval(() => dispatch(fetchNotification()), 1000);
-      return () => clearInterval(interval);
-    }
-    return () => null;
-  }, [notification, dispatch]);
 
   history.listen(() => {
     window.scroll(0, 0);
