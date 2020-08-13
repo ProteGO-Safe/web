@@ -49,8 +49,8 @@ const Information = ({ onNext, onMore, onSkip }) => {
               <p>
                 Pozwól, by aplikacja anonimowo rejestrowała spotkania z innymi
                 urządzeniami. Dzięki temu, gdy użytkownik, któregoś z nich
-                zachoruje, otrzymasz odpowiednie powiadomienie. Zadbaj o swoje i
-                swoich bliskich zdrowie.
+                zachoruje, otrzymasz odpowiednie powiadomienie. Zadbaj o zdrowie
+                swoje i swoich bliskich.
               </p>
               <br />
               <More onClick={onMore}>Więcej informacji</More>
