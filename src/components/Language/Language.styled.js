@@ -56,16 +56,17 @@ export const Language = styled.div`
       &s {
         position: absolute;
         top: calc(100% - 6px);
-        left: 0;
-        width: 100%;
+        left: -2px;
+        width: calc(100% + 4px);
         max-height: 167px;
         margin: 0;
-        padding: 0 14px;
+        padding: 0;
         list-style: none;
         background: ${Color.white};
-        border-width: 3px 0 0 0;
+        border-width: 3px 2px 2px 2px;
         border-style: solid;
         border-color: ${Color.primary};
+        border-radius: 0 0 4px 4px;
         z-index: 999999;
         overflow: auto;
       }
@@ -97,7 +98,7 @@ export const Language = styled.div`
         position: relative;
       }
       &.has-label {
-        padding: 16px 0;
+        padding: 16px 14px;
         > span {
           display: flex;
           flex-flow: nowrap row;
