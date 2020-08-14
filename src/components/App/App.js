@@ -45,7 +45,7 @@ import useFilledDiagnosis from '../../hooks/useFilledDiagnosis';
 import { markDataFromNewestVersion } from '../../store/actions/app';
 import { isLocalPWA, isWebView } from '../../utils/native';
 import useMigration from '../../hooks/useMigration';
-import useLanguage from '../../hooks/useLanguage';
+import useCheckLanguage from '../../hooks/useCheckLanguage';
 import useNotification from '../../hooks/useNotification';
 
 function App() {
@@ -64,7 +64,7 @@ function App() {
   const { inProgress, visible: menuIsVisible } = useMenuContext();
   const { hasFilledAnyDiagnosis } = useFilledDiagnosis();
   useMigration();
-  useLanguage();
+  useCheckLanguage();
 
   useEffect(() => {
     dispatch(fetchNativeVersion());

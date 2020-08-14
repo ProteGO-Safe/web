@@ -10,7 +10,8 @@ i18n.use(initReactI18next).init({
   keySeparator: false,
   interpolation: {
     escapeValue: false
-  }
+  },
+  fallbackLng: DEFAULT_LANGUAGE
 });
 
 export default i18n;
