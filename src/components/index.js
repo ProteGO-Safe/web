@@ -12,6 +12,7 @@ export { Imprint } from './Imprint';
 export { InfoIcon } from './InfoIcon';
 export { Input } from './Input';
 export { InputSlider } from './InputSlider';
+export { InputWithCounter } from './InputWithCounter';
 export { default as Language } from './Language/Language';
 export { default as Layout } from './Layout/Layout';
 export { LineItem } from './LineItem';

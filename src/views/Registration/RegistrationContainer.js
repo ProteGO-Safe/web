@@ -19,8 +19,8 @@ const RegistrationContainer = () => {
   const validationSchema = Yup.object().shape({
     [constants.FIELD_NAME]: Yup.string()
       .trim()
-      .min(3, 'name_form_text7')
-      .max(20, 'name_form_text8')
+      .min(1, 'name_form_text7')
+      .max(12, 'name_form_text8')
       .matches(/^[a-zA-Z0-9wąćęłńóśźżĄĆĘŁŃÓŚŹŻ ]+$/, 'name_form_text9')
   });
 
