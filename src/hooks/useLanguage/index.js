@@ -1,7 +1,6 @@
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
-import { getAppLanguage } from '../../store/selectors/app';
 import { changeLanguage } from '../../store/actions/app';
 import { languages } from '../../utils/languages';
 import useDefaultLanguage from '../useDefaultLanguage';
@@ -9,14 +8,14 @@ import useDefaultLanguage from '../useDefaultLanguage';
 const useLanguage = () => {
   const dispatch = useDispatch();
   const { i18n } = useTranslation();
-  const appLanguage = useSelector(getAppLanguage);
 
   const { defaultLanguage } = useDefaultLanguage();
 
   const changeAppLanguage = useCallback(
     language => {
-      dispatch(changeLanguage(language));
-      i18n.changeLanguage(language);
+      i18n
+        .changeLanguage(language)
+        .then(value => dispatch(changeLanguage(language)));
     },
     [dispatch, i18n]
   );
@@ -24,7 +23,7 @@ const useLanguage = () => {
   return {
     languages,
     changeAppLanguage,
-    language: appLanguage || defaultLanguage
+    language: defaultLanguage
   };
 };
 

@@ -2,22 +2,33 @@ import React, { useRef, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import ReactFlagsSelect from 'react-flags-select';
 import * as Styled from './Language.styled';
+import {
+  convertToIso,
+  convertToLibraryCode,
+  prepareLanguages
+} from './language.helpers';
 
 const Language = ({ customLabels, defaultLang, languages, onSelect }) => {
   const myInput = useRef();
 
+  const lang = convertToLibraryCode(defaultLang);
+
   useEffect(() => {
-    myInput.current.updateSelected(defaultLang);
-  }, [myInput, defaultLang]);
+    myInput.current.updateSelected(lang);
+  }, [myInput, lang]);
+
+  const changeLanguage = code => {
+    onSelect(convertToIso(code));
+  };
 
   return (
     <Styled.Language>
       <ReactFlagsSelect
         ref={myInput}
-        countries={languages}
+        countries={prepareLanguages(languages)}
         customLabels={customLabels}
-        defaultCountry={defaultLang}
-        onSelect={onSelect}
+        defaultCountry={lang}
+        onSelect={changeLanguage}
       />
     </Styled.Language>
   );

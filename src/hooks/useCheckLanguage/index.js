@@ -17,10 +17,8 @@ const useCheckLanguage = () => {
   useEffect(() => {
     if (!isLanguageChangedByUser) {
       dispatch(fetchLanguage());
-      if (nativeLanguage) {
-        i18n.changeLanguage(defaultLanguage);
-      }
     }
+    i18n.changeLanguage(defaultLanguage);
   }, [
     dispatch,
     i18n,
