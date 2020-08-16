@@ -11,6 +11,7 @@ import { chronicSickValues } from '../../constants';
 import Routes from '../../routes';
 import useLoaderContext from '../../hooks/useLoaderContext';
 import { ImprintFiller } from '../../components/ImprintFiller';
+import { userNameValidationSchema } from '../../utils/user';
 
 const UserDataChange = ({ t }) => {
   const dispatch = useDispatch();
@@ -67,11 +68,7 @@ const UserDataChange = ({ t }) => {
   };
 
   const validationSchema = Yup.object().shape({
-    [constants.FIELD_NAME]: Yup.string()
-      .trim()
-      .min(1, 'name_form_text7')
-      .max(12, 'name_form_text8')
-      .matches(/^[a-zA-Z0-9wąćęłńóśźżĄĆĘŁŃÓŚŹŻ ]+$/, 'name_form_text9'),
+    [constants.FIELD_NAME]: userNameValidationSchema,
     [constants.FIELD_TERM1]: Yup.boolean().oneOf([true], t('name_form_text10'))
   });
 
