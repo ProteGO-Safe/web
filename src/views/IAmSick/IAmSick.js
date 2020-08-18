@@ -18,8 +18,8 @@ const Complete = () => {
           <ListNumber>
             <ListNumberItem>
               <strong>Zostań w domu</strong> i monitoruj stan swojego zdrowia.
-              Zadzwoń na infolinię Narodowego Funduszu zdrowia{' '}
-              <PhoneNumber value="800190590">800 190 590</PhoneNumber> lub do
+              Zadzwoń na darmową, całodobową infolinię{' '}
+              <PhoneNumber value="222500115">222 500 115</PhoneNumber> lub do
               lokalnej placówki służby zdrowia. Ważne! Nie idź tam.
             </ListNumberItem>
             <ListNumberItem>
@@ -38,8 +38,8 @@ const Complete = () => {
             </ListNumberItem>
             <ListNumberItem>
               Jeżeli pojawią się nowe objawy infekcji lub nasilą się
-              dotychczasowe, ponów kontakt z infolinią NFZ{' '}
-              <PhoneNumber value="800190590">800 190 590</PhoneNumber> lub{' '}
+              dotychczasowe, ponów kontakt z darmową, całodobową infolinią{' '}
+              <PhoneNumber value="222500115">222 500 115</PhoneNumber> lub{' '}
               <strong>zadzwoń (nie idź!)</strong> do lokalnej placówki służby
               zdrowia.
             </ListNumberItem>

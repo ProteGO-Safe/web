@@ -9,6 +9,9 @@ export const Title = styled.h1`
   line-height: 1.2;
   color: ${Color.lightBlack};
   font-weight: ${FontWeight.Bold};
+  @media (max-width: 330px) {
+    font-size: 24px;
+  }
 `;
 
 export const ButtonWrapper = styled.div`
@@ -16,7 +19,7 @@ export const ButtonWrapper = styled.div`
   flex-flow: wrap column;
   width: 100%;
   margin-top: 24px;
-  margin-bottom: auto;
+  margin-bottom: 32px;
   > *:not(:last-child) {
     margin-bottom: 12px;
   }
@@ -40,4 +43,11 @@ export const Label = styled.span`
   line-height: 1.4;
   font-weight: ${FontWeight.Normal};
   color: ${Color.lightBlack};
+`;
+
+export const Small = styled.span`
+  margin-bottom: 24px;
+  font-size: 11px;
+  line-height: 17px;
+  color: ${Color.black};
 `;

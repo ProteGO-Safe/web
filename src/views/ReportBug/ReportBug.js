@@ -27,7 +27,7 @@ const ReportBug = () => {
             Masz pytania? Znalazłeś błąd? Skontaktuj się z nami!
           </Paragraph>
           <Paragraph color={Color.primary} fontWeight={FontWeight.Bold}>
-            <Email>info@safesafe.app</Email>
+            <Email>protego@mc.gov.pl</Email>
           </Paragraph>
         </Container>
         <BottomNavigation />

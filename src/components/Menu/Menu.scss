@@ -111,7 +111,6 @@
       font-size: 16px;
       font-weight: bold;
       line-height: 20px;
-      color: #0052a5;
 
       &.disable {
         pointer-events: none;
@@ -120,6 +119,14 @@
       &.active {
         color: $button_primary;
         background-color: $gray_3;
+      }
+
+      &.red {
+        color: $warning;
+      }
+
+      &.blue {
+        color: $button_primary;
       }
     }
 
