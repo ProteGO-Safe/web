@@ -11,8 +11,7 @@ const IAmSick = ({ t }) => {
       <Title>{t('i_am_sick_text1')}</Title>
       <ListNumber>
         <ListNumberItem>
-          <strong>{t('i_am_sick_text2')}</strong>
-          {t('i_am_sick_text3')}{' '}
+          <strong>{t('i_am_sick_text2')}</strong> {t('i_am_sick_text3')}{' '}
           <PhoneNumber value="800190590">{t('i_am_sick_text4')}</PhoneNumber>
           {t('i_am_sick_text5')}
         </ListNumberItem>

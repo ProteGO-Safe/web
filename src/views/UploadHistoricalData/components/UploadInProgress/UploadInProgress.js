@@ -19,7 +19,7 @@ const UploadInProgress = ({ t }) => {
         <Loader />
       </LoaderWrapper>
       <Information>
-        {t('upload_in_progress_text2')}
+        {t('upload_in_progress_text2')}{' '}
         <Link to={Routes.PrivacyPolicy}>
           <TextLink>{t('upload_in_progress_text3')}</TextLink>.
         </Link>

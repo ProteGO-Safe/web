@@ -38,10 +38,8 @@ const Information = ({ t, hideInformation }) => {
             {t('information_text9')}
           </WarningListItem>
           <WarningListItem>
-            {t('information_text10')}
-            <strong>{t('information_text11')}</strong>
-            {t('information_text12')}
-            <strong>{t('information_text13')}</strong>
+            {t('information_text10')} <strong>{t('information_text11')}</strong>{' '}
+            {t('information_text12')} <strong>{t('information_text13')}</strong>
           </WarningListItem>
         </WarningList>
       </WarningContent>
