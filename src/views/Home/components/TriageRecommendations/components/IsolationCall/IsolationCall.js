@@ -30,10 +30,10 @@ const IsolationCall = ({ t }) => (
         </Url>
       </p>
       <p>
-        {t('isolation_call_text9')}
-        <PhoneNumber>{t('isolation_call_text10')}</PhoneNumber>
+        {t('isolation_call_text9')}{' '}
+        <PhoneNumber>{t('isolation_call_text10')}</PhoneNumber>{' '}
         {t('isolation_call_text11')}{' '}
-        <PhoneNumber>{t('isolation_call_text12')}</PhoneNumber>
+        <PhoneNumber>{t('isolation_call_text12')}</PhoneNumber>{' '}
         {t('isolation_call_text13')}
       </p>
     </Collapse>

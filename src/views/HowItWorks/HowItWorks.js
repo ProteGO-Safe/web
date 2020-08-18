@@ -9,8 +9,7 @@ const HowItWorks = ({ t }) => {
     <Layout isNavigation>
       <Title>{t('how_it_works_text1')}</Title>
       <Paragraph>
-        <strong>{t('how_it_works_text2')}</strong>
-        {t('how_it_works_text3')}
+        <strong>{t('how_it_works_text2')}</strong> {t('how_it_works_text3')}
       </Paragraph>
       <Paragraph>{t('how_it_works_text4')}</Paragraph>
       <Paragraph>{t('how_it_works_text5')}</Paragraph>

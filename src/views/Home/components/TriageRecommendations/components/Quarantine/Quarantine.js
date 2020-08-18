@@ -73,10 +73,10 @@ const Quarantine = ({ t }) => (
       </p>
       <p>{t('quarantine_text30')}</p>
       <p>
-        {t('quarantine_text31')}
-        <PhoneNumber>{t('quarantine_text32')}</PhoneNumber>
+        {t('quarantine_text31')}{' '}
+        <PhoneNumber>{t('quarantine_text32')}</PhoneNumber>{' '}
         {t('quarantine_text33')}{' '}
-        <PhoneNumber>{t('quarantine_text34')}</PhoneNumber>
+        <PhoneNumber>{t('quarantine_text34')}</PhoneNumber>{' '}
         {t('quarantine_text35')}{' '}
       </p>
     </Collapse>

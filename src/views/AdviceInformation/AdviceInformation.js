@@ -102,7 +102,7 @@ const AdviceInformation = ({ t, collapse, title, watermark }) => {
           {t('advice_information_text8')}{' '}
           <PhoneNumber value="800190590">
             {t('advice_information_text9')}
-          </PhoneNumber>
+          </PhoneNumber>{' '}
           {t('advice_information_text10')}
         </Paragraph>
       </Warning>
