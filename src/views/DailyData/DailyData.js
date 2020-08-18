@@ -32,9 +32,7 @@ const DailyData = ({ t, mode, setMode }) => {
     <Layout isNavigation>
       <Title>{t('daily_data_text1')}</Title>
       {viewMode ? <Data /> : <Form isEditMode={isEditMode} />}
-      <TitleBox className="medium title-4 text-left">
-        {t('daily_data_text2')}
-      </TitleBox>
+      <TitleBox>{t('daily_data_text2')}</TitleBox>
       <Imprint />
       <Actions>
         {(createMode || editMode) && (

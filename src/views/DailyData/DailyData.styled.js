@@ -3,10 +3,10 @@ import styled from 'styled-components';
 export const Title = styled.h1`
   width: 100%;
   margin-top: 0;
-  margin-bottom: 24px;
+  margin-bottom: 28px;
   font-size: 20px;
   font-weight: bold;
-  line-height: 1.3;
+  line-height: 24px;
   color: #1b1b1b;
 `;
 

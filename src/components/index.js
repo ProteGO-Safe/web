@@ -11,6 +11,7 @@ export { default as Header } from './Header/Header';
 export { Imprint } from './Imprint';
 export { InfoIcon } from './InfoIcon';
 export { Input } from './Input';
+export { InputDatePicker } from './InputDatePicker';
 export { InputSlider } from './InputSlider';
 export { InputWithCounter } from './InputWithCounter';
 export { default as Language } from './Language/Language';

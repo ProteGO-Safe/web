@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { withTranslation } from 'react-i18next';
 import PropTypes from 'prop-types';
 import { useFormikContext } from 'formik';
@@ -11,31 +11,48 @@ import {
   FIELD_TEMPERATURE
 } from '../../../../constants';
 import { marks } from './constants';
-import { FieldSet, Input, Textarea, InputSlider } from '../../../../components';
+import {
+  Input,
+  Textarea,
+  InputSlider,
+  InputDatePicker
+} from '../../../../components';
 import { getValueFromMark } from './form.helpers';
+import * as Styled from './Form.styled';
 
 const Form = ({ t, isViewMode }) => {
   const { handleChange, setFieldValue, values, errors } = useFormikContext();
+  const [startDate, setStartDate] = useState(new Date());
 
   return (
     <div className="form">
-      <h4 className="medium title-2">{t('form_text1')}</h4>
-      <FieldSet>
+      <Styled.Group>
+        <Styled.Label>{t('form_text17')}</Styled.Label>
+        <InputDatePicker
+          selected={startDate}
+          onChange={date => setStartDate(date)}
+          dateFormat="d MMMM yyyy"
+        />
+      </Styled.Group>
+
+      <Styled.Group>
+        <Styled.Label>{t('form_text1')}</Styled.Label>
         <Input
           error={t(errors[FIELD_TEMPERATURE])}
           disabled={isViewMode}
-          label={t('form_text4')}
           name={FIELD_TEMPERATURE}
-          placeholder="36.6"
+          placeholder={t('form_text18')}
           max={45}
           min={35}
           onChange={handleChange}
           type="number"
           value={values[FIELD_TEMPERATURE]}
         />
-      </FieldSet>
-      <h4 className="medium title-3">{t('form_text2')}</h4>
-      <FieldSet>
+      </Styled.Group>
+
+      <Styled.Group>
+        <Styled.Label>{t('form_text2')}</Styled.Label>
+
         <InputSlider
           label={t('form_text10')}
           marks={marks}
@@ -72,9 +89,10 @@ const Form = ({ t, isViewMode }) => {
           }
           value={getValueFromMark(values[FIELD_MUSCLE_PAIN])}
         />
-      </FieldSet>
-      <h4 className="medium title-2">{t('form_text3')}</h4>
-      <FieldSet>
+      </Styled.Group>
+
+      <Styled.Group>
+        <Styled.Label>{t('form_text3')}</Styled.Label>
         <Textarea
           disabled={isViewMode}
           label={t('form_text5')}
@@ -83,7 +101,7 @@ const Form = ({ t, isViewMode }) => {
           placeholder={t('form_text6')}
           value={values[FIELD_CONTACTS]}
         />
-      </FieldSet>
+      </Styled.Group>
     </div>
   );
 };
