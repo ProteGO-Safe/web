@@ -8,6 +8,14 @@ import {
 } from './InputSlider.styled';
 
 const InputSlider = ({ t, label, marks, max, min, onChange, step, value }) => {
+  const translatedMarks = marks.map(_value => {
+    const { label: _label } = _value;
+    return {
+      ..._value,
+      label: t(_label)
+    };
+  });
+
   return (
     <InputSliderContainer>
       <Label>{t(label)}</Label>
@@ -15,7 +23,7 @@ const InputSlider = ({ t, label, marks, max, min, onChange, step, value }) => {
         <ProteGoSlider
           defaultValue={value || 0}
           step={step}
-          marks={marks}
+          marks={translatedMarks}
           max={max}
           min={min}
           onChange={onChange}
