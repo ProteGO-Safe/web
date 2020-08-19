@@ -92,5 +92,12 @@ export const createErrorMessage = (
       'upload_historical_data_text2'
     )}${lockdownMessage}${t('upload_historical_data_text3')}`;
   }
-  return <>{t('ban-pin-tries_text1')}</>;
+  return (
+    <>
+      {t('ban-pin-tries_text1')} ({t('ban-pin-tries_text2')}
+      {numberOfTries}
+      {t('ban-pin-tries_text2')}
+      {currentLimitOfTries})
+    </>
+  );
 };
