@@ -13,6 +13,21 @@ const descending = (a, b) => {
 };
 
 // filledDays contains moments
+export const createDaysDetailsByTimestamp = (
+  filledDays = [],
+  dateFormatIn = dateFormat
+) => {
+  return filledDays
+    .sort((a, b) => b - a)
+    .map(_timestamp => {
+      return {
+        day: moment.unix(_timestamp).format(dateFormatIn),
+        dayWeek: moment.unix(_timestamp).format(dayWeekFormat),
+        timestamp: _timestamp
+      };
+    });
+};
+
 export const createDaysDetails = (
   filledDays = [],
   dateFormatIn = dateFormat
