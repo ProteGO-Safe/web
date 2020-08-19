@@ -20,7 +20,6 @@ import './AdviceInformation.scss';
 import IconWarning from '../../assets/img/icons/warning.svg';
 import IconAdviceHome from '../../assets/img/icons/zostan-w-domu.svg';
 import IconAdvicePhone from '../../assets/img/icons/seniorzy.svg';
-import IconAdviceCountry from '../../assets/img/icons/przyjazd.svg';
 import IconAdviceNote from '../../assets/img/icons/dziennik.svg';
 
 const AdviceInformation = ({ collapse, title, watermark }) => {
@@ -80,13 +79,6 @@ const AdviceInformation = ({ collapse, title, watermark }) => {
           </p>
         </ListItem>
         <ListItem>
-          <img src={IconAdviceCountry} alt="Ikonka" />
-          <p>
-            Jeśli przyjechałeś/-aś z zagranicy – skontaktuj się z sanepidem i
-            poddaj obowiązkowej 14-dniowej kwarantannie.
-          </p>
-        </ListItem>
-        <ListItem>
           <img src={IconAdviceNote} alt="Ikonka" />
           <p>
             Regularnie uzupełniaj zakładkę{' '}
@@ -106,8 +98,8 @@ const AdviceInformation = ({ collapse, title, watermark }) => {
         </WarningLabel>
         <Paragraph>
           Jeśli u Ciebie lub Twoich bliskich wystąpią objawy zakażenia
-          koronawirusem, zadzwoń na infolinię Narodowego Funduszu Zdrowia (NFZ){' '}
-          <PhoneNumber value="800190590">800 190 590</PhoneNumber> lub do
+          koronawirusem, zadzwoń na darmową, całodobową infolinię{' '}
+          <PhoneNumber value="222500115">222 500 115</PhoneNumber> lub do
           lokalnej placówki służby zdrowia.
         </Paragraph>
       </Warning>

@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { Color } from '../../../../theme/colors';
+import { ReactComponent as ArrowIcon } from '../../../../assets/img/icons/arrow-current-color.svg';
 
 const resolveDefaultColor = defaultColor => ({ color }) =>
   color || defaultColor;
@@ -22,15 +23,19 @@ export const InfoBorderContainer = styled.div`
   }
 `;
 
-export const Content = styled.div`
-  padding-bottom: 20px;
-  padding-top: 20px;
-  color: #0052a5;
-  padding-left: 30px;
+export const LinkArrow = styled.a`
+  display: inline-flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 20px 0;
+  color: ${Color.primary};
+`;
 
-  img {
-    margin-left: 20px;
-    height: 14px;
-    width: 14px;
-  }
+export const Arrow = styled(ArrowIcon)`
+  display: block;
+  height: 14px;
+  width: 14px;
+  margin-left: 20px;
 `;

@@ -27,42 +27,49 @@ const MenuContainer = () => {
   const items = [
     {
       icon: Icon1,
+      color: 'blue',
       path: Routes.Daily,
       slug: 'dziennik',
       title: 'Dziennik zdrowia'
     },
     {
       icon: Icon2,
+      color: 'blue',
       path: Routes.RiskTest,
       slug: 'test_oceny_ryzyka',
       title: 'Test oceny ryzyka'
     },
     {
       icon: Icon3,
+      color: 'blue',
       path: Routes.HowItWorks,
       slug: 'jak_to_dziala',
       title: 'Jak to działa?'
     },
     {
       icon: Icon4,
+      color: 'blue',
       path: Routes.IAmSick,
       slug: 'co_zrobic',
       title: 'Czuję się źle, co zrobić?'
     },
     {
       icon: Icon5,
+      color: 'red',
       path: Routes.EmergencyNumbers,
       slug: 'numery_alarmowe',
       title: 'Numery alarmowe'
     },
     {
       icon: Icon6,
+      color: 'blue',
       path: Routes.PrivacyPolicy,
       slug: 'regulamin_i_polityka_prywatności',
       title: 'Regulamin i Polityka prywatności'
     },
     {
       icon: Icon7,
+      color: 'blue',
       path: Routes.Settings,
       slug: 'ustawienia',
       title: 'Ustawienia',
@@ -70,12 +77,14 @@ const MenuContainer = () => {
     },
     {
       icon: Icon8,
+      color: 'blue',
       path: Routes.UserData,
       slug: 'moje_dane',
       title: 'Moje dane'
     },
     {
       icon: Icon9,
+      color: 'blue',
       path: Routes.ReportBug,
       slug: 'zglos_blad',
       title: 'Zgłoś błąd'

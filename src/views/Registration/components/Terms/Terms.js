@@ -9,9 +9,14 @@ import { Annotation, TextLink } from '../../../../theme/typography';
 import Header from '../../../../components/Header/Header';
 import PrivacyPolicyContent from '../../../PrivacyPolicyDetails/component/PrivacyPolicyContent/PrivacyPolicyContent';
 import RegulationsContent from '../../../Regulations/component/RegulationsContent/RegulationsContent';
-import { Button, Checkbox, GovFooter } from '../../../../components';
+import { Button, Checkbox, Email, GovFooter } from '../../../../components';
 import { Container, Content, View } from '../../../../theme/grid';
-import { ButtonWrapper, Title, Paragraph } from '../../Registration.styled';
+import {
+  ButtonWrapper,
+  Title,
+  Paragraph,
+  Small
+} from '../../Registration.styled';
 
 const Terms = ({ handleClick }) => {
   const { setFieldValue, values } = useFormikContext();
@@ -73,6 +78,27 @@ const Terms = ({ handleClick }) => {
           <ButtonWrapper>
             <Button disabled={disabled} onClick={handleClick} text="Dalej" />
           </ButtonWrapper>
+
+          <Small>
+            Administratorem danych jest Główny Inspektor Sanitarny (GIS), adres
+            do kontaktu: <Email>iod@gis.gov.pl</Email>. Celem aplikacji jest
+            wsparcie w&nbsp;przeciwdziałaniu rozprzestrzeniania się pandemii
+            COVID-19, wsparcie szybkiej wymiany informacji oraz oceny ryzyka
+            zarażenia. Masz prawo dostępu do swoich danych, ich poprawiania,
+            usunięcia, ograniczenia przetwarzania, sprzeciwu wobec przetwarzania
+            oraz wniesienia skargi do organu nadzorczego. Więcej informacji w{' '}
+            <TextLink
+              onClick={e => {
+                e.preventDefault();
+                openModal(<PrivacyPolicyContent />);
+              }}
+              role="button"
+            >
+              Polityce Prywatności
+            </TextLink>
+            .
+          </Small>
+
           <GovFooter type="black" />
         </Container>
       </Content>

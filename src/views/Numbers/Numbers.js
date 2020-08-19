@@ -11,6 +11,8 @@ import {
 } from '../../components';
 import { Info, Phone, Line } from './Numbers.styled';
 import { Container, Content, View } from '../../theme/grid';
+import { Paragraph } from '../../theme/typography';
+import { Color } from '../../theme/colors';
 
 const Numbers = () => {
   const history = useHistory();
@@ -23,15 +25,19 @@ const Numbers = () => {
       <Content>
         <Container className="full-height">
           <Info>Szukaj pomocy w Twojej okolicy</Info>
-          <PhoneNumber value="800190590">
+          <PhoneNumber value="222500115">
             <BordersButton
               className="small"
-              text="Zadzwoń na infolinię - 800190590"
+              text="Zadzwoń na infolinię - 222500115"
               icon={<Phone />}
             >
-              Zadzwoń na infolinię - 800190590
+              Zadzwoń na infolinię - 222500115
             </BordersButton>
           </PhoneNumber>
+          <Paragraph color={Color.primary}>
+            Połączenie z infolinią jest bezpłatne, infolinia czynna jest przez
+            całą dobę.
+          </Paragraph>
           <LineItem
             onClick={goToHospitalsList}
             text="Pokaż adresy szpitali zakaźnych"
