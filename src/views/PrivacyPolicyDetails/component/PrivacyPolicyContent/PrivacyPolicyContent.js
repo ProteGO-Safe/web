@@ -23,7 +23,7 @@ const PrivacyPolicyContent = ({ t }) => (
       {t('privacy_policy_content_text3')}
       <br />
       {t('privacy_policy_content_text4')}{' '}
-      <Url value="https://www.gov.pl/web/koronawirus">COVID-19</Url>
+      <Url value="https://www.gov.pl/web/koronawirus">COVID-19</Url>{' '}
       {t('privacy_policy_content_text5')}
     </Paragraph>
     <Paragraph>
@@ -32,18 +32,18 @@ const PrivacyPolicyContent = ({ t }) => (
     <Paragraph>{t('privacy_policy_content_text7')}</Paragraph>
     <Paragraph>{t('privacy_policy_content_text8')}</Paragraph>
     <Paragraph>
-      {t('privacy_policy_content_text9')}
+      {t('privacy_policy_content_text9')}{' '}
       <Url value="https://www.gov.pl/web/koronawirus">COVID-19</Url>{' '}
       {t('privacy_policy_content_text138')}
     </Paragraph>
     <Paragraph>
       {t('privacy_policy_content_text10')}{' '}
-      <Url value="https://www.gov.pl/web/koronawirus">COVID-19</Url>
+      <Url value="https://www.gov.pl/web/koronawirus">COVID-19</Url>{' '}
       {t('privacy_policy_content_text11')}{' '}
-      <Url value="https://www.gov.pl/web/koronawirus">COVID-19</Url>
+      <Url value="https://www.gov.pl/web/koronawirus">COVID-19</Url>{' '}
       {t('privacy_policy_content_text12')}{' '}
       <Url value="https://www.gov.pl/web/koronawirus">COVID-19</Url>
-      {t('privacy_policy_content_text13')}
+      {t('privacy_policy_content_text13')}{' '}
     </Paragraph>
     <Paragraph>{t('privacy_policy_content_text14')}</Paragraph>
     <Annotation>§1.</Annotation>
@@ -53,8 +53,8 @@ const PrivacyPolicyContent = ({ t }) => (
       <ListItem>{t('privacy_policy_content_text17')}</ListItem>
       <ListItem>{t('privacy_policy_content_text18')}</ListItem>
       <ListItem>
-        {t('privacy_policy_content_text19')}
-        <Email>{t('privacy_policy_content_text20')}</Email>
+        {t('privacy_policy_content_text19')}{' '}
+        <Email>{t('privacy_policy_content_text20')}</Email>{' '}
         {t('privacy_policy_content_text21')}{' '}
         <Email>{t('privacy_policy_content_text22')}</Email>.
       </ListItem>
@@ -79,7 +79,7 @@ const PrivacyPolicyContent = ({ t }) => (
       </ListItem>
       <ListItem>
         <strong>{t('privacy_policy_content_text33')}</strong>
-        {t('privacy_policy_content_text34')}
+        {t('privacy_policy_content_text34')}{' '}
         <Url value="https://www.gov.pl/web/koronawirus">COVID-19</Url>
         {t('privacy_policy_content_text139')}
       </ListItem>
@@ -108,7 +108,7 @@ const PrivacyPolicyContent = ({ t }) => (
       <ListItem>
         <strong>{t('privacy_policy_content_text44')}</strong>
         {t('privacy_policy_content_text45')}{' '}
-        <Url value="https://www.gov.pl/web/koronawirus">COVID-19</Url>
+        <Url value="https://www.gov.pl/web/koronawirus">COVID-19</Url>{' '}
         {t('privacy_policy_content_text46')}
       </ListItem>
       <ListItem>
@@ -265,7 +265,7 @@ const PrivacyPolicyContent = ({ t }) => (
       </ListItem>
       <ListItem>
         {t('privacy_policy_content_text112')}{' '}
-        <Url value="https://www.gov.pl/web/koronawirus">COVID-19</Url>
+        <Url value="https://www.gov.pl/web/koronawirus">COVID-19</Url>{' '}
         {t('privacy_policy_content_text113')}
       </ListItem>
       <ListItem>{t('privacy_policy_content_text114')}</ListItem>

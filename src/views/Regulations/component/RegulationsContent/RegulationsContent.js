@@ -64,8 +64,8 @@ const RegulationsContent = ({ t }) => (
       </ListItem>
       <ListItem>
         <strong>{t('regulations_content_text24')}</strong>
-        {t('regulations_content_text25')}
-        <Url value="https://www.gov.pl/web/koronawirus">COVID-19</Url>
+        {t('regulations_content_text25')}{' '}
+        <Url value="https://www.gov.pl/web/koronawirus">COVID-19</Url>{' '}
         {t('regulations_content_text91')}
       </ListItem>
       <ListItem>
@@ -83,7 +83,7 @@ const RegulationsContent = ({ t }) => (
       <ListItem>
         <strong>{t('regulations_content_text32')}</strong>
         {t('regulations_content_text33')}{' '}
-        <Url value="https://www.gov.pl/web/koronawirus">COVID-19</Url>
+        <Url value="https://www.gov.pl/web/koronawirus">COVID-19</Url>{' '}
         {t('regulations_content_text34')}
       </ListItem>
       <ListItem>
@@ -95,7 +95,7 @@ const RegulationsContent = ({ t }) => (
       <ListItem>
         <strong>{t('regulations_content_text38')}</strong>
         {t('regulations_content_text39')}{' '}
-        <Url value="https://www.gov.pl/web/koronawirus">COVID-19</Url>
+        <Url value="https://www.gov.pl/web/koronawirus">COVID-19</Url>{' '}
         {t('regulations_content_text40')}{' '}
         <Url value="https://www.gov.pl/web/koronawirus">COVID-19</Url>.
       </ListItem>
@@ -117,18 +117,18 @@ const RegulationsContent = ({ t }) => (
     <ListNumber>
       <ListItem>
         {t('regulations_content_text47')}{' '}
-        <Url value="https://www.gov.pl/web/koronawirus">COVID-19</Url>
+        <Url value="https://www.gov.pl/web/koronawirus">COVID-19</Url>{' '}
         {t('regulations_content_text48')}
       </ListItem>
       <ListItem>
-        {t('regulations_content_text49')}
-        <Url value="https://www.gov.pl/web/koronawirus">COVID-19</Url>
-        {t('regulations_content_text50')}
+        {t('regulations_content_text49')}{' '}
+        <Url value="https://www.gov.pl/web/koronawirus">COVID-19</Url>{' '}
+        {t('regulations_content_text50')}{' '}
         <Url value="https://www.gov.pl/web/koronawirus">COVID-19</Url>
         {t('regulations_content_text51')}
       </ListItem>
       <ListItem>
-        {t('regulations_content_text52')}
+        {t('regulations_content_text52')}{' '}
         <Url value="https://www.gov.pl/web/koronawirus">COVID-19</Url>
         {t('regulations_content_text92')}
       </ListItem>
@@ -136,9 +136,9 @@ const RegulationsContent = ({ t }) => (
         {t('regulations_content_text53')}{' '}
         <Url value="https://www.gov.pl/web/koronawirus">COVID-19</Url>
         {t('regulations_content_text54')}{' '}
-        <Url value="https://www.gov.pl/web/koronawirus">COVID-19</Url>
+        <Url value="https://www.gov.pl/web/koronawirus">COVID-19</Url>{' '}
         {t('regulations_content_text55')}{' '}
-        <Url value="https://www.gov.pl/web/koronawirus">COVID-19</Url>
+        <Url value="https://www.gov.pl/web/koronawirus">COVID-19</Url>{' '}
         {t('regulations_content_text56')}
       </ListItem>
       <ListItem>{t('regulations_content_text57')}</ListItem>
@@ -153,7 +153,7 @@ const RegulationsContent = ({ t }) => (
     <Annotation>§5.</Annotation>
     <Title>{t('regulations_content_text62')}</Title>
     <Paragraph>
-      {t('regulations_content_text63')}
+      {t('regulations_content_text63')}{' '}
       <Url value="https://www.gnu.org/licenses/gpl-3.0.html">GPL-3.0</Url>.
     </Paragraph>
     <Annotation>§6.</Annotation>
@@ -163,12 +163,12 @@ const RegulationsContent = ({ t }) => (
       <ListItem>{t('regulations_content_text66')}</ListItem>
       <ListItem>
         {t('regulations_content_text67')}{' '}
-        <PhoneNumber>{t('regulations_content_text68')}</PhoneNumber>
+        <PhoneNumber>{t('regulations_content_text68')}</PhoneNumber>{' '}
         {t('regulations_content_text69')}
       </ListItem>
       <ListItem>
-        {t('regulations_content_text70')}
-        <PhoneNumber>{t('regulations_content_text71')}</PhoneNumber>
+        {t('regulations_content_text70')}{' '}
+        <PhoneNumber>{t('regulations_content_text71')}</PhoneNumber>{' '}
         {t('regulations_content_text72')}
       </ListItem>
       <ListItem>{t('regulations_content_text73')}</ListItem>
@@ -194,7 +194,7 @@ const RegulationsContent = ({ t }) => (
       <ListItem>{t('regulations_content_text85')}</ListItem>
       <ListItem>{t('regulations_content_text86')}</ListItem>
       <ListItem>
-        {t('regulations_content_text87')}
+        {t('regulations_content_text87')}{' '}
         <Email>{t('regulations_content_text88')}</Email>.
       </ListItem>
     </ListNumber>
