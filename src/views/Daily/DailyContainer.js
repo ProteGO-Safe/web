@@ -13,7 +13,7 @@ const DailyContainer = () => {
   const history = useHistory();
   const daily = useSelector(state => state.daily);
 
-  const daysInDaily = createDaysDetails(Object.keys(daily), dateFormat);
+  const daysInDaily = createDaysDetails(Object.entries(daily), dateFormat);
 
   const today = moment().format(todayFormat);
 

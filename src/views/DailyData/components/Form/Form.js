@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { withTranslation } from 'react-i18next';
 import PropTypes from 'prop-types';
 import { useFormikContext } from 'formik';
@@ -8,7 +8,8 @@ import {
   FIELD_COUGH,
   FIELD_MUSCLE_PAIN,
   FIELD_RUNNY_NOSE,
-  FIELD_TEMPERATURE
+  FIELD_TEMPERATURE,
+  FIELD_TIME
 } from '../../../../constants';
 import { marks } from './constants';
 import {
@@ -22,15 +23,14 @@ import * as Styled from './Form.styled';
 
 const Form = ({ t, isViewMode }) => {
   const { handleChange, setFieldValue, values, errors } = useFormikContext();
-  const [startDate, setStartDate] = useState(new Date());
 
   return (
     <div className="form">
       <Styled.Group>
         <Styled.Label>{t('form_text17')}</Styled.Label>
         <InputDatePicker
-          selected={startDate}
-          onChange={date => setStartDate(date)}
+          selected={values[FIELD_TIME]}
+          onChange={date => setFieldValue(FIELD_TIME, date)}
           dateFormat="d MMMM yyyy"
         />
       </Styled.Group>

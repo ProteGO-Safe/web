@@ -6,7 +6,9 @@ const dailyReducer = (state = INITIAL_STATE, action) => {
   switch (action.type) {
     case DAILY_ADD:
       return (() => {
-        const { data, timestamp } = action;
+        const { data } = action;
+        const { data: _data } = data;
+        const timestamp = _data.time.valueOf() / 1000;
 
         return {
           ...state,

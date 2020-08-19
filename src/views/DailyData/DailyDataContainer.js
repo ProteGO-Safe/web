@@ -12,6 +12,7 @@ import {
   FIELD_MUSCLE_PAIN,
   FIELD_RUNNY_NOSE,
   FIELD_TEMPERATURE,
+  FIELD_TIME,
   VALUE_SYMPTOM_LEVEL_1
 } from '../../constants';
 import { addDaily, updateDaily } from '../../store/actions/daily';
@@ -45,7 +46,8 @@ const DailyDataContainer = () => {
       (dailyData && dailyData.data[FIELD_CHILLS]) || VALUE_SYMPTOM_LEVEL_1,
     [FIELD_MUSCLE_PAIN]:
       (dailyData && dailyData.data[FIELD_MUSCLE_PAIN]) || VALUE_SYMPTOM_LEVEL_1,
-    [FIELD_CONTACTS]: (dailyData && dailyData.data[FIELD_CONTACTS]) || ''
+    [FIELD_CONTACTS]: (dailyData && dailyData.data[FIELD_CONTACTS]) || '',
+    [FIELD_TIME]: (dailyData && dailyData.data[FIELD_TIME]) || new Date()
   };
 
   const [mode, setMode] = useState(
