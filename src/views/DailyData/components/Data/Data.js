@@ -1,4 +1,5 @@
 import React from 'react';
+import moment from 'moment';
 import { withTranslation } from 'react-i18next';
 import { Grid } from '@material-ui/core';
 import { useFormikContext } from 'formik';
@@ -12,16 +13,20 @@ import {
   FIELD_COUGH,
   FIELD_MUSCLE_PAIN,
   FIELD_RUNNY_NOSE,
-  FIELD_TEMPERATURE
+  FIELD_TEMPERATURE,
+  FIELD_TIME
 } from '../../../../constants';
 import { levels } from '../Form/constants';
 
 const Data = ({ t }) => {
   const { values } = useFormikContext();
+  const date = moment(values[FIELD_TIME]).format('DD MMM, YYYY');
 
   return (
     <>
-      <SmallText style={{ marginBottom: '19px' }}>{t('data_text1')}</SmallText>
+      <SmallText style={{ marginBottom: '19px' }}>
+        {t('data_text1')} {date}
+      </SmallText>
       <ImprintWrapper className="metrics-paragraph">
         <Grid container>
           <Grid item xs={6}>

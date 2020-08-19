@@ -102,6 +102,7 @@ export const FIELD_ITEM_ID = 'item_id';
 export const VALUE_PRESENT = 'present';
 export const VALUE_ABSENT = 'absent';
 
+export const FIELD_TIME = 'time';
 export const FIELD_TEMPERATURE = 'temperature';
 export const FIELD_RUNNY_NOSE = 'runnyNose';
 export const FIELD_COUGH = 'cough';
