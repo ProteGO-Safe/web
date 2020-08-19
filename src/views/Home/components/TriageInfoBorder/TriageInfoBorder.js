@@ -1,10 +1,13 @@
 import React from 'react';
 
 import { withTranslation } from 'react-i18next';
-import { InfoBorderContainer, Content } from './TriageInfoBorder.styled';
 import useTriage from '../../../../hooks/useTriage';
-import ArrowIcon from '../../../../assets/img/icons/angle-right.svg';
 import { PhoneNumber } from '../../../../components';
+import {
+  LinkArrow,
+  Arrow,
+  InfoBorderContainer
+} from './TriageInfoBorder.styled';
 
 const TriageInfoBorder = ({ t }) => {
   const {
@@ -15,10 +18,6 @@ const TriageInfoBorder = ({ t }) => {
     serious = [],
     riskLevel
   } = useTriage();
-
-  const goToAdvice = () => {
-    window.open('https://pacjent.gov.pl/teleporada', '_blank');
-  };
 
   const renderItem = serious
     .map(_obj => _obj.common_name)
@@ -38,10 +37,10 @@ const TriageInfoBorder = ({ t }) => {
       return (
         <>
           {t('triage_info_border_text4')}
-          <Content onClick={goToAdvice}>
+          <LinkArrow href="https://pacjent.gov.pl/teleporada" target="_blank">
             {t('triage_info_border_text5')}
-            <img src={ArrowIcon} alt="button" />
-          </Content>
+            <Arrow />
+          </LinkArrow>
           {t('triage_info_border_text6')} <PhoneNumber>112</PhoneNumber> lub{' '}
           <PhoneNumber>999</PhoneNumber>
           {t('triage_info_border_text7')}

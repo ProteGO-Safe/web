@@ -15,7 +15,7 @@ const Menu = ({ t, items }) => {
   const isHidden = inProgress ? 'hidden' : '';
 
   const renderItems = items.map(item => {
-    const { bottom, bold, disable, icon, path, slug, title } = item;
+    const { bottom, bold, color, disable, icon, path, slug, title } = item;
 
     const isBottom = bottom ? 'bottom' : '';
     const isBold = bold ? 'text-bold' : '';
@@ -28,7 +28,7 @@ const Menu = ({ t, items }) => {
     return (
       <li className={`menu__item ${isBottom} ${isDisable}`} key={slug}>
         <NavLink
-          className={`menu__item__link ${isBold} ${isDisable}`}
+          className={`menu__item__link ${isBold} ${isDisable} ${color}`}
           onClick={handleClose}
           to={path}
         >

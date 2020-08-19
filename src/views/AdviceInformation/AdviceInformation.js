@@ -21,7 +21,6 @@ import './AdviceInformation.scss';
 import IconWarning from '../../assets/img/icons/warning.svg';
 import IconAdviceHome from '../../assets/img/icons/zostan-w-domu.svg';
 import IconAdvicePhone from '../../assets/img/icons/seniorzy.svg';
-import IconAdviceCountry from '../../assets/img/icons/przyjazd.svg';
 import IconAdviceNote from '../../assets/img/icons/dziennik.svg';
 
 const AdviceInformation = ({ t, collapse, title, watermark }) => {
@@ -77,10 +76,6 @@ const AdviceInformation = ({ t, collapse, title, watermark }) => {
           <p>{t('advice_information_text2')}</p>
         </ListItem>
         <ListItem>
-          <img src={IconAdviceCountry} alt={t('advice_information_text1')} />
-          <p>{t('advice_information_text3')}</p>
-        </ListItem>
-        <ListItem>
           <img src={IconAdviceNote} alt={t('advice_information_text1')} />
           <p>
             {t('advice_information_text4')}{' '}
@@ -100,7 +95,7 @@ const AdviceInformation = ({ t, collapse, title, watermark }) => {
         </WarningLabel>
         <Paragraph>
           {t('advice_information_text8')}{' '}
-          <PhoneNumber value="800190590">
+          <PhoneNumber value="222500115">
             {t('advice_information_text9')}
           </PhoneNumber>{' '}
           {t('advice_information_text10')}

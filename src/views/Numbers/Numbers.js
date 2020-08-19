@@ -3,6 +3,8 @@ import { withTranslation } from 'react-i18next';
 import { useHistory } from 'react-router-dom';
 import Routes from '../../routes';
 import { Button, LineItem, PhoneNumber, Layout } from '../../components';
+import { Paragraph } from '../../theme/typography';
+import { Color } from '../../theme/colors';
 import { Info, Phone, Line } from './Numbers.styled';
 
 const Numbers = ({ t }) => {
@@ -22,6 +24,7 @@ const Numbers = ({ t }) => {
           icon={<Phone />}
         />
       </PhoneNumber>
+      <Paragraph color={Color.primary}>{t('numbers_text4')}</Paragraph>
       <LineItem onClick={goToHospitalsList} text={t('numbers_text3')} />
       <Line />
     </Layout>

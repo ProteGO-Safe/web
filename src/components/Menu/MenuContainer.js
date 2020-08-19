@@ -23,54 +23,63 @@ const MenuContainer = () => {
   const items = [
     {
       icon: Icon1,
+      color: 'blue',
       path: Routes.Daily,
       slug: 'menu_container_text1',
       title: 'menu_container_text1'
     },
     {
       icon: Icon2,
+      color: 'blue',
       path: Routes.RiskTest,
       slug: 'menu_container_text2',
       title: 'menu_container_text2'
     },
     {
       icon: Icon3,
+      color: 'blue',
       path: Routes.HowItWorks,
       slug: 'menu_container_text3',
       title: 'menu_container_text3'
     },
     {
       icon: Icon4,
+      color: 'blue',
       path: Routes.IAmSick,
       slug: 'menu_container_text4',
       title: 'menu_container_text4'
     },
     {
       icon: Icon5,
+      color: 'red',
       path: Routes.EmergencyNumbers,
       slug: 'menu_container_text5',
       title: 'menu_container_text5'
     },
     {
       icon: Icon6,
+      color: 'blue',
       path: Routes.PrivacyPolicy,
       slug: 'menu_container_text6',
       title: 'menu_container_text6'
     },
     {
       icon: Icon7,
+      color: 'blue',
       path: Routes.Settings,
       slug: 'menu_container_text7',
       title: 'menu_container_text7'
     },
     {
       icon: Icon8,
+      color: 'blue',
       path: Routes.UserData,
       slug: 'menu_container_text8',
       title: 'menu_container_text8'
     },
     {
       icon: Icon9,
+      color: 'blue',
       path: Routes.ReportBug,
       slug: 'menu_container_text9',
       title: 'menu_container_text9'
