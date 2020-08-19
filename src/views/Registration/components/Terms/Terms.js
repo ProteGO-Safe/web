@@ -77,7 +77,7 @@ const Terms = ({ t, handleClick }) => {
       </ButtonWrapper>
 
       <Small>
-        {t('terms_text9')} <Email>iod@gis.gov.pl</Email>
+        {t('terms_text9')} <Email>{t('terms_text11')}</Email>
         {t('terms_text12')}{' '}
         <TextLink
           onClick={e => {
