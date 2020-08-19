@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { withTranslation } from 'react-i18next';
-import { Collapse, Input, Url, Layout } from '../../components';
+import { Collapse, Input, Layout } from '../../components';
 import {
   FaqIntro,
   FaqTitle,
@@ -16,6 +16,7 @@ import {
 import SearchIcon from '../../assets/img/icons/lupa.svg';
 import search from '../../utils/faqSearcher';
 import faqData from './faq.json';
+import { Color } from '../../theme/colors';
 
 const escapedCharacters = new RegExp('[{}()\\[\\].+*?^$\\\\|]', 'g');
 
@@ -28,8 +29,17 @@ const FaqPage = ({ t }) => {
 
   const { watermark, elements = [], intro } = faqData;
 
-  const findAndMarkTexts = (element, valueToSearch) => {
-    const escapedValueToSearch = valueToSearch.replace(
+  const highlightComponent = (text, key) => (
+    <Highlight key={key}>{text}</Highlight>
+  );
+  const highlightHtml = (text, key) =>
+    `<mark style="display: inline; background-color:${Color.info}">${text}</mark>`;
+
+  const findAndHighlightTexts = (element, highlighting) => {
+    if (filterText.length < 3) {
+      return [element];
+    }
+    const escapedValueToSearch = filterText.replace(
       escapedCharacters,
       '\\\\$0'
     );
@@ -37,9 +47,17 @@ const FaqPage = ({ t }) => {
       new RegExp(`(${escapedValueToSearch})`, 'gi')
     );
     return inArray.map((part, key) => {
-      const test = part.toLowerCase() === valueToSearch.toLowerCase();
-      return test ? <Highlight key={key}>{part}</Highlight> : part;
+      const exists = part.toLowerCase() === filterText.toLowerCase();
+      return exists ? highlighting(part, key) : part;
     });
+  };
+
+  const findAndMarkTexts = element => {
+    return findAndHighlightTexts(element, highlightComponent);
+  };
+
+  const findAndMarkHtmlTexts = element => {
+    return findAndHighlightTexts(element, highlightHtml).join('');
   };
 
   const handleResetInput = () => {
@@ -51,46 +69,37 @@ const FaqPage = ({ t }) => {
     setFilterText(value.toLocaleLowerCase());
   };
 
-  const parseUrl = phrases =>
-    phrases.map((phrase, index) => {
-      const part = phrase.split(/\|/);
-      return part.length > 1 ? (
-        <Url key={index} value={part[1]}>
-          {filterText.length >= '3'
-            ? findAndMarkTexts(part[0], filterText)
-            : part[0]}
-        </Url>
-      ) : filterText.length >= '3' ? (
-        findAndMarkTexts(part[0], filterText)
-      ) : (
-        part[0]
-      );
-    });
-
-  const renderLine = line => {
-    const phrases = line.replace(/\xa0/gi, ' ').split(/\[url\]/);
-    return parseUrl(phrases);
-  };
-
   const elementsToDisplay = search(filterText, elements).map(
     (element, elementId) => {
       return (
         <FaqItem key={elementId}>
-          {element.show && <FaqTitle>{renderLine(element.title)}</FaqTitle>}
+          {element.show && (
+            <FaqTitle>{findAndMarkTexts(element.title)}</FaqTitle>
+          )}
           {element.paragraphs.map((paragraph, paragraphId) => {
             const p = paragraph.paragraph;
             return (
               <FaqContent key={paragraphId}>
-                {paragraph.show && <FaqUppercase>{renderLine(p)}</FaqUppercase>}
+                {paragraph.show && (
+                  <FaqUppercase>{findAndMarkTexts(p)}</FaqUppercase>
+                )}
                 {paragraph.collapses.map((collapse, collapseId) => {
+                  const { description, forceOpen, text } = collapse;
+                  const formattedDescription = findAndMarkHtmlTexts(
+                    description
+                  );
                   return (
                     <Collapse
                       key={collapseId}
-                      title={renderLine(collapse.text)}
+                      title={findAndMarkTexts(text)}
                       className="collapse"
-                      forceOpen={collapse.forceOpen}
+                      forceOpen={forceOpen}
                     >
-                      {renderLine(collapse.description)}
+                      <span
+                        dangerouslySetInnerHTML={{
+                          __html: formattedDescription
+                        }}
+                      />
                     </Collapse>
                   );
                 })}
