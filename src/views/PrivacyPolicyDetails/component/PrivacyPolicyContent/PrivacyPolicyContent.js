@@ -279,16 +279,9 @@ const PrivacyPolicyContent = ({ t }) => (
       <ListItem>
         {t('privacy_policy_content_text119')}
         <ListAlpha>
-          <ListItem>
-            {t('privacy_policy_content_text120')}{' '}
-            <Url value="https://www.gov.pl/web/koronawirus">COVID-19</Url>
-            {t('privacy_policy_content_text124')}
-          </ListItem>
-          <ListItem>
-            {t('privacy_policy_content_text126')}{' '}
-            <Url value="https://www.gov.pl/web/koronawirus">COVID-19</Url>
-            {t('privacy_policy_content_text129')}
-          </ListItem>
+          <ListItem>{t('privacy_policy_content_text120')}</ListItem>
+          <ListItem>{t('privacy_policy_content_text124')}</ListItem>
+          <ListItem>{t('privacy_policy_content_text126')}</ListItem>
         </ListAlpha>
         {t('privacy_policy_content_text131')}
       </ListItem>
