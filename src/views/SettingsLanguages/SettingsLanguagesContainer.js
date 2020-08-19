@@ -1,39 +1,33 @@
 import React from 'react';
+import { withTranslation } from 'react-i18next';
 import Routes from '../../routes';
 import { Layout } from '../../components';
 import SettingsLanguages from './SettingsLanguages';
+import useLanguage from '../../hooks/useLanguage';
 
-const SettingsLanguagesContainer = () => {
-  const LANGUAGES = [
-    {
-      shortcutLang: 'no',
-      label: 'Norski',
-      onClick: () => null
-    },
-    {
-      shortcutLang: 'pl',
-      label: 'Polski',
-      onClick: () => null
-    },
-    {
-      shortcutLang: 'ua',
-      label: 'Yкраїнська',
-      onClick: () => null
-    }
-  ];
+const SettingsLanguagesContainer = ({ t }) => {
+  const { language, changeAppLanguage, languages } = useLanguage();
+
+  const availableLanguages = languages.map(value => {
+    return {
+      shortcutLang: value,
+      label: t(value),
+      onClick: () => changeAppLanguage(value)
+    };
+  });
 
   return (
     <Layout isNavigation noMargin>
       <SettingsLanguages
         addTranslationPath={Routes.AddTranslation}
-        languages={LANGUAGES}
+        languages={availableLanguages}
         selectedLang={{
-          shortcutLang: 'pl',
-          label: 'Polski'
+          shortcutLang: language,
+          label: t(language)
         }}
       />
     </Layout>
   );
 };
 
-export default SettingsLanguagesContainer;
+export default withTranslation('languages')(SettingsLanguagesContainer);

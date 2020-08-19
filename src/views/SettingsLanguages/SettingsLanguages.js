@@ -14,9 +14,7 @@ const SettingsLanguages = ({
   const renderLanguages = languages.map(({ shortcutLang, label, onClick }) => (
     <Styled.Item key={shortcutLang} onClick={onClick}>
       <Styled.Flag src={renderFlag(shortcutLang)} />
-      <Styled.Label>
-        {label} ({shortcutLang.toUpperCase()})
-      </Styled.Label>
+      <Styled.Label>{label}</Styled.Label>
     </Styled.Item>
   ));
 
@@ -25,9 +23,7 @@ const SettingsLanguages = ({
       <Styled.Title>{t('settings_languages_text1')}</Styled.Title>
       <Styled.SelectedLang>
         <Styled.Flag src={renderFlag(selectedLang.shortcutLang)} />
-        <Styled.Label>
-          {selectedLang.label} ({selectedLang.shortcutLang.toUpperCase()})
-        </Styled.Label>
+        <Styled.Label>{selectedLang.label}</Styled.Label>
       </Styled.SelectedLang>
 
       <Styled.Title>{t('settings_languages_text2')}</Styled.Title>
