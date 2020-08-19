@@ -30,7 +30,7 @@ const Imprint = ({ t, user = {} }) => {
     }
     return chronicSicks.map((sick, index) => (
       <SmallText key={sick.name}>
-        {`${sick.name}${sick.description ? `: ${sick.description}` : ''}${
+        {`${t(sick.name)}${sick.description ? `: ${t(sick.description)}` : ''}${
           index === chronicSicks.length - 1 ? '' : ','
         }`}
       </SmallText>

@@ -25,7 +25,7 @@ const Smoke = ({ t }) => {
     VALUE_SMOKE_NUMBER_3,
     VALUE_SMOKE_NUMBER_4,
     VALUE_SMOKE_NUMBER_5
-  ].map(option => ({ label: t(option), value: option }));
+  ].map(option => ({ label: t(option), value: t(option) }));
 
   const isSmoking = values[FIELD_SMOKE] === t('yes');
   const noSmoking = values[FIELD_SMOKE] === t('no');

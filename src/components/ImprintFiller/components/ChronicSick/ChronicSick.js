@@ -103,7 +103,11 @@ const ChronicSick = ({ t }) => {
         </SubContainer>
       )}
       <Actions>
-        <Button disabled={disabled} onClick={goToNextStep} label={t('button_next')} />
+        <Button
+          disabled={disabled}
+          onClick={goToNextStep}
+          label={t('button_next')}
+        />
       </Actions>
     </>
   );
