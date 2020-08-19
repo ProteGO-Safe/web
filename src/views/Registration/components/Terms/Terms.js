@@ -9,8 +9,13 @@ import useModalContext from '../../../../hooks/useModalContext';
 import { Annotation, TextLink } from '../../../../theme/typography';
 import PrivacyPolicyContent from '../../../PrivacyPolicyDetails/component/PrivacyPolicyContent/PrivacyPolicyContent';
 import RegulationsContent from '../../../Regulations/component/RegulationsContent/RegulationsContent';
-import { Button, Checkbox, Layout } from '../../../../components';
-import { ButtonWrapper, Title, Paragraph } from '../../Registration.styled';
+import { Button, Checkbox, Email, Layout } from '../../../../components';
+import {
+  ButtonWrapper,
+  Title,
+  Paragraph,
+  Small
+} from '../../Registration.styled';
 
 const Terms = ({ t, handleClick }) => {
   const { setFieldValue, values } = useFormikContext();
@@ -64,8 +69,27 @@ const Terms = ({ t, handleClick }) => {
       </FormGroup>
 
       <ButtonWrapper>
-        <Button disabled={disabled} onClick={handleClick} label={t('button_next')} />
+        <Button
+          disabled={disabled}
+          onClick={handleClick}
+          label={t('button_next')}
+        />
       </ButtonWrapper>
+
+      <Small>
+        {t('terms_text9')} <Email>iod@gis.gov.pl</Email>
+        {t('terms_text12')}{' '}
+        <TextLink
+          onClick={e => {
+            e.preventDefault();
+            openModal(<PrivacyPolicyContent />);
+          }}
+          role="button"
+        >
+          {t('terms_text13')}
+        </TextLink>
+        .
+      </Small>
     </Layout>
   );
 };
