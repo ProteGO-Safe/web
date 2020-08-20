@@ -8,7 +8,7 @@ const VersionApp = ({ t }) => {
   return (
     <VersionAppWrapper>
       <Version>
-        `${t('version_app_text1')}:${version}`
+        {t('version_app_text1')}:{version}
       </Version>
     </VersionAppWrapper>
   );
