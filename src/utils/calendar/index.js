@@ -9,7 +9,7 @@ const descending = (a, b) => {
   const { data: _data } = b[1];
   const dateA = moment(data.time).unix();
   const dateB = moment(_data.time).unix();
-  return dateA - dateB;
+  return dateB - dateA;
 };
 
 // filledDays contains moments

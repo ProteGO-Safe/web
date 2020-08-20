@@ -91,7 +91,7 @@ export const InputDatePicker = styled.div`
       opacity: 0.2;
     }
     &__day--selected {
-      background-color: ${Color.primary};
+      background-color: ${Color.primary}!important;
     }
     &__day-name {
       color: ${Color.gray_2};
@@ -151,10 +151,18 @@ export const InputDatePicker = styled.div`
         line-height: 24px;
         color: ${Color.primary};
         background: transparent;
+        -webkit-appearance: none;
+        -webkit-user-select: none;
         &:focus {
           outline: none !important;
         }
       }
+    }
+    &__day:hover,
+    &__month-text:hover,
+    &__quarter-text:hover,
+    &__year-text:hover {
+      background-color: inherit;
     }
   }
 `;

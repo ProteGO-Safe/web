@@ -33,7 +33,7 @@ const Data = ({ t }) => {
             <Paragraph color={Color.lightBlack} fontWeight={FontWeight.Bold}>
               {t('data_text2')}
             </Paragraph>
-            <SmallText>{values[FIELD_TEMPERATURE]}</SmallText>
+            <SmallText>{values[FIELD_TEMPERATURE]} °C</SmallText>
           </Grid>
 
           <Grid item xs={6}>
