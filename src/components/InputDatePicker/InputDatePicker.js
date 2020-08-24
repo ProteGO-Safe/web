@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import moment from 'moment';
 import PropTypes from 'prop-types';
 import { withTranslation } from 'react-i18next';
@@ -7,6 +7,13 @@ import * as Styled from './InputDatePicker.styled';
 import 'react-datepicker/dist/react-datepicker.css';
 
 const InputDatePicker = ({ dateFormat, disabled, onChange, selected, t }) => {
+  const pickerRef = useRef(null);
+
+  useEffect(() => {
+    if (pickerRef.current !== null) {
+      pickerRef.current.input.readOnly = true;
+    }
+  }, [pickerRef]);
   const selectedDate = moment(selected).toDate();
 
   const months = [
@@ -51,6 +58,7 @@ const InputDatePicker = ({ dateFormat, disabled, onChange, selected, t }) => {
   return (
     <Styled.InputDatePicker>
       <DatePicker
+        ref={pickerRef}
         selected={selectedDate}
         onChange={onChange}
         dateFormat={dateFormat}

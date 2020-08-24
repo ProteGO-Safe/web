@@ -3,6 +3,7 @@ const Routes = {
   Start: '/start',
   AddTranslation: '/add-translation',
   Daily: '/daily',
+  DailyData: '/daily-data',
   RiskTest: '/risk-test',
   HowItWorks: '/how-it-works',
   IAmSick: '/i-am-sick',
