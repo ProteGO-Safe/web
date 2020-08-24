@@ -4,6 +4,29 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## 4.3.0
+
+### Added
+- multi language support
+- possibility to edit the entry of the health diary
+- possibility to set and edit the date of entry in the health diary
+- temperature unit in the health diary
+- clickable application logotype
+
+### Changed
+- date format of the last triage result 
+- nick validation
+- text of the privacy policy for iOS EN funcionality
+- copies in few screens
+- faq view logic
+- refactor of buttons components
+- refactor of the on boarding logic
+
+### Fixed
+- FAQ search with special characters
+- problem with triage view on small screens
+- UI bugs
+
 ## 4.2.4
 
 ### Changed
