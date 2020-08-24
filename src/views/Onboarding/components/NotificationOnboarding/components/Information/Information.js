@@ -15,7 +15,7 @@ const Information = ({ t, onNext, onSkip }) => {
       onClick: onNext
     },
     {
-      label: t('notification_onboarding_information_text1'),
+      label: t('notification_onboarding_information_text2'),
       type: 'blankSmall',
       onClick: onSkip
     }
