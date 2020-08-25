@@ -2,14 +2,12 @@ import React from 'react';
 import { withTranslation } from 'react-i18next';
 import { useHistory } from 'react-router-dom';
 import Routes from '../../routes';
-import { Collapse, Button, FieldSet, PhoneNumber, Url } from '../../components';
+import { Collapse, Button, FieldSet, PhoneNumber } from '../../components';
 import {
   CollapseWrapper,
   List,
   ListItem,
   Paragraph,
-  RepliesList,
-  RepliesListItem,
   Title,
   Warning,
   WarningLabel,
@@ -23,49 +21,27 @@ import IconAdviceHome from '../../assets/img/icons/zostan-w-domu.svg';
 import IconAdvicePhone from '../../assets/img/icons/seniorzy.svg';
 import IconAdviceNote from '../../assets/img/icons/dziennik.svg';
 
-const AdviceInformation = ({ t, collapse, title, watermark }) => {
+const AdviceInformation = ({ t, collapse, watermark }) => {
   const history = useHistory();
 
-  const parseUrl = phrases =>
-    phrases.map((phrase, index) => {
-      const part = phrase.split(/\|/);
-      return part.length > 1 ? (
-        <Url key={index} value={part[1]}>
-          <strong>{part[0]}</strong>
-        </Url>
-      ) : (
-        part
-      );
-    });
-  const renderLine = line => {
-    const phrases = line.split(/\[url\]/);
-    return parseUrl(phrases);
-  };
-
   const renderCollapse = collapse.map((item, i) => {
-    const repliesLength = item.replies.length;
+    const { title, reply } = item;
     return (
-      <Collapse key={i} title={item.title}>
-        {repliesLength > '1' ? (
-          <RepliesList>
-            {item.replies.map((reply, key) => (
-              <RepliesListItem key={key}>{renderLine(reply)}</RepliesListItem>
-            ))}
-          </RepliesList>
-        ) : (
-          <>
-            {item.replies.map((reply, key) => (
-              <Paragraph key={key}>{renderLine(reply)}</Paragraph>
-            ))}
-          </>
-        )}
+      <Collapse key={i} title={title}>
+        <Paragraph>
+          <span
+            dangerouslySetInnerHTML={{
+              __html: reply
+            }}
+          />
+        </Paragraph>
       </Collapse>
     );
   });
 
   return (
     <>
-      <Title>{title}</Title>
+      <Title>{t('advice_information_text2')}</Title>
       <List>
         <ListItem>
           <img src={IconAdviceHome} alt={t('advice_information_text1')} />

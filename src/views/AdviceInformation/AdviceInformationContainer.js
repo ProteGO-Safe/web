@@ -12,7 +12,6 @@ const AdviceInformationContainer = () => {
   return (
     <Layout hideBackButton isNavigation>
       <AdviceInformation
-        title="Porady"
         collapse={advices}
         watermark={watermark}
       />
