@@ -50,8 +50,13 @@ const PrivacyPolicyContent = ({ t }) => (
     <Title>{t('privacy_policy_content_text15')}</Title>
     <ListNumber>
       <ListItem>{t('privacy_policy_content_text16')}</ListItem>
+      <ListItem>{t('privacy_policy_content_text141')}</ListItem>
       <ListItem>{t('privacy_policy_content_text17')}</ListItem>
       <ListItem>{t('privacy_policy_content_text18')}</ListItem>
+      <ListItem>
+        {t('privacy_policy_content_text142')}{' '}
+        <Email>{t('privacy_policy_content_text143')}</Email>
+      </ListItem>
       <ListItem>
         {t('privacy_policy_content_text19')}{' '}
         <Email>{t('privacy_policy_content_text20')}</Email>{' '}
@@ -66,26 +71,29 @@ const PrivacyPolicyContent = ({ t }) => (
     <Paragraph>{t('privacy_policy_content_text26')}</Paragraph>
     <ListNumber>
       <ListItem>
-        <strong>{t('privacy_policy_content_text27')}</strong>
-        {t('privacy_policy_content_text28')}
-      </ListItem>
-      <ListItem>
-        <strong>{t('privacy_policy_content_text29')}</strong>
-        {t('privacy_policy_content_text30')}
+        <strong>{t('privacy_policy_content_text49')}</strong>
+        {t('privacy_policy_content_text50')}{' '}
+        <Url value="https://www.gov.pl/web/koronawirus">COVID-19</Url>
+        {t('privacy_policy_content_text51')}{' '}
+        <Url value="https://www.gov.pl/web/koronawirus">COVID-19</Url>.
       </ListItem>
       <ListItem>
         <strong>{t('privacy_policy_content_text31')}</strong>
         {t('privacy_policy_content_text32')}
       </ListItem>
       <ListItem>
-        <strong>{t('privacy_policy_content_text33')}</strong>
-        {t('privacy_policy_content_text34')}{' '}
-        <Url value="https://www.gov.pl/web/koronawirus">COVID-19</Url>
-        {t('privacy_policy_content_text139')}
+        <strong>{t('privacy_policy_content_text29')}</strong>
+        {t('privacy_policy_content_text30')}
       </ListItem>
       <ListItem>
-        <strong>{t('privacy_policy_content_text35')}</strong>
-        {t('privacy_policy_content_text36')}
+        <strong>{t('privacy_policy_content_text44')}</strong>
+        {t('privacy_policy_content_text45')}{' '}
+        <Url value="https://www.gov.pl/web/koronawirus">COVID-19</Url>{' '}
+        {t('privacy_policy_content_text46')}
+      </ListItem>
+      <ListItem>
+        <strong>{t('privacy_policy_content_text27')}</strong>
+        {t('privacy_policy_content_text28')}
       </ListItem>
       <ListItem>
         <strong>{t('privacy_policy_content_text37')}</strong>
@@ -100,35 +108,42 @@ const PrivacyPolicyContent = ({ t }) => (
         {t('privacy_policy_content_text140')}
       </ListItem>
       <ListItem>
+        <strong>{t('privacy_policy_content_text52')}</strong>
+        {t('privacy_policy_content_text53')}
+      </ListItem>
+      <ListItem>
         <strong>{t('privacy_policy_content_text41')}</strong>
         {t('privacy_policy_content_text42')}{' '}
         <Url value="https://www.gov.pl/web/koronawirus">COVID-19</Url>
         {t('privacy_policy_content_text43')}
       </ListItem>
       <ListItem>
-        <strong>{t('privacy_policy_content_text44')}</strong>
-        {t('privacy_policy_content_text45')}{' '}
-        <Url value="https://www.gov.pl/web/koronawirus">COVID-19</Url>{' '}
-        {t('privacy_policy_content_text46')}
-      </ListItem>
-      <ListItem>
-        <strong>{t('privacy_policy_content_text47')}</strong>
-        {t('privacy_policy_content_text48')}
-      </ListItem>
-      <ListItem>
-        <strong>{t('privacy_policy_content_text49')}</strong>
-        {t('privacy_policy_content_text50')}{' '}
+        <strong>{t('privacy_policy_content_text144')}</strong>
+        {t('privacy_policy_content_text145')}{' '}
         <Url value="https://www.gov.pl/web/koronawirus">COVID-19</Url>
-        {t('privacy_policy_content_text51')}{' '}
-        <Url value="https://www.gov.pl/web/koronawirus">COVID-19</Url>.
+        {t('privacy_policy_content_text146')}
       </ListItem>
       <ListItem>
-        <strong>{t('privacy_policy_content_text52')}</strong>
-        {t('privacy_policy_content_text53')}
+        <strong>{t('privacy_policy_content_text33')}</strong>
+        {t('privacy_policy_content_text34')}{' '}
+        <Url value="https://www.gov.pl/web/koronawirus">COVID-19</Url>
+        {t('privacy_policy_content_text139')}
+      </ListItem>
+      <ListItem>
+        <strong>{t('privacy_policy_content_text147')}</strong>
+        {t('privacy_policy_content_text148')}
+      </ListItem>
+      <ListItem>
+        <strong>{t('privacy_policy_content_text35')}</strong>
+        {t('privacy_policy_content_text36')}
       </ListItem>
       <ListItem>
         <strong>{t('privacy_policy_content_text54')}</strong>
         {t('privacy_policy_content_text55')}
+      </ListItem>
+      <ListItem>
+        <strong>{t('privacy_policy_content_text47')}</strong>
+        {t('privacy_policy_content_text48')}
       </ListItem>
       <ListItem>
         <strong>{t('privacy_policy_content_text56')}</strong>
@@ -139,35 +154,40 @@ const PrivacyPolicyContent = ({ t }) => (
         {t('privacy_policy_content_text59')}
       </ListItem>
       <ListItem>
-        <strong>WHO </strong>
+        <strong>{t('privacy_policy_content_text149')} </strong>
         {t('privacy_policy_content_text60')}
       </ListItem>
     </ListNumber>
     <Annotation>§3.</Annotation>
     <Title>{t('privacy_policy_content_text61')}</Title>
     <ListNumber>
+      <ListItem>{t('privacy_policy_content_text62')}</ListItem>
       <ListItem>
-        {t('privacy_policy_content_text62')}
-        <ListNumber>
-          <ListItem>
-            {t('privacy_policy_content_text63')}{' '}
-            <Url value="https://www.gov.pl/web/koronawirus">COVID-19</Url>;
-          </ListItem>
-          <ListItem>
-            {t('privacy_policy_content_text64')}{' '}
-            <Url value="https://www.gov.pl/web/koronawirus">COVID-19</Url>;
-          </ListItem>
-          <ListItem>{t('privacy_policy_content_text65')}</ListItem>
-          <ListItem>{t('privacy_policy_content_text66')}</ListItem>
-        </ListNumber>
+        {t('privacy_policy_content_text150_1')}{' '}
+        <Url value="https://www.gov.pl/web/koronawirus">COVID-19</Url>
+        {t('privacy_policy_content_text150_2')}{' '}
+        <Url value="https://www.gov.pl/web/koronawirus">COVID-19</Url>
+        {t('privacy_policy_content_text150_3')}
       </ListItem>
-      <ListItem>{t('privacy_policy_content_text67')}</ListItem>
+      <ListItem>
+        {t('privacy_policy_content_text67_1')}{' '}
+        <strong>{t('privacy_policy_content_text67_2')}</strong>{' '}
+        {t('privacy_policy_content_text67_3')}
+      </ListItem>
+      <ListItem>
+        {t('privacy_policy_content_text151_1')}{' '}
+        <strong>{t('privacy_policy_content_text151_2')}</strong>{' '}
+        {t('privacy_policy_content_text151_3')}{' '}
+        <Url value="https://www.gov.pl/web/koronawirus">COVID-19</Url>{' '}
+        {t('privacy_policy_content_text151_4')}
+      </ListItem>
       <ListItem>
         {t('privacy_policy_content_text68')}
         <ListNumber>
           <ListItem>{t('privacy_policy_content_text69')}</ListItem>
           <ListItem>{t('privacy_policy_content_text70')}</ListItem>
           <ListItem>{t('privacy_policy_content_text71')}</ListItem>
+          <ListItem>{t('privacy_policy_content_text152')}</ListItem>
           <ListItem>{t('privacy_policy_content_text72')}</ListItem>
         </ListNumber>
       </ListItem>
@@ -240,6 +260,7 @@ const PrivacyPolicyContent = ({ t }) => (
           </ListItem>
         </ListNumber>
       </ListItem>
+      <ListItem>{t('privacy_policy_content_text153')}</ListItem>
       <ListItem>
         {t('privacy_policy_content_text105')}
         <ListNumber>
@@ -269,33 +290,67 @@ const PrivacyPolicyContent = ({ t }) => (
         {t('privacy_policy_content_text113')}
       </ListItem>
       <ListItem>{t('privacy_policy_content_text114')}</ListItem>
+      <ListItem>{t('privacy_policy_content_text154')}</ListItem>
       <ListItem>{t('privacy_policy_content_text115')}</ListItem>
     </ListNumber>
     <Annotation>§4.</Annotation>
     <Title>{t('privacy_policy_content_text116')}</Title>
     <ListNumber>
-      <ListItem>{t('privacy_policy_content_text117')}</ListItem>
-      <ListItem>{t('privacy_policy_content_text118')}</ListItem>
+      <ListItem>{t('privacy_policy_content_text155')}</ListItem>
       <ListItem>
-        {t('privacy_policy_content_text119')}
-        <ListAlpha>
-          <ListItem>{t('privacy_policy_content_text120')}</ListItem>
-          <ListItem>{t('privacy_policy_content_text124')}</ListItem>
-          <ListItem>{t('privacy_policy_content_text126')}</ListItem>
-        </ListAlpha>
-        {t('privacy_policy_content_text131')}
+        {t('privacy_policy_content_text156')}
+        <ListNumber>
+          <ListItem>{t('privacy_policy_content_text157')}</ListItem>
+          <ListItem>{t('privacy_policy_content_text158')}</ListItem>
+          <ListItem>{t('privacy_policy_content_text159')}</ListItem>
+          <ListItem>{t('privacy_policy_content_text160')}</ListItem>
+          <ListItem>{t('privacy_policy_content_text161')}</ListItem>
+        </ListNumber>
+      </ListItem>
+      <ListItem>{t('privacy_policy_content_text162')}</ListItem>
+      <ListItem>
+        {t('privacy_policy_content_text117')}
+        <ListNumber>
+          <ListItem>{t('privacy_policy_content_text118')}</ListItem>
+          <ListItem>
+            {t('privacy_policy_content_text119')}
+            <ListAlpha>
+              <ListItem>{t('privacy_policy_content_text120')}</ListItem>
+              <ListItem>{t('privacy_policy_content_text163')}</ListItem>
+              <ListItem>
+                {t('privacy_policy_content_text126')}
+                {'\n'}
+                {t('privacy_policy_content_text131')}
+              </ListItem>
+            </ListAlpha>
+          </ListItem>
+        </ListNumber>
       </ListItem>
       <ListItem>
         {t('privacy_policy_content_text132')}{' '}
         <Email>{t('privacy_policy_content_text133')}</Email>.
       </ListItem>
       <ListItem>{t('privacy_policy_content_text134')}</ListItem>
+      <ListItem>
+        {t('privacy_policy_content_text164')}
+        <ListNumber>
+          <ListItem>{t('privacy_policy_content_text165')}</ListItem>
+          <ListItem>{t('privacy_policy_content_text166')}</ListItem>
+          <ListItem>
+            {t('privacy_policy_content_text167')}
+            {'\n'}
+            {t('privacy_policy_content_text168')}
+          </ListItem>
+        </ListNumber>
+      </ListItem>
+      <ListItem>{t('privacy_policy_content_text169')}</ListItem>
     </ListNumber>
     <Annotation>§5.</Annotation>
     <Title>{t('privacy_policy_content_text135')}</Title>
     <ListNumber>
       <ListItem>{t('privacy_policy_content_text136')}</ListItem>
       <ListItem>{t('privacy_policy_content_text137')}</ListItem>
+      <ListItem>{t('privacy_policy_content_text170')}</ListItem>
     </ListNumber>
   </>
 );
