@@ -96,9 +96,6 @@ export const chronicSickValues = [
 
 export const FIELD_BLOOD_GROUP = 'bloodGroup';
 
-export const FIELD_CHOICE_ID = 'choice_id';
-export const FIELD_ITEM_ID = 'item_id';
-
 export const VALUE_PRESENT = 'present';
 export const VALUE_ABSENT = 'absent';
 

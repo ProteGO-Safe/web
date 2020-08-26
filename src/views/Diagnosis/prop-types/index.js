@@ -7,7 +7,7 @@ export const choicesPropType = PropTypes.arrayOf(
   })
 );
 
-export const itemsPropType = PropTypes.arrayOf(
+const itemsPropType = PropTypes.arrayOf(
   PropTypes.shape({
     id: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired,

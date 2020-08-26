@@ -9,7 +9,10 @@ const FirstDiagnosisAskingContainer = () => {
   const dispatch = useDispatch();
   const history = useHistory();
   const goToDiagnosis = () => {
-    history.push(Routes.Diagnosis);
+    history.push({
+      pathname: Routes.Diagnosis,
+      search: '?p=1'
+    });
   };
   const goToHome = () => {
     dispatch(finishFirstDiagnosis());
