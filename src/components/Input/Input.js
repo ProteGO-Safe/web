@@ -29,7 +29,14 @@ const Input = ({
         return false;
       };
     }
-  }, []);
+  }, [ref]);
+
+  const change = e => {
+    if (type === 'number') {
+      e.target.value = e.target.value.replace(',', '.');
+    }
+    onChange(e);
+  };
   return (
     <div className="input input__wrapper">
       {icon && value.length < 1 && (
@@ -49,7 +56,7 @@ const Input = ({
         disabled={disabled}
         min={min}
         name={name}
-        onChange={onChange}
+        onChange={change}
         onKeyPress={onKeyPress}
         placeholder={placeholder}
         ref={ref}
@@ -90,7 +97,7 @@ Input.propTypes = {
   onKeyPress: PropTypes.func,
   placeholder: PropTypes.string,
   size: PropTypes.oneOf(['small', 'normal']),
-  type: PropTypes.string,
+  type: PropTypes.oneOf(['text', 'number']),
   value: PropTypes.oneOfType([PropTypes.number, PropTypes.string])
 };
 
