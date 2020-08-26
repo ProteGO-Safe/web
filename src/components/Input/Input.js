@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import Close from '../../assets/img/icons/notifi_close.svg';
 import './Input.scss';
@@ -20,6 +20,16 @@ const Input = ({
   type,
   value
 }) => {
+  const ref = useRef(null);
+
+  useEffect(() => {
+    if (ref.current) {
+      ref.current.oncopy = e => {
+        e.preventDefault();
+        return false;
+      };
+    }
+  }, []);
   return (
     <div className="input input__wrapper">
       {icon && value.length < 1 && (
@@ -42,8 +52,9 @@ const Input = ({
         onChange={onChange}
         onKeyPress={onKeyPress}
         placeholder={placeholder}
-        type={type}
+        ref={ref}
         step="0.1"
+        type={type}
         value={value}
       />
       {description && <span className="input__description">{description}</span>}
