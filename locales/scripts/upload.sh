@@ -14,5 +14,4 @@ curl -X POST https://api.poeditor.com/v2/projects/upload \
      -F language="$language" \
      -F updating="terms_translations" \
      -F file=@"`dirname "$0"`/../$language.json" \
-     -F fuzzy_trigger="1" \
-     -F sync_terms="1"
+     -F fuzzy_trigger="1"
