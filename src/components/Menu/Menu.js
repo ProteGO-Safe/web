@@ -44,7 +44,7 @@ const Menu = ({ t, items }) => {
       {visible && <div className="menu__overlay" onClick={handleClose} />}
       <div className={`menu menu__wrapper ${isVisible} ${isHidden}`}>
         <div className="menu__user">
-          <img src={LogoSafeSafe} alt="ProteGO Safe" />
+          <img src={LogoSafeSafe} alt="STOP COVID - ProteGO Safe" />
         </div>
         <ul className="menu__items">{renderItems}</ul>
         <VersionApp />
