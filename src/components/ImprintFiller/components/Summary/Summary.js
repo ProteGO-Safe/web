@@ -32,12 +32,9 @@ const Summary = ({ t }) => {
       <Title>{t('imprint_filler_summary_text1')}</Title>
       <Imprint
         user={{
-          bloodGroup:
-            values[FIELD_BLOOD_GROUP] === 'undefined'
-              ? t('imprint_text6')
-              : values[FIELD_BLOOD_GROUP],
+          bloodGroup: values[FIELD_BLOOD_GROUP],
           chronicSicks,
-          smokeNumber: t(values[FIELD_SMOKE_NUMBER]),
+          smokeNumber: values[FIELD_SMOKE_NUMBER],
           isSmoking: values[FIELD_SMOKE] === t('yes')
         }}
       />
