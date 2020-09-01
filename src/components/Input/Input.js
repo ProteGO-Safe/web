@@ -31,12 +31,6 @@ const Input = ({
     }
   }, [ref]);
 
-  const change = e => {
-    if (type === 'number') {
-      e.target.value = e.target.value.replace(',', '.');
-    }
-    onChange(e);
-  };
   return (
     <div className="input input__wrapper">
       {icon && value.length < 1 && (
@@ -56,13 +50,14 @@ const Input = ({
         disabled={disabled}
         min={min}
         name={name}
-        onChange={change}
+        onChange={onChange}
         onKeyPress={onKeyPress}
         placeholder={placeholder}
         ref={ref}
         step="0.1"
         type={type}
         value={value}
+        pattern="\d*"
       />
       {description && <span className="input__description">{description}</span>}
       {error && <span className="input__error">{error}</span>}
