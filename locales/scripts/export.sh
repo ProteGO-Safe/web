@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 # run sh locales/scripts/export.sh -i PROJECT_ID -t PROJECT_TOKEN -l LOCALE
 while getopts i:t:l: flag
 do

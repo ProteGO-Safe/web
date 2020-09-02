@@ -62,7 +62,7 @@ jobs:
 
       - name: Upload PL locale to the POEditor
         run: |
-          sh  locales/scripts/upload.sh -l pl -i $POEDITOR_ID -t $POEDITOR_TOKEN | grep '"status":"200"' || exit 1
+          sh  locales/scripts/upload.sh -l pl -i $POEDITOR_ID -t $POEDITOR_TOKEN | grep '"code":"200"' || exit 1
         if: env.ENVIRONMENT == 'DEV'
         env:
           POEDITOR_ID: ${{ secrets.POEDITOR_ID }}

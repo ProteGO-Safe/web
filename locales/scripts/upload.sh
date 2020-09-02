@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 # run sh locales/scripts/upload.sh -i PROJECT_ID -t PROJECT_TOKEN -l pl
 while getopts i:t:l: flag
 do
