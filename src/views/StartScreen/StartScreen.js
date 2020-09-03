@@ -22,16 +22,16 @@ const StartScreen = ({
         </Styled.LogoWrapper>
         <Styled.Subtitle>{t('start_screen_subtitle')}</Styled.Subtitle>
 
-        <Styled.ChooseLang>
-          {/*  <Styled.Label>{t('start_screen_label')}</Styled.Label> */}
-          {/*  <Styled.Info>{t('start_screen_info')}</Styled.Info> */}
-          {/*  <Language */}
-          {/*    languages={languages} */}
-          {/*    customLabels={customLabels} */}
-          {/*    defaultLang={defaultLang} */}
-          {/*    onSelect={onSelect} */}
-          {/*  /> */}
-        </Styled.ChooseLang>
+        {/* <Styled.ChooseLang> */}
+        {/*  <Styled.Label>{t('start_screen_label')}</Styled.Label> */}
+        {/*  <Styled.Info>{t('start_screen_info')}</Styled.Info> */}
+        {/*  <Language */}
+        {/*    languages={languages} */}
+        {/*    customLabels={customLabels} */}
+        {/*    defaultLang={defaultLang} */}
+        {/*    onSelect={onSelect} */}
+        {/*  /> */}
+        {/* </Styled.ChooseLang> */}
 
         <Styled.Button onClick={handleStartClick}>
           {t('start_screen_button')}
