@@ -104,4 +104,5 @@ export const Button = styled.button`
   color: ${Color.primary};
   background: #ffffff;
   cursor: pointer;
+  font-family: 'Open Sans', sans-serif;
 `;
