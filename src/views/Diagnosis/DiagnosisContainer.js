@@ -18,7 +18,7 @@ const DiagnosisContainer = () => {
   const saveRiskTest = (triage, evidence, allQuestions) => {
     const { triage_level: triageLevel, description } = triage;
     const data = {
-      allQuestions,
+      allQuestions: allQuestions.filter(item => item),
       evidence,
       triageLevel,
       description
