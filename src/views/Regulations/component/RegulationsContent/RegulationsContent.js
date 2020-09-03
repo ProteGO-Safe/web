@@ -104,7 +104,7 @@ const RegulationsContent = ({ t }) => (
         {t('regulations_content_text42')}
       </ListItem>
       <ListItem>
-        <strong>{t('regulations_content_text43')}</strong>
+        <strong>{t('regulations_content_text43')}</strong>{' '}
         {t('regulations_content_text44')}
       </ListItem>
       <ListItem>
