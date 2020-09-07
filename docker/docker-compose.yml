@@ -1,0 +1,10 @@
+version: "3"
+services:
+  node:
+    image: node:13-alpine
+    container_name: protego-safe-react
+    volumes:
+      - ../:/app
+    network_mode: host
+    working_dir: "/app"
+    command: "tail /dev/null -f"

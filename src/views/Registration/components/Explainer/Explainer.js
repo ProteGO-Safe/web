@@ -1,36 +1,29 @@
 import React from 'react';
+import { withTranslation } from 'react-i18next';
 import PropTypes from 'prop-types';
 import Slider from 'react-slick';
-
-import { Button, GovFooter, Header } from '../../../../components';
-import { Container, Content, View } from '../../../../theme/grid';
+import { Button, Layout } from '../../../../components';
 import { SliderWrapper, Title } from './Explainer.styled';
 
-const Explainer = ({ carouselRef, index, items, onClick, settings }) => {
+const Explainer = ({ t, carouselRef, index, items, onClick, settings }) => {
   return (
-    <View>
-      <Header hideBackButton />
-      <Content>
-        <Container className="full-height">
-          {index < 1 ? (
-            <Title>Powiadomienia o narażeniu na kontakt z COVID-19</Title>
-          ) : (
-            <Title>
-              Włącz się do wspólnej walki
-              <br />
-              przeciwko koronawirusowi
-            </Title>
-          )}
-          <SliderWrapper>
-            <Slider ref={carouselRef} {...settings}>
-              {items}
-            </Slider>
-          </SliderWrapper>
-          <Button onClick={onClick} text="Dalej" />
-          <GovFooter type="black" />
-        </Container>
-      </Content>
-    </View>
+    <Layout hideBackButton isGovFooter>
+      {index < 1 ? (
+        <Title>{t('explainer_text1')}</Title>
+      ) : (
+        <Title>
+          {t('explainer_text2')}
+          <br />
+          {t('explainer_text3')}
+        </Title>
+      )}
+      <SliderWrapper>
+        <Slider ref={carouselRef} {...settings}>
+          {items}
+        </Slider>
+      </SliderWrapper>
+      <Button onClick={onClick} label={t('button_next')} />
+    </Layout>
   );
 };
 
@@ -43,4 +36,4 @@ Explainer.propTypes = {
   settings: PropTypes.object.isRequired
 };
 
-export default Explainer;
+export default withTranslation()(Explainer);

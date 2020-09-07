@@ -29,3 +29,14 @@ export function resetTimeOfConfirmedCovid() {
     dispatch(timeOfConfirmedCovidReseted());
   };
 }
+
+export const wholeTriageUpdated = data => ({
+  data,
+  type: types.WHOLE_TRIAGE_UPDATED
+});
+
+export function updateWholeTriage(data) {
+  return dispatch => {
+    dispatch(wholeTriageUpdated(data));
+  };
+}

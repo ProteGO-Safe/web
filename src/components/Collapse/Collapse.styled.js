@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Color } from "../../theme/colors";
+import { Color } from '../../theme/colors';
 
 export const CollapseWrapper = styled.div`
   display: flex;
@@ -8,35 +8,33 @@ export const CollapseWrapper = styled.div`
   margin-top: -1px;
 `;
 
-export const Title = styled.div`
+export const Header = styled.div`
   position: relative;
-  display: flex;
-  flex-flow: wrap row;
+  display: grid;
+  grid-template-areas: 'title icon';
+  grid-template-columns: 1fr 14px;
+  grid-column-gap: 16px;
   align-items: center;
   width: 100%;
   min-height: 54px;
-  padding: 12px 40px 12px 7px;
+  padding: 12px 7px;
   font-size: 14px;
   font-weight: bold;
   line-height: 1.3;
   color: ${Color.primary};
   border-top: solid 1px ${Color.veryLightGrey};
-  border-bottom: solid 1px ${Color.veryLightGrey};
-  img {
-    position: absolute;
-    top: 50%;
-    right: 7px;
-    display: block;
-    max-height: 14px;
-    margin-top: -7px;
-    transform: rotate(90deg);
-  }
-  &.open {
-    border-bottom: solid 1px transparent;
-    img {
-      transform: rotate(-90deg);
-    }
-  }
+  border-bottom: solid 1px ${({ open }) => open ? 'transparent' : Color.veryLightGrey};
+`;
+
+export const Title = styled.span`
+  grid-area: title;
+`;
+
+export const Icon = styled.img`
+  grid-area: icon;
+  display: block;
+  max-height: 14px;
+  transform: rotate(${({ open }) => open && '-'}90deg);
 `;
 
 export const Description = styled.div`

@@ -1,7 +1,5 @@
 import React from 'react';
-import { Content, Container, View } from '../../theme/grid';
-import { OnboardingContent, Button, GovFooter } from '../../components';
-import Header from '../../components/Header/Header';
+import { OnboardingContent, Button, Layout } from '../../components';
 import './Onboarding.scss';
 
 const Onboarding = ({ screen: { buttons, content, icon, title } }) => {
@@ -9,23 +7,17 @@ const Onboarding = ({ screen: { buttons, content, icon, title } }) => {
     <Button
       key={button.text}
       onClick={button.onClick}
-      text={button.text}
+      label={button.text}
       type={button.type}
     />
   ));
 
   return (
-    <View>
-      <Header hideBackButton />
-      <Content>
-        <Container className="full-height">
-          <OnboardingContent icon={icon} title={title} buttons={renderButton}>
-            {content}
-          </OnboardingContent>
-          <GovFooter type="black" />
-        </Container>
-      </Content>
-    </View>
+    <Layout hideBackButton>
+      <OnboardingContent icon={icon} title={title} buttons={renderButton}>
+        {content}
+      </OnboardingContent>
+    </Layout>
   );
 };
 

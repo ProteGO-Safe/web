@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { useFormikContext } from 'formik';
+import { withTranslation } from 'react-i18next';
 import { Button, FieldSet, Radio } from '../../../../components';
 import { Title } from '../../Diagnosis.styled';
 
@@ -10,10 +11,9 @@ import {
   VALUE_PRESENT
 } from '../../../../constants';
 
-import Icon from '../../../../assets/img/icons/angle-right-white.svg';
 import { itemsPropType } from '../../prop-types';
 
-const GroupSingle = ({ text, items }) => {
+const GroupSingle = ({ t, text, items }) => {
   const { setFieldValue, values, submitForm } = useFormikContext();
 
   const handleChange = itemId => {
@@ -23,7 +23,7 @@ const GroupSingle = ({ text, items }) => {
 
   return (
     <>
-      <Title>{text}</Title>
+      <Title>{t(text)}</Title>
       <FieldSet>
         {items.map(item => (
           <Radio
@@ -31,16 +31,14 @@ const GroupSingle = ({ text, items }) => {
             checked={values[FIELD_ITEM_ID] === item.id}
             name={FIELD_ITEM_ID}
             onChange={() => handleChange(item.id)}
-            label={item.name}
+            label={t(item.name)}
           />
         ))}
       </FieldSet>
       <Button
         disabled={!values[FIELD_CHOICE_ID]}
         onClick={submitForm}
-        icon={Icon}
-        size="medium"
-        text="Dalej"
+        label={t('button_next')}
       />
     </>
   );
@@ -51,4 +49,4 @@ GroupSingle.propTypes = {
   items: itemsPropType
 };
 
-export default GroupSingle;
+export default withTranslation()(GroupSingle);

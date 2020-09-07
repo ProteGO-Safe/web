@@ -21,3 +21,14 @@ export function saveUser(data) {
     dispatch(saveUserRequested(data));
   };
 }
+
+export const wholeUserUpdated = data => ({
+  data,
+  type: types.WHOLE_USER_UPDATED
+});
+
+export function updateWholeUser(data) {
+  return dispatch => {
+    dispatch(wholeUserUpdated(data));
+  };
+}

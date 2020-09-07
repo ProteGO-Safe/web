@@ -4,6 +4,7 @@ import { ReactComponent as AngleRightIcon } from '../../assets/img/icons/angle-r
 
 export const ArrowButton = styled.div`
   display: flex;
+  width: 100%;
   height: 54px;
   border-top: solid 1px #cbcbcb;
   cursor: pointer;

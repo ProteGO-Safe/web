@@ -1,4 +1,4 @@
-import { RISK_TEST_ADD } from '../../types/risktest';
+import { RISK_TEST_ADD, WHOLE_RISK_TEST_UPDATED } from '../../types/risktest';
 
 const INITIAL_STATE = {};
 
@@ -13,6 +13,13 @@ const riskTestReducer = (state = INITIAL_STATE, action) => {
           [timestamp]: data
         };
       })();
+    case WHOLE_RISK_TEST_UPDATED: {
+      const { data } = action;
+      return {
+        ...state,
+        ...data
+      };
+    }
     default:
       return state;
   }

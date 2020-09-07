@@ -3,6 +3,7 @@ import { Paragraph, SmallText } from '../../theme/typography';
 import { Color } from '../../theme/colors';
 
 export const Title = styled.h1`
+  width: 100%;
   font-weight: 700;
   font-size: 20px;
   line-height: 1.25;

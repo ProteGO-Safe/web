@@ -1,7 +1,9 @@
 const Routes = {
   Home: '/',
   Start: '/start',
+  AddTranslation: '/add-translation',
   Daily: '/daily',
+  DailyData: '/daily-data',
   RiskTest: '/risk-test',
   HowItWorks: '/how-it-works',
   IAmSick: '/i-am-sick',
@@ -10,6 +12,8 @@ const Routes = {
   PrivacyPolicy: '/privacy-policy',
   PrivacyPolicyDetails: '/privacy-policy-details',
   Settings: '/settings',
+  SettingsBluetooth: '/settings/bluetooth',
+  SettingsLanguages: '/settings/languages',
   Regulations: '/regulations',
   Diagnosis: '/diagnosis',
   UserData: '/user-data',

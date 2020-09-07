@@ -14,6 +14,7 @@ import _store from './store';
 import StoreRegistry from './store/storeRegistry';
 import { GlobalStyle } from './theme/global';
 import { materialTheme } from './theme/materialTheme';
+import './locales/i18n';
 
 StoreRegistry.setStore(_store.store);
 

@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { Color } from '../../theme/colors';
 import { FontWeight } from '../../theme/fonts';
 
-import { ReactComponent as LogoSVG } from '../../assets/img/logo/protegosafe_logo_white.svg';
+import { ReactComponent as LogoSVG } from '../../assets/img/logo/stopcovid_protegosafe_logo_sygnet.svg';
 import { ReactComponent as ArrowIcon } from '../../assets/img/icons/angle-left.svg';
 
 export const Container = styled.header`
@@ -43,7 +43,8 @@ export const Arrow = styled(ArrowIcon)`
 `;
 
 export const Title = styled.p`
-  margin-right: ${({ titlePosition }) => (titlePosition === 'left' ? 'auto' : 0)};
+  margin-right: ${({ titlePosition }) =>
+    titlePosition === 'left' ? 'auto' : 0};
   color: ${Color.white};
   font-size: 18px;
   font-weight: ${FontWeight.Normal}

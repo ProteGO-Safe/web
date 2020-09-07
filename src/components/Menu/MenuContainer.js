@@ -1,5 +1,5 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
+import Routes from '../../routes';
 import Menu from './Menu';
 import useMenuContext from '../../hooks/useMenuContext';
 
@@ -13,11 +13,7 @@ import Icon7 from '../../assets/img/icons/menu-boczne-ustawienia_BLUE.svg';
 import Icon8 from '../../assets/img/icons/menu-boczne-moje-dane_BLUE.svg';
 import Icon9 from '../../assets/img/icons/menu-boczne-zglos-blad_BLUE.svg';
 
-import Routes from '../../routes';
-import { isVersionCompatibilityWithBluetoothModule } from '../../utils/version';
-
 const MenuContainer = () => {
-  const { servicesStatus } = useSelector(state => state.nativeData);
   const { visible } = useMenuContext();
 
   if (!visible) {
@@ -29,65 +25,64 @@ const MenuContainer = () => {
       icon: Icon1,
       color: 'blue',
       path: Routes.Daily,
-      slug: 'dziennik',
-      title: 'Dziennik zdrowia'
+      slug: 'menu_container_text1',
+      title: 'menu_container_text1'
     },
     {
       icon: Icon2,
       color: 'blue',
       path: Routes.RiskTest,
-      slug: 'test_oceny_ryzyka',
-      title: 'Test oceny ryzyka'
+      slug: 'menu_container_text2',
+      title: 'menu_container_text2'
     },
     {
       icon: Icon3,
       color: 'blue',
       path: Routes.HowItWorks,
-      slug: 'jak_to_dziala',
-      title: 'Jak to działa?'
+      slug: 'menu_container_text3',
+      title: 'menu_container_text3'
     },
     {
       icon: Icon4,
       color: 'blue',
       path: Routes.IAmSick,
-      slug: 'co_zrobic',
-      title: 'Czuję się źle, co zrobić?'
+      slug: 'menu_container_text4',
+      title: 'menu_container_text4'
     },
     {
       icon: Icon5,
       color: 'red',
       path: Routes.EmergencyNumbers,
-      slug: 'numery_alarmowe',
-      title: 'Numery alarmowe'
+      slug: 'menu_container_text5',
+      title: 'menu_container_text5'
     },
     {
       icon: Icon6,
       color: 'blue',
       path: Routes.PrivacyPolicy,
-      slug: 'regulamin_i_polityka_prywatności',
-      title: 'Regulamin i Polityka prywatności'
+      slug: 'menu_container_text6',
+      title: 'menu_container_text6'
     },
     {
       icon: Icon7,
       color: 'blue',
       path: Routes.Settings,
-      slug: 'ustawienia',
-      title: 'Ustawienia',
-      disable: !isVersionCompatibilityWithBluetoothModule(servicesStatus)
+      slug: 'menu_container_text7',
+      title: 'menu_container_text7'
     },
     {
       icon: Icon8,
       color: 'blue',
       path: Routes.UserData,
-      slug: 'moje_dane',
-      title: 'Moje dane'
+      slug: 'menu_container_text8',
+      title: 'menu_container_text8'
     },
     {
       icon: Icon9,
       color: 'blue',
       path: Routes.ReportBug,
-      slug: 'zglos_blad',
-      title: 'Zgłoś błąd'
+      slug: 'menu_container_text9',
+      title: 'menu_container_text9'
     }
   ];
 

@@ -1,26 +1,24 @@
 {
   "01": {
-    "description": "Twoje objawy nie wskazują na COVID-19, jednak zgodnie z zaleceniami WHO i CDC zalecana jest izolacja na okres następnych 14 dni.",
-    "label": "Kwarantanna",
+    "description": "diagnosis_text48",
     "serious": [
       {
-        "common_name": "Opieka nad osobą z podejrzeniem COVID-19 bez środków ochronnych",
+        "common_name": "seriouses_text10",
         "id": "p_5",
         "is_emergency": true,
-        "name": "Opieka nad osobą z podejrzeniem COVID-19 bez środków ochronnych"
+        "name": "seriouses_text10"
       }
     ],
     "triage_level": "quarantine"
   },
   "02": {
-    "description": "Twoje objawy nie wskazują na COVID-19, jednak zgodnie z zaleceniami WHO i CDC zalecana jest izolacja na okres następnych 14 dni.",
-    "label": "Kwarantanna",
+    "description": "diagnosis_text48",
     "serious": [
       {
-        "common_name": "Opieka nad osobą z podejrzeniem COVID-19 bez środków ochronnych",
+        "common_name": "seriouses_text10",
         "id": "p_5",
         "is_emergency": true,
-        "name": "Opieka nad osobą z podejrzeniem COVID-19 bez środków ochronnych"
+        "name": "seriouses_text10"
       }
     ],
     "triage_level": "quarantine"

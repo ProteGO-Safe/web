@@ -29,6 +29,12 @@
     }
   }
 
+  button {
+    + button {
+      margin-top: 10px;
+    }
+  }
+
   .range {
     + .range {
       margin-top: 17px;
