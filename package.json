@@ -38,8 +38,6 @@
   "scripts": {
     "start": "PORT=3001 react-scripts start",
     "clean-cra-sw": "rm -f build/precache-manifest.*.js && rm -f build/service-worker.js",
-    "build-sw": "node ./src/sw-build.js",
-    "fix-asset-manifest": "node ./src/fixAssetManifest.js",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
@@ -87,7 +85,6 @@
     "husky": "^4.2.3",
     "lint-staged": "^10.0.8",
     "prettier": "^1.19.1",
-    "react-scripts": "3.4.1",
-    "workbox-build": "^5.1.1"
+    "react-scripts": "3.4.1"
   }
 }
