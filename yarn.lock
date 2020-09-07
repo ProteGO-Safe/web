@@ -6480,11 +6480,6 @@ is-typedarray@~1.0.0:
   resolved "https://registry.yarnpkg.com/is-typedarray/-/is-typedarray-1.0.0.tgz#e479c80858df0c1b11ddda6940f96011fcda4a9a"
   integrity sha1-5HnICFjfDBsR3dppQPlgEfzaSpo=
 
-is-ua-webview@^1.0.1:
-  version "1.0.5"
-  resolved "https://registry.yarnpkg.com/is-ua-webview/-/is-ua-webview-1.0.5.tgz#f5798e50e379aced92b6bf1a13b5ee645dbef09b"
-  integrity sha512-CfaCxjFTU3xUluvcKg0+3j5uXeyneANFnC9ynSCTFA06nFt1okFBXpkKVxqxtFAKcbsFl+vrOQ7g6hlaDIQu8A==
-
 is-utf8@^0.2.0:
   version "0.2.1"
   resolved "https://registry.yarnpkg.com/is-utf8/-/is-utf8-0.2.1.tgz#4b0da1442104d1b336340e80797e865cf39f7d72"
