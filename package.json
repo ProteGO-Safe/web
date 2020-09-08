@@ -36,7 +36,7 @@
     "yup": "^0.28.3"
   },
   "scripts": {
-    "start": "PORT=3001 react-scripts start",
+    "start": "react-scripts start",
     "clean-cra-sw": "rm -f build/precache-manifest.*.js && rm -f build/service-worker.js",
     "build-sw": "node ./src/sw-build.js",
     "fix-asset-manifest": "node ./src/fixAssetManifest.js",
