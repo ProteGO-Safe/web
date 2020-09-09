@@ -28,16 +28,25 @@ export const createDaysDetailsByTimestamp = (
     });
 };
 
+const createTimestampForDay = timestamp => {
+  const { data } = timestamp[1];
+  const { time } = data;
+  if (time) {
+    return moment(time).unix();
+  }
+  return timestamp[0];
+};
+
 export const createDaysDetails = (
   filledDays = [],
   dateFormatIn = dateFormat
 ) => {
   return filledDays.sort(descending).map(_timestamp => {
-    const { data } = _timestamp[1];
+    const timestamp = createTimestampForDay(_timestamp);
 
     return {
-      day: moment(data.time).format(dateFormatIn),
-      dayWeek: moment(data.time).format(dayWeekFormat),
+      day: moment.unix(timestamp).format(dateFormatIn),
+      dayWeek: moment.unix(timestamp).format(dayWeekFormat),
       timestamp: _timestamp[0]
     };
   });
