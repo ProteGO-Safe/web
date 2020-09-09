@@ -6,7 +6,7 @@ export const ButtonWrapper = styled.div`
   display: flex;
   flex-flow: wrap column;
   width: 100%;
-  margin-top: auto;
+  margin-top: 24px;
   margin-bottom: auto;
   * {
     &:not(:last-child) {

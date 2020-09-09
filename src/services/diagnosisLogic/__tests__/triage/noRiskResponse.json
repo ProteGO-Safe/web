@@ -1,7 +1,6 @@
 {
   "01": {
-    "description": "Odpowiedzi, których udzieliłeś/-aś, nie wskazują na zakażenie koronawirusem (choroba COVID-19). Stosuj poniższe środki zapobiegawcze i zalecenia rządowe, by uniknąć zakażenia. Pamiętaj, że Twoje objawy mogą wynikać także z innych chorób i mogą wymagać konsultacji lekarskiej - powyższy wywiad jest ukierunkowany na COVID-19. Jeśli Twoje objawy wydają się niepokojące, skontaktuj się z lekarzem.",
-    "label": "Postępuj zgodnie z zaleceniami epidemiologicznymi.",
+    "description": "diagnosis_text47",
     "serious": [],
     "triage_level": "no_risk"
   }

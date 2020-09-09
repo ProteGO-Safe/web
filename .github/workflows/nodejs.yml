@@ -1,6 +1,6 @@
 ---
 
-name: build and deploy
+name: test, build and deploy
 on:
   release:
     types:
@@ -12,6 +12,16 @@ on:
       - '**'
 
 jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [13.x]
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v2
+      - run: yarn install
+      - run: yarn test
   build:
     runs-on: ubuntu-latest
     strategy:

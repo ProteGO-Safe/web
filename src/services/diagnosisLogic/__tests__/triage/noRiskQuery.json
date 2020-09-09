@@ -1,7 +1,7 @@
 {
 	"01": {
 		"sex": "female",
-		"age": 12,
+		"moreThan65": false,
 		"evidence": [
 			{
 				"id": "s_0",

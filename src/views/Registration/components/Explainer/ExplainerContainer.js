@@ -1,5 +1,6 @@
 import React, { useRef, useState } from 'react';
 import { useFormikContext } from 'formik';
+import { withTranslation } from 'react-i18next';
 import Explainer from './Explainer';
 
 import { ExplainerItem } from './components';
@@ -8,7 +9,7 @@ import IconDiary from '../../../../assets/img/explainer/diary.svg';
 import IconInfo from '../../../../assets/img/explainer/info.svg';
 import IconDiagnostic from '../../../../assets/img/explainer/diagnostic.svg';
 
-const ExplainerContainer = () => {
+const ExplainerContainer = ({ t }) => {
   const carouselRef = useRef(null);
   const [activeSlide, setActiveSlide] = useState(0);
   const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
@@ -18,31 +19,30 @@ const ExplainerContainer = () => {
     {
       content: (
         <>
-          <strong>Nowość w aplikacji:</strong> powiadomienia o możliwym
-          kontakcie z koronawirusem.
+          <strong>{t('explainer_container_text1')}</strong>
+          {t('explainer_container_text2')}
         </>
       ),
       icon: IconDiagnostic,
       slug: 'diagnostic_apple_google'
     },
     {
-      content: (
-        <>Dbaj o siebie! Regularnie sprawdzaj, czy jesteś w grupie ryzyka</>
-      ),
+      content: <>{t('explainer_container_text3')}</>,
       icon: IconInfo,
       slug: 'information'
     },
     {
       content: (
         <>
-          Uzupełniaj <span className="text-bold">Dziennik Zdrowia</span>
+          {t('explainer_container_text4')}
+          <span className="text-bold">{t('explainer_container_text5')}</span>
         </>
       ),
       icon: IconDiary,
       slug: 'diary'
     },
     {
-      content: <>Wszystkie najważniejsze informacje w jednym miejscu</>,
+      content: <>{t('explainer_container_text6')}</>,
       icon: IconChat,
       slug: 'chat'
     }
@@ -82,4 +82,4 @@ const ExplainerContainer = () => {
   );
 };
 
-export default ExplainerContainer;
+export default withTranslation()(ExplainerContainer);

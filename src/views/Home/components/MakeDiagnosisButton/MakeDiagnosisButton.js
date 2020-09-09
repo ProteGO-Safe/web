@@ -1,22 +1,24 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
 import { Icon } from '../../../RiskTest/RiskTest.styled';
-import { BordersButton } from '../../../../components/BordersButton';
+import { Button } from '../../../../components';
 import Routes from '../../../../routes';
+import {withTranslation} from "react-i18next";
 
-const MakeDiagnosisButton = () => {
+const MakeDiagnosisButton = ({t}) => {
   const history = useHistory();
   const goToDiagnosis = () => {
     history.push(Routes.Diagnosis);
   };
 
   return (
-    <BordersButton
+    <Button
       onClick={goToDiagnosis}
-      text="Wykonaj TEST oceny ryzyka"
+      label={t('make_diagnosis_button_text1')}
+      type="border"
       icon={<Icon />}
     />
   );
 };
 
-export default MakeDiagnosisButton;
+export default withTranslation()(MakeDiagnosisButton);

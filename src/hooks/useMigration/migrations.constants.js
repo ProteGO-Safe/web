@@ -1,0 +1,3 @@
+export const MIGRATIONS = {
+  MIGRATION_01: 'MIGRATION_01'
+};

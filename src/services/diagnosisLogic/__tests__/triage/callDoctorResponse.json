@@ -1,153 +1,143 @@
 {
   "01": {
-    "description": "Twoje odpowiedzi nie wskazują abyś miał/-ła COVID-19. Twoje objawy są jednak niepokojące i wymagają konsultacji medycznej.",
-    "label": "Zadzwoń do lekarza",
+    "description": "diagnosis_text44",
     "serious": [
       {
-        "common_name": "Kaszel",
+        "common_name": "seriouses_text1",
         "id": "s_1",
         "is_emergency": true,
-        "name": "Kaszel"
+        "name": "seriouses_text1"
       },
       {
-        "common_name": "Duszność",
+        "common_name": "seriouses_text2",
         "id": "s_2",
         "is_emergency": true,
-        "name": "Duszność"
+        "name": "seriouses_text2"
       }
     ],
     "triage_level": "call_doctor"
   },
   "02": {
-    "description": "Twoje odpowiedzi nie wskazują abyś miał/-ła COVID-19. Twoje objawy są jednak niepokojące i wymagają konsultacji medycznej.",
-    "label": "Zadzwoń do lekarza",
+    "description": "diagnosis_text44",
     "serious": [
       {
-        "common_name": "Kaszel",
+        "common_name": "seriouses_text1",
         "id": "s_1",
         "is_emergency": true,
-        "name": "Kaszel"
+        "name": "seriouses_text1"
       },
       {
-        "common_name": "Duszność",
+        "common_name": "seriouses_text2",
         "id": "s_2",
         "is_emergency": true,
-        "name": "Duszność"
+        "name": "seriouses_text2"
       }
     ],
     "triage_level": "call_doctor"
   },
   "03": {
-    "description": "Twoje odpowiedzi nie wskazują abyś miał/-ła COVID-19. Twoje objawy są jednak niepokojące i wymagają konsultacji medycznej.",
-    "label": "Zadzwoń do lekarza",
+    "description": "diagnosis_text44",
     "serious": [
       {
-        "common_name": "Duszność",
+        "common_name": "seriouses_text2",
         "id": "s_2",
         "is_emergency": true,
-        "name": "Duszność"
+        "name": "seriouses_text2"
       }
     ],
     "triage_level": "call_doctor"
   },
   "04": {
-    "description": "Twoje odpowiedzi nie wskazują abyś miał/-ła COVID-19. Twoje objawy są jednak niepokojące i wymagają konsultacji medycznej.",
-    "label": "Zadzwoń do lekarza",
+    "description": "diagnosis_text44",
     "serious": [
       {
-        "common_name": "Gorączka powyżej 40°C (104°F)",
+        "common_name": "seriouses_text3",
         "id": "s_4",
         "is_emergency": true,
-        "name": "Gorączka powyżej 40°C (104°F)"
+        "name": "seriouses_text3"
       }
     ],
     "triage_level": "call_doctor"
   },
   "05": {
-    "description": "Twoje odpowiedzi nie wskazują abyś miał/-ła COVID-19. Twoje objawy są jednak niepokojące i wymagają konsultacji medycznej.",
-    "label": "Zadzwoń do lekarza",
+    "description": "diagnosis_text44",
     "serious": [
       {
-        "common_name": "Gorączka powyżej 40°C (104°F)",
+        "common_name": "seriouses_text3",
         "id": "s_4",
         "is_emergency": true,
-        "name": "Gorączka powyżej 40°C (104°F)"
+        "name": "seriouses_text3"
       }
     ],
     "triage_level": "call_doctor"
   },
   "06": {
-    "description": "Twoje odpowiedzi nie wskazują abyś miał/-ła COVID-19. Twoje objawy są jednak niepokojące i wymagają konsultacji medycznej.",
-    "label": "Zadzwoń do lekarza",
+    "description": "diagnosis_text44",
     "serious": [],
     "triage_level": "call_doctor"
   },
   "07": {
-    "description": "Twoje odpowiedzi nie wskazują abyś miał/-ła COVID-19. Twoje objawy są jednak niepokojące i wymagają konsultacji medycznej.",
-    "label": "Zadzwoń do lekarza",
+    "description": "diagnosis_text44",
     "serious": [
       {
-        "common_name": "Kaszel",
+        "common_name": "seriouses_text1",
         "id": "s_1",
         "is_emergency": true,
-        "name": "Kaszel"
+        "name": "seriouses_text1"
       }
     ],
     "triage_level": "call_doctor"
   },
   "08": {
-    "description": "Twoje odpowiedzi nie wskazują abyś miał/-ła COVID-19. Twoje objawy są jednak niepokojące i wymagają konsultacji medycznej.",
-    "label": "Zadzwoń do lekarza",
+    "description": "diagnosis_text44",
     "serious": [
       {
-        "common_name": "Kaszel",
+        "common_name": "seriouses_text1",
         "id": "s_1",
         "is_emergency": true,
-        "name": "Kaszel"
+        "name": "seriouses_text1"
       },
       {
-        "common_name": "Gorączka pomiędzy 37.5°C a 38°C (99.5°F a 100.4°F)",
+        "common_name": "seriouses_text7",
         "id": "s_22",
         "is_emergency": true,
-        "name": "Gorączka pomiędzy 37.5°C a 38°C (99.5°F a 100.4°F)"
+        "name": "seriouses_text7"
       }
     ],
     "triage_level": "call_doctor"
   },
   "09": {
-    "description": "Twoje odpowiedzi nie wskazują abyś miał/-ła COVID-19. Twoje objawy są jednak niepokojące i wymagają konsultacji medycznej.",
-    "label": "Zadzwoń do lekarza",
+    "description": "diagnosis_text44",
     "serious": [
       {
-        "common_name": "Kaszel",
+        "common_name": "seriouses_text1",
         "id": "s_1",
         "is_emergency": true,
-        "name": "Kaszel"
+        "name": "seriouses_text1"
       },
       {
-        "common_name": "Gorączka pomiędzy 37.5°C a 38°C (99.5°F a 100.4°F)",
+        "common_name": "seriouses_text7",
         "id": "s_22",
         "is_emergency": true,
-        "name": "Gorączka pomiędzy 37.5°C a 38°C (99.5°F a 100.4°F)"
+        "name": "seriouses_text7"
       }
     ],
     "triage_level": "call_doctor"
   },
   "10": {
-    "description": "Twoje odpowiedzi nie wskazują abyś miał/-ła COVID-19. Twoje objawy są jednak niepokojące i wymagają konsultacji medycznej.",
-    "label": "Zadzwoń do lekarza",
+    "description": "diagnosis_text44",
     "serious": [
       {
-        "common_name": "Kaszel",
+        "common_name": "seriouses_text1",
         "id": "s_1",
         "is_emergency": true,
-        "name": "Kaszel"
+        "name": "seriouses_text1"
       },
       {
-        "common_name": "Gorączka pomiędzy 37.5°C a 38°C (99.5°F a 100.4°F)",
+        "common_name": "seriouses_text7",
         "id": "s_22",
         "is_emergency": true,
-        "name": "Gorączka pomiędzy 37.5°C a 38°C (99.5°F a 100.4°F)"
+        "name": "seriouses_text7"
       }
     ],
     "triage_level": "call_doctor"

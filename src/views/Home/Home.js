@@ -1,18 +1,13 @@
 import React from 'react';
-import { Header, Container, BottomNavigation } from '../../components';
-import './Home.scss';
-import { ExposureNotificationWarning } from './components';
+import { Layout } from '../../components';
+import { ExposureNotificationWarning, HomeContent } from './components';
 
-const Home = ({ resolveView }) => {
+const Home = () => {
   return (
-    <div className="view view__home">
-      <Header hideBackButton />
-      <Container>
-        <ExposureNotificationWarning />
-        {resolveView()}
-      </Container>
-      <BottomNavigation />
-    </div>
+    <Layout hideBackButton isNavigation>
+      <ExposureNotificationWarning />
+      <HomeContent />
+    </Layout>
   );
 };
 

@@ -1,17 +1,13 @@
 import React from 'react';
-import { Button } from '../Button';
+import { Button } from '../index';
 import { Color } from '../../theme/colors';
 import { ButtonWrapper, IconWrapper, Title, Text } from './ResultView.styled';
 
 const ResultView = ({ icon, title, text, buttons, colorTitle }) => {
-  const renderButtons = buttons.map(button => (
-    <Button
-      key={button.text}
-      onClick={button.onClick}
-      text={button.text}
-      border={button.border}
-    />
+  const renderButtons = buttons.map(({ label, onClick }) => (
+    <Button key={label} onClick={onClick} label={label} />
   ));
+
   return (
     <>
       <IconWrapper>

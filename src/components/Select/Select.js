@@ -4,7 +4,15 @@ import { FormControl, Select as MuiSelect } from '@material-ui/core';
 import { Label } from '../../theme/form';
 import { SelectWrapper } from './Select.styled';
 
-const Select = ({ changeHandler, label, name, options, required, value }) => {
+const Select = ({
+  changeHandler,
+  label,
+  name,
+  options,
+  required,
+  value,
+  white
+}) => {
   const renderOptions = options.map(option => (
     <option key={option.value} value={option.value}>
       {option.label}
@@ -14,7 +22,7 @@ const Select = ({ changeHandler, label, name, options, required, value }) => {
   const onChange = e => changeHandler(name, e.target.value);
 
   return (
-    <SelectWrapper>
+    <SelectWrapper white={white}>
       <FormControl required={required} variant="outlined">
         {label && <Label required={required}>{label}</Label>}
         <MuiSelect name={name} native onChange={onChange} value={value}>

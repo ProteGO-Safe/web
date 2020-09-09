@@ -1,80 +1,47 @@
 import React from 'react';
-
-import Header from '../../components/Header/Header';
-import { BottomNavigation } from '../../components/BottomNavigation';
-import { Container, Content, View } from '../../theme/grid';
+import { withTranslation } from 'react-i18next';
+import { Layout } from '../../components';
 import { List, ListItem, Paragraph } from '../../theme/typography';
 import { Title } from './HowItWorks.styled';
 
-const HowItWorks = () => {
+const HowItWorks = ({ t }) => {
   return (
-    <View>
-      <Header />
-      <Content>
-        <Container className="full-height">
-          <Title>Jak to działa?</Title>
-          <Paragraph>
-            <strong>ProteGO Safe</strong> to darmowa, oficjalna i bezpieczna
-            aplikacja, dzięki której możesz zostać powiadamiana/y o ryzyku
-            zakażenia koronawirusem. W aplikacji możesz także oceniać ryzyko
-            infekcji koronawirusem, prowadzić dziennik zdrowia oraz dowiedzieć
-            się jak unikać zakażenia.
-          </Paragraph>
-          <Paragraph>
-            Obserwując wyniki oraz stosując środki zaradcze minimalizujesz
-            ryzyko zachorowania.
-          </Paragraph>
-          <Paragraph>
-            Dzięki aplikacji trzymasz rękę na pulsie - dbasz o zdrowie swoje i
-            swoich bliskich.
-          </Paragraph>
-          <Paragraph>Oto jej funkcje:</Paragraph>
-          <List>
-            <ListItem>
-              <strong>Powiadamianie o ryzyku zakażenia koronawirusem</strong> –
-              korzystając ze wspólnych wysiłków firm Apple i Google i we
-              współpracy z instytucjami zdrowia publicznego wdrożyliśmy
-              rozwiązanie, które na podstawie analizy stopnia ryzyka i w oparciu
-              o dane spotkanych urządzeń, umożliwia powiadomianie o kontakcie z
-              osobą zakażoną.
-            </ListItem>
-            <ListItem>
-              <strong>Test oceny ryzyka</strong> - opracowaliśmy go na bazie
-              wytycznych Światowej Organizacji Zdrowia (WHO). Dzięki niemu m.in.
-              dowiesz się jak dbać o swoje zdrowie i jak działać w przypadku
-              podejrzenia zakażenia.
-            </ListItem>
-            <ListItem>
-              <strong>Dziennik zdrowia</strong> – ułatwia prowadzenie
-              codziennych zapisków o stanie zdrowia, w tym zapisywanie objawów.
-            </ListItem>
-            <ListItem>
-              <strong>Profilaktyka</strong> – wskazówki, gdzie - w razie
-              potrzeby - szukać specjalistycznej pomocy, aktualne informacje i
-              zalecenia.
-            </ListItem>
-            <ListItem>
-              <strong>Pomoc w diagnozie</strong> - regularnie uzupełniane przez
-              Ciebie infomacje - w razie konieczności - pomogą lekarzom wystawić
-              diagnozę. Tylko oni mogą to zrobić.
-            </ListItem>
-          </List>
-          <Paragraph>
-            <strong>Ważne! Test oceny ryzyka NIE jest diagnozą.</strong>
-          </Paragraph>
-          <Paragraph>
-            * Komunikacja z użytkownikiem – wysyłanie zweryfikowanych wiadomości
-            od WHO i Ministerstwa Zdrowia. To od naszej postawy zależy, jak
-            szybko pokonamy koronawirusa i wrócimy do normalnego życia.
-            Korzystaj z naszej aplikacji, stosuj się do wytycznych! Prowadzenie
-            dziennika zdrowia jest bardzo proste i nie zajmuje wiele czasu.
-            Zacznij od dziś – zadbaj o siebie i swoich bliskich.
-          </Paragraph>
-        </Container>
-        <BottomNavigation />
-      </Content>
-    </View>
+    <Layout isNavigation>
+      <Title>{t('how_it_works_text1')}</Title>
+      <Paragraph>
+        <strong>{t('how_it_works_text2')}</strong> {t('how_it_works_text3')}
+      </Paragraph>
+      <Paragraph>{t('how_it_works_text4')}</Paragraph>
+      <Paragraph>{t('how_it_works_text5')}</Paragraph>
+      <Paragraph>{t('how_it_works_text6')}</Paragraph>
+      <List>
+        <ListItem>
+          <strong>{t('how_it_works_text7')}</strong>
+          {t('how_it_works_text8')}
+        </ListItem>
+        <ListItem>
+          <strong>{t('how_it_works_text9')}</strong>
+          {t('how_it_works_text10')}
+        </ListItem>
+        <ListItem>
+          <strong>{t('how_it_works_text11')}</strong>
+          {t('how_it_works_text12')}
+        </ListItem>
+        <ListItem>
+          <strong>{t('how_it_works_text13')}</strong>
+          {t('how_it_works_text14')}
+        </ListItem>
+        <ListItem>
+          <strong>{t('how_it_works_text15')}</strong>
+          {t('how_it_works_text16')}
+        </ListItem>
+      </List>
+      <Paragraph>
+        <strong>{t('how_it_works_text17')}</strong>
+      </Paragraph>
+      <Paragraph>{t('how_it_works_text18')}</Paragraph>
+    </Layout>
   );
 };
 
-export default HowItWorks;
+export default withTranslation()(HowItWorks);

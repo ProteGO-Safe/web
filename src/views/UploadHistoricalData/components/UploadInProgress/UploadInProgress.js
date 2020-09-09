@@ -1,45 +1,31 @@
 import React from 'react';
+import { withTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { getUserName } from '../../../../store/selectors/user';
-import { Header, Loader } from '../../../../components';
-import { BottomNavigation } from '../../../../components/BottomNavigation';
-import { Container, Content, View } from '../../../../theme/grid';
+import { Layout, Loader } from '../../../../components';
 import { Name, Paragraph, TextLink } from '../../../../theme/typography';
 import { Information, LoaderWrapper } from './UploadInProgress.styled';
 import Routes from '../../../../routes';
 
-const UploadInProgress = () => {
+const UploadInProgress = ({ t }) => {
   const userName = useSelector(getUserName);
 
   return (
-    <View>
-      <Header hideBackButton />
-      <Content>
-        <Container className="full-height">
-          <Name>{userName},</Name>
-          <Paragraph>
-            dziękujemy, że myślisz o innych. Jesteś odpowiedzialna/-y i
-            solidarna/-y. Informacja o ryzyku kontaktu z koronawirusem trafi na
-            urządzenia osób, z którymi się widziałaś/widziałeś.
-          </Paragraph>
-          <LoaderWrapper>
-            <Loader />
-          </LoaderWrapper>
-          <Information>
-            Dbamy o Twoją prywatność i bezpieczeństwo Twoich danych.
-            Przekazujesz informacje w pełni anonimowo. Nie ma możliwości, by
-            ktokolwiek mógł Cię zidentyfikować. Więcej informacji znajdziesz
-            w&nbsp;
-            <Link to={Routes.PrivacyPolicy}>
-              <TextLink>Polityce prywatności</TextLink>.
-            </Link>
-          </Information>
-        </Container>
-        <BottomNavigation />
-      </Content>
-    </View>
+    <Layout hideBackButton isNavigation>
+      <Name>{userName},</Name>
+      <Paragraph>{t('upload_in_progress_text1')}</Paragraph>
+      <LoaderWrapper>
+        <Loader />
+      </LoaderWrapper>
+      <Information>
+        {t('upload_in_progress_text2')}{' '}
+        <Link to={Routes.PrivacyPolicy}>
+          <TextLink>{t('upload_in_progress_text3')}</TextLink>.
+        </Link>
+      </Information>
+    </Layout>
   );
 };
 
-export default UploadInProgress;
+export default withTranslation()(UploadInProgress);

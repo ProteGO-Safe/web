@@ -1,10 +1,11 @@
 import React from 'react';
+import { withTranslation } from 'react-i18next';
 import { GreenSmile } from '../../../../assets/img/icons/buzka-zielona';
 import { YellowSmile } from '../../../../assets/img/icons/buzka-zolta';
 import { RedSmile } from '../../../../assets/img/icons/buzka-czerwona';
 import { Icons, Paragraph, Title, Wrapper } from './SmileNoData.styled';
 
-const SmileNoData = () => {
+const SmileNoData = ({ t }) => {
   return (
     <Wrapper>
       <Icons>
@@ -12,15 +13,10 @@ const SmileNoData = () => {
         <YellowSmile />
         <RedSmile />
       </Icons>
-      <Title>
-        Brakuje informacji do analizy Twojego ryzyka zakażenia koronawirusem.
-      </Title>
-      <Paragraph>
-        Wypełnij test oceny ryzyka lub zaczekaj na informacje o kontaktach z
-        zakażonymi.
-      </Paragraph>
+      <Title>{t('smile_no_data_text1')}</Title>
+      <Paragraph>{t('smile_no_data_text2')}</Paragraph>
     </Wrapper>
   );
 };
 
-export default SmileNoData;
+export default withTranslation()(SmileNoData);

@@ -1,7 +1,7 @@
 {
   "01": {
     "sex": "female",
-    "age": 12,
+    "moreThan65": false,
     "evidence": [
       {
         "id": "s_0",
@@ -67,7 +67,7 @@
   },
   "02": {
     "sex": "female",
-    "age": 12,
+    "moreThan65": false,
     "evidence": [
       {
         "id": "s_0",
@@ -133,7 +133,7 @@
   },
   "03": {
     "sex": "female",
-    "age": 12,
+    "moreThan65": false,
     "evidence": [
       {
         "id": "s_0",
@@ -199,7 +199,7 @@
   },
   "04": {
     "sex": "female",
-    "age": 12,
+    "moreThan65": false,
     "evidence": [
       {
         "id": "s_0",
@@ -265,7 +265,7 @@
   },
   "05": {
     "sex": "female",
-    "age": 12,
+    "moreThan65": false,
     "evidence": [
       {
         "id": "s_0",
@@ -335,7 +335,7 @@
   },
   "06": {
     "sex": "female",
-    "age": 12,
+    "moreThan65": false,
     "evidence": [
       {
         "id": "s_0",
@@ -410,7 +410,7 @@
   },
   "07": {
     "sex": "female",
-    "age": 11,
+    "moreThan65": false,
     "evidence": [
       {
         "id": "s_0",
@@ -484,7 +484,7 @@
   },
   "08": {
     "sex": "female",
-    "age": 12,
+    "moreThan65": false,
     "evidence": [
       {
         "id": "s_0",
@@ -558,7 +558,7 @@
   },
   "09": {
     "sex": "female",
-    "age": 12,
+    "moreThan65": false,
     "evidence": [
       {
         "id": "s_0",

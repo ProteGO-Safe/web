@@ -1,17 +1,15 @@
 import React from 'react';
+import { withTranslation } from 'react-i18next';
+import { Small, Paragraph } from '../../../../theme/typography';
+import { Color } from '../../../../theme/colors';
+import * as Styled from './MoreInformation.styled';
 
-const MoreInformation = () => (
-  <div className="more-information">
-    <h4>Więcej informacji</h4>
-    <p>
-      Aktualne informacje na temat sytuacji epidemicznej oraz inne porady i
-      wskazówki, znajdziesz na www.gov.pl/koronawirus
-    </p>
-    <small>
-      Wyniki Testu służą wyłącznie celom informacyjnym oraz edukacyjnym. Nie
-      traktuj ich jako konsultacji lub diagnozy lekarskiej.
-    </small>
-  </div>
+const MoreInformation = ({ t }) => (
+  <Styled.MoreInformation>
+    <Styled.Title>{t('home_more_information_text1')}</Styled.Title>
+    <Paragraph color={Color.lightBlack}>{t('home_more_information_text2')}</Paragraph>
+    <Small>{t('home_more_information_text3')}</Small>
+  </Styled.MoreInformation>
 );
 
-export default MoreInformation;
+export default withTranslation()(MoreInformation);

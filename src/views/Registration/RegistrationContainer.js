@@ -6,6 +6,7 @@ import { useDispatch } from 'react-redux';
 import { saveUserName } from '../../store/actions/user';
 import * as constants from '../../constants';
 import Registration from './Registration';
+import { userNameValidationSchema } from '../../utils/user';
 
 const RegistrationContainer = () => {
   const dispatch = useDispatch();
@@ -17,11 +18,7 @@ const RegistrationContainer = () => {
   };
 
   const validationSchema = Yup.object().shape({
-    [constants.FIELD_NAME]: Yup.string()
-      .trim()
-      .min(3, 'Za krótki pseudonim')
-      .max(20, 'Za długi pseudonim')
-      .matches(/^[a-zA-Z0-9wąćęłńóśźżĄĆĘŁŃÓŚŹŻ ]+$/, 'Bez znaków specjalnych')
+    [constants.FIELD_NAME]: userNameValidationSchema
   });
 
   const handleSubmit = form => {
