@@ -1,4 +1,5 @@
 import React from 'react';
+import { withTranslation } from 'react-i18next';
 import { Email, Url } from '../../../../components';
 import {
   Annotation,
@@ -10,437 +11,248 @@ import {
   ListItem
 } from './PrivacyPolicyContent.styled';
 
-const PrivacyPolicyContent = () => (
+const PrivacyPolicyContent = ({ t }) => (
   <>
     <Paragraph>
-      <strong>ProteGO Safe</strong>
+      <strong>{t('privacy_policy_content_text1')}</strong>
     </Paragraph>
     <Paragraph>
-      <strong>Najistotniejsze informacje dotyczące Twojej prywatności</strong>
+      <strong>{t('privacy_policy_content_text2')}</strong>
     </Paragraph>
     <Paragraph>
-      Przygotowaliśmy ten dokument, aby poinformować Cię jak przetwarzamy
-      informacje i dane w ProteGO Safe, a także jakie prawa Ci przysługują.
-      Poniżej znajdziesz kluczowe informacje związane z przetwarzaniem danych i
-      informacji w ramach naszej Aplikacji.
+      {t('privacy_policy_content_text3')}
       <br />
-      Zaprojektowaliśmy ProteGO Safe zgodnie z zasadami Privacy by Default oraz
-      Privacy by Design. Oznacza to, że domyślnie stosujemy ochronę Twojej
-      prywatności i staraliśmy się ograniczyć przetwarzanie informacji o Tobie
-      już na etapie projektowania i tworzenia aplikacji ProteGO Safe. Staramy
-      się nie pozyskiwać od Ciebie informacji, które umożliwią Twoją
-      identyfikację (tj. danych osobowych), gdyż wierzymy, że skuteczne
-      zapobieganie pandemii{' '}
-      <Url value="https://www.gov.pl/web/koronawirus">COVID-19</Url> nie wymaga
-      przetwarzania danych osobowych.
+      {t('privacy_policy_content_text4')}{' '}
+      <Url value="https://www.gov.pl/web/koronawirus">COVID-19</Url>{' '}
+      {t('privacy_policy_content_text5')}
     </Paragraph>
     <Paragraph>
-      <u>
-        Informacje przetwarzane przez ProteGO Safe nie umożliwiają Twojej
-        identyfikacji.
-      </u>
+      <u>{t('privacy_policy_content_text6')}</u>
+    </Paragraph>
+    <Paragraph>{t('privacy_policy_content_text7')}</Paragraph>
+    <Paragraph>{t('privacy_policy_content_text8')}</Paragraph>
+    <Paragraph>
+      {t('privacy_policy_content_text9')}{' '}
+      <Url value="https://www.gov.pl/web/koronawirus">COVID-19</Url>{' '}
+      {t('privacy_policy_content_text138')}
     </Paragraph>
     <Paragraph>
-      Nie będziemy mieli dostępu do informacji i danych osobowych, które
-      wprowadzisz do aplikacji ProteGO Safe. Nie będziemy podejmowali aktywnych
-      działań, aby Cię zidentyfikować. Nie będziemy także analizowali w jaki
-      sposób korzystasz z ProteGO Safe.
+      {t('privacy_policy_content_text10')}{' '}
+      <Url value="https://www.gov.pl/web/koronawirus">COVID-19</Url>{' '}
+      {t('privacy_policy_content_text11')}{' '}
+      <Url value="https://www.gov.pl/web/koronawirus">COVID-19</Url>{' '}
+      {t('privacy_policy_content_text12')}{' '}
+      <Url value="https://www.gov.pl/web/koronawirus">COVID-19</Url>
+      {t('privacy_policy_content_text13')}{' '}
     </Paragraph>
-    <Paragraph>
-      Informacje wprowadzone do ProteGO Safe związane z Triażem (samooceną
-      ryzyka zarażenia COVID- 19 - Moduł Triażu) są analizowane w ramach ProteGO
-      Safe bez opuszczania Twojego urządzenia.
-    </Paragraph>
-    <Paragraph>
-      Funkcjonalność analizowania narażenia na zarażenie COVID-10 w związku z
-      kontaktem z innymi Użytkownikami Aplikacji (Moduł Analityczny) jest
-      dobrowolna. Masz możliwość analizowania potencjalnego narażenia na
-      zarażenie <Url value="https://www.gov.pl/web/koronawirus">COVID-19</Url>{' '}
-      wykorzystując do tego celu technologię Bluetooth. Jeśli zdecydujesz się na
-      korzystanie z tej funkcjonalności Twoje Urządzenie będzie analizowało
-      otoczenie, w którym się znajdujesz, w poszukiwaniu innych Urządzeń na
-      których zainstalowana jest Aplikacja. W przypadku spotkania innego
-      Urządzenia, na którym zainstalowana jest Aplikacja ProteGO Safe w obu
-      Aplikacjach zapisze się informacja o tym spotkaniu. Historia spotykanych
-      Urządzeń pozostaje na Twoim Urządzeniu nie dłużej niż przez 14 dni.
-    </Paragraph>
-    <Paragraph>
-      Jeśli Twój test na{' '}
-      <Url value="https://www.gov.pl/web/koronawirus">COVID-19</Url> będzie miał
-      wynik pozytywny zadzwoni do Ciebie konsultant Centrum Kontaktu, który
-      poinformuje o pozytywnym wyniku testu. Następnie konsultant Centrum
-      Kontaktu zapyta Cię, czy masz zainstalowaną aplikację ProteGO Safe. Jeśli
-      tak będzie, konsultant Centrum Kontaktu zaproponuje Ci możliwość
-      powiadomienia innych Użytkowników o tym, że przebywali w pobliżu
-      Urządzenia Osoby Chorej na{' '}
-      <Url value="https://www.gov.pl/web/koronawirus">COVID-19</Url> w ciągu
-      ostatnich 14 dni poprzez podyktowanie Ci Kodu PIN. Kod PIN ma na celu
-      potwierdzenie, że Twoje urządzenie, to urządzenie osoby chorej na{' '}
-      <Url value="https://www.gov.pl/web/koronawirus">COVID-19</Url>.
-      Potwierdzenie to ma charakter anonimowy, ani my, ani inni Użytkownicy nie
-      będą w stanie rozróżnić poszczególnych Urządzeń i przypisać do nich
-      konkretnych Użytkowników. Po wprowadzeniu kodu PIN zostanie zainicjowany
-      proces przesłania anonimowego Klucza Diagnostycznego na serwer ProteGO
-      Safe, a następnie do Urządzeń innych Użytkowników w celu analizy ryzyka
-      zarażenia COVID- 19. Wprowadzenie Kodu PIN do Urządzenia jest dobrowolne.
-    </Paragraph>
-    <Paragraph>
-      Klucz Diagnostyczny wysłany z Twojego Urządzenia na Serwer ProteGO Safe
-      nie będzie zawierał Twoich danych osobowych ani informacji o Urządzeniach
-      z którymi miałeś styczność. Ty będziesz decydować o tym, czy chcesz
-      oznaczyć swoje Urządzenie jako Urządzenie Osoby Chorej, co zainicjuje
-      wysłanie anonimowego Klucza Diagnostycznego na Serwer ProteGO Safe a
-      następnie do innych Użytkowników Aplikacji. Każda z Aplikacji, po
-      otrzymaniu Klucza Diagnostycznego dokonuje automatycznej analizy spotkań
-      poprzez odpowiednie porównanie otrzymanego Klucza Diagnostycznego z
-      historią spotkań Urządzeń z zainstalowaną Aplikacją z ostatnich 14 dni.
-      Analiza wykonywana jest niezależnie na Urządzeniu każdego Użytkownika,
-      brana jest w niej pod uwagę w szczególności odległość Użytkowników (siła
-      sygnału) oraz czas przebywania w pobliżu osoby zakażonej i w jej wyniku
-      może zostać zmieniony status aktualnej grupy ryzyka.
-    </Paragraph>
+    <Paragraph>{t('privacy_policy_content_text14')}</Paragraph>
     <Annotation>§1.</Annotation>
-    <Title>Postanowienia ogólne</Title>
+    <Title>{t('privacy_policy_content_text15')}</Title>
     <ListNumber>
+      <ListItem>{t('privacy_policy_content_text16')}</ListItem>
+      <ListItem>{t('privacy_policy_content_text141')}</ListItem>
+      <ListItem>{t('privacy_policy_content_text17')}</ListItem>
+      <ListItem>{t('privacy_policy_content_text18')}</ListItem>
       <ListItem>
-        Niniejsza Polityka Prywatności określa zasady zbierania, przetwarzania i
-        ochrony prywatności Użytkowników w związku z korzystaniem z aplikacji
-        ProteGO Safe. GIS ani MC nie przetwarzają Danych Osobowych w ramach
-        ProteGO Safe.
+        {t('privacy_policy_content_text142')}{' '}
+        <Email>{t('privacy_policy_content_text143')}</Email>
       </ListItem>
       <ListItem>
-        Poprzez pobranie ProteGO Safe ze sklepu Play lub AppStore oraz
-        zainstalowanie Użytkownik wyraża zgodę, o której mowa w art. 173 ust. 1
-        pkt. 2 Prawa Telekomunikacyjnego, a Regulamin oraz Polityka Prywatności
-        stanowią informację, o której mowa w art. 173 ust. 1 pkt. 1 Prawa
-        Telekomunikacyjnego.
+        {t('privacy_policy_content_text19')}{' '}
+        <Email>{t('privacy_policy_content_text20')}</Email>{' '}
+        {t('privacy_policy_content_text21')}{' '}
+        <Email>{t('privacy_policy_content_text22')}</Email>.
       </ListItem>
-      <ListItem>
-        Niniejszy dokument jest przygotowany w oparciu o postanowienia
-        Rozporządzenia Parlamentu Europejskiego i Rady (UE) 2016/679 z dnia 27
-        kwietnia 2016 r. w sprawie ochrony osób fizycznych w związku z
-        przetwarzaniem Danych Osobowych i w sprawie swobodnego przepływu takich
-        danych oraz uchylenia dyrektywy 95/46/WE (ogólne rozporządzenie o
-        ochronie danych), ustawy z dnia 10 maja 2018 r. o ochronie Danych
-        Osobowych (Dz.U. z 2018 r. poz. 1000) oraz innych przepisów powszechnie
-        obowiązujących.
-      </ListItem>
-      <ListItem>
-        W razie ogólnych pytań dotyczących prywatności, a także pytań
-        dotyczących niniejszej Polityki Prywatności zachęcamy do kontaktu pod
-        adresem: <Email>protego@mc.gov.pl</Email> lub{' '}
-        <Email>iod@gis.gov.pl</Email>.
-      </ListItem>
-      <ListItem>
-        GIS zapewnia, iż dokłada wszelkich starań, by Aplikacja Protego Safe
-        zapewniała najwyższy standard ochrony prywatności Użytkowników, a w
-        szczególności zapewnia, iż podjął wszelkie przewidziane prawem i możliwe
-        technologicznie środki zmierzające do zabezpieczenia prywatności
-        Użytkowników.
-      </ListItem>
-      <ListItem>
-        GIS oświadcza, iż stosuje środki techniczne i organizacyjne zapewniające
-        ochronę prywatności Użytkowników odpowiednią do zagrożeń oraz kategorii
-        informacji objętych ochroną, a w szczególności stosuje szyfrowanie oraz
-        zabezpiecza informacje przed ich udostępnieniem osobom nieupoważnionym,
-        zabraniem przez osobę nieuprawnioną, przetwarzaniem z naruszeniem prawa
-        oraz zmianą, utratą, uszkodzeniem lub zniszczeniem.
-      </ListItem>
+      <ListItem>{t('privacy_policy_content_text23')}</ListItem>
+      <ListItem>{t('privacy_policy_content_text24')}</ListItem>
     </ListNumber>
     <Annotation>§2.</Annotation>
-    <Title>Definicje</Title>
-    <Paragraph>Ilekroć w Polityce Prywatności mowa o:</Paragraph>
+    <Title>{t('privacy_policy_content_text25')}</Title>
+    <Paragraph>{t('privacy_policy_content_text26')}</Paragraph>
     <ListNumber>
       <ListItem>
-        <strong>MC </strong>- rozumie się przez to Ministra Cyfryzacji z
-        siedzibą w Warszawie, ul. Królewska 27, 00 – 060 Warszawa. MC w oparciu
-        o porozumienie wspiera GIS w rozwoju i utrzymaniu ProteGO Safe.
-      </ListItem>
-      <ListItem>
-        <strong>GIS </strong>– rozumie się przez to Głównego Inspektora
-        Sanitarnego z siedzibą w Warszawie, ul. Targowa 65, 03–729 Warszawa. GIS
-        samodzielnie ustala cele i sposoby przetwarzania informacji przez
-        ProteGO Safe.
-      </ListItem>
-      <ListItem>
-        <strong>Danych Osobowych </strong>– rozumie się przez to wszelkie
-        informacje dotyczące zidentyfikowanej lub możliwej do zidentyfikowania
-        osoby fizycznej w rozumieniu art. 4 pkt. 1 RODO;
-      </ListItem>
-      <ListItem>
-        <strong>ProteGO Safe lub Aplikacji </strong>– rozumie się przez to
-        aplikację ProteGO Safe, która zawiera Moduł Analityczny, Moduł Triażu
-        oraz Moduł Dziennik Zdrowia, a także wspiera w profilaktyce i
-        zapobieganiu zarażeniem, przekazuje istotne informacje związane z
-        pandemią <Url value="https://www.gov.pl/web/koronawirus">COVID-19</Url>{' '}
-        oraz przypomina o bezpiecznych zachowaniach i nawykach codziennej
-        higieny.
-      </ListItem>
-      <ListItem>
-        <strong>Regulaminie </strong>– rozumie się przez to dokument, który
-        określa warunki korzystania z ProteGO Safe, a także prawa i obowiązki
-        GIS, MC oraz Użytkowników.
-      </ListItem>
-      <ListItem>
-        <strong>Module Analitycznym </strong>- rozumie się przez to
-        funkcjonalność ProteGO Safe umożliwiająca zapisywanie, tworzenie
-        historii oraz analizowanie spotkania Urządzenia Użytkownika z innymi
-        Urządzeniami Użytkowników Aplikacji. Moduł Analityczny jest oparty o
-        Privacy-Preserving Contact Tracing API wytworzone oraz udostępnione
-        przez Google oraz Apple. Informacje generowane przez Moduł Analityczny
-        wraz z wynikami jego pracy są przechowywane lokalnie na Urządzeniu przez
-        14 dni. Google oraz Apple w swojej dokumentacji, którą można odnaleźć
-        tutaj:{' '}
-        <Url value="https://www.google.com/covid19/exposurenotifications/">
-          exposurenotifications
-        </Url>{' '}
-        oraz{' '}
-        <Url value="https://developer.apple.com/documentation/exposurenotification">
-          exposurenotification
-        </Url>{' '}
-        zapewniają, że stosują najwyższe standardy bezpieczeństwa, aby chronić
-        prywatność Użytkowników.
-      </ListItem>
-      <ListItem>
-        <strong>Moduł Triażu </strong>- rozumie się przez to funkcjonalność
-        ProteGO Safe umożliwiająca wykonanie przez Użytkownika samooceny ryzyka
-        narażenia na zakażenie{' '}
-        <Url value="https://www.gov.pl/web/koronawirus">COVID-19</Url>,
-        stworzona na podstawie kwestionariusza WHO. Informacje wprowadzane do
-        Modułu Triażu są przechowywane lokalnie na Urządzeniu Użytkownika.
-      </ListItem>
-      <ListItem>
-        <strong>Klucz Diagnostyczny </strong>- rozumie się przez to generowany
-        losowo, okresowy i alfanumeryczny ciąg znaków przekazywany na Serwer
-        ProteGO Safe, który zawiera anonimowe informacje inicjujące proces
-        analizy narażenia na zarażenie{' '}
-        <Url value="https://www.gov.pl/web/koronawirus">COVID-19</Url> w ramach
-        Modułu Analitycznego. Klucz Diagnostyczny jest przekazywany na Serwer
-        ProteGO Safe po wpisaniu do Aplikacji Kodu PIN przez Użytkownika
-        będącego Osobą Chorą.
-      </ListItem>
-      <ListItem>
-        <strong>Serwer ProteGO Safe </strong>- rozumie się przez to
-        infrastrukturę chmurową utrzymywaną przez Operatora Chmury Krajowej
-        służącą do przekazania Klucza Diagnostycznego do Urządzeń Użytkowników.
-        Klucze Diagnostyczne są przechowywane na Serwerze ProteGO Safe w postaci
-        zaszyfrowanej przez 14 (czternaście) dni.
-      </ListItem>
-      <ListItem>
-        <strong>Centrum Kontaktu </strong>- rozumie się przez to jednostkę
-        powiadamiającą telefonicznie o wyniku testu na{' '}
-        <Url value="https://www.gov.pl/web/koronawirus">COVID-19</Url>,
-        przekazującą Kod PIN Użytkownikom Aplikacji i udzielająca informacji
-        związanych z{' '}
+        <strong>{t('privacy_policy_content_text49')}</strong>
+        {t('privacy_policy_content_text50')}{' '}
+        <Url value="https://www.gov.pl/web/koronawirus">COVID-19</Url>
+        {t('privacy_policy_content_text51')}{' '}
         <Url value="https://www.gov.pl/web/koronawirus">COVID-19</Url>.
       </ListItem>
       <ListItem>
-        <strong>Moduł Dziennik Zdrowia </strong> rozumie się przez to
-        funkcjonalność ProteGO Safe o charakterze notatnika umożliwiającą
-        Użytkownikowi odnotowywanie informacji o swoim stanie zdrowia.
-        Informacje wprowadzane do Modułu Dziennik Zdrowia sąprzechowywane
-        lokalnie na Urządzeniu Użytkownika.
+        <strong>{t('privacy_policy_content_text31')}</strong>
+        {t('privacy_policy_content_text32')}
       </ListItem>
       <ListItem>
-        <strong>RODO </strong>– rozumie się przez to Rozporządzenia Parlamentu
-        Europejskiego i Rady (UE) 2016/679 z dnia 27 kwietnia 2016 r. w sprawie
-        ochrony osób fizycznych w związku z przetwarzaniem Danych Osobowych i w
-        sprawie swobodnego przepływu takich danych oraz uchylenia dyrektywy
-        95/46/WE (ogólne rozporządzenie o ochronie danych).
+        <strong>{t('privacy_policy_content_text29')}</strong>
+        {t('privacy_policy_content_text30')}
       </ListItem>
       <ListItem>
-        <strong>Urządzeniu </strong>– rozumie się przez to elektroniczne
-        urządzenie za pośrednictwem, którego Użytkownik uzyskuje dostęp do
-        ProteGO Safe (tablet, smartphone itp.) z aktywnym modułem Bluetooth,
-        systemem Android 5.0 lub wyższym z dostępem do sklepu Google Play albo z
-        systemem iOS w wersji nie niższej niż 13.5 z dostępem do sklepu
-        AppStore. Moduł Analityczny będzie działał jedynie w Urządzeniach z
-        systemem Android 6.0 wspierających technologię BLE lub wyższym albo z
-        systemem iOS w wersji nie niższej niż 13.5.
+        <strong>{t('privacy_policy_content_text44')}</strong>
+        {t('privacy_policy_content_text45')}{' '}
+        <Url value="https://www.gov.pl/web/koronawirus">COVID-19</Url>{' '}
+        {t('privacy_policy_content_text46')}
       </ListItem>
       <ListItem>
-        <strong>Użytkowniku </strong>– rozumie się przez to osobę posiadającą
-        pełną zdolność do czynności prawnych, która po zaakceptowaniu Regulaminu
-        i Polityki Prywatności korzysta z ProteGO Safe.
+        <strong>{t('privacy_policy_content_text27')}</strong>
+        {t('privacy_policy_content_text28')}
       </ListItem>
       <ListItem>
-        <strong>WHO </strong>- rozumie się przez to Światową Organizację Zdrowia
-        (World Health Organisation).
+        <strong>{t('privacy_policy_content_text37')}</strong>
+        {t('privacy_policy_content_text38')}{' '}
+        <Url value="https://www.google.com/covid19/exposurenotifications/">
+          {t('privacy_policy_content_text39')}
+        </Url>{' '}
+        oraz{' '}
+        <Url value="https://developer.apple.com/documentation/exposurenotification">
+          {t('privacy_policy_content_text40')}
+        </Url>{' '}
+        {t('privacy_policy_content_text140')}
+      </ListItem>
+      <ListItem>
+        <strong>{t('privacy_policy_content_text52')}</strong>
+        {t('privacy_policy_content_text53')}
+      </ListItem>
+      <ListItem>
+        <strong>{t('privacy_policy_content_text41')}</strong>
+        {t('privacy_policy_content_text42')}{' '}
+        <Url value="https://www.gov.pl/web/koronawirus">COVID-19</Url>
+        {t('privacy_policy_content_text43')}
+      </ListItem>
+      <ListItem>
+        <strong>{t('privacy_policy_content_text144')}</strong>
+        {t('privacy_policy_content_text145')}{' '}
+        <Url value="https://www.gov.pl/web/koronawirus">COVID-19</Url>
+        {t('privacy_policy_content_text146')}
+      </ListItem>
+      <ListItem>
+        <strong>{t('privacy_policy_content_text33')}</strong>
+        {t('privacy_policy_content_text34')}{' '}
+        <Url value="https://www.gov.pl/web/koronawirus">COVID-19</Url>
+        {t('privacy_policy_content_text139')}
+      </ListItem>
+      <ListItem>
+        <strong>{t('privacy_policy_content_text147')}</strong>
+        {t('privacy_policy_content_text148')}
+      </ListItem>
+      <ListItem>
+        <strong>{t('privacy_policy_content_text35')}</strong>
+        {t('privacy_policy_content_text36')}
+      </ListItem>
+      <ListItem>
+        <strong>{t('privacy_policy_content_text54')}</strong>
+        {t('privacy_policy_content_text55')}
+      </ListItem>
+      <ListItem>
+        <strong>{t('privacy_policy_content_text47')}</strong>
+        {t('privacy_policy_content_text48')}
+      </ListItem>
+      <ListItem>
+        <strong>{t('privacy_policy_content_text56')}</strong>
+        {t('privacy_policy_content_text57')}
+      </ListItem>
+      <ListItem>
+        <strong>{t('privacy_policy_content_text58')}</strong>
+        {t('privacy_policy_content_text59')}
+      </ListItem>
+      <ListItem>
+        <strong>{t('privacy_policy_content_text149')} </strong>
+        {t('privacy_policy_content_text60')}
       </ListItem>
     </ListNumber>
     <Annotation>§3.</Annotation>
-    <Title>Ogólne zasady</Title>
+    <Title>{t('privacy_policy_content_text61')}</Title>
     <ListNumber>
+      <ListItem>{t('privacy_policy_content_text62')}</ListItem>
       <ListItem>
-        Protego Safe przetwarza informacje niebędące Danymi Osobowymi wyłącznie
-        w następujących celach:
+        {t('privacy_policy_content_text150_1')}{' '}
+        <Url value="https://www.gov.pl/web/koronawirus">COVID-19</Url>
+        {t('privacy_policy_content_text150_2')}{' '}
+        <Url value="https://www.gov.pl/web/koronawirus">COVID-19</Url>
+        {t('privacy_policy_content_text150_3')}
+      </ListItem>
+      <ListItem>
+        {t('privacy_policy_content_text67_1')}{' '}
+        <strong>{t('privacy_policy_content_text67_2')}</strong>{' '}
+        {t('privacy_policy_content_text67_3')}
+      </ListItem>
+      <ListItem>
+        {t('privacy_policy_content_text151_1')}{' '}
+        <strong>{t('privacy_policy_content_text151_2')}</strong>{' '}
+        {t('privacy_policy_content_text151_3')}{' '}
+        <Url value="https://www.gov.pl/web/koronawirus">COVID-19</Url>{' '}
+        {t('privacy_policy_content_text151_4')}
+      </ListItem>
+      <ListItem>
+        {t('privacy_policy_content_text68')}
         <ListNumber>
-          <ListItem>
-            przeciwdziałania pandemii{' '}
-            <Url value="https://www.gov.pl/web/koronawirus">COVID-19</Url>;
-          </ListItem>
-          <ListItem>
-            zanonimizowanego profilowania w ramach Modułu Analitycznego w celu
-            przeciwdziałania pandemii{' '}
-            <Url value="https://www.gov.pl/web/koronawirus">COVID-19</Url>;
-          </ListItem>
-          <ListItem>
-            korzystania przez Użytkownika z Aplikacji zgodnie z Regulaminem;
-          </ListItem>
-          <ListItem>
-            analiza, organizowanie i ulepszanie ProteGO Safe w oparciu o dane
-            statystyczne określone w §3 ust. 4 pkt. 2.
-          </ListItem>
+          <ListItem>{t('privacy_policy_content_text69')}</ListItem>
+          <ListItem>{t('privacy_policy_content_text70')}</ListItem>
+          <ListItem>{t('privacy_policy_content_text71')}</ListItem>
+          <ListItem>{t('privacy_policy_content_text152')}</ListItem>
+          <ListItem>{t('privacy_policy_content_text72')}</ListItem>
         </ListNumber>
       </ListItem>
       <ListItem>
-        Protego Safe działa w związku z realizacją przez GIS obowiązków
-        wynikających z art. 1, 2, 3, 6 oraz 8a ust. 1, 4 i 5 ustawy z dnia 14
-        marca 1985 r o Państwowej Inspekcji Sanitarnej (Dz.U. z 2019 r. poz.
-        59).
-      </ListItem>
-      <ListItem>
-        ProteGO Safe przetwarza informacje niewymagające identyfikacji jak
-        stanowi art. 11 RODO. GIS ani MC nie są w stanie zidentyfikować osoby,
-        której dane dotyczą (Użytkownika). GIS przestrzega następujących zasad:
+        {t('privacy_policy_content_text73')}
         <ListNumber>
           <ListItem>
-            wdraża odpowiednie środki techniczne i organizacyjne, aby
-            przetwarzanie danych o Użytkownikach Aplikacji odbywało się w sposób
-            anonimowy bez ich identyfikacji zgodnie z przepisami o ochronie
-            Danych Osobowych i aby móc to wykazać;
-          </ListItem>
-          <ListItem>
-            wykonuje nadzór nad bezpieczeństwem danych przez cały okres ich
-            posiadania w sposób zapewniający w szczególności ochronę przed
-            dostępem osób nieuprawnionych, uszkodzeniem, zniszczeniem lub
-            utratą;
-          </ListItem>
-          <ListItem>
-            zachowuje poufność informacji dotyczących Użytkownika poprzez
-            zastosowanie szyfrowania;
-          </ListItem>
-          <ListItem>
-            zapewnia osobom, których dane dotyczą, realizację ich praw
-            wynikających z przepisów prawa.
-          </ListItem>
-        </ListNumber>
-      </ListItem>
-      <ListItem>
-        Aplikacja może przetwarzać następujące informacje:
-        <ListNumber>
-          <ListItem>
-            Dane związane z wykorzystywaniem serwera zapewniającego
-            przekazywanie Użytkownikom komunikatów:
+            {t('privacy_policy_content_text74')}
             <ListAlpha>
               <ListItem>
-                <strong>UID </strong>– losowe oznaczenie Użytkownika
-                uniemożliwiające identyfikację,
+                <strong>{t('privacy_policy_content_text75')}</strong>
+                {t('privacy_policy_content_text76')}
               </ListItem>
-              <ListItem>
-                Średni czas korzystania z Aplikacji przez Użytkowników (dane
-                statystyczne, których nie można powiązać z poszczególnymi
-                Użytkownikami).
-              </ListItem>
+              <ListItem>{t('privacy_policy_content_text77')}</ListItem>
             </ListAlpha>
           </ListItem>
           <ListItem>
-            Dane statystyczne pochodzące ze sklepów z aplikacjami tj. Google
-            Play Store oraz Apple AppStore, których nie można powiązać z
-            poszczególnymi Użytkownikami (dane statystyczne):
+            {t('privacy_policy_content_text78')}
             <ListAlpha>
-              <ListItem>
-                Informacja o instalacji, ostatnim korzystaniu i usunięciu
-                Aplikacji;
-              </ListItem>
-              <ListItem>
-                Lokalizacja, w której znajdował się Użytkownik podczas
-                instalacji Aplikacji (określenie miasta lub kraju);
-              </ListItem>
-              <ListItem>Modele Urządzeń Użytkowników;</ListItem>
+              <ListItem>{t('privacy_policy_content_text79')}</ListItem>
+              <ListItem>{t('privacy_policy_content_text80')}</ListItem>
+              <ListItem>{t('privacy_policy_content_text81')}</ListItem>
             </ListAlpha>
           </ListItem>
           <ListItem>
-            Dane przechowywane lokalnie na Urządzeniach, niezależnie od systemu
-            operacyjnego Urządzenia. Dane te nie są przekazywane poza Urządzenie
-            Użytkownika:
+            {t('privacy_policy_content_text82')}
             <ListAlpha>
-              <ListItem>ID Użytkownika,</ListItem>
-              <ListItem>Historia wpisów do Dziennika Zdrowia,</ListItem>
-              <ListItem>Historia wpisów do Modułu Triażu,</ListItem>
+              <ListItem>{t('privacy_policy_content_text83')}</ListItem>
+              <ListItem>{t('privacy_policy_content_text84')}</ListItem>
+              <ListItem>{t('privacy_policy_content_text85')}</ListItem>
+              <ListItem>{t('privacy_policy_content_text86')}</ListItem>
+              <ListItem>{t('privacy_policy_content_text87')}</ListItem>
+              <ListItem>{t('privacy_policy_content_text88')}</ListItem>
+              <ListItem>{t('privacy_policy_content_text89')}</ListItem>
+              <ListItem>{t('privacy_policy_content_text90')}</ListItem>
+              <ListItem>{t('privacy_policy_content_text91')}</ListItem>
+              <ListItem>{t('privacy_policy_content_text92')}</ListItem>
+              <ListItem>{t('privacy_policy_content_text93')}</ListItem>
               <ListItem>
-                Temporary_exposure_keys_upload_status - informacja czy
-                przesłanie informacji w ramach Modułu Analitycznego zakończyło
-                się pomyślnie czy też z błędem,
-              </ListItem>
-              <ListItem>
-                informacja o tym, czy Aplikacja jest uruchamiana pierwszy raz,
-              </ListItem>
-              <ListItem>Informacja o połączeniu Internetowym,</ListItem>
-              <ListItem>
-                informacja o tym, czy Użytkownik udzielił zgodę na powiadomienia
-                push w Aplikacji,
-              </ListItem>
-              <ListItem>
-                informacja o tym, czy Użytkownik przydzielił Aplikacji
-                uprawnienie konieczne dla funkcjonowania Modułu Analitycznego,
-              </ListItem>
-              <ListItem>
-                informacja o tym, czy moduł Bluetooth urządzenia jest włączony,
-              </ListItem>
-              <ListItem>
-                Informacja o stanie, włączeniu i aktywności Modułu
-                Analitycznego,
-              </ListItem>
-              <ListItem>
-                Informacja o stanie Aplikacji (czy jest włączona na pierwszym
-                planie, czy w tle),
-              </ListItem>
-              <ListItem>
-                Informacje usuwane po 14 dniach:
+                {t('privacy_policy_content_text94')}
                 <ListRoman>
-                  <ListItem>
-                    historia wyników analiz Modułu Analitycznego z ostatnich 14
-                    dni,
-                  </ListItem>
-                  <ListItem>
-                    okres kontaktu Urządzeń Użytkowników, wartości w zakresie
-                    5-30 minut,
-                  </ListItem>
-                  <ListItem>data kontaktu Urządzeń Użytkowników.</ListItem>
+                  <ListItem>{t('privacy_policy_content_text95')}</ListItem>
+                  <ListItem>{t('privacy_policy_content_text96')}</ListItem>
+                  <ListItem>{t('privacy_policy_content_text97')}</ListItem>
                 </ListRoman>
               </ListItem>
             </ListAlpha>
           </ListItem>
           <ListItem>
-            Dane przekazywane do innych Urządzeń za pośrednictwem Serwera
-            ProteGO Safe:
+            {t('privacy_policy_content_text98')}
             <ListAlpha>
               <ListItem>
-                Klucz Diagnostyczny - zawiera informacje o kluczu,
-                rollingPeriod, rollingStartNumber oraz transmissionRisk
-                (dokładne informacje{' '}
+                {t('privacy_policy_content_text99')}{' '}
                 <Url value="https://developer.apple.com/documentation/exposurenotification/entemporaryexposurekey">
-                  tutaj
+                  {t('privacy_policy_content_text100')}
                 </Url>
                 )
               </ListItem>
-              <ListItem>region działania Aplikacji (Polska);</ListItem>
-              <ListItem>
-                informacja, że Klucz Diagnostyczny jest związany z aplikacją
-                ProteGO Safe;
-              </ListItem>
-              <ListItem>potwierdzenie, że Kod PIN jest poprawny.</ListItem>
+              <ListItem>{t('privacy_policy_content_text101')}</ListItem>
+              <ListItem>{t('privacy_policy_content_text102')}</ListItem>
+              <ListItem>{t('privacy_policy_content_text103')}</ListItem>
             </ListAlpha>
           </ListItem>
           <ListItem>
-            Anonimowy plik cookies zawierający UID Użytkownika przekazywany do
-            Cloudflare Inc. w celu zapobiegania atakom DDOS oraz zapewnienia
-            najwyższych standardów bezpieczeństwa Użytkowników. Anonimowy plik
-            cookies, o którym mowa w niniejszym punkcie nie umożliwia
-            profilowania, ani monitorowania zachowań Użytkownika na różnych
-            witrynach (cross-site tracking). Więcej informacji dotyczących
-            bezpieczeństwa tego rozwiązania jest dostępne tutaj:{' '}
+            {t('privacy_policy_content_text104')}{' '}
             <Url value="https://support.cloudflare.com/hc/en-us/articles/200170156-Understanding-the-Cloudflare-Cookies#12345682">
               https://support.cloudflare.com/
             </Url>
@@ -448,143 +260,99 @@ const PrivacyPolicyContent = () => (
           </ListItem>
         </ListNumber>
       </ListItem>
+      <ListItem>{t('privacy_policy_content_text153')}</ListItem>
       <ListItem>
-        Odbiorcami zanonimizowanych danych i informacji z ProteGO Safe:
+        {t('privacy_policy_content_text105')}
         <ListNumber>
           <ListItem>
-            w zakresie określonym w §3 ust. 4 pkt. 1, 2 i 4 mogą być podmioty,
-            które współpracują z GIS w celu rozwoju i utrzymania ProteGO Safe:
+            {t('privacy_policy_content_text106')}
             <ListAlpha>
               <ListItem>
-                MC odpowiedzialny za nadzór nad rozwojem i utrzymaniem ProteGO
-                Safe tj. Minister Cyfryzacji z siedzibą w Warszawie, ul.
-                Królewska 27, 00 – 060 Warszawa, e-mail:{' '}
-                <Email>mc@mc.gov.pl</Email>;
+                {t('privacy_policy_content_text107')}{' '}
+                <Email>{t('privacy_policy_content_text108')}</Email>;
               </ListItem>
-              <ListItem>
-                podmiot odpowiedzialny za utrzymanie aplikacji ProteGO Safe, a
-                także wykonywanie zleconych przez MC prac rozwojowych iUID –
-                losow deweloperskich nad ProteGO Safe: TYTANI24 Spółka z
-                ograniczoną odpowiedzialnością z siedzibą we Wrocławiu, ul.
-                Ząbkowicka 55, 50 – 511 Wrocław (adres biura: ul. Kościerzyńska
-                32A, Wrocław, 51 – 410), wpisana do rejestru przedsiębiorców
-                Krajowego Rejestru Sądowego prowadzonego przez Sąd Rejonowy we
-                Wrocławiu, VI Wydział Gospodarczy Krajowego Rejestru Sądowego,
-                pod numerem KRS 0000725465, REGON 369879064, NIP 8992843182, o
-                kapitale zakładowym opłaconym w całości w wysokości 20 000,00
-                zł;
-              </ListItem>
+              <ListItem>{t('privacy_policy_content_text109')}</ListItem>
             </ListAlpha>
           </ListItem>
           <ListItem>
-            w zakresie określonym w §3 ust. 4 pkt. 1, 2 i 4 może być Operator
-            Chmury Krajowej Sp. z o.o. jako podmiot dostarczający infrastrukturę
-            umożliwiającą pobieranie i aktualizowanie ProteGO Safe oraz
-            utrzymujący Serwer ProteGO Safe. Podmiot ten świadczy także
-            utrzymanie usługi Google Firebase umożliwiającej przekazywanie
-            Użytkownikom powiadomień push -{' '}
+            {t('privacy_policy_content_text110')}{' '}
             <Url value="https://firebase.google.com/support/privacy">
               https://firebase.google.com
             </Url>
             ;
           </ListItem>
+          <ListItem>{t('privacy_policy_content_text111')}</ListItem>
+        </ListNumber>
+      </ListItem>
+      <ListItem>
+        {t('privacy_policy_content_text112')}{' '}
+        <Url value="https://www.gov.pl/web/koronawirus">COVID-19</Url>{' '}
+        {t('privacy_policy_content_text113')}
+      </ListItem>
+      <ListItem>{t('privacy_policy_content_text114')}</ListItem>
+      <ListItem>{t('privacy_policy_content_text154')}</ListItem>
+      <ListItem>{t('privacy_policy_content_text115')}</ListItem>
+    </ListNumber>
+    <Annotation>§4.</Annotation>
+    <Title>{t('privacy_policy_content_text116')}</Title>
+    <ListNumber>
+      <ListItem>{t('privacy_policy_content_text155')}</ListItem>
+      <ListItem>
+        {t('privacy_policy_content_text156')}
+        <ListNumber>
+          <ListItem>{t('privacy_policy_content_text157')}</ListItem>
+          <ListItem>{t('privacy_policy_content_text158')}</ListItem>
+          <ListItem>{t('privacy_policy_content_text159')}</ListItem>
+          <ListItem>{t('privacy_policy_content_text160')}</ListItem>
+          <ListItem>{t('privacy_policy_content_text161')}</ListItem>
+        </ListNumber>
+      </ListItem>
+      <ListItem>{t('privacy_policy_content_text162')}</ListItem>
+      <ListItem>
+        {t('privacy_policy_content_text117')}
+        <ListNumber>
+          <ListItem>{t('privacy_policy_content_text118')}</ListItem>
           <ListItem>
-            w zakresie określonym w §3 ust. 4 pkt. 5 może być: Cloudflare Inc.
-            101 Townsend St, San Francisco, CA 94107, USA w zakresie
-            dostarczania usługi zapobiegania atakom DDOS oraz zapewnienia
-            najwyższych standardów bezpieczeństwa Użytkowników.
+            {t('privacy_policy_content_text119')}
+            <ListAlpha>
+              <ListItem>{t('privacy_policy_content_text120')}</ListItem>
+              <ListItem>{t('privacy_policy_content_text163')}</ListItem>
+              <ListItem>
+                {t('privacy_policy_content_text126')}
+                {'\n'}
+                {t('privacy_policy_content_text131')}
+              </ListItem>
+            </ListAlpha>
           </ListItem>
         </ListNumber>
       </ListItem>
       <ListItem>
-        ProteGO Safe będzie aktywne jedynie przez okres pandemii{' '}
-        <Url value="https://www.gov.pl/web/koronawirus">COVID-19</Url> i może
-        zostać dezaktywowana zgodnie z decyzją GIS. Po zaprzestaniu korzystania
-        z ProteGO Safe wszystkie informacje zostaną usunięte wraz z Aplikacją.
+        {t('privacy_policy_content_text132')}{' '}
+        <Email>{t('privacy_policy_content_text133')}</Email>.
       </ListItem>
+      <ListItem>{t('privacy_policy_content_text134')}</ListItem>
       <ListItem>
-        Informacje dotyczące Użytkownika w postaci anonimowego adresu UID mogą
-        być przekazywane poza Europejski Obszar Gospodarczy w zakresie
-        korzystania z usługi świadczonej przez Cloudflare w celu zapobiegania
-        atakom DDOS oraz zapewnienia najwyższych standardów bezpieczeństwa
-        Użytkowników. Numer UID Użytkownika pozostanie anonimowy i nie będzie
-        umożliwiał identyfikacji Użytkownika. Takie przekazanie nastąpi także
-        jedynie w sytuacji wyjątkowej, w szczególności wtedy, gdy Użytkownik
-        będzie korzystał z Aplikacji poza terenem Europejskiego Obszaru
-        Gospodarczego.
-      </ListItem>
-      <ListItem>
-        W ramach ProteGO Safe nie są podejmowane decyzje w sposób
-        zautomatyzowany w rozumieniu art. 22 RODO. Oznacza to, że okoliczność
-        korzystania z Aplikacji nie powoduje wydawania w stosunku do Użytkownika
-        jakichkolwiek decyzji, które mogłyby mieć charakter skutku prawnego lub
-        w podobny sposób istotnie wpływać na Użytkownika.
-      </ListItem>
-    </ListNumber>
-    <Annotation>§4.</Annotation>
-    <Title>Prawa Użytkowników</Title>
-    <ListNumber>
-      <ListItem>
-        ProteGO Safe umożliwia Użytkownikowi w dowolnym czasie usunięcie
-        historii Modułu Analitycznego, Modułu Dziennik Zdrowia oraz Modułu
-        Triażu. W tym celu należy skorzystać z odpowiednich funkcjonalności
-        ProteGO Safe.
-      </ListItem>
-      <ListItem>
-        Aby usunąć dane z Modułu Triażu, Modułu Dziennik Zdrowia oraz innych
-        danych wprowadzonych przez Użytkownika należy na ekranie głównym ProteGO
-        Safe wybrać kolejno: Więcej, następnie Moje dane, następnie Zarządzaj
-        danymi, a następnie Wymaż dane. Po zatwierdzeniu przez Użytkownika
-        decyzji wszystkie dane wprowadzone przez Użytkownika zostaną
-        bezpowrotnie usunięte.
-      </ListItem>
-      <ListItem>
-        Aby usunąć dane z Modułu Analitycznego należy odpowiednio:
-        <ListAlpha>
+        {t('privacy_policy_content_text164')}
+        <ListNumber>
+          <ListItem>{t('privacy_policy_content_text165')}</ListItem>
+          <ListItem>{t('privacy_policy_content_text166')}</ListItem>
           <ListItem>
-            dla Urządzeń z systemem iOS wybrać kolejno: Ustawienia Systemowe{' '}
-            {'>'} Prywatność {'>'} Zdrowie {'>'} Rejestrowanie Narażenia na{' '}
-            <Url value="https://www.gov.pl/web/koronawirus">COVID-19</Url> -
-            {'>'} Usuń dziennik narażeń;
+            {t('privacy_policy_content_text167')}
+            {'\n'}
+            {t('privacy_policy_content_text168')}
           </ListItem>
-          <ListItem>
-            dla Urządzeń z systemem Android wybrać kolejno: Ustawienia -{'>'}{' '}
-            Google -{'>'} Powiadomienia o ryzyku ekspozycji na{' '}
-            <Url value="https://www.gov.pl/web/koronawirus">COVID-19</Url> -
-            {'>'} Usuń losowe identyfikatory;
-          </ListItem>
-        </ListAlpha>
-        po zatwierdzeniu przez Użytkownika decyzji wszystkie dane związane z
-        Modułem Analitycznym zostaną bezpowrotnie usunięte.
+        </ListNumber>
       </ListItem>
-      <ListItem>
-        W sprawie jakichkolwiek pytań i wniosków związanych z prawami
-        Użytkowników należy kontaktować się pod adresem:{' '}
-        <Email>protego@mc.gov.pl</Email>.
-      </ListItem>
-      <ListItem>
-        Użytkownik, ma prawo wniesienia skargi do Prezesa Urzędu Ochrony Danych
-        Osobowych, jeżeli uzna, że Przetwarzanie jego Danych Osobowych narusza
-        przepisy RODO lub powszechnie obowiązujące przepisy. Skargę można wysłać
-        pisemnie na adres: Prezes Urzędu Ochrony Danych Osobowych, ul. Stawki 2,
-        00-193 Warszawa lub elektroniczne za pośrednictwem portalu ePUAP.
-      </ListItem>
+      <ListItem>{t('privacy_policy_content_text169')}</ListItem>
     </ListNumber>
     <Annotation>§5.</Annotation>
-    <Title>Postanowienia końcowe</Title>
+    <Title>{t('privacy_policy_content_text135')}</Title>
     <ListNumber>
-      <ListItem>
-        W ProteGO Safe mogą pojawiać się linki do innych stron internetowych.
-        Takie strony internetowe działają niezależnie od GIS i nie są w żaden
-        sposób przez niego nadzorowane. Strony te mogą posiadać własne polityki
-        prywatności oraz regulaminy, z którymi zalecamy się zapoznać.
-      </ListItem>
-      <ListItem>
-        GIS zastrzega sobie prawo zmiany Polityki Prywatności poprzez
-        opublikowanie nowej Polityki Prywatności na stronie ProteGO Safe.
-      </ListItem>
+      <ListItem>{t('privacy_policy_content_text136')}</ListItem>
+      <ListItem>{t('privacy_policy_content_text137')}</ListItem>
+      <ListItem>{t('privacy_policy_content_text170')}</ListItem>
     </ListNumber>
   </>
 );
 
-export default PrivacyPolicyContent;
+export default withTranslation()(PrivacyPolicyContent);

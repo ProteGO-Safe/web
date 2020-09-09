@@ -83,16 +83,6 @@ export const Watermark = styled.span`
   color: ${Color.watermark};
 `;
 
-export const RepliesList = styled.ul`
-  padding-left: 18px;
-`;
-
-export const RepliesListItem = styled.li`
-  font-size: 14px;
-  line-height: 1.5;
-  color: ${Color.lightBlack};
-`;
-
 export const LinkStyle = styled.span`
   color: #0052a5;
   font-weight: bold;

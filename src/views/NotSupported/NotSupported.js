@@ -1,33 +1,28 @@
 import React from 'react';
-
-import { Button, GovFooter, Url } from '../../components';
-import Header from '../../components/Header/Header';
+import { withTranslation } from 'react-i18next';
+import { Button, Layout, Url } from '../../components';
 import { Logo, Title, Paragraph } from './NotSupported.styled';
-import { Container, Content, View } from '../../theme/grid';
 
-const NotSupported = ({ url }) => {
+const NotSupported = ({ t, url }) => {
   return (
-    <View>
-      <Header hideBackButton />
-      <Content>
-        <Container className="full-height">
-          <Logo />
-          <Title>Wymagana aktualizacja</Title>
-          <Paragraph>
-            Dostępna jest nowa wersja aplikacji.
-            <br />
-            Zaktualizuj aplikację ProteGO Safe, aby korzystać z pełni
-            funkcjonalności.
-          </Paragraph>
+    <Layout hideBackButton isGovFooter>
+      <Logo />
+      <Title>{t('not_supported_text1')}</Title>
+      <Paragraph>
+        {t('not_supported_text2')}
+        <br />
+        {t('not_supported_text3')}
+      </Paragraph>
 
-          <Url value={url} underlineOff>
-            <Button onClick={() => null} text="AKTUALIZUJ" type="primary" />
-          </Url>
-          <GovFooter type="black" />
-        </Container>
-      </Content>
-    </View>
+      <Url value={url} underlineOff>
+        <Button
+          onClick={() => null}
+          text={t('not_supported_text4')}
+          type="primary"
+        />
+      </Url>
+    </Layout>
   );
 };
 
-export default NotSupported;
+export default withTranslation()(NotSupported);

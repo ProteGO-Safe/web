@@ -27,9 +27,6 @@ export const FaqContent = styled.div`
   display: flex;
   flex-flow: wrap row;
   width: 100%;
-  .collapse:last-child {
-    margin-bottom: 32px;
-  }
 `;
 
 export const FaqIntro = styled.p`
@@ -41,7 +38,7 @@ export const FaqIntro = styled.p`
 
 export const FaqTitle = styled.h2`
   width: 100%;
-  margin-top: 0;
+  margin-top: 32px;
   font-size: 20px;
   font-weight: ${FontWeight.Bold};
   line-height: 1.3;
@@ -49,6 +46,8 @@ export const FaqTitle = styled.h2`
 `;
 
 export const FaqUppercase = styled.p`
+  width: 100%;
+  margin-top: 18px;
   margin-bottom: 18px;
   font-size: 14px;
   font-weight: ${FontWeight.Bold};

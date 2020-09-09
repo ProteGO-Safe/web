@@ -2,14 +2,13 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { useFormikContext } from 'formik';
 
-import { Checkbox, FieldSet } from '../../../../components';
-import { Button } from '../../../../components/Button';
+import { withTranslation } from 'react-i18next';
+import { Button, Checkbox, FieldSet } from '../../../../components';
 import { VALUE_ABSENT, VALUE_PRESENT } from '../../../../constants';
-import Icon from '../../../../assets/img/icons/angle-right-white.svg';
 import { itemsPropType } from '../../prop-types';
 import { Title } from '../../Diagnosis.styled';
 
-const GroupMultiple = ({ text, items }) => {
+const GroupMultiple = ({ t, text, items }) => {
   const { setFieldValue, values, submitForm } = useFormikContext();
   const [otherSelected, setOtherSelected] = useState(false);
 
@@ -36,13 +35,13 @@ const GroupMultiple = ({ text, items }) => {
 
   return (
     <>
-      <Title>{text}</Title>
+      <Title>{t(text)}</Title>
       <FieldSet>
         {items.map(item => (
           <Checkbox
             checked={values[item.id] === VALUE_PRESENT}
             key={item.id}
-            label={item.name}
+            label={t(item.name)}
             name={item.id}
             onChange={() => handleChange(item.id)}
             type="checkbox"
@@ -52,8 +51,8 @@ const GroupMultiple = ({ text, items }) => {
         ))}
         <Checkbox
           checked={otherSelected}
-          label="Żadne z powyższych"
-          name="Żadne z powyższych"
+          label={t('group_multiple_text1')}
+          name={t('group_multiple_text1')}
           onChange={handelSelectOther}
           type="checkbox"
           size="big"
@@ -62,9 +61,7 @@ const GroupMultiple = ({ text, items }) => {
       <Button
         disabled={!someSelected}
         onClick={submitForm}
-        icon={Icon}
-        size="medium"
-        text="Dalej"
+        label={t('button_next')}
       />
     </>
   );
@@ -75,4 +72,4 @@ GroupMultiple.propTypes = {
   items: itemsPropType
 };
 
-export default GroupMultiple;
+export default withTranslation()(GroupMultiple);

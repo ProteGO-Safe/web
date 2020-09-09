@@ -1,9 +1,10 @@
 import React, { useEffect, useState, useRef } from 'react';
+import { withTranslation } from 'react-i18next';
 import useTriage from '../../../../hooks/useTriage';
 import { InfoContainer } from './TriageRiskInformation.styled';
 import { CallHelpline } from '../../../../components/CallHelpline';
 
-const TriageRiskInformation = () => {
+const TriageRiskInformation = ({ t }) => {
   const { color, content } = useTriage();
 
   const ref = useRef(null);
@@ -25,7 +26,7 @@ const TriageRiskInformation = () => {
 
   return (
     <InfoContainer color={color} ref={ref}>
-      <p>{content}</p>
+      <p>{t(content)}</p>
       <CallHelpline
         hideText={hideText}
         color={color}
@@ -35,4 +36,4 @@ const TriageRiskInformation = () => {
   );
 };
 
-export default TriageRiskInformation;
+export default withTranslation()(TriageRiskInformation);

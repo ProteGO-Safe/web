@@ -1,14 +1,13 @@
 import React from 'react';
+import { withTranslation } from 'react-i18next';
 import { useHistory } from 'react-router-dom';
 import Routes from '../../routes';
-import { Collapse, Button, FieldSet, PhoneNumber, Url } from '../../components';
+import { Collapse, Button, FieldSet, PhoneNumber } from '../../components';
 import {
   CollapseWrapper,
   List,
   ListItem,
   Paragraph,
-  RepliesList,
-  RepliesListItem,
   Title,
   Warning,
   WarningLabel,
@@ -22,70 +21,44 @@ import IconAdviceHome from '../../assets/img/icons/zostan-w-domu.svg';
 import IconAdvicePhone from '../../assets/img/icons/seniorzy.svg';
 import IconAdviceNote from '../../assets/img/icons/dziennik.svg';
 
-const AdviceInformation = ({ collapse, title, watermark }) => {
+const AdviceInformation = ({ t, collapse, watermark }) => {
   const history = useHistory();
 
-  const parseUrl = phrases =>
-    phrases.map((phrase, index) => {
-      const part = phrase.split(/\|/);
-      return part.length > 1 ? (
-        <Url key={index} value={part[1]}>
-          <strong>{part[0]}</strong>
-        </Url>
-      ) : (
-        part
-      );
-    });
-  const renderLine = line => {
-    const phrases = line.split(/\[url\]/);
-    return parseUrl(phrases);
-  };
-
   const renderCollapse = collapse.map((item, i) => {
-    const repliesLength = item.replies.length;
+    const { title, reply } = item;
     return (
-      <Collapse key={i} title={item.title}>
-        {repliesLength > '1' ? (
-          <RepliesList>
-            {item.replies.map((reply, key) => (
-              <RepliesListItem key={key}>{renderLine(reply)}</RepliesListItem>
-            ))}
-          </RepliesList>
-        ) : (
-          <>
-            {item.replies.map((reply, key) => (
-              <Paragraph key={key}>{renderLine(reply)}</Paragraph>
-            ))}
-          </>
-        )}
+      <Collapse key={i} title={title}>
+        <Paragraph>
+          <span
+            dangerouslySetInnerHTML={{
+              __html: reply
+            }}
+          />
+        </Paragraph>
       </Collapse>
     );
   });
 
   return (
     <>
-      <Title>{title}</Title>
+      <Title>{t('advice_information_text2')}</Title>
       <List>
         <ListItem>
-          <img src={IconAdviceHome} alt="Ikonka" />
-          <p>Zostań w domu.</p>
+          <img src={IconAdviceHome} alt={t('advice_information_text1')} />
+          <p>{t('advice_information_text1')}</p>
         </ListItem>
         <ListItem>
-          <img src={IconAdvicePhone} alt="Ikonka" />
-          <p>
-            Zadzwoń do rodziców i krewnych w podeszłym wieku. Pomóż im korzystać
-            z ProteGo Safe na ich telefonie. Zrób dla nich zakupy. Unikaj
-            kontaktu osobistego.
-          </p>
+          <img src={IconAdvicePhone} alt={t('advice_information_text1')} />
+          <p>{t('advice_information_text2')}</p>
         </ListItem>
         <ListItem>
-          <img src={IconAdviceNote} alt="Ikonka" />
+          <img src={IconAdviceNote} alt={t('advice_information_text1')} />
           <p>
-            Regularnie uzupełniaj zakładkę{' '}
+            {t('advice_information_text4')}{' '}
             <LinkStyle onClick={() => history.push(Routes.Daily)}>
-              MÓJ DZIENNIK ZDROWIA
+              {t('advice_information_text5')}
             </LinkStyle>
-            : zapisuj w aplikacji objawy i temperaturę ciała.
+            {t('advice_information_text6')}
           </p>
         </ListItem>
       </List>
@@ -93,21 +66,22 @@ const AdviceInformation = ({ collapse, title, watermark }) => {
       <Watermark>{watermark}</Watermark>
       <Warning>
         <WarningLabel>
-          <img src={IconWarning} alt="Ważne" />
-          Ważne
+          <img src={IconWarning} alt={t('advice_information_text7')} />
+          {t('advice_information_text7')}
         </WarningLabel>
         <Paragraph>
-          Jeśli u Ciebie lub Twoich bliskich wystąpią objawy zakażenia
-          koronawirusem, zadzwoń na darmową, całodobową infolinię{' '}
-          <PhoneNumber value="222500115">222 500 115</PhoneNumber> lub do
-          lokalnej placówki służby zdrowia.
+          {t('advice_information_text8')}{' '}
+          <PhoneNumber value="222500115">
+            {t('advice_information_text9')}
+          </PhoneNumber>{' '}
+          {t('advice_information_text10')}
         </Paragraph>
       </Warning>
       <FieldSet>
-        <Button onClick={() => history.push(Routes.Home)} text="OK" />
+        <Button onClick={() => history.push(Routes.Home)} label="OK" />
       </FieldSet>
     </>
   );
 };
 
-export default AdviceInformation;
+export default withTranslation()(AdviceInformation);

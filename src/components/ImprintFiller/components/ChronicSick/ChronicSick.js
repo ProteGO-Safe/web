@@ -1,4 +1,5 @@
 import React, { Fragment } from 'react';
+import { withTranslation } from 'react-i18next';
 import { useFormikContext } from 'formik';
 import { FormGroup } from '@material-ui/core';
 
@@ -11,8 +12,6 @@ import {
 
 import { Button, Checkbox, Radio, TextField } from '../../..';
 
-import Icon from '../../../../assets/img/icons/angle-right-white.svg';
-
 import {
   Actions,
   Description,
@@ -22,7 +21,7 @@ import {
   Title
 } from '../../ImprintFiller.styled';
 
-const ChronicSick = () => {
+const ChronicSick = ({ t }) => {
   const { handleChange, setFieldValue, values } = useFormikContext();
 
   const handleSelectChronicSick = () => {
@@ -55,7 +54,7 @@ const ChronicSick = () => {
       <Fragment key={field}>
         <Checkbox
           checked={values[field]}
-          label={<Label>{field}</Label>}
+          label={<Label>{t(field)}</Label>}
           name={field}
           onChange={() => handleSetFieldValue(field, !values[field])}
           size="big"
@@ -64,7 +63,7 @@ const ChronicSick = () => {
         {values[field] && placeholder && (
           <InputWrapper>
             <TextField
-              label={placeholder}
+              label={t(placeholder)}
               name={description}
               onChange={handleChange}
               value={values[description] || ''}
@@ -82,42 +81,36 @@ const ChronicSick = () => {
 
   return (
     <>
-      <Title>Czy cierpisz na jakąś dolegliwość?</Title>
+      <Title>{t('chronic_sick_text1')}</Title>
       <FormGroup>
         <Radio
           checked={values[FIELD_IS_CHRONIC_SICK] === VALUE_IS_CHRONIC_SICK_NO}
-          label={
-            <Label>
-              Nie, jestem zdrowy/-a i nie cierpię na przewlekłe choroby
-            </Label>
-          }
+          label={<Label>{t('chronic_sick_text2')}</Label>}
           onChange={handleSelectNoChronicSick}
           name={FIELD_IS_CHRONIC_SICK}
         />
         <Radio
           checked={values[FIELD_IS_CHRONIC_SICK] === VALUE_IS_CHRONIC_SICK_YES}
-          label={<Label>Tak, jestem przewlekle chory/-a</Label>}
+          label={<Label>{t('chronic_sick_text3')}</Label>}
           onChange={handleSelectChronicSick}
           name={FIELD_IS_CHRONIC_SICK}
         />
       </FormGroup>
       {isChronicSick && (
         <SubContainer>
-          <Description>Zaznacz dolegliwość, na którą cierpisz:</Description>
+          <Description>{t('chronic_sick_text4')}</Description>
           {renderCheckboxes}
         </SubContainer>
       )}
       <Actions>
         <Button
           disabled={disabled}
-          icon={Icon}
           onClick={goToNextStep}
-          size="medium"
-          text="Dalej"
+          label={t('button_next')}
         />
       </Actions>
     </>
   );
 };
 
-export default ChronicSick;
+export default withTranslation()(ChronicSick);

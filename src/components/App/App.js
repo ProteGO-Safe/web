@@ -5,6 +5,7 @@ import 'moment/locale/pl';
 import { useDispatch, useSelector } from 'react-redux';
 import { Redirect, Route, Switch, useHistory } from 'react-router-dom';
 import {
+  AddTranslation,
   Daily,
   DailyData,
   Diagnosis,
@@ -22,6 +23,8 @@ import {
   Regulations,
   RiskTestData,
   Settings,
+  SettingsLanguages,
+  MenuSettings,
   StartScreen,
   UserData,
   UserDataChange,
@@ -32,19 +35,18 @@ import {
   UploadHistoricalData,
   FaqPage
 } from '../../views';
-
-import {
-  fetchNativeVersion,
-  fetchNotification
-} from '../../store/actions/nativeData';
+import { Menu } from '../index';
+import { fetchNativeVersion } from '../../store/actions/nativeData';
 import useMenuContext from '../../hooks/useMenuContext';
-import { Menu } from '../Menu';
 import Routes from '../../routes';
 import './App.scss';
 import { Notification } from '../Notification';
 import useFilledDiagnosis from '../../hooks/useFilledDiagnosis';
 import { markDataFromNewestVersion } from '../../store/actions/app';
 import { isLocalPWA, isWebView } from '../../utils/native';
+import useMigration from '../../hooks/useMigration';
+import useCheckLanguage from '../../hooks/useCheckLanguage';
+import useNotification from '../../hooks/useNotification';
 
 function App() {
   moment.locale('pl');
@@ -58,21 +60,15 @@ function App() {
     startScreenShowed,
     firstDiagnosisFinished
   } = useSelector(state => state.app);
-  const { notification } = useSelector(state => state.nativeData);
+  const { notification } = useNotification();
   const { inProgress, visible: menuIsVisible } = useMenuContext();
   const { hasFilledAnyDiagnosis } = useFilledDiagnosis();
+  useMigration();
+  useCheckLanguage();
 
   useEffect(() => {
     dispatch(fetchNativeVersion());
   }, [dispatch, startScreenShowed]);
-
-  useEffect(() => {
-    if (!notification) {
-      const interval = setInterval(() => dispatch(fetchNotification()), 1000);
-      return () => clearInterval(interval);
-    }
-    return () => null;
-  }, [notification, dispatch]);
 
   history.listen(() => {
     window.scroll(0, 0);
@@ -118,71 +114,76 @@ function App() {
 
   return (
     <div className={className}>
-      <div className="app__inner">
-        <Switch>
-          <Route exact path={Routes.Home} component={resolveHomeComponent} />
-          {name && (
-            <>
-              <Route exact path={Routes.Daily} component={Daily} />
-              <Route exact path="/daily/:id" component={DailyData} />
-              <Route exact path="/daily-data" component={DailyData} />
-              <Route exact path={Routes.HowItWorks} component={HowItWorks} />
-              <Route exact path={Routes.IAmSick} component={IAmSick} />
-              <Route exact path={Routes.RiskTest} component={RiskTest} />
-              <Route exact path={Routes.Settings} component={Settings} />
-              <Route
-                exact
-                path="/risk-test-data/:id"
-                component={RiskTestData}
-              />
-              <Route exact path={Routes.EmergencyNumbers} component={Numbers} />
-              <Route
-                exact
-                path={Routes.PrivacyPolicy}
-                component={PrivacyPolicy}
-              />
-              <Route
-                exact
-                path={Routes.PrivacyPolicyDetails}
-                component={PrivacyPolicyDetails}
-              />
-              <Route exact path={Routes.Regulations} component={Regulations} />
-              <Route exact path={Routes.Diagnosis} component={Diagnosis} />
-              <Route exact path={Routes.UserData} component={UserData} />
-              <Route
-                exact
-                path={Routes.HospitalsList}
-                component={HospitalsList}
-              />
-              <Route exact path={Routes.ReportBug} component={ReportBug} />
-              <Route
-                exact
-                path={Routes.UserDataChange}
-                component={UserDataChange}
-              />
-              <Route
-                exact
-                path={Routes.UserDataSettings}
-                component={UserDataSettings}
-              />
-              <Route
-                exact
-                path={Routes.AdviceInformation}
-                component={AdviceInformation}
-              />
-              <Route exact path={Routes.FaqPage} component={FaqPage} />
-              <Route
-                exact
-                path={Routes.UploadHistoricalData}
-                component={UploadHistoricalData}
-              />
-            </>
-          )}
-          <Route render={() => <Redirect to={Routes.Home} />} />
-        </Switch>
-        <Menu />
-        {notification && <Notification />}
-      </div>
+      <Switch>
+        <Route exact path={Routes.Home} component={resolveHomeComponent} />
+        {name && (
+          <>
+            <Route
+              exact
+              path={Routes.AddTranslation}
+              component={AddTranslation}
+            />
+            <Route exact path={Routes.Daily} component={Daily} />
+            <Route exact path="/daily/:id" component={DailyData} />
+            <Route exact path={Routes.DailyData} component={DailyData} />
+            <Route exact path={Routes.HowItWorks} component={HowItWorks} />
+            <Route exact path={Routes.IAmSick} component={IAmSick} />
+            <Route exact path={Routes.RiskTest} component={RiskTest} />
+            <Route exact path={Routes.Settings} component={MenuSettings} />
+            <Route exact path={Routes.SettingsBluetooth} component={Settings} />
+            <Route
+              exact
+              path={Routes.SettingsLanguages}
+              component={SettingsLanguages}
+            />
+            <Route exact path="/risk-test-data/:id" component={RiskTestData} />
+            <Route exact path={Routes.EmergencyNumbers} component={Numbers} />
+            <Route
+              exact
+              path={Routes.PrivacyPolicy}
+              component={PrivacyPolicy}
+            />
+            <Route
+              exact
+              path={Routes.PrivacyPolicyDetails}
+              component={PrivacyPolicyDetails}
+            />
+            <Route exact path={Routes.Regulations} component={Regulations} />
+            <Route exact path={Routes.Diagnosis} component={Diagnosis} />
+            <Route exact path={Routes.UserData} component={UserData} />
+            <Route
+              exact
+              path={Routes.HospitalsList}
+              component={HospitalsList}
+            />
+            <Route exact path={Routes.ReportBug} component={ReportBug} />
+            <Route
+              exact
+              path={Routes.UserDataChange}
+              component={UserDataChange}
+            />
+            <Route
+              exact
+              path={Routes.UserDataSettings}
+              component={UserDataSettings}
+            />
+            <Route
+              exact
+              path={Routes.AdviceInformation}
+              component={AdviceInformation}
+            />
+            <Route exact path={Routes.FaqPage} component={FaqPage} />
+            <Route
+              exact
+              path={Routes.UploadHistoricalData}
+              component={UploadHistoricalData}
+            />
+          </>
+        )}
+        <Route render={() => <Redirect to={Routes.Home} />} />
+      </Switch>
+      <Menu />
+      {notification && <Notification />}
     </div>
   );
 }

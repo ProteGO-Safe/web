@@ -1,12 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { withTranslation } from 'react-i18next';
 import { NavLink } from 'react-router-dom';
-import LogoSafeSafe from '../../assets/img/logo/protegosafe_logo_white.svg';
+import LogoSafeSafe from '../../assets/img/logo/stopcovid_protegosafe_logo_sygnet.svg';
 import useMenuContext from '../../hooks/useMenuContext';
 import { VersionApp } from '../index';
 import './Menu.scss';
 
-const Menu = ({ items }) => {
+const Menu = ({ t, items }) => {
   const { visible, startHiding, inProgress } = useMenuContext();
   const handleClose = () => startHiding();
 
@@ -31,8 +32,8 @@ const Menu = ({ items }) => {
           onClick={handleClose}
           to={path}
         >
-          <img className="menu__item__icon" src={icon} alt={title} />
-          {title}
+          <img className="menu__item__icon" src={icon} alt={t(title)} />
+          {t(title)}
         </NavLink>
       </li>
     );
@@ -43,7 +44,7 @@ const Menu = ({ items }) => {
       {visible && <div className="menu__overlay" onClick={handleClose} />}
       <div className={`menu menu__wrapper ${isVisible} ${isHidden}`}>
         <div className="menu__user">
-          <img src={LogoSafeSafe} alt="ProteGO Safe" />
+          <img src={LogoSafeSafe} alt="STOP COVID - ProteGO Safe" />
         </div>
         <ul className="menu__items">{renderItems}</ul>
         <VersionApp />
@@ -63,4 +64,4 @@ Menu.propTypes = {
   version: PropTypes.string
 };
 
-export default Menu;
+export default withTranslation()(Menu);

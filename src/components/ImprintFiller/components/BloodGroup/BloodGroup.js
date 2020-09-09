@@ -1,4 +1,5 @@
 import React from 'react';
+import { withTranslation } from 'react-i18next';
 import { useFormikContext } from 'formik';
 import { FormGroup } from '@material-ui/core';
 
@@ -14,12 +15,11 @@ import {
   VALUE_BLOOD_GROUP_BPLUS,
   VALUE_BLOOD_GROUP_UNDEFINED
 } from '../../../../constants';
-import Icon from '../../../../assets/img/icons/angle-right-white.svg';
-import { Button, Radio } from '../../..';
+import { Button, Radio } from '../../../index';
 
 import { Actions, Label, Title } from '../../ImprintFiller.styled';
 
-const BloodGroup = () => {
+const BloodGroup = ({ t }) => {
   const { setFieldValue, values } = useFormikContext();
 
   const renderRadios = [
@@ -56,7 +56,7 @@ const BloodGroup = () => {
       value: VALUE_BLOOD_GROUP_0MINUS
     },
     {
-      text: 'nie wiem',
+      text: t('imprint_text6'),
       value: VALUE_BLOOD_GROUP_UNDEFINED
     }
   ].map(({ text, value }) => (
@@ -71,19 +71,17 @@ const BloodGroup = () => {
 
   return (
     <>
-      <Title>Jaka jest Twoja grupa krwi?</Title>
+      <Title>{t('blood_group_text1')}</Title>
       <FormGroup>{renderRadios}</FormGroup>
       <Actions>
         <Button
           disabled={!values[FIELD_BLOOD_GROUP]}
           onClick={() => setFieldValue('step', 4)}
-          icon={Icon}
-          size="medium"
-          text="Dalej"
+          label={t('button_next')}
         />
       </Actions>
     </>
   );
 };
 
-export default BloodGroup;
+export default withTranslation()(BloodGroup);

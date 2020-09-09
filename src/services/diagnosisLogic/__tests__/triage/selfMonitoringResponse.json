@@ -1,65 +1,59 @@
 {
   "01": {
-    "description": "Objawy, które zgłosiłeś/-aś, nie wskazują na chorobę COVID-19. Mimo to lepiej, żebyś pozostał/-a w domu, dopóki nie wyzdrowiejesz. W ten sposób zmniejszasz ryzyko zakażenia siebie oraz innych. Pamiętaj, że Twoje objawy mogą wynikać także z innych chorób i mogą wymagać konsultacji lekarskiej - powyższy wywiad jest ukierunkowany na COVID-19. Jeśli twoje objawy wydają się niepokojące, skontaktuj się z lekarzem.",
-    "label": "Pozostań w domu i obserwuj swój stan zdrowia.",
+    "description": "diagnosis_text46",
     "serious": [
       {
-        "common_name": "Kaszel",
+        "common_name": "seriouses_text1",
         "id": "s_1",
         "is_emergency": true,
-        "name": "Kaszel"
+        "name": "seriouses_text1"
       }
     ],
     "triage_level": "self_monitoring"
   },
   "02": {
-    "description": "Objawy, które zgłosiłeś/-aś, nie wskazują na chorobę COVID-19. Mimo to lepiej, żebyś pozostał/-a w domu, dopóki nie wyzdrowiejesz. W ten sposób zmniejszasz ryzyko zakażenia siebie oraz innych. Pamiętaj, że Twoje objawy mogą wynikać także z innych chorób i mogą wymagać konsultacji lekarskiej - powyższy wywiad jest ukierunkowany na COVID-19. Jeśli twoje objawy wydają się niepokojące, skontaktuj się z lekarzem.",
-    "label": "Pozostań w domu i obserwuj swój stan zdrowia.",
+    "description": "diagnosis_text46",
     "serious": [],
     "triage_level": "self_monitoring"
   },
   "03": {
-    "description": "Objawy, które zgłosiłeś/-aś, nie wskazują na chorobę COVID-19. Mimo to lepiej, żebyś pozostał/-a w domu, dopóki nie wyzdrowiejesz. W ten sposób zmniejszasz ryzyko zakażenia siebie oraz innych. Pamiętaj, że Twoje objawy mogą wynikać także z innych chorób i mogą wymagać konsultacji lekarskiej - powyższy wywiad jest ukierunkowany na COVID-19. Jeśli twoje objawy wydają się niepokojące, skontaktuj się z lekarzem.",
-    "label": "Pozostań w domu i obserwuj swój stan zdrowia.",
+    "description": "diagnosis_text46",
     "serious": [
       {
-        "common_name": "Gorączka pomiędzy 37.5°C a 38°C (99.5°F a 100.4°F)",
+        "common_name": "seriouses_text7",
         "id": "s_22",
         "is_emergency": true,
-        "name": "Gorączka pomiędzy 37.5°C a 38°C (99.5°F a 100.4°F)"
+        "name": "seriouses_text7"
       }
     ],
     "triage_level": "self_monitoring"
   },
   "04": {
-    "description": "Objawy, które zgłosiłeś/-aś, nie wskazują na chorobę COVID-19. Mimo to lepiej, żebyś pozostał/-a w domu, dopóki nie wyzdrowiejesz. W ten sposób zmniejszasz ryzyko zakażenia siebie oraz innych. Pamiętaj, że Twoje objawy mogą wynikać także z innych chorób i mogą wymagać konsultacji lekarskiej - powyższy wywiad jest ukierunkowany na COVID-19. Jeśli twoje objawy wydają się niepokojące, skontaktuj się z lekarzem.",
-    "label": "Pozostań w domu i obserwuj swój stan zdrowia.",
+    "description": "diagnosis_text46",
     "serious": [
       {
-        "common_name": "Gorączka pomiędzy 38°C a 40°C (100.4°F a 104°F)",
+        "common_name": "seriouses_text8",
         "id": "s_23",
         "is_emergency": true,
-        "name": "Gorączka pomiędzy 38°C a 40°C (100.4°F a 104°F)"
+        "name": "seriouses_text8"
       }
     ],
     "triage_level": "self_monitoring"
   },
   "05": {
-    "description": "Objawy, które zgłosiłeś/-aś, nie wskazują na chorobę COVID-19. Mimo to lepiej, żebyś pozostał/-a w domu, dopóki nie wyzdrowiejesz. W ten sposób zmniejszasz ryzyko zakażenia siebie oraz innych. Pamiętaj, że Twoje objawy mogą wynikać także z innych chorób i mogą wymagać konsultacji lekarskiej - powyższy wywiad jest ukierunkowany na COVID-19. Jeśli twoje objawy wydają się niepokojące, skontaktuj się z lekarzem.",
-    "label": "Pozostań w domu i obserwuj swój stan zdrowia.",
+    "description": "diagnosis_text46",
     "serious": [
       {
-        "common_name": "Kaszel",
+        "common_name": "seriouses_text1",
         "id": "s_1",
         "is_emergency": true,
-        "name": "Kaszel"
+        "name": "seriouses_text1"
       }
     ],
     "triage_level": "self_monitoring"
   },
   "06": {
-    "description": "Objawy, które zgłosiłeś/-aś, nie wskazują na chorobę COVID-19. Mimo to lepiej, żebyś pozostał/-a w domu, dopóki nie wyzdrowiejesz. W ten sposób zmniejszasz ryzyko zakażenia siebie oraz innych. Pamiętaj, że Twoje objawy mogą wynikać także z innych chorób i mogą wymagać konsultacji lekarskiej - powyższy wywiad jest ukierunkowany na COVID-19. Jeśli twoje objawy wydają się niepokojące, skontaktuj się z lekarzem.",
-    "label": "Pozostań w domu i obserwuj swój stan zdrowia.",
+    "description": "diagnosis_text46",
     "serious": [],
     "triage_level": "self_monitoring"
   }

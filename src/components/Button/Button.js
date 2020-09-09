@@ -1,65 +1,93 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import './Button.scss';
+import { BUTTON_TYPES } from './Button.constants';
+import {
+  ArrowRight,
+  ButtonBlankSmall,
+  ButtonBorder,
+  ButtonBorderArrow,
+  ButtonDefault,
+  ButtonOutline,
+  Content,
+  Description,
+  Label
+} from './Button.styled';
+
+import { ReactComponent as ArrowIcon } from '../../assets/img/icons/arrow-current-color.svg';
 
 const Button = ({
-  border,
   children,
+  description,
   disabled,
-  height,
-  iconLeft,
+  icon,
+  label,
   onClick,
-  size,
-  text,
   type
 }) => {
-  const iconPosition = iconLeft ? 'left' : 'right';
-
-  return (
-    <button
-      disabled={disabled}
-      className={`button button--${type} button--${height} button--size--${size} button--icon-${iconPosition} ${
-        border ? 'button--border' : ''
-      }`}
-      onClick={onClick}
-      type="button"
-    >
-      {children}
-      {text}
-    </button>
+  const renderButton = Component => (
+    <Component disabled={disabled} onClick={onClick} type="button">
+      {icon}
+      {label || children}
+    </Component>
   );
+
+  const renderButtonBorder = Component => (
+    <Component disabled={disabled} onClick={onClick} type="button">
+      {icon}
+      <Content>
+        <Label>{label || children}</Label>
+        <Description>{description}</Description>
+      </Content>
+      {type === BUTTON_TYPES.BORDER_ARROW && (
+        <ArrowRight>
+          <ArrowIcon />
+        </ArrowRight>
+      )}
+    </Component>
+  );
+
+  switch (type) {
+    case BUTTON_TYPES.DEFAULT: {
+      return renderButton(ButtonDefault);
+    }
+    case BUTTON_TYPES.OUTLINE: {
+      return renderButton(ButtonOutline);
+    }
+    case BUTTON_TYPES.BORDER: {
+      return renderButtonBorder(ButtonBorder);
+    }
+    case BUTTON_TYPES.BORDER_ARROW: {
+      return renderButtonBorder(ButtonBorderArrow);
+    }
+    case BUTTON_TYPES.BLANK_SMALL: {
+      return renderButton(ButtonBlankSmall);
+    }
+    default: {
+      return renderButton(ButtonDefault);
+    }
+  }
 };
 
 Button.defaultProps = {
-  border: false,
   children: null,
+  description: null,
   disabled: false,
-  height: 'normal',
-  iconLeft: false,
-  size: 'normal',
-  type: 'primary'
+  label: null,
+  type: BUTTON_TYPES.DEFAULT
 };
 
 Button.propTypes = {
-  border: PropTypes.bool,
   children: PropTypes.node,
+  description: PropTypes.string,
   disabled: PropTypes.bool,
-  height: PropTypes.oneOf(['small', 'normal']),
-  iconLeft: PropTypes.bool,
+  label: PropTypes.string,
   onClick: PropTypes.func.isRequired,
-  size: PropTypes.oneOf(['small', 'medium', 'normal']),
-  text: PropTypes.string.isRequired,
   type: PropTypes.oneOf([
-    'black',
-    'blank',
-    'gray',
-    'outline',
-    'primary',
-    'secondary',
-    'tertiary',
-    'success',
-    'success-blank',
-    'white'
+    BUTTON_TYPES.BLANK_SMALL,
+    BUTTON_TYPES.BORDER,
+    BUTTON_TYPES.BORDER_ARROW,
+    BUTTON_TYPES.DEFAULT,
+    BUTTON_TYPES.OUTLINE
   ])
 };
 

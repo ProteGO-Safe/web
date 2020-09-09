@@ -14,16 +14,13 @@ const SummaryContainer = () => {
   const { setVisible } = useMenuContext();
   const { setLoader } = useLoaderContext();
   const { allQuestions, evidence } = useSelector(state => state.diagnosis);
-  const { triageLevel, label, description } = useSelector(
-    state => state.triage
-  );
+  const { triageLevel, description } = useSelector(state => state.triage);
   const dispatch = useDispatch();
   const save = () => {
     const data = {
       allQuestions,
       evidence,
       triageLevel,
-      label,
       description
     };
 

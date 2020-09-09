@@ -1,104 +1,73 @@
 import React from 'react';
+import { withTranslation } from 'react-i18next';
 import { Collapse, PhoneNumber, Url } from '../../../../../../components';
 
-const CallDoctor = () => (
+const CallDoctor = ({ t }) => (
   <>
-    <Collapse title="Umów teleporadę z lekarzem POZ">
+    <Collapse title={t('call_doctor_text30')}>
+      <p>{t('call_doctor_text1')}</p>
       <p>
-        Jak najszybciej zadzwoń do swojego lekarza rodzinnego (POZ) i powiedz mu
-        jakie masz objawy. Lekarz przeprowadzi z tobą wywiad medyczny i w razie
-        potrzeby zaprosi cię na wizytę lekarską.
-      </p>
-      <p>
-        Lista placówek POZ, które udzielają teleporad, a także inne placówki, w
-        tym otwarte poradnie specjalistyczne, gabinety ginekologiczne i
-        stomatologiczne, znajdują się na{' '}
+        {t('call_doctor_text2')}{' '}
         <Url value="https://www.nfz.gov.pl/aktualnosci/aktualnosci-oddzialow/gdzie-sie-leczyc-w-czasie-epidemii-koronawirusa,401.html">
-          stronie internetowej NFZ
+          {t('call_doctor_text3')}
         </Url>{' '}
-        . Informacje o placówkach są aktualizowane na bieżąco.
+        {t('call_doctor_text31')}
       </p>
-      <p>Podczas teleporady możesz otrzymać:</p>
+      <p>{t('call_doctor_text4')}</p>
       <ul>
-        <li>zalecenia,</li>
-        <li>e-zwolnienie,</li>
-        <li>e-receptę,</li>
-        <li>
-          sugestię osobistej wizyty w placówce lub kontaktu ze stacją
-          sanitarno-epidemiologiczną.
-        </li>
+        <li>{t('call_doctor_text5')}</li>
+        <li>{t('call_doctor_text6')}</li>
+        <li>{t('call_doctor_text7')}</li>
+        <li>{t('call_doctor_text8')}</li>
       </ul>
-      <p>Teleporady medyczne:</p>
+      <p>{t('call_doctor_text9')}</p>
       <ul>
-        <li>ograniczają ryzyko rozprzestrzeniania się koronawirusa,</li>
-        <li>pozwalają rozwiać swoje wątpliwości, bez wychodzenia z domu,</li>
-        <li>skracają czas oczekiwania na wizytę u lekarza.</li>
+        <li>{t('call_doctor_text10')}</li>
+        <li>{t('call_doctor_text11')}</li>
+        <li>{t('call_doctor_text12')}</li>
       </ul>
-      <p>
-        Teleporady nie utrudniają bezpośredniego dostępu do lekarza. Jeśli
-        będzie taka potrzeba, lekarz skieruje cię do placówki medycznej lub
-        zaleci kontakt ze stacją sanitarno-epidemiologiczną.
-      </p>
+      <p>{t('call_doctor_text13')}</p>
     </Collapse>
-    <Collapse title="Przestrzegaj kilku podstawowych zasad dotyczących higieny">
+    <Collapse title={t('call_doctor_text32')}>
       <ul>
         <li>
-          <div className="bold">Często myj ręce</div>
+          <div className="bold">{t('call_doctor_text14')}</div>
           <div className="normal">
-            Regularnie myj ręce mydłem i wodą, lub dezynfekuj je środkiem na
-            bazie alkoholu (min. 60%). Mycie rąk powinno trwać 30 sekund.
-            Zapoznaj się z{' '}
+            {t('call_doctor_text15')}{' '}
             <Url value="https://gis.gov.pl/zdrowie/zasady-prawidlowego-mycia-rak/">
-              instrukcją mycia rąk
+              {t('call_doctor_text16')}
             </Url>{' '}
-            na stronie Głównego Inspektoratu Sanitarnego.
+            {t('call_doctor_text33')}
           </div>
         </li>
         <li>
-          <div className="bold">Zasłoń usta i nos gdy kaszlesz lub kichasz</div>
-          <div className="normal">
-            Gdy kaszlesz lub kichasz, zakrywaj usta i nos chusteczką jednorazową
-            lub zgięciem łokcia. Chusteczkę jak najszybciej wyrzuć do kosza i
-            dokładnie umyj ręce.
-          </div>
+          <div className="bold">{t('call_doctor_text17')}</div>
+          <div className="normal">{t('call_doctor_text18')}</div>
         </li>
         <li>
-          <div className="bold">Zachowaj bezpieczną odległość od innych</div>
-          <div className="normal">
-            Unikaj bliskiego (mniej niż 2 metry) kontaktu z innymi osobami.
-          </div>
+          <div className="bold">{t('call_doctor_text19')}</div>
+          <div className="normal">{t('call_doctor_text20')}</div>
         </li>
         <li>
-          <div className="bold">
-            Unikaj dotykania twarzy, szczególnie oczu, nosa i ust
-          </div>
-          <div className="normal">
-            Wirus przedostaje się do organizmu przez usta, nos i oczy. Możesz go
-            przenieść z zanieczyszczonej powierzchni. Wirusy mogą utrzymywać się
-            do kilku godzin lub dni na przedmiotach, na których znajdują się
-            wydzieliny, np. ślina. Zgodnie z obecnym stanem wiedzy, koronawirus
-            może przetrwać do 3 godzin w formie aerozolu, do 24 godzin na
-            powierzchni kartonowej i do 72 godzin na stali nierdzewnej lub
-            plastiku.
-          </div>
+          <div className="bold">{t('call_doctor_text21')}</div>
+          <div className="normal">{t('call_doctor_text22')}</div>
         </li>
         <li>
-          <div className="bold">#ZostańWDomu</div>
-          <div className="normal">
-            Ogranicz wyjścia z domu do niezbędnego minimum. W ten sposób
-            chronisz siebie i innych.
-          </div>
+          <div className="bold">{t('call_doctor_text23')}</div>
+          <div className="normal">{t('call_doctor_text24')}</div>
         </li>
       </ul>
     </Collapse>
-    <Collapse title="Obserwuj swój stan zdrowia. Jeżeli jest niepokojący lub się pogarsza – reaguj.">
+    <Collapse title={t('call_doctor_text34')}>
       <p>
-        W stanie zagrażającym życiu lub zdrowiu, nie czekaj, zadzwoń na numer
-        alarmowy <PhoneNumber>999</PhoneNumber> lub{' '}
-        <PhoneNumber>112</PhoneNumber> i wezwij pogotowie.
+        {t('call_doctor_text25')}{' '}
+        <PhoneNumber>{t('call_doctor_text26')}</PhoneNumber>{' '}
+        {t('call_doctor_text27')}{' '}
+        <PhoneNumber>{t('call_doctor_text28')}</PhoneNumber>{' '}
+        {t('call_doctor_text29')}
       </p>
     </Collapse>
   </>
 );
 
-export default CallDoctor;
+export default withTranslation()(CallDoctor);

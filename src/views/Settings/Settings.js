@@ -1,10 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Header from '../../components/Header/Header';
-import { BottomNavigation } from '../../components/BottomNavigation';
-import { Container, Content, View } from '../../theme/grid';
+import { Layout, Switcher } from '../../components';
 import { ItemWrapper, Text, Title } from './Settings.styled';
-import { Switcher } from '../../components';
 
 const Settings = ({ children, items, onBack, title }) => {
   const renderSettings = items.map(item => {
@@ -23,17 +20,11 @@ const Settings = ({ children, items, onBack, title }) => {
   });
 
   return (
-    <View>
-      <Header onBackClick={onBack} />
-      <Content>
-        <Container>
-          <Title>{title}</Title>
-          <Text>{children}</Text>
-          <ItemWrapper>{renderSettings}</ItemWrapper>
-        </Container>
-      </Content>
-      <BottomNavigation />
-    </View>
+    <Layout onBackClick={onBack} isNavigation>
+      <Title>{title}</Title>
+      <Text>{children}</Text>
+      <ItemWrapper>{renderSettings}</ItemWrapper>
+    </Layout>
   );
 };
 

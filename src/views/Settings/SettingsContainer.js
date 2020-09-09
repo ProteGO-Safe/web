@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { withTranslation } from 'react-i18next';
 import { useDispatch, useSelector } from 'react-redux';
 import Settings from './Settings';
 import {
@@ -8,7 +9,7 @@ import {
 } from '../../store/actions/nativeData';
 import { EXPOSURE_NOTIFICATION_STATUS } from '../../utils/servicesStatus/servicesStatus.constants';
 
-const SettingsContainer = () => {
+const SettingsContainer = ({ t }) => {
   const {
     servicesStatus: {
       exposureNotificationStatus = EXPOSURE_NOTIFICATION_STATUS.OFF
@@ -37,17 +38,16 @@ const SettingsContainer = () => {
       checked: isExposureNotificationOn,
       disabled: false,
       onChange: toggleChecked,
-      label: 'Zgoda na używanie Bluetooth w celu wykrycia zagrożeń',
+      label: t('settings_container_text2'),
       name: 'bluetooth'
     }
   ];
 
   return (
-    <Settings items={items} title="Ustawienia">
-      Korzystamy z Modułu Bluetooth aby móc chronić się wzajemnie i umożliwić
-      aplikacji informowanie o zagrożeniach.
+    <Settings items={items} title={t('settings_container_text3')}>
+      {t('settings_container_text1')}
     </Settings>
   );
 };
 
-export default SettingsContainer;
+export default withTranslation()(SettingsContainer);
