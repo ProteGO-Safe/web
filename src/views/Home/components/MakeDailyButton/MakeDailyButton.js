@@ -1,27 +1,30 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
+import { withTranslation } from 'react-i18next';
 import { Icon } from '../../../RiskTest/RiskTest.styled';
-import { BordersButtonWithArrow } from '../../../../components/BordersButtonWithArrow';
+import { Button } from '../../../../components';
 import useTriage from '../../../../hooks/useTriage';
+import Routes from '../../../../routes';
 
-const MakeDailyButton = () => {
+const MakeDailyButton = ({ t }) => {
   const history = useHistory();
   const { isExposure = false, riskLevel } = useTriage();
   const goToDailyData = () => {
-    history.push('/daily-data');
+    history.push(Routes.DailyData);
   };
 
   return (
     isExposure &&
     riskLevel === 2 && (
-      <BordersButtonWithArrow
+      <Button
         onClick={goToDailyData}
-        text="Zmierz temperaturę"
-        description="Zapisz ją w Dzienniku Zdrowia aplikacji"
+        label={t('make_daily_button_text1')}
+        description={t('make_daily_button_text2')}
         icon={<Icon />}
+        type="borderArrow"
       />
     )
   );
 };
 
-export default MakeDailyButton;
+export default withTranslation()(MakeDailyButton);

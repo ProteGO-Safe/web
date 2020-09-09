@@ -1,4 +1,5 @@
 import React from 'react';
+import { withTranslation } from 'react-i18next';
 import { FormGroup } from '@material-ui/core';
 import { useFormikContext } from 'formik';
 
@@ -6,19 +7,16 @@ import { Button, Radio, Select } from '../../..';
 import {
   FIELD_SMOKE,
   FIELD_SMOKE_NUMBER,
-  VALUE_SMOKE_NO,
   VALUE_SMOKE_NUMBER_1,
   VALUE_SMOKE_NUMBER_2,
   VALUE_SMOKE_NUMBER_3,
   VALUE_SMOKE_NUMBER_4,
-  VALUE_SMOKE_NUMBER_5,
-  VALUE_SMOKE_YES
+  VALUE_SMOKE_NUMBER_5
 } from '../../../../constants';
-import Icon from '../../../../assets/img/icons/angle-right-white.svg';
 
 import { Actions, Label, Title } from '../../ImprintFiller.styled';
 
-const Smoke = () => {
+const Smoke = ({ t }) => {
   const { setFieldValue, values } = useFormikContext();
 
   const options = [
@@ -27,43 +25,43 @@ const Smoke = () => {
     VALUE_SMOKE_NUMBER_3,
     VALUE_SMOKE_NUMBER_4,
     VALUE_SMOKE_NUMBER_5
-  ].map(option => ({ label: option, value: option }));
+  ].map(option => ({ label: t(option), value: t(option) }));
 
-  const isSmoking = values[FIELD_SMOKE] === VALUE_SMOKE_YES;
-  const noSmoking = values[FIELD_SMOKE] === VALUE_SMOKE_NO;
+  const isSmoking = values[FIELD_SMOKE] === t('yes');
+  const noSmoking = values[FIELD_SMOKE] === t('no');
 
   const handleSmokeRadio = value => {
-    if (value === VALUE_SMOKE_YES) {
-      setFieldValue(FIELD_SMOKE, VALUE_SMOKE_YES);
+    if (value === t('yes')) {
+      setFieldValue(FIELD_SMOKE, t('yes'));
       setFieldValue(FIELD_SMOKE_NUMBER, VALUE_SMOKE_NUMBER_1);
       return;
     }
 
-    setFieldValue(FIELD_SMOKE, VALUE_SMOKE_NO);
+    setFieldValue(FIELD_SMOKE, t('no'));
     setFieldValue(FIELD_SMOKE_NUMBER, null);
   };
 
   return (
     <>
-      <Title>Czy palisz papierosy lub inne wyroby tytoniowe?</Title>
+      <Title>{t('smoke_text1')}</Title>
       <FormGroup>
         <Radio
           checked={isSmoking}
-          label={<Label>Tak</Label>}
+          label={<Label>{t('smoke_text2')}</Label>}
           name={FIELD_SMOKE}
-          onChange={() => handleSmokeRadio(VALUE_SMOKE_YES)}
+          onChange={() => handleSmokeRadio(t('yes'))}
         />
         <Radio
           checked={noSmoking}
-          label={<Label>Nie</Label>}
+          label={<Label>{t('smoke_text3')}</Label>}
           name={FIELD_SMOKE}
-          onChange={() => handleSmokeRadio(VALUE_SMOKE_NO)}
+          onChange={() => handleSmokeRadio(t('no'))}
         />
       </FormGroup>
       {isSmoking && (
         <Select
           changeHandler={setFieldValue}
-          label="Liczba wypalanych dziennie papierosów"
+          label={t('smoke_text4')}
           name={FIELD_SMOKE_NUMBER}
           options={options}
           value={values[FIELD_SMOKE_NUMBER]}
@@ -73,13 +71,11 @@ const Smoke = () => {
         <Button
           disabled={!values[FIELD_SMOKE]}
           onClick={() => setFieldValue('step', 5)}
-          icon={Icon}
-          size="medium"
-          text="Dalej"
+          label={t('button_next')}
         />
       </Actions>
     </>
   );
 };
 
-export default Smoke;
+export default withTranslation()(Smoke);

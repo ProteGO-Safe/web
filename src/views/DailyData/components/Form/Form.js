@@ -1,4 +1,5 @@
 import React from 'react';
+import { withTranslation } from 'react-i18next';
 import PropTypes from 'prop-types';
 import { useFormikContext } from 'formik';
 import {
@@ -7,77 +8,100 @@ import {
   FIELD_COUGH,
   FIELD_MUSCLE_PAIN,
   FIELD_RUNNY_NOSE,
-  FIELD_TEMPERATURE
+  FIELD_TEMPERATURE,
+  FIELD_TIME
 } from '../../../../constants';
 import { marks } from './constants';
-import { FieldSet, Input, Textarea, InputSlider } from '../../../../components';
+import {
+  Input,
+  Textarea,
+  InputSlider,
+  InputDatePicker
+} from '../../../../components';
+import { getValueFromMark } from './form.helpers';
+import * as Styled from './Form.styled';
 
-const Form = ({ isViewMode }) => {
+const Form = ({ t, isViewMode }) => {
   const { handleChange, setFieldValue, values, errors } = useFormikContext();
 
   return (
     <div className="form">
-      <h4 className="medium title-2">Temperatura</h4>
-      <FieldSet>
+      <Styled.Group>
+        <Styled.Label>{t('form_text17')}</Styled.Label>
+        <InputDatePicker
+          selected={values[FIELD_TIME]}
+          onChange={date => setFieldValue(FIELD_TIME, date)}
+          dateFormat="d MMMM yyyy"
+        />
+      </Styled.Group>
+
+      <Styled.Group>
+        <Styled.Label>{t('form_text1')}</Styled.Label>
         <Input
-          error={errors[FIELD_TEMPERATURE]}
+          error={t(errors[FIELD_TEMPERATURE])}
           disabled={isViewMode}
-          label="Podaj aktualną temperaturę ciała"
           name={FIELD_TEMPERATURE}
-          placeholder="36.6"
+          placeholder={t('form_text18')}
           max={45}
           min={35}
           onChange={handleChange}
           type="number"
           value={values[FIELD_TEMPERATURE]}
         />
-      </FieldSet>
-      <h4 className="medium title-3">Objawy</h4>
-      <FieldSet>
+      </Styled.Group>
+
+      <Styled.Group>
+        <Styled.Label>{t('form_text2')}</Styled.Label>
+
         <InputSlider
-          label="Katar"
+          label={t('form_text10')}
           marks={marks}
           min={1}
           max={4}
           onChange={(e, value) =>
             setFieldValue(FIELD_RUNNY_NOSE, `level ${value}`)
           }
+          value={getValueFromMark(values[FIELD_RUNNY_NOSE])}
         />
         <InputSlider
-          label="Kaszel"
+          label={t('form_text9')}
           marks={marks}
           min={1}
           max={4}
           onChange={(e, value) => setFieldValue(FIELD_COUGH, `level ${value}`)}
+          value={getValueFromMark(values[FIELD_COUGH])}
         />
         <InputSlider
-          label="Dreszcze"
+          label={t('form_text8')}
           marks={marks}
           min={1}
           max={4}
           onChange={(e, value) => setFieldValue(FIELD_CHILLS, `level ${value}`)}
+          value={getValueFromMark(values[FIELD_CHILLS])}
         />
         <InputSlider
-          label="Ból mięśni"
+          label={t('form_text7')}
           marks={marks}
           min={1}
           max={4}
           onChange={(e, value) =>
             setFieldValue(FIELD_MUSCLE_PAIN, `level ${value}`)
           }
+          value={getValueFromMark(values[FIELD_MUSCLE_PAIN])}
         />
-      </FieldSet>
-      <h4 className="medium title-2">Miejsca i kontakty</h4>
-      <FieldSet>
+      </Styled.Group>
+
+      <Styled.Group>
+        <Styled.Label>{t('form_text3')}</Styled.Label>
         <Textarea
           disabled={isViewMode}
-          label="Z kim się spotkałem, gdzie byłem"
+          label={t('form_text5')}
           name={FIELD_CONTACTS}
           onChange={handleChange}
-          placeholder="wpisz"
+          placeholder={t('form_text6')}
           value={values[FIELD_CONTACTS]}
         />
-      </FieldSet>
+      </Styled.Group>
     </div>
   );
 };
@@ -90,4 +114,4 @@ Form.propTypes = {
   isViewMode: PropTypes.bool
 };
 
-export default Form;
+export default withTranslation()(Form);

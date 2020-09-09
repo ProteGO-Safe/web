@@ -1,41 +1,32 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
+import { withTranslation } from 'react-i18next';
 import { daysDetailsPropType } from '../../utils/calendar';
-import Header from '../../components/Header/Header';
-import LineItem from '../../components/LineItem/LineItem';
-import { BottomNavigation } from '../../components/BottomNavigation';
-import { BordersButton } from '../../components/BordersButton';
+import { Button, Layout, LineItem } from '../../components';
 import { Icon, ListTitle, Title } from './RiskTest.styled';
-import { Container, Content, View } from '../../theme/grid';
 
-const RiskTest = ({ goToHistory, onFill, previousDays }) => (
-  <View>
-    <Header />
-    <Content>
-      <Container>
-        <Title>Przygotowaliśmy dla Ciebie nowy test na dzisiaj</Title>
-        <BordersButton
-          onClick={onFill}
-          text="Wykonaj TEST oceny ryzyka"
-          icon={<Icon />}
+const RiskTest = ({ t, goToHistory, onFill, previousDays }) => (
+  <Layout isNavigation>
+    <Title>{t('risk_test_text1')}</Title>
+    <Button
+      onClick={onFill}
+      label={t('risk_test_text2')}
+      type="border"
+      icon={<Icon />}
+    />
+    <ListTitle>{t('risk_test_text3')}</ListTitle>
+    {previousDays.map(previousDay => {
+      const { day, dayWeek, timestamp } = previousDay;
+      const text = `Test: ${dayWeek} (${day} r.)`;
+      return (
+        <LineItem
+          key={timestamp}
+          onClick={() => goToHistory(timestamp)}
+          text={text}
         />
-        <ListTitle>Wykonane testy:</ListTitle>
-        {previousDays.map(previousDay => {
-          const { day, dayWeek, timestamp } = previousDay;
-          const text = `Test: ${dayWeek} (${day} r.)`;
-          return (
-            <LineItem
-              key={timestamp}
-              onClick={() => goToHistory(timestamp)}
-              text={text}
-            />
-          );
-        })}
-      </Container>
-      <BottomNavigation />
-    </Content>
-  </View>
+      );
+    })}
+  </Layout>
 );
 
 RiskTest.propTypes = {
@@ -44,4 +35,4 @@ RiskTest.propTypes = {
   previousDays: daysDetailsPropType
 };
 
-export default RiskTest;
+export default withTranslation()(RiskTest);

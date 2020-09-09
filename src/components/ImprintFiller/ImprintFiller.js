@@ -1,13 +1,8 @@
 import React, { useEffect } from 'react';
 import { useFormikContext } from 'formik';
-
 import { NUMBER_OF_STEPS } from './ImprintFiller.constants';
-
 import { BloodGroup, ChronicSick, Name, Smoke, Summary } from './components';
-import { GovFooter, Stepper } from '..';
-import { Header } from '../Header';
-
-import { Container, View } from '../../theme/grid';
+import { Stepper, Layout } from '../index';
 
 const steps = {
   1: {
@@ -42,14 +37,10 @@ const ImprintFiller = () => {
   const StepComponent = steps[step].Component;
 
   return (
-    <View>
-      <Header hideBackButton />
-      <Container>
-        <Stepper currentStep={step} numberOfSteps={NUMBER_OF_STEPS} />
-        <StepComponent />
-        <GovFooter type="black" />
-      </Container>
-    </View>
+    <Layout hideBackButton isGovFooter>
+      <Stepper currentStep={step} numberOfSteps={NUMBER_OF_STEPS} />
+      <StepComponent />
+    </Layout>
   );
 };
 

@@ -1,6 +1,5 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useHistory, useParams } from 'react-router-dom';
-import moment from 'moment';
 import { useDispatch, useSelector } from 'react-redux';
 import { Formik } from 'formik';
 import * as Yup from 'yup';
@@ -13,12 +12,13 @@ import {
   FIELD_MUSCLE_PAIN,
   FIELD_RUNNY_NOSE,
   FIELD_TEMPERATURE,
+  FIELD_TIME,
   VALUE_SYMPTOM_LEVEL_1
 } from '../../constants';
-import { addDaily } from '../../store/actions/daily';
+import { addDaily, updateDaily } from '../../store/actions/daily';
 import Routes from '../../routes';
-
-const dateFormat = 'D-MM-YYYY';
+import { DAILY_DATA_MODE } from './dailyData.constants';
+import { isEditMode } from './dailyData.helpers';
 
 const DailyDataContainer = () => {
   const history = useHistory();
@@ -28,18 +28,12 @@ const DailyDataContainer = () => {
 
   const goHome = () => history.push(Routes.Daily);
 
-  const handleSubmit = form => {
-    dispatch(addDaily({ data: form })).then(goHome);
-  };
-
   const dailyData = daily[[id]];
-  const date =
-    (id && moment.unix(id).format(dateFormat)) || moment().format(dateFormat);
 
   const validationSchema = Yup.object().shape({
     [FIELD_TEMPERATURE]: Yup.number()
-      .min(35, 'Za niska wartość temperatury')
-      .max(45, 'Za wysoka wartość temperatury')
+      .min(35, 'form_text15')
+      .max(45, 'form_text16')
   });
 
   const initialValues = {
@@ -52,7 +46,21 @@ const DailyDataContainer = () => {
       (dailyData && dailyData.data[FIELD_CHILLS]) || VALUE_SYMPTOM_LEVEL_1,
     [FIELD_MUSCLE_PAIN]:
       (dailyData && dailyData.data[FIELD_MUSCLE_PAIN]) || VALUE_SYMPTOM_LEVEL_1,
-    [FIELD_CONTACTS]: (dailyData && dailyData.data[FIELD_CONTACTS]) || ''
+    [FIELD_CONTACTS]: (dailyData && dailyData.data[FIELD_CONTACTS]) || '',
+    [FIELD_TIME]: (dailyData && dailyData.data[FIELD_TIME]) || new Date()
+  };
+
+  const [mode, setMode] = useState(
+    dailyData ? DAILY_DATA_MODE.VIEW : DAILY_DATA_MODE.CREATE
+  );
+
+  const handleSubmit = form => {
+    if (!isEditMode(mode)) {
+      dispatch(addDaily({ data: form })).then(goHome);
+      return;
+    }
+
+    dispatch(updateDaily({ data: form }, id)).then(goHome);
   };
 
   return (
@@ -61,7 +69,7 @@ const DailyDataContainer = () => {
       onSubmit={handleSubmit}
       validationSchema={validationSchema}
     >
-      <DailyData isViewMode={!!dailyData} date={date} />
+      <DailyData mode={mode} setMode={setMode} />
     </Formik>
   );
 };

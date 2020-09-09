@@ -1,66 +1,41 @@
 import React from 'react';
+import { withTranslation } from 'react-i18next';
 import './NotSupported.scss';
 import {
   OnboardingContent,
   Button,
-  GovFooter
+  Layout
 } from '../../../../../../components';
 import { isIOSWebView } from '../../../../../../utils/native';
-import Header from '../../../../../../components/Header/Header';
-import { View, Container, Content } from '../../../../../../theme/grid';
 import { Icon } from './NotSupported.styled';
 
-const NotSupported = ({ onNext }) => {
+const NotSupported = ({ t, onNext }) => {
   const buttons = [
     {
-      border: false,
-      text: 'Rozumiem',
+      label: t('onboarding_not_supported_text3'),
       onClick: onNext
     }
   ];
 
-  const renderButton = buttons.map(button => (
-    <Button
-      key={button.text}
-      onClick={button.onClick}
-      text={button.text}
-      border={button.border}
-    />
+  const renderButton = buttons.map(({ onClick, label }) => (
+    <Button key={label} onClick={onClick} label={label} />
   ));
 
   return (
-    <View>
-      <Header hideBackButton />
-      <Content>
-        <Container className="full-height">
-          <OnboardingContent
-            icon={<Icon />}
-            title="Niezgodna wersja"
-            buttons={renderButton}
-          >
-            {!isIOSWebView() ? (
-              <p>
-                Coś jest nie tak. Sprawdź swoje urządzenie - zaktualizuj wersję
-                systemu swojego telefonu. To konieczne, jeśli chcesz w pełni
-                korzystać ze wszystkich funkcjonalności aplikacji. Wsparcie dla
-                powiadamiania o możliwym kontakcie z koronawirusem posiadają
-                zaktualizowane urządzenia Android.
-              </p>
-            ) : (
-              <p>
-                Wsparcie dla powiadamiania o możliwym kontakcie z koronawirusem
-                posiadają tylko urządzenia iPhone z iOS 13.5 i nowszym. Sprawdź
-                swoje urządzenie - zaktualizuj wersję systemu swojego telefonu.
-                To konieczne, jeśli chcesz w pełni korzystać ze wszystkich
-                funkcjonalności aplikacji.
-              </p>
-            )}
-          </OnboardingContent>
-          <GovFooter type="black" />
-        </Container>
-      </Content>
-    </View>
+    <Layout hideBackButton isGovFooter>
+      <OnboardingContent
+        icon={<Icon />}
+        title={t('onboarding_not_supported_text4')}
+        buttons={renderButton}
+      >
+        {!isIOSWebView() ? (
+          <p>{t('onboarding_not_supported_text1')}</p>
+        ) : (
+          <p>{t('onboarding_not_supported_text2')}</p>
+        )}
+      </OnboardingContent>
+    </Layout>
   );
 };
 
-export default NotSupported;
+export default withTranslation()(NotSupported);

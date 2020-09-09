@@ -1,4 +1,8 @@
-import { USER_NAME_SAVE, USER_SAVE } from '../../types/user';
+import {
+  USER_NAME_SAVE,
+  USER_SAVE,
+  WHOLE_USER_UPDATED
+} from '../../types/user';
 
 const INITIAL_STATE = {
   bloodGroup: undefined,
@@ -34,6 +38,13 @@ const diagnosisReducer = (state = INITIAL_STATE, action) => {
           isSmoking
         };
       })();
+    case WHOLE_USER_UPDATED: {
+      const { data } = action;
+      return {
+        ...state,
+        ...data
+      };
+    }
 
     default:
       return state;

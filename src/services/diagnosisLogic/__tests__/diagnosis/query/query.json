@@ -1,7 +1,7 @@
 {
 	"symptoms": {
 		"sex": "female",
-		"age": 12,
+		"moreThan65": false,
 		"evidence": [
 			{
 				"id": "p_16",
@@ -35,7 +35,7 @@
 	},
 	"nonspecificSymptoms": {
 		"sex": "female",
-		"age": 12,
+		"moreThan65": false,
 		"evidence": [
 			{
 				"id": "p_16",
@@ -81,7 +81,7 @@
 	},
 	"contact": {
 		"sex": "female",
-		"age": 12,
+		"moreThan65": false,
 		"evidence": [
 			{
 				"id": "p_16",
@@ -155,7 +155,7 @@
 	},
 	"fatique": {
 		"sex": "female",
-		"age": 12,
+		"moreThan65": false,
 		"evidence": [
 			{
 				"id": "p_16",
@@ -229,7 +229,7 @@
 	},
 	"end": {
 		"sex": "female",
-		"age": 12,
+		"moreThan65": false,
 		"evidence": [
 			{
 				"id": "p_16",
@@ -307,7 +307,7 @@
 	},
 	"fever_cought": {
 		"sex": "female",
-		"age": 12,
+		"moreThan65": false,
 		"evidence": [
 			{
 				"id": "p_16",
@@ -353,7 +353,7 @@
 	},
 	"temperature": {
 		"sex": "female",
-		"age": 12,
+		"moreThan65": false,
 		"evidence": [
 			{
 				"id": "p_16",
@@ -403,7 +403,7 @@
 	},
 	"rapidly": {
 		"sex": "female",
-		"age": 12,
+		"moreThan65": false,
 		"evidence": [
 			{
 				"id": "p_16",
@@ -457,7 +457,7 @@
 	},
 	"fast_breatching": {
 		"sex": "female",
-		"age": 12,
+		"moreThan65": false,
 		"evidence": [
 			{
 				"id": "p_16",
@@ -515,7 +515,7 @@
 	},
 	"no_blood": {
 		"sex": "female",
-		"age": 12,
+		"moreThan65": false,
 		"evidence": [
 			{
 				"id": "p_16",
@@ -577,7 +577,7 @@
 	},
 	"symptoms_true": {
 		"sex": "female",
-		"age": 12,
+		"moreThan65": false,
 		"evidence": [
 			{
 				"id": "p_16",
@@ -667,7 +667,7 @@
 	},
 	"symptoms_false": {
 		"sex": "female",
-		"age": 12,
+		"moreThan65": false,
 		"evidence": [
 			{
 				"id": "p_16",
@@ -757,7 +757,7 @@
 	},
 	"travel": {
 		"sex": "female",
-		"age": 12,
+		"moreThan65": false,
 		"evidence": [
 			{
 				"id": "p_16",
@@ -851,7 +851,7 @@
 	},
 	"travel_no": {
 		"sex": "female",
-		"age": 12,
+		"moreThan65": false,
 		"evidence": [
 			{
 				"id": "p_16",
@@ -945,7 +945,7 @@
 	},
 	"end_travel_no": {
 		"sex": "female",
-		"age": 12,
+		"moreThan65": false,
 		"evidence": [
 			{
 				"id": "p_16",
@@ -1043,7 +1043,7 @@
 	},
 	"fever_shortness": {
 		"sex": "female",
-		"age": 12,
+		"moreThan65": false,
 		"evidence": [
 			{
 				"id": "p_16",
@@ -1089,7 +1089,7 @@
 	},
 	"fever_shortness_nothing_else": {
 		"sex": "female",
-		"age": 12,
+		"moreThan65": false,
 		"evidence": [
 			{
 				"id": "p_16",
@@ -1151,7 +1151,7 @@
 	},
 	"no_fever": {
 		"sex": "female",
-		"age": 12,
+		"moreThan65": false,
 		"evidence": [
 			{
 				"id": "p_16",
@@ -1197,7 +1197,7 @@
 	},
 	"no_fever_nothing_else": {
 		"sex": "female",
-		"age": 12,
+		"moreThan65": false,
 		"evidence": [
 			{
 				"id": "p_16",
@@ -1255,7 +1255,7 @@
 	},
 	"multi_single": {
 		"sex": "female",
-		"age": 76,
+		"moreThan65": true,
 		"evidence": [
 			{
 				"id": "p_16",
@@ -1304,7 +1304,7 @@
 		]
 	},
 	"fever_nothing_else": {
-		"age": 70,
+		"moreThan65": true,
 		"sex": "female",
 		"evidence": [
 			{

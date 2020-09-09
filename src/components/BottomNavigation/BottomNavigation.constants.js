@@ -6,28 +6,28 @@ import { ReactComponent as BurgerIcon } from '../../assets/img/icons/SafeSafe-do
 
 export const HomeItem = {
   id: 'home',
-  label: 'Home',
+  label: 'bottom_navigation_home',
   Icon: HomeIcon,
   path: Routes.Home
 };
 
 export const InfoItem = {
   id: 'porady',
-  label: 'Porady',
+  label: 'bottom_navigation_advice',
   Icon: InfoIcon,
   path: Routes.AdviceInformation
 };
 
 export const FAQItem = {
   id: 'questions',
-  label: 'Pytania i odp.',
+  label: 'bottom_navigation_faq',
   Icon: FAQIcon,
   path: Routes.FaqPage
 };
 
 export const BurgerItem = {
   id: 'nav_menu_button',
-  label: 'Więcej',
+  label: 'bottom_navigation_more',
   Icon: BurgerIcon,
   openMenu: true
 };

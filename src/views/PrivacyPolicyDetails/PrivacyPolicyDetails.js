@@ -1,23 +1,16 @@
 import React from 'react';
+import { withTranslation } from 'react-i18next';
 import { PrivacyPolicyContent } from './component/PrivacyPolicyContent';
-import Header from '../../components/Header/Header';
-import { BottomNavigation } from '../../components/BottomNavigation';
-import { Content, Container, View } from '../../theme/grid';
+import { Layout } from '../../components';
 import { Title } from './PrivacyPolicyDetails.styled';
 
-const PrivacyPolicyDetails = () => {
+const PrivacyPolicyDetails = ({ t }) => {
   return (
-    <View>
-      <Header />
-      <Content>
-        <Container>
-          <Title>Polityka prywatności</Title>
-          <PrivacyPolicyContent />
-        </Container>
-      </Content>
-      <BottomNavigation />
-    </View>
+    <Layout isNavigation>
+      <Title>{t('privacy_policy_details_text1')}</Title>
+      <PrivacyPolicyContent />
+    </Layout>
   );
 };
 
-export default PrivacyPolicyDetails;
+export default withTranslation()(PrivacyPolicyDetails);

@@ -3,6 +3,7 @@ import { FontWeight } from '../../../../theme/fonts';
 import { Color } from '../../../../theme/colors';
 
 export const Paragraph = styled.p`
+  width: 100%;
   font-size: 16px;
   font-weight: ${FontWeight.Normal};
   line-height: 1.5;
@@ -13,6 +14,7 @@ export const Paragraph = styled.p`
 `;
 
 export const Title = styled.h3`
+  width: 100%;
   margin-top: 0;
   margin-bottom: 12px;
   font-size: 18px;
@@ -22,6 +24,7 @@ export const Title = styled.h3`
 `;
 
 export const Annotation = styled.h2`
+  width: 100%;
   margin-bottom: 12px;
   font-size: 22px;
   line-height: 1.5;
@@ -30,6 +33,7 @@ export const Annotation = styled.h2`
 `;
 
 export const ListNumber = styled.ol`
+  width: 100%;
   margin-top: 0;
   padding-left: 24px;
   ol {
@@ -38,6 +42,7 @@ export const ListNumber = styled.ol`
 `;
 
 export const ListAlpha = styled.ol`
+  width: 100%;
   list-style-type: lower-alpha;
   margin-top: 0;
   padding-left: 24px;
@@ -47,6 +52,7 @@ export const ListAlpha = styled.ol`
 `;
 
 export const ListRoman = styled.ol`
+  width: 100%;
   list-style-type: upper-roman;
   margin-top: 0;
   padding-left: 24px;
@@ -56,6 +62,7 @@ export const ListRoman = styled.ol`
 `;
 
 export const ListItem = styled.li`
+  width: 100%;
   font-size: 16px;
   font-weight: ${FontWeight.Normal};
   line-height: 1.5;

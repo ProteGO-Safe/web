@@ -1,23 +1,16 @@
 import React from 'react';
+import { withTranslation } from 'react-i18next';
 import { RegulationsContent } from './component/RegulationsContent';
-import Header from '../../components/Header/Header';
-import { BottomNavigation } from '../../components/BottomNavigation';
-import { Container, Content, View } from '../../theme/grid';
+import { Layout } from '../../components';
 import { Title } from './Regulations.styled';
 
-const Regulations = () => {
+const Regulations = ({ t }) => {
   return (
-    <View>
-      <Header />
-      <Content>
-        <Container>
-          <Title>Regulamin</Title>
-          <RegulationsContent />
-        </Container>
-        <BottomNavigation />
-      </Content>
-    </View>
+    <Layout isNavigation>
+      <Title>{t('regulations_text1')}</Title>
+      <RegulationsContent />
+    </Layout>
   );
 };
 
-export default Regulations;
+export default withTranslation()(Regulations);

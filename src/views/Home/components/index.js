@@ -1,4 +1,5 @@
 export { ExposureNotificationWarning } from './ExposureNotificationWarning';
+export { HomeContent } from './HomeContent';
 export { MakeDailyButton } from './MakeDailyButton';
 export { MakeDiagnosisButton } from './MakeDiagnosisButton';
 export { MoreInformation } from './MoreInformation';

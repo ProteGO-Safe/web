@@ -2,13 +2,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { useFormikContext } from 'formik';
 
+import { withTranslation } from 'react-i18next';
 import { FIELD_CHOICE_ID } from '../../../../constants';
-import Icon from '../../../../assets/img/icons/angle-right-white.svg';
 import { Button, FieldSet, Radio } from '../../../../components';
 import { Title } from '../../Diagnosis.styled';
 import { choicesPropType } from '../../prop-types';
 
-const Single = ({ text, choices }) => {
+const Single = ({ t, text, choices }) => {
   const { setFieldValue, values, submitForm } = useFormikContext();
 
   const handleChange = (field, value) => {
@@ -17,7 +17,7 @@ const Single = ({ text, choices }) => {
 
   return (
     <>
-      <Title>{text}</Title>
+      <Title>{t(text)}</Title>
       <FieldSet>
         {choices.map(choice => (
           <Radio
@@ -25,16 +25,14 @@ const Single = ({ text, choices }) => {
             checked={values[FIELD_CHOICE_ID] === choice.id}
             name={FIELD_CHOICE_ID}
             onChange={() => handleChange(FIELD_CHOICE_ID, choice.id)}
-            label={choice.label}
+            label={t(choice.label)}
           />
         ))}
       </FieldSet>
       <Button
         disabled={!values[FIELD_CHOICE_ID]}
         onClick={submitForm}
-        icon={Icon}
-        size="medium"
-        text="Dalej"
+        label={t('button_next')}
       />
     </>
   );
@@ -45,4 +43,4 @@ Single.propTypes = {
   choices: choicesPropType
 };
 
-export default Single;
+export default withTranslation()(Single);
