@@ -1,66 +1,52 @@
 import React from 'react';
+import { withTranslation } from 'react-i18next';
 import './Information.scss';
 import {
   OnboardingContent,
   Button,
-  GovFooter
+  Layout
 } from '../../../../../../components';
-import { View, Container, Content } from '../../../../../../theme/grid';
-import Header from '../../../../../../components/Header/Header';
 import { Icon, More } from './Information.styled';
 
-const Information = ({ onNext, onMore, onSkip }) => {
+const Information = ({ t, onNext, onMore, onSkip }) => {
   const buttons = [
     {
-      border: false,
-      text: 'Dalej',
+      label: t('button_next'),
       onClick: onNext
     },
     {
-      text: 'Nie powiadamiaj mnie o zagrożeniach',
-      type: 'tertiary',
+      label: t('exposure_onboarding_information_text1'),
+      type: 'blankSmall',
       onClick: onSkip
     }
   ];
 
   const renderButton = buttons.map(button => (
     <Button
-      key={button.text}
+      key={button.label}
       onClick={button.onClick}
-      text={button.text}
-      border={button.border}
+      label={button.label}
       type={button.type}
     />
   ));
 
   return (
-    <View>
-      <Header hideBackButton />
-      <Content>
-        <Container className="full-height">
-          <OnboardingContent
-            icon={<Icon />}
-            title="Wszystko w Twoich rękach. Ta wersja aplikacji korzysta z narzędzi
-              systemów iOS/Android do powiadamiania o możliwym kontakcie z
-              koronawirusem."
-            buttons={renderButton}
-          >
-            <>
-              <p>
-                Pozwól, by aplikacja anonimowo rejestrowała spotkania z innymi
-                urządzeniami. Dzięki temu, gdy użytkownik, któregoś z nich
-                zachoruje, otrzymasz odpowiednie powiadomienie. Zadbaj o zdrowie
-                swoje i swoich bliskich.
-              </p>
-              <br />
-              <More onClick={onMore}>Więcej informacji</More>
-            </>
-          </OnboardingContent>
-          <GovFooter type="black" />
-        </Container>
-      </Content>
-    </View>
+    <Layout hideBackButton isGovFooter>
+      <OnboardingContent
+        icon={<Icon />}
+        title={t('exposure_onboarding_information_text2')}
+        buttons={renderButton}
+      >
+        <>
+          <p>{t('exposure_onboarding_information_text3')}</p>
+          <br />
+          <More onClick={onMore}>
+            {t('exposure_onboarding_information_text4')}
+          </More>
+        </>
+      </OnboardingContent>
+    </Layout>
   );
 };
 
-export default Information;
+export default withTranslation()(Information);

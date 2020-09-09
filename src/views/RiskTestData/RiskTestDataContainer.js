@@ -3,13 +3,14 @@ import { useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import moment from 'moment';
 
+import { withTranslation } from 'react-i18next';
 import RiskTestData from './RiskTestData';
 import { TRIAGE_LEVEL } from './RiskTestData.constants';
 import locations from '../../services/diagnosisLogic/locations.json';
 
 const dateFormat = 'D-MM-YYYY';
 
-const RiskTestDataContainer = () => {
+const RiskTestDataContainer = ({ t }) => {
   const riskTest = useSelector(state => state.riskTest);
   const { id } = useParams();
   const day = moment.unix(id);
@@ -24,7 +25,7 @@ const RiskTestDataContainer = () => {
     );
     return countryNames.map((name, index) => (
       <>
-        {name}
+        {t(name)}
         {index !== countryNames.length - 1 ? ', ' : null}
       </>
     ));
@@ -37,7 +38,7 @@ const RiskTestDataContainer = () => {
     const answer = evidence.find(_obj => _obj.id === evidenceId);
     const choiceId = answer ? answer.choice_id : 'absent';
     const choice = choices.find(_obj => _obj.id === choiceId);
-    return choice ? choice.label : '';
+    return choice ? t(choice.label) : '';
   };
 
   const { riskTestInformation } = TRIAGE_LEVEL[triageLevel];
@@ -48,9 +49,9 @@ const RiskTestDataContainer = () => {
       questions={allQuestions}
       idToChoiceResolver={idToChoiceResolver}
       isToday={isToday}
-      triageLevelInformation={riskTestInformation}
+      triageLevelInformation={t(riskTestInformation)}
     />
   );
 };
 
-export default RiskTestDataContainer;
+export default withTranslation()(RiskTestDataContainer);

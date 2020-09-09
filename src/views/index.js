@@ -1,3 +1,4 @@
+export { AddTranslation } from './AddTranslation';
 export { Daily } from './Daily';
 export { DailyData } from './DailyData';
 export { Diagnosis } from './Diagnosis';
@@ -5,9 +6,11 @@ export { FirstDiagnosisAsking } from './FirstDiagnosisAsking';
 export { Home } from './Home';
 export { HowItWorks } from './HowItWorks';
 export { IAmSick } from './IAmSick';
+export { MenuSettings } from './MenuSettings';
 export { RiskTest } from './RiskTest';
 export { RiskTestData } from './RiskTestData';
 export { Settings } from './Settings';
+export { SettingsLanguages } from './SettingsLanguages';
 export { Numbers } from './Numbers';
 export { NotSupported } from './NotSupported';
 export { Onboarding } from './Onboarding';

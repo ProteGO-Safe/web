@@ -11,8 +11,10 @@ export const Color = {
   darkGray: '#656565',
   gray: '#767676',
   lightGray: '#b7b7b7',
-  lighterGray: '#f1f1f1',
+  lighterGray: '#F1F1F1',
   veryLightGrey: '#cbcbcb',
+  gray_1: '#D8D8D8',
+  gray_2: '#95989A',
   green: '#598527',
   watermark: '#605E5E',
   orange: '#CC4700'

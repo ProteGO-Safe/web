@@ -5,7 +5,7 @@ Use apropriate template and don't forget about [DISCLAIMER](#DISCLAIMER)
 
 ## DISCLAIMER
 We require Digitally Signed Personal Agreement for Contributors collaborating on the project to accept their Pull Requests - it's Public Health so We need Public Trust thus introducing digital two-factor authentication for The Makers - also Apple doesn't go well with GNU so We make them do so manually by following these steps:
-1. Remember ProteGO-Safe software is being released on [GNU GENERAL PUBLIC LICENSE](../../LICENSE)
+1. Remember STOP COVID - ProteGO Safe software is being released on [GNU GENERAL PUBLIC LICENSE](../../LICENSE)
 2. If You would like to contribute any changes to our project repositories You are the author and the owner of these changes, by the law of [GitHub Terms of Use](https://help.github.com/en/github/site-policy/github-terms-of-service#6-contributions-under-repository-license) You automatically grant license for these changes .
 3. Mitigating any kind of misunderstanding around copyrights as well as lack of trust for unknown entities in public sector we ask that every Pull Request author verify aforementioned license grants for proposed changes through :
     * [Downloading personal license disclaimer form](/DISCLAIMER.pdf) which states that the author:

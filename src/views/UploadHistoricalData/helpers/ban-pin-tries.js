@@ -52,47 +52,52 @@ export const getBanData = listOfTries => {
   return banData;
 };
 
-const getCorrentMinuteForm = lockdownTimeInMinutes => {
+const getCorrentMinuteForm = (lockdownTimeInMinutes, t) => {
   if (lockdownTimeInMinutes === 1) {
-    return `${lockdownTimeInMinutes} minutę`;
+    return `${lockdownTimeInMinutes} ${t('upload_historical_data_text6')}`;
   }
   if (lockdownTimeInMinutes > 4 && lockdownTimeInMinutes <= 21) {
-    return `${lockdownTimeInMinutes} minut`;
+    return `${lockdownTimeInMinutes} ${t('upload_historical_data_text7')}`;
   }
   const modulo = lockdownTimeInMinutes % 10;
   if (modulo > 1 && modulo <= 4) {
-    return `${lockdownTimeInMinutes} minuty`;
+    return `${lockdownTimeInMinutes} ${t('upload_historical_data_text8')}`;
   }
-  return `${lockdownTimeInMinutes} minut`;
+  return `${lockdownTimeInMinutes} ${t('upload_historical_data_text7')}`;
 };
 
-const getLockdownInfo = lockdownTime => {
+const getLockdownInfo = (lockdownTime, t) => {
   const lockdownTimeInMinutes = lockdownTime / MINUTE;
   const lockdownTimeInHours = Math.floor(lockdownTimeInMinutes / 60);
   if (lockdownTimeInHours === 1) {
-    return `${lockdownTimeInHours} godzinę`;
+    return `${lockdownTimeInHours} ${t('upload_historical_data_text4')}`;
   }
   if (lockdownTimeInHours > 1) {
-    return `${lockdownTimeInHours} godziny`;
+    return `${lockdownTimeInHours} ${t('upload_historical_data_text5')}`;
   }
-  return getCorrentMinuteForm(lockdownTimeInMinutes);
+  return getCorrentMinuteForm(lockdownTimeInMinutes, t);
 };
 
 export const createErrorMessage = (
   { lockdownTime, currentLimitOfTries },
-  numberOfTries
+  numberOfTries,
+  t
 ) => {
   if (!numberOfTries) {
     return null;
   }
   if (lockdownTime) {
-    const lockdownMessage = getLockdownInfo(lockdownTime);
-    return `PIN ${numberOfTries}-krotnie został wpisany niepoprawnie. Odczekaj ${lockdownMessage} i spróbuj ponownie.`;
+    const lockdownMessage = getLockdownInfo(lockdownTime, t);
+    return `${t('upload_historical_data_text1')} ${numberOfTries}${t(
+      'upload_historical_data_text2'
+    )}${lockdownMessage}${t('upload_historical_data_text3')}`;
   }
   return (
     <>
-      Twój PIN jest niepoprawny lub wygasł. Sprawdź poprawność kodu PIN i
-      spróbuj ponownie. (Próba {numberOfTries} z {currentLimitOfTries})
+      {t('ban-pin-tries_text1')} ({t('ban-pin-tries_text2')}
+      {numberOfTries}
+      {t('ban-pin-tries_text2')}
+      {currentLimitOfTries})
     </>
   );
 };

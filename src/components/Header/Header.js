@@ -4,8 +4,9 @@ import PropTypes from 'prop-types';
 
 import Routes from '../../routes';
 import { Arrow, ArrowButton, Container, Logo } from './Header.styled';
+import {withTranslation} from "react-i18next";
 
-const Header = ({ hideBackButton, onBackClick }) => {
+const Header = ({ t, hideBackButton, onBackClick }) => {
   const history = useHistory();
 
   const handleBackClick = useCallback(() => {
@@ -21,14 +22,14 @@ const Header = ({ hideBackButton, onBackClick }) => {
   const renderBackButton = () => (
     <ArrowButton onClick={handleBackClick}>
       <Arrow />
-      Powrót
+      {t('button_back')}
     </ArrowButton>
   );
 
   return (
     <Container hideBackButton={hideBackButton}>
       {!hideBackButton ? renderBackButton() : null}
-      <Logo />
+      <Logo onClick={() => history.push(Routes.Home)} />
     </Container>
   );
 };
@@ -43,4 +44,4 @@ Header.propTypes = {
   onBackClick: PropTypes.func
 };
 
-export default Header;
+export default withTranslation()(Header);

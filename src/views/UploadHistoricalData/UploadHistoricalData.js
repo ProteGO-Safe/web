@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Redirect, useHistory } from 'react-router-dom';
+import { withTranslation } from 'react-i18next';
 import { UploadData } from './components/UploadData';
 import {
   endUploadHistoricalData,
@@ -13,7 +14,7 @@ import { getBanData, createErrorMessage } from './helpers/ban-pin-tries';
 import { UPLOAD_HISTORICAL_DATA_STATE as uploadState } from '../../store/reducers/app/app.constants';
 import Routes from '../../routes';
 
-const UploadHistoricalData = () => {
+const UploadHistoricalData = ({ t }) => {
   const { areEnableAllServices } = useSupportExposureNotificationTracing();
   const MAX_UPLOAD_TIME = 60;
   const dispatch = useDispatch();
@@ -78,7 +79,7 @@ const UploadHistoricalData = () => {
     return <UploadSuccess finishUpload={finishUpload} />;
   }
   const getErrorMessage = () =>
-    banData && createErrorMessage(banData, unsuccessfulAttempts.length);
+    banData && createErrorMessage(banData, unsuccessfulAttempts.length, t);
   return (
     <>
       {areEnableAllServices ? (
@@ -98,4 +99,4 @@ const UploadHistoricalData = () => {
   );
 };
 
-export default UploadHistoricalData;
+export default withTranslation()(UploadHistoricalData);

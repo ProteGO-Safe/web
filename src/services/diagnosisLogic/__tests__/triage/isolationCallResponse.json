@@ -1,158 +1,149 @@
 {
   "01": {
-    "description": "Twoje objawy są niepokojące i mogą mieć związek z koronawirusem. Zadzwoń na lokalną infolinię dotyczącą COVID-19. W zależności od kraju może to być infolinia stworzona przez ministerstwo zdrowia lub sanepid.",
-    "label": "Zadzwoń na infolinię COVID-19. Unikaj kontaktu z innymi osobami.",
+    "description": "diagnosis_text45",
     "serious": [
       {
-        "common_name": "Kaszel",
+        "common_name": "seriouses_text1",
         "id": "s_1",
         "is_emergency": true,
-        "name": "Kaszel"
+        "name": "seriouses_text1"
       },
       {
-        "common_name": "Duszność",
+        "common_name": "seriouses_text2",
         "id": "s_2",
         "is_emergency": true,
-        "name": "Duszność"
+        "name": "seriouses_text2"
       }
     ],
     "triage_level": "isolation_call"
   },
   "02": {
-    "description": "Twoje objawy są niepokojące i mogą mieć związek z koronawirusem. Zadzwoń na lokalną infolinię dotyczącą COVID-19. W zależności od kraju może to być infolinia stworzona przez ministerstwo zdrowia lub sanepid.",
-    "label": "Zadzwoń na infolinię COVID-19. Unikaj kontaktu z innymi osobami.",
+    "description": "diagnosis_text45",
     "serious": [
       {
-        "common_name": "Kaszel",
+        "common_name": "seriouses_text1",
         "id": "s_1",
         "is_emergency": true,
-        "name": "Kaszel"
+        "name": "seriouses_text1"
       },
       {
-        "common_name": "Duszność",
+        "common_name": "seriouses_text2",
         "id": "s_2",
         "is_emergency": true,
-        "name": "Duszność"
+        "name": "seriouses_text2"
       }
     ],
     "triage_level": "isolation_call"
   },
   "03": {
-    "description": "Twoje objawy są niepokojące i mogą mieć związek z koronawirusem. Zadzwoń na lokalną infolinię dotyczącą COVID-19. W zależności od kraju może to być infolinia stworzona przez ministerstwo zdrowia lub sanepid.",
-    "label": "Zadzwoń na infolinię COVID-19. Unikaj kontaktu z innymi osobami.",
+    "description": "diagnosis_text45",
     "serious": [
       {
-        "common_name": "Duszność",
+        "common_name": "seriouses_text2",
         "id": "s_2",
         "is_emergency": true,
-        "name": "Duszność"
+        "name": "seriouses_text2"
       }
     ],
     "triage_level": "isolation_call"
   },
   "04": {
-    "description": "Twoje objawy są niepokojące i mogą mieć związek z koronawirusem. Zadzwoń na lokalną infolinię dotyczącą COVID-19. W zależności od kraju może to być infolinia stworzona przez ministerstwo zdrowia lub sanepid.",
-    "label": "Zadzwoń na infolinię COVID-19. Unikaj kontaktu z innymi osobami.",
+    "description": "diagnosis_text45",
     "serious": [
       {
-        "common_name": "Kaszel",
+        "common_name": "seriouses_text1",
         "id": "s_1",
         "is_emergency": true,
-        "name": "Kaszel"
+        "name": "seriouses_text1"
       }
     ],
     "triage_level": "isolation_call"
   },
   "05": {
-    "description": "Twoje objawy są niepokojące i mogą mieć związek z koronawirusem. Zadzwoń na lokalną infolinię dotyczącą COVID-19. W zależności od kraju może to być infolinia stworzona przez ministerstwo zdrowia lub sanepid.",
-    "label": "Zadzwoń na infolinię COVID-19. Unikaj kontaktu z innymi osobami.",
+    "description": "diagnosis_text45",
     "serious": [],
     "triage_level": "isolation_call"
   },
   "06": {
-    "description": "Twoje objawy są niepokojące i mogą mieć związek z koronawirusem. Zadzwoń na lokalną infolinię dotyczącą COVID-19. W zależności od kraju może to być infolinia stworzona przez ministerstwo zdrowia lub sanepid.",
-    "label": "Zadzwoń na infolinię COVID-19. Unikaj kontaktu z innymi osobami.",
+    "description": "diagnosis_text45",
     "serious": [
       {
-        "common_name": "Kaszel",
+        "common_name": "seriouses_text1",
         "id": "s_1",
         "is_emergency": true,
-        "name": "Kaszel"
+        "name": "seriouses_text1"
       },
       {
-        "common_name": "Gorączka pomiędzy 37.5°C a 38°C (99.5°F a 100.4°F)",
+        "common_name": "seriouses_text7",
         "id": "s_22",
         "is_emergency": true,
-        "name": "Gorączka pomiędzy 37.5°C a 38°C (99.5°F a 100.4°F)"
+        "name": "seriouses_text7"
       },
       {
-        "common_name": "Kraj z transmisją wirusa w społeczeństwie",
+        "common_name": "seriouses_text9",
         "id": "p_5",
         "is_emergency": true,
-        "name": "Kraj z transmisją wirusa w społeczeństwie"
+        "name": "seriouses_text9"
       }
     ],
     "triage_level": "isolation_call"
   },
   "07": {
-    "description": "Twoje objawy są niepokojące i mogą mieć związek z koronawirusem. Zadzwoń na lokalną infolinię dotyczącą COVID-19. W zależności od kraju może to być infolinia stworzona przez ministerstwo zdrowia lub sanepid.",
-    "label": "Zadzwoń na infolinię COVID-19. Unikaj kontaktu z innymi osobami.",
+    "description": "diagnosis_text45",
     "serious": [
       {
-        "common_name": "Kaszel",
+        "common_name": "seriouses_text1",
         "id": "s_1",
         "is_emergency": true,
-        "name": "Kaszel"
+        "name": "seriouses_text1"
       },
       {
-        "common_name": "Gorączka pomiędzy 37.5°C a 38°C (99.5°F a 100.4°F)",
+        "common_name": "seriouses_text7",
         "id": "s_22",
         "is_emergency": true,
-        "name": "Gorączka pomiędzy 37.5°C a 38°C (99.5°F a 100.4°F)"
+        "name": "seriouses_text7"
       }
     ],
     "triage_level": "isolation_call"
   },
   "08": {
-    "description": "Twoje objawy są niepokojące i mogą mieć związek z koronawirusem. Zadzwoń na lokalną infolinię dotyczącą COVID-19. W zależności od kraju może to być infolinia stworzona przez ministerstwo zdrowia lub sanepid.",
-    "label": "Zadzwoń na infolinię COVID-19. Unikaj kontaktu z innymi osobami.",
+    "description": "diagnosis_text45",
     "serious": [
       {
-        "common_name": "Kaszel",
+        "common_name": "seriouses_text1",
         "id": "s_1",
         "is_emergency": true,
-        "name": "Kaszel"
+        "name": "seriouses_text1"
       },
       {
-        "common_name": "Gorączka pomiędzy 37.5°C a 38°C (99.5°F a 100.4°F)",
+        "common_name": "seriouses_text7",
         "id": "s_22",
         "is_emergency": true,
-        "name": "Gorączka pomiędzy 37.5°C a 38°C (99.5°F a 100.4°F)"
+        "name": "seriouses_text7"
       },
       {
-        "common_name": "Kraj z transmisją wirusa w społeczeństwie",
+        "common_name": "seriouses_text9",
         "id": "p_5",
         "is_emergency": true,
-        "name": "Kraj z transmisją wirusa w społeczeństwie"
+        "name": "seriouses_text9"
       }
     ],
     "triage_level": "isolation_call"
   },
   "09": {
-    "description": "Twoje objawy są niepokojące i mogą mieć związek z koronawirusem. Zadzwoń na lokalną infolinię dotyczącą COVID-19. W zależności od kraju może to być infolinia stworzona przez ministerstwo zdrowia lub sanepid.",
-    "label": "Zadzwoń na infolinię COVID-19. Unikaj kontaktu z innymi osobami.",
+    "description": "diagnosis_text45",
     "serious": [
       {
-        "common_name": "Kaszel",
+        "common_name": "seriouses_text1",
         "id": "s_1",
         "is_emergency": true,
-        "name": "Kaszel"
+        "name": "seriouses_text1"
       },
       {
-        "common_name": "Gorączka pomiędzy 37.5°C a 38°C (99.5°F a 100.4°F)",
+        "common_name": "seriouses_text7",
         "id": "s_22",
         "is_emergency": true,
-        "name": "Gorączka pomiędzy 37.5°C a 38°C (99.5°F a 100.4°F)"
+        "name": "seriouses_text7"
       }
     ],
     "triage_level": "isolation_call"

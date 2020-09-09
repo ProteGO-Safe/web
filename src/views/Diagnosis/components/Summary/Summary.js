@@ -1,4 +1,5 @@
 import React from 'react';
+import { withTranslation } from 'react-i18next';
 import PropTypes from 'prop-types';
 
 import { Button, Container, FieldSet } from '../../../../components';
@@ -7,25 +8,23 @@ import Header from '../../../../components/Header/Header';
 import { Title } from '../../Diagnosis.styled';
 import './Summary.scss';
 
-const Summary = ({ onSave }) => (
+const Summary = ({ t, onSave }) => (
   <div className="view view__summary">
     <Header hideBackButton />
     <Container>
       <div className="content">
-        <img className="icon" src={success} alt="Gratulacje" />
-        <Title>Gratulacje!</Title>
-        <p className="big">Dziękujemy za wypełnienie Testu Oceny Ryzyka</p>
-        <p className="big">
-          Na podstawie Twoich odpowiedzi, nasz system sprawdzi teraz do jakiej
-          grupy Cię zakwalifikować.
-        </p>
-        <small>
-          To bardzo ważne, abyś wypełniał/-a testy codziennie. Będziemy Ci o tym
-          przypominać :)
-        </small>
+        <img
+          className="icon"
+          src={success}
+          alt={t('diagnosis_summary_text1')}
+        />
+        <Title>{t('diagnosis_summary_text1')}</Title>
+        <p className="big">{t('diagnosis_summary_text2')}</p>
+        <p className="big">{t('diagnosis_summary_text3')}</p>
+        <small>{t('diagnosis_summary_text4')}</small>
       </div>
       <FieldSet>
-        <Button onClick={onSave} text="Sprawdź wynik" type="primary" />
+        <Button onClick={onSave} label={t('diagnosis_summary_text5')} />
       </FieldSet>
     </Container>
   </div>
@@ -35,4 +34,4 @@ Summary.propTypes = {
   onSave: PropTypes.func.isRequired
 };
 
-export default Summary;
+export default withTranslation()(Summary);

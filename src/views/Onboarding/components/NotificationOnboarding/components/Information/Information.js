@@ -1,61 +1,48 @@
 import React from 'react';
+import { withTranslation } from 'react-i18next';
 import './Information.scss';
 import {
   OnboardingContent,
   Button,
-  GovFooter
+  Layout
 } from '../../../../../../components';
-import { View, Container, Content } from '../../../../../../theme/grid';
-import Header from '../../../../../../components/Header/Header';
 import { Icon } from './Information.styled';
 
-const Information = ({ onNext, onSkip }) => {
+const Information = ({ t, onNext, onSkip }) => {
   const buttons = [
     {
-      border: false,
-      text: 'Dalej',
+      label: t('button_next'),
       onClick: onNext
     },
     {
-      text: 'Nie powiadamiaj mnie o zagrożeniach',
-      type: 'tertiary',
+      label: t('notification_onboarding_information_text2'),
+      type: 'blankSmall',
       onClick: onSkip
     }
   ];
 
   const renderButton = buttons.map(button => (
     <Button
-      key={button.text}
+      key={button.label}
       onClick={button.onClick}
-      text={button.text}
-      border={button.border}
+      label={button.label}
       type={button.type}
     />
   ));
 
   return (
-    <View>
-      <Header hideBackButton />
-      <Content>
-        <Container className="full-height">
-          <OnboardingContent
-            icon={<Icon />}
-            title="Włącz powiadomienia"
-            buttons={renderButton}
-          >
-            <>
-              <p>
-                Do prawidłowego działania aplikacji potrzebna jest Twoja zgoda
-                na wyświetlanie powiadomień. Kliknij poniżej i pozwól ProteGO
-                Safe wspierać ochronę zdrowia każdego z nas.
-              </p>
-            </>
-          </OnboardingContent>
-          <GovFooter type="black" />
-        </Container>
-      </Content>
-    </View>
+    <Layout hideBackButton isGovFooter>
+      <OnboardingContent
+        icon={<Icon />}
+        title={t('notification_onboarding_information_text3')}
+        buttons={renderButton}
+      >
+        <>
+          <p>{t('notification_onboarding_information_text1')}</p>
+        </>
+      </OnboardingContent>
+    </Layout>
   );
 };
 
-export default Information;
+export default withTranslation()(Information);

@@ -4,6 +4,7 @@ import uniqueId from 'lodash.uniqueid';
 import { always, cond, equals } from 'ramda';
 import StoreRegistry from '../../store/storeRegistry';
 import {
+  FETCH_LANGUAGE,
   NATIVE_DATA_FETCH_EXPOSURE_NOTIFICATION_STATISTICS_SUCCESS,
   NATIVE_DATA_FETCH_NATIVE_STATE,
   NATIVE_DATA_SET_SERVICES_STATUS_SUCCESS
@@ -17,6 +18,11 @@ const nativeRequests = {};
 
 const sendNativeRequest = (functionName, dataType, data) => {
   const requestId = uniqueId('request-');
+  if (process.env.NODE_ENV !== 'production') {
+    console.log(
+      `functionName: ${functionName}, dataType: ${dataType}, data: ${data}, requestId: ${requestId}`
+    );
+  }
   return new Promise((resolve, reject) => {
     nativeRequests[requestId] = { resolve, reject };
     if (isIOSWebView()) {
@@ -78,6 +84,10 @@ const getNativeVersion = async () => {
   return callGetBridgeData(DATA_TYPE.NATIVE_VERSION);
 };
 
+const getLanguage = async () => {
+  return callGetBridgeData(DATA_TYPE.LANGUAGE);
+};
+
 const getExposureNotificationStatistics = async () => {
   return callGetBridgeData(DATA_TYPE.EXPOSURE_STATISTICS);
 };
@@ -137,6 +147,14 @@ const handleNativeState = appState => {
     dispatch(fetchExposureNotificationStatistics());
   }
 };
+const handleNativeLanguage = body => {
+  const store = StoreRegistry.getStore();
+  const { dispatch } = store;
+  dispatch({
+    body,
+    type: FETCH_LANGUAGE
+  });
+};
 
 const callBridgeDataHandler = cond([
   [equals(DATA_TYPE.NATIVE_SERVICES_STATUS), always(handleServicesStatus)],
@@ -145,7 +163,8 @@ const callBridgeDataHandler = cond([
     always(handleUploadHistoricalDataResponse)
   ],
   [equals(DATA_TYPE.EXPOSURE_STATISTICS), always(handleExposureSummary)],
-  [equals(DATA_TYPE.NATIVE_STATE), always(handleNativeState)]
+  [equals(DATA_TYPE.NATIVE_STATE), always(handleNativeState)],
+  [equals(DATA_TYPE.LANGUAGE), always(handleNativeLanguage)]
 ]);
 
 const onBridgeData = (dataType, dataString) => {
@@ -161,6 +180,10 @@ const clearBluetoothData = async data => {
   await callNativeFunction('setBridgeData', DATA_TYPE.CLEAR_BT_DATA, data);
 };
 
+const changeLanguage = async data => {
+  await callNativeFunction('setBridgeData', DATA_TYPE.LANGUAGE, data);
+};
+
 window.onBridgeData = onBridgeData;
 window.bridgeDataResponse = receiveNativeResponse;
 
@@ -172,5 +195,7 @@ export default {
   getExposureNotificationStatistics,
   getNotification,
   clearBluetoothData,
-  getNativeVersion
+  changeLanguage,
+  getNativeVersion,
+  getLanguage
 };
