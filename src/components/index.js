@@ -32,6 +32,7 @@ export { Switcher } from './Switcher';
 export { Stepper } from './Stepper';
 export { Textarea } from './Textarea';
 export { TextField } from './TextField';
+export { Tooltip } from './Tooltip';
 export { Url } from './Url';
 export { VersionApp } from './VersionApp';
 export { Warning } from './Warning';

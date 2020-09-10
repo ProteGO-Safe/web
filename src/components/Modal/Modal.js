@@ -1,37 +1,35 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import PerfectScrollbar from 'react-perfect-scrollbar';
-import Icon from '../../assets/img/icons/close.svg';
 import useModalContext from '../../hooks/useModalContext';
-import './Modal.scss';
+import { ModalClose } from './components';
+import * as Styled from './Modal.styled';
 
 const Modal = () => {
-  const { content, onClose, type } = useModalContext();
+  const { content, onClose, type, title } = useModalContext();
   const scrollRef = useRef(null);
+  const [height, setHeight] = useState(null);
 
   useEffect(() => {
     if (scrollRef && scrollRef.current) {
       // eslint-disable-next-line
       scrollRef.current._ps.update();
+      // eslint-disable-next-line no-underscore-dangle
+      setHeight(scrollRef.current._ps.containerHeight);
     }
   }, [scrollRef]);
 
   return (
-    <div className={`modal ${type}`}>
-      {/* eslint-disable-next-line */}
-      <div className="modal__overlay" onClick={onClose} />
-      <div className="modal__wrapper">
-        <div className="modal__header">
-          <button onClick={onClose} type="button">
-            <img src={Icon} alt="Zamknij" />
-          </button>
-        </div>
-        <div className="modal__content">
-          <PerfectScrollbar ref={scrollRef}>
-            <div className="modal__content__inner">{content}</div>
-          </PerfectScrollbar>
-        </div>
-      </div>
-    </div>
+    <Styled.Wrapper>
+      <Styled.Overlay onClick={onClose} />
+      <Styled.Content type={type} height={height}>
+        <ModalClose onClick={onClose} />
+        {title && <Styled.Title>{title}</Styled.Title>}
+
+        <Styled.ScrollbarContent>
+          <PerfectScrollbar ref={scrollRef}>{content}</PerfectScrollbar>
+        </Styled.ScrollbarContent>
+      </Styled.Content>
+    </Styled.Wrapper>
   );
 };
 

@@ -44,7 +44,7 @@ const Terms = ({ t, handleClick }) => {
               <TextLink
                 onClick={e => {
                   e.preventDefault();
-                  openModal(<RegulationsContent />);
+                  openModal(<RegulationsContent small />);
                 }}
                 role="button"
               >
@@ -54,7 +54,7 @@ const Terms = ({ t, handleClick }) => {
               <TextLink
                 onClick={e => {
                   e.preventDefault();
-                  openModal(<PrivacyPolicyContent />);
+                  openModal(<PrivacyPolicyContent small />);
                 }}
                 role="button"
               >

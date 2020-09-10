@@ -37,7 +37,7 @@ const GroupMultiple = ({ t, onBack, onNext, question }) => {
     setFieldValue(itemId, current === undefined ? true : !current);
   };
 
-  const handelSelectOther = () => {
+  const handleSelectOther = () => {
     answersIds.forEach(value => {
       values[value] = false;
     });
@@ -90,7 +90,7 @@ const GroupMultiple = ({ t, onBack, onNext, question }) => {
             checked={values[otherId]}
             label={t('group_multiple_text1')}
             name={t('group_multiple_text1')}
-            onChange={handelSelectOther}
+            onChange={handleSelectOther}
           />
         </FieldSet>
         <Button
