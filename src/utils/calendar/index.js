@@ -4,12 +4,17 @@ import PropTypes from 'prop-types';
 const dayWeekFormat = 'dddd';
 const dateFormat = 'D-MM-YYYY';
 
+const createTimestampForDay = timestamp => {
+  const { data } = timestamp[1];
+  const { time } = data;
+  if (time) {
+    return moment(time).unix();
+  }
+  return timestamp[0];
+};
+
 const descending = (a, b) => {
-  const { data } = a[1];
-  const { data: _data } = b[1];
-  const dateA = moment(data.time).unix();
-  const dateB = moment(_data.time).unix();
-  return dateB - dateA;
+  return createTimestampForDay(b) - createTimestampForDay(a);
 };
 
 // filledDays contains moments
@@ -33,11 +38,11 @@ export const createDaysDetails = (
   dateFormatIn = dateFormat
 ) => {
   return filledDays.sort(descending).map(_timestamp => {
-    const { data } = _timestamp[1];
+    const timestamp = createTimestampForDay(_timestamp);
 
     return {
-      day: moment(data.time).format(dateFormatIn),
-      dayWeek: moment(data.time).format(dayWeekFormat),
+      day: moment.unix(timestamp).format(dateFormatIn),
+      dayWeek: moment.unix(timestamp).format(dayWeekFormat),
       timestamp: _timestamp[0]
     };
   });
