@@ -1,32 +1,33 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {
-  FormControl,
-  FormControlLabel,
-  Checkbox as MuiCheckbox
-} from '@material-ui/core';
+import { Error, Tooltip } from '../index';
+import * as Styled from './Checkbox.styled';
 
-import { CheckboxWrapper } from './Checkbox.styled';
-
-const Checkbox = ({ checked, error, label, name, onChange }) => (
-  <CheckboxWrapper>
-    <FormControl error={error}>
-      <FormControlLabel
-        control={
-          <MuiCheckbox
-            checked={checked}
-            color="primary"
-            onChange={onChange}
-            name={name}
-            style={{
-              marginRight: `25px`
-            }}
-          />
-        }
-        label={label}
-      />
-    </FormControl>
-  </CheckboxWrapper>
+const Checkbox = ({
+  checked,
+  error,
+  label,
+  name,
+  onChange,
+  tooltipContent,
+  tooltipTitle
+}) => (
+  <Styled.Wrapper>
+    <Styled.Checkbox
+      id={name}
+      checked={checked}
+      name={name}
+      onChange={onChange}
+      type="checkbox"
+    />
+    <Styled.Label htmlFor={name} error={error} tooltip={tooltipContent}>
+      <Styled.Text>{label}</Styled.Text>
+      {tooltipContent && (
+        <Tooltip sticky title={tooltipTitle} content={tooltipContent} />
+      )}
+    </Styled.Label>
+    {error && <Error content={error} />}
+  </Styled.Wrapper>
 );
 
 Checkbox.defaultProps = {

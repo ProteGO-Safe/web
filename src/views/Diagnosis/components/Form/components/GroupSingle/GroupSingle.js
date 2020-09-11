@@ -1,7 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { useFormikContext } from 'formik';
 import { withTranslation } from 'react-i18next';
-import { Button, FieldSet, Header, Radio } from '../../../../../../components';
+import {
+  Button,
+  FieldSet,
+  Header,
+  Radio,
+  Tooltip
+} from '../../../../../../components';
 import { Title } from '../../../../Diagnosis.styled';
 
 import { VALUE_ABSENT, VALUE_PRESENT } from '../../../../../../constants';
@@ -23,7 +29,7 @@ const GroupSingle = ({ t, onBack, onNext, question }) => {
     return null;
   }
 
-  const { text } = question;
+  const { explanation: tooltip, text } = question;
   const answersIds = answers.map(value => value.id);
 
   const handleChange = itemId => {
@@ -60,10 +66,13 @@ const GroupSingle = ({ t, onBack, onNext, question }) => {
     <>
       <Header onBackClick={back} />
       <Container>
-        <Title>{t(text)}</Title>
+        <Title explanation={tooltip}>
+          {t(text)}
+          {tooltip && <Tooltip sticky title={t(text)} content={t(tooltip)} />}
+        </Title>
         <FieldSet>
           {answers.map(item => {
-            const { id, name } = item;
+            const { explanation, id, name } = item;
             return (
               <Radio
                 key={id}
@@ -71,6 +80,8 @@ const GroupSingle = ({ t, onBack, onNext, question }) => {
                 name={id}
                 onChange={() => handleChange(id)}
                 label={t(name)}
+                tooltipContent={t(explanation)}
+                tooltipTitle={t(name)}
               />
             );
           })}

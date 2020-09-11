@@ -5,6 +5,7 @@ export { Checkbox } from './Checkbox';
 export { Collapse } from './Collapse';
 export { Container } from './Container';
 export { Email } from './Email';
+export { Error } from './Error';
 export { FieldSet } from './FieldSet';
 export { GovFooter } from './GovFooter';
 export { default as Header } from './Header/Header';

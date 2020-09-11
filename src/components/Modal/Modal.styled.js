@@ -32,7 +32,7 @@ export const Content = styled.div`
   flex-direction: column;
   width: calc(100% - 34px);
   height: ${({ type, height }) =>
-    type === 'dialog' || height < 256 ? 'auto' : '100vh'};
+    type === 'dialog' || height < 260 ? 'auto' : '100vh'};
   max-height: 62%;
   max-width: 450px;
   margin: 0 auto;

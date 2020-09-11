@@ -4,16 +4,19 @@ import useModalContext from '../../hooks/useModalContext';
 import { TooltipContent } from './components';
 import * as Styled from './Tooltip.styled';
 
-const Tooltip = ({ content, title }) => {
+const Tooltip = ({ content, title, sticky }) => {
   const { openModal } = useModalContext();
 
-  const handleOpenModal = () => {
+  const handleOpenModal = e => {
+    e.preventDefault();
     openModal(<TooltipContent content={content} />, '', title);
   };
 
   return (
-    <Styled.Tooltip onClick={handleOpenModal}>
-      <Styled.IconInfo />
+    <Styled.Tooltip sticky={sticky} onClick={handleOpenModal}>
+      <Styled.Test1>
+        <Styled.IconInfo />
+      </Styled.Test1>
     </Styled.Tooltip>
   );
 };

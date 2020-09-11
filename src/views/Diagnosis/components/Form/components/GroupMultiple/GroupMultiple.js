@@ -75,7 +75,7 @@ const GroupMultiple = ({ t, onBack, onNext, question }) => {
         <Title>{t(text)}</Title>
         <FieldSet>
           {answers.map(item => {
-            const { id, name } = item;
+            const { explanation, id, name } = item;
             return (
               <Checkbox
                 checked={values[id]}
@@ -83,6 +83,8 @@ const GroupMultiple = ({ t, onBack, onNext, question }) => {
                 label={t(name)}
                 name={id}
                 onChange={() => handleChange(id)}
+                tooltipContent={t(explanation)}
+                tooltipTitle={t(name)}
               />
             );
           })}

@@ -1,7 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { useFormikContext } from 'formik';
 import { withTranslation } from 'react-i18next';
-import { Button, FieldSet, Header, Radio } from '../../../../../../components';
+import {
+  Button,
+  FieldSet,
+  Header,
+  Radio,
+  Tooltip
+} from '../../../../../../components';
 import { Title } from '../../../../Diagnosis.styled';
 
 import { VALUE_ABSENT, VALUE_PRESENT } from '../../../../../../constants';
@@ -23,7 +29,7 @@ const Single = ({ t, onBack, onNext, question }) => {
     return null;
   }
 
-  const { text } = question;
+  const { explanation, text } = question;
   const oneAnswer = answers[0];
   const { choices, id: answerId } = oneAnswer;
 
@@ -65,7 +71,12 @@ const Single = ({ t, onBack, onNext, question }) => {
     <>
       <Header onBackClick={back} />
       <Container>
-        <Title>{t(text)}</Title>
+        <Title explanation={explanation}>
+          {t(text)}
+          {explanation && (
+            <Tooltip sticky title={t(text)} content={t(explanation)} />
+          )}
+        </Title>
         <FieldSet>
           {choices.map(item => {
             const { id, label } = item;
