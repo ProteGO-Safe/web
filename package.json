@@ -40,7 +40,7 @@
     "yup": "^0.28.3"
   },
   "scripts": {
-    "start": "PORT=3001 react-scripts start",
+    "start": "react-scripts start",
     "prepare-tranlations": "node locales/build/prepareTranlations.js",
     "after-build-tranlations": "node locales/build/afterBuildTranlations.js",
     "create-tranlations-file": "node locales/helpers/createTranlationsFile.js",
