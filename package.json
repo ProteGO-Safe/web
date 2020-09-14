@@ -1,6 +1,6 @@
 {
-  "name": "ProteGoSafe",
-  "version": "4.2.4",
+  "name": "STOPCOVIDProteGOSafe",
+  "version": "4.3.1",
   "homepage": "./",
   "private": true,
   "dependencies": {

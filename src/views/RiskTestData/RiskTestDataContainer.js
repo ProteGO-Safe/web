@@ -25,7 +25,7 @@ const RiskTestDataContainer = ({ t }) => {
     );
     return countryNames.map((name, index) => (
       <>
-        {name}
+        {t(name)}
         {index !== countryNames.length - 1 ? ', ' : null}
       </>
     ));

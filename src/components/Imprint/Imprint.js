@@ -16,7 +16,7 @@ const Imprint = ({ t, user = {} }) => {
       return t('imprint_text5');
     }
     if (smokeNumber) {
-      return `${t('yes')} ${smokeNumber}`;
+      return `${t('yes')} ${t(smokeNumber)}`;
     }
     return t('no');
   };
@@ -51,7 +51,9 @@ const Imprint = ({ t, user = {} }) => {
           <Paragraph color={Color.lightBlack} fontWeight={FontWeight.Bold}>
             {t('imprint_text2')}
           </Paragraph>
-          <SmallText>{bloodGroup || t('imprint_text5')}</SmallText>
+          <SmallText>
+            {bloodGroup === 'undefined' ? t('imprint_text5') : bloodGroup}
+          </SmallText>
         </Grid>
 
         <Grid item>
