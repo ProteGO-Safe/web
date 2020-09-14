@@ -29,7 +29,7 @@ export const IconInfo = styled.span`
   }
 `;
 
-export const Test1 = styled.span`
+export const IconWrapper = styled.span`
   position: relative;
   display: inline-block;
   width: 100%;

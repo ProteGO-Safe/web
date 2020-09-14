@@ -6,7 +6,8 @@ import {
   Button,
   Checkbox,
   FieldSet,
-  Header
+  Header,
+  Tooltip
 } from '../../../../../../components';
 import { VALUE_ABSENT, VALUE_PRESENT } from '../../../../../../constants';
 import { questionPropType } from '../../../../prop-types';
@@ -79,12 +80,15 @@ const GroupMultiple = ({ t, onBack, onNext, question }) => {
             return (
               <Checkbox
                 checked={values[id]}
+                content={
+                  explanation && (
+                    <Tooltip sticky title={t(name)} content={t(explanation)} />
+                  )
+                }
                 key={id}
                 label={t(name)}
                 name={id}
                 onChange={() => handleChange(id)}
-                tooltipContent={t(explanation)}
-                tooltipTitle={t(name)}
               />
             );
           })}

@@ -1,17 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Error, Tooltip } from '../index';
+import { Error } from '../index';
 import * as Styled from './Checkbox.styled';
 
-const Checkbox = ({
-  checked,
-  error,
-  label,
-  name,
-  onChange,
-  tooltipContent,
-  tooltipTitle
-}) => (
+const Checkbox = ({ checked, content, error, label, name, onChange }) => (
   <Styled.Wrapper>
     <Styled.Checkbox
       id={name}
@@ -20,11 +12,9 @@ const Checkbox = ({
       onChange={onChange}
       type="checkbox"
     />
-    <Styled.Label htmlFor={name} error={error} tooltip={tooltipContent}>
+    <Styled.Label htmlFor={name} error={error} hasContent={!!content}>
       <Styled.Text>{label}</Styled.Text>
-      {tooltipContent && (
-        <Tooltip sticky title={tooltipTitle} content={tooltipContent} />
-      )}
+      {content && content}
     </Styled.Label>
     {error && <Error content={error} />}
   </Styled.Wrapper>
@@ -32,11 +22,13 @@ const Checkbox = ({
 
 Checkbox.defaultProps = {
   checked: false,
+  content: undefined,
   error: undefined
 };
 
 Checkbox.propTypes = {
   checked: PropTypes.bool,
+  content: PropTypes.node,
   error: PropTypes.string,
   label: PropTypes.oneOfType([PropTypes.node, PropTypes.string]).isRequired,
   name: PropTypes.string.isRequired,

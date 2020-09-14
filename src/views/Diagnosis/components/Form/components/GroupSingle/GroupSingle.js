@@ -77,11 +77,14 @@ const GroupSingle = ({ t, onBack, onNext, question }) => {
               <Radio
                 key={id}
                 checked={values[id]}
+                content={
+                  explanation && (
+                    <Tooltip sticky title={t(name)} content={t(explanation)} />
+                  )
+                }
                 name={id}
                 onChange={() => handleChange(id)}
                 label={t(name)}
-                tooltipContent={t(explanation)}
-                tooltipTitle={t(name)}
               />
             );
           })}

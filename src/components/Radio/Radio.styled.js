@@ -36,7 +36,7 @@ export const Label = styled.label`
   display: inline-block;
   width: auto;
   padding-left: 52px;
-  padding-right: ${({ tooltip }) => tooltip && '24px'};
+  padding-right: ${({ hasContent }) => hasContent && '24px'};
 
   &:before {
     content: '';

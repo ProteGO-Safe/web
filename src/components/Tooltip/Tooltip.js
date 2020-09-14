@@ -14,9 +14,9 @@ const Tooltip = ({ content, title, sticky }) => {
 
   return (
     <Styled.Tooltip sticky={sticky} onClick={handleOpenModal}>
-      <Styled.Test1>
+      <Styled.IconWrapper>
         <Styled.IconInfo />
-      </Styled.Test1>
+      </Styled.IconWrapper>
     </Styled.Tooltip>
   );
 };
