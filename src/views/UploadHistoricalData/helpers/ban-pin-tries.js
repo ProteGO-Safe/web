@@ -88,16 +88,13 @@ export const createErrorMessage = (
   }
   if (lockdownTime) {
     const lockdownMessage = getLockdownInfo(lockdownTime, t);
-    return `${t('upload_historical_data_text1')} ${numberOfTries}${t(
-      'upload_historical_data_text2'
-    )}${lockdownMessage}${t('upload_historical_data_text3')}`;
+    return t('upload_historical_data_text1', {
+      amount: numberOfTries,
+      seconds: lockdownMessage
+    });
   }
-  return (
-    <>
-      {t('ban-pin-tries_text1')} ({t('ban-pin-tries_text2')}
-      {numberOfTries}
-      {t('ban-pin-tries_text2')}
-      {currentLimitOfTries})
-    </>
-  );
+  return t('ban-pin-tries_text1', {
+    amount: numberOfTries,
+    limit: currentLimitOfTries
+  });
 };
