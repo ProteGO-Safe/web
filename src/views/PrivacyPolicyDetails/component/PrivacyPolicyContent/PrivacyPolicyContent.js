@@ -8,11 +8,12 @@ import {
   ListAlpha,
   ListRoman,
   ListNumber,
-  ListItem
+  ListItem,
+  Wrapper
 } from './PrivacyPolicyContent.styled';
 
-const PrivacyPolicyContent = ({ t }) => (
-  <>
+const PrivacyPolicyContent = ({ small, t }) => (
+  <Wrapper small={small}>
     <Paragraph>
       <strong>{t('privacy_policy_content_text1')}</strong>
     </Paragraph>
@@ -352,7 +353,7 @@ const PrivacyPolicyContent = ({ t }) => (
       <ListItem>{t('privacy_policy_content_text137')}</ListItem>
       <ListItem>{t('privacy_policy_content_text170')}</ListItem>
     </ListNumber>
-  </>
+  </Wrapper>
 );
 
 export default withTranslation()(PrivacyPolicyContent);

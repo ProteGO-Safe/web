@@ -6,11 +6,12 @@ import {
   Paragraph,
   Title,
   ListNumber,
-  ListItem
+  ListItem,
+  Wrapper
 } from './RegulationsContent.styled';
 
-const RegulationsContent = ({ t }) => (
-  <>
+const RegulationsContent = ({ small, t }) => (
+  <Wrapper small={small}>
     <Paragraph>
       <strong>{t('regulations_content_text1')}</strong>
     </Paragraph>
@@ -198,7 +199,7 @@ const RegulationsContent = ({ t }) => (
         <Email>{t('regulations_content_text88')}</Email>.
       </ListItem>
     </ListNumber>
-  </>
+  </Wrapper>
 );
 
 export default withTranslation()(RegulationsContent);

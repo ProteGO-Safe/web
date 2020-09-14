@@ -6,7 +6,8 @@ import {
   Button,
   Checkbox,
   FieldSet,
-  Header
+  Header,
+  Tooltip
 } from '../../../../../../components';
 import { VALUE_ABSENT, VALUE_PRESENT } from '../../../../../../constants';
 import { questionPropType } from '../../../../prop-types';
@@ -37,7 +38,7 @@ const GroupMultiple = ({ t, onBack, onNext, question }) => {
     setFieldValue(itemId, current === undefined ? true : !current);
   };
 
-  const handelSelectOther = () => {
+  const handleSelectOther = () => {
     answersIds.forEach(value => {
       values[value] = false;
     });
@@ -75,10 +76,15 @@ const GroupMultiple = ({ t, onBack, onNext, question }) => {
         <Title>{t(text)}</Title>
         <FieldSet>
           {answers.map(item => {
-            const { id, name } = item;
+            const { explanation, id, name } = item;
             return (
               <Checkbox
                 checked={values[id]}
+                content={
+                  explanation && (
+                    <Tooltip sticky title={t(name)} content={t(explanation)} />
+                  )
+                }
                 key={id}
                 label={t(name)}
                 name={id}
@@ -90,7 +96,7 @@ const GroupMultiple = ({ t, onBack, onNext, question }) => {
             checked={values[otherId]}
             label={t('group_multiple_text1')}
             name={t('group_multiple_text1')}
-            onChange={handelSelectOther}
+            onChange={handleSelectOther}
           />
         </FieldSet>
         <Button

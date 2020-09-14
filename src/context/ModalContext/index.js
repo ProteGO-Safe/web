@@ -7,12 +7,14 @@ const ModalContext = createContext(null);
 export const ModalProvider = ({ children }) => {
   const [modal, setModal] = useState(false);
   const [content, setContent] = useState(null);
+  const [title, setTitle] = useState(null);
   const [type, setType] = useState('');
 
   const onClose = () => setContent(null);
-  const openModal = (value, modalType) => {
+  const openModal = (value, modalType, modalTitle) => {
     setContent(value);
-    setType(modalType || '');
+    setType(modalType || 'normal');
+    setTitle(modalTitle || null);
   };
 
   useEffect(() => {
@@ -25,6 +27,7 @@ export const ModalProvider = ({ children }) => {
         content,
         onClose,
         openModal,
+        title,
         type
       }}
     >

@@ -4,7 +4,6 @@ import { FormGroup } from '@material-ui/core';
 import { useFormikContext } from 'formik';
 import {
   Title,
-  Label,
   Actions
 } from '../../../../../../components/ImprintFiller/ImprintFiller.styled';
 import { Button, Layout, Radio } from '../../../../../../components';
@@ -25,19 +24,19 @@ const Age = ({ t, onBack, onNext }) => {
       <FormGroup>
         <Radio
           checked={values[DIAGNOSIS_FORM_FIELDS.AGE] === IS_NOT_ELDERLY}
-          label={<Label>{t('age_text2')}</Label>}
+          label={t('age_text2')}
           name="age"
           onChange={() => onChange(IS_NOT_ELDERLY)}
         />
         <Radio
           checked={values[DIAGNOSIS_FORM_FIELDS.AGE] === IS_ELDERLY}
-          label={<Label>{t('age_text3')}</Label>}
+          label={t('age_text3')}
           name="age"
           onChange={() => onChange(IS_ELDERLY)}
         />
         <Radio
           checked={values[DIAGNOSIS_FORM_FIELDS.AGE] === NO_DATA}
-          label={<Label>{t('age_text4')}</Label>}
+          label={t('age_text4')}
           name="age"
           onChange={() => onChange(NO_DATA)}
         />
