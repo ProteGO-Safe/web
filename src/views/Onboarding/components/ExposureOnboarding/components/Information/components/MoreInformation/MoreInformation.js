@@ -25,7 +25,7 @@ const MoreInformation = ({ t, onNext }) => {
     <Layout hideBackButton isGovFooter>
       <OnboardingContent icon={<Icon />} title="" buttons={renderButton}>
         <Paragraph>
-          <strong>{t('more_information_text1')}</strong>
+          <strong>{t('more_information_text1')}</strong>{' '}
           {t('more_information_text2')}
         </Paragraph>
         <Paragraph>{t('more_information_text3')}</Paragraph>

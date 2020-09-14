@@ -4,6 +4,23 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## 4.4.0
+
+### Added
+- language switcher on the startup screen
+- language switcher in settings
+- Ukrainian translation
+- English translation
+- hints for answers in the Risk Assessment Test
+
+### Changed
+- date format of the last triage result
+
+## 4.3.1
+
+### Fixed
+- displaying dates in the health diary 
+
 ## 4.3.0
 
 ### Added

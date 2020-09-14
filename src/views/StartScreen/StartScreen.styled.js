@@ -39,10 +39,11 @@ export const LogoWrapper = styled.h1`
 export const Logo = styled(LogoSVG)`
   width: 100%;
   max-width: 302px;
-  margin-bottom: 20px;
 `;
 
 export const Subtitle = styled.p`
+  margin-top: 43px;
+  margin-bottom: 43px;
   font-size: 20px;
   line-height: 24px;
   color: ${Color.white};
@@ -103,4 +104,5 @@ export const Button = styled.button`
   color: ${Color.primary};
   background: #ffffff;
   cursor: pointer;
+  font-family: 'Open Sans', sans-serif;
 `;

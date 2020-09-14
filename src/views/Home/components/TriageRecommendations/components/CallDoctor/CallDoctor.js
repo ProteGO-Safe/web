@@ -60,10 +60,10 @@ const CallDoctor = ({ t }) => (
     </Collapse>
     <Collapse title={t('call_doctor_text34')}>
       <p>
-        {t('call_doctor_text25')}
-        <PhoneNumber>{t('call_doctor_text26')}</PhoneNumber>
+        {t('call_doctor_text25')}{' '}
+        <PhoneNumber>{t('call_doctor_text26')}</PhoneNumber>{' '}
         {t('call_doctor_text27')}{' '}
-        <PhoneNumber>{t('call_doctor_text28')}</PhoneNumber>
+        <PhoneNumber>{t('call_doctor_text28')}</PhoneNumber>{' '}
         {t('call_doctor_text29')}
       </p>
     </Collapse>
