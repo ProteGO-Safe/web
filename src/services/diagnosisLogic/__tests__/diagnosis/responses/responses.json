@@ -23,7 +23,7 @@
               "label": "no"
             }
           ],
-          "explanation": null,
+          "explanation": "diagnosis_explanation7",
           "id": "p_16",
           "name": "diagnosis_text1"
         },
@@ -38,7 +38,7 @@
               "label": "no"
             }
           ],
-          "explanation": null,
+          "explanation": "diagnosis_explanation10",
           "id": "p_17",
           "name": "diagnosis_text2"
         },
@@ -68,7 +68,7 @@
               "label": "no"
             }
           ],
-          "explanation": null,
+          "explanation": "diagnosis_explanation1",
           "id": "p_19",
           "name": "diagnosis_text4"
         },
@@ -83,7 +83,7 @@
               "label": "no"
             }
           ],
-          "explanation": null,
+          "explanation": "diagnosis_explanation8",
           "id": "p_20",
           "name": "diagnosis_text5"
         },
@@ -98,7 +98,7 @@
               "label": "no"
             }
           ],
-          "explanation": null,
+          "explanation": "diagnosis_explanation9",
           "id": "p_21",
           "name": "diagnosis_text6"
         },
@@ -143,7 +143,7 @@
               "label": "no"
             }
           ],
-          "explanation": null,
+          "explanation": "diagnosis_explanation2",
           "id": "p_24",
           "name": "diagnosis_text9"
         }
@@ -171,7 +171,7 @@
               "label": "no"
             }
           ],
-          "explanation": null,
+          "explanation": "diagnosis_explanation3",
           "id": "s_0",
           "name": "diagnosis_text11"
         },
@@ -201,7 +201,7 @@
               "label": "no"
             }
           ],
-          "explanation": null,
+          "explanation": "diagnosis_explanation4",
           "id": "s_2",
           "name": "diagnosis_text13"
         }
@@ -348,7 +348,7 @@
     "conditions": [],
     "extras": {},
     "question": {
-      "explanation": null,
+      "explanation": "diagnosis_explanation11",
       "extras": {},
       "items": [
         {
@@ -509,7 +509,7 @@
     "conditions": [],
     "extras": {},
     "question": {
-      "explanation": null,
+      "explanation": "diagnosis_explanation5",
       "extras": {},
       "items": [
         {
@@ -537,7 +537,7 @@
     "conditions": [],
     "extras": {},
     "question": {
-      "explanation": null,
+      "explanation": "diagnosis_explanation6",
       "extras": {},
       "items": [
         {
@@ -818,7 +818,7 @@
     "conditions": [],
     "extras": {},
     "question": {
-      "explanation": null,
+      "explanation": "diagnosis_explanation5",
       "extras": {},
       "items": [
         {
@@ -979,7 +979,7 @@
     "conditions": [],
     "extras": {},
     "question": {
-      "explanation": null,
+      "explanation": "diagnosis_explanation5",
       "extras": {},
       "items": [
         {
