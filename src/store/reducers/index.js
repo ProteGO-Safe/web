@@ -19,6 +19,7 @@ const reducers = combineReducers({
 
 const rootReducer = (state, action) => {
   if (action.type === APP_STATE_CLEARED) {
+    window.localStorage.clear();
     return reducers(undefined, action);
   }
 

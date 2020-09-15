@@ -51,10 +51,10 @@ export const applicationStateCleared = () => ({
   type: types.APP_STATE_CLEARED
 });
 
-export function clearApplicationState() {
-  return async dispatch => {
-    dispatch(clearBluetoothData());
+export const clearApplicationState = () => {
+  return dispatch => {
     dispatch(applicationStateCleared());
+    clearBluetoothData();
   };
 }
 
