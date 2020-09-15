@@ -17,7 +17,7 @@ const Numbers = ({ t }) => {
   return (
     <Layout isNavigation>
       <Info>{t('numbers_text1')}</Info>
-      <PhoneNumber value="800190590">
+      <PhoneNumber value="222500115">
         <Button
           onClick={() => null}
           className="small"
