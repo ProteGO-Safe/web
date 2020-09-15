@@ -5,7 +5,7 @@ import { ModalClose } from './components';
 import * as Styled from './Modal.styled';
 
 const Modal = () => {
-  const { content, onClose, type, title } = useModalContext();
+  const { content, footer, onClose, title, type } = useModalContext();
   const scrollRef = useRef(null);
   const [height, setHeight] = useState(null);
 
@@ -22,12 +22,16 @@ const Modal = () => {
     <Styled.Wrapper>
       <Styled.Overlay onClick={onClose} />
       <Styled.Content type={type} height={height}>
-        <ModalClose onClick={onClose} />
+        {type !== 'dialog' && <ModalClose onClick={onClose} />}
         {title && <Styled.Title>{title}</Styled.Title>}
 
         <Styled.ScrollbarContent>
-          <PerfectScrollbar ref={scrollRef}>{content}</PerfectScrollbar>
+          <PerfectScrollbar ref={scrollRef}>
+            <Styled.Text>{content}</Styled.Text>
+          </PerfectScrollbar>
         </Styled.ScrollbarContent>
+
+        {footer && type === 'dialog' && <Styled.Footer>{footer}</Styled.Footer>}
       </Styled.Content>
     </Styled.Wrapper>
   );

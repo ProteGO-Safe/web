@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { Color } from '../../theme/colors';
+import { Paragraph } from '../../theme/typography';
 
 export const Wrapper = styled.div`
   position: fixed;
@@ -31,12 +32,12 @@ export const Content = styled.div`
   display: flex;
   flex-direction: column;
   width: calc(100% - 34px);
-  height: ${({ type, height }) =>
-    type === 'dialog' || height < 260 ? 'auto' : '100vh'};
-  max-height: 62%;
+  height: ${({ height }) => (height < 320 ? 'auto' : '100vh')};
+  max-height: calc(100vh - 136px);
   max-width: 450px;
   margin: 0 auto;
-  padding: 30px 40px;
+  padding: ${({ type }) =>
+    type === 'dialog' ? '30px 40px 20px 40px' : '30px 40px'};
   grid-area: wrapper;
   align-self: center;
   background-color: ${Color.white};
@@ -52,14 +53,28 @@ export const Title = styled.h2`
   color: ${Color.black};
 `;
 
+export const Text = styled(Paragraph)`
+  font-size: 14px;
+  line-height: 22px;
+  margin-bottom: 0 !important;
+`;
+
+export const Footer = styled.div`
+  width: calc(100% + 44px);
+  margin: 30px -22px 0 -22px;
+  button:not(:last-child) {
+    margin-bottom: 10px;
+  }
+`;
+
 export const ScrollbarContent = styled.div`
-  width: calc(100% + 24px);
+  width: calc(100% + 22px);
   height: 100%;
   margin-top: 12px;
   overflow-x: hidden;
 
   .scrollbar-container {
-    padding-right: 24px;
+    padding-right: 22px;
     .ps {
       &__rail-y,
       &__rail-x {

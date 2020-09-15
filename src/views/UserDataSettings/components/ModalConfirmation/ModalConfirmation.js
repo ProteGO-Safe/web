@@ -9,6 +9,8 @@ import Routes from '../../../../routes';
 import useLoaderContext from '../../../../hooks/useLoaderContext';
 import { clearApplicationState } from '../../../../store/actions/app';
 
+import * as Styled from './ModalConfirmation.styled';
+
 const ModalConfirmation = ({ t }) => {
   const dispatch = useDispatch();
   const { onClose } = useModalContext();
@@ -25,10 +27,9 @@ const ModalConfirmation = ({ t }) => {
   };
 
   return (
-    <div className="user-data__modal-confirmation">
-      <h4 className="text-center">{t('modal_confirmation_text1')}</h4>
+    <Styled.ModalConfirmation>
       <Button onClick={handleClose} label={t('ok')} />
-    </div>
+    </Styled.ModalConfirmation>
   );
 };
 

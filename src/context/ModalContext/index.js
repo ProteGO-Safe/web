@@ -5,16 +5,18 @@ import { Modal } from '../../components';
 const ModalContext = createContext(null);
 
 export const ModalProvider = ({ children }) => {
-  const [modal, setModal] = useState(false);
+  const [footer, setFooter] = useState([]);
   const [content, setContent] = useState(null);
+  const [modal, setModal] = useState(false);
   const [title, setTitle] = useState(null);
   const [type, setType] = useState('');
 
   const onClose = () => setContent(null);
-  const openModal = (value, modalType, modalTitle) => {
-    setContent(value);
+  const openModal = (value, modalType, modalTitle, modalFooter) => {
+    setContent(value || ' ');
     setType(modalType || 'normal');
     setTitle(modalTitle || null);
+    setFooter(modalFooter || null);
   };
 
   useEffect(() => {
@@ -24,7 +26,9 @@ export const ModalProvider = ({ children }) => {
   return (
     <ModalContext.Provider
       value={{
+        footer,
         content,
+        modal,
         onClose,
         openModal,
         title,

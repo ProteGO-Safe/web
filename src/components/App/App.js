@@ -47,11 +47,13 @@ import { isLocalPWA, isWebView } from '../../utils/native';
 import useMigration from '../../hooks/useMigration';
 import useCheckLanguage from '../../hooks/useCheckLanguage';
 import useNotification from '../../hooks/useNotification';
+import useModalContext from '../../hooks/useModalContext';
 
 function App() {
   moment.locale('pl');
   const dispatch = useDispatch();
   const history = useHistory();
+  const { modal } = useModalContext();
 
   const { name } = useSelector(state => state.user);
   const {
@@ -113,7 +115,7 @@ function App() {
   })();
 
   return (
-    <div className={className}>
+    <div className={`${className} ${modal ? 'open-modal' : ''}`}>
       <Switch>
         <Route exact path={Routes.Home} component={resolveHomeComponent} />
         {name && (
