@@ -8,8 +8,8 @@ export const Icon = styled.img`
 `;
 
 export const Container = styled.div`
+  flex-direction: column;
   display: flex;
-  flex-flow: wrap row;
   align-items: center;
   justify-content: center;
   width: 100%;
