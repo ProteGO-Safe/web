@@ -117,7 +117,7 @@ const FaqPage = ({ t }) => {
     if (language === 'en') {
       return 'https://www.gov.pl/web/coronavirus';
     }
-    if (language === 'ua') {
+    if (language === 'uk') {
       return 'https://www.gov.pl/web/coronavirus-ua';
     }
     return '';
