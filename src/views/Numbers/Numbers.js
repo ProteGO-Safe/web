@@ -6,9 +6,11 @@ import { Button, LineItem, PhoneNumber, Layout } from '../../components';
 import { Paragraph } from '../../theme/typography';
 import { Color } from '../../theme/colors';
 import { Info, Phone, Line } from './Numbers.styled';
+import useLanguage from '../../hooks/useLanguage';
 
 const Numbers = ({ t }) => {
   const history = useHistory();
+  const { isDefaultLanguage } = useLanguage();
 
   const goToHospitalsList = () => history.push(Routes.HospitalsList);
 
@@ -25,8 +27,12 @@ const Numbers = ({ t }) => {
         />
       </PhoneNumber>
       <Paragraph color={Color.primary}>{t('numbers_text4')}</Paragraph>
-      <LineItem onClick={goToHospitalsList} text={t('numbers_text3')} />
-      <Line />
+      {isDefaultLanguage && (
+        <>
+          <LineItem onClick={goToHospitalsList} text={t('numbers_text3')} />
+          <Line />
+        </>
+      )}
     </Layout>
   );
 };

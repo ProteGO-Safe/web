@@ -4,6 +4,7 @@ import { useTranslation } from 'react-i18next';
 import { changeLanguage } from '../../store/actions/app';
 import { languages } from '../../utils/languages';
 import useDefaultLanguage from '../useDefaultLanguage';
+import { DEFAULT_LANGUAGE } from '../../constants';
 
 const useLanguage = () => {
   const dispatch = useDispatch();
@@ -23,7 +24,8 @@ const useLanguage = () => {
   return {
     languages,
     changeAppLanguage,
-    language: defaultLanguage
+    language: defaultLanguage,
+    isDefaultLanguage: defaultLanguage === DEFAULT_LANGUAGE
   };
 };
 
