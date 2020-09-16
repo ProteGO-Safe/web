@@ -9,7 +9,7 @@ export const InputSliderContainer = styled.div`
 export const InputSliderWrapper = styled.div`
   position: relative;
   width: 100%;
-  padding: 0 16px 30px;
+  padding: 0 20px 24px;
 `;
 
 export const Label = styled.span`
