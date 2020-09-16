@@ -9,7 +9,7 @@ const getAttemptFromTheEnd = (listOfTries, numberOfTries) => {
 
 export const getBanData = listOfTries => {
   const now = new Date().getTime();
-  const banData = pinTimeouts.reduce(
+  return pinTimeouts.reduce(
     (prev, curr, index) => {
       const interval = curr.intervalInMinutes * MINUTE;
       let firstTimeTry = listOfTries[0];
@@ -48,7 +48,6 @@ export const getBanData = listOfTries => {
       currentLimitOfTries: pinTimeouts[0].numberOfTries
     }
   );
-  return banData;
 };
 
 const getCorrentMinuteForm = (lockdownTimeInMinutes, t) => {
