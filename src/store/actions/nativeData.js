@@ -92,7 +92,7 @@ export function enableServices(data) {
   nativeBridge.setServicesState(data);
 }
 
-export function clearBluetoothData() {
+export function clearNativeBluetoothData() {
   const data = { clearBtData: true };
   nativeBridge.clearBluetoothData(data);
 }

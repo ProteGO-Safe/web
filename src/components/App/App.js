@@ -48,6 +48,7 @@ import useMigration from '../../hooks/useMigration';
 import useCheckLanguage from '../../hooks/useCheckLanguage';
 import useNotification from '../../hooks/useNotification';
 import useModalContext from '../../hooks/useModalContext';
+import useClearData from '../../hooks/useClearData';
 
 function App() {
   moment.locale('pl');
@@ -67,6 +68,7 @@ function App() {
   const { hasFilledAnyDiagnosis } = useFilledDiagnosis();
   useMigration();
   useCheckLanguage();
+  useClearData();
 
   useEffect(() => {
     dispatch(fetchNativeVersion());
