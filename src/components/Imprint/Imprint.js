@@ -11,6 +11,7 @@ import './Imprint.scss';
 
 const Imprint = ({ t, user = {} }) => {
   const { chronicSicks, bloodGroup, smokeNumber, isSmoking } = user;
+
   const smokingContent = () => {
     if (!smokeNumber && isSmoking === undefined) {
       return t('imprint_text5');
