@@ -1,7 +1,8 @@
 import React, { useEffect } from 'react';
-import moment from 'moment';
 import classNames from 'classnames';
 import 'moment/locale/pl';
+import 'moment/locale/uk';
+import 'moment/locale/en-gb';
 import { useDispatch, useSelector } from 'react-redux';
 import { Redirect, Route, Switch, useHistory } from 'react-router-dom';
 import {
@@ -51,7 +52,6 @@ import useModalContext from '../../hooks/useModalContext';
 import useClearData from '../../hooks/useClearData';
 
 function App() {
-  moment.locale('pl');
   const dispatch = useDispatch();
   const history = useHistory();
   const { modal } = useModalContext();
