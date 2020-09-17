@@ -32,7 +32,7 @@ export const Content = styled.div`
   display: flex;
   flex-direction: column;
   width: calc(100% - 34px);
-  height: ${({ height }) => (height < 320 ? 'auto' : '100vh')};
+  height: ${({ height }) => (height < 260 ? `auto` : '100vh')};
   max-height: calc(100vh - 136px);
   max-width: 450px;
   margin: 0 auto;
@@ -68,30 +68,8 @@ export const Footer = styled.div`
 `;
 
 export const ScrollbarContent = styled.div`
-  width: calc(100% + 22px);
+  width: ${({ height }) => (height < 260 ? '100%' : 'calc(100% + 22px)')};
   height: 100%;
   margin-top: 12px;
   overflow-x: hidden;
-
-  .scrollbar-container {
-    padding-right: 22px;
-    .ps {
-      &__rail-y,
-      &__rail-x {
-        right: 2px !important;
-        opacity: 1 !important;
-        background-color: ${Color.gray_1} !important;
-        width: 8px;
-        border-radius: 4px;
-      }
-
-      &__thumb-y,
-      &__thumb-x {
-        right: 0;
-        width: 8px !important;
-        background-color: ${Color.lightGray} !important;
-        border-radius: 4px;
-      }
-    }
-  }
 `;

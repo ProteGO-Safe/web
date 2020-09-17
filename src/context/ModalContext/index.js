@@ -4,6 +4,8 @@ import { Modal } from '../../components';
 
 const ModalContext = createContext(null);
 
+export const EMPTY_MODAL_CONTENT = ' ';
+
 export const ModalProvider = ({ children }) => {
   const [footer, setFooter] = useState([]);
   const [content, setContent] = useState(null);
@@ -13,7 +15,7 @@ export const ModalProvider = ({ children }) => {
 
   const onClose = () => setContent(null);
   const openModal = (value, modalType, modalTitle, modalFooter) => {
-    setContent(value || ' ');
+    setContent(value || EMPTY_MODAL_CONTENT);
     setType(modalType || 'normal');
     setTitle(modalTitle || null);
     setFooter(modalFooter || null);

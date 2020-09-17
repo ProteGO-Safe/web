@@ -10,7 +10,7 @@ const ModalContent = ({ t }) => {
 
   const handleSubmit = () => {
     openModal(
-      ' ',
+      null,
       'dialog',
       t('modal_confirmation_text1'),
       <ModalConfirmation />
