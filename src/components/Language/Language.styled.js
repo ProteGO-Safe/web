@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import { Color } from '../../theme/colors';
 
 import Arrow from '../../assets/img/icons/angle-right-white.svg';
+import { DEVICE } from '../../theme/deviceResponsive';
 
 export const Language = styled.div`
   display: flex;
@@ -55,10 +56,9 @@ export const Language = styled.div`
     &__option {
       &s {
         position: absolute;
-        top: calc(100% - 6px);
         left: -2px;
         width: calc(100% + 4px);
-        max-height: 167px;
+        max-height: 170px;
         margin: 0;
         padding: 0;
         list-style: none;
@@ -69,6 +69,12 @@ export const Language = styled.div`
         border-radius: 0 0 4px 4px;
         z-index: 999999;
         overflow: auto;
+        ${DEVICE.XS} {
+          bottom: calc(100% - 6px);
+        }
+        ${DEVICE.minXS} {
+          top: calc(100% - 6px);
+        }
       }
       &--placeholder {
         display: flex;
