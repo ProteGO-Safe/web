@@ -18,7 +18,8 @@ const Input = ({
   reset,
   size,
   type,
-  value
+  value,
+  pattern
 }) => {
   const ref = useRef(null);
 
@@ -30,7 +31,6 @@ const Input = ({
       };
     }
   }, [ref]);
-
   return (
     <div className="input input__wrapper">
       {icon && value.length < 1 && (
@@ -57,7 +57,7 @@ const Input = ({
         step="0.1"
         type={type}
         value={value}
-        pattern="\d*"
+        pattern={pattern}
       />
       {description && <span className="input__description">{description}</span>}
       {error && <span className="input__error">{error}</span>}
@@ -77,7 +77,8 @@ Input.defaultProps = {
   placeholder: '',
   size: 'normal',
   type: 'text',
-  value: null
+  value: null,
+  pattern: null
 };
 
 Input.propTypes = {
@@ -93,7 +94,8 @@ Input.propTypes = {
   placeholder: PropTypes.string,
   size: PropTypes.oneOf(['small', 'normal']),
   type: PropTypes.oneOf(['text', 'number']),
-  value: PropTypes.oneOfType([PropTypes.number, PropTypes.string])
+  value: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+  pattern: PropTypes.string
 };
 
 export default Input;

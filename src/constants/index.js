@@ -109,6 +109,8 @@ export const FIELD_CONTACTS = 'contacts';
 export const FIELD_SMOKE = 'smoke';
 export const FIELD_SMOKE_NUMBER = 'smokeNumber';
 
+export const PATTERN_TEMPERATURE = '^[0-9]{2}+([.,][0-9]{1,2})?$';
+
 export const VALUE_SYMPTOM_LEVEL_1 = 'level 1';
 export const VALUE_SYMPTOM_LEVEL_2 = 'level 2';
 export const VALUE_SYMPTOM_LEVEL_3 = 'level 3';
