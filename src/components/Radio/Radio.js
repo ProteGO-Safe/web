@@ -1,41 +1,38 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {
-  FormControl,
-  FormControlLabel,
-  Radio as MuiRadio
-} from '@material-ui/core';
+import uniqueId from 'lodash.uniqueid';
+import { Error } from '../index';
+import * as Styled from './Radio.styled';
 
-import { RadioWrapper } from './Radio.styled';
-
-const Radio = ({ checked, error, label, name, onChange }) => (
-  <RadioWrapper>
-    <FormControl error={error}>
-      <FormControlLabel
-        control={
-          <MuiRadio
-            checked={checked}
-            color="primary"
-            onChange={onChange}
-            name={name}
-            style={{
-              marginRight: `25px`
-            }}
-          />
-        }
-        label={label}
+const Radio = ({ checked, content, error, label, name, onChange }) => {
+  const id = uniqueId('radio-');
+  return (
+    <Styled.Wrapper>
+      <Styled.Radio
+        id={id}
+        checked={checked}
+        name={name}
+        onChange={onChange}
+        type="radio"
       />
-    </FormControl>
-  </RadioWrapper>
-);
+      <Styled.Label htmlFor={id} error={error} hasContent={!!content}>
+        <Styled.Text>{label}</Styled.Text>
+        {content && content}
+      </Styled.Label>
+      {error && <Error content={error} />}
+    </Styled.Wrapper>
+  );
+};
 
 Radio.defaultProps = {
   checked: false,
+  content: undefined,
   error: undefined
 };
 
 Radio.propTypes = {
   checked: PropTypes.bool,
+  content: PropTypes.node,
   error: PropTypes.string,
   label: PropTypes.oneOfType([PropTypes.node, PropTypes.string]).isRequired,
   name: PropTypes.string.isRequired,

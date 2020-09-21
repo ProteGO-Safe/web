@@ -2,7 +2,7 @@ import React from 'react';
 import { withTranslation } from 'react-i18next';
 import { useHistory } from 'react-router-dom';
 import Routes from '../../routes';
-import { Collapse, Button, FieldSet, PhoneNumber } from '../../components';
+import { Collapse, PhoneNumber } from '../../components';
 import {
   CollapseWrapper,
   List,
@@ -20,9 +20,11 @@ import IconWarning from '../../assets/img/icons/warning.svg';
 import IconAdviceHome from '../../assets/img/icons/zostan-w-domu.svg';
 import IconAdvicePhone from '../../assets/img/icons/seniorzy.svg';
 import IconAdviceNote from '../../assets/img/icons/dziennik.svg';
+import useLanguage from '../../hooks/useLanguage';
 
 const AdviceInformation = ({ t, collapse, watermark }) => {
   const history = useHistory();
+  const { isDefaultLanguage } = useLanguage();
 
   const renderCollapse = collapse.map((item, i) => {
     const { title, reply } = item;
@@ -62,8 +64,12 @@ const AdviceInformation = ({ t, collapse, watermark }) => {
           </p>
         </ListItem>
       </List>
-      <CollapseWrapper>{renderCollapse}</CollapseWrapper>
-      <Watermark>{watermark}</Watermark>
+      {isDefaultLanguage && (
+        <>
+          <CollapseWrapper>{renderCollapse}</CollapseWrapper>
+          <Watermark>{watermark}</Watermark>
+        </>
+      )}
       <Warning>
         <WarningLabel>
           <img src={IconWarning} alt={t('advice_information_text7')} />
@@ -77,9 +83,6 @@ const AdviceInformation = ({ t, collapse, watermark }) => {
           {t('advice_information_text10')}
         </Paragraph>
       </Warning>
-      <FieldSet>
-        <Button onClick={() => history.push(Routes.Home)} label="OK" />
-      </FieldSet>
     </>
   );
 };

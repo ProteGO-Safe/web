@@ -1,37 +1,50 @@
-import React, { useEffect, useRef } from 'react';
-import PerfectScrollbar from 'react-perfect-scrollbar';
-import Icon from '../../assets/img/icons/close.svg';
+import React, { useEffect, useRef, useState } from 'react';
+import Scrollbar from 'react-scrollbars-custom';
 import useModalContext from '../../hooks/useModalContext';
-import './Modal.scss';
+import { ModalClose } from './components';
+import * as Styled from './Modal.styled';
+import { EMPTY_MODAL_CONTENT } from '../../context/ModalContext';
 
 const Modal = () => {
-  const { content, onClose, type } = useModalContext();
+  const { content, footer, onClose, title, type } = useModalContext();
+  const [scrollHeight, setScrollHeight] = useState(null);
   const scrollRef = useRef(null);
 
   useEffect(() => {
-    if (scrollRef && scrollRef.current) {
-      // eslint-disable-next-line
-      scrollRef.current._ps.update();
+    if (scrollRef && scrollRef.current && scrollRef.current.contentElement) {
+      setScrollHeight(scrollRef.current.contentElement.clientHeight);
     }
   }, [scrollRef]);
 
+  useEffect(() => {
+    if (content === EMPTY_MODAL_CONTENT) {
+      setScrollHeight(0);
+    }
+  }, [content]);
+
   return (
-    <div className={`modal ${type}`}>
-      {/* eslint-disable-next-line */}
-      <div className="modal__overlay" onClick={onClose} />
-      <div className="modal__wrapper">
-        <div className="modal__header">
-          <button onClick={onClose} type="button">
-            <img src={Icon} alt="Zamknij" />
-          </button>
-        </div>
-        <div className="modal__content">
-          <PerfectScrollbar ref={scrollRef}>
-            <div className="modal__content__inner">{content}</div>
-          </PerfectScrollbar>
-        </div>
-      </div>
-    </div>
+    <Styled.Wrapper>
+      <Styled.Overlay onClick={onClose} />
+      <Styled.Content type={type} height={scrollHeight}>
+        {type !== 'dialog' && <ModalClose onClick={onClose} />}
+        {title && <Styled.Title>{title}</Styled.Title>}
+
+        <Styled.ScrollbarContent height={scrollHeight}>
+          <Scrollbar
+            ref={scrollRef}
+            style={{
+              width: '100%',
+              height: scrollHeight > 260 ? '100%' : `${scrollHeight}px`,
+              maxHeight: '100%'
+            }}
+          >
+            <Styled.Text>{content}</Styled.Text>
+          </Scrollbar>
+        </Styled.ScrollbarContent>
+
+        {footer && type === 'dialog' && <Styled.Footer>{footer}</Styled.Footer>}
+      </Styled.Content>
+    </Styled.Wrapper>
   );
 };
 

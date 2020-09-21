@@ -153,7 +153,7 @@ const anyRFSelected = (evidences: Evidence[]) => {
 
 const noFeverAndExistsShortnessBreath = (
   evidences: Evidence[],
-  moreThan65: boolean
+  isElderly: boolean
 ) => {
   if (anyOfThreeSymptoms(evidences)) {
     return resolveCallAmbulanceResponse(evidences);
@@ -167,7 +167,7 @@ const noFeverAndExistsShortnessBreath = (
   if (hasNoSignificantContactConfirmed(evidences)) {
     return resolveCallDoctorResponse(evidences);
   }
-  if (moreThan65 || anyRFSelected(evidences)) {
+  if (isElderly || anyRFSelected(evidences)) {
     return resolveCallAmbulanceResponse(evidences);
   }
   return resolveIsolationCallResponse(evidences);
@@ -178,7 +178,7 @@ const hasFeverTemp = (evidences: Evidence[]) => {
   return isPresent(feverTemp);
 };
 
-const onlyCoughOrFever = (evidences: Evidence[], moreThan65: boolean) => {
+const onlyCoughOrFever = (evidences: Evidence[], isElderly: boolean) => {
   if (anyOfThreeSymptoms(evidences)) {
     return resolveCallAmbulanceResponse(evidences);
   }
@@ -196,7 +196,7 @@ const onlyCoughOrFever = (evidences: Evidence[], moreThan65: boolean) => {
     }
   } else {
     if (hasNoSignificantContactConfirmed(evidences)) {
-      if (hasFeverTemp(evidences) || moreThan65 || anyRFSelected(evidences)) {
+      if (hasFeverTemp(evidences) || isElderly || anyRFSelected(evidences)) {
         return resolveCallDoctorResponse(evidences);
       } else {
         return resolveSelfMonitoringResponse(evidences);
@@ -215,7 +215,7 @@ const onlyFeverAndShortnessBreathOrAll = (evidences: Evidence[]) => {
   return resolveCallAmbulanceResponse(evidences);
 };
 
-const onlyFeverAndCough = (evidences: Evidence[], moreThan65: boolean) => {
+const onlyFeverAndCough = (evidences: Evidence[], isElderly: boolean) => {
   if (anyOfThreeSymptoms(evidences) || hasFeverTemp(evidences)) {
     return resolveCallAmbulanceResponse(evidences);
   }
@@ -224,7 +224,7 @@ const onlyFeverAndCough = (evidences: Evidence[], moreThan65: boolean) => {
       return resolveIsolationCallResponse(evidences);
     }
     if (hasNoSignificantContactConfirmed(evidences)) {
-      if (moreThan65 || anyRFSelected(evidences)) {
+      if (isElderly || anyRFSelected(evidences)) {
         return resolveCallDoctorResponse(evidences);
       } else {
         return resolveSelfMonitoringResponse(evidences);
@@ -261,7 +261,7 @@ const noFeverAndNoCoughAndNoShortnessBreath = (evidences: Evidence[]) => {
 };
 
 const resolveTriageLevel = (query: QueryObject) => {
-  const { evidence: evidences, moreThan65 } = query;
+  const { evidence: evidences, isElderly } = query;
   const [fever, cough, shortnessBreath] = findEvidenceByIds(evidences, [
     's_0',
     's_1',
@@ -269,13 +269,13 @@ const resolveTriageLevel = (query: QueryObject) => {
   ]);
 
   if (isAbsent(fever) && isPresent(shortnessBreath)) {
-    return noFeverAndExistsShortnessBreath(evidences, moreThan65);
+    return noFeverAndExistsShortnessBreath(evidences, isElderly);
   }
   if (
     (isAbsent(fever) && isPresent(cough) && isAbsent(shortnessBreath)) ||
     (isPresent(fever) && isAbsent(cough) && isAbsent(shortnessBreath))
   ) {
-    return onlyCoughOrFever(evidences, moreThan65);
+    return onlyCoughOrFever(evidences, isElderly);
   }
   if (
     (isPresent(fever) && isPresent(cough) && isPresent(shortnessBreath)) ||
@@ -284,7 +284,7 @@ const resolveTriageLevel = (query: QueryObject) => {
     return onlyFeverAndShortnessBreathOrAll(evidences);
   }
   if (isPresent(fever) && isPresent(cough) && isAbsent(shortnessBreath)) {
-    return onlyFeverAndCough(evidences, moreThan65);
+    return onlyFeverAndCough(evidences, isElderly);
   }
   if (isAbsent(fever) && isAbsent(cough) && isAbsent(shortnessBreath)) {
     return noFeverAndNoCoughAndNoShortnessBreath(evidences);
@@ -294,9 +294,9 @@ const resolveTriageLevel = (query: QueryObject) => {
 };
 
 export const getTriage = (query: QueryObject) => {
-  const { moreThan65 } = query;
-  if (moreThan65 === undefined) {
-    throw new Error('moreThan65 is required');
+  const { isElderly } = query;
+  if (isElderly === undefined) {
+    throw new Error('isElderly is required');
   }
   return resolveTriageLevel(query);
 };

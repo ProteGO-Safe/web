@@ -1,7 +1,7 @@
 {
 	"01": {
 		"sex": "female",
-		"moreThan65": false,
+		"isElderly": false,
 		"evidence": [
 			{
 				"id": "s_0",
@@ -31,7 +31,7 @@
 	},
 	"02": {
 		"sex": "female",
-		"moreThan65": false,
+		"isElderly": false,
 		"evidence": [
 			{
 				"id": "s_0",
@@ -61,7 +61,7 @@
 	},
 	"03": {
 		"sex": "female",
-		"moreThan65": false,
+		"isElderly": false,
 		"evidence": [
 			{
 				"id": "s_0",
@@ -91,7 +91,7 @@
 	},
 	"04": {
 		"sex": "female",
-		"moreThan65": true,
+		"isElderly": true,
 		"evidence": [
 			{
 				"id": "s_0",
@@ -157,7 +157,7 @@
 	},
 	"05": {
 		"sex": "female",
-		"moreThan65": false,
+		"isElderly": false,
 		"evidence": [
 			{
 				"id": "p_18",
@@ -259,7 +259,7 @@
 	},
 	"06": {
 		"sex": "female",
-		"moreThan65": false,
+		"isElderly": false,
 		"evidence": [
 			{
 				"id": "s_0",
@@ -329,7 +329,7 @@
 	},
 	"07": {
 		"sex": "female",
-		"moreThan65": false,
+		"isElderly": false,
 		"evidence": [
 			{
 				"id": "s_0",
@@ -399,7 +399,7 @@
 	},
 	"08": {
 		"sex": "female",
-		"moreThan65": false,
+		"isElderly": false,
 		"evidence": [
 			{
 				"id": "s_0",
@@ -433,7 +433,7 @@
 	},
 	"09": {
 		"sex": "female",
-		"moreThan65": false,
+		"isElderly": false,
 		"evidence": [
 			{
 				"id": "s_0",
@@ -467,7 +467,7 @@
 	},
 	"10": {
 		"sex": "female",
-		"moreThan65": false,
+		"isElderly": false,
 		"evidence": [
 			{
 				"id": "s_0",
@@ -501,7 +501,7 @@
 	},
 	"11": {
 		"sex": "female",
-		"moreThan65": false,
+		"isElderly": false,
 		"evidence": [
 			{
 				"id": "s_0",

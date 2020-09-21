@@ -11,10 +11,7 @@ const AdviceInformationContainer = () => {
 
   return (
     <Layout hideBackButton isNavigation>
-      <AdviceInformation
-        collapse={advices}
-        watermark={watermark}
-      />
+      <AdviceInformation collapse={advices} watermark={watermark} />
     </Layout>
   );
 };

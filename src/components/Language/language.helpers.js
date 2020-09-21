@@ -1,7 +1,8 @@
 // https://github.com/ekwonye-richard/react-flags-select/blob/master/src/countries.js
 const isoCodeWithLibraryCode = {
   UK: 'UA',
-  PL: 'PL'
+  PL: 'PL',
+  EN: 'GB'
 };
 
 export const prepareLanguages = languages =>
@@ -16,4 +17,15 @@ export const convertToIso = code => {
 
 export const convertToLibraryCode = code => {
   return isoCodeWithLibraryCode[code];
+};
+
+export const prepareLanguagesCustomLabels = customLabels => {
+  return Object.keys(customLabels)
+    .map(key => {
+      const newKey = isoCodeWithLibraryCode[key] || key;
+      return { [newKey]: customLabels[key] };
+    })
+    .reduce((obj, item) => {
+      return { ...obj, ...item };
+    }, {});
 };

@@ -2,7 +2,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { DATAS, getKeyBySentence } from './migration01.helpers';
 import { updateWholeTriage } from '../../../store/actions/triage';
 import { updateWholeUser } from '../../../store/actions/user';
-import { updateWholeRiskTest } from '../../../store/actions/risktest';
+import { updateWholeRiskTest } from '../../../store/actions/riskTest';
 import { MIGRATIONS } from '../migrations.constants';
 import { finishMigration } from '../../../store/actions/app';
 import { getUser } from '../../../store/selectors/user';

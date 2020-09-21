@@ -59,6 +59,14 @@ jobs:
         env:
           EV: "${{ env.ENVIRONMENT }}_ENV"
         if: env.ENVIRONMENT == 'STAGE' || env.ENVIRONMENT == 'PROD' || env.ENVIRONMENT == 'DEV'
+
+      - name: Upload PL locale to the POEditor
+        run: |
+          sh  locales/scripts/upload.sh -l pl -i $POEDITOR_ID -t $POEDITOR_TOKEN | grep '"code":"200"' || exit 1
+        if: env.ENVIRONMENT == 'DEV'
+        env:
+          POEDITOR_ID: ${{ secrets.POEDITOR_ID }}
+          POEDITOR_TOKEN: ${{ secrets.POEDITOR_TOKEN }}
         
       - name: Setu Correct curl for static assets from cdn
         run: echo "::set-env name=CURL_COMMAND::${{ secrets[env.CURL] }}"
@@ -93,7 +101,6 @@ jobs:
         with:
           name: build
           path: build
-
   deploy:
     needs: build
     runs-on: ubuntu-latest

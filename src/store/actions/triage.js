@@ -11,32 +11,27 @@ export const triageFetchSuccess = ({ data }) => ({
   type: types.TRIAGE_FETCH_SUCCESS
 });
 
-export function fetchTriage(data) {
-  return dispatch => {
-    dispatch(triageFetchRequested());
-    dispatch(firstDiagnosisFinished());
-    const result = getTriage(data);
-    dispatch(triageFetchSuccess({ data: result }));
-  };
-}
+export const fetchTriage = data => async dispatch => {
+  dispatch(triageFetchRequested());
+  dispatch(firstDiagnosisFinished());
+  const result = getTriage(data);
+  dispatch(triageFetchSuccess({ data: result }));
+  return result;
+};
 
 export const timeOfConfirmedCovidReseted = () => ({
   type: types.TIME_OF_CONFIRMED_COVID_RESETED
 });
 
-export function resetTimeOfConfirmedCovid() {
-  return dispatch => {
-    dispatch(timeOfConfirmedCovidReseted());
-  };
-}
+export const resetTimeOfConfirmedCovid = () => dispatch => {
+  dispatch(timeOfConfirmedCovidReseted());
+};
 
 export const wholeTriageUpdated = data => ({
   data,
   type: types.WHOLE_TRIAGE_UPDATED
 });
 
-export function updateWholeTriage(data) {
-  return dispatch => {
-    dispatch(wholeTriageUpdated(data));
-  };
-}
+export const updateWholeTriage = data => dispatch => {
+  dispatch(wholeTriageUpdated(data));
+};

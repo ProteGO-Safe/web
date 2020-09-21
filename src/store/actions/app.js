@@ -1,7 +1,6 @@
 import * as types from '../types/app';
 import {
   changeNativeLanguage,
-  clearBluetoothData,
   resetSourceSetServicesStatus
 } from './nativeData';
 
@@ -51,12 +50,21 @@ export const applicationStateCleared = () => ({
   type: types.APP_STATE_CLEARED
 });
 
-export function clearApplicationState() {
-  return async dispatch => {
-    dispatch(clearBluetoothData());
+export const clearApplicationState = () => {
+  return dispatch => {
     dispatch(applicationStateCleared());
   };
-}
+};
+
+export const bluetoothDataCleared = () => ({
+  type: types.BLUETOOTH_DATA_CLEARED
+});
+
+export const clearBluetoothData = () => {
+  return dispatch => {
+    dispatch(bluetoothDataCleared());
+  };
+};
 
 export const dataFromNewestVersionMarked = () => ({
   type: types.DATA_FROM_NEWEST_VERSION_MARKED

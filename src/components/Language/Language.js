@@ -5,6 +5,7 @@ import * as Styled from './Language.styled';
 import {
   convertToIso,
   convertToLibraryCode,
+  prepareLanguagesCustomLabels,
   prepareLanguages
 } from './language.helpers';
 
@@ -26,7 +27,7 @@ const Language = ({ customLabels, defaultLang, languages, onSelect }) => {
       <ReactFlagsSelect
         ref={myInput}
         countries={prepareLanguages(languages)}
-        customLabels={customLabels}
+        customLabels={prepareLanguagesCustomLabels(customLabels)}
         defaultCountry={lang}
         onSelect={changeLanguage}
       />
