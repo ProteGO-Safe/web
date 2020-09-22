@@ -5,7 +5,7 @@ import Routes from '../../routes';
 import { Layout } from '../../components';
 import MenuSettings from './MenuSettings';
 
-// import LanguageIcon from '../../assets/img/icons/language.svg';
+import LanguageIcon from '../../assets/img/icons/language.svg';
 import Bluetooth from '../../assets/img/icons/bluetooth.svg';
 import { isVersionCompatibilityWithBluetoothModule } from '../../utils/version';
 
@@ -18,12 +18,12 @@ const MenuSettingsContainer = ({ t }) => {
       name: t('menu_settings_item1'),
       path: Routes.SettingsBluetooth,
       disabled: !isVersionCompatibilityWithBluetoothModule(servicesStatus)
+    },
+    {
+      icon: LanguageIcon,
+      name: t('menu_settings_item2'),
+      path: Routes.SettingsLanguages
     }
-    // {
-    //   icon: LanguageIcon,
-    //   name: t('menu_settings_item2'),
-    //   path: Routes.SettingsLanguages
-    // }
   ];
 
   return (

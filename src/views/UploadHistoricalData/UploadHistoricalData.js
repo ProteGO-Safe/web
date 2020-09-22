@@ -10,7 +10,7 @@ import {
 import UploadInProgress from './components/UploadInProgress/UploadInProgress';
 import useSupportExposureNotificationTracing from '../../hooks/useSupportExposureNotificationTracing';
 import { UploadSuccess } from './components/UploadSuccess';
-import { getBanData, createErrorMessage } from './helpers/ban-pin-tries';
+import { getBanData, createErrorMessage } from './helpers/BanPinTries';
 import { UPLOAD_HISTORICAL_DATA_STATE as uploadState } from '../../store/reducers/app/app.constants';
 import Routes from '../../routes';
 

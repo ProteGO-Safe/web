@@ -1,6 +1,6 @@
 import React from 'react';
-import { Icon, Container } from './ExposureNotificationInfo.styled';
 import { withTranslation } from 'react-i18next';
+import { Icon, Container } from './ExposureNotificationInfo.styled';
 
 const ExposureNotificationInfo = ({ t, icon }) => {
   return (

@@ -299,7 +299,7 @@ Array [
 }
 
 <button
-    className="sc-pTWqp c0"
+    className="c0"
     disabled={false}
     onClick={[Function]}
     type="button"
@@ -580,7 +580,7 @@ Array [
 }
 
 <button
-    className="sc-pTWqp c0"
+    className="c0"
     disabled={false}
     onClick={[Function]}
     type="button"
@@ -861,7 +861,7 @@ Array [
 }
 
 <button
-    className="sc-pTWqp c0"
+    className="c0"
     disabled={false}
     onClick={[Function]}
     type="button"
@@ -1577,7 +1577,7 @@ Array [
     className="c0"
   >
     <h5
-      className="sc-fznKkj c1"
+      className="c1"
     >
       home_more_information_text1
     </h5>
@@ -1710,7 +1710,7 @@ Array [
 }
 
 <button
-    className="sc-pTWqp c0"
+    className="c0"
     disabled={false}
     onClick={[Function]}
     type="button"
@@ -2505,7 +2505,7 @@ Array [
     className="c0"
   >
     <h5
-      className="sc-fznKkj c1"
+      className="c1"
     >
       home_more_information_text1
     </h5>
@@ -2638,7 +2638,7 @@ Array [
 }
 
 <button
-    className="sc-pTWqp c0"
+    className="c0"
     disabled={false}
     onClick={[Function]}
     type="button"
@@ -3433,7 +3433,7 @@ Array [
     className="c0"
   >
     <h5
-      className="sc-fznKkj c1"
+      className="c1"
     >
       home_more_information_text1
     </h5>
@@ -3566,7 +3566,7 @@ Array [
 }
 
 <button
-    className="sc-pTWqp c0"
+    className="c0"
     disabled={false}
     onClick={[Function]}
     type="button"
@@ -3874,7 +3874,7 @@ Array [
 }
 
 <button
-    className="sc-pTWqp c0"
+    className="c0"
     disabled={false}
     onClick={[Function]}
     type="button"
@@ -4581,7 +4581,7 @@ Array [
     className="c0"
   >
     <h5
-      className="sc-fznKkj c1"
+      className="c1"
     >
       home_more_information_text1
     </h5>
@@ -4855,7 +4855,7 @@ Array [
 }
 
 <button
-    className="sc-pTWqp c0"
+    className="c0"
     disabled={false}
     onClick={[Function]}
     type="button"
@@ -5248,19 +5248,34 @@ Array [
 }
 
 .c1 {
-  padding-bottom: 20px;
-  padding-top: 20px;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 100%;
+  padding: 20px 0;
   color: #0052a5;
-  padding-left: 30px;
-}
-
-.c1 img {
-  margin-left: 20px;
-  height: 14px;
-  width: 14px;
 }
 
 .c2 {
+  display: block;
+  height: 14px;
+  width: 14px;
+  margin-left: 20px;
+}
+
+.c3 {
   width: auto;
   font-weight: 700;
   color: #0052a5;
@@ -5286,20 +5301,22 @@ Array [
       className="p1"
     >
       triage_info_border_text4
-      <div
+      <a
         className="c1"
-        onClick={[Function]}
+        href="https://pacjent.gov.pl/teleporada"
+        target="_blank"
       >
         triage_info_border_text5
-        <img
-          alt="button"
-          src="angle-right.svg"
-        />
-      </div>
+        <svg
+          className="c2"
+        >
+          arrow-current-color.svg
+        </svg>
+      </a>
       triage_info_border_text6
        
       <a
-        className="c2"
+        className="c3"
         href="tel:112"
       >
         112
@@ -5307,7 +5324,7 @@ Array [
        lub
        
       <a
-        className="c2"
+        className="c3"
         href="tel:999"
       >
         999
@@ -5842,7 +5859,7 @@ Array [
 }
 
 <button
-    className="sc-pTWqp sc-pdKru c0"
+    className="c0"
     disabled={false}
     onClick={[Function]}
     type="button"
@@ -6310,7 +6327,7 @@ Array [
     className="c0"
   >
     <h5
-      className="sc-fznKkj c1"
+      className="c1"
     >
       exposure_sick_text1
     </h5>
@@ -6653,7 +6670,7 @@ Array [
 }
 
 <button
-    className="sc-pTWqp c0"
+    className="c0"
     disabled={false}
     onClick={[Function]}
     type="button"
@@ -7046,19 +7063,34 @@ Array [
 }
 
 .c1 {
-  padding-bottom: 20px;
-  padding-top: 20px;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 100%;
+  padding: 20px 0;
   color: #0052a5;
-  padding-left: 30px;
-}
-
-.c1 img {
-  margin-left: 20px;
-  height: 14px;
-  width: 14px;
 }
 
 .c2 {
+  display: block;
+  height: 14px;
+  width: 14px;
+  margin-left: 20px;
+}
+
+.c3 {
   width: auto;
   font-weight: 700;
   color: #0052a5;
@@ -7084,20 +7116,22 @@ Array [
       className="p1"
     >
       triage_info_border_text4
-      <div
+      <a
         className="c1"
-        onClick={[Function]}
+        href="https://pacjent.gov.pl/teleporada"
+        target="_blank"
       >
         triage_info_border_text5
-        <img
-          alt="button"
-          src="angle-right.svg"
-        />
-      </div>
+        <svg
+          className="c2"
+        >
+          arrow-current-color.svg
+        </svg>
+      </a>
       triage_info_border_text6
        
       <a
-        className="c2"
+        className="c3"
         href="tel:112"
       >
         112
@@ -7105,7 +7139,7 @@ Array [
        lub
        
       <a
-        className="c2"
+        className="c3"
         href="tel:999"
       >
         999
@@ -7640,7 +7674,7 @@ Array [
 }
 
 <button
-    className="sc-pTWqp sc-pdKru c0"
+    className="c0"
     disabled={false}
     onClick={[Function]}
     type="button"
@@ -8365,7 +8399,7 @@ Array [
     className="c0"
   >
     <h5
-      className="sc-fznKkj c1"
+      className="c1"
     >
       home_more_information_text1
     </h5>
@@ -8498,7 +8532,7 @@ Array [
 }
 
 <button
-    className="sc-pTWqp c0"
+    className="c0"
     disabled={false}
     onClick={[Function]}
     type="button"
@@ -8891,19 +8925,34 @@ Array [
 }
 
 .c1 {
-  padding-bottom: 20px;
-  padding-top: 20px;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 100%;
+  padding: 20px 0;
   color: #0052a5;
-  padding-left: 30px;
-}
-
-.c1 img {
-  margin-left: 20px;
-  height: 14px;
-  width: 14px;
 }
 
 .c2 {
+  display: block;
+  height: 14px;
+  width: 14px;
+  margin-left: 20px;
+}
+
+.c3 {
   width: auto;
   font-weight: 700;
   color: #0052a5;
@@ -8929,20 +8978,22 @@ Array [
       className="p1"
     >
       triage_info_border_text4
-      <div
+      <a
         className="c1"
-        onClick={[Function]}
+        href="https://pacjent.gov.pl/teleporada"
+        target="_blank"
       >
         triage_info_border_text5
-        <img
-          alt="button"
-          src="angle-right.svg"
-        />
-      </div>
+        <svg
+          className="c2"
+        >
+          arrow-current-color.svg
+        </svg>
+      </a>
       triage_info_border_text6
        
       <a
-        className="c2"
+        className="c3"
         href="tel:112"
       >
         112
@@ -8950,7 +9001,7 @@ Array [
        lub
        
       <a
-        className="c2"
+        className="c3"
         href="tel:999"
       >
         999
@@ -9328,19 +9379,34 @@ Array [
 }
 
 .c1 {
-  padding-bottom: 20px;
-  padding-top: 20px;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 100%;
+  padding: 20px 0;
   color: #0052a5;
-  padding-left: 30px;
-}
-
-.c1 img {
-  margin-left: 20px;
-  height: 14px;
-  width: 14px;
 }
 
 .c2 {
+  display: block;
+  height: 14px;
+  width: 14px;
+  margin-left: 20px;
+}
+
+.c3 {
   width: auto;
   font-weight: 700;
   color: #0052a5;
@@ -9366,20 +9432,22 @@ Array [
       className="p1"
     >
       triage_info_border_text4
-      <div
+      <a
         className="c1"
-        onClick={[Function]}
+        href="https://pacjent.gov.pl/teleporada"
+        target="_blank"
       >
         triage_info_border_text5
-        <img
-          alt="button"
-          src="angle-right.svg"
-        />
-      </div>
+        <svg
+          className="c2"
+        >
+          arrow-current-color.svg
+        </svg>
+      </a>
       triage_info_border_text6
        
       <a
-        className="c2"
+        className="c3"
         href="tel:112"
       >
         112
@@ -9387,7 +9455,7 @@ Array [
        lub
        
       <a
-        className="c2"
+        className="c3"
         href="tel:999"
       >
         999
@@ -9680,7 +9748,7 @@ Array [
 }
 
 <button
-    className="sc-pTWqp c0"
+    className="c0"
     disabled={false}
     onClick={[Function]}
     type="button"
@@ -10387,7 +10455,7 @@ Array [
     className="c0"
   >
     <h5
-      className="sc-fznKkj c1"
+      className="c1"
     >
       home_more_information_text1
     </h5>
@@ -10773,19 +10841,34 @@ Array [
 }
 
 .c1 {
-  padding-bottom: 20px;
-  padding-top: 20px;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 100%;
+  padding: 20px 0;
   color: #0052a5;
-  padding-left: 30px;
-}
-
-.c1 img {
-  margin-left: 20px;
-  height: 14px;
-  width: 14px;
 }
 
 .c2 {
+  display: block;
+  height: 14px;
+  width: 14px;
+  margin-left: 20px;
+}
+
+.c3 {
   width: auto;
   font-weight: 700;
   color: #0052a5;
@@ -10811,20 +10894,22 @@ Array [
       className="p1"
     >
       triage_info_border_text4
-      <div
+      <a
         className="c1"
-        onClick={[Function]}
+        href="https://pacjent.gov.pl/teleporada"
+        target="_blank"
       >
         triage_info_border_text5
-        <img
-          alt="button"
-          src="angle-right.svg"
-        />
-      </div>
+        <svg
+          className="c2"
+        >
+          arrow-current-color.svg
+        </svg>
+      </a>
       triage_info_border_text6
        
       <a
-        className="c2"
+        className="c3"
         href="tel:112"
       >
         112
@@ -10832,7 +10917,7 @@ Array [
        lub
        
       <a
-        className="c2"
+        className="c3"
         href="tel:999"
       >
         999
@@ -11367,7 +11452,7 @@ Array [
 }
 
 <button
-    className="sc-pTWqp sc-pdKru c0"
+    className="c0"
     disabled={false}
     onClick={[Function]}
     type="button"

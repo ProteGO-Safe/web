@@ -96,9 +96,6 @@ export const chronicSickValues = [
 
 export const FIELD_BLOOD_GROUP = 'bloodGroup';
 
-export const FIELD_CHOICE_ID = 'choice_id';
-export const FIELD_ITEM_ID = 'item_id';
-
 export const VALUE_PRESENT = 'present';
 export const VALUE_ABSENT = 'absent';
 
@@ -111,6 +108,8 @@ export const FIELD_MUSCLE_PAIN = 'musclePain';
 export const FIELD_CONTACTS = 'contacts';
 export const FIELD_SMOKE = 'smoke';
 export const FIELD_SMOKE_NUMBER = 'smokeNumber';
+
+export const PATTERN_TEMPERATURE = '^[0-9]{2}+([.,][0-9]{1,2})?$';
 
 export const VALUE_SYMPTOM_LEVEL_1 = 'level 1';
 export const VALUE_SYMPTOM_LEVEL_2 = 'level 2';

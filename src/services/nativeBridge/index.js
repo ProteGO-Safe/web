@@ -20,7 +20,7 @@ const sendNativeRequest = (functionName, dataType, data) => {
   const requestId = uniqueId('request-');
   if (process.env.NODE_ENV !== 'production') {
     console.log(
-      `functionName: ${functionName}, dataType: ${dataType}, data: ${data}, requestId: ${requestId}`
+      `${Date.now()}: functionName: ${functionName}, dataType: ${dataType}, data: ${data}, requestId: ${requestId}`
     );
   }
   return new Promise((resolve, reject) => {

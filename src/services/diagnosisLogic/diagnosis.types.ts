@@ -26,7 +26,7 @@ export interface Evidence {
 }
 
 export interface QueryObject {
-  moreThan65: boolean;
+  isElderly: boolean;
   evidence: Evidence[];
 }
 

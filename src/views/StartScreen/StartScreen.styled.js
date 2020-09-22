@@ -1,8 +1,8 @@
 import styled from 'styled-components';
-
+import { Color } from '../../theme/colors';
 import { ReactComponent as LogoSVG } from '../../assets/img/logo/protegosafe_logo_white.svg';
 import GovFooter from '../../components/GovFooter/GovFooter';
-import { Color } from '../../theme/colors';
+import { DEVICE } from '../../theme/deviceResponsive';
 
 export const Container = styled.section`
   background-image: linear-gradient(to bottom, #0075e2, #003061);
@@ -39,6 +39,9 @@ export const LogoWrapper = styled.h1`
 export const Logo = styled(LogoSVG)`
   width: 100%;
   max-width: 302px;
+  ${DEVICE.XS} {
+    max-height: 120px;
+  }
 `;
 
 export const Subtitle = styled.p`
@@ -48,6 +51,12 @@ export const Subtitle = styled.p`
   line-height: 24px;
   color: ${Color.white};
   text-align: center;
+  ${DEVICE.XS} {
+    margin-top: 28px;
+    margin-bottom: 28px;
+    font-size: 16px;
+    line-height: 20px;
+  }
 `;
 
 export const ChooseLang = styled.div`
@@ -57,6 +66,9 @@ export const ChooseLang = styled.div`
   width: 100%;
   margin-top: auto;
   margin-bottom: auto;
+  ${DEVICE.XS} {
+    margin-top: 0;
+  }
 `;
 
 export const Label = styled.div`
@@ -66,6 +78,10 @@ export const Label = styled.div`
   line-height: 24px;
   color: ${Color.white};
   text-align: center;
+  ${DEVICE.XS} {
+    font-size: 16px;
+    line-height: 22px;
+  }
 `;
 
 export const Info = styled.span`
@@ -77,6 +93,9 @@ export const Info = styled.span`
   line-height: 24px;
   color: ${Color.white};
   text-align: center;
+  ${DEVICE.XS} {
+    margin-bottom: 24px;
+  }
 `;
 
 export const Footer = styled(GovFooter)`

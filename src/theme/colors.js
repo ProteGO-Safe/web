@@ -15,6 +15,7 @@ export const Color = {
   veryLightGrey: '#cbcbcb',
   gray_1: '#D8D8D8',
   gray_2: '#95989A',
+  gray_4: '#DCDCDC',
   green: '#598527',
   watermark: '#605E5E',
   orange: '#CC4700'

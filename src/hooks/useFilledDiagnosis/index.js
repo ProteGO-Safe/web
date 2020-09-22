@@ -1,7 +1,7 @@
 import { useSelector } from 'react-redux';
 import moment from 'moment';
 
-const dateFormat = 'D-MM-YYYY (hh:mm)';
+const dateFormat = 'D-MM-YYYY (HH:mm)';
 const descending = (a, b) => b - a;
 
 const getLastDate = (filledDays = []) => {

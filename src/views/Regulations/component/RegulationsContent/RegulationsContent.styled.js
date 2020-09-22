@@ -50,3 +50,12 @@ export const ListItem = styled.li`
     margin-bottom: 8px;
   }
 `;
+
+export const Wrapper = styled.div`
+  p,
+  li {
+    font-size: ${({ small }) => small && '12px'};
+    line-height: ${({ small }) => small && '16px'};
+    color: ${({ small }) => small && Color.black};
+  }
+`;

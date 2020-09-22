@@ -1,82 +1,49 @@
-import React, { useEffect, useState } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-
-import { getDiagnosis, clearDiagnosis } from '../../store/actions/diagnosis';
-import { fetchTriage } from '../../store/actions/triage';
-
-import Diagnosis from './Diagnosis';
-import { Summary } from './components/Summary';
+import React from 'react';
+import { useHistory } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { Formik } from 'formik';
 
 import './Diagnosis.scss';
+import { DIAGNOSIS_FORM_INITIAL_VALUES } from './diagnosis.constants';
+import { Form } from './components';
+import { fetchTriage } from '../../store/actions/triage';
+import { addRiskTest } from '../../store/actions/riskTest';
 import useLoaderContext from '../../hooks/useLoaderContext';
-import { Information } from '../Information/index';
-import { Age } from './components/Age';
 
 const DiagnosisContainer = () => {
   const dispatch = useDispatch();
+  const history = useHistory();
   const { setLoader } = useLoaderContext();
-  const [showInformation, setShowInformation] = useState(true);
-  const [moreThan65, setMoreThan65] = useState(undefined);
 
-  const { evidence, question, isLoading, inProgress } = useSelector(
-    state => state.diagnosis
-  );
-
-  useEffect(() => {
-    if (isLoading) {
-      setLoader(true);
-      return;
-    }
-    setLoader(false);
-  }, [isLoading, setLoader]);
-
-  useEffect(() => {
+  const saveRiskTest = (triage, evidence, allQuestions) => {
+    const { triage_level: triageLevel, description } = triage;
     const data = {
-      evidence: []
+      allQuestions: allQuestions.filter(item => item),
+      evidence,
+      triageLevel,
+      description
     };
-    dispatch(getDiagnosis(data));
-  }, [dispatch]);
 
-  useEffect(() => {
-    if (!inProgress && evidence.length > 0 && moreThan65 !== undefined) {
-      const data = {
-        moreThan65,
-        evidence
-      };
-      dispatch(fetchTriage(data));
-    }
-  }, [inProgress, evidence, moreThan65, dispatch]);
-
-  const onClearDiagnosis = () => dispatch(clearDiagnosis());
-
-  const isCountryQuestion = () => {
-    return question.items.some(value => value.id === 'p_5');
+    dispatch(addRiskTest(data));
+    setLoader(true);
+    setTimeout(() => setLoader(false), 5000);
+    history.push('/');
   };
 
-  if (!inProgress && evidence.length > 0) {
-    return <Summary />;
-  }
-
-  if (showInformation) {
-    return <Information hideInformation={() => setShowInformation(false)} />;
-  }
-
-  if (moreThan65 === undefined) {
-    return (
-      <Age onBack={() => setShowInformation(true)} onNext={setMoreThan65} />
+  const finish = (evidence, isElderly, allQuestions) => {
+    const data = {
+      isElderly,
+      evidence
+    };
+    dispatch(fetchTriage(data)).then(triage =>
+      saveRiskTest(triage, evidence, allQuestions)
     );
-  }
+  };
 
   return (
-    <Diagnosis
-      showNavigation={false}
-      isLoading={isLoading}
-      question={question}
-      evidence={evidence}
-      inProgress={inProgress}
-      isCountryQuestion={isCountryQuestion}
-      clearDiagnosis={onClearDiagnosis}
-    />
+    <Formik initialValues={DIAGNOSIS_FORM_INITIAL_VALUES}>
+      <Form onFinish={finish} />
+    </Formik>
   );
 };
 

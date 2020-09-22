@@ -1,7 +1,8 @@
 import React, { useEffect } from 'react';
-import moment from 'moment';
 import classNames from 'classnames';
 import 'moment/locale/pl';
+import 'moment/locale/uk';
+import 'moment/locale/en-gb';
 import { useDispatch, useSelector } from 'react-redux';
 import { Redirect, Route, Switch, useHistory } from 'react-router-dom';
 import {
@@ -47,11 +48,13 @@ import { isLocalPWA, isWebView } from '../../utils/native';
 import useMigration from '../../hooks/useMigration';
 import useCheckLanguage from '../../hooks/useCheckLanguage';
 import useNotification from '../../hooks/useNotification';
+import useModalContext from '../../hooks/useModalContext';
+import useClearData from '../../hooks/useClearData';
 
 function App() {
-  moment.locale('pl');
   const dispatch = useDispatch();
   const history = useHistory();
+  const { modal } = useModalContext();
 
   const { name } = useSelector(state => state.user);
   const {
@@ -65,6 +68,7 @@ function App() {
   const { hasFilledAnyDiagnosis } = useFilledDiagnosis();
   useMigration();
   useCheckLanguage();
+  useClearData();
 
   useEffect(() => {
     dispatch(fetchNativeVersion());
@@ -113,7 +117,7 @@ function App() {
   })();
 
   return (
-    <div className={className}>
+    <div className={`${className} ${modal ? 'open-modal' : ''}`}>
       <Switch>
         <Route exact path={Routes.Home} component={resolveHomeComponent} />
         {name && (

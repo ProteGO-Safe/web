@@ -5,6 +5,7 @@ import { fetchLanguage } from '../../store/actions/nativeData';
 import { getNativeLanguage } from '../../store/selectors/nativeData';
 import { getLanguageChangedByUser } from '../../store/selectors/app';
 import useDefaultLanguage from '../useDefaultLanguage';
+import moment from "moment";
 
 const useCheckLanguage = () => {
   const dispatch = useDispatch();
@@ -18,6 +19,7 @@ const useCheckLanguage = () => {
     if (!isLanguageChangedByUser) {
       dispatch(fetchLanguage());
     }
+    moment.locale(defaultLanguage);
     i18n.changeLanguage(defaultLanguage);
   }, [
     dispatch,

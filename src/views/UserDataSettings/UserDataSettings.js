@@ -11,7 +11,14 @@ import warning from '../../assets/img/icons/warning.svg';
 
 const UserDataSettings = ({ t }) => {
   const { openModal } = useModalContext();
-  const handleClick = () => openModal(<ModalContent />, 'dialog');
+
+  const handleClick = () =>
+    openModal(
+      t('modal_content_text2'),
+      'dialog',
+      t('modal_content_text1'),
+      <ModalContent />
+    );
 
   return (
     <Layout isNavigation>

@@ -29,10 +29,10 @@ export const ProteGoSlider = withStyles({
     width: 0
   },
   markLabel: {
-    top: 52,
+    top: 44,
     fontFamily: 'Open Sans',
-    fontSize: 14,
-    fontWeight: 'bold',
+    fontSize: 12,
+    fontWeight: 'normal',
     color: 'rgba(27, 27, 27, 0.87)',
     '&:first-child': {
       left: 0

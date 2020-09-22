@@ -50,7 +50,7 @@ const UploadData = ({
             <strong>{t('upload_data_text2')}</strong>
             <br />
             {t('upload_data_text3')}{' '}
-            <PhoneNumber value="800123123">800 123 123</PhoneNumber>
+            <PhoneNumber value="222500115">222 500 115</PhoneNumber>
           </Paragraph>
         </InfoIcon>
       ) : null}

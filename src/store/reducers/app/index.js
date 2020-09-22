@@ -1,4 +1,6 @@
 import {
+  APP_STATE_CLEARED,
+  BLUETOOTH_DATA_CLEARED,
   DATA_FROM_NEWEST_VERSION_MARKED,
   EXPOSURE_ONBOARDING_FINISHED,
   FIRST_DIAGNOSIS_FINISHED,
@@ -13,6 +15,7 @@ import {
 import { UPLOAD_HISTORICAL_DATA_STATE as uploadState } from './app.constants';
 
 const INITIAL_STATE = {
+  applicationReseted: false,
   exposureOnboardingFinished: false,
   dataFromNewestVersionMarked: false,
   language: null,
@@ -123,6 +126,19 @@ const appReducer = (state = INITIAL_STATE, action) => {
         languageChangedByUser: true
       };
     }
+    case APP_STATE_CLEARED: {
+      return {
+        ...state,
+        applicationReseted: true
+      };
+    }
+    case BLUETOOTH_DATA_CLEARED: {
+      return {
+        ...state,
+        applicationReseted: false
+      };
+    }
+
     default:
       return state;
   }

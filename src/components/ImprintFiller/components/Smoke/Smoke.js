@@ -15,6 +15,7 @@ import {
 } from '../../../../constants';
 
 import { Actions, Label, Title } from '../../ImprintFiller.styled';
+import * as Styled from './Smoke.styled';
 
 const Smoke = ({ t }) => {
   const { setFieldValue, values } = useFormikContext();
@@ -25,7 +26,7 @@ const Smoke = ({ t }) => {
     VALUE_SMOKE_NUMBER_3,
     VALUE_SMOKE_NUMBER_4,
     VALUE_SMOKE_NUMBER_5
-  ].map(option => ({ label: t(option), value: t(option) }));
+  ].map(option => ({ label: t(option), value: option }));
 
   const isSmoking = values[FIELD_SMOKE] === t('yes');
   const noSmoking = values[FIELD_SMOKE] === t('no');
@@ -59,13 +60,15 @@ const Smoke = ({ t }) => {
         />
       </FormGroup>
       {isSmoking && (
-        <Select
-          changeHandler={setFieldValue}
-          label={t('smoke_text4')}
-          name={FIELD_SMOKE_NUMBER}
-          options={options}
-          value={values[FIELD_SMOKE_NUMBER]}
-        />
+        <Styled.SelectWrapper>
+          <Select
+            changeHandler={setFieldValue}
+            label={t('smoke_text4')}
+            name={FIELD_SMOKE_NUMBER}
+            options={options}
+            value={values[FIELD_SMOKE_NUMBER]}
+          />
+        </Styled.SelectWrapper>
       )}
       <Actions>
         <Button

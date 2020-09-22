@@ -6,6 +6,7 @@ import { ReactComponent as LogoSVG } from '../../assets/img/logo/stopcovid_prote
 import { ReactComponent as ArrowIcon } from '../../assets/img/icons/angle-left.svg';
 
 export const Container = styled.header`
+  margin-top: 1px;
   height: 50px;
   background-color: #0052a5;
   width: 100%;

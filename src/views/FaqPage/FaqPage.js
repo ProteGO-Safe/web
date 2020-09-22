@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { withTranslation } from 'react-i18next';
-import { Collapse, Input, Layout } from '../../components';
+import { Collapse, Input, Layout, Url } from '../../components';
 import {
   FaqIntro,
   FaqTitle,
@@ -17,10 +17,12 @@ import SearchIcon from '../../assets/img/icons/lupa.svg';
 import search from '../../utils/faqSearcher';
 import faqData from './faq.json';
 import { Color } from '../../theme/colors';
+import useLanguage from '../../hooks/useLanguage';
 
 const escapedCharacters = new RegExp('[{}()\\[\\].+*?^$\\\\|]', 'g');
 
 const FaqPage = ({ t }) => {
+  const { isDefaultLanguage, language } = useLanguage();
   const [filterText, setFilterText] = useState('');
 
   if (!faqData) {
@@ -111,24 +113,45 @@ const FaqPage = ({ t }) => {
     }
   );
 
+  const resolveExternalFaqUrl = () => {
+    if (language === 'en') {
+      return 'https://www.gov.pl/web/coronavirus';
+    }
+    if (language === 'uk') {
+      return 'https://www.gov.pl/web/coronavirus-ua';
+    }
+    return '';
+  };
+
   return (
     <Layout hideBackButton isNavigation>
       <Title>{t('faq_page_text1')}</Title>
       <FaqWrapper>
-        <FaqIntro>{intro}</FaqIntro>
-        <SearchWrapper>
-          <Input
-            reset={handleResetInput}
-            icon={SearchIcon}
-            type="text"
-            name="search"
-            placeholder={t('faq_page_text2')}
-            value={filterText}
-            onChange={handleChangeInput}
-          />
-        </SearchWrapper>
-        {elementsToDisplay}
-        <Watermark>{watermark}</Watermark>
+        {isDefaultLanguage ? (
+          <>
+            <FaqIntro>{intro}</FaqIntro>
+            <SearchWrapper>
+              <Input
+                reset={handleResetInput}
+                icon={SearchIcon}
+                type="text"
+                name="search"
+                placeholder={t('faq_page_text2')}
+                value={filterText}
+                onChange={handleChangeInput}
+              />
+            </SearchWrapper>
+            {elementsToDisplay}
+            <Watermark>{watermark}</Watermark>
+          </>
+        ) : (
+          <>
+            {t('faq_page_text3')}
+            <br />
+            <br />
+            <Url>{resolveExternalFaqUrl()}</Url>
+          </>
+        )}
       </FaqWrapper>
     </Layout>
   );
