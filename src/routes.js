@@ -23,7 +23,8 @@ const Routes = {
   ReportBug: '/report-bug',
   AdviceInformation: '/advice',
   FaqPage: '/faq',
-  UploadHistoricalData: '/upload-historical-data'
+  UploadHistoricalData: '/upload-historical-data',
+  ImportantInformation: '/important-info'
 };
 
 export default Routes;

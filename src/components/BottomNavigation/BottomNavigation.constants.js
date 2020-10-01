@@ -14,7 +14,7 @@ export const InfoItem = {
   id: 'advice_information',
   label: 'bottom_navigation_important_info',
   Icon: ImportantInfo,
-  path: Routes.AdviceInformation,
+  path: Routes.ImportantInformation,
   panicButton: true
 };
 

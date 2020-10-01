@@ -14,6 +14,7 @@ import {
   Home,
   HowItWorks,
   IAmSick,
+  ImportantInfo,
   RiskTest,
   NotSupported,
   Numbers,
@@ -181,6 +182,11 @@ function App() {
               exact
               path={Routes.UploadHistoricalData}
               component={UploadHistoricalData}
+            />
+            <Route
+              exact
+              path={Routes.ImportantInformation}
+              component={ImportantInfo}
             />
           </>
         )}

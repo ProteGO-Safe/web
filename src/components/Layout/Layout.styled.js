@@ -17,7 +17,7 @@ export const Container = styled.div`
   width: 100%;
   max-width: ${({ noMargin }) => (noMargin ? '420px' : '338px')};
   margin: ${({ noMargin }) => (noMargin ? '0 auto' : '24px auto 0')};
-  padding-bottom: 50px;
+  padding-bottom: ${({ noPadding }) => (noPadding ? '0' : '50px')};
   @media (max-width: 320px) {
     max-width: ${({ noMargin }) => (noMargin ? '420px' : '290px')};
     margin: ${({ noMargin }) => (noMargin ? '0 auto' : '24px auto 0')};
