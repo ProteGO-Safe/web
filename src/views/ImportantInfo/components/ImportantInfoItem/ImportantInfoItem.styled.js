@@ -24,6 +24,10 @@ export const ImportantInfoItem = styled.div`
     padding: 14px 12px 28px 12px;
   }
 
+  @media (max-height: 480px) {
+    padding: 14px 6px 18px 6px;
+  }
+
   &:active {
     box-shadow: inset 0 0 5px ${hexToRgba(Color.black, 0.26)};
   }
@@ -43,6 +47,11 @@ export const Icon = styled.div`
 
   @media (max-height: 580px) {
     height: 32px;
+  }
+
+  @media (max-height: 520px) {
+    height: 26px;
+    margin-bottom: 6px;
   }
 `;
 
@@ -71,8 +80,15 @@ export const Title = styled.div`
   }
 
   @media (max-height: 580px) {
-    font-size: 14px;
-    line-height: 18px;
+    font-size: 13px;
+    line-height: 17px;
+    margin-bottom: 0;
+  }
+
+  @media (max-height: 560px) {
+    font-size: 12px;
+    line-height: 14px;
+    margin-bottom: 0;
   }
 `;
 
@@ -94,6 +110,11 @@ export const LinkGov = styled.div`
   font-size: 10px;
   line-height: 1;
   color: ${Color.primary};
+
+  @media (max-height: 480px) {
+    bottom: 4px;
+    font-size: 9px;
+  }
 `;
 
 export const UrlLink = styled.a`
