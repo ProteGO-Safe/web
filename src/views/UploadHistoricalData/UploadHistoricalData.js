@@ -13,6 +13,8 @@ import { UploadSuccess } from './components/UploadSuccess';
 import { getBanData, createErrorMessage } from './helpers/BanPinTries';
 import { UPLOAD_HISTORICAL_DATA_STATE as uploadState } from '../../store/reducers/app/app.constants';
 import Routes from '../../routes';
+import { getUploadHistoricalDataStateErrorMessageVisible } from '../../store/selectors/app';
+import { hideUploadHistoricalDataErrorMessage } from '../../store/actions/app';
 
 const UploadHistoricalData = ({ t }) => {
   const { areEnableAllServices } = useSupportExposureNotificationTracing();
@@ -20,6 +22,9 @@ const UploadHistoricalData = ({ t }) => {
   const dispatch = useDispatch();
   const history = useHistory();
   const { name: userName } = useSelector(state => state.user);
+  const errorMessageVisible = useSelector(
+    getUploadHistoricalDataStateErrorMessageVisible
+  );
   const {
     uploadHistoricalDataState: { status, date, unsuccessfulAttempts } = {
       status: uploadState.EMPTY,
@@ -67,6 +72,10 @@ const UploadHistoricalData = ({ t }) => {
     dispatch(uploadHistoricalData(data));
   };
 
+  const hideErrorMessage = () => {
+    dispatch(hideUploadHistoricalDataErrorMessage());
+  };
+
   const finishUpload = () => {
     dispatch(endUploadHistoricalData()).then(history.push(Routes.Home));
   };
@@ -87,6 +96,8 @@ const UploadHistoricalData = ({ t }) => {
           disableButton={status === uploadState.REQUESTED}
           disablePinInput={Boolean(banData && banData.lockdownTime)}
           errorMessage={getErrorMessage()}
+          errorMessageVisible={errorMessageVisible}
+          hideErrorMessage={hideErrorMessage}
           onUploadData={uploadData}
           pin={pin}
           setPin={setPin}

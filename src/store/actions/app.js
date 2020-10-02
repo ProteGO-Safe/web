@@ -99,3 +99,13 @@ export function changeLanguage(data) {
     dispatch(changeNativeLanguage(data));
   };
 }
+
+export const uploadHistoricalDataErrorMessageHidden = () => ({
+  type: types.UPLOAD_HISTORICAL_DATA_ERROR_MESSAGE_HIDDEN
+});
+
+export const hideUploadHistoricalDataErrorMessage = () => {
+  return dispatch => {
+    dispatch(uploadHistoricalDataErrorMessageHidden());
+  };
+};

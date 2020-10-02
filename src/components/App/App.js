@@ -42,7 +42,10 @@ import useMenuContext from '../../hooks/useMenuContext';
 import Routes from '../../routes';
 import { Notification } from '../Notification';
 import useFilledDiagnosis from '../../hooks/useFilledDiagnosis';
-import { markDataFromNewestVersion } from '../../store/actions/app';
+import {
+  hideUploadHistoricalDataErrorMessage,
+  markDataFromNewestVersion
+} from '../../store/actions/app';
 import { isLocalPWA, isWebView } from '../../utils/native';
 import useMigration from '../../hooks/useMigration';
 import useCheckLanguage from '../../hooks/useCheckLanguage';
@@ -73,6 +76,10 @@ function App() {
   useEffect(() => {
     dispatch(fetchNativeVersion());
   }, [dispatch, startScreenShowed]);
+
+  useEffect(() => {
+    dispatch(hideUploadHistoricalDataErrorMessage());
+  }, [dispatch]);
 
   history.listen(() => {
     window.scroll(0, 0);

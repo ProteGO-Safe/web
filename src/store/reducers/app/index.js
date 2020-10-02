@@ -9,6 +9,7 @@ import {
   ONBOARDING_FINISHED,
   START_SCREEN_SHOWED,
   UPLOAD_HISTORICAL_DATA_ENDED,
+  UPLOAD_HISTORICAL_DATA_ERROR_MESSAGE_HIDDEN,
   UPLOAD_HISTORICAL_DATA_FINISHED,
   UPLOAD_HISTORICAL_DATA_REQUESTED
 } from '../../types/app';
@@ -24,8 +25,9 @@ const INITIAL_STATE = {
   onboardingFinished: false,
   startScreenShowed: false,
   uploadHistoricalDataState: {
-    status: uploadState.EMPTY,
+    errorMessageVisible: false,
     date: null,
+    status: uploadState.EMPTY,
     unsuccessfulAttempts: []
   }
 };
@@ -100,6 +102,13 @@ const appReducer = (state = INITIAL_STATE, action) => {
           };
         }
 
+        if (result !== 1) {
+          uploadHistoricalDataState = {
+            ...uploadHistoricalDataState,
+            errorMessageVisible: true
+          };
+        }
+
         return {
           ...state,
           uploadHistoricalDataState
@@ -136,6 +145,16 @@ const appReducer = (state = INITIAL_STATE, action) => {
       return {
         ...state,
         applicationReseted: false
+      };
+    }
+    case UPLOAD_HISTORICAL_DATA_ERROR_MESSAGE_HIDDEN: {
+      const { uploadHistoricalDataState } = state;
+      return {
+        ...state,
+        uploadHistoricalDataState: {
+          ...uploadHistoricalDataState,
+          errorMessageVisible: false
+        }
       };
     }
 

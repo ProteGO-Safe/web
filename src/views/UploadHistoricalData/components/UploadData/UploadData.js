@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { withTranslation } from 'react-i18next';
 import PinInput from 'react-pin-input';
 import { Button, InfoIcon, Layout, PhoneNumber } from '../../../../components';
@@ -12,12 +12,19 @@ import WarningIcon from '../../../../assets/img/icons/warning.svg';
 const UploadData = ({
   t,
   disableSubmitButton,
+  disablePinInput,
   errorMessage,
+  errorMessageVisible,
+  hideErrorMessage,
   onUploadData,
   pin,
-  setPin,
-  disablePinInput
+  setPin
 }) => {
+  useEffect(() => {
+    return () => {
+      hideErrorMessage();
+    };
+  }, [hideErrorMessage]);
   return (
     <Layout hideBackButton isNavigation>
       <Paragraph>{t('upload_data_text1')}</Paragraph>
@@ -32,7 +39,7 @@ const UploadData = ({
           inputStyle={{ borderColor: Color.lightGray }}
         />
       </PinWrapper>
-      {errorMessage ? (
+      {errorMessage && errorMessageVisible ? (
         <InfoIcon icon={WarningIcon} className="errorMessage">
           <Paragraph color={Color.danger}>{errorMessage}</Paragraph>
         </InfoIcon>
@@ -44,7 +51,7 @@ const UploadData = ({
           disabled={pin.length !== 6 || disableSubmitButton || disablePinInput}
         />
       </ButtonWrapper>
-      {errorMessage ? (
+      {errorMessage && errorMessageVisible ? (
         <InfoIcon icon={InformationIcon}>
           <Paragraph>
             <strong>{t('upload_data_text2')}</strong>
