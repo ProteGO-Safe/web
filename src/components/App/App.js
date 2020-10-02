@@ -40,7 +40,6 @@ import { Menu } from '../index';
 import { fetchNativeVersion } from '../../store/actions/nativeData';
 import useMenuContext from '../../hooks/useMenuContext';
 import Routes from '../../routes';
-import './App.scss';
 import { Notification } from '../Notification';
 import useFilledDiagnosis from '../../hooks/useFilledDiagnosis';
 import { markDataFromNewestVersion } from '../../store/actions/app';
@@ -50,6 +49,7 @@ import useCheckLanguage from '../../hooks/useCheckLanguage';
 import useNotification from '../../hooks/useNotification';
 import useModalContext from '../../hooks/useModalContext';
 import useClearData from '../../hooks/useClearData';
+import * as Styled from './App.styled';
 
 function App() {
   const dispatch = useDispatch();
@@ -117,7 +117,7 @@ function App() {
   })();
 
   return (
-    <div className={`${className} ${modal ? 'open-modal' : ''}`}>
+    <Styled.Container className={`${className} ${modal ? 'open-modal' : ''}`}>
       <Switch>
         <Route exact path={Routes.Home} component={resolveHomeComponent} />
         {name && (
@@ -192,7 +192,7 @@ function App() {
       </Switch>
       <Menu />
       {notification && <Notification />}
-    </div>
+    </Styled.Container>
   );
 }
 

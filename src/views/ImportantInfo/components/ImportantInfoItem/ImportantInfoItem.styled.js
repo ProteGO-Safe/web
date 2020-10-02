@@ -16,12 +16,12 @@ export const ImportantInfoItem = styled.div`
   box-shadow: 2px 2px 3px ${hexToRgba(Color.black, 0.26)};
   transition: all 0.1s ease-in;
 
-  @media (max-height: 740px) {
-    padding: 20px 12px 28px 12px;
+  @media (max-height: 760px) {
+    padding: 18px 10px 28px 10px;
   }
 
   @media (max-height: 580px) {
-    padding: 14px 12px 28px 12px;
+    padding: 14px 10px 28px 10px;
   }
 
   @media (max-height: 480px) {
@@ -74,6 +74,10 @@ export const Title = styled.div`
   font-weight: bold;
   text-align: center;
 
+  @media (max-width: 300px) {
+    font-size: 12px;
+  }
+
   @media (max-height: 740px) {
     font-size: 16px;
     line-height: 22px;
@@ -110,10 +114,16 @@ export const LinkGov = styled.div`
   font-size: 10px;
   line-height: 1;
   color: ${Color.primary};
+  text-align: center;
 
   @media (max-height: 480px) {
     bottom: 4px;
     font-size: 9px;
+  }
+
+  @media (max-width: 300px) {
+    bottom: 4px;
+    font-size: 8px;
   }
 `;
 

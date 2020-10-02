@@ -128,6 +128,11 @@
       &.blue {
         color: $button_primary;
       }
+
+      @media (max-width: 300px) {
+        font-size: 12px;
+        line-height: 16px;
+      }
     }
 
     &.disable {
