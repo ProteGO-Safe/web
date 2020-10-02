@@ -23,6 +23,6 @@ export const Container = styled.div`
   }
 
   > a {
-    outline: none;
+    -webkit-tap-highlight-color: transparent;
   }
 `;

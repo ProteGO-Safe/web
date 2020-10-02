@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import PropTypes from 'prop-types';
 import { NavLink } from 'react-router-dom';
+import { withTranslation } from 'react-i18next';
 import { TYPES } from './ImportantInfoItem.constants';
 import * as Styled from './ImportantInfoItem.styled';
 
@@ -11,7 +12,8 @@ const ImportantInfoItem = ({
   link,
   path,
   title,
-  type
+  type,
+  t
 }) => {
   const ref = useRef(null);
   const [height, setHeight] = useState(0);
@@ -31,7 +33,9 @@ const ImportantInfoItem = ({
       <Styled.Title danger={danger}>{title}</Styled.Title>
       {height > 180 && <Styled.Description>{description}</Styled.Description>}
 
-      {link && <Styled.LinkGov>Kliknij i przejdź na gov.pl</Styled.LinkGov>}
+      {link && (
+        <Styled.LinkGov>{t('important_info_button_info')}</Styled.LinkGov>
+      )}
     </Styled.ImportantInfoItem>
   );
 
@@ -75,4 +79,4 @@ ImportantInfoItem.propTypes = {
   type: PropTypes.oneOf([TYPES.ROUTE, TYPES.LINK]).isRequired
 };
 
-export default ImportantInfoItem;
+export default withTranslation()(ImportantInfoItem);
