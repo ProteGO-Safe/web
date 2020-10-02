@@ -17,7 +17,6 @@ import {
   ImportantInfo,
   RiskTest,
   NotSupported,
-  Numbers,
   Onboarding,
   PrivacyPolicy,
   PrivacyPolicyDetails,
@@ -142,7 +141,6 @@ function App() {
               component={SettingsLanguages}
             />
             <Route exact path="/risk-test-data/:id" component={RiskTestData} />
-            <Route exact path={Routes.EmergencyNumbers} component={Numbers} />
             <Route
               exact
               path={Routes.PrivacyPolicy}

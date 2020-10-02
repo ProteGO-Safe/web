@@ -21,5 +21,8 @@ export const Color = {
   gray_6: '#F2F2F2',
   green: '#598527',
   watermark: '#605E5E',
-  orange: '#CC4700'
+  orange: '#CC4700',
+  gradient_c1: '#438AD1',
+  gradient_c2: '#0052A5',
+  gradient_c3: '#002953'
 };

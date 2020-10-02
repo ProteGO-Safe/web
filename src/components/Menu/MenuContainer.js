@@ -5,7 +5,6 @@ import useMenuContext from '../../hooks/useMenuContext';
 
 import Icon1 from '../../assets/img/icons/menu-boczne-dziennik_BLUE.svg';
 import Icon2 from '../../assets/img/icons/menu-boczne-kwestionariusz_BLUE.svg';
-import Icon5 from '../../assets/img/icons/menu-boczne-numery-alarm_BLUE.svg';
 import Icon6 from '../../assets/img/icons/menu-boczne-polityka-prywatnosci_BLUE.svg';
 import Icon7 from '../../assets/img/icons/menu-boczne-ustawienia_BLUE.svg';
 import Icon8 from '../../assets/img/icons/menu-boczne-moje-dane_BLUE.svg';
@@ -31,13 +30,6 @@ const MenuContainer = () => {
       path: Routes.RiskTest,
       slug: 'menu_container_text2',
       title: 'menu_container_text2'
-    },
-    {
-      icon: Icon5,
-      color: 'red',
-      path: Routes.EmergencyNumbers,
-      slug: 'menu_container_text5',
-      title: 'menu_container_text5'
     },
     {
       icon: Icon6,

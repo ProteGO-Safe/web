@@ -7,7 +7,6 @@ const Routes = {
   RiskTest: '/risk-test',
   HowItWorks: '/how-it-works',
   IAmSick: '/i-am-sick',
-  EmergencyNumbers: '/numbers',
   NoRiskInformation: '/risk-information/no_risk',
   PrivacyPolicy: '/privacy-policy',
   PrivacyPolicyDetails: '/privacy-policy-details',
