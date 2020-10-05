@@ -1,12 +1,12 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
 import { withTranslation } from 'react-i18next';
 import useFilledDiagnosis from '../../../../hooks/useFilledDiagnosis';
 import useTriage from '../../../../hooks/useTriage';
 import Smile from './Smile';
+import useUserName from '../../../../hooks/useUserName';
 
 const SmileContainer = ({ t }) => {
-  const { name: userName } = useSelector(state => state.user);
+  const userName = useUserName();
   const { lastDate } = useFilledDiagnosis();
   const { isCovid, isExposure, riskGroup, IconComponent } = useTriage();
 

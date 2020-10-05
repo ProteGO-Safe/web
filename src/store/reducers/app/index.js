@@ -7,6 +7,7 @@ import {
   LANGUAGE_CHANGED,
   MIGRATION_FINISHED,
   ONBOARDING_FINISHED,
+  REGISTRATION_FINISHED,
   START_SCREEN_SHOWED,
   UPLOAD_HISTORICAL_DATA_ENDED,
   UPLOAD_HISTORICAL_DATA_ERROR_MESSAGE_HIDDEN,
@@ -29,7 +30,8 @@ const INITIAL_STATE = {
     date: null,
     status: uploadState.EMPTY,
     unsuccessfulAttempts: []
-  }
+  },
+  registrationFinished: false
 };
 const appReducer = (state = INITIAL_STATE, action) => {
   switch (action.type) {
@@ -155,6 +157,12 @@ const appReducer = (state = INITIAL_STATE, action) => {
           ...uploadHistoricalDataState,
           errorMessageVisible: false
         }
+      };
+    }
+    case REGISTRATION_FINISHED: {
+      return {
+        ...state,
+        registrationFinished: true
       };
     }
 

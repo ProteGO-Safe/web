@@ -59,13 +59,12 @@ function App() {
   const dispatch = useDispatch();
   const history = useHistory();
   const { modal } = useModalContext();
-
-  const { name } = useSelector(state => state.user);
   const {
     dataFromNewestVersionMarked = false,
     onboardingFinished = false,
     startScreenShowed,
-    firstDiagnosisFinished
+    firstDiagnosisFinished,
+    registrationFinished
   } = useSelector(state => state.app);
   const { notification } = useNotification();
   const { inProgress, visible: menuIsVisible } = useMenuContext();
@@ -110,13 +109,13 @@ function App() {
     if (isWebView() && !isLocalPWA()) {
       return NotSupported;
     }
-    if (!startScreenShowed && !name) {
+    if (!startScreenShowed && !registrationFinished) {
       return StartScreen;
     }
     if (!onboardingFinished) {
       return Onboarding;
     }
-    if (!name) {
+    if (!registrationFinished) {
       return Registration;
     }
     if (!firstDiagnosisFinished) {
@@ -129,7 +128,7 @@ function App() {
     <Styled.Container className={`${className} ${modal ? 'open-modal' : ''}`}>
       <Switch>
         <Route exact path={Routes.Home} component={resolveHomeComponent} />
-        {name && (
+        {registrationFinished && (
           <>
             <Route
               exact

@@ -109,3 +109,7 @@ export const hideUploadHistoricalDataErrorMessage = () => {
     dispatch(uploadHistoricalDataErrorMessageHidden());
   };
 };
+
+export const registrationFinished = () => ({
+  type: types.REGISTRATION_FINISHED
+});
