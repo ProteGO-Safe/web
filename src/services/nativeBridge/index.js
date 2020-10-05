@@ -112,6 +112,12 @@ const setServicesState = async data => {
   );
 };
 
+const turnOff = async () => {
+  await callNativeFunction('setBridgeData', DATA_TYPE.TURN_OFF, {
+    turnOff: true
+  });
+};
+
 const handleServicesStatus = servicesStatus => {
   const store = StoreRegistry.getStore();
   store.dispatch({
@@ -197,5 +203,6 @@ export default {
   clearBluetoothData,
   changeLanguage,
   getNativeVersion,
-  getLanguage
+  getLanguage,
+  turnOff
 };

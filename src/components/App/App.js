@@ -52,6 +52,7 @@ import useCheckLanguage from '../../hooks/useCheckLanguage';
 import useNotification from '../../hooks/useNotification';
 import useModalContext from '../../hooks/useModalContext';
 import useClearData from '../../hooks/useClearData';
+import useTurnOffApplication from '../../hooks/useTurnOffApplication';
 import * as Styled from './App.styled';
 
 function App() {
@@ -72,6 +73,7 @@ function App() {
   useMigration();
   useCheckLanguage();
   useClearData();
+  useTurnOffApplication();
 
   useEffect(() => {
     dispatch(fetchNativeVersion());

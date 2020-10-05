@@ -31,11 +31,6 @@ const FormContainer = ({ onFinish }) => {
   useEffect(() => {
     const questions = [...values[DIAGNOSIS_FORM_FIELDS.QUESTIONS]];
 
-    if (questions.length === 0 && urlPage > 3) {
-      history.push(Routes.Home);
-      return;
-    }
-
     if (direction === 'POP') {
       if (questions.length === 0) {
         return;
