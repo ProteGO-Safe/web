@@ -24,7 +24,8 @@ const UploadData = ({
     return () => {
       hideErrorMessage();
     };
-  }, [hideErrorMessage]);
+    // eslint-disable-next-line
+  }, []);
   return (
     <Layout hideBackButton isNavigation>
       <Paragraph>{t('upload_data_text1')}</Paragraph>
