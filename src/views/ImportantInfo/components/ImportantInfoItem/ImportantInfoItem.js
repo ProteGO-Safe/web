@@ -31,7 +31,7 @@ const ImportantInfoItem = ({
         <Styled.Image src={icon} alt={title} />
       </Styled.Icon>
       <Styled.Title danger={danger}>{title}</Styled.Title>
-      {height > 180 && <Styled.Description>{description}</Styled.Description>}
+      {height > 186 && <Styled.Description>{description}</Styled.Description>}
 
       {link && (
         <Styled.LinkGov>{t('important_info_button_info')}</Styled.LinkGov>
