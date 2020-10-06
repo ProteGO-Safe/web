@@ -87,8 +87,14 @@ const UploadHistoricalData = ({ t }) => {
   if (status === uploadState.SUCCESS) {
     return <UploadSuccess finishUpload={finishUpload} />;
   }
-  const getErrorMessage = () =>
-    banData && createErrorMessage(banData, unsuccessfulAttempts.length, t);
+  const getErrorMessage = () => {
+    if (status === uploadState.DENIED) {
+      return t('upload_data_text4');
+    }
+    return (
+      banData && createErrorMessage(banData, unsuccessfulAttempts.length, t)
+    );
+  };
   return (
     <>
       {areEnableAllServices ? (

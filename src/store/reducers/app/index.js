@@ -15,6 +15,7 @@ import {
   UPLOAD_HISTORICAL_DATA_REQUESTED
 } from '../../types/app';
 import { UPLOAD_HISTORICAL_DATA_STATE as uploadState } from './app.constants';
+import createUploadHistoricalDataState from './app.helpers';
 
 const INITIAL_STATE = {
   applicationReseted: false,
@@ -33,6 +34,7 @@ const INITIAL_STATE = {
   },
   registrationFinished: false
 };
+
 const appReducer = (state = INITIAL_STATE, action) => {
   switch (action.type) {
     case ONBOARDING_FINISHED:
@@ -76,44 +78,13 @@ const appReducer = (state = INITIAL_STATE, action) => {
     case UPLOAD_HISTORICAL_DATA_FINISHED:
       return (() => {
         const { result } = action;
-        const unsuccessfulAttempts =
-          (state.uploadHistoricalDataState &&
-            state.uploadHistoricalDataState.unsuccessfulAttempts) ||
-          [];
-
-        let uploadHistoricalDataState;
-
-        uploadHistoricalDataState = {
-          status: uploadState.FAILED,
-          unsuccessfulAttempts: unsuccessfulAttempts.concat(
-            new Date().getTime()
-          )
-        };
-
-        if (result === 1) {
-          uploadHistoricalDataState = {
-            status: uploadState.SUCCESS,
-            unsuccessfulAttempts: []
-          };
-        }
-
-        if (result === 3) {
-          uploadHistoricalDataState = {
-            ...state.uploadHistoricalDataState,
-            status: uploadState.EMPTY
-          };
-        }
-
-        if (result !== 1) {
-          uploadHistoricalDataState = {
-            ...uploadHistoricalDataState,
-            errorMessageVisible: true
-          };
-        }
 
         return {
           ...state,
-          uploadHistoricalDataState
+          uploadHistoricalDataState: createUploadHistoricalDataState(
+            result,
+            state
+          )
         };
       })();
     case DATA_FROM_NEWEST_VERSION_MARKED: {

@@ -1175,6 +1175,7 @@
     "upload_data_text1": "Jeśli w związku z przeprowadzonym testem laboratoryjnym zostanie u Ciebie wykryty Covid-19, skontaktuje się z Tobą Operator Centrum Kontaktu. Wprowadź podany przez niego kod PIN poniżej - dzięki temu dasz innym znać, że mogli mieć kontakt z koronawirusem. Nie martw się, informacje są w pełni anonimowe.",
     "upload_data_text2": "Potrzebujesz pomocy?",
     "upload_data_text3": "Skontaktuj się z Centrum Kontaktu:",
+    "upload_data_text4": "Aby kontynuować musisz wyrazić zgodę na udostępnienie losowych identyfikatorów.",
     "upload_data_text5": "Przekaż informacje",
     "upload_historical_data_text1": "PIN {{amount}}-krotnie został wpisany niepoprawnie. Odczekaj {{seconds}} i spróbuj ponownie.",
     "upload_historical_data_text4": "godzinę",
