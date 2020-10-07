@@ -17,6 +17,7 @@ const ImportantInfoItem = ({
 }) => {
   const ref = useRef(null);
   const [height, setHeight] = useState(0);
+  const windowWidth = window.innerWidth;
 
   useEffect(() => {
     if (ref.current) {
@@ -30,9 +31,14 @@ const ImportantInfoItem = ({
       <Styled.Icon>
         <Styled.Image src={icon} alt={title} />
       </Styled.Icon>
-      <Styled.Title danger={danger}>{title}</Styled.Title>
-      {height > 186 && <Styled.Description>{description}</Styled.Description>}
-
+      <Styled.Content>
+        <Styled.Title danger={danger}>{title}</Styled.Title>
+        {windowWidth < 375 ? (
+          <Styled.Description>{description}</Styled.Description>
+        ) : (
+          height > 186 && <Styled.Description>{description}</Styled.Description>
+        )}
+      </Styled.Content>
       {link && (
         <Styled.LinkGov>{t('important_info_button_info')}</Styled.LinkGov>
       )}
