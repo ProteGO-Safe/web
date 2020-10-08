@@ -14,6 +14,14 @@ const ImportantInfoContainer = ({ t }) => {
   const IMPORTANT_INFO_ITEMS = [
     {
       type: 'route',
+      icon: Icon6,
+      title: t('important_info_title_6'),
+      description: t('important_info_description_6'),
+      path: Routes.IAmSick,
+      danger: true
+    },
+    {
+      type: 'route',
       icon: Icon1,
       title: t('important_info_title_1'),
       description: t('important_info_description_1'),
@@ -45,14 +53,6 @@ const ImportantInfoContainer = ({ t }) => {
       icon: Icon5,
       title: t('important_info_title_5'),
       link: 'https://www.gov.pl/web/koronawirus/pytania-i-odpowiedzi'
-    },
-    {
-      type: 'route',
-      icon: Icon6,
-      title: t('important_info_title_6'),
-      description: t('important_info_description_6'),
-      path: Routes.IAmSick,
-      danger: true
     }
   ];
   return <ImportantInfo items={IMPORTANT_INFO_ITEMS} />;
