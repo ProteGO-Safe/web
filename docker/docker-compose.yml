@@ -1,7 +1,7 @@
 version: "3"
 services:
   node:
-    image: node:13-alpine
+    image: node:14-alpine
     container_name: protego-safe-react
     volumes:
       - ../:/app

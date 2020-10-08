@@ -3,7 +3,7 @@ stages:
   - deploy
 
 .build: &build
-  image: node:13
+  image: node:14
   stage: build
   script:
     - yarn audit --groups dependencies
