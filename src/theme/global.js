@@ -6,5 +6,6 @@ export const GlobalStyle = createGlobalStyle`
   }
   * {
     -webkit-touch-callout: none;
+    -webkit-tap-highlight-color: transparent;
   }
 `;

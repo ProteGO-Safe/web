@@ -43,8 +43,4 @@ export const Container = styled.div`
     row-gap: 12px;
     padding: 12px 12px 0 12px;
   }
-
-  > a {
-    -webkit-tap-highlight-color: transparent;
-  }
 `;
