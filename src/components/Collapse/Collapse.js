@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import * as Styled from './Collapse.styled';
-import arrow from '../../assets/img/icons/angle-right.svg';
 
 const Collapse = ({ children, className, forceOpen, title }) => {
   const [open, setOpen] = useState(false);
@@ -14,7 +13,7 @@ const Collapse = ({ children, className, forceOpen, title }) => {
     <Styled.CollapseWrapper className={className}>
       <Styled.Header onClick={handleClick} open={isOpen}>
         <Styled.Title>{title}</Styled.Title>
-        <Styled.Icon alt="Arrow" open={isOpen} src={arrow} />
+        <Styled.Icon open={isOpen} />
       </Styled.Header>
       {isOpen && <Styled.Description>{children}</Styled.Description>}
     </Styled.CollapseWrapper>

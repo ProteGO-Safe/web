@@ -22,24 +22,17 @@ const ImportantInfoContainer = ({ t }) => {
     },
     {
       type: 'route',
-      icon: Icon1,
-      title: t('important_info_title_1'),
-      description: t('important_info_description_1'),
-      path: Routes.HowItWorks
-    },
-    {
-      type: 'route',
       icon: Icon2,
       title: t('important_info_title_2'),
       description: t('important_info_description_2'),
       path: Routes.ReportBug
     },
     {
-      type: 'link',
+      type: 'route',
       icon: Icon3,
       title: t('important_info_title_3'),
       description: t('important_info_description_3'),
-      link: 'https://www.gov.pl/web/koronawirus/aktualne-zasady-i-ograniczenia'
+      path: Routes.CurrentRestrictions
     },
     {
       type: 'link',
@@ -53,6 +46,13 @@ const ImportantInfoContainer = ({ t }) => {
       icon: Icon5,
       title: t('important_info_title_5'),
       link: 'https://www.gov.pl/web/koronawirus/pytania-i-odpowiedzi'
+    },
+    {
+      type: 'route',
+      icon: Icon1,
+      title: t('important_info_title_1'),
+      description: t('important_info_description_1'),
+      path: Routes.HowItWorks
     }
   ];
   return <ImportantInfo items={IMPORTANT_INFO_ITEMS} />;

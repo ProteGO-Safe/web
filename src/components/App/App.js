@@ -7,6 +7,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Redirect, Route, Switch, useHistory } from 'react-router-dom';
 import {
   AddTranslation,
+  CurrentRestrictions,
   Daily,
   DailyData,
   Diagnosis,
@@ -134,6 +135,11 @@ function App() {
               exact
               path={Routes.AddTranslation}
               component={AddTranslation}
+            />
+            <Route
+              exact
+              path={Routes.CurrentRestrictions}
+              component={CurrentRestrictions}
             />
             <Route exact path={Routes.Daily} component={Daily} />
             <Route exact path="/daily/:id" component={DailyData} />
