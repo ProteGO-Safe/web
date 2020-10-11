@@ -1,8 +1,10 @@
 // https://github.com/ekwonye-richard/react-flags-select/blob/master/src/countries.js
+import { AVAILABLE_LANGUAGES } from '../../constants';
+
 const isoCodeWithLibraryCode = {
-  UK: 'UA',
-  PL: 'PL',
-  EN: 'GB'
+  [AVAILABLE_LANGUAGES.uk.toUpperCase()]: 'UA',
+  [AVAILABLE_LANGUAGES.pl.toUpperCase()]: 'PL',
+  [AVAILABLE_LANGUAGES.en.toUpperCase()]: 'GB'
 };
 
 export const prepareLanguages = languages =>

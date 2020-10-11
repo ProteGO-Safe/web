@@ -1,52 +1,37 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useMemo } from 'react';
 import moment from 'moment';
 import PropTypes from 'prop-types';
 import { withTranslation } from 'react-i18next';
 import DatePicker from 'react-datepicker';
+import pl from 'date-fns/locale/pl';
+import uk from 'date-fns/locale/uk';
+import en from 'date-fns/locale/en-GB';
 import * as Styled from './InputDatePicker.styled';
 import 'react-datepicker/dist/react-datepicker.css';
+import useLanguage from '../../hooks/useLanguage';
+import { AVAILABLE_LANGUAGES } from '../../constants';
+
+const isoCodeWithLibraryCode = {
+  [AVAILABLE_LANGUAGES.uk]: uk,
+  [AVAILABLE_LANGUAGES.pl]: pl,
+  [AVAILABLE_LANGUAGES.en]: en
+};
 
 const InputDatePicker = ({ dateFormat, disabled, onChange, selected, t }) => {
   const pickerRef = useRef(null);
+  const { language } = useLanguage();
 
   useEffect(() => {
     if (pickerRef.current !== null) {
       pickerRef.current.input.readOnly = true;
     }
   }, [pickerRef]);
+
   const selectedDate = moment(selected).toDate();
 
-  const months = [
-    t('months_1'),
-    t('months_2'),
-    t('months_3'),
-    t('months_4'),
-    t('months_5'),
-    t('months_6'),
-    t('months_7'),
-    t('months_8'),
-    t('months_9'),
-    t('months_10'),
-    t('months_11'),
-    t('months_12')
-  ];
-  const days = [
-    t('day_1'),
-    t('day_2'),
-    t('day_3'),
-    t('day_4'),
-    t('day_5'),
-    t('day_6'),
-    t('day_7')
-  ];
-
-  const locale = {
-    localize: {
-      month: n => months[n],
-      day: n => days[n]
-    },
-    formatLong: {}
-  };
+  const resolvedLocale = useMemo(() => {
+    return isoCodeWithLibraryCode[language.toUpperCase()];
+  }, [language]);
 
   const Container = ({ children }) => (
     <Styled.CalendarContainer>
@@ -64,7 +49,7 @@ const InputDatePicker = ({ dateFormat, disabled, onChange, selected, t }) => {
         dateFormat={dateFormat}
         disabled={disabled}
         calendarContainer={Container}
-        locale={locale}
+        locale={resolvedLocale}
       />
       <Styled.Icon />
     </Styled.InputDatePicker>
