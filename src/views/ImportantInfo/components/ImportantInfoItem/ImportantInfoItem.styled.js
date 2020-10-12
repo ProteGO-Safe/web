@@ -10,7 +10,7 @@ export const ImportantInfoItem = styled.div`
   align-items: stretch;
   width: 100%;
   height: 100%;
-  padding: 1.2rem 0.35rem 1.2rem 0.35rem;
+  padding: 1.5rem 0.5rem;
   background: ${Color.gray_6};
   border-radius: 4px;
   box-shadow: 2px 2px 3px ${hexToRgba(Color.black, 0.26)};
@@ -19,7 +19,7 @@ export const ImportantInfoItem = styled.div`
   @media (max-width: 374px) {
     align-items: center;
     margin-bottom: 12px;
-    padding: 1.2rem 0.6rem 1.2rem 0.6rem;
+    padding: 1.5rem 0.6rem;
   }
   @media (min-width: 240px) {
     font-size: 15px;
@@ -86,7 +86,7 @@ export const Icon = styled.div`
   @media (max-width: 374px) {
     width: 2.4em;
     height: 100%;
-    margin-right: 0.6rem;
+    margin-right: 0.75rem;
     margin-bottom: 0;
   }
 `;
@@ -106,7 +106,7 @@ export const Content = styled.div`
   flex-flow: wrap row;
   width: 100%;
   @media (max-width: 374px) {
-    width: calc(100% - 2.4em - 0.6rem);
+    width: calc(100% - 2.4em - 0.75rem);
   }
 `;
 
@@ -125,7 +125,7 @@ export const Title = styled.div`
   @media (max-width: 374px) {
     justify-content: flex-start;
     margin-bottom: 0;
-    padding-right: 1.3rem;
+    padding-right: 1.6rem;
     text-align: left;
   }
   @media (max-width: 320px) {

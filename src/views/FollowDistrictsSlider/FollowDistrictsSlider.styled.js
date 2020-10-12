@@ -18,8 +18,8 @@ export const Title = styled.h2`
   margin: 0 0 8px 0;
   padding-right: 17px;
   padding-left: 17px;
-  font-size: 0.8rem;
-  line-height: 1rem;
+  font-size: 1rem;
+  line-height: 1.25rem;
   font-weight: 600;
   color: ${Color.black};
 `;
@@ -28,10 +28,10 @@ export const Badge = styled.span`
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  width: 1.2rem;
-  height: 1.2rem;
-  font-size: 0.8rem;
-  line-height: 0.8rem;
+  width: 1.5rem;
+  height: 1.5rem;
+  font-size: 1rem;
+  line-height: 1rem;
   color: ${Color.white};
   transform: translateY(-0.1rem);
   background-color: ${Color.primary};
@@ -52,8 +52,8 @@ export const Slider = styled.div`
 export const Button = styled(NavLink)`
   position: relative;
   width: 100%;
-  font-size: 0.8rem;
-  line-height: 0.8rem;
+  font-size: 1rem;
+  line-height: 1rem;
   font-weight: 600;
   color: ${Color.black};
 `;
@@ -62,7 +62,7 @@ export const Icon = styled(IconArrow)`
   position: absolute;
   top: 1px;
   right: 0;
-  width: 0.7rem;
-  height: 0.7rem;
+  width: 1rem;
+  height: 1rem;
   color: ${Color.primary};
 `;
