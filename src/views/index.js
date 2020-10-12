@@ -7,6 +7,7 @@ export { Diagnosis } from './Diagnosis';
 export { FaqPage } from './FaqPage';
 export { FirstDiagnosisAsking } from './FirstDiagnosisAsking';
 export { FollowDistricts } from './FollowDistricts';
+export { FollowDistrictsSlider } from './FollowDistrictsSlider';
 export { Home } from './Home';
 export { HospitalsList } from './HospitalsList';
 export { HowItWorks } from './HowItWorks';

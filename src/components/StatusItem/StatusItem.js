@@ -6,12 +6,12 @@ const StatusItem = ({ handleClick, name, status }) => (
   <Styled.StatusItem>
     <Styled.Status status={status} />
     <Styled.Name>{name}</Styled.Name>
-    <Styled.Action onClick={handleClick} />
+    {handleClick && <Styled.Action onClick={handleClick} />}
   </Styled.StatusItem>
 );
 
 StatusItem.defaultProps = {
-  handleClick: () => null
+  handleClick: null
 };
 
 StatusItem.propTypes = {

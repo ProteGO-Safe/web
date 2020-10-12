@@ -15,7 +15,16 @@ const ImportantInfo = ({ items }) => {
   };
 
   const renderItems = items.map(item => {
-    const { danger, description, icon, link, path, title, type } = item;
+    const {
+      danger,
+      description,
+      icon,
+      link,
+      newFeature,
+      path,
+      title,
+      type
+    } = item;
     return (
       <ImportantInfoItem
         key={title}
@@ -26,6 +35,7 @@ const ImportantInfo = ({ items }) => {
         path={path}
         title={title}
         type={type}
+        newFeature={newFeature}
       />
     );
   });

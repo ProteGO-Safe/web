@@ -39,6 +39,7 @@ export const Name = styled.span`
   font-size: 16px;
   line-height: 22px;
   color: ${Color.black};
+  white-space: nowrap;
 `;
 
 export const Action = styled(IconClose)`

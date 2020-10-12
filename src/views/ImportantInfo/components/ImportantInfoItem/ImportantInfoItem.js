@@ -10,6 +10,7 @@ const ImportantInfoItem = ({
   description,
   icon,
   link,
+  newFeature,
   path,
   title,
   type,
@@ -28,6 +29,7 @@ const ImportantInfoItem = ({
 
   const Content = () => (
     <Styled.ImportantInfoItem ref={ref}>
+      {newFeature && <Styled.Badge>{t('new')}</Styled.Badge>}
       <Styled.Icon>
         <Styled.Image src={icon} alt={title} />
       </Styled.Icon>

@@ -16,6 +16,9 @@ export const DateUpdate = styled.span`
   font-size: 12px;
   line-height: 20px;
   color: ${Color.gray_5};
+  @media (max-width: 320px) {
+    max-width: 290px;
+  }
 `;
 
 export const Content = styled.div`
