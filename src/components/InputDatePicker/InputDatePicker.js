@@ -12,9 +12,9 @@ import useLanguage from '../../hooks/useLanguage';
 import { AVAILABLE_LANGUAGES } from '../../constants';
 
 const isoCodeWithLibraryCode = {
-  [AVAILABLE_LANGUAGES.uk]: uk,
-  [AVAILABLE_LANGUAGES.pl]: pl,
-  [AVAILABLE_LANGUAGES.en]: en
+  [AVAILABLE_LANGUAGES.uk.toUpperCase()]: uk,
+  [AVAILABLE_LANGUAGES.pl.toUpperCase()]: pl,
+  [AVAILABLE_LANGUAGES.en.toUpperCase()]: en
 };
 
 const InputDatePicker = ({ dateFormat, disabled, onChange, selected, t }) => {
