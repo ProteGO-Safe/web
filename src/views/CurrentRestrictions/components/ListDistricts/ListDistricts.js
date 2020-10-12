@@ -1,20 +1,19 @@
 import React from 'react';
-import { Collapse, SubscribeItem } from '../../components';
+import { Collapse, SubscribeItem } from '../../../../components';
 import * as Styled from './ListDistricts.styled';
 
-const ListDistricts = ({ items }) => {
-  console.log(items);
+const ListDistricts = ({ items, handleSubscribeDistrict }) => {
   const renderDistricts = items.map(item => {
-    const { id, name } = item;
+    const { id: voivodeshipId, name } = item;
     return (
-      <Collapse key={id} title={name}>
+      <Collapse key={voivodeshipId} title={name}>
         {item.districts.map(
-          ({ id: _id, name: _name, state: _state, is_subscribed }) => (
+          ({ id: districtId, name: _name, state: _state, is_subscribed }) => (
             <SubscribeItem
-              key={_id}
+              key={districtId}
               name={_name}
               status={_state}
-              handleClick={() => null}
+              handleClick={() => handleSubscribeDistrict(districtId)}
               subscribed={is_subscribed}
             />
           )

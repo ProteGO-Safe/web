@@ -1318,13 +1318,13 @@ Array [
   align-items: center;
   width: 100%;
   min-height: 54px;
-  padding: 12px 7px;
+  padding: 12px 15px;
   font-size: 14px;
   font-weight: bold;
   line-height: 1.3;
   color: #0052a5;
-  border-top: solid 1px #cbcbcb;
-  border-bottom: solid 1px #cbcbcb;
+  border-top: solid 1px #EEEEEE;
+  border-bottom: solid 1px #EEEEEE;
 }
 
 .c2 {
@@ -1334,7 +1334,8 @@ Array [
 .c3 {
   grid-area: icon;
   display: block;
-  max-height: 14px;
+  width: 12px;
+  height: 12px;
   -webkit-transform: rotate(90deg);
   -ms-transform: rotate(90deg);
   transform: rotate(90deg);
@@ -1365,12 +1366,12 @@ Array [
       >
         call_doctor_text30
       </span>
-      <img
-        alt="Arrow"
+      <svg
         className="c3"
         open={false}
-        src="angle-right.svg"
-      />
+      >
+        angle-right.svg
+      </svg>
     </div>
   </div>,
   .c0 {
@@ -1397,13 +1398,13 @@ Array [
   align-items: center;
   width: 100%;
   min-height: 54px;
-  padding: 12px 7px;
+  padding: 12px 15px;
   font-size: 14px;
   font-weight: bold;
   line-height: 1.3;
   color: #0052a5;
-  border-top: solid 1px #cbcbcb;
-  border-bottom: solid 1px #cbcbcb;
+  border-top: solid 1px #EEEEEE;
+  border-bottom: solid 1px #EEEEEE;
 }
 
 .c2 {
@@ -1413,7 +1414,8 @@ Array [
 .c3 {
   grid-area: icon;
   display: block;
-  max-height: 14px;
+  width: 12px;
+  height: 12px;
   -webkit-transform: rotate(90deg);
   -ms-transform: rotate(90deg);
   transform: rotate(90deg);
@@ -1444,12 +1446,12 @@ Array [
       >
         call_doctor_text32
       </span>
-      <img
-        alt="Arrow"
+      <svg
         className="c3"
         open={false}
-        src="angle-right.svg"
-      />
+      >
+        angle-right.svg
+      </svg>
     </div>
   </div>,
   .c0 {
@@ -1476,13 +1478,13 @@ Array [
   align-items: center;
   width: 100%;
   min-height: 54px;
-  padding: 12px 7px;
+  padding: 12px 15px;
   font-size: 14px;
   font-weight: bold;
   line-height: 1.3;
   color: #0052a5;
-  border-top: solid 1px #cbcbcb;
-  border-bottom: solid 1px #cbcbcb;
+  border-top: solid 1px #EEEEEE;
+  border-bottom: solid 1px #EEEEEE;
 }
 
 .c2 {
@@ -1492,7 +1494,8 @@ Array [
 .c3 {
   grid-area: icon;
   display: block;
-  max-height: 14px;
+  width: 12px;
+  height: 12px;
   -webkit-transform: rotate(90deg);
   -ms-transform: rotate(90deg);
   transform: rotate(90deg);
@@ -1523,12 +1526,12 @@ Array [
       >
         call_doctor_text34
       </span>
-      <img
-        alt="Arrow"
+      <svg
         className="c3"
         open={false}
-        src="angle-right.svg"
-      />
+      >
+        angle-right.svg
+      </svg>
     </div>
   </div>,
   .c2 {
@@ -2170,13 +2173,13 @@ Array [
   align-items: center;
   width: 100%;
   min-height: 54px;
-  padding: 12px 7px;
+  padding: 12px 15px;
   font-size: 14px;
   font-weight: bold;
   line-height: 1.3;
   color: #0052a5;
-  border-top: solid 1px #cbcbcb;
-  border-bottom: solid 1px #cbcbcb;
+  border-top: solid 1px #EEEEEE;
+  border-bottom: solid 1px #EEEEEE;
 }
 
 .c2 {
@@ -2186,7 +2189,8 @@ Array [
 .c3 {
   grid-area: icon;
   display: block;
-  max-height: 14px;
+  width: 12px;
+  height: 12px;
   -webkit-transform: rotate(90deg);
   -ms-transform: rotate(90deg);
   transform: rotate(90deg);
@@ -2217,12 +2221,12 @@ Array [
       >
         isolation_ambulance_text22
       </span>
-      <img
-        alt="Arrow"
+      <svg
         className="c3"
         open={false}
-        src="angle-right.svg"
-      />
+      >
+        angle-right.svg
+      </svg>
     </div>
   </div>,
   .c0 {
@@ -2249,13 +2253,13 @@ Array [
   align-items: center;
   width: 100%;
   min-height: 54px;
-  padding: 12px 7px;
+  padding: 12px 15px;
   font-size: 14px;
   font-weight: bold;
   line-height: 1.3;
   color: #0052a5;
-  border-top: solid 1px #cbcbcb;
-  border-bottom: solid 1px #cbcbcb;
+  border-top: solid 1px #EEEEEE;
+  border-bottom: solid 1px #EEEEEE;
 }
 
 .c2 {
@@ -2265,7 +2269,8 @@ Array [
 .c3 {
   grid-area: icon;
   display: block;
-  max-height: 14px;
+  width: 12px;
+  height: 12px;
   -webkit-transform: rotate(90deg);
   -ms-transform: rotate(90deg);
   transform: rotate(90deg);
@@ -2296,12 +2301,12 @@ Array [
       >
         isolation_ambulance_text23
       </span>
-      <img
-        alt="Arrow"
+      <svg
         className="c3"
         open={false}
-        src="angle-right.svg"
-      />
+      >
+        angle-right.svg
+      </svg>
     </div>
   </div>,
   .c0 {
@@ -2328,13 +2333,13 @@ Array [
   align-items: center;
   width: 100%;
   min-height: 54px;
-  padding: 12px 7px;
+  padding: 12px 15px;
   font-size: 14px;
   font-weight: bold;
   line-height: 1.3;
   color: #0052a5;
-  border-top: solid 1px #cbcbcb;
-  border-bottom: solid 1px #cbcbcb;
+  border-top: solid 1px #EEEEEE;
+  border-bottom: solid 1px #EEEEEE;
 }
 
 .c2 {
@@ -2344,7 +2349,8 @@ Array [
 .c3 {
   grid-area: icon;
   display: block;
-  max-height: 14px;
+  width: 12px;
+  height: 12px;
   -webkit-transform: rotate(90deg);
   -ms-transform: rotate(90deg);
   transform: rotate(90deg);
@@ -2375,12 +2381,12 @@ Array [
       >
         isolation_ambulance_text24
       </span>
-      <img
-        alt="Arrow"
+      <svg
         className="c3"
         open={false}
-        src="angle-right.svg"
-      />
+      >
+        angle-right.svg
+      </svg>
     </div>
   </div>,
   .c0 {
@@ -2407,13 +2413,13 @@ Array [
   align-items: center;
   width: 100%;
   min-height: 54px;
-  padding: 12px 7px;
+  padding: 12px 15px;
   font-size: 14px;
   font-weight: bold;
   line-height: 1.3;
   color: #0052a5;
-  border-top: solid 1px #cbcbcb;
-  border-bottom: solid 1px #cbcbcb;
+  border-top: solid 1px #EEEEEE;
+  border-bottom: solid 1px #EEEEEE;
 }
 
 .c2 {
@@ -2423,7 +2429,8 @@ Array [
 .c3 {
   grid-area: icon;
   display: block;
-  max-height: 14px;
+  width: 12px;
+  height: 12px;
   -webkit-transform: rotate(90deg);
   -ms-transform: rotate(90deg);
   transform: rotate(90deg);
@@ -2454,12 +2461,12 @@ Array [
       >
         isolation_ambulance_text25
       </span>
-      <img
-        alt="Arrow"
+      <svg
         className="c3"
         open={false}
-        src="angle-right.svg"
-      />
+      >
+        angle-right.svg
+      </svg>
     </div>
   </div>,
   .c2 {
@@ -3101,13 +3108,13 @@ Array [
   align-items: center;
   width: 100%;
   min-height: 54px;
-  padding: 12px 7px;
+  padding: 12px 15px;
   font-size: 14px;
   font-weight: bold;
   line-height: 1.3;
   color: #0052a5;
-  border-top: solid 1px #cbcbcb;
-  border-bottom: solid 1px #cbcbcb;
+  border-top: solid 1px #EEEEEE;
+  border-bottom: solid 1px #EEEEEE;
 }
 
 .c2 {
@@ -3117,7 +3124,8 @@ Array [
 .c3 {
   grid-area: icon;
   display: block;
-  max-height: 14px;
+  width: 12px;
+  height: 12px;
   -webkit-transform: rotate(90deg);
   -ms-transform: rotate(90deg);
   transform: rotate(90deg);
@@ -3148,12 +3156,12 @@ Array [
       >
         isolation_call_text22
       </span>
-      <img
-        alt="Arrow"
+      <svg
         className="c3"
         open={false}
-        src="angle-right.svg"
-      />
+      >
+        angle-right.svg
+      </svg>
     </div>
   </div>,
   .c0 {
@@ -3180,13 +3188,13 @@ Array [
   align-items: center;
   width: 100%;
   min-height: 54px;
-  padding: 12px 7px;
+  padding: 12px 15px;
   font-size: 14px;
   font-weight: bold;
   line-height: 1.3;
   color: #0052a5;
-  border-top: solid 1px #cbcbcb;
-  border-bottom: solid 1px #cbcbcb;
+  border-top: solid 1px #EEEEEE;
+  border-bottom: solid 1px #EEEEEE;
 }
 
 .c2 {
@@ -3196,7 +3204,8 @@ Array [
 .c3 {
   grid-area: icon;
   display: block;
-  max-height: 14px;
+  width: 12px;
+  height: 12px;
   -webkit-transform: rotate(90deg);
   -ms-transform: rotate(90deg);
   transform: rotate(90deg);
@@ -3227,12 +3236,12 @@ Array [
       >
         isolation_call_text23
       </span>
-      <img
-        alt="Arrow"
+      <svg
         className="c3"
         open={false}
-        src="angle-right.svg"
-      />
+      >
+        angle-right.svg
+      </svg>
     </div>
   </div>,
   .c0 {
@@ -3259,13 +3268,13 @@ Array [
   align-items: center;
   width: 100%;
   min-height: 54px;
-  padding: 12px 7px;
+  padding: 12px 15px;
   font-size: 14px;
   font-weight: bold;
   line-height: 1.3;
   color: #0052a5;
-  border-top: solid 1px #cbcbcb;
-  border-bottom: solid 1px #cbcbcb;
+  border-top: solid 1px #EEEEEE;
+  border-bottom: solid 1px #EEEEEE;
 }
 
 .c2 {
@@ -3275,7 +3284,8 @@ Array [
 .c3 {
   grid-area: icon;
   display: block;
-  max-height: 14px;
+  width: 12px;
+  height: 12px;
   -webkit-transform: rotate(90deg);
   -ms-transform: rotate(90deg);
   transform: rotate(90deg);
@@ -3306,12 +3316,12 @@ Array [
       >
         isolation_call_text24
       </span>
-      <img
-        alt="Arrow"
+      <svg
         className="c3"
         open={false}
-        src="angle-right.svg"
-      />
+      >
+        angle-right.svg
+      </svg>
     </div>
   </div>,
   .c0 {
@@ -3338,13 +3348,13 @@ Array [
   align-items: center;
   width: 100%;
   min-height: 54px;
-  padding: 12px 7px;
+  padding: 12px 15px;
   font-size: 14px;
   font-weight: bold;
   line-height: 1.3;
   color: #0052a5;
-  border-top: solid 1px #cbcbcb;
-  border-bottom: solid 1px #cbcbcb;
+  border-top: solid 1px #EEEEEE;
+  border-bottom: solid 1px #EEEEEE;
 }
 
 .c2 {
@@ -3354,7 +3364,8 @@ Array [
 .c3 {
   grid-area: icon;
   display: block;
-  max-height: 14px;
+  width: 12px;
+  height: 12px;
   -webkit-transform: rotate(90deg);
   -ms-transform: rotate(90deg);
   transform: rotate(90deg);
@@ -3385,12 +3396,12 @@ Array [
       >
         isolation_call_text25
       </span>
-      <img
-        alt="Arrow"
+      <svg
         className="c3"
         open={false}
-        src="angle-right.svg"
-      />
+      >
+        angle-right.svg
+      </svg>
     </div>
   </div>,
   .c2 {
@@ -4173,13 +4184,13 @@ Array [
   align-items: center;
   width: 100%;
   min-height: 54px;
-  padding: 12px 7px;
+  padding: 12px 15px;
   font-size: 14px;
   font-weight: bold;
   line-height: 1.3;
   color: #0052a5;
-  border-top: solid 1px #cbcbcb;
-  border-bottom: solid 1px #cbcbcb;
+  border-top: solid 1px #EEEEEE;
+  border-bottom: solid 1px #EEEEEE;
 }
 
 .c2 {
@@ -4189,7 +4200,8 @@ Array [
 .c3 {
   grid-area: icon;
   display: block;
-  max-height: 14px;
+  width: 12px;
+  height: 12px;
   -webkit-transform: rotate(90deg);
   -ms-transform: rotate(90deg);
   transform: rotate(90deg);
@@ -4220,12 +4232,12 @@ Array [
       >
         quarantine_text45
       </span>
-      <img
-        alt="Arrow"
+      <svg
         className="c3"
         open={false}
-        src="angle-right.svg"
-      />
+      >
+        angle-right.svg
+      </svg>
     </div>
   </div>,
   .c0 {
@@ -4252,13 +4264,13 @@ Array [
   align-items: center;
   width: 100%;
   min-height: 54px;
-  padding: 12px 7px;
+  padding: 12px 15px;
   font-size: 14px;
   font-weight: bold;
   line-height: 1.3;
   color: #0052a5;
-  border-top: solid 1px #cbcbcb;
-  border-bottom: solid 1px #cbcbcb;
+  border-top: solid 1px #EEEEEE;
+  border-bottom: solid 1px #EEEEEE;
 }
 
 .c2 {
@@ -4268,7 +4280,8 @@ Array [
 .c3 {
   grid-area: icon;
   display: block;
-  max-height: 14px;
+  width: 12px;
+  height: 12px;
   -webkit-transform: rotate(90deg);
   -ms-transform: rotate(90deg);
   transform: rotate(90deg);
@@ -4299,12 +4312,12 @@ Array [
       >
         quarantine_text46
       </span>
-      <img
-        alt="Arrow"
+      <svg
         className="c3"
         open={false}
-        src="angle-right.svg"
-      />
+      >
+        angle-right.svg
+      </svg>
     </div>
   </div>,
   .c0 {
@@ -4331,13 +4344,13 @@ Array [
   align-items: center;
   width: 100%;
   min-height: 54px;
-  padding: 12px 7px;
+  padding: 12px 15px;
   font-size: 14px;
   font-weight: bold;
   line-height: 1.3;
   color: #0052a5;
-  border-top: solid 1px #cbcbcb;
-  border-bottom: solid 1px #cbcbcb;
+  border-top: solid 1px #EEEEEE;
+  border-bottom: solid 1px #EEEEEE;
 }
 
 .c2 {
@@ -4347,7 +4360,8 @@ Array [
 .c3 {
   grid-area: icon;
   display: block;
-  max-height: 14px;
+  width: 12px;
+  height: 12px;
   -webkit-transform: rotate(90deg);
   -ms-transform: rotate(90deg);
   transform: rotate(90deg);
@@ -4378,12 +4392,12 @@ Array [
       >
         quarantine_text47
       </span>
-      <img
-        alt="Arrow"
+      <svg
         className="c3"
         open={false}
-        src="angle-right.svg"
-      />
+      >
+        angle-right.svg
+      </svg>
     </div>
   </div>,
   .c0 {
@@ -4410,13 +4424,13 @@ Array [
   align-items: center;
   width: 100%;
   min-height: 54px;
-  padding: 12px 7px;
+  padding: 12px 15px;
   font-size: 14px;
   font-weight: bold;
   line-height: 1.3;
   color: #0052a5;
-  border-top: solid 1px #cbcbcb;
-  border-bottom: solid 1px #cbcbcb;
+  border-top: solid 1px #EEEEEE;
+  border-bottom: solid 1px #EEEEEE;
 }
 
 .c2 {
@@ -4426,7 +4440,8 @@ Array [
 .c3 {
   grid-area: icon;
   display: block;
-  max-height: 14px;
+  width: 12px;
+  height: 12px;
   -webkit-transform: rotate(90deg);
   -ms-transform: rotate(90deg);
   transform: rotate(90deg);
@@ -4457,12 +4472,12 @@ Array [
       >
         quarantine_text49
       </span>
-      <img
-        alt="Arrow"
+      <svg
         className="c3"
         open={false}
-        src="angle-right.svg"
-      />
+      >
+        angle-right.svg
+      </svg>
     </div>
   </div>,
   .c0 {
@@ -4489,13 +4504,13 @@ Array [
   align-items: center;
   width: 100%;
   min-height: 54px;
-  padding: 12px 7px;
+  padding: 12px 15px;
   font-size: 14px;
   font-weight: bold;
   line-height: 1.3;
   color: #0052a5;
-  border-top: solid 1px #cbcbcb;
-  border-bottom: solid 1px #cbcbcb;
+  border-top: solid 1px #EEEEEE;
+  border-bottom: solid 1px #EEEEEE;
 }
 
 .c2 {
@@ -4505,7 +4520,8 @@ Array [
 .c3 {
   grid-area: icon;
   display: block;
-  max-height: 14px;
+  width: 12px;
+  height: 12px;
   -webkit-transform: rotate(90deg);
   -ms-transform: rotate(90deg);
   transform: rotate(90deg);
@@ -4536,12 +4552,12 @@ Array [
       >
         quarantine_text50
       </span>
-      <img
-        alt="Arrow"
+      <svg
         className="c3"
         open={false}
-        src="angle-right.svg"
-      />
+      >
+        angle-right.svg
+      </svg>
     </div>
   </div>,
   .c2 {
@@ -8167,13 +8183,13 @@ Array [
   align-items: center;
   width: 100%;
   min-height: 54px;
-  padding: 12px 7px;
+  padding: 12px 15px;
   font-size: 14px;
   font-weight: bold;
   line-height: 1.3;
   color: #0052a5;
-  border-top: solid 1px #cbcbcb;
-  border-bottom: solid 1px #cbcbcb;
+  border-top: solid 1px #EEEEEE;
+  border-bottom: solid 1px #EEEEEE;
 }
 
 .c2 {
@@ -8183,7 +8199,8 @@ Array [
 .c3 {
   grid-area: icon;
   display: block;
-  max-height: 14px;
+  width: 12px;
+  height: 12px;
   -webkit-transform: rotate(90deg);
   -ms-transform: rotate(90deg);
   transform: rotate(90deg);
@@ -8214,12 +8231,12 @@ Array [
       >
         call_doctor_text30
       </span>
-      <img
-        alt="Arrow"
+      <svg
         className="c3"
         open={false}
-        src="angle-right.svg"
-      />
+      >
+        angle-right.svg
+      </svg>
     </div>
   </div>,
   .c0 {
@@ -8246,13 +8263,13 @@ Array [
   align-items: center;
   width: 100%;
   min-height: 54px;
-  padding: 12px 7px;
+  padding: 12px 15px;
   font-size: 14px;
   font-weight: bold;
   line-height: 1.3;
   color: #0052a5;
-  border-top: solid 1px #cbcbcb;
-  border-bottom: solid 1px #cbcbcb;
+  border-top: solid 1px #EEEEEE;
+  border-bottom: solid 1px #EEEEEE;
 }
 
 .c2 {
@@ -8262,7 +8279,8 @@ Array [
 .c3 {
   grid-area: icon;
   display: block;
-  max-height: 14px;
+  width: 12px;
+  height: 12px;
   -webkit-transform: rotate(90deg);
   -ms-transform: rotate(90deg);
   transform: rotate(90deg);
@@ -8293,12 +8311,12 @@ Array [
       >
         call_doctor_text32
       </span>
-      <img
-        alt="Arrow"
+      <svg
         className="c3"
         open={false}
-        src="angle-right.svg"
-      />
+      >
+        angle-right.svg
+      </svg>
     </div>
   </div>,
   .c0 {
@@ -8325,13 +8343,13 @@ Array [
   align-items: center;
   width: 100%;
   min-height: 54px;
-  padding: 12px 7px;
+  padding: 12px 15px;
   font-size: 14px;
   font-weight: bold;
   line-height: 1.3;
   color: #0052a5;
-  border-top: solid 1px #cbcbcb;
-  border-bottom: solid 1px #cbcbcb;
+  border-top: solid 1px #EEEEEE;
+  border-bottom: solid 1px #EEEEEE;
 }
 
 .c2 {
@@ -8341,7 +8359,8 @@ Array [
 .c3 {
   grid-area: icon;
   display: block;
-  max-height: 14px;
+  width: 12px;
+  height: 12px;
   -webkit-transform: rotate(90deg);
   -ms-transform: rotate(90deg);
   transform: rotate(90deg);
@@ -8372,12 +8391,12 @@ Array [
       >
         call_doctor_text34
       </span>
-      <img
-        alt="Arrow"
+      <svg
         className="c3"
         open={false}
-        src="angle-right.svg"
-      />
+      >
+        angle-right.svg
+      </svg>
     </div>
   </div>,
   .c2 {
@@ -10074,13 +10093,13 @@ Array [
   align-items: center;
   width: 100%;
   min-height: 54px;
-  padding: 12px 7px;
+  padding: 12px 15px;
   font-size: 14px;
   font-weight: bold;
   line-height: 1.3;
   color: #0052a5;
-  border-top: solid 1px #cbcbcb;
-  border-bottom: solid 1px #cbcbcb;
+  border-top: solid 1px #EEEEEE;
+  border-bottom: solid 1px #EEEEEE;
 }
 
 .c2 {
@@ -10090,7 +10109,8 @@ Array [
 .c3 {
   grid-area: icon;
   display: block;
-  max-height: 14px;
+  width: 12px;
+  height: 12px;
   -webkit-transform: rotate(90deg);
   -ms-transform: rotate(90deg);
   transform: rotate(90deg);
@@ -10121,12 +10141,12 @@ Array [
       >
         quarantine_text45
       </span>
-      <img
-        alt="Arrow"
+      <svg
         className="c3"
         open={false}
-        src="angle-right.svg"
-      />
+      >
+        angle-right.svg
+      </svg>
     </div>
   </div>,
   .c0 {
@@ -10153,13 +10173,13 @@ Array [
   align-items: center;
   width: 100%;
   min-height: 54px;
-  padding: 12px 7px;
+  padding: 12px 15px;
   font-size: 14px;
   font-weight: bold;
   line-height: 1.3;
   color: #0052a5;
-  border-top: solid 1px #cbcbcb;
-  border-bottom: solid 1px #cbcbcb;
+  border-top: solid 1px #EEEEEE;
+  border-bottom: solid 1px #EEEEEE;
 }
 
 .c2 {
@@ -10169,7 +10189,8 @@ Array [
 .c3 {
   grid-area: icon;
   display: block;
-  max-height: 14px;
+  width: 12px;
+  height: 12px;
   -webkit-transform: rotate(90deg);
   -ms-transform: rotate(90deg);
   transform: rotate(90deg);
@@ -10200,12 +10221,12 @@ Array [
       >
         quarantine_text46
       </span>
-      <img
-        alt="Arrow"
+      <svg
         className="c3"
         open={false}
-        src="angle-right.svg"
-      />
+      >
+        angle-right.svg
+      </svg>
     </div>
   </div>,
   .c0 {
@@ -10232,13 +10253,13 @@ Array [
   align-items: center;
   width: 100%;
   min-height: 54px;
-  padding: 12px 7px;
+  padding: 12px 15px;
   font-size: 14px;
   font-weight: bold;
   line-height: 1.3;
   color: #0052a5;
-  border-top: solid 1px #cbcbcb;
-  border-bottom: solid 1px #cbcbcb;
+  border-top: solid 1px #EEEEEE;
+  border-bottom: solid 1px #EEEEEE;
 }
 
 .c2 {
@@ -10248,7 +10269,8 @@ Array [
 .c3 {
   grid-area: icon;
   display: block;
-  max-height: 14px;
+  width: 12px;
+  height: 12px;
   -webkit-transform: rotate(90deg);
   -ms-transform: rotate(90deg);
   transform: rotate(90deg);
@@ -10279,12 +10301,12 @@ Array [
       >
         quarantine_text47
       </span>
-      <img
-        alt="Arrow"
+      <svg
         className="c3"
         open={false}
-        src="angle-right.svg"
-      />
+      >
+        angle-right.svg
+      </svg>
     </div>
   </div>,
   .c0 {
@@ -10311,13 +10333,13 @@ Array [
   align-items: center;
   width: 100%;
   min-height: 54px;
-  padding: 12px 7px;
+  padding: 12px 15px;
   font-size: 14px;
   font-weight: bold;
   line-height: 1.3;
   color: #0052a5;
-  border-top: solid 1px #cbcbcb;
-  border-bottom: solid 1px #cbcbcb;
+  border-top: solid 1px #EEEEEE;
+  border-bottom: solid 1px #EEEEEE;
 }
 
 .c2 {
@@ -10327,7 +10349,8 @@ Array [
 .c3 {
   grid-area: icon;
   display: block;
-  max-height: 14px;
+  width: 12px;
+  height: 12px;
   -webkit-transform: rotate(90deg);
   -ms-transform: rotate(90deg);
   transform: rotate(90deg);
@@ -10358,12 +10381,12 @@ Array [
       >
         quarantine_text49
       </span>
-      <img
-        alt="Arrow"
+      <svg
         className="c3"
         open={false}
-        src="angle-right.svg"
-      />
+      >
+        angle-right.svg
+      </svg>
     </div>
   </div>,
   .c0 {
@@ -10390,13 +10413,13 @@ Array [
   align-items: center;
   width: 100%;
   min-height: 54px;
-  padding: 12px 7px;
+  padding: 12px 15px;
   font-size: 14px;
   font-weight: bold;
   line-height: 1.3;
   color: #0052a5;
-  border-top: solid 1px #cbcbcb;
-  border-bottom: solid 1px #cbcbcb;
+  border-top: solid 1px #EEEEEE;
+  border-bottom: solid 1px #EEEEEE;
 }
 
 .c2 {
@@ -10406,7 +10429,8 @@ Array [
 .c3 {
   grid-area: icon;
   display: block;
-  max-height: 14px;
+  width: 12px;
+  height: 12px;
   -webkit-transform: rotate(90deg);
   -ms-transform: rotate(90deg);
   transform: rotate(90deg);
@@ -10437,12 +10461,12 @@ Array [
       >
         quarantine_text50
       </span>
-      <img
-        alt="Arrow"
+      <svg
         className="c3"
         open={false}
-        src="angle-right.svg"
-      />
+      >
+        angle-right.svg
+      </svg>
     </div>
   </div>,
   .c2 {

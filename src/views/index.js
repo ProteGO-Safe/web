@@ -12,7 +12,6 @@ export { HospitalsList } from './HospitalsList';
 export { HowItWorks } from './HowItWorks';
 export { IAmSick } from './IAmSick';
 export { ImportantInfo } from './ImportantInfo';
-export { ListDistricts } from './ListDistricts';
 export { MenuSettings } from './MenuSettings';
 export { NotSupported } from './NotSupported';
 export { Numbers } from './Numbers';

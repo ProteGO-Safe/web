@@ -51,3 +51,9 @@ export const UrlLink = styled.a`
   display: inline-block;
   width: 100%;
 `;
+
+export const SearchWrapper = styled.div`
+  display: block;
+  width: 100%;
+  padding: 18px;
+`;

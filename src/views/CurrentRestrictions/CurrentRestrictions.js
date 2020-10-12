@@ -1,64 +1,56 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import { withTranslation } from 'react-i18next';
 import { FollowDistricts } from '../FollowDistricts';
-import { ListDistricts } from '../ListDistricts';
+import { ListDistricts } from './components/ListDistricts';
 import * as Styled from './CurrentRestrictions.styled';
-import { Button } from '../../components';
+import { Button, Input } from '../../components';
+import SearchIcon from '../../assets/img/icons/lupa.svg';
+import { FlattenListDistricts } from './components/FlattenListDistricts';
 
-const CurrentRestrictions = ({ t }) => {
-  const followDistrictsItems = [
-    {
-      id: 1,
-      name: 'grodziski',
-      state: 1,
-      is_subscribed: true
-    },
-    {
-      id: 5,
-      name: 'garwoliński',
-      state: 0,
-      is_subscribed: false
+const CurrentRestrictions = ({
+  filterText,
+  flattenDistricts,
+  followDistrictsItems,
+  handleChangeInput,
+  handleResetInput,
+  handleSubscribeDistrict,
+  isFlatten,
+  listDistrictsItems,
+  t,
+  dateUpdate
+}) => {
+  const renderList = useMemo(() => {
+    if (isFlatten && flattenDistricts.length === 0) {
+      return (
+        <Styled.Paragraph>
+          {t('current_restrictions_paragraph_3')}
+        </Styled.Paragraph>
+      );
     }
-  ];
-
-  const listDistrictsItems = [
-    {
-      id: 1,
-      name: 'mazowieckie',
-      districts: [
-        {
-          id: 1,
-          name: 'grodziski',
-          state: 1,
-          is_subscribed: true
-        },
-        {
-          id: 5,
-          name: 'garwoliński',
-          state: 0,
-          is_subscribed: false
-        }
-      ]
-    },
-    {
-      id: 2,
-      name: 'donlośląskie',
-      districts: [
-        {
-          id: 1,
-          name: 'wrocławski',
-          state: 1,
-          is_subscribed: true
-        },
-        {
-          id: 2,
-          name: 'świdnicki',
-          state: 2,
-          is_subscribed: false
-        }
-      ]
+    if (isFlatten) {
+      return (
+        <FlattenListDistricts
+          handleSubscribeDistrict={handleSubscribeDistrict}
+          items={flattenDistricts}
+        />
+      );
     }
-  ];
+    return (
+      <>
+        <Styled.Title>{t('current_restrictions_title_2')}</Styled.Title>
+        <ListDistricts
+          items={listDistrictsItems}
+          handleSubscribeDistrict={handleSubscribeDistrict}
+        />
+      </>
+    );
+  }, [
+    isFlatten,
+    flattenDistricts,
+    listDistrictsItems,
+    handleSubscribeDistrict,
+    t
+  ]);
 
   return (
     <Styled.CurrentRestrictions>
@@ -68,12 +60,21 @@ const CurrentRestrictions = ({ t }) => {
         </Styled.Title>
       </Styled.Container>
 
-      <FollowDistricts items={followDistrictsItems} dateUpdate="20.20.2020" />
+      <FollowDistricts items={followDistrictsItems} dateUpdate={dateUpdate} />
 
-      <Styled.Container>
-        <Styled.Title>{t('current_restrictions_title_2')}</Styled.Title>
-        <ListDistricts items={listDistrictsItems} />
-      </Styled.Container>
+      <Styled.SearchWrapper>
+        <Input
+          reset={handleResetInput}
+          icon={SearchIcon}
+          type="text"
+          name="search"
+          placeholder=""
+          value={filterText}
+          onChange={handleChangeInput}
+        />
+      </Styled.SearchWrapper>
+
+      <Styled.Container>{renderList}</Styled.Container>
 
       <Styled.Container>
         <Styled.Title>{t('current_restrictions_title_3')}</Styled.Title>
@@ -82,7 +83,10 @@ const CurrentRestrictions = ({ t }) => {
         </Styled.Paragraph>
 
         <Styled.ButtonWrapper>
-          <Styled.UrlLink href="#" target="_blank">
+          <Styled.UrlLink
+            href="https://www.gov.pl/web/koronawirus/regionalne-obostrzenia-dla-powiatow"
+            target="_blank"
+          >
             <Button
               label={t('current_restrictions_button_name')}
               onClick={() => null}
