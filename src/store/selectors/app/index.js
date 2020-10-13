@@ -4,3 +4,5 @@ export const getLanguageChangedByUser = state =>
 export const getApplicationReseted = state => state.app.applicationReseted;
 export const getUploadHistoricalDataStateErrorMessageVisible = state =>
   state.app.uploadHistoricalDataState.errorMessageVisible;
+export const getRestrictionsModalShowed = state =>
+  state.app.restrictionsModalShowed;

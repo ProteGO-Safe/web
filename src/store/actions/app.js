@@ -113,3 +113,13 @@ export const hideUploadHistoricalDataErrorMessage = () => {
 export const registrationFinished = () => ({
   type: types.REGISTRATION_FINISHED
 });
+
+export const restrictionsModalShowed = () => ({
+  type: types.RESTRICTIONS_MODAL_SHOWED
+});
+
+export const hideRestrictionsModal = () => {
+  return dispatch => {
+    dispatch(restrictionsModalShowed());
+  };
+};

@@ -8,6 +8,7 @@ import {
   MIGRATION_FINISHED,
   ONBOARDING_FINISHED,
   REGISTRATION_FINISHED,
+  RESTRICTIONS_MODAL_SHOWED,
   START_SCREEN_SHOWED,
   UPLOAD_HISTORICAL_DATA_ENDED,
   UPLOAD_HISTORICAL_DATA_ERROR_MESSAGE_HIDDEN,
@@ -32,7 +33,8 @@ const INITIAL_STATE = {
     status: uploadState.EMPTY,
     unsuccessfulAttempts: []
   },
-  registrationFinished: false
+  registrationFinished: false,
+  restrictionsModalShowed: false
 };
 
 const appReducer = (state = INITIAL_STATE, action) => {
@@ -134,6 +136,12 @@ const appReducer = (state = INITIAL_STATE, action) => {
       return {
         ...state,
         registrationFinished: true
+      };
+    }
+    case RESTRICTIONS_MODAL_SHOWED: {
+      return {
+        ...state,
+        restrictionsModalShowed: true
       };
     }
 

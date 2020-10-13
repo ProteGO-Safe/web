@@ -20,6 +20,8 @@ import {
   prepareVoivodeshipsWithDistricts
 } from './currentRestrictions.helpers';
 import { ModalContent, ModalFooter } from './components';
+import { getRestrictionsModalShowed } from '../../store/selectors/app';
+import { hideRestrictionsModal } from '../../store/actions/app';
 
 const dateFormat = 'D-MM-YYYY';
 
@@ -30,6 +32,7 @@ const CurrentRestrictionsContainer = () => {
   const [filterText, setFilterText] = useState('');
   const voivodeships = useSelector(getVoivodeships);
   const updateTimestamp = useSelector(getUpdateTimestamp);
+  const restrictionsModalShowed = useSelector(getRestrictionsModalShowed);
   const subscribedDistricts = useSelector(getSubscribedDistricts);
   const [flattenDistricts, setFlattenDistricts] = useState([]);
   const [districts, setDistricts] = useState([]);
@@ -42,9 +45,20 @@ const CurrentRestrictionsContainer = () => {
   );
 
   useEffect(() => {
-    openModal(<ModalContent />, 'inner-content', null, <ModalFooter />);
     dispatch(fetchDistrictsStatus());
     dispatch(fetchSubscribedDistricts());
+    // eslint-disable-next-line
+  }, []);
+
+  useEffect(() => {
+    if (!restrictionsModalShowed) {
+      openModal(
+        <ModalContent />,
+        'inner-content',
+        null,
+        <ModalFooter handleClick={handleModalClick} />
+      );
+    }
     // eslint-disable-next-line
   }, []);
 
@@ -65,6 +79,11 @@ const CurrentRestrictionsContainer = () => {
   const handleChangeInput = useCallback(e => {
     const { value } = e.target;
     setFilterText(value.toLocaleLowerCase());
+  }, []);
+
+  const handleModalClick = useCallback(() => {
+    dispatch(hideRestrictionsModal());
+    // eslint-disable-next-line
   }, []);
 
   const handleResetInput = useCallback(() => {
