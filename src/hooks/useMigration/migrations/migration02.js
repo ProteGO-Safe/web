@@ -11,6 +11,9 @@ const useMigration02 = () => {
   const userName = useSelector(getUserName);
 
   const migrateRiskTest = () => {
+    if (!userName) {
+      return;
+    }
     if (translatedUserNamesToChangeToNull.includes(userName)) {
       dispatch(saveUserName({ name: null }));
     } else {
