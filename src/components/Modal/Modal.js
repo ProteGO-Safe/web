@@ -26,23 +26,31 @@ const Modal = () => {
     <Styled.Wrapper>
       <Styled.Overlay onClick={onClose} />
       <Styled.Content type={type} height={scrollHeight}>
-        {type !== 'dialog' && <ModalClose onClick={onClose} />}
-        {title && <Styled.Title>{title}</Styled.Title>}
+        {type === 'inner-content' ? (
+          content
+        ) : (
+          <>
+            {type !== 'dialog' && <ModalClose onClick={onClose} />}
+            {title && <Styled.Title>{title}</Styled.Title>}
 
-        <Styled.ScrollbarContent height={scrollHeight}>
-          <Scrollbar
-            ref={scrollRef}
-            style={{
-              width: '100%',
-              height: scrollHeight > 260 ? '100%' : `${scrollHeight}px`,
-              maxHeight: '100%'
-            }}
-          >
-            <Styled.Text>{content}</Styled.Text>
-          </Scrollbar>
-        </Styled.ScrollbarContent>
+            <Styled.ScrollbarContent height={scrollHeight}>
+              <Scrollbar
+                ref={scrollRef}
+                style={{
+                  width: '100%',
+                  height: scrollHeight > 260 ? '100%' : `${scrollHeight}px`,
+                  maxHeight: '100%'
+                }}
+              >
+                <Styled.Text>{content}</Styled.Text>
+              </Scrollbar>
+            </Styled.ScrollbarContent>
+          </>
+        )}
 
-        {footer && type === 'dialog' && <Styled.Footer>{footer}</Styled.Footer>}
+        {footer && (type === 'dialog' || type === 'inner-content') && (
+          <Styled.Footer type={type}>{footer}</Styled.Footer>
+        )}
       </Styled.Content>
     </Styled.Wrapper>
   );

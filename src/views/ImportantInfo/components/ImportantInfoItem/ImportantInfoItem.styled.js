@@ -174,3 +174,7 @@ export const LinkGov = styled.div`
 export const UrlLink = styled.a`
   display: block;
 `;
+
+export const Action = styled.div`
+  display: block;
+`;

@@ -12,9 +12,9 @@ const ImportantInfoItem = ({
   link,
   newFeature,
   path,
+  t,
   title,
-  type,
-  t
+  type
 }) => {
   const ref = useRef(null);
   const [height, setHeight] = useState(0);

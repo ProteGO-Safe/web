@@ -56,6 +56,7 @@ const ImportantInfoContainer = ({ t }) => {
       path: Routes.HowItWorks
     }
   ];
+
   return <ImportantInfo items={IMPORTANT_INFO_ITEMS} />;
 };
 

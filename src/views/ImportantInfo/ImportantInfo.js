@@ -8,10 +8,7 @@ const ImportantInfo = ({ items }) => {
   const windowWidth = window.innerWidth;
   const stylesScrollbar = {
     width: '100%',
-    height: '100%',
-    'ScrollbarsCustom-Wrapper': {
-      color: 'red'
-    }
+    height: '100%'
   };
 
   const renderItems = items.map(item => {

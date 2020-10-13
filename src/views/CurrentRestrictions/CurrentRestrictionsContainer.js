@@ -1,7 +1,8 @@
 import React, { useEffect, useState, useCallback, useMemo } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
 import moment from 'moment';
+import { useDispatch, useSelector } from 'react-redux';
 import CurrentRestrictions from './CurrentRestrictions';
+import useModalContext from '../../hooks/useModalContext';
 import { Layout } from '../../components';
 import {
   fetchDistrictsStatus,
@@ -18,10 +19,13 @@ import {
   flatDistricts,
   prepareVoivodeshipsWithDistricts
 } from './currentRestrictions.helpers';
+import { ModalContent, ModalFooter } from './components';
 
 const dateFormat = 'D-MM-YYYY';
 
 const CurrentRestrictionsContainer = () => {
+  const { openModal } = useModalContext();
+
   const dispatch = useDispatch();
   const [filterText, setFilterText] = useState('');
   const voivodeships = useSelector(getVoivodeships);
@@ -38,6 +42,7 @@ const CurrentRestrictionsContainer = () => {
   );
 
   useEffect(() => {
+    openModal(<ModalContent />, 'inner-content', null, <ModalFooter />);
     dispatch(fetchDistrictsStatus());
     dispatch(fetchSubscribedDistricts());
     // eslint-disable-next-line
