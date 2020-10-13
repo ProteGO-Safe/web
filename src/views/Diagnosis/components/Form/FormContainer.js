@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import { useFormikContext } from 'formik';
+import isequal from 'lodash.isequal';
 
 import { DIAGNOSIS_FORM_FIELDS } from '../../diagnosis.constants';
 import Form from './Form';
@@ -28,6 +29,16 @@ const FormContainer = ({ onFinish }) => {
     });
   }, [history]);
 
+  const addIfNotExists = (list = [], fetchedQuestion) => {
+    const existingQuestion = list.find(value =>
+      isequal(value, fetchedQuestion)
+    );
+    if (existingQuestion) {
+      return [...list];
+    }
+    return [...list, fetchedQuestion];
+  };
+
   useEffect(() => {
     const questions = [...values[DIAGNOSIS_FORM_FIELDS.QUESTIONS]];
 
@@ -44,7 +55,7 @@ const FormContainer = ({ onFinish }) => {
       }
     );
     setQuestion(fetchedQuestion);
-    setAllQuestions(prev => [...prev, fetchedQuestion]);
+    setAllQuestions(prev => addIfNotExists(prev, fetchedQuestion));
 
     if (shouldStop) {
       setEvidence(questions.flat(1));
