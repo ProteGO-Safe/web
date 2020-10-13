@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useCallback, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import moment from 'moment';
 import Home from './Home';
@@ -8,11 +8,17 @@ import {
 } from '../../store/actions/nativeData';
 import { resetTimeOfConfirmedCovid } from '../../store/actions/triage';
 import { getSubscribedDistricts } from '../../store/selectors/restrictions';
+import { unsubscribeDistrict } from '../../store/actions/restrictions';
 
 const HomeContainer = () => {
   const dispatch = useDispatch();
   const { timeOfConfirmedCovid } = useSelector(state => state.triage);
   const subscribedDistricts = useSelector(getSubscribedDistricts);
+
+  const handleUnsubscribeDistrict = useCallback(districtId => {
+    dispatch(unsubscribeDistrict(districtId));
+    // eslint-disable-next-line
+  }, []);
 
   useEffect(() => {
     dispatch(fetchServicesStatus());
@@ -22,7 +28,12 @@ const HomeContainer = () => {
     }
   }, [dispatch, timeOfConfirmedCovid]);
 
-  return <Home subscribedDistricts={subscribedDistricts} />;
+  return (
+    <Home
+      subscribedDistricts={subscribedDistricts}
+      handleUnsubscribeDistrict={handleUnsubscribeDistrict}
+    />
+  );
 };
 
 export default HomeContainer;

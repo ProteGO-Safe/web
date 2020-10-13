@@ -4,14 +4,17 @@ import { FollowDistrictsSlider } from '../index';
 import { ExposureNotificationWarning, HomeContent } from './components';
 import * as Styled from './Home.styled';
 
-const Home = ({ subscribedDistricts }) => {
+const Home = ({ handleUnsubscribeDistrict, subscribedDistricts }) => {
   return (
     <Layout hideBackButton isNavigation noMargin>
       <Styled.Container>
         <ExposureNotificationWarning />
       </Styled.Container>
 
-      <FollowDistrictsSlider items={subscribedDistricts} />
+      <FollowDistrictsSlider
+        items={subscribedDistricts}
+        handleUnsubscribeDistrict={handleUnsubscribeDistrict}
+      />
 
       <Styled.Container noMargin>
         <HomeContent />
