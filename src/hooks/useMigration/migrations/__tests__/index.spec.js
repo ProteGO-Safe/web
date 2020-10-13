@@ -1,5 +1,5 @@
 import prepareRiskTestes from '../migration03.helpers';
-import { expectedRiskTest, riskTestInStore } from './test.data';
+import { expectedRiskTest, riskTestInStore } from '../test.data';
 
 describe('migrations', () => {
   it('should create risk test data for migration3', () => {
