@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import CurrentRestrictions from './CurrentRestrictions';
 import useModalContext from '../../hooks/useModalContext';
 import { Layout } from '../../components';
+import { NoData } from './components/NoData';
 import {
   fetchDistrictsStatus,
   fetchSubscribedDistricts,
@@ -102,6 +103,7 @@ const CurrentRestrictionsContainer = () => {
 
   return (
     <Layout isNavigation noMargin>
+      <NoData handleClick={() => null} />
       <CurrentRestrictions
         filterText={filterText}
         flattenDistricts={flattenDistricts}
