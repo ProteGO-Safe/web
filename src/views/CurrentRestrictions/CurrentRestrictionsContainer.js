@@ -3,12 +3,21 @@ import { useDispatch, useSelector } from 'react-redux';
 import moment from 'moment';
 import CurrentRestrictions from './CurrentRestrictions';
 import { Layout } from '../../components';
-import { fetchDistrictsStatus } from '../../store/actions/restrictions';
 import {
+  fetchDistrictsStatus,
+  fetchSubscribedDistricts,
+  subscribeDistrict,
+  unsubscribeDistrict
+} from '../../store/actions/restrictions';
+import {
+  getSubscribedDistricts,
   getUpdateTimestamp,
   getVoivodeships
 } from '../../store/selectors/restrictions';
-import flatDistricts from './currentRestrictions.helpers';
+import {
+  flatDistricts,
+  prepareVoivodeshipsWithDistricts
+} from './currentRestrictions.helpers';
 
 const dateFormat = 'D-MM-YYYY';
 
@@ -17,7 +26,9 @@ const CurrentRestrictionsContainer = () => {
   const [filterText, setFilterText] = useState('');
   const voivodeships = useSelector(getVoivodeships);
   const updateTimestamp = useSelector(getUpdateTimestamp);
+  const subscribedDistricts = useSelector(getSubscribedDistricts);
   const [flattenDistricts, setFlattenDistricts] = useState([]);
+  const [districts, setDistricts] = useState([]);
 
   const isFlatten = useMemo(() => filterText.length > 2, [filterText]);
   const dateUpdate = useMemo(
@@ -28,29 +39,23 @@ const CurrentRestrictionsContainer = () => {
 
   useEffect(() => {
     dispatch(fetchDistrictsStatus());
+    dispatch(fetchSubscribedDistricts());
     // eslint-disable-next-line
   }, []);
 
   useEffect(() => {
-    if (filterText.length > 2) {
-      setFlattenDistricts(flatDistricts(voivodeships, filterText));
-    }
-  }, [filterText, voivodeships]);
+    setDistricts(
+      prepareVoivodeshipsWithDistricts(voivodeships, subscribedDistricts)
+    );
+  }, [voivodeships, subscribedDistricts]);
 
-  const followDistrictsItems = [
-    {
-      id: 1,
-      name: 'grodziski',
-      state: 1,
-      is_subscribed: true
-    },
-    {
-      id: 5,
-      name: 'garwoliński',
-      state: 0,
-      is_subscribed: false
+  useEffect(() => {
+    if (filterText.length > 2) {
+      setFlattenDistricts(
+        flatDistricts(voivodeships, filterText, subscribedDistricts)
+      );
     }
-  ];
+  }, [filterText, voivodeships, subscribedDistricts]);
 
   const handleChangeInput = useCallback(e => {
     const { value } = e.target;
@@ -61,8 +66,14 @@ const CurrentRestrictionsContainer = () => {
     setFilterText('');
   }, []);
 
-  const handleSubscribeDistrict = useCallback((districtId) => {
-    // todo PSAFE-2381
+  const handleSubscribeDistrict = useCallback(districtId => {
+    dispatch(subscribeDistrict(districtId));
+    // eslint-disable-next-line
+  }, []);
+
+  const handleUnsubscribeDistrict = useCallback(districtId => {
+    dispatch(unsubscribeDistrict(districtId));
+    // eslint-disable-next-line
   }, []);
 
   return (
@@ -70,12 +81,13 @@ const CurrentRestrictionsContainer = () => {
       <CurrentRestrictions
         filterText={filterText}
         flattenDistricts={flattenDistricts}
-        followDistrictsItems={followDistrictsItems}
+        subscribedDistricts={subscribedDistricts}
         handleChangeInput={handleChangeInput}
         handleResetInput={handleResetInput}
         handleSubscribeDistrict={handleSubscribeDistrict}
+        handleUnsubscribeDistrict={handleUnsubscribeDistrict}
         isFlatten={isFlatten}
-        listDistrictsItems={voivodeships}
+        listDistrictsItems={districts}
         dateUpdate={dateUpdate}
       />
     </Layout>

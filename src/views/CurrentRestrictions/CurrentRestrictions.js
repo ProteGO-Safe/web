@@ -10,10 +10,11 @@ import { FlattenListDistricts } from './components/FlattenListDistricts';
 const CurrentRestrictions = ({
   filterText,
   flattenDistricts,
-  followDistrictsItems,
+  subscribedDistricts,
   handleChangeInput,
   handleResetInput,
   handleSubscribeDistrict,
+  handleUnsubscribeDistrict,
   isFlatten,
   listDistrictsItems,
   t,
@@ -60,7 +61,11 @@ const CurrentRestrictions = ({
         </Styled.Title>
       </Styled.Container>
 
-      <FollowDistricts items={followDistrictsItems} dateUpdate={dateUpdate} />
+      <FollowDistricts
+        items={subscribedDistricts}
+        dateUpdate={dateUpdate}
+        handleUnsubscribeDistrict={handleUnsubscribeDistrict}
+      />
 
       <Styled.SearchWrapper>
         <Input

@@ -1,20 +1,22 @@
-const flatDistricts = (districts, searchedDistrictName) => {
+const mapToIds = list => list.map(value => value.id);
+
+export const flatDistricts = (
+  districts,
+  searchedDistrictName,
+  subscribedDistricts
+) => {
+  const subscribedDistrictsIds = mapToIds(subscribedDistricts);
   return districts
     .reduce((obj, item) => {
       const { name: voivodeshipName, districts } = item;
       const items = districts.reduce((obj, item) => {
-        const {
-          id: districtId,
-          name: districtName,
-          state,
-          is_subscribed: isSubscribed
-        } = item;
+        const { id: districtId, name: districtName, state } = item;
         if (districtName.includes(searchedDistrictName)) {
           return obj.concat({
             districtId,
             name: `${districtName} (${voivodeshipName})`,
             state,
-            isSubscribed
+            isSubscribed: subscribedDistrictsIds.includes(districtId)
           });
         }
         return obj;
@@ -24,4 +26,22 @@ const flatDistricts = (districts, searchedDistrictName) => {
     .sort((a, b) => a.name.localeCompare(b.name));
 };
 
-export default flatDistricts;
+export const prepareVoivodeshipsWithDistricts = (
+  voivodeships,
+  subscribedDistricts
+) => {
+  const subscribedDistrictsIds = mapToIds(subscribedDistricts);
+  return voivodeships.map(value => {
+    const { districts } = value;
+    return {
+      ...value,
+      districts: districts.map(value => {
+        const { id } = value;
+        return {
+          ...value,
+          isSubscribed: subscribedDistrictsIds.includes(id)
+        };
+      })
+    };
+  });
+};

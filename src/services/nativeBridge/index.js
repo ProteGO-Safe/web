@@ -60,9 +60,9 @@ const callNativeFunction = async (functionName, dataType, data) => {
   return sendNativeRequest(functionName, ...args);
 };
 
-const callGetBridgeData = async dataType => {
+const callGetBridgeData = async (dataType, data = undefined) => {
   try {
-    const json = await callNativeFunction('getBridgeData', dataType);
+    const json = await callNativeFunction('getBridgeData', dataType, data);
     if (json) {
       return JSON.parse(json);
     }
@@ -90,6 +90,10 @@ const getLanguage = async () => {
 
 const getDistrictsStatus = async () => {
   return callGetBridgeData(DATA_TYPE.DISTRICTS_STATUS);
+};
+
+const getSubscribedDistricts = async () => {
+  return callGetBridgeData(DATA_TYPE.SUBSCRIBED_DISTRICTS);
 };
 
 const getExposureNotificationStatistics = async () => {
@@ -125,7 +129,7 @@ const turnOff = async () => {
 const setDistrictSubscription = async (districtId, isSubscribed) => {
   const ADD = 1;
   const DELETE = 2;
-  await callNativeFunction('setBridgeData', DATA_TYPE.DISTRICT_ACTION, {
+  return callGetBridgeData(DATA_TYPE.DISTRICT_ACTION, {
     type: isSubscribed ? ADD : DELETE,
     district_id: districtId
   });
@@ -219,5 +223,6 @@ export default {
   getLanguage,
   turnOff,
   getDistrictsStatus,
-  setDistrictSubscription
+  setDistrictSubscription,
+  getSubscribedDistricts
 };

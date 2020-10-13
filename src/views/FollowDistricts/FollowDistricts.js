@@ -4,9 +4,22 @@ import { withTranslation } from 'react-i18next';
 import { StatusItem } from '../../components';
 import * as Styled from './FollowDistricts.styled';
 
-const FollowDistricts = ({ dateUpdate, items, t }) => {
+const FollowDistricts = ({
+  dateUpdate,
+  handleUnsubscribeDistrict,
+  items,
+  t
+}) => {
+  if (!items) {
+    return null;
+  }
   const renderItems = items.map(({ id, name, state }) => (
-    <StatusItem key={id} name={name} status={state} handleClick={() => null} />
+    <StatusItem
+      key={id}
+      name={name}
+      status={state}
+      handleClick={() => handleUnsubscribeDistrict(id)}
+    />
   ));
 
   return (
