@@ -18,6 +18,12 @@ export function saveUserName(data) {
   };
 }
 
+export const finishRegistration = () => {
+  return async dispatch => {
+    dispatch(registrationFinished());
+  };
+};
+
 export function saveUser(data) {
   return async dispatch => {
     dispatch(saveUserRequested(data));
