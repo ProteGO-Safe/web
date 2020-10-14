@@ -11,6 +11,7 @@ const ImportantInfoItem = ({
   icon,
   link,
   path,
+  size,
   title,
   type,
   t
@@ -27,7 +28,7 @@ const ImportantInfoItem = ({
   }, [ref]);
 
   const Content = () => (
-    <Styled.ImportantInfoItem ref={ref}>
+    <Styled.ImportantInfoItem ref={ref} size={size}>
       <Styled.Icon>
         <Styled.Image src={icon} alt={title} />
       </Styled.Icon>
@@ -71,6 +72,7 @@ ImportantInfoItem.defaultProps = {
   description: '',
   icon: null,
   link: null,
+  size: 'Normal',
   path: null,
   title: null
 };
@@ -81,6 +83,7 @@ ImportantInfoItem.propTypes = {
   icon: PropTypes.string,
   link: PropTypes.string,
   path: PropTypes.string,
+  size: PropTypes.string,
   title: PropTypes.string,
   type: PropTypes.oneOf([TYPES.ROUTE, TYPES.LINK]).isRequired
 };

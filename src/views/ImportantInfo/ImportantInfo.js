@@ -1,14 +1,12 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
 import Scrollbar from 'react-scrollbars-custom';
-import { getFontScale } from '../../store/selectors/app';
 import { Layout } from '../../components';
 import { ImportantInfoItem } from './components';
+import useFontScale from '../../hooks/useFontScale';
 import * as Styled from './ImportantInfo.styled';
 
 const ImportantInfo = ({ items }) => {
-  const fontScale = useSelector(getFontScale);
-  console.log(fontScale);
+  const fontScale = useFontScale();
 
   const windowWidth = window.innerWidth;
   const stylesScrollbar = {
@@ -28,14 +26,13 @@ const ImportantInfo = ({ items }) => {
         path={path}
         title={title}
         type={type}
+        size={fontScale}
       />
     );
   });
 
   return (
     <Layout isNavigation noMargin noPadding>
-      <Styled.Test size={fontScale}>font-scale: {fontScale}</Styled.Test>
-
       <Styled.Container>
         {windowWidth < 375 ? (
           <Scrollbar scrollbarWidth={6} style={stylesScrollbar}>
