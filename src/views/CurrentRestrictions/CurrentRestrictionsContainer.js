@@ -30,7 +30,7 @@ import { FAILED } from '../../constants';
 const dateFormat = 'D-MM-YYYY';
 
 const CurrentRestrictionsContainer = () => {
-  const { openModal } = useModalContext();
+  const { openModal, onClose } = useModalContext();
 
   const dispatch = useDispatch();
   const [filterText, setFilterText] = useState('');
@@ -55,14 +55,16 @@ const CurrentRestrictionsContainer = () => {
   }, []);
 
   useEffect(() => {
-    if (!restrictionsModalShowed) {
-      openModal(
-        <ModalContent />,
-        'inner-content',
-        null,
-        <ModalFooter handleClick={handleModalClick} />
-      );
+    if (restrictionsModalShowed) {
+      onClose();
+      return;
     }
+    openModal(
+      <ModalContent />,
+      'inner-content',
+      null,
+      <ModalFooter handleClick={handleModalClick} />
+    );
     // eslint-disable-next-line
   }, [restrictionsModalShowed]);
 
