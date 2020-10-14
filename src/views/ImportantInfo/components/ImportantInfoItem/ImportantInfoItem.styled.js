@@ -34,7 +34,7 @@ export const ImportantInfoItem = styled.div`
   box-shadow: 2px 2px 3px ${hexToRgba(Color.black, 0.26)};
   transition: all 0.1s ease-in;
 
-  font-size: ${({ size }) => handleFontSize(size)}!important;
+  font-size: ${({ size }) => handleFontSize(size)};
 
   @media (max-width: 374px) {
     align-items: center;
@@ -89,8 +89,8 @@ export const Title = styled.h2`
   width: 100%;
   margin-top: 0;
   margin-bottom: 0.4em;
-  font-size: 1em !important;
-  line-height: 1.2em !important;
+  font-size: 1em;
+  line-height: 1.2em;
   color: ${({ danger }) => (danger ? Color.danger : Color.primary)};
   font-weight: bold;
   text-align: center;
@@ -113,8 +113,8 @@ export const Description = styled.span`
   justify-content: center;
   width: 100%;
   margin-top: auto;
-  font-size: 0.556em !important;
-  line-height: 1.4em !important;
+  font-size: 0.556em;
+  line-height: 1.4em;
   color: ${Color.black};
   text-align: center;
   @media (max-width: 374px) {
@@ -133,13 +133,13 @@ export const LinkGov = styled.div`
   bottom: 8px;
   left: 0;
   width: 100%;
-  font-size: 0.556em !important;
-  line-height: 1em !important;
+  font-size: 0.556em;
+  line-height: 1em;
   color: ${Color.primary};
   text-align: center;
   @media (max-width: 374px) {
     padding: 0 0.5rem;
-    font-size: 10px !important;
+    font-size: 10px;
     line-height: 1;
     text-align: right;
   }

@@ -33,7 +33,6 @@ const ImportantInfo = ({ items }) => {
 
   return (
     <Layout isNavigation noMargin noPadding>
-      {fontScale}
       <Styled.Container>
         {windowWidth < 375 ? (
           <Scrollbar scrollbarWidth={6} style={stylesScrollbar}>
