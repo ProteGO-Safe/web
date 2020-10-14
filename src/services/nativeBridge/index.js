@@ -80,6 +80,10 @@ const getServicesStatus = async () => {
   return callGetBridgeData(DATA_TYPE.NATIVE_SERVICES_STATUS);
 };
 
+const getFontScale = async () => {
+  return callGetBridgeData(DATA_TYPE.FONT_SCALE);
+};
+
 const getNativeVersion = async () => {
   return callGetBridgeData(DATA_TYPE.NATIVE_VERSION);
 };
@@ -194,6 +198,7 @@ window.onBridgeData = onBridgeData;
 window.bridgeDataResponse = receiveNativeResponse;
 
 export default {
+  getFontScale,
   getServicesStatus,
   setDiagnosisTimestamp,
   setPin,

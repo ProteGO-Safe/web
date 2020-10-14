@@ -43,6 +43,7 @@ import Routes from '../../routes';
 import { Notification } from '../Notification';
 import useFilledDiagnosis from '../../hooks/useFilledDiagnosis';
 import {
+  fetchFontScale,
   hideUploadHistoricalDataErrorMessage,
   markDataFromNewestVersion
 } from '../../store/actions/app';
@@ -80,6 +81,7 @@ function App() {
 
   useEffect(() => {
     dispatch(hideUploadHistoricalDataErrorMessage());
+    dispatch(fetchFontScale());
   }, [dispatch]);
 
   history.listen(() => {
