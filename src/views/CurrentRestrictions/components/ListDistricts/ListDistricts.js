@@ -16,17 +16,15 @@ const ListDistricts = ({
     const { id: voivodeshipId, name } = item;
     return (
       <Collapse key={voivodeshipId} title={name}>
-        {item.districts.map(
-          ({ id: districtId, name, state, is_subscribed: isSubscribed }) => (
-            <SubscribeItem
-              key={districtId}
-              name={name}
-              status={state}
-              handleClick={() => handleClick(districtId, isSubscribed)}
-              subscribed={isSubscribed}
-            />
-          )
-        )}
+        {item.districts.map(({ id: districtId, name, state, isSubscribed }) => (
+          <SubscribeItem
+            key={districtId}
+            name={name}
+            status={state}
+            handleClick={() => handleClick(districtId, isSubscribed)}
+            subscribed={isSubscribed}
+          />
+        ))}
       </Collapse>
     );
   });
