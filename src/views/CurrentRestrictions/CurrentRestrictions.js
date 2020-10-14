@@ -32,6 +32,7 @@ const CurrentRestrictions = ({
       return (
         <FlattenListDistricts
           handleSubscribeDistrict={handleSubscribeDistrict}
+          handleUnsubscribeDistrict={handleUnsubscribeDistrict}
           items={flattenDistricts}
         />
       );
@@ -42,6 +43,7 @@ const CurrentRestrictions = ({
         <ListDistricts
           items={listDistrictsItems}
           handleSubscribeDistrict={handleSubscribeDistrict}
+          handleUnsubscribeDistrict={handleUnsubscribeDistrict}
         />
       </>
     );

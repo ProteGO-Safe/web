@@ -4,23 +4,26 @@ import {
   SUBSCRIBED_DISTRICTS_SUCCESS,
   UNSUBSCRIBED_DISTRICTS_SUCCESS
 } from '../../types/restrictions';
+import { resolveStatusByNumber } from './restrictions.constants';
 
 const INITIAL_STATE = {
   voivodeships: [],
   updated: undefined,
-  subscribedDistricts: []
+  subscribedDistricts: [],
+  result: undefined
 };
 
 const restrictionsReducer = (state = INITIAL_STATE, action) => {
   switch (action.type) {
     case FETCH_DISTRICTS_STATUS_SUCCESS: {
       const {
-        body: { voivodeships, updated }
+        body: { voivodeships, updated, result }
       } = action;
       return {
         ...state,
         voivodeships,
-        updated
+        updated,
+        result: resolveStatusByNumber(result)
       };
     }
     case SUBSCRIBED_DISTRICTS_SUCCESS:

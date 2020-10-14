@@ -92,6 +92,10 @@ const getDistrictsStatus = async () => {
   return callGetBridgeData(DATA_TYPE.DISTRICTS_STATUS);
 };
 
+const getForceDistrictsStatus = async () => {
+  return callGetBridgeData(DATA_TYPE.FORCE_DISTRICTS_STATUS);
+};
+
 const getSubscribedDistricts = async () => {
   return callGetBridgeData(DATA_TYPE.SUBSCRIBED_DISTRICTS);
 };
@@ -131,7 +135,7 @@ const setDistrictSubscription = async (districtId, isSubscribed) => {
   const DELETE = 2;
   return callGetBridgeData(DATA_TYPE.DISTRICT_ACTION, {
     type: isSubscribed ? ADD : DELETE,
-    district_id: districtId
+    districtId
   });
 };
 
@@ -223,6 +227,7 @@ export default {
   getLanguage,
   turnOff,
   getDistrictsStatus,
+  getForceDistrictsStatus,
   setDistrictSubscription,
   getSubscribedDistricts
 };

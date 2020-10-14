@@ -3,18 +3,15 @@ import PropTypes from 'prop-types';
 import * as Styled from './SubscribeItem.styled';
 
 const SubscribeItem = ({ handleClick, name, status, subscribed }) => {
-  const [active, setActive] = useState(false);
-
   const onClick = () => {
-    setActive(prev => !prev);
     handleClick();
   };
 
   return (
     <Styled.SubscribeItem onClick={onClick}>
       <Styled.Status status={status} />
-      <Styled.Name active={active}>{name}</Styled.Name>
-      <Styled.Action active={active} className={active && 'active'} />
+      <Styled.Name active={subscribed}>{name}</Styled.Name>
+      <Styled.Action active={subscribed} className={subscribed && 'active'} />
     </Styled.SubscribeItem>
   );
 };

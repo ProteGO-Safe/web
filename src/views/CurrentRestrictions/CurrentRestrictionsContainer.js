@@ -7,13 +7,15 @@ import { Layout } from '../../components';
 import { NoData } from './components/NoData';
 import {
   fetchDistrictsStatus,
+  fetchForceDistrictsStatus,
   fetchSubscribedDistricts,
   subscribeDistrict,
   unsubscribeDistrict
 } from '../../store/actions/restrictions';
 import {
+  getResult,
   getSubscribedDistricts,
-  getUpdateTimestamp,
+  getUpdated,
   getVoivodeships
 } from '../../store/selectors/restrictions';
 import {
@@ -23,6 +25,7 @@ import {
 import { ModalContent, ModalFooter } from './components';
 import { getRestrictionsModalShowed } from '../../store/selectors/app';
 import { hideRestrictionsModal } from '../../store/actions/app';
+import { FAILED } from '../../constants';
 
 const dateFormat = 'D-MM-YYYY';
 
@@ -32,17 +35,17 @@ const CurrentRestrictionsContainer = () => {
   const dispatch = useDispatch();
   const [filterText, setFilterText] = useState('');
   const voivodeships = useSelector(getVoivodeships);
-  const updateTimestamp = useSelector(getUpdateTimestamp);
+  const updated = useSelector(getUpdated);
   const restrictionsModalShowed = useSelector(getRestrictionsModalShowed);
   const subscribedDistricts = useSelector(getSubscribedDistricts);
+  const fetchingDistrictsResult = useSelector(getResult);
   const [flattenDistricts, setFlattenDistricts] = useState([]);
   const [districts, setDistricts] = useState([]);
 
   const isFlatten = useMemo(() => filterText.length > 2, [filterText]);
   const dateUpdate = useMemo(
-    () =>
-      updateTimestamp ? moment.unix(updateTimestamp).format(dateFormat) : '',
-    [updateTimestamp]
+    () => (updated ? moment.unix(updated).format(dateFormat) : ''),
+    [updated]
   );
 
   useEffect(() => {
@@ -61,7 +64,7 @@ const CurrentRestrictionsContainer = () => {
       );
     }
     // eslint-disable-next-line
-  }, []);
+  }, [restrictionsModalShowed]);
 
   useEffect(() => {
     setDistricts(
@@ -87,6 +90,11 @@ const CurrentRestrictionsContainer = () => {
     // eslint-disable-next-line
   }, []);
 
+  const handleFetchForceDistrictsStatus = useCallback(() => {
+    dispatch(fetchForceDistrictsStatus());
+    // eslint-disable-next-line
+  }, []);
+
   const handleResetInput = useCallback(() => {
     setFilterText('');
   }, []);
@@ -103,19 +111,22 @@ const CurrentRestrictionsContainer = () => {
 
   return (
     <Layout isNavigation noMargin>
-      <NoData handleClick={() => null} />
-      <CurrentRestrictions
-        filterText={filterText}
-        flattenDistricts={flattenDistricts}
-        subscribedDistricts={subscribedDistricts}
-        handleChangeInput={handleChangeInput}
-        handleResetInput={handleResetInput}
-        handleSubscribeDistrict={handleSubscribeDistrict}
-        handleUnsubscribeDistrict={handleUnsubscribeDistrict}
-        isFlatten={isFlatten}
-        listDistrictsItems={districts}
-        dateUpdate={dateUpdate}
-      />
+      {fetchingDistrictsResult === FAILED ? (
+        <NoData handleClick={() => handleFetchForceDistrictsStatus()} />
+      ) : (
+        <CurrentRestrictions
+          filterText={filterText}
+          flattenDistricts={flattenDistricts}
+          subscribedDistricts={subscribedDistricts}
+          handleChangeInput={handleChangeInput}
+          handleResetInput={handleResetInput}
+          handleSubscribeDistrict={handleSubscribeDistrict}
+          handleUnsubscribeDistrict={handleUnsubscribeDistrict}
+          isFlatten={isFlatten}
+          listDistrictsItems={districts}
+          dateUpdate={dateUpdate}
+        />
+      )}
     </Layout>
   );
 };

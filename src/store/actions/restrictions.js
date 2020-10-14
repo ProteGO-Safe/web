@@ -15,6 +15,16 @@ export const fetchDistrictsStatus = () => {
     });
   };
 };
+export const fetchForceDistrictsStatus = () => {
+  return dispatch => {
+    nativeBridge.getForceDistrictsStatus().then(body => {
+      if (body) {
+        dispatch(fetchDistrictsStatusSuccess(body));
+      }
+    });
+  };
+};
+
 
 export const fetchSubscribedDistrictsSuccess = body => ({
   body,

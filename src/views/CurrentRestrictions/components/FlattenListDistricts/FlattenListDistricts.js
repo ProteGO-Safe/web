@@ -2,7 +2,16 @@ import React from 'react';
 import { SubscribeItem } from '../../../../components';
 import * as Styled from './FlattenListDistricts.styled';
 
-const FlattenListDistricts = ({ items, handleSubscribeDistrict }) => {
+const FlattenListDistricts = ({
+  items,
+  handleSubscribeDistrict,
+  handleUnsubscribeDistrict
+}) => {
+  const handleClick = (districtId, isSubscribed) =>
+    isSubscribed
+      ? handleUnsubscribeDistrict(districtId)
+      : handleSubscribeDistrict(districtId);
+
   const renderDistricts = items.map(item => {
     const { districtId, name, state, isSubscribed } = item;
     return (
@@ -10,7 +19,7 @@ const FlattenListDistricts = ({ items, handleSubscribeDistrict }) => {
         key={name}
         name={name}
         status={state}
-        handleClick={() => handleSubscribeDistrict(districtId)}
+        handleClick={() => handleClick(districtId, isSubscribed)}
         subscribed={isSubscribed}
       />
     );
