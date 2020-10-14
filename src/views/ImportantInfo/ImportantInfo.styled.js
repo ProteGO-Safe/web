@@ -44,3 +44,24 @@ export const Container = styled.div`
     padding: 12px 12px 0 12px;
   }
 `;
+
+const handleFontSize = size => {
+  switch (size) {
+    case size < 1:
+      return '5px';
+    case size === 1:
+      return '10px';
+    case size > 1:
+      return '15px';
+    case size > 1.2:
+      return '20px';
+    case size > 1.3:
+      return '25px';
+    default:
+      return '10px';
+  }
+};
+
+export const Test = styled.span`
+  font-size: ${({ size }) => handleFontSize(size)};
+`;
