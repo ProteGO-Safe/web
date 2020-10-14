@@ -52,6 +52,7 @@ const CurrentRestrictions = ({
     flattenDistricts,
     listDistrictsItems,
     handleSubscribeDistrict,
+    handleUnsubscribeDistrict,
     t
   ]);
 
