@@ -29,9 +29,7 @@ const ImportantInfoItem = ({
 
   const Content = () => (
     <Styled.ImportantInfoItem ref={ref} size={size}>
-      <Styled.Icon size={size}>
-        <Styled.Image size={size} src={icon} alt={title} />
-      </Styled.Icon>
+      <Styled.Icon size={size}>{icon}</Styled.Icon>
       <Styled.Content size={size}>
         <Styled.Title size={size} danger={danger}>
           {title}
@@ -86,7 +84,7 @@ ImportantInfoItem.defaultProps = {
 ImportantInfoItem.propTypes = {
   danger: PropTypes.bool,
   description: PropTypes.string,
-  icon: PropTypes.string,
+  icon: PropTypes.object,
   link: PropTypes.string,
   path: PropTypes.string,
   size: PropTypes.bool,

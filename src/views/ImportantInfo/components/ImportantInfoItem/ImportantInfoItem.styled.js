@@ -23,7 +23,7 @@ export const ImportantInfoItem = styled.div`
     `
     align-items: center;
     margin-bottom: 12px;
-    padding: 1.5rem 0.6rem;
+    padding: 1.5rem 1rem;
   `}
 
   &:active {
@@ -46,18 +46,11 @@ export const Icon = styled.div`
     margin-right: 0.75rem;
     margin-bottom: 0;
   `}
-`;
-
-export const Image = styled.img`
-  display: block;
-  width: auto;
-  height: 100%;
-  ${({ size }) =>
-    size &&
-    `
-    width: 100%;
-    height: 2.4em;
-  `}
+  svg {
+    display: block;
+    max-width: 100%;
+    max-height: 100%;
+  }
 `;
 
 export const Content = styled.div`
