@@ -29,19 +29,25 @@ const ImportantInfoItem = ({
 
   const Content = () => (
     <Styled.ImportantInfoItem ref={ref} size={size}>
-      <Styled.Icon>
-        <Styled.Image src={icon} alt={title} />
+      <Styled.Icon size={size}>
+        <Styled.Image size={size} src={icon} alt={title} />
       </Styled.Icon>
-      <Styled.Content>
-        <Styled.Title danger={danger}>{title}</Styled.Title>
+      <Styled.Content size={size}>
+        <Styled.Title size={size} danger={danger}>
+          {title}
+        </Styled.Title>
         {windowWidth < 375 ? (
-          <Styled.Description>{description}</Styled.Description>
+          <Styled.Description size={size}>{description}</Styled.Description>
         ) : (
-          height > 186 && <Styled.Description>{description}</Styled.Description>
+          height > 186 && (
+            <Styled.Description size={size}>{description}</Styled.Description>
+          )
         )}
       </Styled.Content>
       {link && (
-        <Styled.LinkGov>{t('important_info_button_info')}</Styled.LinkGov>
+        <Styled.LinkGov size={size}>
+          {t('important_info_button_info')}
+        </Styled.LinkGov>
       )}
     </Styled.ImportantInfoItem>
   );
@@ -72,7 +78,7 @@ ImportantInfoItem.defaultProps = {
   description: '',
   icon: null,
   link: null,
-  size: 'Normal',
+  size: false,
   path: null,
   title: null
 };
@@ -83,7 +89,7 @@ ImportantInfoItem.propTypes = {
   icon: PropTypes.string,
   link: PropTypes.string,
   path: PropTypes.string,
-  size: PropTypes.string,
+  size: PropTypes.bool,
   title: PropTypes.string,
   type: PropTypes.oneOf([TYPES.ROUTE, TYPES.LINK]).isRequired
 };
