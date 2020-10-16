@@ -2,8 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import * as Styled from './Counter.styled';
 
-const Counter = ({ count, limit }) => (
-  <Styled.Counter count={count}>
+const Counter = ({ count, limit, margin }) => (
+  <Styled.Counter count={count} margin={margin}>
     {count}/{limit}
   </Styled.Counter>
 );

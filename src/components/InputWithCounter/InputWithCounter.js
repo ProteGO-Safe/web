@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { Counter, Error } from './components';
 import * as Styled from './InputWithCounter.styled';
@@ -13,24 +13,34 @@ const InputWithCounter = ({
   onChange,
   placeholder,
   value
-}) => (
-  <Styled.InputWithCounter>
-    {label && <Styled.Label>{label}</Styled.Label>}
-    <Styled.Input
-      error={error}
-      maxLength={max}
-      minLength={min}
-      name={name}
-      onChange={onChange}
-      placeholder={placeholder}
-      value={value}
-    />
-    <Counter count={value ? value.length : 0} limit={max} />
-    {error && <Error text={error} />}
+}) => {
+  const ref = useRef(null);
+  const [margin, setMargin] = useState(null);
 
-    {info && <Styled.Information>{info}</Styled.Information>}
-  </Styled.InputWithCounter>
-);
+  useEffect(() => {
+    const height = ref.current.offsetHeight;
+    setMargin(height);
+  }, []);
+
+  return (
+    <Styled.InputWithCounter>
+      {label && <Styled.Label ref={ref}>{label}</Styled.Label>}
+      <Styled.Input
+        error={error}
+        maxLength={max}
+        minLength={min}
+        name={name}
+        onChange={onChange}
+        placeholder={placeholder}
+        value={value}
+      />
+      <Counter count={value ? value.length : 0} limit={max} margin={margin} />
+      {error && <Error text={error} />}
+
+      {info && <Styled.Information>{info}</Styled.Information>}
+    </Styled.InputWithCounter>
+  );
+};
 
 InputWithCounter.defaultProps = {
   error: '',

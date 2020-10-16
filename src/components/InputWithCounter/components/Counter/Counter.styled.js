@@ -11,7 +11,7 @@ export const Counter = styled.div`
   align-items: center;
   width: auto;
   height: 44px;
-  margin-top: 24px;
+  margin-top: calc(${({ margin }) => margin}px + 4px);
   font-size: 14px;
   line-height: 24px;
   color: ${({ count }) => (count > 0 ? Color.gray : Color.gray_1)};
