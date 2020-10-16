@@ -4,6 +4,7 @@ import {
   DATA_FROM_NEWEST_VERSION_MARKED,
   EXPOSURE_ONBOARDING_FINISHED,
   FIRST_DIAGNOSIS_FINISHED,
+  FONT_SCALE_FETCHED,
   LANGUAGE_CHANGED,
   MIGRATION_FINISHED,
   ONBOARDING_FINISHED,
@@ -136,6 +137,15 @@ const appReducer = (state = INITIAL_STATE, action) => {
       return {
         ...state,
         registrationFinished: true
+      };
+    }
+    case FONT_SCALE_FETCHED: {
+      const {
+        data: { fontScale }
+      } = action;
+      return {
+        ...state,
+        fontScale
       };
     }
     case RESTRICTIONS_MODAL_SHOWED: {

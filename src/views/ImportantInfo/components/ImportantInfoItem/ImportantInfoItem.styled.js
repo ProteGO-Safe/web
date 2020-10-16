@@ -16,42 +16,15 @@ export const ImportantInfoItem = styled.div`
   box-shadow: 2px 2px 3px ${hexToRgba(Color.black, 0.26)};
   transition: all 0.1s ease-in;
 
-  @media (max-width: 374px) {
+  font-size: 18px;
+
+  ${({ size }) =>
+    size &&
+    `
     align-items: center;
     margin-bottom: 12px;
-    padding: 1.5rem 0.6rem;
-  }
-  @media (min-width: 240px) {
-    font-size: 15px;
-  }
-  @media (min-width: 360px) {
-    font-size: 16px;
-  }
-  @media (min-width: 375px) {
-    font-size: 20px;
-  }
-  @media (min-width: 600px) {
-    font-size: 22px;
-  }
-  @media (min-width: 800px) {
-    font-size: 24px;
-  }
-
-  @media (min-height: 568px) {
-    font-size: 15px;
-  }
-  @media (min-height: 616px) {
-    font-size: 16px;
-  }
-  @media (min-height: 667px) {
-    font-size: 18px;
-  }
-  @media (min-height: 812px) {
-    font-size: 20px;
-  }
-  @media (min-height: 960px) {
-    font-size: 22px;
-  }
+    padding: 1.5rem 1rem;
+  `}
 
   &:active {
     box-shadow: inset 0 0 5px ${hexToRgba(Color.black, 0.26)};
@@ -68,12 +41,14 @@ export const Badge = styled.span`
   text-transform: uppercase;
   border-radius: 4px;
   border: 1px solid ${Color.primary};
-  @media (max-width: 374px) {
+  ${({ size }) =>
+    size
+      ? `
     bottom: 8px;
-  }
-  @media (min-width: 375px) {
+  `
+      : `
     top: 8px;
-  }
+  `}
 `;
 
 export const Icon = styled.div`
@@ -83,21 +58,18 @@ export const Icon = styled.div`
   margin-bottom: 0.5em;
   width: 100%;
   height: 2.4em;
-  @media (max-width: 374px) {
+  ${({ size }) =>
+    size &&
+    `
     width: 2.4em;
     height: 100%;
     margin-right: 0.75rem;
     margin-bottom: 0;
-  }
-`;
-
-export const Image = styled.img`
-  display: block;
-  width: auto;
-  height: 100%;
-  @media (max-width: 374px) {
-    width: 100%;
-    height: 2.4em;
+  `}
+  svg {
+    display: block;
+    max-width: 100%;
+    max-height: 100%;
   }
 `;
 
@@ -105,53 +77,64 @@ export const Content = styled.div`
   display: flex;
   flex-flow: wrap row;
   width: 100%;
-  @media (max-width: 374px) {
+  ${({ size }) =>
+    size &&
+    `
     width: calc(100% - 2.4em - 0.75rem);
-  }
+  `}
 `;
 
-export const Title = styled.div`
+export const Title = styled.h2`
   display: flex;
   flex-flow: wrap row;
   justify-content: center;
   align-items: center;
   width: 100%;
+  margin-top: 0;
   margin-bottom: 0.4em;
   font-size: 1em;
   line-height: 1.2em;
   color: ${({ danger }) => (danger ? Color.danger : Color.primary)};
   font-weight: bold;
   text-align: center;
-  @media (max-width: 374px) {
+  ${({ size }) =>
+    size &&
+    `
     justify-content: flex-start;
     margin-bottom: 0;
-    padding-right: 1.6rem;
     text-align: left;
-  }
+  `}
   @media (max-width: 320px) {
     padding-right: 0;
   }
+  @media (min-height: 812px) {
+    line-height: 1.4em;
+  }
 `;
 
-export const Description = styled.div`
+export const Description = styled.span`
   display: flex;
   flex-flow: wrap row;
   justify-content: center;
   width: 100%;
   margin-top: auto;
-  font-size: 10px;
-  line-height: 14px;
+  font-size: 0.556em;
+  line-height: 1.4em;
   color: ${Color.black};
   text-align: center;
-  @media (max-width: 374px) {
+
+  @media (max-width: 320px) {
+    padding-right: 0;
+  }
+
+  ${({ size }) =>
+    size &&
+    `
     justify-content: flex-start;
     margin-top: 0.4em;
     padding-right: 2rem;
     text-align: left;
-  }
-  @media (max-width: 320px) {
-    padding-right: 0;
-  }
+  `}
 `;
 
 export const LinkGov = styled.div`
@@ -159,16 +142,18 @@ export const LinkGov = styled.div`
   bottom: 8px;
   left: 0;
   width: 100%;
-  font-size: 0.5em;
+  font-size: 0.556em;
   line-height: 1em;
   color: ${Color.primary};
   text-align: center;
-  @media (max-width: 374px) {
+  ${({ size }) =>
+    size &&
+    `
     padding: 0 0.5rem;
     font-size: 10px;
     line-height: 1;
     text-align: right;
-  }
+  `}
 `;
 
 export const UrlLink = styled.a`

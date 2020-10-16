@@ -109,8 +109,6 @@ export const FIELD_CONTACTS = 'contacts';
 export const FIELD_SMOKE = 'smoke';
 export const FIELD_SMOKE_NUMBER = 'smokeNumber';
 
-export const PATTERN_TEMPERATURE = '^[0-9]{2}+([.,][0-9]{1,2})?$';
-
 export const VALUE_SYMPTOM_LEVEL_1 = 'level 1';
 export const VALUE_SYMPTOM_LEVEL_2 = 'level 2';
 export const VALUE_SYMPTOM_LEVEL_3 = 'level 3';
@@ -138,6 +136,7 @@ export const LOGO_COLOR_WHITE = 'white';
 
 // Languages
 export const DEFAULT_LANGUAGE = 'pl';
+export const AVAILABLE_LANGUAGES = { pl: 'pl', en: 'en', uk: 'uk' };
 
 export const FAILED = 'FAILED';
 export const SUCCESS = 'SUCCESS';

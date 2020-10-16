@@ -1,7 +1,9 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  @media (max-width: 374px) {
+  ${({ change }) =>
+    change
+      ? `
     display: flex;
     flex-flow: wrap column;
     align-items: flex-start;
@@ -20,9 +22,8 @@ export const Container = styled.div`
       width: 8px !important;
       right: 2px !important;
     }
-  }
-
-  @media (min-width: 375px) {
+  `
+      : `
     display: grid;
     grid-template-columns: repeat(2, calc(50% - 8.5px));
     grid-template-rows: repeat(3, calc((100% / 3) - 11.5px));
@@ -34,7 +35,7 @@ export const Container = styled.div`
     height: calc(
       100vh - env(safe-area-inset-top) - env(safe-area-inset-bottom) - 118px
     );
-  }
+  `}
 
   @media (max-height: 580px) {
     grid-template-columns: repeat(2, calc(50% - 6.5px));
