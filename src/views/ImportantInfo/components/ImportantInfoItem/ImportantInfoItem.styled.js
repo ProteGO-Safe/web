@@ -41,12 +41,14 @@ export const Badge = styled.span`
   text-transform: uppercase;
   border-radius: 4px;
   border: 1px solid ${Color.primary};
-  @media (max-width: 374px) {
+  ${({ size }) =>
+    size
+      ? `
     bottom: 8px;
-  }
-  @media (min-width: 375px) {
+  `
+      : `
     top: 8px;
-  }
+  `}
 `;
 
 export const Icon = styled.div`
