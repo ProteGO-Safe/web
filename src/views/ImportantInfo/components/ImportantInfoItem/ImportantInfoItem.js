@@ -13,6 +13,7 @@ const ImportantInfoItem = ({
   newFeature,
   path,
   t,
+  size,
   title,
   type
 }) => {
@@ -28,21 +29,25 @@ const ImportantInfoItem = ({
   }, [ref]);
 
   const Content = () => (
-    <Styled.ImportantInfoItem ref={ref}>
+    <Styled.ImportantInfoItem ref={ref} size={size}>
       {newFeature && <Styled.Badge>{t('new')}</Styled.Badge>}
-      <Styled.Icon>
-        <Styled.Image src={icon} alt={title} />
-      </Styled.Icon>
-      <Styled.Content>
-        <Styled.Title danger={danger}>{title}</Styled.Title>
+      <Styled.Icon size={size}>{icon}</Styled.Icon>
+      <Styled.Content size={size}>
+        <Styled.Title size={size} danger={danger}>
+          {title}
+        </Styled.Title>
         {windowWidth < 375 ? (
-          <Styled.Description>{description}</Styled.Description>
+          <Styled.Description size={size}>{description}</Styled.Description>
         ) : (
-          height > 186 && <Styled.Description>{description}</Styled.Description>
+          height > 186 && (
+            <Styled.Description size={size}>{description}</Styled.Description>
+          )
         )}
       </Styled.Content>
       {link && (
-        <Styled.LinkGov>{t('important_info_button_info')}</Styled.LinkGov>
+        <Styled.LinkGov size={size}>
+          {t('important_info_button_info')}
+        </Styled.LinkGov>
       )}
     </Styled.ImportantInfoItem>
   );
@@ -73,6 +78,7 @@ ImportantInfoItem.defaultProps = {
   description: '',
   icon: null,
   link: null,
+  size: false,
   path: null,
   title: null
 };
@@ -80,9 +86,10 @@ ImportantInfoItem.defaultProps = {
 ImportantInfoItem.propTypes = {
   danger: PropTypes.bool,
   description: PropTypes.string,
-  icon: PropTypes.string,
+  icon: PropTypes.object,
   link: PropTypes.string,
   path: PropTypes.string,
+  size: PropTypes.bool,
   title: PropTypes.string,
   type: PropTypes.oneOf([TYPES.ROUTE, TYPES.LINK]).isRequired
 };
