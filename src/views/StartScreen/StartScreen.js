@@ -1,8 +1,10 @@
 import React, { useCallback } from 'react';
 import PropTypes from 'prop-types';
 import { withTranslation } from 'react-i18next';
+import { useSelector } from 'react-redux';
 import { Language } from '../../components';
 import * as Styled from './StartScreen.styled';
+import { getFontScale } from '../../store/selectors/app';
 
 const StartScreen = ({
   customLabels,
@@ -12,17 +14,21 @@ const StartScreen = ({
   onStartClick = Function.prototype,
   t
 }) => {
+  const fontScale = useSelector(getFontScale);
   const handleStartClick = useCallback(onStartClick, []);
+  const handleChangeView = fontScale > 1;
 
   return (
     <Styled.Container>
       <Styled.Content>
         <Styled.LogoWrapper>
-          <Styled.Logo />
+          <Styled.Logo change={handleChangeView} />
         </Styled.LogoWrapper>
-        <Styled.Subtitle>{t('start_screen_subtitle')}</Styled.Subtitle>
+        <Styled.Subtitle change={handleChangeView}>
+          {t('start_screen_subtitle')}
+        </Styled.Subtitle>
 
-        <Styled.ChooseLang>
+        <Styled.ChooseLang change={handleChangeView}>
           <Styled.Label>{t('start_screen_label')}</Styled.Label>
           <Styled.Info>{t('start_screen_info')}</Styled.Info>
           <Language
