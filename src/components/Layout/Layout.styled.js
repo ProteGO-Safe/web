@@ -17,9 +17,13 @@ export const Container = styled.div`
   width: 100%;
   max-width: ${({ noMargin }) => (noMargin ? '420px' : '338px')};
   margin: ${({ noMargin }) => (noMargin ? '0 auto' : '24px auto 0')};
-  padding-bottom: 50px;
+  padding: ${({ noPadding }) => (noPadding ? '0' : '0 0 50px 0')};
   @media (max-width: 320px) {
     max-width: ${({ noMargin }) => (noMargin ? '420px' : '290px')};
     margin: ${({ noMargin }) => (noMargin ? '0 auto' : '24px auto 0')};
+    padding: ${({ noPadding }) => (noPadding ? '0' : '0 0 50px 0')};
+  }
+  @media (max-width: 300px) {
+    padding: ${({ noPadding }) => (noPadding ? '0' : '0 6px 50px 6px')};
   }
 `;

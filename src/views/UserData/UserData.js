@@ -1,18 +1,17 @@
 import React from 'react';
 import { withTranslation } from 'react-i18next';
-import { useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import { Button, Imprint, Layout } from '../../components';
 import Routes from '../../routes';
-import { getUserName } from '../../store/selectors/user';
 import useSupportExposureNotificationTracing from '../../hooks/useSupportExposureNotificationTracing';
 import { Name, Paragraph } from '../../theme/typography';
 import { ButtonWrapper } from './UserData.styled';
 import './UserData.scss';
+import useUserName from '../../hooks/useUserName';
 
 const UserData = ({ t }) => {
   const history = useHistory();
-  const userName = useSelector(getUserName);
+  const userName = useUserName();
   const { areEnableAllServices } = useSupportExposureNotificationTracing();
 
   return (

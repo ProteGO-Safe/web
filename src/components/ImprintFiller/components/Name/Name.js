@@ -7,7 +7,7 @@ import { FIELD_NAME } from '../../../../constants';
 import { Actions } from '../../ImprintFiller.styled';
 import './Name.scss';
 
-const Name = ({ t, handleClick }) => {
+const Name = ({ t, handleNext, handleSkip }) => {
   const { errors, handleChange, values } = useFormikContext();
 
   const disabled = (() => {
@@ -31,8 +31,13 @@ const Name = ({ t, handleClick }) => {
       <Actions>
         <Button
           disabled={disabled}
-          onClick={handleClick}
+          onClick={handleNext}
           label={t('button_next')}
+        />
+        <Button
+          onClick={handleSkip}
+          type="outline"
+          label={t('name_form_text6')}
         />
       </Actions>
     </>

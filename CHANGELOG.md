@@ -4,6 +4,15 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## 4.5.0
+
+### Changed
+- easier access to key functions of the application
+- improve translations into English and Ukrainian
+
+### Fixed
+- minor bugs
+
 ## 4.4.0
 
 ### Added

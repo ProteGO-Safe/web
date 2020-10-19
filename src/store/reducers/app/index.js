@@ -4,15 +4,19 @@ import {
   DATA_FROM_NEWEST_VERSION_MARKED,
   EXPOSURE_ONBOARDING_FINISHED,
   FIRST_DIAGNOSIS_FINISHED,
+  FONT_SCALE_FETCHED,
   LANGUAGE_CHANGED,
   MIGRATION_FINISHED,
   ONBOARDING_FINISHED,
+  REGISTRATION_FINISHED,
   START_SCREEN_SHOWED,
   UPLOAD_HISTORICAL_DATA_ENDED,
+  UPLOAD_HISTORICAL_DATA_ERROR_MESSAGE_HIDDEN,
   UPLOAD_HISTORICAL_DATA_FINISHED,
   UPLOAD_HISTORICAL_DATA_REQUESTED
 } from '../../types/app';
 import { UPLOAD_HISTORICAL_DATA_STATE as uploadState } from './app.constants';
+import createUploadHistoricalDataState from './app.helpers';
 
 const INITIAL_STATE = {
   applicationReseted: false,
@@ -24,11 +28,14 @@ const INITIAL_STATE = {
   onboardingFinished: false,
   startScreenShowed: false,
   uploadHistoricalDataState: {
-    status: uploadState.EMPTY,
+    errorMessageVisible: false,
     date: null,
+    status: uploadState.EMPTY,
     unsuccessfulAttempts: []
-  }
+  },
+  registrationFinished: false
 };
+
 const appReducer = (state = INITIAL_STATE, action) => {
   switch (action.type) {
     case ONBOARDING_FINISHED:
@@ -72,37 +79,13 @@ const appReducer = (state = INITIAL_STATE, action) => {
     case UPLOAD_HISTORICAL_DATA_FINISHED:
       return (() => {
         const { result } = action;
-        const unsuccessfulAttempts =
-          (state.uploadHistoricalDataState &&
-            state.uploadHistoricalDataState.unsuccessfulAttempts) ||
-          [];
-
-        let uploadHistoricalDataState;
-
-        uploadHistoricalDataState = {
-          status: uploadState.FAILED,
-          unsuccessfulAttempts: unsuccessfulAttempts.concat(
-            new Date().getTime()
-          )
-        };
-
-        if (result === 1) {
-          uploadHistoricalDataState = {
-            status: uploadState.SUCCESS,
-            unsuccessfulAttempts: []
-          };
-        }
-
-        if (result === 3) {
-          uploadHistoricalDataState = {
-            ...state.uploadHistoricalDataState,
-            status: uploadState.EMPTY
-          };
-        }
 
         return {
           ...state,
-          uploadHistoricalDataState
+          uploadHistoricalDataState: createUploadHistoricalDataState(
+            result,
+            state
+          )
         };
       })();
     case DATA_FROM_NEWEST_VERSION_MARKED: {
@@ -136,6 +119,31 @@ const appReducer = (state = INITIAL_STATE, action) => {
       return {
         ...state,
         applicationReseted: false
+      };
+    }
+    case UPLOAD_HISTORICAL_DATA_ERROR_MESSAGE_HIDDEN: {
+      const { uploadHistoricalDataState } = state;
+      return {
+        ...state,
+        uploadHistoricalDataState: {
+          ...uploadHistoricalDataState,
+          errorMessageVisible: false
+        }
+      };
+    }
+    case REGISTRATION_FINISHED: {
+      return {
+        ...state,
+        registrationFinished: true
+      };
+    }
+    case FONT_SCALE_FETCHED: {
+      const {
+        data: { fontScale }
+      } = action;
+      return {
+        ...state,
+        fontScale
       };
     }
 

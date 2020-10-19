@@ -1,4 +1,5 @@
 import * as types from '../types/user';
+import { registrationFinished } from './app';
 
 export const saveUserNameRequested = data => ({
   data,
@@ -13,8 +14,15 @@ export const saveUserRequested = data => ({
 export function saveUserName(data) {
   return async dispatch => {
     dispatch(saveUserNameRequested(data));
+    dispatch(registrationFinished());
   };
 }
+
+export const finishRegistration = () => {
+  return async dispatch => {
+    dispatch(registrationFinished());
+  };
+};
 
 export function saveUser(data) {
   return async dispatch => {

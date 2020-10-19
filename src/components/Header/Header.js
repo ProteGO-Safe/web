@@ -2,9 +2,9 @@ import React, { useCallback } from 'react';
 import { useHistory } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
+import { withTranslation } from 'react-i18next';
 import Routes from '../../routes';
 import { Arrow, ArrowButton, Container, Logo } from './Header.styled';
-import {withTranslation} from "react-i18next";
 
 const Header = ({ t, hideBackButton, onBackClick }) => {
   const history = useHistory();

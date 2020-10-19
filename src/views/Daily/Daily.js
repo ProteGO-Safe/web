@@ -1,8 +1,6 @@
 import React from 'react';
 import { withTranslation } from 'react-i18next';
 import PropTypes from 'prop-types';
-import { useHistory } from 'react-router-dom';
-import Routes from '../../routes';
 import { daysDetailsPropType } from '../../utils/calendar';
 import { Button, Layout } from '../../components';
 import {
@@ -17,7 +15,6 @@ import {
 import arrowRight from '../../assets/img/icons/angle-right.svg';
 
 const Daily = ({ t, goToHistory, onFill, today, previousDays }) => {
-  const history = useHistory();
   const renderDairyDays = previousDays.map(_obj => (
     <DiaryListItem
       key={_obj.timestamp}
@@ -34,7 +31,7 @@ const Daily = ({ t, goToHistory, onFill, today, previousDays }) => {
   ));
 
   return (
-    <Layout onBackClick={() => history.push(Routes.Home)} isNavigation>
+    <Layout isNavigation>
       <Title>
         {t('daily_text1')}
         <br />

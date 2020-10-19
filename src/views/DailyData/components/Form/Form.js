@@ -9,8 +9,7 @@ import {
   FIELD_MUSCLE_PAIN,
   FIELD_RUNNY_NOSE,
   FIELD_TEMPERATURE,
-  FIELD_TIME,
-  PATTERN_TEMPERATURE
+  FIELD_TIME
 } from '../../../../constants';
 import { marks } from './constants';
 import {
@@ -48,7 +47,6 @@ const Form = ({ t, isViewMode }) => {
           onChange={handleChange}
           type="number"
           value={values[FIELD_TEMPERATURE]}
-          pattern={PATTERN_TEMPERATURE}
         />
       </Styled.Group>
 

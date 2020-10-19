@@ -9,9 +9,9 @@ const resolveDefaultColor = defaultColor => ({ color }) =>
 export const Button = styled.a`
   position: fixed;
   right: 50%;
-  bottom: 60px;
-  bottom: calc(60px + constant(safe-area-inset-bottom));
-  bottom: calc(60px + env(safe-area-inset-bottom));
+  bottom: 80px;
+  bottom: calc(80px + constant(safe-area-inset-bottom));
+  bottom: calc(80px + env(safe-area-inset-bottom));
   display: flex;
   flex-flow: wrap row;
   align-items: center;
@@ -30,6 +30,9 @@ export const Button = styled.a`
   }
   &.small {
     right: 15px;
+    bottom: 60px;
+    bottom: calc(60px + constant(safe-area-inset-bottom));
+    bottom: calc(60px + env(safe-area-inset-bottom));
     justify-content: center;
     width: 66px;
     height: 66px;

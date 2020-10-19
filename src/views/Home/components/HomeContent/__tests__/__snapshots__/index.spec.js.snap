@@ -1076,9 +1076,9 @@ Array [
 .c1 {
   position: fixed;
   right: 50%;
-  bottom: 60px;
-  bottom: calc(60px + constant(safe-area-inset-bottom));
-  bottom: calc(60px + env(safe-area-inset-bottom));
+  bottom: 80px;
+  bottom: calc(80px + constant(safe-area-inset-bottom));
+  bottom: calc(80px + env(safe-area-inset-bottom));
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1106,6 +1106,9 @@ Array [
 
 .c1.small {
   right: 15px;
+  bottom: 60px;
+  bottom: calc(60px + constant(safe-area-inset-bottom));
+  bottom: calc(60px + env(safe-area-inset-bottom));
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
@@ -1925,9 +1928,9 @@ Array [
 .c1 {
   position: fixed;
   right: 50%;
-  bottom: 60px;
-  bottom: calc(60px + constant(safe-area-inset-bottom));
-  bottom: calc(60px + env(safe-area-inset-bottom));
+  bottom: 80px;
+  bottom: calc(80px + constant(safe-area-inset-bottom));
+  bottom: calc(80px + env(safe-area-inset-bottom));
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1955,6 +1958,9 @@ Array [
 
 .c1.small {
   right: 15px;
+  bottom: 60px;
+  bottom: calc(60px + constant(safe-area-inset-bottom));
+  bottom: calc(60px + env(safe-area-inset-bottom));
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
@@ -2853,9 +2859,9 @@ Array [
 .c1 {
   position: fixed;
   right: 50%;
-  bottom: 60px;
-  bottom: calc(60px + constant(safe-area-inset-bottom));
-  bottom: calc(60px + env(safe-area-inset-bottom));
+  bottom: 80px;
+  bottom: calc(80px + constant(safe-area-inset-bottom));
+  bottom: calc(80px + env(safe-area-inset-bottom));
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2883,6 +2889,9 @@ Array [
 
 .c1.small {
   right: 15px;
+  bottom: 60px;
+  bottom: calc(60px + constant(safe-area-inset-bottom));
+  bottom: calc(60px + env(safe-area-inset-bottom));
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
@@ -3922,9 +3931,9 @@ Array [
 .c1 {
   position: fixed;
   right: 50%;
-  bottom: 60px;
-  bottom: calc(60px + constant(safe-area-inset-bottom));
-  bottom: calc(60px + env(safe-area-inset-bottom));
+  bottom: 80px;
+  bottom: calc(80px + constant(safe-area-inset-bottom));
+  bottom: calc(80px + env(safe-area-inset-bottom));
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -3952,6 +3961,9 @@ Array [
 
 .c1.small {
   right: 15px;
+  bottom: 60px;
+  bottom: calc(60px + constant(safe-area-inset-bottom));
+  bottom: calc(60px + env(safe-area-inset-bottom));
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
@@ -5067,9 +5079,9 @@ Array [
 .c1 {
   position: fixed;
   right: 50%;
-  bottom: 60px;
-  bottom: calc(60px + constant(safe-area-inset-bottom));
-  bottom: calc(60px + env(safe-area-inset-bottom));
+  bottom: 80px;
+  bottom: calc(80px + constant(safe-area-inset-bottom));
+  bottom: calc(80px + env(safe-area-inset-bottom));
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -5097,6 +5109,9 @@ Array [
 
 .c1.small {
   right: 15px;
+  bottom: 60px;
+  bottom: calc(60px + constant(safe-area-inset-bottom));
+  bottom: calc(60px + env(safe-area-inset-bottom));
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
@@ -5521,9 +5536,9 @@ Array [
 .c1 {
   position: fixed;
   right: 50%;
-  bottom: 60px;
-  bottom: calc(60px + constant(safe-area-inset-bottom));
-  bottom: calc(60px + env(safe-area-inset-bottom));
+  bottom: 80px;
+  bottom: calc(80px + constant(safe-area-inset-bottom));
+  bottom: calc(80px + env(safe-area-inset-bottom));
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -5551,6 +5566,9 @@ Array [
 
 .c1.small {
   right: 15px;
+  bottom: 60px;
+  bottom: calc(60px + constant(safe-area-inset-bottom));
+  bottom: calc(60px + env(safe-area-inset-bottom));
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
@@ -6071,9 +6089,9 @@ Array [
 .c1 {
   position: fixed;
   right: 50%;
-  bottom: 60px;
-  bottom: calc(60px + constant(safe-area-inset-bottom));
-  bottom: calc(60px + env(safe-area-inset-bottom));
+  bottom: 80px;
+  bottom: calc(80px + constant(safe-area-inset-bottom));
+  bottom: calc(80px + env(safe-area-inset-bottom));
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -6101,6 +6119,9 @@ Array [
 
 .c1.small {
   right: 15px;
+  bottom: 60px;
+  bottom: calc(60px + constant(safe-area-inset-bottom));
+  bottom: calc(60px + env(safe-area-inset-bottom));
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
@@ -6882,9 +6903,9 @@ Array [
 .c1 {
   position: fixed;
   right: 50%;
-  bottom: 60px;
-  bottom: calc(60px + constant(safe-area-inset-bottom));
-  bottom: calc(60px + env(safe-area-inset-bottom));
+  bottom: 80px;
+  bottom: calc(80px + constant(safe-area-inset-bottom));
+  bottom: calc(80px + env(safe-area-inset-bottom));
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -6912,6 +6933,9 @@ Array [
 
 .c1.small {
   right: 15px;
+  bottom: 60px;
+  bottom: calc(60px + constant(safe-area-inset-bottom));
+  bottom: calc(60px + env(safe-area-inset-bottom));
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
@@ -7336,9 +7360,9 @@ Array [
 .c1 {
   position: fixed;
   right: 50%;
-  bottom: 60px;
-  bottom: calc(60px + constant(safe-area-inset-bottom));
-  bottom: calc(60px + env(safe-area-inset-bottom));
+  bottom: 80px;
+  bottom: calc(80px + constant(safe-area-inset-bottom));
+  bottom: calc(80px + env(safe-area-inset-bottom));
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -7366,6 +7390,9 @@ Array [
 
 .c1.small {
   right: 15px;
+  bottom: 60px;
+  bottom: calc(60px + constant(safe-area-inset-bottom));
+  bottom: calc(60px + env(safe-area-inset-bottom));
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
@@ -7898,9 +7925,9 @@ Array [
 .c1 {
   position: fixed;
   right: 50%;
-  bottom: 60px;
-  bottom: calc(60px + constant(safe-area-inset-bottom));
-  bottom: calc(60px + env(safe-area-inset-bottom));
+  bottom: 80px;
+  bottom: calc(80px + constant(safe-area-inset-bottom));
+  bottom: calc(80px + env(safe-area-inset-bottom));
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -7928,6 +7955,9 @@ Array [
 
 .c1.small {
   right: 15px;
+  bottom: 60px;
+  bottom: calc(60px + constant(safe-area-inset-bottom));
+  bottom: calc(60px + env(safe-area-inset-bottom));
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
@@ -8744,9 +8774,9 @@ Array [
 .c1 {
   position: fixed;
   right: 50%;
-  bottom: 60px;
-  bottom: calc(60px + constant(safe-area-inset-bottom));
-  bottom: calc(60px + env(safe-area-inset-bottom));
+  bottom: 80px;
+  bottom: calc(80px + constant(safe-area-inset-bottom));
+  bottom: calc(80px + env(safe-area-inset-bottom));
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -8774,6 +8804,9 @@ Array [
 
 .c1.small {
   right: 15px;
+  bottom: 60px;
+  bottom: calc(60px + constant(safe-area-inset-bottom));
+  bottom: calc(60px + env(safe-area-inset-bottom));
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
@@ -9198,9 +9231,9 @@ Array [
 .c1 {
   position: fixed;
   right: 50%;
-  bottom: 60px;
-  bottom: calc(60px + constant(safe-area-inset-bottom));
-  bottom: calc(60px + env(safe-area-inset-bottom));
+  bottom: 80px;
+  bottom: calc(80px + constant(safe-area-inset-bottom));
+  bottom: calc(80px + env(safe-area-inset-bottom));
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -9228,6 +9261,9 @@ Array [
 
 .c1.small {
   right: 15px;
+  bottom: 60px;
+  bottom: calc(60px + constant(safe-area-inset-bottom));
+  bottom: calc(60px + env(safe-area-inset-bottom));
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
@@ -9796,9 +9832,9 @@ Array [
 .c1 {
   position: fixed;
   right: 50%;
-  bottom: 60px;
-  bottom: calc(60px + constant(safe-area-inset-bottom));
-  bottom: calc(60px + env(safe-area-inset-bottom));
+  bottom: 80px;
+  bottom: calc(80px + constant(safe-area-inset-bottom));
+  bottom: calc(80px + env(safe-area-inset-bottom));
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -9826,6 +9862,9 @@ Array [
 
 .c1.small {
   right: 15px;
+  bottom: 60px;
+  bottom: calc(60px + constant(safe-area-inset-bottom));
+  bottom: calc(60px + env(safe-area-inset-bottom));
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
@@ -10660,9 +10699,9 @@ Array [
 .c1 {
   position: fixed;
   right: 50%;
-  bottom: 60px;
-  bottom: calc(60px + constant(safe-area-inset-bottom));
-  bottom: calc(60px + env(safe-area-inset-bottom));
+  bottom: 80px;
+  bottom: calc(80px + constant(safe-area-inset-bottom));
+  bottom: calc(80px + env(safe-area-inset-bottom));
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -10690,6 +10729,9 @@ Array [
 
 .c1.small {
   right: 15px;
+  bottom: 60px;
+  bottom: calc(60px + constant(safe-area-inset-bottom));
+  bottom: calc(60px + env(safe-area-inset-bottom));
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
@@ -11114,9 +11156,9 @@ Array [
 .c1 {
   position: fixed;
   right: 50%;
-  bottom: 60px;
-  bottom: calc(60px + constant(safe-area-inset-bottom));
-  bottom: calc(60px + env(safe-area-inset-bottom));
+  bottom: 80px;
+  bottom: calc(80px + constant(safe-area-inset-bottom));
+  bottom: calc(80px + env(safe-area-inset-bottom));
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -11144,6 +11186,9 @@ Array [
 
 .c1.small {
   right: 15px;
+  bottom: 60px;
+  bottom: calc(60px + constant(safe-area-inset-bottom));
+  bottom: calc(60px + env(safe-area-inset-bottom));
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
