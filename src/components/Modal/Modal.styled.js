@@ -46,7 +46,8 @@ export const Content = styled.div`
   flex-direction: column;
   width: calc(100% - 34px);
   height: ${({ height }) => (height < 260 ? `auto` : '100vh')};
-  max-height: calc(100vh - 136px);
+  max-height: ${({ maxHeight }) =>
+    maxHeight ? `100%` : 'calc(100vh - 136px)'};
   max-width: 450px;
   margin: 0 auto;
   padding: ${({ type }) => handleType(type)};
@@ -57,6 +58,10 @@ export const Content = styled.div`
   box-shadow: 5px 5px 15px #00000026;
   border-radius: 4px;
   z-index: 2;
+`;
+
+export const ContentHeight = styled.div`
+  width: 100%;
 `;
 
 export const Title = styled.h2`

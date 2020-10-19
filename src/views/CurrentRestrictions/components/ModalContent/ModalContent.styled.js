@@ -18,7 +18,7 @@ export const Title = styled.h2`
   font-weight: 700;
   color: ${Color.black};
   text-align: center;
-  @media (max-width: 340px) {
+  @media (max-width: 359px) {
     font-size: 1rem;
     line-height: 1.25rem;
   }
@@ -31,7 +31,7 @@ export const Image = styled(Icon)`
   @media (max-width: 359px) {
     margin-bottom: 24px;
   }
-  @media (max-width: 340px) {
+  @media (max-width: 359px) {
     height: 56px;
   }
 `;

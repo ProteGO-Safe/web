@@ -8,7 +8,28 @@ import { EMPTY_MODAL_CONTENT } from '../../context/ModalContext';
 const Modal = () => {
   const { content, footer, onClose, title, type } = useModalContext();
   const [scrollHeight, setScrollHeight] = useState(null);
+  const [modalHeight, setModalHeight] = useState(null);
+  const [contentHeight, setContentHeight] = useState(null);
+  const [footerHeight, setFooterHeight] = useState(null);
+
+  const modalRef = useRef(null);
+  const contentRef = useRef(null);
   const scrollRef = useRef(null);
+  const footerRef = useRef(null);
+
+  useEffect(() => {
+    if (modalRef && modalRef.current) {
+      setModalHeight(modalRef.current.clientHeight - 50);
+    }
+    if (contentRef && contentRef.current) {
+      setContentHeight(contentRef.current.clientHeight);
+    }
+    if (footerRef && footerRef.current) {
+      setFooterHeight(footerRef.current.clientHeight + 30);
+    }
+  }, []);
+
+  useEffect(() => {}, []);
 
   useEffect(() => {
     if (scrollRef && scrollRef.current && scrollRef.current.contentElement) {
@@ -22,12 +43,23 @@ const Modal = () => {
     }
   }, [content]);
 
+  console.log(modalHeight, contentHeight + footerHeight);
+
   return (
     <Styled.Wrapper>
       <Styled.Overlay onClick={onClose} />
-      <Styled.Content type={type} height={scrollHeight}>
+      <Styled.Content
+        type={type}
+        height={scrollHeight}
+        maxHeight={
+          contentHeight + footerHeight > modalHeight && type === 'inner-content'
+        }
+        ref={modalRef}
+      >
         {type === 'inner-content' ? (
-          content
+          <Styled.ContentHeight ref={contentRef}>
+            {content}
+          </Styled.ContentHeight>
         ) : (
           <>
             {type !== 'dialog' && <ModalClose onClick={onClose} />}
@@ -49,7 +81,9 @@ const Modal = () => {
         )}
 
         {footer && (type === 'dialog' || type === 'inner-content') && (
-          <Styled.Footer type={type}>{footer}</Styled.Footer>
+          <Styled.Footer type={type} ref={footerRef}>
+            {footer}
+          </Styled.Footer>
         )}
       </Styled.Content>
     </Styled.Wrapper>
