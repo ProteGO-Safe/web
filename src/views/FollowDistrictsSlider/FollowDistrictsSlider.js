@@ -5,15 +5,9 @@ import Routes from '../../routes';
 import * as Styled from './FollowDistrictsSlider.styled';
 import { StatusItem } from '../../components/StatusItem';
 
-const FollowDistrictsSlider = ({ handleUnsubscribeDistrict, items, t }) => {
+const FollowDistrictsSlider = ({ items, t }) => {
   const renderItems = items.map(({ id, name, state }) => (
-    <StatusItem
-      id={id}
-      key={id}
-      name={name}
-      status={state}
-      handleClick={handleUnsubscribeDistrict}
-    />
+    <StatusItem id={id} key={id} name={name} status={state} />
   ));
 
   return (
