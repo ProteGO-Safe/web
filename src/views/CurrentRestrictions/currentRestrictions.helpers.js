@@ -11,7 +11,11 @@ export const flatDistricts = (
       const { name: voivodeshipName, districts } = item;
       const items = districts.reduce((obj, item) => {
         const { id: districtId, name: districtName, state } = item;
-        if (districtName.includes(searchedDistrictName)) {
+        if (
+          districtName
+            .toLowerCase()
+            .includes(searchedDistrictName.toLowerCase())
+        ) {
           return obj.concat({
             districtId,
             name: `${districtName} (${voivodeshipName})`,

@@ -144,6 +144,67 @@ describe('flat districts', () => {
     );
     expect(flattedDistricts).toEqual(expectedDistricts);
   });
+
+  it('should flat and search uppercase district', () => {
+    const districts = [
+      {
+        id: 1,
+        name: 'mazowieckie',
+        districts: [
+          {
+            id: 1,
+            name: 'M. Wrocław',
+            state: 1
+          },
+          {
+            id: 2,
+            name: 'świdnicki',
+            state: 2
+          }
+        ]
+      },
+      {
+        id: 2,
+        name: 'donlośląskie',
+        districts: [
+          {
+            id: 2,
+            name: 'zgrowoliński',
+            state: 0
+          },
+          {
+            id: 5,
+            name: 'M. Świdnica',
+            state: 1
+          }
+        ]
+      }
+    ];
+
+    const subscribedDistricts = [];
+
+    const expectedDistricts = [
+      {
+        districtId: 5,
+        name: 'M. Świdnica (donlośląskie)',
+        state: 1,
+        isSubscribed: false
+      },
+      {
+        districtId: 1,
+        name: 'M. Wrocław (mazowieckie)',
+        state: 1,
+        isSubscribed: false
+      }
+    ];
+
+    const flattedDistricts = flatDistricts(
+      districts,
+      'm. ',
+      subscribedDistricts
+    );
+    expect(flattedDistricts).toEqual(expectedDistricts);
+  });
 });
 
 describe('prepare voivodeships with districts', () => {
