@@ -57,13 +57,13 @@ export const clearApplicationState = () => {
   };
 };
 
-export const bluetoothDataCleared = () => ({
-  type: types.BLUETOOTH_DATA_CLEARED
+export const allDataCleared = () => ({
+  type: types.ALL_DATA_CLEARED
 });
 
-export const clearBluetoothData = () => {
+export const clearAllData = () => {
   return dispatch => {
-    dispatch(bluetoothDataCleared());
+    dispatch(allDataCleared());
   };
 };
 

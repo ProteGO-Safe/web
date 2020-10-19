@@ -1,6 +1,6 @@
 import {
   APP_STATE_CLEARED,
-  BLUETOOTH_DATA_CLEARED,
+  ALL_DATA_CLEARED,
   DATA_FROM_NEWEST_VERSION_MARKED,
   EXPOSURE_ONBOARDING_FINISHED,
   FIRST_DIAGNOSIS_FINISHED,
@@ -117,7 +117,7 @@ const appReducer = (state = INITIAL_STATE, action) => {
         applicationReseted: true
       };
     }
-    case BLUETOOTH_DATA_CLEARED: {
+    case ALL_DATA_CLEARED: {
       return {
         ...state,
         applicationReseted: false
