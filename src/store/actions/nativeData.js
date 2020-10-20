@@ -154,3 +154,9 @@ export function changeNativeLanguage(language) {
     nativeBridge.changeLanguage(data);
   };
 }
+
+export const generateFreeTestCode = () => {
+  return () => {
+    nativeBridge.generateFreeTestCode();
+  };
+};
