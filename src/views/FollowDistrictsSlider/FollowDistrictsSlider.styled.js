@@ -13,11 +13,9 @@ export const FollowDistrictsSlider = styled.div`
   background-color: ${Color.primaryLighter};
 `;
 
-export const Title = styled.h2`
+export const Title = styled(NavLink)`
   width: 100%;
   margin: 0 0 8px 0;
-  padding-right: 17px;
-  padding-left: 17px;
   font-size: 1rem;
   line-height: 1.25rem;
   font-weight: 600;

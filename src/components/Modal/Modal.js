@@ -43,8 +43,6 @@ const Modal = () => {
     }
   }, [content]);
 
-  console.log(modalHeight, contentHeight + footerHeight);
-
   return (
     <Styled.Wrapper>
       <Styled.Overlay onClick={onClose} />
