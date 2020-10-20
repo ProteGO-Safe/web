@@ -12,7 +12,7 @@ const handleColorStatus = status => {
     case 2:
       return Color.danger;
     default:
-      return '#fff';
+      return Color.lightGray;
   }
 };
 
