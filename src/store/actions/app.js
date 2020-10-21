@@ -3,6 +3,7 @@ import {
   changeNativeLanguage,
   resetSourceSetServicesStatus
 } from './nativeData';
+import nativeBridge from '../../services/nativeBridge';
 
 export const onboardingFinished = () => ({
   type: types.ONBOARDING_FINISHED
@@ -99,3 +100,32 @@ export function changeLanguage(data) {
     dispatch(changeNativeLanguage(data));
   };
 }
+
+export const uploadHistoricalDataErrorMessageHidden = () => ({
+  type: types.UPLOAD_HISTORICAL_DATA_ERROR_MESSAGE_HIDDEN
+});
+
+export const hideUploadHistoricalDataErrorMessage = () => {
+  return dispatch => {
+    dispatch(uploadHistoricalDataErrorMessageHidden());
+  };
+};
+
+export const registrationFinished = () => ({
+  type: types.REGISTRATION_FINISHED
+});
+
+export const fontScaleFetched = data => ({
+  data,
+  type: types.FONT_SCALE_FETCHED
+});
+
+export const fetchFontScale = () => {
+  return dispatch => {
+    nativeBridge.getFontScale().then(data => {
+      if (data) {
+        dispatch(fontScaleFetched(data));
+      }
+    });
+  };
+};

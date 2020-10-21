@@ -6,7 +6,6 @@ import { ReactComponent as LogoSVG } from '../../assets/img/logo/stopcovid_prote
 import { ReactComponent as ArrowIcon } from '../../assets/img/icons/angle-left.svg';
 
 export const Container = styled.header`
-  margin-top: 1px;
   height: 50px;
   background-color: #0052a5;
   width: 100%;
@@ -15,6 +14,10 @@ export const Container = styled.header`
   align-items: center;
   justify-content: center;
   transition: all 0.2s ease-in;
+
+  @media (max-width: 300px) {
+    height: 40px;
+  }
 `;
 
 export const Logo = styled(LogoSVG)`
@@ -30,6 +33,9 @@ const Button = styled.div`
   color: #ffffff;
   cursor: pointer;
   appearance: none;
+  @media (max-width: 300px) {
+    font-size: 12px;
+  }
 `;
 
 export const ArrowButton = styled(Button)`

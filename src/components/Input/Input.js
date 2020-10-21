@@ -18,8 +18,7 @@ const Input = ({
   reset,
   size,
   type,
-  value,
-  pattern
+  value
 }) => {
   const ref = useRef(null);
 
@@ -57,7 +56,8 @@ const Input = ({
         step="0.1"
         type={type}
         value={value}
-        pattern={pattern}
+        {...(type === 'number' && { pattern: 'd*' })}
+        {...(type === 'number' && { inputMode: 'decimal' })}
       />
       {description && <span className="input__description">{description}</span>}
       {error && <span className="input__error">{error}</span>}
@@ -77,8 +77,7 @@ Input.defaultProps = {
   placeholder: '',
   size: 'normal',
   type: 'text',
-  value: null,
-  pattern: null
+  value: null
 };
 
 Input.propTypes = {
@@ -94,8 +93,7 @@ Input.propTypes = {
   placeholder: PropTypes.string,
   size: PropTypes.oneOf(['small', 'normal']),
   type: PropTypes.oneOf(['text', 'number']),
-  value: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
-  pattern: PropTypes.string
+  value: PropTypes.oneOfType([PropTypes.number, PropTypes.string])
 };
 
 export default Input;

@@ -13,7 +13,7 @@ import { Title, TitleBox } from './DailyData.styled';
 import './DailyData.scss';
 
 const DailyData = ({ t, mode, setMode }) => {
-  const { dirty, submitForm } = useFormikContext();
+  const { dirty, submitForm, initialValues } = useFormikContext();
   const history = useHistory();
 
   // Edit mode
@@ -31,7 +31,11 @@ const DailyData = ({ t, mode, setMode }) => {
   return (
     <Layout isNavigation>
       <Title>{t('daily_data_text1')}</Title>
-      {viewMode ? <Data /> : <Form isEditMode={isEditMode} />}
+      {viewMode ? (
+        <Data data={initialValues} />
+      ) : (
+        <Form isEditMode={isEditMode} />
+      )}
       <TitleBox>{t('daily_data_text2')}</TitleBox>
       <Imprint />
       <Actions>

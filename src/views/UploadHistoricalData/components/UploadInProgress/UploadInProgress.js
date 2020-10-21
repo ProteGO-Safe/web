@@ -1,15 +1,14 @@
 import React from 'react';
 import { withTranslation } from 'react-i18next';
-import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { getUserName } from '../../../../store/selectors/user';
 import { Layout, Loader } from '../../../../components';
 import { Name, Paragraph, TextLink } from '../../../../theme/typography';
 import { Information, LoaderWrapper } from './UploadInProgress.styled';
 import Routes from '../../../../routes';
+import useUserName from '../../../../hooks/useUserName';
 
 const UploadInProgress = ({ t }) => {
-  const userName = useSelector(getUserName);
+  const userName = useUserName();
 
   return (
     <Layout hideBackButton isNavigation>

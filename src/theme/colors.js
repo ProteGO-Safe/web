@@ -5,6 +5,7 @@ export const Color = {
   black: '#000000',
   primary: '#0052a5',
   primaryLight: '#006cd7',
+  primaryLighter: '#E5EDF6',
   secondary: '#006cd7',
   secondaryDark: '#a7162d',
   lightBlack: '#1b1b1b',
@@ -16,7 +17,12 @@ export const Color = {
   gray_1: '#D8D8D8',
   gray_2: '#95989A',
   gray_4: '#DCDCDC',
+  gray_5: '#757575',
+  gray_6: '#F2F2F2',
   green: '#598527',
   watermark: '#605E5E',
-  orange: '#CC4700'
+  orange: '#CC4700',
+  gradient_c1: '#438AD1',
+  gradient_c2: '#0052A5',
+  gradient_c3: '#002953'
 };

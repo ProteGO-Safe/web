@@ -19,7 +19,7 @@ const NameForm = ({ t }) => {
   })();
 
   const onSkip = () => {
-    setFieldValue(FIELD_NAME, t('name_form_text2'));
+    setFieldValue(FIELD_NAME, null);
     handleSubmit();
   };
 

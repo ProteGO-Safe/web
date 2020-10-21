@@ -6,13 +6,16 @@ const Layout = ({
   children,
   hideBackButton,
   noMargin,
+  noPadding,
   onBackClick,
   isNavigation,
   isGovFooter
 }) => (
   <Styled.Layout>
     <Header hideBackButton={hideBackButton} onBackClick={onBackClick} />
-    <Styled.Container noMargin={noMargin}>{children}</Styled.Container>
+    <Styled.Container noMargin={noMargin} noPadding={noPadding}>
+      {children}
+    </Styled.Container>
     {isNavigation && <BottomNavigation />}
     {isGovFooter && <GovFooter type="black" />}
   </Styled.Layout>

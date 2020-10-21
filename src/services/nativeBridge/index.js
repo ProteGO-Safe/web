@@ -80,6 +80,10 @@ const getServicesStatus = async () => {
   return callGetBridgeData(DATA_TYPE.NATIVE_SERVICES_STATUS);
 };
 
+const getFontScale = async () => {
+  return callGetBridgeData(DATA_TYPE.FONT_SCALE);
+};
+
 const getNativeVersion = async () => {
   return callGetBridgeData(DATA_TYPE.NATIVE_VERSION);
 };
@@ -110,6 +114,12 @@ const setServicesState = async data => {
     DATA_TYPE.NATIVE_SERVICES_STATE,
     data
   );
+};
+
+const turnOff = async () => {
+  await callNativeFunction('setBridgeData', DATA_TYPE.TURN_OFF, {
+    turnOff: true
+  });
 };
 
 const handleServicesStatus = servicesStatus => {
@@ -188,6 +198,7 @@ window.onBridgeData = onBridgeData;
 window.bridgeDataResponse = receiveNativeResponse;
 
 export default {
+  getFontScale,
   getServicesStatus,
   setDiagnosisTimestamp,
   setPin,
@@ -197,5 +208,6 @@ export default {
   clearBluetoothData,
   changeLanguage,
   getNativeVersion,
-  getLanguage
+  getLanguage,
+  turnOff
 };

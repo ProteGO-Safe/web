@@ -1,6 +1,7 @@
 export { App } from './App';
 export { BottomNavigation } from './BottomNavigation';
 export { default as Button } from './Button/Button';
+export { CallHotline } from './CallHotline';
 export { Checkbox } from './Checkbox';
 export { Collapse } from './Collapse';
 export { Container } from './Container';
@@ -32,6 +33,7 @@ export { Select } from './Select';
 export { Switcher } from './Switcher';
 export { Stepper } from './Stepper';
 export { Textarea } from './Textarea';
+export { TextBlockWithIcon } from './TextBlockWithIcon';
 export { TextField } from './TextField';
 export { Tooltip } from './Tooltip';
 export { Url } from './Url';

@@ -6,6 +6,7 @@ export { FirstDiagnosisAsking } from './FirstDiagnosisAsking';
 export { Home } from './Home';
 export { HowItWorks } from './HowItWorks';
 export { IAmSick } from './IAmSick';
+export { ImportantInfo } from './ImportantInfo';
 export { MenuSettings } from './MenuSettings';
 export { RiskTest } from './RiskTest';
 export { RiskTestData } from './RiskTestData';

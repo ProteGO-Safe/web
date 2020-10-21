@@ -34,7 +34,7 @@ const BottomNavigation = ({ className, t }) => {
   useEffect(() => {
     if (containerRef.current) {
       const height = containerRef.current.offsetHeight;
-      containerRef.current.parentNode.style.paddingBottom = `${height}px`;
+      containerRef.current.parentNode.style.paddingBottom = `${height + 14}px`;
     }
   }, [containerRef]);
 
@@ -56,14 +56,16 @@ const BottomNavigation = ({ className, t }) => {
     [history, menuVisible]
   );
 
-  const renderMenuItem = ({ id, label, disabled, Icon }) => (
+  const renderMenuItem = ({ id, label, disabled, Icon, panicButton }) => (
     <MenuItem
       id={id}
       key={label}
+      className={panicButton && 'panic-button'}
       label={t(label)}
       disabled={disabled}
       icon={<Icon />}
       disableRipple
+      panicButton={panicButton}
     />
   );
 

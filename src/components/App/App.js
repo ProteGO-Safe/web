@@ -14,9 +14,9 @@ import {
   Home,
   HowItWorks,
   IAmSick,
+  ImportantInfo,
   RiskTest,
   NotSupported,
-  Numbers,
   Onboarding,
   PrivacyPolicy,
   PrivacyPolicyDetails,
@@ -40,28 +40,32 @@ import { Menu } from '../index';
 import { fetchNativeVersion } from '../../store/actions/nativeData';
 import useMenuContext from '../../hooks/useMenuContext';
 import Routes from '../../routes';
-import './App.scss';
 import { Notification } from '../Notification';
 import useFilledDiagnosis from '../../hooks/useFilledDiagnosis';
-import { markDataFromNewestVersion } from '../../store/actions/app';
+import {
+  fetchFontScale,
+  hideUploadHistoricalDataErrorMessage,
+  markDataFromNewestVersion
+} from '../../store/actions/app';
 import { isLocalPWA, isWebView } from '../../utils/native';
 import useMigration from '../../hooks/useMigration';
 import useCheckLanguage from '../../hooks/useCheckLanguage';
 import useNotification from '../../hooks/useNotification';
 import useModalContext from '../../hooks/useModalContext';
 import useClearData from '../../hooks/useClearData';
+import useTurnOffApplication from '../../hooks/useTurnOffApplication';
+import * as Styled from './App.styled';
 
 function App() {
   const dispatch = useDispatch();
   const history = useHistory();
   const { modal } = useModalContext();
-
-  const { name } = useSelector(state => state.user);
   const {
     dataFromNewestVersionMarked = false,
     onboardingFinished = false,
     startScreenShowed,
-    firstDiagnosisFinished
+    firstDiagnosisFinished,
+    registrationFinished
   } = useSelector(state => state.app);
   const { notification } = useNotification();
   const { inProgress, visible: menuIsVisible } = useMenuContext();
@@ -69,10 +73,16 @@ function App() {
   useMigration();
   useCheckLanguage();
   useClearData();
+  useTurnOffApplication();
 
   useEffect(() => {
     dispatch(fetchNativeVersion());
   }, [dispatch, startScreenShowed]);
+
+  useEffect(() => {
+    dispatch(hideUploadHistoricalDataErrorMessage());
+    dispatch(fetchFontScale());
+  }, [dispatch]);
 
   history.listen(() => {
     window.scroll(0, 0);
@@ -101,13 +111,13 @@ function App() {
     if (isWebView() && !isLocalPWA()) {
       return NotSupported;
     }
-    if (!startScreenShowed && !name) {
+    if (!startScreenShowed && !registrationFinished) {
       return StartScreen;
     }
     if (!onboardingFinished) {
       return Onboarding;
     }
-    if (!name) {
+    if (!registrationFinished) {
       return Registration;
     }
     if (!firstDiagnosisFinished) {
@@ -117,10 +127,10 @@ function App() {
   })();
 
   return (
-    <div className={`${className} ${modal ? 'open-modal' : ''}`}>
+    <Styled.Container className={`${className} ${modal ? 'open-modal' : ''}`}>
       <Switch>
         <Route exact path={Routes.Home} component={resolveHomeComponent} />
-        {name && (
+        {registrationFinished && (
           <>
             <Route
               exact
@@ -141,7 +151,6 @@ function App() {
               component={SettingsLanguages}
             />
             <Route exact path="/risk-test-data/:id" component={RiskTestData} />
-            <Route exact path={Routes.EmergencyNumbers} component={Numbers} />
             <Route
               exact
               path={Routes.PrivacyPolicy}
@@ -182,13 +191,18 @@ function App() {
               path={Routes.UploadHistoricalData}
               component={UploadHistoricalData}
             />
+            <Route
+              exact
+              path={Routes.ImportantInformation}
+              component={ImportantInfo}
+            />
           </>
         )}
         <Route render={() => <Redirect to={Routes.Home} />} />
       </Switch>
       <Menu />
       {notification && <Notification />}
-    </div>
+    </Styled.Container>
   );
 }
 

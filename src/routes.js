@@ -7,7 +7,6 @@ const Routes = {
   RiskTest: '/risk-test',
   HowItWorks: '/how-it-works',
   IAmSick: '/i-am-sick',
-  EmergencyNumbers: '/numbers',
   NoRiskInformation: '/risk-information/no_risk',
   PrivacyPolicy: '/privacy-policy',
   PrivacyPolicyDetails: '/privacy-policy-details',
@@ -23,7 +22,8 @@ const Routes = {
   ReportBug: '/report-bug',
   AdviceInformation: '/advice',
   FaqPage: '/faq',
-  UploadHistoricalData: '/upload-historical-data'
+  UploadHistoricalData: '/upload-historical-data',
+  ImportantInformation: '/important-info'
 };
 
 export default Routes;

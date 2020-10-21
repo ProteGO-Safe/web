@@ -1,7 +1,6 @@
 import Routes from '../../routes';
 import { ReactComponent as HomeIcon } from '../../assets/img/icons/SafeSafe-dolne-menu-Home-white.svg';
-import { ReactComponent as FAQIcon } from '../../assets/img/icons/SafeSafe-dolne-menu-FAQ-white.svg';
-import { ReactComponent as InfoIcon } from '../../assets/img/icons/SafeSafe-dolne-menu-Info-white.svg';
+import { ReactComponent as ImportantInfo } from '../../assets/img/icons/SafeSafe-dolne-menu-important-info.svg';
 import { ReactComponent as BurgerIcon } from '../../assets/img/icons/SafeSafe-dolne-menu-More-white.svg';
 
 export const HomeItem = {
@@ -12,17 +11,11 @@ export const HomeItem = {
 };
 
 export const InfoItem = {
-  id: 'porady',
-  label: 'bottom_navigation_advice',
-  Icon: InfoIcon,
-  path: Routes.AdviceInformation
-};
-
-export const FAQItem = {
-  id: 'questions',
-  label: 'bottom_navigation_faq',
-  Icon: FAQIcon,
-  path: Routes.FaqPage
+  id: 'advice_information',
+  label: 'bottom_navigation_important_info',
+  Icon: ImportantInfo,
+  path: Routes.ImportantInformation,
+  panicButton: true
 };
 
 export const BurgerItem = {
@@ -32,4 +25,4 @@ export const BurgerItem = {
   openMenu: true
 };
 
-export const menuItems = [HomeItem, InfoItem, FAQItem, BurgerItem];
+export const menuItems = [HomeItem, InfoItem, BurgerItem];

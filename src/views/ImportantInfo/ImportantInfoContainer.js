@@ -1,0 +1,61 @@
+import React from 'react';
+import { withTranslation } from 'react-i18next';
+import Routes from '../../routes';
+import ImportantInfo from './ImportantInfo';
+
+import { ReactComponent as Icon1 } from '../../assets/img/icons/important-info-1.svg';
+import { ReactComponent as Icon2 } from '../../assets/img/icons/important-info-2.svg';
+import { ReactComponent as Icon3 } from '../../assets/img/icons/important-info-3.svg';
+import { ReactComponent as Icon4 } from '../../assets/img/icons/important-info-4.svg';
+import { ReactComponent as Icon5 } from '../../assets/img/icons/important-info-5.svg';
+import { ReactComponent as Icon6 } from '../../assets/img/icons/important-info-6.svg';
+
+const ImportantInfoContainer = ({ t }) => {
+  const IMPORTANT_INFO_ITEMS = [
+    {
+      type: 'route',
+      icon: <Icon6 />,
+      title: t('important_info_title_6'),
+      description: t('important_info_description_6'),
+      path: Routes.IAmSick,
+      danger: true
+    },
+    {
+      type: 'route',
+      icon: <Icon1 />,
+      title: t('important_info_title_1'),
+      description: t('important_info_description_1'),
+      path: Routes.HowItWorks
+    },
+    {
+      type: 'route',
+      icon: <Icon2 />,
+      title: t('important_info_title_2'),
+      description: t('important_info_description_2'),
+      path: Routes.ReportBug
+    },
+    {
+      type: 'link',
+      icon: <Icon3 />,
+      title: t('important_info_title_3'),
+      description: t('important_info_description_3'),
+      link: 'https://www.gov.pl/web/koronawirus/aktualne-zasady-i-ograniczenia'
+    },
+    {
+      type: 'link',
+      icon: <Icon4 />,
+      title: t('important_info_title_4'),
+      description: t('important_info_description_4'),
+      link: 'https://www.gov.pl/web/koronawirus/informacje-dla-podrozujacych'
+    },
+    {
+      type: 'link',
+      icon: <Icon5 />,
+      title: t('important_info_title_5'),
+      link: 'https://www.gov.pl/web/koronawirus/pytania-i-odpowiedzi'
+    }
+  ];
+  return <ImportantInfo items={IMPORTANT_INFO_ITEMS} />;
+};
+
+export default withTranslation()(ImportantInfoContainer);
