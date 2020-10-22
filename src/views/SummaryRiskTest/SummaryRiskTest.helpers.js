@@ -15,8 +15,12 @@ export const DATA = {
     paragraph_strong: 'summary_risk_test_description_1_2',
     button: 'summary_risk_test_button_name_1',
     annotation: {
+      title: 'summary_risk_test_annotation_title',
       paragraph_1: 'summary_risk_test_annotation_1',
-      paragraph_2: 'summary_risk_test_annotation_2'
+      paragraph_2: 'summary_risk_test_annotation_2',
+      paragraph_3: 'summary_risk_test_annotation_3',
+      paragraph_4: 'summary_risk_test_annotation_4',
+      link_name: 'summary_risk_test_annotation_more'
     },
     path: '/' // TODO: flow labtest
   },

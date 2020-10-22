@@ -21,7 +21,7 @@ export const Description = styled.div`
   flex-flow: wrap row;
   width: 100%;
   margin-top: 40px;
-  margin-bottom: 48px;
+  margin-bottom: auto;
   > *:not(:last-child) {
     margin-bottom: 20px;
   }
@@ -40,22 +40,22 @@ export const Strong = styled(Paragraph)`
 
 export const ButtonWrapper = styled.div`
   width: 100%;
-  margin-top: auto;
+  margin-top: 24px;
   margin-bottom: 6px;
 `;
 
-export const Annotation = styled.span`
+export const Annotation = styled.div`
+  display: inline-block;
+  width: 100%;
+  margin-top: 24px;
   font-size: 12px;
-  line-height: 12px;
+  line-height: 16px;
+  font-weight: 400;
   color: ${Color.black};
 `;
 
-export const Required = styled.span`
-  display: inline-block;
-  padding-left: 52px;
-  width: 100%;
-  margin-bottom: 4px;
-  font-size: 12px;
-  line-height: 12px;
-  color: ${Color.lightGray};
+export const Link = styled.span`
+  display: inline;
+  color: ${Color.primary};
+  cursor: pointer;
 `;

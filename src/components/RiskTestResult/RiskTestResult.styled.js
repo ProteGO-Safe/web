@@ -27,6 +27,7 @@ export const Title = styled.h2`
 
 export const Result = styled.span`
   position: relative;
+  display: inline-flex;
   padding-right: 48px;
   font-size: 20px;
   line-height: 24px;

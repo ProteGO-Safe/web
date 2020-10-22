@@ -58,7 +58,9 @@ const Modal = () => {
           </Styled.ContentHeight>
         ) : (
           <>
-            {type !== 'dialog' && <ModalClose onClick={onClose} />}
+            {(type !== 'dialog' || type === 'normal') && (
+              <ModalClose onClick={onClose} />
+            )}
             {title && <Styled.Title>{title}</Styled.Title>}
 
             <Styled.ScrollbarContent height={scrollHeight}>

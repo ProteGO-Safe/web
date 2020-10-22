@@ -27,6 +27,12 @@ export const Wrapper = styled.div`
   height: 100%;
   box-sizing: border-box;
   z-index: 999;
+  .ScrollbarsCustom-TrackY {
+    width: 8px !important;
+  }
+  .ScrollbarsCustom-Scroller {
+    padding-right: 26px !important;
+  }
 `;
 
 export const Overlay = styled.div`
