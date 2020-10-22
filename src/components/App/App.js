@@ -28,6 +28,7 @@ import {
   SettingsLanguages,
   MenuSettings,
   StartScreen,
+  SummaryRiskTest,
   UserData,
   UserDataChange,
   UserDataSettings,
@@ -144,6 +145,11 @@ function App() {
               exact
               path={Routes.CurrentRestrictions}
               component={CurrentRestrictions}
+            />
+            <Route
+              exact
+              path={Routes.SummaryRiskTest}
+              component={SummaryRiskTest}
             />
             <Route exact path={Routes.Daily} component={Daily} />
             <Route exact path="/daily/:id" component={DailyData} />

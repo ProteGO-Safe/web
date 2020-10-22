@@ -27,6 +27,7 @@ export { RiskTestData } from './RiskTestData';
 export { Settings } from './Settings';
 export { SettingsLanguages } from './SettingsLanguages';
 export { StartScreen } from './StartScreen';
+export { SummaryRiskTest } from './SummaryRiskTest';
 export { UploadHistoricalData } from './UploadHistoricalData';
 export { UserData } from './UserData';
 export { UserDataChange } from './UserDataChange';

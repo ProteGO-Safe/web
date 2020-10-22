@@ -29,8 +29,6 @@ const Modal = () => {
     }
   }, []);
 
-  useEffect(() => {}, []);
-
   useEffect(() => {
     if (scrollRef && scrollRef.current && scrollRef.current.contentElement) {
       setScrollHeight(scrollRef.current.contentElement.clientHeight);
