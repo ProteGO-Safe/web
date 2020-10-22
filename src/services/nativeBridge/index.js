@@ -135,6 +135,10 @@ const turnOff = async () => {
   });
 };
 
+const generateFreeTestCode = async () => {
+  await callNativeFunction('setBridgeData', DATA_TYPE.GENERATE_FREE_TEST_CODE);
+};
+
 const setDistrictSubscription = async (districtId, isSubscribed) => {
   const ADD = 1;
   const DELETE = 2;
@@ -221,6 +225,7 @@ window.onBridgeData = onBridgeData;
 window.bridgeDataResponse = receiveNativeResponse;
 
 export default {
+  generateFreeTestCode,
   getFontScale,
   getServicesStatus,
   setDiagnosisTimestamp,
