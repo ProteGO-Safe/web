@@ -14,7 +14,7 @@ const FollowDistrictsSlider = ({ items, t }) => {
     <Styled.FollowDistrictsSlider padding={items.length === 0}>
       {items.length > 0 ? (
         <>
-          <Styled.Title>
+          <Styled.Title to={Routes.CurrentRestrictions}>
             {t('follow_district_title')}:{' '}
             <Styled.Badge>{items.length}</Styled.Badge>
           </Styled.Title>

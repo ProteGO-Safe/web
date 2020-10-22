@@ -194,7 +194,7 @@ Array [
       smile_no_data_text2
     </p>
   </div>,
-  .c1 {
+  .c2 {
   height: 44px;
   width: 44px;
 }
@@ -235,18 +235,6 @@ Array [
   border-radius: 8px;
   cursor: pointer;
   text-transform: uppercase;
-  -webkit-box-pack: start;
-  -webkit-justify-content: flex-start;
-  -ms-flex-pack: start;
-  justify-content: flex-start;
-  border-width: 1px;
-  border-style: solid;
-  border-color: #cbcbcb;
-  background-color: #ffffff;
-  border-radius: 4px;
-  padding: 20px 28px;
-  margin-bottom: 24px;
-  text-transform: none;
 }
 
 .c0:disabled {
@@ -261,13 +249,28 @@ Array [
   outline: none;
 }
 
-.c0 > svg {
+.c1 {
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #cbcbcb;
+  background-color: #ffffff;
+  border-radius: 4px;
+  padding: 20px 28px;
+  margin-bottom: 24px;
+  text-transform: none;
+}
+
+.c1 > svg {
   width: 40px;
   height: auto;
   margin-right: 24px;
 }
 
-.c2 {
+.c3 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -282,7 +285,7 @@ Array [
   width: calc(100% - 64px);
 }
 
-.c4 {
+.c5 {
   font-size: 11px;
   line-height: 2;
   font-weight: 400;
@@ -290,7 +293,7 @@ Array [
   text-align: left;
 }
 
-.c3 {
+.c4 {
   font-size: 14px;
   font-weight: bold;
   line-height: 1.57;
@@ -299,26 +302,26 @@ Array [
 }
 
 <button
-    className="c0"
+    className="c0 c1"
     disabled={false}
     onClick={[Function]}
     type="button"
   >
     <svg
-      className="c1"
+      className="c2"
     >
       wykonaj-test.svg
     </svg>
     <span
-      className="c2"
+      className="c3"
     >
       <span
-        className="c3"
+        className="c4"
       >
         make_diagnosis_button_text1
       </span>
       <span
-        className="c4"
+        className="c5"
       />
     </span>
   </button>,
@@ -475,7 +478,7 @@ Array [
       </div>
     </div>
   </div>,
-  .c1 {
+  .c2 {
   height: 44px;
   width: 44px;
 }
@@ -516,18 +519,6 @@ Array [
   border-radius: 8px;
   cursor: pointer;
   text-transform: uppercase;
-  -webkit-box-pack: start;
-  -webkit-justify-content: flex-start;
-  -ms-flex-pack: start;
-  justify-content: flex-start;
-  border-width: 1px;
-  border-style: solid;
-  border-color: #cbcbcb;
-  background-color: #ffffff;
-  border-radius: 4px;
-  padding: 20px 28px;
-  margin-bottom: 24px;
-  text-transform: none;
 }
 
 .c0:disabled {
@@ -542,13 +533,28 @@ Array [
   outline: none;
 }
 
-.c0 > svg {
+.c1 {
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #cbcbcb;
+  background-color: #ffffff;
+  border-radius: 4px;
+  padding: 20px 28px;
+  margin-bottom: 24px;
+  text-transform: none;
+}
+
+.c1 > svg {
   width: 40px;
   height: auto;
   margin-right: 24px;
 }
 
-.c2 {
+.c3 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -563,7 +569,7 @@ Array [
   width: calc(100% - 64px);
 }
 
-.c4 {
+.c5 {
   font-size: 11px;
   line-height: 2;
   font-weight: 400;
@@ -571,7 +577,7 @@ Array [
   text-align: left;
 }
 
-.c3 {
+.c4 {
   font-size: 14px;
   font-weight: bold;
   line-height: 1.57;
@@ -580,26 +586,26 @@ Array [
 }
 
 <button
-    className="c0"
+    className="c0 c1"
     disabled={false}
     onClick={[Function]}
     type="button"
   >
     <svg
-      className="c1"
+      className="c2"
     >
       wykonaj-test.svg
     </svg>
     <span
-      className="c2"
+      className="c3"
     >
       <span
-        className="c3"
+        className="c4"
       >
         make_diagnosis_button_text1
       </span>
       <span
-        className="c4"
+        className="c5"
       />
     </span>
   </button>,
@@ -756,7 +762,7 @@ Array [
       </div>
     </div>
   </div>,
-  .c1 {
+  .c2 {
   height: 44px;
   width: 44px;
 }
@@ -797,18 +803,6 @@ Array [
   border-radius: 8px;
   cursor: pointer;
   text-transform: uppercase;
-  -webkit-box-pack: start;
-  -webkit-justify-content: flex-start;
-  -ms-flex-pack: start;
-  justify-content: flex-start;
-  border-width: 1px;
-  border-style: solid;
-  border-color: #cbcbcb;
-  background-color: #ffffff;
-  border-radius: 4px;
-  padding: 20px 28px;
-  margin-bottom: 24px;
-  text-transform: none;
 }
 
 .c0:disabled {
@@ -823,13 +817,28 @@ Array [
   outline: none;
 }
 
-.c0 > svg {
+.c1 {
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #cbcbcb;
+  background-color: #ffffff;
+  border-radius: 4px;
+  padding: 20px 28px;
+  margin-bottom: 24px;
+  text-transform: none;
+}
+
+.c1 > svg {
   width: 40px;
   height: auto;
   margin-right: 24px;
 }
 
-.c2 {
+.c3 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -844,7 +853,7 @@ Array [
   width: calc(100% - 64px);
 }
 
-.c4 {
+.c5 {
   font-size: 11px;
   line-height: 2;
   font-weight: 400;
@@ -852,7 +861,7 @@ Array [
   text-align: left;
 }
 
-.c3 {
+.c4 {
   font-size: 14px;
   font-weight: bold;
   line-height: 1.57;
@@ -861,26 +870,26 @@ Array [
 }
 
 <button
-    className="c0"
+    className="c0 c1"
     disabled={false}
     onClick={[Function]}
     type="button"
   >
     <svg
-      className="c1"
+      className="c2"
     >
       wykonaj-test.svg
     </svg>
     <span
-      className="c2"
+      className="c3"
     >
       <span
-        className="c3"
+        className="c4"
       >
         make_diagnosis_button_text1
       </span>
       <span
-        className="c4"
+        className="c5"
       />
     </span>
   </button>,
@@ -1534,18 +1543,25 @@ Array [
       </svg>
     </div>
   </div>,
-  .c2 {
+  .c1 {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1.25;
+  color: #1b1b1b;
+}
+
+.c3 {
   font-size: 16px;
   font-weight: 400;
   line-height: 1.5;
   color: #1b1b1b;
 }
 
-.c2:not(:last-child) {
+.c3:not(:last-child) {
   margin-bottom: 24px;
 }
 
-.c3 {
+.c4 {
   font-size: 12px;
   font-weight: 400;
   line-height: 1.5;
@@ -1558,11 +1574,7 @@ Array [
   margin-bottom: 32px;
 }
 
-.c1 {
-  font-weight: 700;
-  font-size: 20px;
-  line-height: 1.25;
-  color: #1b1b1b;
+.c2 {
   margin-bottom: 12px;
   color: #1b1b1b;
 }
@@ -1583,23 +1595,23 @@ Array [
     className="c0"
   >
     <h5
-      className="c1"
+      className="c1 c2"
     >
       home_more_information_text1
     </h5>
     <p
-      className="c2"
+      className="c3"
       color="#1b1b1b"
     >
       home_more_information_text2
     </p>
     <p
-      className="c3"
+      className="c4"
     >
       home_more_information_text3
     </p>
   </div>,
-  .c1 {
+  .c2 {
   height: 44px;
   width: 44px;
 }
@@ -1640,18 +1652,6 @@ Array [
   border-radius: 8px;
   cursor: pointer;
   text-transform: uppercase;
-  -webkit-box-pack: start;
-  -webkit-justify-content: flex-start;
-  -ms-flex-pack: start;
-  justify-content: flex-start;
-  border-width: 1px;
-  border-style: solid;
-  border-color: #cbcbcb;
-  background-color: #ffffff;
-  border-radius: 4px;
-  padding: 20px 28px;
-  margin-bottom: 24px;
-  text-transform: none;
 }
 
 .c0:disabled {
@@ -1666,13 +1666,28 @@ Array [
   outline: none;
 }
 
-.c0 > svg {
+.c1 {
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #cbcbcb;
+  background-color: #ffffff;
+  border-radius: 4px;
+  padding: 20px 28px;
+  margin-bottom: 24px;
+  text-transform: none;
+}
+
+.c1 > svg {
   width: 40px;
   height: auto;
   margin-right: 24px;
 }
 
-.c2 {
+.c3 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1687,7 +1702,7 @@ Array [
   width: calc(100% - 64px);
 }
 
-.c4 {
+.c5 {
   font-size: 11px;
   line-height: 2;
   font-weight: 400;
@@ -1695,7 +1710,7 @@ Array [
   text-align: left;
 }
 
-.c3 {
+.c4 {
   font-size: 14px;
   font-weight: bold;
   line-height: 1.57;
@@ -1716,26 +1731,26 @@ Array [
 }
 
 <button
-    className="c0"
+    className="c0 c1"
     disabled={false}
     onClick={[Function]}
     type="button"
   >
     <svg
-      className="c1"
+      className="c2"
     >
       wykonaj-test.svg
     </svg>
     <span
-      className="c2"
+      className="c3"
     >
       <span
-        className="c3"
+        className="c4"
       >
         make_diagnosis_button_text1
       </span>
       <span
-        className="c4"
+        className="c5"
       />
     </span>
   </button>,
@@ -2469,18 +2484,25 @@ Array [
       </svg>
     </div>
   </div>,
-  .c2 {
+  .c1 {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1.25;
+  color: #1b1b1b;
+}
+
+.c3 {
   font-size: 16px;
   font-weight: 400;
   line-height: 1.5;
   color: #1b1b1b;
 }
 
-.c2:not(:last-child) {
+.c3:not(:last-child) {
   margin-bottom: 24px;
 }
 
-.c3 {
+.c4 {
   font-size: 12px;
   font-weight: 400;
   line-height: 1.5;
@@ -2493,11 +2515,7 @@ Array [
   margin-bottom: 32px;
 }
 
-.c1 {
-  font-weight: 700;
-  font-size: 20px;
-  line-height: 1.25;
-  color: #1b1b1b;
+.c2 {
   margin-bottom: 12px;
   color: #1b1b1b;
 }
@@ -2518,23 +2536,23 @@ Array [
     className="c0"
   >
     <h5
-      className="c1"
+      className="c1 c2"
     >
       home_more_information_text1
     </h5>
     <p
-      className="c2"
+      className="c3"
       color="#1b1b1b"
     >
       home_more_information_text2
     </p>
     <p
-      className="c3"
+      className="c4"
     >
       home_more_information_text3
     </p>
   </div>,
-  .c1 {
+  .c2 {
   height: 44px;
   width: 44px;
 }
@@ -2575,18 +2593,6 @@ Array [
   border-radius: 8px;
   cursor: pointer;
   text-transform: uppercase;
-  -webkit-box-pack: start;
-  -webkit-justify-content: flex-start;
-  -ms-flex-pack: start;
-  justify-content: flex-start;
-  border-width: 1px;
-  border-style: solid;
-  border-color: #cbcbcb;
-  background-color: #ffffff;
-  border-radius: 4px;
-  padding: 20px 28px;
-  margin-bottom: 24px;
-  text-transform: none;
 }
 
 .c0:disabled {
@@ -2601,13 +2607,28 @@ Array [
   outline: none;
 }
 
-.c0 > svg {
+.c1 {
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #cbcbcb;
+  background-color: #ffffff;
+  border-radius: 4px;
+  padding: 20px 28px;
+  margin-bottom: 24px;
+  text-transform: none;
+}
+
+.c1 > svg {
   width: 40px;
   height: auto;
   margin-right: 24px;
 }
 
-.c2 {
+.c3 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2622,7 +2643,7 @@ Array [
   width: calc(100% - 64px);
 }
 
-.c4 {
+.c5 {
   font-size: 11px;
   line-height: 2;
   font-weight: 400;
@@ -2630,7 +2651,7 @@ Array [
   text-align: left;
 }
 
-.c3 {
+.c4 {
   font-size: 14px;
   font-weight: bold;
   line-height: 1.57;
@@ -2651,26 +2672,26 @@ Array [
 }
 
 <button
-    className="c0"
+    className="c0 c1"
     disabled={false}
     onClick={[Function]}
     type="button"
   >
     <svg
-      className="c1"
+      className="c2"
     >
       wykonaj-test.svg
     </svg>
     <span
-      className="c2"
+      className="c3"
     >
       <span
-        className="c3"
+        className="c4"
       >
         make_diagnosis_button_text1
       </span>
       <span
-        className="c4"
+        className="c5"
       />
     </span>
   </button>,
@@ -3404,18 +3425,25 @@ Array [
       </svg>
     </div>
   </div>,
-  .c2 {
+  .c1 {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1.25;
+  color: #1b1b1b;
+}
+
+.c3 {
   font-size: 16px;
   font-weight: 400;
   line-height: 1.5;
   color: #1b1b1b;
 }
 
-.c2:not(:last-child) {
+.c3:not(:last-child) {
   margin-bottom: 24px;
 }
 
-.c3 {
+.c4 {
   font-size: 12px;
   font-weight: 400;
   line-height: 1.5;
@@ -3428,11 +3456,7 @@ Array [
   margin-bottom: 32px;
 }
 
-.c1 {
-  font-weight: 700;
-  font-size: 20px;
-  line-height: 1.25;
-  color: #1b1b1b;
+.c2 {
   margin-bottom: 12px;
   color: #1b1b1b;
 }
@@ -3453,23 +3477,23 @@ Array [
     className="c0"
   >
     <h5
-      className="c1"
+      className="c1 c2"
     >
       home_more_information_text1
     </h5>
     <p
-      className="c2"
+      className="c3"
       color="#1b1b1b"
     >
       home_more_information_text2
     </p>
     <p
-      className="c3"
+      className="c4"
     >
       home_more_information_text3
     </p>
   </div>,
-  .c1 {
+  .c2 {
   height: 44px;
   width: 44px;
 }
@@ -3510,18 +3534,6 @@ Array [
   border-radius: 8px;
   cursor: pointer;
   text-transform: uppercase;
-  -webkit-box-pack: start;
-  -webkit-justify-content: flex-start;
-  -ms-flex-pack: start;
-  justify-content: flex-start;
-  border-width: 1px;
-  border-style: solid;
-  border-color: #cbcbcb;
-  background-color: #ffffff;
-  border-radius: 4px;
-  padding: 20px 28px;
-  margin-bottom: 24px;
-  text-transform: none;
 }
 
 .c0:disabled {
@@ -3536,13 +3548,28 @@ Array [
   outline: none;
 }
 
-.c0 > svg {
+.c1 {
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #cbcbcb;
+  background-color: #ffffff;
+  border-radius: 4px;
+  padding: 20px 28px;
+  margin-bottom: 24px;
+  text-transform: none;
+}
+
+.c1 > svg {
   width: 40px;
   height: auto;
   margin-right: 24px;
 }
 
-.c2 {
+.c3 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -3557,7 +3584,7 @@ Array [
   width: calc(100% - 64px);
 }
 
-.c4 {
+.c5 {
   font-size: 11px;
   line-height: 2;
   font-weight: 400;
@@ -3565,7 +3592,7 @@ Array [
   text-align: left;
 }
 
-.c3 {
+.c4 {
   font-size: 14px;
   font-weight: bold;
   line-height: 1.57;
@@ -3586,26 +3613,26 @@ Array [
 }
 
 <button
-    className="c0"
+    className="c0 c1"
     disabled={false}
     onClick={[Function]}
     type="button"
   >
     <svg
-      className="c1"
+      className="c2"
     >
       wykonaj-test.svg
     </svg>
     <span
-      className="c2"
+      className="c3"
     >
       <span
-        className="c3"
+        className="c4"
       >
         make_diagnosis_button_text1
       </span>
       <span
-        className="c4"
+        className="c5"
       />
     </span>
   </button>,
@@ -3777,7 +3804,7 @@ Array [
       </div>
     </div>
   </div>,
-  .c1 {
+  .c2 {
   height: 44px;
   width: 44px;
 }
@@ -3818,18 +3845,6 @@ Array [
   border-radius: 8px;
   cursor: pointer;
   text-transform: uppercase;
-  -webkit-box-pack: start;
-  -webkit-justify-content: flex-start;
-  -ms-flex-pack: start;
-  justify-content: flex-start;
-  border-width: 1px;
-  border-style: solid;
-  border-color: #cbcbcb;
-  background-color: #ffffff;
-  border-radius: 4px;
-  padding: 20px 28px;
-  margin-bottom: 24px;
-  text-transform: none;
 }
 
 .c0:disabled {
@@ -3844,13 +3859,28 @@ Array [
   outline: none;
 }
 
-.c0 > svg {
+.c1 {
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #cbcbcb;
+  background-color: #ffffff;
+  border-radius: 4px;
+  padding: 20px 28px;
+  margin-bottom: 24px;
+  text-transform: none;
+}
+
+.c1 > svg {
   width: 40px;
   height: auto;
   margin-right: 24px;
 }
 
-.c2 {
+.c3 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -3865,7 +3895,7 @@ Array [
   width: calc(100% - 64px);
 }
 
-.c4 {
+.c5 {
   font-size: 11px;
   line-height: 2;
   font-weight: 400;
@@ -3873,7 +3903,7 @@ Array [
   text-align: left;
 }
 
-.c3 {
+.c4 {
   font-size: 14px;
   font-weight: bold;
   line-height: 1.57;
@@ -3894,26 +3924,26 @@ Array [
 }
 
 <button
-    className="c0"
+    className="c0 c1"
     disabled={false}
     onClick={[Function]}
     type="button"
   >
     <svg
-      className="c1"
+      className="c2"
     >
       wykonaj-test.svg
     </svg>
     <span
-      className="c2"
+      className="c3"
     >
       <span
-        className="c3"
+        className="c4"
       >
         make_diagnosis_button_text1
       </span>
       <span
-        className="c4"
+        className="c5"
       />
     </span>
   </button>,
@@ -4560,18 +4590,25 @@ Array [
       </svg>
     </div>
   </div>,
-  .c2 {
+  .c1 {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1.25;
+  color: #1b1b1b;
+}
+
+.c3 {
   font-size: 16px;
   font-weight: 400;
   line-height: 1.5;
   color: #1b1b1b;
 }
 
-.c2:not(:last-child) {
+.c3:not(:last-child) {
   margin-bottom: 24px;
 }
 
-.c3 {
+.c4 {
   font-size: 12px;
   font-weight: 400;
   line-height: 1.5;
@@ -4584,11 +4621,7 @@ Array [
   margin-bottom: 32px;
 }
 
-.c1 {
-  font-weight: 700;
-  font-size: 20px;
-  line-height: 1.25;
-  color: #1b1b1b;
+.c2 {
   margin-bottom: 12px;
   color: #1b1b1b;
 }
@@ -4609,18 +4642,18 @@ Array [
     className="c0"
   >
     <h5
-      className="c1"
+      className="c1 c2"
     >
       home_more_information_text1
     </h5>
     <p
-      className="c2"
+      className="c3"
       color="#1b1b1b"
     >
       home_more_information_text2
     </p>
     <p
-      className="c3"
+      className="c4"
     >
       home_more_information_text3
     </p>
@@ -4778,7 +4811,7 @@ Array [
       </div>
     </div>
   </div>,
-  .c1 {
+  .c2 {
   height: 44px;
   width: 44px;
 }
@@ -4819,18 +4852,6 @@ Array [
   border-radius: 8px;
   cursor: pointer;
   text-transform: uppercase;
-  -webkit-box-pack: start;
-  -webkit-justify-content: flex-start;
-  -ms-flex-pack: start;
-  justify-content: flex-start;
-  border-width: 1px;
-  border-style: solid;
-  border-color: #cbcbcb;
-  background-color: #ffffff;
-  border-radius: 4px;
-  padding: 20px 28px;
-  margin-bottom: 24px;
-  text-transform: none;
 }
 
 .c0:disabled {
@@ -4845,13 +4866,28 @@ Array [
   outline: none;
 }
 
-.c0 > svg {
+.c1 {
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #cbcbcb;
+  background-color: #ffffff;
+  border-radius: 4px;
+  padding: 20px 28px;
+  margin-bottom: 24px;
+  text-transform: none;
+}
+
+.c1 > svg {
   width: 40px;
   height: auto;
   margin-right: 24px;
 }
 
-.c2 {
+.c3 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -4866,7 +4902,7 @@ Array [
   width: calc(100% - 64px);
 }
 
-.c4 {
+.c5 {
   font-size: 11px;
   line-height: 2;
   font-weight: 400;
@@ -4874,7 +4910,7 @@ Array [
   text-align: left;
 }
 
-.c3 {
+.c4 {
   font-size: 14px;
   font-weight: bold;
   line-height: 1.57;
@@ -4883,26 +4919,26 @@ Array [
 }
 
 <button
-    className="c0"
+    className="c0 c1"
     disabled={false}
     onClick={[Function]}
     type="button"
   >
     <svg
-      className="c1"
+      className="c2"
     >
       wykonaj-test.svg
     </svg>
     <span
-      className="c2"
+      className="c3"
     >
       <span
-        className="c3"
+        className="c4"
       >
         make_diagnosis_button_text1
       </span>
       <span
-        className="c4"
+        className="c5"
       />
     </span>
   </button>,
@@ -5757,7 +5793,7 @@ Array [
       triage_info_border_text3
     </span>
   </div>,
-  .c1 {
+  .c3 {
   height: 44px;
   width: 44px;
 }
@@ -5798,21 +5834,6 @@ Array [
   border-radius: 8px;
   cursor: pointer;
   text-transform: uppercase;
-  -webkit-box-pack: start;
-  -webkit-justify-content: flex-start;
-  -ms-flex-pack: start;
-  justify-content: flex-start;
-  border-width: 1px;
-  border-style: solid;
-  border-color: #cbcbcb;
-  background-color: #ffffff;
-  border-radius: 4px;
-  padding: 20px 28px;
-  margin-bottom: 24px;
-  text-transform: none;
-  position: relative;
-  padding-right: 40px;
-  color: #0052a5;
 }
 
 .c0:disabled {
@@ -5827,13 +5848,34 @@ Array [
   outline: none;
 }
 
-.c0 > svg {
+.c1 {
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #cbcbcb;
+  background-color: #ffffff;
+  border-radius: 4px;
+  padding: 20px 28px;
+  margin-bottom: 24px;
+  text-transform: none;
+}
+
+.c1 > svg {
   width: 40px;
   height: auto;
   margin-right: 24px;
 }
 
-.c5 {
+.c2 {
+  position: relative;
+  padding-right: 40px;
+  color: #0052a5;
+}
+
+.c7 {
   position: absolute;
   top: 50%;
   right: 15px;
@@ -5843,13 +5885,13 @@ Array [
   z-index: 10;
 }
 
-.c5 > svg {
+.c7 > svg {
   display: block;
   height: 100%;
   width: 100%;
 }
 
-.c2 {
+.c4 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -5864,7 +5906,7 @@ Array [
   width: calc(100% - 64px);
 }
 
-.c4 {
+.c6 {
   font-size: 11px;
   line-height: 2;
   font-weight: 400;
@@ -5872,7 +5914,7 @@ Array [
   text-align: left;
 }
 
-.c3 {
+.c5 {
   font-size: 14px;
   font-weight: bold;
   line-height: 1.57;
@@ -5893,32 +5935,32 @@ Array [
 }
 
 <button
-    className="c0"
+    className="c0 c1 c2"
     disabled={false}
     onClick={[Function]}
     type="button"
   >
     <svg
-      className="c1"
+      className="c3"
     >
       wykonaj-test.svg
     </svg>
     <span
-      className="c2"
+      className="c4"
     >
       <span
-        className="c3"
+        className="c5"
       >
         make_daily_button_text1
       </span>
       <span
-        className="c4"
+        className="c6"
       >
         make_daily_button_text2
       </span>
     </span>
     <span
-      className="c5"
+      className="c7"
     >
       <svg>
         arrow-current-color.svg
@@ -6310,24 +6352,31 @@ Array [
       triage_info_border_text1
     </span>
   </div>,
-  .c2 {
+  .c1 {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1.25;
+  color: #1b1b1b;
+}
+
+.c3 {
   font-size: 16px;
   font-weight: 400;
   line-height: 1.5;
   color: #1b1b1b;
 }
 
-.c2:not(:last-child) {
+.c3:not(:last-child) {
   margin-bottom: 24px;
 }
 
-.c4 {
+.c5 {
   width: auto;
   font-weight: 700;
   color: #0052a5;
 }
 
-.c3 {
+.c4 {
   -webkit-text-decoration: underline;
   text-decoration: underline;
   color: #006cd7;
@@ -6339,11 +6388,7 @@ Array [
   margin-bottom: 32px;
 }
 
-.c1 {
-  font-weight: 700;
-  font-size: 20px;
-  line-height: 1.25;
-  color: #1b1b1b;
+.c2 {
   margin-bottom: 12px;
   color: #1b1b1b;
 }
@@ -6364,18 +6409,18 @@ Array [
     className="c0"
   >
     <h5
-      className="c1"
+      className="c1 c2"
     >
       exposure_sick_text1
     </h5>
     <p
-      className="c2"
+      className="c3"
       color="#1b1b1b"
     >
       exposure_sick_text2
        
       <a
-        className="c3"
+        className="c4"
         href="https://www.gov.pl/koronawirus"
         target="_blank"
       >
@@ -6385,7 +6430,7 @@ Array [
       lub
        
       <a
-        className="c3"
+        className="c4"
         href="https://www.pacjent.gov.pl"
         target="_blank"
       >
@@ -6394,7 +6439,7 @@ Array [
       exposure_sick_text5
        
       <a
-        className="c4"
+        className="c5"
         href="tel:6"
       >
         exposure_sick_text6
@@ -6602,7 +6647,7 @@ Array [
   >
     exposure_low_text1
   </p>,
-  .c1 {
+  .c2 {
   height: 44px;
   width: 44px;
 }
@@ -6643,18 +6688,6 @@ Array [
   border-radius: 8px;
   cursor: pointer;
   text-transform: uppercase;
-  -webkit-box-pack: start;
-  -webkit-justify-content: flex-start;
-  -ms-flex-pack: start;
-  justify-content: flex-start;
-  border-width: 1px;
-  border-style: solid;
-  border-color: #cbcbcb;
-  background-color: #ffffff;
-  border-radius: 4px;
-  padding: 20px 28px;
-  margin-bottom: 24px;
-  text-transform: none;
 }
 
 .c0:disabled {
@@ -6669,13 +6702,28 @@ Array [
   outline: none;
 }
 
-.c0 > svg {
+.c1 {
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #cbcbcb;
+  background-color: #ffffff;
+  border-radius: 4px;
+  padding: 20px 28px;
+  margin-bottom: 24px;
+  text-transform: none;
+}
+
+.c1 > svg {
   width: 40px;
   height: auto;
   margin-right: 24px;
 }
 
-.c2 {
+.c3 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -6690,7 +6738,7 @@ Array [
   width: calc(100% - 64px);
 }
 
-.c4 {
+.c5 {
   font-size: 11px;
   line-height: 2;
   font-weight: 400;
@@ -6698,7 +6746,7 @@ Array [
   text-align: left;
 }
 
-.c3 {
+.c4 {
   font-size: 14px;
   font-weight: bold;
   line-height: 1.57;
@@ -6707,26 +6755,26 @@ Array [
 }
 
 <button
-    className="c0"
+    className="c0 c1"
     disabled={false}
     onClick={[Function]}
     type="button"
   >
     <svg
-      className="c1"
+      className="c2"
     >
       wykonaj-test.svg
     </svg>
     <span
-      className="c2"
+      className="c3"
     >
       <span
-        className="c3"
+        className="c4"
       >
         make_diagnosis_button_text1
       </span>
       <span
-        className="c4"
+        className="c5"
       />
     </span>
   </button>,
@@ -7581,7 +7629,7 @@ Array [
       triage_info_border_text3
     </span>
   </div>,
-  .c1 {
+  .c3 {
   height: 44px;
   width: 44px;
 }
@@ -7622,21 +7670,6 @@ Array [
   border-radius: 8px;
   cursor: pointer;
   text-transform: uppercase;
-  -webkit-box-pack: start;
-  -webkit-justify-content: flex-start;
-  -ms-flex-pack: start;
-  justify-content: flex-start;
-  border-width: 1px;
-  border-style: solid;
-  border-color: #cbcbcb;
-  background-color: #ffffff;
-  border-radius: 4px;
-  padding: 20px 28px;
-  margin-bottom: 24px;
-  text-transform: none;
-  position: relative;
-  padding-right: 40px;
-  color: #0052a5;
 }
 
 .c0:disabled {
@@ -7651,13 +7684,34 @@ Array [
   outline: none;
 }
 
-.c0 > svg {
+.c1 {
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #cbcbcb;
+  background-color: #ffffff;
+  border-radius: 4px;
+  padding: 20px 28px;
+  margin-bottom: 24px;
+  text-transform: none;
+}
+
+.c1 > svg {
   width: 40px;
   height: auto;
   margin-right: 24px;
 }
 
-.c5 {
+.c2 {
+  position: relative;
+  padding-right: 40px;
+  color: #0052a5;
+}
+
+.c7 {
   position: absolute;
   top: 50%;
   right: 15px;
@@ -7667,13 +7721,13 @@ Array [
   z-index: 10;
 }
 
-.c5 > svg {
+.c7 > svg {
   display: block;
   height: 100%;
   width: 100%;
 }
 
-.c2 {
+.c4 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -7688,7 +7742,7 @@ Array [
   width: calc(100% - 64px);
 }
 
-.c4 {
+.c6 {
   font-size: 11px;
   line-height: 2;
   font-weight: 400;
@@ -7696,7 +7750,7 @@ Array [
   text-align: left;
 }
 
-.c3 {
+.c5 {
   font-size: 14px;
   font-weight: bold;
   line-height: 1.57;
@@ -7717,32 +7771,32 @@ Array [
 }
 
 <button
-    className="c0"
+    className="c0 c1 c2"
     disabled={false}
     onClick={[Function]}
     type="button"
   >
     <svg
-      className="c1"
+      className="c3"
     >
       wykonaj-test.svg
     </svg>
     <span
-      className="c2"
+      className="c4"
     >
       <span
-        className="c3"
+        className="c5"
       >
         make_daily_button_text1
       </span>
       <span
-        className="c4"
+        className="c6"
       >
         make_daily_button_text2
       </span>
     </span>
     <span
-      className="c5"
+      className="c7"
     >
       <svg>
         arrow-current-color.svg
@@ -8399,18 +8453,25 @@ Array [
       </svg>
     </div>
   </div>,
-  .c2 {
+  .c1 {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1.25;
+  color: #1b1b1b;
+}
+
+.c3 {
   font-size: 16px;
   font-weight: 400;
   line-height: 1.5;
   color: #1b1b1b;
 }
 
-.c2:not(:last-child) {
+.c3:not(:last-child) {
   margin-bottom: 24px;
 }
 
-.c3 {
+.c4 {
   font-size: 12px;
   font-weight: 400;
   line-height: 1.5;
@@ -8423,11 +8484,7 @@ Array [
   margin-bottom: 32px;
 }
 
-.c1 {
-  font-weight: 700;
-  font-size: 20px;
-  line-height: 1.25;
-  color: #1b1b1b;
+.c2 {
   margin-bottom: 12px;
   color: #1b1b1b;
 }
@@ -8448,23 +8505,23 @@ Array [
     className="c0"
   >
     <h5
-      className="c1"
+      className="c1 c2"
     >
       home_more_information_text1
     </h5>
     <p
-      className="c2"
+      className="c3"
       color="#1b1b1b"
     >
       home_more_information_text2
     </p>
     <p
-      className="c3"
+      className="c4"
     >
       home_more_information_text3
     </p>
   </div>,
-  .c1 {
+  .c2 {
   height: 44px;
   width: 44px;
 }
@@ -8505,18 +8562,6 @@ Array [
   border-radius: 8px;
   cursor: pointer;
   text-transform: uppercase;
-  -webkit-box-pack: start;
-  -webkit-justify-content: flex-start;
-  -ms-flex-pack: start;
-  justify-content: flex-start;
-  border-width: 1px;
-  border-style: solid;
-  border-color: #cbcbcb;
-  background-color: #ffffff;
-  border-radius: 4px;
-  padding: 20px 28px;
-  margin-bottom: 24px;
-  text-transform: none;
 }
 
 .c0:disabled {
@@ -8531,13 +8576,28 @@ Array [
   outline: none;
 }
 
-.c0 > svg {
+.c1 {
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #cbcbcb;
+  background-color: #ffffff;
+  border-radius: 4px;
+  padding: 20px 28px;
+  margin-bottom: 24px;
+  text-transform: none;
+}
+
+.c1 > svg {
   width: 40px;
   height: auto;
   margin-right: 24px;
 }
 
-.c2 {
+.c3 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -8552,7 +8612,7 @@ Array [
   width: calc(100% - 64px);
 }
 
-.c4 {
+.c5 {
   font-size: 11px;
   line-height: 2;
   font-weight: 400;
@@ -8560,7 +8620,7 @@ Array [
   text-align: left;
 }
 
-.c3 {
+.c4 {
   font-size: 14px;
   font-weight: bold;
   line-height: 1.57;
@@ -8581,26 +8641,26 @@ Array [
 }
 
 <button
-    className="c0"
+    className="c0 c1"
     disabled={false}
     onClick={[Function]}
     type="button"
   >
     <svg
-      className="c1"
+      className="c2"
     >
       wykonaj-test.svg
     </svg>
     <span
-      className="c2"
+      className="c3"
     >
       <span
-        className="c3"
+        className="c4"
       >
         make_diagnosis_button_text1
       </span>
       <span
-        className="c4"
+        className="c5"
       />
     </span>
   </button>,
@@ -9686,7 +9746,7 @@ Array [
       </div>
     </div>
   </div>,
-  .c1 {
+  .c2 {
   height: 44px;
   width: 44px;
 }
@@ -9727,18 +9787,6 @@ Array [
   border-radius: 8px;
   cursor: pointer;
   text-transform: uppercase;
-  -webkit-box-pack: start;
-  -webkit-justify-content: flex-start;
-  -ms-flex-pack: start;
-  justify-content: flex-start;
-  border-width: 1px;
-  border-style: solid;
-  border-color: #cbcbcb;
-  background-color: #ffffff;
-  border-radius: 4px;
-  padding: 20px 28px;
-  margin-bottom: 24px;
-  text-transform: none;
 }
 
 .c0:disabled {
@@ -9753,13 +9801,28 @@ Array [
   outline: none;
 }
 
-.c0 > svg {
+.c1 {
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #cbcbcb;
+  background-color: #ffffff;
+  border-radius: 4px;
+  padding: 20px 28px;
+  margin-bottom: 24px;
+  text-transform: none;
+}
+
+.c1 > svg {
   width: 40px;
   height: auto;
   margin-right: 24px;
 }
 
-.c2 {
+.c3 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -9774,7 +9837,7 @@ Array [
   width: calc(100% - 64px);
 }
 
-.c4 {
+.c5 {
   font-size: 11px;
   line-height: 2;
   font-weight: 400;
@@ -9782,7 +9845,7 @@ Array [
   text-align: left;
 }
 
-.c3 {
+.c4 {
   font-size: 14px;
   font-weight: bold;
   line-height: 1.57;
@@ -9803,26 +9866,26 @@ Array [
 }
 
 <button
-    className="c0"
+    className="c0 c1"
     disabled={false}
     onClick={[Function]}
     type="button"
   >
     <svg
-      className="c1"
+      className="c2"
     >
       wykonaj-test.svg
     </svg>
     <span
-      className="c2"
+      className="c3"
     >
       <span
-        className="c3"
+        className="c4"
       >
         make_diagnosis_button_text1
       </span>
       <span
-        className="c4"
+        className="c5"
       />
     </span>
   </button>,
@@ -10469,18 +10532,25 @@ Array [
       </svg>
     </div>
   </div>,
-  .c2 {
+  .c1 {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1.25;
+  color: #1b1b1b;
+}
+
+.c3 {
   font-size: 16px;
   font-weight: 400;
   line-height: 1.5;
   color: #1b1b1b;
 }
 
-.c2:not(:last-child) {
+.c3:not(:last-child) {
   margin-bottom: 24px;
 }
 
-.c3 {
+.c4 {
   font-size: 12px;
   font-weight: 400;
   line-height: 1.5;
@@ -10493,11 +10563,7 @@ Array [
   margin-bottom: 32px;
 }
 
-.c1 {
-  font-weight: 700;
-  font-size: 20px;
-  line-height: 1.25;
-  color: #1b1b1b;
+.c2 {
   margin-bottom: 12px;
   color: #1b1b1b;
 }
@@ -10518,18 +10584,18 @@ Array [
     className="c0"
   >
     <h5
-      className="c1"
+      className="c1 c2"
     >
       home_more_information_text1
     </h5>
     <p
-      className="c2"
+      className="c3"
       color="#1b1b1b"
     >
       home_more_information_text2
     </p>
     <p
-      className="c3"
+      className="c4"
     >
       home_more_information_text3
     </p>
@@ -11385,7 +11451,7 @@ Array [
       triage_info_border_text3
     </span>
   </div>,
-  .c1 {
+  .c3 {
   height: 44px;
   width: 44px;
 }
@@ -11426,21 +11492,6 @@ Array [
   border-radius: 8px;
   cursor: pointer;
   text-transform: uppercase;
-  -webkit-box-pack: start;
-  -webkit-justify-content: flex-start;
-  -ms-flex-pack: start;
-  justify-content: flex-start;
-  border-width: 1px;
-  border-style: solid;
-  border-color: #cbcbcb;
-  background-color: #ffffff;
-  border-radius: 4px;
-  padding: 20px 28px;
-  margin-bottom: 24px;
-  text-transform: none;
-  position: relative;
-  padding-right: 40px;
-  color: #0052a5;
 }
 
 .c0:disabled {
@@ -11455,13 +11506,34 @@ Array [
   outline: none;
 }
 
-.c0 > svg {
+.c1 {
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #cbcbcb;
+  background-color: #ffffff;
+  border-radius: 4px;
+  padding: 20px 28px;
+  margin-bottom: 24px;
+  text-transform: none;
+}
+
+.c1 > svg {
   width: 40px;
   height: auto;
   margin-right: 24px;
 }
 
-.c5 {
+.c2 {
+  position: relative;
+  padding-right: 40px;
+  color: #0052a5;
+}
+
+.c7 {
   position: absolute;
   top: 50%;
   right: 15px;
@@ -11471,13 +11543,13 @@ Array [
   z-index: 10;
 }
 
-.c5 > svg {
+.c7 > svg {
   display: block;
   height: 100%;
   width: 100%;
 }
 
-.c2 {
+.c4 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -11492,7 +11564,7 @@ Array [
   width: calc(100% - 64px);
 }
 
-.c4 {
+.c6 {
   font-size: 11px;
   line-height: 2;
   font-weight: 400;
@@ -11500,7 +11572,7 @@ Array [
   text-align: left;
 }
 
-.c3 {
+.c5 {
   font-size: 14px;
   font-weight: bold;
   line-height: 1.57;
@@ -11521,32 +11593,32 @@ Array [
 }
 
 <button
-    className="c0"
+    className="c0 c1 c2"
     disabled={false}
     onClick={[Function]}
     type="button"
   >
     <svg
-      className="c1"
+      className="c3"
     >
       wykonaj-test.svg
     </svg>
     <span
-      className="c2"
+      className="c4"
     >
       <span
-        className="c3"
+        className="c5"
       >
         make_daily_button_text1
       </span>
       <span
-        className="c4"
+        className="c6"
       >
         make_daily_button_text2
       </span>
     </span>
     <span
-      className="c5"
+      className="c7"
     >
       <svg>
         arrow-current-color.svg
