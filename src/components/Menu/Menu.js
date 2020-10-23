@@ -15,27 +15,40 @@ const Menu = ({ t, items }) => {
   const isHidden = inProgress ? 'hidden' : '';
 
   const renderItems = items.map(item => {
-    const { bottom, bold, color, disable, icon, path, slug, title } = item;
+    const {
+      bottom,
+      bold,
+      color,
+      disable,
+      icon,
+      path,
+      slug,
+      title,
+      invisible
+    } = item;
 
     const isBottom = bottom ? 'bottom' : '';
     const isBold = bold ? 'text-bold' : '';
     const isDisable = disable ? 'disable' : '';
+    const isInvisible = invisible ? 'invisible' : '';
 
     if (!title) {
       return <li className="menu__item menu__item--empty" key={slug} />;
     }
 
     return (
-      <li className={`menu__item ${isBottom} ${isDisable}`} key={slug}>
-        <NavLink
-          className={`menu__item__link ${isBold} ${isDisable} ${color}`}
-          onClick={handleClose}
-          to={path}
-        >
-          <img className="menu__item__icon" src={icon} alt={t(title)} />
-          {t(title)}
-        </NavLink>
-      </li>
+      !isInvisible && (
+        <li className={`menu__item ${isBottom} ${isDisable}`} key={slug}>
+          <NavLink
+            className={`menu__item__link ${isBold} ${isDisable} ${color}`}
+            onClick={handleClose}
+            to={path}
+          >
+            <img className="menu__item__icon" src={icon} alt={t(title)} />
+            {t(title)}
+          </NavLink>
+        </li>
+      )
     );
   });
 
@@ -55,13 +68,15 @@ const Menu = ({ t, items }) => {
 
 Menu.defaultProps = {
   items: [],
-  userName: undefined
+  userName: undefined,
+  invisible: false
 };
 
 Menu.propTypes = {
   items: PropTypes.array,
   userName: PropTypes.string,
-  version: PropTypes.string
+  version: PropTypes.string,
+  invisible: PropTypes.bool
 };
 
 export default withTranslation()(Menu);

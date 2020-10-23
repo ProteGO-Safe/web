@@ -5,9 +5,10 @@ import useMenuContext from '../../hooks/useMenuContext';
 
 import Icon1 from '../../assets/img/icons/menu-boczne-dziennik_BLUE.svg';
 import Icon2 from '../../assets/img/icons/menu-boczne-kwestionariusz_BLUE.svg';
-import Icon6 from '../../assets/img/icons/menu-boczne-polityka-prywatnosci_BLUE.svg';
-import Icon7 from '../../assets/img/icons/menu-boczne-ustawienia_BLUE.svg';
-import Icon8 from '../../assets/img/icons/menu-boczne-moje-dane_BLUE.svg';
+import Icon3 from '../../assets/img/icons/menu-boczne-polityka-prywatnosci_BLUE.svg';
+import Icon4 from '../../assets/img/icons/menu-boczne-ustawienia_BLUE.svg';
+import Icon5 from '../../assets/img/icons/menu-boczne-moje-dane_BLUE.svg';
+import Icon6 from '../../assets/img/icons/menu-boczne-kwestionariusz_RED.svg';
 
 const MenuContainer = () => {
   const { visible } = useMenuContext();
@@ -32,25 +33,33 @@ const MenuContainer = () => {
       title: 'menu_container_text2'
     },
     {
-      icon: Icon6,
+      icon: Icon3,
       color: 'blue',
       path: Routes.PrivacyPolicy,
       slug: 'menu_container_text6',
       title: 'menu_container_text6'
     },
     {
-      icon: Icon7,
+      icon: Icon4,
       color: 'blue',
       path: Routes.Settings,
       slug: 'menu_container_text7',
       title: 'menu_container_text7'
     },
     {
-      icon: Icon8,
+      icon: Icon5,
       color: 'blue',
       path: Routes.UserData,
       slug: 'menu_container_text8',
       title: 'menu_container_text8'
+    },
+    {
+      icon: Icon6,
+      color: 'blue',
+      path: Routes.UserData, // TODO: adding logic
+      invisible: true, // TODO: adding logic
+      slug: 'menu_container_text10',
+      title: 'menu_container_text10'
     }
   ];
 
