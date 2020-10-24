@@ -140,3 +140,10 @@ export const AVAILABLE_LANGUAGES = { pl: 'pl', en: 'en', uk: 'uk' };
 
 export const FAILED = 'FAILED';
 export const SUCCESS = 'SUCCESS';
+
+export const TYPE_TEST_BORDER_BOX = {
+  TEST_QUALIFICATION: 'TEST_QUALIFICATION',
+  TEST_PICK_UP: 'TEST_PICK_UP',
+  TEST_VERIFICATION: 'TEST_VERIFICATION',
+  TEST_APPROVE: 'TEST_APPROVE'
+};

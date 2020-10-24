@@ -28,6 +28,7 @@ export { Settings } from './Settings';
 export { SettingsLanguages } from './SettingsLanguages';
 export { StartScreen } from './StartScreen';
 export { SummaryRiskTest } from './SummaryRiskTest';
+export { TestBorderBox } from './TestBorderBox';
 export { UploadHistoricalData } from './UploadHistoricalData';
 export { UserData } from './UserData';
 export { UserDataChange } from './UserDataChange';

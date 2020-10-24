@@ -1,4 +1,5 @@
 export { App } from './App';
+export { BorderBox } from './BorderBox';
 export { BottomNavigation } from './BottomNavigation';
 export { default as Button } from './Button/Button';
 export { CallHotline } from './CallHotline';
