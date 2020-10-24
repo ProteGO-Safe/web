@@ -13,6 +13,7 @@ export { HospitalsList } from './HospitalsList';
 export { HowItWorks } from './HowItWorks';
 export { IAmSick } from './IAmSick';
 export { ImportantInfo } from './ImportantInfo';
+export { LabTest } from './LabTest';
 export { MenuSettings } from './MenuSettings';
 export { NotSupported } from './NotSupported';
 export { Numbers } from './Numbers';

@@ -11,6 +11,7 @@ export const Layout = styled.div`
 `;
 
 export const Container = styled.div`
+  position: relative;
   display: flex;
   flex-flow: wrap column;
   justify-content: flex-start;

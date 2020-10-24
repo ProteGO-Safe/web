@@ -11,6 +11,7 @@ const Routes = {
   HowItWorks: '/how-it-works',
   IAmSick: '/i-am-sick',
   ImportantInformation: '/important-info',
+  LabTest: '/lab-test',
   NoRiskInformation: '/risk-information/no_risk',
   PrivacyPolicy: '/privacy-policy',
   PrivacyPolicyDetails: '/privacy-policy-details',

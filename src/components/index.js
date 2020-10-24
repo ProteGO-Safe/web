@@ -4,6 +4,7 @@ export { BottomNavigation } from './BottomNavigation';
 export { default as Button } from './Button/Button';
 export { CallHotline } from './CallHotline';
 export { Checkbox } from './Checkbox';
+export { CircleLoader } from './CircleLoader';
 export { Collapse } from './Collapse';
 export { Container } from './Container';
 export { StatusItem } from './StatusItem';

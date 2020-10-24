@@ -1,0 +1,41 @@
+import React from 'react';
+import { useHistory } from 'react-router-dom';
+import { withTranslation } from 'react-i18next';
+import Routes from '../../../../routes';
+import { FieldSet } from '../../../../components/FieldSet';
+import { Button } from '../../../../components';
+import { Link } from '../../../../theme/typography';
+import { PHONE_NUMBER } from '../../labTest.constants';
+import * as Styled from '../../LabTest.styled';
+
+const Step1 = ({ setCompletedSteps, t }) => {
+  const history = useHistory();
+
+  const handleNextBtnClick = () => {
+    setCompletedSteps(1);
+    history.push(`${Routes.LabTest}/2`);
+  };
+
+  return (
+    <>
+      <Styled.Content>
+        <Styled.SubTitle>{t('lab_test_text2')}</Styled.SubTitle>
+        <Styled.List>
+          <Styled.ListItem>{t('lab_test_text3')}</Styled.ListItem>
+          <Styled.ListItem>{t('lab_test_text4')}</Styled.ListItem>
+          <Styled.ListItem>
+            <strong>{t('lab_test_text5_1')}</strong>{' '}
+            <Link href={`tel:${PHONE_NUMBER}`}>{PHONE_NUMBER}</Link>
+            <br />
+            {t('lab_test_text5_2')}
+          </Styled.ListItem>
+        </Styled.List>
+      </Styled.Content>
+      <FieldSet>
+        <Button onClick={handleNextBtnClick} label={t('button_next')} />
+      </FieldSet>
+    </>
+  );
+};
+
+export default withTranslation()(Step1);
