@@ -9,7 +9,8 @@ import {
   FETCH_VERSION_SUCCESS,
   FETCH_LANGUAGE,
   UPLOAD_TEST_PIN_FINISHED,
-  RESET_UPLOAD_TEST_PIN_RESULT_SUCCESS
+  RESET_UPLOAD_TEST_PIN_RESULT_SUCCESS,
+  FETCH_LAB_TEST_SUBSCRIPTION
 } from '../../types/nativeData';
 
 const INITIAL_STATE = {
@@ -19,7 +20,8 @@ const INITIAL_STATE = {
   servicesStatusSetByNative: false,
   version: undefined,
   language: undefined,
-  uploadTestPinResult: undefined
+  uploadTestPinResult: undefined,
+  labTestSubscription: undefined
 };
 
 const setServicesStatusSuccess = (
@@ -109,6 +111,15 @@ const nativeBridgeReducer = (state = INITIAL_STATE, action) => {
       return {
         ...state,
         uploadTestPinResult: undefined
+      };
+    }
+    case FETCH_LAB_TEST_SUBSCRIPTION: {
+      const {
+        body: { subscription }
+      } = action;
+      return {
+        ...state,
+        labTestSubscription: subscription
       };
     }
     default:

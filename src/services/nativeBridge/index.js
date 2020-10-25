@@ -105,6 +105,10 @@ const getSubscribedDistricts = async () => {
   return callGetBridgeData(DATA_TYPE.SUBSCRIBED_DISTRICTS);
 };
 
+const getLabTestSubscription = async () => {
+  return callGetBridgeData(DATA_TYPE.LAB_TEST_SUBSCRIPTION);
+};
+
 const getExposureNotificationStatistics = async () => {
   return callGetBridgeData(DATA_TYPE.EXPOSURE_STATISTICS);
 };
@@ -234,6 +238,7 @@ export default {
   getDistrictsStatus,
   getFontScale,
   getForceDistrictsStatus,
+  getLabTestSubscription,
   getLanguage,
   getNativeVersion,
   getNotification,

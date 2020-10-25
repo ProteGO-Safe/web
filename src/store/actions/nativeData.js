@@ -148,6 +148,21 @@ export function fetchLanguage() {
   };
 }
 
+export const fetchLabTestSubscriptionSuccess = body => ({
+  body,
+  type: types.FETCH_LAB_TEST_SUBSCRIPTION
+});
+
+export const fetchLabTestSubscription = () => {
+  return dispatch => {
+    nativeBridge.getLabTestSubscription().then(body => {
+      if (body) {
+        dispatch(fetchLabTestSubscriptionSuccess(body));
+      }
+    });
+  };
+}
+
 export function changeNativeLanguage(language) {
   const data = { language: language.toUpperCase() };
   return () => {

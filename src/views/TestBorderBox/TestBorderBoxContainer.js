@@ -1,26 +1,46 @@
-import React from 'react';
-import { TYPE_TEST_BORDER_BOX } from '../../constants';
-import { DATA } from './TestBorderBox.helpers';
+import React, { useEffect } from 'react';
+import { withTranslation } from 'react-i18next';
+import { useDispatch } from 'react-redux';
+import { resolveData } from './TestBorderBox.helpers';
 import TestBorderBox from './TestBorderBox';
+import { fetchLabTestSubscription } from '../../store/actions/nativeData';
+import useLabTest from '../../hooks/useLabTest';
 
-const TestBorderBoxContainer = ({ type }) => {
-  switch (type) {
-    case TYPE_TEST_BORDER_BOX.TEST_QUALIFICATION: {
-      return <TestBorderBox data={DATA.TEST_QUALIFICATION} />;
-    }
-    case TYPE_TEST_BORDER_BOX.TEST_PICK_UP: {
-      return <TestBorderBox data={DATA.TEST_PICK_UP} />;
-    }
-    case TYPE_TEST_BORDER_BOX.TEST_VERIFICATION: {
-      return <TestBorderBox data={DATA.TEST_VERIFICATION} />;
-    }
-    case TYPE_TEST_BORDER_BOX.TEST_APPROVE: {
-      return <TestBorderBox data={DATA.TEST_APPROVE} />;
-    }
-    default: {
-      return <TestBorderBox data={DATA.TEST_QUALIFICATION} />;
-    }
+const TestBorderBoxContainer = ({ t }) => {
+  const dispatch = useDispatch();
+  const {
+    isEnHigh,
+    isTorHigh,
+    isSubscriptionVerified,
+    isSubscriptionConfirmed,
+    isSubscriptionInProgress
+  } = useLabTest();
+
+  useEffect(() => {
+    dispatch(fetchLabTestSubscription());
+    // eslint-disable-next-line
+  }, []);
+
+  const data = resolveData(t);
+
+  if (!isEnHigh) {
+    return null;
   }
+
+  if (isTorHigh && !isSubscriptionInProgress) {
+    return <TestBorderBox data={data.QUALIFICATION_FOR_TEST} />;
+  }
+  if (!isTorHigh && !isSubscriptionInProgress) {
+    return <TestBorderBox data={data.TOR_IS_NEEDED} />;
+  }
+  if (isSubscriptionVerified) {
+    return <TestBorderBox data={data.TEST_IN_PROGRESS} />;
+  }
+  if (isSubscriptionConfirmed) {
+    return <TestBorderBox data={data.TEST_IS_CONFIRMED} />;
+  }
+
+  return null;
 };
 
-export default TestBorderBoxContainer;
+export default withTranslation()(TestBorderBoxContainer);
