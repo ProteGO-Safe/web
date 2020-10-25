@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 import { Color } from '../../theme/colors';
 
+import IconStarSolid from '../../assets/img/icons/star-solid.svg';
+
 export const FollowDistricts = styled.div`
   position: relative;
   width: 100%;
@@ -36,4 +38,23 @@ export const Title = styled.h2`
   line-height: 20px;
   font-weight: 600;
   color: ${Color.black};
+`;
+
+export const Description = styled.div`
+  display: inline-block;
+  width: 100%;
+  padding: 0 17px;
+  font-size: 14px;
+  line-height: 20px;
+`;
+
+export const Star = styled.span`
+  display: inline-block;
+  margin-bottom: -1px;
+  width: 16px;
+  height: 16px;
+  background-image: url(${IconStarSolid});
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 16px 16px;
 `;

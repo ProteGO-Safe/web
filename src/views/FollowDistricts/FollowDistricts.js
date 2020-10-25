@@ -28,12 +28,18 @@ const FollowDistricts = ({
         {t('follow_district_date_update')} {dateUpdate}
       </Styled.DateUpdate>
 
-      <Styled.Content>
-        <Styled.Title>
-          {t('follow_district_title')} ({items.length}):
-        </Styled.Title>
-        {renderItems}
-      </Styled.Content>
+      {items.length === 0 ? (
+        <Styled.Description>
+          {t('follow_district_description')} <Styled.Star />
+        </Styled.Description>
+      ) : (
+        <Styled.Content>
+          <Styled.Title>
+            {t('follow_district_title')} ({items.length}):
+          </Styled.Title>
+          {renderItems}
+        </Styled.Content>
+      )}
     </Styled.FollowDistricts>
   );
 };
