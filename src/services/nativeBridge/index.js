@@ -109,6 +109,10 @@ const getLabTestSubscription = async () => {
   return callGetBridgeData(DATA_TYPE.LAB_TEST_SUBSCRIPTION);
 };
 
+const getLabTestPin = async () => {
+  return callGetBridgeData(DATA_TYPE.LAB_TEST_PIN);
+};
+
 const getExposureNotificationStatistics = async () => {
   return callGetBridgeData(DATA_TYPE.EXPOSURE_STATISTICS);
 };
@@ -238,6 +242,7 @@ export default {
   getDistrictsStatus,
   getFontScale,
   getForceDistrictsStatus,
+  getLabTestPin,
   getLabTestSubscription,
   getLanguage,
   getNativeVersion,
