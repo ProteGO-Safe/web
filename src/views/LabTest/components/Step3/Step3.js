@@ -28,6 +28,7 @@ const Step3 = ({ completedSteps, t }) => {
       </Styled.WarningWrapper>
       <Styled.Content>
         <SmallText>{t('lab_test_text19')}</SmallText>
+        <Styled.Space />
         <Styled.SubTitle>{t('lab_test_text20')}</Styled.SubTitle>
         <Styled.List>
           <Styled.ListItem>

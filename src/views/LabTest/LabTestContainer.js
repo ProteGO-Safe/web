@@ -65,6 +65,7 @@ const LabTestContainer = () => {
       <LabTest
         completedSteps={completedSteps}
         isInvalidPin={isInvalidPin}
+        loader={loader}
         onReset={handleResetSteps}
         onSubmit={handleSubmitPin}
         pin={pin}

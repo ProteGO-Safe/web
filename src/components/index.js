@@ -33,6 +33,7 @@ export { PhoneNumber } from './PhoneNumber';
 export { Radio } from './Radio';
 export { ResultView } from './ResultView';
 export { RiskTestResult } from './RiskTestResult';
+export { RouteLeavingGuard } from './RouteLeavingGuard';
 export { Select } from './Select';
 export { Switcher } from './Switcher';
 export { Stepper } from './Stepper';

@@ -149,3 +149,8 @@ export const WarningWrapper = styled.div`
     margin-top: 0 !important;
   }
 `;
+
+export const Space = styled.div`
+  display: block;
+  height: 17px;
+`;

@@ -10,6 +10,7 @@ import * as Styled from './LabTest.styled';
 const LabTest = ({
   completedSteps,
   isInvalidPin,
+  loader,
   onReset,
   onSubmit,
   pin,
@@ -27,11 +28,14 @@ const LabTest = ({
           <Stepper currentStep={step} numberOfSteps={NUMBER_OF_STEPS} />
         </Styled.LabTestStepper>
       </Styled.Content>
-      {step === '1' && <Step1 setCompletedSteps={setCompletedSteps} />}
+      {step === '1' && (
+        <Step1 setCompletedSteps={setCompletedSteps} setPin={setPin} />
+      )}
       {step === '2' && (
         <Step2
           completedSteps={completedSteps}
           isInvalidPin={isInvalidPin}
+          loader={loader}
           onReset={onReset}
           onSubmit={onSubmit}
           pin={pin}

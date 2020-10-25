@@ -1,5 +1,5 @@
-import React, { useEffect, useRef } from 'react';
-import { Redirect } from 'react-router-dom';
+import React, { useEffect, useRef, useState } from 'react';
+import { Prompt, Redirect } from 'react-router-dom';
 import { withTranslation } from 'react-i18next';
 import PinInput from 'react-pin-input';
 import Routes from '../../../../routes';
@@ -12,6 +12,7 @@ import { BUTTON_TYPES } from '../../../../components/Button/Button.constants';
 const Step2 = ({
   completedSteps,
   isInvalidPin,
+  loader,
   onReset,
   onSubmit,
   pin,
@@ -20,14 +21,43 @@ const Step2 = ({
 }) => {
   const pinInputRef = useRef();
 
+  const [isSending, setIsSending] = useState(false);
+
+  const [shouldConfirmNavigation, setShouldConfirmNavigation] = useState(false);
+  const confirmNavigationMessage = JSON.stringify({
+    title: t('lab_test_text23'),
+    description: t('lab_test_text24')
+  });
+
   const isConfirmBtnDisabled = !pin || (pin && pin.toString().length < 6);
 
+  const handleSubmit = () => {
+    setShouldConfirmNavigation(false);
+    setIsSending(true);
+  };
+
   useEffect(() => {
-    // Reset on invalid pin
+    // Reset inputs on invalid pin
     if (pinInputRef && pinInputRef.current && isInvalidPin) {
       pinInputRef.current.clear();
     }
   }, [isInvalidPin, pinInputRef]);
+
+  useEffect(() => {
+    // check confirm navigation
+    if (!loader) {
+      setIsSending(false);
+      setShouldConfirmNavigation(!!(pin && pin.toString().length));
+    }
+  }, [loader, pin]);
+
+  useEffect(() => {
+    // send form
+    if (isSending) {
+      onSubmit();
+    }
+    // eslint-disable-next-line
+  }, [isSending]);
 
   if (completedSteps !== 1) {
     onReset();
@@ -78,7 +108,7 @@ const Step2 = ({
       <FieldSet>
         <Button
           disabled={isConfirmBtnDisabled}
-          onClick={onSubmit}
+          onClick={handleSubmit}
           label={t('button_confirm')}
         />
         {isInvalidPin && (
@@ -89,6 +119,10 @@ const Step2 = ({
           />
         )}
       </FieldSet>
+      <Prompt
+        message={confirmNavigationMessage}
+        when={shouldConfirmNavigation}
+      />
     </>
   );
 };

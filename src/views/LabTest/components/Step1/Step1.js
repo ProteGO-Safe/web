@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 import { withTranslation } from 'react-i18next';
 import Routes from '../../../../routes';
@@ -8,13 +8,18 @@ import { Link } from '../../../../theme/typography';
 import { PHONE_NUMBER } from '../../labTest.constants';
 import * as Styled from '../../LabTest.styled';
 
-const Step1 = ({ setCompletedSteps, t }) => {
+const Step1 = ({ setCompletedSteps, setPin, t }) => {
   const history = useHistory();
 
   const handleNextBtnClick = () => {
     setCompletedSteps(1);
     history.push(`${Routes.LabTest}/2`);
   };
+
+  useEffect(() => {
+    setPin(undefined);
+    // eslint-disable-next-line
+  }, []);
 
   return (
     <>
