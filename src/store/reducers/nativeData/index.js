@@ -7,7 +7,9 @@ import {
   NATIVE_DATA_FETCH_EXPOSURE_NOTIFICATION_STATISTICS_SUCCESS,
   NATIVE_DATA_FETCH_NATIVE_STATE,
   FETCH_VERSION_SUCCESS,
-  FETCH_LANGUAGE
+  FETCH_LANGUAGE,
+  UPLOAD_TEST_PIN_FINISHED,
+  RESET_UPLOAD_TEST_PIN_RESULT_SUCCESS
 } from '../../types/nativeData';
 
 const INITIAL_STATE = {
@@ -16,7 +18,8 @@ const INITIAL_STATE = {
   servicesStatus: {},
   servicesStatusSetByNative: false,
   version: undefined,
-  language: undefined
+  language: undefined,
+  uploadTestPinResult: undefined
 };
 
 const setServicesStatusSuccess = (
@@ -91,6 +94,21 @@ const nativeBridgeReducer = (state = INITIAL_STATE, action) => {
       return {
         ...state,
         language: language.toLowerCase()
+      };
+    }
+    case UPLOAD_TEST_PIN_FINISHED: {
+      const {
+        body: { result }
+      } = action;
+      return {
+        ...state,
+        uploadTestPinResult: result
+      };
+    }
+    case RESET_UPLOAD_TEST_PIN_RESULT_SUCCESS: {
+      return {
+        ...state,
+        uploadTestPinResult: undefined
       };
     }
     default:

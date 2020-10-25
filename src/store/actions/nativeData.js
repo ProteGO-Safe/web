@@ -155,8 +155,24 @@ export function changeNativeLanguage(language) {
   };
 }
 
-export const generateFreeTestCode = () => {
-  return () => {
-    nativeBridge.generateFreeTestCode();
+export const resetUploadTestPinResultSuccess = () => ({
+  type: types.RESET_UPLOAD_TEST_PIN_RESULT_SUCCESS
+});
+
+export const resetUploadTestPinResult = () => {
+  return dispatch => dispatch(resetUploadTestPinResultSuccess());
+};
+
+export const uploadTestPinFinished = body => ({
+  body,
+  type: types.UPLOAD_TEST_PIN_FINISHED
+});
+
+export const uploadTestPin = pin => {
+  return dispatch => {
+    dispatch(resetUploadTestPinResultSuccess())
+    nativeBridge.uploadTestPin(pin).then(body => {
+      dispatch(uploadTestPinFinished(body));
+    });
   };
 };

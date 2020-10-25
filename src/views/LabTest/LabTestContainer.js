@@ -1,13 +1,22 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
 import LabTest from './LabTest';
 import { PinVerificationLoader } from './components';
 import { Layout } from '../../components';
 import Routes from '../../routes';
 import { NUMBER_OF_STEPS } from './labTest.constants';
+import {
+  resetUploadTestPinResult,
+  uploadTestPin
+} from '../../store/actions/nativeData';
+import { getUploadTestPinResult } from '../../store/selectors/nativeData';
 
 const LabTestContainer = () => {
   const history = useHistory();
+  const dispatch = useDispatch();
+
+  const uploadTestPinResult = useSelector(getUploadTestPinResult);
 
   const [completedSteps, setCompletedSteps] = useState(0);
   const [pin, setPin] = useState(undefined);
@@ -22,26 +31,33 @@ const LabTestContainer = () => {
     setIsInvalidPin(false);
   };
 
-  const handleSubmitPin = () => {
-    // todo - remove logic below, it is only mock for ui
+  useEffect(() => {
+    dispatch(resetUploadTestPinResult());
+    return () => {
+      dispatch(resetUploadTestPinResult());
+    };
+    // eslint-disable-next-line
+  }, []);
 
-    setLoader(true);
-
-    if (!isInvalidPin) {
-      setIsInvalidPin(true);
-
-      setTimeout(() => {
-        setLoader(false);
-        setPin(undefined);
-      }, 2000);
-      return;
-    }
-
-    if (isInvalidPin) {
-      setTimeout(() => setLoader(false), 2000);
+  useEffect(() => {
+    if (uploadTestPinResult === 1) {
+      setLoader(false);
       setCompletedSteps(2);
       history.push(`${Routes.LabTest}/3`);
     }
+
+    if (uploadTestPinResult === 2 || uploadTestPinResult === 3) {
+      setLoader(false);
+      setIsInvalidPin(true);
+      setPin(undefined);
+    }
+    // eslint-disable-next-line
+  }, [uploadTestPinResult]);
+
+  const handleSubmitPin = () => {
+    setLoader(true);
+    setIsInvalidPin(false);
+    dispatch(uploadTestPin(pin));
   };
 
   return (

@@ -135,8 +135,10 @@ const turnOff = async () => {
   });
 };
 
-const generateFreeTestCode = async () => {
-  await callNativeFunction('setBridgeData', DATA_TYPE.GENERATE_FREE_TEST_CODE);
+const uploadTestPin = async pin => {
+  return callGetBridgeData(DATA_TYPE.UPLOAD_TEST_PIN, {
+    pin
+  });
 };
 
 const setDistrictSubscription = async (districtId, isSubscribed) => {
@@ -225,21 +227,21 @@ window.onBridgeData = onBridgeData;
 window.bridgeDataResponse = receiveNativeResponse;
 
 export default {
-  generateFreeTestCode,
-  getFontScale,
-  getServicesStatus,
-  setDiagnosisTimestamp,
-  setPin,
-  setServicesState,
-  getExposureNotificationStatistics,
-  getNotification,
   clearAllData,
   changeLanguage,
-  getNativeVersion,
-  getLanguage,
-  turnOff,
+  setDiagnosisTimestamp,
+  getExposureNotificationStatistics,
   getDistrictsStatus,
+  getFontScale,
   getForceDistrictsStatus,
+  getLanguage,
+  getNativeVersion,
+  getNotification,
+  getServicesStatus,
+  getSubscribedDistricts,
+  setPin,
   setDistrictSubscription,
-  getSubscribedDistricts
+  setServicesState,
+  turnOff,
+  uploadTestPin
 };
