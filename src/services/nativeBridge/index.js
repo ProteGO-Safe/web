@@ -13,6 +13,7 @@ import { DATA_TYPE } from './nativeBridge.constants';
 import { UPLOAD_HISTORICAL_DATA_FINISHED } from '../../store/types/app';
 import { isAndroidWebView, isIOSWebView } from '../../utils/native';
 import { fetchExposureNotificationStatistics } from '../../store/actions/nativeData';
+import { fetchDistrictsStatus } from '../../store/actions/restrictions';
 
 const nativeRequests = {};
 
@@ -60,9 +61,9 @@ const callNativeFunction = async (functionName, dataType, data) => {
   return sendNativeRequest(functionName, ...args);
 };
 
-const callGetBridgeData = async dataType => {
+const callGetBridgeData = async (dataType, data = undefined) => {
   try {
-    const json = await callNativeFunction('getBridgeData', dataType);
+    const json = await callNativeFunction('getBridgeData', dataType, data);
     if (json) {
       return JSON.parse(json);
     }
@@ -92,6 +93,18 @@ const getLanguage = async () => {
   return callGetBridgeData(DATA_TYPE.LANGUAGE);
 };
 
+const getDistrictsStatus = async () => {
+  return callGetBridgeData(DATA_TYPE.DISTRICTS_STATUS);
+};
+
+const getForceDistrictsStatus = async () => {
+  return callGetBridgeData(DATA_TYPE.FORCE_DISTRICTS_STATUS);
+};
+
+const getSubscribedDistricts = async () => {
+  return callGetBridgeData(DATA_TYPE.SUBSCRIBED_DISTRICTS);
+};
+
 const getExposureNotificationStatistics = async () => {
   return callGetBridgeData(DATA_TYPE.EXPOSURE_STATISTICS);
 };
@@ -119,6 +132,19 @@ const setServicesState = async data => {
 const turnOff = async () => {
   await callNativeFunction('setBridgeData', DATA_TYPE.TURN_OFF, {
     turnOff: true
+  });
+};
+
+const generateFreeTestCode = async () => {
+  await callNativeFunction('setBridgeData', DATA_TYPE.GENERATE_FREE_TEST_CODE);
+};
+
+const setDistrictSubscription = async (districtId, isSubscribed) => {
+  const ADD = 1;
+  const DELETE = 2;
+  return callGetBridgeData(DATA_TYPE.DISTRICT_ACTION, {
+    type: isSubscribed ? ADD : DELETE,
+    districtId
   });
 };
 
@@ -155,6 +181,7 @@ const handleNativeState = appState => {
   });
   if (appState.appState === 1) {
     dispatch(fetchExposureNotificationStatistics());
+    dispatch(fetchDistrictsStatus());
   }
 };
 const handleNativeLanguage = body => {
@@ -186,8 +213,8 @@ const onBridgeData = (dataType, dataString) => {
   }
 };
 
-const clearBluetoothData = async data => {
-  await callNativeFunction('setBridgeData', DATA_TYPE.CLEAR_BT_DATA, data);
+const clearAllData = async data => {
+  await callNativeFunction('setBridgeData', DATA_TYPE.CLEAR_ALL_DATA, data);
 };
 
 const changeLanguage = async data => {
@@ -198,6 +225,7 @@ window.onBridgeData = onBridgeData;
 window.bridgeDataResponse = receiveNativeResponse;
 
 export default {
+  generateFreeTestCode,
   getFontScale,
   getServicesStatus,
   setDiagnosisTimestamp,
@@ -205,9 +233,13 @@ export default {
   setServicesState,
   getExposureNotificationStatistics,
   getNotification,
-  clearBluetoothData,
+  clearAllData,
   changeLanguage,
   getNativeVersion,
   getLanguage,
-  turnOff
+  turnOff,
+  getDistrictsStatus,
+  getForceDistrictsStatus,
+  setDistrictSubscription,
+  getSubscribedDistricts
 };

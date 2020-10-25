@@ -1,33 +1,41 @@
 import React from 'react';
 import { withTranslation } from 'react-i18next';
-import { NavLink } from 'react-router-dom';
-import { Button, Url } from '../../components';
+import { Button } from '../../components';
 import * as Styled from './AddTranslation.styled';
 
 const AddTranslation = ({ path, t }) => (
   <Styled.AddTranslation>
-    <Styled.IconWrapper>
-      <Styled.Icon />
-    </Styled.IconWrapper>
+    <Styled.Title>{t('add_translation_title1')}</Styled.Title>
 
-    <Styled.Title>
-      {t('add_translation_title1')}
-      <br />
-      {t('add_translation_title2')}
-    </Styled.Title>
-    <Styled.Subtitle>{t('add_translation_text1')}</Styled.Subtitle>
+    <Styled.Paragraph>{t('add_translation_paragraph1')}</Styled.Paragraph>
+    <Styled.Paragraph>{t('add_translation_paragraph2')}</Styled.Paragraph>
 
-    <Styled.Content>
-      <Styled.Text>{t('add_translation_text2')}</Styled.Text>
-      <Url value="https://poeditor.com/join/project/NULZoDaaBA">
-        {t('add_translation_text3')}
-      </Url>
-      <Styled.Text>{t('add_translation_text4')}</Styled.Text>
-    </Styled.Content>
+    <Styled.Title>{t('add_translation_title2')}</Styled.Title>
 
-    <NavLink to={path}>
-      <Button onClick={() => null} label={t('add_translation_button')} />
-    </NavLink>
+    <Styled.Steps>
+      <Styled.Step>
+        <Styled.Icon1 />
+        <Styled.Description>
+          <Styled.Number>1.</Styled.Number> {t('add_translation_step1')}
+        </Styled.Description>
+      </Styled.Step>
+      <Styled.Step>
+        <Styled.Icon2 />
+        <Styled.Description>
+          <Styled.Number>2.</Styled.Number> {t('add_translation_step2')}
+        </Styled.Description>
+      </Styled.Step>
+      <Styled.Step>
+        <Styled.Icon3 />
+        <Styled.Description>
+          <Styled.Number>3.</Styled.Number> {t('add_translation_step3')}
+        </Styled.Description>
+      </Styled.Step>
+    </Styled.Steps>
+
+    <Styled.Link href={path} target="_blank">
+      <Button onClick={() => null}>{t('add_translation_button')}</Button>
+    </Styled.Link>
   </Styled.AddTranslation>
 );
 

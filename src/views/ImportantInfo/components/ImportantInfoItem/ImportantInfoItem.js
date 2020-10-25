@@ -10,11 +10,12 @@ const ImportantInfoItem = ({
   description,
   icon,
   link,
+  newFeature,
   path,
+  t,
   size,
   title,
-  type,
-  t
+  type
 }) => {
   const ref = useRef(null);
   const [height, setHeight] = useState(0);
@@ -29,11 +30,10 @@ const ImportantInfoItem = ({
 
   const Content = () => (
     <Styled.ImportantInfoItem ref={ref} size={size}>
+      {newFeature && <Styled.Badge size={size}>{t('new')}</Styled.Badge>}
       <Styled.Icon size={size}>{icon}</Styled.Icon>
       <Styled.Content size={size}>
-        <Styled.Title size={size} danger={danger}>
-          {title}
-        </Styled.Title>
+        <Styled.Title size={size} danger={danger}>{title}</Styled.Title>
         {windowWidth < 375 ? (
           <Styled.Description size={size}>{description}</Styled.Description>
         ) : (

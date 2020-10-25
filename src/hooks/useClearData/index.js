@@ -1,8 +1,8 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import { getApplicationReseted } from '../../store/selectors/app';
-import { clearBluetoothData } from '../../store/actions/app';
-import { clearNativeBluetoothData } from '../../store/actions/nativeData';
+import { clearAllData } from '../../store/actions/app';
+import { clearNativeAllData } from '../../store/actions/nativeData';
 
 const useClearData = () => {
   const dispatch = useDispatch();
@@ -10,8 +10,8 @@ const useClearData = () => {
 
   useEffect(() => {
     if (applicationReseted) {
-      dispatch(clearBluetoothData());
-      clearNativeBluetoothData();
+      dispatch(clearAllData());
+      clearNativeAllData();
     }
   }, [dispatch, applicationReseted]);
 };

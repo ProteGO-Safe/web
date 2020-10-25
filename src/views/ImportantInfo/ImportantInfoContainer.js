@@ -35,11 +35,12 @@ const ImportantInfoContainer = ({ t }) => {
       path: Routes.ReportBug
     },
     {
-      type: 'link',
+      type: 'route',
       icon: <Icon3 />,
       title: t('important_info_title_3'),
       description: t('important_info_description_3'),
-      link: 'https://www.gov.pl/web/koronawirus/aktualne-zasady-i-ograniczenia'
+      path: Routes.CurrentRestrictions,
+      newFeature: true
     },
     {
       type: 'link',
@@ -55,6 +56,7 @@ const ImportantInfoContainer = ({ t }) => {
       link: 'https://www.gov.pl/web/koronawirus/pytania-i-odpowiedzi'
     }
   ];
+
   return <ImportantInfo items={IMPORTANT_INFO_ITEMS} />;
 };
 

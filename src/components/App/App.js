@@ -7,6 +7,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Redirect, Route, Switch, useHistory } from 'react-router-dom';
 import {
   AddTranslation,
+  CurrentRestrictions,
   Daily,
   DailyData,
   Diagnosis,
@@ -55,6 +56,7 @@ import useModalContext from '../../hooks/useModalContext';
 import useClearData from '../../hooks/useClearData';
 import useTurnOffApplication from '../../hooks/useTurnOffApplication';
 import * as Styled from './App.styled';
+import { fetchDistrictsStatus } from '../../store/actions/restrictions';
 
 function App() {
   const dispatch = useDispatch();
@@ -82,6 +84,7 @@ function App() {
   useEffect(() => {
     dispatch(hideUploadHistoricalDataErrorMessage());
     dispatch(fetchFontScale());
+    dispatch(fetchDistrictsStatus());
   }, [dispatch]);
 
   history.listen(() => {
@@ -136,6 +139,11 @@ function App() {
               exact
               path={Routes.AddTranslation}
               component={AddTranslation}
+            />
+            <Route
+              exact
+              path={Routes.CurrentRestrictions}
+              component={CurrentRestrictions}
             />
             <Route exact path={Routes.Daily} component={Daily} />
             <Route exact path="/daily/:id" component={DailyData} />

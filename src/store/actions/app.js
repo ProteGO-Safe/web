@@ -57,13 +57,13 @@ export const clearApplicationState = () => {
   };
 };
 
-export const bluetoothDataCleared = () => ({
-  type: types.BLUETOOTH_DATA_CLEARED
+export const allDataCleared = () => ({
+  type: types.ALL_DATA_CLEARED
 });
 
-export const clearBluetoothData = () => {
+export const clearAllData = () => {
   return dispatch => {
-    dispatch(bluetoothDataCleared());
+    dispatch(allDataCleared());
   };
 };
 
@@ -127,5 +127,15 @@ export const fetchFontScale = () => {
         dispatch(fontScaleFetched(data));
       }
     });
+  };
+};
+
+export const restrictionsModalShowed = () => ({
+  type: types.RESTRICTIONS_MODAL_SHOWED
+});
+
+export const hideRestrictionsModal = () => {
+  return dispatch => {
+    dispatch(restrictionsModalShowed());
   };
 };
