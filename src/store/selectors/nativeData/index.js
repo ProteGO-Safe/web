@@ -1,5 +1,7 @@
 export const getNativeLanguage = state => state.nativeData.language;
-export const getUploadTestPinResult = state =>
-  state.nativeData.uploadTestPinResult;
+export const getUploadLabTestPinResult = state =>
+  state.nativeData.labTest && state.nativeData.labTest.uploadPinResult;
 export const getLabTestSubscription = state =>
-  state.nativeData.labTestSubscription;
+  state.nativeData.labTest && state.nativeData.labTest.subscription;
+export const getLabTestPinUnsuccessfulAttempts = state =>
+  state.nativeData.labTest && state.nativeData.labTest.pinUnsuccessfulAttempts;

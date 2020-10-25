@@ -7,16 +7,16 @@ import { Layout } from '../../components';
 import Routes from '../../routes';
 import { NUMBER_OF_STEPS } from './labTest.constants';
 import {
-  resetUploadTestPinResult,
-  uploadTestPin
+  resetUploadLabTestPinResult,
+  uploadLabTestPin
 } from '../../store/actions/nativeData';
-import { getUploadTestPinResult } from '../../store/selectors/nativeData';
+import { getUploadLabTestPinResult } from '../../store/selectors/nativeData';
 
 const LabTestContainer = () => {
   const history = useHistory();
   const dispatch = useDispatch();
 
-  const uploadTestPinResult = useSelector(getUploadTestPinResult);
+  const uploadLabTestPinResult = useSelector(getUploadLabTestPinResult);
 
   const [completedSteps, setCompletedSteps] = useState(0);
   const [pin, setPin] = useState(undefined);
@@ -32,32 +32,32 @@ const LabTestContainer = () => {
   };
 
   useEffect(() => {
-    dispatch(resetUploadTestPinResult());
+    dispatch(resetUploadLabTestPinResult());
     return () => {
-      dispatch(resetUploadTestPinResult());
+      dispatch(resetUploadLabTestPinResult());
     };
     // eslint-disable-next-line
   }, []);
 
   useEffect(() => {
-    if (uploadTestPinResult === 1) {
+    if (uploadLabTestPinResult === 1) {
       setLoader(false);
       setCompletedSteps(2);
       history.push(`${Routes.LabTest}/3`);
     }
 
-    if (uploadTestPinResult === 2 || uploadTestPinResult === 3) {
+    if (uploadLabTestPinResult === 2 || uploadLabTestPinResult === 3) {
       setLoader(false);
       setIsInvalidPin(true);
       setPin(undefined);
     }
     // eslint-disable-next-line
-  }, [uploadTestPinResult]);
+  }, [uploadLabTestPinResult]);
 
   const handleSubmitPin = () => {
     setLoader(true);
     setIsInvalidPin(false);
-    dispatch(uploadTestPin(pin));
+    dispatch(uploadLabTestPin(pin));
   };
 
   return (

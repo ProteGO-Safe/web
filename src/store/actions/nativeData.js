@@ -170,23 +170,23 @@ export function changeNativeLanguage(language) {
   };
 }
 
-export const resetUploadTestPinResultSuccess = () => ({
-  type: types.RESET_UPLOAD_TEST_PIN_RESULT_SUCCESS
+export const resetUploadLabTestPinResultSuccess = () => ({
+  type: types.RESET_UPLOAD_LAB_TEST_PIN_RESULT_SUCCESS
 });
 
-export const resetUploadTestPinResult = () => {
-  return dispatch => dispatch(resetUploadTestPinResultSuccess());
+export const resetUploadLabTestPinResult = () => {
+  return dispatch => dispatch(resetUploadLabTestPinResultSuccess());
 };
 
 export const uploadTestPinFinished = body => ({
   body,
-  type: types.UPLOAD_TEST_PIN_FINISHED
+  type: types.UPLOAD_LAB_TEST_PIN_FINISHED
 });
 
-export const uploadTestPin = pin => {
+export const uploadLabTestPin = pin => {
   return dispatch => {
-    dispatch(resetUploadTestPinResultSuccess())
-    nativeBridge.uploadTestPin(pin).then(body => {
+    dispatch(resetUploadLabTestPinResultSuccess());
+    nativeBridge.uploadLabTestPin(pin).then(body => {
       dispatch(uploadTestPinFinished(body));
     });
   };

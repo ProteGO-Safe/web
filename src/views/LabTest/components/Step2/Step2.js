@@ -8,6 +8,7 @@ import { Button, Warning } from '../../../../components';
 import * as Styled from '../../LabTest.styled';
 import { Color } from '../../../../theme/colors';
 import { BUTTON_TYPES } from '../../../../components/Button/Button.constants';
+import useLabTestPinBan from '../../../../hooks/useLabTestPinBan';
 
 const Step2 = ({
   completedSteps,
@@ -28,6 +29,8 @@ const Step2 = ({
     title: t('lab_test_text23'),
     description: t('lab_test_text24')
   });
+
+  const { message: banMessage, isBanned } = useLabTestPinBan();
 
   const isConfirmBtnDisabled = !pin || (pin && pin.toString().length < 6);
 
@@ -93,7 +96,8 @@ const Step2 = ({
               borderColor={Color.danger}
               colorFont={Color.danger}
               status="error"
-              title={t('lab_test_text12')}
+              title={
+                t('lab_test_text12') && banMessage}
             />
           </Styled.WarningWrapper>
           <Styled.Content>
@@ -107,7 +111,7 @@ const Step2 = ({
       )}
       <FieldSet>
         <Button
-          disabled={isConfirmBtnDisabled}
+          disabled={isConfirmBtnDisabled || isBanned}
           onClick={handleSubmit}
           label={t('button_confirm')}
         />

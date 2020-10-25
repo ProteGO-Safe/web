@@ -143,8 +143,8 @@ const turnOff = async () => {
   });
 };
 
-const uploadTestPin = async pin => {
-  return callGetBridgeData(DATA_TYPE.UPLOAD_TEST_PIN, {
+const uploadLabTestPin = async pin => {
+  return callGetBridgeData(DATA_TYPE.UPLOAD_LAB_TEST_PIN, {
     pin
   });
 };
@@ -253,5 +253,5 @@ export default {
   setDistrictSubscription,
   setServicesState,
   turnOff,
-  uploadTestPin
+  uploadLabTestPin
 };
