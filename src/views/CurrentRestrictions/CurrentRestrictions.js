@@ -106,7 +106,7 @@ const CurrentRestrictions = ({
 
         <Styled.ButtonWrapper>
           <Styled.UrlLink
-            href="https://www.gov.pl/web/koronawirus/regionalne-obostrzenia-dla-powiatow"
+            href="https://www.gov.pl/web/koronawirus/regionalne-obostrzenia-dla-wybranych-powiatow"
             target="_blank"
           >
             <Button
