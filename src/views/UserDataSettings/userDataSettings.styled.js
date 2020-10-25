@@ -12,6 +12,7 @@ export const BoxTitle = styled(H4)`
   display: flex;
   align-items: center;
   color: ${Color.danger};
+  margin-top: 0;
   margin-bottom: 15px;
 
   img {

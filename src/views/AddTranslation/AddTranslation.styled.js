@@ -1,57 +1,77 @@
 import styled from 'styled-components';
-import { ReactComponent as AddTranslationIcon } from '../../assets/img/icons/add-translation-view.svg';
+import { ReactComponent as AddTranslationIcon1 } from '../../assets/img/icons/icon-rejestracja.svg';
+import { ReactComponent as AddTranslationIcon2 } from '../../assets/img/icons/icon-tlumacz.svg';
+import { ReactComponent as AddTranslationIcon3 } from '../../assets/img/icons/icon-tlumaczenie_sukces.svg';
 import { Color } from '../../theme/colors';
 
 export const AddTranslation = styled.div`
   display: flex;
-  flex-flow: wrap column;
+  flex-flow: wrap row;
   width: 100%;
-  height: 100%;
 `;
 
-export const IconWrapper = styled.div`
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  width: 100%;
-  margin-bottom: 32px;
-`;
-
-export const Icon = styled(AddTranslationIcon)`
-  display: block;
-  width: auto;
-  height: 106px;
-`;
 export const Title = styled.div`
   font-size: 22px;
   line-height: 28px;
   font-weight: 700;
-  color: ${Color.black};
-`;
-export const Subtitle = styled.div`
-  margin-top: 12px;
-  font-size: 18px;
-  line-height: 24px;
-  font-weight: 400;
+  margin-bottom: 20px;
   color: ${Color.black};
 `;
 
-export const Content = styled.div`
+export const Paragraph = styled.div`
+  width: 100%;
+  font-size: 18px;
+  line-height: 24px;
+  margin-bottom: 20px;
+  color: ${Color.black};
+`;
+
+export const Steps = styled.div`
   display: flex;
   flex-flow: wrap column;
-  align-items: flex-start;
+  align-items: center;
   width: 100%;
-  margin-top: 66px;
-  margin-bottom: 112px;
-  a {
-    font-weight: 700;
-    text-decoration: none;
-  }
+  margin-top: 20px;
+  margin-bottom: 50px;
 `;
-export const Text = styled.div`
+
+export const Step = styled.div`
+  display: flex;
+  flex-flow: wrap column;
+  align-items: center;
   width: 100%;
-  font-size: 16px;
+  max-width: 280px;
+  margin-bottom: 40px;
+`;
+
+export const Icon1 = styled(AddTranslationIcon1)`
+  width: 70px;
+  height: 70px;
+  margin: 0 auto 30px;
+`;
+
+export const Icon2 = styled(AddTranslationIcon2)`
+  width: 70px;
+  height: 70px;
+  margin: 0 auto 30px;
+`;
+
+export const Icon3 = styled(AddTranslationIcon3)`
+  width: 70px;
+  height: 70px;
+  margin: 0 auto 30px;
+`;
+
+export const Description = styled.div`
+  font-size: 18px;
   line-height: 24px;
-  font-weight: 400;
-  color: ${Color.black};
+  text-align: center;
+`;
+export const Number = styled.div`
+  display: inline;
+  font-weight: 700;
+  color: ${Color.primary};
+`;
+export const Link = styled.a`
+  width: 100%;
 `;

@@ -1,6 +1,6 @@
 import {
   APP_STATE_CLEARED,
-  BLUETOOTH_DATA_CLEARED,
+  ALL_DATA_CLEARED,
   DATA_FROM_NEWEST_VERSION_MARKED,
   EXPOSURE_ONBOARDING_FINISHED,
   FIRST_DIAGNOSIS_FINISHED,
@@ -9,6 +9,7 @@ import {
   MIGRATION_FINISHED,
   ONBOARDING_FINISHED,
   REGISTRATION_FINISHED,
+  RESTRICTIONS_MODAL_SHOWED,
   START_SCREEN_SHOWED,
   UPLOAD_HISTORICAL_DATA_ENDED,
   UPLOAD_HISTORICAL_DATA_ERROR_MESSAGE_HIDDEN,
@@ -33,7 +34,8 @@ const INITIAL_STATE = {
     status: uploadState.EMPTY,
     unsuccessfulAttempts: []
   },
-  registrationFinished: false
+  registrationFinished: false,
+  restrictionsModalShowed: false
 };
 
 const appReducer = (state = INITIAL_STATE, action) => {
@@ -115,7 +117,7 @@ const appReducer = (state = INITIAL_STATE, action) => {
         applicationReseted: true
       };
     }
-    case BLUETOOTH_DATA_CLEARED: {
+    case ALL_DATA_CLEARED: {
       return {
         ...state,
         applicationReseted: false
@@ -144,6 +146,12 @@ const appReducer = (state = INITIAL_STATE, action) => {
       return {
         ...state,
         fontScale
+      };
+    }
+    case RESTRICTIONS_MODAL_SHOWED: {
+      return {
+        ...state,
+        restrictionsModalShowed: true
       };
     }
 

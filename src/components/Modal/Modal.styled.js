@@ -2,6 +2,19 @@ import styled from 'styled-components';
 import { Color } from '../../theme/colors';
 import { Paragraph } from '../../theme/typography';
 
+const handleType = type => {
+  switch (type) {
+    case 'dialog':
+      return '30px 40px 20px 40px';
+    case 'inner-content':
+      return '30px 20px 20px';
+    case 'normal':
+      return '30px 40px';
+    default:
+      return '30px 40px';
+  }
+};
+
 export const Wrapper = styled.div`
   position: fixed;
   top: 0;
@@ -33,17 +46,22 @@ export const Content = styled.div`
   flex-direction: column;
   width: calc(100% - 34px);
   height: ${({ height }) => (height < 260 ? `auto` : '100vh')};
-  max-height: calc(100vh - 136px);
+  max-height: ${({ maxHeight }) =>
+    maxHeight ? `100%` : 'calc(100vh - 136px)'};
   max-width: 450px;
   margin: 0 auto;
-  padding: ${({ type }) =>
-    type === 'dialog' ? '30px 40px 20px 40px' : '30px 40px'};
+  padding: ${({ type }) => handleType(type)};
+
   grid-area: wrapper;
   align-self: center;
   background-color: ${Color.white};
   box-shadow: 5px 5px 15px #00000026;
   border-radius: 4px;
   z-index: 2;
+`;
+
+export const ContentHeight = styled.div`
+  width: 100%;
 `;
 
 export const Title = styled.h2`
@@ -60,8 +78,10 @@ export const Text = styled(Paragraph)`
 `;
 
 export const Footer = styled.div`
-  width: calc(100% + 44px);
-  margin: 30px -22px 0 -22px;
+  width: ${({ type }) =>
+    type === 'inner-content' ? '100%' : 'calc(100% + 44px)'};
+  margin: ${({ type }) =>
+    type === 'inner-content' ? '30px 0 0' : '30px -22px 0 -22px'};
   button:not(:last-child) {
     margin-bottom: 10px;
   }

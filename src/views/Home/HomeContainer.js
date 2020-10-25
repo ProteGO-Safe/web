@@ -7,10 +7,12 @@ import {
   fetchServicesStatus
 } from '../../store/actions/nativeData';
 import { resetTimeOfConfirmedCovid } from '../../store/actions/triage';
+import { getSubscribedDistricts } from '../../store/selectors/restrictions';
 
 const HomeContainer = () => {
   const dispatch = useDispatch();
   const { timeOfConfirmedCovid } = useSelector(state => state.triage);
+  const subscribedDistricts = useSelector(getSubscribedDistricts);
 
   useEffect(() => {
     dispatch(fetchServicesStatus());
@@ -20,7 +22,7 @@ const HomeContainer = () => {
     }
   }, [dispatch, timeOfConfirmedCovid]);
 
-  return <Home />;
+  return <Home subscribedDistricts={subscribedDistricts} />;
 };
 
 export default HomeContainer;

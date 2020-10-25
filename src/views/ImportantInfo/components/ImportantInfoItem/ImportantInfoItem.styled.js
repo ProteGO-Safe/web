@@ -31,6 +31,26 @@ export const ImportantInfoItem = styled.div`
   }
 `;
 
+export const Badge = styled.span`
+  position: absolute;
+  right: 8px;
+  padding: 4px 6px;
+  font-size: 0.5em;
+  line-height: 0.7em;
+  color: ${Color.primary};
+  text-transform: uppercase;
+  border-radius: 4px;
+  border: 1px solid ${Color.primary};
+  ${({ size }) =>
+    size
+      ? `
+    bottom: 8px;
+  `
+      : `
+    top: 8px;
+  `}
+`;
+
 export const Icon = styled.div`
   display: flex;
   justify-content: center;
@@ -137,5 +157,9 @@ export const LinkGov = styled.div`
 `;
 
 export const UrlLink = styled.a`
+  display: block;
+`;
+
+export const Action = styled.div`
   display: block;
 `;

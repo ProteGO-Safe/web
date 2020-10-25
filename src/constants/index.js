@@ -137,3 +137,6 @@ export const LOGO_COLOR_WHITE = 'white';
 // Languages
 export const DEFAULT_LANGUAGE = 'pl';
 export const AVAILABLE_LANGUAGES = { pl: 'pl', en: 'en', uk: 'uk' };
+
+export const FAILED = 'FAILED';
+export const SUCCESS = 'SUCCESS';

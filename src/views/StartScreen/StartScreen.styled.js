@@ -42,6 +42,11 @@ export const Logo = styled(LogoSVG)`
   ${DEVICE.XS} {
     max-height: 120px;
   }
+  ${({ change }) =>
+    change &&
+    `
+    max-height: 110px!important;
+  `}
 `;
 
 export const Subtitle = styled.p`
@@ -57,6 +62,12 @@ export const Subtitle = styled.p`
     font-size: 16px;
     line-height: 20px;
   }
+  ${({ change }) =>
+    change &&
+    `
+    margin-top: 20px!important;
+    margin-bottom: 20px!important;
+  `}
 `;
 
 export const ChooseLang = styled.div`
@@ -65,7 +76,7 @@ export const ChooseLang = styled.div`
   justify-content: center;
   width: 100%;
   margin-top: auto;
-  margin-bottom: auto;
+  margin-bottom: ${({ change }) => (change ? '24px' : 'auto')};
   ${DEVICE.XS} {
     margin-top: 0;
   }

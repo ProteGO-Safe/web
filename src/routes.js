@@ -2,6 +2,7 @@ const Routes = {
   Home: '/',
   Start: '/start',
   AddTranslation: '/add-translation',
+  CurrentRestrictions: '/current-restrictions',
   Daily: '/daily',
   DailyData: '/daily-data',
   RiskTest: '/risk-test',
