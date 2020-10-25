@@ -1,4 +1,7 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import useLabTest from '../../hooks/useLabTest';
+import { fetchLabTestSubscription } from '../../store/actions/nativeData';
 import Routes from '../../routes';
 import Menu from './Menu';
 import useMenuContext from '../../hooks/useMenuContext';
@@ -11,7 +14,14 @@ import Icon5 from '../../assets/img/icons/menu-boczne-moje-dane_BLUE.svg';
 import Icon6 from '../../assets/img/icons/menu-boczne-kwestionariusz_RED.svg';
 
 const MenuContainer = () => {
+  const dispatch = useDispatch();
   const { visible } = useMenuContext();
+  const { isEnHigh, isTorHigh, isSubscriptionInProgress } = useLabTest();
+
+  useEffect(() => {
+    dispatch(fetchLabTestSubscription());
+    // eslint-disable-next-line
+  }, []);
 
   if (!visible) {
     return null;
@@ -56,8 +66,11 @@ const MenuContainer = () => {
     {
       icon: Icon6,
       color: 'blue',
-      path: Routes.UserData, // TODO: adding logic
-      invisible: true, // TODO: adding logic
+      path:
+        isEnHigh && isTorHigh
+          ? `${Routes.LabTest}/1`
+          : `${Routes.Diagnosis}?p=1`,
+      invisible: isSubscriptionInProgress || !isEnHigh,
       slug: 'menu_container_text10',
       title: 'menu_container_text10'
     }
