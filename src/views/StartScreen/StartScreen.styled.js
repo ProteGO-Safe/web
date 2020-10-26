@@ -34,6 +34,9 @@ export const LogoWrapper = styled.h1`
   align-items: center;
   width: 100%;
   margin: auto 0 0;
+  @media (max-width: 330px) {
+    height: 22%;
+  }
 `;
 
 export const Logo = styled(LogoSVG)`
@@ -41,6 +44,9 @@ export const Logo = styled(LogoSVG)`
   max-width: 302px;
   ${DEVICE.XS} {
     max-height: 120px;
+  }
+  @media (max-width: 330px) {
+    height: 100% !important;
   }
   ${({ change }) =>
     change &&
@@ -60,6 +66,12 @@ export const Subtitle = styled.p`
     margin-top: 28px;
     margin-bottom: 28px;
     font-size: 16px;
+    line-height: 20px;
+  }
+  @media (max-width: 330px) {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 14px;
     line-height: 20px;
   }
   ${({ change }) =>
@@ -93,6 +105,10 @@ export const Label = styled.div`
     font-size: 16px;
     line-height: 22px;
   }
+  @media (max-width: 330px) {
+    font-size: 14px;
+    line-height: 20px;
+  }
 `;
 
 export const Info = styled.span`
@@ -106,6 +122,10 @@ export const Info = styled.span`
   text-align: center;
   ${DEVICE.XS} {
     margin-bottom: 24px;
+  }
+  @media (max-width: 330px) {
+    font-size: 14px;
+    line-height: 20px;
   }
 `;
 
@@ -135,4 +155,7 @@ export const Button = styled.button`
   background: #ffffff;
   cursor: pointer;
   font-family: 'Open Sans', sans-serif;
+  @media (max-width: 330px) {
+    margin-top: 20px;
+  }
 `;
