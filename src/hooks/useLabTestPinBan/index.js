@@ -29,8 +29,6 @@ const useLabTestPinBan = () => {
     return () => {};
   }, [banData, pinUnsuccessfulAttempts]);
 
-  console.log(banData);
-
   const message =
     banData &&
     banPinTries.createErrorMessage(banData, pinUnsuccessfulAttempts.length, t);

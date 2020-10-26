@@ -46,11 +46,16 @@ const LabTestContainer = () => {
       history.push(`${Routes.LabTest}/3`);
     }
 
-    if (uploadLabTestPinResult === 2 || uploadLabTestPinResult === 3) {
+    if (uploadLabTestPinResult === 2) {
       setLoader(false);
       setIsInvalidPin(true);
       setPin(undefined);
     }
+
+    if (uploadLabTestPinResult === 3) {
+      history.push(Routes.Home);
+    }
+
     // eslint-disable-next-line
   }, [uploadLabTestPinResult]);
 
