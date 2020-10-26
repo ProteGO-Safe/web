@@ -279,7 +279,9 @@ describe('test render home component', () => {
       ...baseStore,
       nativeData: {
         ...nativeDataStorageWithEnableExposureByRiskLevel(3),
-        labTestSubscription: { status: 1 }
+        labTest: {
+          subscription: { status: 1 }
+        }
       }
     });
     const container = renderTestedComponent(store);
@@ -291,7 +293,9 @@ describe('test render home component', () => {
       ...baseStore,
       nativeData: {
         ...nativeDataStorageWithEnableExposureByRiskLevel(3),
-        labTestSubscription: { status: 2 }
+        labTest: {
+          subscription: { status: 2 }
+        }
       }
     });
     const container = renderTestedComponent(store);
