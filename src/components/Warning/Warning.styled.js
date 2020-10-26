@@ -12,7 +12,7 @@ export const WarningWrapper = styled.div`
   display: flex;
   flex-flow: wrap row;
   width: 100%;
-  margin-top: 22px;
+  margin-bottom: 18px;
   padding: 12px 24px 12px 8px;
   border-radius: 4px;
   border-style: solid;
