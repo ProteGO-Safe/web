@@ -1,11 +1,12 @@
-import React, { useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import { useFormikContext } from 'formik';
 import isequal from 'lodash.isequal';
 
 import { DIAGNOSIS_FORM_FIELDS } from '../../diagnosis.constants';
 import Form from './Form';
-import { Age, Summary } from './components';
+import { Age } from './components';
+import { SummaryRiskTest } from '../../../SummaryRiskTest';
 import { IS_NOT_ELDERLY } from './components/Age/age.constants';
 import { getDiagnosis } from '../../../../services/diagnosisLogic/diagnosisLogic';
 import { Information } from '../../../Information';
@@ -38,6 +39,18 @@ const FormContainer = ({ onFinish }) => {
     }
     return [...list, fetchedQuestion];
   };
+
+  const finish = useCallback(() => {
+    const isElderly = values[DIAGNOSIS_FORM_FIELDS.AGE] !== IS_NOT_ELDERLY;
+    onFinish(evidence, isElderly, allQuestions);
+  }, [evidence, allQuestions, onFinish, values]);
+
+  useEffect(() => {
+    if (evidence) {
+      finish();
+    }
+    // eslint-disable-next-line
+  }, [evidence]);
 
   useEffect(() => {
     const questions = [...values[DIAGNOSIS_FORM_FIELDS.QUESTIONS]];
@@ -76,11 +89,6 @@ const FormContainer = ({ onFinish }) => {
     history.goBack();
   };
 
-  const finish = () => {
-    const isElderly = values[DIAGNOSIS_FORM_FIELDS.AGE] !== IS_NOT_ELDERLY;
-    onFinish(evidence, isElderly, allQuestions);
-  };
-
   if (urlPage === 1) {
     return <Information hideInformation={() => nextPage()} />;
   }
@@ -90,7 +98,7 @@ const FormContainer = ({ onFinish }) => {
   }
 
   if (evidence) {
-    return <Summary onBack={() => back()} onNext={() => finish()} />;
+    return <SummaryRiskTest onBack={() => back()} />;
   }
 
   if (!question) {

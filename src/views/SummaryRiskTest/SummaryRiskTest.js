@@ -2,7 +2,7 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { withTranslation } from 'react-i18next';
 import useModalContext from '../../hooks/useModalContext';
-import { RiskTestResult, Button } from '../../components';
+import { Button, RiskTestResult } from '../../components';
 import AnnotationContent from './components/AnnotationContent/AnnotationContent';
 import PrivacyPolicyContent from '../PrivacyPolicyDetails/component/PrivacyPolicyContent/PrivacyPolicyContent';
 import * as Styled from './SummaryRiskTest.styled';
@@ -60,6 +60,13 @@ const SummaryRiskTest = ({ data, t }) => {
         <NavLink to={data.path}>
           <Button onClick={() => null}>{t(data.button)}</Button>
         </NavLink>
+        {data.button_remind_later && (
+          <NavLink to={data.path}>
+            <Button onClick={() => null} type="outline">
+              {t(data.button_remind_later)}
+            </Button>
+          </NavLink>
+        )}
       </Styled.ButtonWrapper>
     </Styled.SummaryRiskTest>
   );

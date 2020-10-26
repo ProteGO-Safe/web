@@ -14,6 +14,7 @@ export const DATA = {
     paragraph: 'summary_risk_test_description_1_1',
     paragraph_strong: 'summary_risk_test_description_1_2',
     button: 'summary_risk_test_button_name_1',
+    button_remind_later: 'summary_risk_test_button_name_3',
     annotation: {
       title: 'summary_risk_test_annotation_title',
       paragraph_1: 'summary_risk_test_annotation_1',
