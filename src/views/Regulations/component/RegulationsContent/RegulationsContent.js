@@ -124,7 +124,7 @@ const RegulationsContent = ({ small, t }) => (
         {t('regulations_content_text39')}{' '}
         <Url value="https://www.gov.pl/web/koronawirus">COVID-19</Url>{' '}
         {t('regulations_content_text40')}{' '}
-        <Url value="https://www.gov.pl/web/koronawirus">COVID-19</Url>.
+        <Url value="https://www.gov.pl/web/koronawirus">COVID-19</Url>;
       </ListItem>
       <ListItem>
         <strong>{t('regulations_content_text41')}</strong>{' '}
@@ -220,6 +220,7 @@ const RegulationsContent = ({ small, t }) => (
     <ListNumber>
       <ListItem>{t('regulations_content_text76')}</ListItem>
       <ListItem>{t('regulations_content_text77')}</ListItem>
+      <ListItem>{t('regulations_content_text113')}</ListItem>
     </ListNumber>
     <Annotation>§8.</Annotation>
     <Title>{t('regulations_content_text78')}</Title>
