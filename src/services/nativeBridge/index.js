@@ -4,6 +4,7 @@ import uniqueId from 'lodash.uniqueid';
 import { always, cond, equals } from 'ramda';
 import StoreRegistry from '../../store/storeRegistry';
 import {
+  FETCH_LAB_TEST_SUBSCRIPTION,
   FETCH_LANGUAGE,
   NATIVE_DATA_FETCH_EXPOSURE_NOTIFICATION_STATISTICS_SUCCESS,
   NATIVE_DATA_FETCH_NATIVE_STATE,
@@ -203,6 +204,15 @@ const handleNativeLanguage = body => {
   });
 };
 
+const handleLabTestSubscription = body => {
+  const store = StoreRegistry.getStore();
+  const { dispatch } = store;
+  dispatch({
+    body,
+    type: FETCH_LAB_TEST_SUBSCRIPTION
+  });
+};
+
 const callBridgeDataHandler = cond([
   [equals(DATA_TYPE.NATIVE_SERVICES_STATUS), always(handleServicesStatus)],
   [
@@ -211,7 +221,8 @@ const callBridgeDataHandler = cond([
   ],
   [equals(DATA_TYPE.EXPOSURE_STATISTICS), always(handleExposureSummary)],
   [equals(DATA_TYPE.NATIVE_STATE), always(handleNativeState)],
-  [equals(DATA_TYPE.LANGUAGE), always(handleNativeLanguage)]
+  [equals(DATA_TYPE.LANGUAGE), always(handleNativeLanguage)],
+  [equals(DATA_TYPE.LAB_TEST_SUBSCRIPTION), always(handleLabTestSubscription)]
 ]);
 
 const onBridgeData = (dataType, dataString) => {
