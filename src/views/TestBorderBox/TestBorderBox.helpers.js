@@ -48,11 +48,11 @@ export const resolveData = t => {
       colorTitle: Color.black,
       content: (
         <>
-          <strong>{t('test_border_box_approve_description_1')}</strong>
-          {t('test_border_box_approve_description_2')}
-          <strong>{t('test_border_box_approve_description_3')}</strong>
-          {t('test_border_box_approve_description_4')}
-          <strong>{t('test_border_box_approve_description_5')}</strong>
+          <strong>{t('test_border_box_approve_description_1')}</strong>{' '}
+          {t('test_border_box_approve_description_2')}{' '}
+          <strong>{t('test_border_box_approve_description_3')}</strong>{' '}
+          {t('test_border_box_approve_description_4')}{' '}
+          <strong>{t('test_border_box_approve_description_5')}</strong>{' '}
           {t('test_border_box_approve_description_6')}
           <br />
           {t('test_border_box_approve_description_7')}
