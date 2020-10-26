@@ -23,7 +23,7 @@ export const DATA = {
       paragraph_4: 'summary_risk_test_annotation_4',
       link_name: 'summary_risk_test_annotation_more'
     },
-    path: '/' // TODO: flow labtest
+    path: `${Routes.LabTest}/1`
   },
   TOR_RED_EN_NOT_RED: {
     color: Color.danger,
