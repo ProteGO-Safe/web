@@ -54,7 +54,7 @@ export const Content = styled.div`
   height: ${({ height }) => (height < 260 ? `auto` : '100vh')};
   max-height: ${({ maxHeight }) =>
     maxHeight ? `100%` : 'calc(100vh - 136px)'};
-  max-width: 450px;
+  max-width: 420px;
   margin: 0 auto;
   padding: ${({ type }) => handleType(type)};
 
