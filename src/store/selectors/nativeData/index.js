@@ -5,3 +5,4 @@ export const getLabTestSubscription = state =>
   state.nativeData.labTest && state.nativeData.labTest.subscription;
 export const getLabTestPinUnsuccessfulAttempts = state =>
   state.nativeData.labTest && state.nativeData.labTest.pinUnsuccessfulAttempts;
+export const getNativeRiskLevel = state => state.nativeData.riskLevel;

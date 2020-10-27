@@ -1,10 +1,14 @@
 import { useSelector } from 'react-redux';
-import { getLabTestSubscription } from '../../store/selectors/nativeData';
+import {
+  getLabTestSubscription,
+  getNativeRiskLevel
+} from '../../store/selectors/nativeData';
 import useTriage from '../useTriage';
 
 const useLabTest = () => {
   const subscription = useSelector(getLabTestSubscription);
-  const { exposureRiskLevel, triageRiskLevel } = useTriage();
+  const { triageRiskLevel } = useTriage();
+  const nativeRiskLevel = useSelector(getNativeRiskLevel);
 
   const isTorHigh = triageRiskLevel === 3;
   const isSubscriptionVerified = subscription && subscription.status === 1;
@@ -14,7 +18,7 @@ const useLabTest = () => {
     isSubscriptionVerified || isSubscriptionConfirmed;
 
   return {
-    isEnHigh: exposureRiskLevel === 3,
+    isEnHigh: nativeRiskLevel === 3,
     isTorHigh,
     isSubscriptionVerified,
     isSubscriptionConfirmed,
