@@ -4,7 +4,7 @@ import useTriage from '../useTriage';
 
 const useLabTest = () => {
   const subscription = useSelector(getLabTestSubscription);
-  const { isExposure, triageRiskLevel } = useTriage();
+  const { exposureRiskLevel, triageRiskLevel } = useTriage();
 
   const isTorHigh = triageRiskLevel === 3;
   const isSubscriptionVerified = subscription && subscription.status === 1;
@@ -14,7 +14,7 @@ const useLabTest = () => {
     isSubscriptionVerified || isSubscriptionConfirmed;
 
   return {
-    isEnHigh: isExposure,
+    isEnHigh: exposureRiskLevel === 3,
     isTorHigh,
     isSubscriptionVerified,
     isSubscriptionConfirmed,
