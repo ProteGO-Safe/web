@@ -96,8 +96,7 @@ const Step2 = ({
               borderColor={Color.danger}
               colorFont={Color.danger}
               status="error"
-              title={
-                t('lab_test_text12') && banMessage}
+              title={t('lab_test_text12') && banMessage}
             />
           </Styled.WarningWrapper>
           <Styled.Content>

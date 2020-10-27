@@ -33,7 +33,7 @@ const useLabTestPinBan = () => {
     banData &&
     banPinTries.createErrorMessage(banData, pinUnsuccessfulAttempts.length, t);
 
-  const isBanned = banData && banData.lockdownTime;
+  const isBanned = banData && !!banData.lockdownTime;
 
   return { message, isBanned };
 };
