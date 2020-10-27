@@ -14,7 +14,7 @@ import { DATA_TYPE } from './nativeBridge.constants';
 import { UPLOAD_HISTORICAL_DATA_FINISHED } from '../../store/types/app';
 import { isAndroidWebView, isIOSWebView } from '../../utils/native';
 import { fetchExposureNotificationStatistics } from '../../store/actions/nativeData';
-import { fetchDistrictsStatus } from '../../store/actions/restrictions';
+import { fetchSubscribedDistricts } from '../../store/actions/restrictions';
 
 const nativeRequests = {};
 
@@ -192,7 +192,7 @@ const handleNativeState = appState => {
   });
   if (appState.appState === 1) {
     dispatch(fetchExposureNotificationStatistics());
-    dispatch(fetchDistrictsStatus());
+    dispatch(fetchSubscribedDistricts());
   }
 };
 const handleNativeLanguage = body => {

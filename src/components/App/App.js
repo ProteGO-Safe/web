@@ -58,7 +58,7 @@ import useModalContext from '../../hooks/useModalContext';
 import useClearData from '../../hooks/useClearData';
 import useTurnOffApplication from '../../hooks/useTurnOffApplication';
 import * as Styled from './App.styled';
-import { fetchDistrictsStatus } from '../../store/actions/restrictions';
+import { fetchSubscribedDistricts } from '../../store/actions/restrictions';
 
 function App() {
   const dispatch = useDispatch();
@@ -86,7 +86,7 @@ function App() {
   useEffect(() => {
     dispatch(hideUploadHistoricalDataErrorMessage());
     dispatch(fetchFontScale());
-    dispatch(fetchDistrictsStatus());
+    dispatch(fetchSubscribedDistricts());
   }, [dispatch]);
 
   history.listen(() => {
