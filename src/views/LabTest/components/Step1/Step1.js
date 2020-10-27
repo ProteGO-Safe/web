@@ -13,7 +13,7 @@ const Step1 = ({ setCompletedSteps, setPin, t }) => {
 
   const handleNextBtnClick = () => {
     setCompletedSteps(1);
-    history.push(`${Routes.LabTest}/2`);
+    history.replace(`${Routes.LabTest}/2`);
   };
 
   useEffect(() => {

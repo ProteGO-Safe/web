@@ -43,7 +43,7 @@ const LabTestContainer = () => {
     if (uploadLabTestPinResult === 1) {
       setLoader(false);
       setCompletedSteps(2);
-      history.push(`${Routes.LabTest}/3`);
+      history.replace(`${Routes.LabTest}/3`);
     }
 
     if (uploadLabTestPinResult === 2) {
