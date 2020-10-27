@@ -30,7 +30,7 @@ const SummaryRiskTestContainer = () => {
   }, [triageRiskLevel, isExposure]);
 
   return (
-    <Layout hideBackButton isNavigation noPadding fullHeight>
+    <Layout hideBackButton noPadding fullHeight>
       <SummaryRiskTest data={screenData} />
     </Layout>
   );

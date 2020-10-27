@@ -61,7 +61,7 @@ const SummaryRiskTest = ({ data, t }) => {
           <Button onClick={() => null}>{t(data.button)}</Button>
         </NavLink>
         {data.button_remind_later && (
-          <NavLink to={data.path}>
+          <NavLink to={data.path_remind_later}>
             <Button onClick={() => null} type="outline">
               {t(data.button_remind_later)}
             </Button>
