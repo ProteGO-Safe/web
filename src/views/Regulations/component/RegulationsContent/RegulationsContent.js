@@ -1,6 +1,6 @@
 import React from 'react';
 import { withTranslation } from 'react-i18next';
-import { Email, Url, PhoneNumber } from '../../../../components';
+import { Email, Url, UrlCovid, PhoneNumber } from '../../../../components';
 import {
   Annotation,
   Paragraph,
@@ -55,8 +55,7 @@ const RegulationsContent = ({ small, t }) => (
       </ListItem>
       <ListItem>
         <strong>{t('regulations_content_text17')}</strong>
-        {t('regulations_content_text18')}{' '}
-        <Url value="https://www.gov.pl/web/koronawirus">COVID-19</Url>
+        {t('regulations_content_text18')} <UrlCovid />{' '}
         {t('regulations_content_text19')}
       </ListItem>
       <ListItem>
@@ -65,8 +64,7 @@ const RegulationsContent = ({ small, t }) => (
       </ListItem>
       <ListItem>
         <strong>{t('regulations_content_text93')}</strong>{' '}
-        {t('regulations_content_text94')}{' '}
-        <Url value="https://www.gov.pl/web/koronawirus">COVID-19</Url>{' '}
+        {t('regulations_content_text94')} <UrlCovid />{' '}
         {t('regulations_content_text95')}
       </ListItem>
       <ListItem>
@@ -79,8 +77,7 @@ const RegulationsContent = ({ small, t }) => (
       </ListItem>
       <ListItem>
         <strong>{t('regulations_content_text24')}</strong>{' '}
-        {t('regulations_content_text25')}{' '}
-        <Url value="https://www.gov.pl/web/koronawirus">COVID-19</Url>{' '}
+        {t('regulations_content_text25')} <UrlCovid />{' '}
         {t('regulations_content_text91')}
       </ListItem>
       <ListItem>
@@ -101,30 +98,24 @@ const RegulationsContent = ({ small, t }) => (
       </ListItem>
       <ListItem>
         <strong>{t('regulations_content_text98')}</strong>{' '}
-        {t('regulations_content_text99')}{' '}
-        <Url value="https://www.gov.pl/web/koronawirus">COVID-19</Url>{' '}
-        {t('regulations_content_text100')}{' '}
-        <Url value="https://www.gov.pl/web/koronawirus">COVID-19</Url>{' '}
+        {t('regulations_content_text99')} <UrlCovid />{' '}
+        {t('regulations_content_text100')} <UrlCovid />{' '}
         {t('regulations_content_text101')}
       </ListItem>
       <ListItem>
         <strong>{t('regulations_content_text32')}</strong>{' '}
-        {t('regulations_content_text33')}{' '}
-        <Url value="https://www.gov.pl/web/koronawirus">COVID-19</Url>{' '}
+        {t('regulations_content_text33')} <UrlCovid />{' '}
         {t('regulations_content_text34')}
       </ListItem>
       <ListItem>
         <strong>{t('regulations_content_text35')}</strong>{' '}
-        {t('regulations_content_text36')}{' '}
-        <Url value="https://www.gov.pl/web/koronawirus">COVID-19</Url>
+        {t('regulations_content_text36')} <UrlCovid />{' '}
         {t('regulations_content_text37')}
       </ListItem>
       <ListItem>
         <strong>{t('regulations_content_text38')}</strong>{' '}
-        {t('regulations_content_text39')}{' '}
-        <Url value="https://www.gov.pl/web/koronawirus">COVID-19</Url>{' '}
-        {t('regulations_content_text40')}{' '}
-        <Url value="https://www.gov.pl/web/koronawirus">COVID-19</Url>;
+        {t('regulations_content_text39')} <UrlCovid />{' '}
+        {t('regulations_content_text40')} <UrlCovid />;
       </ListItem>
       <ListItem>
         <strong>{t('regulations_content_text41')}</strong>{' '}
@@ -143,43 +134,31 @@ const RegulationsContent = ({ small, t }) => (
     <Title>{t('regulations_content_text46')}</Title>
     <ListNumber>
       <ListItem>
-        {t('regulations_content_text47')}{' '}
-        <Url value="https://www.gov.pl/web/koronawirus">COVID-19</Url>{' '}
+        {t('regulations_content_text47')} <UrlCovid />{' '}
         {t('regulations_content_text48')}
       </ListItem>
       <ListItem>
-        {t('regulations_content_text49')}{' '}
-        <Url value="https://www.gov.pl/web/koronawirus">COVID-19</Url>{' '}
-        {t('regulations_content_text50')}{' '}
-        <Url value="https://www.gov.pl/web/koronawirus">COVID-19</Url>
+        {t('regulations_content_text49')} <UrlCovid />{' '}
+        {t('regulations_content_text50')} <UrlCovid />
         {t('regulations_content_text51')}
       </ListItem>
       <ListItem>
-        {t('regulations_content_text52')}{' '}
-        <Url value="https://www.gov.pl/web/koronawirus">COVID-19</Url>
+        {t('regulations_content_text52')} <UrlCovid />
         {t('regulations_content_text92')}
       </ListItem>
       <ListItem>
-        {t('regulations_content_text53')}{' '}
-        <Url value="https://www.gov.pl/web/koronawirus">COVID-19</Url>
-        {t('regulations_content_text54')}{' '}
-        <Url value="https://www.gov.pl/web/koronawirus">COVID-19</Url>{' '}
-        {t('regulations_content_text55')}{' '}
-        <Url value="https://www.gov.pl/web/koronawirus">COVID-19</Url>{' '}
+        {t('regulations_content_text53')} <UrlCovid />{' '}
+        {t('regulations_content_text54')} <UrlCovid />{' '}
+        {t('regulations_content_text55')} <UrlCovid />{' '}
         {t('regulations_content_text56')}
       </ListItem>
       <ListItem>{t('regulations_content_text57')}</ListItem>
       <ListItem>
-        {t('regulations_content_text102')}{' '}
-        <Url value="https://www.gov.pl/web/koronawirus">COVID-19</Url>{' '}
-        {t('regulations_content_text103')}{' '}
-        <Url value="https://www.gov.pl/web/koronawirus">COVID-19</Url>{' '}
-        {t('regulations_content_text104')}{' '}
-        <Url value="https://www.gov.pl/web/koronawirus">COVID-19</Url>{' '}
-        {t('regulations_content_text105')}{' '}
-        <Url value="https://www.gov.pl/web/koronawirus">COVID-19</Url>{' '}
-        {t('regulations_content_text106')}{' '}
-        <Url value="https://www.gov.pl/web/koronawirus">COVID-19</Url>{' '}
+        {t('regulations_content_text102')} <UrlCovid />{' '}
+        {t('regulations_content_text103')} <UrlCovid />{' '}
+        {t('regulations_content_text104')} <UrlCovid />{' '}
+        {t('regulations_content_text105')} <UrlCovid />{' '}
+        {t('regulations_content_text106')} <UrlCovid />{' '}
         {t('regulations_content_text107')}
       </ListItem>
       <ListItem>{t('regulations_content_text108')}</ListItem>

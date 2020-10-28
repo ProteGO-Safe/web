@@ -47,13 +47,13 @@ const ImportantInfoContainer = ({ t }) => {
       icon: <Icon4 />,
       title: t('important_info_title_4'),
       description: t('important_info_description_4'),
-      link: 'https://www.gov.pl/web/koronawirus/informacje-dla-podrozujacych'
+      link: t('important_info_href_1')
     },
     {
       type: 'link',
       icon: <Icon5 />,
       title: t('important_info_title_5'),
-      link: 'https://www.gov.pl/web/koronawirus/pytania-i-odpowiedzi'
+      link: t('important_info_href_2')
     }
   ];
 

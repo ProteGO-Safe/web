@@ -68,7 +68,7 @@ const MenuContainer = () => {
       color: 'blue',
       path:
         isEnHigh && isTorHigh
-          ? `${Routes.LabTest}/1`
+          ? `${Routes.SummaryRiskTest}`
           : `${Routes.Diagnosis}?p=1`,
       invisible: isSubscriptionInProgress || !isEnHigh,
       slug: 'menu_container_text10',
