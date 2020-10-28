@@ -28,7 +28,7 @@ export const resolveData = t => {
           {t('test_border_box_pick_up_description_2')}
         </>
       ),
-      path: `${Routes.LabTest}/1`,
+      path: `${Routes.SummaryRiskTest}`,
       title: 'test_border_box_pick_up_title'
     },
     TOR_IS_NEEDED: {

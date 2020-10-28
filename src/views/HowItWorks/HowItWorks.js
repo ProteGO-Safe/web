@@ -34,7 +34,7 @@ const HowItWorks = ({ t }) => {
       <Styled.Paragraph>{t('how_it_works_paragraph10')}</Styled.Paragraph>
       <Styled.Paragraph>
         <strong>{t('how_it_works_paragraph11_1')}</strong>
-        <Styled.Link href="https://www.gov.pl/web/protegosafe" target="_blank">
+        <Styled.Link href={t('how_it_works_href_1')} target="_blank">
           {t('how_it_works_paragraph11_2')}
         </Styled.Link>
       </Styled.Paragraph>

@@ -10155,7 +10155,7 @@ Array [
     aria-current={null}
     className="c0"
     color="#0052a5"
-    href="#/lab-test/1"
+    href="#/summary-risk-test"
     onClick={[Function]}
   >
     <h3
@@ -10630,87 +10630,6 @@ Array [
       </div>
     </div>
   </div>,
-  .c0 {
-  width: 100%;
-  margin-bottom: 16px;
-  padding: 22px 20px 22px;
-  border-radius: 4px;
-  border-width: 2px;
-  border-style: solid;
-  border-color: #0052a5;
-}
-
-.c1 {
-  position: relative;
-  width: 100%;
-  margin: 0;
-  font-size: 16px;
-  line-height: 22px;
-  font-weight: 700;
-  color: #0052a5;
-}
-
-.c1:after {
-  content: '';
-  position: absolute;
-  top: 1px;
-  right: -16px;
-  display: block;
-  width: 20px;
-  height: 20px;
-  background-image: url(angle-right-blue.svg);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 14px;
-}
-
-.c2 {
-  display: inline-block;
-  width: 100%;
-  margin-top: 10px;
-  font-size: 14px;
-  line-height: 20px;
-  color: #000000;
-}
-
-.c2 strong {
-  font-weight: 600;
-}
-
-@media screen and (max-width:370px) {
-
-}
-
-@media screen and (max-width:370px) {
-
-}
-
-@media screen and (max-width:370px) {
-
-}
-
-<a
-    aria-current={null}
-    className="c0"
-    color="#0052a5"
-    href="#/lab-test/1"
-    onClick={[Function]}
-  >
-    <h3
-      className="c1"
-      color="#0052a5"
-    >
-      test_border_box_pick_up_title
-    </h3>
-    <span
-      className="c2"
-      color="#000000"
-    >
-      test_border_box_pick_up_description_1
-      <br />
-      test_border_box_pick_up_description_2
-    </span>
-  </a>,
   .c0 {
   display: -webkit-box;
   display: -webkit-flex;

@@ -61,10 +61,7 @@ const IAmSick = ({ t }) => {
       </Styled.Content>
 
       <Styled.ButtonWrapper>
-        <Styled.UrlLink
-          href="https://www.gov.pl/web/koronawirus/lista-szpitali"
-          target="_blank"
-        >
+        <Styled.UrlLink href={t('i_am_sick_button_href')} target="_blank">
           <Button label={t('i_am_sick_button_label')} onClick={() => null} />
         </Styled.UrlLink>
 
