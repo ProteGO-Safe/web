@@ -41,8 +41,8 @@ const TriageInfoBorder = ({ t }) => {
             {t('triage_info_border_text5')}
             <Arrow />
           </LinkArrow>
-          {t('triage_info_border_text6')} <PhoneNumber>112</PhoneNumber> lub{' '}
-          <PhoneNumber>999</PhoneNumber>
+          {t('triage_info_border_text6')} <PhoneNumber>112</PhoneNumber>{' '}
+          {t('triage_info_border_text9')} <PhoneNumber>999</PhoneNumber>{' '}
           {t('triage_info_border_text7')}
         </>
       );
