@@ -3,26 +3,29 @@ import { withTranslation } from 'react-i18next';
 import PropTypes from 'prop-types';
 import Slider from 'react-slick';
 import { Button, Layout } from '../../../../components';
-import { SliderWrapper, Title } from './Explainer.styled';
+import * as Styled from './Explainer.styled';
 
 const Explainer = ({ t, carouselRef, index, items, onClick, settings }) => {
   return (
-    <Layout hideBackButton isGovFooter>
+    <Layout hideBackButton isGovFooter fullHeight noPadding>
       {index < 1 ? (
-        <Title>{t('explainer_text1')}</Title>
+        <Styled.Title>{t('explainer_text1')}</Styled.Title>
       ) : (
-        <Title>
+        <Styled.Title>
           {t('explainer_text2')}
           <br />
           {t('explainer_text3')}
-        </Title>
+        </Styled.Title>
       )}
-      <SliderWrapper>
+      <Styled.SliderWrapper>
         <Slider ref={carouselRef} {...settings}>
           {items}
         </Slider>
-      </SliderWrapper>
-      <Button onClick={onClick} label={t('button_next')} />
+      </Styled.SliderWrapper>
+
+      <Styled.ButtonWrapper>
+        <Button onClick={onClick} label={t('button_next')} />
+      </Styled.ButtonWrapper>
     </Layout>
   );
 };
