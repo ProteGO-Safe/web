@@ -4,6 +4,19 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## 4.7.0
+
+### Added
+- allowing to perform a COVID-19 laboratory test for people with COVID-19 symptoms after the application notified about a high risk of contact with a person tested positive for COVID-19
+- instruction for the feature of following the zones on the screen with a list of poviats
+
+### Changed
+- subpage "How does the application work?"
+- Terms & Conditions and Privacy Policy
+
+### Fixed
+- save Health Metric
+
 ## 4.6.0
 
 ### Added

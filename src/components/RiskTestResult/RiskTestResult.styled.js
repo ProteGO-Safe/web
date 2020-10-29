@@ -44,6 +44,6 @@ export const Result = styled.span`
     background-image: url(${({ icon }) => icon});
     background-repeat: no-repeat;
     background-position: center;
-    background-size: 100%;
+    background-size: 32px 32px;
   }
 `;

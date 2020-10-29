@@ -2,12 +2,9 @@ import React from 'react';
 import { withTranslation } from 'react-i18next';
 import { FormGroup } from '@material-ui/core';
 import { useFormikContext } from 'formik';
-import {
-  Title,
-  Actions
-} from '../../../../../../components/ImprintFiller/ImprintFiller.styled';
+import { Title, Actions, Paragraph } from './Age.styled';
 import { Button, Layout, Radio } from '../../../../../../components';
-import { Paragraph } from './Age.styled';
+
 import { IS_NOT_ELDERLY, IS_ELDERLY, NO_DATA } from './age.constants';
 import { DIAGNOSIS_FORM_FIELDS } from '../../../../diagnosis.constants';
 

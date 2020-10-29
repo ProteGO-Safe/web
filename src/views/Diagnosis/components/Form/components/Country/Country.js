@@ -1,7 +1,7 @@
 import React from 'react';
 import { withTranslation } from 'react-i18next';
 import { Multiselect } from 'multiselect-react-dropdown';
-import { Button, FieldSet } from '../../../../../../components';
+import { Button, FieldSet, Layout } from '../../../../../../components';
 import { Title } from '../../../../Diagnosis.styled';
 import { Color } from '../../../../../../theme/colors';
 
@@ -49,7 +49,7 @@ const Country = ({ t, onChange, onNext, options, selectedValues }) => {
   };
 
   return (
-    <>
+    <Layout>
       <Title>{t('country_text1')}</Title>
       <FieldSet>
         <Multiselect
@@ -70,7 +70,7 @@ const Country = ({ t, onChange, onNext, options, selectedValues }) => {
         onClick={onNext}
         label={t('button_next')}
       />
-    </>
+    </Layout>
   );
 };
 
