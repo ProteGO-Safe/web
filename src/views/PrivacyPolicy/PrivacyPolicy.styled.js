@@ -5,7 +5,7 @@ export const Content = styled.div`
   margin: 24px auto;
 `;
 
-export const Title = styled.h1`
+export const Title = styled.h2`
   width: 100%;
   margin-top: 0;
   margin-bottom: 24px;

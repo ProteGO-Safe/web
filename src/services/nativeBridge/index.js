@@ -4,6 +4,7 @@ import uniqueId from 'lodash.uniqueid';
 import { always, cond, equals } from 'ramda';
 import StoreRegistry from '../../store/storeRegistry';
 import {
+  FETCH_LAB_TEST_SUBSCRIPTION,
   FETCH_LANGUAGE,
   NATIVE_DATA_FETCH_EXPOSURE_NOTIFICATION_STATISTICS_SUCCESS,
   NATIVE_DATA_FETCH_NATIVE_STATE,
@@ -13,7 +14,7 @@ import { DATA_TYPE } from './nativeBridge.constants';
 import { UPLOAD_HISTORICAL_DATA_FINISHED } from '../../store/types/app';
 import { isAndroidWebView, isIOSWebView } from '../../utils/native';
 import { fetchExposureNotificationStatistics } from '../../store/actions/nativeData';
-import { fetchDistrictsStatus } from '../../store/actions/restrictions';
+import { fetchSubscribedDistricts } from '../../store/actions/restrictions';
 
 const nativeRequests = {};
 
@@ -105,6 +106,14 @@ const getSubscribedDistricts = async () => {
   return callGetBridgeData(DATA_TYPE.SUBSCRIBED_DISTRICTS);
 };
 
+const getLabTestSubscription = async () => {
+  return callGetBridgeData(DATA_TYPE.LAB_TEST_SUBSCRIPTION);
+};
+
+const getLabTestPin = async () => {
+  return callGetBridgeData(DATA_TYPE.LAB_TEST_PIN);
+};
+
 const getExposureNotificationStatistics = async () => {
   return callGetBridgeData(DATA_TYPE.EXPOSURE_STATISTICS);
 };
@@ -135,8 +144,10 @@ const turnOff = async () => {
   });
 };
 
-const generateFreeTestCode = async () => {
-  await callNativeFunction('setBridgeData', DATA_TYPE.GENERATE_FREE_TEST_CODE);
+const uploadLabTestPin = async pin => {
+  return callGetBridgeData(DATA_TYPE.UPLOAD_LAB_TEST_PIN, {
+    pin
+  });
 };
 
 const setDistrictSubscription = async (districtId, isSubscribed) => {
@@ -181,7 +192,7 @@ const handleNativeState = appState => {
   });
   if (appState.appState === 1) {
     dispatch(fetchExposureNotificationStatistics());
-    dispatch(fetchDistrictsStatus());
+    dispatch(fetchSubscribedDistricts());
   }
 };
 const handleNativeLanguage = body => {
@@ -193,6 +204,15 @@ const handleNativeLanguage = body => {
   });
 };
 
+const handleLabTestSubscription = body => {
+  const store = StoreRegistry.getStore();
+  const { dispatch } = store;
+  dispatch({
+    body,
+    type: FETCH_LAB_TEST_SUBSCRIPTION
+  });
+};
+
 const callBridgeDataHandler = cond([
   [equals(DATA_TYPE.NATIVE_SERVICES_STATUS), always(handleServicesStatus)],
   [
@@ -201,7 +221,8 @@ const callBridgeDataHandler = cond([
   ],
   [equals(DATA_TYPE.EXPOSURE_STATISTICS), always(handleExposureSummary)],
   [equals(DATA_TYPE.NATIVE_STATE), always(handleNativeState)],
-  [equals(DATA_TYPE.LANGUAGE), always(handleNativeLanguage)]
+  [equals(DATA_TYPE.LANGUAGE), always(handleNativeLanguage)],
+  [equals(DATA_TYPE.LAB_TEST_SUBSCRIPTION), always(handleLabTestSubscription)]
 ]);
 
 const onBridgeData = (dataType, dataString) => {
@@ -225,21 +246,23 @@ window.onBridgeData = onBridgeData;
 window.bridgeDataResponse = receiveNativeResponse;
 
 export default {
-  generateFreeTestCode,
-  getFontScale,
-  getServicesStatus,
-  setDiagnosisTimestamp,
-  setPin,
-  setServicesState,
-  getExposureNotificationStatistics,
-  getNotification,
   clearAllData,
   changeLanguage,
-  getNativeVersion,
-  getLanguage,
-  turnOff,
+  setDiagnosisTimestamp,
+  getExposureNotificationStatistics,
   getDistrictsStatus,
+  getFontScale,
   getForceDistrictsStatus,
+  getLabTestPin,
+  getLabTestSubscription,
+  getLanguage,
+  getNativeVersion,
+  getNotification,
+  getServicesStatus,
+  getSubscribedDistricts,
+  setPin,
   setDistrictSubscription,
-  getSubscribedDistricts
+  setServicesState,
+  turnOff,
+  uploadLabTestPin
 };

@@ -5107,6 +5107,89 @@ Array [
     </div>
   </div>,
   .c0 {
+  width: 100%;
+  margin-bottom: 16px;
+  padding: 22px 20px 22px;
+  border-radius: 4px;
+  border-width: 2px;
+  border-style: solid;
+  border-color: #0052a5;
+}
+
+.c1 {
+  position: relative;
+  width: 100%;
+  margin: 0;
+  font-size: 16px;
+  line-height: 22px;
+  font-weight: 700;
+  color: #0052a5;
+}
+
+.c1:after {
+  content: '';
+  position: absolute;
+  top: 1px;
+  right: -16px;
+  display: block;
+  width: 20px;
+  height: 20px;
+  background-image: url(angle-right-blue.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 14px;
+}
+
+.c2 {
+  display: inline-block;
+  width: 100%;
+  margin-top: 10px;
+  font-size: 14px;
+  line-height: 20px;
+  color: #000000;
+}
+
+.c2 strong {
+  font-weight: 600;
+}
+
+@media screen and (max-width:370px) {
+
+}
+
+@media screen and (max-width:370px) {
+
+}
+
+@media screen and (max-width:370px) {
+
+}
+
+<a
+    aria-current={null}
+    className="c0"
+    color="#0052a5"
+    href="#/diagnosis?p=1"
+    onClick={[Function]}
+  >
+    <h3
+      className="c1"
+      color="#0052a5"
+    >
+      test_border_box_text_1
+    </h3>
+    <span
+      className="c2"
+      color="#000000"
+    >
+      test_border_box_text_2
+       
+      <strong>
+        test_border_box_text_3
+      </strong>
+    </span>
+  </a>,
+  .c0 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -5388,7 +5471,8 @@ Array [
       >
         112
       </a>
-       lub
+       
+      triage_info_border_text9
        
       <a
         className="c3"
@@ -5396,6 +5480,7 @@ Array [
       >
         999
       </a>
+       
       triage_info_border_text7
     </span>
   </div>,
@@ -6450,6 +6535,1108 @@ Array [
 ]
 `;
 
+exports[`test render home component should render with: enabled exposure module, high exposure data, lab test completed 1`] = `
+Array [
+  .c5 .red-st0 {
+  fill: none;
+  stroke: #d5233f;
+  stroke-width: 2.5;
+  stroke-linecap: round;
+  stroke-miterlimit: 10;
+}
+
+.c0 {
+  grid-template-areas: 'name' 'text_wrapper';
+  grid-template-rows: auto auto;
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: wrap row;
+  -ms-flex-flow: wrap row;
+  flex-flow: wrap row;
+  grid-area: text_wrapper;
+}
+
+.c1 {
+  display: grid;
+  grid-area: name;
+  margin-bottom: 9px;
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 1.5;
+  color: #1b1b1b;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: wrap row;
+  -ms-flex-flow: wrap row;
+  flex-flow: wrap row;
+  width: calc(100% - 132px);
+  margin-right: 10px;
+}
+
+.c3 p {
+  font-size: 16px;
+  line-height: 1.44;
+  color: #1b1b1b;
+}
+
+.c3 p .nowrap {
+  white-space: nowrap;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 122px;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c4 svg {
+  width: inherit;
+}
+
+@media screen and (max-width:370px) {
+
+}
+
+@media screen and (max-width:370px) {
+
+}
+
+@media screen and (max-width:370px) {
+
+}
+
+<div
+    className="c0"
+  >
+    <div
+      className="c1"
+    >
+      player
+      ,
+    </div>
+    <div
+      className="c2"
+    >
+      <div
+        className="c3"
+      >
+        <p>
+          <strong>
+            smile_container_text2
+          </strong>
+           
+          smile_container_text3
+           
+          <strong>
+            triage_level_high_risk
+          </strong>
+          .
+        </p>
+      </div>
+      <div
+        className="c4"
+      >
+        <svg
+          className="c5"
+          id="red"
+          style={
+            Object {
+              "enableBackground": "new 0 0 132 132",
+            }
+          }
+          version="1.1"
+          viewBox="0 0 132 132"
+          x="0px"
+          xmlSpace="preserve"
+          y="0px"
+        >
+          <path
+            className="red-st0"
+            d="M123.7,39.2c3.7,8,5.8,17,5.8,26.5c0,34.9-28.3,63.2-63.2,63.2S3.1,100.5,3.1,65.6S31.4,2.5,66.3,2.5 c8,0,15.6,1.5,22.6,4.2"
+          />
+          <path
+            className="red-st0"
+            d="M90.2,100.3c-5.4-7.3-14.1-12.1-23.9-12.1c-9.9,0-18.6,4.8-24,12.3"
+          />
+          <path
+            className="red-st0"
+            d="M23.8,57.1c3.7-4.8,9.5-8,16-8c6.4,0,12.1,3,15.8,7.6"
+          />
+          <path
+            className="red-st0"
+            d="M77.1,57.1c3.7-4.8,9.5-8,16-8c6.4,0,12.1,3,15.8,7.6"
+          />
+          <path
+            className="red-st0"
+            d="M117.7,25.9c0,6.7-5.4,12.1-12.1,12.1c-6.7,0-12.1-5.4-12.1-12.1S105.6,3,105.6,3S117.7,19.2,117.7,25.9z"
+          />
+        </svg>
+      </div>
+    </div>
+  </div>,
+  .c0 {
+  width: 100%;
+  margin-bottom: 16px;
+  padding: 22px 20px 22px;
+  border-radius: 4px;
+  border-width: 2px;
+  border-style: solid;
+  border-color: #598527;
+}
+
+.c1 {
+  position: relative;
+  width: 100%;
+  margin: 0;
+  font-size: 16px;
+  line-height: 22px;
+  font-weight: 700;
+  color: #000000;
+}
+
+.c1:after {
+  content: '';
+  position: absolute;
+  top: 1px;
+  right: -16px;
+  display: none;
+  width: 20px;
+  height: 20px;
+  background-image: url(angle-right-blue.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 14px;
+}
+
+.c2 {
+  display: inline-block;
+  width: 100%;
+  margin-top: 10px;
+  font-size: 14px;
+  line-height: 20px;
+  color: #000000;
+}
+
+.c2 strong {
+  font-weight: 600;
+}
+
+@media screen and (max-width:370px) {
+
+}
+
+@media screen and (max-width:370px) {
+
+}
+
+@media screen and (max-width:370px) {
+
+}
+
+<div
+    className="c0"
+    color="#598527"
+    to={null}
+  >
+    <h3
+      className="c1"
+      color="#000000"
+    >
+      test_border_box_approve_title
+    </h3>
+    <span
+      className="c2"
+      color="#000000"
+    >
+      <strong>
+        test_border_box_approve_description_1
+      </strong>
+       
+      test_border_box_approve_description_2
+       
+      <strong>
+        test_border_box_approve_description_3
+      </strong>
+       
+      test_border_box_approve_description_4
+       
+      <strong>
+        test_border_box_approve_description_5
+      </strong>
+       
+      test_border_box_approve_description_6
+      <br />
+      test_border_box_approve_description_7
+    </span>
+  </div>,
+  .c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: wrap row;
+  -ms-flex-flow: wrap row;
+  flex-flow: wrap row;
+  width: 100%;
+  padding: 14px 19px;
+  margin-bottom: 24px;
+  border-radius: 4px;
+  background-color: #d5233f;
+}
+
+.c0 p {
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 1.44;
+  color: #ffffff;
+}
+
+.c1 {
+  position: fixed;
+  right: 50%;
+  bottom: 80px;
+  bottom: calc(80px + constant(safe-area-inset-bottom));
+  bottom: calc(80px + env(safe-area-inset-bottom));
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: wrap row;
+  -ms-flex-flow: wrap row;
+  flex-flow: wrap row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: calc(100% - 30px);
+  max-width: 384px;
+  margin-top: 24px;
+  padding: 10px 18px;
+  border-radius: 4px;
+  background-color: #ffffff;
+  box-shadow: 0 0 8px 0 rgba(0,0,0,0.65);
+  -webkit-transform: translateX(50%);
+  -ms-transform: translateX(50%);
+  transform: translateX(50%);
+  cursor: pointer;
+  z-index: 98;
+}
+
+.c1.small {
+  right: 15px;
+  bottom: 60px;
+  bottom: calc(60px + constant(safe-area-inset-bottom));
+  bottom: calc(60px + env(safe-area-inset-bottom));
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  width: 66px;
+  height: 66px;
+  padding: 16px;
+  border-radius: 50%;
+  box-shadow: 0 0 8px 0 rgba(0,0,0,0.75);
+  -webkit-transform: translateX(0);
+  -ms-transform: translateX(0);
+  transform: translateX(0);
+}
+
+.c3 {
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: wrap row;
+  -ms-flex-flow: wrap row;
+  flex-flow: wrap row;
+  width: calc(100% - 78px);
+  font-size: 16px;
+  line-height: 1.4;
+  font-weight: 700;
+  color: #d5233f;
+}
+
+.c3 img {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  height: 14px;
+  width: 14px;
+  margin-top: -7px;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 46px;
+  height: 46px;
+  margin-right: 32px;
+}
+
+.c2.small {
+  width: 36px;
+  height: 36px;
+  margin-right: 0;
+}
+
+.c4 {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  height: 16px;
+  width: 16px;
+  margin-top: -8px;
+  z-index: 10;
+}
+
+.c4 > svg {
+  display: block;
+  height: 100%;
+  width: 100%;
+}
+
+@media screen and (max-width:370px) {
+  .c1 {
+    padding: 10px 14px;
+  }
+}
+
+@media screen and (max-width:370px) {
+  .c3 {
+    width: calc(100% - 56px);
+  }
+}
+
+@media screen and (max-width:370px) {
+  .c2 {
+    width: 36px;
+    height: 36px;
+    margin-right: 20px;
+  }
+}
+
+<div
+    className="c0"
+    color="#d5233f"
+  >
+    <p>
+      exposure_triage_level_high_risk_content
+    </p>
+    <a
+      className="c1"
+      color="#d5233f"
+      href="tel:222500115"
+    >
+      <svg
+        className="c2"
+        color="#d5233f"
+      >
+        icon-contact.svg
+      </svg>
+      <div
+        className="c3"
+        color="#d5233f"
+      >
+        call_helpline
+        <br />
+        222 500 115
+        <span
+          className="c4"
+        >
+          <svg>
+            arrow-current-color.svg
+          </svg>
+        </span>
+      </div>
+    </a>
+  </div>,
+  .c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: wrap row;
+  -ms-flex-flow: wrap row;
+  flex-flow: wrap row;
+  width: 100%;
+  padding: 14px 19px;
+  margin-bottom: 24px;
+  border-radius: 4px;
+  border-style: solid;
+  border-width: 2px;
+  border-color: #d5233f;
+}
+
+.c0 .p1 {
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 1.44;
+  color: #1b1b1b;
+}
+
+.c1 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 100%;
+  padding: 20px 0;
+  color: #0052a5;
+}
+
+.c2 {
+  display: block;
+  height: 14px;
+  width: 14px;
+  margin-left: 20px;
+}
+
+.c3 {
+  width: auto;
+  font-weight: 700;
+  color: #0052a5;
+}
+
+@media screen and (max-width:370px) {
+
+}
+
+@media screen and (max-width:370px) {
+
+}
+
+@media screen and (max-width:370px) {
+
+}
+
+<div
+    className="c0"
+    color="#d5233f"
+  >
+    <span
+      className="p1"
+    >
+      triage_info_border_text4
+      <a
+        className="c1"
+        href="https://pacjent.gov.pl/teleporada"
+        target="_blank"
+      >
+        triage_info_border_text5
+        <svg
+          className="c2"
+        >
+          arrow-current-color.svg
+        </svg>
+      </a>
+      triage_info_border_text6
+       
+      <a
+        className="c3"
+        href="tel:112"
+      >
+        112
+      </a>
+       
+      triage_info_border_text9
+       
+      <a
+        className="c3"
+        href="tel:999"
+      >
+        999
+      </a>
+       
+      triage_info_border_text7
+    </span>
+  </div>,
+]
+`;
+
+exports[`test render home component should render with: enabled exposure module, high exposure data, lab test in progress 1`] = `
+Array [
+  .c5 .red-st0 {
+  fill: none;
+  stroke: #d5233f;
+  stroke-width: 2.5;
+  stroke-linecap: round;
+  stroke-miterlimit: 10;
+}
+
+.c0 {
+  grid-template-areas: 'name' 'text_wrapper';
+  grid-template-rows: auto auto;
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: wrap row;
+  -ms-flex-flow: wrap row;
+  flex-flow: wrap row;
+  grid-area: text_wrapper;
+}
+
+.c1 {
+  display: grid;
+  grid-area: name;
+  margin-bottom: 9px;
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 1.5;
+  color: #1b1b1b;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: wrap row;
+  -ms-flex-flow: wrap row;
+  flex-flow: wrap row;
+  width: calc(100% - 132px);
+  margin-right: 10px;
+}
+
+.c3 p {
+  font-size: 16px;
+  line-height: 1.44;
+  color: #1b1b1b;
+}
+
+.c3 p .nowrap {
+  white-space: nowrap;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 122px;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c4 svg {
+  width: inherit;
+}
+
+@media screen and (max-width:370px) {
+
+}
+
+@media screen and (max-width:370px) {
+
+}
+
+@media screen and (max-width:370px) {
+
+}
+
+<div
+    className="c0"
+  >
+    <div
+      className="c1"
+    >
+      player
+      ,
+    </div>
+    <div
+      className="c2"
+    >
+      <div
+        className="c3"
+      >
+        <p>
+          <strong>
+            smile_container_text2
+          </strong>
+           
+          smile_container_text3
+           
+          <strong>
+            triage_level_high_risk
+          </strong>
+          .
+        </p>
+      </div>
+      <div
+        className="c4"
+      >
+        <svg
+          className="c5"
+          id="red"
+          style={
+            Object {
+              "enableBackground": "new 0 0 132 132",
+            }
+          }
+          version="1.1"
+          viewBox="0 0 132 132"
+          x="0px"
+          xmlSpace="preserve"
+          y="0px"
+        >
+          <path
+            className="red-st0"
+            d="M123.7,39.2c3.7,8,5.8,17,5.8,26.5c0,34.9-28.3,63.2-63.2,63.2S3.1,100.5,3.1,65.6S31.4,2.5,66.3,2.5 c8,0,15.6,1.5,22.6,4.2"
+          />
+          <path
+            className="red-st0"
+            d="M90.2,100.3c-5.4-7.3-14.1-12.1-23.9-12.1c-9.9,0-18.6,4.8-24,12.3"
+          />
+          <path
+            className="red-st0"
+            d="M23.8,57.1c3.7-4.8,9.5-8,16-8c6.4,0,12.1,3,15.8,7.6"
+          />
+          <path
+            className="red-st0"
+            d="M77.1,57.1c3.7-4.8,9.5-8,16-8c6.4,0,12.1,3,15.8,7.6"
+          />
+          <path
+            className="red-st0"
+            d="M117.7,25.9c0,6.7-5.4,12.1-12.1,12.1c-6.7,0-12.1-5.4-12.1-12.1S105.6,3,105.6,3S117.7,19.2,117.7,25.9z"
+          />
+        </svg>
+      </div>
+    </div>
+  </div>,
+  .c3 {
+  width: auto;
+  font-weight: 700;
+  color: #0052a5;
+}
+
+.c0 {
+  width: 100%;
+  margin-bottom: 16px;
+  padding: 22px 20px 22px;
+  border-radius: 4px;
+  border-width: 2px;
+  border-style: solid;
+  border-color: #0052a5;
+}
+
+.c1 {
+  position: relative;
+  width: 100%;
+  margin: 0;
+  font-size: 16px;
+  line-height: 22px;
+  font-weight: 700;
+  color: #000000;
+}
+
+.c1:after {
+  content: '';
+  position: absolute;
+  top: 1px;
+  right: -16px;
+  display: none;
+  width: 20px;
+  height: 20px;
+  background-image: url(angle-right-blue.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 14px;
+}
+
+.c2 {
+  display: inline-block;
+  width: 100%;
+  margin-top: 10px;
+  font-size: 14px;
+  line-height: 20px;
+  color: #000000;
+}
+
+.c2 strong {
+  font-weight: 600;
+}
+
+@media screen and (max-width:370px) {
+
+}
+
+@media screen and (max-width:370px) {
+
+}
+
+@media screen and (max-width:370px) {
+
+}
+
+<div
+    className="c0"
+    color="#0052a5"
+    to={null}
+  >
+    <h3
+      className="c1"
+      color="#000000"
+    >
+      test_border_box_qualification_title
+    </h3>
+    <span
+      className="c2"
+      color="#000000"
+    >
+      test_border_box_qualification_description_1
+      <a
+        className="c3"
+        href="tel:2"
+      >
+        test_border_box_qualification_description_2
+      </a>
+    </span>
+  </div>,
+  .c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: wrap row;
+  -ms-flex-flow: wrap row;
+  flex-flow: wrap row;
+  width: 100%;
+  padding: 14px 19px;
+  margin-bottom: 24px;
+  border-radius: 4px;
+  background-color: #d5233f;
+}
+
+.c0 p {
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 1.44;
+  color: #ffffff;
+}
+
+.c1 {
+  position: fixed;
+  right: 50%;
+  bottom: 80px;
+  bottom: calc(80px + constant(safe-area-inset-bottom));
+  bottom: calc(80px + env(safe-area-inset-bottom));
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: wrap row;
+  -ms-flex-flow: wrap row;
+  flex-flow: wrap row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: calc(100% - 30px);
+  max-width: 384px;
+  margin-top: 24px;
+  padding: 10px 18px;
+  border-radius: 4px;
+  background-color: #ffffff;
+  box-shadow: 0 0 8px 0 rgba(0,0,0,0.65);
+  -webkit-transform: translateX(50%);
+  -ms-transform: translateX(50%);
+  transform: translateX(50%);
+  cursor: pointer;
+  z-index: 98;
+}
+
+.c1.small {
+  right: 15px;
+  bottom: 60px;
+  bottom: calc(60px + constant(safe-area-inset-bottom));
+  bottom: calc(60px + env(safe-area-inset-bottom));
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  width: 66px;
+  height: 66px;
+  padding: 16px;
+  border-radius: 50%;
+  box-shadow: 0 0 8px 0 rgba(0,0,0,0.75);
+  -webkit-transform: translateX(0);
+  -ms-transform: translateX(0);
+  transform: translateX(0);
+}
+
+.c3 {
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: wrap row;
+  -ms-flex-flow: wrap row;
+  flex-flow: wrap row;
+  width: calc(100% - 78px);
+  font-size: 16px;
+  line-height: 1.4;
+  font-weight: 700;
+  color: #d5233f;
+}
+
+.c3 img {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  height: 14px;
+  width: 14px;
+  margin-top: -7px;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 46px;
+  height: 46px;
+  margin-right: 32px;
+}
+
+.c2.small {
+  width: 36px;
+  height: 36px;
+  margin-right: 0;
+}
+
+.c4 {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  height: 16px;
+  width: 16px;
+  margin-top: -8px;
+  z-index: 10;
+}
+
+.c4 > svg {
+  display: block;
+  height: 100%;
+  width: 100%;
+}
+
+@media screen and (max-width:370px) {
+  .c1 {
+    padding: 10px 14px;
+  }
+}
+
+@media screen and (max-width:370px) {
+  .c3 {
+    width: calc(100% - 56px);
+  }
+}
+
+@media screen and (max-width:370px) {
+  .c2 {
+    width: 36px;
+    height: 36px;
+    margin-right: 20px;
+  }
+}
+
+<div
+    className="c0"
+    color="#d5233f"
+  >
+    <p>
+      exposure_triage_level_high_risk_content
+    </p>
+    <a
+      className="c1"
+      color="#d5233f"
+      href="tel:222500115"
+    >
+      <svg
+        className="c2"
+        color="#d5233f"
+      >
+        icon-contact.svg
+      </svg>
+      <div
+        className="c3"
+        color="#d5233f"
+      >
+        call_helpline
+        <br />
+        222 500 115
+        <span
+          className="c4"
+        >
+          <svg>
+            arrow-current-color.svg
+          </svg>
+        </span>
+      </div>
+    </a>
+  </div>,
+  .c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: wrap row;
+  -ms-flex-flow: wrap row;
+  flex-flow: wrap row;
+  width: 100%;
+  padding: 14px 19px;
+  margin-bottom: 24px;
+  border-radius: 4px;
+  border-style: solid;
+  border-width: 2px;
+  border-color: #d5233f;
+}
+
+.c0 .p1 {
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 1.44;
+  color: #1b1b1b;
+}
+
+.c1 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 100%;
+  padding: 20px 0;
+  color: #0052a5;
+}
+
+.c2 {
+  display: block;
+  height: 14px;
+  width: 14px;
+  margin-left: 20px;
+}
+
+.c3 {
+  width: auto;
+  font-weight: 700;
+  color: #0052a5;
+}
+
+@media screen and (max-width:370px) {
+
+}
+
+@media screen and (max-width:370px) {
+
+}
+
+@media screen and (max-width:370px) {
+
+}
+
+<div
+    className="c0"
+    color="#d5233f"
+  >
+    <span
+      className="p1"
+    >
+      triage_info_border_text4
+      <a
+        className="c1"
+        href="https://pacjent.gov.pl/teleporada"
+        target="_blank"
+      >
+        triage_info_border_text5
+        <svg
+          className="c2"
+        >
+          arrow-current-color.svg
+        </svg>
+      </a>
+      triage_info_border_text6
+       
+      <a
+        className="c3"
+        href="tel:112"
+      >
+        112
+      </a>
+       
+      triage_info_border_text9
+       
+      <a
+        className="c3"
+        href="tel:999"
+      >
+        999
+      </a>
+       
+      triage_info_border_text7
+    </span>
+  </div>,
+]
+`;
+
 exports[`test render home component should render with: enabled exposure module, no test, green exposure data 1`] = `
 Array [
   .c5 .green-st0 {
@@ -6943,6 +8130,89 @@ Array [
     </div>
   </div>,
   .c0 {
+  width: 100%;
+  margin-bottom: 16px;
+  padding: 22px 20px 22px;
+  border-radius: 4px;
+  border-width: 2px;
+  border-style: solid;
+  border-color: #0052a5;
+}
+
+.c1 {
+  position: relative;
+  width: 100%;
+  margin: 0;
+  font-size: 16px;
+  line-height: 22px;
+  font-weight: 700;
+  color: #0052a5;
+}
+
+.c1:after {
+  content: '';
+  position: absolute;
+  top: 1px;
+  right: -16px;
+  display: block;
+  width: 20px;
+  height: 20px;
+  background-image: url(angle-right-blue.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 14px;
+}
+
+.c2 {
+  display: inline-block;
+  width: 100%;
+  margin-top: 10px;
+  font-size: 14px;
+  line-height: 20px;
+  color: #000000;
+}
+
+.c2 strong {
+  font-weight: 600;
+}
+
+@media screen and (max-width:370px) {
+
+}
+
+@media screen and (max-width:370px) {
+
+}
+
+@media screen and (max-width:370px) {
+
+}
+
+<a
+    aria-current={null}
+    className="c0"
+    color="#0052a5"
+    href="#/diagnosis?p=1"
+    onClick={[Function]}
+  >
+    <h3
+      className="c1"
+      color="#0052a5"
+    >
+      test_border_box_text_1
+    </h3>
+    <span
+      className="c2"
+      color="#000000"
+    >
+      test_border_box_text_2
+       
+      <strong>
+        test_border_box_text_3
+      </strong>
+    </span>
+  </a>,
+  .c0 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -7224,7 +8494,8 @@ Array [
       >
         112
       </a>
-       lub
+       
+      triage_info_border_text9
        
       <a
         className="c3"
@@ -7232,6 +8503,7 @@ Array [
       >
         999
       </a>
+       
       triage_info_border_text7
     </span>
   </div>,
@@ -8829,6 +10101,87 @@ Array [
     </div>
   </div>,
   .c0 {
+  width: 100%;
+  margin-bottom: 16px;
+  padding: 22px 20px 22px;
+  border-radius: 4px;
+  border-width: 2px;
+  border-style: solid;
+  border-color: #0052a5;
+}
+
+.c1 {
+  position: relative;
+  width: 100%;
+  margin: 0;
+  font-size: 16px;
+  line-height: 22px;
+  font-weight: 700;
+  color: #0052a5;
+}
+
+.c1:after {
+  content: '';
+  position: absolute;
+  top: 1px;
+  right: -16px;
+  display: block;
+  width: 20px;
+  height: 20px;
+  background-image: url(angle-right-blue.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 14px;
+}
+
+.c2 {
+  display: inline-block;
+  width: 100%;
+  margin-top: 10px;
+  font-size: 14px;
+  line-height: 20px;
+  color: #000000;
+}
+
+.c2 strong {
+  font-weight: 600;
+}
+
+@media screen and (max-width:370px) {
+
+}
+
+@media screen and (max-width:370px) {
+
+}
+
+@media screen and (max-width:370px) {
+
+}
+
+<a
+    aria-current={null}
+    className="c0"
+    color="#0052a5"
+    href="#/summary-risk-test"
+    onClick={[Function]}
+  >
+    <h3
+      className="c1"
+      color="#0052a5"
+    >
+      test_border_box_pick_up_title
+    </h3>
+    <span
+      className="c2"
+      color="#000000"
+    >
+      test_border_box_pick_up_description_1
+      <br />
+      test_border_box_pick_up_description_2
+    </span>
+  </a>,
+  .c0 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -9110,7 +10463,8 @@ Array [
       >
         112
       </a>
-       lub
+       
+      triage_info_border_text9
        
       <a
         className="c3"
@@ -9118,6 +10472,7 @@ Array [
       >
         999
       </a>
+       
       triage_info_border_text7
     </span>
   </div>,
@@ -9567,7 +10922,8 @@ Array [
       >
         112
       </a>
-       lub
+       
+      triage_info_border_text9
        
       <a
         className="c3"
@@ -9575,6 +10931,7 @@ Array [
       >
         999
       </a>
+       
       triage_info_border_text7
     </span>
   </div>,
@@ -10765,6 +12122,89 @@ Array [
     </div>
   </div>,
   .c0 {
+  width: 100%;
+  margin-bottom: 16px;
+  padding: 22px 20px 22px;
+  border-radius: 4px;
+  border-width: 2px;
+  border-style: solid;
+  border-color: #0052a5;
+}
+
+.c1 {
+  position: relative;
+  width: 100%;
+  margin: 0;
+  font-size: 16px;
+  line-height: 22px;
+  font-weight: 700;
+  color: #0052a5;
+}
+
+.c1:after {
+  content: '';
+  position: absolute;
+  top: 1px;
+  right: -16px;
+  display: block;
+  width: 20px;
+  height: 20px;
+  background-image: url(angle-right-blue.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 14px;
+}
+
+.c2 {
+  display: inline-block;
+  width: 100%;
+  margin-top: 10px;
+  font-size: 14px;
+  line-height: 20px;
+  color: #000000;
+}
+
+.c2 strong {
+  font-weight: 600;
+}
+
+@media screen and (max-width:370px) {
+
+}
+
+@media screen and (max-width:370px) {
+
+}
+
+@media screen and (max-width:370px) {
+
+}
+
+<a
+    aria-current={null}
+    className="c0"
+    color="#0052a5"
+    href="#/diagnosis?p=1"
+    onClick={[Function]}
+  >
+    <h3
+      className="c1"
+      color="#0052a5"
+    >
+      test_border_box_text_1
+    </h3>
+    <span
+      className="c2"
+      color="#000000"
+    >
+      test_border_box_text_2
+       
+      <strong>
+        test_border_box_text_3
+      </strong>
+    </span>
+  </a>,
+  .c0 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -11046,7 +12486,8 @@ Array [
       >
         112
       </a>
-       lub
+       
+      triage_info_border_text9
        
       <a
         className="c3"
@@ -11054,6 +12495,7 @@ Array [
       >
         999
       </a>
+       
       triage_info_border_text7
     </span>
   </div>,

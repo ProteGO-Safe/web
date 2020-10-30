@@ -135,3 +135,8 @@ export const Name = styled.h1`
   line-height: 1.4;
   color: ${Color.lightBlack};
 `;
+
+export const Link = styled.a`
+  color: ${Color.primary};
+  font-weight: ${FontWeight.SemiBold};
+`;

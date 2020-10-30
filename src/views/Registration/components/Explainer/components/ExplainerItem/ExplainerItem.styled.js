@@ -1,9 +1,9 @@
 import styled from 'styled-components';
 
 export const Icon = styled.img`
-  width: 100px;
-  height: auto;
-  margin: 56px auto 65px;
+  max-width: 100px;
+  max-height: 16vh;
+  margin: 7vh auto 8vh;
 `;
 
 export const Content = styled.p`

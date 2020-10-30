@@ -3,6 +3,7 @@ import renderer from 'react-test-renderer';
 import 'jest-styled-components';
 import '@testing-library/jest-dom';
 import { Provider } from 'react-redux';
+import { HashRouter } from 'react-router-dom';
 import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
 import { HomeContent } from '../index';
@@ -13,9 +14,11 @@ const mockStore = configureMockStore(middlewares);
 
 const renderTestedComponent = store => {
   return renderer.create(
-    <Provider store={store}>
-      <HomeContent />
-    </Provider>
+    <HashRouter>
+      <Provider store={store}>
+        <HomeContent />
+      </Provider>
+    </HashRouter>
   );
 };
 
@@ -266,6 +269,34 @@ describe('test render home component', () => {
     const store = mockStore({
       ...baseStore,
       triage: { ...baseStore.triage, timeOfConfirmedCovid: 1596953125 }
+    });
+    const container = renderTestedComponent(store);
+    expect(container.toJSON()).toMatchSnapshot();
+  });
+
+  it('should render with: enabled exposure module, high exposure data, lab test in progress', () => {
+    const store = mockStore({
+      ...baseStore,
+      nativeData: {
+        ...nativeDataStorageWithEnableExposureByRiskLevel(3),
+        labTest: {
+          subscription: { status: 1 }
+        }
+      }
+    });
+    const container = renderTestedComponent(store);
+    expect(container.toJSON()).toMatchSnapshot();
+  });
+
+  it('should render with: enabled exposure module, high exposure data, lab test completed', () => {
+    const store = mockStore({
+      ...baseStore,
+      nativeData: {
+        ...nativeDataStorageWithEnableExposureByRiskLevel(3),
+        labTest: {
+          subscription: { status: 2 }
+        }
+      }
     });
     const container = renderTestedComponent(store);
     expect(container.toJSON()).toMatchSnapshot();

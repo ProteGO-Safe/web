@@ -10,7 +10,7 @@ import {
 import UploadInProgress from './components/UploadInProgress/UploadInProgress';
 import useSupportExposureNotificationTracing from '../../hooks/useSupportExposureNotificationTracing';
 import { UploadSuccess } from './components/UploadSuccess';
-import { getBanData, createErrorMessage } from './helpers/BanPinTries';
+import banPinTries from '../../services/banPinTries';
 import { UPLOAD_HISTORICAL_DATA_STATE as uploadState } from '../../store/reducers/app/app.constants';
 import Routes from '../../routes';
 import { getUploadHistoricalDataStateErrorMessageVisible } from '../../store/selectors/app';
@@ -38,7 +38,7 @@ const UploadHistoricalData = ({ t }) => {
 
   useEffect(() => {
     if (unsuccessfulAttempts) {
-      const banInfo = getBanData(unsuccessfulAttempts);
+      const banInfo = banPinTries.getBanData(unsuccessfulAttempts);
       setBanData(banInfo);
     }
   }, [unsuccessfulAttempts]);
@@ -46,7 +46,7 @@ const UploadHistoricalData = ({ t }) => {
   useEffect(() => {
     if (banData && banData.lockdownTime) {
       const timer = setTimeout(() => {
-        setBanData(getBanData(unsuccessfulAttempts));
+        setBanData(banPinTries.getBanData(unsuccessfulAttempts));
       }, banData.lockdownTime);
       return () => clearTimeout(timer);
     }
@@ -92,7 +92,8 @@ const UploadHistoricalData = ({ t }) => {
       return t('upload_data_text4');
     }
     return (
-      banData && createErrorMessage(banData, unsuccessfulAttempts.length, t)
+      banData &&
+      banPinTries.createErrorMessage(banData, unsuccessfulAttempts.length, t)
     );
   };
   return (

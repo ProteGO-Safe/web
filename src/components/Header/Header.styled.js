@@ -6,14 +6,16 @@ import { ReactComponent as LogoSVG } from '../../assets/img/logo/stopcovid_prote
 import { ReactComponent as ArrowIcon } from '../../assets/img/icons/angle-left.svg';
 
 export const Container = styled.header`
-  height: 50px;
-  background-color: #0052a5;
-  width: 100%;
-  padding: 0 14px;
+  position: relative;
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
+  height: 50px;
+  width: 100vw;
+  padding: 0 14px;
+  background-color: #0052a5;
   transition: all 0.2s ease-in;
+  z-index: 600;
 
   @media (max-width: 300px) {
     height: 40px;

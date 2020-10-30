@@ -23,9 +23,23 @@ const CurrentRestrictions = ({
   const renderList = useMemo(() => {
     if (isFlatten && flattenDistricts.length === 0) {
       return (
-        <Styled.Paragraph>
-          {t('current_restrictions_paragraph_3')}
-        </Styled.Paragraph>
+        <>
+          <Styled.NoResults>
+            <Styled.NoResultsTitle>
+              {t('current_restrictions_paragraph_3')}
+            </Styled.NoResultsTitle>
+            <Styled.NoResultsText>
+              {t('current_restrictions_paragraph_4')}
+            </Styled.NoResultsText>
+          </Styled.NoResults>
+
+          <Styled.Title>{t('current_restrictions_title_2')}</Styled.Title>
+          <ListDistricts
+            items={listDistrictsItems}
+            handleSubscribeDistrict={handleSubscribeDistrict}
+            handleUnsubscribeDistrict={handleUnsubscribeDistrict}
+          />
+        </>
       );
     }
     if (isFlatten) {
@@ -91,10 +105,7 @@ const CurrentRestrictions = ({
         </Styled.Paragraph>
 
         <Styled.ButtonWrapper>
-          <Styled.UrlLink
-            href="https://www.gov.pl/web/koronawirus/regionalne-obostrzenia-dla-wybranych-powiatow"
-            target="_blank"
-          >
+          <Styled.UrlLink href={t('current_restrictions_href')} target="_blank">
             <Button
               label={t('current_restrictions_button_name')}
               onClick={() => null}

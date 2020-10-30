@@ -14,8 +14,10 @@ export const Container = styled.div`
   justify-content: center;
   width: 100%;
   min-height: 30px;
-  margin-top: 18px;
   margin-bottom: 4px;
   color: ${Color.gray};
   font-size: 14px;
+  + * {
+    margin-top: 12px;
+  }
 `;

@@ -60,3 +60,24 @@ export const SearchWrapper = styled.div`
   width: 100%;
   padding: 18px;
 `;
+
+export const NoResults = styled.div`
+  display: flex;
+  flex-flow: wrap row;
+  width: 100%;
+  margin-bottom: 32px;
+`;
+export const NoResultsTitle = styled.h4`
+  width: 100%;
+  margin: 0 0 16px 0;
+  font-size: 20px;
+  line-height: 24px;
+  font-weight: 700;
+  text-align: center;
+`;
+export const NoResultsText = styled.span`
+  width: 100%;
+  font-size: 14px;
+  line-height: 20px;
+  text-align: center;
+`;

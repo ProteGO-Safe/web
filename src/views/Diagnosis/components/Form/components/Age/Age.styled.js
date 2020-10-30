@@ -15,7 +15,8 @@ export const Title = styled.h1`
   font-size: 20px;
   line-height: 1.25;
   color: ${Color.lightBlack};
-  margin: 10px 0 30px;
+  margin-top: 0;
+  margin-bottom: 30px;
 `;
 
 export const Actions = styled.div`

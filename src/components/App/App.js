@@ -16,6 +16,7 @@ import {
   HowItWorks,
   IAmSick,
   ImportantInfo,
+  LabTest,
   RiskTest,
   NotSupported,
   Onboarding,
@@ -28,6 +29,7 @@ import {
   SettingsLanguages,
   MenuSettings,
   StartScreen,
+  SummaryRiskTest,
   UserData,
   UserDataChange,
   UserDataSettings,
@@ -56,7 +58,7 @@ import useModalContext from '../../hooks/useModalContext';
 import useClearData from '../../hooks/useClearData';
 import useTurnOffApplication from '../../hooks/useTurnOffApplication';
 import * as Styled from './App.styled';
-import { fetchDistrictsStatus } from '../../store/actions/restrictions';
+import { fetchSubscribedDistricts } from '../../store/actions/restrictions';
 
 function App() {
   const dispatch = useDispatch();
@@ -84,7 +86,7 @@ function App() {
   useEffect(() => {
     dispatch(hideUploadHistoricalDataErrorMessage());
     dispatch(fetchFontScale());
-    dispatch(fetchDistrictsStatus());
+    dispatch(fetchSubscribedDistricts());
   }, [dispatch]);
 
   history.listen(() => {
@@ -145,11 +147,21 @@ function App() {
               path={Routes.CurrentRestrictions}
               component={CurrentRestrictions}
             />
+            <Route
+              exact
+              path={Routes.SummaryRiskTest}
+              component={SummaryRiskTest}
+            />
             <Route exact path={Routes.Daily} component={Daily} />
             <Route exact path="/daily/:id" component={DailyData} />
             <Route exact path={Routes.DailyData} component={DailyData} />
             <Route exact path={Routes.HowItWorks} component={HowItWorks} />
             <Route exact path={Routes.IAmSick} component={IAmSick} />
+            <Route
+              exact
+              path={`${Routes.LabTest}/:step(1|2|3)`}
+              component={LabTest}
+            />
             <Route exact path={Routes.RiskTest} component={RiskTest} />
             <Route exact path={Routes.Settings} component={MenuSettings} />
             <Route exact path={Routes.SettingsBluetooth} component={Settings} />

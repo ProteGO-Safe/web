@@ -10,6 +10,5 @@ export const DiagnosisWrapper = styled.div`
 `;
 
 export const Container = styled(ContainerBase)`
-  padding-top: 30px;
   flex: 1;
 `;

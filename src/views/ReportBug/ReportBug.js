@@ -1,6 +1,6 @@
 import React from 'react';
 import { withTranslation } from 'react-i18next';
-import { Email, Layout, Url } from '../../components';
+import { Email, Layout, UrlCovid } from '../../components';
 import { Color } from '../../theme/colors';
 import { FontWeight } from '../../theme/fonts';
 import { Paragraph } from '../../theme/typography';
@@ -11,8 +11,7 @@ const ReportBug = ({ t }) => {
     <Layout isNavigation>
       <Title>{t('report_bug_text1')}</Title>
       <Paragraph>
-        {t('report_bug_text2')}{' '}
-        <Url value="https://www.gov.pl/web/koronawirus">COVID-19</Url>.
+        {t('report_bug_text2')} <UrlCovid />.
       </Paragraph>
       <Paragraph>{t('report_bug_text3')}</Paragraph>
       <Paragraph color={Color.primary} fontWeight={FontWeight.Bold}>

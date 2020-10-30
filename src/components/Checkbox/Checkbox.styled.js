@@ -29,10 +29,14 @@ export const Checkbox = styled.input`
       border-color: ${Color.primary};
       background-color: ${Color.primary};
     }
+    &:after {
+      opacity: 1;
+    }
   }
 `;
 
 export const Label = styled.label`
+  position: relative;
   display: inline-block;
   width: auto;
   padding-left: 52px;
@@ -51,6 +55,7 @@ export const Label = styled.label`
     border-radius: 4px;
     background-color: ${Color.white};
     transition: all 0.2s;
+    z-index: 1;
   }
   &:after {
     content: '';
@@ -62,6 +67,8 @@ export const Label = styled.label`
     background-image: url(${Icon});
     background-position: center;
     background-size: 100%;
+    opacity: 0;
+    z-index: 10;
   }
 `;
 

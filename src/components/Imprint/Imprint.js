@@ -9,7 +9,7 @@ import { ImprintWrapper } from './Imprint.styled';
 
 import './Imprint.scss';
 
-const Imprint = ({ t, user = {} }) => {
+const Imprint = ({ labTestPin, t, user = {} }) => {
   const { chronicSicks, bloodGroup, smokeNumber, isSmoking } = user;
 
   const smokingContent = () => {
@@ -57,12 +57,21 @@ const Imprint = ({ t, user = {} }) => {
           </SmallText>
         </Grid>
 
-        <Grid item>
+        <Grid item xs={6}>
           <Paragraph color={Color.lightBlack} fontWeight={FontWeight.Bold}>
             {t('imprint_text3')}
           </Paragraph>
           {chronicSicksContent()}
         </Grid>
+
+        {labTestPin && (
+          <Grid item xs={6}>
+            <Paragraph color={Color.lightBlack} fontWeight={FontWeight.Bold}>
+              {t('imprint_text12')}
+            </Paragraph>
+            <SmallText>{labTestPin}</SmallText>
+          </Grid>
+        )}
       </Grid>
     </ImprintWrapper>
   );

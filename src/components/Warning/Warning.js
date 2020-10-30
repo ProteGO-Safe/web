@@ -43,14 +43,14 @@ const Warning = ({
     }
   })();
   return (
-    <WarningWrapper className={`${borderColor}`} onClick={onClick}>
+    <WarningWrapper border={borderColor} onClick={onClick}>
       {arrow && <IconArrow color={colorFont} />}
       <TitleWrapper>
         <Icon>
           <img src={renderIcon} alt="icon" />
         </Icon>
         <Title color={colorFont}>{title}</Title>
-        <Content color={colorFont}>{content}</Content>
+        {content && <Content color={colorFont}>{content}</Content>}
       </TitleWrapper>
     </WarningWrapper>
   );
@@ -59,18 +59,20 @@ const Warning = ({
 Warning.defaultProps = {
   arrow: false,
   borderColor: '',
+  content: '',
   colorFont: '',
+  onClick: () => null,
   status: 'success'
 };
 
 Warning.propTypes = {
   arrow: PropTypes.bool,
   borderColor: PropTypes.string,
-  content: PropTypes.string.isRequired,
+  content: PropTypes.string,
   colorFont: PropTypes.string,
   status: PropTypes.oneOf(['success', 'warning', 'info', 'error']),
   title: PropTypes.string.isRequired,
-  onClick: PropTypes.func.isRequired
+  onClick: PropTypes.func
 };
 
 export default Warning;

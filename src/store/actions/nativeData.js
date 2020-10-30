@@ -148,6 +148,21 @@ export function fetchLanguage() {
   };
 }
 
+export const fetchLabTestSubscriptionSuccess = body => ({
+  body,
+  type: types.FETCH_LAB_TEST_SUBSCRIPTION
+});
+
+export const fetchLabTestSubscription = () => {
+  return dispatch => {
+    nativeBridge.getLabTestSubscription().then(body => {
+      if (body) {
+        dispatch(fetchLabTestSubscriptionSuccess(body));
+      }
+    });
+  };
+}
+
 export function changeNativeLanguage(language) {
   const data = { language: language.toUpperCase() };
   return () => {
@@ -155,8 +170,24 @@ export function changeNativeLanguage(language) {
   };
 }
 
-export const generateFreeTestCode = () => {
-  return () => {
-    nativeBridge.generateFreeTestCode();
+export const resetUploadLabTestPinResultSuccess = () => ({
+  type: types.RESET_UPLOAD_LAB_TEST_PIN_RESULT_SUCCESS
+});
+
+export const resetUploadLabTestPinResult = () => {
+  return dispatch => dispatch(resetUploadLabTestPinResultSuccess());
+};
+
+export const uploadTestPinFinished = body => ({
+  body,
+  type: types.UPLOAD_LAB_TEST_PIN_FINISHED
+});
+
+export const uploadLabTestPin = pin => {
+  return dispatch => {
+    dispatch(resetUploadLabTestPinResultSuccess());
+    nativeBridge.uploadLabTestPin(pin).then(body => {
+      dispatch(uploadTestPinFinished(body));
+    });
   };
 };

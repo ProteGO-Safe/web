@@ -4,9 +4,9 @@ import { withTranslation } from 'react-i18next';
 import {
   Button,
   FieldSet,
-  Header,
   Radio,
-  Tooltip
+  Tooltip,
+  Layout
 } from '../../../../../../components';
 import { Title } from '../../../../Diagnosis.styled';
 
@@ -63,8 +63,7 @@ const GroupSingle = ({ t, onBack, onNext, question }) => {
   };
 
   return (
-    <>
-      <Header onBackClick={back} />
+    <Layout onBackClick={back}>
       <Container>
         <Title explanation={tooltip}>
           {t(text)}
@@ -95,7 +94,7 @@ const GroupSingle = ({ t, onBack, onNext, question }) => {
           label={t('button_next')}
         />
       </Container>
-    </>
+    </Layout>
   );
 };
 
