@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { NavLink } from 'react-router-dom';
 
 import IconArrow from '../../assets/img/icons/angle-right-blue.svg';
 
@@ -13,7 +12,7 @@ export const BorderBoxInfo = styled.div`
   border-color: ${({ color }) => color};
 `;
 
-export const BorderBoxNavLink = styled(NavLink)`
+export const BorderBoxNavLink = styled.span`
   width: 100%;
   margin-bottom: 16px;
   padding: 22px 20px 22px;

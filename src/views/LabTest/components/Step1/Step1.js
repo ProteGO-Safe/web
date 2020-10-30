@@ -1,19 +1,14 @@
 import React, { useEffect } from 'react';
-import { useHistory } from 'react-router-dom';
 import { withTranslation } from 'react-i18next';
-import Routes from '../../../../routes';
 import { FieldSet } from '../../../../components/FieldSet';
 import { Button } from '../../../../components';
 import { Link } from '../../../../theme/typography';
 import { PHONE_NUMBER } from '../../labTest.constants';
 import * as Styled from '../../LabTest.styled';
 
-const Step1 = ({ setCompletedSteps, setPin, t }) => {
-  const history = useHistory();
-
+const Step1 = ({ setPin, setStep, t }) => {
   const handleNextBtnClick = () => {
-    setCompletedSteps(1);
-    history.replace(`${Routes.LabTest}/2`);
+    setStep(2);
   };
 
   useEffect(() => {

@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { Link as LinkRoute } from 'react-router-dom';
 import { Color } from '../../theme/colors';
 
 export const Title = styled.h1`
@@ -19,7 +18,7 @@ export const Content = styled.div`
   margin-bottom: 30px;
 `;
 
-export const Link = styled(LinkRoute)`
+export const Link = styled.span`
   display: inline-block;
   color: ${Color.primary};
   font-weight: bold;

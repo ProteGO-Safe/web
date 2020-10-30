@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Redirect, useHistory } from 'react-router-dom';
 import { withTranslation } from 'react-i18next';
 import { UploadData } from './components/UploadData';
 import {
@@ -12,15 +11,15 @@ import useSupportExposureNotificationTracing from '../../hooks/useSupportExposur
 import { UploadSuccess } from './components/UploadSuccess';
 import banPinTries from '../../services/banPinTries';
 import { UPLOAD_HISTORICAL_DATA_STATE as uploadState } from '../../store/reducers/app/app.constants';
-import Routes from '../../routes';
 import { getUploadHistoricalDataStateErrorMessageVisible } from '../../store/selectors/app';
 import { hideUploadHistoricalDataErrorMessage } from '../../store/actions/app';
+import useNavigation from '../../hooks/useNavigation';
 
 const UploadHistoricalData = ({ t }) => {
+  const { goHome } = useNavigation();
   const { areEnableAllServices } = useSupportExposureNotificationTracing();
   const MAX_UPLOAD_TIME = 60;
   const dispatch = useDispatch();
-  const history = useHistory();
   const { name: userName } = useSelector(state => state.user);
   const errorMessageVisible = useSelector(
     getUploadHistoricalDataStateErrorMessageVisible
@@ -35,6 +34,13 @@ const UploadHistoricalData = ({ t }) => {
   const [pin, setPin] = useState('');
   const [banData, setBanData] = useState(null);
   const [isUploading, setIsUploading] = useState(false);
+
+  useEffect(() => {
+    if (!areEnableAllServices) {
+      goHome();
+    }
+    // eslint-disable-next-line
+  }, [areEnableAllServices]);
 
   useEffect(() => {
     if (unsuccessfulAttempts) {
@@ -77,7 +83,7 @@ const UploadHistoricalData = ({ t }) => {
   };
 
   const finishUpload = () => {
-    dispatch(endUploadHistoricalData()).then(history.push(Routes.Home));
+    dispatch(endUploadHistoricalData()).then(goHome());
   };
 
   if (status === uploadState.REQUESTED && isUploading) {
@@ -97,23 +103,17 @@ const UploadHistoricalData = ({ t }) => {
     );
   };
   return (
-    <>
-      {areEnableAllServices ? (
-        <UploadData
-          disableButton={status === uploadState.REQUESTED}
-          disablePinInput={Boolean(banData && banData.lockdownTime)}
-          errorMessage={getErrorMessage()}
-          errorMessageVisible={errorMessageVisible}
-          hideErrorMessage={hideErrorMessage}
-          onUploadData={uploadData}
-          pin={pin}
-          setPin={setPin}
-          userName={userName}
-        />
-      ) : (
-        <Redirect to={Routes.Home} />
-      )}
-    </>
+    <UploadData
+      disableButton={status === uploadState.REQUESTED}
+      disablePinInput={Boolean(banData && banData.lockdownTime)}
+      errorMessage={getErrorMessage()}
+      errorMessageVisible={errorMessageVisible}
+      hideErrorMessage={hideErrorMessage}
+      onUploadData={uploadData}
+      pin={pin}
+      setPin={setPin}
+      userName={userName}
+    />
   );
 };
 

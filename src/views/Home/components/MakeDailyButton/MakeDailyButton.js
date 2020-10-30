@@ -1,16 +1,16 @@
 import React from 'react';
-import { useHistory } from 'react-router-dom';
 import { withTranslation } from 'react-i18next';
 import { Icon } from '../../../RiskTest/RiskTest.styled';
 import { Button } from '../../../../components';
 import useTriage from '../../../../hooks/useTriage';
-import Routes from '../../../../routes';
+import useNavigation from '../../../../hooks/useNavigation';
+import { Routes } from '../../../../services/navigationService/routes';
 
 const MakeDailyButton = ({ t }) => {
-  const history = useHistory();
+  const { goTo } = useNavigation();
   const { isExposure = false, riskLevel } = useTriage();
   const goToDailyData = () => {
-    history.push(Routes.DailyData);
+    goTo(Routes.DailyData);
   };
 
   return (

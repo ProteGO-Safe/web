@@ -1,33 +1,34 @@
 import React, { useState, useEffect } from 'react';
-import { useHistory } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
+import { withTranslation } from 'react-i18next';
 import LabTest from './LabTest';
 import { PinVerificationLoader } from './components';
-import { Layout } from '../../components';
-import Routes from '../../routes';
+import { NavigationBackGuard, Layout } from '../../components';
 import { NUMBER_OF_STEPS } from './labTest.constants';
 import {
   resetUploadLabTestPinResult,
   uploadLabTestPin
 } from '../../store/actions/nativeData';
 import { getUploadLabTestPinResult } from '../../store/selectors/nativeData';
+import useNavigation from '../../hooks/useNavigation';
 
-const LabTestContainer = () => {
-  const history = useHistory();
+const LabTestContainer = ({ t }) => {
   const dispatch = useDispatch();
+  const { goHome, goBack } = useNavigation();
 
   const uploadLabTestPinResult = useSelector(getUploadLabTestPinResult);
 
-  const [completedSteps, setCompletedSteps] = useState(0);
+  const [step, setStep] = useState(1);
   const [pin, setPin] = useState(undefined);
   const [isInvalidPin, setIsInvalidPin] = useState(false);
   const [loader, setLoader] = useState(false);
+  const [showBackGuard, setShowBackGuard] = useState(false);
 
-  const hideBackButton = loader || completedSteps >= NUMBER_OF_STEPS - 1;
+  const hideBackButton = loader || step > NUMBER_OF_STEPS - 1;
 
   const handleResetSteps = () => {
     setPin(undefined);
-    setCompletedSteps(0);
+    setStep(1);
     setIsInvalidPin(false);
   };
 
@@ -42,8 +43,7 @@ const LabTestContainer = () => {
   useEffect(() => {
     if (uploadLabTestPinResult === 1) {
       setLoader(false);
-      setCompletedSteps(2);
-      history.replace(`${Routes.LabTest}/3`);
+      setStep(3);
     }
 
     if (uploadLabTestPinResult === 2) {
@@ -53,7 +53,7 @@ const LabTestContainer = () => {
     }
 
     if (uploadLabTestPinResult === 3) {
-      history.push(Routes.Home);
+      goHome();
     }
 
     // eslint-disable-next-line
@@ -65,21 +65,49 @@ const LabTestContainer = () => {
     dispatch(uploadLabTestPin(pin));
   };
 
+  const back = () => {
+    if (!!(pin && pin.toString().length) && step === 2) {
+      setShowBackGuard(true);
+      return;
+    }
+    if (step === 1) {
+      goBack();
+    } else {
+      setStep(prev => prev - 1);
+    }
+  };
+
+  const backOnGuard = () => {
+    setPin(undefined);
+    setShowBackGuard(false);
+    setStep(1);
+  };
+
   return (
-    <Layout hideBackButton={hideBackButton}>
-      <LabTest
-        completedSteps={completedSteps}
-        isInvalidPin={isInvalidPin}
-        loader={loader}
-        onReset={handleResetSteps}
-        onSubmit={handleSubmitPin}
-        pin={pin}
-        setCompletedSteps={setCompletedSteps}
-        setPin={setPin}
-      />
-      {loader && <PinVerificationLoader />}
-    </Layout>
+    <>
+      <Layout onBackClick={back} hideBackButton={hideBackButton}>
+        <LabTest
+          isInvalidPin={isInvalidPin}
+          loader={loader}
+          onReset={handleResetSteps}
+          onSubmit={handleSubmitPin}
+          pin={pin}
+          setPin={setPin}
+          setStep={setStep}
+          step={step}
+        />
+        {loader && <PinVerificationLoader />}
+      </Layout>
+      {showBackGuard && (
+        <NavigationBackGuard
+          title={t('lab_test_text23')}
+          description={t('lab_test_text24')}
+          handleCancel={() => setShowBackGuard(false)}
+          handleConfirm={() => backOnGuard()}
+        />
+      )}
+    </>
   );
 };
 
-export default LabTestContainer;
+export default withTranslation()(LabTestContainer);

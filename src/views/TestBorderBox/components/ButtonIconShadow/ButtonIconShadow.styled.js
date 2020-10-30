@@ -1,11 +1,10 @@
 import styled from 'styled-components';
-import { NavLink } from 'react-router-dom';
 import { Color } from '../../../../theme/colors';
 
 import { ReactComponent as IconWriting } from '../../../../assets/img/icons/pismo.svg';
 import { ReactComponent as IconArrow } from '../../../../assets/img/icons/angle-right-blue.svg';
 
-export const ButtonIconShadow = styled(NavLink)`
+export const ButtonIconShadow = styled.span`
   position: relative;
   display: flex;
   flex-flow: nowrap row;

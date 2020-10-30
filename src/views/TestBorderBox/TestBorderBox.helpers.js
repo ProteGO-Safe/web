@@ -1,7 +1,7 @@
 import React from 'react';
 import { Color } from '../../theme/colors';
 import { PhoneNumber } from '../../components/PhoneNumber';
-import Routes from '../../routes';
+import { Routes } from '../../services/navigationService/routes';
 
 export const resolveData = t => {
   return {
@@ -28,7 +28,7 @@ export const resolveData = t => {
           {t('test_border_box_pick_up_description_2')}
         </>
       ),
-      path: `${Routes.SummaryRiskTest}`,
+      path: Routes.SummaryRiskTest,
       title: 'test_border_box_pick_up_title'
     },
     TOR_IS_NEEDED: {
@@ -40,7 +40,7 @@ export const resolveData = t => {
           <strong>{t('test_border_box_text_3')}</strong>
         </>
       ),
-      path: `${Routes.Diagnosis}?p=1`,
+      path: Routes.Diagnosis,
       title: 'test_border_box_text_1'
     },
     TEST_IS_CONFIRMED: {

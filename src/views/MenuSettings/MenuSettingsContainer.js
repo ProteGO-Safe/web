@@ -1,13 +1,13 @@
 import React from 'react';
 import { withTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
-import Routes from '../../routes';
 import { Layout } from '../../components';
 import MenuSettings from './MenuSettings';
 
 import LanguageIcon from '../../assets/img/icons/language.svg';
 import Bluetooth from '../../assets/img/icons/bluetooth.svg';
 import { isVersionCompatibilityWithBluetoothModule } from '../../utils/version';
+import { Routes } from '../../services/navigationService/routes';
 
 const MenuSettingsContainer = ({ t }) => {
   const { servicesStatus } = useSelector(state => state.nativeData);

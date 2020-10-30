@@ -15,6 +15,10 @@ import { UPLOAD_HISTORICAL_DATA_FINISHED } from '../../store/types/app';
 import { isAndroidWebView, isIOSWebView } from '../../utils/native';
 import { fetchExposureNotificationStatistics } from '../../store/actions/nativeData';
 import { fetchSubscribedDistricts } from '../../store/actions/restrictions';
+import {
+  GO_TO_PREVIOUS_ROUTE_REQUESTED,
+  GO_TO_PREVIOUS_ROUTE_SUCCESS
+} from '../../store/types/navigation';
 
 const nativeRequests = {};
 
@@ -213,6 +217,17 @@ const handleLabTestSubscription = body => {
   });
 };
 
+const handleBackPressed = () => {
+  const store = StoreRegistry.getStore();
+  const { dispatch } = store;
+  dispatch({
+    type: GO_TO_PREVIOUS_ROUTE_REQUESTED
+  });
+  dispatch({
+    type: GO_TO_PREVIOUS_ROUTE_SUCCESS
+  });
+};
+
 const callBridgeDataHandler = cond([
   [equals(DATA_TYPE.NATIVE_SERVICES_STATUS), always(handleServicesStatus)],
   [
@@ -222,7 +237,8 @@ const callBridgeDataHandler = cond([
   [equals(DATA_TYPE.EXPOSURE_STATISTICS), always(handleExposureSummary)],
   [equals(DATA_TYPE.NATIVE_STATE), always(handleNativeState)],
   [equals(DATA_TYPE.LANGUAGE), always(handleNativeLanguage)],
-  [equals(DATA_TYPE.LAB_TEST_SUBSCRIPTION), always(handleLabTestSubscription)]
+  [equals(DATA_TYPE.LAB_TEST_SUBSCRIPTION), always(handleLabTestSubscription)],
+  [equals(DATA_TYPE.BACK_PRESSED), always(handleBackPressed)]
 ]);
 
 const onBridgeData = (dataType, dataString) => {

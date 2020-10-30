@@ -1,9 +1,9 @@
 import React, { useEffect, useRef, useState } from 'react';
 import PropTypes from 'prop-types';
-import { NavLink } from 'react-router-dom';
 import { withTranslation } from 'react-i18next';
 import { TYPES } from './ImportantInfoItem.constants';
 import * as Styled from './ImportantInfoItem.styled';
+import { NavLink } from '../../../../components';
 
 const ImportantInfoItem = ({
   danger,
@@ -33,7 +33,9 @@ const ImportantInfoItem = ({
       {newFeature && <Styled.Badge size={size}>{t('new')}</Styled.Badge>}
       <Styled.Icon size={size}>{icon}</Styled.Icon>
       <Styled.Content size={size}>
-        <Styled.Title size={size} danger={danger}>{title}</Styled.Title>
+        <Styled.Title size={size} danger={danger}>
+          {title}
+        </Styled.Title>
         {windowWidth < 375 ? (
           <Styled.Description size={size}>{description}</Styled.Description>
         ) : (

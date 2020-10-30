@@ -2,20 +2,19 @@ import React from 'react';
 import { Formik } from 'formik';
 import * as Yup from 'yup';
 import { useDispatch, useSelector } from 'react-redux';
-import { useHistory } from 'react-router-dom';
 
 import { withTranslation } from 'react-i18next';
 import { saveUser } from '../../store/actions/user';
 import * as constants from '../../constants';
 import { chronicSickValues } from '../../constants';
-import Routes from '../../routes';
 import useLoaderContext from '../../hooks/useLoaderContext';
 import { ImprintFiller } from '../../components/ImprintFiller';
 import { userNameValidationSchema } from '../../utils/user';
+import useNavigation from '../../hooks/useNavigation';
 
 const UserDataChange = ({ t }) => {
+  const { goHome } = useNavigation();
   const dispatch = useDispatch();
-  const history = useHistory();
   const { setLoader } = useLoaderContext();
   const { bloodGroup, chronicSicks, name, smokeNumber } = useSelector(
     state => state.user
@@ -87,13 +86,13 @@ const UserDataChange = ({ t }) => {
       isSmoking: form[constants.FIELD_SMOKE] === t('yes')
     };
 
-    const goHome = () => {
+    const goToHome = () => {
       setLoader(true);
       setTimeout(() => setLoader(false), 1000);
-      history.push(Routes.Home);
+      goHome();
     };
 
-    dispatch(saveUser(data)).then(goHome);
+    dispatch(saveUser(data)).then(goToHome);
   };
 
   return (

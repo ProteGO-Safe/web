@@ -1,6 +1,5 @@
 import React from 'react';
 import { withTranslation } from 'react-i18next';
-import Routes from '../../routes';
 import ImportantInfo from './ImportantInfo';
 
 import { ReactComponent as Icon1 } from '../../assets/img/icons/important-info-1.svg';
@@ -9,6 +8,7 @@ import { ReactComponent as Icon3 } from '../../assets/img/icons/important-info-3
 import { ReactComponent as Icon4 } from '../../assets/img/icons/important-info-4.svg';
 import { ReactComponent as Icon5 } from '../../assets/img/icons/important-info-5.svg';
 import { ReactComponent as Icon6 } from '../../assets/img/icons/important-info-6.svg';
+import { Routes } from '../../services/navigationService/routes';
 
 const ImportantInfoContainer = ({ t }) => {
   const IMPORTANT_INFO_ITEMS = [

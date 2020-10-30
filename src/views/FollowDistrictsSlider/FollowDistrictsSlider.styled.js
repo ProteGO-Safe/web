@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { NavLink } from 'react-router-dom';
 import { Color } from '../../theme/colors';
 import { ReactComponent as IconArrow } from '../../assets/img/icons/arrow-current-color.svg';
 
@@ -13,7 +12,7 @@ export const FollowDistrictsSlider = styled.div`
   background-color: ${Color.primaryLighter};
 `;
 
-export const Title = styled(NavLink)`
+export const Title = styled.span`
   width: 100%;
   margin: 0 0 8px 0;
   padding-right: 17px;
@@ -49,7 +48,7 @@ export const Slider = styled.div`
   overflow-scrolling: touch;
 `;
 
-export const Button = styled(NavLink)`
+export const Button = styled.span`
   position: relative;
   width: 100%;
   font-size: 1rem;

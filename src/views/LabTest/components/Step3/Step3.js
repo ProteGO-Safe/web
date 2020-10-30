@@ -1,21 +1,15 @@
-import React, { useState } from 'react';
-import { Redirect } from 'react-router-dom';
+import React from 'react';
 import { withTranslation } from 'react-i18next';
-import Routes from '../../../../routes';
 import { FieldSet } from '../../../../components/FieldSet';
 import { Button, Warning } from '../../../../components';
 import * as Styled from '../../LabTest.styled';
 import { Color } from '../../../../theme/colors';
 import { Link, SmallText } from '../../../../theme/typography';
 import { PHONE_NUMBER } from '../../labTest.constants';
+import useNavigation from '../../../../hooks/useNavigation';
 
-const Step3 = ({ completedSteps, t }) => {
-  const [isComplete, setIsComplete] = useState(false);
-
-  if (completedSteps !== 2 || isComplete) {
-    return <Redirect to={`${Routes.Home}`} />;
-  }
-
+const Step3 = ({ t }) => {
+  const { goHome } = useNavigation();
   return (
     <>
       <Styled.WarningWrapper>
@@ -41,10 +35,7 @@ const Step3 = ({ completedSteps, t }) => {
         </Styled.List>
       </Styled.Content>
       <FieldSet>
-        <Button
-          onClick={() => setIsComplete(true)}
-          label={t('button_understand')}
-        />
+        <Button onClick={() => goHome()} label={t('button_understand')} />
       </FieldSet>
     </>
   );

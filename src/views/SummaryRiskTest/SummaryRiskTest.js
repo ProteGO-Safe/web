@@ -1,13 +1,15 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
 import { withTranslation } from 'react-i18next';
 import useModalContext from '../../hooks/useModalContext';
 import { Button, RiskTestResult } from '../../components';
 import AnnotationContent from './components/AnnotationContent/AnnotationContent';
 import PrivacyPolicyContent from '../PrivacyPolicyDetails/component/PrivacyPolicyContent/PrivacyPolicyContent';
 import * as Styled from './SummaryRiskTest.styled';
+import useNavigation from '../../hooks/useNavigation';
+import { Routes } from '../../services/navigationService/routes';
 
 const SummaryRiskTest = ({ data, t }) => {
+  const { goHome, goTo } = useNavigation();
   const { openModal } = useModalContext();
 
   const handleOpenModal = () => {
@@ -57,15 +59,15 @@ const SummaryRiskTest = ({ data, t }) => {
       )}
 
       <Styled.ButtonWrapper>
-        <NavLink to={data.path}>
-          <Button onClick={() => null}>{t(data.button)}</Button>
-        </NavLink>
+        <Button
+          onClick={() => (data.annotation ? goTo(Routes.LabTest) : goHome())}
+        >
+          {t(data.button)}
+        </Button>
         {data.button_remind_later && (
-          <NavLink to={data.path_remind_later}>
-            <Button onClick={() => null} type="outline">
-              {t(data.button_remind_later)}
-            </Button>
-          </NavLink>
+          <Button onClick={() => goHome()} type="outline">
+            {t(data.button_remind_later)}
+          </Button>
         )}
       </Styled.ButtonWrapper>
     </Styled.SummaryRiskTest>

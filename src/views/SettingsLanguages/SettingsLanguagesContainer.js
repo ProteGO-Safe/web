@@ -1,9 +1,9 @@
 import React from 'react';
 import { withTranslation } from 'react-i18next';
-import Routes from '../../routes';
 import { Layout } from '../../components';
 import SettingsLanguages from './SettingsLanguages';
 import useLanguage from '../../hooks/useLanguage';
+import { Routes } from '../../services/navigationService/routes';
 
 const SettingsLanguagesContainer = ({ t }) => {
   const { language, changeAppLanguage, languages } = useLanguage();

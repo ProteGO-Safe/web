@@ -5165,30 +5165,31 @@ Array [
 
 }
 
-<a
-    aria-current={null}
-    className="c0"
-    color="#0052a5"
-    href="#/diagnosis?p=1"
+<span
     onClick={[Function]}
   >
-    <h3
-      className="c1"
+    <span
+      className="c0"
       color="#0052a5"
     >
-      test_border_box_text_1
-    </h3>
-    <span
-      className="c2"
-      color="#000000"
-    >
-      test_border_box_text_2
-       
-      <strong>
-        test_border_box_text_3
-      </strong>
+      <h3
+        className="c1"
+        color="#0052a5"
+      >
+        test_border_box_text_1
+      </h3>
+      <span
+        className="c2"
+        color="#000000"
+      >
+        test_border_box_text_2
+         
+        <strong>
+          test_border_box_text_3
+        </strong>
+      </span>
     </span>
-  </a>,
+  </span>,
   .c0 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -6758,7 +6759,6 @@ Array [
 <div
     className="c0"
     color="#598527"
-    to={null}
   >
     <h3
       className="c1"
@@ -7318,7 +7318,6 @@ Array [
 <div
     className="c0"
     color="#0052a5"
-    to={null}
   >
     <h3
       className="c1"
@@ -8188,30 +8187,31 @@ Array [
 
 }
 
-<a
-    aria-current={null}
-    className="c0"
-    color="#0052a5"
-    href="#/diagnosis?p=1"
+<span
     onClick={[Function]}
   >
-    <h3
-      className="c1"
+    <span
+      className="c0"
       color="#0052a5"
     >
-      test_border_box_text_1
-    </h3>
-    <span
-      className="c2"
-      color="#000000"
-    >
-      test_border_box_text_2
-       
-      <strong>
-        test_border_box_text_3
-      </strong>
+      <h3
+        className="c1"
+        color="#0052a5"
+      >
+        test_border_box_text_1
+      </h3>
+      <span
+        className="c2"
+        color="#000000"
+      >
+        test_border_box_text_2
+         
+        <strong>
+          test_border_box_text_3
+        </strong>
+      </span>
     </span>
-  </a>,
+  </span>,
   .c0 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -10159,28 +10159,29 @@ Array [
 
 }
 
-<a
-    aria-current={null}
-    className="c0"
-    color="#0052a5"
-    href="#/summary-risk-test"
+<span
     onClick={[Function]}
   >
-    <h3
-      className="c1"
+    <span
+      className="c0"
       color="#0052a5"
     >
-      test_border_box_pick_up_title
-    </h3>
-    <span
-      className="c2"
-      color="#000000"
-    >
-      test_border_box_pick_up_description_1
-      <br />
-      test_border_box_pick_up_description_2
+      <h3
+        className="c1"
+        color="#0052a5"
+      >
+        test_border_box_pick_up_title
+      </h3>
+      <span
+        className="c2"
+        color="#000000"
+      >
+        test_border_box_pick_up_description_1
+        <br />
+        test_border_box_pick_up_description_2
+      </span>
     </span>
-  </a>,
+  </span>,
   .c0 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -12180,30 +12181,31 @@ Array [
 
 }
 
-<a
-    aria-current={null}
-    className="c0"
-    color="#0052a5"
-    href="#/diagnosis?p=1"
+<span
     onClick={[Function]}
   >
-    <h3
-      className="c1"
+    <span
+      className="c0"
       color="#0052a5"
     >
-      test_border_box_text_1
-    </h3>
-    <span
-      className="c2"
-      color="#000000"
-    >
-      test_border_box_text_2
-       
-      <strong>
-        test_border_box_text_3
-      </strong>
+      <h3
+        className="c1"
+        color="#0052a5"
+      >
+        test_border_box_text_1
+      </h3>
+      <span
+        className="c2"
+        color="#000000"
+      >
+        test_border_box_text_2
+         
+        <strong>
+          test_border_box_text_3
+        </strong>
+      </span>
     </span>
-  </a>,
+  </span>,
   .c0 {
   display: -webkit-box;
   display: -webkit-flex;

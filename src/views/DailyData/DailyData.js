@@ -1,9 +1,7 @@
 import React, { useEffect, useMemo } from 'react';
 import { withTranslation } from 'react-i18next';
 import PropTypes from 'prop-types';
-import { useHistory } from 'react-router-dom';
 import { useFormikContext } from 'formik';
-import Routes from '../../routes';
 import { Button, Imprint, Layout } from '../../components';
 import { Data, Form } from './components';
 import { Actions } from '../../components/ImprintFiller/ImprintFiller.styled';
@@ -11,10 +9,11 @@ import { DAILY_DATA_MODE as MODE } from './dailyData.constants';
 import { isCreateMode, isEditMode, isViewMode } from './dailyData.helpers';
 import { Title, TitleBox } from './DailyData.styled';
 import './DailyData.scss';
+import useNavigation from '../../hooks/useNavigation';
 
 const DailyData = ({ t, mode, setMode }) => {
   const { dirty, submitForm, initialValues } = useFormikContext();
-  const history = useHistory();
+  const { goBack } = useNavigation();
 
   // Edit mode
   const handleCancel = () => setMode(MODE.VIEW);
@@ -52,7 +51,7 @@ const DailyData = ({ t, mode, setMode }) => {
         {viewMode && <Button onClick={handleEdit} label={t('button_edit')} />}
         {(createMode || viewMode) && (
           <Button
-            onClick={() => history.push(Routes.Daily)}
+            onClick={() => goBack()}
             label={t('button_back')}
           />
         )}
