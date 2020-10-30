@@ -38,6 +38,7 @@ export { Select } from './Select';
 export { Switcher } from './Switcher';
 export { Stepper } from './Stepper';
 export { SubscribeItem } from './SubscribeItem';
+export { T } from './T';
 export { Textarea } from './Textarea';
 export { TextBlockWithIcon } from './TextBlockWithIcon';
 export { TextField } from './TextField';

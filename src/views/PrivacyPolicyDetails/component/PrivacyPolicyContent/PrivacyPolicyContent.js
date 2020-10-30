@@ -1,6 +1,6 @@
 import React from 'react';
 import { withTranslation } from 'react-i18next';
-import { Email, Url, UrlCovid } from '../../../../components';
+import { Email, Url, UrlCovid, T } from '../../../../components';
 import {
   Annotation,
   Paragraph,
@@ -32,7 +32,7 @@ const PrivacyPolicyContent = ({ small, t }) => (
     <Paragraph>{t('privacy_policy_content_text7')}</Paragraph>
     <Paragraph>{t('privacy_policy_content_text8')}</Paragraph>
     <Paragraph>
-      {t('privacy_policy_content_text9')} <UrlCovid />{' '}
+      <T i18nKey="privacy_policy_content_text9" /> <UrlCovid />{' '}
       {t('privacy_policy_content_text138')}
     </Paragraph>
     <Paragraph>
