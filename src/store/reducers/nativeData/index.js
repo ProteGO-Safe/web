@@ -7,7 +7,10 @@ import {
   NATIVE_DATA_FETCH_EXPOSURE_NOTIFICATION_STATISTICS_SUCCESS,
   NATIVE_DATA_FETCH_NATIVE_STATE,
   FETCH_VERSION_SUCCESS,
-  FETCH_LANGUAGE
+  FETCH_LANGUAGE,
+  UPLOAD_LAB_TEST_PIN_FINISHED,
+  RESET_UPLOAD_LAB_TEST_PIN_RESULT_SUCCESS,
+  FETCH_LAB_TEST_SUBSCRIPTION
 } from '../../types/nativeData';
 
 const INITIAL_STATE = {
@@ -16,7 +19,12 @@ const INITIAL_STATE = {
   servicesStatus: {},
   servicesStatusSetByNative: false,
   version: undefined,
-  language: undefined
+  language: undefined,
+  labTest: {
+    subscription: undefined,
+    pinUnsuccessfulAttempts: [],
+    uploadPinResult: undefined
+  }
 };
 
 const setServicesStatusSuccess = (
@@ -29,6 +37,24 @@ const setServicesStatusSuccess = (
     ...servicesStatus,
     servicesStatusSetByNative
   };
+};
+
+const resolvePinUnsuccessfulAttempts = (state, result) => {
+  const { labTest } = state;
+  if (!labTest) {
+    return [];
+  }
+  const { pinUnsuccessfulAttempts = [] } = labTest;
+  if (result === 1) {
+    return [];
+  }
+  if (result === 2) {
+    return [...pinUnsuccessfulAttempts, new Date().getTime()];
+  }
+  if (result === 3) {
+    return [...pinUnsuccessfulAttempts];
+  }
+  return [...pinUnsuccessfulAttempts];
 };
 
 const nativeBridgeReducer = (state = INITIAL_STATE, action) => {
@@ -91,6 +117,43 @@ const nativeBridgeReducer = (state = INITIAL_STATE, action) => {
       return {
         ...state,
         language: language.toLowerCase()
+      };
+    }
+    case UPLOAD_LAB_TEST_PIN_FINISHED: {
+      const {
+        body: { result }
+      } = action;
+      const { labTest } = state;
+
+      const pinUnsuccessfulAttempts = resolvePinUnsuccessfulAttempts(
+        state,
+        result
+      );
+
+      return {
+        ...state,
+        labTest: {
+          ...labTest,
+          uploadPinResult: result,
+          pinUnsuccessfulAttempts
+        }
+      };
+    }
+    case RESET_UPLOAD_LAB_TEST_PIN_RESULT_SUCCESS: {
+      const { labTest } = state;
+      return {
+        ...state,
+        labTest: { ...labTest, uploadPinResult: undefined }
+      };
+    }
+    case FETCH_LAB_TEST_SUBSCRIPTION: {
+      const {
+        body: { subscription }
+      } = action;
+      const { labTest } = state;
+      return {
+        ...state,
+        labTest: { ...labTest, subscription }
       };
     }
     default:

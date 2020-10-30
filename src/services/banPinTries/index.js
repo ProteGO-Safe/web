@@ -1,4 +1,4 @@
-import pinTimeouts from '../../../pin-timeouts.json';
+import pinTimeouts from './pin-timeouts.json';
 
 const MINUTE = 60 * 1000;
 
@@ -7,7 +7,7 @@ const getAttemptFromTheEnd = (listOfTries, numberOfTries) => {
   return listOfTries[attempFromEndIndex];
 };
 
-export const getBanData = listOfTries => {
+const getBanData = listOfTries => {
   const now = new Date().getTime();
   return pinTimeouts.reduce(
     (prev, curr, index) => {
@@ -76,7 +76,7 @@ const getLockdownInfo = (lockdownTime, t) => {
   return getCorrentMinuteForm(lockdownTimeInMinutes, t);
 };
 
-export const createErrorMessage = (
+const createErrorMessage = (
   { lockdownTime, currentLimitOfTries },
   numberOfTries,
   t
@@ -96,3 +96,5 @@ export const createErrorMessage = (
     limit: currentLimitOfTries
   });
 };
+
+export default { createErrorMessage, getBanData };

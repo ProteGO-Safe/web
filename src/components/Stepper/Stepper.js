@@ -15,7 +15,9 @@ import {
 
 const MINIMUM_STEPS_TO_DISPLAY = 1;
 
-const Stepper = ({ currentStep, numberOfSteps }) => {
+const Stepper = ({ currentStep: _currentStep, numberOfSteps }) => {
+  const currentStep = parseInt(_currentStep);
+
   const renderSteps = Array.from({ length: numberOfSteps }, (_, index) => {
     const step = index + 1;
 
@@ -67,7 +69,8 @@ const Stepper = ({ currentStep, numberOfSteps }) => {
 };
 
 Stepper.propTypes = {
-  currentStep: PropTypes.number.isRequired,
+  currentStep: PropTypes.oneOfType([PropTypes.number, PropTypes.string])
+    .isRequired,
   numberOfSteps: PropTypes.number.isRequired
 };
 

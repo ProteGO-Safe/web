@@ -1,6 +1,6 @@
 {
   "name": "STOPCOVIDProteGOSafe",
-  "version": "4.6.0",
+  "version": "4.7.0",
   "homepage": "./",
   "private": true,
   "dependencies": {
@@ -10,7 +10,7 @@
     "date-fns": "^2.16.1",
     "flat": "^5.0.0",
     "formik": "^2.1.4",
-    "i18next": "^19.6.3",
+    "i18next": "^19.8.3",
     "is-ua-webview": "^1.0.1",
     "lodash.invoke": "^4.5.2",
     "lodash.isequal": "^4.5.0",

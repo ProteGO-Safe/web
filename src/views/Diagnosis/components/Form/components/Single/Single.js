@@ -4,9 +4,9 @@ import { withTranslation } from 'react-i18next';
 import {
   Button,
   FieldSet,
-  Header,
   Radio,
-  Tooltip
+  Tooltip,
+  Layout
 } from '../../../../../../components';
 import { Title } from '../../../../Diagnosis.styled';
 
@@ -68,8 +68,7 @@ const Single = ({ t, onBack, onNext, question }) => {
   };
 
   return (
-    <>
-      <Header onBackClick={back} />
+    <Layout onBackClick={back}>
       <Container>
         <Title explanation={explanation}>
           {t(text)}
@@ -97,7 +96,7 @@ const Single = ({ t, onBack, onNext, question }) => {
           label={t('button_next')}
         />
       </Container>
-    </>
+    </Layout>
   );
 };
 

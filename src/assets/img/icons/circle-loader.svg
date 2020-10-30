@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+    <defs>
+        <style>.a_circle-loader{fill:#d8d8d8;}.b_circle-loader{fill:#438ad1;}</style>
+    </defs>
+    <g transform="translate(-66 -52)">
+        <g transform="translate(66 52)">
+            <path class="a_circle-loader"
+                  d="M82,84A16,16,0,1,1,98,68,16.018,16.018,0,0,1,82,84Zm0-29.091A13.091,13.091,0,1,0,95.091,68,13.106,13.106,0,0,0,82,54.909Z"
+                  transform="translate(-66 -52)"/>
+        </g>
+        <g transform="translate(66 52)">
+            <path class="b_circle-loader"
+                  d="M82,84a16,16,0,1,1,0-32,1.455,1.455,0,1,1,0,2.909A13.091,13.091,0,1,0,95.091,68,1.455,1.455,0,0,1,98,68,16.018,16.018,0,0,1,82,84Z"
+                  transform="translate(-66 -52)"/>
+        </g>
+    </g>
+</svg>

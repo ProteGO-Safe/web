@@ -6,8 +6,8 @@ import {
   Button,
   Checkbox,
   FieldSet,
-  Header,
-  Tooltip
+  Tooltip,
+  Layout
 } from '../../../../../../components';
 import { VALUE_ABSENT, VALUE_PRESENT } from '../../../../../../constants';
 import { questionPropType } from '../../../../prop-types';
@@ -70,8 +70,7 @@ const GroupMultiple = ({ t, onBack, onNext, question }) => {
   };
 
   return (
-    <>
-      <Header onBackClick={back} />
+    <Layout onBackClick={back}>
       <Container>
         <Title>{t(text)}</Title>
         <FieldSet>
@@ -105,7 +104,7 @@ const GroupMultiple = ({ t, onBack, onNext, question }) => {
           label={t('button_next')}
         />
       </Container>
-    </>
+    </Layout>
   );
 };
 

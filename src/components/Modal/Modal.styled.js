@@ -27,6 +27,12 @@ export const Wrapper = styled.div`
   height: 100%;
   box-sizing: border-box;
   z-index: 999;
+  .ScrollbarsCustom-TrackY {
+    width: 8px !important;
+  }
+  .ScrollbarsCustom-Scroller {
+    padding-right: 26px !important;
+  }
 `;
 
 export const Overlay = styled.div`
@@ -48,7 +54,7 @@ export const Content = styled.div`
   height: ${({ height }) => (height < 260 ? `auto` : '100vh')};
   max-height: ${({ maxHeight }) =>
     maxHeight ? `100%` : 'calc(100vh - 136px)'};
-  max-width: 450px;
+  max-width: 420px;
   margin: 0 auto;
   padding: ${({ type }) => handleType(type)};
 

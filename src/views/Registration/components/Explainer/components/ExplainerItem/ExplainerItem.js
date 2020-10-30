@@ -4,10 +4,10 @@ import PropTypes from 'prop-types';
 import { Content, Icon } from './ExplainerItem.styled';
 
 const ExplainerItem = ({ content, icon }) => (
-  <div>
+  <>
     <Icon src={icon} alt="Ikona" />
     <Content>{content}</Content>
-  </div>
+  </>
 );
 
 ExplainerItem.propTypes = {
