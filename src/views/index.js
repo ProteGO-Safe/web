@@ -19,6 +19,7 @@ export { PrivacyPolicyDetails } from './PrivacyPolicyDetails';
 export { Registration } from './Registration';
 export { Regulations } from './Regulations';
 export { ReportBug } from './ReportBug';
+export { ResultLabTest } from './ResultLabTest';
 export { RiskTest } from './RiskTest';
 export { RiskTestData } from './RiskTestData';
 export { Settings } from './Settings';

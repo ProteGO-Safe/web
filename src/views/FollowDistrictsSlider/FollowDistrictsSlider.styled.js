@@ -10,6 +10,9 @@ export const FollowDistrictsSlider = styled.div`
   margin-top: 4px;
   padding: ${({ padding }) => (padding ? '10px 17px' : '10px 0 0')};
   background-color: ${Color.primaryLighter};
+  > * {
+    width: 100%;
+  }
 `;
 
 export const Title = styled.span`
@@ -50,9 +53,10 @@ export const Slider = styled.div`
 
 export const Button = styled.span`
   position: relative;
+  display: block;
   width: 100%;
   font-size: 1rem;
-  line-height: 1rem;
+  line-height: 20px;
   font-weight: 600;
   color: ${Color.black};
 `;

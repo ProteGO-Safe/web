@@ -13,6 +13,7 @@ export const Routes = {
   PrivacyPolicyDetails: 'privacyPolicyDetails',
   Regulations: 'regulations',
   ReportBug: 'reportBug',
+  ResultLabTest: 'resultLabTest',
   RiskTest: 'riskTest',
   RiskTestData: 'riskTestData',
   Settings: 'settings',
