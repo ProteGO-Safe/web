@@ -45,7 +45,7 @@ It uses following functions:
  * data
  ```
 {
-    "pin": "123ABC
+    "pin": "123ABC"
 }
 ```
 #### upload exposure data response
