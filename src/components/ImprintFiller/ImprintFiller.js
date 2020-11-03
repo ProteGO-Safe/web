@@ -1,7 +1,14 @@
 import React, { useEffect } from 'react';
 import { useFormikContext } from 'formik';
 import { NUMBER_OF_STEPS } from './ImprintFiller.constants';
-import { BloodGroup, ChronicSick, Name, Smoke, Summary } from './components';
+import {
+  BloodGroup,
+  ChronicSick,
+  ManualCovidState,
+  Name,
+  Smoke,
+  Summary
+} from './components';
 import { Stepper, Layout } from '../index';
 
 const steps = {
@@ -16,6 +23,9 @@ const steps = {
   },
   4: {
     Component: Smoke
+  },
+  5: {
+    Component: ManualCovidState
   }
 };
 
@@ -30,7 +40,7 @@ const ImprintFiller = () => {
     }
   }, [step]);
 
-  if (step === 5) {
+  if (step === 6) {
     return <Summary />;
   }
 

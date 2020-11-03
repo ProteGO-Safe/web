@@ -64,6 +64,13 @@ const Imprint = ({ labTestPin, t, user = {} }) => {
           {chronicSicksContent()}
         </Grid>
 
+        <Grid item xs={6}>
+          <Paragraph color={Color.lightBlack} fontWeight={FontWeight.Bold}>
+            {t('imprint_text13')}
+          </Paragraph>
+          <SmallText>{t('imprint_text14')}</SmallText>
+        </Grid>
+
         {labTestPin && (
           <Grid item xs={6}>
             <Paragraph color={Color.lightBlack} fontWeight={FontWeight.Bold}>
