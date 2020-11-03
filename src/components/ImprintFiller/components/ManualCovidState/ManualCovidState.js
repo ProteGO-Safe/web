@@ -10,16 +10,11 @@ import * as Styled from './ManualCovidState.styled';
 const ManualCovidState = ({ t }) => {
   const { setFieldValue, values } = useFormikContext();
 
-  const yesManualCovid = values[FIELD_MANUAL_COVID] === t('yes');
-  const noManualCovid = values[FIELD_MANUAL_COVID] === t('no');
+  const yesManualCovid = values[FIELD_MANUAL_COVID] === true;
+  const noManualCovid = values[FIELD_MANUAL_COVID] === false;
 
   const handleManualCovidRadio = value => {
-    if (value === t('yes')) {
-      setFieldValue(FIELD_MANUAL_COVID, t('yes'));
-      return;
-    }
-
-    setFieldValue(FIELD_MANUAL_COVID, t('no'));
+    setFieldValue(FIELD_MANUAL_COVID, value);
   };
 
   return (
@@ -28,13 +23,13 @@ const ManualCovidState = ({ t }) => {
       <FormGroup>
         <Radio
           checked={yesManualCovid}
-          onChange={() => handleManualCovidRadio(t('yes'))}
+          onChange={() => handleManualCovidRadio(true)}
           name={FIELD_MANUAL_COVID}
           label={<Label>{t('manual_covid_state_text2')}</Label>}
         />
         <Radio
           checked={noManualCovid}
-          onChange={() => handleManualCovidRadio(t('no'))}
+          onChange={() => handleManualCovidRadio(false)}
           name={FIELD_MANUAL_COVID}
           label={<Label>{t('manual_covid_state_text3')}</Label>}
         />
@@ -52,7 +47,7 @@ const ManualCovidState = ({ t }) => {
 
       <Actions>
         <Button
-          disabled={!values[FIELD_MANUAL_COVID]}
+          disabled={values[FIELD_MANUAL_COVID] === undefined}
           onClick={() => setFieldValue('step', 6)}
           label={t('button_next')}
         />

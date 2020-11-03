@@ -11,6 +11,8 @@ import useLoaderContext from '../../hooks/useLoaderContext';
 import { ImprintFiller } from '../../components/ImprintFiller';
 import { userNameValidationSchema } from '../../utils/user';
 import useNavigation from '../../hooks/useNavigation';
+import { revokeEnStatus } from '../../store/actions/nativeData';
+import { revokeTorStatus } from '../../store/actions/triage';
 import { Routes } from '../../services/navigationService/routes';
 
 const UserDataChange = ({ t }) => {
@@ -63,6 +65,7 @@ const UserDataChange = ({ t }) => {
     [constants.FIELD_SMOKE]: smoke,
     [constants.FIELD_SMOKE_NUMBER]: smokeNumber,
     [constants.FIELD_IS_CHRONIC_SICK]: isChronicSick,
+    [constants.FIELD_MANUAL_COVID]: undefined,
     step: 1,
     ...filledChronicsSicks
   };
@@ -92,6 +95,16 @@ const UserDataChange = ({ t }) => {
       setTimeout(() => setLoader(false), 1000);
       goTo(Routes.Home);
     };
+
+    if (form[constants.FIELD_MANUAL_COVID] === false) {
+      dispatch(saveUser(data)).then(() =>
+        dispatch(revokeEnStatus()).then(() => {
+          dispatch(revokeTorStatus());
+          goToHome();
+        })
+      );
+      return;
+    }
 
     dispatch(saveUser(data)).then(goToHome);
   };
