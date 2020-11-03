@@ -93,6 +93,13 @@ export const EXPOSURE_TRIAGE_LEVEL = {
   }
 };
 
+export const MANUAL_COVID = {
+  color: Color.danger,
+  content: 'exposure_sick_content',
+  IconComponent: RedSmile,
+  isManualCovid: true
+};
+
 export const EXPOSURE_SICK = {
   color: Color.danger,
   content: 'exposure_sick_content',

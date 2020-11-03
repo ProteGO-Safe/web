@@ -7,7 +7,10 @@ import { ModalFooter } from './components';
 import { Layout } from '../../components';
 import useNavigation from '../../hooks/useNavigation';
 import { revokeEnStatus } from '../../store/actions/nativeData';
-import { revokeTorStatus } from '../../store/actions/triage';
+import {
+  confirmManualCovid,
+  revokeTorStatus
+} from '../../store/actions/triage';
 
 const ResultLabTestContainer = ({ t }) => {
   const dispatch = useDispatch();
@@ -17,6 +20,11 @@ const ResultLabTestContainer = ({ t }) => {
   const closeModal = () => {
     onClose();
     goHome();
+  };
+
+  const handlePositiveYes = () => {
+    dispatch(confirmManualCovid());
+    closeModal();
   };
 
   const handleNegativeYes = () => {
@@ -39,7 +47,7 @@ const ResultLabTestContainer = ({ t }) => {
           'dialog',
           t('result_test_lab_text10'),
           <ModalFooter
-            handleClickYes={() => closeModal()}
+            handleClickYes={() => handlePositiveYes()}
             handleClickCancel={onClose}
           />
         )

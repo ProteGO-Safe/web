@@ -300,4 +300,13 @@ describe('test render home component', () => {
     const container = renderTestedComponent(store);
     expect(container.toJSON()).toMatchSnapshot();
   });
+
+  it('should render with: enabled exposure module, manual covid', () => {
+    const store = mockStore({
+      ...baseStore,
+      triage: { ...baseStore.triage, timeOfConfirmedManualCovid: 1596953125 }
+    });
+    const container = renderTestedComponent(store);
+    expect(container.toJSON()).toMatchSnapshot();
+  });
 });

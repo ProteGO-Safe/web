@@ -13,6 +13,7 @@ const TriageInfoBorder = ({ t }) => {
   const {
     isCovid = false,
     isExposure = false,
+    isManualCovid,
     color,
     description,
     serious = [],
@@ -24,7 +25,7 @@ const TriageInfoBorder = ({ t }) => {
     .map(item => <li key={item}>{t(item)}</li>);
 
   const renderContent = () => {
-    if (isCovid) {
+    if (isCovid || isManualCovid) {
       return <>{t('triage_info_border_text1')}</>;
     }
     if (isExposure && riskLevel === 1) {

@@ -8,11 +8,20 @@ import useUserName from '../../../../hooks/useUserName';
 const SmileContainer = ({ t }) => {
   const userName = useUserName();
   const { lastDate } = useFilledDiagnosis();
-  const { isCovid, isExposure, riskGroup, IconComponent } = useTriage();
+  const {
+    isCovid,
+    isExposure,
+    isManualCovid,
+    riskGroup,
+    IconComponent
+  } = useTriage();
 
   const getContent = () => {
     if (isCovid) {
       return <>{t('smile_container_text1')}</>;
+    }
+    if (isManualCovid) {
+      return <>{t('smile_container_text6')}</>;
     }
     if (isExposure) {
       return (
