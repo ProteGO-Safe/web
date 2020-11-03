@@ -9,7 +9,7 @@ import useNavigation from '../../hooks/useNavigation';
 import { Routes } from '../../services/navigationService/routes';
 
 const SummaryRiskTest = ({ data, t }) => {
-  const { goHome, goTo } = useNavigation();
+  const { goTo } = useNavigation();
   const { openModal } = useModalContext();
 
   const handleOpenModal = () => {
@@ -60,12 +60,14 @@ const SummaryRiskTest = ({ data, t }) => {
 
       <Styled.ButtonWrapper>
         <Button
-          onClick={() => (data.annotation ? goTo(Routes.LabTest) : goHome())}
+          onClick={() =>
+            data.annotation ? goTo(Routes.LabTest) : goTo(Routes.Home)
+          }
         >
           {t(data.button)}
         </Button>
         {data.button_remind_later && (
-          <Button onClick={() => goHome()} type="outline">
+          <Button onClick={() => goTo(Routes.Home)} type="outline">
             {t(data.button_remind_later)}
           </Button>
         )}

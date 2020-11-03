@@ -11,9 +11,10 @@ import useLoaderContext from '../../hooks/useLoaderContext';
 import { ImprintFiller } from '../../components/ImprintFiller';
 import { userNameValidationSchema } from '../../utils/user';
 import useNavigation from '../../hooks/useNavigation';
+import { Routes } from '../../services/navigationService/routes';
 
 const UserDataChange = ({ t }) => {
-  const { goHome } = useNavigation();
+  const { goTo } = useNavigation();
   const dispatch = useDispatch();
   const { setLoader } = useLoaderContext();
   const { bloodGroup, chronicSicks, name, smokeNumber } = useSelector(
@@ -89,7 +90,7 @@ const UserDataChange = ({ t }) => {
     const goToHome = () => {
       setLoader(true);
       setTimeout(() => setLoader(false), 1000);
-      goHome();
+      goTo(Routes.Home);
     };
 
     dispatch(saveUser(data)).then(goToHome);

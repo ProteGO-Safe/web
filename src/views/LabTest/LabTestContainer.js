@@ -11,10 +11,11 @@ import {
 } from '../../store/actions/nativeData';
 import { getUploadLabTestPinResult } from '../../store/selectors/nativeData';
 import useNavigation from '../../hooks/useNavigation';
+import { Routes } from '../../services/navigationService/routes';
 
 const LabTestContainer = ({ t }) => {
   const dispatch = useDispatch();
-  const { goHome, goBack } = useNavigation();
+  const { goTo, goBack } = useNavigation();
 
   const uploadLabTestPinResult = useSelector(getUploadLabTestPinResult);
 
@@ -53,7 +54,7 @@ const LabTestContainer = ({ t }) => {
     }
 
     if (uploadLabTestPinResult === 3) {
-      goHome();
+      goTo(Routes.Home);
     }
 
     // eslint-disable-next-line

@@ -1,5 +1,4 @@
 import {
-  TO_HOME_ROUTE_WENT,
   ROUTE_CHANGED,
   GO_TO_PREVIOUS_ROUTE_REQUESTED,
   GO_TO_PREVIOUS_ROUTE_SUCCESS
@@ -12,14 +11,19 @@ const INITIAL_STATE = {
     params: undefined
   },
   backToPreviousRequested: false,
+  backRoute: undefined,
   previousRoutes: []
+};
+
+const resolveCurrentRoute = (backRoute, lastRoutes) => {
+  return backRoute ? { route: backRoute, params: undefined } : lastRoutes;
 };
 
 const navigationReducer = (state = INITIAL_STATE, action) => {
   switch (action.type) {
     case ROUTE_CHANGED: {
       const {
-        data: { route, params }
+        data: { route, params, backRoute }
       } = action;
       const { currentRoute, previousRoutes = [] } = state;
 
@@ -29,17 +33,8 @@ const navigationReducer = (state = INITIAL_STATE, action) => {
           route,
           params
         },
-        previousRoutes: [...previousRoutes, currentRoute]
-      };
-    }
-    case TO_HOME_ROUTE_WENT: {
-      return {
-        ...state,
-        currentRoute: {
-          route: Routes.Home,
-          params: undefined
-        },
-        previousRoutes: []
+        previousRoutes: [...previousRoutes, currentRoute],
+        backRoute
       };
     }
     case GO_TO_PREVIOUS_ROUTE_REQUESTED: {
@@ -49,14 +44,17 @@ const navigationReducer = (state = INITIAL_STATE, action) => {
       };
     }
     case GO_TO_PREVIOUS_ROUTE_SUCCESS: {
-      const { previousRoutes = [] } = state;
+      const { previousRoutes = [], backRoute } = state;
       const copyPreviousRoutes = [...previousRoutes];
       const lastRoutes = copyPreviousRoutes.pop();
+      const currentRoute = resolveCurrentRoute(backRoute, lastRoutes);
+      const { route } = currentRoute;
       return {
         ...state,
-        currentRoute: lastRoutes,
-        previousRoutes: copyPreviousRoutes,
-        backToPreviousRequested: false
+        currentRoute,
+        previousRoutes: route === Routes.Home ? [] : copyPreviousRoutes,
+        backToPreviousRequested: false,
+        backRoute: undefined
       };
     }
     default:

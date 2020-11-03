@@ -3,9 +3,10 @@ import { withTranslation } from 'react-i18next';
 import useNavigation from '../../hooks/useNavigation';
 import { Button } from '../../components';
 import * as Styled from './ResultLabTest.styled';
+import { Routes } from '../../services/navigationService/routes';
 
 const ResultLabTest = ({ t, title, content, buttons }) => {
-  const { goHome } = useNavigation();
+  const { goTo } = useNavigation();
 
   const renderButtons = buttons.map(({ type, name, onClick }) => (
     <Button onClick={onClick} type={type} key={name}>
@@ -21,7 +22,7 @@ const ResultLabTest = ({ t, title, content, buttons }) => {
 
       <Styled.ButtonWrapper>
         {renderButtons}
-        <Button onClick={() => goHome()} type="outline">
+        <Button onClick={() => goTo(Routes.Home)} type="outline">
           {t('result_test_lab_text3')}
         </Button>
       </Styled.ButtonWrapper>

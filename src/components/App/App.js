@@ -33,6 +33,7 @@ import { fetchSubscribedDistricts } from '../../store/actions/restrictions';
 import useNavigation from '../../hooks/useNavigation';
 import ScreenFactory from '../../services/navigationService/Screen.factory';
 import useTurnOffApplication from '../../hooks/useTurnOffApplication';
+import { Routes } from '../../services/navigationService/routes';
 
 function App() {
   const dispatch = useDispatch();
@@ -51,7 +52,7 @@ function App() {
   useCheckLanguage();
   useClearData();
   useTurnOffApplication();
-  const { goHome, route } = useNavigation();
+  const { goTo, route } = useNavigation();
 
   useEffect(() => {
     dispatch(fetchNativeVersion());
@@ -61,7 +62,7 @@ function App() {
     dispatch(hideUploadHistoricalDataErrorMessage());
     dispatch(fetchFontScale());
     dispatch(fetchSubscribedDistricts());
-    goHome();
+    goTo(Routes.Home);
     // eslint-disable-next-line
   }, [dispatch]);
 

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { withTranslation } from 'react-i18next';
 import { useDispatch } from 'react-redux';
 import useModalContext from '../../hooks/useModalContext';
@@ -11,15 +11,19 @@ import {
   confirmManualCovid,
   revokeTorStatus
 } from '../../store/actions/triage';
+import { InfoNegativeLabTest } from '../InfoNegativeLabTest';
+import { Routes } from '../../services/navigationService/routes';
 
 const ResultLabTestContainer = ({ t }) => {
   const dispatch = useDispatch();
-  const { goHome } = useNavigation();
+  const { goTo } = useNavigation();
   const { openModal, onClose } = useModalContext();
+
+  const [showNegativeView, setShowNegativeView] = useState(false);
 
   const closeModal = () => {
     onClose();
-    goHome();
+    goTo(Routes.Home);
   };
 
   const handlePositiveYes = () => {
@@ -30,7 +34,8 @@ const ResultLabTestContainer = ({ t }) => {
   const handleNegativeYes = () => {
     dispatch(revokeEnStatus()).then(() => {
       dispatch(revokeTorStatus());
-      closeModal();
+      onClose();
+      setShowNegativeView(true);
     });
   };
 
@@ -67,6 +72,10 @@ const ResultLabTestContainer = ({ t }) => {
         )
     }
   ];
+
+  if (showNegativeView) {
+    return <InfoNegativeLabTest />;
+  }
 
   return (
     <Layout isNavigation fullHeight noPadding hideBackButton>

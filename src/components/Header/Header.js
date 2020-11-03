@@ -4,9 +4,10 @@ import PropTypes from 'prop-types';
 import { withTranslation } from 'react-i18next';
 import { Arrow, ArrowButton, Container, Logo } from './Header.styled';
 import useNavigation from '../../hooks/useNavigation';
+import { Routes } from '../../services/navigationService/routes';
 
 const Header = ({ t, hideBackButton, onBackClick }) => {
-  const { goBack, goHome } = useNavigation();
+  const { goBack, goTo } = useNavigation();
   const handleBackClick = useCallback(() => {
     if (onBackClick) {
       onBackClick();
@@ -26,7 +27,7 @@ const Header = ({ t, hideBackButton, onBackClick }) => {
   return (
     <Container hideBackButton={hideBackButton}>
       {!hideBackButton ? renderBackButton() : null}
-      <Logo onClick={() => goHome()} />
+      <Logo onClick={() => goTo(Routes.Home)} />
     </Container>
   );
 };

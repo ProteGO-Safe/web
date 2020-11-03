@@ -1,9 +1,9 @@
 import React from 'react';
 import { withTranslation } from 'react-i18next';
 import { Button } from '../../components';
-import * as Styled from './InfoLabTest.styled';
+import * as Styled from './InfoNegativeLabTest.styled';
 
-const InfoLabTest = ({ handleClickYes, handleClickCancel, t }) => (
+const InfoNegativeLabTest = ({ handleClickYes, handleClickCancel, t }) => (
   <Styled.InfoLabTest>
     <Styled.Icon />
     <Styled.Title>{t('info_lab_test_text1')}</Styled.Title>
@@ -23,4 +23,4 @@ const InfoLabTest = ({ handleClickYes, handleClickCancel, t }) => (
   </Styled.InfoLabTest>
 );
 
-export default withTranslation()(InfoLabTest);
+export default withTranslation()(InfoNegativeLabTest);

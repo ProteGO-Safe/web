@@ -14,9 +14,10 @@ import { UPLOAD_HISTORICAL_DATA_STATE as uploadState } from '../../store/reducer
 import { getUploadHistoricalDataStateErrorMessageVisible } from '../../store/selectors/app';
 import { hideUploadHistoricalDataErrorMessage } from '../../store/actions/app';
 import useNavigation from '../../hooks/useNavigation';
+import { Routes } from '../../services/navigationService/routes';
 
 const UploadHistoricalData = ({ t }) => {
-  const { goHome } = useNavigation();
+  const { goTo } = useNavigation();
   const { areEnableAllServices } = useSupportExposureNotificationTracing();
   const MAX_UPLOAD_TIME = 60;
   const dispatch = useDispatch();
@@ -37,7 +38,7 @@ const UploadHistoricalData = ({ t }) => {
 
   useEffect(() => {
     if (!areEnableAllServices) {
-      goHome();
+      goTo(Routes.Home);
     }
     // eslint-disable-next-line
   }, [areEnableAllServices]);
@@ -83,7 +84,7 @@ const UploadHistoricalData = ({ t }) => {
   };
 
   const finishUpload = () => {
-    dispatch(endUploadHistoricalData()).then(goHome());
+    dispatch(endUploadHistoricalData()).then(goTo(Routes.Home));
   };
 
   if (status === uploadState.REQUESTED && isUploading) {

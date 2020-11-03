@@ -7,9 +7,10 @@ import { Color } from '../../../../theme/colors';
 import { Link, SmallText } from '../../../../theme/typography';
 import { PHONE_NUMBER } from '../../labTest.constants';
 import useNavigation from '../../../../hooks/useNavigation';
+import { Routes } from '../../../../services/navigationService/routes';
 
 const Step3 = ({ t }) => {
-  const { goHome } = useNavigation();
+  const { goTo } = useNavigation();
   return (
     <>
       <Styled.WarningWrapper>
@@ -35,7 +36,10 @@ const Step3 = ({ t }) => {
         </Styled.List>
       </Styled.Content>
       <FieldSet>
-        <Button onClick={() => goHome()} label={t('button_understand')} />
+        <Button
+          onClick={() => goTo(Routes.Home)}
+          label={t('button_understand')}
+        />
       </FieldSet>
     </>
   );

@@ -1,15 +1,12 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import {
-  changeRoute,
-  goToHomeRoute,
-  goToPreviousRoute
-} from '../../store/actions/navigation';
+import { changeRoute, goToPreviousRoute } from '../../store/actions/navigation';
 import {
   getCurrentParams,
   getCurrentRoute,
   isBackToPreviousRequested
 } from '../../store/selectors/navigation';
+import { Routes } from '../../services/navigationService/routes';
 
 const useNavigation = () => {
   const dispatch = useDispatch();
@@ -22,10 +19,6 @@ const useNavigation = () => {
     window.scroll(0, 0);
   }, [currentRoute]);
 
-  const goHome = () => {
-    dispatch(goToHomeRoute());
-  };
-
   const goBack = () => {
     dispatch(goToPreviousRoute());
   };
@@ -37,6 +30,14 @@ const useNavigation = () => {
     dispatch(changeRoute({ route, params }));
   };
 
+  const goToWithCustomBack = (route, backRoute) => {
+    dispatch(changeRoute({ route, backRoute }));
+  };
+
+  const gotToWithHomeAsBack = route => {
+    dispatch(changeRoute({ route, backRoute: Routes.Home }));
+  };
+
   const getParam = param => {
     return currentParams && currentParams[param];
   };
@@ -44,8 +45,9 @@ const useNavigation = () => {
   return {
     getParam,
     goBack,
-    goHome,
     goTo,
+    goToWithCustomBack,
+    gotToWithHomeAsBack,
     backToPreviousRequested,
     route: currentRoute
   };

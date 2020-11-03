@@ -25,13 +25,3 @@ export const goToPreviousRoute = () => {
     dispatch(goToPreviousRouteSuccess());
   };
 };
-
-export const toHomeRouteWent = () => ({
-  type: types.TO_HOME_ROUTE_WENT
-});
-
-export const goToHomeRoute = () => {
-  return dispatch => {
-    dispatch(toHomeRouteWent());
-  };
-};
