@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { Color } from '../../../../theme/colors';
 
 import { ReactComponent as IconWriting } from '../../../../assets/img/icons/pismo.svg';
-import { ReactComponent as IconArrow } from '../../../../assets/img/icons/angle-right-blue.svg';
+import IconArrow from '../../../../assets/img/icons/angle-right-blue.svg';
 
 export const ButtonIconShadow = styled.span`
   position: relative;
@@ -41,7 +41,7 @@ export const Name = styled.span`
   color: ${Color.primary};
 `;
 
-export const Arrow = styled(IconArrow)`
+export const Arrow = styled.span`
   position: absolute;
   top: 50%;
   right: 8px;
