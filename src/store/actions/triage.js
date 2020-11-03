@@ -35,3 +35,11 @@ export const wholeTriageUpdated = data => ({
 export const updateWholeTriage = data => dispatch => {
   dispatch(wholeTriageUpdated(data));
 };
+
+export const revokeTorStatusFinished = () => ({
+  type: types.REVOKE_TOR_STATUS_FINISHED
+});
+
+export const revokeTorStatus = () => dispatch => {
+  dispatch(revokeTorStatusFinished());
+};

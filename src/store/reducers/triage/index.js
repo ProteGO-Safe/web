@@ -3,7 +3,8 @@ import {
   TRIAGE_FETCH_REQUESTED,
   TRIAGE_FETCH_SUCCESS,
   TIME_OF_CONFIRMED_COVID_RESETED,
-  WHOLE_TRIAGE_UPDATED
+  WHOLE_TRIAGE_UPDATED,
+  REVOKE_TOR_STATUS_FINISHED
 } from '../../types/triage';
 import { UPLOAD_HISTORICAL_DATA_FINISHED } from '../../types/app';
 
@@ -67,6 +68,14 @@ const triageReducer = (state = INITIAL_STATE, action) => {
       return {
         ...state,
         ...data
+      };
+    }
+    case REVOKE_TOR_STATUS_FINISHED: {
+      return {
+        ...state,
+        triageLevel: '',
+        description: '',
+        serious: []
       };
     }
 

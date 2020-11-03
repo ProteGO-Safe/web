@@ -1,7 +1,8 @@
 import React from 'react';
 import { Color } from '../../theme/colors';
-import { PhoneNumber } from '../../components/PhoneNumber';
+import { T, PhoneNumber } from '../../components';
 import { Routes } from '../../services/navigationService/routes';
+import { ButtonIconShadow } from './components/ButtonIconShadow';
 
 export const resolveData = t => {
   return {
@@ -48,17 +49,16 @@ export const resolveData = t => {
       colorTitle: Color.black,
       content: (
         <>
-          <strong>{t('test_border_box_approve_description_1')}</strong>{' '}
-          {t('test_border_box_approve_description_2')}{' '}
-          <strong>{t('test_border_box_approve_description_3')}</strong>{' '}
-          {t('test_border_box_approve_description_4')}{' '}
-          <strong>{t('test_border_box_approve_description_5')}</strong>{' '}
-          {t('test_border_box_approve_description_6')}
+          <T i18nKey="test_border_box_approve_description_9" />
           <br />
-          {t('test_border_box_approve_description_7')}
+          <T i18nKey="test_border_box_approve_description_10" />
+          <ButtonIconShadow
+            name={<T i18nKey="test_border_box_approve_description_11" />}
+            path={Routes.LabTestResult}
+          />
         </>
       ),
-      title: 'test_border_box_approve_title'
+      title: 'test_border_box_approve_description_8'
     }
   };
 };

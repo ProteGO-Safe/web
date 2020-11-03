@@ -86,6 +86,10 @@ const getServicesStatus = async () => {
   return callGetBridgeData(DATA_TYPE.NATIVE_SERVICES_STATUS);
 };
 
+const revokeEnStatus = async () => {
+  return callGetBridgeData(DATA_TYPE.REVOKE_EN);
+};
+
 const getFontScale = async () => {
   return callGetBridgeData(DATA_TYPE.FONT_SCALE);
 };
@@ -276,6 +280,7 @@ export default {
   getNotification,
   getServicesStatus,
   getSubscribedDistricts,
+  revokeEnStatus,
   setPin,
   setDistrictSubscription,
   setServicesState,
