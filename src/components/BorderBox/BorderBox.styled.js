@@ -13,6 +13,7 @@ export const BorderBoxInfo = styled.div`
 `;
 
 export const BorderBoxNavLink = styled.span`
+  display: block;
   width: 100%;
   margin-bottom: 16px;
   padding: 22px 20px 22px;
