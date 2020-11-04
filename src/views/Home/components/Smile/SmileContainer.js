@@ -4,11 +4,13 @@ import useFilledDiagnosis from '../../../../hooks/useFilledDiagnosis';
 import useTriage from '../../../../hooks/useTriage';
 import Smile from './Smile';
 import useUserName from '../../../../hooks/useUserName';
+import { T } from '../../../../components/T';
 
 const SmileContainer = ({ t }) => {
   const userName = useUserName();
   const { lastDate } = useFilledDiagnosis();
   const {
+    exposureRiskLevel,
     isCovid,
     isExposure,
     isManualCovid,
@@ -23,14 +25,14 @@ const SmileContainer = ({ t }) => {
     if (isManualCovid) {
       return <>{t('smile_container_text6')}</>;
     }
-    if (isExposure) {
-      return (
-        <>
-          <strong>{t('smile_container_text2')}</strong>{' '}
-          {t('smile_container_text3')}&nbsp;
-          <strong>{t(riskGroup)}</strong>.
-        </>
-      );
+    if (isExposure && exposureRiskLevel === 1) {
+      return <T i18nKey="smile_container_text7" />;
+    }
+    if (isExposure && exposureRiskLevel === 2) {
+      return <T i18nKey="smile_container_text8" />;
+    }
+    if (isExposure && exposureRiskLevel === 3) {
+      return <T i18nKey="smile_container_text9" />;
     }
     return (
       <>
