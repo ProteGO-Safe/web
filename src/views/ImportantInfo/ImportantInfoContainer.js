@@ -1,6 +1,8 @@
 import React from 'react';
 import { withTranslation } from 'react-i18next';
 import ImportantInfo from './ImportantInfo';
+import useLanguage from '../../hooks/useLanguage';
+import { AVAILABLE_LANGUAGES } from '../../constants';
 
 import { ReactComponent as Icon1 } from '../../assets/img/icons/important-info-1.svg';
 import { ReactComponent as Icon2 } from '../../assets/img/icons/important-info-2.svg';
@@ -11,6 +13,8 @@ import { ReactComponent as Icon6 } from '../../assets/img/icons/important-info-6
 import { Routes } from '../../services/navigationService/routes';
 
 const ImportantInfoContainer = ({ t }) => {
+  const { language } = useLanguage();
+
   const IMPORTANT_INFO_ITEMS = [
     {
       type: 'route',
@@ -28,11 +32,14 @@ const ImportantInfoContainer = ({ t }) => {
       path: Routes.HowItWorks
     },
     {
-      type: 'route',
+      type: language === AVAILABLE_LANGUAGES.pl ? 'link' : 'route',
       icon: <Icon2 />,
       title: t('important_info_title_2'),
       description: t('important_info_description_2'),
-      path: Routes.ReportBug
+      path:
+        language === AVAILABLE_LANGUAGES.pl
+          ? 'https://www.gov.pl/web/protegosafe/pytania-i-odpowiedzi'
+          : Routes.ReportBug
     },
     {
       type: 'route',
@@ -47,13 +54,13 @@ const ImportantInfoContainer = ({ t }) => {
       icon: <Icon4 />,
       title: t('important_info_title_4'),
       description: t('important_info_description_4'),
-      link: t('important_info_href_1')
+      path: t('important_info_href_1')
     },
     {
       type: 'link',
       icon: <Icon5 />,
       title: t('important_info_title_5'),
-      link: t('important_info_href_2')
+      path: t('important_info_href_2')
     }
   ];
 
