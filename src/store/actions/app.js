@@ -139,3 +139,13 @@ export const hideRestrictionsModal = () => {
     dispatch(restrictionsModalShowed());
   };
 };
+
+export const interoperabilityModalShowed = () => ({
+  type: types.INTEROPERABILITY_MODAL_SHOWED
+});
+
+export const hideInteroperabilityModal = () => {
+  return dispatch => {
+    dispatch(interoperabilityModalShowed());
+  };
+};

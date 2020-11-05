@@ -7,3 +7,5 @@ export const getUploadHistoricalDataStateErrorMessageVisible = state =>
 export const getFontScale = state => state.app.fontScale;
 export const getRestrictionsModalShowed = state =>
   state.app.restrictionsModalShowed;
+export const getInteroperabilityModalShowed = state =>
+  state.app.interoperabilityModalShowed;

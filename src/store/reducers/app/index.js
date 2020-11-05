@@ -5,6 +5,7 @@ import {
   EXPOSURE_ONBOARDING_FINISHED,
   FIRST_DIAGNOSIS_FINISHED,
   FONT_SCALE_FETCHED,
+  INTEROPERABILITY_MODAL_SHOWED,
   LANGUAGE_CHANGED,
   MIGRATION_FINISHED,
   ONBOARDING_FINISHED,
@@ -35,7 +36,8 @@ const INITIAL_STATE = {
     unsuccessfulAttempts: []
   },
   registrationFinished: false,
-  restrictionsModalShowed: false
+  restrictionsModalShowed: false,
+  interoperabilityModalShowed: false
 };
 
 const appReducer = (state = INITIAL_STATE, action) => {
@@ -152,6 +154,12 @@ const appReducer = (state = INITIAL_STATE, action) => {
       return {
         ...state,
         restrictionsModalShowed: true
+      };
+    }
+    case INTEROPERABILITY_MODAL_SHOWED: {
+      return {
+        ...state,
+        interoperabilityModalShowed: true
       };
     }
 

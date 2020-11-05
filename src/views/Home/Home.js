@@ -1,6 +1,6 @@
 import React from 'react';
 import { Layout } from '../../components';
-import { FollowDistrictsSlider } from '../index';
+import { FollowDistrictsSlider, InfoInteroperability } from '../index';
 import { ExposureNotificationWarning, HomeContent } from './components';
 import * as Styled from './Home.styled';
 
@@ -10,6 +10,8 @@ const Home = ({ subscribedDistricts }) => {
       <Styled.Container>
         <ExposureNotificationWarning />
       </Styled.Container>
+
+      <InfoInteroperability />
 
       <FollowDistrictsSlider items={subscribedDistricts} />
 

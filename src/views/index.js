@@ -10,6 +10,7 @@ export { Home } from './Home';
 export { HowItWorks } from './HowItWorks';
 export { IAmSick } from './IAmSick';
 export { ImportantInfo } from './ImportantInfo';
+export { InfoInteroperability } from './InfoInteroperability';
 export { InfoNegativeLabTest } from './InfoNegativeLabTest';
 export { LabTest } from './LabTest';
 export { MenuSettings } from './MenuSettings';
