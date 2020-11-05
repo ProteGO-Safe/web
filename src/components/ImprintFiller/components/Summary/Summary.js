@@ -6,6 +6,7 @@ import Imprint from '../../../Imprint/Imprint';
 import {
   chronicSickValues,
   FIELD_BLOOD_GROUP,
+  FIELD_MANUAL_COVID,
   FIELD_SMOKE,
   FIELD_SMOKE_NUMBER
 } from '../../../../constants';
@@ -37,6 +38,7 @@ const Summary = ({ t }) => {
           smokeNumber: values[FIELD_SMOKE_NUMBER],
           isSmoking: values[FIELD_SMOKE] === t('yes')
         }}
+        forceHideManualCovid={values[FIELD_MANUAL_COVID] === false}
       />
       <Actions>
         <Button onClick={handleSubmit}>
