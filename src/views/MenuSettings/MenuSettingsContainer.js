@@ -6,6 +6,7 @@ import MenuSettings from './MenuSettings';
 
 import LanguageIcon from '../../assets/img/icons/language.svg';
 import Bluetooth from '../../assets/img/icons/bluetooth.svg';
+import FlagUE from '../../assets/img/icons/flag-ue.svg';
 import { isVersionCompatibilityWithBluetoothModule } from '../../utils/version';
 import { Routes } from '../../services/navigationService/routes';
 
@@ -23,6 +24,12 @@ const MenuSettingsContainer = ({ t }) => {
       icon: LanguageIcon,
       name: t('menu_settings_item2'),
       path: Routes.SettingsLanguages
+    },
+    {
+      icon: FlagUE,
+      name: t('menu_settings_item3'),
+      // TODO: PSAFE-2666 - change Routes
+      path: Routes.Home
     }
   ];
 
