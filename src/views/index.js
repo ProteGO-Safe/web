@@ -33,3 +33,4 @@ export { UploadHistoricalData } from './UploadHistoricalData';
 export { UserData } from './UserData';
 export { UserDataChange } from './UserDataChange';
 export { UserDataSettings } from './UserDataSettings';
+export { WarningInEurope } from './WarningInEurope';

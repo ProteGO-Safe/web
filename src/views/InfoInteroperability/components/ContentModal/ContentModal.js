@@ -1,5 +1,6 @@
 import React from 'react';
 import { T } from '../../../../components/T';
+import { WarningInEuropeImage } from '../../../../components';
 import * as Styled from './ContentModal.styled';
 
 const ContentModal = ({ title, content }) => (
@@ -8,11 +9,7 @@ const ContentModal = ({ title, content }) => (
       <T i18nKey={title} />
     </Styled.Title>
 
-    <Styled.Images>
-      <Styled.FlagPL />
-      <Styled.Img />
-      <Styled.FlagUE />
-    </Styled.Images>
+    <WarningInEuropeImage />
 
     <Styled.Description>
       <T i18nKey={content} />

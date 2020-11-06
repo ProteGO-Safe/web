@@ -28,8 +28,7 @@ const MenuSettingsContainer = ({ t }) => {
     {
       icon: FlagUE,
       name: t('menu_settings_item3'),
-      // TODO: PSAFE-2666 - change Routes
-      path: Routes.Home
+      path: Routes.WarningInEurope
     }
   ];
 

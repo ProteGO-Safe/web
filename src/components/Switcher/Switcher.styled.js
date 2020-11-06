@@ -2,12 +2,15 @@ import styled from 'styled-components';
 
 export const SwitcherWrapper = styled.div`
   display: flex;
+  width: 100%;
   .MuiFormControlLabel-root {
+    display: flex;
+    flex-flow: wrap row-reverse;
     justify-content: space-between;
+    align-items: center !important;
     width: 100%;
     margin-left: 0;
     margin-right: 0;
-    flex-direction: row-reverse;
   }
   .MuiTypography-root {
     font-size: 14px;

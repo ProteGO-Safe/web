@@ -2,11 +2,14 @@ import React, { useCallback, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { ContentModal, FooterModal } from './components';
 import useModalContext from '../../hooks/useModalContext';
+import useNavigation from '../../hooks/useNavigation';
 import { getInteroperabilityModalShowed } from '../../store/selectors/app';
 import { hideInteroperabilityModal } from '../../store/actions/app';
+import { Routes } from '../../services/navigationService/routes';
 
 const InfoInteroperability = () => {
   const { openModal, onClose } = useModalContext();
+  const { goTo } = useNavigation();
 
   const dispatch = useDispatch();
   const interoperabilityModalShowed = useSelector(
@@ -15,7 +18,8 @@ const InfoInteroperability = () => {
 
   const handleModalClickTrue = useCallback(() => {
     dispatch(hideInteroperabilityModal());
-    // TODO: PSAFE-2666 - goTo(Routes)
+    goTo(Routes.WarningInEurope);
+    onClose();
     // eslint-disable-next-line
   }, []);
 

@@ -48,3 +48,5 @@ export { Url } from './Url';
 export { UrlCovid } from './UrlCovid';
 export { VersionApp } from './VersionApp';
 export { Warning } from './Warning';
+export { WarningInEuropeImage } from './WarningInEuropeImage';
+export { WarningInEuropeTerm } from './WarningInEuropeTerm';
