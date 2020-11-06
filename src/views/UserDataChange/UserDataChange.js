@@ -12,7 +12,7 @@ import { ImprintFiller } from '../../components/ImprintFiller';
 import { userNameValidationSchema } from '../../utils/user';
 import useNavigation from '../../hooks/useNavigation';
 import { revokeEnStatus } from '../../store/actions/nativeData';
-import { revokeTorStatus } from '../../store/actions/triage';
+import { revokeManualCovid, revokeTorStatus } from '../../store/actions/triage';
 import { Routes } from '../../services/navigationService/routes';
 
 const UserDataChange = ({ t }) => {
@@ -90,23 +90,28 @@ const UserDataChange = ({ t }) => {
       isSmoking: form[constants.FIELD_SMOKE] === t('yes')
     };
 
-    const goToHome = () => {
+    const goToHome = revoke => {
       setLoader(true);
-      setTimeout(() => setLoader(false), 1000);
-      goTo(Routes.Home);
+      setTimeout(() => {
+        goTo(Routes.Home);
+        if (revoke) {
+          dispatch(revokeTorStatus());
+          dispatch(revokeManualCovid());
+        }
+        setLoader(false);
+      }, 1000);
     };
 
     if (form[constants.FIELD_MANUAL_COVID] === false) {
       dispatch(saveUser(data)).then(() =>
         dispatch(revokeEnStatus()).then(() => {
-          dispatch(revokeTorStatus());
-          goToHome();
+          goToHome(true);
         })
       );
       return;
     }
 
-    dispatch(saveUser(data)).then(goToHome);
+    dispatch(saveUser(data)).then(() => goToHome(false));
   };
 
   return (

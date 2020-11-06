@@ -53,3 +53,11 @@ export const confirmManualCovidFinished = () => ({
 export const confirmManualCovid = () => dispatch => {
   dispatch(confirmManualCovidFinished());
 };
+
+export const revokeManualCovidFinished = () => ({
+  type: types.REVOKE_MANUAL_COVID_FINISHED
+});
+
+export const revokeManualCovid = () => dispatch => {
+  dispatch(revokeManualCovidFinished());
+};
