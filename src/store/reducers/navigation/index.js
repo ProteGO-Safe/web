@@ -1,7 +1,7 @@
 import {
   ROUTE_CHANGED,
-  GO_TO_PREVIOUS_ROUTE_REQUESTED,
-  GO_TO_PREVIOUS_ROUTE_SUCCESS
+  GO_TO_PREVIOUS_ROUTE_SUCCESS,
+  BACK_PRESSED
 } from '../../types/navigation';
 import { Routes } from '../../../services/navigationService/routes';
 
@@ -10,13 +10,16 @@ const INITIAL_STATE = {
     route: undefined,
     params: undefined
   },
-  backToPreviousRequested: false,
   backRoute: undefined,
-  previousRoutes: []
+  previousRoutes: [],
+  backPressedMarker: 0
 };
 
-const resolveCurrentRoute = (backRoute, lastRoutes) => {
-  return backRoute ? { route: backRoute, params: undefined } : lastRoutes;
+const resolveCurrentRoute = (state, lastRoutes) => {
+  const { backRoute, currentRoute } = state;
+  return backRoute
+    ? { route: backRoute, params: undefined }
+    : lastRoutes || currentRoute;
 };
 
 const navigationReducer = (state = INITIAL_STATE, action) => {
@@ -33,28 +36,29 @@ const navigationReducer = (state = INITIAL_STATE, action) => {
           route,
           params
         },
-        previousRoutes: [...previousRoutes, currentRoute],
-        backRoute
-      };
-    }
-    case GO_TO_PREVIOUS_ROUTE_REQUESTED: {
-      return {
-        ...state,
-        backToPreviousRequested: true
+        previousRoutes:
+          route === Routes.Home ? [] : [...previousRoutes, currentRoute],
+        backRoute: route === Routes.Home ? undefined : backRoute
       };
     }
     case GO_TO_PREVIOUS_ROUTE_SUCCESS: {
-      const { previousRoutes = [], backRoute } = state;
+      const { previousRoutes = [] } = state;
       const copyPreviousRoutes = [...previousRoutes];
       const lastRoutes = copyPreviousRoutes.pop();
-      const currentRoute = resolveCurrentRoute(backRoute, lastRoutes);
+      const currentRoute = resolveCurrentRoute(state, lastRoutes);
       const { route } = currentRoute;
       return {
         ...state,
         currentRoute,
         previousRoutes: route === Routes.Home ? [] : copyPreviousRoutes,
-        backToPreviousRequested: false,
         backRoute: undefined
+      };
+    }
+    case BACK_PRESSED: {
+      const { backPressedMarker = 0 } = state;
+      return {
+        ...state,
+        backPressedMarker: backPressedMarker + 1
       };
     }
     default:

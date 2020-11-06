@@ -3,8 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { changeRoute, goToPreviousRoute } from '../../store/actions/navigation';
 import {
   getCurrentParams,
-  getCurrentRoute,
-  isBackToPreviousRequested
+  getCurrentRoute
 } from '../../store/selectors/navigation';
 import { Routes } from '../../services/navigationService/routes';
 
@@ -13,7 +12,6 @@ const useNavigation = () => {
 
   const currentParams = useSelector(getCurrentParams);
   const currentRoute = useSelector(getCurrentRoute);
-  const backToPreviousRequested = useSelector(isBackToPreviousRequested);
 
   useEffect(() => {
     window.scroll(0, 0);
@@ -48,7 +46,6 @@ const useNavigation = () => {
     goTo,
     goToWithCustomBack,
     gotToWithHomeAsBack,
-    backToPreviousRequested,
     route: currentRoute
   };
 };

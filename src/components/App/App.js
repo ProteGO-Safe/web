@@ -32,7 +32,6 @@ import * as Styled from './App.styled';
 import { fetchSubscribedDistricts } from '../../store/actions/restrictions';
 import useNavigation from '../../hooks/useNavigation';
 import ScreenFactory from '../../services/navigationService/Screen.factory';
-import useTurnOffApplication from '../../hooks/useTurnOffApplication';
 import { Routes } from '../../services/navigationService/routes';
 
 function App() {
@@ -51,7 +50,6 @@ function App() {
   useMigration();
   useCheckLanguage();
   useClearData();
-  useTurnOffApplication();
   const { goTo, route } = useNavigation();
 
   useEffect(() => {

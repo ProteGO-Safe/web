@@ -15,10 +15,7 @@ import { UPLOAD_HISTORICAL_DATA_FINISHED } from '../../store/types/app';
 import { isAndroidWebView, isIOSWebView } from '../../utils/native';
 import { fetchExposureNotificationStatistics } from '../../store/actions/nativeData';
 import { fetchSubscribedDistricts } from '../../store/actions/restrictions';
-import {
-  GO_TO_PREVIOUS_ROUTE_REQUESTED,
-  GO_TO_PREVIOUS_ROUTE_SUCCESS
-} from '../../store/types/navigation';
+import { BACK_PRESSED } from '../../store/types/navigation';
 
 const nativeRequests = {};
 
@@ -225,10 +222,7 @@ const handleBackPressed = () => {
   const store = StoreRegistry.getStore();
   const { dispatch } = store;
   dispatch({
-    type: GO_TO_PREVIOUS_ROUTE_REQUESTED
-  });
-  dispatch({
-    type: GO_TO_PREVIOUS_ROUTE_SUCCESS
+    type: BACK_PRESSED
   });
 };
 
