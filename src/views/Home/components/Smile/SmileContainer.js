@@ -37,7 +37,9 @@ const SmileContainer = ({ t }) => {
     return (
       <>
         {t('smile_container_text4')}&nbsp;
-        <strong className="nowrap">{lastDate}</strong>
+        <strong className="nowrap" data-cy="risk-test-last-date">
+          {lastDate}
+        </strong>
         {t('smile_container_text5')}&nbsp;
         <strong>{t(riskGroup)}</strong>.
       </>

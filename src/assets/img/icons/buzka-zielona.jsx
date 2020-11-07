@@ -4,6 +4,7 @@ import styled from 'styled-components';
 export const GreenSmile = () => {
   return (
     <Smile
+      data-cy="green-smile"
       version="1.1"
       id="green"
       x="0px"

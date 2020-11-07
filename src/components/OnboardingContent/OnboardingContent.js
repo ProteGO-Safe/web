@@ -10,9 +10,9 @@ import {
 
 const OnboardingContent = ({ buttons, children, icon, title }) => {
   return (
-    <OnboardingWrapper>
+    <OnboardingWrapper data-cy="view-onboarding">
       <IconWrapper>{icon}</IconWrapper>
-      <Title>{title}</Title>
+      <Title data-cy="onboarding-title">{title}</Title>
       <Text>{children}</Text>
       <ButtonWrapper>{buttons}</ButtonWrapper>
     </OnboardingWrapper>

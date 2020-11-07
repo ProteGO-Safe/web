@@ -63,7 +63,7 @@ const GroupSingle = ({ t, onBack, onNext, question }) => {
   };
 
   return (
-    <Layout onBackClick={back}>
+    <Layout id="view-diagnosis" onBackClick={back}>
       <Container>
         <Title explanation={tooltip}>
           {t(text)}

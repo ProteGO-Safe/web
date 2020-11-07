@@ -5,7 +5,7 @@ import { Paragraph, Small, ButtonWrapper } from './FirstDiagnosisAsking.styled';
 
 const FirstDiagnosisAsking = ({ t, onYesClick, onNoClick }) => {
   return (
-    <Layout hideBackButton isGovFooter>
+    <Layout id="view-first-diagnosis-asking" hideBackButton isGovFooter>
       <Paragraph>
         {t('first_diagnosis_asking_text1')}
         <br />

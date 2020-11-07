@@ -24,7 +24,7 @@ const NameForm = ({ t }) => {
   };
 
   return (
-    <Layout hideBackButton isGovFooter>
+    <Layout id="view-name-form" hideBackButton isGovFooter>
       <Label>{t('name_form_text1')}</Label>
 
       <InputWithCounter

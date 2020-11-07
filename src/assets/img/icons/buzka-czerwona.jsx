@@ -4,6 +4,7 @@ import styled from 'styled-components';
 export const RedSmile = () => {
   return (
     <Smile
+      data-cy="red-smile"
       version="1.1"
       id="red"
       x="0px"

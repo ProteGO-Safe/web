@@ -16,7 +16,7 @@ const Age = ({ t, onBack, onNext }) => {
   };
 
   return (
-    <Layout onBackClick={onBack}>
+    <Layout id="view-diagnosis-age" onBackClick={onBack}>
       <Title>{t('age_text1')}</Title>
       <FormGroup>
         <Radio
@@ -24,18 +24,21 @@ const Age = ({ t, onBack, onNext }) => {
           label={t('age_text2')}
           name="age"
           onChange={() => onChange(IS_NOT_ELDERLY)}
+          testId="is-not-elderly"
         />
         <Radio
           checked={values[DIAGNOSIS_FORM_FIELDS.AGE] === IS_ELDERLY}
           label={t('age_text3')}
           name="age"
           onChange={() => onChange(IS_ELDERLY)}
+          testId="is-elderly"
         />
         <Radio
           checked={values[DIAGNOSIS_FORM_FIELDS.AGE] === NO_DATA}
           label={t('age_text4')}
           name="age"
           onChange={() => onChange(NO_DATA)}
+          testId="no-data"
         />
       </FormGroup>
       <Paragraph>

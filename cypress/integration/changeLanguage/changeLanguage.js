@@ -1,10 +1,12 @@
 import { visitBaseUrl } from '../../utils/visitBaseUrl';
 import { resolveChangeLanguage } from './changeLanguage.helpers';
+import { clearLocalStorage } from '../../utils/clearLocalStorage';
 
 /**
  * Change language
  */
 describe('Choose language on first screen', () => {
+  clearLocalStorage();
   visitBaseUrl();
 
   const changeToPolish = resolveChangeLanguage('#select_flag_PL', 'PL');
