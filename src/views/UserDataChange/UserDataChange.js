@@ -65,7 +65,7 @@ const UserDataChange = ({ t }) => {
     [constants.FIELD_SMOKE]: smoke,
     [constants.FIELD_SMOKE_NUMBER]: smokeNumber,
     [constants.FIELD_IS_CHRONIC_SICK]: isChronicSick,
-    [constants.FIELD_MANUAL_COVID]: undefined,
+    [constants.FIELD_MANUAL_COVID]: true,
     step: 1,
     ...filledChronicsSicks
   };
