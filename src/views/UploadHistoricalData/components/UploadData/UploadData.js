@@ -20,6 +20,7 @@ import {
 import { Color } from '../../../../theme/colors';
 import { ButtonWrapper } from '../../UploadHistoricalData.styled';
 import { SwitchBarContent } from './components/SwitchBarContent';
+import useModalContext from '../../../../hooks/useModalContext';
 import * as Styled from './UploadData.styled';
 
 const UploadData = ({
@@ -32,6 +33,7 @@ const UploadData = ({
   pin,
   setPin
 }) => {
+  const { openModal } = useModalContext();
   const [checked, setChecked] = useState(false);
   const toggleChecked = () => {
     setChecked(prev => !prev);
@@ -43,6 +45,15 @@ const UploadData = ({
     };
     // eslint-disable-next-line
   }, []);
+
+  const handleOpenModal = () => {
+    openModal(
+      <T i18nKey="upload_data_popup_4" />,
+      'normal',
+      <T i18nKey="upload_data_popup_3" />,
+      null
+    );
+  };
 
   return (
     <Layout isNavigation>
@@ -56,7 +67,7 @@ const UploadData = ({
         </H5>
         <SmallText>
           <T i18nKey="upload_data_text_2" />{' '}
-          <TextLink>
+          <TextLink onClick={handleOpenModal}>
             <T i18nKey="upload_data_text_3" />
           </TextLink>{' '}
           <T i18nKey="upload_data_text_4" />

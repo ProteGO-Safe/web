@@ -1438,6 +1438,8 @@
   "triage_level_self_monitoring_content": "Jeśli wracasz do Polski z zagranicy lub mieszkasz z osobą skierowaną na kwarantannę po dniu 31.03.2020, zostaniesz automatycznie skierowany|skierowana na kwarantannę (o ile pozwala na to twój stan zdrowia).",
   "turn_off": "Wyłącz",
   "turn_on": "Włącz",
+  "upload_data_popup_3": "Jak działa STOP COVID – ProteGo Safe? Co to Klucze?",
+  "upload_data_popup_4": "Główna funkcjonalność STOP COVID – ProteGO Safe oparta jest o [B]Exposure Notification API[/B] (moduł powiadamiania o narażeniu), umożliwiający tzw. [B]Contact tracing[/B]. Jeśli użytkownik wyrazi zgodę – aplikacja, wykorzystując moduł Bluetooth, [B]rozgłasza generowany losowo, zmieniany co 10 minut, zaszyfrowany Klucz[/B]. Za pomocą Bluetooth tracing skanuje otoczenie w poszukiwaniu innych urządzeń, które rozgłaszają analogiczne Klucze. Kiedy kontakt jest wystarczająco długi, zapisuje anonimowe Klucze urządzeń. Jeśli u użytkownika zostanie zdiagnozowany [COVID-19] – może on dobrowolnie udostępnić Klucze i anonimowo ostrzec osoby, z którymi miał kontakt.",
   "upload_data_text_1": "Przekaż dane",
   "upload_data_text_10": "Potrzebujesz pomocy?[BR]Zadzwoń do Centrum Kontaktu: [PHONE]222 500 115[/PHONE]",
   "upload_data_text_11": "Włącz: Ostrzeż w Europie",
