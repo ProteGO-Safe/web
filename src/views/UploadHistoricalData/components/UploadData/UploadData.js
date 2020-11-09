@@ -1,16 +1,27 @@
-import React, { useEffect } from 'react';
-import { withTranslation } from 'react-i18next';
-import PinInput from 'react-pin-input';
-import { Button, InfoIcon, Layout, PhoneNumber } from '../../../../components';
-import { Paragraph } from '../../../../theme/typography';
-import { Color } from '../../../../theme/colors';
-import { PinWrapper, ButtonWrapper } from '../../UploadHistoricalData.styled';
-
+import React, { useEffect, useState } from 'react';
 import InformationIcon from '../../../../assets/img/icons/bad.svg';
-import WarningIcon from '../../../../assets/img/icons/warning.svg';
+import {
+  Button,
+  InfoIcon,
+  Layout,
+  Pin,
+  SwitchBar,
+  Warning,
+  T
+} from '../../../../components';
+import {
+  H5,
+  TextLink,
+  Paragraph,
+  Small,
+  SmallText
+} from '../../../../theme/typography';
+import { Color } from '../../../../theme/colors';
+import { ButtonWrapper } from '../../UploadHistoricalData.styled';
+import { SwitchBarContent } from './components/SwitchBarContent';
+import * as Styled from './UploadData.styled';
 
 const UploadData = ({
-  t,
   disableSubmitButton,
   disablePinInput,
   errorMessage,
@@ -20,50 +31,101 @@ const UploadData = ({
   pin,
   setPin
 }) => {
+  const [checked, setChecked] = useState(false);
+  const toggleChecked = () => {
+    setChecked(prev => !prev);
+  };
+
   useEffect(() => {
     return () => {
       hideErrorMessage();
     };
     // eslint-disable-next-line
   }, []);
+
   return (
-    <Layout hideBackButton isNavigation>
-      <Paragraph>{t('upload_data_text1')}</Paragraph>
-      <PinWrapper>
-        <PinInput
-          disabled={disablePinInput}
-          initialValue={pin}
-          focus
-          length={6}
-          type="text"
-          onChange={value => setPin(value)}
-          inputStyle={{ borderColor: Color.lightGray }}
+    <Layout isNavigation>
+      <Styled.Content>
+        <H5>
+          <T i18nKey="upload_data_text_1" /> <InfoIcon icon={InformationIcon} />
+        </H5>
+        <SmallText>
+          <T i18nKey="upload_data_text_2" />{' '}
+          <TextLink>
+            <T i18nKey="upload_data_text_3" />
+          </TextLink>{' '}
+          <T i18nKey="upload_data_text_4" />
+        </SmallText>
+        <SmallText>
+          <T i18nKey="upload_data_text_5" />
+        </SmallText>
+      </Styled.Content>
+
+      <Styled.SwitchWrapper>
+        <SwitchBar
+          checked={checked}
+          content={<SwitchBarContent checked={checked} />}
+          onChange={toggleChecked}
         />
-      </PinWrapper>
+      </Styled.SwitchWrapper>
+
+      <Styled.Agreement visible={checked}>
+        <Styled.Content>
+          <Small>
+            <T i18nKey="upload_data_text_6" />{' '}
+            <TextLink>
+              <T i18nKey="upload_data_text_7" />
+            </TextLink>
+          </Small>
+        </Styled.Content>
+      </Styled.Agreement>
+
+      <Styled.PinWrapper>
+        <Pin
+          initialValue={pin}
+          onChange={value => setPin(value)}
+          title={<T i18nKey="upload_data_text_8" />}
+        />
+      </Styled.PinWrapper>
+
       {errorMessage && errorMessageVisible ? (
-        <InfoIcon icon={WarningIcon} className="errorMessage">
-          <Paragraph color={Color.danger}>{errorMessage}</Paragraph>
-        </InfoIcon>
+        <Styled.Warning>
+          <Warning
+            borderColor={Color.danger}
+            colorFont={Color.danger}
+            status="error"
+            title={errorMessage}
+          />
+        </Styled.Warning>
       ) : null}
+
       <ButtonWrapper>
         <Button
           onClick={onUploadData}
-          label={t('upload_data_text5')}
+          label={<T i18nKey="upload_data_text_9" />}
           disabled={pin.length !== 6 || disableSubmitButton || disablePinInput}
         />
       </ButtonWrapper>
-      {errorMessage && errorMessageVisible ? (
+
+      <Styled.Info>
         <InfoIcon icon={InformationIcon}>
           <Paragraph>
-            <strong>{t('upload_data_text2')}</strong>
-            <br />
-            {t('upload_data_text3')}{' '}
-            <PhoneNumber value="222500115">222 500 115</PhoneNumber>
+            <T i18nKey="upload_data_text_10" />
           </Paragraph>
         </InfoIcon>
+      </Styled.Info>
+
+      {errorMessage && errorMessageVisible ? (
+        <Styled.Info>
+          <InfoIcon icon={InformationIcon}>
+            <Paragraph>
+              <T i18nKey="upload_data_text_10" />
+            </Paragraph>
+          </InfoIcon>
+        </Styled.Info>
       ) : null}
     </Layout>
   );
 };
 
-export default withTranslation()(UploadData);
+export default UploadData;

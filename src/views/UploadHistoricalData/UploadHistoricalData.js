@@ -37,7 +37,7 @@ const UploadHistoricalData = ({ t }) => {
   const [isUploading, setIsUploading] = useState(false);
 
   useEffect(() => {
-    if (!areEnableAllServices) {
+    if (areEnableAllServices) {
       goTo(Routes.Home);
     }
     // eslint-disable-next-line

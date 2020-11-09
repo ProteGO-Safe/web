@@ -20,10 +20,12 @@ export const Color = {
   gray_5: '#757575',
   gray_6: '#F2F2F2',
   gray_7: '#EEEEEE',
+  gray_8: '#E8E8E8',
   green: '#598527',
   watermark: '#605E5E',
   orange: '#CC4700',
   gradient_c1: '#438AD1',
   gradient_c2: '#0052A5',
-  gradient_c3: '#002953'
+  gradient_c3: '#002953',
+  skyblue: '#9BC7F2'
 };

@@ -1,8 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import { withTranslation } from 'react-i18next';
-import PinInput from 'react-pin-input';
 import { FieldSet } from '../../../../components/FieldSet';
-import { Button, Warning } from '../../../../components';
+import { Button, Pin, Warning } from '../../../../components';
 import * as Styled from '../../LabTest.styled';
 import { Color } from '../../../../theme/colors';
 import { BUTTON_TYPES } from '../../../../components/Button/Button.constants';
@@ -35,19 +34,12 @@ const Step2 = ({ isInvalidPin, onReset, onSubmit, pin, setPin, t }) => {
           <Styled.ListItem>{t('lab_test_text8')}</Styled.ListItem>
         </Styled.List>
       </Styled.Content>
-      <Styled.LabTestPin>
-        <Styled.LabTestPinTitle>{t('lab_test_text9')}</Styled.LabTestPinTitle>
-        <PinInput
-          disabled={false}
-          focus
-          initialValue={pin}
-          inputStyle={{ borderColor: Color.lightGray }}
-          length={6}
-          ref={pinInputRef}
-          type="text"
-          onChange={value => setPin(value)}
-        />
-      </Styled.LabTestPin>
+      <Pin
+        initialValue={pinInputRef.current}
+        onChange={value => setPin(value)}
+        pinInputRef={pinInputRef}
+        title={t('lab_test_text9')}
+      />
       {isInvalidPin && (
         <>
           <Styled.WarningWrapper>
