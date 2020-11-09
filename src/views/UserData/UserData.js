@@ -30,13 +30,6 @@ const UserData = ({ t }) => {
           label={t('user_data_text3')}
         />
       </ButtonWrapper>
-      <ButtonWrapper>
-        <Button
-          onClick={() => goTo(Routes.UploadHistoricalData)}
-          type="outline"
-          label={t('user_data_text4')}
-        />
-      </ButtonWrapper>
       {areEnableAllServices && (
         <ButtonWrapper>
           <Button

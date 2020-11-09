@@ -3,8 +3,8 @@ import Icon from '../../assets/img/icons/info-tooltip.svg';
 
 export const Tooltip = styled.span`
   display: inline-block;
-  width: ${({ sticky }) => (sticky ? '0' : '32px')};
-  height: ${({ sticky }) => (sticky ? '0' : '32px')};
+  width: ${({ sticky }) => (sticky ? '0' : '24px')};
+  height: ${({ sticky }) => (sticky ? '0' : '24px')};
   &:focus {
     outline: none;
   }
@@ -33,6 +33,6 @@ export const IconWrapper = styled.span`
   position: relative;
   display: inline-block;
   width: 100%;
-  padding: 5px 22px;
+  padding: 5px 16px;
   margin-top: -5px;
 `;

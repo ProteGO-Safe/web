@@ -1450,6 +1450,8 @@
   "upload_data_text_7": "Polityce prywatności",
   "upload_data_text_8": "Wpisz PIN",
   "upload_data_text_9": "Przekaż dane",
+  "upload_data_popup_1": "Przekazywanie danych – jak to działa?",
+  "upload_data_popup_2": "Jeśli w teście laboratoryjnym zostanie u Ciebie wykryty COVID-19, skontaktuje się z Tobą Operator Centrum Kontaktu. [B]Wprowadź podany przez niego kod PIN poniżej[/B] – dzięki temu dasz znać innym, że mogli mieć kontakt z koronawirusem.[BR][BR]Nie martw się, informacje są w pełni anonimowe.",
   "upload_historical_data_text1": "PIN {{amount}}-krotnie został wpisany niepoprawnie. Odczekaj {{seconds}} i spróbuj ponownie.",
   "upload_historical_data_text4": "godzinę",
   "upload_historical_data_text5": "godziny",

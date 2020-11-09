@@ -7,7 +7,8 @@ import {
   Pin,
   SwitchBar,
   Warning,
-  T
+  T,
+  Tooltip
 } from '../../../../components';
 import {
   H5,
@@ -47,7 +48,11 @@ const UploadData = ({
     <Layout isNavigation>
       <Styled.Content>
         <H5>
-          <T i18nKey="upload_data_text_1" /> <InfoIcon icon={InformationIcon} />
+          <T i18nKey="upload_data_text_1" />{' '}
+          <Tooltip
+            content={<T i18nKey="upload_data_popup_2" />}
+            title={<T i18nKey="upload_data_popup_1" />}
+          />
         </H5>
         <SmallText>
           <T i18nKey="upload_data_text_2" />{' '}
@@ -106,14 +111,6 @@ const UploadData = ({
           disabled={pin.length !== 6 || disableSubmitButton || disablePinInput}
         />
       </ButtonWrapper>
-
-      <Styled.Info>
-        <InfoIcon icon={InformationIcon}>
-          <Paragraph>
-            <T i18nKey="upload_data_text_10" />
-          </Paragraph>
-        </InfoIcon>
-      </Styled.Info>
 
       {errorMessage && errorMessageVisible ? (
         <Styled.Info>
