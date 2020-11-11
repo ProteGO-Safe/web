@@ -1,10 +1,11 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Switcher } from '../Switcher';
 import { T } from '../index';
 import { Routes } from '../../services/navigationService/routes';
 import * as Styled from './WarningInEuropeTerm.styled';
 
-const WarningInEuropeTerm = ({ checked, handleOnChange, name, forceOpen }) => {
+const WarningInEuropeTerm = ({ checked, forceOpen, name, onChange }) => {
   const renderLabel = (
     <Styled.Content>
       <Styled.Flag />
@@ -21,7 +22,7 @@ const WarningInEuropeTerm = ({ checked, handleOnChange, name, forceOpen }) => {
         <Switcher
           label={renderLabel}
           checked={checked}
-          onChange={handleOnChange}
+          onChange={onChange}
           name={name}
         />
       </Styled.Container>
@@ -36,6 +37,18 @@ const WarningInEuropeTerm = ({ checked, handleOnChange, name, forceOpen }) => {
       </Styled.TermDescription>
     </Styled.WarningInEuropeTerm>
   );
+};
+
+WarningInEuropeTerm.defaultProps = {
+  checked: false,
+  forceOpen: false
+};
+
+WarningInEuropeTerm.propTypes = {
+  checked: PropTypes.bool,
+  forceOpen: PropTypes.bool,
+  name: PropTypes.string.isRequired,
+  onChange: PropTypes.func.isRequired
 };
 
 export default WarningInEuropeTerm;

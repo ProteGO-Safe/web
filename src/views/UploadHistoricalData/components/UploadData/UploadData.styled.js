@@ -38,16 +38,6 @@ export const Content = styled.div`
   }
 `;
 
-export const SwitchWrapper = styled.div`
-  margin: 0 -18px 30px;
-`;
-
-export const Agreement = styled.div`
-  max-height: ${({ visible }) => (visible ? '200' : '0')}px;
-  overflow: hidden;
-  transition: max-height 200ms linear;
-`;
-
 export const PinWrapper = styled.div`
   margin: 30px 0;
 `;

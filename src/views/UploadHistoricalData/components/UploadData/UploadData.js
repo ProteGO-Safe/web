@@ -1,25 +1,23 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import InformationIcon from '../../../../assets/img/icons/bad.svg';
 import {
   Button,
   InfoIcon,
   Layout,
   Pin,
-  SwitchBar,
   Warning,
   T,
-  Tooltip
+  Tooltip,
+  WarningInEuropeTerm
 } from '../../../../components';
 import {
   H5,
   TextLink,
   Paragraph,
-  Small,
   SmallText
 } from '../../../../theme/typography';
 import { Color } from '../../../../theme/colors';
 import { ButtonWrapper } from '../../UploadHistoricalData.styled';
-import { SwitchBarContent } from './components/SwitchBarContent';
 import useModalContext from '../../../../hooks/useModalContext';
 import * as Styled from './UploadData.styled';
 
@@ -34,10 +32,6 @@ const UploadData = ({
   setPin
 }) => {
   const { openModal } = useModalContext();
-  const [checked, setChecked] = useState(false);
-  const toggleChecked = () => {
-    setChecked(prev => !prev);
-  };
 
   useEffect(() => {
     return () => {
@@ -77,24 +71,7 @@ const UploadData = ({
         </SmallText>
       </Styled.Content>
 
-      <Styled.SwitchWrapper>
-        <SwitchBar
-          checked={checked}
-          content={<SwitchBarContent checked={checked} />}
-          onChange={toggleChecked}
-        />
-      </Styled.SwitchWrapper>
-
-      <Styled.Agreement visible={checked}>
-        <Styled.Content>
-          <Small>
-            <T i18nKey="upload_data_text_6" />{' '}
-            <TextLink>
-              <T i18nKey="upload_data_text_7" />
-            </TextLink>
-          </Small>
-        </Styled.Content>
-      </Styled.Agreement>
+      <WarningInEuropeTerm />
 
       <Styled.PinWrapper>
         <Pin

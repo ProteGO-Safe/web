@@ -149,3 +149,7 @@ export const hideInteroperabilityModal = () => {
     dispatch(interoperabilityModalShowed());
   };
 };
+
+export const warningInEuropeTermToggle = () => ({
+  type: types.WARNING_IN_EUROPE_TERM_TOGGLE
+});

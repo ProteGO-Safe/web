@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Color } from '../../theme/colors';
 
 export const SwitcherWrapper = styled.div`
   display: flex;
@@ -17,5 +18,26 @@ export const SwitcherWrapper = styled.div`
     font-weight: bold;
     line-height: 1.43;
     color: #1b1b1b;
+  }
+
+  .MuiSwitch-root {
+    margin-right: -9px;
+  }
+
+  .MuiSwitch-track {
+    opacity: 1;
+    background-color: ${Color.gray_8};
+  }
+
+  .MuiSwitch-switchBase {
+    color: ${Color.gray_5};
+  }
+
+  .MuiSwitch-colorSecondary.Mui-checked {
+    color: ${Color.primary};
+
+    + .MuiSwitch-track {
+      background-color: ${Color.skyblue};
+    }
   }
 `;

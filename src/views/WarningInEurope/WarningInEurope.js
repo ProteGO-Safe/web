@@ -16,12 +16,7 @@ const WarningInEurope = () => (
       </Styled.Paragraph>
     </Styled.Container>
 
-    <WarningInEuropeTerm
-      name="Term"
-      checked
-      handleOnChange={() => null}
-      forceOpen
-    />
+    <WarningInEuropeTerm forceOpen />
 
     <Styled.Container>
       <Styled.Title>

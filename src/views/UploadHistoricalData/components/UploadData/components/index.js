@@ -1,1 +1,0 @@
-export { SwitchBarContent } from './SwitchBarContent';

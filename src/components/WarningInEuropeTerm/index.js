@@ -1,1 +1,1 @@
-export { default as WarningInEuropeTerm } from './WarningInEuropeTerm';
+export { default as WarningInEuropeTerm } from './WarningInEuropeTerm.container';

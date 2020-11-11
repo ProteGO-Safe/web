@@ -9,3 +9,5 @@ export const getRestrictionsModalShowed = state =>
   state.app.restrictionsModalShowed;
 export const getInteroperabilityModalShowed = state =>
   state.app.interoperabilityModalShowed;
+export const getWarningInEuropeTermState = state =>
+  state.app.warningInEuropeTerm;

@@ -40,7 +40,6 @@ export { Select } from './Select';
 export { Switcher } from './Switcher';
 export { Stepper } from './Stepper';
 export { SubscribeItem } from './SubscribeItem';
-export { SwitchBar } from './SwitchBar';
 export { T } from './T';
 export { Textarea } from './Textarea';
 export { TextBlockWithIcon } from './TextBlockWithIcon';
