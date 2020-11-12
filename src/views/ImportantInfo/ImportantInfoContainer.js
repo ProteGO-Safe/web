@@ -39,8 +39,7 @@ const ImportantInfoContainer = ({ t }) => {
       icon: <Icon3 />,
       title: t('important_info_title_3'),
       description: t('important_info_description_3'),
-      path: Routes.CurrentRestrictions,
-      newFeature: true
+      path: Routes.CurrentRestrictions
     },
     {
       type: 'link',
