@@ -6,13 +6,19 @@ import * as Styled from './Checkbox.styled';
 const Checkbox = ({ checked, content, error, label, name, onChange }) => (
   <Styled.Wrapper>
     <Styled.Checkbox
+      data-cy={`checkbox-input-${name}`}
       id={name}
       checked={checked}
       name={name}
       onChange={onChange}
       type="checkbox"
     />
-    <Styled.Label htmlFor={name} error={error} hasContent={!!content}>
+    <Styled.Label
+      data-cy={`checkbox-label-${name}`}
+      htmlFor={name}
+      error={error}
+      hasContent={!!content}
+    >
       <Styled.Text>{label}</Styled.Text>
       {content && content}
     </Styled.Label>

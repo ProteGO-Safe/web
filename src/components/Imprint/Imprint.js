@@ -1,6 +1,7 @@
 import React from 'react';
 import { withTranslation } from 'react-i18next';
 import { Grid } from '@material-ui/core';
+import useTriage from '../../hooks/useTriage';
 
 import { FontWeight } from '../../theme/fonts';
 import { Color } from '../../theme/colors';
@@ -9,8 +10,9 @@ import { ImprintWrapper } from './Imprint.styled';
 
 import './Imprint.scss';
 
-const Imprint = ({ labTestPin, t, user = {} }) => {
+const Imprint = ({ labTestPin, t, user = {}, forceHideManualCovid }) => {
   const { chronicSicks, bloodGroup, smokeNumber, isSmoking } = user;
+  const { isManualCovid } = useTriage();
 
   const smokingContent = () => {
     if (!smokeNumber && isSmoking === undefined) {
@@ -63,6 +65,15 @@ const Imprint = ({ labTestPin, t, user = {} }) => {
           </Paragraph>
           {chronicSicksContent()}
         </Grid>
+
+        {isManualCovid && !forceHideManualCovid && (
+          <Grid item xs={6}>
+            <Paragraph color={Color.lightBlack} fontWeight={FontWeight.Bold}>
+              {t('imprint_text13')}
+            </Paragraph>
+            <SmallText>{t('imprint_text14')}</SmallText>
+          </Grid>
+        )}
 
         {labTestPin && (
           <Grid item xs={6}>

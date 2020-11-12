@@ -1,4 +1,3 @@
-import Routes from '../../routes';
 import { Color } from '../../theme/colors';
 
 import IconLow from '../../assets/img/icons/risk-test-result-low.svg';
@@ -22,9 +21,7 @@ export const DATA = {
       paragraph_3: 'summary_risk_test_annotation_3',
       paragraph_4: 'summary_risk_test_annotation_4',
       link_name: 'summary_risk_test_annotation_more'
-    },
-    path: `${Routes.LabTest}/1`,
-    path_remind_later: Routes.Home
+    }
   },
   TOR_RED_EN_NOT_RED: {
     color: Color.danger,
@@ -34,8 +31,7 @@ export const DATA = {
     paragraph: 'summary_risk_test_description_2_1',
     paragraph_strong: 'summary_risk_test_description_2_2',
     info: 'summary_risk_test_description_2_3',
-    button: 'summary_risk_test_button_name_2',
-    path: Routes.Home
+    button: 'summary_risk_test_button_name_2'
   },
   TOR_ORANGE_EN_RED: {
     color: Color.orange,
@@ -45,8 +41,7 @@ export const DATA = {
     paragraph: 'summary_risk_test_description_3_1',
     paragraph_strong: 'summary_risk_test_description_3_2',
     info: 'summary_risk_test_description_3_3',
-    button: 'summary_risk_test_button_name_2',
-    path: Routes.Home
+    button: 'summary_risk_test_button_name_2'
   },
   TOR_ORANGE_EN_NOT_RED: {
     color: Color.orange,
@@ -55,8 +50,7 @@ export const DATA = {
     title: 'summary_risk_test_title_4',
     paragraph: 'summary_risk_test_description_4_1',
     paragraph_strong: 'summary_risk_test_description_4_2',
-    button: 'summary_risk_test_button_name_2',
-    path: Routes.Home
+    button: 'summary_risk_test_button_name_2'
   },
   TOR_GREEN_EN_RED: {
     color: Color.green,
@@ -65,8 +59,7 @@ export const DATA = {
     title: 'summary_risk_test_title_5',
     paragraph: 'summary_risk_test_description_5_1',
     paragraph_strong: 'summary_risk_test_description_5_2',
-    button: 'summary_risk_test_button_name_2',
-    path: Routes.Home
+    button: 'summary_risk_test_button_name_2'
   },
   TOR_GREEN_EN_NOT_RED: {
     color: Color.green,
@@ -74,7 +67,6 @@ export const DATA = {
     status: 'risk_test_result_low',
     title: 'summary_risk_test_title_6',
     paragraph: 'summary_risk_test_description_6_1',
-    button: 'summary_risk_test_button_name_2',
-    path: Routes.Home
+    button: 'summary_risk_test_button_name_2'
   }
 };

@@ -1,26 +1,26 @@
 import React from 'react';
-import { useHistory } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import moment from 'moment';
 
 import { createDaysDetails } from '../../utils/calendar';
 import Daily from './Daily';
-import Routes from '../../routes';
+import useNavigation from '../../hooks/useNavigation';
+import { Routes } from '../../services/navigationService/routes';
 
 const todayFormat = 'D-MM-YYYY';
 const dateFormat = 'HH:mm D-MM-YYYY';
 
 const DailyContainer = () => {
-  const history = useHistory();
+  const { goTo } = useNavigation();
   const daily = useSelector(state => state.daily);
 
   const daysInDaily = createDaysDetails(Object.entries(daily), dateFormat);
 
   const today = moment().format(todayFormat);
 
-  const fill = () => history.push(Routes.DailyData);
+  const fill = () => goTo(Routes.DailyData);
 
-  const goToHistory = timestamp => history.push(`/daily/${timestamp}`);
+  const goToHistory = timestamp => goTo(Routes.DailyData, { id: timestamp });
 
   return (
     <Daily

@@ -1,9 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { withTranslation } from 'react-i18next';
-import Routes from '../../routes';
 import * as Styled from './FollowDistrictsSlider.styled';
 import { StatusItem } from '../../components/StatusItem';
+import { NavLink } from '../../components';
+import { Routes } from '../../services/navigationService/routes';
 
 const FollowDistrictsSlider = ({ items, t }) => {
   const renderItems = items.map(({ id, name, state }) => (
@@ -14,17 +15,21 @@ const FollowDistrictsSlider = ({ items, t }) => {
     <Styled.FollowDistrictsSlider padding={items.length === 0}>
       {items.length > 0 ? (
         <>
-          <Styled.Title to={Routes.CurrentRestrictions}>
-            {t('follow_district_title')}:{' '}
-            <Styled.Badge>{items.length}</Styled.Badge>
-          </Styled.Title>
+          <NavLink to={Routes.CurrentRestrictions}>
+            <Styled.Title>
+              {t('follow_district_title')}:{' '}
+              <Styled.Badge>{items.length}</Styled.Badge>
+            </Styled.Title>
+          </NavLink>
           <Styled.Slider>{renderItems}</Styled.Slider>
         </>
       ) : (
-        <Styled.Button to={Routes.CurrentRestrictions}>
-          {t('follow_district_button_name')}
-          <Styled.Icon />
-        </Styled.Button>
+        <NavLink to={Routes.CurrentRestrictions}>
+          <Styled.Button>
+            {t('follow_district_button_name')}
+            <Styled.Icon />
+          </Styled.Button>
+        </NavLink>
       )}
     </Styled.FollowDistrictsSlider>
   );

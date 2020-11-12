@@ -26,6 +26,7 @@ const InputWithCounter = ({
     <Styled.InputWithCounter>
       {label && <Styled.Label ref={ref}>{label}</Styled.Label>}
       <Styled.Input
+        data-cy={`input-with-counter-${name}`}
         error={error}
         maxLength={max}
         minLength={min}
@@ -35,7 +36,7 @@ const InputWithCounter = ({
         value={value}
       />
       <Counter count={value ? value.length : 0} limit={max} margin={margin} />
-      {error && <Error text={error} />}
+      {error && <Error id={`input-with-counter-error-${name}`} text={error} />}
 
       {info && <Styled.Information>{info}</Styled.Information>}
     </Styled.InputWithCounter>

@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { useHistory, useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { Formik } from 'formik';
 import * as Yup from 'yup';
@@ -16,19 +15,20 @@ import {
   VALUE_SYMPTOM_LEVEL_1
 } from '../../constants';
 import { addDaily, updateDaily } from '../../store/actions/daily';
-import Routes from '../../routes';
 import { DAILY_DATA_MODE } from './dailyData.constants';
 import { isEditMode } from './dailyData.helpers';
+import useNavigation from '../../hooks/useNavigation';
 
 const DailyDataContainer = () => {
-  const history = useHistory();
   const dispatch = useDispatch();
   const daily = useSelector(state => state.daily);
-  const { id } = useParams();
+  const { getParam, goBack } = useNavigation();
 
-  const goHome = () => history.push(Routes.Daily);
+  const goHome = () => goBack();
 
-  const dailyData = daily[[id]];
+  const id = getParam('id');
+
+  const dailyData = daily[id];
 
   const validationSchema = Yup.object().shape({
     [FIELD_TEMPERATURE]: Yup.number()

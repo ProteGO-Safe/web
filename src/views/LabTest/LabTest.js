@@ -1,5 +1,4 @@
 import React from 'react';
-import { useParams } from 'react-router-dom';
 import { withTranslation } from 'react-i18next';
 import { NUMBER_OF_STEPS } from './labTest.constants';
 import { Stepper } from '../../components';
@@ -8,18 +7,16 @@ import { H5 } from '../../theme/typography';
 import * as Styled from './LabTest.styled';
 
 const LabTest = ({
-  completedSteps,
   isInvalidPin,
   loader,
   onReset,
   onSubmit,
   pin,
-  setCompletedSteps,
   setPin,
+  setStep,
+  step,
   t
 }) => {
-  const { step } = useParams();
-
   return (
     <>
       <Styled.Content>
@@ -28,22 +25,19 @@ const LabTest = ({
           <Stepper currentStep={step} numberOfSteps={NUMBER_OF_STEPS} />
         </Styled.LabTestStepper>
       </Styled.Content>
-      {step === '1' && (
-        <Step1 setCompletedSteps={setCompletedSteps} setPin={setPin} />
-      )}
-      {step === '2' && (
+      {step === 1 && <Step1 setPin={setPin} setStep={setStep} />}
+      {step === 2 && (
         <Step2
-          completedSteps={completedSteps}
           isInvalidPin={isInvalidPin}
           loader={loader}
           onReset={onReset}
           onSubmit={onSubmit}
           pin={pin}
-          setCompletedSteps={setCompletedSteps}
           setPin={setPin}
+          setStep={setStep}
         />
       )}
-      {step === '3' && <Step3 completedSteps={completedSteps} />}
+      {step === 3 && <Step3 />}
     </>
   );
 };

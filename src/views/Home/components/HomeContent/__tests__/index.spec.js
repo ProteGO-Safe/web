@@ -3,22 +3,20 @@ import renderer from 'react-test-renderer';
 import 'jest-styled-components';
 import '@testing-library/jest-dom';
 import { Provider } from 'react-redux';
-import { HashRouter } from 'react-router-dom';
 import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
 import { HomeContent } from '../index';
 import { EXPOSURE_NOTIFICATION_STATUS } from '../../../../../utils/servicesStatus/servicesStatus.constants';
+import { Routes } from '../../../../../services/navigationService/routes';
 
 const middlewares = [thunk];
 const mockStore = configureMockStore(middlewares);
 
 const renderTestedComponent = store => {
   return renderer.create(
-    <HashRouter>
-      <Provider store={store}>
-        <HomeContent />
-      </Provider>
-    </HashRouter>
+    <Provider store={store}>
+      <HomeContent />
+    </Provider>
   );
 };
 
@@ -26,7 +24,8 @@ const baseStore = {
   triage: {},
   nativeData: { servicesStatus: {} },
   user: { name: 'player' },
-  riskTest: {}
+  riskTest: {},
+  navigation: { currentScreen: { screen: Routes.Home } }
 };
 
 const serious = [
@@ -297,6 +296,15 @@ describe('test render home component', () => {
           subscription: { status: 2 }
         }
       }
+    });
+    const container = renderTestedComponent(store);
+    expect(container.toJSON()).toMatchSnapshot();
+  });
+
+  it('should render with: enabled exposure module, manual covid', () => {
+    const store = mockStore({
+      ...baseStore,
+      triage: { ...baseStore.triage, timeOfConfirmedManualCovid: 1596953125 }
     });
     const container = renderTestedComponent(store);
     expect(container.toJSON()).toMatchSnapshot();

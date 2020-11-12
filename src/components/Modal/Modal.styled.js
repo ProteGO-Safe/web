@@ -30,9 +30,13 @@ export const Wrapper = styled.div`
   .ScrollbarsCustom-TrackY {
     width: 8px !important;
   }
-  .ScrollbarsCustom-Scroller {
-    padding-right: 26px !important;
-  }
+  ${({ padding }) =>
+    padding &&
+    `
+      .ScrollbarsCustom-Scroller {
+        padding-right: 26px !important;
+      }
+  `}
 `;
 
 export const Overlay = styled.div`

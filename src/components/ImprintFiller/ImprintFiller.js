@@ -1,8 +1,16 @@
 import React, { useEffect } from 'react';
 import { useFormikContext } from 'formik';
 import { NUMBER_OF_STEPS } from './ImprintFiller.constants';
-import { BloodGroup, ChronicSick, Name, Smoke, Summary } from './components';
+import {
+  BloodGroup,
+  ChronicSick,
+  ManualCovidState,
+  Name,
+  Smoke,
+  Summary
+} from './components';
 import { Stepper, Layout } from '../index';
+import useTriage from '../../hooks/useTriage';
 
 const steps = {
   1: {
@@ -16,10 +24,14 @@ const steps = {
   },
   4: {
     Component: Smoke
+  },
+  5: {
+    Component: ManualCovidState
   }
 };
 
 const ImprintFiller = () => {
+  const { isManualCovid } = useTriage();
   const {
     values: { step }
   } = useFormikContext();
@@ -30,7 +42,9 @@ const ImprintFiller = () => {
     }
   }, [step]);
 
-  if (step === 5) {
+  const numberOfSteps = isManualCovid ? NUMBER_OF_STEPS : NUMBER_OF_STEPS - 1;
+
+  if (step === numberOfSteps + 1) {
     return <Summary />;
   }
 
@@ -38,7 +52,7 @@ const ImprintFiller = () => {
 
   return (
     <Layout hideBackButton isGovFooter>
-      <Stepper currentStep={step} numberOfSteps={NUMBER_OF_STEPS} />
+      <Stepper currentStep={step} numberOfSteps={numberOfSteps} />
       <StepComponent />
     </Layout>
   );

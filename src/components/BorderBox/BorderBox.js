@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import PropTypes from 'prop-types';
 import { Color } from '../../theme/colors';
 import {
@@ -7,6 +7,7 @@ import {
   Description,
   Title
 } from './BorderBox.styled';
+import { NavLink } from '../NavLink';
 
 const BorderBox = ({
   children,
@@ -16,18 +17,24 @@ const BorderBox = ({
   path,
   title
 }) => {
-  const renderBorderBox = Component => (
-    <Component color={colorBorder} to={path}>
-      <Title color={colorTitle} arrow={path}>
-        {title}
-      </Title>
-      <Description color={colorDescription}>{children}</Description>
-    </Component>
-  );
+  const box = useMemo(() => {
+    return (
+      <>
+        <Title color={colorTitle} arrow={path}>
+          {title}
+        </Title>
+        <Description color={colorDescription}>{children}</Description>
+      </>
+    );
+  }, [colorTitle, path, title, colorDescription, children]);
 
-  return path
-    ? renderBorderBox(BorderBoxNavLink)
-    : renderBorderBox(BorderBoxInfo);
+  return path ? (
+    <NavLink to={path}>
+      <BorderBoxNavLink color={colorBorder}>{box}</BorderBoxNavLink>
+    </NavLink>
+  ) : (
+    <BorderBoxInfo color={colorBorder}>{box}</BorderBoxInfo>
+  );
 };
 
 BorderBox.defaultProps = {

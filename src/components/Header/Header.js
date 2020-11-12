@@ -1,23 +1,28 @@
 import React, { useCallback } from 'react';
-import { useHistory } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 import { withTranslation } from 'react-i18next';
-import Routes from '../../routes';
 import { Arrow, ArrowButton, Container, Logo } from './Header.styled';
+import useNavigation from '../../hooks/useNavigation';
+import { Routes } from '../../services/navigationService/routes';
+import useHandlingPhysicalBack from '../../hooks/useHandlingPhysicalBack';
 
 const Header = ({ t, hideBackButton, onBackClick }) => {
-  const history = useHistory();
+  const { goBack, goTo } = useNavigation();
 
   const handleBackClick = useCallback(() => {
+    if (hideBackButton) {
+      return;
+    }
     if (onBackClick) {
       onBackClick();
-    } else if (history.length > 2) {
-      history.goBack();
     } else {
-      history.push(Routes.Home);
+      goBack();
     }
-  }, [onBackClick, history]);
+    // eslint-disable-next-line
+  }, [onBackClick, hideBackButton]);
+
+  useHandlingPhysicalBack(handleBackClick);
 
   const renderBackButton = () => (
     <ArrowButton onClick={handleBackClick}>
@@ -29,7 +34,7 @@ const Header = ({ t, hideBackButton, onBackClick }) => {
   return (
     <Container hideBackButton={hideBackButton}>
       {!hideBackButton ? renderBackButton() : null}
-      <Logo onClick={() => history.push(Routes.Home)} />
+      <Logo onClick={() => goTo(Routes.Home)} />
     </Container>
   );
 };

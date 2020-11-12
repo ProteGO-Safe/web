@@ -1,16 +1,16 @@
 import React from 'react';
 import { withTranslation } from 'react-i18next';
-import { useHistory } from 'react-router-dom';
 import { Button, Imprint, Layout } from '../../components';
-import Routes from '../../routes';
 import useSupportExposureNotificationTracing from '../../hooks/useSupportExposureNotificationTracing';
 import { Name, Paragraph } from '../../theme/typography';
 import { ButtonWrapper } from './UserData.styled';
 import './UserData.scss';
 import useUserName from '../../hooks/useUserName';
+import useNavigation from '../../hooks/useNavigation';
+import { Routes } from '../../services/navigationService/routes';
 
 const UserData = ({ t }) => {
-  const history = useHistory();
+  const { goTo } = useNavigation();
   const userName = useUserName();
   const { areEnableAllServices } = useSupportExposureNotificationTracing();
 
@@ -21,11 +21,11 @@ const UserData = ({ t }) => {
       <Imprint />
       <ButtonWrapper>
         <Button
-          onClick={() => history.push(Routes.UserDataSettings)}
+          onClick={() => goTo(Routes.UserDataSettings)}
           label={t('user_data_text2')}
         />
         <Button
-          onClick={() => history.push(Routes.UserDataChange)}
+          onClick={() => goTo(Routes.UserDataChange)}
           type="outline"
           label={t('user_data_text3')}
         />
@@ -33,7 +33,7 @@ const UserData = ({ t }) => {
       {areEnableAllServices && (
         <ButtonWrapper>
           <Button
-            onClick={() => history.push(Routes.UploadHistoricalData)}
+            onClick={() => goTo(Routes.UploadHistoricalData)}
             type="outline"
             label={t('user_data_text4')}
           />

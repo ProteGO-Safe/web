@@ -4,18 +4,24 @@ import uniqueId from 'lodash.uniqueid';
 import { Error } from '../index';
 import * as Styled from './Radio.styled';
 
-const Radio = ({ checked, content, error, label, name, onChange }) => {
+const Radio = ({ checked, content, error, label, name, onChange, testId }) => {
   const id = uniqueId('radio-');
   return (
     <Styled.Wrapper>
       <Styled.Radio
+        data-cy={`radio-input-${name}-${testId}`}
         id={id}
         checked={checked}
         name={name}
         onChange={onChange}
         type="radio"
       />
-      <Styled.Label htmlFor={id} error={error} hasContent={!!content}>
+      <Styled.Label
+        data-cy={`radio-label-${name}-${testId}`}
+        error={error}
+        hasContent={!!content}
+        htmlFor={id}
+      >
         <Styled.Text>{label}</Styled.Text>
         {content && content}
       </Styled.Label>

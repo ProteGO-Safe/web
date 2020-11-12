@@ -5,7 +5,8 @@ import {
   CallHotline,
   Layout,
   PhoneNumber,
-  Button
+  Button,
+  NavLink
 } from '../../components';
 import * as Styled from './IAmSick.styled';
 
@@ -15,6 +16,7 @@ import Icon2 from '../../assets/img/icons/i-am-sick-icon-2.svg';
 import Icon3 from '../../assets/img/icons/i-am-sick-icon-3.svg';
 import Icon4 from '../../assets/img/icons/i-am-sick-icon-4.svg';
 import Icon5 from '../../assets/img/icons/i-am-sick-icon-5.svg';
+import { Routes } from '../../services/navigationService/routes';
 
 const IAmSick = ({ t }) => {
   return (
@@ -42,9 +44,9 @@ const IAmSick = ({ t }) => {
 
         <TextBlockWithIcon icon={Icon3} title={t('i_am_sick_title_3')}>
           {t('i_am_sick_description_3_1')}{' '}
-          <Styled.Link to="/daily">
-            {t('i_am_sick_description_3_2')}
-          </Styled.Link>{' '}
+          <NavLink to={Routes.Daily}>
+            <Styled.Link>{t('i_am_sick_description_3_2')}</Styled.Link>
+          </NavLink>{' '}
           {t('i_am_sick_description_3_3')}
         </TextBlockWithIcon>
 

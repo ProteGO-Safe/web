@@ -13,9 +13,14 @@ import {
 } from './views';
 
 const HomeContent = () => {
-  const { exposureRiskLevel, isCovid, triageRiskLevel } = useTriage();
+  const {
+    exposureRiskLevel,
+    isCovid,
+    isManualCovid,
+    triageRiskLevel
+  } = useTriage();
 
-  if (isCovid) {
+  if (isCovid || isManualCovid) {
     return <ExposureSick />;
   }
   if (triageRiskLevel === 0 && exposureRiskLevel === 0) {

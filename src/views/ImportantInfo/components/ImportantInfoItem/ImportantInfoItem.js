@@ -1,15 +1,14 @@
 import React, { useEffect, useRef, useState } from 'react';
 import PropTypes from 'prop-types';
-import { NavLink } from 'react-router-dom';
 import { withTranslation } from 'react-i18next';
 import { TYPES } from './ImportantInfoItem.constants';
+import { NavLink } from '../../../../components';
 import * as Styled from './ImportantInfoItem.styled';
 
 const ImportantInfoItem = ({
   danger,
   description,
   icon,
-  link,
   newFeature,
   path,
   t,
@@ -33,7 +32,9 @@ const ImportantInfoItem = ({
       {newFeature && <Styled.Badge size={size}>{t('new')}</Styled.Badge>}
       <Styled.Icon size={size}>{icon}</Styled.Icon>
       <Styled.Content size={size}>
-        <Styled.Title size={size} danger={danger}>{title}</Styled.Title>
+        <Styled.Title size={size} danger={danger}>
+          {title}
+        </Styled.Title>
         {windowWidth < 375 ? (
           <Styled.Description size={size}>{description}</Styled.Description>
         ) : (
@@ -42,7 +43,7 @@ const ImportantInfoItem = ({
           )
         )}
       </Styled.Content>
-      {link && (
+      {type === TYPES.LINK && (
         <Styled.LinkGov size={size}>
           {t('important_info_button_info')}
         </Styled.LinkGov>
@@ -60,7 +61,7 @@ const ImportantInfoItem = ({
     }
     case TYPES.LINK: {
       return (
-        <Styled.UrlLink href={link} target="_blank">
+        <Styled.UrlLink href={path} target="_blank">
           <Content />
         </Styled.UrlLink>
       );
@@ -75,7 +76,6 @@ ImportantInfoItem.defaultProps = {
   danger: false,
   description: '',
   icon: null,
-  link: null,
   size: false,
   path: null,
   title: null
@@ -85,7 +85,6 @@ ImportantInfoItem.propTypes = {
   danger: PropTypes.bool,
   description: PropTypes.string,
   icon: PropTypes.object,
-  link: PropTypes.string,
   path: PropTypes.string,
   size: PropTypes.bool,
   title: PropTypes.string,

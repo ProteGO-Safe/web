@@ -1,10 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { withTranslation } from 'react-i18next';
-import { NavLink } from 'react-router-dom';
 import LogoSafeSafe from '../../assets/img/logo/stopcovid_protegosafe_logo_sygnet.svg';
 import useMenuContext from '../../hooks/useMenuContext';
-import { VersionApp } from '../index';
+import { NavLink, VersionApp } from '../index';
 import './Menu.scss';
 
 const Menu = ({ t, items }) => {

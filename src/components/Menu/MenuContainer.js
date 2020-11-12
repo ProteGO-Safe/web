@@ -2,9 +2,9 @@ import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import useLabTest from '../../hooks/useLabTest';
 import { fetchLabTestSubscription } from '../../store/actions/nativeData';
-import Routes from '../../routes';
 import Menu from './Menu';
 import useMenuContext from '../../hooks/useMenuContext';
+import { Routes } from '../../services/navigationService/routes';
 
 import Icon1 from '../../assets/img/icons/menu-boczne-dziennik_BLUE.svg';
 import Icon2 from '../../assets/img/icons/menu-boczne-kwestionariusz_BLUE.svg';
@@ -66,10 +66,7 @@ const MenuContainer = () => {
     {
       icon: Icon6,
       color: 'blue',
-      path:
-        isEnHigh && isTorHigh
-          ? `${Routes.SummaryRiskTest}`
-          : `${Routes.Diagnosis}?p=1`,
+      path: isEnHigh && isTorHigh ? Routes.SummaryRiskTest : Routes.Diagnosis,
       invisible: isSubscriptionInProgress || !isEnHigh,
       slug: 'menu_container_text10',
       title: 'menu_container_text10'

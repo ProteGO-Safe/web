@@ -6,7 +6,7 @@ import * as Styled from './Home.styled';
 
 const Home = ({ subscribedDistricts }) => {
   return (
-    <Layout hideBackButton isNavigation noMargin>
+    <Layout id="view-home" hideBackButton isNavigation noMargin>
       <Styled.Container>
         <ExposureNotificationWarning />
       </Styled.Container>

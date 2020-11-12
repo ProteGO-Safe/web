@@ -42,7 +42,7 @@ const Modal = () => {
   }, [content]);
 
   return (
-    <Styled.Wrapper>
+    <Styled.Wrapper padding={scrollHeight > 260}>
       <Styled.Overlay onClick={onClose} />
       <Styled.Content
         type={type}

@@ -1,6 +1,6 @@
 import React from 'react';
 import { withTranslation } from 'react-i18next';
-import { Email, Url, UrlCovid } from '../../../../components';
+import { Email, Url, UrlCovid, T } from '../../../../components';
 import {
   Annotation,
   Paragraph,
@@ -32,14 +32,14 @@ const PrivacyPolicyContent = ({ small, t }) => (
     <Paragraph>{t('privacy_policy_content_text7')}</Paragraph>
     <Paragraph>{t('privacy_policy_content_text8')}</Paragraph>
     <Paragraph>
-      {t('privacy_policy_content_text9')} <UrlCovid />{' '}
+      <T i18nKey="privacy_policy_content_text9" /> <UrlCovid />{' '}
       {t('privacy_policy_content_text138')}
     </Paragraph>
     <Paragraph>
       {t('privacy_policy_content_text10')} <UrlCovid />{' '}
       {t('privacy_policy_content_text11')} <UrlCovid />{' '}
       {t('privacy_policy_content_text12')} <UrlCovid />
-      {t('privacy_policy_content_text13')}{' '}
+      <T i18nKey="privacy_policy_content_text13" />{' '}
     </Paragraph>
     <Paragraph>{t('privacy_policy_content_text14')}</Paragraph>
     <Annotation>§1.</Annotation>
@@ -177,7 +177,7 @@ const PrivacyPolicyContent = ({ small, t }) => (
       <ListItem>
         {t('privacy_policy_content_text67_1')}{' '}
         <strong>{t('privacy_policy_content_text67_2')}</strong>{' '}
-        {t('privacy_policy_content_text67_3')}
+        <T i18nKey="privacy_policy_content_text67_3" />
       </ListItem>
       <ListItem>
         {t('privacy_policy_content_text151_1')}{' '}
@@ -332,10 +332,12 @@ const PrivacyPolicyContent = ({ small, t }) => (
           <ListItem>
             {t('privacy_policy_content_text119')}
             <ListAlpha>
-              <ListItem>{t('privacy_policy_content_text120')}</ListItem>
+              <ListItem>
+                <T i18nKey="privacy_policy_content_text120" />
+              </ListItem>
               <ListItem>{t('privacy_policy_content_text163')}</ListItem>
               <ListItem>
-                {t('privacy_policy_content_text126')}
+                <T i18nKey="privacy_policy_content_text126" />
                 {'\n'}
                 {t('privacy_policy_content_text131')}
               </ListItem>

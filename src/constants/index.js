@@ -108,6 +108,7 @@ export const FIELD_MUSCLE_PAIN = 'musclePain';
 export const FIELD_CONTACTS = 'contacts';
 export const FIELD_SMOKE = 'smoke';
 export const FIELD_SMOKE_NUMBER = 'smokeNumber';
+export const FIELD_MANUAL_COVID = 'manualCovid';
 
 export const VALUE_SYMPTOM_LEVEL_1 = 'level 1';
 export const VALUE_SYMPTOM_LEVEL_2 = 'level 2';

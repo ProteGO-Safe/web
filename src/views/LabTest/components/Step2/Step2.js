@@ -1,8 +1,6 @@
-import React, { useEffect, useRef, useState } from 'react';
-import { Prompt, Redirect } from 'react-router-dom';
+import React, { useEffect, useRef } from 'react';
 import { withTranslation } from 'react-i18next';
 import PinInput from 'react-pin-input';
-import Routes from '../../../../routes';
 import { FieldSet } from '../../../../components/FieldSet';
 import { Button, Warning } from '../../../../components';
 import * as Styled from '../../LabTest.styled';
@@ -10,33 +8,15 @@ import { Color } from '../../../../theme/colors';
 import { BUTTON_TYPES } from '../../../../components/Button/Button.constants';
 import useLabTestPinBan from '../../../../hooks/useLabTestPinBan';
 
-const Step2 = ({
-  completedSteps,
-  isInvalidPin,
-  loader,
-  onReset,
-  onSubmit,
-  pin,
-  setPin,
-  t
-}) => {
+const Step2 = ({ isInvalidPin, onReset, onSubmit, pin, setPin, t }) => {
   const pinInputRef = useRef();
-
-  const [isSending, setIsSending] = useState(false);
-
-  const [shouldConfirmNavigation, setShouldConfirmNavigation] = useState(false);
-  const confirmNavigationMessage = JSON.stringify({
-    title: t('lab_test_text23'),
-    description: t('lab_test_text24')
-  });
 
   const { message: banMessage, isBanned } = useLabTestPinBan();
 
   const isConfirmBtnDisabled = !pin || (pin && pin.toString().length < 6);
 
   const handleSubmit = () => {
-    setShouldConfirmNavigation(false);
-    setIsSending(true);
+    onSubmit();
   };
 
   useEffect(() => {
@@ -45,27 +25,6 @@ const Step2 = ({
       pinInputRef.current.clear();
     }
   }, [isInvalidPin, pinInputRef]);
-
-  useEffect(() => {
-    // check confirm navigation
-    if (!loader) {
-      setIsSending(false);
-      setShouldConfirmNavigation(!!(pin && pin.toString().length));
-    }
-  }, [loader, pin]);
-
-  useEffect(() => {
-    // send form
-    if (isSending) {
-      onSubmit();
-    }
-    // eslint-disable-next-line
-  }, [isSending]);
-
-  if (completedSteps !== 1) {
-    onReset();
-    return <Redirect to={`${Routes.LabTest}/1`} />;
-  }
 
   return (
     <>
@@ -122,10 +81,6 @@ const Step2 = ({
           />
         )}
       </FieldSet>
-      <Prompt
-        message={confirmNavigationMessage}
-        when={shouldConfirmNavigation}
-      />
     </>
   );
 };
