@@ -132,9 +132,10 @@ const setDiagnosisTimestamp = async timestamp => {
   });
 };
 
-const setPin = async pin => {
+const uploadHistoricalData = async ({ pin, isInteroperabilityEnabled }) => {
   await callNativeFunction('setBridgeData', DATA_TYPE.HISTORICAL_DATA, {
-    pin
+    pin,
+    isInteroperabilityEnabled
   });
 };
 
@@ -281,9 +282,9 @@ export default {
   getServicesStatus,
   getSubscribedDistricts,
   revokeEnStatus,
-  setPin,
   setDistrictSubscription,
   setServicesState,
   turnOff,
+  uploadHistoricalData,
   uploadLabTestPin
 };

@@ -11,7 +11,10 @@ import useSupportExposureNotificationTracing from '../../hooks/useSupportExposur
 import { UploadSuccess } from './components/UploadSuccess';
 import banPinTries from '../../services/banPinTries';
 import { UPLOAD_HISTORICAL_DATA_STATE as uploadState } from '../../store/reducers/app/app.constants';
-import { getUploadHistoricalDataStateErrorMessageVisible } from '../../store/selectors/app';
+import {
+  getUploadHistoricalDataStateErrorMessageVisible,
+  getWarningInEuropeTermState
+} from '../../store/selectors/app';
 import { hideUploadHistoricalDataErrorMessage } from '../../store/actions/app';
 import useNavigation from '../../hooks/useNavigation';
 import { Routes } from '../../services/navigationService/routes';
@@ -22,6 +25,7 @@ const UploadHistoricalData = ({ t }) => {
   const MAX_UPLOAD_TIME = 60;
   const dispatch = useDispatch();
   const { name: userName } = useSelector(state => state.user);
+  const isInteroperabilityEnabled = useSelector(getWarningInEuropeTermState);
   const errorMessageVisible = useSelector(
     getUploadHistoricalDataStateErrorMessageVisible
   );
@@ -73,10 +77,7 @@ const UploadHistoricalData = ({ t }) => {
   }, [date]);
 
   const uploadData = () => {
-    const data = {
-      pin
-    };
-    dispatch(uploadHistoricalData(data));
+    dispatch(uploadHistoricalData(pin, isInteroperabilityEnabled));
   };
 
   const hideErrorMessage = () => {

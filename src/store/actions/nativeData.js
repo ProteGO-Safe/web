@@ -101,10 +101,10 @@ export const uploadHistoricalDataRequested = () => ({
   type: UPLOAD_HISTORICAL_DATA_REQUESTED
 });
 
-export function uploadHistoricalData({ pin }) {
+export function uploadHistoricalData(pin, isInteroperabilityEnabled) {
   return dispatch => {
     dispatch(uploadHistoricalDataRequested());
-    nativeBridge.setPin(pin);
+    nativeBridge.uploadHistoricalData({ pin, isInteroperabilityEnabled });
   };
 }
 
