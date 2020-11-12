@@ -25,14 +25,24 @@ const Button = ({
   type
 }) => {
   const renderButton = Component => (
-    <Component disabled={disabled} onClick={onClick} type="button">
+    <Component
+      data-cy={`button-${type}`}
+      disabled={disabled}
+      onClick={onClick}
+      type="button"
+    >
       {icon}
       {label || children}
     </Component>
   );
 
   const renderButtonBorder = Component => (
-    <Component disabled={disabled} onClick={onClick} type="button">
+    <Component
+      data-cy={`button-${type}`}
+      disabled={disabled}
+      onClick={onClick}
+      type="button"
+    >
       {icon}
       <Content>
         <Label>{label || children}</Label>

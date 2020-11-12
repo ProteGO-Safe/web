@@ -80,6 +80,7 @@ Array [
     >
       <svg
         className="c2"
+        data-cy="green-smile"
         id="green"
         style={
           Object {
@@ -113,6 +114,7 @@ Array [
       </svg>
       <svg
         className="c3"
+        data-cy="yellow-smile"
         id="yellow"
         style={
           Object {
@@ -149,6 +151,7 @@ Array [
       </svg>
       <svg
         className="c4"
+        data-cy="red-smile"
         id="red"
         style={
           Object {
@@ -303,6 +306,7 @@ Array [
 
 <button
     className="c0 c1"
+    data-cy="button-border"
     disabled={false}
     onClick={[Function]}
     type="button"
@@ -410,6 +414,7 @@ Array [
 
 <div
     className="c0"
+    data-cy="smile-container"
   >
     <div
       className="c1"
@@ -428,6 +433,7 @@ Array [
            
           <strong
             className="nowrap"
+            data-cy="risk-test-last-date"
           >
             
           </strong>
@@ -444,6 +450,7 @@ Array [
       >
         <svg
           className="c5"
+          data-cy="green-smile"
           id="green"
           style={
             Object {
@@ -587,6 +594,7 @@ Array [
 
 <button
     className="c0 c1"
+    data-cy="button-border"
     disabled={false}
     onClick={[Function]}
     type="button"
@@ -694,6 +702,7 @@ Array [
 
 <div
     className="c0"
+    data-cy="smile-container"
   >
     <div
       className="c1"
@@ -712,6 +721,7 @@ Array [
            
           <strong
             className="nowrap"
+            data-cy="risk-test-last-date"
           >
             
           </strong>
@@ -728,6 +738,7 @@ Array [
       >
         <svg
           className="c5"
+          data-cy="green-smile"
           id="green"
           style={
             Object {
@@ -871,6 +882,7 @@ Array [
 
 <button
     className="c0 c1"
+    data-cy="button-border"
     disabled={false}
     onClick={[Function]}
     type="button"
@@ -990,6 +1002,7 @@ Array [
 
 <div
     className="c0"
+    data-cy="smile-container"
   >
     <div
       className="c1"
@@ -1008,6 +1021,7 @@ Array [
            
           <strong
             className="nowrap"
+            data-cy="risk-test-last-date"
           >
             
           </strong>
@@ -1024,6 +1038,7 @@ Array [
       >
         <svg
           className="c5"
+          data-cy="red-smile"
           id="red"
           style={
             Object {
@@ -1732,6 +1747,7 @@ Array [
 
 <button
     className="c0 c1"
+    data-cy="button-border"
     disabled={false}
     onClick={[Function]}
     type="button"
@@ -1851,6 +1867,7 @@ Array [
 
 <div
     className="c0"
+    data-cy="smile-container"
   >
     <div
       className="c1"
@@ -1869,6 +1886,7 @@ Array [
            
           <strong
             className="nowrap"
+            data-cy="risk-test-last-date"
           >
             
           </strong>
@@ -1885,6 +1903,7 @@ Array [
       >
         <svg
           className="c5"
+          data-cy="red-smile"
           id="red"
           style={
             Object {
@@ -2673,6 +2692,7 @@ Array [
 
 <button
     className="c0 c1"
+    data-cy="button-border"
     disabled={false}
     onClick={[Function]}
     type="button"
@@ -2792,6 +2812,7 @@ Array [
 
 <div
     className="c0"
+    data-cy="smile-container"
   >
     <div
       className="c1"
@@ -2810,6 +2831,7 @@ Array [
            
           <strong
             className="nowrap"
+            data-cy="risk-test-last-date"
           >
             
           </strong>
@@ -2826,6 +2848,7 @@ Array [
       >
         <svg
           className="c5"
+          data-cy="red-smile"
           id="red"
           style={
             Object {
@@ -3614,6 +3637,7 @@ Array [
 
 <button
     className="c0 c1"
+    data-cy="button-border"
     disabled={false}
     onClick={[Function]}
     type="button"
@@ -3733,6 +3757,7 @@ Array [
 
 <div
     className="c0"
+    data-cy="smile-container"
   >
     <div
       className="c1"
@@ -3751,6 +3776,7 @@ Array [
            
           <strong
             className="nowrap"
+            data-cy="risk-test-last-date"
           >
             
           </strong>
@@ -3767,6 +3793,7 @@ Array [
       >
         <svg
           className="c5"
+          data-cy="yellow-smile"
           id="yellow"
           style={
             Object {
@@ -3925,6 +3952,7 @@ Array [
 
 <button
     className="c0 c1"
+    data-cy="button-border"
     disabled={false}
     onClick={[Function]}
     type="button"
@@ -4743,6 +4771,7 @@ Array [
 
 <div
     className="c0"
+    data-cy="smile-container"
   >
     <div
       className="c1"
@@ -4761,6 +4790,7 @@ Array [
            
           <strong
             className="nowrap"
+            data-cy="risk-test-last-date"
           >
             
           </strong>
@@ -4777,6 +4807,7 @@ Array [
       >
         <svg
           className="c5"
+          data-cy="green-smile"
           id="green"
           style={
             Object {
@@ -4920,6 +4951,7 @@ Array [
 
 <button
     className="c0 c1"
+    data-cy="button-border"
     disabled={false}
     onClick={[Function]}
     type="button"
@@ -5039,6 +5071,7 @@ Array [
 
 <div
     className="c0"
+    data-cy="smile-container"
   >
     <div
       className="c1"
@@ -5053,16 +5086,7 @@ Array [
         className="c3"
       >
         <p>
-          <strong>
-            smile_container_text2
-          </strong>
-           
-          smile_container_text3
-           
-          <strong>
-            triage_level_high_risk
-          </strong>
-          .
+          smile_container_text9
         </p>
       </div>
       <div
@@ -5070,6 +5094,7 @@ Array [
       >
         <svg
           className="c5"
+          data-cy="red-smile"
           id="red"
           style={
             Object {
@@ -5583,6 +5608,7 @@ Array [
 
 <div
     className="c0"
+    data-cy="smile-container"
   >
     <div
       className="c1"
@@ -5597,16 +5623,7 @@ Array [
         className="c3"
       >
         <p>
-          <strong>
-            smile_container_text2
-          </strong>
-           
-          smile_container_text3
-           
-          <strong>
-            triage_level_medium_risk
-          </strong>
-          .
+          smile_container_text8
         </p>
       </div>
       <div
@@ -5614,6 +5631,7 @@ Array [
       >
         <svg
           className="c5"
+          data-cy="red-smile"
           id="red"
           style={
             Object {
@@ -6023,6 +6041,7 @@ Array [
 
 <button
     className="c0 c1 c2"
+    data-cy="button-borderArrow"
     disabled={false}
     onClick={[Function]}
     type="button"
@@ -6151,6 +6170,7 @@ Array [
 
 <div
     className="c0"
+    data-cy="smile-container"
   >
     <div
       className="c1"
@@ -6173,6 +6193,7 @@ Array [
       >
         <svg
           className="c5"
+          data-cy="red-smile"
           id="red"
           style={
             Object {
@@ -6631,6 +6652,7 @@ Array [
 
 <div
     className="c0"
+    data-cy="smile-container"
   >
     <div
       className="c1"
@@ -6645,16 +6667,7 @@ Array [
         className="c3"
       >
         <p>
-          <strong>
-            smile_container_text2
-          </strong>
-           
-          smile_container_text3
-           
-          <strong>
-            triage_level_high_risk
-          </strong>
-          .
+          smile_container_text9
         </p>
       </div>
       <div
@@ -6662,6 +6675,7 @@ Array [
       >
         <svg
           className="c5"
+          data-cy="red-smile"
           id="red"
           style={
             Object {
@@ -7262,6 +7276,7 @@ Array [
 
 <div
     className="c0"
+    data-cy="smile-container"
   >
     <div
       className="c1"
@@ -7276,16 +7291,7 @@ Array [
         className="c3"
       >
         <p>
-          <strong>
-            smile_container_text2
-          </strong>
-           
-          smile_container_text3
-           
-          <strong>
-            triage_level_high_risk
-          </strong>
-          .
+          smile_container_text9
         </p>
       </div>
       <div
@@ -7293,6 +7299,7 @@ Array [
       >
         <svg
           className="c5"
+          data-cy="red-smile"
           id="red"
           style={
             Object {
@@ -7809,6 +7816,7 @@ Array [
 
 <div
     className="c0"
+    data-cy="smile-container"
   >
     <div
       className="c1"
@@ -7831,6 +7839,7 @@ Array [
       >
         <svg
           className="c5"
+          data-cy="red-smile"
           id="red"
           style={
             Object {
@@ -8277,6 +8286,7 @@ Array [
 
 <div
     className="c0"
+    data-cy="smile-container"
   >
     <div
       className="c1"
@@ -8291,16 +8301,7 @@ Array [
         className="c3"
       >
         <p>
-          <strong>
-            smile_container_text2
-          </strong>
-           
-          smile_container_text3
-           
-          <strong>
-            triage_level_low_risk
-          </strong>
-          .
+          smile_container_text7
         </p>
       </div>
       <div
@@ -8308,6 +8309,7 @@ Array [
       >
         <svg
           className="c5"
+          data-cy="green-smile"
           id="green"
           style={
             Object {
@@ -8501,6 +8503,7 @@ Array [
 
 <button
     className="c0 c1"
+    data-cy="button-border"
     disabled={false}
     onClick={[Function]}
     type="button"
@@ -8620,6 +8623,7 @@ Array [
 
 <div
     className="c0"
+    data-cy="smile-container"
   >
     <div
       className="c1"
@@ -8634,16 +8638,7 @@ Array [
         className="c3"
       >
         <p>
-          <strong>
-            smile_container_text2
-          </strong>
-           
-          smile_container_text3
-           
-          <strong>
-            triage_level_high_risk
-          </strong>
-          .
+          smile_container_text9
         </p>
       </div>
       <div
@@ -8651,6 +8646,7 @@ Array [
       >
         <svg
           className="c5"
+          data-cy="red-smile"
           id="red"
           style={
             Object {
@@ -9164,6 +9160,7 @@ Array [
 
 <div
     className="c0"
+    data-cy="smile-container"
   >
     <div
       className="c1"
@@ -9178,16 +9175,7 @@ Array [
         className="c3"
       >
         <p>
-          <strong>
-            smile_container_text2
-          </strong>
-           
-          smile_container_text3
-           
-          <strong>
-            triage_level_medium_risk
-          </strong>
-          .
+          smile_container_text8
         </p>
       </div>
       <div
@@ -9195,6 +9183,7 @@ Array [
       >
         <svg
           className="c5"
+          data-cy="red-smile"
           id="red"
           style={
             Object {
@@ -9604,6 +9593,7 @@ Array [
 
 <button
     className="c0 c1 c2"
+    data-cy="button-borderArrow"
     disabled={false}
     onClick={[Function]}
     type="button"
@@ -9732,6 +9722,7 @@ Array [
 
 <div
     className="c0"
+    data-cy="smile-container"
   >
     <div
       className="c1"
@@ -9750,6 +9741,7 @@ Array [
            
           <strong
             className="nowrap"
+            data-cy="risk-test-last-date"
           >
             
           </strong>
@@ -9766,6 +9758,7 @@ Array [
       >
         <svg
           className="c5"
+          data-cy="red-smile"
           id="red"
           style={
             Object {
@@ -10474,6 +10467,7 @@ Array [
 
 <button
     className="c0 c1"
+    data-cy="button-border"
     disabled={false}
     onClick={[Function]}
     type="button"
@@ -10593,6 +10587,7 @@ Array [
 
 <div
     className="c0"
+    data-cy="smile-container"
   >
     <div
       className="c1"
@@ -10607,16 +10602,7 @@ Array [
         className="c3"
       >
         <p>
-          <strong>
-            smile_container_text2
-          </strong>
-           
-          smile_container_text3
-           
-          <strong>
-            triage_level_high_risk
-          </strong>
-          .
+          smile_container_text9
         </p>
       </div>
       <div
@@ -10624,6 +10610,7 @@ Array [
       >
         <svg
           className="c5"
+          data-cy="red-smile"
           id="red"
           style={
             Object {
@@ -11135,6 +11122,7 @@ Array [
 
 <div
     className="c0"
+    data-cy="smile-container"
   >
     <div
       className="c1"
@@ -11149,16 +11137,7 @@ Array [
         className="c3"
       >
         <p>
-          <strong>
-            smile_container_text2
-          </strong>
-           
-          smile_container_text3
-           
-          <strong>
-            triage_level_high_risk
-          </strong>
-          .
+          smile_container_text9
         </p>
       </div>
       <div
@@ -11166,6 +11145,7 @@ Array [
       >
         <svg
           className="c5"
+          data-cy="red-smile"
           id="red"
           style={
             Object {
@@ -11594,6 +11574,7 @@ Array [
 
 <div
     className="c0"
+    data-cy="smile-container"
   >
     <div
       className="c1"
@@ -11612,6 +11593,7 @@ Array [
            
           <strong
             className="nowrap"
+            data-cy="risk-test-last-date"
           >
             
           </strong>
@@ -11628,6 +11610,7 @@ Array [
       >
         <svg
           className="c5"
+          data-cy="yellow-smile"
           id="yellow"
           style={
             Object {
@@ -11786,6 +11769,7 @@ Array [
 
 <button
     className="c0 c1"
+    data-cy="button-border"
     disabled={false}
     onClick={[Function]}
     type="button"
@@ -12616,6 +12600,7 @@ Array [
 
 <div
     className="c0"
+    data-cy="smile-container"
   >
     <div
       className="c1"
@@ -12630,16 +12615,7 @@ Array [
         className="c3"
       >
         <p>
-          <strong>
-            smile_container_text2
-          </strong>
-           
-          smile_container_text3
-           
-          <strong>
-            triage_level_high_risk
-          </strong>
-          .
+          smile_container_text9
         </p>
       </div>
       <div
@@ -12647,6 +12623,7 @@ Array [
       >
         <svg
           className="c5"
+          data-cy="red-smile"
           id="red"
           style={
             Object {
@@ -13160,6 +13137,7 @@ Array [
 
 <div
     className="c0"
+    data-cy="smile-container"
   >
     <div
       className="c1"
@@ -13174,16 +13152,7 @@ Array [
         className="c3"
       >
         <p>
-          <strong>
-            smile_container_text2
-          </strong>
-           
-          smile_container_text3
-           
-          <strong>
-            triage_level_medium_risk
-          </strong>
-          .
+          smile_container_text8
         </p>
       </div>
       <div
@@ -13191,6 +13160,7 @@ Array [
       >
         <svg
           className="c5"
+          data-cy="red-smile"
           id="red"
           style={
             Object {
@@ -13600,6 +13570,7 @@ Array [
 
 <button
     className="c0 c1 c2"
+    data-cy="button-borderArrow"
     disabled={false}
     onClick={[Function]}
     type="button"

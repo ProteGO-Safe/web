@@ -7,7 +7,7 @@ import * as Styled from './Explainer.styled';
 
 const Explainer = ({ t, carouselRef, index, items, onClick, settings }) => {
   return (
-    <Layout hideBackButton isGovFooter fullHeight noPadding>
+    <Layout id="view-explainer" hideBackButton isGovFooter fullHeight noPadding>
       {index < 1 ? (
         <Styled.Title>{t('explainer_text1')}</Styled.Title>
       ) : (
@@ -17,13 +17,13 @@ const Explainer = ({ t, carouselRef, index, items, onClick, settings }) => {
           {t('explainer_text3')}
         </Styled.Title>
       )}
-      <Styled.SliderWrapper>
+      <Styled.SliderWrapper data-cy={`explainer-step-${index + 1}`}>
         <Slider ref={carouselRef} {...settings}>
           {items}
         </Slider>
       </Styled.SliderWrapper>
 
-      <Styled.ButtonWrapper>
+      <Styled.ButtonWrapper data-cy="button-next-wrapper">
         <Button onClick={onClick} label={t('button_next')} />
       </Styled.ButtonWrapper>
     </Layout>

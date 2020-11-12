@@ -5,17 +5,24 @@ import { withTranslation } from 'react-i18next';
 import { Arrow, ArrowButton, Container, Logo } from './Header.styled';
 import useNavigation from '../../hooks/useNavigation';
 import { Routes } from '../../services/navigationService/routes';
+import useHandlingPhysicalBack from '../../hooks/useHandlingPhysicalBack';
 
 const Header = ({ t, hideBackButton, onBackClick }) => {
   const { goBack, goTo } = useNavigation();
+
   const handleBackClick = useCallback(() => {
+    if (hideBackButton) {
+      return;
+    }
     if (onBackClick) {
       onBackClick();
     } else {
       goBack();
     }
     // eslint-disable-next-line
-  }, [onBackClick]);
+  }, [onBackClick, hideBackButton]);
+
+  useHandlingPhysicalBack(handleBackClick);
 
   const renderBackButton = () => (
     <ArrowButton onClick={handleBackClick}>

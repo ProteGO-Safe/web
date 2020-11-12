@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useRef } from 'react';
+import React, { useCallback, useEffect, useRef, useState } from 'react';
 import { withTranslation } from 'react-i18next';
 import { menuItems } from './BottomNavigation.constants';
 import useMenuContext from '../../hooks/useMenuContext';
@@ -6,13 +6,26 @@ import { Container, MenuItem } from './BottomNavigation.styled';
 import useNavigation from '../../hooks/useNavigation';
 
 const BottomNavigation = ({ className, t }) => {
-  const { goTo } = useNavigation();
+  const { goTo, route } = useNavigation();
+  const [value, setValue] = useState(null);
   const containerRef = useRef();
   const {
     setVisible: setMenuVisible,
     startHiding: hideMenu,
     visible: menuVisible
   } = useMenuContext();
+
+  useEffect(() => {
+    if (menuVisible) {
+      setValue(menuItems.length - 1);
+    } else {
+      const activeItemIndex = menuItems.findIndex(({ path }) => {
+        return route === path;
+      });
+
+      setValue(activeItemIndex !== -1 ? activeItemIndex : null);
+    }
+  }, [route, menuVisible]);
 
   useEffect(() => {
     if (containerRef.current) {
@@ -58,6 +71,7 @@ const BottomNavigation = ({ className, t }) => {
       className={className}
       onChange={handleSelectionChange}
       showLabels
+      value={value}
     >
       {menuItems.map(renderMenuItem)}
     </Container>

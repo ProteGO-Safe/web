@@ -10,7 +10,7 @@ import { ImprintWrapper } from './Imprint.styled';
 
 import './Imprint.scss';
 
-const Imprint = ({ labTestPin, t, user = {} }) => {
+const Imprint = ({ labTestPin, t, user = {}, forceHideManualCovid }) => {
   const { chronicSicks, bloodGroup, smokeNumber, isSmoking } = user;
   const { isManualCovid } = useTriage();
 
@@ -66,7 +66,7 @@ const Imprint = ({ labTestPin, t, user = {} }) => {
           {chronicSicksContent()}
         </Grid>
 
-        {isManualCovid && (
+        {isManualCovid && !forceHideManualCovid && (
           <Grid item xs={6}>
             <Paragraph color={Color.lightBlack} fontWeight={FontWeight.Bold}>
               {t('imprint_text13')}

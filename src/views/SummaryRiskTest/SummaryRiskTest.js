@@ -34,7 +34,7 @@ const SummaryRiskTest = ({ data, t }) => {
   };
 
   return (
-    <Styled.SummaryRiskTest>
+    <Styled.SummaryRiskTest data-cy="view-summary-risk-test">
       <Styled.Title>{t(data.title)}</Styled.Title>
 
       <RiskTestResult color={data.color} icon={data.icon} text={data.status} />

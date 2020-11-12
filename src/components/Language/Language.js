@@ -23,7 +23,7 @@ const Language = ({ customLabels, defaultLang, languages, onSelect }) => {
   };
 
   return (
-    <Styled.Language>
+    <Styled.Language data-cy="language-select-wrapper" data-lang={lang}>
       <ReactFlagsSelect
         ref={myInput}
         countries={prepareLanguages(languages)}

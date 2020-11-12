@@ -11,17 +11,12 @@ export const changeRoute = data => {
   };
 };
 
-export const goToPreviousRouteRequested = () => ({
-  type: types.GO_TO_PREVIOUS_ROUTE_REQUESTED
-});
-
 export const goToPreviousRouteSuccess = () => ({
   type: types.GO_TO_PREVIOUS_ROUTE_SUCCESS
 });
 
 export const goToPreviousRoute = () => {
   return dispatch => {
-    dispatch(goToPreviousRouteRequested());
     dispatch(goToPreviousRouteSuccess());
   };
 };

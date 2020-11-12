@@ -9,6 +9,7 @@ import useNavigation from '../../hooks/useNavigation';
 import { revokeEnStatus } from '../../store/actions/nativeData';
 import {
   confirmManualCovid,
+  revokeManualCovid,
   revokeTorStatus
 } from '../../store/actions/triage';
 import { InfoNegativeLabTest } from '../InfoNegativeLabTest';
@@ -34,6 +35,7 @@ const ResultLabTestContainer = ({ t }) => {
   const handleNegativeYes = () => {
     dispatch(revokeEnStatus()).then(() => {
       dispatch(revokeTorStatus());
+      dispatch(revokeManualCovid());
       onClose();
       setShowNegativeView(true);
     });

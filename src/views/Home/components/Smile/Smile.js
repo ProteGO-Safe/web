@@ -9,7 +9,7 @@ import {
 
 const Smile = ({ content, userName, IconComponent }) => {
   return (
-    <SmileContainer>
+    <SmileContainer data-cy="smile-container">
       <UserName>{userName},</UserName>
       <TextWrapper>
         <Text>
