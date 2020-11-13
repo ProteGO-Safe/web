@@ -1,15 +1,14 @@
-import React, { useCallback, useState, useEffect, useRef } from 'react';
-import { useHistory, useLocation } from 'react-router-dom';
+import React, { useCallback, useEffect, useRef, useState } from 'react';
 import { withTranslation } from 'react-i18next';
 import { menuItems } from './BottomNavigation.constants';
 import useMenuContext from '../../hooks/useMenuContext';
 import { Container, MenuItem } from './BottomNavigation.styled';
+import useNavigation from '../../hooks/useNavigation';
 
 const BottomNavigation = ({ className, t }) => {
-  const history = useHistory();
-  const location = useLocation();
-  const containerRef = useRef();
+  const { goTo, route } = useNavigation();
   const [value, setValue] = useState(null);
+  const containerRef = useRef();
   const {
     setVisible: setMenuVisible,
     startHiding: hideMenu,
@@ -20,16 +19,13 @@ const BottomNavigation = ({ className, t }) => {
     if (menuVisible) {
       setValue(menuItems.length - 1);
     } else {
-      const activeItemIndex = menuItems.findIndex(({ path, disabled }) => {
-        if (location.pathname === path) {
-          return true;
-        }
-        return disabled && path && location.pathname.startsWith(path);
+      const activeItemIndex = menuItems.findIndex(({ path }) => {
+        return route === path;
       });
 
       setValue(activeItemIndex !== -1 ? activeItemIndex : null);
     }
-  }, [location.pathname, menuVisible]);
+  }, [route, menuVisible]);
 
   useEffect(() => {
     if (containerRef.current) {
@@ -43,7 +39,7 @@ const BottomNavigation = ({ className, t }) => {
       const menuItem = menuItems[newValue];
 
       if (!menuItem.openMenu) {
-        history.push(menuItem.path);
+        goTo(menuItem.path);
 
         if (menuVisible) {
           hideMenu();
@@ -53,7 +49,7 @@ const BottomNavigation = ({ className, t }) => {
       }
     },
     // eslint-disable-next-line
-    [history, menuVisible]
+    [menuVisible]
   );
 
   const renderMenuItem = ({ id, label, disabled, Icon, panicButton }) => (
@@ -72,10 +68,10 @@ const BottomNavigation = ({ className, t }) => {
   return (
     <Container
       ref={containerRef}
-      value={value}
       className={className}
       onChange={handleSelectionChange}
       showLabels
+      value={value}
     >
       {menuItems.map(renderMenuItem)}
     </Container>

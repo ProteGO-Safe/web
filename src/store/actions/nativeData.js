@@ -161,7 +161,7 @@ export const fetchLabTestSubscription = () => {
       }
     });
   };
-}
+};
 
 export function changeNativeLanguage(language) {
   const data = { language: language.toUpperCase() };
@@ -188,6 +188,19 @@ export const uploadLabTestPin = pin => {
     dispatch(resetUploadLabTestPinResultSuccess());
     nativeBridge.uploadLabTestPin(pin).then(body => {
       dispatch(uploadTestPinFinished(body));
+    });
+  };
+};
+
+export const revokeEnStatusFinished = body => ({
+  body,
+  type: types.REVOKE_EN_STATUS_FINISHED
+});
+
+export const revokeEnStatus = () => {
+  return async dispatch => {
+    await nativeBridge.revokeEnStatus().then(value => {
+      dispatch(revokeEnStatusFinished(value));
     });
   };
 };

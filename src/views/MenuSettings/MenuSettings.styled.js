@@ -1,4 +1,3 @@
-import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 import { Color } from '../../theme/colors';
 import { ReactComponent as ArrowRight } from '../../assets/img/icons/arrow-current-color.svg';
@@ -7,7 +6,7 @@ export const MenuSettings = styled.div`
   width: 100%;
 `;
 
-export const Item = styled(NavLink)`
+export const Item = styled.span`
   position: relative;
   display: flex;
   flex-flow: wrap row;

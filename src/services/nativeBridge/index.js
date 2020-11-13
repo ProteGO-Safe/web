@@ -15,6 +15,7 @@ import { UPLOAD_HISTORICAL_DATA_FINISHED } from '../../store/types/app';
 import { isAndroidWebView, isIOSWebView } from '../../utils/native';
 import { fetchExposureNotificationStatistics } from '../../store/actions/nativeData';
 import { fetchSubscribedDistricts } from '../../store/actions/restrictions';
+import { BACK_PRESSED } from '../../store/types/navigation';
 
 const nativeRequests = {};
 
@@ -80,6 +81,10 @@ const getNotification = async () => {
 
 const getServicesStatus = async () => {
   return callGetBridgeData(DATA_TYPE.NATIVE_SERVICES_STATUS);
+};
+
+const revokeEnStatus = async () => {
+  return callGetBridgeData(DATA_TYPE.REVOKE_EN);
 };
 
 const getFontScale = async () => {
@@ -213,6 +218,14 @@ const handleLabTestSubscription = body => {
   });
 };
 
+const handleBackPressed = () => {
+  const store = StoreRegistry.getStore();
+  const { dispatch } = store;
+  dispatch({
+    type: BACK_PRESSED
+  });
+};
+
 const callBridgeDataHandler = cond([
   [equals(DATA_TYPE.NATIVE_SERVICES_STATUS), always(handleServicesStatus)],
   [
@@ -222,7 +235,8 @@ const callBridgeDataHandler = cond([
   [equals(DATA_TYPE.EXPOSURE_STATISTICS), always(handleExposureSummary)],
   [equals(DATA_TYPE.NATIVE_STATE), always(handleNativeState)],
   [equals(DATA_TYPE.LANGUAGE), always(handleNativeLanguage)],
-  [equals(DATA_TYPE.LAB_TEST_SUBSCRIPTION), always(handleLabTestSubscription)]
+  [equals(DATA_TYPE.LAB_TEST_SUBSCRIPTION), always(handleLabTestSubscription)],
+  [equals(DATA_TYPE.BACK_PRESSED), always(handleBackPressed)]
 ]);
 
 const onBridgeData = (dataType, dataString) => {
@@ -260,6 +274,7 @@ export default {
   getNotification,
   getServicesStatus,
   getSubscribedDistricts,
+  revokeEnStatus,
   setPin,
   setDistrictSubscription,
   setServicesState,

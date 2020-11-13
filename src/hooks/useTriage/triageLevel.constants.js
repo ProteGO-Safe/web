@@ -67,7 +67,6 @@ export const EXPOSURE_TRIAGE_LEVEL = {
     IconComponent: GreenSmile,
     isDangerous: false,
     isExposure: true,
-    riskGroup: 'triage_level_low_risk',
     riskLevel: 1,
     exposureRiskLevel: 1
   },
@@ -77,7 +76,6 @@ export const EXPOSURE_TRIAGE_LEVEL = {
     IconComponent: RedSmile,
     isDangerous: true,
     isExposure: true,
-    riskGroup: 'triage_level_medium_risk',
     riskLevel: 2,
     exposureRiskLevel: 2
   },
@@ -87,10 +85,16 @@ export const EXPOSURE_TRIAGE_LEVEL = {
     IconComponent: RedSmile,
     isDangerous: true,
     isExposure: true,
-    riskGroup: 'triage_level_high_risk',
     riskLevel: 3,
     exposureRiskLevel: 3
   }
+};
+
+export const MANUAL_COVID = {
+  color: Color.danger,
+  content: 'exposure_sick_content',
+  IconComponent: RedSmile,
+  isManualCovid: true
 };
 
 export const EXPOSURE_SICK = {

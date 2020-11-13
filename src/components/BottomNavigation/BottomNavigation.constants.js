@@ -1,7 +1,7 @@
-import Routes from '../../routes';
 import { ReactComponent as HomeIcon } from '../../assets/img/icons/SafeSafe-dolne-menu-Home-white.svg';
 import { ReactComponent as ImportantInfo } from '../../assets/img/icons/SafeSafe-dolne-menu-important-info.svg';
 import { ReactComponent as BurgerIcon } from '../../assets/img/icons/SafeSafe-dolne-menu-More-white.svg';
+import { Routes } from '../../services/navigationService/routes';
 
 export const HomeItem = {
   id: 'home',

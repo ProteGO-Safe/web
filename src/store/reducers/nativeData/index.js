@@ -10,7 +10,8 @@ import {
   FETCH_LANGUAGE,
   UPLOAD_LAB_TEST_PIN_FINISHED,
   RESET_UPLOAD_LAB_TEST_PIN_RESULT_SUCCESS,
-  FETCH_LAB_TEST_SUBSCRIPTION
+  FETCH_LAB_TEST_SUBSCRIPTION,
+  REVOKE_EN_STATUS_FINISHED
 } from '../../types/nativeData';
 
 const INITIAL_STATE = {
@@ -87,6 +88,15 @@ const nativeBridgeReducer = (state = INITIAL_STATE, action) => {
         ...state,
         servicesStatusSetByNative: false
       };
+    case REVOKE_EN_STATUS_FINISHED: {
+      const {
+        body: { riskLevel }
+      } = action;
+      return {
+        ...state,
+        riskLevel
+      };
+    }
     case NATIVE_DATA_FETCH_EXPOSURE_NOTIFICATION_STATISTICS_SUCCESS: {
       const { riskLevel } = action;
       return {

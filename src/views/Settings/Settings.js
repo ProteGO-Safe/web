@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Layout, Switcher } from '../../components';
 import { ItemWrapper, Text, Title } from './Settings.styled';
 
-const Settings = ({ children, items, onBack, title }) => {
+const Settings = ({ children, items, title }) => {
   const renderSettings = items.map(item => {
     const { checked, disabled, onChange, label, name } = item;
 
@@ -20,7 +20,7 @@ const Settings = ({ children, items, onBack, title }) => {
   });
 
   return (
-    <Layout onBackClick={onBack} isNavigation>
+    <Layout isNavigation>
       <Title>{title}</Title>
       <Text>{children}</Text>
       <ItemWrapper>{renderSettings}</ItemWrapper>
@@ -29,13 +29,11 @@ const Settings = ({ children, items, onBack, title }) => {
 };
 
 Settings.defaultProps = {
-  info: undefined,
   items: []
 };
 
 Settings.propTypes = {
   children: PropTypes.node.isRequired,
-  info: PropTypes.node,
   items: PropTypes.array,
   title: PropTypes.string
 };

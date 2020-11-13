@@ -1,0 +1,6 @@
+{
+  "baseUrl": "http://127.0.0.1:3001",
+  "requestTimeout": 10000,
+  "viewportHeight": 667,
+  "viewportWidth": 375
+}

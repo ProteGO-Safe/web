@@ -4,7 +4,8 @@ import {
   RISK_LEVEL_COLOR,
   EXPOSURE_TRIAGE_LEVEL,
   NO_TRIAGE_LEVEL,
-  EXPOSURE_SICK
+  EXPOSURE_SICK,
+  MANUAL_COVID
 } from './triageLevel.constants';
 import { EXPOSURE_NOTIFICATION_STATUS } from '../../utils/servicesStatus/servicesStatus.constants';
 
@@ -135,7 +136,8 @@ const useTriage = () => {
     triageLevel,
     description,
     serious,
-    timeOfConfirmedCovid
+    timeOfConfirmedCovid,
+    timeOfConfirmedManualCovid
   } = useSelector(state => state.triage);
   const {
     riskLevel = undefined,
@@ -144,6 +146,10 @@ const useTriage = () => {
 
   const exposureRiskLevel = resolveExposureRiskLevel(riskLevel);
   const triageRiskLevel = resolveTriageRiskLevel(triageLevel);
+
+  if (timeOfConfirmedManualCovid) {
+    return MANUAL_COVID;
+  }
 
   if (timeOfConfirmedCovid) {
     return EXPOSURE_SICK;

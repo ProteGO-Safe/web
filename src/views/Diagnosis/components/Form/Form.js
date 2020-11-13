@@ -28,7 +28,10 @@ const Form = ({ onBack, onNext, question }) => {
   };
 
   return (
-    <DiagnosisWrapper className="view view__diagnosis view__diagnosis--single">
+    <DiagnosisWrapper
+      className="view view__diagnosis view__diagnosis--single"
+      data-cy="diagnosis-wrapper"
+    >
       {chooseQuestion()}
     </DiagnosisWrapper>
   );

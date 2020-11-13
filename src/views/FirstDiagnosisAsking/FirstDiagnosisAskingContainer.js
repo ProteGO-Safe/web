@@ -1,18 +1,15 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
-import { useHistory } from 'react-router-dom';
 import FirstDiagnosisAsking from './FirstDiagnosisAsking';
 import { finishFirstDiagnosis } from '../../store/actions/app';
-import Routes from '../../routes';
+import useNavigation from '../../hooks/useNavigation';
+import { Routes } from '../../services/navigationService/routes';
 
 const FirstDiagnosisAskingContainer = () => {
   const dispatch = useDispatch();
-  const history = useHistory();
+  const { goTo } = useNavigation();
   const goToDiagnosis = () => {
-    history.push({
-      pathname: Routes.Diagnosis,
-      search: '?p=1'
-    });
+    goTo(Routes.Diagnosis);
   };
   const goToHome = () => {
     dispatch(finishFirstDiagnosis());

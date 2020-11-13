@@ -1,3 +1,4 @@
+import moment from 'moment';
 import * as types from '../types/triage';
 import { getTriage } from '../../services/diagnosisLogic/triageLogic';
 import { firstDiagnosisFinished } from './app';
@@ -34,4 +35,29 @@ export const wholeTriageUpdated = data => ({
 
 export const updateWholeTriage = data => dispatch => {
   dispatch(wholeTriageUpdated(data));
+};
+
+export const revokeTorStatusFinished = () => ({
+  type: types.REVOKE_TOR_STATUS_FINISHED
+});
+
+export const revokeTorStatus = () => dispatch => {
+  dispatch(revokeTorStatusFinished());
+};
+
+export const confirmManualCovidFinished = () => ({
+  data: moment().unix(),
+  type: types.CONFIRM_MANUAL_COVID_FINISHED
+});
+
+export const confirmManualCovid = () => dispatch => {
+  dispatch(confirmManualCovidFinished());
+};
+
+export const revokeManualCovidFinished = () => ({
+  type: types.REVOKE_MANUAL_COVID_FINISHED
+});
+
+export const revokeManualCovid = () => dispatch => {
+  dispatch(revokeManualCovidFinished());
 };

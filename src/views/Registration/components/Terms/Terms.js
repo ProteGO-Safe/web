@@ -26,7 +26,7 @@ const Terms = ({ t, handleClick }) => {
   })();
 
   return (
-    <Layout hideBackButton isGovFooter>
+    <Layout id="view-terms" hideBackButton isGovFooter>
       <Title>
         {t('terms_text1')}
         <br />

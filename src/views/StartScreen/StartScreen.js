@@ -24,7 +24,10 @@ const StartScreen = ({
         <Styled.LogoWrapper>
           <Styled.Logo change={handleChangeView} />
         </Styled.LogoWrapper>
-        <Styled.Subtitle change={handleChangeView}>
+        <Styled.Subtitle
+          change={handleChangeView}
+          data-cy="start-screen-subtitle"
+        >
           {t('start_screen_subtitle')}
         </Styled.Subtitle>
 
@@ -39,7 +42,7 @@ const StartScreen = ({
           />
         </Styled.ChooseLang>
 
-        <Styled.Button onClick={handleStartClick}>
+        <Styled.Button data-cy="start-screen-button" onClick={handleStartClick}>
           {t('start_screen_button')}
         </Styled.Button>
       </Styled.Content>

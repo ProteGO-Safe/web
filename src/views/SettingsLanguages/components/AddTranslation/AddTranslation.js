@@ -1,6 +1,6 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
 import * as Styled from './AddTranslation.styled';
+import { NavLink } from '../../../../components';
 
 const AddTranslation = ({ path, name }) => (
   <NavLink to={path}>

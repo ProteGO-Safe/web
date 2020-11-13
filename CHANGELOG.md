@@ -4,6 +4,12 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## 4.7.1
+
+### Added
+- Possibility to enter the result of the laboratory test after being signed up for it in the application.
+- Redirection to chatbot which enables making comments and reporting bugs in the Polish language version.
+
 ## 4.7.0
 
 ### Added

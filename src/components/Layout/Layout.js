@@ -6,13 +6,14 @@ const Layout = ({
   children,
   fullHeight,
   hideBackButton,
+  id,
   noMargin,
   noPadding,
   onBackClick,
   isNavigation,
   isGovFooter
 }) => (
-  <Styled.Layout>
+  <Styled.Layout data-cy={id}>
     <Header hideBackButton={hideBackButton} onBackClick={onBackClick} />
     <Styled.Container
       noMargin={noMargin}

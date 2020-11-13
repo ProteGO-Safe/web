@@ -4,7 +4,7 @@ import { Icon, Container } from './ExposureNotificationInfo.styled';
 
 const ExposureNotificationInfo = ({ t, icon }) => {
   return (
-    <Container>
+    <Container data-cy="exposure-notification-info">
       <Icon src={icon} />
       {t('exposure_notification_info_text1')}
     </Container>

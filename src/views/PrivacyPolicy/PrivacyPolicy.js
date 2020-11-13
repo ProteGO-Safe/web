@@ -1,15 +1,14 @@
 import React from 'react';
 import { withTranslation } from 'react-i18next';
-import { useHistory } from 'react-router-dom';
 
 import { Button, FieldSet, Layout } from '../../components';
-import Routes from '../../routes';
 import { Content, Title } from './PrivacyPolicy.styled';
 import { Paragraph } from '../../theme/typography';
+import useNavigation from '../../hooks/useNavigation';
+import { Routes } from '../../services/navigationService/routes';
 
 const PrivacyPolicy = ({ t }) => {
-  const history = useHistory();
-
+  const { goTo } = useNavigation();
   return (
     <Layout isNavigation>
       <Content>
@@ -20,15 +19,15 @@ const PrivacyPolicy = ({ t }) => {
       </Content>
       <FieldSet>
         <Button
-          onClick={() => history.push(Routes.Regulations)}
+          onClick={() => goTo(Routes.Regulations)}
           label={t('privacy_policy_text5')}
         />
         <Button
-          onClick={() => history.push(Routes.PrivacyPolicyDetails)}
+          onClick={() => goTo(Routes.PrivacyPolicyDetails)}
           label={t('privacy_policy_text6')}
         />
         <Button
-          onClick={() => history.push(Routes.UserData)}
+          onClick={() => goTo(Routes.UserData)}
           type="outline"
           label={t('privacy_policy_text7')}
         />

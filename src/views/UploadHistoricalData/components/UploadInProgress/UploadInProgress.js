@@ -1,11 +1,10 @@
 import React from 'react';
 import { withTranslation } from 'react-i18next';
-import { Link } from 'react-router-dom';
-import { Layout, Loader } from '../../../../components';
+import { Layout, Loader, NavLink } from '../../../../components';
 import { Name, Paragraph, TextLink } from '../../../../theme/typography';
 import { Information, LoaderWrapper } from './UploadInProgress.styled';
-import Routes from '../../../../routes';
 import useUserName from '../../../../hooks/useUserName';
+import { Routes } from '../../../../services/navigationService/routes';
 
 const UploadInProgress = ({ t }) => {
   const userName = useUserName();
@@ -19,9 +18,9 @@ const UploadInProgress = ({ t }) => {
       </LoaderWrapper>
       <Information>
         {t('upload_in_progress_text2')}{' '}
-        <Link to={Routes.PrivacyPolicy}>
+        <NavLink to={Routes.PrivacyPolicy}>
           <TextLink>{t('upload_in_progress_text3')}</TextLink>.
-        </Link>
+        </NavLink>
       </Information>
     </Layout>
   );

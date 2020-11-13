@@ -1,18 +1,19 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import { useParams } from 'react-router-dom';
 import moment from 'moment';
 
 import { withTranslation } from 'react-i18next';
 import RiskTestData from './RiskTestData';
 import { TRIAGE_LEVEL } from './RiskTestData.constants';
 import locations from '../../services/diagnosisLogic/locations.json';
+import useNavigation from '../../hooks/useNavigation';
 
 const dateFormat = 'D-MM-YYYY';
 
 const RiskTestDataContainer = ({ t }) => {
+  const { getParam } = useNavigation();
   const riskTest = useSelector(state => state.riskTest);
-  const { id } = useParams();
+  const id = getParam('id');
   const day = moment.unix(id);
   const isToday = day.isSame(moment(), 'day');
 
