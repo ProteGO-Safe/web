@@ -37,17 +37,10 @@ export const Wrapper = styled.div`
         padding-right: 26px !important;
       }
   `}
-  ${({ type }) =>
-    type === 'normal' &&
-    `
-      padding-top: 60px;
-      padding-bottom: 70px;
-      overflow-y: auto;
-  `}
 `;
 
 export const Overlay = styled.div`
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   width: 100vw;
@@ -63,13 +56,8 @@ export const Content = styled.div`
   flex-direction: column;
   width: calc(100% - 34px);
   height: ${({ height }) => (height < 260 ? `auto` : '100vh')};
-  ${({ type }) =>
-    type !== 'normal' &&
-    `
-      max-height: ${({ maxHeight }) =>
-        maxHeight ? `100%` : 'calc(100vh - 136px)'};
-  `};
-
+  max-height: ${({ maxHeight }) =>
+    maxHeight ? `100%` : 'calc(100vh - 136px)'};
   max-width: 420px;
   margin: 0 auto;
   padding: ${({ type }) => handleType(type)};
@@ -112,13 +100,6 @@ export const Footer = styled.div`
 export const ScrollbarContent = styled.div`
   width: ${({ height }) => (height < 260 ? '100%' : 'calc(100% + 22px)')};
   height: 100%;
-  margin-top: 12px;
-  overflow-x: hidden;
-`;
-
-export const Description = styled.div`
-  display: block;
-  width: 100%;
   margin-top: 12px;
   overflow-x: hidden;
 `;
