@@ -41,11 +41,6 @@ export const Pin = styled.div`
       &:focus {
         border: 1px solid ${Color.primary} !important;
       }
-      
-      @media (max-width: 330px) {
-        width: 42px !important;
-        height: 42px !important;
-      }
     }
 `;
 
