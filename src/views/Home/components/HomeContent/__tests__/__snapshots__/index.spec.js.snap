@@ -5350,13 +5350,7 @@ Array [
       </div>
     </a>
   </div>,
-  .c3 {
-  width: auto;
-  font-weight: 700;
-  color: #0052a5;
-}
-
-.c0 {
+  .c0 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -5406,6 +5400,12 @@ Array [
   height: 14px;
   width: 14px;
   margin-left: 20px;
+}
+
+.c3 {
+  width: auto;
+  font-weight: 700;
+  color: #0052a5;
 }
 
 @media screen and (max-width:370px) {
@@ -6417,7 +6417,7 @@ Array [
 .c4 {
   -webkit-text-decoration: underline;
   text-decoration: underline;
-  color: #006cd7;
+  color: #0052a5;
 }
 
 .c0 {
@@ -6988,13 +6988,7 @@ Array [
       </div>
     </a>
   </div>,
-  .c3 {
-  width: auto;
-  font-weight: 700;
-  color: #0052a5;
-}
-
-.c0 {
+  .c0 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -7044,6 +7038,12 @@ Array [
   height: 14px;
   width: 14px;
   margin-left: 20px;
+}
+
+.c3 {
+  width: auto;
+  font-weight: 700;
+  color: #0052a5;
 }
 
 @media screen and (max-width:370px) {
@@ -7256,13 +7256,7 @@ Array [
       </div>
     </div>
   </div>,
-  .c3 {
-  width: auto;
-  font-weight: 700;
-  color: #0052a5;
-}
-
-.c0 {
+  .c0 {
   width: 100%;
   margin-bottom: 16px;
   padding: 22px 20px 22px;
@@ -7307,6 +7301,12 @@ Array [
 
 .c2 strong {
   font-weight: 600;
+}
+
+.c3 {
+  width: auto;
+  font-weight: 700;
+  color: #0052a5;
 }
 
 @media screen and (max-width:370px) {
@@ -7518,13 +7518,7 @@ Array [
       </div>
     </a>
   </div>,
-  .c3 {
-  width: auto;
-  font-weight: 700;
-  color: #0052a5;
-}
-
-.c0 {
+  .c0 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -7574,6 +7568,12 @@ Array [
   height: 14px;
   width: 14px;
   margin-left: 20px;
+}
+
+.c3 {
+  width: auto;
+  font-weight: 700;
+  color: #0052a5;
 }
 
 @media screen and (max-width:370px) {
@@ -8033,7 +8033,7 @@ Array [
 .c4 {
   -webkit-text-decoration: underline;
   text-decoration: underline;
-  color: #006cd7;
+  color: #0052a5;
 }
 
 .c0 {
@@ -8842,13 +8842,7 @@ Array [
       </div>
     </a>
   </div>,
-  .c3 {
-  width: auto;
-  font-weight: 700;
-  color: #0052a5;
-}
-
-.c0 {
+  .c0 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -8898,6 +8892,12 @@ Array [
   height: 14px;
   width: 14px;
   margin-left: 20px;
+}
+
+.c3 {
+  width: auto;
+  font-weight: 700;
+  color: #0052a5;
 }
 
 @media screen and (max-width:370px) {
@@ -10774,13 +10774,7 @@ Array [
       </div>
     </a>
   </div>,
-  .c3 {
-  width: auto;
-  font-weight: 700;
-  color: #0052a5;
-}
-
-.c0 {
+  .c0 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -10830,6 +10824,12 @@ Array [
   height: 14px;
   width: 14px;
   margin-left: 20px;
+}
+
+.c3 {
+  width: auto;
+  font-weight: 700;
+  color: #0052a5;
 }
 
 @media screen and (max-width:370px) {
@@ -11216,13 +11216,7 @@ Array [
       </div>
     </a>
   </div>,
-  .c3 {
-  width: auto;
-  font-weight: 700;
-  color: #0052a5;
-}
-
-.c0 {
+  .c0 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -11272,6 +11266,12 @@ Array [
   height: 14px;
   width: 14px;
   margin-left: 20px;
+}
+
+.c3 {
+  width: auto;
+  font-weight: 700;
+  color: #0052a5;
 }
 
 @media screen and (max-width:370px) {
@@ -12759,13 +12759,7 @@ Array [
       </div>
     </a>
   </div>,
-  .c3 {
-  width: auto;
-  font-weight: 700;
-  color: #0052a5;
-}
-
-.c0 {
+  .c0 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -12815,6 +12809,12 @@ Array [
   height: 14px;
   width: 14px;
   margin-left: 20px;
+}
+
+.c3 {
+  width: auto;
+  font-weight: 700;
+  color: #0052a5;
 }
 
 @media screen and (max-width:370px) {

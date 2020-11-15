@@ -4,70 +4,113 @@ import {
   TextBlockWithIcon,
   CallHotline,
   Layout,
-  PhoneNumber,
   Button,
-  NavLink
+  T
 } from '../../components';
 import * as Styled from './IAmSick.styled';
 
-import CallHotlineIcon from '../../assets/img/icons/call-hotline.svg';
+import CallHotlineIcon from '../../assets/img/icons/icon-contact-blue.svg';
 import Icon1 from '../../assets/img/icons/i-am-sick-icon-1.svg';
 import Icon2 from '../../assets/img/icons/i-am-sick-icon-2.svg';
 import Icon3 from '../../assets/img/icons/i-am-sick-icon-3.svg';
 import Icon4 from '../../assets/img/icons/i-am-sick-icon-4.svg';
 import Icon5 from '../../assets/img/icons/i-am-sick-icon-5.svg';
-import { Routes } from '../../services/navigationService/routes';
+import Icon6 from '../../assets/img/icons/i-am-sick-icon-6.svg';
 
 const IAmSick = ({ t }) => {
   return (
     <Layout isNavigation>
-      <Styled.Title>{t('i_am_sick_main_title')}</Styled.Title>
-
-      <CallHotline
-        icon={CallHotlineIcon}
-        numberPhone="222 500 115"
-        title={t('call_the_hotline_title')}
-        content={t('call_the_hotline_description')}
-      />
+      <Styled.Title>
+        <T i18nKey="i_am_sick_text_1" />
+      </Styled.Title>
 
       <Styled.Content>
-        <TextBlockWithIcon icon={Icon1} title={t('i_am_sick_title_1')}>
-          {t('i_am_sick_description_1_1')}{' '}
-          <PhoneNumber>222 500 115</PhoneNumber>{' '}
-          {t('i_am_sick_description_1_2')}{' '}
-          <strong>{t('i_am_sick_description_remember')}</strong>
+        <TextBlockWithIcon
+          icon={Icon1}
+          title={<T i18nKey="i_am_sick_text_2" />}
+        >
+          <T i18nKey="i_am_sick_text_3" />
         </TextBlockWithIcon>
 
-        <TextBlockWithIcon icon={Icon2} title={t('i_am_sick_title_2')}>
-          {t('i_am_sick_description_2')}
+        <TextBlockWithIcon
+          icon={Icon2}
+          title={<T i18nKey="i_am_sick_text_4" />}
+        >
+          <T i18nKey="i_am_sick_text_5" />
         </TextBlockWithIcon>
 
-        <TextBlockWithIcon icon={Icon3} title={t('i_am_sick_title_3')}>
-          {t('i_am_sick_description_3_1')}{' '}
-          <NavLink to={Routes.Daily}>
-            <Styled.Link>{t('i_am_sick_description_3_2')}</Styled.Link>
-          </NavLink>{' '}
-          {t('i_am_sick_description_3_3')}
+        <TextBlockWithIcon
+          icon={Icon6}
+          title={<T i18nKey="i_am_sick_text_6" />}
+        >
+          <T i18nKey="i_am_sick_text_7" />
         </TextBlockWithIcon>
 
-        <TextBlockWithIcon icon={Icon4} title={t('i_am_sick_title_4')}>
-          {t('i_am_sick_description_4')}
+        <TextBlockWithIcon
+          icon={Icon3}
+          title={<T i18nKey="i_am_sick_text_8" />}
+        >
+          <T i18nKey="i_am_sick_text_9" />
         </TextBlockWithIcon>
 
-        <TextBlockWithIcon icon={Icon5} title={t('i_am_sick_title_5')}>
-          {t('i_am_sick_description_5_1')}{' '}
-          <PhoneNumber>222 500 115</PhoneNumber>{' '}
-          {t('i_am_sick_description_5_2')}{' '}
-          <strong>{t('i_am_sick_description_remember')}</strong>
+        <TextBlockWithIcon
+          icon={Icon4}
+          title={<T i18nKey="i_am_sick_text_10" />}
+        >
+          <T i18nKey="i_am_sick_text_11" />
+        </TextBlockWithIcon>
+
+        <TextBlockWithIcon
+          icon={Icon5}
+          title={<T i18nKey="i_am_sick_text_12" />}
+        >
+          <T i18nKey="i_am_sick_text_13" />
         </TextBlockWithIcon>
       </Styled.Content>
 
+      <CallHotline
+        icon={CallHotlineIcon}
+        title={<T i18nKey="i_am_sick_text_14" />}
+        content={<T i18nKey="i_am_sick_text_15" />}
+      />
+
+      <Styled.Title>
+        <T i18nKey="i_am_sick_text_16" />
+      </Styled.Title>
+
+      <Styled.Paragraph>
+        <T i18nKey="i_am_sick_text_17" />
+      </Styled.Paragraph>
+
+      <Styled.List>
+        <Styled.ListItem>
+          <T i18nKey="i_am_sick_text_18" />
+        </Styled.ListItem>
+        <Styled.ListItem>
+          <T i18nKey="i_am_sick_text_19" />
+        </Styled.ListItem>
+        <Styled.ListItem>
+          <T i18nKey="i_am_sick_text_20" />
+        </Styled.ListItem>
+        <Styled.ListItem>
+          <T i18nKey="i_am_sick_text_21" />
+        </Styled.ListItem>
+        <Styled.ListItem>
+          <T i18nKey="i_am_sick_text_22" />
+        </Styled.ListItem>
+        <Styled.ListItem>
+          <T i18nKey="i_am_sick_text_23" />
+        </Styled.ListItem>
+      </Styled.List>
+
       <Styled.ButtonWrapper>
-        <Styled.UrlLink href={t('i_am_sick_button_href')} target="_blank">
-          <Button label={t('i_am_sick_button_label')} onClick={() => null} />
+        <Styled.UrlLink href={t('i_am_sick_text_24')} target="_blank">
+          <Button label={t('i_am_sick_text_26')} onClick={() => null} />
         </Styled.UrlLink>
 
-        <Styled.Small>{t('i_am_sick_button_info')}</Styled.Small>
+        <Styled.Small>
+          <T i18nKey="i_am_sick_text_25" />
+        </Styled.Small>
       </Styled.ButtonWrapper>
     </Layout>
   );

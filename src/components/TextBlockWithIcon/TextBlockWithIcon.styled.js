@@ -51,4 +51,12 @@ export const Description = styled.div`
   > * {
     display: inline;
   }
+  > a {
+    font-weight: 700;
+  }
+  > .trans-route {
+    font-weight: 700;
+    color: ${Color.primary};
+    text-decoration: none;
+  }
 `;
