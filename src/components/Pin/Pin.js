@@ -15,7 +15,6 @@ const Pin = ({
       <Styled.PinTitle>{title}</Styled.PinTitle>
       <PinInput
         disabled={false}
-        focus
         initialValue={initialValue}
         inputStyle={{ borderColor: Color.lightGray }}
         length={length}
