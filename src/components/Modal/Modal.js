@@ -42,7 +42,7 @@ const Modal = () => {
   }, [content]);
 
   return (
-    <Styled.Wrapper padding={scrollHeight > 260}>
+    <Styled.Wrapper type={type} padding={scrollHeight > 260}>
       <Styled.Overlay onClick={onClose} />
       <Styled.Content
         type={type}
@@ -63,18 +63,24 @@ const Modal = () => {
             )}
             {title && <Styled.Title>{title}</Styled.Title>}
 
-            <Styled.ScrollbarContent height={scrollHeight}>
-              <Scrollbar
-                ref={scrollRef}
-                style={{
-                  width: '100%',
-                  height: scrollHeight > 260 ? '100%' : `${scrollHeight}px`,
-                  maxHeight: '100%'
-                }}
-              >
+            {type === 'normal' ? (
+              <Styled.Description>
                 <Styled.Text>{content}</Styled.Text>
-              </Scrollbar>
-            </Styled.ScrollbarContent>
+              </Styled.Description>
+            ) : (
+              <Styled.ScrollbarContent height={scrollHeight}>
+                <Scrollbar
+                  ref={scrollRef}
+                  style={{
+                    width: '100%',
+                    height: scrollHeight > 260 ? '100%' : `${scrollHeight}px`,
+                    maxHeight: '100%'
+                  }}
+                >
+                  <Styled.Text>{content}</Styled.Text>
+                </Scrollbar>
+              </Styled.ScrollbarContent>
+            )}
           </>
         )}
 
