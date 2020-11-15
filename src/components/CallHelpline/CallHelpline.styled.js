@@ -7,28 +7,23 @@ const resolveDefaultColor = defaultColor => ({ color }) =>
   color || defaultColor;
 
 export const Button = styled.a`
-  position: fixed;
-  right: 50%;
-  bottom: 80px;
-  bottom: calc(80px + constant(safe-area-inset-bottom));
-  bottom: calc(80px + env(safe-area-inset-bottom));
   display: flex;
   flex-flow: wrap row;
   align-items: center;
-  width: calc(100% - 30px);
+  width: 100%;
   max-width: 384px;
   margin-top: 24px;
-  padding: 10px 18px;
+  padding: 12px 18px 9px;
   border-radius: 4px;
   background-color: ${Color.white};
   box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.65);
-  transform: translateX(50%);
   cursor: pointer;
   z-index: 98;
   @media screen and (max-width: 370px) {
     padding: 10px 14px;
   }
   &.small {
+    position: fixed;
     right: 15px;
     bottom: 60px;
     bottom: calc(60px + constant(safe-area-inset-bottom));
@@ -39,7 +34,6 @@ export const Button = styled.a`
     padding: 16px;
     border-radius: 50%;
     box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.75);
-    transform: translateX(0);
   }
 `;
 
@@ -69,7 +63,7 @@ export const Icon = styled(ContactIcon)`
   display: flex;
   width: 46px;
   height: 46px;
-  margin-right: 32px;
+  margin-right: 28px;
   @media screen and (max-width: 370px) {
     width: 36px;
     height: 36px;
@@ -85,9 +79,9 @@ export const Icon = styled(ContactIcon)`
 export const ArrowRight = styled.span`
   position: absolute;
   top: 50%;
-  right: 0;
-  height: 16px;
-  width: 16px;
+  right: -6px;
+  height: 12px;
+  width: 12px;
   margin-top: -8px;
   z-index: 10;
   > svg {

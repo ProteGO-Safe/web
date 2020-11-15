@@ -65,7 +65,7 @@ export const Content = styled.p`
   width: calc(100% - 32px);
   margin-top: 9px;
   margin-left: 30px;
-  font-size: 12px;
+  font-size: 14px;
   line-height: 1.36;
   font-weight: ${FontWeight.Normal};
   color: ${colorFont(Color.lightBlack)};
