@@ -6,7 +6,9 @@ import { Routes } from '../../services/navigationService/routes';
 
 const T = ({ i18nKey, t }) => {
   let translated = t(i18nKey);
-  translated = reactStringReplace(translated, '[COVID-19]', () => <UrlCovid />);
+  translated = reactStringReplace(translated, '[COVID-19]', i => (
+    <UrlCovid key={i} />
+  ));
   translated = reactStringReplace(
     translated,
     /\[PHONE\](.*?)\[\/PHONE\]/g,
@@ -16,7 +18,7 @@ const T = ({ i18nKey, t }) => {
       </PhoneNumber>
     )
   );
-  translated = reactStringReplace(translated, '[BR]', () => <br />);
+  translated = reactStringReplace(translated, '[BR]', i => <br key={i} />);
   translated = reactStringReplace(translated, /\[B\](.*?)\[\/B\]/g, match => (
     <strong key={match}>{match}</strong>
   ));

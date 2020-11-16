@@ -19,7 +19,6 @@ const HomeContent = () => {
     isManualCovid,
     triageRiskLevel
   } = useTriage();
-  console.log(exposureRiskLevel, isCovid, isManualCovid, triageRiskLevel);
 
   if (isCovid || isManualCovid) {
     return <ExposureSick />;
