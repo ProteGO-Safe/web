@@ -14,8 +14,8 @@ import Icon1 from '../../assets/img/icons/i-am-sick-icon-1.svg';
 import Icon2 from '../../assets/img/icons/i-am-sick-icon-2.svg';
 import Icon3 from '../../assets/img/icons/i-am-sick-icon-3.svg';
 import Icon4 from '../../assets/img/icons/i-am-sick-icon-4.svg';
-import Icon5 from '../../assets/img/icons/i-am-sick-icon-5.svg';
 import Icon6 from '../../assets/img/icons/i-am-sick-icon-6.svg';
+import Icon7 from '../../assets/img/icons/i-am-sick-icon-7.svg';
 
 const IAmSick = ({ t }) => {
   return (
@@ -61,7 +61,7 @@ const IAmSick = ({ t }) => {
         </TextBlockWithIcon>
 
         <TextBlockWithIcon
-          icon={Icon5}
+          icon={Icon7}
           title={<T i18nKey="i_am_sick_text_12" />}
         >
           <T i18nKey="i_am_sick_text_13" />
