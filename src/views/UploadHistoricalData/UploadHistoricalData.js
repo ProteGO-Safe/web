@@ -77,7 +77,10 @@ const UploadHistoricalData = ({ t }) => {
   }, [date]);
 
   const uploadData = () => {
-    dispatch(uploadHistoricalData(pin, isInteroperabilityEnabled));
+    if (isInteroperabilityEnabled) {
+      dispatch(uploadHistoricalData(pin, isInteroperabilityEnabled));
+    }
+    return null;
   };
 
   const hideErrorMessage = () => {
@@ -97,7 +100,7 @@ const UploadHistoricalData = ({ t }) => {
   }
   const getErrorMessage = () => {
     if (status === uploadState.DENIED) {
-      return t('upload_data_text4');
+      return null;
     }
     return (
       banData &&
