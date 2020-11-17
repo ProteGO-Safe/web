@@ -16,15 +16,12 @@ const SummaryRiskTest = ({ data, t }) => {
     openModal(
       <AnnotationContent>
         {t(data.annotation.paragraph_2)}
-        <br />
-        <br />
-        {t(data.annotation.paragraph_3)}
         <Styled.Link
           onClick={() => {
             openModal(<PrivacyPolicyContent small />);
           }}
         >
-          {t(data.annotation.paragraph_4)}
+          {t(data.annotation.paragraph_3)}
         </Styled.Link>
       </AnnotationContent>,
       'normal',
