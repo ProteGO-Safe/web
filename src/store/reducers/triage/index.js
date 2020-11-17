@@ -19,11 +19,15 @@ const INITIAL_STATE = {
   timeOfConfirmedManualCovid: undefined
 };
 
-const obtainTimeOfConfirmedCovid = (result, currentTimeOfConfirmedCovid) => {
-  if (result === 1 && currentTimeOfConfirmedCovid === undefined) {
-    return moment().unix();
-  }
-  return currentTimeOfConfirmedCovid;
+const isCovidOccurs = (state, result) => {
+  const { timeOfConfirmedCovid } = state;
+
+  return result === 1 && timeOfConfirmedCovid === undefined;
+};
+
+const obtainTimeOfConfirmedCovid = state => {
+  const { timeOfConfirmedManualCovid } = state;
+  return timeOfConfirmedManualCovid || moment().unix();
 };
 
 const triageReducer = (state = INITIAL_STATE, action) => {
@@ -50,15 +54,17 @@ const triageReducer = (state = INITIAL_STATE, action) => {
     case UPLOAD_HISTORICAL_DATA_FINISHED:
       return (() => {
         const { result } = action;
-        const { timeOfConfirmedCovid: currentTimeOfConfirmedCovid } = state;
 
-        const timeOfConfirmedCovid = obtainTimeOfConfirmedCovid(
-          result,
-          currentTimeOfConfirmedCovid
-        );
+        if (isCovidOccurs(state, result)) {
+          return {
+            ...state,
+            timeOfConfirmedCovid: obtainTimeOfConfirmedCovid(state, result),
+            timeOfConfirmedManualCovid: undefined
+          };
+        }
+
         return {
-          ...state,
-          timeOfConfirmedCovid
+          ...state
         };
       })();
     case TIME_OF_CONFIRMED_COVID_RESETED:
