@@ -36,7 +36,7 @@ jobs:
             && startsWith(github.ref, 'refs/heads/release/')
             && github.event_name == 'push'
         run: |
-          echo "::set-env name=ENVIRONMENT::DEV"
+          echo "ENVIRONMENT=DEV" >> $GITHUB_ENV
 
       - name: Set env to STAGE
         if: startsWith(github.ref, 'refs/tags/')
@@ -44,7 +44,7 @@ jobs:
             && ( github.event.release.target_commitish == 'master' || startsWith( github.event.release.target_commitish, 'release' ))
             && github.event_name == 'release'
         run: |
-          echo "::set-env name=ENVIRONMENT::STAGE"
+          echo "ENVIRONMENT=STAGE" >> $GITHUB_ENV
 
       - name: Set env to PROD
         if: startsWith(github.ref, 'refs/tags/')
@@ -52,10 +52,10 @@ jobs:
             && ( github.event.release.target_commitish == 'master' || startsWith( github.event.release.target_commitish, 'release/3' ))
             && github.event_name == 'release'
         run: |
-          echo "::set-env name=ENVIRONMENT::PROD"
+          echo "ENVIRONMENT=PROD" >> $GITHUB_ENV
 
       - name: Set Env's
-        run: echo "::set-env name=PROJECT_ENVS::${{ secrets[env.EV] }}"
+        run: echo "PROJECT_ENVS=${{ secrets[env.EV] }}" >> $GITHUB_ENV
         env:
           EV: "${{ env.ENVIRONMENT }}_ENV"
         if: env.ENVIRONMENT == 'STAGE' || env.ENVIRONMENT == 'PROD' || env.ENVIRONMENT == 'DEV'
@@ -69,7 +69,7 @@ jobs:
           POEDITOR_TOKEN: ${{ secrets.POEDITOR_TOKEN }}
         
       - name: Setu Correct curl for static assets from cdn
-        run: echo "::set-env name=CURL_COMMAND::${{ secrets[env.CURL] }}"
+        run: echo "CURL_COMMAND=${{ secrets[env.CURL] }}" >> $GITHUB_ENV
         env:
           CURL: "${{ env.ENVIRONMENT }}_CURL"
         if: env.ENVIRONMENT == 'STAGE' || env.ENVIRONMENT == 'PROD' || env.ENVIRONMENT == 'DEV'
@@ -114,7 +114,7 @@ jobs:
             && startsWith(github.ref, 'refs/heads/release/')
             && github.event_name == 'push'
         run: |
-          echo "::set-env name=ENVIRONMENT::DEV"
+          echo "name=ENVIRONMENT=DEV" >> $GITHUB_ENV
 
       - name: Set env to STAGE
         if: startsWith(github.ref, 'refs/tags/')
@@ -122,7 +122,7 @@ jobs:
             && startsWith( github.event.release.target_commitish, 'release' )
             && github.event_name == 'release'
         run: |
-          echo "::set-env name=ENVIRONMENT::STAGE"
+          echo "ENVIRONMENT=STAGE" >> $GITHUB_ENV
 
       - name: Set env to PROD
         if: startsWith(github.ref, 'refs/tags/')
@@ -130,7 +130,7 @@ jobs:
             && ( github.event.release.target_commitish == 'master' || startsWith( github.event.release.target_commitish, 'release/3' ))
             && github.event_name == 'release'
         run: |
-          echo "::set-env name=ENVIRONMENT::PROD"
+          echo "ENVIRONMENT=PROD" >> $GITHUB_ENV
 
       - name: Download Artifact
         uses: actions/download-artifact@master
@@ -140,12 +140,12 @@ jobs:
 
       - name: Set Env's from Git refs.
         run: |
-          echo "::set-env name=SOURCE_NAME::${GITHUB_REF#refs/*/}"
-          echo "::set-env name=SOURCE_BRANCH::${GITHUB_REF#refs/heads/}"
-          echo "::set-env name=SOURCE_TAG::${GITHUB_REF#refs/tags/}"
-          echo "::set-env name=GCP_SA_KEY::${{ secrets[env.SECRET_ENV] }}"
-          echo "::set-env name=SECRET_PROJECT::${{ secrets[env.PROJECT_ENV] }}"
-          echo "::set-env name=SITE_PROJECT::${{ secrets[env.SITE_ENV] }}"
+          echo "SOURCE_NAME=${GITHUB_REF#refs/*/}" >> $GITHUB_ENV
+          echo "SOURCE_BRANCH=${GITHUB_REF#refs/heads/}" >> $GITHUB_ENV
+          echo "SOURCE_TAG=${GITHUB_REF#refs/tags/}" >> $GITHUB_ENV
+          echo "GCP_SA_KEY=${{ secrets[env.SECRET_ENV] }}" >> $GITHUB_ENV
+          echo "SECRET_PROJECT=${{ secrets[env.PROJECT_ENV] }}" >> $GITHUB_ENV
+          echo "SITE_PROJECT=${{ secrets[env.SITE_ENV] }}" >> $GITHUB_ENV
         env:
           SECRET_ENV: "${{ env.ENVIRONMENT }}_FIREBASE_HOSTING_SAFE"
           PROJECT_ENV: "${{ env.ENVIRONMENT }}_FIREBASE_PROJECT"
@@ -154,14 +154,14 @@ jobs:
 
       - name: Set SITE_PROJECT for V4 PROD
         run: |
-          echo "::set-env name=SITE_PROJECT::${{ secrets[env.SITE_ENV] }}-v4"
+          echo "SITE_PROJECT=${{ secrets[env.SITE_ENV] }}-v4" >> $GITHUB_ENV
         env:
           SITE_ENV: "${{ env.ENVIRONMENT }}_FIREBASE_SITE"
         if: ( env.ENVIRONMENT == 'PROD' && github.event.release.target_commitish == 'master' )
 
       - name: Set SITE_PROJECT for V3 in PROD
         run: |
-          echo "::set-env name=SITE_PROJECT::${{ secrets[env.SITE_ENV] }}"
+          echo "SITE_PROJECT=${{ secrets[env.SITE_ENV] }}" >> $GITHUB_ENV
         env:
           SITE_ENV: "${{ env.ENVIRONMENT }}_FIREBASE_SITE"
         if: ( env.ENVIRONMENT == 'PROD' && startsWith( github.event.release.target_commitish, 'release/3' ) )
