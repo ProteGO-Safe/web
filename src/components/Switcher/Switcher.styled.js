@@ -14,6 +14,7 @@ export const SwitcherWrapper = styled.div`
     margin-right: 0;
   }
   .MuiTypography-root {
+    width: calc(100% - 52px);
     font-size: 14px;
     font-weight: bold;
     line-height: 1.43;
