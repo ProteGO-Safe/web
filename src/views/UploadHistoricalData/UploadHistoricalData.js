@@ -77,10 +77,7 @@ const UploadHistoricalData = ({ t }) => {
   }, [date]);
 
   const uploadData = () => {
-    if (isInteroperabilityEnabled) {
-      dispatch(uploadHistoricalData(pin, isInteroperabilityEnabled));
-    }
-    return null;
+    dispatch(uploadHistoricalData(pin, isInteroperabilityEnabled));
   };
 
   const hideErrorMessage = () => {
