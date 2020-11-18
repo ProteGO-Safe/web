@@ -97,7 +97,7 @@ const UploadHistoricalData = ({ t }) => {
   }
   const getErrorMessage = () => {
     if (status === uploadState.DENIED) {
-      return t('upload_data_text4');
+      return null;
     }
     return (
       banData &&
