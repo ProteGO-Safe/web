@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import { Color } from '../../theme/colors';
 import { Paragraph } from '../../theme/typography';
 
@@ -15,10 +15,20 @@ const handleType = type => {
   }
 };
 
+const animationModalShow = keyframes`
+  from { bottom: -999px; }
+  to { bottom: 0; }
+`;
+
+const animationModalHide = keyframes`
+  from { bottom: 0; }
+  to { bottom: -999px; }
+`;
+
 export const Wrapper = styled.div`
   position: fixed;
   top: 0;
-  left: 0;
+  left: ${({ open }) => (open ? 0 : '-999px')};
   display: flex;
   flex-flow: wrap row;
   justify-content: center;
@@ -30,16 +40,20 @@ export const Wrapper = styled.div`
   padding-top: 60px;
   padding-bottom: 70px;
   overflow-y: auto;
+  animation: ${({ open }) => (open ? animationModalShow : animationModalHide)}
+    0.3s 0s both;
+  transition: all 0.3s;
 `;
 
 export const Overlay = styled.div`
   position: fixed;
   top: 0;
-  left: 0;
+  left: ${({ open }) => (open ? 0 : '-999px')};
   width: 100vw;
   height: 100vh;
   background: ${Color.darkGray};
-  opacity: 0.5;
+  opacity: ${({ open }) => (open ? 0.5 : 0)};
+  transition: opacity 0.5s ease-in;
   z-index: 1;
 `;
 
@@ -52,7 +66,6 @@ export const Content = styled.div`
   max-width: 420px;
   margin: 0 auto;
   padding: ${({ type }) => handleType(type)};
-
   grid-area: wrapper;
   align-self: center;
   background-color: ${Color.white};

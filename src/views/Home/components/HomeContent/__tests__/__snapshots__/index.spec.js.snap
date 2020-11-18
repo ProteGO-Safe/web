@@ -1363,6 +1363,38 @@ Array [
   -webkit-transform: rotate(90deg);
   -ms-transform: rotate(90deg);
   transform: rotate(90deg);
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.c4 {
+  display: block;
+  width: 100%;
+  max-height: 0;
+  padding: 0 15px 0 15px;
+  font-size: 14px;
+  line-height: 1.61;
+  color: #1b1b1b;
+  white-space: pre-line;
+  -webkit-transition: padding 0.5s, max-height 0.4s cubic-bezier(0,1,0,1) -0.1s;
+  transition: padding 0.5s, max-height 0.4s cubic-bezier(0,1,0,1) -0.1s;
+  overflow: hidden;
+}
+
+.c4 * {
+  font-size: 14px;
+  line-height: 1.61;
+  color: #1b1b1b;
+}
+
+.c4 a {
+  color: #0052a5;
+}
+
+.c5 {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+  color: #0052a5;
 }
 
 @media screen and (max-width:370px) {
@@ -1397,85 +1429,60 @@ Array [
         angle-right.svg
       </svg>
     </div>
-  </div>,
-  .c0 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-flow: wrap row;
-  -ms-flex-flow: wrap row;
-  flex-flow: wrap row;
-  width: 100%;
-  margin-top: -1px;
-}
-
-.c1 {
-  position: relative;
-  display: grid;
-  grid-template-areas: 'title icon';
-  grid-template-columns: 1fr 14px;
-  grid-column-gap: 16px;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  width: 100%;
-  min-height: 54px;
-  padding: 12px 15px;
-  font-size: 14px;
-  font-weight: bold;
-  line-height: 1.3;
-  color: #0052a5;
-  border-top: solid 1px #EEEEEE;
-  border-bottom: solid 1px #EEEEEE;
-}
-
-.c2 {
-  grid-area: title;
-}
-
-.c3 {
-  grid-area: icon;
-  display: block;
-  width: 12px;
-  height: 12px;
-  -webkit-transform: rotate(90deg);
-  -ms-transform: rotate(90deg);
-  transform: rotate(90deg);
-}
-
-@media screen and (max-width:370px) {
-
-}
-
-@media screen and (max-width:370px) {
-
-}
-
-@media screen and (max-width:370px) {
-
-}
-
-<div
-    className="c0"
-  >
     <div
-      className="c1"
-      onClick={[Function]}
+      className="c4"
       open={false}
     >
-      <span
-        className="c2"
-      >
-        call_doctor_text32
-      </span>
-      <svg
-        className="c3"
-        open={false}
-      >
-        angle-right.svg
-      </svg>
+      <p>
+        call_doctor_text1
+      </p>
+      <p>
+        call_doctor_text2
+         
+        <a
+          className="c5"
+          href="https://www.nfz.gov.pl/aktualnosci/aktualnosci-oddzialow/gdzie-sie-leczyc-w-czasie-epidemii-koronawirusa,401.html"
+          target="_blank"
+        >
+          call_doctor_text3
+        </a>
+         
+        call_doctor_text31
+      </p>
+      <p>
+        call_doctor_text4
+      </p>
+      <ul>
+        <li>
+          call_doctor_text5
+        </li>
+        <li>
+          call_doctor_text6
+        </li>
+        <li>
+          call_doctor_text7
+        </li>
+        <li>
+          call_doctor_text8
+        </li>
+      </ul>
+      <p>
+        call_doctor_text9
+      </p>
+      <ul>
+        <li>
+          call_doctor_text10
+        </li>
+        <li>
+          call_doctor_text11
+        </li>
+        <li>
+          call_doctor_text12
+        </li>
+      </ul>
+      <p>
+        call_doctor_text13
+      </p>
     </div>
   </div>,
   .c0 {
@@ -1523,6 +1530,227 @@ Array [
   -webkit-transform: rotate(90deg);
   -ms-transform: rotate(90deg);
   transform: rotate(90deg);
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.c4 {
+  display: block;
+  width: 100%;
+  max-height: 0;
+  padding: 0 15px 0 15px;
+  font-size: 14px;
+  line-height: 1.61;
+  color: #1b1b1b;
+  white-space: pre-line;
+  -webkit-transition: padding 0.5s, max-height 0.4s cubic-bezier(0,1,0,1) -0.1s;
+  transition: padding 0.5s, max-height 0.4s cubic-bezier(0,1,0,1) -0.1s;
+  overflow: hidden;
+}
+
+.c4 * {
+  font-size: 14px;
+  line-height: 1.61;
+  color: #1b1b1b;
+}
+
+.c4 a {
+  color: #0052a5;
+}
+
+.c5 {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+  color: #0052a5;
+}
+
+@media screen and (max-width:370px) {
+
+}
+
+@media screen and (max-width:370px) {
+
+}
+
+@media screen and (max-width:370px) {
+
+}
+
+<div
+    className="c0"
+  >
+    <div
+      className="c1"
+      onClick={[Function]}
+      open={false}
+    >
+      <span
+        className="c2"
+      >
+        call_doctor_text32
+      </span>
+      <svg
+        className="c3"
+        open={false}
+      >
+        angle-right.svg
+      </svg>
+    </div>
+    <div
+      className="c4"
+      open={false}
+    >
+      <ul>
+        <li>
+          <div
+            className="bold"
+          >
+            call_doctor_text14
+          </div>
+          <div
+            className="normal"
+          >
+            call_doctor_text15
+             
+            <a
+              className="c5"
+              href="https://gis.gov.pl/zdrowie/zasady-prawidlowego-mycia-rak/"
+              target="_blank"
+            >
+              call_doctor_text16
+            </a>
+             
+            call_doctor_text33
+          </div>
+        </li>
+        <li>
+          <div
+            className="bold"
+          >
+            call_doctor_text17
+          </div>
+          <div
+            className="normal"
+          >
+            call_doctor_text18
+          </div>
+        </li>
+        <li>
+          <div
+            className="bold"
+          >
+            call_doctor_text19
+          </div>
+          <div
+            className="normal"
+          >
+            call_doctor_text20
+          </div>
+        </li>
+        <li>
+          <div
+            className="bold"
+          >
+            call_doctor_text21
+          </div>
+          <div
+            className="normal"
+          >
+            call_doctor_text22
+          </div>
+        </li>
+        <li>
+          <div
+            className="bold"
+          >
+            call_doctor_text23
+          </div>
+          <div
+            className="normal"
+          >
+            call_doctor_text24
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>,
+  .c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: wrap row;
+  -ms-flex-flow: wrap row;
+  flex-flow: wrap row;
+  width: 100%;
+  margin-top: -1px;
+}
+
+.c1 {
+  position: relative;
+  display: grid;
+  grid-template-areas: 'title icon';
+  grid-template-columns: 1fr 14px;
+  grid-column-gap: 16px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 100%;
+  min-height: 54px;
+  padding: 12px 15px;
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 1.3;
+  color: #0052a5;
+  border-top: solid 1px #EEEEEE;
+  border-bottom: solid 1px #EEEEEE;
+}
+
+.c2 {
+  grid-area: title;
+}
+
+.c3 {
+  grid-area: icon;
+  display: block;
+  width: 12px;
+  height: 12px;
+  -webkit-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  transform: rotate(90deg);
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.c4 {
+  display: block;
+  width: 100%;
+  max-height: 0;
+  padding: 0 15px 0 15px;
+  font-size: 14px;
+  line-height: 1.61;
+  color: #1b1b1b;
+  white-space: pre-line;
+  -webkit-transition: padding 0.5s, max-height 0.4s cubic-bezier(0,1,0,1) -0.1s;
+  transition: padding 0.5s, max-height 0.4s cubic-bezier(0,1,0,1) -0.1s;
+  overflow: hidden;
+}
+
+.c4 * {
+  font-size: 14px;
+  line-height: 1.61;
+  color: #1b1b1b;
+}
+
+.c4 a {
+  color: #0052a5;
+}
+
+.c5 {
+  width: auto;
+  font-weight: 700;
+  color: #0052a5;
 }
 
 @media screen and (max-width:370px) {
@@ -1556,6 +1784,32 @@ Array [
       >
         angle-right.svg
       </svg>
+    </div>
+    <div
+      className="c4"
+      open={false}
+    >
+      <p>
+        call_doctor_text25
+         
+        <a
+          className="c5"
+          href="tel:26"
+        >
+          call_doctor_text26
+        </a>
+         
+        call_doctor_text27
+         
+        <a
+          className="c5"
+          href="tel:28"
+        >
+          call_doctor_text28
+        </a>
+         
+        call_doctor_text29
+      </p>
     </div>
   </div>,
   .c1 {
@@ -2228,6 +2482,38 @@ Array [
   -webkit-transform: rotate(90deg);
   -ms-transform: rotate(90deg);
   transform: rotate(90deg);
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.c4 {
+  display: block;
+  width: 100%;
+  max-height: 0;
+  padding: 0 15px 0 15px;
+  font-size: 14px;
+  line-height: 1.61;
+  color: #1b1b1b;
+  white-space: pre-line;
+  -webkit-transition: padding 0.5s, max-height 0.4s cubic-bezier(0,1,0,1) -0.1s;
+  transition: padding 0.5s, max-height 0.4s cubic-bezier(0,1,0,1) -0.1s;
+  overflow: hidden;
+}
+
+.c4 * {
+  font-size: 14px;
+  line-height: 1.61;
+  color: #1b1b1b;
+}
+
+.c4 a {
+  color: #0052a5;
+}
+
+.c5 {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+  color: #0052a5;
 }
 
 @media screen and (max-width:370px) {
@@ -2262,6 +2548,42 @@ Array [
         angle-right.svg
       </svg>
     </div>
+    <div
+      className="c4"
+      open={false}
+    >
+      <p>
+        <a
+          className="c5"
+          href="https://pacjent.gov.pl/podejrzewasz-ze-masz-koronawirusa#znajdz-stacje-sanitarno-epidemiologiczna"
+          target="_blank"
+        >
+          isolation_ambulance_text1
+        </a>
+         
+        <a
+          className="c5"
+          href="https://pacjent.gov.pl/podejrzewasz-ze-masz-koronawirusa#szpitale-z-oddzialami-zakaznymi"
+          target="_blank"
+        >
+          isolation_ambulance_text2
+        </a>
+      </p>
+      <p>
+        isolation_ambulance_text3
+      </p>
+      <p>
+        isolation_ambulance_text4
+         
+        <a
+          className="c5"
+          href="https://bit.ly/teleporady-lista"
+          target="_blank"
+        >
+          isolation_ambulance_text5
+        </a>
+      </p>
+    </div>
   </div>,
   .c0 {
   display: -webkit-box;
@@ -2308,6 +2630,44 @@ Array [
   -webkit-transform: rotate(90deg);
   -ms-transform: rotate(90deg);
   transform: rotate(90deg);
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.c4 {
+  display: block;
+  width: 100%;
+  max-height: 0;
+  padding: 0 15px 0 15px;
+  font-size: 14px;
+  line-height: 1.61;
+  color: #1b1b1b;
+  white-space: pre-line;
+  -webkit-transition: padding 0.5s, max-height 0.4s cubic-bezier(0,1,0,1) -0.1s;
+  transition: padding 0.5s, max-height 0.4s cubic-bezier(0,1,0,1) -0.1s;
+  overflow: hidden;
+}
+
+.c4 * {
+  font-size: 14px;
+  line-height: 1.61;
+  color: #1b1b1b;
+}
+
+.c4 a {
+  color: #0052a5;
+}
+
+.c6 {
+  width: auto;
+  font-weight: 700;
+  color: #0052a5;
+}
+
+.c5 {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+  color: #0052a5;
 }
 
 @media screen and (max-width:370px) {
@@ -2342,85 +2702,46 @@ Array [
         angle-right.svg
       </svg>
     </div>
-  </div>,
-  .c0 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-flow: wrap row;
-  -ms-flex-flow: wrap row;
-  flex-flow: wrap row;
-  width: 100%;
-  margin-top: -1px;
-}
-
-.c1 {
-  position: relative;
-  display: grid;
-  grid-template-areas: 'title icon';
-  grid-template-columns: 1fr 14px;
-  grid-column-gap: 16px;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  width: 100%;
-  min-height: 54px;
-  padding: 12px 15px;
-  font-size: 14px;
-  font-weight: bold;
-  line-height: 1.3;
-  color: #0052a5;
-  border-top: solid 1px #EEEEEE;
-  border-bottom: solid 1px #EEEEEE;
-}
-
-.c2 {
-  grid-area: title;
-}
-
-.c3 {
-  grid-area: icon;
-  display: block;
-  width: 12px;
-  height: 12px;
-  -webkit-transform: rotate(90deg);
-  -ms-transform: rotate(90deg);
-  transform: rotate(90deg);
-}
-
-@media screen and (max-width:370px) {
-
-}
-
-@media screen and (max-width:370px) {
-
-}
-
-@media screen and (max-width:370px) {
-
-}
-
-<div
-    className="c0"
-  >
     <div
-      className="c1"
-      onClick={[Function]}
+      className="c4"
       open={false}
     >
-      <span
-        className="c2"
-      >
-        isolation_ambulance_text24
-      </span>
-      <svg
-        className="c3"
-        open={false}
-      >
-        angle-right.svg
-      </svg>
+      <p>
+        isolation_ambulance_text6
+      </p>
+      <p>
+        isolation_ambulance_text7
+      </p>
+      <p>
+        <a
+          className="c5"
+          href="https://pacjent.gov.pl/podejrzewasz-ze-masz-koronawirusa#szpitale-z-oddzialami-zakaznymi"
+          target="_blank"
+        >
+          isolation_ambulance_text8
+        </a>
+      </p>
+      <p>
+        isolation_ambulance_text9
+         
+        <a
+          className="c6"
+          href="tel:10"
+        >
+          isolation_ambulance_text10
+        </a>
+         
+        isolation_ambulance_text11
+         
+        <a
+          className="c6"
+          href="tel:12"
+        >
+          isolation_ambulance_text12
+        </a>
+         
+        isolation_ambulance_text13
+      </p>
     </div>
   </div>,
   .c0 {
@@ -2468,6 +2789,167 @@ Array [
   -webkit-transform: rotate(90deg);
   -ms-transform: rotate(90deg);
   transform: rotate(90deg);
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.c4 {
+  display: block;
+  width: 100%;
+  max-height: 0;
+  padding: 0 15px 0 15px;
+  font-size: 14px;
+  line-height: 1.61;
+  color: #1b1b1b;
+  white-space: pre-line;
+  -webkit-transition: padding 0.5s, max-height 0.4s cubic-bezier(0,1,0,1) -0.1s;
+  transition: padding 0.5s, max-height 0.4s cubic-bezier(0,1,0,1) -0.1s;
+  overflow: hidden;
+}
+
+.c4 * {
+  font-size: 14px;
+  line-height: 1.61;
+  color: #1b1b1b;
+}
+
+.c4 a {
+  color: #0052a5;
+}
+
+.c5 {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+  color: #0052a5;
+}
+
+@media screen and (max-width:370px) {
+
+}
+
+@media screen and (max-width:370px) {
+
+}
+
+@media screen and (max-width:370px) {
+
+}
+
+<div
+    className="c0"
+  >
+    <div
+      className="c1"
+      onClick={[Function]}
+      open={false}
+    >
+      <span
+        className="c2"
+      >
+        isolation_ambulance_text24
+      </span>
+      <svg
+        className="c3"
+        open={false}
+      >
+        angle-right.svg
+      </svg>
+    </div>
+    <div
+      className="c4"
+      open={false}
+    >
+      <p>
+        isolation_ambulance_text14
+      </p>
+      <p>
+        <a
+          className="c5"
+          href="https://pacjent.gov.pl/bez-maski-ani-rusz#Jak-zakladac-i-zdejmowac-maske"
+          target="_blank"
+        >
+          isolation_ambulance_text15
+        </a>
+      </p>
+    </div>
+  </div>,
+  .c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: wrap row;
+  -ms-flex-flow: wrap row;
+  flex-flow: wrap row;
+  width: 100%;
+  margin-top: -1px;
+}
+
+.c1 {
+  position: relative;
+  display: grid;
+  grid-template-areas: 'title icon';
+  grid-template-columns: 1fr 14px;
+  grid-column-gap: 16px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 100%;
+  min-height: 54px;
+  padding: 12px 15px;
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 1.3;
+  color: #0052a5;
+  border-top: solid 1px #EEEEEE;
+  border-bottom: solid 1px #EEEEEE;
+}
+
+.c2 {
+  grid-area: title;
+}
+
+.c3 {
+  grid-area: icon;
+  display: block;
+  width: 12px;
+  height: 12px;
+  -webkit-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  transform: rotate(90deg);
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.c4 {
+  display: block;
+  width: 100%;
+  max-height: 0;
+  padding: 0 15px 0 15px;
+  font-size: 14px;
+  line-height: 1.61;
+  color: #1b1b1b;
+  white-space: pre-line;
+  -webkit-transition: padding 0.5s, max-height 0.4s cubic-bezier(0,1,0,1) -0.1s;
+  transition: padding 0.5s, max-height 0.4s cubic-bezier(0,1,0,1) -0.1s;
+  overflow: hidden;
+}
+
+.c4 * {
+  font-size: 14px;
+  line-height: 1.61;
+  color: #1b1b1b;
+}
+
+.c4 a {
+  color: #0052a5;
+}
+
+.c5 {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+  color: #0052a5;
 }
 
 @media screen and (max-width:370px) {
@@ -2501,6 +2983,38 @@ Array [
       >
         angle-right.svg
       </svg>
+    </div>
+    <div
+      className="c4"
+      open={false}
+    >
+      <p>
+        isolation_ambulance_text16
+      </p>
+      <ul>
+        <li>
+          isolation_ambulance_text17
+           
+          <a
+            className="c5"
+            href="https://gis.gov.pl/zdrowie/zasady-prawidlowego-mycia-rak/"
+            target="_blank"
+          >
+            isolation_ambulance_text18
+          </a>
+           
+          isolation_ambulance_text26
+        </li>
+        <li>
+          isolation_ambulance_text19
+        </li>
+        <li>
+          isolation_ambulance_text20
+        </li>
+        <li>
+          isolation_ambulance_text21
+        </li>
+      </ul>
     </div>
   </div>,
   .c1 {
@@ -3173,6 +3687,38 @@ Array [
   -webkit-transform: rotate(90deg);
   -ms-transform: rotate(90deg);
   transform: rotate(90deg);
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.c4 {
+  display: block;
+  width: 100%;
+  max-height: 0;
+  padding: 0 15px 0 15px;
+  font-size: 14px;
+  line-height: 1.61;
+  color: #1b1b1b;
+  white-space: pre-line;
+  -webkit-transition: padding 0.5s, max-height 0.4s cubic-bezier(0,1,0,1) -0.1s;
+  transition: padding 0.5s, max-height 0.4s cubic-bezier(0,1,0,1) -0.1s;
+  overflow: hidden;
+}
+
+.c4 * {
+  font-size: 14px;
+  line-height: 1.61;
+  color: #1b1b1b;
+}
+
+.c4 a {
+  color: #0052a5;
+}
+
+.c5 {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+  color: #0052a5;
 }
 
 @media screen and (max-width:370px) {
@@ -3207,6 +3753,42 @@ Array [
         angle-right.svg
       </svg>
     </div>
+    <div
+      className="c4"
+      open={false}
+    >
+      <p>
+        <a
+          className="c5"
+          href="https://pacjent.gov.pl/podejrzewasz-ze-masz-koronawirusa#znajdz-stacje-sanitarno-epidemiologiczna"
+          target="_blank"
+        >
+          isolation_call_text1
+        </a>
+         
+        <a
+          className="c5"
+          href="https://pacjent.gov.pl/podejrzewasz-ze-masz-koronawirusa#szpitale-z-oddzialami-zakaznymi"
+          target="_blank"
+        >
+          isolation_call_text2
+        </a>
+      </p>
+      <p>
+        isolation_call_text3
+      </p>
+      <p>
+        isolation_call_text4
+         
+        <a
+          className="c5"
+          href="https://bit.ly/teleporady-lista"
+          target="_blank"
+        >
+          isolation_call_text5
+        </a>
+      </p>
+    </div>
   </div>,
   .c0 {
   display: -webkit-box;
@@ -3253,6 +3835,44 @@ Array [
   -webkit-transform: rotate(90deg);
   -ms-transform: rotate(90deg);
   transform: rotate(90deg);
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.c4 {
+  display: block;
+  width: 100%;
+  max-height: 0;
+  padding: 0 15px 0 15px;
+  font-size: 14px;
+  line-height: 1.61;
+  color: #1b1b1b;
+  white-space: pre-line;
+  -webkit-transition: padding 0.5s, max-height 0.4s cubic-bezier(0,1,0,1) -0.1s;
+  transition: padding 0.5s, max-height 0.4s cubic-bezier(0,1,0,1) -0.1s;
+  overflow: hidden;
+}
+
+.c4 * {
+  font-size: 14px;
+  line-height: 1.61;
+  color: #1b1b1b;
+}
+
+.c4 a {
+  color: #0052a5;
+}
+
+.c6 {
+  width: auto;
+  font-weight: 700;
+  color: #0052a5;
+}
+
+.c5 {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+  color: #0052a5;
 }
 
 @media screen and (max-width:370px) {
@@ -3287,85 +3907,46 @@ Array [
         angle-right.svg
       </svg>
     </div>
-  </div>,
-  .c0 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-flow: wrap row;
-  -ms-flex-flow: wrap row;
-  flex-flow: wrap row;
-  width: 100%;
-  margin-top: -1px;
-}
-
-.c1 {
-  position: relative;
-  display: grid;
-  grid-template-areas: 'title icon';
-  grid-template-columns: 1fr 14px;
-  grid-column-gap: 16px;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  width: 100%;
-  min-height: 54px;
-  padding: 12px 15px;
-  font-size: 14px;
-  font-weight: bold;
-  line-height: 1.3;
-  color: #0052a5;
-  border-top: solid 1px #EEEEEE;
-  border-bottom: solid 1px #EEEEEE;
-}
-
-.c2 {
-  grid-area: title;
-}
-
-.c3 {
-  grid-area: icon;
-  display: block;
-  width: 12px;
-  height: 12px;
-  -webkit-transform: rotate(90deg);
-  -ms-transform: rotate(90deg);
-  transform: rotate(90deg);
-}
-
-@media screen and (max-width:370px) {
-
-}
-
-@media screen and (max-width:370px) {
-
-}
-
-@media screen and (max-width:370px) {
-
-}
-
-<div
-    className="c0"
-  >
     <div
-      className="c1"
-      onClick={[Function]}
+      className="c4"
       open={false}
     >
-      <span
-        className="c2"
-      >
-        isolation_call_text24
-      </span>
-      <svg
-        className="c3"
-        open={false}
-      >
-        angle-right.svg
-      </svg>
+      <p>
+        isolation_call_text6
+      </p>
+      <p>
+        isolation_call_text7
+      </p>
+      <p>
+        <a
+          className="c5"
+          href="https://pacjent.gov.pl/podejrzewasz-ze-masz-koronawirusa#szpitale-z-oddzialami-zakaznymi"
+          target="_blank"
+        >
+          isolation_call_text8
+        </a>
+      </p>
+      <p>
+        isolation_call_text9
+         
+        <a
+          className="c6"
+          href="tel:10"
+        >
+          isolation_call_text10
+        </a>
+         
+        isolation_call_text11
+         
+        <a
+          className="c6"
+          href="tel:12"
+        >
+          isolation_call_text12
+        </a>
+         
+        isolation_call_text13
+      </p>
     </div>
   </div>,
   .c0 {
@@ -3413,6 +3994,167 @@ Array [
   -webkit-transform: rotate(90deg);
   -ms-transform: rotate(90deg);
   transform: rotate(90deg);
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.c4 {
+  display: block;
+  width: 100%;
+  max-height: 0;
+  padding: 0 15px 0 15px;
+  font-size: 14px;
+  line-height: 1.61;
+  color: #1b1b1b;
+  white-space: pre-line;
+  -webkit-transition: padding 0.5s, max-height 0.4s cubic-bezier(0,1,0,1) -0.1s;
+  transition: padding 0.5s, max-height 0.4s cubic-bezier(0,1,0,1) -0.1s;
+  overflow: hidden;
+}
+
+.c4 * {
+  font-size: 14px;
+  line-height: 1.61;
+  color: #1b1b1b;
+}
+
+.c4 a {
+  color: #0052a5;
+}
+
+.c5 {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+  color: #0052a5;
+}
+
+@media screen and (max-width:370px) {
+
+}
+
+@media screen and (max-width:370px) {
+
+}
+
+@media screen and (max-width:370px) {
+
+}
+
+<div
+    className="c0"
+  >
+    <div
+      className="c1"
+      onClick={[Function]}
+      open={false}
+    >
+      <span
+        className="c2"
+      >
+        isolation_call_text24
+      </span>
+      <svg
+        className="c3"
+        open={false}
+      >
+        angle-right.svg
+      </svg>
+    </div>
+    <div
+      className="c4"
+      open={false}
+    >
+      <p>
+        isolation_call_text14
+      </p>
+      <p>
+        <a
+          className="c5"
+          href="https://pacjent.gov.pl/bez-maski-ani-rusz#Jak-zakladac-i-zdejmowac-maske"
+          target="_blank"
+        >
+          isolation_call_text15
+        </a>
+      </p>
+    </div>
+  </div>,
+  .c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: wrap row;
+  -ms-flex-flow: wrap row;
+  flex-flow: wrap row;
+  width: 100%;
+  margin-top: -1px;
+}
+
+.c1 {
+  position: relative;
+  display: grid;
+  grid-template-areas: 'title icon';
+  grid-template-columns: 1fr 14px;
+  grid-column-gap: 16px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 100%;
+  min-height: 54px;
+  padding: 12px 15px;
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 1.3;
+  color: #0052a5;
+  border-top: solid 1px #EEEEEE;
+  border-bottom: solid 1px #EEEEEE;
+}
+
+.c2 {
+  grid-area: title;
+}
+
+.c3 {
+  grid-area: icon;
+  display: block;
+  width: 12px;
+  height: 12px;
+  -webkit-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  transform: rotate(90deg);
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.c4 {
+  display: block;
+  width: 100%;
+  max-height: 0;
+  padding: 0 15px 0 15px;
+  font-size: 14px;
+  line-height: 1.61;
+  color: #1b1b1b;
+  white-space: pre-line;
+  -webkit-transition: padding 0.5s, max-height 0.4s cubic-bezier(0,1,0,1) -0.1s;
+  transition: padding 0.5s, max-height 0.4s cubic-bezier(0,1,0,1) -0.1s;
+  overflow: hidden;
+}
+
+.c4 * {
+  font-size: 14px;
+  line-height: 1.61;
+  color: #1b1b1b;
+}
+
+.c4 a {
+  color: #0052a5;
+}
+
+.c5 {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+  color: #0052a5;
 }
 
 @media screen and (max-width:370px) {
@@ -3446,6 +4188,38 @@ Array [
       >
         angle-right.svg
       </svg>
+    </div>
+    <div
+      className="c4"
+      open={false}
+    >
+      <p>
+        isolation_call_text16
+      </p>
+      <ul>
+        <li>
+          isolation_call_text17
+           
+          <a
+            className="c5"
+            href="https://gis.gov.pl/zdrowie/zasady-prawidlowego-mycia-rak/"
+            target="_blank"
+          >
+            isolation_call_text18
+          </a>
+           
+          isolation_call_text26
+        </li>
+        <li>
+          isolation_call_text19
+        </li>
+        <li>
+          isolation_call_text20
+        </li>
+        <li>
+          isolation_call_text21
+        </li>
+      </ul>
     </div>
   </div>,
   .c1 {
@@ -4073,6 +4847,32 @@ Array [
   -webkit-transform: rotate(90deg);
   -ms-transform: rotate(90deg);
   transform: rotate(90deg);
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.c4 {
+  display: block;
+  width: 100%;
+  max-height: 0;
+  padding: 0 15px 0 15px;
+  font-size: 14px;
+  line-height: 1.61;
+  color: #1b1b1b;
+  white-space: pre-line;
+  -webkit-transition: padding 0.5s, max-height 0.4s cubic-bezier(0,1,0,1) -0.1s;
+  transition: padding 0.5s, max-height 0.4s cubic-bezier(0,1,0,1) -0.1s;
+  overflow: hidden;
+}
+
+.c4 * {
+  font-size: 14px;
+  line-height: 1.61;
+  color: #1b1b1b;
+}
+
+.c4 a {
+  color: #0052a5;
 }
 
 <div
@@ -4095,6 +4895,14 @@ Array [
         angle-right.svg
       </svg>
     </div>
+    <div
+      className="c4"
+      open={false}
+    >
+      <p>
+        quarantine_text1
+      </p>
+    </div>
   </div>,
   .c0 {
   display: -webkit-box;
@@ -4141,6 +4949,32 @@ Array [
   -webkit-transform: rotate(90deg);
   -ms-transform: rotate(90deg);
   transform: rotate(90deg);
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.c4 {
+  display: block;
+  width: 100%;
+  max-height: 0;
+  padding: 0 15px 0 15px;
+  font-size: 14px;
+  line-height: 1.61;
+  color: #1b1b1b;
+  white-space: pre-line;
+  -webkit-transition: padding 0.5s, max-height 0.4s cubic-bezier(0,1,0,1) -0.1s;
+  transition: padding 0.5s, max-height 0.4s cubic-bezier(0,1,0,1) -0.1s;
+  overflow: hidden;
+}
+
+.c4 * {
+  font-size: 14px;
+  line-height: 1.61;
+  color: #1b1b1b;
+}
+
+.c4 a {
+  color: #0052a5;
 }
 
 <div
@@ -4163,6 +4997,34 @@ Array [
         angle-right.svg
       </svg>
     </div>
+    <div
+      className="c4"
+      open={false}
+    >
+      <ul>
+        <li>
+          quarantine_text2
+        </li>
+        <li>
+          quarantine_text3
+        </li>
+        <li>
+          quarantine_text4
+        </li>
+        <li>
+          quarantine_text5
+        </li>
+        <li>
+          quarantine_text6
+        </li>
+        <li>
+          quarantine_text7
+        </li>
+        <li>
+          quarantine_text8
+        </li>
+      </ul>
+    </div>
   </div>,
   .c0 {
   display: -webkit-box;
@@ -4209,6 +5071,38 @@ Array [
   -webkit-transform: rotate(90deg);
   -ms-transform: rotate(90deg);
   transform: rotate(90deg);
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.c4 {
+  display: block;
+  width: 100%;
+  max-height: 0;
+  padding: 0 15px 0 15px;
+  font-size: 14px;
+  line-height: 1.61;
+  color: #1b1b1b;
+  white-space: pre-line;
+  -webkit-transition: padding 0.5s, max-height 0.4s cubic-bezier(0,1,0,1) -0.1s;
+  transition: padding 0.5s, max-height 0.4s cubic-bezier(0,1,0,1) -0.1s;
+  overflow: hidden;
+}
+
+.c4 * {
+  font-size: 14px;
+  line-height: 1.61;
+  color: #1b1b1b;
+}
+
+.c4 a {
+  color: #0052a5;
+}
+
+.c5 {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+  color: #0052a5;
 }
 
 <div
@@ -4231,73 +5125,101 @@ Array [
         angle-right.svg
       </svg>
     </div>
-  </div>,
-  .c0 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-flow: wrap row;
-  -ms-flex-flow: wrap row;
-  flex-flow: wrap row;
-  width: 100%;
-  margin-top: -1px;
-}
-
-.c1 {
-  position: relative;
-  display: grid;
-  grid-template-areas: 'title icon';
-  grid-template-columns: 1fr 14px;
-  grid-column-gap: 16px;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  width: 100%;
-  min-height: 54px;
-  padding: 12px 15px;
-  font-size: 14px;
-  font-weight: bold;
-  line-height: 1.3;
-  color: #0052a5;
-  border-top: solid 1px #EEEEEE;
-  border-bottom: solid 1px #EEEEEE;
-}
-
-.c2 {
-  grid-area: title;
-}
-
-.c3 {
-  grid-area: icon;
-  display: block;
-  width: 12px;
-  height: 12px;
-  -webkit-transform: rotate(90deg);
-  -ms-transform: rotate(90deg);
-  transform: rotate(90deg);
-}
-
-<div
-    className="c0"
-  >
     <div
-      className="c1"
-      onClick={[Function]}
+      className="c4"
       open={false}
     >
-      <span
-        className="c2"
-      >
-        quarantine_text49
-      </span>
-      <svg
-        className="c3"
-        open={false}
-      >
-        angle-right.svg
-      </svg>
+      <ul>
+        <li>
+          <div
+            className="bold"
+          >
+            quarantine_text9
+          </div>
+          <div
+            className="normal"
+          >
+            quarantine_text10
+             
+            <a
+              className="c5"
+              href="https://gis.gov.pl/zdrowie/zasady-prawidlowego-mycia-rak/"
+              target="_blank"
+            >
+              quarantine_text11
+            </a>
+             
+            quarantine_text48
+          </div>
+        </li>
+        <li>
+          <div
+            className="bold"
+          >
+            quarantine_text12
+          </div>
+          <div
+            className="normal"
+          >
+            quarantine_text13
+          </div>
+        </li>
+        <li>
+          <div
+            className="bold"
+          >
+            quarantine_text14
+          </div>
+          <div
+            className="normal"
+          >
+            quarantine_text15
+          </div>
+        </li>
+        <li>
+          <div
+            className="bold"
+          >
+            quarantine_text16
+          </div>
+          <div
+            className="normal"
+          >
+            quarantine_text17
+          </div>
+        </li>
+        <li>
+          <div
+            className="bold"
+          >
+            quarantine_text18
+          </div>
+          <div
+            className="normal"
+          >
+            quarantine_text19
+          </div>
+        </li>
+        <li>
+          <div
+            className="bold"
+          >
+            quarantine_text20
+          </div>
+        </li>
+        <li>
+          <div
+            className="bold"
+          >
+            quarantine_text21
+          </div>
+          <div
+            className="normal"
+          >
+            quarantine_text22
+          </div>
+        </li>
+      </ul>
     </div>
   </div>,
   .c0 {
@@ -4345,6 +5267,202 @@ Array [
   -webkit-transform: rotate(90deg);
   -ms-transform: rotate(90deg);
   transform: rotate(90deg);
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.c4 {
+  display: block;
+  width: 100%;
+  max-height: 0;
+  padding: 0 15px 0 15px;
+  font-size: 14px;
+  line-height: 1.61;
+  color: #1b1b1b;
+  white-space: pre-line;
+  -webkit-transition: padding 0.5s, max-height 0.4s cubic-bezier(0,1,0,1) -0.1s;
+  transition: padding 0.5s, max-height 0.4s cubic-bezier(0,1,0,1) -0.1s;
+  overflow: hidden;
+}
+
+.c4 * {
+  font-size: 14px;
+  line-height: 1.61;
+  color: #1b1b1b;
+}
+
+.c4 a {
+  color: #0052a5;
+}
+
+.c6 {
+  width: auto;
+  font-weight: 700;
+  color: #0052a5;
+}
+
+.c5 {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+  color: #0052a5;
+}
+
+<div
+    className="c0"
+  >
+    <div
+      className="c1"
+      onClick={[Function]}
+      open={false}
+    >
+      <span
+        className="c2"
+      >
+        quarantine_text49
+      </span>
+      <svg
+        className="c3"
+        open={false}
+      >
+        angle-right.svg
+      </svg>
+    </div>
+    <div
+      className="c4"
+      open={false}
+    >
+      <p>
+        quarantine_text23
+      </p>
+      <ul>
+        <li>
+          quarantine_text24
+        </li>
+        <li>
+          quarantine_text25
+        </li>
+        <li>
+          quarantine_text26
+        </li>
+      </ul>
+      <p>
+        quarantine_text27
+      </p>
+      <p>
+        <a
+          className="c5"
+          href="https://pacjent.gov.pl/podejrzewasz-ze-masz-koronawirusa#znajdz-stacje-sanitarno-epidemiologiczna"
+          target="_blank"
+        >
+          quarantine_text28
+        </a>
+         
+        <a
+          className="c5"
+          href="https://pacjent.gov.pl/podejrzewasz-ze-masz-koronawirusa#szpitale-z-oddzialami-zakaznymi"
+          target="_blank"
+        >
+          quarantine_text29
+        </a>
+      </p>
+      <p>
+        quarantine_text30
+      </p>
+      <p>
+        quarantine_text31
+         
+        <a
+          className="c6"
+          href="tel:32"
+        >
+          quarantine_text32
+        </a>
+         
+        quarantine_text33
+         
+        <a
+          className="c6"
+          href="tel:34"
+        >
+          quarantine_text34
+        </a>
+         
+        quarantine_text35
+         
+      </p>
+    </div>
+  </div>,
+  .c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: wrap row;
+  -ms-flex-flow: wrap row;
+  flex-flow: wrap row;
+  width: 100%;
+  margin-top: -1px;
+}
+
+.c1 {
+  position: relative;
+  display: grid;
+  grid-template-areas: 'title icon';
+  grid-template-columns: 1fr 14px;
+  grid-column-gap: 16px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 100%;
+  min-height: 54px;
+  padding: 12px 15px;
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 1.3;
+  color: #0052a5;
+  border-top: solid 1px #EEEEEE;
+  border-bottom: solid 1px #EEEEEE;
+}
+
+.c2 {
+  grid-area: title;
+}
+
+.c3 {
+  grid-area: icon;
+  display: block;
+  width: 12px;
+  height: 12px;
+  -webkit-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  transform: rotate(90deg);
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.c4 {
+  display: block;
+  width: 100%;
+  max-height: 0;
+  padding: 0 15px 0 15px;
+  font-size: 14px;
+  line-height: 1.61;
+  color: #1b1b1b;
+  white-space: pre-line;
+  -webkit-transition: padding 0.5s, max-height 0.4s cubic-bezier(0,1,0,1) -0.1s;
+  transition: padding 0.5s, max-height 0.4s cubic-bezier(0,1,0,1) -0.1s;
+  overflow: hidden;
+}
+
+.c4 * {
+  font-size: 14px;
+  line-height: 1.61;
+  color: #1b1b1b;
+}
+
+.c4 a {
+  color: #0052a5;
 }
 
 <div
@@ -4366,6 +5484,56 @@ Array [
       >
         angle-right.svg
       </svg>
+    </div>
+    <div
+      className="c4"
+      open={false}
+    >
+      <p>
+        quarantine_text36
+      </p>
+      <ul>
+        <li>
+          <p>
+            <strong>
+              quarantine_text37
+            </strong>
+          </p>
+          <p>
+            quarantine_text38
+          </p>
+        </li>
+        <li>
+          <p>
+            <strong>
+              quarantine_text39
+            </strong>
+          </p>
+          <p>
+            quarantine_text40
+          </p>
+        </li>
+        <li>
+          <p>
+            <strong>
+              quarantine_text41
+            </strong>
+          </p>
+          <p>
+            quarantine_text42
+          </p>
+        </li>
+        <li>
+          <p>
+            <strong>
+              quarantine_text43
+            </strong>
+          </p>
+          <p>
+            quarantine_text44
+          </p>
+        </li>
+      </ul>
     </div>
   </div>,
   .c1 {
@@ -9821,6 +10989,38 @@ Array [
   -webkit-transform: rotate(90deg);
   -ms-transform: rotate(90deg);
   transform: rotate(90deg);
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.c4 {
+  display: block;
+  width: 100%;
+  max-height: 0;
+  padding: 0 15px 0 15px;
+  font-size: 14px;
+  line-height: 1.61;
+  color: #1b1b1b;
+  white-space: pre-line;
+  -webkit-transition: padding 0.5s, max-height 0.4s cubic-bezier(0,1,0,1) -0.1s;
+  transition: padding 0.5s, max-height 0.4s cubic-bezier(0,1,0,1) -0.1s;
+  overflow: hidden;
+}
+
+.c4 * {
+  font-size: 14px;
+  line-height: 1.61;
+  color: #1b1b1b;
+}
+
+.c4 a {
+  color: #0052a5;
+}
+
+.c5 {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+  color: #0052a5;
 }
 
 @media screen and (max-width:370px) {
@@ -9855,85 +11055,60 @@ Array [
         angle-right.svg
       </svg>
     </div>
-  </div>,
-  .c0 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-flow: wrap row;
-  -ms-flex-flow: wrap row;
-  flex-flow: wrap row;
-  width: 100%;
-  margin-top: -1px;
-}
-
-.c1 {
-  position: relative;
-  display: grid;
-  grid-template-areas: 'title icon';
-  grid-template-columns: 1fr 14px;
-  grid-column-gap: 16px;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  width: 100%;
-  min-height: 54px;
-  padding: 12px 15px;
-  font-size: 14px;
-  font-weight: bold;
-  line-height: 1.3;
-  color: #0052a5;
-  border-top: solid 1px #EEEEEE;
-  border-bottom: solid 1px #EEEEEE;
-}
-
-.c2 {
-  grid-area: title;
-}
-
-.c3 {
-  grid-area: icon;
-  display: block;
-  width: 12px;
-  height: 12px;
-  -webkit-transform: rotate(90deg);
-  -ms-transform: rotate(90deg);
-  transform: rotate(90deg);
-}
-
-@media screen and (max-width:370px) {
-
-}
-
-@media screen and (max-width:370px) {
-
-}
-
-@media screen and (max-width:370px) {
-
-}
-
-<div
-    className="c0"
-  >
     <div
-      className="c1"
-      onClick={[Function]}
+      className="c4"
       open={false}
     >
-      <span
-        className="c2"
-      >
-        call_doctor_text32
-      </span>
-      <svg
-        className="c3"
-        open={false}
-      >
-        angle-right.svg
-      </svg>
+      <p>
+        call_doctor_text1
+      </p>
+      <p>
+        call_doctor_text2
+         
+        <a
+          className="c5"
+          href="https://www.nfz.gov.pl/aktualnosci/aktualnosci-oddzialow/gdzie-sie-leczyc-w-czasie-epidemii-koronawirusa,401.html"
+          target="_blank"
+        >
+          call_doctor_text3
+        </a>
+         
+        call_doctor_text31
+      </p>
+      <p>
+        call_doctor_text4
+      </p>
+      <ul>
+        <li>
+          call_doctor_text5
+        </li>
+        <li>
+          call_doctor_text6
+        </li>
+        <li>
+          call_doctor_text7
+        </li>
+        <li>
+          call_doctor_text8
+        </li>
+      </ul>
+      <p>
+        call_doctor_text9
+      </p>
+      <ul>
+        <li>
+          call_doctor_text10
+        </li>
+        <li>
+          call_doctor_text11
+        </li>
+        <li>
+          call_doctor_text12
+        </li>
+      </ul>
+      <p>
+        call_doctor_text13
+      </p>
     </div>
   </div>,
   .c0 {
@@ -9981,6 +11156,227 @@ Array [
   -webkit-transform: rotate(90deg);
   -ms-transform: rotate(90deg);
   transform: rotate(90deg);
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.c4 {
+  display: block;
+  width: 100%;
+  max-height: 0;
+  padding: 0 15px 0 15px;
+  font-size: 14px;
+  line-height: 1.61;
+  color: #1b1b1b;
+  white-space: pre-line;
+  -webkit-transition: padding 0.5s, max-height 0.4s cubic-bezier(0,1,0,1) -0.1s;
+  transition: padding 0.5s, max-height 0.4s cubic-bezier(0,1,0,1) -0.1s;
+  overflow: hidden;
+}
+
+.c4 * {
+  font-size: 14px;
+  line-height: 1.61;
+  color: #1b1b1b;
+}
+
+.c4 a {
+  color: #0052a5;
+}
+
+.c5 {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+  color: #0052a5;
+}
+
+@media screen and (max-width:370px) {
+
+}
+
+@media screen and (max-width:370px) {
+
+}
+
+@media screen and (max-width:370px) {
+
+}
+
+<div
+    className="c0"
+  >
+    <div
+      className="c1"
+      onClick={[Function]}
+      open={false}
+    >
+      <span
+        className="c2"
+      >
+        call_doctor_text32
+      </span>
+      <svg
+        className="c3"
+        open={false}
+      >
+        angle-right.svg
+      </svg>
+    </div>
+    <div
+      className="c4"
+      open={false}
+    >
+      <ul>
+        <li>
+          <div
+            className="bold"
+          >
+            call_doctor_text14
+          </div>
+          <div
+            className="normal"
+          >
+            call_doctor_text15
+             
+            <a
+              className="c5"
+              href="https://gis.gov.pl/zdrowie/zasady-prawidlowego-mycia-rak/"
+              target="_blank"
+            >
+              call_doctor_text16
+            </a>
+             
+            call_doctor_text33
+          </div>
+        </li>
+        <li>
+          <div
+            className="bold"
+          >
+            call_doctor_text17
+          </div>
+          <div
+            className="normal"
+          >
+            call_doctor_text18
+          </div>
+        </li>
+        <li>
+          <div
+            className="bold"
+          >
+            call_doctor_text19
+          </div>
+          <div
+            className="normal"
+          >
+            call_doctor_text20
+          </div>
+        </li>
+        <li>
+          <div
+            className="bold"
+          >
+            call_doctor_text21
+          </div>
+          <div
+            className="normal"
+          >
+            call_doctor_text22
+          </div>
+        </li>
+        <li>
+          <div
+            className="bold"
+          >
+            call_doctor_text23
+          </div>
+          <div
+            className="normal"
+          >
+            call_doctor_text24
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>,
+  .c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: wrap row;
+  -ms-flex-flow: wrap row;
+  flex-flow: wrap row;
+  width: 100%;
+  margin-top: -1px;
+}
+
+.c1 {
+  position: relative;
+  display: grid;
+  grid-template-areas: 'title icon';
+  grid-template-columns: 1fr 14px;
+  grid-column-gap: 16px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 100%;
+  min-height: 54px;
+  padding: 12px 15px;
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 1.3;
+  color: #0052a5;
+  border-top: solid 1px #EEEEEE;
+  border-bottom: solid 1px #EEEEEE;
+}
+
+.c2 {
+  grid-area: title;
+}
+
+.c3 {
+  grid-area: icon;
+  display: block;
+  width: 12px;
+  height: 12px;
+  -webkit-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  transform: rotate(90deg);
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.c4 {
+  display: block;
+  width: 100%;
+  max-height: 0;
+  padding: 0 15px 0 15px;
+  font-size: 14px;
+  line-height: 1.61;
+  color: #1b1b1b;
+  white-space: pre-line;
+  -webkit-transition: padding 0.5s, max-height 0.4s cubic-bezier(0,1,0,1) -0.1s;
+  transition: padding 0.5s, max-height 0.4s cubic-bezier(0,1,0,1) -0.1s;
+  overflow: hidden;
+}
+
+.c4 * {
+  font-size: 14px;
+  line-height: 1.61;
+  color: #1b1b1b;
+}
+
+.c4 a {
+  color: #0052a5;
+}
+
+.c5 {
+  width: auto;
+  font-weight: 700;
+  color: #0052a5;
 }
 
 @media screen and (max-width:370px) {
@@ -10014,6 +11410,32 @@ Array [
       >
         angle-right.svg
       </svg>
+    </div>
+    <div
+      className="c4"
+      open={false}
+    >
+      <p>
+        call_doctor_text25
+         
+        <a
+          className="c5"
+          href="tel:26"
+        >
+          call_doctor_text26
+        </a>
+         
+        call_doctor_text27
+         
+        <a
+          className="c5"
+          href="tel:28"
+        >
+          call_doctor_text28
+        </a>
+         
+        call_doctor_text29
+      </p>
     </div>
   </div>,
   .c1 {
@@ -11628,6 +13050,32 @@ Array [
   -webkit-transform: rotate(90deg);
   -ms-transform: rotate(90deg);
   transform: rotate(90deg);
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.c4 {
+  display: block;
+  width: 100%;
+  max-height: 0;
+  padding: 0 15px 0 15px;
+  font-size: 14px;
+  line-height: 1.61;
+  color: #1b1b1b;
+  white-space: pre-line;
+  -webkit-transition: padding 0.5s, max-height 0.4s cubic-bezier(0,1,0,1) -0.1s;
+  transition: padding 0.5s, max-height 0.4s cubic-bezier(0,1,0,1) -0.1s;
+  overflow: hidden;
+}
+
+.c4 * {
+  font-size: 14px;
+  line-height: 1.61;
+  color: #1b1b1b;
+}
+
+.c4 a {
+  color: #0052a5;
 }
 
 <div
@@ -11650,6 +13098,14 @@ Array [
         angle-right.svg
       </svg>
     </div>
+    <div
+      className="c4"
+      open={false}
+    >
+      <p>
+        quarantine_text1
+      </p>
+    </div>
   </div>,
   .c0 {
   display: -webkit-box;
@@ -11696,6 +13152,32 @@ Array [
   -webkit-transform: rotate(90deg);
   -ms-transform: rotate(90deg);
   transform: rotate(90deg);
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.c4 {
+  display: block;
+  width: 100%;
+  max-height: 0;
+  padding: 0 15px 0 15px;
+  font-size: 14px;
+  line-height: 1.61;
+  color: #1b1b1b;
+  white-space: pre-line;
+  -webkit-transition: padding 0.5s, max-height 0.4s cubic-bezier(0,1,0,1) -0.1s;
+  transition: padding 0.5s, max-height 0.4s cubic-bezier(0,1,0,1) -0.1s;
+  overflow: hidden;
+}
+
+.c4 * {
+  font-size: 14px;
+  line-height: 1.61;
+  color: #1b1b1b;
+}
+
+.c4 a {
+  color: #0052a5;
 }
 
 <div
@@ -11718,6 +13200,34 @@ Array [
         angle-right.svg
       </svg>
     </div>
+    <div
+      className="c4"
+      open={false}
+    >
+      <ul>
+        <li>
+          quarantine_text2
+        </li>
+        <li>
+          quarantine_text3
+        </li>
+        <li>
+          quarantine_text4
+        </li>
+        <li>
+          quarantine_text5
+        </li>
+        <li>
+          quarantine_text6
+        </li>
+        <li>
+          quarantine_text7
+        </li>
+        <li>
+          quarantine_text8
+        </li>
+      </ul>
+    </div>
   </div>,
   .c0 {
   display: -webkit-box;
@@ -11764,6 +13274,38 @@ Array [
   -webkit-transform: rotate(90deg);
   -ms-transform: rotate(90deg);
   transform: rotate(90deg);
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.c4 {
+  display: block;
+  width: 100%;
+  max-height: 0;
+  padding: 0 15px 0 15px;
+  font-size: 14px;
+  line-height: 1.61;
+  color: #1b1b1b;
+  white-space: pre-line;
+  -webkit-transition: padding 0.5s, max-height 0.4s cubic-bezier(0,1,0,1) -0.1s;
+  transition: padding 0.5s, max-height 0.4s cubic-bezier(0,1,0,1) -0.1s;
+  overflow: hidden;
+}
+
+.c4 * {
+  font-size: 14px;
+  line-height: 1.61;
+  color: #1b1b1b;
+}
+
+.c4 a {
+  color: #0052a5;
+}
+
+.c5 {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+  color: #0052a5;
 }
 
 <div
@@ -11786,73 +13328,101 @@ Array [
         angle-right.svg
       </svg>
     </div>
-  </div>,
-  .c0 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-flow: wrap row;
-  -ms-flex-flow: wrap row;
-  flex-flow: wrap row;
-  width: 100%;
-  margin-top: -1px;
-}
-
-.c1 {
-  position: relative;
-  display: grid;
-  grid-template-areas: 'title icon';
-  grid-template-columns: 1fr 14px;
-  grid-column-gap: 16px;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  width: 100%;
-  min-height: 54px;
-  padding: 12px 15px;
-  font-size: 14px;
-  font-weight: bold;
-  line-height: 1.3;
-  color: #0052a5;
-  border-top: solid 1px #EEEEEE;
-  border-bottom: solid 1px #EEEEEE;
-}
-
-.c2 {
-  grid-area: title;
-}
-
-.c3 {
-  grid-area: icon;
-  display: block;
-  width: 12px;
-  height: 12px;
-  -webkit-transform: rotate(90deg);
-  -ms-transform: rotate(90deg);
-  transform: rotate(90deg);
-}
-
-<div
-    className="c0"
-  >
     <div
-      className="c1"
-      onClick={[Function]}
+      className="c4"
       open={false}
     >
-      <span
-        className="c2"
-      >
-        quarantine_text49
-      </span>
-      <svg
-        className="c3"
-        open={false}
-      >
-        angle-right.svg
-      </svg>
+      <ul>
+        <li>
+          <div
+            className="bold"
+          >
+            quarantine_text9
+          </div>
+          <div
+            className="normal"
+          >
+            quarantine_text10
+             
+            <a
+              className="c5"
+              href="https://gis.gov.pl/zdrowie/zasady-prawidlowego-mycia-rak/"
+              target="_blank"
+            >
+              quarantine_text11
+            </a>
+             
+            quarantine_text48
+          </div>
+        </li>
+        <li>
+          <div
+            className="bold"
+          >
+            quarantine_text12
+          </div>
+          <div
+            className="normal"
+          >
+            quarantine_text13
+          </div>
+        </li>
+        <li>
+          <div
+            className="bold"
+          >
+            quarantine_text14
+          </div>
+          <div
+            className="normal"
+          >
+            quarantine_text15
+          </div>
+        </li>
+        <li>
+          <div
+            className="bold"
+          >
+            quarantine_text16
+          </div>
+          <div
+            className="normal"
+          >
+            quarantine_text17
+          </div>
+        </li>
+        <li>
+          <div
+            className="bold"
+          >
+            quarantine_text18
+          </div>
+          <div
+            className="normal"
+          >
+            quarantine_text19
+          </div>
+        </li>
+        <li>
+          <div
+            className="bold"
+          >
+            quarantine_text20
+          </div>
+        </li>
+        <li>
+          <div
+            className="bold"
+          >
+            quarantine_text21
+          </div>
+          <div
+            className="normal"
+          >
+            quarantine_text22
+          </div>
+        </li>
+      </ul>
     </div>
   </div>,
   .c0 {
@@ -11900,6 +13470,202 @@ Array [
   -webkit-transform: rotate(90deg);
   -ms-transform: rotate(90deg);
   transform: rotate(90deg);
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.c4 {
+  display: block;
+  width: 100%;
+  max-height: 0;
+  padding: 0 15px 0 15px;
+  font-size: 14px;
+  line-height: 1.61;
+  color: #1b1b1b;
+  white-space: pre-line;
+  -webkit-transition: padding 0.5s, max-height 0.4s cubic-bezier(0,1,0,1) -0.1s;
+  transition: padding 0.5s, max-height 0.4s cubic-bezier(0,1,0,1) -0.1s;
+  overflow: hidden;
+}
+
+.c4 * {
+  font-size: 14px;
+  line-height: 1.61;
+  color: #1b1b1b;
+}
+
+.c4 a {
+  color: #0052a5;
+}
+
+.c6 {
+  width: auto;
+  font-weight: 700;
+  color: #0052a5;
+}
+
+.c5 {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+  color: #0052a5;
+}
+
+<div
+    className="c0"
+  >
+    <div
+      className="c1"
+      onClick={[Function]}
+      open={false}
+    >
+      <span
+        className="c2"
+      >
+        quarantine_text49
+      </span>
+      <svg
+        className="c3"
+        open={false}
+      >
+        angle-right.svg
+      </svg>
+    </div>
+    <div
+      className="c4"
+      open={false}
+    >
+      <p>
+        quarantine_text23
+      </p>
+      <ul>
+        <li>
+          quarantine_text24
+        </li>
+        <li>
+          quarantine_text25
+        </li>
+        <li>
+          quarantine_text26
+        </li>
+      </ul>
+      <p>
+        quarantine_text27
+      </p>
+      <p>
+        <a
+          className="c5"
+          href="https://pacjent.gov.pl/podejrzewasz-ze-masz-koronawirusa#znajdz-stacje-sanitarno-epidemiologiczna"
+          target="_blank"
+        >
+          quarantine_text28
+        </a>
+         
+        <a
+          className="c5"
+          href="https://pacjent.gov.pl/podejrzewasz-ze-masz-koronawirusa#szpitale-z-oddzialami-zakaznymi"
+          target="_blank"
+        >
+          quarantine_text29
+        </a>
+      </p>
+      <p>
+        quarantine_text30
+      </p>
+      <p>
+        quarantine_text31
+         
+        <a
+          className="c6"
+          href="tel:32"
+        >
+          quarantine_text32
+        </a>
+         
+        quarantine_text33
+         
+        <a
+          className="c6"
+          href="tel:34"
+        >
+          quarantine_text34
+        </a>
+         
+        quarantine_text35
+         
+      </p>
+    </div>
+  </div>,
+  .c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: wrap row;
+  -ms-flex-flow: wrap row;
+  flex-flow: wrap row;
+  width: 100%;
+  margin-top: -1px;
+}
+
+.c1 {
+  position: relative;
+  display: grid;
+  grid-template-areas: 'title icon';
+  grid-template-columns: 1fr 14px;
+  grid-column-gap: 16px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 100%;
+  min-height: 54px;
+  padding: 12px 15px;
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 1.3;
+  color: #0052a5;
+  border-top: solid 1px #EEEEEE;
+  border-bottom: solid 1px #EEEEEE;
+}
+
+.c2 {
+  grid-area: title;
+}
+
+.c3 {
+  grid-area: icon;
+  display: block;
+  width: 12px;
+  height: 12px;
+  -webkit-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  transform: rotate(90deg);
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.c4 {
+  display: block;
+  width: 100%;
+  max-height: 0;
+  padding: 0 15px 0 15px;
+  font-size: 14px;
+  line-height: 1.61;
+  color: #1b1b1b;
+  white-space: pre-line;
+  -webkit-transition: padding 0.5s, max-height 0.4s cubic-bezier(0,1,0,1) -0.1s;
+  transition: padding 0.5s, max-height 0.4s cubic-bezier(0,1,0,1) -0.1s;
+  overflow: hidden;
+}
+
+.c4 * {
+  font-size: 14px;
+  line-height: 1.61;
+  color: #1b1b1b;
+}
+
+.c4 a {
+  color: #0052a5;
 }
 
 <div
@@ -11921,6 +13687,56 @@ Array [
       >
         angle-right.svg
       </svg>
+    </div>
+    <div
+      className="c4"
+      open={false}
+    >
+      <p>
+        quarantine_text36
+      </p>
+      <ul>
+        <li>
+          <p>
+            <strong>
+              quarantine_text37
+            </strong>
+          </p>
+          <p>
+            quarantine_text38
+          </p>
+        </li>
+        <li>
+          <p>
+            <strong>
+              quarantine_text39
+            </strong>
+          </p>
+          <p>
+            quarantine_text40
+          </p>
+        </li>
+        <li>
+          <p>
+            <strong>
+              quarantine_text41
+            </strong>
+          </p>
+          <p>
+            quarantine_text42
+          </p>
+        </li>
+        <li>
+          <p>
+            <strong>
+              quarantine_text43
+            </strong>
+          </p>
+          <p>
+            quarantine_text44
+          </p>
+        </li>
+      </ul>
     </div>
   </div>,
   .c1 {

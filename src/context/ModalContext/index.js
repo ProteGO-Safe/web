@@ -13,7 +13,17 @@ export const ModalProvider = ({ children }) => {
   const [title, setTitle] = useState(null);
   const [type, setType] = useState('');
 
-  const onClose = () => setContent(null);
+  const onClose = () => {
+    setModal(false);
+
+    const timer = setTimeout(() => {
+      setTitle(null);
+      setContent(null);
+      setFooter(null);
+    }, 400);
+    return () => clearTimeout(timer);
+  };
+
   const openModal = (value, modalType, modalTitle, modalFooter) => {
     setContent(value || EMPTY_MODAL_CONTENT);
     setType(modalType || 'normal');
@@ -38,7 +48,7 @@ export const ModalProvider = ({ children }) => {
       }}
     >
       {children}
-      {modal && <Modal />}
+      <Modal open={modal} />
     </ModalContext.Provider>
   );
 };

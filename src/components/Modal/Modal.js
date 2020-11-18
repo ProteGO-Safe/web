@@ -3,12 +3,12 @@ import useModalContext from '../../hooks/useModalContext';
 import { ModalClose } from './components';
 import * as Styled from './Modal.styled';
 
-const Modal = () => {
+const Modal = ({ open }) => {
   const { content, footer, onClose, title, type } = useModalContext();
 
   return (
-    <Styled.Wrapper>
-      <Styled.Overlay onClick={onClose} />
+    <Styled.Wrapper open={open}>
+      <Styled.Overlay onClick={onClose} open={open} />
       <Styled.Content type={type}>
         {type === 'inner-content' ? (
           <Styled.ContentWrapper>{content}</Styled.ContentWrapper>
