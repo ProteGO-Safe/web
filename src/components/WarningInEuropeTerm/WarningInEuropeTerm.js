@@ -2,10 +2,15 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Switcher } from '../Switcher';
 import { T } from '../index';
-import { Routes } from '../../services/navigationService/routes';
 import * as Styled from './WarningInEuropeTerm.styled';
 
-const WarningInEuropeTerm = ({ checked, forceOpen, name, onChange }) => {
+const WarningInEuropeTerm = ({
+  checked,
+  forceOpen,
+  handleClick,
+  name,
+  onChange
+}) => {
   const renderLabel = (
     <Styled.Content>
       <Styled.Flag />
@@ -30,7 +35,7 @@ const WarningInEuropeTerm = ({ checked, forceOpen, name, onChange }) => {
       <Styled.TermDescription open={checked || forceOpen}>
         <Styled.Container>
           <T i18nKey="warning_in_europe_term_text2" />{' '}
-          <Styled.Link to={Routes.PrivacyPolicyDetails}>
+          <Styled.Link onClick={handleClick}>
             <T i18nKey="warning_in_europe_term_text3" />
           </Styled.Link>
         </Styled.Container>

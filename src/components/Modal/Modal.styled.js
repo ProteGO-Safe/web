@@ -28,7 +28,7 @@ const animationModalHide = keyframes`
 export const Wrapper = styled.div`
   position: fixed;
   top: 0;
-  left: ${({ open }) => (open ? 0 : '-999px')};
+  left: ${({ open }) => (open ? 0 : '-9999px')};
   display: flex;
   flex-flow: wrap row;
   justify-content: center;
@@ -48,7 +48,7 @@ export const Wrapper = styled.div`
 export const Overlay = styled.div`
   position: fixed;
   top: 0;
-  left: ${({ open }) => (open ? 0 : '-999px')};
+  left: ${({ open }) => (open ? 0 : '-9999px')};
   width: 100vw;
   height: 100vh;
   background: ${Color.darkGray};

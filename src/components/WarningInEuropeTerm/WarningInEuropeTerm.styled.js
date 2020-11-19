@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 import { Color } from '../../theme/colors';
 import { FontWeight } from '../../theme/fonts';
-import { NavLink } from '../index';
 
 import { ReactComponent as IconFlagUE } from '../../assets/img/icons/flag-ue.svg';
 
@@ -72,7 +71,7 @@ export const TermDescription = styled.div`
     `}
 `;
 
-export const Link = styled(NavLink)`
+export const Link = styled.span`
   display: inline;
   color: ${Color.primary};
 `;
