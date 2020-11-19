@@ -18,9 +18,10 @@ import {
 import { hideUploadHistoricalDataErrorMessage } from '../../store/actions/app';
 import useNavigation from '../../hooks/useNavigation';
 import { Routes } from '../../services/navigationService/routes';
+import { NavigationBackGuard } from '../../components/NavigationBackGuard';
 
 const UploadHistoricalData = ({ t }) => {
-  const { goTo } = useNavigation();
+  const { goTo, goBack } = useNavigation();
   const { areEnableAllServices } = useSupportExposureNotificationTracing();
   const MAX_UPLOAD_TIME = 60;
   const dispatch = useDispatch();
@@ -38,6 +39,7 @@ const UploadHistoricalData = ({ t }) => {
 
   const [pin, setPin] = useState('');
   const [banData, setBanData] = useState(null);
+  const [showBackGuard, setShowBackGuard] = useState(false);
   const [isUploading, setIsUploading] = useState(false);
 
   useEffect(() => {
@@ -88,6 +90,20 @@ const UploadHistoricalData = ({ t }) => {
     dispatch(endUploadHistoricalData()).then(goTo(Routes.Home));
   };
 
+  const handleBack = () => {
+    if (pin && pin.toString().length) {
+      setShowBackGuard(true);
+      return;
+    }
+    goBack();
+  };
+
+  const backOnGuard = () => {
+    setPin(undefined);
+    setShowBackGuard(false);
+    goBack();
+  };
+
   if (status === uploadState.REQUESTED && isUploading) {
     return <UploadInProgress />;
   }
@@ -105,17 +121,28 @@ const UploadHistoricalData = ({ t }) => {
     );
   };
   return (
-    <UploadData
-      disableButton={status === uploadState.REQUESTED}
-      disablePinInput={Boolean(banData && banData.lockdownTime)}
-      errorMessage={getErrorMessage()}
-      errorMessageVisible={errorMessageVisible}
-      hideErrorMessage={hideErrorMessage}
-      onUploadData={uploadData}
-      pin={pin}
-      setPin={setPin}
-      userName={userName}
-    />
+    <>
+      <UploadData
+        disableButton={status === uploadState.REQUESTED}
+        disablePinInput={Boolean(banData && banData.lockdownTime)}
+        errorMessage={getErrorMessage()}
+        errorMessageVisible={errorMessageVisible}
+        handleBack={handleBack}
+        hideErrorMessage={hideErrorMessage}
+        onUploadData={uploadData}
+        pin={pin}
+        setPin={setPin}
+        userName={userName}
+      />
+      {showBackGuard && (
+        <NavigationBackGuard
+          title={t('lab_test_text23')}
+          description={t('lab_test_text24')}
+          handleCancel={() => setShowBackGuard(false)}
+          handleConfirm={() => backOnGuard()}
+        />
+      )}
+    </>
   );
 };
 

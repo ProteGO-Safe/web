@@ -26,6 +26,7 @@ const UploadData = ({
   disablePinInput,
   errorMessage,
   errorMessageVisible,
+  handleBack,
   hideErrorMessage,
   onUploadData,
   pin,
@@ -50,7 +51,7 @@ const UploadData = ({
   };
 
   return (
-    <Layout isNavigation>
+    <Layout isNavigation onBackClick={handleBack}>
       <Styled.Content>
         <H5>
           <T i18nKey="upload_data_text_1" />{' '}
@@ -96,7 +97,9 @@ const UploadData = ({
         <Button
           onClick={onUploadData}
           label={<T i18nKey="upload_data_text_9" />}
-          disabled={pin.length !== 6 || disableSubmitButton || disablePinInput}
+          disabled={
+            !pin || pin.length !== 6 || disableSubmitButton || disablePinInput
+          }
         />
       </ButtonWrapper>
 
