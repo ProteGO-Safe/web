@@ -11,9 +11,9 @@ const Modal = ({ open }) => {
     <Styled.Wrapper open={open}>
       <Styled.Overlay onClick={onClose} open={open} />
       <Styled.Content type={type}>
-        {(type !== TYPE.DIALOG ||
-          type === TYPE.NORMAL ||
-          type === TYPE.RATING_APP) && <ModalClose onClick={onClose} />}
+        {(type === TYPE.NORMAL || type === TYPE.RATING_APP) && (
+          <ModalClose onClick={onClose} />
+        )}
 
         {type === TYPE.INNER_CONTENT || type === TYPE.RATING_APP ? (
           <Styled.ContentWrapper>{content}</Styled.ContentWrapper>
@@ -27,12 +27,9 @@ const Modal = ({ open }) => {
           </>
         )}
 
-        {footer &&
-          (type === TYPE.DIALOG ||
-            type === TYPE.INNER_CONTENT ||
-            type === TYPE.RATING_APP) && (
-            <Styled.Footer type={type}>{footer}</Styled.Footer>
-          )}
+        {footer && type !== TYPE.NORMAL && (
+          <Styled.Footer type={type}>{footer}</Styled.Footer>
+        )}
       </Styled.Content>
     </Styled.Wrapper>
   );
