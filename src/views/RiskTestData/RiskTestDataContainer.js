@@ -8,7 +8,7 @@ import { TRIAGE_LEVEL } from './RiskTestData.constants';
 import locations from '../../services/diagnosisLogic/locations.json';
 import useNavigation from '../../hooks/useNavigation';
 
-const dateFormat = 'D-MM-YYYY';
+const dateFormat = 'D.MM.YYYY';
 
 const RiskTestDataContainer = ({ t }) => {
   const { getParam } = useNavigation();
