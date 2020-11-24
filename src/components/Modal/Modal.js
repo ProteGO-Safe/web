@@ -1,6 +1,7 @@
 import React from 'react';
 import useModalContext from '../../hooks/useModalContext';
 import { ModalClose } from './components';
+import { TYPE } from './Modal.helpers';
 import * as Styled from './Modal.styled';
 
 const Modal = ({ open }) => {
@@ -10,13 +11,14 @@ const Modal = ({ open }) => {
     <Styled.Wrapper open={open}>
       <Styled.Overlay onClick={onClose} open={open} />
       <Styled.Content type={type}>
-        {type === 'inner-content' ? (
+        {(type !== TYPE.DIALOG ||
+          type === TYPE.NORMAL ||
+          type === TYPE.RATING_APP) && <ModalClose onClick={onClose} />}
+
+        {type === TYPE.INNER_CONTENT || type === TYPE.RATING_APP ? (
           <Styled.ContentWrapper>{content}</Styled.ContentWrapper>
         ) : (
           <>
-            {(type !== 'dialog' || type === 'normal') && (
-              <ModalClose onClick={onClose} />
-            )}
             {title && <Styled.Title>{title}</Styled.Title>}
 
             <Styled.Description>
@@ -25,9 +27,12 @@ const Modal = ({ open }) => {
           </>
         )}
 
-        {footer && (type === 'dialog' || type === 'inner-content') && (
-          <Styled.Footer type={type}>{footer}</Styled.Footer>
-        )}
+        {footer &&
+          (type === TYPE.DIALOG ||
+            type === TYPE.INNER_CONTENT ||
+            type === TYPE.RATING_APP) && (
+            <Styled.Footer type={type}>{footer}</Styled.Footer>
+          )}
       </Styled.Content>
     </Styled.Wrapper>
   );

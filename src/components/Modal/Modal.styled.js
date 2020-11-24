@@ -1,15 +1,18 @@
 import styled, { keyframes } from 'styled-components';
 import { Color } from '../../theme/colors';
 import { Paragraph } from '../../theme/typography';
+import { TYPE } from './Modal.helpers';
 
 const handleType = type => {
   switch (type) {
-    case 'dialog':
+    case TYPE.DIALOG:
       return '30px 40px 20px 40px';
-    case 'inner-content':
+    case TYPE.INNER_CONTENT:
       return '30px 20px 20px';
-    case 'normal':
+    case TYPE.NORMAL:
       return '30px 40px';
+    case TYPE.RATING_APP:
+      return '30px 0 0';
     default:
       return '30px 40px';
   }

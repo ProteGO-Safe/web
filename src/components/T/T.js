@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { withTranslation } from 'react-i18next';
 import reactStringReplace from 'react-string-replace';
 import { UrlCovid, PhoneNumber, Url, NavLink } from '../index';
@@ -49,6 +50,10 @@ const T = ({ i18nKey, t }) => {
     }
   );
   return translated;
+};
+
+T.propTypes = {
+  i18nKey: PropTypes.string.isRequired
 };
 
 export default withTranslation()(T);
