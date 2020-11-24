@@ -13,7 +13,7 @@ const TestYellow = () => {
     <>
       <Smile />
       <MakeDiagnosisButton />
-      <TriageRiskInformation />
+      <TriageRiskInformation isHotline={false} />
       <TriageInfoBorder />
       <TriageRecommendations />
       <MoreInformation />

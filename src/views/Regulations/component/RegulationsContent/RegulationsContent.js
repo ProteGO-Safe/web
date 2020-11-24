@@ -20,7 +20,7 @@ const RegulationsContent = ({ small, t }) => (
     <ListNumber>
       <ListItem>
         {t('regulations_content_text3')}
-        <strong>{t('regulations_content_text4')}</strong>
+        <strong>{t('regulations_content_text4')}</strong>{' '}
         {t('regulations_content_text5')}
       </ListItem>
       <ListItem>{t('regulations_content_text6')}</ListItem>
@@ -30,67 +30,35 @@ const RegulationsContent = ({ small, t }) => (
     <Paragraph>{t('regulations_content_text8')}</Paragraph>
     <ListNumber>
       <ListItem>
-        <strong>{t('regulations_content_text9')}</strong>
-        {t('regulations_content_text10')}
-      </ListItem>
-      <ListItem>
-        <strong>{t('regulations_content_text11')}</strong>
-        {t('regulations_content_text12')}
-      </ListItem>
-      <ListItem>
-        <strong>{t('regulations_content_text109')}</strong>
-        {t('regulations_content_text110')}
-      </ListItem>
-      <ListItem>
-        <strong>{t('regulations_content_text13')}</strong>
-        {t('regulations_content_text14')}{' '}
-        <Url value="https://www.google.com/covid19/exposurenotifications/">
-          {t('regulations_content_text15')}
-        </Url>{' '}
-        {t('regulations_content_text89')}{' '}
-        <Url value="https://developer.apple.com/documentation/exposurenotification">
-          {t('regulations_content_text16')}
-        </Url>{' '}
-        {t('regulations_content_text90')}
-      </ListItem>
-      <ListItem>
-        <strong>{t('regulations_content_text17')}</strong>
-        {t('regulations_content_text18')} <UrlCovid />{' '}
-        {t('regulations_content_text19')}
-      </ListItem>
-      <ListItem>
-        <strong>{t('regulations_content_text20')}</strong>
-        {t('regulations_content_text21')}
-      </ListItem>
-      <ListItem>
         <strong>{t('regulations_content_text93')}</strong>{' '}
         {t('regulations_content_text94')} <UrlCovid />{' '}
         {t('regulations_content_text95')}
       </ListItem>
       <ListItem>
-        <strong>{t('regulations_content_text96')}</strong>{' '}
-        {t('regulations_content_text97')}
+        <strong>{t('regulations_content_text117')}</strong>{' '}
+        {t('regulations_content_text118')}
       </ListItem>
       <ListItem>
-        <strong>{t('regulations_content_text22')}</strong>{' '}
-        {t('regulations_content_text23')}
+        <strong>{t('regulations_content_text38')}</strong>{' '}
+        {t('regulations_content_text39')} <UrlCovid />{' '}
+        {t('regulations_content_text40')} <UrlCovid />;
       </ListItem>
       <ListItem>
-        <strong>{t('regulations_content_text24')}</strong>{' '}
-        {t('regulations_content_text25')} <UrlCovid />{' '}
-        {t('regulations_content_text91')}
+        <strong>{t('regulations_content_text109')}</strong>{' '}
+        {t('regulations_content_text110')}
       </ListItem>
       <ListItem>
-        <strong>{t('regulations_content_text111')}</strong>{' '}
-        {t('regulations_content_text112')}{' '}
+        <strong>{t('regulations_content_text9')}</strong>{' '}
+        {t('regulations_content_text10')}
       </ListItem>
       <ListItem>
-        <strong>{t('regulations_content_text26')}</strong>{' '}
-        {t('regulations_content_text27')}
+        <strong>{t('regulations_content_text119')}</strong>{' '}
+        {t('regulations_content_text120')}
       </ListItem>
       <ListItem>
-        <strong>{t('regulations_content_text28')}</strong>{' '}
-        {t('regulations_content_text29')}
+        <strong>{t('regulations_content_text32')}</strong>{' '}
+        {t('regulations_content_text33')} <UrlCovid />{' '}
+        {t('regulations_content_text34')}
       </ListItem>
       <ListItem>
         <strong>{t('regulations_content_text30')}</strong>{' '}
@@ -102,10 +70,31 @@ const RegulationsContent = ({ small, t }) => (
         {t('regulations_content_text100')} <UrlCovid />{' '}
         {t('regulations_content_text101')}
       </ListItem>
+
       <ListItem>
-        <strong>{t('regulations_content_text32')}</strong>{' '}
-        {t('regulations_content_text33')} <UrlCovid />{' '}
-        {t('regulations_content_text34')}
+        <strong>{t('regulations_content_text11')}</strong>{' '}
+        {t('regulations_content_text12')}
+      </ListItem>
+      <ListItem>
+        <strong>{t('regulations_content_text13')}</strong>{' '}
+        {t('regulations_content_text14')}{' '}
+        <Url value="https://www.google.com/covid19/exposurenotifications/">
+          {t('regulations_content_text15')}
+        </Url>{' '}
+        {t('regulations_content_text89')}{' '}
+        <Url value="https://developer.apple.com/documentation/exposurenotification">
+          {t('regulations_content_text16')}
+        </Url>{' '}
+        {t('regulations_content_text90')}
+      </ListItem>
+      <ListItem>
+        <strong>{t('regulations_content_text20')}</strong>{' '}
+        {t('regulations_content_text21')}
+      </ListItem>
+      <ListItem>
+        <strong>{t('regulations_content_text17')}</strong>
+        {t('regulations_content_text18')} <UrlCovid />{' '}
+        {t('regulations_content_text19')}
       </ListItem>
       <ListItem>
         <strong>{t('regulations_content_text35')}</strong>{' '}
@@ -113,9 +102,16 @@ const RegulationsContent = ({ small, t }) => (
         {t('regulations_content_text37')}
       </ListItem>
       <ListItem>
-        <strong>{t('regulations_content_text38')}</strong>{' '}
-        {t('regulations_content_text39')} <UrlCovid />{' '}
-        {t('regulations_content_text40')} <UrlCovid />;
+        <strong>{t('regulations_content_text22')}</strong>{' '}
+        {t('regulations_content_text23')}
+      </ListItem>
+      <ListItem>
+        <strong>{t('regulations_content_text96')}</strong>{' '}
+        {t('regulations_content_text97')}
+      </ListItem>
+      <ListItem>
+        <strong>{t('regulations_content_text111')}</strong>{' '}
+        {t('regulations_content_text112')}{' '}
       </ListItem>
       <ListItem>
         <strong>{t('regulations_content_text41')}</strong>{' '}
@@ -124,6 +120,19 @@ const RegulationsContent = ({ small, t }) => (
       <ListItem>
         <strong>{t('regulations_content_text43')}</strong>{' '}
         {t('regulations_content_text44')}
+      </ListItem>
+      <ListItem>
+        <strong>{t('regulations_content_text24')}</strong>{' '}
+        {t('regulations_content_text25')} <UrlCovid />{' '}
+        {t('regulations_content_text91')}
+      </ListItem>
+      <ListItem>
+        <strong>{t('regulations_content_text26')}</strong>{' '}
+        {t('regulations_content_text27')}
+      </ListItem>
+      <ListItem>
+        <strong>{t('regulations_content_text28')}</strong>{' '}
+        {t('regulations_content_text29')}
       </ListItem>
       <ListItem>
         <strong>WHO </strong>
@@ -161,6 +170,7 @@ const RegulationsContent = ({ small, t }) => (
         {t('regulations_content_text106')} <UrlCovid />{' '}
         {t('regulations_content_text107')}
       </ListItem>
+      <ListItem>{t('regulations_content_text121')}</ListItem>
       <ListItem>{t('regulations_content_text108')}</ListItem>
     </ListNumber>
     <Annotation>§4.</Annotation>

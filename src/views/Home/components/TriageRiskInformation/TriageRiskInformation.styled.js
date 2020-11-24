@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { Color } from '../../../../theme/colors';
+import { FontWeight } from '../../../../theme/fonts';
 
 const resolveDefaultColor = defaultColor => ({ color }) =>
   color || defaultColor;
@@ -14,7 +15,7 @@ export const InfoContainer = styled.div`
   background-color: ${resolveDefaultColor(Color.info)};
   p {
     font-size: 16px;
-    font-weight: bold;
+    font-weight: ${FontWeight.SemiBold};
     line-height: 1.44;
     color: #ffffff;
   }

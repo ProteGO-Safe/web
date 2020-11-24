@@ -6,7 +6,8 @@ import {
   FieldSet,
   Radio,
   Tooltip,
-  Layout
+  Layout,
+  T
 } from '../../../../../../components';
 import { Title } from '../../../../Diagnosis.styled';
 
@@ -73,7 +74,11 @@ const Single = ({ t, onBack, onNext, question }) => {
         <Title explanation={explanation}>
           {t(text)}
           {explanation && (
-            <Tooltip sticky title={t(text)} content={t(explanation)} />
+            <Tooltip
+              sticky
+              title={t(text)}
+              content={<T i18nKey={explanation} />}
+            />
           )}
         </Title>
         <FieldSet>

@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import { Color } from '../../../../theme/colors';
 import { ReactComponent as ArrowIcon } from '../../../../assets/img/icons/arrow-current-color.svg';
+import { FontWeight } from '../../../../theme/fonts';
 
 const resolveDefaultColor = defaultColor => ({ color }) =>
   color || defaultColor;
@@ -17,7 +18,7 @@ export const InfoBorderContainer = styled.div`
   border-color: ${resolveDefaultColor(Color.info)};
   .p1 {
     font-size: 16px;
-    font-weight: bold;
+    font-weight: ${FontWeight.SemiBold};
     line-height: 1.44;
     color: #1b1b1b;
   }

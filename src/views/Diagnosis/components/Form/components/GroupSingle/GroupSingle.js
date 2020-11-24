@@ -6,7 +6,8 @@ import {
   FieldSet,
   Radio,
   Tooltip,
-  Layout
+  Layout,
+  T
 } from '../../../../../../components';
 import { Title } from '../../../../Diagnosis.styled';
 
@@ -67,7 +68,9 @@ const GroupSingle = ({ t, onBack, onNext, question }) => {
       <Container>
         <Title explanation={tooltip}>
           {t(text)}
-          {tooltip && <Tooltip sticky title={t(text)} content={t(tooltip)} />}
+          {tooltip && (
+            <Tooltip sticky title={t(text)} content={<T i18nKey={tooltip} />} />
+          )}
         </Title>
         <FieldSet>
           {answers.map(item => {

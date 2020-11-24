@@ -8,7 +8,7 @@ const ExposureNotificationWarning = ({ t, enableServices }) => {
     <Warning
       arrow
       onClick={enableServices}
-      colorFont={Color.secondary}
+      colorFont={Color.primary}
       status="error"
       title={t('exposure_notification_warning_text1')}
       content={t('exposure_notification_warning_text2')}

@@ -90,7 +90,7 @@ Button.propTypes = {
   children: PropTypes.node,
   description: PropTypes.string,
   disabled: PropTypes.bool,
-  label: PropTypes.string,
+  label: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
   onClick: PropTypes.func.isRequired,
   type: PropTypes.oneOf([
     BUTTON_TYPES.BLANK_SMALL,

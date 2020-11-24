@@ -1,21 +1,4 @@
-import {
-  APP_STATE_CLEARED,
-  ALL_DATA_CLEARED,
-  DATA_FROM_NEWEST_VERSION_MARKED,
-  EXPOSURE_ONBOARDING_FINISHED,
-  FIRST_DIAGNOSIS_FINISHED,
-  FONT_SCALE_FETCHED,
-  LANGUAGE_CHANGED,
-  MIGRATION_FINISHED,
-  ONBOARDING_FINISHED,
-  REGISTRATION_FINISHED,
-  RESTRICTIONS_MODAL_SHOWED,
-  START_SCREEN_SHOWED,
-  UPLOAD_HISTORICAL_DATA_ENDED,
-  UPLOAD_HISTORICAL_DATA_ERROR_MESSAGE_HIDDEN,
-  UPLOAD_HISTORICAL_DATA_FINISHED,
-  UPLOAD_HISTORICAL_DATA_REQUESTED
-} from '../../types/app';
+import * as types from '../../types/app';
 import { UPLOAD_HISTORICAL_DATA_STATE as uploadState } from './app.constants';
 import createUploadHistoricalDataState from './app.helpers';
 
@@ -35,28 +18,30 @@ const INITIAL_STATE = {
     unsuccessfulAttempts: []
   },
   registrationFinished: false,
-  restrictionsModalShowed: false
+  restrictionsModalShowed: false,
+  interoperabilityModalShowed: false,
+  warningInEuropeTerm: false
 };
 
 const appReducer = (state = INITIAL_STATE, action) => {
   switch (action.type) {
-    case ONBOARDING_FINISHED:
+    case types.ONBOARDING_FINISHED:
       return {
         ...state,
         onboardingFinished: true
       };
-    case EXPOSURE_ONBOARDING_FINISHED:
+    case types.EXPOSURE_ONBOARDING_FINISHED:
       return {
         ...state,
         exposureOnboardingFinished: true
       };
 
-    case START_SCREEN_SHOWED:
+    case types.START_SCREEN_SHOWED:
       return {
         ...state,
         startScreenShowed: true
       };
-    case UPLOAD_HISTORICAL_DATA_REQUESTED:
+    case types.UPLOAD_HISTORICAL_DATA_REQUESTED:
       return {
         ...state,
         uploadHistoricalDataState: {
@@ -65,7 +50,7 @@ const appReducer = (state = INITIAL_STATE, action) => {
           date: new Date().getTime()
         }
       };
-    case UPLOAD_HISTORICAL_DATA_ENDED:
+    case types.UPLOAD_HISTORICAL_DATA_ENDED:
       return {
         ...state,
         uploadHistoricalDataState: {
@@ -73,12 +58,12 @@ const appReducer = (state = INITIAL_STATE, action) => {
           status: uploadState.EMPTY
         }
       };
-    case FIRST_DIAGNOSIS_FINISHED:
+    case types.FIRST_DIAGNOSIS_FINISHED:
       return {
         ...state,
         firstDiagnosisFinished: true
       };
-    case UPLOAD_HISTORICAL_DATA_FINISHED:
+    case types.UPLOAD_HISTORICAL_DATA_FINISHED:
       return (() => {
         const { result } = action;
 
@@ -90,20 +75,20 @@ const appReducer = (state = INITIAL_STATE, action) => {
           )
         };
       })();
-    case DATA_FROM_NEWEST_VERSION_MARKED: {
+    case types.DATA_FROM_NEWEST_VERSION_MARKED: {
       return {
         ...state,
         dataFromNewestVersionMarked: true
       };
     }
-    case MIGRATION_FINISHED: {
+    case types.MIGRATION_FINISHED: {
       const { data } = action;
       return {
         ...state,
         migrations: [...(state.migrations || []), data]
       };
     }
-    case LANGUAGE_CHANGED: {
+    case types.LANGUAGE_CHANGED: {
       const { data } = action;
       return {
         ...state,
@@ -111,19 +96,19 @@ const appReducer = (state = INITIAL_STATE, action) => {
         languageChangedByUser: true
       };
     }
-    case APP_STATE_CLEARED: {
+    case types.APP_STATE_CLEARED: {
       return {
         ...state,
         applicationReseted: true
       };
     }
-    case ALL_DATA_CLEARED: {
+    case types.ALL_DATA_CLEARED: {
       return {
         ...state,
         applicationReseted: false
       };
     }
-    case UPLOAD_HISTORICAL_DATA_ERROR_MESSAGE_HIDDEN: {
+    case types.UPLOAD_HISTORICAL_DATA_ERROR_MESSAGE_HIDDEN: {
       const { uploadHistoricalDataState } = state;
       return {
         ...state,
@@ -133,13 +118,13 @@ const appReducer = (state = INITIAL_STATE, action) => {
         }
       };
     }
-    case REGISTRATION_FINISHED: {
+    case types.REGISTRATION_FINISHED: {
       return {
         ...state,
         registrationFinished: true
       };
     }
-    case FONT_SCALE_FETCHED: {
+    case types.FONT_SCALE_FETCHED: {
       const {
         data: { fontScale }
       } = action;
@@ -148,13 +133,28 @@ const appReducer = (state = INITIAL_STATE, action) => {
         fontScale
       };
     }
-    case RESTRICTIONS_MODAL_SHOWED: {
+    case types.RESTRICTIONS_MODAL_SHOWED: {
       return {
         ...state,
         restrictionsModalShowed: true
       };
     }
+    case types.INTEROPERABILITY_MODAL_SHOWED: {
+      return {
+        ...state,
+        interoperabilityModalShowed: true
+      };
+    }
+    case types.WARNING_IN_EUROPE_TERM_TOGGLE: {
+      return (() => {
+        const prev = state.warningInEuropeTerm;
 
+        return {
+          ...state,
+          warningInEuropeTerm: !prev
+        };
+      })();
+    }
     default:
       return state;
   }
