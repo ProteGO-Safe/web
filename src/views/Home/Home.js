@@ -15,14 +15,13 @@ const Home = ({ subscribedDistricts }) => {
         <ExposureNotificationWarning />
       </Styled.Container>
 
-      <InfoInteroperability />
-
       <FollowDistrictsSlider items={subscribedDistricts} />
 
       <Styled.Container noMargin>
         <HomeContent />
       </Styled.Container>
 
+      <InfoInteroperability />
       <RatingApp />
     </Layout>
   );
