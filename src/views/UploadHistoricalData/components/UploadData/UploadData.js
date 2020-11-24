@@ -1,69 +1,119 @@
 import React, { useEffect } from 'react';
-import { withTranslation } from 'react-i18next';
-import PinInput from 'react-pin-input';
-import { Button, InfoIcon, Layout, PhoneNumber } from '../../../../components';
-import { Paragraph } from '../../../../theme/typography';
-import { Color } from '../../../../theme/colors';
-import { PinWrapper, ButtonWrapper } from '../../UploadHistoricalData.styled';
-
 import InformationIcon from '../../../../assets/img/icons/bad.svg';
-import WarningIcon from '../../../../assets/img/icons/warning.svg';
+import {
+  Button,
+  InfoIcon,
+  Layout,
+  Pin,
+  Warning,
+  T,
+  Tooltip,
+  WarningInEuropeTerm
+} from '../../../../components';
+import {
+  H5,
+  TextLink,
+  Paragraph,
+  SmallText
+} from '../../../../theme/typography';
+import { Color } from '../../../../theme/colors';
+import { ButtonWrapper } from '../../UploadHistoricalData.styled';
+import useModalContext from '../../../../hooks/useModalContext';
+import * as Styled from './UploadData.styled';
 
 const UploadData = ({
-  t,
   disableSubmitButton,
   disablePinInput,
   errorMessage,
   errorMessageVisible,
+  handleBack,
   hideErrorMessage,
   onUploadData,
   pin,
   setPin
 }) => {
+  const { openModal } = useModalContext();
+
   useEffect(() => {
     return () => {
       hideErrorMessage();
     };
     // eslint-disable-next-line
   }, []);
+
+  const handleOpenModal = () => {
+    openModal(
+      <T i18nKey="upload_data_popup_4" />,
+      'normal',
+      <T i18nKey="upload_data_popup_3" />,
+      null
+    );
+  };
+
   return (
-    <Layout hideBackButton isNavigation>
-      <Paragraph>{t('upload_data_text1')}</Paragraph>
-      <PinWrapper>
-        <PinInput
-          disabled={disablePinInput}
+    <Layout isNavigation onBackClick={handleBack}>
+      <Styled.Content>
+        <H5>
+          <T i18nKey="upload_data_text_1" />{' '}
+          <Tooltip
+            content={<T i18nKey="upload_data_popup_2" />}
+            title={<T i18nKey="upload_data_popup_1" />}
+          />
+        </H5>
+        <SmallText>
+          <T i18nKey="upload_data_text_2" />{' '}
+          <TextLink onClick={handleOpenModal}>
+            <T i18nKey="upload_data_text_3" />
+          </TextLink>{' '}
+          <T i18nKey="upload_data_text_4" />
+        </SmallText>
+        <SmallText>
+          <T i18nKey="upload_data_text_5" />
+        </SmallText>
+      </Styled.Content>
+
+      <WarningInEuropeTerm />
+
+      <Styled.PinWrapper>
+        <Pin
           initialValue={pin}
-          focus
-          length={6}
-          type="text"
           onChange={value => setPin(value)}
-          inputStyle={{ borderColor: Color.lightGray }}
+          title={<T i18nKey="upload_data_text_8" />}
         />
-      </PinWrapper>
+      </Styled.PinWrapper>
+
       {errorMessage && errorMessageVisible ? (
-        <InfoIcon icon={WarningIcon} className="errorMessage">
-          <Paragraph color={Color.danger}>{errorMessage}</Paragraph>
-        </InfoIcon>
+        <Styled.Warning>
+          <Warning
+            borderColor={Color.danger}
+            colorFont={Color.danger}
+            status="error"
+            title={errorMessage}
+          />
+        </Styled.Warning>
       ) : null}
+
       <ButtonWrapper>
         <Button
           onClick={onUploadData}
-          label={t('upload_data_text5')}
-          disabled={pin.length !== 6 || disableSubmitButton || disablePinInput}
+          label={<T i18nKey="upload_data_text_9" />}
+          disabled={
+            !pin || pin.length !== 6 || disableSubmitButton || disablePinInput
+          }
         />
       </ButtonWrapper>
+
       {errorMessage && errorMessageVisible ? (
-        <InfoIcon icon={InformationIcon}>
-          <Paragraph>
-            <strong>{t('upload_data_text2')}</strong>
-            <br />
-            {t('upload_data_text3')}{' '}
-            <PhoneNumber value="222500115">222 500 115</PhoneNumber>
-          </Paragraph>
-        </InfoIcon>
+        <Styled.Info>
+          <InfoIcon icon={InformationIcon}>
+            <Paragraph>
+              <T i18nKey="upload_data_text_10" />
+            </Paragraph>
+          </InfoIcon>
+        </Styled.Info>
       ) : null}
     </Layout>
   );
 };
 
-export default withTranslation()(UploadData);
+export default UploadData;

@@ -9,7 +9,7 @@ const Tooltip = ({ content, title, sticky }) => {
 
   const handleOpenModal = e => {
     e.preventDefault();
-    openModal(<TooltipContent content={content} />, '', title);
+    openModal(<TooltipContent content={content} />, 'normal', title, null);
   };
 
   return (

@@ -16,6 +16,7 @@ export const FollowDistrictsSlider = styled.div`
 `;
 
 export const Title = styled.span`
+  display: block;
   width: 100%;
   margin: 0 0 8px 0;
   padding-right: 17px;

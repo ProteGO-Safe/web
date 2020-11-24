@@ -23,7 +23,8 @@ import {
   UploadHistoricalData,
   UserData,
   UserDataChange,
-  UserDataSettings
+  UserDataSettings,
+  WarningInEurope
 } from '../../views';
 
 export const Screens = {
@@ -50,5 +51,6 @@ export const Screens = {
   [Routes.UploadHistoricalData]: UploadHistoricalData,
   [Routes.UserData]: UserData,
   [Routes.UserDataChange]: UserDataChange,
-  [Routes.UserDataSettings]: UserDataSettings
+  [Routes.UserDataSettings]: UserDataSettings,
+  [Routes.WarningInEurope]: WarningInEurope
 };

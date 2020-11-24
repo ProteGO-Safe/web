@@ -69,7 +69,7 @@ export const Icon = styled(ContactIcon)`
   display: flex;
   width: 46px;
   height: 46px;
-  margin-right: 32px;
+  margin-right: 28px;
   @media screen and (max-width: 370px) {
     width: 36px;
     height: 36px;
@@ -85,9 +85,9 @@ export const Icon = styled(ContactIcon)`
 export const ArrowRight = styled.span`
   position: absolute;
   top: 50%;
-  right: 0;
-  height: 16px;
-  width: 16px;
+  right: -6px;
+  height: 12px;
+  width: 12px;
   margin-top: -8px;
   z-index: 10;
   > svg {

@@ -1,11 +1,11 @@
 import React, { useEffect, useState, useRef } from 'react';
-import { withTranslation } from 'react-i18next';
+import PropTypes from 'prop-types';
 import useTriage from '../../../../hooks/useTriage';
 import { InfoContainer } from './TriageRiskInformation.styled';
 import { CallHelpline } from '../../../../components/CallHelpline';
 import { T } from '../../../../components/T';
 
-const TriageRiskInformation = ({ t }) => {
+const TriageRiskInformation = ({ isHotline }) => {
   const { color, content } = useTriage();
 
   const ref = useRef(null);
@@ -30,13 +30,23 @@ const TriageRiskInformation = ({ t }) => {
       <p>
         <T i18nKey={content} />
       </p>
-      <CallHelpline
-        hideText={hideText}
-        color={color}
-        phoneNumber="222 500 115"
-      />
+      {isHotline && (
+        <CallHelpline
+          hideText={hideText}
+          color={color}
+          phoneNumber="222 500 115"
+        />
+      )}
     </InfoContainer>
   );
 };
 
-export default withTranslation()(TriageRiskInformation);
+TriageRiskInformation.defaultProps = {
+  isHotline: true
+};
+
+TriageRiskInformation.propTypes = {
+  isHotline: PropTypes.bool
+};
+
+export default TriageRiskInformation;

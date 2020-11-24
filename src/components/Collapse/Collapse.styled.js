@@ -38,16 +38,28 @@ export const Icon = styled(ArrowIcon)`
   width: 12px;
   height: 12px;
   transform: rotate(${({ open }) => open && '-'}90deg);
+  transition: all 0.3s;
 `;
 
 export const Description = styled.div`
   display: block;
   width: 100%;
-  padding: 0 15px 10px 15px;
+  max-height: ${({ open }) => (open ? '9999px' : '0')};
+  padding: ${({ open }) => (open ? '0 15px 10px 15px' : '0 15px 0 15px')};
   font-size: 14px;
   line-height: 1.61;
   color: ${Color.lightBlack};
   white-space: pre-line;
+  transition: padding ${({ open }) => (open ? '0.1s' : '0.5s')},
+    max-height 0.4s cubic-bezier(0, 1, 0, 1) -0.1s;
+  overflow: hidden;
+  ${({ open }) =>
+    open &&
+    `
+      transition-timing-function: cubic-bezier(0.5, 0, 1, 0); 
+      transition-delay: 0s;
+    `}
+
   * {
     font-size: 14px;
     line-height: 1.61;

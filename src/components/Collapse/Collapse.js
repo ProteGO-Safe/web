@@ -15,7 +15,7 @@ const Collapse = ({ children, className, forceOpen, title }) => {
         <Styled.Title>{title}</Styled.Title>
         <Styled.Icon open={isOpen} />
       </Styled.Header>
-      {isOpen && <Styled.Description>{children}</Styled.Description>}
+      <Styled.Description open={isOpen}>{children}</Styled.Description>
     </Styled.CollapseWrapper>
   );
 };

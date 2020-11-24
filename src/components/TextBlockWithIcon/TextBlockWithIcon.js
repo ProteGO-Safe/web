@@ -18,7 +18,7 @@ const TextBlockWithIcon = ({ children, icon, title }) => (
 TextBlockWithIcon.propTypes = {
   children: PropTypes.node.isRequired,
   icon: PropTypes.string.isRequired,
-  title: PropTypes.string.isRequired
+  title: PropTypes.object.isRequired
 };
 
 export default TextBlockWithIcon;

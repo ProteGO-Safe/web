@@ -21,7 +21,7 @@ yarn test a
 ### Run application locally
 ```shell script
 git update-index --skip-worktree src/locales/resources.j (once)
-yarn prepare-tranlations
+yarn prepare-translations
 yarn install
 yarn start
 ```

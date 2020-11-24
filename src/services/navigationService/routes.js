@@ -23,5 +23,6 @@ export const Routes = {
   UploadHistoricalData: 'uploadHistoricalData',
   UserData: 'userData',
   UserDataChange: 'userDataChange',
-  UserDataSettings: 'userDataSettings'
+  UserDataSettings: 'userDataSettings',
+  WarningInEurope: 'warningInEurope'
 };
