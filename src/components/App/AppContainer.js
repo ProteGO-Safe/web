@@ -1,5 +1,4 @@
 import React from 'react';
-
 import { LoaderProvider } from '../../context/LoaderContext';
 import { MenuProvider } from '../../context/MenuContext';
 import { ModalProvider } from '../../context/ModalContext';
