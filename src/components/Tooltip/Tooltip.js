@@ -3,13 +3,14 @@ import PropTypes from 'prop-types';
 import useModalContext from '../../hooks/useModalContext';
 import { TooltipContent } from './components';
 import * as Styled from './Tooltip.styled';
+import { TYPE } from '../Modal/Modal.helpers';
 
 const Tooltip = ({ content, title, sticky }) => {
   const { openModal } = useModalContext();
 
   const handleOpenModal = e => {
     e.preventDefault();
-    openModal(<TooltipContent content={content} />, 'normal', title, null);
+    openModal(<TooltipContent content={content} />, TYPE.TOOLTIP, title, null);
   };
 
   return (

@@ -5,14 +5,14 @@ import { TYPE } from './Modal.helpers';
 
 const handleType = type => {
   switch (type) {
-    case TYPE.DIALOG:
-      return '30px 40px 20px 40px';
-    case TYPE.INNER_CONTENT:
-      return '30px 20px 20px';
-    case TYPE.NORMAL:
-      return '30px 40px';
-    case TYPE.RATING_APP:
+    case TYPE.CUSTOM:
       return '30px 0 0';
+    case TYPE.DEFAULT:
+      return '30px 30px 20px';
+    case TYPE.ONLY_CONTENT:
+      return '30px 40px';
+    case TYPE.TOOLTIP:
+      return '30px 30px 20px';
     default:
       return '30px 40px';
   }
@@ -106,5 +106,4 @@ export const Description = styled.div`
   display: block;
   width: 100%;
   margin-top: 12px;
-  overflow-x: hidden;
 `;

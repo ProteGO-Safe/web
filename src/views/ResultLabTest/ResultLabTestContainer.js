@@ -14,6 +14,7 @@ import {
 } from '../../store/actions/triage';
 import { InfoNegativeLabTest } from '../InfoNegativeLabTest';
 import { Routes } from '../../services/navigationService/routes';
+import { TYPE } from '../../components/Modal/Modal.helpers';
 
 const ResultLabTestContainer = ({ t }) => {
   const dispatch = useDispatch();
@@ -51,7 +52,7 @@ const ResultLabTestContainer = ({ t }) => {
             {t('result_test_lab_text9')}{' '}
             <strong>{t('result_test_lab_text4')}.</strong>
           </>,
-          'dialog',
+          TYPE.DEFAULT,
           t('result_test_lab_text10'),
           <ModalFooter
             handleClickYes={() => handlePositiveYes()}
@@ -65,7 +66,7 @@ const ResultLabTestContainer = ({ t }) => {
       onClick: () =>
         openModal(
           t('result_test_lab_text5'),
-          'dialog',
+          TYPE.DEFAULT,
           t('result_test_lab_text6'),
           <ModalFooter
             handleClickYes={() => handleNegativeYes()}

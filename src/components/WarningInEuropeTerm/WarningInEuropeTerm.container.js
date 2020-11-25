@@ -6,6 +6,7 @@ import useModalContext from '../../hooks/useModalContext';
 import PrivacyPolicyContent from '../../views/PrivacyPolicyDetails/component/PrivacyPolicyContent/PrivacyPolicyContent';
 import { getWarningInEuropeTermState } from '../../store/selectors/app';
 import { warningInEuropeTermToggle } from '../../store/actions/app';
+import { TYPE } from '../Modal/Modal.helpers';
 
 const WarningInEuropeTermContainer = ({ forceOpen }) => {
   const dispatch = useDispatch();
@@ -18,7 +19,7 @@ const WarningInEuropeTermContainer = ({ forceOpen }) => {
 
   const handleOpenModal = e => {
     e.preventDefault();
-    openModal(<PrivacyPolicyContent small />, 'normal', null, null);
+    openModal(<PrivacyPolicyContent small />, TYPE.DEFAULT, null, null);
   };
 
   return (

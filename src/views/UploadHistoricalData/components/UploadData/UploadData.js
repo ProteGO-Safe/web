@@ -20,6 +20,7 @@ import { Color } from '../../../../theme/colors';
 import { ButtonWrapper } from '../../UploadHistoricalData.styled';
 import useModalContext from '../../../../hooks/useModalContext';
 import * as Styled from './UploadData.styled';
+import { TYPE } from '../../../../components/Modal/Modal.helpers';
 
 const UploadData = ({
   disableSubmitButton,
@@ -44,7 +45,7 @@ const UploadData = ({
   const handleOpenModal = () => {
     openModal(
       <T i18nKey="upload_data_popup_4" />,
-      'normal',
+      TYPE.DEFAULT,
       <T i18nKey="upload_data_popup_3" />,
       null
     );

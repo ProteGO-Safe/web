@@ -4,6 +4,7 @@ import useLanguage from '../../hooks/useLanguage';
 import useNavigation from '../../hooks/useNavigation';
 import { AVAILABLE_LANGUAGES } from '../../constants';
 import { RatingAppModalFooter, RatingAppModalContent } from './components';
+import { TYPE } from '../../components/Modal/Modal.helpers';
 import {
   ModalFalseContent,
   ModalFalseFooter
@@ -23,7 +24,7 @@ const RatingApp = () => {
   const handleModalClickFalse = useCallback(() => {
     openModal(
       <ModalFalseContent />,
-      'rating-app',
+      TYPE.CUSTOM,
       null,
       <ModalFalseFooter
         type={language === AVAILABLE_LANGUAGES.pl ? 'link' : 'route'}
@@ -43,7 +44,7 @@ const RatingApp = () => {
   useEffect(() => {
     openModal(
       <RatingAppModalContent />,
-      'rating-app',
+      TYPE.CUSTOM,
       null,
       <RatingAppModalFooter
         handleClickTrue={handleModalClickTrue}

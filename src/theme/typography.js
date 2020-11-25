@@ -103,30 +103,6 @@ export const ListItem = styled(Paragraph)`
   }
 `;
 
-export const Title = styled(H4)`
-  margin-top: 0;
-  font-size: 18px;
-  color: ${Color.primary};
-  text-align: center;
-  padding-bottom: 30px;
-`;
-
-export const ListNumber = styled.ol`
-  padding-left: 35px;
-  margin-top: 0;
-`;
-
-export const ListNumberItem = styled.li`
-  margin-bottom: 16px;
-  font-size: 16px;
-  font-weight: normal;
-  line-height: 1.5;
-  color: #1b1b1b;
-  &:last-child {
-    margin-bottom: 0;
-  }
-`;
-
 export const Name = styled.h1`
   margin-top: 0;
   margin-bottom: 10px;

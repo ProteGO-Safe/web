@@ -4,10 +4,11 @@ import { Button, Layout } from '../../components';
 import { ModalContent } from './components';
 import useModalContext from '../../hooks/useModalContext';
 import { Actions } from '../../components/ImprintFiller/ImprintFiller.styled';
-import { Paragraph, Title } from '../../theme/typography';
-import { Box, BoxTitle } from './userDataSettings.styled';
+import { Paragraph } from '../../theme/typography';
+import { Box, BoxTitle, Title } from './userDataSettings.styled';
 
 import warning from '../../assets/img/icons/warning.svg';
+import { TYPE } from '../../components/Modal/Modal.helpers';
 
 const UserDataSettings = ({ t }) => {
   const { openModal } = useModalContext();
@@ -15,7 +16,7 @@ const UserDataSettings = ({ t }) => {
   const handleClick = () =>
     openModal(
       t('modal_content_text2'),
-      'dialog',
+      TYPE.DEFAULT,
       t('modal_content_text1'),
       <ModalContent />
     );
