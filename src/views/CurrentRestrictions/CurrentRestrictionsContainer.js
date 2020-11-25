@@ -62,7 +62,7 @@ const CurrentRestrictionsContainer = () => {
     }
     openModal(
       <ModalContent />,
-      TYPE.CUSTOM,
+      TYPE.DEFAULT,
       null,
       <ModalFooter handleClick={handleModalClick} />
     );
