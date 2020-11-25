@@ -6,6 +6,7 @@ import PrivacyPolicyContent from '../PrivacyPolicyDetails/component/PrivacyPolic
 import * as Styled from './SummaryRiskTest.styled';
 import useNavigation from '../../hooks/useNavigation';
 import { Routes } from '../../services/navigationService/routes';
+import { TYPE } from '../../components/Modal/Modal.helpers';
 
 const SummaryRiskTest = ({ data }) => {
   const { goTo } = useNavigation();
@@ -17,13 +18,13 @@ const SummaryRiskTest = ({ data }) => {
         <T i18nKey={data.annotation.paragraph_2} />
         <Styled.Link
           onClick={() => {
-            openModal(<PrivacyPolicyContent small />);
+            openModal(<PrivacyPolicyContent small />, TYPE.DEFAULT, null, null);
           }}
         >
           <T i18nKey={data.annotation.paragraph_3} />
         </Styled.Link>
       </AnnotationContent>,
-      'normal',
+      TYPE.DEFAULT,
       <T i18nKey={data.annotation.title} />,
       null
     );

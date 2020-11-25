@@ -16,6 +16,7 @@ import {
   Paragraph,
   Small
 } from '../../Registration.styled';
+import { TYPE } from '../../../../components/Modal/Modal.helpers';
 
 const Terms = ({ t, handleClick }) => {
   const { setFieldValue, values } = useFormikContext();
@@ -44,7 +45,12 @@ const Terms = ({ t, handleClick }) => {
               <TextLink
                 onClick={e => {
                   e.preventDefault();
-                  openModal(<RegulationsContent small />);
+                  openModal(
+                    <RegulationsContent small />,
+                    TYPE.DEFAULT,
+                    null,
+                    null
+                  );
                 }}
                 role="button"
               >
@@ -54,7 +60,12 @@ const Terms = ({ t, handleClick }) => {
               <TextLink
                 onClick={e => {
                   e.preventDefault();
-                  openModal(<PrivacyPolicyContent small />);
+                  openModal(
+                    <PrivacyPolicyContent small />,
+                    TYPE.DEFAULT,
+                    null,
+                    null
+                  );
                 }}
                 role="button"
               >
@@ -82,7 +93,7 @@ const Terms = ({ t, handleClick }) => {
         <TextLink
           onClick={e => {
             e.preventDefault();
-            openModal(<PrivacyPolicyContent />);
+            openModal(<PrivacyPolicyContent small />, TYPE.DEFAULT, null, null);
           }}
           role="button"
         >

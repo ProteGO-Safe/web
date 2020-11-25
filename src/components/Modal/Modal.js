@@ -11,13 +11,9 @@ const Modal = ({ open }) => {
     <Styled.Wrapper open={open}>
       <Styled.Overlay onClick={onClose} open={open} />
       <Styled.Content type={type}>
-        {(type === TYPE.NORMAL || type === TYPE.RATING_APP) && (
-          <ModalClose onClick={onClose} />
-        )}
+        {type !== TYPE.ONLY_CONTENT && <ModalClose onClick={onClose} />}
 
-        {type === TYPE.INNER_CONTENT || type === TYPE.RATING_APP ? (
-          <Styled.ContentWrapper>{content}</Styled.ContentWrapper>
-        ) : (
+        {type !== TYPE.CUSTOM ? (
           <>
             {title && <Styled.Title>{title}</Styled.Title>}
 
@@ -25,10 +21,12 @@ const Modal = ({ open }) => {
               <Styled.Text>{content}</Styled.Text>
             </Styled.Description>
           </>
+        ) : (
+          <Styled.ContentWrapper>{content}</Styled.ContentWrapper>
         )}
 
-        {footer && type !== TYPE.NORMAL && (
-          <Styled.Footer type={type}>{footer}</Styled.Footer>
+        {footer && type !== TYPE.TOOLTIP && (
+          <Styled.Footer>{footer}</Styled.Footer>
         )}
       </Styled.Content>
     </Styled.Wrapper>

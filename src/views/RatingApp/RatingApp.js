@@ -1,6 +1,7 @@
 import React, { useEffect, useCallback } from 'react';
 import useModalContext from '../../hooks/useModalContext';
 import { RatingAppModalFooter, RatingAppModalContent } from './components';
+import { TYPE } from '../../components/Modal/Modal.helpers';
 
 const RatingApp = () => {
   const { openModal, onClose } = useModalContext();
@@ -18,7 +19,7 @@ const RatingApp = () => {
   useEffect(() => {
     openModal(
       <RatingAppModalContent />,
-      'rating-app',
+      TYPE.CUSTOM,
       null,
       <RatingAppModalFooter
         handleClickTrue={handleModalClickTrue}

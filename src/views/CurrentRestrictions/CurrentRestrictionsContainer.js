@@ -26,6 +26,7 @@ import { ModalContent, ModalFooter } from './components';
 import { getRestrictionsModalShowed } from '../../store/selectors/app';
 import { hideRestrictionsModal } from '../../store/actions/app';
 import { FAILED } from '../../constants';
+import { TYPE } from '../../components/Modal/Modal.helpers';
 
 const dateFormat = 'D-MM-YYYY';
 
@@ -61,7 +62,7 @@ const CurrentRestrictionsContainer = () => {
     }
     openModal(
       <ModalContent />,
-      'inner-content',
+      TYPE.CUSTOM,
       null,
       <ModalFooter handleClick={handleModalClick} />
     );

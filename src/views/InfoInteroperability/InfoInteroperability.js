@@ -6,6 +6,7 @@ import useNavigation from '../../hooks/useNavigation';
 import { getInteroperabilityModalShowed } from '../../store/selectors/app';
 import { hideInteroperabilityModal } from '../../store/actions/app';
 import { Routes } from '../../services/navigationService/routes';
+import { TYPE } from '../../components/Modal/Modal.helpers';
 
 const InfoInteroperability = () => {
   const { openModal, onClose } = useModalContext();
@@ -39,7 +40,7 @@ const InfoInteroperability = () => {
         title="info_interoperability_text1"
         content="info_interoperability_text2"
       />,
-      'inner-content',
+      TYPE.DEFAULT,
       null,
       <FooterModal
         handleClickTrue={handleModalClickTrue}
