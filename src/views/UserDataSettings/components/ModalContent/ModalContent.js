@@ -4,18 +4,15 @@ import { Button } from '../../../../components';
 import useModalContext from '../../../../hooks/useModalContext';
 import { ModalConfirmation } from '../ModalConfirmation';
 import * as Styled from './ModalContent.styled.';
-import { TYPE } from '../../../../components/Modal/Modal.helpers';
 
 const ModalContent = ({ t }) => {
   const { onClose, openModal } = useModalContext();
 
   const handleSubmit = () => {
-    openModal(
-      null,
-      TYPE.DEFAULT,
-      t('modal_confirmation_text1'),
-      <ModalConfirmation />
-    );
+    openModal({
+      modalTitle: t('modal_confirmation_text1'),
+      modalFooter: <ModalConfirmation />
+    });
   };
 
   return (

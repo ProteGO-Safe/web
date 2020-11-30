@@ -1,10 +1,7 @@
 import moment from 'moment';
 import nativeBridge from '../../services/nativeBridge';
 import * as types from '../types/nativeData';
-import {
-  UPLOAD_HISTORICAL_DATA_ENDED,
-  UPLOAD_HISTORICAL_DATA_REQUESTED
-} from '../types/app';
+import { UPLOAD_HISTORICAL_DATA_ENDED, UPLOAD_HISTORICAL_DATA_REQUESTED } from '../types/app';
 
 export function saveInfoAboutFilledDiagnosis() {
   const timestamp = moment().unix();
@@ -44,16 +41,17 @@ export function fetchServicesStatus() {
   };
 }
 
-export const fetchExposureNotificationStatisticsSuccess = riskLevel => ({
-  riskLevel,
-  type: types.NATIVE_DATA_FETCH_EXPOSURE_NOTIFICATION_STATISTICS_SUCCESS
+export const enStatusReceived = riskLevel => ({
+  data: { riskLevel },
+  type: types.EN_STATUS_RECEIVED
 });
 
 export function fetchExposureNotificationStatistics() {
   return dispatch => {
-    nativeBridge.getExposureNotificationStatistics().then(riskLevel => {
-      if (riskLevel) {
-        dispatch(fetchExposureNotificationStatisticsSuccess(riskLevel));
+    nativeBridge.getExposureNotificationStatistics().then(data => {
+      if (data) {
+        const { riskLevel } = data;
+        dispatch(enStatusReceived(riskLevel));
       }
     });
   };
@@ -192,15 +190,11 @@ export const uploadLabTestPin = pin => {
   };
 };
 
-export const revokeEnStatusFinished = body => ({
-  body,
-  type: types.REVOKE_EN_STATUS_FINISHED
-});
-
 export const revokeEnStatus = () => {
   return async dispatch => {
-    await nativeBridge.revokeEnStatus().then(value => {
-      dispatch(revokeEnStatusFinished(value));
+    await nativeBridge.revokeEnStatus().then(data => {
+      const { riskLevel } = data;
+      dispatch(enStatusReceived(riskLevel));
     });
   };
 };

@@ -10,13 +10,7 @@ import { Annotation, TextLink } from '../../../../theme/typography';
 import PrivacyPolicyContent from '../../../PrivacyPolicyDetails/component/PrivacyPolicyContent/PrivacyPolicyContent';
 import RegulationsContent from '../../../Regulations/component/RegulationsContent/RegulationsContent';
 import { Button, Checkbox, Email, Layout } from '../../../../components';
-import {
-  ButtonWrapper,
-  Title,
-  Paragraph,
-  Small
-} from '../../Registration.styled';
-import { TYPE } from '../../../../components/Modal/Modal.helpers';
+import { ButtonWrapper, Paragraph, Small, Title } from '../../Registration.styled';
 
 const Terms = ({ t, handleClick }) => {
   const { setFieldValue, values } = useFormikContext();
@@ -25,6 +19,10 @@ const Terms = ({ t, handleClick }) => {
   const disabled = (() => {
     return !values[FIELD_TERM1];
   })();
+
+  const onOpenModal = content => {
+    openModal({ value: content });
+  };
 
   return (
     <Layout id="view-terms" hideBackButton isGovFooter>
@@ -45,12 +43,7 @@ const Terms = ({ t, handleClick }) => {
               <TextLink
                 onClick={e => {
                   e.preventDefault();
-                  openModal(
-                    <RegulationsContent small />,
-                    TYPE.DEFAULT,
-                    null,
-                    null
-                  );
+                  onOpenModal(<RegulationsContent small />);
                 }}
                 role="button"
               >
@@ -60,12 +53,7 @@ const Terms = ({ t, handleClick }) => {
               <TextLink
                 onClick={e => {
                   e.preventDefault();
-                  openModal(
-                    <PrivacyPolicyContent small />,
-                    TYPE.DEFAULT,
-                    null,
-                    null
-                  );
+                  onOpenModal(<PrivacyPolicyContent small />);
                 }}
                 role="button"
               >
@@ -80,11 +68,7 @@ const Terms = ({ t, handleClick }) => {
       </FormGroup>
 
       <ButtonWrapper>
-        <Button
-          disabled={disabled}
-          onClick={handleClick}
-          label={t('button_next')}
-        />
+        <Button disabled={disabled} onClick={handleClick} label={t('button_next')} />
       </ButtonWrapper>
 
       <Small>
@@ -93,7 +77,7 @@ const Terms = ({ t, handleClick }) => {
         <TextLink
           onClick={e => {
             e.preventDefault();
-            openModal(<PrivacyPolicyContent small />, TYPE.DEFAULT, null, null);
+            onOpenModal(<PrivacyPolicyContent small />);
           }}
           role="button"
         >

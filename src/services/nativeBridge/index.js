@@ -4,18 +4,20 @@ import uniqueId from 'lodash.uniqueid';
 import { always, cond, equals } from 'ramda';
 import StoreRegistry from '../../store/storeRegistry';
 import {
-  FETCH_LAB_TEST_SUBSCRIPTION,
   FETCH_LANGUAGE,
-  NATIVE_DATA_FETCH_EXPOSURE_NOTIFICATION_STATISTICS_SUCCESS,
   NATIVE_DATA_FETCH_NATIVE_STATE,
   NATIVE_DATA_SET_SERVICES_STATUS_SUCCESS
 } from '../../store/types/nativeData';
 import { DATA_TYPE } from './nativeBridge.constants';
-import { UPLOAD_HISTORICAL_DATA_FINISHED } from '../../store/types/app';
 import { isAndroidWebView, isIOSWebView } from '../../utils/native';
-import { fetchExposureNotificationStatistics } from '../../store/actions/nativeData';
+import {
+  enStatusReceived,
+  fetchExposureNotificationStatistics,
+  fetchLabTestSubscriptionSuccess
+} from '../../store/actions/nativeData';
 import { fetchSubscribedDistricts } from '../../store/actions/restrictions';
 import { BACK_PRESSED } from '../../store/types/navigation';
+import { UPLOAD_HISTORICAL_DATA_FINISHED } from '../../store/types/app';
 
 const nativeRequests = {};
 
@@ -137,11 +139,13 @@ const uploadHistoricalData = async ({ pin, isInteroperabilityEnabled }) => {
 };
 
 const setServicesState = async data => {
-  await callNativeFunction(
-    'setBridgeData',
-    DATA_TYPE.NATIVE_SERVICES_STATE,
-    data
-  );
+  await callNativeFunction('setBridgeData', DATA_TYPE.NATIVE_SERVICES_STATE, data);
+};
+
+const rateApp = async () => {
+  await callNativeFunction('setBridgeData', DATA_TYPE.RATING_APP, {
+    appReview: true
+  });
 };
 
 const turnOff = async () => {
@@ -181,12 +185,10 @@ const handleUploadHistoricalDataResponse = ({ result }) => {
   });
 };
 
-const handleExposureSummary = riskLevel => {
+const handleExposureSummary = data => {
   const store = StoreRegistry.getStore();
-  store.dispatch({
-    riskLevel,
-    type: NATIVE_DATA_FETCH_EXPOSURE_NOTIFICATION_STATISTICS_SUCCESS
-  });
+  const { riskLevel } = data;
+  store.dispatch(enStatusReceived(riskLevel));
 };
 
 const handleNativeState = appState => {
@@ -213,10 +215,7 @@ const handleNativeLanguage = body => {
 const handleLabTestSubscription = body => {
   const store = StoreRegistry.getStore();
   const { dispatch } = store;
-  dispatch({
-    body,
-    type: FETCH_LAB_TEST_SUBSCRIPTION
-  });
+  dispatch(fetchLabTestSubscriptionSuccess(body));
 };
 
 const handleBackPressed = () => {
@@ -229,10 +228,7 @@ const handleBackPressed = () => {
 
 const callBridgeDataHandler = cond([
   [equals(DATA_TYPE.NATIVE_SERVICES_STATUS), always(handleServicesStatus)],
-  [
-    equals(DATA_TYPE.HISTORICAL_DATA),
-    always(handleUploadHistoricalDataResponse)
-  ],
+  [equals(DATA_TYPE.HISTORICAL_DATA), always(handleUploadHistoricalDataResponse)],
   [equals(DATA_TYPE.EXPOSURE_STATISTICS), always(handleExposureSummary)],
   [equals(DATA_TYPE.NATIVE_STATE), always(handleNativeState)],
   [equals(DATA_TYPE.LANGUAGE), always(handleNativeLanguage)],
@@ -275,6 +271,7 @@ export default {
   getNotification,
   getServicesStatus,
   getSubscribedDistricts,
+  rateApp,
   revokeEnStatus,
   setDistrictSubscription,
   setServicesState,

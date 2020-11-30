@@ -8,18 +8,16 @@ import { Paragraph } from '../../theme/typography';
 import { Box, BoxTitle, Title } from './userDataSettings.styled';
 
 import warning from '../../assets/img/icons/warning.svg';
-import { TYPE } from '../../components/Modal/Modal.helpers';
 
 const UserDataSettings = ({ t }) => {
   const { openModal } = useModalContext();
 
   const handleClick = () =>
-    openModal(
-      t('modal_content_text2'),
-      TYPE.DEFAULT,
-      t('modal_content_text1'),
-      <ModalContent />
-    );
+    openModal({
+      value: t('modal_content_text2'),
+      modalTitle: t('modal_content_text1'),
+      modalFooter: <ModalContent />
+    });
 
   return (
     <Layout isNavigation>
@@ -32,11 +30,7 @@ const UserDataSettings = ({ t }) => {
         <Paragraph>{t('user_data_settings_text3')}</Paragraph>
       </Box>
       <Actions>
-        <Button
-          onClick={handleClick}
-          label={t('user_data_settings_text4')}
-          type="outline"
-        />
+        <Button onClick={handleClick} label={t('user_data_settings_text4')} type="outline" />
       </Actions>
     </Layout>
   );

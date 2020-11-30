@@ -7,14 +7,9 @@ import { ModalFooter } from './components';
 import { Layout } from '../../components';
 import useNavigation from '../../hooks/useNavigation';
 import { revokeEnStatus } from '../../store/actions/nativeData';
-import {
-  confirmManualCovid,
-  revokeManualCovid,
-  revokeTorStatus
-} from '../../store/actions/triage';
+import { confirmManualCovid, revokeManualCovid, revokeTorStatus } from '../../store/actions/triage';
 import { InfoNegativeLabTest } from '../InfoNegativeLabTest';
 import { Routes } from '../../services/navigationService/routes';
-import { TYPE } from '../../components/Modal/Modal.helpers';
 
 const ResultLabTestContainer = ({ t }) => {
   const dispatch = useDispatch();
@@ -47,32 +42,25 @@ const ResultLabTestContainer = ({ t }) => {
       type: 'default',
       name: t('result_test_lab_text1'),
       onClick: () =>
-        openModal(
-          <>
-            {t('result_test_lab_text9')}{' '}
-            <strong>{t('result_test_lab_text4')}.</strong>
-          </>,
-          TYPE.DEFAULT,
-          t('result_test_lab_text10'),
-          <ModalFooter
-            handleClickYes={() => handlePositiveYes()}
-            handleClickCancel={onClose}
-          />
-        )
+        openModal({
+          value: (
+            <>
+              {t('result_test_lab_text9')} <strong>{t('result_test_lab_text4')}.</strong>
+            </>
+          ),
+          modalTitle: t('result_test_lab_text10'),
+          modalFooter: <ModalFooter handleClickYes={() => handlePositiveYes()} handleClickCancel={onClose} />
+        })
     },
     {
       type: 'default',
       name: t('result_test_lab_text2'),
       onClick: () =>
-        openModal(
-          t('result_test_lab_text5'),
-          TYPE.DEFAULT,
-          t('result_test_lab_text6'),
-          <ModalFooter
-            handleClickYes={() => handleNegativeYes()}
-            handleClickCancel={onClose}
-          />
-        )
+        openModal({
+          value: t('result_test_lab_text5'),
+          modalTitle: t('result_test_lab_text6'),
+          modalFooter: <ModalFooter handleClickYes={() => handleNegativeYes()} handleClickCancel={onClose} />
+        })
     }
   ];
 
@@ -82,11 +70,7 @@ const ResultLabTestContainer = ({ t }) => {
 
   return (
     <Layout isNavigation fullHeight noPadding hideBackButton>
-      <ResultLabTest
-        title={t('result_test_lab_text8')}
-        content={t('result_test_lab_text7')}
-        buttons={BUTTONS}
-      />
+      <ResultLabTest title={t('result_test_lab_text8')} content={t('result_test_lab_text7')} buttons={BUTTONS} />
     </Layout>
   );
 };

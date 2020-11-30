@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useCallback, useMemo } from 'react';
+import React, { useCallback, useEffect, useMemo, useState } from 'react';
 import moment from 'moment';
 import { useDispatch, useSelector } from 'react-redux';
 import CurrentRestrictions from './CurrentRestrictions';
@@ -12,21 +12,12 @@ import {
   subscribeDistrict,
   unsubscribeDistrict
 } from '../../store/actions/restrictions';
-import {
-  getResult,
-  getSubscribedDistricts,
-  getUpdated,
-  getVoivodeships
-} from '../../store/selectors/restrictions';
-import {
-  flatDistricts,
-  prepareVoivodeshipsWithDistricts
-} from './currentRestrictions.helpers';
+import { getResult, getSubscribedDistricts, getUpdated, getVoivodeships } from '../../store/selectors/restrictions';
+import { flatDistricts, prepareVoivodeshipsWithDistricts } from './currentRestrictions.helpers';
 import { ModalContent, ModalFooter } from './components';
 import { getRestrictionsModalShowed } from '../../store/selectors/app';
 import { hideRestrictionsModal } from '../../store/actions/app';
 import { FAILED } from '../../constants';
-import { TYPE } from '../../components/Modal/Modal.helpers';
 
 const dateFormat = 'D-MM-YYYY';
 
@@ -44,10 +35,7 @@ const CurrentRestrictionsContainer = () => {
   const [districts, setDistricts] = useState([]);
 
   const isFlatten = useMemo(() => filterText.length > 2, [filterText]);
-  const dateUpdate = useMemo(
-    () => (updated ? moment.unix(updated).format(dateFormat) : ''),
-    [updated]
-  );
+  const dateUpdate = useMemo(() => (updated ? moment.unix(updated).format(dateFormat) : ''), [updated]);
 
   useEffect(() => {
     dispatch(fetchDistrictsStatus());
@@ -60,26 +48,20 @@ const CurrentRestrictionsContainer = () => {
       onClose();
       return;
     }
-    openModal(
-      <ModalContent />,
-      TYPE.DEFAULT,
-      null,
-      <ModalFooter handleClick={handleModalClick} />
-    );
+    openModal({
+      value: <ModalContent />,
+      modalFooter: <ModalFooter handleClick={handleModalClick} />
+    });
     // eslint-disable-next-line
   }, [restrictionsModalShowed]);
 
   useEffect(() => {
-    setDistricts(
-      prepareVoivodeshipsWithDistricts(voivodeships, subscribedDistricts)
-    );
+    setDistricts(prepareVoivodeshipsWithDistricts(voivodeships, subscribedDistricts));
   }, [voivodeships, subscribedDistricts]);
 
   useEffect(() => {
     if (filterText.length > 2) {
-      setFlattenDistricts(
-        flatDistricts(voivodeships, filterText, subscribedDistricts)
-      );
+      setFlattenDistricts(flatDistricts(voivodeships, filterText, subscribedDistricts));
     }
   }, [filterText, voivodeships, subscribedDistricts]);
 

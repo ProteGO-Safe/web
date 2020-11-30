@@ -4,14 +4,7 @@ import 'moment/locale/pl';
 import 'moment/locale/uk';
 import 'moment/locale/en-gb';
 import { useDispatch, useSelector } from 'react-redux';
-import {
-  FirstDiagnosisAsking,
-  Home,
-  NotSupported,
-  Onboarding,
-  Registration,
-  StartScreen
-} from '../../views';
+import { FirstDiagnosisAsking, Home, NotSupported, Onboarding, Registration, StartScreen } from '../../views';
 import { Menu } from '../index';
 import { fetchNativeVersion } from '../../store/actions/nativeData';
 import useMenuContext from '../../hooks/useMenuContext';
@@ -33,6 +26,7 @@ import { fetchSubscribedDistricts } from '../../store/actions/restrictions';
 import useNavigation from '../../hooks/useNavigation';
 import ScreenFactory from '../../services/navigationService/Screen.factory';
 import { Routes } from '../../services/navigationService/routes';
+import useFirstRun from '../../hooks/useFirstRun';
 
 function App() {
   const dispatch = useDispatch();
@@ -50,6 +44,7 @@ function App() {
   useMigration();
   useCheckLanguage();
   useClearData();
+  useFirstRun();
   const { goTo, route } = useNavigation();
 
   useEffect(() => {

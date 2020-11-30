@@ -6,28 +6,27 @@ import PrivacyPolicyContent from '../PrivacyPolicyDetails/component/PrivacyPolic
 import * as Styled from './SummaryRiskTest.styled';
 import useNavigation from '../../hooks/useNavigation';
 import { Routes } from '../../services/navigationService/routes';
-import { TYPE } from '../../components/Modal/Modal.helpers';
 
 const SummaryRiskTest = ({ data }) => {
   const { goTo } = useNavigation();
   const { openModal } = useModalContext();
 
   const handleOpenModal = () => {
-    openModal(
-      <AnnotationContent>
-        <T i18nKey={data.annotation.paragraph_2} />
-        <Styled.Link
-          onClick={() => {
-            openModal(<PrivacyPolicyContent small />, TYPE.DEFAULT, null, null);
-          }}
-        >
-          <T i18nKey={data.annotation.paragraph_3} />
-        </Styled.Link>
-      </AnnotationContent>,
-      TYPE.DEFAULT,
-      <T i18nKey={data.annotation.title} />,
-      null
-    );
+    openModal({
+      value: (
+        <AnnotationContent>
+          <T i18nKey={data.annotation.paragraph_2} />
+          <Styled.Link
+            onClick={() => {
+              openModal({ value: <PrivacyPolicyContent small /> });
+            }}
+          >
+            <T i18nKey={data.annotation.paragraph_3} />
+          </Styled.Link>
+        </AnnotationContent>
+      ),
+      modalTitle: <T i18nKey={data.annotation.title} />
+    });
   };
 
   return (
@@ -66,11 +65,7 @@ const SummaryRiskTest = ({ data }) => {
       )}
 
       <Styled.ButtonWrapper>
-        <Button
-          onClick={() =>
-            data.annotation ? goTo(Routes.LabTest) : goTo(Routes.Home)
-          }
-        >
+        <Button onClick={() => (data.annotation ? goTo(Routes.LabTest) : goTo(Routes.Home))}>
           <T i18nKey={data.button} />
         </Button>
         {data.button_remind_later && (

@@ -1,8 +1,6 @@
+import moment from 'moment';
 import * as types from '../types/app';
-import {
-  changeNativeLanguage,
-  resetSourceSetServicesStatus
-} from './nativeData';
+import { changeNativeLanguage, resetSourceSetServicesStatus } from './nativeData';
 import nativeBridge from '../../services/nativeBridge';
 
 export const onboardingFinished = () => ({
@@ -152,4 +150,45 @@ export const hideInteroperabilityModal = () => {
 
 export const warningInEuropeTermToggle = () => ({
   type: types.WARNING_IN_EUROPE_TERM_TOGGLE
+});
+
+export const firstRun = data => ({
+  data,
+  type: types.FIRST_RUN
+});
+
+export const markFirstRun = () => {
+  const timestamp = moment().unix();
+  return dispatch => {
+    dispatch(firstRun({ timestamp }));
+  };
+};
+
+export const applicationRated = data => ({
+  data,
+  type: types.APPLICATION_RATED
+});
+
+export const rateApplication = liked => {
+  return dispatch => {
+    dispatch(applicationRated({ liked }));
+    if (liked) {
+      nativeBridge.rateApp();
+    }
+  };
+};
+
+export const showingRateApplicationSet = data => ({
+  data,
+  type: types.SHOWING_RATE_APPLICATION_SET
+});
+
+export const setShowingRateApplication = timestamp => {
+  return dispatch => {
+    dispatch(showingRateApplicationSet({ timestamp }));
+  };
+};
+
+export const rateApplicationShowed = () => ({
+  type: types.RATE_APPLICATION_SHOWED
 });

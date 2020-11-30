@@ -5,52 +5,50 @@ import useNavigation from '../../hooks/useNavigation';
 import { AVAILABLE_LANGUAGES } from '../../constants';
 import { RatingAppModalFooter, RatingAppModalContent } from './components';
 import { TYPE } from '../../components/Modal/Modal.helpers';
-import {
-  ModalFalseContent,
-  ModalFalseFooter
-} from './components/RatingAppModalFalse';
+import { ModalFalseContent, ModalFalseFooter } from './components/RatingAppModalFalse';
 import { Routes } from '../../services/navigationService/routes';
 
-const RatingApp = () => {
+const RatingApp = ({ handleClose, handleYes, handleNo }) => {
   const { openModal, onClose } = useModalContext();
   const { language } = useLanguage();
   const { goTo } = useNavigation();
 
-  const handleModalClickTrue = useCallback(() => {
+  const handleModalClickYes = useCallback(() => {
+    handleYes();
     onClose();
     // eslint-disable-next-line
   }, []);
 
-  const handleModalClickFalse = useCallback(() => {
-    openModal(
-      <ModalFalseContent />,
-      TYPE.CUSTOM,
-      null,
-      <ModalFalseFooter
-        type={language === AVAILABLE_LANGUAGES.pl ? 'link' : 'route'}
-        path="https://www.gov.pl/web/protegosafe/pytania-i-odpowiedzi"
-        handleClickTrue={() => {
-          onClose();
-          goTo(Routes.ReportBug);
-        }}
-        handleClickFalse={() => {
-          onClose();
-        }}
-      />
-    );
+  const handleModalClickNo = useCallback(() => {
+    onClose();
+    handleNo();
+    openModal({
+      value: <ModalFalseContent />,
+      modalType: TYPE.CUSTOM,
+      modalFooter: (
+        <ModalFalseFooter
+          type={language === AVAILABLE_LANGUAGES.pl ? 'link' : 'route'}
+          path="https://www.gov.pl/web/protegosafe/pytania-i-odpowiedzi"
+          handleClickTrue={() => {
+            onClose();
+            goTo(Routes.ReportBug);
+          }}
+          handleClickFalse={() => {
+            onClose();
+          }}
+        />
+      )
+    });
     // eslint-disable-next-line
   }, []);
 
   useEffect(() => {
-    openModal(
-      <RatingAppModalContent />,
-      TYPE.CUSTOM,
-      null,
-      <RatingAppModalFooter
-        handleClickTrue={handleModalClickTrue}
-        handleClickFalse={handleModalClickFalse}
-      />
-    );
+    openModal({
+      value: <RatingAppModalContent />,
+      modalType: TYPE.CUSTOM,
+      modalFooter: <RatingAppModalFooter handleClickYes={handleModalClickYes} handleClickNo={handleModalClickNo} />,
+      closeCallback: handleClose
+    });
     // eslint-disable-next-line
   }, []);
 
