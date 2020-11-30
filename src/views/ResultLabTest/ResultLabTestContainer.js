@@ -4,7 +4,7 @@ import { useDispatch } from 'react-redux';
 import useModalContext from '../../hooks/useModalContext';
 import ResultLabTest from './ResultLabTest';
 import { ModalFooter } from './components';
-import { Layout } from '../../components';
+import { Layout, T } from '../../components';
 import useNavigation from '../../hooks/useNavigation';
 import { revokeEnStatus } from '../../store/actions/nativeData';
 import { confirmManualCovid, revokeManualCovid, revokeTorStatus } from '../../store/actions/triage';
@@ -43,11 +43,7 @@ const ResultLabTestContainer = ({ t }) => {
       name: t('result_test_lab_text1'),
       onClick: () =>
         openModal({
-          value: (
-            <>
-              {t('result_test_lab_text9')} <strong>{t('result_test_lab_text4')}.</strong>
-            </>
-          ),
+          value: <T i18nKey="result_test_lab_text9" />,
           modalTitle: t('result_test_lab_text10'),
           modalFooter: <ModalFooter handleClickYes={() => handlePositiveYes()} handleClickCancel={onClose} />
         })

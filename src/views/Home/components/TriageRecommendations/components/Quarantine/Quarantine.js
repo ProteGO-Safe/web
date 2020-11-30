@@ -1,6 +1,6 @@
 import React from 'react';
 import { withTranslation } from 'react-i18next';
-import { Collapse, PhoneNumber, Url } from '../../../../../../components';
+import { Collapse, T } from '../../../../../../components';
 
 const Quarantine = ({ t }) => (
   <>
@@ -23,11 +23,7 @@ const Quarantine = ({ t }) => (
         <li>
           <div className="bold">{t('quarantine_text9')}</div>
           <div className="normal">
-            {t('quarantine_text10')}{' '}
-            <Url value="https://gis.gov.pl/zdrowie/zasady-prawidlowego-mycia-rak/">
-              {t('quarantine_text11')}
-            </Url>{' '}
-            {t('quarantine_text48')}
+            <T i18nKey="quarantine_text10" />
           </div>
         </li>
         <li>
@@ -64,20 +60,11 @@ const Quarantine = ({ t }) => (
       </ul>
       <p>{t('quarantine_text27')}</p>
       <p>
-        <Url value="https://pacjent.gov.pl/podejrzewasz-ze-masz-koronawirusa#znajdz-stacje-sanitarno-epidemiologiczna">
-          {t('quarantine_text28')}
-        </Url>{' '}
-        <Url value="https://pacjent.gov.pl/podejrzewasz-ze-masz-koronawirusa#szpitale-z-oddzialami-zakaznymi">
-          {t('quarantine_text29')}
-        </Url>
+        <T i18nKey="quarantine_text28" />
       </p>
       <p>{t('quarantine_text30')}</p>
       <p>
-        {t('quarantine_text31')}{' '}
-        <PhoneNumber>{t('quarantine_text32')}</PhoneNumber>{' '}
-        {t('quarantine_text33')}{' '}
-        <PhoneNumber>{t('quarantine_text34')}</PhoneNumber>{' '}
-        {t('quarantine_text35')}{' '}
+        <T i18nKey="quarantine_text31" />
       </p>
     </Collapse>
     <Collapse title={t('quarantine_text50')}>

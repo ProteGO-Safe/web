@@ -1,6 +1,7 @@
 import React from 'react';
 import { withTranslation } from 'react-i18next';
 import * as Styled from './ModalContent.styled';
+import { T } from '../../../../components/T';
 
 const ModalContent = ({ t }) => (
   <Styled.ModalContent>
@@ -12,13 +13,10 @@ const ModalContent = ({ t }) => (
     <Styled.Image />
     <Styled.Description>
       <Styled.Paragraph>
-        {t('current_restrictions_modal_paragraph1')}{' '}
-        <strong>{t('current_restrictions_modal_paragraph2')}</strong>{' '}
-        {t('current_restrictions_modal_paragraph3')}
+        <T i18nKey="current_restrictions_modal_paragraph1" />
       </Styled.Paragraph>
       <Styled.Paragraph>
-        <strong>{t('current_restrictions_modal_paragraph4')}</strong>{' '}
-        {t('current_restrictions_modal_paragraph5')}
+        <T i18nKey="current_restrictions_modal_paragraph4" />
       </Styled.Paragraph>
     </Styled.Description>
   </Styled.ModalContent>

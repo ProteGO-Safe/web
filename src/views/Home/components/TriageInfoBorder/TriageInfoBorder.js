@@ -2,12 +2,8 @@ import React from 'react';
 
 import { withTranslation } from 'react-i18next';
 import useTriage from '../../../../hooks/useTriage';
-import { PhoneNumber } from '../../../../components';
-import {
-  LinkArrow,
-  Arrow,
-  InfoBorderContainer
-} from './TriageInfoBorder.styled';
+import { T } from '../../../../components';
+import { InfoBorderContainer } from './TriageInfoBorder.styled';
 
 const TriageInfoBorder = ({ t }) => {
   const {
@@ -35,18 +31,7 @@ const TriageInfoBorder = ({ t }) => {
       return <>{t('triage_info_border_text3')}</>;
     }
     if (isExposure && riskLevel === 3) {
-      return (
-        <>
-          {t('triage_info_border_text4')}
-          <LinkArrow href="https://pacjent.gov.pl/teleporada" target="_blank">
-            {t('triage_info_border_text5')}
-            <Arrow />
-          </LinkArrow>
-          {t('triage_info_border_text6')} <PhoneNumber>112</PhoneNumber>{' '}
-          {t('triage_info_border_text9')} <PhoneNumber>999</PhoneNumber>{' '}
-          {t('triage_info_border_text7')}
-        </>
-      );
+      return <T i18nKey="triage_info_border_text4" />;
     }
     if (renderItem.length === 0) {
       return <>{t(description)}</>;

@@ -3,9 +3,9 @@ import { withTranslation } from 'react-i18next';
 import './MoreInformation.scss';
 import {
   Button,
-  Email,
   Layout,
-  OnboardingContent
+  OnboardingContent,
+  T
 } from '../../../../../../../../components';
 import { Icon, Paragraph } from './MoreInformation.styled';
 
@@ -25,15 +25,13 @@ const MoreInformation = ({ t, onNext }) => {
     <Layout hideBackButton isGovFooter>
       <OnboardingContent icon={<Icon />} title="" buttons={renderButton}>
         <Paragraph>
-          <strong>{t('more_information_text1')}</strong>{' '}
-          {t('more_information_text2')}
+          <T i18nKey="more_information_text1" />
         </Paragraph>
         <Paragraph>{t('more_information_text3')}</Paragraph>
         <Paragraph>
-          <strong>{t('more_information_text4')}</strong>
+          <T i18nKey="more_information_text4" />
         </Paragraph>
         <Paragraph>{t('more_information_text5')}</Paragraph>
-
         <Paragraph>{t('more_information_text6')}</Paragraph>
         <Paragraph>{t('more_information_text7')}</Paragraph>
         <Paragraph>{t('more_information_text8')}</Paragraph>
@@ -43,11 +41,10 @@ const MoreInformation = ({ t, onNext }) => {
         <Paragraph>{t('more_information_text12')}</Paragraph>
         <Paragraph>{t('more_information_text13')}</Paragraph>
         <Paragraph>
-          <strong>{t('more_information_text14')}</strong>
+          <T i18nKey="more_information_text14" />
         </Paragraph>
         <Paragraph>
-          {t('more_information_text15')}{' '}
-          <Email>{t('more_information_text16')}</Email>
+          <T i18nKey="more_information_text15" />
         </Paragraph>
       </OnboardingContent>
     </Layout>

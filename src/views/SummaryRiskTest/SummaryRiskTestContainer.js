@@ -1,39 +1,45 @@
 import React, { useMemo } from 'react';
 import { Layout } from '../../components';
-import { DATA } from './SummaryRiskTest.helpers';
+import { types, resolveData } from './SummaryRiskTest.helpers';
 import SummaryRiskTest from './SummaryRiskTest';
 import useTriage from '../../hooks/useTriage';
 import useLabTest from '../../hooks/useLabTest';
+import useNavigation from '../../hooks/useNavigation';
+import useModalContext from '../../hooks/useModalContext';
 
 const SummaryRiskTestContainer = () => {
   const { triageRiskLevel } = useTriage();
   const { isEnHigh } = useLabTest();
+  const { goTo } = useNavigation();
+  const { openModal } = useModalContext();
 
-  const screenData = useMemo(() => {
+  const resolveType = useMemo(() => {
     if (triageRiskLevel === 1 && !isEnHigh) {
-      return DATA.TOR_GREEN_EN_NOT_RED;
+      return types.TOR_GREEN_EN_NOT_RED;
     }
     if (triageRiskLevel === 2 && !isEnHigh) {
-      return DATA.TOR_ORANGE_EN_NOT_RED;
+      return types.TOR_ORANGE_EN_NOT_RED;
     }
     if (triageRiskLevel === 3 && !isEnHigh) {
-      return DATA.TOR_RED_EN_NOT_RED;
+      return types.TOR_RED_EN_NOT_RED;
     }
     if (triageRiskLevel === 1 && isEnHigh) {
-      return DATA.TOR_GREEN_EN_RED;
+      return types.TOR_GREEN_EN_RED;
     }
     if (triageRiskLevel === 2 && isEnHigh) {
-      return DATA.TOR_ORANGE_EN_RED;
+      return types.TOR_ORANGE_EN_RED;
     }
     if (triageRiskLevel === 3 && isEnHigh) {
-      return DATA.TOR_RED_EN_RED;
+      return types.TOR_RED_EN_RED;
     }
-    return DATA.TOR_RED_EN_RED;
+    return types.TOR_RED_EN_RED;
   }, [triageRiskLevel, isEnHigh]);
+
+  const data = resolveData(goTo, openModal, resolveType());
 
   return (
     <Layout hideBackButton noPadding fullHeight>
-      <SummaryRiskTest data={screenData} />
+      <SummaryRiskTest data={data} />
     </Layout>
   );
 };

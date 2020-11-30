@@ -117,7 +117,7 @@ const UploadHistoricalData = ({ t }) => {
     }
     return (
       banData &&
-      banPinTries.createErrorMessage(banData, unsuccessfulAttempts.length, t)
+      banPinTries.createErrorMessage(banData, unsuccessfulAttempts.length)
     );
   };
   return (

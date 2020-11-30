@@ -2,7 +2,7 @@ import React from 'react';
 import { withTranslation } from 'react-i18next';
 import PropTypes from 'prop-types';
 import Slider from 'react-slick';
-import { Button, Layout } from '../../../../components';
+import { Button, Layout, T } from '../../../../components';
 import * as Styled from './Explainer.styled';
 
 const Explainer = ({ t, carouselRef, index, items, onClick, settings }) => {
@@ -12,9 +12,7 @@ const Explainer = ({ t, carouselRef, index, items, onClick, settings }) => {
         <Styled.Title>{t('explainer_text1')}</Styled.Title>
       ) : (
         <Styled.Title>
-          {t('explainer_text2')}
-          <br />
-          {t('explainer_text3')}
+          <T i18nKey="explainer_text2" />
         </Styled.Title>
       )}
       <Styled.SliderWrapper data-cy={`explainer-step-${index + 1}`}>

@@ -5,7 +5,6 @@ import { Color } from '../../theme/colors';
 import { NoRisk } from '../../views/Home/components/TriageRecommendations/components/NoRisk';
 import { Quarantine } from '../../views/Home/components/TriageRecommendations/components/Quarantine';
 import { SelfMonitoring } from '../../views/Home/components/TriageRecommendations/components/SelfMonitoring';
-import { IsolationCall } from '../../views/Home/components/TriageRecommendations/components/IsolationCall';
 import { IsolationAmbulance } from '../../views/Home/components/TriageRecommendations/components/IsolationAmbulance';
 import { CallDoctor } from '../../views/Home/components/TriageRecommendations/components/CallDoctor';
 
@@ -40,7 +39,7 @@ export const TRIAGE_LEVEL = {
     IconComponent: RedSmile,
     riskLevel: 3,
     riskGroup: 'triage_level_high_risk',
-    Recommendation: IsolationCall
+    Recommendation: IsolationAmbulance
   },
   isolation_ambulance: {
     content: 'triage_level_isolation_ambulance_content',

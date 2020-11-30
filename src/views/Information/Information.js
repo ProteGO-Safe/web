@@ -1,7 +1,7 @@
 import React from 'react';
 import { withTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
-import { Button, FieldSet, Layout } from '../../components';
+import { Button, FieldSet, Layout, T } from '../../components';
 import {
   Title,
   Paragraph1,
@@ -29,17 +29,13 @@ const Information = ({ t, hideInformation }) => {
         <Paragraph2>{t('information_text4')}</Paragraph2>
         <WarningList>
           <WarningListItem>
-            <strong>{t('information_text5')}</strong>
-            {t('information_text6')}
+            <T i18nKey="information_text5" />
           </WarningListItem>
           <WarningListItem>
-            {t('information_text7')}
-            <strong>{t('information_text8')}</strong>
-            {t('information_text9')}
+            <T i18nKey="information_text7" />
           </WarningListItem>
           <WarningListItem>
-            {t('information_text10')} <strong>{t('information_text11')}</strong>{' '}
-            {t('information_text12')} <strong>{t('information_text13')}</strong>
+            <T i18nKey="information_text10" />
           </WarningListItem>
         </WarningList>
       </WarningContent>

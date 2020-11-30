@@ -35,14 +35,10 @@ const SmileContainer = ({ t }) => {
       return <T i18nKey="smile_container_text9" />;
     }
     return (
-      <>
-        {t('smile_container_text4')}&nbsp;
-        <strong className="nowrap" data-cy="risk-test-last-date">
-          {lastDate}
-        </strong>
-        {t('smile_container_text5')}&nbsp;
-        <strong>{t(riskGroup)}</strong>.
-      </>
+      <T
+        i18nKey="smile_container_text4"
+        variables={{ date: lastDate, group: t(riskGroup) }}
+      />
     );
   };
   return (

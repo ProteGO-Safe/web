@@ -8,6 +8,7 @@ import IconChat from '../../../../assets/img/explainer/chat.svg';
 import IconDiary from '../../../../assets/img/explainer/diary.svg';
 import IconInfo from '../../../../assets/img/explainer/info.svg';
 import IconDiagnostic from '../../../../assets/img/explainer/diagnostic.svg';
+import { T } from '../../../../components/T';
 
 const ExplainerContainer = ({ t }) => {
   const carouselRef = useRef(null);
@@ -19,8 +20,7 @@ const ExplainerContainer = ({ t }) => {
     {
       content: (
         <>
-          <strong>{t('explainer_container_text1')}</strong>
-          {t('explainer_container_text2')}
+          <T i18nKey="explainer_container_text1" />
         </>
       ),
       icon: IconDiagnostic,
@@ -34,8 +34,7 @@ const ExplainerContainer = ({ t }) => {
     {
       content: (
         <>
-          {t('explainer_container_text4')}
-          <span className="text-bold">{t('explainer_container_text5')}</span>
+          <T i18nKey="explainer_container_text4" />
         </>
       ),
       icon: IconDiary,

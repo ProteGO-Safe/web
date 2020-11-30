@@ -1,4 +1,4 @@
-const fs = require('fs');
+import fs from 'fs';
 
 const LABEL_PREFIX = 'diagnosis';
 

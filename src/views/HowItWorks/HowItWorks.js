@@ -1,6 +1,6 @@
 import React from 'react';
 import { withTranslation } from 'react-i18next';
-import { Collapse, Layout } from '../../components';
+import { Collapse, Layout, T } from '../../components';
 import * as Styled from './HowItWorks.styled';
 
 const HowItWorks = ({ t }) => {
@@ -12,12 +12,10 @@ const HowItWorks = ({ t }) => {
       <Styled.Paragraph>{t('how_it_works_paragraph2')}</Styled.Paragraph>
       <Styled.Title>{t('how_it_works_title1')}</Styled.Title>
       <Styled.Paragraph>
-        {t('how_it_works_paragraph3_1')}{' '}
-        <strong>{t('how_it_works_paragraph3_2')}</strong>{' '}
-        {t('how_it_works_paragraph3_3')}
+        <T i18nKey="how_it_works_paragraph3_1" />
       </Styled.Paragraph>
       <Styled.Paragraph>
-        <strong>{t('how_it_works_paragraph4')}</strong>
+        <T i18nKey="how_it_works_paragraph4" />
       </Styled.Paragraph>
       <Styled.Warning>
         <Styled.Icon />

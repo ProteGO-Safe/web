@@ -430,19 +430,6 @@ Array [
       >
         <p>
           smile_container_text4
-           
-          <strong
-            className="nowrap"
-            data-cy="risk-test-last-date"
-          >
-            
-          </strong>
-          smile_container_text5
-           
-          <strong>
-            triage_level_low_risk
-          </strong>
-          .
         </p>
       </div>
       <div
@@ -718,19 +705,6 @@ Array [
       >
         <p>
           smile_container_text4
-           
-          <strong
-            className="nowrap"
-            data-cy="risk-test-last-date"
-          >
-            
-          </strong>
-          smile_container_text5
-           
-          <strong>
-            triage_level_low_risk
-          </strong>
-          .
         </p>
       </div>
       <div
@@ -1018,19 +992,6 @@ Array [
       >
         <p>
           smile_container_text4
-           
-          <strong
-            className="nowrap"
-            data-cy="risk-test-last-date"
-          >
-            
-          </strong>
-          smile_container_text5
-           
-          <strong>
-            triage_level_high_risk
-          </strong>
-          .
         </p>
       </div>
       <div
@@ -1391,12 +1352,6 @@ Array [
   color: #0052a5;
 }
 
-.c5 {
-  -webkit-text-decoration: underline;
-  text-decoration: underline;
-  color: #0052a5;
-}
-
 @media screen and (max-width:370px) {
 
 }
@@ -1438,16 +1393,6 @@ Array [
       </p>
       <p>
         call_doctor_text2
-         
-        <a
-          className="c5"
-          href="https://www.nfz.gov.pl/aktualnosci/aktualnosci-oddzialow/gdzie-sie-leczyc-w-czasie-epidemii-koronawirusa,401.html"
-          target="_blank"
-        >
-          call_doctor_text3
-        </a>
-         
-        call_doctor_text31
       </p>
       <p>
         call_doctor_text4
@@ -1558,12 +1503,6 @@ Array [
   color: #0052a5;
 }
 
-.c5 {
-  -webkit-text-decoration: underline;
-  text-decoration: underline;
-  color: #0052a5;
-}
-
 @media screen and (max-width:370px) {
 
 }
@@ -1611,16 +1550,6 @@ Array [
             className="normal"
           >
             call_doctor_text15
-             
-            <a
-              className="c5"
-              href="https://gis.gov.pl/zdrowie/zasady-prawidlowego-mycia-rak/"
-              target="_blank"
-            >
-              call_doctor_text16
-            </a>
-             
-            call_doctor_text33
           </div>
         </li>
         <li>
@@ -1747,12 +1676,6 @@ Array [
   color: #0052a5;
 }
 
-.c5 {
-  width: auto;
-  font-weight: 700;
-  color: #0052a5;
-}
-
 @media screen and (max-width:370px) {
 
 }
@@ -1791,24 +1714,6 @@ Array [
     >
       <p>
         call_doctor_text25
-         
-        <a
-          className="c5"
-          href="tel:26"
-        >
-          call_doctor_text26
-        </a>
-         
-        call_doctor_text27
-         
-        <a
-          className="c5"
-          href="tel:28"
-        >
-          call_doctor_text28
-        </a>
-         
-        call_doctor_text29
       </p>
     </div>
   </div>,
@@ -2137,19 +2042,6 @@ Array [
       >
         <p>
           smile_container_text4
-           
-          <strong
-            className="nowrap"
-            data-cy="risk-test-last-date"
-          >
-            
-          </strong>
-          smile_container_text5
-           
-          <strong>
-            triage_level_high_risk
-          </strong>
-          .
         </p>
       </div>
       <div
@@ -2510,12 +2402,6 @@ Array [
   color: #0052a5;
 }
 
-.c5 {
-  -webkit-text-decoration: underline;
-  text-decoration: underline;
-  color: #0052a5;
-}
-
 @media screen and (max-width:370px) {
 
 }
@@ -2553,35 +2439,13 @@ Array [
       open={false}
     >
       <p>
-        <a
-          className="c5"
-          href="https://pacjent.gov.pl/podejrzewasz-ze-masz-koronawirusa#znajdz-stacje-sanitarno-epidemiologiczna"
-          target="_blank"
-        >
-          isolation_ambulance_text1
-        </a>
-         
-        <a
-          className="c5"
-          href="https://pacjent.gov.pl/podejrzewasz-ze-masz-koronawirusa#szpitale-z-oddzialami-zakaznymi"
-          target="_blank"
-        >
-          isolation_ambulance_text2
-        </a>
+        isolation_ambulance_text1
       </p>
       <p>
         isolation_ambulance_text3
       </p>
       <p>
         isolation_ambulance_text4
-         
-        <a
-          className="c5"
-          href="https://bit.ly/teleporady-lista"
-          target="_blank"
-        >
-          isolation_ambulance_text5
-        </a>
       </p>
     </div>
   </div>,
@@ -2655,18 +2519,6 @@ Array [
 }
 
 .c4 a {
-  color: #0052a5;
-}
-
-.c6 {
-  width: auto;
-  font-weight: 700;
-  color: #0052a5;
-}
-
-.c5 {
-  -webkit-text-decoration: underline;
-  text-decoration: underline;
   color: #0052a5;
 }
 
@@ -2713,34 +2565,10 @@ Array [
         isolation_ambulance_text7
       </p>
       <p>
-        <a
-          className="c5"
-          href="https://pacjent.gov.pl/podejrzewasz-ze-masz-koronawirusa#szpitale-z-oddzialami-zakaznymi"
-          target="_blank"
-        >
-          isolation_ambulance_text8
-        </a>
+        isolation_ambulance_text8
       </p>
       <p>
         isolation_ambulance_text9
-         
-        <a
-          className="c6"
-          href="tel:10"
-        >
-          isolation_ambulance_text10
-        </a>
-         
-        isolation_ambulance_text11
-         
-        <a
-          className="c6"
-          href="tel:12"
-        >
-          isolation_ambulance_text12
-        </a>
-         
-        isolation_ambulance_text13
       </p>
     </div>
   </div>,
@@ -2814,12 +2642,6 @@ Array [
 }
 
 .c4 a {
-  color: #0052a5;
-}
-
-.c5 {
-  -webkit-text-decoration: underline;
-  text-decoration: underline;
   color: #0052a5;
 }
 
@@ -2863,13 +2685,7 @@ Array [
         isolation_ambulance_text14
       </p>
       <p>
-        <a
-          className="c5"
-          href="https://pacjent.gov.pl/bez-maski-ani-rusz#Jak-zakladac-i-zdejmowac-maske"
-          target="_blank"
-        >
-          isolation_ambulance_text15
-        </a>
+        isolation_ambulance_text15
       </p>
     </div>
   </div>,
@@ -2943,12 +2759,6 @@ Array [
 }
 
 .c4 a {
-  color: #0052a5;
-}
-
-.c5 {
-  -webkit-text-decoration: underline;
-  text-decoration: underline;
   color: #0052a5;
 }
 
@@ -2994,16 +2804,6 @@ Array [
       <ul>
         <li>
           isolation_ambulance_text17
-           
-          <a
-            className="c5"
-            href="https://gis.gov.pl/zdrowie/zasady-prawidlowego-mycia-rak/"
-            target="_blank"
-          >
-            isolation_ambulance_text18
-          </a>
-           
-          isolation_ambulance_text26
         </li>
         <li>
           isolation_ambulance_text19
@@ -3342,19 +3142,6 @@ Array [
       >
         <p>
           smile_container_text4
-           
-          <strong
-            className="nowrap"
-            data-cy="risk-test-last-date"
-          >
-            
-          </strong>
-          smile_container_text5
-           
-          <strong>
-            triage_level_high_risk
-          </strong>
-          .
         </p>
       </div>
       <div
@@ -3715,12 +3502,6 @@ Array [
   color: #0052a5;
 }
 
-.c5 {
-  -webkit-text-decoration: underline;
-  text-decoration: underline;
-  color: #0052a5;
-}
-
 @media screen and (max-width:370px) {
 
 }
@@ -3744,7 +3525,7 @@ Array [
       <span
         className="c2"
       >
-        isolation_call_text22
+        isolation_ambulance_text22
       </span>
       <svg
         className="c3"
@@ -3758,35 +3539,13 @@ Array [
       open={false}
     >
       <p>
-        <a
-          className="c5"
-          href="https://pacjent.gov.pl/podejrzewasz-ze-masz-koronawirusa#znajdz-stacje-sanitarno-epidemiologiczna"
-          target="_blank"
-        >
-          isolation_call_text1
-        </a>
-         
-        <a
-          className="c5"
-          href="https://pacjent.gov.pl/podejrzewasz-ze-masz-koronawirusa#szpitale-z-oddzialami-zakaznymi"
-          target="_blank"
-        >
-          isolation_call_text2
-        </a>
+        isolation_ambulance_text1
       </p>
       <p>
-        isolation_call_text3
+        isolation_ambulance_text3
       </p>
       <p>
-        isolation_call_text4
-         
-        <a
-          className="c5"
-          href="https://bit.ly/teleporady-lista"
-          target="_blank"
-        >
-          isolation_call_text5
-        </a>
+        isolation_ambulance_text4
       </p>
     </div>
   </div>,
@@ -3863,18 +3622,6 @@ Array [
   color: #0052a5;
 }
 
-.c6 {
-  width: auto;
-  font-weight: 700;
-  color: #0052a5;
-}
-
-.c5 {
-  -webkit-text-decoration: underline;
-  text-decoration: underline;
-  color: #0052a5;
-}
-
 @media screen and (max-width:370px) {
 
 }
@@ -3898,7 +3645,7 @@ Array [
       <span
         className="c2"
       >
-        isolation_call_text23
+        isolation_ambulance_text23
       </span>
       <svg
         className="c3"
@@ -3912,40 +3659,16 @@ Array [
       open={false}
     >
       <p>
-        isolation_call_text6
+        isolation_ambulance_text6
       </p>
       <p>
-        isolation_call_text7
+        isolation_ambulance_text7
       </p>
       <p>
-        <a
-          className="c5"
-          href="https://pacjent.gov.pl/podejrzewasz-ze-masz-koronawirusa#szpitale-z-oddzialami-zakaznymi"
-          target="_blank"
-        >
-          isolation_call_text8
-        </a>
+        isolation_ambulance_text8
       </p>
       <p>
-        isolation_call_text9
-         
-        <a
-          className="c6"
-          href="tel:10"
-        >
-          isolation_call_text10
-        </a>
-         
-        isolation_call_text11
-         
-        <a
-          className="c6"
-          href="tel:12"
-        >
-          isolation_call_text12
-        </a>
-         
-        isolation_call_text13
+        isolation_ambulance_text9
       </p>
     </div>
   </div>,
@@ -4022,12 +3745,6 @@ Array [
   color: #0052a5;
 }
 
-.c5 {
-  -webkit-text-decoration: underline;
-  text-decoration: underline;
-  color: #0052a5;
-}
-
 @media screen and (max-width:370px) {
 
 }
@@ -4051,7 +3768,7 @@ Array [
       <span
         className="c2"
       >
-        isolation_call_text24
+        isolation_ambulance_text24
       </span>
       <svg
         className="c3"
@@ -4065,16 +3782,10 @@ Array [
       open={false}
     >
       <p>
-        isolation_call_text14
+        isolation_ambulance_text14
       </p>
       <p>
-        <a
-          className="c5"
-          href="https://pacjent.gov.pl/bez-maski-ani-rusz#Jak-zakladac-i-zdejmowac-maske"
-          target="_blank"
-        >
-          isolation_call_text15
-        </a>
+        isolation_ambulance_text15
       </p>
     </div>
   </div>,
@@ -4151,12 +3862,6 @@ Array [
   color: #0052a5;
 }
 
-.c5 {
-  -webkit-text-decoration: underline;
-  text-decoration: underline;
-  color: #0052a5;
-}
-
 @media screen and (max-width:370px) {
 
 }
@@ -4180,7 +3885,7 @@ Array [
       <span
         className="c2"
       >
-        isolation_call_text25
+        isolation_ambulance_text25
       </span>
       <svg
         className="c3"
@@ -4194,30 +3899,20 @@ Array [
       open={false}
     >
       <p>
-        isolation_call_text16
+        isolation_ambulance_text16
       </p>
       <ul>
         <li>
-          isolation_call_text17
-           
-          <a
-            className="c5"
-            href="https://gis.gov.pl/zdrowie/zasady-prawidlowego-mycia-rak/"
-            target="_blank"
-          >
-            isolation_call_text18
-          </a>
-           
-          isolation_call_text26
+          isolation_ambulance_text17
         </li>
         <li>
-          isolation_call_text19
+          isolation_ambulance_text19
         </li>
         <li>
-          isolation_call_text20
+          isolation_ambulance_text20
         </li>
         <li>
-          isolation_call_text21
+          isolation_ambulance_text21
         </li>
       </ul>
     </div>
@@ -4535,19 +4230,6 @@ Array [
       >
         <p>
           smile_container_text4
-           
-          <strong
-            className="nowrap"
-            data-cy="risk-test-last-date"
-          >
-            
-          </strong>
-          smile_container_text5
-           
-          <strong>
-            triage_level_medium_risk
-          </strong>
-          .
         </p>
       </div>
       <div
@@ -5099,12 +4781,6 @@ Array [
   color: #0052a5;
 }
 
-.c5 {
-  -webkit-text-decoration: underline;
-  text-decoration: underline;
-  color: #0052a5;
-}
-
 <div
     className="c0"
   >
@@ -5140,16 +4816,6 @@ Array [
             className="normal"
           >
             quarantine_text10
-             
-            <a
-              className="c5"
-              href="https://gis.gov.pl/zdrowie/zasady-prawidlowego-mycia-rak/"
-              target="_blank"
-            >
-              quarantine_text11
-            </a>
-             
-            quarantine_text48
           </div>
         </li>
         <li>
@@ -5295,18 +4961,6 @@ Array [
   color: #0052a5;
 }
 
-.c6 {
-  width: auto;
-  font-weight: 700;
-  color: #0052a5;
-}
-
-.c5 {
-  -webkit-text-decoration: underline;
-  text-decoration: underline;
-  color: #0052a5;
-}
-
 <div
     className="c0"
   >
@@ -5349,46 +5003,13 @@ Array [
         quarantine_text27
       </p>
       <p>
-        <a
-          className="c5"
-          href="https://pacjent.gov.pl/podejrzewasz-ze-masz-koronawirusa#znajdz-stacje-sanitarno-epidemiologiczna"
-          target="_blank"
-        >
-          quarantine_text28
-        </a>
-         
-        <a
-          className="c5"
-          href="https://pacjent.gov.pl/podejrzewasz-ze-masz-koronawirusa#szpitale-z-oddzialami-zakaznymi"
-          target="_blank"
-        >
-          quarantine_text29
-        </a>
+        quarantine_text28
       </p>
       <p>
         quarantine_text30
       </p>
       <p>
         quarantine_text31
-         
-        <a
-          className="c6"
-          href="tel:32"
-        >
-          quarantine_text32
-        </a>
-         
-        quarantine_text33
-         
-        <a
-          className="c6"
-          href="tel:34"
-        >
-          quarantine_text34
-        </a>
-         
-        quarantine_text35
-         
       </p>
     </div>
   </div>,
@@ -5693,19 +5314,6 @@ Array [
       >
         <p>
           smile_container_text4
-           
-          <strong
-            className="nowrap"
-            data-cy="risk-test-last-date"
-          >
-            
-          </strong>
-          smile_container_text5
-           
-          <strong>
-            triage_level_low_risk
-          </strong>
-          .
         </p>
       </div>
       <div
@@ -6115,10 +5723,6 @@ Array [
         color="#000000"
       >
         test_border_box_text_2
-         
-        <strong>
-          test_border_box_text_3
-        </strong>
       </span>
     </span>
   </span>,
@@ -6330,40 +5934,6 @@ Array [
   color: #1b1b1b;
 }
 
-.c1 {
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  width: 100%;
-  padding: 20px 0;
-  color: #0052a5;
-}
-
-.c2 {
-  display: block;
-  height: 14px;
-  width: 14px;
-  margin-left: 20px;
-}
-
-.c3 {
-  width: auto;
-  font-weight: 700;
-  color: #0052a5;
-}
-
 @media screen and (max-width:370px) {
 
 }
@@ -6384,37 +5954,6 @@ Array [
       className="p1"
     >
       triage_info_border_text4
-      <a
-        className="c1"
-        href="https://pacjent.gov.pl/teleporada"
-        target="_blank"
-      >
-        triage_info_border_text5
-        <svg
-          className="c2"
-        >
-          arrow-current-color.svg
-        </svg>
-      </a>
-      triage_info_border_text6
-       
-      <a
-        className="c3"
-        href="tel:112"
-      >
-        112
-      </a>
-       
-      triage_info_border_text9
-       
-      <a
-        className="c3"
-        href="tel:999"
-      >
-        999
-      </a>
-       
-      triage_info_border_text7
     </span>
   </div>,
 ]
@@ -7384,18 +6923,6 @@ Array [
   margin-bottom: 24px;
 }
 
-.c5 {
-  width: auto;
-  font-weight: 700;
-  color: #0052a5;
-}
-
-.c4 {
-  -webkit-text-decoration: underline;
-  text-decoration: underline;
-  color: #0052a5;
-}
-
 .c0 {
   width: 100%;
   margin-top: 32px;
@@ -7432,33 +6959,6 @@ Array [
       color="#1b1b1b"
     >
       exposure_sick_text2
-       
-      <a
-        className="c4"
-        href="https://www.gov.pl/koronawirus"
-        target="_blank"
-      >
-        exposure_sick_text3
-      </a>
-       
-      lub
-       
-      <a
-        className="c4"
-        href="https://www.pacjent.gov.pl"
-        target="_blank"
-      >
-        exposure_sick_text4
-      </a>
-      exposure_sick_text5
-       
-      <a
-        className="c5"
-        href="tel:6"
-      >
-        exposure_sick_text6
-      </a>
-      .
     </p>
   </div>,
 ]
@@ -7998,40 +7498,6 @@ Array [
   color: #1b1b1b;
 }
 
-.c1 {
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  width: 100%;
-  padding: 20px 0;
-  color: #0052a5;
-}
-
-.c2 {
-  display: block;
-  height: 14px;
-  width: 14px;
-  margin-left: 20px;
-}
-
-.c3 {
-  width: auto;
-  font-weight: 700;
-  color: #0052a5;
-}
-
 @media screen and (max-width:370px) {
 
 }
@@ -8052,37 +7518,6 @@ Array [
       className="p1"
     >
       triage_info_border_text4
-      <a
-        className="c1"
-        href="https://pacjent.gov.pl/teleporada"
-        target="_blank"
-      >
-        triage_info_border_text5
-        <svg
-          className="c2"
-        >
-          arrow-current-color.svg
-        </svg>
-      </a>
-      triage_info_border_text6
-       
-      <a
-        className="c3"
-        href="tel:112"
-      >
-        112
-      </a>
-       
-      triage_info_border_text9
-       
-      <a
-        className="c3"
-        href="tel:999"
-      >
-        999
-      </a>
-       
-      triage_info_border_text7
     </span>
   </div>,
 ]
@@ -8289,12 +7724,6 @@ Array [
   font-weight: 600;
 }
 
-.c3 {
-  width: auto;
-  font-weight: 700;
-  color: #0052a5;
-}
-
 @media screen and (max-width:370px) {
 
 }
@@ -8322,12 +7751,6 @@ Array [
       color="#000000"
     >
       test_border_box_qualification_description_1
-      <a
-        className="c3"
-        href="tel:2"
-      >
-        test_border_box_qualification_description_2
-      </a>
     </span>
   </div>,
   .c0 {
@@ -8538,40 +7961,6 @@ Array [
   color: #1b1b1b;
 }
 
-.c1 {
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  width: 100%;
-  padding: 20px 0;
-  color: #0052a5;
-}
-
-.c2 {
-  display: block;
-  height: 14px;
-  width: 14px;
-  margin-left: 20px;
-}
-
-.c3 {
-  width: auto;
-  font-weight: 700;
-  color: #0052a5;
-}
-
 @media screen and (max-width:370px) {
 
 }
@@ -8592,37 +7981,6 @@ Array [
       className="p1"
     >
       triage_info_border_text4
-      <a
-        className="c1"
-        href="https://pacjent.gov.pl/teleporada"
-        target="_blank"
-      >
-        triage_info_border_text5
-        <svg
-          className="c2"
-        >
-          arrow-current-color.svg
-        </svg>
-      </a>
-      triage_info_border_text6
-       
-      <a
-        className="c3"
-        href="tel:112"
-      >
-        112
-      </a>
-       
-      triage_info_border_text9
-       
-      <a
-        className="c3"
-        href="tel:999"
-      >
-        999
-      </a>
-       
-      triage_info_border_text7
     </span>
   </div>,
 ]
@@ -9030,18 +8388,6 @@ Array [
   margin-bottom: 24px;
 }
 
-.c5 {
-  width: auto;
-  font-weight: 700;
-  color: #0052a5;
-}
-
-.c4 {
-  -webkit-text-decoration: underline;
-  text-decoration: underline;
-  color: #0052a5;
-}
-
 .c0 {
   width: 100%;
   margin-top: 32px;
@@ -9078,33 +8424,6 @@ Array [
       color="#1b1b1b"
     >
       exposure_sick_text2
-       
-      <a
-        className="c4"
-        href="https://www.gov.pl/koronawirus"
-        target="_blank"
-      >
-        exposure_sick_text3
-      </a>
-       
-      lub
-       
-      <a
-        className="c4"
-        href="https://www.pacjent.gov.pl"
-        target="_blank"
-      >
-        exposure_sick_text4
-      </a>
-      exposure_sick_text5
-       
-      <a
-        className="c5"
-        href="tel:6"
-      >
-        exposure_sick_text6
-      </a>
-      .
     </p>
   </div>,
 ]
@@ -9667,10 +8986,6 @@ Array [
         color="#000000"
       >
         test_border_box_text_2
-         
-        <strong>
-          test_border_box_text_3
-        </strong>
       </span>
     </span>
   </span>,
@@ -9882,40 +9197,6 @@ Array [
   color: #1b1b1b;
 }
 
-.c1 {
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  width: 100%;
-  padding: 20px 0;
-  color: #0052a5;
-}
-
-.c2 {
-  display: block;
-  height: 14px;
-  width: 14px;
-  margin-left: 20px;
-}
-
-.c3 {
-  width: auto;
-  font-weight: 700;
-  color: #0052a5;
-}
-
 @media screen and (max-width:370px) {
 
 }
@@ -9936,37 +9217,6 @@ Array [
       className="p1"
     >
       triage_info_border_text4
-      <a
-        className="c1"
-        href="https://pacjent.gov.pl/teleporada"
-        target="_blank"
-      >
-        triage_info_border_text5
-        <svg
-          className="c2"
-        >
-          arrow-current-color.svg
-        </svg>
-      </a>
-      triage_info_border_text6
-       
-      <a
-        className="c3"
-        href="tel:112"
-      >
-        112
-      </a>
-       
-      triage_info_border_text9
-       
-      <a
-        className="c3"
-        href="tel:999"
-      >
-        999
-      </a>
-       
-      triage_info_border_text7
     </span>
   </div>,
 ]
@@ -10644,19 +9894,6 @@ Array [
       >
         <p>
           smile_container_text4
-           
-          <strong
-            className="nowrap"
-            data-cy="risk-test-last-date"
-          >
-            
-          </strong>
-          smile_container_text5
-           
-          <strong>
-            triage_level_high_risk
-          </strong>
-          .
         </p>
       </div>
       <div
@@ -11017,12 +10254,6 @@ Array [
   color: #0052a5;
 }
 
-.c5 {
-  -webkit-text-decoration: underline;
-  text-decoration: underline;
-  color: #0052a5;
-}
-
 @media screen and (max-width:370px) {
 
 }
@@ -11064,16 +10295,6 @@ Array [
       </p>
       <p>
         call_doctor_text2
-         
-        <a
-          className="c5"
-          href="https://www.nfz.gov.pl/aktualnosci/aktualnosci-oddzialow/gdzie-sie-leczyc-w-czasie-epidemii-koronawirusa,401.html"
-          target="_blank"
-        >
-          call_doctor_text3
-        </a>
-         
-        call_doctor_text31
       </p>
       <p>
         call_doctor_text4
@@ -11184,12 +10405,6 @@ Array [
   color: #0052a5;
 }
 
-.c5 {
-  -webkit-text-decoration: underline;
-  text-decoration: underline;
-  color: #0052a5;
-}
-
 @media screen and (max-width:370px) {
 
 }
@@ -11237,16 +10452,6 @@ Array [
             className="normal"
           >
             call_doctor_text15
-             
-            <a
-              className="c5"
-              href="https://gis.gov.pl/zdrowie/zasady-prawidlowego-mycia-rak/"
-              target="_blank"
-            >
-              call_doctor_text16
-            </a>
-             
-            call_doctor_text33
           </div>
         </li>
         <li>
@@ -11373,12 +10578,6 @@ Array [
   color: #0052a5;
 }
 
-.c5 {
-  width: auto;
-  font-weight: 700;
-  color: #0052a5;
-}
-
 @media screen and (max-width:370px) {
 
 }
@@ -11417,24 +10616,6 @@ Array [
     >
       <p>
         call_doctor_text25
-         
-        <a
-          className="c5"
-          href="tel:26"
-        >
-          call_doctor_text26
-        </a>
-         
-        call_doctor_text27
-         
-        <a
-          className="c5"
-          href="tel:28"
-        >
-          call_doctor_text28
-        </a>
-         
-        call_doctor_text29
       </p>
     </div>
   </div>,
@@ -11885,8 +11066,6 @@ Array [
         color="#000000"
       >
         test_border_box_pick_up_description_1
-        <br />
-        test_border_box_pick_up_description_2
       </span>
     </span>
   </span>,
@@ -12098,40 +11277,6 @@ Array [
   color: #1b1b1b;
 }
 
-.c1 {
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  width: 100%;
-  padding: 20px 0;
-  color: #0052a5;
-}
-
-.c2 {
-  display: block;
-  height: 14px;
-  width: 14px;
-  margin-left: 20px;
-}
-
-.c3 {
-  width: auto;
-  font-weight: 700;
-  color: #0052a5;
-}
-
 @media screen and (max-width:370px) {
 
 }
@@ -12152,37 +11297,6 @@ Array [
       className="p1"
     >
       triage_info_border_text4
-      <a
-        className="c1"
-        href="https://pacjent.gov.pl/teleporada"
-        target="_blank"
-      >
-        triage_info_border_text5
-        <svg
-          className="c2"
-        >
-          arrow-current-color.svg
-        </svg>
-      </a>
-      triage_info_border_text6
-       
-      <a
-        className="c3"
-        href="tel:112"
-      >
-        112
-      </a>
-       
-      triage_info_border_text9
-       
-      <a
-        className="c3"
-        href="tel:999"
-      >
-        999
-      </a>
-       
-      triage_info_border_text7
     </span>
   </div>,
 ]
@@ -12550,40 +11664,6 @@ Array [
   color: #1b1b1b;
 }
 
-.c1 {
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  width: 100%;
-  padding: 20px 0;
-  color: #0052a5;
-}
-
-.c2 {
-  display: block;
-  height: 14px;
-  width: 14px;
-  margin-left: 20px;
-}
-
-.c3 {
-  width: auto;
-  font-weight: 700;
-  color: #0052a5;
-}
-
 @media screen and (max-width:370px) {
 
 }
@@ -12604,37 +11684,6 @@ Array [
       className="p1"
     >
       triage_info_border_text4
-      <a
-        className="c1"
-        href="https://pacjent.gov.pl/teleporada"
-        target="_blank"
-      >
-        triage_info_border_text5
-        <svg
-          className="c2"
-        >
-          arrow-current-color.svg
-        </svg>
-      </a>
-      triage_info_border_text6
-       
-      <a
-        className="c3"
-        href="tel:112"
-      >
-        112
-      </a>
-       
-      triage_info_border_text9
-       
-      <a
-        className="c3"
-        href="tel:999"
-      >
-        999
-      </a>
-       
-      triage_info_border_text7
     </span>
   </div>,
 ]
@@ -12738,19 +11787,6 @@ Array [
       >
         <p>
           smile_container_text4
-           
-          <strong
-            className="nowrap"
-            data-cy="risk-test-last-date"
-          >
-            
-          </strong>
-          smile_container_text5
-           
-          <strong>
-            triage_level_medium_risk
-          </strong>
-          .
         </p>
       </div>
       <div
@@ -13302,12 +12338,6 @@ Array [
   color: #0052a5;
 }
 
-.c5 {
-  -webkit-text-decoration: underline;
-  text-decoration: underline;
-  color: #0052a5;
-}
-
 <div
     className="c0"
   >
@@ -13343,16 +12373,6 @@ Array [
             className="normal"
           >
             quarantine_text10
-             
-            <a
-              className="c5"
-              href="https://gis.gov.pl/zdrowie/zasady-prawidlowego-mycia-rak/"
-              target="_blank"
-            >
-              quarantine_text11
-            </a>
-             
-            quarantine_text48
           </div>
         </li>
         <li>
@@ -13498,18 +12518,6 @@ Array [
   color: #0052a5;
 }
 
-.c6 {
-  width: auto;
-  font-weight: 700;
-  color: #0052a5;
-}
-
-.c5 {
-  -webkit-text-decoration: underline;
-  text-decoration: underline;
-  color: #0052a5;
-}
-
 <div
     className="c0"
   >
@@ -13552,46 +12560,13 @@ Array [
         quarantine_text27
       </p>
       <p>
-        <a
-          className="c5"
-          href="https://pacjent.gov.pl/podejrzewasz-ze-masz-koronawirusa#znajdz-stacje-sanitarno-epidemiologiczna"
-          target="_blank"
-        >
-          quarantine_text28
-        </a>
-         
-        <a
-          className="c5"
-          href="https://pacjent.gov.pl/podejrzewasz-ze-masz-koronawirusa#szpitale-z-oddzialami-zakaznymi"
-          target="_blank"
-        >
-          quarantine_text29
-        </a>
+        quarantine_text28
       </p>
       <p>
         quarantine_text30
       </p>
       <p>
         quarantine_text31
-         
-        <a
-          className="c6"
-          href="tel:32"
-        >
-          quarantine_text32
-        </a>
-         
-        quarantine_text33
-         
-        <a
-          className="c6"
-          href="tel:34"
-        >
-          quarantine_text34
-        </a>
-         
-        quarantine_text35
-         
       </p>
     </div>
   </div>,
@@ -14030,10 +13005,6 @@ Array [
         color="#000000"
       >
         test_border_box_text_2
-         
-        <strong>
-          test_border_box_text_3
-        </strong>
       </span>
     </span>
   </span>,
@@ -14245,40 +13216,6 @@ Array [
   color: #1b1b1b;
 }
 
-.c1 {
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  width: 100%;
-  padding: 20px 0;
-  color: #0052a5;
-}
-
-.c2 {
-  display: block;
-  height: 14px;
-  width: 14px;
-  margin-left: 20px;
-}
-
-.c3 {
-  width: auto;
-  font-weight: 700;
-  color: #0052a5;
-}
-
 @media screen and (max-width:370px) {
 
 }
@@ -14299,37 +13236,6 @@ Array [
       className="p1"
     >
       triage_info_border_text4
-      <a
-        className="c1"
-        href="https://pacjent.gov.pl/teleporada"
-        target="_blank"
-      >
-        triage_info_border_text5
-        <svg
-          className="c2"
-        >
-          arrow-current-color.svg
-        </svg>
-      </a>
-      triage_info_border_text6
-       
-      <a
-        className="c3"
-        href="tel:112"
-      >
-        112
-      </a>
-       
-      triage_info_border_text9
-       
-      <a
-        className="c3"
-        href="tel:999"
-      >
-        999
-      </a>
-       
-      triage_info_border_text7
     </span>
   </div>,
 ]

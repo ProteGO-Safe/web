@@ -1,16 +1,13 @@
 import React from 'react';
 import { withTranslation } from 'react-i18next';
-import { Collapse, Url } from '../../../../../../components';
+import { Collapse } from '../../../../../../components';
+import T from '../../../../../../components/T/T';
 
 const NoRisk = ({ t }) => (
   <>
     <Collapse title={t('no_risk_text8')}>
       <p>
-        {t('no_risk_text1')}{' '}
-        <Url value="https://gis.gov.pl/zdrowie/zasady-prawidlowego-mycia-rak/">
-          {t('no_risk_text2')}
-        </Url>{' '}
-        {t('no_risk_text9')}
+        <T i18nKey="no_risk_text1" />
       </p>
     </Collapse>
     <Collapse title={t('no_risk_text10')}>

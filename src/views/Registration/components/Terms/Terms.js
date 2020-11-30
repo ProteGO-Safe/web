@@ -9,7 +9,7 @@ import useModalContext from '../../../../hooks/useModalContext';
 import { Annotation, TextLink } from '../../../../theme/typography';
 import PrivacyPolicyContent from '../../../PrivacyPolicyDetails/component/PrivacyPolicyContent/PrivacyPolicyContent';
 import RegulationsContent from '../../../Regulations/component/RegulationsContent/RegulationsContent';
-import { Button, Checkbox, Email, Layout } from '../../../../components';
+import { Button, Checkbox, Layout, T } from '../../../../components';
 import { ButtonWrapper, Paragraph, Small, Title } from '../../Registration.styled';
 
 const Terms = ({ t, handleClick }) => {
@@ -72,8 +72,7 @@ const Terms = ({ t, handleClick }) => {
       </ButtonWrapper>
 
       <Small>
-        {t('terms_text10')} <Email>{t('terms_text11')}</Email>
-        {t('terms_text12')}{' '}
+        <T i18nKey="terms_text10" />
         <TextLink
           onClick={e => {
             e.preventDefault();

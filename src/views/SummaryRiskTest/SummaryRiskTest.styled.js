@@ -34,10 +34,6 @@ export const Paragraph = styled.p`
   color: ${Color.black};
 `;
 
-export const Strong = styled(Paragraph)`
-  font-weight: 600;
-`;
-
 export const ButtonWrapper = styled.div`
   display: flex;
   flex-flow: wrap column;

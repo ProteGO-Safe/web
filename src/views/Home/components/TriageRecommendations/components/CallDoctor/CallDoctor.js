@@ -1,17 +1,13 @@
 import React from 'react';
 import { withTranslation } from 'react-i18next';
-import { Collapse, PhoneNumber, Url } from '../../../../../../components';
+import { Collapse, T } from '../../../../../../components';
 
 const CallDoctor = ({ t }) => (
   <>
     <Collapse title={t('call_doctor_text30')}>
       <p>{t('call_doctor_text1')}</p>
       <p>
-        {t('call_doctor_text2')}{' '}
-        <Url value="https://www.nfz.gov.pl/aktualnosci/aktualnosci-oddzialow/gdzie-sie-leczyc-w-czasie-epidemii-koronawirusa,401.html">
-          {t('call_doctor_text3')}
-        </Url>{' '}
-        {t('call_doctor_text31')}
+        <T i18nKey="call_doctor_text2" />
       </p>
       <p>{t('call_doctor_text4')}</p>
       <ul>
@@ -33,11 +29,7 @@ const CallDoctor = ({ t }) => (
         <li>
           <div className="bold">{t('call_doctor_text14')}</div>
           <div className="normal">
-            {t('call_doctor_text15')}{' '}
-            <Url value="https://gis.gov.pl/zdrowie/zasady-prawidlowego-mycia-rak/">
-              {t('call_doctor_text16')}
-            </Url>{' '}
-            {t('call_doctor_text33')}
+            <T i18nKey="call_doctor_text15" />
           </div>
         </li>
         <li>
@@ -60,11 +52,7 @@ const CallDoctor = ({ t }) => (
     </Collapse>
     <Collapse title={t('call_doctor_text34')}>
       <p>
-        {t('call_doctor_text25')}{' '}
-        <PhoneNumber>{t('call_doctor_text26')}</PhoneNumber>{' '}
-        {t('call_doctor_text27')}{' '}
-        <PhoneNumber>{t('call_doctor_text28')}</PhoneNumber>{' '}
-        {t('call_doctor_text29')}
+        <T i18nKey="call_doctor_text25" />
       </p>
     </Collapse>
   </>

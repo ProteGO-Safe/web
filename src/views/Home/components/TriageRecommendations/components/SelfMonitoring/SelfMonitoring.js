@@ -1,6 +1,6 @@
 import React from 'react';
 import { withTranslation } from 'react-i18next';
-import { Collapse, Url } from '../../../../../../components';
+import { Collapse, T } from '../../../../../../components';
 
 const SelfMonitoring = ({ t }) => (
   <>
@@ -9,11 +9,7 @@ const SelfMonitoring = ({ t }) => (
     </Collapse>
     <Collapse title={t('self_monitoring_text11')}>
       <p>
-        {t('self_monitoring_text2')}{' '}
-        <Url value="https://gis.gov.pl/zdrowie/zasady-prawidlowego-mycia-rak/">
-          {t('self_monitoring_text3')}
-        </Url>{' '}
-        {t('self_monitoring_text12')}
+        <T i18nKey="self_monitoring_text2" />
       </p>
     </Collapse>
     <Collapse title={t('self_monitoring_text13')}>
