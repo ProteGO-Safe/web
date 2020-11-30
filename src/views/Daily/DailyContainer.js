@@ -8,7 +8,7 @@ import useNavigation from '../../hooks/useNavigation';
 import { Routes } from '../../services/navigationService/routes';
 
 const todayFormat = 'D.MM.YYYY';
-const dateFormat = 'HH:mm D.MM.YYYY';
+const dateFormat = 'HH:mm, D.MM.YYYY';
 
 const DailyContainer = () => {
   const { goTo } = useNavigation();
