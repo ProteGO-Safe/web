@@ -2,7 +2,6 @@ import React from 'react';
 import { withTranslation } from 'react-i18next';
 import ImportantInfo from './ImportantInfo';
 import useLanguage from '../../hooks/useLanguage';
-import { AVAILABLE_LANGUAGES } from '../../constants';
 import { Routes } from '../../services/navigationService/routes';
 
 import { ReactComponent as Icon1 } from '../../assets/img/icons/important-info-1.svg';
@@ -13,7 +12,7 @@ import { ReactComponent as Icon5 } from '../../assets/img/icons/important-info-5
 import { ReactComponent as Icon6 } from '../../assets/img/icons/important-info-6.svg';
 
 const ImportantInfoContainer = ({ t }) => {
-  const { language } = useLanguage();
+  const { isPolish } = useLanguage();
 
   const IMPORTANT_INFO_ITEMS = [
     {
@@ -32,12 +31,12 @@ const ImportantInfoContainer = ({ t }) => {
       path: Routes.HowItWorks
     },
     {
-      type: language === AVAILABLE_LANGUAGES.pl ? 'link' : 'route',
+      type: isPolish ? 'link' : 'route',
       icon: <Icon2 />,
       title: t('important_info_title_2'),
       description: t('important_info_description_2'),
       path:
-        language === AVAILABLE_LANGUAGES.pl
+        isPolish
           ? 'https://www.gov.pl/web/protegosafe/pytania-i-odpowiedzi'
           : Routes.ReportBug
     },

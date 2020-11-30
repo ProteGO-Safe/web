@@ -2,14 +2,9 @@ import React from 'react';
 import { Button, T } from '../../../../../components';
 import * as Styled from './ModalFalseFooter.styled';
 
-const ModalFalseFooter = ({
-  handleClickFalse,
-  handleClickTrue,
-  type,
-  path
-}) => {
-  const renderSwitch = param => {
-    switch (param) {
+const ModalFalseFooter = ({ handleClickFalse, handleClickTrue, type }) => {
+  const feedBack = (() => {
+    switch (type) {
       case 'route':
         return (
           <Button onClick={handleClickTrue}>
@@ -18,7 +13,7 @@ const ModalFalseFooter = ({
         );
       case 'link':
         return (
-          <Styled.UrlLink href={path} target="_blank">
+          <Styled.UrlLink onClick={handleClickTrue}>
             <Button onClick={() => null}>
               <T i18nKey="rating_app_modal_text_5" />
             </Button>
@@ -30,12 +25,11 @@ const ModalFalseFooter = ({
       default:
         return null;
     }
-  };
+  })();
 
   return (
     <Styled.ModalFalseFooter>
-      {renderSwitch(type)}
-
+      {feedBack}
       <Button onClick={handleClickFalse} type="outline">
         <T i18nKey="rating_app_modal_text_7" />
       </Button>
