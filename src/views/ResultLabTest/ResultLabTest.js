@@ -1,11 +1,10 @@
 import React from 'react';
-import { withTranslation } from 'react-i18next';
 import useNavigation from '../../hooks/useNavigation';
-import { Button } from '../../components';
+import { Button, T } from '../../components';
 import * as Styled from './ResultLabTest.styled';
 import { Routes } from '../../services/navigationService/routes';
 
-const ResultLabTest = ({ t, title, content, buttons }) => {
+const ResultLabTest = ({ title, content, buttons }) => {
   const { goTo } = useNavigation();
 
   const renderButtons = buttons.map(({ type, name, onClick }) => (
@@ -23,11 +22,11 @@ const ResultLabTest = ({ t, title, content, buttons }) => {
       <Styled.ButtonWrapper>
         {renderButtons}
         <Button onClick={() => goTo(Routes.Home)} type="outline">
-          {t('result_test_lab_text3')}
+          <T i18nKey="result_test_lab_text3" />
         </Button>
       </Styled.ButtonWrapper>
     </Styled.ResultLabTest>
   );
 };
 
-export default withTranslation()(ResultLabTest);
+export default ResultLabTest;

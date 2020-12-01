@@ -1,6 +1,5 @@
 import React, { useRef, useState } from 'react';
 import { useFormikContext } from 'formik';
-import { withTranslation } from 'react-i18next';
 import Explainer from './Explainer';
 
 import { ExplainerItem } from './components';
@@ -10,7 +9,7 @@ import IconInfo from '../../../../assets/img/explainer/info.svg';
 import IconDiagnostic from '../../../../assets/img/explainer/diagnostic.svg';
 import { T } from '../../../../components/T';
 
-const ExplainerContainer = ({ t }) => {
+const ExplainerContainer = () => {
   const carouselRef = useRef(null);
   const [activeSlide, setActiveSlide] = useState(0);
   const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
@@ -18,36 +17,26 @@ const ExplainerContainer = ({ t }) => {
 
   const items = [
     {
-      content: (
-        <>
-          <T i18nKey="explainer_container_text1" />
-        </>
-      ),
+      content: <T i18nKey="explainer_container_text1" />,
       icon: IconDiagnostic,
       slug: 'diagnostic_apple_google'
     },
     {
-      content: <>{t('explainer_container_text3')}</>,
+      content: <T i18nKey="explainer_container_text3" />,
       icon: IconInfo,
       slug: 'information'
     },
     {
-      content: (
-        <>
-          <T i18nKey="explainer_container_text4" />
-        </>
-      ),
+      content: <T i18nKey="explainer_container_text4" />,
       icon: IconDiary,
       slug: 'diary'
     },
     {
-      content: <>{t('explainer_container_text6')}</>,
+      content: <T i18nKey="explainer_container_text6" />,
       icon: IconChat,
       slug: 'chat'
     }
-  ].map(({ content, icon, slug }) => (
-    <ExplainerItem content={content} icon={icon} key={slug} />
-  ));
+  ].map(({ content, icon, slug }) => <ExplainerItem content={content} icon={icon} key={slug} />);
 
   const settings = {
     afterChange: currentSlide => setActiveSlide(currentSlide),
@@ -81,4 +70,4 @@ const ExplainerContainer = ({ t }) => {
   );
 };
 
-export default withTranslation()(ExplainerContainer);
+export default ExplainerContainer;

@@ -1,14 +1,14 @@
 import React from 'react';
-import { withTranslation } from 'react-i18next';
 import { Icon, Container } from './ExposureNotificationInfo.styled';
+import { T } from '../../../../components';
 
-const ExposureNotificationInfo = ({ t, icon }) => {
+const ExposureNotificationInfo = ({ icon }) => {
   return (
     <Container data-cy="exposure-notification-info">
       <Icon src={icon} />
-      {t('exposure_notification_info_text1')}
+      <T i18nKey="exposure_notification_info_text1" />
     </Container>
   );
 };
 
-export default withTranslation()(ExposureNotificationInfo);
+export default ExposureNotificationInfo;

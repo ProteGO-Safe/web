@@ -1,19 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { withTranslation } from 'react-i18next';
 import LabTest from './LabTest';
 import { PinVerificationLoader } from './components';
-import { NavigationBackGuard, Layout } from '../../components';
+import { NavigationBackGuard, Layout, T } from '../../components';
 import { NUMBER_OF_STEPS } from './labTest.constants';
-import {
-  resetUploadLabTestPinResult,
-  uploadLabTestPin
-} from '../../store/actions/nativeData';
+import { resetUploadLabTestPinResult, uploadLabTestPin } from '../../store/actions/nativeData';
 import { getUploadLabTestPinResult } from '../../store/selectors/nativeData';
 import useNavigation from '../../hooks/useNavigation';
 import { Routes } from '../../services/navigationService/routes';
 
-const LabTestContainer = ({ t }) => {
+const LabTestContainer = () => {
   const dispatch = useDispatch();
   const { goTo, goBack } = useNavigation();
 
@@ -101,8 +97,8 @@ const LabTestContainer = ({ t }) => {
       </Layout>
       {showBackGuard && (
         <NavigationBackGuard
-          title={t('lab_test_text23')}
-          description={t('lab_test_text24')}
+          title={<T i18nKey="lab_test_text23" />}
+          description={<T i18nKey="lab_test_text24" />}
           handleCancel={() => setShowBackGuard(false)}
           handleConfirm={() => backOnGuard()}
         />
@@ -111,4 +107,4 @@ const LabTestContainer = ({ t }) => {
   );
 };
 
-export default withTranslation()(LabTestContainer);
+export default LabTestContainer;

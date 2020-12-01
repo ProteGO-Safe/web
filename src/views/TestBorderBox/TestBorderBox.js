@@ -1,17 +1,16 @@
 import React from 'react';
-import { withTranslation } from 'react-i18next';
-import { BorderBox } from '../../components';
+import { BorderBox, T } from '../../components';
 
-const TestBorderBox = ({ data, t }) => (
+const TestBorderBox = ({ data }) => (
   <BorderBox
-    title={t(data.title)}
-    colorBorder={t(data.colorBorder)}
+    title={<T i18nKey={data.title} />}
+    colorBorder={data.colorBorder}
     path={data.path}
-    colorDescription={t(data.colorDescription)}
-    colorTitle={t(data.colorTitle)}
+    colorDescription={data.colorDescription}
+    colorTitle={data.colorTitle}
   >
     {data.content}
   </BorderBox>
 );
 
-export default withTranslation()(TestBorderBox);
+export default TestBorderBox;

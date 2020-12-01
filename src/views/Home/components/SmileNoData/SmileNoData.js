@@ -1,11 +1,11 @@
 import React from 'react';
-import { withTranslation } from 'react-i18next';
 import { GreenSmile } from '../../../../assets/img/icons/buzka-zielona';
 import { YellowSmile } from '../../../../assets/img/icons/buzka-zolta';
 import { RedSmile } from '../../../../assets/img/icons/buzka-czerwona';
 import { Icons, Paragraph, Title, Wrapper } from './SmileNoData.styled';
+import { T } from '../../../../components';
 
-const SmileNoData = ({ t }) => {
+const SmileNoData = () => {
   return (
     <Wrapper>
       <Icons>
@@ -13,10 +13,14 @@ const SmileNoData = ({ t }) => {
         <YellowSmile />
         <RedSmile />
       </Icons>
-      <Title>{t('smile_no_data_text1')}</Title>
-      <Paragraph>{t('smile_no_data_text2')}</Paragraph>
+      <Title>
+        <T i18nKey="smile_no_data_text1" />
+      </Title>
+      <Paragraph>
+        <T i18nKey="smile_no_data_text2" />
+      </Paragraph>
     </Wrapper>
   );
 };
 
-export default withTranslation()(SmileNoData);
+export default SmileNoData;

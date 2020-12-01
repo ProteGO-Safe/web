@@ -1,14 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { withTranslation } from 'react-i18next';
 import { UploadData } from './components/UploadData';
-import {
-  endUploadHistoricalData,
-  uploadHistoricalData
-} from '../../store/actions/nativeData';
+import { endUploadHistoricalData, uploadHistoricalData } from '../../store/actions/nativeData';
 import UploadInProgress from './components/UploadInProgress/UploadInProgress';
 import useSupportExposureNotificationTracing from '../../hooks/useSupportExposureNotificationTracing';
 import { UploadSuccess } from './components/UploadSuccess';
+import { T } from '../../components';
 import banPinTries from '../../services/banPinTries';
 import { UPLOAD_HISTORICAL_DATA_STATE as uploadState } from '../../store/reducers/app/app.constants';
 import {
@@ -20,16 +17,14 @@ import useNavigation from '../../hooks/useNavigation';
 import { Routes } from '../../services/navigationService/routes';
 import { NavigationBackGuard } from '../../components/NavigationBackGuard';
 
-const UploadHistoricalData = ({ t }) => {
+const UploadHistoricalData = () => {
   const { goTo, goBack } = useNavigation();
   const { areEnableAllServices } = useSupportExposureNotificationTracing();
   const MAX_UPLOAD_TIME = 60;
   const dispatch = useDispatch();
   const { name: userName } = useSelector(state => state.user);
   const isInteroperabilityEnabled = useSelector(getWarningInEuropeTermState);
-  const errorMessageVisible = useSelector(
-    getUploadHistoricalDataStateErrorMessageVisible
-  );
+  const errorMessageVisible = useSelector(getUploadHistoricalDataStateErrorMessageVisible);
   const {
     uploadHistoricalDataState: { status, date, unsuccessfulAttempts } = {
       status: uploadState.EMPTY,
@@ -115,10 +110,7 @@ const UploadHistoricalData = ({ t }) => {
     if (status === uploadState.DENIED) {
       return null;
     }
-    return (
-      banData &&
-      banPinTries.createErrorMessage(banData, unsuccessfulAttempts.length)
-    );
+    return banData && banPinTries.createErrorMessage(banData, unsuccessfulAttempts.length);
   };
   return (
     <>
@@ -136,8 +128,8 @@ const UploadHistoricalData = ({ t }) => {
       />
       {showBackGuard && (
         <NavigationBackGuard
-          title={t('lab_test_text23')}
-          description={t('lab_test_text24')}
+          title={<T i18nKey="lab_test_text23" />}
+          description={<T i18nKey="lab_test_text24" />}
           handleCancel={() => setShowBackGuard(false)}
           handleConfirm={() => backOnGuard()}
         />
@@ -146,4 +138,4 @@ const UploadHistoricalData = ({ t }) => {
   );
 };
 
-export default withTranslation()(UploadHistoricalData);
+export default UploadHistoricalData;

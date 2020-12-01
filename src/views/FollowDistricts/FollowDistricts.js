@@ -1,41 +1,30 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { withTranslation } from 'react-i18next';
-import { StatusItem } from '../../components';
+import { StatusItem, T } from '../../components';
 import * as Styled from './FollowDistricts.styled';
 
-const FollowDistricts = ({
-  dateUpdate,
-  handleUnsubscribeDistrict,
-  items,
-  t
-}) => {
+const FollowDistricts = ({ dateUpdate, handleUnsubscribeDistrict, items }) => {
   if (!items) {
     return null;
   }
   const renderItems = items.map(({ id, name, state }) => (
-    <StatusItem
-      key={id}
-      name={name}
-      status={state}
-      handleClick={() => handleUnsubscribeDistrict(id)}
-    />
+    <StatusItem key={id} name={name} status={state} handleClick={() => handleUnsubscribeDistrict(id)} />
   ));
 
   return (
     <Styled.FollowDistricts>
       <Styled.DateUpdate>
-        {t('follow_district_date_update')} {dateUpdate}
+        <T i18nKey="follow_district_date_update" /> {dateUpdate}
       </Styled.DateUpdate>
 
       {items.length === 0 ? (
         <Styled.Description>
-          {t('follow_district_description')} <Styled.Star />
+          <T i18nKey="follow_district_description" /> <Styled.Star />
         </Styled.Description>
       ) : (
         <Styled.Content>
           <Styled.Title>
-            {t('follow_district_title')} ({items.length}):
+            <T i18nKey="follow_district_title" /> ({items.length}):
           </Styled.Title>
           {renderItems}
         </Styled.Content>
@@ -49,4 +38,4 @@ FollowDistricts.propTypes = {
   items: PropTypes.array.isRequired
 };
 
-export default withTranslation()(FollowDistricts);
+export default FollowDistricts;

@@ -1,12 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { withTranslation } from 'react-i18next';
 import * as Styled from './FollowDistrictsSlider.styled';
 import { StatusItem } from '../../components/StatusItem';
-import { NavLink } from '../../components';
+import { NavLink, T } from '../../components';
 import { Routes } from '../../services/navigationService/routes';
 
-const FollowDistrictsSlider = ({ items, t }) => {
+const FollowDistrictsSlider = ({ items }) => {
   const renderItems = items.map(({ id, name, state }) => (
     <StatusItem id={id} key={id} name={name} status={state} />
   ));
@@ -17,7 +16,7 @@ const FollowDistrictsSlider = ({ items, t }) => {
         <>
           <NavLink to={Routes.CurrentRestrictions}>
             <Styled.Title>
-              {t('follow_district_title')}:{' '}
+              <T i18nKey="follow_district_title"/>:{' '}
               <Styled.Badge>{items.length}</Styled.Badge>
             </Styled.Title>
           </NavLink>
@@ -26,7 +25,7 @@ const FollowDistrictsSlider = ({ items, t }) => {
       ) : (
         <NavLink to={Routes.CurrentRestrictions}>
           <Styled.Button>
-            {t('follow_district_button_name')}
+            <T i18nKey="follow_district_button_name"/>
             <Styled.Icon />
           </Styled.Button>
         </NavLink>
@@ -43,4 +42,4 @@ FollowDistrictsSlider.propTypes = {
   items: PropTypes.array
 };
 
-export default withTranslation()(FollowDistrictsSlider);
+export default FollowDistrictsSlider;

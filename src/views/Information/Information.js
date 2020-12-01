@@ -1,5 +1,4 @@
 import React from 'react';
-import { withTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import { Button, FieldSet, Layout, T } from '../../components';
 import {
@@ -14,19 +13,25 @@ import {
 
 import warning from '../../assets/img/icons/warning.svg';
 
-const Information = ({ t, hideInformation }) => {
+const Information = ({ hideInformation }) => {
   const { triageLevel } = useSelector(state => state.triage);
 
   return (
     <Layout id="view-information" hideBackButton={triageLevel === ''}>
-      <Title>{t('information_text1')}</Title>
-      <Paragraph1>{t('information_text2')}</Paragraph1>
+      <Title>
+        <T i18nKey="information_text1" />
+      </Title>
+      <Paragraph1>
+        <T i18nKey="information_text2" />
+      </Paragraph1>
       <WarningContent>
         <WarningLabel>
-          <img src={warning} alt={t('information_text3')} />
-          {t('information_text3')}
+          <img src={warning} alt={<T i18nKey="information_text3" />} />
+          <T i18nKey="information_text3" />
         </WarningLabel>
-        <Paragraph2>{t('information_text4')}</Paragraph2>
+        <Paragraph2>
+          <T i18nKey="information_text4" />
+        </Paragraph2>
         <WarningList>
           <WarningListItem>
             <T i18nKey="information_text5" />
@@ -40,10 +45,10 @@ const Information = ({ t, hideInformation }) => {
         </WarningList>
       </WarningContent>
       <FieldSet>
-        <Button onClick={hideInformation} label={t('button_next')} />
+        <Button onClick={hideInformation} label={<T i18nKey="button_next" />} />
       </FieldSet>
     </Layout>
   );
 };
 
-export default withTranslation()(Information);
+export default Information;

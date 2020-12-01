@@ -1,12 +1,5 @@
 import React from 'react';
-import { withTranslation } from 'react-i18next';
-import {
-  TextBlockWithIcon,
-  CallHotline,
-  Layout,
-  Button,
-  T
-} from '../../components';
+import { TextBlockWithIcon, CallHotline, Layout, Button, T } from '../../components';
 import * as Styled from './IAmSick.styled';
 
 import CallHotlineIcon from '../../assets/img/icons/icon-contact-blue.svg';
@@ -17,7 +10,7 @@ import Icon4 from '../../assets/img/icons/i-am-sick-icon-4.svg';
 import Icon6 from '../../assets/img/icons/i-am-sick-icon-6.svg';
 import Icon7 from '../../assets/img/icons/i-am-sick-icon-7.svg';
 
-const IAmSick = ({ t }) => {
+const IAmSick = () => {
   return (
     <Layout isNavigation>
       <Styled.Title>
@@ -25,45 +18,27 @@ const IAmSick = ({ t }) => {
       </Styled.Title>
 
       <Styled.Content>
-        <TextBlockWithIcon
-          icon={Icon1}
-          title={<T i18nKey="i_am_sick_text_2" />}
-        >
+        <TextBlockWithIcon icon={Icon1} title={<T i18nKey="i_am_sick_text_2" />}>
           <T i18nKey="i_am_sick_text_3" />
         </TextBlockWithIcon>
 
-        <TextBlockWithIcon
-          icon={Icon2}
-          title={<T i18nKey="i_am_sick_text_4" />}
-        >
+        <TextBlockWithIcon icon={Icon2} title={<T i18nKey="i_am_sick_text_4" />}>
           <T i18nKey="i_am_sick_text_5" />
         </TextBlockWithIcon>
 
-        <TextBlockWithIcon
-          icon={Icon6}
-          title={<T i18nKey="i_am_sick_text_6" />}
-        >
+        <TextBlockWithIcon icon={Icon6} title={<T i18nKey="i_am_sick_text_6" />}>
           <T i18nKey="i_am_sick_text_7" />
         </TextBlockWithIcon>
 
-        <TextBlockWithIcon
-          icon={Icon3}
-          title={<T i18nKey="i_am_sick_text_8" />}
-        >
+        <TextBlockWithIcon icon={Icon3} title={<T i18nKey="i_am_sick_text_8" />}>
           <T i18nKey="i_am_sick_text_9" />
         </TextBlockWithIcon>
 
-        <TextBlockWithIcon
-          icon={Icon4}
-          title={<T i18nKey="i_am_sick_text_10" />}
-        >
+        <TextBlockWithIcon icon={Icon4} title={<T i18nKey="i_am_sick_text_10" />}>
           <T i18nKey="i_am_sick_text_11" />
         </TextBlockWithIcon>
 
-        <TextBlockWithIcon
-          icon={Icon7}
-          title={<T i18nKey="i_am_sick_text_12" />}
-        >
+        <TextBlockWithIcon icon={Icon7} title={<T i18nKey="i_am_sick_text_12" />}>
           <T i18nKey="i_am_sick_text_13" />
         </TextBlockWithIcon>
       </Styled.Content>
@@ -104,8 +79,8 @@ const IAmSick = ({ t }) => {
       </Styled.List>
 
       <Styled.ButtonWrapper>
-        <Styled.UrlLink href={t('i_am_sick_text_24')} target="_blank">
-          <Button label={t('i_am_sick_text_26')} onClick={() => null} />
+        <Styled.UrlLink href={<T i18nKey="i_am_sick_text_24" />} target="_blank">
+          <Button label={<T i18nKey="i_am_sick_text_26" />} onClick={() => null} />
         </Styled.UrlLink>
 
         <Styled.Small>
@@ -116,4 +91,4 @@ const IAmSick = ({ t }) => {
   );
 };
 
-export default withTranslation()(IAmSick);
+export default IAmSick;

@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react';
-import { withTranslation } from 'react-i18next';
 import { useDispatch, useSelector } from 'react-redux';
 import Settings from './Settings';
 import {
@@ -8,13 +7,12 @@ import {
   fetchServicesStatus
 } from '../../store/actions/nativeData';
 import { EXPOSURE_NOTIFICATION_STATUS } from '../../utils/servicesStatus/servicesStatus.constants';
+import { T } from '../../components';
 
-const SettingsContainer = ({ t }) => {
-  const {
-    servicesStatus: {
-      exposureNotificationStatus = EXPOSURE_NOTIFICATION_STATUS.OFF
-    } = {}
-  } = useSelector(state => state.nativeData);
+const SettingsContainer = () => {
+  const { servicesStatus: { exposureNotificationStatus = EXPOSURE_NOTIFICATION_STATUS.OFF } = {} } = useSelector(
+    state => state.nativeData
+  );
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -38,16 +36,16 @@ const SettingsContainer = ({ t }) => {
       checked: isExposureNotificationOn,
       disabled: false,
       onChange: toggleChecked,
-      label: t('settings_container_text2'),
+      label: <T i18nKey="settings_container_text2" />,
       name: 'bluetooth'
     }
   ];
 
   return (
-    <Settings items={items} title={t('settings_container_text3')}>
-      {t('settings_container_text1')}
+    <Settings items={items} title={<T i18nKey="settings_container_text3" />}>
+      <T i18nKey="settings_container_text1" />
     </Settings>
   );
 };
 
-export default withTranslation()(SettingsContainer);
+export default SettingsContainer;

@@ -2,15 +2,15 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import moment from 'moment';
 
-import { withTranslation } from 'react-i18next';
 import RiskTestData from './RiskTestData';
 import { TRIAGE_LEVEL } from './RiskTestData.constants';
 import locations from '../../services/diagnosisLogic/locations.json';
 import useNavigation from '../../hooks/useNavigation';
+import { T } from '../../components';
 
 const dateFormat = 'D.MM.YYYY';
 
-const RiskTestDataContainer = ({ t }) => {
+const RiskTestDataContainer = () => {
   const { getParam } = useNavigation();
   const riskTest = useSelector(state => state.riskTest);
   const id = getParam('id');
@@ -21,12 +21,10 @@ const RiskTestDataContainer = ({ t }) => {
 
   const getCountries = () => {
     const countryAnswers = evidence.filter(_obj => _obj.id.startsWith('l'));
-    const countryNames = countryAnswers.map(
-      answer => locations.find(country => country.id === answer.id).name
-    );
+    const countryNames = countryAnswers.map(answer => locations.find(country => country.id === answer.id).name);
     return countryNames.map((name, index) => (
       <>
-        {t(name)}
+        <T i18nKey={name} />
         {index !== countryNames.length - 1 ? ', ' : null}
       </>
     ));
@@ -39,7 +37,7 @@ const RiskTestDataContainer = ({ t }) => {
     const answer = evidence.find(_obj => _obj.id === evidenceId);
     const choiceId = answer ? answer.choice_id : 'absent';
     const choice = choices.find(_obj => _obj.id === choiceId);
-    return choice ? t(choice.label) : '';
+    return choice ? <T i18nKey={choice.label} /> : '';
   };
 
   const { riskTestInformation } = TRIAGE_LEVEL[triageLevel];
@@ -50,9 +48,9 @@ const RiskTestDataContainer = ({ t }) => {
       questions={allQuestions}
       idToChoiceResolver={idToChoiceResolver}
       isToday={isToday}
-      triageLevelInformation={t(riskTestInformation)}
+      triageLevelInformation={<T i18nKey={riskTestInformation} />}
     />
   );
 };
 
-export default withTranslation()(RiskTestDataContainer);
+export default RiskTestDataContainer;

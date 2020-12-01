@@ -1,13 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { withTranslation } from 'react-i18next';
 import * as Styled from './RiskTestResult.styled';
+import { T } from '../index';
 
-const RiskTestResult = ({ color, icon, text, t }) => {
+const RiskTestResult = ({ color, icon, text }) => {
   return (
     <Styled.RiskTestResult color={color}>
-      <Styled.Title>{t('risk_test_result_title')}</Styled.Title>
-      <Styled.Result icon={icon}>{t(text)}</Styled.Result>
+      <Styled.Title>
+        <T i18nKey="risk_test_result_title" />
+      </Styled.Title>
+      <Styled.Result icon={icon}>
+        <T i18nKey={text} />
+      </Styled.Result>
     </Styled.RiskTestResult>
   );
 };
@@ -18,4 +22,4 @@ RiskTestResult.propTypes = {
   text: PropTypes.string.isRequired
 };
 
-export default withTranslation()(RiskTestResult);
+export default RiskTestResult;

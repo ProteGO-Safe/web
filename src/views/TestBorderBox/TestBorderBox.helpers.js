@@ -4,7 +4,7 @@ import { T } from '../../components';
 import { Routes } from '../../services/navigationService/routes';
 import { ButtonIconShadow } from './components/ButtonIconShadow';
 
-export const resolveData = t => {
+export const resolveData = () => {
   return {
     TEST_IN_PROGRESS: {
       colorBorder: Color.primary,
@@ -34,10 +34,7 @@ export const resolveData = t => {
           <T i18nKey="test_border_box_approve_description_9" />
           <br />
           <T i18nKey="test_border_box_approve_description_10" />
-          <ButtonIconShadow
-            name={<T i18nKey="test_border_box_approve_description_11" />}
-            path={Routes.LabTestResult}
-          />
+          <ButtonIconShadow name={<T i18nKey="test_border_box_approve_description_11" />} path={Routes.LabTestResult} />
         </>
       ),
       title: 'test_border_box_approve_description_8'

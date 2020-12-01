@@ -1,14 +1,9 @@
 import React from 'react';
-import { withTranslation } from 'react-i18next';
 import { AddTranslation } from './components';
+import { T } from '../../components';
 import * as Styled from './SettingsLanguages.styled';
 
-const SettingsLanguages = ({
-  addTranslationPath,
-  languages,
-  selectedLang,
-  t
-}) => {
+const SettingsLanguages = ({ addTranslationPath, languages, selectedLang }) => {
   const renderFlag = flag => require(`../../assets/img/flags/${flag}.svg`);
 
   const renderLanguages = languages.map(({ shortcutLang, label, onClick }) => (
@@ -20,21 +15,22 @@ const SettingsLanguages = ({
 
   return (
     <Styled.SettingsLanguages>
-      <Styled.Title>{t('settings_languages_text1')}</Styled.Title>
+      <Styled.Title>
+        <T i18nKey="settings_languages_text1" />
+      </Styled.Title>
       <Styled.SelectedLang>
         <Styled.Flag src={renderFlag(selectedLang.shortcutLang)} />
         <Styled.Label>{selectedLang.label}</Styled.Label>
       </Styled.SelectedLang>
 
-      <Styled.Title>{t('settings_languages_text2')}</Styled.Title>
+      <Styled.Title>
+        <T i18nKey="settings_languages_text2" />
+      </Styled.Title>
       {renderLanguages}
 
-      <AddTranslation
-        name={t('settings_languages_text3')}
-        path={addTranslationPath}
-      />
+      <AddTranslation name={<T i18nKey="settings_languages_text3" />} path={addTranslationPath} />
     </Styled.SettingsLanguages>
   );
 };
 
-export default withTranslation()(SettingsLanguages);
+export default SettingsLanguages;

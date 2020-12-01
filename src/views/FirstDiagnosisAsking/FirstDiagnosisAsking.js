@@ -1,30 +1,24 @@
 import React from 'react';
-import { withTranslation } from 'react-i18next';
-import { Button, Layout } from '../../components/index';
+import { Button, Layout, T } from '../../components/index';
 import { Paragraph, Small, ButtonWrapper } from './FirstDiagnosisAsking.styled';
 
-const FirstDiagnosisAsking = ({ t, onYesClick, onNoClick }) => {
+const FirstDiagnosisAsking = ({ onYesClick, onNoClick }) => {
   return (
     <Layout id="view-first-diagnosis-asking" hideBackButton isGovFooter>
       <Paragraph>
-        {t('first_diagnosis_asking_text1')}
+        <T i18nKey="first_diagnosis_asking_text1" />
         <br />
-        {t('first_diagnosis_asking_text2')}
+        <T i18nKey="first_diagnosis_asking_text2" />
       </Paragraph>
-      <Small>{t('first_diagnosis_asking_text3')}</Small>
+      <Small>
+        <T i18nKey="first_diagnosis_asking_text3" />
+      </Small>
       <ButtonWrapper>
-        <Button
-          label={t('first_diagnosis_asking_text4')}
-          onClick={onYesClick}
-        />
-        <Button
-          label={t('first_diagnosis_asking_text5')}
-          type="outline"
-          onClick={onNoClick}
-        />
+        <Button label={<T i18nKey="first_diagnosis_asking_text4" />} onClick={onYesClick} />
+        <Button label={<T i18nKey="first_diagnosis_asking_text5" />} type="outline" onClick={onNoClick} />
       </ButtonWrapper>
     </Layout>
   );
 };
 
-export default withTranslation()(FirstDiagnosisAsking);
+export default FirstDiagnosisAsking;

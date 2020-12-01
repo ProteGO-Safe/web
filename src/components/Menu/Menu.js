@@ -1,12 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { withTranslation } from 'react-i18next';
 import LogoSafeSafe from '../../assets/img/logo/stopcovid_protegosafe_logo_sygnet.svg';
 import useMenuContext from '../../hooks/useMenuContext';
-import { NavLink, VersionApp } from '../index';
+import { NavLink, VersionApp, T } from '../index';
 import './Menu.scss';
 
-const Menu = ({ t, items }) => {
+const Menu = ({ items }) => {
   const { visible, startHiding, inProgress } = useMenuContext();
   const handleClose = () => startHiding();
 
@@ -14,17 +13,7 @@ const Menu = ({ t, items }) => {
   const isHidden = inProgress ? 'hidden' : '';
 
   const renderItems = items.map(item => {
-    const {
-      bottom,
-      bold,
-      color,
-      disable,
-      icon,
-      path,
-      slug,
-      title,
-      invisible
-    } = item;
+    const { bottom, bold, color, disable, icon, path, slug, title, invisible } = item;
 
     const isBottom = bottom ? 'bottom' : '';
     const isBold = bold ? 'text-bold' : '';
@@ -38,13 +27,9 @@ const Menu = ({ t, items }) => {
     return (
       !isInvisible && (
         <li className={`menu__item ${isBottom} ${isDisable}`} key={slug}>
-          <NavLink
-            className={`menu__item__link ${isBold} ${isDisable} ${color}`}
-            onClick={handleClose}
-            to={path}
-          >
-            <img className="menu__item__icon" src={icon} alt={t(title)} />
-            {t(title)}
+          <NavLink className={`menu__item__link ${isBold} ${isDisable} ${color}`} onClick={handleClose} to={path}>
+            <img className="menu__item__icon" src={icon} alt={<T i18nKey={title} />} />
+            <T i18nKey={title} />
           </NavLink>
         </li>
       )
@@ -78,4 +63,4 @@ Menu.propTypes = {
   invisible: PropTypes.bool
 };
 
-export default withTranslation()(Menu);
+export default Menu;

@@ -1,19 +1,15 @@
 import React, { useCallback, useEffect, useRef, useState } from 'react';
-import { withTranslation } from 'react-i18next';
 import { menuItems } from './BottomNavigation.constants';
 import useMenuContext from '../../hooks/useMenuContext';
 import { Container, MenuItem } from './BottomNavigation.styled';
 import useNavigation from '../../hooks/useNavigation';
+import { T } from '../index';
 
-const BottomNavigation = ({ className, t }) => {
+const BottomNavigation = ({ className }) => {
   const { goTo, route } = useNavigation();
   const [value, setValue] = useState(null);
   const containerRef = useRef();
-  const {
-    setVisible: setMenuVisible,
-    startHiding: hideMenu,
-    visible: menuVisible
-  } = useMenuContext();
+  const { setVisible: setMenuVisible, startHiding: hideMenu, visible: menuVisible } = useMenuContext();
 
   useEffect(() => {
     if (menuVisible) {
@@ -57,7 +53,7 @@ const BottomNavigation = ({ className, t }) => {
       id={id}
       key={label}
       className={panicButton && 'panic-button'}
-      label={t(label)}
+      label={<T i18nKey={label} />}
       disabled={disabled}
       icon={<Icon />}
       disableRipple
@@ -66,16 +62,10 @@ const BottomNavigation = ({ className, t }) => {
   );
 
   return (
-    <Container
-      ref={containerRef}
-      className={className}
-      onChange={handleSelectionChange}
-      showLabels
-      value={value}
-    >
+    <Container ref={containerRef} className={className} onChange={handleSelectionChange} showLabels value={value}>
       {menuItems.map(renderMenuItem)}
     </Container>
   );
 };
 
-export default withTranslation()(BottomNavigation);
+export default BottomNavigation;

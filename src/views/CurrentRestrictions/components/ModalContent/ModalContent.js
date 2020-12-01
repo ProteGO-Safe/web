@@ -1,14 +1,13 @@
 import React from 'react';
-import { withTranslation } from 'react-i18next';
 import * as Styled from './ModalContent.styled';
 import { T } from '../../../../components/T';
 
-const ModalContent = ({ t }) => (
+const ModalContent = () => (
   <Styled.ModalContent>
     <Styled.Title>
-      {t('current_restrictions_modal_title1')}
+      <T i18nKey="current_restrictions_modal_title1" />
       <br />
-      {t('current_restrictions_modal_title2')}
+      <T i18nKey="current_restrictions_modal_title2" />
     </Styled.Title>
     <Styled.Image />
     <Styled.Description>
@@ -22,4 +21,4 @@ const ModalContent = ({ t }) => (
   </Styled.ModalContent>
 );
 
-export default withTranslation()(ModalContent);
+export default ModalContent;

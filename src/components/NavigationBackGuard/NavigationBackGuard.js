@@ -1,17 +1,10 @@
 import React from 'react';
-import { withTranslation } from 'react-i18next';
 import * as Styled from './NavigationBackGuard.styled';
 import { FieldSet } from '../FieldSet';
-import { Button } from '../index';
+import { Button, T } from '../index';
 import { BUTTON_TYPES } from '../Button/Button.constants';
 
-const NavigationBackGuard = ({
-  description,
-  handleCancel,
-  handleConfirm,
-  t,
-  title
-}) => {
+const NavigationBackGuard = ({ description, handleCancel, handleConfirm, t, title }) => {
   return (
     <Styled.Wrapper>
       <Styled.Background />
@@ -19,16 +12,12 @@ const NavigationBackGuard = ({
         <Styled.Title>{title}</Styled.Title>
         <Styled.Description>{description}</Styled.Description>
         <FieldSet>
-          <Button onClick={handleConfirm} label={t('yes')} />
-          <Button
-            onClick={handleCancel}
-            label={t('no')}
-            type={BUTTON_TYPES.OUTLINE}
-          />
+          <Button onClick={handleConfirm} label={<T i18nKey="yes" />} />
+          <Button onClick={handleCancel} label={<T i18nKey="no" />} type={BUTTON_TYPES.OUTLINE} />
         </FieldSet>
       </Styled.Box>
     </Styled.Wrapper>
   );
 };
 
-export default withTranslation()(NavigationBackGuard);
+export default NavigationBackGuard;

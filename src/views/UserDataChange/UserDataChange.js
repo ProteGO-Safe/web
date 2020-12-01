@@ -3,7 +3,6 @@ import { Formik } from 'formik';
 import * as Yup from 'yup';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { withTranslation } from 'react-i18next';
 import { saveUser } from '../../store/actions/user';
 import * as constants from '../../constants';
 import { chronicSickValues } from '../../constants';
@@ -14,14 +13,13 @@ import useNavigation from '../../hooks/useNavigation';
 import { revokeEnStatus } from '../../store/actions/nativeData';
 import { revokeManualCovid, revokeTorStatus } from '../../store/actions/triage';
 import { Routes } from '../../services/navigationService/routes';
+import { T } from '../../components';
 
-const UserDataChange = ({ t }) => {
+const UserDataChange = () => {
   const { goTo } = useNavigation();
   const dispatch = useDispatch();
   const { setLoader } = useLoaderContext();
-  const { bloodGroup, chronicSicks, name, smokeNumber } = useSelector(
-    state => state.user
-  );
+  const { bloodGroup, chronicSicks, name, smokeNumber } = useSelector(state => state.user);
 
   const filledChronicsSicks = (() => {
     if (chronicSicks === undefined) {
@@ -31,13 +29,9 @@ const UserDataChange = ({ t }) => {
     chronicSicks.forEach(_obj => {
       const { name: filledName, description: filledDescription } = _obj;
       filledChronicsSicksToReturn[filledName] = true;
-      const foundedChronicsSick = chronicSickValues.find(
-        value => value.field === filledName
-      );
+      const foundedChronicsSick = chronicSickValues.find(value => value.field === filledName);
       if (foundedChronicsSick && filledDescription) {
-        filledChronicsSicksToReturn[
-          foundedChronicsSick.description
-        ] = filledDescription;
+        filledChronicsSicksToReturn[foundedChronicsSick.description] = filledDescription;
       }
     });
     return filledChronicsSicksToReturn;
@@ -47,16 +41,14 @@ const UserDataChange = ({ t }) => {
     if (smokeNumber === undefined) {
       return undefined;
     }
-    return smokeNumber ? t('yes') : t('no');
+    return smokeNumber ? <T i18nKey="yes" /> : <T i18nKey="no" />;
   })();
 
   const isChronicSick = (() => {
     if (chronicSicks === undefined) {
       return undefined;
     }
-    return chronicSicks.length === 0
-      ? constants.VALUE_IS_CHRONIC_SICK_NO
-      : constants.VALUE_IS_CHRONIC_SICK_YES;
+    return chronicSicks.length === 0 ? constants.VALUE_IS_CHRONIC_SICK_NO : constants.VALUE_IS_CHRONIC_SICK_YES;
   })();
 
   const initialValues = {
@@ -72,7 +64,7 @@ const UserDataChange = ({ t }) => {
 
   const validationSchema = Yup.object().shape({
     [constants.FIELD_NAME]: userNameValidationSchema,
-    [constants.FIELD_TERM1]: Yup.boolean().oneOf([true], t('name_form_text10'))
+    [constants.FIELD_TERM1]: Yup.boolean().oneOf([true], <T i18nKey="name_form_text10" />)
   });
 
   const handleSubmit = form => {
@@ -87,7 +79,7 @@ const UserDataChange = ({ t }) => {
       chronicSicks: [...chronicSicksFromForm],
       bloodGroup: form[constants.FIELD_BLOOD_GROUP],
       smokeNumber: form[constants.FIELD_SMOKE_NUMBER],
-      isSmoking: form[constants.FIELD_SMOKE] === t('yes')
+      isSmoking: form[constants.FIELD_SMOKE] === <T i18nKey="yes" />
     };
 
     const goToHome = revoke => {
@@ -126,4 +118,4 @@ const UserDataChange = ({ t }) => {
   );
 };
 
-export default withTranslation()(UserDataChange);
+export default UserDataChange;

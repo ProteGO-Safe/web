@@ -1,17 +1,19 @@
 import React from 'react';
-import { withTranslation } from 'react-i18next';
 import { MakeDiagnosisButton, Smile, TriageInfoBorder } from '../../../index';
+import { T } from '../../../../../../components';
 import { Paragraph } from '../../../../../../theme/typography';
 
-const ExposureLow = ({ t }) => {
+const ExposureLow = () => {
   return (
     <>
       <Smile />
       <TriageInfoBorder />
-      <Paragraph>{t('exposure_low_text1')}</Paragraph>
+      <Paragraph>
+        <T i18nKey="exposure_low_text1" />
+      </Paragraph>
       <MakeDiagnosisButton />
     </>
   );
 };
 
-export default withTranslation()(ExposureLow);
+export default ExposureLow;

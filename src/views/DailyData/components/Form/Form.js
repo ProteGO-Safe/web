@@ -1,5 +1,4 @@
 import React from 'react';
-import { withTranslation } from 'react-i18next';
 import PropTypes from 'prop-types';
 import { useFormikContext } from 'formik';
 import {
@@ -12,22 +11,19 @@ import {
   FIELD_TIME
 } from '../../../../constants';
 import { marks } from './constants';
-import {
-  Input,
-  Textarea,
-  InputSlider,
-  InputDatePicker
-} from '../../../../components';
+import { Input, Textarea, InputSlider, InputDatePicker, T } from '../../../../components';
 import { getValueFromMark } from './form.helpers';
 import * as Styled from './Form.styled';
 
-const Form = ({ t, isViewMode }) => {
+const Form = ({ isViewMode }) => {
   const { handleChange, setFieldValue, values, errors } = useFormikContext();
 
   return (
     <div className="form">
       <Styled.Group>
-        <Styled.Label>{t('form_text17')}</Styled.Label>
+        <Styled.Label>
+          <T i18nKey="form_text17" />
+        </Styled.Label>
         <InputDatePicker
           selected={values[FIELD_TIME]}
           onChange={date => setFieldValue(FIELD_TIME, date)}
@@ -36,12 +32,14 @@ const Form = ({ t, isViewMode }) => {
       </Styled.Group>
 
       <Styled.Group>
-        <Styled.Label>{t('form_text1')}</Styled.Label>
+        <Styled.Label>
+          <T i18nKey="form_text1" />
+        </Styled.Label>
         <Input
-          error={t(errors[FIELD_TEMPERATURE])}
+          error={<T i18nKey={errors[FIELD_TEMPERATURE]} />}
           disabled={isViewMode}
           name={FIELD_TEMPERATURE}
-          placeholder={t('form_text18')}
+          placeholder={<T i18nKey="form_text18" />}
           max={45}
           min={35}
           onChange={handleChange}
@@ -51,20 +49,20 @@ const Form = ({ t, isViewMode }) => {
       </Styled.Group>
 
       <Styled.Group>
-        <Styled.Label>{t('form_text2')}</Styled.Label>
+        <Styled.Label>
+          <T i18nKey="form_text2" />
+        </Styled.Label>
 
         <InputSlider
-          label={t('form_text10')}
+          label={<T i18nKey="form_text10" />}
           marks={marks}
           min={1}
           max={4}
-          onChange={(e, value) =>
-            setFieldValue(FIELD_RUNNY_NOSE, `level ${value}`)
-          }
+          onChange={(e, value) => setFieldValue(FIELD_RUNNY_NOSE, `level ${value}`)}
           value={getValueFromMark(values[FIELD_RUNNY_NOSE])}
         />
         <InputSlider
-          label={t('form_text9')}
+          label={<T i18nKey="form_text9" />}
           marks={marks}
           min={1}
           max={4}
@@ -72,7 +70,7 @@ const Form = ({ t, isViewMode }) => {
           value={getValueFromMark(values[FIELD_COUGH])}
         />
         <InputSlider
-          label={t('form_text8')}
+          label={<T i18nKey="form_text8" />}
           marks={marks}
           min={1}
           max={4}
@@ -80,25 +78,25 @@ const Form = ({ t, isViewMode }) => {
           value={getValueFromMark(values[FIELD_CHILLS])}
         />
         <InputSlider
-          label={t('form_text7')}
+          label={<T i18nKey="form_text7" />}
           marks={marks}
           min={1}
           max={4}
-          onChange={(e, value) =>
-            setFieldValue(FIELD_MUSCLE_PAIN, `level ${value}`)
-          }
+          onChange={(e, value) => setFieldValue(FIELD_MUSCLE_PAIN, `level ${value}`)}
           value={getValueFromMark(values[FIELD_MUSCLE_PAIN])}
         />
       </Styled.Group>
 
       <Styled.Group>
-        <Styled.Label>{t('form_text3')}</Styled.Label>
+        <Styled.Label>
+          <T i18nKey="form_text3" />
+        </Styled.Label>
         <Textarea
           disabled={isViewMode}
-          label={t('form_text5')}
+          label={<T i18nKey="form_text5" />}
           name={FIELD_CONTACTS}
           onChange={handleChange}
-          placeholder={t('form_text6')}
+          placeholder={<T i18nKey="form_text6" />}
           value={values[FIELD_CONTACTS]}
         />
       </Styled.Group>
@@ -114,4 +112,4 @@ Form.propTypes = {
   isViewMode: PropTypes.bool
 };
 
-export default withTranslation()(Form);
+export default Form;

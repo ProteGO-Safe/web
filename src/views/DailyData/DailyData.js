@@ -1,8 +1,7 @@
 import React, { useEffect, useMemo } from 'react';
-import { withTranslation } from 'react-i18next';
 import PropTypes from 'prop-types';
 import { useFormikContext } from 'formik';
-import { Button, Imprint, Layout } from '../../components';
+import { Button, Imprint, Layout, T } from '../../components';
 import { Data, Form } from './components';
 import { Actions } from '../../components/ImprintFiller/ImprintFiller.styled';
 import { DAILY_DATA_MODE as MODE } from './dailyData.constants';
@@ -11,7 +10,7 @@ import { Title, TitleBox } from './DailyData.styled';
 import './DailyData.scss';
 import useNavigation from '../../hooks/useNavigation';
 
-const DailyData = ({ t, mode, setMode }) => {
+const DailyData = ({ mode, setMode }) => {
   const { dirty, submitForm, initialValues } = useFormikContext();
   const { goBack } = useNavigation();
 
@@ -29,32 +28,21 @@ const DailyData = ({ t, mode, setMode }) => {
 
   return (
     <Layout isNavigation>
-      <Title>{t('daily_data_text1')}</Title>
-      {viewMode ? (
-        <Data data={initialValues} />
-      ) : (
-        <Form isEditMode={isEditMode} />
-      )}
-      <TitleBox>{t('daily_data_text2')}</TitleBox>
+      <Title>
+        <T i18nKey="daily_data_text1" />
+      </Title>
+      {viewMode ? <Data data={initialValues} /> : <Form isEditMode={isEditMode} />}
+      <TitleBox>
+        <T i18nKey="daily_data_text2" />
+      </TitleBox>
       <Imprint />
       <Actions>
         {(createMode || editMode) && (
-          <Button
-            onClick={submitForm}
-            label={t('button_save')}
-            disabled={!dirty}
-          />
+          <Button onClick={submitForm} label={<T i18nKey="button_save" />} disabled={!dirty} />
         )}
-        {editMode && (
-          <Button onClick={handleCancel} label={t('button_cancel')} />
-        )}
-        {viewMode && <Button onClick={handleEdit} label={t('button_edit')} />}
-        {(createMode || viewMode) && (
-          <Button
-            onClick={() => goBack()}
-            label={t('button_back')}
-          />
-        )}
+        {editMode && <Button onClick={handleCancel} label={<T i18nKey="button_cancel" />} />}
+        {viewMode && <Button onClick={handleEdit} label={<T i18nKey="button_edit" />} />}
+        {(createMode || viewMode) && <Button onClick={() => goBack()} label={<T i18nKey="button_back" />} />}
       </Actions>
     </Layout>
   );
@@ -65,4 +53,4 @@ DailyData.propTypes = {
   setMode: PropTypes.func.isRequired
 };
 
-export default withTranslation()(DailyData);
+export default DailyData;

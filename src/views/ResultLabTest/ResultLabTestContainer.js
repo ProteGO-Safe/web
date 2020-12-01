@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { withTranslation } from 'react-i18next';
 import { useDispatch } from 'react-redux';
 import useModalContext from '../../hooks/useModalContext';
 import ResultLabTest from './ResultLabTest';
@@ -11,7 +10,7 @@ import { confirmManualCovid, revokeManualCovid, revokeTorStatus } from '../../st
 import { InfoNegativeLabTest } from '../InfoNegativeLabTest';
 import { Routes } from '../../services/navigationService/routes';
 
-const ResultLabTestContainer = ({ t }) => {
+const ResultLabTestContainer = () => {
   const dispatch = useDispatch();
   const { goTo } = useNavigation();
   const { openModal, onClose } = useModalContext();
@@ -40,21 +39,21 @@ const ResultLabTestContainer = ({ t }) => {
   const BUTTONS = [
     {
       type: 'default',
-      name: t('result_test_lab_text1'),
+      name: <T i18nKey="result_test_lab_text1" />,
       onClick: () =>
         openModal({
           value: <T i18nKey="result_test_lab_text9" />,
-          modalTitle: t('result_test_lab_text10'),
+          modalTitle: <T i18nKey="result_test_lab_text10" />,
           modalFooter: <ModalFooter handleClickYes={() => handlePositiveYes()} handleClickCancel={onClose} />
         })
     },
     {
       type: 'default',
-      name: t('result_test_lab_text2'),
+      name: <T i18nKey="result_test_lab_text2" />,
       onClick: () =>
         openModal({
-          value: t('result_test_lab_text5'),
-          modalTitle: t('result_test_lab_text6'),
+          value: <T i18nKey="result_test_lab_text5" />,
+          modalTitle: <T i18nKey="result_test_lab_text6" />,
           modalFooter: <ModalFooter handleClickYes={() => handleNegativeYes()} handleClickCancel={onClose} />
         })
     }
@@ -66,9 +65,13 @@ const ResultLabTestContainer = ({ t }) => {
 
   return (
     <Layout isNavigation fullHeight noPadding hideBackButton>
-      <ResultLabTest title={t('result_test_lab_text8')} content={t('result_test_lab_text7')} buttons={BUTTONS} />
+      <ResultLabTest
+        title={<T i18nKey="result_test_lab_text8" />}
+        content={<T i18nKey="result_test_lab_text7" />}
+        buttons={BUTTONS}
+      />
     </Layout>
   );
 };
 
-export default withTranslation()(ResultLabTestContainer);
+export default ResultLabTestContainer;

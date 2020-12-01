@@ -1,18 +1,12 @@
 import React from 'react';
-import { withTranslation } from 'react-i18next';
 import './MoreInformation.scss';
-import {
-  Button,
-  Layout,
-  OnboardingContent,
-  T
-} from '../../../../../../../../components';
+import { Button, Layout, OnboardingContent, T } from '../../../../../../../../components';
 import { Icon, Paragraph } from './MoreInformation.styled';
 
-const MoreInformation = ({ t, onNext }) => {
+const MoreInformation = ({ onNext }) => {
   const buttons = [
     {
-      label: t('button_next'),
+      label: <T i18nKey="button_next" />,
       onClick: onNext
     }
   ];
@@ -27,19 +21,39 @@ const MoreInformation = ({ t, onNext }) => {
         <Paragraph>
           <T i18nKey="more_information_text1" />
         </Paragraph>
-        <Paragraph>{t('more_information_text3')}</Paragraph>
+        <Paragraph>
+          <T i18nKey="more_information_text3" />
+        </Paragraph>
         <Paragraph>
           <T i18nKey="more_information_text4" />
         </Paragraph>
-        <Paragraph>{t('more_information_text5')}</Paragraph>
-        <Paragraph>{t('more_information_text6')}</Paragraph>
-        <Paragraph>{t('more_information_text7')}</Paragraph>
-        <Paragraph>{t('more_information_text8')}</Paragraph>
-        <Paragraph>{t('more_information_text9')}</Paragraph>
-        <Paragraph>{t('more_information_text10')}</Paragraph>
-        <Paragraph>{t('more_information_text11')}</Paragraph>
-        <Paragraph>{t('more_information_text12')}</Paragraph>
-        <Paragraph>{t('more_information_text13')}</Paragraph>
+        <Paragraph>
+          <T i18nKey="more_information_text5" />
+        </Paragraph>
+        <Paragraph>
+          <T i18nKey="more_information_text6" />
+        </Paragraph>
+        <Paragraph>
+          <T i18nKey="more_information_text7" />
+        </Paragraph>
+        <Paragraph>
+          <T i18nKey="more_information_text8" />
+        </Paragraph>
+        <Paragraph>
+          <T i18nKey="more_information_text9" />
+        </Paragraph>
+        <Paragraph>
+          <T i18nKey="more_information_text10" />
+        </Paragraph>
+        <Paragraph>
+          <T i18nKey="more_information_text11" />
+        </Paragraph>
+        <Paragraph>
+          <T i18nKey="more_information_text12" />
+        </Paragraph>
+        <Paragraph>
+          <T i18nKey="more_information_text13" />
+        </Paragraph>
         <Paragraph>
           <T i18nKey="more_information_text14" />
         </Paragraph>
@@ -51,4 +65,4 @@ const MoreInformation = ({ t, onNext }) => {
   );
 };
 
-export default withTranslation()(MoreInformation);
+export default MoreInformation;

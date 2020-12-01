@@ -1,13 +1,12 @@
 import React from 'react';
-import { withTranslation } from 'react-i18next';
 import { Multiselect } from 'multiselect-react-dropdown';
-import { Button, FieldSet } from '../../../../../../components';
+import { Button, FieldSet, T } from '../../../../../../components';
 import { Title } from '../../../../Diagnosis.styled';
 import { Color } from '../../../../../../theme/colors';
 
 import './Country.scss';
 
-const Country = ({ t, onChange, onNext, options, selectedValues }) => {
+const Country = ({ onChange, onNext, options, selectedValues }) => {
   const rootStyle = {
     multiselectContainer: {
       marginBottom: 32
@@ -50,7 +49,9 @@ const Country = ({ t, onChange, onNext, options, selectedValues }) => {
 
   return (
     <>
-      <Title>{t('country_text1')}</Title>
+      <Title>
+        <T i18nKey="country_text1" />
+      </Title>
       <FieldSet>
         <Multiselect
           options={options}
@@ -60,18 +61,14 @@ const Country = ({ t, onChange, onNext, options, selectedValues }) => {
           style={rootStyle}
           closeIcon="cancel"
           avoidHighlightFirstOption
-          emptyRecordMsg={t('country_text2')}
-          placeholder={t('country_text3')}
+          emptyRecordMsg={<T i18nKey="country_text2" />}
+          placeholder={<T i18nKey="country_text3" />}
           selectedValues={selectedValues}
         />
       </FieldSet>
-      <Button
-        disabled={selectedValues.length === 0}
-        onClick={onNext}
-        label={t('button_next')}
-      />
+      <Button disabled={selectedValues.length === 0} onClick={onNext} label={<T i18nKey="button_next" />} />
     </>
   );
 };
 
-export default withTranslation()(Country);
+export default Country;

@@ -1,11 +1,7 @@
 import React from 'react';
-import { withTranslation } from 'react-i18next';
 import { ProteGoSlider } from './InputSlider.theme';
-import {
-  InputSliderContainer,
-  InputSliderWrapper,
-  Label
-} from './InputSlider.styled';
+import { InputSliderContainer, InputSliderWrapper, Label } from './InputSlider.styled';
+import { T } from '../index';
 
 const InputSlider = ({ t, label, marks, max, min, onChange, step, value }) => {
   const translatedMarks = marks.map(_value => {
@@ -18,7 +14,9 @@ const InputSlider = ({ t, label, marks, max, min, onChange, step, value }) => {
 
   return (
     <InputSliderContainer>
-      <Label>{t(label)}</Label>
+      <Label>
+        <T i18nKey={label} />
+      </Label>
       <InputSliderWrapper>
         <ProteGoSlider
           defaultValue={value || 0}
@@ -34,4 +32,4 @@ const InputSlider = ({ t, label, marks, max, min, onChange, step, value }) => {
   );
 };
 
-export default withTranslation()(InputSlider);
+export default InputSlider;

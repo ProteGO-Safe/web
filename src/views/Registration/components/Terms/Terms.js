@@ -1,5 +1,4 @@
 import React from 'react';
-import { withTranslation } from 'react-i18next';
 import { useFormikContext } from 'formik';
 import { FormGroup } from '@material-ui/core';
 import { FIELD_TERM1 } from '../../../../constants';
@@ -7,7 +6,7 @@ import { Annotation } from '../../../../theme/typography';
 import { Button, Checkbox, Layout, T } from '../../../../components';
 import { ButtonWrapper, Paragraph, Small, Title } from '../../Registration.styled';
 
-const Terms = ({ t, handleClick }) => {
+const Terms = ({ handleClick }) => {
   const { setFieldValue, values } = useFormikContext();
 
   const disabled = (() => {
@@ -41,7 +40,7 @@ const Terms = ({ t, handleClick }) => {
       </FormGroup>
 
       <ButtonWrapper>
-        <Button disabled={disabled} onClick={handleClick} label={t('button_next')} />
+        <Button disabled={disabled} onClick={handleClick} label={<T i18nKey="button_next" />} />
       </ButtonWrapper>
 
       <Small>
@@ -51,4 +50,4 @@ const Terms = ({ t, handleClick }) => {
   );
 };
 
-export default withTranslation()(Terms);
+export default Terms;

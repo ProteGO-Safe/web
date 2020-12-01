@@ -1,7 +1,6 @@
 import React, { useEffect, useRef, useMemo } from 'react';
 import moment from 'moment';
 import PropTypes from 'prop-types';
-import { withTranslation } from 'react-i18next';
 import DatePicker from 'react-datepicker';
 import pl from 'date-fns/locale/pl';
 import uk from 'date-fns/locale/uk';
@@ -10,6 +9,7 @@ import * as Styled from './InputDatePicker.styled';
 import 'react-datepicker/dist/react-datepicker.css';
 import useLanguage from '../../hooks/useLanguage';
 import { AVAILABLE_LANGUAGES } from '../../constants';
+import { T } from '../index';
 
 const isoCodeWithLibraryCode = {
   [AVAILABLE_LANGUAGES.uk.toUpperCase()]: uk,
@@ -17,7 +17,7 @@ const isoCodeWithLibraryCode = {
   [AVAILABLE_LANGUAGES.en.toUpperCase()]: en
 };
 
-const InputDatePicker = ({ dateFormat, disabled, onChange, selected, t }) => {
+const InputDatePicker = ({ dateFormat, disabled, onChange, selected }) => {
   const pickerRef = useRef(null);
   const { language } = useLanguage();
 
@@ -35,7 +35,9 @@ const InputDatePicker = ({ dateFormat, disabled, onChange, selected, t }) => {
 
   const Container = ({ children }) => (
     <Styled.CalendarContainer>
-      <Styled.Placeholder>{t('date_picker_text')}</Styled.Placeholder>
+      <Styled.Placeholder>
+        <T i18nKey="date_picker_text" />
+      </Styled.Placeholder>
       <Styled.Calendar>{children}</Styled.Calendar>
     </Styled.CalendarContainer>
   );
@@ -68,4 +70,4 @@ InputDatePicker.protoTypes = {
   selected: PropTypes.string.isRequired
 };
 
-export default withTranslation()(InputDatePicker);
+export default InputDatePicker;

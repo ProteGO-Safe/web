@@ -1,12 +1,11 @@
 import React, { useEffect } from 'react';
-import { withTranslation } from 'react-i18next';
 import { useDispatch } from 'react-redux';
 import { resolveData } from './TestBorderBox.helpers';
 import TestBorderBox from './TestBorderBox';
 import { fetchLabTestSubscription } from '../../store/actions/nativeData';
 import useLabTest from '../../hooks/useLabTest';
 
-const TestBorderBoxContainer = ({ t }) => {
+const TestBorderBoxContainer = () => {
   const dispatch = useDispatch();
   const {
     isEnHigh,
@@ -21,7 +20,7 @@ const TestBorderBoxContainer = ({ t }) => {
     // eslint-disable-next-line
   }, []);
 
-  const data = resolveData(t);
+  const data = resolveData();
 
   if (!isEnHigh) {
     return null;
@@ -43,4 +42,4 @@ const TestBorderBoxContainer = ({ t }) => {
   return null;
 };
 
-export default withTranslation()(TestBorderBoxContainer);
+export default TestBorderBoxContainer;

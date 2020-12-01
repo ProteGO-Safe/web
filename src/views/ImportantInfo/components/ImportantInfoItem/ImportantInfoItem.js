@@ -1,21 +1,10 @@
 import React, { useEffect, useRef, useState } from 'react';
 import PropTypes from 'prop-types';
-import { withTranslation } from 'react-i18next';
 import { TYPES } from './ImportantInfoItem.constants';
-import { NavLink } from '../../../../components';
+import { NavLink, T } from '../../../../components';
 import * as Styled from './ImportantInfoItem.styled';
 
-const ImportantInfoItem = ({
-  danger,
-  description,
-  icon,
-  newFeature,
-  path,
-  t,
-  size,
-  title,
-  type
-}) => {
+const ImportantInfoItem = ({ danger, description, icon, newFeature, path, size, title, type }) => {
   const ref = useRef(null);
   const [height, setHeight] = useState(0);
   const windowWidth = window.innerWidth;
@@ -29,7 +18,11 @@ const ImportantInfoItem = ({
 
   const Content = () => (
     <Styled.ImportantInfoItem ref={ref} size={size}>
-      {newFeature && <Styled.Badge size={size}>{t('new')}</Styled.Badge>}
+      {newFeature && (
+        <Styled.Badge size={size}>
+          <T i18nKey="new" />
+        </Styled.Badge>
+      )}
       <Styled.Icon size={size}>{icon}</Styled.Icon>
       <Styled.Content size={size}>
         <Styled.Title size={size} danger={danger}>
@@ -38,14 +31,12 @@ const ImportantInfoItem = ({
         {windowWidth < 375 ? (
           <Styled.Description size={size}>{description}</Styled.Description>
         ) : (
-          height > 186 && (
-            <Styled.Description size={size}>{description}</Styled.Description>
-          )
+          height > 186 && <Styled.Description size={size}>{description}</Styled.Description>
         )}
       </Styled.Content>
       {type === TYPES.LINK && (
         <Styled.LinkGov size={size}>
-          {t('important_info_button_info')}
+          <T i18nKey="important_info_button_info" />
         </Styled.LinkGov>
       )}
     </Styled.ImportantInfoItem>
@@ -91,4 +82,4 @@ ImportantInfoItem.propTypes = {
   type: PropTypes.oneOf([TYPES.ROUTE, TYPES.LINK]).isRequired
 };
 
-export default withTranslation()(ImportantInfoItem);
+export default ImportantInfoItem;

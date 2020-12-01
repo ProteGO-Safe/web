@@ -1,12 +1,12 @@
 import React from 'react';
-import { withTranslation } from 'react-i18next';
 import { Button, Content, Icon, ArrowRight } from './CallHelpline.styled';
+import { T } from '../index';
 
 import IconContact from '../../assets/img/icons/icon-contact.svg';
 import { ReactComponent as ArrowIcon } from '../../assets/img/icons/arrow-current-color.svg';
 
-const CallHelpline = ({ phoneNumber, color, hideText, t }) => {
-  const callText = t('call_helpline');
+const CallHelpline = ({ phoneNumber, color, hideText }) => {
+  const callText = <T i18nKey="call_helpline" />;
   const tel = phoneNumber.split(' ').join('');
 
   return (
@@ -28,4 +28,4 @@ const CallHelpline = ({ phoneNumber, color, hideText, t }) => {
   );
 };
 
-export default withTranslation()(CallHelpline);
+export default CallHelpline;

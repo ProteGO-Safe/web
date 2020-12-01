@@ -1,3 +1,9 @@
 {
-  "type": "module"
+  "type": "module",
+  "scripts": {
+    "changeToComponentTranslation": "node src/changeToComponentTranslation.js"
+  },
+  "dependencies": {
+    "react-string-replace": "^0.4.4"
+  }
 }
