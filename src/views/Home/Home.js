@@ -1,10 +1,6 @@
 import React from 'react';
 import { Layout } from '../../components';
-import {
-  FollowDistrictsSlider,
-  InfoInteroperability,
-  RatingApp
-} from '../index';
+import { FollowDistrictsSlider, InfoInteroperability, RatingApp } from '../index';
 import { ExposureNotificationWarning, HomeContent } from './components';
 import * as Styled from './Home.styled';
 

@@ -3,63 +3,36 @@ import { withTranslation } from 'react-i18next';
 import { useFormikContext } from 'formik';
 import { FormGroup } from '@material-ui/core';
 import { FIELD_TERM1 } from '../../../../constants';
-
-import useModalContext from '../../../../hooks/useModalContext';
-
-import { Annotation, TextLink } from '../../../../theme/typography';
-import PrivacyPolicyContent from '../../../PrivacyPolicyDetails/component/PrivacyPolicyContent/PrivacyPolicyContent';
-import RegulationsContent from '../../../Regulations/component/RegulationsContent/RegulationsContent';
+import { Annotation } from '../../../../theme/typography';
 import { Button, Checkbox, Layout, T } from '../../../../components';
 import { ButtonWrapper, Paragraph, Small, Title } from '../../Registration.styled';
 
 const Terms = ({ t, handleClick }) => {
   const { setFieldValue, values } = useFormikContext();
-  const { openModal } = useModalContext();
 
   const disabled = (() => {
     return !values[FIELD_TERM1];
   })();
 
-  const onOpenModal = content => {
-    openModal({ value: content });
-  };
-
   return (
     <Layout id="view-terms" hideBackButton isGovFooter>
       <Title>
-        {t('terms_text1')}
-        <br />
-        {t('terms_text2')}
+        <T i18nKey="terms_text_1" />
       </Title>
 
-      <Paragraph>{t('terms_text3')}</Paragraph>
-      <Paragraph>{t('terms_text4')}</Paragraph>
+      <Paragraph>
+        <T i18nKey="terms_text_2" />
+      </Paragraph>
+      <Paragraph>
+        <T i18nKey="terms_text_3" />
+      </Paragraph>
+
       <FormGroup>
         <Checkbox
           checked={values[FIELD_TERM1]}
           label={
             <Annotation>
-              {t('terms_text5')}{' '}
-              <TextLink
-                onClick={e => {
-                  e.preventDefault();
-                  onOpenModal(<RegulationsContent small />);
-                }}
-                role="button"
-              >
-                {t('terms_text6')}
-              </TextLink>{' '}
-              {t('terms_text8')}{' '}
-              <TextLink
-                onClick={e => {
-                  e.preventDefault();
-                  onOpenModal(<PrivacyPolicyContent small />);
-                }}
-                role="button"
-              >
-                {t('terms_text7')}
-              </TextLink>{' '}
-              {t('terms_text9')}
+              <T i18nKey="terms_text_4" />
             </Annotation>
           }
           name={FIELD_TERM1}
@@ -72,17 +45,7 @@ const Terms = ({ t, handleClick }) => {
       </ButtonWrapper>
 
       <Small>
-        <T i18nKey="terms_text10" />
-        <TextLink
-          onClick={e => {
-            e.preventDefault();
-            onOpenModal(<PrivacyPolicyContent small />);
-          }}
-          role="button"
-        >
-          {t('terms_text13')}
-        </TextLink>
-        .
+        <T i18nKey="terms_text_5" />
       </Small>
     </Layout>
   );
