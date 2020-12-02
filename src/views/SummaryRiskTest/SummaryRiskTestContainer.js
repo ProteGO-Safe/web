@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import React from 'react';
 import { Layout } from '../../components';
 import { types, resolveData } from './SummaryRiskTest.helpers';
 import SummaryRiskTest from './SummaryRiskTest';
