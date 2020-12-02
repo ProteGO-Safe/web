@@ -13,7 +13,7 @@ const SummaryRiskTestContainer = () => {
   const { goTo } = useNavigation();
   const { openModal } = useModalContext();
 
-  const resolveType = useMemo(() => {
+  const resolveType = () => {
     if (triageRiskLevel === 1 && !isEnHigh) {
       return types.TOR_GREEN_EN_NOT_RED;
     }
@@ -33,7 +33,7 @@ const SummaryRiskTestContainer = () => {
       return types.TOR_RED_EN_RED;
     }
     return types.TOR_RED_EN_RED;
-  }, [triageRiskLevel, isEnHigh]);
+  };
 
   const data = resolveData(goTo, openModal, resolveType());
 
