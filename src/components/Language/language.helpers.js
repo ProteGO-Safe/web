@@ -4,11 +4,13 @@ import { AVAILABLE_LANGUAGES } from '../../constants';
 const isoCodeWithLibraryCode = {
   [AVAILABLE_LANGUAGES.uk.toUpperCase()]: 'UA',
   [AVAILABLE_LANGUAGES.pl.toUpperCase()]: 'PL',
-  [AVAILABLE_LANGUAGES.en.toUpperCase()]: 'GB'
+  [AVAILABLE_LANGUAGES.en.toUpperCase()]: 'GB',
+  [AVAILABLE_LANGUAGES.de.toUpperCase()]: 'DE',
+  [AVAILABLE_LANGUAGES.ru.toUpperCase()]: 'RU',
+  [AVAILABLE_LANGUAGES.tr.toUpperCase()]: 'TR'
 };
 
-export const prepareLanguages = languages =>
-  languages.map(language => isoCodeWithLibraryCode[language]);
+export const prepareLanguages = languages => languages.map(language => isoCodeWithLibraryCode[language]);
 
 export const convertToIso = code => {
   return Object.keys(isoCodeWithLibraryCode).find(value => {

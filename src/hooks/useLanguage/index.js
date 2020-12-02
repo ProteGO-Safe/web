@@ -16,9 +16,7 @@ const useLanguage = () => {
 
   const changeAppLanguage = useCallback(
     language => {
-      i18n
-        .changeLanguage(language)
-        .then(value => dispatch(changeLanguage(language)));
+      i18n.changeLanguage(language).then(value => dispatch(changeLanguage(language)));
     },
     [dispatch, i18n]
   );

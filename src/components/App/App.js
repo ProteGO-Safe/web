@@ -1,6 +1,9 @@
 import React, { useEffect } from 'react';
 import classNames from 'classnames';
 import 'moment/locale/pl';
+import 'moment/locale/de';
+import 'moment/locale/tr';
+import 'moment/locale/ru';
 import 'moment/locale/uk';
 import 'moment/locale/en-gb';
 import { useDispatch, useSelector } from 'react-redux';
