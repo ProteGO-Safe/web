@@ -1,6 +1,7 @@
 import React from 'react';
-import { Url, T } from '../index';
+import { withTranslation } from 'react-i18next';
+import { Url } from '../index';
 
-const UrlCovid = () => <Url value={<T i18nKey="covid_href" />}>COVID-19</Url>;
+const UrlCovid = ({ t }) => <Url value={t('covid_href')}>COVID-19</Url>;
 
-export default UrlCovid;
+export default withTranslation()(UrlCovid);

@@ -1,8 +1,9 @@
 import React from 'react';
+import { withTranslation } from 'react-i18next';
 import { Collapse, Layout, T } from '../../components';
 import * as Styled from './HowItWorks.styled';
 
-const HowItWorks = () => {
+const HowItWorks = ({ t }) => {
   return (
     <Layout isNavigation>
       <Styled.MainTitle>
@@ -55,7 +56,7 @@ const HowItWorks = () => {
         <strong>
           <T i18nKey="how_it_works_paragraph11_1" />
         </strong>
-        <Styled.Link href={<T i18nKey="how_it_works_href_1" />} target="_blank">
+        <Styled.Link href={t('how_it_works_href_1')} target="_blank">
           <T i18nKey="how_it_works_paragraph11_2" />
         </Styled.Link>
       </Styled.Paragraph>
@@ -165,4 +166,4 @@ const HowItWorks = () => {
   );
 };
 
-export default HowItWorks;
+export default withTranslation()(HowItWorks);

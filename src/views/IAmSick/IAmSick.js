@@ -1,4 +1,5 @@
 import React from 'react';
+import { withTranslation } from 'react-i18next';
 import { TextBlockWithIcon, CallHotline, Layout, Button, T } from '../../components';
 import * as Styled from './IAmSick.styled';
 
@@ -10,7 +11,7 @@ import Icon4 from '../../assets/img/icons/i-am-sick-icon-4.svg';
 import Icon6 from '../../assets/img/icons/i-am-sick-icon-6.svg';
 import Icon7 from '../../assets/img/icons/i-am-sick-icon-7.svg';
 
-const IAmSick = () => {
+const IAmSick = ({ t }) => {
   return (
     <Layout isNavigation>
       <Styled.Title>
@@ -79,7 +80,7 @@ const IAmSick = () => {
       </Styled.List>
 
       <Styled.ButtonWrapper>
-        <Styled.UrlLink href={<T i18nKey="i_am_sick_text_24" />} target="_blank">
+        <Styled.UrlLink href={t('i_am_sick_text_24')} target="_blank">
           <Button label={<T i18nKey="i_am_sick_text_26" />} onClick={() => null} />
         </Styled.UrlLink>
 
@@ -91,4 +92,4 @@ const IAmSick = () => {
   );
 };
 
-export default IAmSick;
+export default withTranslation()(IAmSick);
