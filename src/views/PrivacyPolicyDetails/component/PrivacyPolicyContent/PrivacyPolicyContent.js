@@ -1,5 +1,5 @@
 import React from 'react';
-import { Email, Url, UrlCovid, T } from '../../../../components';
+import { T } from '../../../../components';
 import {
   Annotation,
   Paragraph,
@@ -14,19 +14,13 @@ import {
 const PrivacyPolicyContent = ({ small }) => (
   <Wrapper small={small}>
     <Paragraph>
-      <strong>
-        <T i18nKey="privacy_policy_content_text1" />
-      </strong>
+      <T i18nKey="privacy_policy_content_text1" />
     </Paragraph>
     <Paragraph>
-      <strong>
-        <T i18nKey="privacy_policy_content_text2" />
-      </strong>
+      <T i18nKey="privacy_policy_content_text2" />
     </Paragraph>
     <Paragraph>
       <T i18nKey="privacy_policy_content_text3" />
-      <br />
-      <T i18nKey="privacy_policy_content_text4" /> <UrlCovid /> <T i18nKey="privacy_policy_content_text5" />
     </Paragraph>
     <Paragraph>
       <u>
@@ -40,12 +34,10 @@ const PrivacyPolicyContent = ({ small }) => (
       <T i18nKey="privacy_policy_content_text8" />
     </Paragraph>
     <Paragraph>
-      <T i18nKey="privacy_policy_content_text9" /> <UrlCovid /> <T i18nKey="privacy_policy_content_text138" />
+      <T i18nKey="privacy_policy_content_text9" />
     </Paragraph>
     <Paragraph>
-      <T i18nKey="privacy_policy_content_text10" /> <UrlCovid /> <T i18nKey="privacy_policy_content_text11" />{' '}
-      <UrlCovid /> <T i18nKey="privacy_policy_content_text12" /> <UrlCovid />
-      <T i18nKey="privacy_policy_content_text13" />{' '}
+      <T i18nKey="privacy_policy_content_text10" />
     </Paragraph>
     <Paragraph>
       <T i18nKey="privacy_policy_content_text14" />
@@ -68,21 +60,10 @@ const PrivacyPolicyContent = ({ small }) => (
         <T i18nKey="privacy_policy_content_text18" />
       </ListItem>
       <ListItem>
-        <T i18nKey="privacy_policy_content_text142" />{' '}
-        <Email>
-          <T i18nKey="privacy_policy_content_text143" />
-        </Email>
+        <T i18nKey="privacy_policy_content_text142" />
       </ListItem>
       <ListItem>
-        <T i18nKey="privacy_policy_content_text19" />{' '}
-        <Email>
-          <T i18nKey="privacy_policy_content_text20" />
-        </Email>{' '}
-        <T i18nKey="privacy_policy_content_text21" />{' '}
-        <Email>
-          <T i18nKey="privacy_policy_content_text22" />
-        </Email>
-        .
+        <T i18nKey="privacy_policy_content_text19" />
       </ListItem>
       <ListItem>
         <T i18nKey="privacy_policy_content_text23" />
@@ -91,7 +72,7 @@ const PrivacyPolicyContent = ({ small }) => (
         <T i18nKey="privacy_policy_content_text24" />
       </ListItem>
       <ListItem>
-        <T i18nKey="privacy_policy_content_text190" /> <UrlCovid />.
+        <T i18nKey="privacy_policy_content_text190" />
       </ListItem>
     </ListNumber>
     <Annotation>§2.</Annotation>
@@ -103,156 +84,73 @@ const PrivacyPolicyContent = ({ small }) => (
     </Paragraph>
     <ListNumber>
       <ListItem>
-        <strong>
-          <T i18nKey="privacy_policy_content_text171" />
-        </strong>{' '}
-        <T i18nKey="privacy_policy_content_text172" /> <UrlCovid /> <T i18nKey="privacy_policy_content_text173" />
+        <T i18nKey="privacy_policy_content_text171" />
       </ListItem>
       <ListItem>
-        <strong>
-          <T i18nKey="privacy_policy_content_text194" />
-        </strong>{' '}
-        <T i18nKey="privacy_policy_content_text195" />
+        <T i18nKey="privacy_policy_content_text194" />
       </ListItem>
       <ListItem>
-        <strong>
-          <T i18nKey="privacy_policy_content_text49" />
-        </strong>
-        <T i18nKey="privacy_policy_content_text50" /> <UrlCovid />
-        <T i18nKey="privacy_policy_content_text51" /> <UrlCovid />.
+        <T i18nKey="privacy_policy_content_text49" />
       </ListItem>
       <ListItem>
-        <strong>
-          <T i18nKey="privacy_policy_content_text31" />
-        </strong>
-        <T i18nKey="privacy_policy_content_text32" />
+        <T i18nKey="privacy_policy_content_text31" />
       </ListItem>
       <ListItem>
-        <strong>
-          <T i18nKey="privacy_policy_content_text29" />
-        </strong>
         <T i18nKey="privacy_policy_content_text30" />
       </ListItem>
       <ListItem>
-        <strong>
-          <T i18nKey="privacy_policy_content_text196" />
-        </strong>
         <T i18nKey="privacy_policy_content_text197" />
       </ListItem>
       <ListItem>
-        <strong>
-          <T i18nKey="privacy_policy_content_text44" />
-        </strong>
-        <T i18nKey="privacy_policy_content_text45" /> <UrlCovid /> <T i18nKey="privacy_policy_content_text46" />
+        <T i18nKey="privacy_policy_content_text46" />
       </ListItem>
       <ListItem>
-        <strong>
-          <T i18nKey="privacy_policy_content_text174" />
-        </strong>{' '}
-        <T i18nKey="privacy_policy_content_text175" /> <UrlCovid /> <T i18nKey="privacy_policy_content_text176" />{' '}
-        <UrlCovid /> <T i18nKey="privacy_policy_content_text177" />
+        <T i18nKey="privacy_policy_content_text177" />
       </ListItem>
       <ListItem>
-        <strong>
-          <T i18nKey="privacy_policy_content_text27" />
-        </strong>
         <T i18nKey="privacy_policy_content_text28" />
       </ListItem>
       <ListItem>
-        <strong>
-          <T i18nKey="privacy_policy_content_text37" />
-        </strong>
-        <T i18nKey="privacy_policy_content_text38" />{' '}
-        <Url value="https://www.google.com/covid19/exposurenotifications/">
-          <T i18nKey="privacy_policy_content_text39" />
-        </Url>{' '}
-        oraz{' '}
-        <Url value="https://developer.apple.com/documentation/exposurenotification">
-          <T i18nKey="privacy_policy_content_text40" />
-        </Url>{' '}
         <T i18nKey="privacy_policy_content_text140" />
       </ListItem>
       <ListItem>
-        <strong>
-          <T i18nKey="privacy_policy_content_text52" />
-        </strong>
         <T i18nKey="privacy_policy_content_text53" />
       </ListItem>
       <ListItem>
-        <strong>
-          <T i18nKey="privacy_policy_content_text41" />
-        </strong>
-        <T i18nKey="privacy_policy_content_text42" /> <UrlCovid />
         <T i18nKey="privacy_policy_content_text43" />
       </ListItem>
       <ListItem>
-        <strong>
-          <T i18nKey="privacy_policy_content_text144" />
-        </strong>
-        <T i18nKey="privacy_policy_content_text145" /> <UrlCovid />
         <T i18nKey="privacy_policy_content_text146" />
       </ListItem>
       <ListItem>
-        <strong>
-          <T i18nKey="privacy_policy_content_text178" />
-        </strong>{' '}
         <T i18nKey="privacy_policy_content_text179" />
       </ListItem>
       <ListItem>
-        <strong>
-          <T i18nKey="privacy_policy_content_text147" />
-        </strong>
         <T i18nKey="privacy_policy_content_text148" />
       </ListItem>
       <ListItem>
-        <strong>
-          <T i18nKey="privacy_policy_content_text35" />
-        </strong>
         <T i18nKey="privacy_policy_content_text36" />
       </ListItem>
       <ListItem>
-        <strong>
-          <T i18nKey="privacy_policy_content_text54" />
-        </strong>
         <T i18nKey="privacy_policy_content_text55" />
       </ListItem>
       <ListItem>
-        <strong>
-          <T i18nKey="privacy_policy_content_text47" />
-        </strong>
         <T i18nKey="privacy_policy_content_text48" />
       </ListItem>
       <ListItem>
-        <strong>
-          <T i18nKey="privacy_policy_content_text33" />
-        </strong>
-        <T i18nKey="privacy_policy_content_text34" /> <UrlCovid />
         <T i18nKey="privacy_policy_content_text139" />
       </ListItem>
       <ListItem>
-        <strong>
-          <T i18nKey="privacy_policy_content_text56" />
-        </strong>
         <T i18nKey="privacy_policy_content_text57" />
       </ListItem>
       <ListItem>
-        <strong>
-          <T i18nKey="privacy_policy_content_text58" />
-        </strong>
         <T i18nKey="privacy_policy_content_text59" />
       </ListItem>
       <ListItem>
-        <strong>
-          <T i18nKey="privacy_policy_content_text149" />{' '}
-        </strong>
         <T i18nKey="privacy_policy_content_text60" />
       </ListItem>
       <ListItem>
-        <strong>
-          <T i18nKey="privacy_policy_content_text191" />{' '}
-        </strong>
-        <T i18nKey="privacy_policy_content_text192" />{' '}
-        <Url value={<T i18nKey="privacy_policy_content_text193" />}>https://ec.europa.eu/</Url>
+        <T i18nKey="privacy_policy_content_text193" />
       </ListItem>
     </ListNumber>
     <Annotation>§3.</Annotation>
@@ -264,23 +162,13 @@ const PrivacyPolicyContent = ({ small }) => (
         <T i18nKey="privacy_policy_content_text62" />
       </ListItem>
       <ListItem>
-        <T i18nKey="privacy_policy_content_text150_1" /> <UrlCovid />
-        <T i18nKey="privacy_policy_content_text150_2" /> <UrlCovid />
         <T i18nKey="privacy_policy_content_text150_3" />
       </ListItem>
       <ListItem>
-        <T i18nKey="privacy_policy_content_text67_1" />{' '}
-        <strong>
-          <T i18nKey="privacy_policy_content_text67_2" />
-        </strong>{' '}
         <T i18nKey="privacy_policy_content_text67_3" />
       </ListItem>
       <ListItem>
-        <T i18nKey="privacy_policy_content_text151_1" />{' '}
-        <strong>
-          <T i18nKey="privacy_policy_content_text151_2" />
-        </strong>{' '}
-        <T i18nKey="privacy_policy_content_text151_3" /> <UrlCovid /> <T i18nKey="privacy_policy_content_text151_4" />
+        <T i18nKey="privacy_policy_content_text151_4" />
       </ListItem>
       <ListItem>
         <T i18nKey="privacy_policy_content_text68" />
@@ -309,9 +197,6 @@ const PrivacyPolicyContent = ({ small }) => (
             <T i18nKey="privacy_policy_content_text74" />
             <ListAlpha>
               <ListItem>
-                <strong>
-                  <T i18nKey="privacy_policy_content_text75" />
-                </strong>
                 <T i18nKey="privacy_policy_content_text76" />
               </ListItem>
               <ListItem>
@@ -389,11 +274,7 @@ const PrivacyPolicyContent = ({ small }) => (
             <T i18nKey="privacy_policy_content_text98" />
             <ListAlpha>
               <ListItem>
-                <T i18nKey="privacy_policy_content_text99" />{' '}
-                <Url value="https://developer.apple.com/documentation/exposurenotification/entemporaryexposurekey">
-                  <T i18nKey="privacy_policy_content_text100" />
-                </Url>
-                )
+                <T i18nKey="privacy_policy_content_text100" />)
               </ListItem>
               <ListItem>
                 <T i18nKey="privacy_policy_content_text101" />
@@ -407,21 +288,15 @@ const PrivacyPolicyContent = ({ small }) => (
             </ListAlpha>
           </ListItem>
           <ListItem>
-            <T i18nKey="privacy_policy_content_text104" />{' '}
-            <Url value="https://support.cloudflare.com/hc/en-us/articles/200170156-Understanding-the-Cloudflare-Cookies#12345682">
-              https://support.cloudflare.com/
-            </Url>
-            .
+            <T i18nKey="privacy_policy_content_text104_1" />.
           </ListItem>
           <ListItem>
             <T i18nKey="privacy_policy_content_text180" />
             <ListAlpha>
               <ListItem>
-                <T i18nKey="privacy_policy_content_text181" /> <UrlCovid />{' '}
                 <T i18nKey="privacy_policy_content_text182" />
               </ListItem>
               <ListItem>
-                <T i18nKey="privacy_policy_content_text183" /> <UrlCovid />{' '}
                 <T i18nKey="privacy_policy_content_text184" />
               </ListItem>
             </ListAlpha>
@@ -458,11 +333,7 @@ const PrivacyPolicyContent = ({ small }) => (
             <T i18nKey="privacy_policy_content_text106" />
             <ListAlpha>
               <ListItem>
-                <T i18nKey="privacy_policy_content_text107" />{' '}
-                <Email>
-                  <T i18nKey="privacy_policy_content_text108" />
-                </Email>
-                ;
+                <T i18nKey="privacy_policy_content_text108" />
               </ListItem>
               <ListItem>
                 <T i18nKey="privacy_policy_content_text109" />
@@ -470,8 +341,7 @@ const PrivacyPolicyContent = ({ small }) => (
             </ListAlpha>
           </ListItem>
           <ListItem>
-            <T i18nKey="privacy_policy_content_text110" />{' '}
-            <Url value="https://firebase.google.com/support/privacy">https://firebase.google.com</Url>;
+            <T i18nKey="privacy_policy_content_text110_1" />
           </ListItem>
           <ListItem>
             <T i18nKey="privacy_policy_content_text204" />
@@ -482,7 +352,7 @@ const PrivacyPolicyContent = ({ small }) => (
         </ListNumber>
       </ListItem>
       <ListItem>
-        <T i18nKey="privacy_policy_content_text112" /> <UrlCovid /> <T i18nKey="privacy_policy_content_text113" />
+        <T i18nKey="privacy_policy_content_text113" />
       </ListItem>
       <ListItem>
         <T i18nKey="privacy_policy_content_text114" />
@@ -544,8 +414,6 @@ const PrivacyPolicyContent = ({ small }) => (
                 <T i18nKey="privacy_policy_content_text163" />
               </ListItem>
               <ListItem>
-                <T i18nKey="privacy_policy_content_text126" />
-                {'\n'}
                 <T i18nKey="privacy_policy_content_text131" />
               </ListItem>
             </ListAlpha>
@@ -553,11 +421,7 @@ const PrivacyPolicyContent = ({ small }) => (
         </ListNumber>
       </ListItem>
       <ListItem>
-        <T i18nKey="privacy_policy_content_text132" />{' '}
-        <Email>
-          <T i18nKey="privacy_policy_content_text133" />
-        </Email>
-        .
+        <T i18nKey="privacy_policy_content_text133" />
       </ListItem>
       <ListItem>
         <T i18nKey="privacy_policy_content_text134" />
@@ -572,14 +436,12 @@ const PrivacyPolicyContent = ({ small }) => (
             <T i18nKey="privacy_policy_content_text166" />
           </ListItem>
           <ListItem>
-            <T i18nKey="privacy_policy_content_text167" />
-            {'\n'}
             <T i18nKey="privacy_policy_content_text168" />
           </ListItem>
         </ListNumber>
       </ListItem>
       <ListItem>
-        <T i18nKey="privacy_policy_content_text186" /> <UrlCovid /> <T i18nKey="privacy_policy_content_text187" />
+        <T i18nKey="privacy_policy_content_text187" />
         <ListNumber>
           <ListItem>
             <T i18nKey="privacy_policy_content_text188" />
@@ -633,8 +495,7 @@ const PrivacyPolicyContent = ({ small }) => (
 
     <ListNumber>
       <ListItem>
-        <T i18nKey="privacy_policy_content_text211" />{' '}
-        <Url value={<T i18nKey="privacy_policy_content_text212" />}>(1)</Url>
+        <T i18nKey="privacy_policy_content_text212" />
       </ListItem>
       <ListItem>
         <T i18nKey="privacy_policy_content_text213" />

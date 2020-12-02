@@ -10,9 +10,9 @@ const allFiles = findInDir('./src/', /\.(js|json)$/)
     return data;
   });
 
-const contentPl = readTranslation('pl');
-const contentEn = readTranslation('en');
-const contentUk = readTranslation('uk');
+const { json: contentPl } = readTranslation('pl');
+const { json: contentEn } = readTranslation('en');
+const { json: contentUk } = readTranslation('uk');
 
 const notExistedKeys = Object.entries(contentPl)
   .map(entry => {
@@ -20,12 +20,7 @@ const notExistedKeys = Object.entries(contentPl)
     return key;
   })
   .filter(key => key !== key.toUpperCase())
-  .filter(
-    key =>
-      !allFiles.some(
-        value => value.includes(`'${key}'`) || value.includes(`"${key}"`)
-      )
-  );
+  .filter(key => !allFiles.some(value => value.includes(`'${key}'`) || value.includes(`"${key}"`)));
 
 notExistedKeys.forEach(value => {
   delete contentPl[value];

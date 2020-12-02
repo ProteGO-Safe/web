@@ -1,7 +1,8 @@
 {
   "type": "module",
   "scripts": {
-    "changeToComponentTranslation": "node src/changeToComponentTranslation.js"
+    "changeToComponentTranslation": "node src/changeToComponentTranslation.js",
+    "changePrivacyPolicyTranslation": "node src/changePrivacyPolicyTranslation.js"
   },
   "dependencies": {
     "react-string-replace": "^0.4.4"
