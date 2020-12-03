@@ -18,6 +18,8 @@ import {
 import { fetchSubscribedDistricts } from '../../store/actions/restrictions';
 import { BACK_PRESSED } from '../../store/types/navigation';
 import { UPLOAD_HISTORICAL_DATA_FINISHED } from '../../store/types/app';
+import { changeRoute } from '../../store/actions/navigation';
+import { Routes } from '../navigationService/routes';
 
 const nativeRequests = {};
 
@@ -218,6 +220,13 @@ const handleLabTestSubscription = body => {
   dispatch(fetchLabTestSubscriptionSuccess(body));
 };
 
+const handleChangeScreen = body => {
+  const store = StoreRegistry.getStore();
+  const { dispatch } = store;
+  const { route, params } = body;
+  dispatch(changeRoute({ route, backRoute: Routes.Home, params }));
+};
+
 const handleBackPressed = () => {
   const store = StoreRegistry.getStore();
   const { dispatch } = store;
@@ -233,7 +242,8 @@ const callBridgeDataHandler = cond([
   [equals(DATA_TYPE.NATIVE_STATE), always(handleNativeState)],
   [equals(DATA_TYPE.LANGUAGE), always(handleNativeLanguage)],
   [equals(DATA_TYPE.LAB_TEST_SUBSCRIPTION), always(handleLabTestSubscription)],
-  [equals(DATA_TYPE.BACK_PRESSED), always(handleBackPressed)]
+  [equals(DATA_TYPE.BACK_PRESSED), always(handleBackPressed)],
+  [equals(DATA_TYPE.CHANGE_SCREEN), always(handleChangeScreen)]
 ]);
 
 const onBridgeData = (dataType, dataString) => {
