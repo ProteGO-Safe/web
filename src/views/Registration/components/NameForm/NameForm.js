@@ -1,10 +1,11 @@
 import React from 'react';
+import { withTranslation } from 'react-i18next';
 import { useFormikContext } from 'formik';
 import { FIELD_NAME } from '../../../../constants';
 import { Button, InputWithCounter, Layout, T } from '../../../../components';
 import { ButtonWrapper, Label } from '../../Registration.styled';
 
-const NameForm = () => {
+const NameForm = ({ t }) => {
   const { errors, values, handleChange, handleSubmit, setFieldValue } = useFormikContext();
 
   const disabled = (() => {
@@ -25,13 +26,13 @@ const NameForm = () => {
       <InputWithCounter
         min={1}
         max={12}
-        error={<T i18nKey={errors[FIELD_NAME]} />}
-        label={<T i18nKey="name_form_text3" />}
-        placeholder={<T i18nKey="name_form_text11" />}
+        error={t(errors[FIELD_NAME])}
+        label={t('name_form_text3')}
+        placeholder={t('name_form_text11')}
         onChange={handleChange}
         name={FIELD_NAME}
         value={values[FIELD_NAME]}
-        info={<T i18nKey="name_form_text4" />}
+        info={t('name_form_text4')}
       />
 
       <ButtonWrapper>
@@ -42,4 +43,4 @@ const NameForm = () => {
   );
 };
 
-export default NameForm;
+export default withTranslation()(NameForm);
