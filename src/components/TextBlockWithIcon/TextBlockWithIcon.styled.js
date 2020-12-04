@@ -25,11 +25,10 @@ export const Icon = styled.div`
   width: 50px;
   height: 50px;
   margin-right: 24px;
-`;
-
-export const Image = styled.img`
-  display: block;
-  max-width: 100%;
+  > svg {
+    display: block;
+    max-width: 100%;
+  }
 `;
 
 export const Title = styled.h3`

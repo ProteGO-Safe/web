@@ -4,12 +4,12 @@ import { TextBlockWithIcon, CallHotline, Layout, Button, T } from '../../compone
 import * as Styled from './IAmSick.styled';
 
 import CallHotlineIcon from '../../assets/img/icons/icon-contact-blue.svg';
-import Icon1 from '../../assets/img/icons/i-am-sick-icon-1.svg';
-import Icon2 from '../../assets/img/icons/i-am-sick-icon-2.svg';
-import Icon3 from '../../assets/img/icons/i-am-sick-icon-3.svg';
-import Icon4 from '../../assets/img/icons/i-am-sick-icon-4.svg';
-import Icon6 from '../../assets/img/icons/i-am-sick-icon-6.svg';
-import Icon7 from '../../assets/img/icons/i-am-sick-icon-7.svg';
+import { ReactComponent as Icon1 } from '../../assets/img/icons/i-am-sick-icon-1.svg';
+import { ReactComponent as Icon2 } from '../../assets/img/icons/i-am-sick-icon-2.svg';
+import { ReactComponent as Icon3 } from '../../assets/img/icons/i-am-sick-icon-3.svg';
+import { ReactComponent as Icon4 } from '../../assets/img/icons/i-am-sick-icon-4.svg';
+import { ReactComponent as Icon6 } from '../../assets/img/icons/i-am-sick-icon-6.svg';
+import { ReactComponent as Icon7 } from '../../assets/img/icons/i-am-sick-icon-7.svg';
 
 const IAmSick = ({ t }) => {
   return (
@@ -19,27 +19,27 @@ const IAmSick = ({ t }) => {
       </Styled.Title>
 
       <Styled.Content>
-        <TextBlockWithIcon icon={Icon1} title={<T i18nKey="i_am_sick_text_2" />}>
+        <TextBlockWithIcon icon={<Icon1 />} title={<T i18nKey="i_am_sick_text_2" />}>
           <T i18nKey="i_am_sick_text_3" />
         </TextBlockWithIcon>
 
-        <TextBlockWithIcon icon={Icon2} title={<T i18nKey="i_am_sick_text_4" />}>
+        <TextBlockWithIcon icon={<Icon2 />} title={<T i18nKey="i_am_sick_text_4" />}>
           <T i18nKey="i_am_sick_text_5" />
         </TextBlockWithIcon>
 
-        <TextBlockWithIcon icon={Icon6} title={<T i18nKey="i_am_sick_text_6" />}>
+        <TextBlockWithIcon icon={<Icon6 />} title={<T i18nKey="i_am_sick_text_6" />}>
           <T i18nKey="i_am_sick_text_7" />
         </TextBlockWithIcon>
 
-        <TextBlockWithIcon icon={Icon3} title={<T i18nKey="i_am_sick_text_8" />}>
+        <TextBlockWithIcon icon={<Icon3 />} title={<T i18nKey="i_am_sick_text_8" />}>
           <T i18nKey="i_am_sick_text_9" />
         </TextBlockWithIcon>
 
-        <TextBlockWithIcon icon={Icon4} title={<T i18nKey="i_am_sick_text_10" />}>
+        <TextBlockWithIcon icon={<Icon4 />} title={<T i18nKey="i_am_sick_text_10" />}>
           <T i18nKey="i_am_sick_text_11" />
         </TextBlockWithIcon>
 
-        <TextBlockWithIcon icon={Icon7} title={<T i18nKey="i_am_sick_text_12" />}>
+        <TextBlockWithIcon icon={<Icon7 />} title={<T i18nKey="i_am_sick_text_12" />}>
           <T i18nKey="i_am_sick_text_13" />
         </TextBlockWithIcon>
       </Styled.Content>
