@@ -1,7 +1,7 @@
 import React from 'react';
 import { Grid } from '@material-ui/core';
+import { withTranslation } from 'react-i18next';
 import useTriage from '../../hooks/useTriage';
-
 import { FontWeight } from '../../theme/fonts';
 import { Color } from '../../theme/colors';
 import { Paragraph, SmallText } from '../../theme/typography';
@@ -10,7 +10,7 @@ import { T } from '../index';
 
 import './Imprint.scss';
 
-const Imprint = ({ labTestPin, user = {}, forceHideManualCovid }) => {
+const Imprint = ({ labTestPin, user = {}, forceHideManualCovid, t }) => {
   const { chronicSicks, bloodGroup, smokeNumber, isSmoking } = user;
   const { isManualCovid } = useTriage();
 
@@ -19,7 +19,11 @@ const Imprint = ({ labTestPin, user = {}, forceHideManualCovid }) => {
       return <T i18nKey="imprint_text5" />;
     }
     if (smokeNumber) {
-      return `$<T i18nKey="yes"/> ${(<T i18nKey={smokeNumber} />)}`;
+      return (
+        <>
+          <T i18nKey="yes" /> <T i18nKey={smokeNumber} />
+        </>
+      );
     }
     return <T i18nKey="no" />;
   };
@@ -41,9 +45,9 @@ const Imprint = ({ labTestPin, user = {}, forceHideManualCovid }) => {
     }
     return chronicSicks.map((sick, index) => (
       <SmallText key={sick.name}>
-        {`${(<T i18nKey={sick.name} />)}${sick.description ? `: ${(<T i18nKey={sick.description} />)}` : ''}${
-          index === chronicSicks.length - 1 ? '' : ','
-        }`}
+        <T i18nKey={sick.name} />
+        {sick.description ? `: ${sick.description}` : ''}
+        {index === chronicSicks.length - 1 ? '' : ','}
       </SmallText>
     ));
   };
@@ -96,4 +100,4 @@ const Imprint = ({ labTestPin, user = {}, forceHideManualCovid }) => {
   );
 };
 
-export default Imprint;
+export default withTranslation()(Imprint);

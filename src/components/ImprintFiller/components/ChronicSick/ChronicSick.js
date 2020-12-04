@@ -1,7 +1,6 @@
 import React, { Fragment } from 'react';
 import { useFormikContext } from 'formik';
 import { FormGroup } from '@material-ui/core';
-
 import {
   chronicSickValues,
   FIELD_IS_CHRONIC_SICK,
@@ -9,9 +8,9 @@ import {
   VALUE_IS_CHRONIC_SICK_YES
 } from '../../../../constants';
 
-import { Button, Checkbox, Radio, TextField, T } from '../../..';
+import { Button, Checkbox, Radio, TextField, T } from '../../../index';
 
-import { Actions, Description, InputWrapper, Label, SubContainer, Title } from '../../ImprintFiller.styled';
+import { Actions, Description, InputWrapper, Label, SubContainer, Title, Wrapper } from '../../ImprintFiller.styled';
 
 const ChronicSick = () => {
   const { handleChange, setFieldValue, values } = useFormikContext();
@@ -74,28 +73,31 @@ const ChronicSick = () => {
       <Title>
         <T i18nKey="chronic_sick_text1" />
       </Title>
-      <FormGroup>
-        <Radio
-          checked={values[FIELD_IS_CHRONIC_SICK] === VALUE_IS_CHRONIC_SICK_NO}
-          label={
-            <Label>
-              <T i18nKey="chronic_sick_text2" />
-            </Label>
-          }
-          onChange={handleSelectNoChronicSick}
-          name={FIELD_IS_CHRONIC_SICK}
-        />
-        <Radio
-          checked={values[FIELD_IS_CHRONIC_SICK] === VALUE_IS_CHRONIC_SICK_YES}
-          label={
-            <Label>
-              <T i18nKey="chronic_sick_text3" />
-            </Label>
-          }
-          onChange={handleSelectChronicSick}
-          name={FIELD_IS_CHRONIC_SICK}
-        />
-      </FormGroup>
+      <Wrapper>
+        <FormGroup>
+          <Radio
+            checked={values[FIELD_IS_CHRONIC_SICK] === VALUE_IS_CHRONIC_SICK_NO}
+            label={
+              <Label>
+                <T i18nKey="chronic_sick_text2" />
+              </Label>
+            }
+            onChange={handleSelectNoChronicSick}
+            name={FIELD_IS_CHRONIC_SICK}
+          />
+          <Radio
+            checked={values[FIELD_IS_CHRONIC_SICK] === VALUE_IS_CHRONIC_SICK_YES}
+            label={
+              <Label>
+                <T i18nKey="chronic_sick_text3" />
+              </Label>
+            }
+            onChange={handleSelectChronicSick}
+            name={FIELD_IS_CHRONIC_SICK}
+          />
+        </FormGroup>
+      </Wrapper>
+
       {isChronicSick && (
         <SubContainer>
           <Description>

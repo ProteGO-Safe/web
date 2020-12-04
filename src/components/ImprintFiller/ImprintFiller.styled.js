@@ -2,6 +2,12 @@ import styled from 'styled-components';
 import { Paragraph, SmallText } from '../../theme/typography';
 import { Color } from '../../theme/colors';
 
+export const Wrapper = styled.div`
+  display: flex;
+  flex-flow: wrap row;
+  width: 100%;
+`;
+
 export const Title = styled.h1`
   width: 100%;
   font-weight: 700;

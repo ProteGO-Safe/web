@@ -1,12 +1,12 @@
 import React from 'react';
 import { useFormikContext } from 'formik';
+import { withTranslation } from 'react-i18next';
 import { Button, InputWithCounter, T } from '../../..';
-
 import { FIELD_NAME } from '../../../../constants';
 import { Actions } from '../../ImprintFiller.styled';
 import './Name.scss';
 
-const Name = ({ handleNext, handleSkip }) => {
+const Name = ({ handleNext, handleSkip, t }) => {
   const { errors, handleChange, values } = useFormikContext();
 
   const disabled = (() => {
@@ -18,12 +18,12 @@ const Name = ({ handleNext, handleSkip }) => {
       <InputWithCounter
         min={1}
         max={12}
-        error={<T i18nKey={errors[FIELD_NAME]} />}
+        error={t(errors[FIELD_NAME])}
         label={<T i18nKey="name_form_text1" />}
-        placeholder={<T i18nKey="name_form_text11" />}
+        placeholder={t('name_form_text11')}
         onChange={handleChange}
         name={FIELD_NAME}
-        value={<T i18nKey={values[FIELD_NAME]} />}
+        value={values[FIELD_NAME]}
         info={<T i18nKey="name_form_text4" />}
       />
 
@@ -35,4 +35,4 @@ const Name = ({ handleNext, handleSkip }) => {
   );
 };
 
-export default Name;
+export default withTranslation()(Name);

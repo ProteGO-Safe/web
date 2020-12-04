@@ -1,12 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {
-  OnboardingWrapper,
-  ButtonWrapper,
-  IconWrapper,
-  Text,
-  Title
-} from './OnboardingContent.styled';
+import { OnboardingWrapper, ButtonWrapper, IconWrapper, Text, Title } from './OnboardingContent.styled';
 
 const OnboardingContent = ({ buttons, children, icon, title }) => {
   return (
@@ -27,7 +21,7 @@ OnboardingContent.propTypes = {
   buttons: PropTypes.array,
   children: PropTypes.node.isRequired,
   icon: PropTypes.object.isRequired,
-  title: PropTypes.string.isRequired
+  title: PropTypes.oneOfType([PropTypes.object, PropTypes.string]).isRequired
 };
 
 export default OnboardingContent;

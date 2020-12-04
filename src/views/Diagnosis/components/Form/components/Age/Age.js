@@ -43,11 +43,7 @@ const Age = ({ onBack, onNext }) => {
         />
       </FormGroup>
       <Paragraph>
-        <strong>
-          <T i18nKey="age_text5" />
-        </strong>
-        <br />
-        <T i18nKey="age_text6" />
+        <T i18nKey="age_text5" />
       </Paragraph>
       <Actions>
         <Button

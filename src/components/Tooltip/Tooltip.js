@@ -32,8 +32,8 @@ Tooltip.defaultProps = {
 };
 
 Tooltip.propTypes = {
-  content: PropTypes.string,
-  title: PropTypes.string
+  content: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
+  title: PropTypes.oneOfType([PropTypes.object, PropTypes.string])
 };
 
 export default Tooltip;

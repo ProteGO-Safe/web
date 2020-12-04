@@ -1,4 +1,5 @@
 import React, { useMemo } from 'react';
+import { withTranslation } from 'react-i18next';
 import { FollowDistricts } from '../FollowDistricts';
 import { ListDistricts } from './components/ListDistricts';
 import * as Styled from './CurrentRestrictions.styled';
@@ -16,7 +17,8 @@ const CurrentRestrictions = ({
   handleUnsubscribeDistrict,
   isFlatten,
   listDistrictsItems,
-  dateUpdate
+  dateUpdate,
+  t
 }) => {
   const renderList = useMemo(() => {
     if (isFlatten && flattenDistricts.length === 0) {
@@ -102,7 +104,7 @@ const CurrentRestrictions = ({
         </Styled.Paragraph>
 
         <Styled.ButtonWrapper>
-          <Styled.UrlLink href={<T i18nKey="current_restrictions_href" />} target="_blank">
+          <Styled.UrlLink href={t('current_restrictions_href')} target="_blank">
             <Button label={<T i18nKey="current_restrictions_button_name" />} onClick={() => null} />
           </Styled.UrlLink>
 
@@ -115,4 +117,4 @@ const CurrentRestrictions = ({
   );
 };
 
-export default CurrentRestrictions;
+export default withTranslation()(CurrentRestrictions);
