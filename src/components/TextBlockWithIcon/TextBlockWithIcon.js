@@ -5,9 +5,7 @@ import * as Styled from './TextBlockWithIcon.styled';
 const TextBlockWithIcon = ({ children, icon, title }) => (
   <Styled.TextBlockWithIcon>
     <Styled.Header>
-      <Styled.Icon>
-        <Styled.Image src={icon} alt={title} />
-      </Styled.Icon>
+      <Styled.Icon>{icon}</Styled.Icon>
       <Styled.Title>{title}</Styled.Title>
     </Styled.Header>
 
@@ -18,7 +16,7 @@ const TextBlockWithIcon = ({ children, icon, title }) => (
 TextBlockWithIcon.propTypes = {
   children: PropTypes.node.isRequired,
   icon: PropTypes.string.isRequired,
-  title: PropTypes.object.isRequired
+  title: PropTypes.oneOfType([PropTypes.object, PropTypes.string]).isRequired
 };
 
 export default TextBlockWithIcon;
