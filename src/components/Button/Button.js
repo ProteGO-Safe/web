@@ -15,34 +15,16 @@ import {
 
 import { ReactComponent as ArrowIcon } from '../../assets/img/icons/arrow-current-color.svg';
 
-const Button = ({
-  children,
-  description,
-  disabled,
-  icon,
-  label,
-  onClick,
-  type
-}) => {
+const Button = ({ children, description, disabled, icon, label, onClick, type }) => {
   const renderButton = Component => (
-    <Component
-      data-cy={`button-${type}`}
-      disabled={disabled}
-      onClick={onClick}
-      type="button"
-    >
+    <Component data-cy={`button-${type}`} disabled={disabled} onClick={onClick} type="button">
       {icon}
       {label || children}
     </Component>
   );
 
   const renderButtonBorder = Component => (
-    <Component
-      data-cy={`button-${type}`}
-      disabled={disabled}
-      onClick={onClick}
-      type="button"
-    >
+    <Component data-cy={`button-${type}`} disabled={disabled} onClick={onClick} type="button">
       {icon}
       <Content>
         <Label>{label || children}</Label>
