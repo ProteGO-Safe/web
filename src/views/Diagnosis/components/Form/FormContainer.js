@@ -20,9 +20,7 @@ const FormContainer = ({ onFinish }) => {
   const prevPage = usePrevious(page);
 
   const addIfNotExists = (list = [], fetchedQuestion) => {
-    const existingQuestion = list.find(value =>
-      isequal(value, fetchedQuestion)
-    );
+    const existingQuestion = list.find(value => isequal(value, fetchedQuestion));
     if (existingQuestion) {
       return [...list];
     }
@@ -51,11 +49,9 @@ const FormContainer = ({ onFinish }) => {
       questions.pop();
       setFieldValue(DIAGNOSIS_FORM_FIELDS.QUESTIONS, questions);
     }
-    const { question: fetchedQuestion, should_stop: shouldStop } = getDiagnosis(
-      {
-        evidence: questions.flat(1)
-      }
-    );
+    const { question: fetchedQuestion, should_stop: shouldStop } = getDiagnosis({
+      evidence: questions.flat(1)
+    });
     setQuestion(fetchedQuestion);
     setAllQuestions(prev => addIfNotExists(prev, fetchedQuestion));
 

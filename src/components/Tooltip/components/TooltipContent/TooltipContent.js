@@ -9,7 +9,7 @@ const TooltipContent = ({ content }) => (
 );
 
 TooltipContent.propTypes = {
-  content: PropTypes.string.isRequired
+  content: PropTypes.oneOfType([PropTypes.object, PropTypes.string]).isRequired
 };
 
 export default TooltipContent;

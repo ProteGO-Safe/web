@@ -7,8 +7,6 @@ const FirstDiagnosisAsking = ({ onYesClick, onNoClick }) => {
     <Layout id="view-first-diagnosis-asking" hideBackButton isGovFooter>
       <Paragraph>
         <T i18nKey="first_diagnosis_asking_text1" />
-        <br />
-        <T i18nKey="first_diagnosis_asking_text2" />
       </Paragraph>
       <Small>
         <T i18nKey="first_diagnosis_asking_text3" />

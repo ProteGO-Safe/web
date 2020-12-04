@@ -1,5 +1,6 @@
 import React from 'react';
 import { useFormikContext } from 'formik';
+import { withTranslation } from 'react-i18next';
 import { Button, Stepper, Layout, T } from '../../../index';
 import Imprint from '../../../Imprint/Imprint';
 import {
@@ -10,13 +11,12 @@ import {
   FIELD_SMOKE_NUMBER
 } from '../../../../constants';
 import { NUMBER_OF_STEPS } from '../../ImprintFiller.constants';
-
 import { Color } from '../../../../theme/colors';
 import { SmallText } from '../../../../theme/typography';
 import { FontWeight } from '../../../../theme/fonts';
 import { Actions, Title } from '../../ImprintFiller.styled';
 
-const Summary = () => {
+const Summary = ({ t }) => {
   const { handleSubmit, resetForm, values } = useFormikContext();
   const { step } = values;
 
@@ -37,7 +37,7 @@ const Summary = () => {
           bloodGroup: values[FIELD_BLOOD_GROUP],
           chronicSicks,
           smokeNumber: values[FIELD_SMOKE_NUMBER],
-          isSmoking: values[FIELD_SMOKE] === <T i18nKey="yes" />
+          isSmoking: values[FIELD_SMOKE] === t('yes')
         }}
         forceHideManualCovid={values[FIELD_MANUAL_COVID] === false}
       />
@@ -57,4 +57,4 @@ const Summary = () => {
   );
 };
 
-export default Summary;
+export default withTranslation()(Summary);

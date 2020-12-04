@@ -10,7 +10,7 @@ const RiskTestData = ({ t, day, onBack, questions, idToChoiceResolver, isToday, 
       <T i18nKey="risk_test_data_text1" />
     </Title>
     <Paragraph>
-      {isToday && t('risk_test_data_text3')} {day} r.
+      {isToday && <T i18nKey="risk_test_data_text3" />} {day} r.
     </Paragraph>
     <br />
     <div className="data">

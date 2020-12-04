@@ -9,25 +9,10 @@ import {
 } from './triageLevel.constants';
 import { EXPOSURE_NOTIFICATION_STATUS } from '../../utils/servicesStatus/servicesStatus.constants';
 
-const defaultTriageLevel = (
-  triageLevel,
-  description,
-  serious,
-  triageRiskLevel = 0,
-  exposureRiskLevel = 0
-) => {
-  const {
-    color,
-    content,
-    IconComponent,
-    Recommendation,
-    riskGroup,
-    riskLevel
-  } = TRIAGE_LEVEL[triageLevel];
+const defaultTriageLevel = (triageLevel, description, serious, triageRiskLevel = 0, exposureRiskLevel = 0) => {
+  const { color, content, IconComponent, Recommendation, riskGroup, riskLevel } = TRIAGE_LEVEL[triageLevel];
 
-  const isDangerous =
-    triageLevel &&
-    !(triageLevel === 'no_risk' || triageLevel === 'self_monitoring');
+  const isDangerous = triageLevel && !(triageLevel === 'no_risk' || triageLevel === 'self_monitoring');
   return {
     color,
     content,
@@ -98,33 +83,17 @@ const resolveExposureMidRiskLevel = (triageRiskLevel = 0) => {
   };
 };
 
-const resolveExposureLowRiskLevel = (
-  triageRiskLevel,
-  triageLevel,
-  description,
-  serious
-) => {
+const resolveExposureLowRiskLevel = (triageRiskLevel, triageLevel, description, serious) => {
   if (triageRiskLevel === undefined) {
     return {
       ...EXPOSURE_TRIAGE_LEVEL[RISK_LEVEL_COLOR.GREEN],
       triageRiskLevel: 0
     };
   }
-  return defaultTriageLevel(
-    triageLevel,
-    description,
-    serious,
-    triageRiskLevel,
-    RISK_LEVEL_COLOR.GREEN
-  );
+  return defaultTriageLevel(triageLevel, description, serious, triageRiskLevel, RISK_LEVEL_COLOR.GREEN);
 };
 
-const resolveUndefinedExposureRiskLevel = (
-  triageRiskLevel,
-  triageLevel,
-  description,
-  serious
-) => {
+const resolveUndefinedExposureRiskLevel = (triageRiskLevel, triageLevel, description, serious) => {
   if (triageRiskLevel === undefined) {
     return NO_TRIAGE_LEVEL;
   }
@@ -132,13 +101,9 @@ const resolveUndefinedExposureRiskLevel = (
 };
 
 const useTriage = () => {
-  const {
-    triageLevel,
-    description,
-    serious,
-    timeOfConfirmedCovid,
-    timeOfConfirmedManualCovid
-  } = useSelector(state => state.triage);
+  const { triageLevel, description, serious, timeOfConfirmedCovid, timeOfConfirmedManualCovid } = useSelector(
+    state => state.triage
+  );
   const {
     riskLevel = undefined,
     servicesStatus: { exposureNotificationStatus }
@@ -155,25 +120,12 @@ const useTriage = () => {
     return EXPOSURE_SICK;
   }
 
-  if (
-    exposureNotificationStatus !== EXPOSURE_NOTIFICATION_STATUS.ON ||
-    exposureRiskLevel === undefined
-  ) {
-    return resolveUndefinedExposureRiskLevel(
-      triageRiskLevel,
-      triageLevel,
-      description,
-      serious
-    );
+  if (exposureNotificationStatus !== EXPOSURE_NOTIFICATION_STATUS.ON || exposureRiskLevel === undefined) {
+    return resolveUndefinedExposureRiskLevel(triageRiskLevel, triageLevel, description, serious);
   }
 
   if (exposureRiskLevel === RISK_LEVEL_COLOR.GREEN) {
-    return resolveExposureLowRiskLevel(
-      triageRiskLevel,
-      triageLevel,
-      description,
-      serious
-    );
+    return resolveExposureLowRiskLevel(triageRiskLevel, triageLevel, description, serious);
   }
 
   if (exposureRiskLevel === RISK_LEVEL_COLOR.YELLOW) {

@@ -15,14 +15,18 @@ const T = ({ i18nKey, t, variables }) => {
     <RegulationsModal key={match + i} text={match} />
   ));
   translated = reactStringReplace(translated, '[COVID-19]', (match, i) => <UrlCovid key={match + i} />);
-  translated = reactStringReplace(translated, /\[PHONE\](.*?)\[\/PHONE\]/g, match => (
-    <PhoneNumber key={match} value={match}>
+  translated = reactStringReplace(translated, /\[PHONE\](.*?)\[\/PHONE\]/g, (match, i) => (
+    <PhoneNumber key={match + i} value={match}>
       {match}
     </PhoneNumber>
   ));
   translated = reactStringReplace(translated, '[BR]', (match, i) => <br key={match + i} />);
-  translated = reactStringReplace(translated, /\[B\](.*?)\[\/B\]/g, match => <strong key={match}>{match}</strong>);
-  translated = reactStringReplace(translated, /\[EMAIL\](.*?)\[\/EMAIL\]/g, match => <Email>{match}</Email>);
+  translated = reactStringReplace(translated, /\[B\](.*?)\[\/B\]/g, (match, i) => (
+    <strong key={match + i}>{match}</strong>
+  ));
+  translated = reactStringReplace(translated, /\[EMAIL\](.*?)\[\/EMAIL\]/g, (match, i) => (
+    <Email key={match + i}>{match}</Email>
+  ));
   translated = reactStringReplace(translated, /\[URL\](.*?)\[\/URL\]/g, (match, i) => {
     return (
       <Url key={match + i} value={match.split('|')[1]} underlineOff>

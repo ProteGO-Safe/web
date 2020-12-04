@@ -1,11 +1,12 @@
 import React from 'react';
+import { withTranslation } from 'react-i18next';
 import useFilledDiagnosis from '../../../../hooks/useFilledDiagnosis';
 import useTriage from '../../../../hooks/useTriage';
 import Smile from './Smile';
 import useUserName from '../../../../hooks/useUserName';
 import { T } from '../../../../components/T';
 
-const SmileContainer = () => {
+const SmileContainer = ({ t }) => {
   const userName = useUserName();
   const { lastDate } = useFilledDiagnosis();
   const { exposureRiskLevel, isCovid, isExposure, isManualCovid, riskGroup, IconComponent } = useTriage();
@@ -26,9 +27,9 @@ const SmileContainer = () => {
     if (isExposure && exposureRiskLevel === 3) {
       return <T i18nKey="smile_container_text9" />;
     }
-    return <T i18nKey="smile_container_text4" variables={{ date: lastDate, group: <T i18nKey={riskGroup} /> }} />;
+    return <T i18nKey="smile_container_text4" variables={{ date: lastDate, group: t(riskGroup) }} />;
   };
   return <Smile userName={userName} IconComponent={IconComponent} content={getContent()} />;
 };
 
-export default SmileContainer;
+export default withTranslation()(SmileContainer);

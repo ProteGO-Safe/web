@@ -1,6 +1,5 @@
 import styled, { keyframes } from 'styled-components';
 import { Color } from '../../theme/colors';
-import { Paragraph } from '../../theme/typography';
 import { TYPE } from './Modal.helpers';
 
 const handleType = type => {
@@ -43,8 +42,7 @@ export const Wrapper = styled.div`
   padding-top: 60px;
   padding-bottom: 70px;
   overflow-y: auto;
-  animation: ${({ open }) => (open ? animationModalShow : animationModalHide)}
-    0.3s 0s both;
+  animation: ${({ open }) => (open ? animationModalShow : animationModalHide)} 0.3s 0s both;
   transition: all 0.3s;
 `;
 
@@ -88,7 +86,8 @@ export const Title = styled.h2`
   color: ${Color.black};
 `;
 
-export const Text = styled(Paragraph)`
+export const Text = styled.div`
+  width: 100%;
   font-size: 14px;
   line-height: 22px;
   margin-bottom: 0 !important;
