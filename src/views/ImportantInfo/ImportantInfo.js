@@ -17,20 +17,11 @@ const ImportantInfo = ({ items }) => {
     height: '100%'
   };
 
-  const renderItems = items.map(item => {
-    const {
-      danger,
-      description,
-      icon,
-      link,
-      newFeature,
-      path,
-      title,
-      type
-    } = item;
+  const renderItems = items.map((item, key) => {
+    const { danger, description, icon, link, newFeature, path, title, type } = item;
     return (
       <ImportantInfoItem
-        key={title}
+        key={key}
         danger={danger}
         description={description}
         icon={icon}

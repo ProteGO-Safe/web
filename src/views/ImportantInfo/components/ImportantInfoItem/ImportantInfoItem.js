@@ -1,10 +1,11 @@
 import React, { useEffect, useRef, useState } from 'react';
+import { withTranslation } from 'react-i18next';
 import PropTypes from 'prop-types';
 import { TYPES } from './ImportantInfoItem.constants';
 import { NavLink, T } from '../../../../components';
 import * as Styled from './ImportantInfoItem.styled';
 
-const ImportantInfoItem = ({ danger, description, icon, newFeature, path, size, title, type }) => {
+const ImportantInfoItem = ({ danger, description, icon, newFeature, path, size, title, type, t }) => {
   const ref = useRef(null);
   const [height, setHeight] = useState(0);
   const windowWidth = window.innerWidth;
@@ -52,7 +53,7 @@ const ImportantInfoItem = ({ danger, description, icon, newFeature, path, size, 
     }
     case TYPES.LINK: {
       return (
-        <Styled.UrlLink href={path} target="_blank">
+        <Styled.UrlLink href={t(path)} target="_blank">
           <Content />
         </Styled.UrlLink>
       );
@@ -74,12 +75,12 @@ ImportantInfoItem.defaultProps = {
 
 ImportantInfoItem.propTypes = {
   danger: PropTypes.bool,
-  description: PropTypes.string,
+  description: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
   icon: PropTypes.object,
   path: PropTypes.string,
   size: PropTypes.bool,
-  title: PropTypes.string,
+  title: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
   type: PropTypes.oneOf([TYPES.ROUTE, TYPES.LINK]).isRequired
 };
 
-export default ImportantInfoItem;
+export default withTranslation()(ImportantInfoItem);

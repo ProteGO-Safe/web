@@ -49,13 +49,13 @@ const ImportantInfoContainer = () => {
       icon: <Icon4 />,
       title: <T i18nKey="important_info_title_4" />,
       description: <T i18nKey="important_info_description_4" />,
-      path: <T i18nKey="important_info_href_1" />
+      path: 'important_info_href_1'
     },
     {
       type: 'link',
       icon: <Icon5 />,
       title: <T i18nKey="important_info_title_5" />,
-      path: <T i18nKey="important_info_href_2" />
+      path: 'important_info_href_2'
     }
   ];
 
