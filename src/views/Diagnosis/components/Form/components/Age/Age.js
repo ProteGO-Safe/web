@@ -15,7 +15,7 @@ const Age = ({ onBack, onNext }) => {
   };
 
   return (
-    <Layout id="view-diagnosis-age" onBackClick={onBack}>
+    <Layout id="view-diagnosis-age" onBackClick={onBack} hideBell>
       <Title>
         <T i18nKey="age_text1" />
       </Title>

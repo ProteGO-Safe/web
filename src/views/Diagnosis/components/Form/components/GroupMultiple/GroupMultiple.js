@@ -62,7 +62,7 @@ const GroupMultiple = ({ onBack, onNext, question }) => {
   };
 
   return (
-    <Layout id="view-diagnosis" onBackClick={back}>
+    <Layout id="view-diagnosis" onBackClick={back} hideBell>
       <Container>
         <Title>
           <T i18nKey={text} />

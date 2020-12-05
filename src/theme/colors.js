@@ -27,5 +27,6 @@ export const Color = {
   gradient_c1: '#438AD1',
   gradient_c2: '#0052A5',
   gradient_c3: '#002953',
-  skyblue: '#9BC7F2'
+  skyblue: '#9BC7F2',
+  red: '#D5233F'
 };

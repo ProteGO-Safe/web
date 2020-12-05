@@ -27,7 +27,7 @@ const DailyData = ({ mode, setMode }) => {
   }, [mode]);
 
   return (
-    <Layout isNavigation>
+    <Layout isNavigation hideBell>
       <Title>
         <T i18nKey="daily_data_text1" />
       </Title>

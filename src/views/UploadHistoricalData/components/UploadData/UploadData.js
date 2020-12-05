@@ -35,7 +35,7 @@ const UploadData = ({
   };
 
   return (
-    <Layout isNavigation onBackClick={handleBack}>
+    <Layout isNavigation onBackClick={handleBack} hideBell>
       <Styled.Content>
         <H5>
           <T i18nKey="upload_data_text_1" />{' '}

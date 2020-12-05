@@ -17,7 +17,7 @@ const Information = ({ hideInformation }) => {
   const { triageLevel } = useSelector(state => state.triage);
 
   return (
-    <Layout id="view-information" hideBackButton={triageLevel === ''}>
+    <Layout id="view-information" hideBackButton={triageLevel === ''} hideBell>
       <Title>
         <T i18nKey="information_text1" />
       </Title>

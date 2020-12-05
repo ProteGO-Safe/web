@@ -38,7 +38,7 @@ const SummaryRiskTestContainer = () => {
   const data = resolveData(goTo, openModal, resolveType());
 
   return (
-    <Layout hideBackButton noPadding fullHeight>
+    <Layout hideBackButton noPadding fullHeight hideBell>
       <SummaryRiskTest data={data} />
     </Layout>
   );

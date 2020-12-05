@@ -18,7 +18,7 @@ const Daily = ({ goToHistory, onFill, today, previousDays }) => {
   ));
 
   return (
-    <Layout isNavigation>
+    <Layout isNavigation hideBell>
       <Title>
         <T i18nKey="daily_text1" />
       </Title>

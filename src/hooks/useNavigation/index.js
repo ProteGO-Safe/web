@@ -1,10 +1,7 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { changeRoute, goToPreviousRoute } from '../../store/actions/navigation';
-import {
-  getCurrentParams,
-  getCurrentRoute
-} from '../../store/selectors/navigation';
+import { getCurrentParams, getCurrentRoute } from '../../store/selectors/navigation';
 import { Routes } from '../../services/navigationService/routes';
 
 const useNavigation = () => {
