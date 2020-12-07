@@ -35,7 +35,7 @@ const ImportantInfoContainer = () => {
       icon: <Icon2 />,
       title: <T i18nKey="important_info_title_2" />,
       description: <T i18nKey="important_info_description_2" />,
-      path: isPolish ? 'https://www.gov.pl/web/protegosafe/pytania-i-odpowiedzi' : Routes.ReportBug
+      path: isPolish ? 'important_info_href_3' : Routes.ReportBug
     },
     {
       type: 'route',
