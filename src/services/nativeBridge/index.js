@@ -223,8 +223,8 @@ const handleLabTestSubscription = body => {
 const handleChangeScreen = body => {
   const store = StoreRegistry.getStore();
   const { dispatch } = store;
-  const { route, params } = body;
-  dispatch(changeRoute({ route, backRoute: Routes.Home, params }));
+  const { name, params } = body;
+  dispatch(changeRoute({ route: name, backRoute: Routes.Home, params }));
 };
 
 const handleBackPressed = () => {
