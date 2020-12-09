@@ -1,5 +1,6 @@
 import { combineReducers } from 'redux';
 
+import activities from './activities';
 import app from './app';
 import daily from './daily';
 import nativeData from './nativeData';
@@ -11,6 +12,7 @@ import user from './user';
 import { APP_STATE_CLEARED } from '../types/app';
 
 const reducers = combineReducers({
+  activities,
   app,
   daily,
   nativeData,

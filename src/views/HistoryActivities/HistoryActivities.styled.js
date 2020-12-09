@@ -25,7 +25,7 @@ export const Title = styled.div`
   color: ${Color.black};
 `;
 
-export const HistoryNotifications = styled.div`
+export const HistoryActivities = styled.div`
   position: relative;
   display: flex;
   flex-flow: wrap row;

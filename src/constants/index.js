@@ -148,3 +148,9 @@ export const AVAILABLE_LANGUAGES = {
 
 export const FAILED = 'FAILED';
 export const SUCCESS = 'SUCCESS';
+
+export const ACTIVITY_TYPE = {
+  NOTIFICATION: 'notification',
+  RISK_CHECK: 'riskCheck',
+  EXPOSURE: 'exposure'
+};

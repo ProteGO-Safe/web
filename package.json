@@ -12,6 +12,7 @@
     "formik": "^2.1.4",
     "i18next": "^19.8.3",
     "is-ua-webview": "^1.0.1",
+    "lodash.orderby": "^4.6.0",
     "lodash.invoke": "^4.5.2",
     "lodash.isequal": "^4.5.0",
     "lodash.uniqueid": "^4.0.1",
@@ -38,6 +39,7 @@
     "slick-carousel": "^1.8.1",
     "styled-components": "^5.1.1",
     "typescript": "^3.9.2",
+    "uuid": "^8.3.1",
     "yup": "^0.28.3"
   },
   "scripts": {

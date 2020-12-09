@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState } from 'react';
+import React, { useCallback } from 'react';
 import PropTypes from 'prop-types';
 import { Arrow, ArrowButton, Container, Logo } from './Header.styled';
 import { Bell, T } from '../index';
@@ -7,12 +7,7 @@ import { Routes } from '../../services/navigationService/routes';
 import useHandlingPhysicalBack from '../../hooks/useHandlingPhysicalBack';
 
 const Header = ({ hideBackButton, hideBell, onBackClick }) => {
-  const { goBack, goTo, route } = useNavigation();
-  const [activeBell, setActiveBell] = useState(false);
-
-  useEffect(() => {
-    setActiveBell(route === Routes.HistoryNotifications);
-  }, [route]);
+  const { goBack, goTo } = useNavigation();
 
   const handleBackClick = useCallback(() => {
     if (hideBackButton) {
@@ -39,7 +34,7 @@ const Header = ({ hideBackButton, hideBell, onBackClick }) => {
     <Container hideBackButton={hideBackButton}>
       {!hideBackButton ? renderBackButton() : null}
       <Logo onClick={() => goTo(Routes.Home)} />
-      {!hideBell ? <Bell active={activeBell} badge={1} handleClick={() => goTo(Routes.HistoryNotifications)} /> : null}
+      {!hideBell ? <Bell /> : null}
     </Container>
   );
 };

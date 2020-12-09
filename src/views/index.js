@@ -7,7 +7,7 @@ export { Diagnosis } from './Diagnosis';
 export { FirstDiagnosisAsking } from './FirstDiagnosisAsking';
 export { FollowDistricts } from './FollowDistricts';
 export { FollowDistrictsSlider } from './FollowDistrictsSlider';
-export { HistoryNotifications } from './HistoryNotifications';
+export { HistoryActivities } from './HistoryActivities';
 export { Home } from './Home';
 export { HowItWorks } from './HowItWorks';
 export { IAmSick } from './IAmSick';

@@ -1,12 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Color } from '../../../../theme/colors';
-import * as Styled from './HistoryNotificationsItem.styled';
+import * as Styled from './HistoryActivitiesItem.styled';
 
 import { ReactComponent as ArrowIcon } from '../../../../assets/img/icons/angle-right-blue.svg';
 
-const HistoryNotificationsItem = ({ color, children, date, icon, isRead, title, onClick, open }) => (
-  <Styled.HistoryNotificationsItem>
+const HistoryActivitiesItem = ({ color, children, date, icon, isRead, title, onClick, open }) => (
+  <Styled.HistoryActivitiesItem>
     <Styled.Icon color={color}>{icon}</Styled.Icon>
 
     <Styled.Content onClick={onClick}>
@@ -23,14 +23,14 @@ const HistoryNotificationsItem = ({ color, children, date, icon, isRead, title, 
         <ArrowIcon />
       </Styled.Arrow>
     </Styled.Content>
-  </Styled.HistoryNotificationsItem>
+  </Styled.HistoryActivitiesItem>
 );
 
-HistoryNotificationsItem.defaultProps = {
+HistoryActivitiesItem.defaultProps = {
   color: Color.primary
 };
 
-HistoryNotificationsItem.propTypes = {
+HistoryActivitiesItem.propTypes = {
   color: PropTypes.string,
   children: PropTypes.node.isRequired,
   date: PropTypes.string.isRequired,
@@ -39,4 +39,4 @@ HistoryNotificationsItem.propTypes = {
   title: PropTypes.string.isRequired
 };
 
-export default HistoryNotificationsItem;
+export default HistoryActivitiesItem;

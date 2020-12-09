@@ -1,20 +1,15 @@
 import React from 'react';
 import ContentRiskCheck from './ContentRiskCheck';
-import useLanguage from '../../../../../../hooks/useLanguage';
 import { T } from '../../../../../../components';
 import * as Styled from './ContentRiskCheck.styled';
+import { getFormattedTime } from '../../../../../../utils/date';
 
 const ContentRiskCheckContainer = ({ data }) => {
-  const { language } = useLanguage();
-
   const items = data.map(({ exposures, keys, timestamp }) => {
-    const time = new Intl.DateTimeFormat(language, {
-      hour: '2-digit',
-      minute: '2-digit'
-    }).format(timestamp);
+    const time = getFormattedTime(timestamp);
 
     return (
-      <Styled.Item key={timestamp}>
+      <Styled.Item key={`${timestamp}-${keys}-${exposures}`}>
         <T i18nKey="history_notifications_text_5" variables={{ exposures, keys, time }} />
       </Styled.Item>
     );

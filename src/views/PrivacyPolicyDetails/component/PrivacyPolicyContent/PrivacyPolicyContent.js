@@ -489,9 +489,6 @@ const PrivacyPolicyContent = ({ small }) => (
     <Title>
       <T i18nKey="privacy_policy_content_text210" />
     </Title>
-    <Paragraph>
-      <T i18nKey="privacy_policy_content_text132" />
-    </Paragraph>
 
     <ListNumber>
       <ListItem>

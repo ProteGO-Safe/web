@@ -1,16 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Layout, T } from '../../components';
-import { HistoryNotificationsEmpty, HistoryNotificationsItem } from './components';
-import * as Styled from './HistoryNotifications.styled';
+import { HistoryActivitiesEmpty, HistoryActivitiesItem } from './components';
+import * as Styled from './HistoryActivities.styled';
 
-const HistoryNotifications = ({ handleMarkAllRead, isMarkAllReadVisible, items }) => {
-  const renderNotifications = items.map(item => {
-    const { description, id, isRead, riskChecks, riskLevel, timestamp, title, type } = item;
+const HistoryActivities = ({ handleMarkAllRead, isMarkAllReadVisible, items }) => {
+  const renderedItems = items.map(item => {
+    const { content, id, isRead, riskChecks, riskLevel, timestamp, title, type } = item;
 
     return (
-      <HistoryNotificationsItem
-        content={description}
+      <HistoryActivitiesItem
+        content={content}
+        id={id}
         isRead={isRead}
         key={id}
         riskChecks={riskChecks}
@@ -30,8 +31,8 @@ const HistoryNotifications = ({ handleMarkAllRead, isMarkAllReadVisible, items }
         </Styled.Title>
       </Styled.Container>
 
-      {renderNotifications.length > 0 ? (
-        <Styled.HistoryNotifications>
+      {renderedItems.length > 0 ? (
+        <Styled.HistoryActivities>
           <Styled.Container noMargin>
             {isMarkAllReadVisible && (
               <Styled.MarkAllRead onClick={handleMarkAllRead}>
@@ -39,27 +40,27 @@ const HistoryNotifications = ({ handleMarkAllRead, isMarkAllReadVisible, items }
               </Styled.MarkAllRead>
             )}
 
-            {renderNotifications}
+            {renderedItems}
           </Styled.Container>
-        </Styled.HistoryNotifications>
+        </Styled.HistoryActivities>
       ) : (
         <Styled.Container noMargin>
-          <HistoryNotificationsEmpty />
+          <HistoryActivitiesEmpty />
         </Styled.Container>
       )}
     </Layout>
   );
 };
 
-HistoryNotifications.defaultProps = {
-  renderNotifications: []
+HistoryActivities.defaultProps = {
+  items: []
 };
 
-HistoryNotifications.propTypes = {
+HistoryActivities.propTypes = {
   handleMarkAllRead: PropTypes.func.isRequired,
   isMarkAllReadVisible: PropTypes.bool.isRequired,
   // eslint-disable-next-line react/forbid-prop-types
-  renderNotifications: PropTypes.array
+  items: PropTypes.array
 };
 
-export default HistoryNotifications;
+export default HistoryActivities;
