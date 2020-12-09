@@ -5,7 +5,7 @@ export const Container = styled.div`
   left: 0;
   overflow-x: hidden;
   transition: all 0.16s linear;
-  background-image: linear-gradient(#0052a5 50px, #ffffff 50px);
+  background-image: linear-gradient(#0052a5 52px, #ffffff 52px);
   padding-top: constant(safe-area-inset-top);
   padding-top: env(safe-area-inset-top);
 

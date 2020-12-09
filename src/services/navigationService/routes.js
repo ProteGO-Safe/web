@@ -10,7 +10,7 @@ export const Routes = {
   ImportantInformation: 'importantInformation',
   LabTest: 'labTest',
   LabTestResult: 'labTestResult',
-  HistoryNotifications: 'historyNotifications',
+  HistoryActivities: 'historyActivities',
   PrivacyPolicy: 'privacyPolicy',
   PrivacyPolicyDetails: 'privacyPolicyDetails',
   Regulations: 'regulations',

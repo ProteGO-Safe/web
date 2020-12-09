@@ -2,7 +2,6 @@ import * as types from '../../types/nativeData';
 
 const INITIAL_STATE = {
   riskLevel: undefined,
-  notification: undefined,
   servicesStatus: {},
   servicesStatusSetByNative: false,
   version: undefined,
@@ -42,25 +41,6 @@ const resolvePinUnsuccessfulAttempts = (state, result) => {
 
 const nativeBridgeReducer = (state = INITIAL_STATE, action) => {
   switch (action.type) {
-    case types.NATIVE_DATA_FETCH_NOTIFICATION_SUCCESS:
-      return (() => {
-        const {
-          notification: { title, content, status }
-        } = action;
-        return {
-          ...state,
-          notification: {
-            title,
-            content,
-            status
-          }
-        };
-      })();
-    case types.NATIVE_DATA_HIDE_NOTIFICATION_SUCCESS:
-      return {
-        ...state,
-        notification: undefined
-      };
     case types.NATIVE_DATA_FETCH_SERVICES_STATUS_SUCCESS:
       return setServicesStatusSuccess(state, action, false);
     case types.NATIVE_DATA_SET_SERVICES_STATUS_SUCCESS:

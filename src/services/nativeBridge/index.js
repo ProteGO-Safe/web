@@ -79,8 +79,8 @@ const callGetBridgeData = async (dataType, data = undefined) => {
   return '';
 };
 
-const getNotification = async () => {
-  return callGetBridgeData(DATA_TYPE.NOTIFICATION);
+const listActivities = async () => {
+  return callGetBridgeData(DATA_TYPE.LIST_ACTIVITIES);
 };
 
 const getServicesStatus = async () => {
@@ -154,6 +154,10 @@ const turnOff = async () => {
   await callNativeFunction('setBridgeData', DATA_TYPE.TURN_OFF, {
     turnOff: true
   });
+};
+
+const confirmActivities = data => {
+  callNativeFunction('setBridgeData', DATA_TYPE.CONFIRM_ACTIVITIES, data);
 };
 
 const uploadLabTestPin = async pin => {
@@ -269,6 +273,7 @@ window.bridgeDataResponse = receiveNativeResponse;
 export default {
   clearAllData,
   changeLanguage,
+  confirmActivities,
   setDiagnosisTimestamp,
   getExposureNotificationStatistics,
   getDistrictsStatus,
@@ -278,9 +283,9 @@ export default {
   getLabTestSubscription,
   getLanguage,
   getNativeVersion,
-  getNotification,
   getServicesStatus,
   getSubscribedDistricts,
+  listActivities,
   rateApp,
   revokeEnStatus,
   setDistrictSubscription,
