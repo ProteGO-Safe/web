@@ -93,7 +93,7 @@ export const Description = styled.div`
     `}
 `;
 
-export const HistoryNotificationsItem = styled.div`
+export const HistoryActivitiesItem = styled.div`
   position: relative;
   display: flex;
   flex-flow: wrap row;

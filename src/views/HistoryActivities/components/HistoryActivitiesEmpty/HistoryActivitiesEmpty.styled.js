@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { FontWeight } from '../../../../theme/fonts';
 import { Color } from '../../../../theme/colors';
 
-export const HistoryNotificationsEmpty = styled.div`
+export const HistoryActivitiesEmpty = styled.div`
   width: 100%;
 `;
 

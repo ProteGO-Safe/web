@@ -11,7 +11,6 @@ import { FirstDiagnosisAsking, Home, NotSupported, Onboarding, Registration, Sta
 import { Menu } from '../index';
 import { fetchNativeVersion } from '../../store/actions/nativeData';
 import useMenuContext from '../../hooks/useMenuContext';
-import { Notification } from '../Notification';
 import useFilledDiagnosis from '../../hooks/useFilledDiagnosis';
 import {
   fetchFontScale,
@@ -21,7 +20,6 @@ import {
 import { isLocalPWA, isWebView } from '../../utils/native';
 import useMigration from '../../hooks/useMigration';
 import useCheckLanguage from '../../hooks/useCheckLanguage';
-import useNotification from '../../hooks/useNotification';
 import useModalContext from '../../hooks/useModalContext';
 import useClearData from '../../hooks/useClearData';
 import * as Styled from './App.styled';
@@ -41,7 +39,6 @@ function App() {
     firstDiagnosisFinished,
     registrationFinished
   } = useSelector(state => state.app);
-  const { notification } = useNotification();
   const { inProgress, visible: menuIsVisible } = useMenuContext();
   const { hasFilledAnyDiagnosis } = useFilledDiagnosis();
   useMigration();
@@ -111,7 +108,6 @@ function App() {
     <Styled.Container className={`${className} ${modal ? 'open-modal' : ''}`}>
       <CurrentComponent />
       <Menu />
-      {notification && <Notification />}
     </Styled.Container>
   );
 }

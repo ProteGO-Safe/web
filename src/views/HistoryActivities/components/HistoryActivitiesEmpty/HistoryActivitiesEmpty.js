@@ -1,11 +1,11 @@
 import React from 'react';
-import * as Styled from './HistoryNotificationsEmpty.styled';
+import * as Styled from './HistoryActivitiesEmpty.styled';
 
-import { ReactComponent as Image } from '../../../../assets/img/icons/history-notifications-empty.svg';
+import { ReactComponent as Image } from '../../../../assets/img/icons/history-activities-empty.svg';
 import { T } from '../../../../components/T';
 
-const HistoryNotificationsEmpty = () => (
-  <Styled.HistoryNotificationsEmpty>
+const HistoryActivitiesEmpty = () => (
+  <Styled.HistoryActivitiesEmpty>
     <Styled.ImageWrapper>
       <Image />
     </Styled.ImageWrapper>
@@ -16,7 +16,7 @@ const HistoryNotificationsEmpty = () => (
     <Styled.Text>
       <T i18nKey="history_notifications_text_4" />
     </Styled.Text>
-  </Styled.HistoryNotificationsEmpty>
+  </Styled.HistoryActivitiesEmpty>
 );
 
-export default HistoryNotificationsEmpty;
+export default HistoryActivitiesEmpty;

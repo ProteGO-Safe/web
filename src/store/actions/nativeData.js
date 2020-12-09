@@ -11,21 +11,6 @@ export function saveInfoAboutFilledDiagnosis() {
   };
 }
 
-export const fetchNotificationSuccess = notification => ({
-  notification,
-  type: types.NATIVE_DATA_FETCH_NOTIFICATION_SUCCESS
-});
-
-export function fetchNotification() {
-  return dispatch => {
-    nativeBridge.getNotification().then(notification => {
-      if (notification) {
-        dispatch(fetchNotificationSuccess(notification));
-      }
-    });
-  };
-}
-
 export const fetchServicesStatusSuccess = servicesStatus => ({
   servicesStatus,
   type: types.NATIVE_DATA_FETCH_SERVICES_STATUS_SUCCESS
@@ -54,16 +39,6 @@ export function fetchExposureNotificationStatistics() {
         dispatch(enStatusReceived(riskLevel));
       }
     });
-  };
-}
-
-export const hideNotificationSuccess = () => ({
-  type: types.NATIVE_DATA_HIDE_NOTIFICATION_SUCCESS
-});
-
-export function hideNotification() {
-  return dispatch => {
-    dispatch(hideNotificationSuccess());
   };
 }
 

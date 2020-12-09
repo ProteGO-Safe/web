@@ -29,7 +29,6 @@ export { MenuButton } from './MenuButton';
 export { Modal } from './Modal';
 export { NavigationBackGuard } from './NavigationBackGuard';
 export { NavLink } from './NavLink';
-export { Notification } from './Notification';
 export { OnboardingContent } from './OnboardingContent';
 export { Option } from './Option';
 export { PhoneNumber } from './PhoneNumber';
