@@ -36,7 +36,7 @@ const ImportantInfo = ({ items }) => {
   });
 
   return (
-    <Layout isNavigation noMargin noPadding>
+    <Layout isNavigation noMargin noPadding hideBackButton>
       <Styled.Container change={changeView}>
         {changeView ? (
           <Scrollbar scrollbarWidth={6} style={stylesScrollbar}>

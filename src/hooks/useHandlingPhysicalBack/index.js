@@ -6,7 +6,7 @@ import useNavigation from '../useNavigation';
 import useSkippingFirstUpdate from '../useSkippingFirstUpdate';
 
 const useHandlingPhysicalBack = backClick => {
-  const { route } = useNavigation();
+  const { route, goTo } = useNavigation();
   const backPressed = useSelector(backPressedMarker);
 
   useSkippingFirstUpdate(() => {
@@ -14,6 +14,11 @@ const useHandlingPhysicalBack = backClick => {
       nativeBridge.turnOff();
       return;
     }
+    if (route === Routes.ImportantInformation) {
+      goTo(Routes.Home);
+      return;
+    }
+
     backClick();
     // eslint-disable-next-line
   }, [backPressed])
