@@ -2,6 +2,7 @@ export { AddTranslation } from './AddTranslation';
 export { CurrentRestrictions } from './CurrentRestrictions';
 export { Daily } from './Daily';
 export { DailyData } from './DailyData';
+export { Dashboard } from './Dashboard';
 export { Diagnosis } from './Diagnosis';
 export { FirstDiagnosisAsking } from './FirstDiagnosisAsking';
 export { FollowDistricts } from './FollowDistricts';

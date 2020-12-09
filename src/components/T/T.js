@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { withTranslation } from 'react-i18next';
 import reactStringReplace from 'react-string-replace';
-import { UrlCovid, PhoneNumber, Url, NavLink, Email } from '../index';
+import { Color, Email, NavLink, PhoneNumber, Url, UrlCovid } from '../index';
 import { PrivacyPolicyModal, RegulationsModal } from '../Modals';
 import { Routes } from '../../services/navigationService/routes';
 
@@ -41,6 +41,15 @@ const T = ({ i18nKey, t, variables }) => {
       <NavLink key={match + i} className="trans-route" to={Routes[path]}>
         {match.split('|')[0]}
       </NavLink>
+    );
+  });
+  translated = reactStringReplace(translated, /\[COLOR\](.*?)\[\/COLOR\]/g, (match, i) => {
+    const color = match.split('|')[1];
+
+    return (
+      <Color key={match + i} color={color}>
+        {match.split('|')[0]}
+      </Color>
     );
   });
   return translated;
