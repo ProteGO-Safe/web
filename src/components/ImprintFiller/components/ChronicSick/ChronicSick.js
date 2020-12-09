@@ -12,7 +12,7 @@ import { Button, Checkbox, Radio, TextField, T } from '../../../index';
 
 import { Actions, Description, InputWrapper, Label, SubContainer, Title, Wrapper } from '../../ImprintFiller.styled';
 
-const ChronicSick = () => {
+const ChronicSick = ({ handelGoToNextStep }) => {
   const { handleChange, setFieldValue, values } = useFormikContext();
 
   const handleSelectChronicSick = () => {
@@ -33,7 +33,7 @@ const ChronicSick = () => {
 
   const goToNextStep = () => {
     if (isAnyFieldSelected()) {
-      setFieldValue('step', 3);
+      handelGoToNextStep();
     }
   };
 

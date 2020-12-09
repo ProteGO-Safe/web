@@ -16,7 +16,7 @@ import {
 import { Actions, Label, Title, Wrapper } from '../../ImprintFiller.styled';
 import * as Styled from './Smoke.styled';
 
-const Smoke = ({ t }) => {
+const Smoke = ({ handelGoToNextStep, t }) => {
   const { setFieldValue, values } = useFormikContext();
 
   const options = [
@@ -85,7 +85,7 @@ const Smoke = ({ t }) => {
       <Actions>
         <Button
           disabled={!values[FIELD_SMOKE]}
-          onClick={() => setFieldValue('step', 5)}
+          onClick={handelGoToNextStep}
           label={<T i18nKey="button_next" />}
         />
       </Actions>
