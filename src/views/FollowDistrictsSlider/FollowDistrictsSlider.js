@@ -11,7 +11,7 @@ const FollowDistrictsSlider = ({ items }) => {
   const renderItems = items.map(({ id, name, state }) => <StatusItem id={id} key={id} name={name} status={state} />);
 
   return (
-    <Styled.FollowDistrictsSlider padding={items.length === 0}>
+    <Styled.FollowDistrictsSlider>
       {items.length > 0 ? (
         <>
           <Styled.Title>
