@@ -10,10 +10,8 @@ const ExposureNotificationImage = ({ active, color }) => (
 );
 
 ExposureNotificationImage.propTypes = {
-  // eslint-disable-next-line react/require-default-props
-  active: PropTypes.bool,
-  // eslint-disable-next-line react/require-default-props
-  color: PropTypes.string
+  active: PropTypes.bool.isRequired,
+  color: PropTypes.string.isRequired
 };
 
 export default ExposureNotificationImage;

@@ -4,7 +4,7 @@ import * as Styled from './Dashboard.styled';
 
 const Dashboard = () => (
   <Styled.Dashboard>
-    <ExposureNotification enableServices={false} />
+    <ExposureNotification isEnActive={false} />
   </Styled.Dashboard>
 );
 
