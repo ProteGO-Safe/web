@@ -16,7 +16,7 @@ const ExposureNotificationContainer = ({ isEnActive }) => {
       active={isEnActive}
       color={color}
       handleDisable={() => null}
-      handleEnable={Routes.HowItWorks}
+      pathToEnable={Routes.HowItWorks}
       handleToggleButton={handleOpen}
       keys={<T i18nKey="exposure_notification_text_4" variables={{ keys: 8000 }} />}
       open={open}
