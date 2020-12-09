@@ -6,7 +6,17 @@ import * as Styled from './ExposureNotification.styled';
 
 import { ReactComponent as Arrow } from '../../../../assets/img/icons/angle-right-blue.svg';
 
-const ExposureNotification = ({ active, color, handleDisable, handleToggleButton, keys, open, pathToEnable, t }) => {
+const ExposureNotification = ({
+  active,
+  color,
+  handleDisable,
+  handleToggleButton,
+  keys,
+  open,
+  pathToEnable,
+  t,
+  updateKeys
+}) => {
   const text = active ? t('exposure_notification_text_2') : t('exposure_notification_text_3');
 
   return (
@@ -19,7 +29,13 @@ const ExposureNotification = ({ active, color, handleDisable, handleToggleButton
         {active ? (
           <>
             <Styled.Description open={open}>
-              <Styled.Keys>{keys}</Styled.Keys>
+              <Styled.Keys>
+                <T i18nKey="exposure_notification_text_4" variables={{ keys }} />
+              </Styled.Keys>
+
+              <Styled.Keys>
+                <T i18nKey="exposure_notification_text_10" variables={{ date: updateKeys }} />
+              </Styled.Keys>
 
               <NavLink to={pathToEnable}>
                 <Styled.KeysButton>
@@ -54,9 +70,9 @@ ExposureNotification.propTypes = {
   color: PropTypes.string.isRequired,
   handleDisable: PropTypes.func.isRequired,
   handleToggleButton: PropTypes.func.isRequired,
-  keys: PropTypes.oneOfType([PropTypes.object, PropTypes.string]).isRequired,
+  keys: PropTypes.number.isRequired,
   open: PropTypes.bool.isRequired,
-  pathToEnable: PropTypes.func.isRequired
+  pathToEnable: PropTypes.string.isRequired
 };
 
 export default withTranslation()(ExposureNotification);

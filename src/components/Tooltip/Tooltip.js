@@ -8,8 +8,7 @@ import { TYPE } from '../Modal/Modal.helpers';
 const Tooltip = ({ content, title, sticky }) => {
   const { openModal } = useModalContext();
 
-  const handleOpenModal = e => {
-    e.preventDefault();
+  const handleOpenModal = () => {
     openModal({
       value: <TooltipContent content={content} />,
       modalType: TYPE.TOOLTIP,
