@@ -1,5 +1,7 @@
 import { lte } from 'ramda';
 
+const LOCAL_PL = 'pl-PL';
+
 export const getTimestamp = () => new Date().getTime() / 1000;
 
 export const someTimeWasUp = (timestamps = []) => {
@@ -22,7 +24,7 @@ export const getFormattedDateWithoutTime = timestamp =>
 
 // 15:35
 export const getFormattedTime = timestamp => {
-  const fullDate = getDate(timestamp).toLocaleString();
+  const fullDate = getDate(timestamp).toLocaleString(LOCAL_PL);
   const time = fullDate.split(', ')[1];
   const hour = time.split(':')[0];
   const minutes = time.split(':')[1];
@@ -31,10 +33,13 @@ export const getFormattedTime = timestamp => {
 
 // 27.10.2020, 15:35
 export const getFormattedDate = timestamp => {
-  const fullDate = getDate(timestamp).toLocaleString();
+  const fullDate = getDate(timestamp).toLocaleString(LOCAL_PL);
   const date = fullDate.split(', ')[0];
-  const year = date.split('/')[0];
-  const month = date.split('/')[1];
-  const day = date.split('/')[2];
-  return `${day}.${month}.${year}, ${getFormattedTime(timestamp)}`;
+  return `${date}, ${getFormattedTime(timestamp)}`;
+};
+
+export const getYear = timestamp => {
+  const fullDate = getDate(timestamp).toLocaleString(LOCAL_PL);
+  const date = fullDate.split(', ')[0];
+  return date.split('.')[2];
 };

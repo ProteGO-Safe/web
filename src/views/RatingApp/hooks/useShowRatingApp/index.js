@@ -1,14 +1,19 @@
 import { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
-import { getApplicationLiked, getShowRatingTimestamps } from '../../../../store/selectors/app';
-import { someTimeWasUp } from '../../../../utils/date';
+import {
+  getApplicationLiked,
+  getShowedRatingTimestamps,
+  getShowRatingTimestamps
+} from '../../../../store/selectors/app';
+import { getTimestamp, getYear, someTimeWasUp } from '../../../../utils/date';
 import useLabTestSignUp from '../useLabTestSignUp';
 import useHighEnOccur from '../useHighEnOccur';
 import useFirstRunTime from '../useFirstRunTime';
 
 const useShowRatingApp = () => {
   const isApplicationLiked = useSelector(getApplicationLiked);
-  const showRatingTimestamps = useSelector(getShowRatingTimestamps);
+  const showedRatingTimestamps = useSelector(getShowRatingTimestamps);
+  const showRatingTimestamps = useSelector(getShowedRatingTimestamps);
 
   const [showRatingApp, setShowRatingApp] = useState(false);
 
@@ -23,7 +28,12 @@ const useShowRatingApp = () => {
     // eslint-disable-next-line
   }, [showRatingTimestamps]);
 
-  if (isApplicationLiked) {
+  const wasShowedThreeTimesOnYear = () => {
+    const currentYear = getYear(getTimestamp());
+    return showedRatingTimestamps.map(getYear).filter(year => year === currentYear).length > 3;
+  };
+
+  if (isApplicationLiked || wasShowedThreeTimesOnYear()) {
     return false;
   }
 

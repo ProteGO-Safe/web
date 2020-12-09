@@ -24,6 +24,7 @@ const INITIAL_STATE = {
   rating: {
     applicationLiked: undefined,
     showingTimestamps: [],
+    showedTimestamps: [],
     showed: undefined
   },
   firstRunTime: undefined
@@ -190,9 +191,13 @@ const appReducer = (state = INITIAL_STATE, action) => {
     }
     case types.RATE_APPLICATION_SHOWED: {
       const { rating = {} } = state;
+      const { showedTimestamps = [] } = rating;
+      const {
+        data: { timestamp }
+      } = action;
       return {
         ...state,
-        rating: { ...rating, showed: true, showingTimestamps: [] }
+        rating: { ...rating, showed: true, showingTimestamps: [], showedTimestamps: [...showedTimestamps, timestamp] }
       };
     }
     default:

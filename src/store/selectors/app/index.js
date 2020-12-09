@@ -10,3 +10,4 @@ export const getWarningInEuropeTermState = state => state.app.warningInEuropeTer
 export const getFirstRunTime = state => state.app.firstRunTime;
 export const getApplicationLiked = state => state.app.rating && state.app.rating.applicationLiked;
 export const getShowRatingTimestamps = state => state.app.rating && state.app.rating.showingTimestamps;
+export const getShowedRatingTimestamps = state => (state.app.rating && state.app.rating.showedTimestamps) || [];
