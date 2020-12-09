@@ -15,7 +15,7 @@ export const ModalFalseFooter = styled.div`
   }
 `;
 
-export const UrlLink = styled.span`
+export const UrlLink = styled.a`
   display: block;
   width: 100%;
   *:first-child {

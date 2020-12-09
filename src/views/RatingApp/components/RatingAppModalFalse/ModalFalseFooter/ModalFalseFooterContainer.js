@@ -10,8 +10,6 @@ const ModalFalseFooterContainer = () => {
   const { goTo } = useNavigation();
   const { onClose } = useModalContext();
 
-  const type = isPolish ? 'link' : 'route';
-
   const onClickSkip = () => {
     onClose();
   };
@@ -19,13 +17,19 @@ const ModalFalseFooterContainer = () => {
   const onClickGiveFeedback = () => {
     onClose();
     if (isPolish) {
-      window.open('https://www.gov.pl/web/protegosafe/pytania-i-odpowiedzi', '_blank');
-    } else {
-      goTo(Routes.ReportBug);
+      return;
     }
+    goTo(Routes.ReportBug);
   };
 
-  return <ModalFalseFooter type={type} handleClickTrue={onClickGiveFeedback} handleClickFalse={onClickSkip} />;
+  return (
+    <ModalFalseFooter
+      isPolish={isPolish}
+      handleClickTrue={onClickGiveFeedback}
+      handleClickFalse={onClickSkip}
+      path="https://www.gov.pl/web/protegosafe/pytania-i-odpowiedzi"
+    />
+  );
 };
 
 export default ModalFalseFooterContainer;

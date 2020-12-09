@@ -2,29 +2,25 @@ import React from 'react';
 import { Button, T } from '../../../../../components';
 import * as Styled from './ModalFalseFooter.styled';
 
-const ModalFalseFooter = ({ handleClickFalse, handleClickTrue, type }) => {
+const ModalFalseFooter = ({ handleClickFalse, handleClickTrue, isPolish, path }) => {
   const feedBack = (() => {
-    switch (type) {
-      case 'route':
-        return (
-          <Button onClick={handleClickTrue}>
+    if (isPolish) {
+      return (
+        <Styled.UrlLink href={path} target="_blank" onClick={handleClickTrue}>
+          <Button onClick={() => null}>
             <T i18nKey="rating_app_modal_text_5" />
           </Button>
-        );
-      case 'link':
-        return (
-          <Styled.UrlLink onClick={handleClickTrue}>
-            <Button onClick={() => null}>
-              <T i18nKey="rating_app_modal_text_5" />
-            </Button>
-            <Styled.Small>
-              <T i18nKey="rating_app_modal_text_6" />
-            </Styled.Small>
-          </Styled.UrlLink>
-        );
-      default:
-        return null;
+          <Styled.Small>
+            <T i18nKey="rating_app_modal_text_6" />
+          </Styled.Small>
+        </Styled.UrlLink>
+      );
     }
+    return (
+      <Button onClick={handleClickTrue}>
+        <T i18nKey="rating_app_modal_text_5" />
+      </Button>
+    );
   })();
 
   return (
