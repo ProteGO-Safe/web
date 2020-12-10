@@ -6,7 +6,7 @@ import { FIELD_MANUAL_COVID } from '../../../../constants';
 import { Actions, Title, Label } from '../../ImprintFiller.styled';
 import * as Styled from './ManualCovidState.styled';
 
-const ManualCovidState = () => {
+const ManualCovidState = ({ handelGoToNextStep }) => {
   const { setFieldValue, values } = useFormikContext();
 
   const yesManualCovid = values[FIELD_MANUAL_COVID] === true;
@@ -61,7 +61,7 @@ const ManualCovidState = () => {
       <Actions>
         <Button
           disabled={values[FIELD_MANUAL_COVID] === undefined}
-          onClick={() => setFieldValue('step', 6)}
+          onClick={handelGoToNextStep}
           label={<T i18nKey="button_next" />}
         />
       </Actions>

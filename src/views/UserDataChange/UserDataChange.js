@@ -58,7 +58,6 @@ const UserDataChange = () => {
     [constants.FIELD_SMOKE_NUMBER]: smokeNumber,
     [constants.FIELD_IS_CHRONIC_SICK]: isChronicSick,
     [constants.FIELD_MANUAL_COVID]: true,
-    step: 1,
     ...filledChronicsSicks
   };
 

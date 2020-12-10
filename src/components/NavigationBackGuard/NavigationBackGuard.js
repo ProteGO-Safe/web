@@ -4,7 +4,7 @@ import { FieldSet } from '../FieldSet';
 import { Button, T } from '../index';
 import { BUTTON_TYPES } from '../Button/Button.constants';
 
-const NavigationBackGuard = ({ description, handleCancel, handleConfirm, t, title }) => {
+const NavigationBackGuard = ({ description, handleCancel, handleConfirm, title }) => {
   return (
     <Styled.Wrapper>
       <Styled.Background />

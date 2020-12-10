@@ -18,7 +18,7 @@ import { Button, Radio, T } from '../../../index';
 
 import { Actions, Label, Title } from '../../ImprintFiller.styled';
 
-const BloodGroup = () => {
+const BloodGroup = ({ handelGoToNextStep }) => {
   const { setFieldValue, values } = useFormikContext();
 
   const renderRadios = [
@@ -77,7 +77,7 @@ const BloodGroup = () => {
       <Actions>
         <Button
           disabled={!values[FIELD_BLOOD_GROUP]}
-          onClick={() => setFieldValue('step', 4)}
+          onClick={handelGoToNextStep}
           label={<T i18nKey="button_next" />}
         />
       </Actions>

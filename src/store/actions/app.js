@@ -2,6 +2,7 @@ import moment from 'moment';
 import * as types from '../types/app';
 import { changeNativeLanguage, resetSourceSetServicesStatus } from './nativeData';
 import nativeBridge from '../../services/nativeBridge';
+import { getTimestamp } from '../../utils/date';
 
 export const onboardingFinished = () => ({
   type: types.ONBOARDING_FINISHED
@@ -189,6 +190,7 @@ export const setShowingRateApplication = timestamp => {
   };
 };
 
-export const rateApplicationShowed = () => ({
-  type: types.RATE_APPLICATION_SHOWED
-});
+export const rateApplicationShowed = () => {
+  const timestamp = getTimestamp();
+  return { data: { timestamp }, type: types.RATE_APPLICATION_SHOWED };
+};

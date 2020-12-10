@@ -1,7 +1,7 @@
 import React from 'react';
 import { useFormikContext } from 'formik';
 import { withTranslation } from 'react-i18next';
-import { Button, Stepper, Layout, T } from '../../../index';
+import { Button, T } from '../../../index';
 import Imprint from '../../../Imprint/Imprint';
 import {
   chronicSickValues,
@@ -10,15 +10,13 @@ import {
   FIELD_SMOKE,
   FIELD_SMOKE_NUMBER
 } from '../../../../constants';
-import { NUMBER_OF_STEPS } from '../../ImprintFiller.constants';
 import { Color } from '../../../../theme/colors';
 import { SmallText } from '../../../../theme/typography';
 import { FontWeight } from '../../../../theme/fonts';
 import { Actions, Title } from '../../ImprintFiller.styled';
 
-const Summary = ({ t }) => {
-  const { handleSubmit, resetForm, values } = useFormikContext();
-  const { step } = values;
+const Summary = ({ t, handleResetForm }) => {
+  const { handleSubmit, values } = useFormikContext();
 
   const chronicSicks = chronicSickValues
     .filter(sick => values[sick.field])
@@ -27,8 +25,7 @@ const Summary = ({ t }) => {
     });
 
   return (
-    <Layout hideBackButton isGovFooter>
-      <Stepper currentStep={step} numberOfSteps={NUMBER_OF_STEPS} />
+    <>
       <Title>
         <T i18nKey="imprint_filler_summary_text1" />
       </Title>
@@ -47,13 +44,13 @@ const Summary = ({ t }) => {
             <T i18nKey="imprint_filler_summary_text2" />
           </SmallText>
         </Button>
-        <Button onClick={resetForm} type="outline">
+        <Button onClick={handleResetForm} type="outline">
           <SmallText color={Color.primary} fontWeight={FontWeight.Bold}>
             <T i18nKey="imprint_filler_summary_text3" />
           </SmallText>
         </Button>
       </Actions>
-    </Layout>
+    </>
   );
 };
 
