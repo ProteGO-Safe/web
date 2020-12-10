@@ -8,7 +8,7 @@ export const ExposureNotification = styled.div`
   flex-flow: wrap row;
   align-items: center;
   width: 100%;
-  box-shadow: 6px 6px 10px 0 ${Color.primaryLighter};
+  box-shadow: 0 6px 10px 0 ${Color.primaryLighter};
   overflow: hidden;
 `;
 

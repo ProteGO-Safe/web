@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { T } from '../../../../components';
 import { Color } from '../../../../theme/colors';
 import { Routes } from '../../../../services/navigationService/routes';
 import ExposureNotification from './ExposureNotification';
@@ -18,8 +17,9 @@ const ExposureNotificationContainer = ({ isEnActive }) => {
       handleDisable={() => null}
       pathToEnable={Routes.HowItWorks}
       handleToggleButton={handleOpen}
-      keys={<T i18nKey="exposure_notification_text_4" variables={{ keys: 8000 }} />}
+      keys={8000}
       open={open}
+      updateKeys="05.12.2020, 13:44"
     />
   );
 };
