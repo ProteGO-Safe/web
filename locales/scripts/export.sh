@@ -16,6 +16,6 @@ result=$(curl -X POST https://api.poeditor.com/v2/projects/export \
      -d type="key_value_json" \
      -d order="terms" | awk 'match($0,/\"url\":\"(.+)\"/,a){print a[1]}')
 
-url=$(echo $result | tr -d \\)
+url=$(echo $result | tr -d '\\')
 
 curl $url --output "`dirname "$0"`/../$language.json"
