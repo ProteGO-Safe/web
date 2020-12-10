@@ -21,7 +21,7 @@
     background-color: $white;
     box-shadow: -3px -3px 6px #00000029;
     transition: all 0.2s linear;
-    z-index: 99;
+    z-index: 997;
 
     @media screen and (min-width: 556px) {
       width: 320px;
@@ -54,9 +54,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    min-height: 52px;
+    height: calc(52px + env(safe-area-inset-top));
     padding: 0 24px;
-    padding-top: constant(safe-area-inset-top);
     padding-top: env(safe-area-inset-top);
     background-color: $blue_2;
 

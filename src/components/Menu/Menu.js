@@ -1,9 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import LogoSafeSafe from '../../assets/img/logo/stopcovid_protegosafe_logo_sygnet.svg';
 import useMenuContext from '../../hooks/useMenuContext';
 import { NavLink, VersionApp, T } from '../index';
 import './Menu.scss';
+
+import { ReactComponent as LogoSafeSafe } from '../../assets/img/logo/stopcovid_protegosafe_logo_sygnet.svg';
 
 const Menu = ({ items }) => {
   const { visible, startHiding, inProgress } = useMenuContext();
@@ -41,7 +42,7 @@ const Menu = ({ items }) => {
       {visible && <div className="menu__overlay" onClick={handleClose} />}
       <div className={`menu menu__wrapper ${isVisible} ${isHidden}`}>
         <div className="menu__user">
-          <img src={LogoSafeSafe} alt="STOP COVID - ProteGO Safe" />
+          <LogoSafeSafe />
         </div>
         <ul className="menu__items">{renderItems}</ul>
         <VersionApp />
