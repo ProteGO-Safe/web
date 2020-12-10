@@ -6,16 +6,12 @@ import useNavigation from '../useNavigation';
 import useSkippingFirstUpdate from '../useSkippingFirstUpdate';
 
 const useHandlingPhysicalBack = backClick => {
-  const { route, goTo } = useNavigation();
+  const { route } = useNavigation();
   const backPressed = useSelector(backPressedMarker);
 
   useSkippingFirstUpdate(() => {
     if (route === Routes.Home) {
       nativeBridge.turnOff();
-      return;
-    }
-    if (route === Routes.ImportantInformation) {
-      goTo(Routes.Home);
       return;
     }
 

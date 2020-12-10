@@ -20,3 +20,12 @@ export const goToPreviousRoute = () => {
     dispatch(goToPreviousRouteSuccess());
   };
 };
+
+export const resetNavigationState = () => ({
+  type: types.RESET_NAVIGATION_STATE
+});
+
+export const setNavigationRoot = root => ({
+  data: { root },
+  type: types.SET_NAVIGATION_ROOT
+});

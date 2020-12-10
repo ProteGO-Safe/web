@@ -1,7 +1,7 @@
 window.onBridgeData(
   69,
   JSON.stringify({
-    route: 'importantInformation',
+    name: 'importantInformation',
     params: {
       key: 'value'
     }

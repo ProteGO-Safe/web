@@ -17,6 +17,7 @@ export { InfoNegativeLabTest } from './InfoNegativeLabTest';
 export { LabTest } from './LabTest';
 export { MenuSettings } from './MenuSettings';
 export { NotSupported } from './NotSupported';
+export { Menu } from './Menu';
 export { Onboarding } from './Onboarding';
 export { PrivacyPolicy } from './PrivacyPolicy';
 export { PrivacyPolicyDetails } from './PrivacyPolicyDetails';

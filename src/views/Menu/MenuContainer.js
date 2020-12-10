@@ -3,7 +3,6 @@ import { useDispatch } from 'react-redux';
 import useLabTest from '../../hooks/useLabTest';
 import { fetchLabTestSubscription } from '../../store/actions/nativeData';
 import Menu from './Menu';
-import useMenuContext from '../../hooks/useMenuContext';
 import { Routes } from '../../services/navigationService/routes';
 
 import Icon1 from '../../assets/img/icons/menu-boczne-dziennik_BLUE.svg';
@@ -15,17 +14,12 @@ import Icon6 from '../../assets/img/icons/menu-boczne-kwestionariusz_RED.svg';
 
 const MenuContainer = () => {
   const dispatch = useDispatch();
-  const { visible } = useMenuContext();
   const { isEnHigh, isTorHigh, isSubscriptionInProgress } = useLabTest();
 
   useEffect(() => {
     dispatch(fetchLabTestSubscription());
     // eslint-disable-next-line
   }, []);
-
-  if (!visible) {
-    return null;
-  }
 
   const items = [
     {

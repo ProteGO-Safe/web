@@ -10,9 +10,6 @@ const Header = ({ hideBackButton, hideBell, onBackClick }) => {
   const { goBack, goTo } = useNavigation();
 
   const handleBackClick = useCallback(() => {
-    if (hideBackButton) {
-      return;
-    }
     if (onBackClick) {
       onBackClick();
     } else {

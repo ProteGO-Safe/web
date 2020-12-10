@@ -27,7 +27,7 @@ export { default as Language } from './Language/Language';
 export { default as Layout } from './Layout/Layout';
 export { LineItem } from './LineItem';
 export { Loader } from './Loader';
-export { Menu } from './Menu';
+export { Menu } from '../views/Menu';
 export { MenuButton } from './MenuButton';
 export { Modal } from './Modal';
 export { NavigationBackGuard } from './NavigationBackGuard';

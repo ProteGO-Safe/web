@@ -29,24 +29,6 @@
 
     &.visible {
       right: 0;
-      animation-name: visible;
-      animation-duration: 0.2s;
-    }
-
-    &.hidden {
-      right: -100%;
-      animation-name: hidden;
-      animation-duration: 0.2s;
-    }
-
-    @keyframes visible {
-      0%   {right: -100%;}
-      100% {right: 0;}
-    }
-
-    @keyframes hidden {
-      0%   {right: 0;}
-      100% {right: -100%;}
     }
   }
 

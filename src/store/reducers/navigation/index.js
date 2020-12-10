@@ -1,47 +1,51 @@
-import {
-  ROUTE_CHANGED,
-  GO_TO_PREVIOUS_ROUTE_SUCCESS,
-  BACK_PRESSED
-} from '../../types/navigation';
+import * as type from '../../types/navigation';
 import { Routes } from '../../../services/navigationService/routes';
 
 const INITIAL_STATE = {
   currentRoute: {
-    route: undefined,
-    params: undefined
+    route: Routes.Home,
+    params: undefined,
+    root: Routes.Home
   },
-  backRoute: undefined,
-  previousRoutes: [],
+  currentRoot: Routes.Home,
+  previousRoutes: [], // {route : '', params: '', root: ''}
   backPressedMarker: 0
 };
 
 const resolveCurrentRoute = (state, lastRoutes) => {
-  const { backRoute, currentRoute } = state;
-  return backRoute
-    ? { route: backRoute, params: undefined }
-    : lastRoutes || currentRoute;
+  const { currentRoute } = state;
+  return lastRoutes || currentRoute;
+};
+
+const preparePreviousRoutes = (state, newRoute) => {
+  const { previousRoutes = [], currentRoute } = state;
+  return [...previousRoutes, currentRoute].filter(({ root }) => root !== newRoute);
 };
 
 const navigationReducer = (state = INITIAL_STATE, action) => {
   switch (action.type) {
-    case ROUTE_CHANGED: {
+    case type.ROUTE_CHANGED: {
       const {
         data: { route, params, backRoute }
       } = action;
-      const { currentRoute, previousRoutes = [] } = state;
+      const { currentRoot } = state;
+
+      const previousRoutes = preparePreviousRoutes(state, route);
 
       return {
         ...state,
         currentRoute: {
           route,
-          params
+          params,
+          root: currentRoot
         },
         previousRoutes:
-          route === Routes.Home ? [] : [...previousRoutes, currentRoute],
-        backRoute: route === Routes.Home ? undefined : backRoute
+          route === Routes.Home
+            ? []
+            : [...previousRoutes, ...(backRoute ? [{ route: backRoute, root: Routes.Home }] : [])]
       };
     }
-    case GO_TO_PREVIOUS_ROUTE_SUCCESS: {
+    case type.GO_TO_PREVIOUS_ROUTE_SUCCESS: {
       const { previousRoutes = [] } = state;
       const copyPreviousRoutes = [...previousRoutes];
       const lastRoutes = copyPreviousRoutes.pop();
@@ -50,17 +54,31 @@ const navigationReducer = (state = INITIAL_STATE, action) => {
       return {
         ...state,
         currentRoute,
-        previousRoutes: route === Routes.Home ? [] : copyPreviousRoutes,
-        backRoute: undefined
+        previousRoutes: route === Routes.Home ? [] : copyPreviousRoutes
       };
     }
-    case BACK_PRESSED: {
+    case type.BACK_PRESSED: {
       const { backPressedMarker = 0 } = state;
       return {
         ...state,
         backPressedMarker: backPressedMarker + 1
       };
     }
+    case type.RESET_NAVIGATION_STATE: {
+      return {
+        ...INITIAL_STATE
+      };
+    }
+    case type.SET_NAVIGATION_ROOT: {
+      const {
+        data: { root }
+      } = action;
+      return {
+        ...state,
+        currentRoot: root
+      };
+    }
+
     default:
       return state;
   }
