@@ -1,6 +1,6 @@
 ---
 
-name: Test, build & deploy
+name: Check & Deploy POE
 on:
   schedule:
       - cron: '0 */1 * * *'
