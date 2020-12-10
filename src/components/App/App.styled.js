@@ -16,16 +16,8 @@ export const Container = styled.div`
   &.menu-visible {
     left: -100%;
 
-    header {
-      left: -100%;
-    }
-
     @media screen and (min-width: 375px) {
       left: -320px;
-
-      header {
-        left: -320px;
-      }
     }
   }
 
