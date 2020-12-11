@@ -4,6 +4,7 @@ export { BorderBox } from './BorderBox';
 export { BottomNavigation } from './BottomNavigation';
 export { default as Button } from './Button/Button';
 export { CallHotline } from './CallHotline';
+export { CallToActionHealth } from './CallToActionHealth';
 export { CallToActionPin } from './CallToActionPin';
 export { Checkbox } from './Checkbox';
 export { CircleLoader } from './CircleLoader';

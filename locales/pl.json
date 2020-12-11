@@ -89,6 +89,8 @@
     "call_doctor_text8": "sugestię osobistej wizyty w placówce lub kontaktu ze stacją sanitarno-epidemiologiczną.",
     "call_doctor_text9": "Teleporady medyczne:",
     "call_helpline": "Zadzwoń na infolinię",
+    "call_to_action_health_text_1": "Jak Twoje zdrowie?",
+    "call_to_action_health_text_2": "Zadbaj o swoje bezpieczeństwo i wypełnij test oceny ryzyka",
     "call_to_action_pin_text_1": "Masz COVID-19?",
     "call_to_action_pin_text_2": "[B]Wpisz PIN[/B] i ostrzeż innych",
     "changed_district_info_with_params": "powiat %1$s – strefa %2$s",
