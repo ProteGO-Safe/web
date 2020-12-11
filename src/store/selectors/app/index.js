@@ -9,5 +9,5 @@ export const getInteroperabilityModalShowed = state => state.app.interoperabilit
 export const getWarningInEuropeTermState = state => state.app.warningInEuropeTerm;
 export const getFirstRunTime = state => state.app.firstRunTime;
 export const getApplicationLiked = state => state.app.rating && state.app.rating.applicationLiked;
-export const getShowRatingTimestamps = state => state.app.rating && state.app.rating.showingTimestamps;
+export const getToShowRatingTimestamps = state => (state.app.rating && state.app.rating.toShowTimestamps) || [];
 export const getShowedRatingTimestamps = state => (state.app.rating && state.app.rating.showedTimestamps) || [];

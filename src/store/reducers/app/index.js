@@ -23,7 +23,7 @@ const INITIAL_STATE = {
   warningInEuropeTerm: false,
   rating: {
     applicationLiked: undefined,
-    showingTimestamps: [],
+    toShowTimestamps: [], // {timestamp: '', showed : ''}
     showedTimestamps: [],
     showed: undefined
   },
@@ -180,24 +180,30 @@ const appReducer = (state = INITIAL_STATE, action) => {
     }
     case types.SHOWING_RATE_APPLICATION_SET: {
       const { rating = {} } = state;
-      const { showingTimestamps = [] } = rating;
+      const { toShowTimestamps = [] } = rating;
       const {
         data: { timestamp }
       } = action;
       return {
         ...state,
-        rating: { ...rating, showingTimestamps: [...showingTimestamps, timestamp] }
+        rating: { ...rating, toShowTimestamps: [...toShowTimestamps, { timestamp, showed: false }] }
       };
     }
     case types.RATE_APPLICATION_SHOWED: {
       const { rating = {} } = state;
-      const { showedTimestamps = [] } = rating;
+      const { showedTimestamps = [], toShowTimestamps = [] } = rating;
       const {
-        data: { timestamp }
+        data: { timestamp: showedTimestamp }
       } = action;
+
       return {
         ...state,
-        rating: { ...rating, showed: true, showingTimestamps: [], showedTimestamps: [...showedTimestamps, timestamp] }
+        rating: {
+          ...rating,
+          showed: true,
+          showedTimestamps: [...showedTimestamps, showedTimestamp],
+          toShowTimestamps: toShowTimestamps.map(({ timestamp }) => ({ timestamp, showed: true }))
+        }
       };
     }
     default:

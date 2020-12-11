@@ -170,27 +170,19 @@ export const applicationRated = data => ({
   type: types.APPLICATION_RATED
 });
 
-export const rateApplication = liked => {
-  return dispatch => {
-    dispatch(applicationRated({ liked }));
-    if (liked) {
-      nativeBridge.rateApp();
-    }
-  };
+export const rateApplication = liked => async dispatch => {
+  dispatch(applicationRated({ liked }));
+  if (liked) {
+    nativeBridge.rateApp();
+  }
 };
 
-export const showingRateApplicationSet = data => ({
-  data,
+export const setShowingRateApplication = timestamp => ({
+  data: { timestamp },
   type: types.SHOWING_RATE_APPLICATION_SET
 });
 
-export const setShowingRateApplication = timestamp => {
-  return dispatch => {
-    dispatch(showingRateApplicationSet({ timestamp }));
-  };
-};
-
-export const rateApplicationShowed = () => {
+export const rateApplicationShowed = () => async dispatch => {
   const timestamp = getTimestamp();
-  return { data: { timestamp }, type: types.RATE_APPLICATION_SHOWED };
+  dispatch({ data: { timestamp }, type: types.RATE_APPLICATION_SHOWED });
 };

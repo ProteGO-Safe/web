@@ -2,8 +2,9 @@ import React from 'react';
 import { useDispatch } from 'react-redux';
 import { ifElse } from 'ramda';
 import RatingApp from './RatingApp';
-import { rateApplication, rateApplicationShowed } from '../../store/actions/app';
+import { rateApplication, rateApplicationShowed, setShowingRateApplication } from '../../store/actions/app';
 import useShowRatingApp from './hooks/useShowRatingApp';
+import { addDays, getTimestamp } from '../../utils/date';
 
 const RatingAppContainer = () => {
   const dispatch = useDispatch();
@@ -18,7 +19,10 @@ const RatingAppContainer = () => {
   };
 
   const handleClose = () => {
-    dispatch(rateApplicationShowed());
+    dispatch(rateApplicationShowed()).then(() => {
+      const days30AfterNow = addDays(getTimestamp(), 30);
+      dispatch(setShowingRateApplication(days30AfterNow));
+    });
   };
 
   const renderComponent = () => (

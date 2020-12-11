@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 import {
   getApplicationLiked,
   getShowedRatingTimestamps,
-  getShowRatingTimestamps
+  getToShowRatingTimestamps
 } from '../../../../store/selectors/app';
 import { getTimestamp, getYear, someTimeWasUp } from '../../../../utils/date';
 import useLabTestSignUp from '../useLabTestSignUp';
@@ -12,8 +12,8 @@ import useFirstRunTime from '../useFirstRunTime';
 
 const useShowRatingApp = () => {
   const isApplicationLiked = useSelector(getApplicationLiked);
-  const showedRatingTimestamps = useSelector(getShowRatingTimestamps);
-  const showRatingTimestamps = useSelector(getShowedRatingTimestamps);
+  const toShowTimestamps = useSelector(getToShowRatingTimestamps);
+  const showedRatingTimestamps = useSelector(getShowedRatingTimestamps);
 
   const [showRatingApp, setShowRatingApp] = useState(false);
 
@@ -21,12 +21,14 @@ const useShowRatingApp = () => {
   useHighEnOccur();
   useFirstRunTime();
 
+  const flattedToShowTimestamps = toShowTimestamps.filter(({ showed }) => !showed).map(({ timestamp }) => timestamp);
+
   useEffect(() => {
-    if (someTimeWasUp(showRatingTimestamps)) {
+    if (someTimeWasUp(flattedToShowTimestamps)) {
       setShowRatingApp(true);
     }
     // eslint-disable-next-line
-  }, [showRatingTimestamps]);
+  }, [toShowTimestamps]);
 
   const wasShowedThreeTimesOnYear = () => {
     const currentYear = getYear(getTimestamp());
