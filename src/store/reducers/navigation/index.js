@@ -65,8 +65,10 @@ const navigationReducer = (state = INITIAL_STATE, action) => {
       };
     }
     case type.RESET_NAVIGATION_STATE: {
+      const { backPressedMarker } = state;
       return {
-        ...INITIAL_STATE
+        ...INITIAL_STATE,
+        backPressedMarker
       };
     }
     case type.SET_NAVIGATION_ROOT: {
