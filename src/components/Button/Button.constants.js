@@ -3,5 +3,6 @@ export const BUTTON_TYPES = {
   BORDER: 'border',
   BORDER_ARROW: 'borderArrow',
   DEFAULT: 'default',
-  OUTLINE: 'outline'
+  OUTLINE: 'outline',
+  SMALL_OUTLINE: 'smallOutline'
 };

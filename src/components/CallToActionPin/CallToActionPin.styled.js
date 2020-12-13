@@ -8,7 +8,6 @@ export const CallToActionPin = styled.div`
   align-items: center;
   width: 100%;
   min-height: 120px;
-  margin-bottom: 20px;
   padding: 0 10px;
   border-radius: 4px;
   background-color: ${Color.primaryLighter};

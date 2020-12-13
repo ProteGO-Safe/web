@@ -3,6 +3,8 @@ export { Bell } from './Bell';
 export { BorderBox } from './BorderBox';
 export { BottomNavigation } from './BottomNavigation';
 export { default as Button } from './Button/Button';
+export { ButtonWithDescription } from './ButtonWithDescription';
+export { ButtonWithIcon } from './ButtonWithIcon';
 export { CallHotline } from './CallHotline';
 export { CallToActionHealth } from './CallToActionHealth';
 export { CallToActionPin } from './CallToActionPin';

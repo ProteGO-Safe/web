@@ -1,15 +1,25 @@
 import React from 'react';
-import { ExposureNotification, Statistics } from './components';
+import { CallToActionPin, Layout } from '../../components';
+
+import { ExposureNotification, ResultAnalysis, Statistics } from './components';
 import * as Styled from './Dashboard.styled';
 
 const Dashboard = () => (
-  <Styled.Dashboard>
-    <ExposureNotification isEnActive />
+  <Layout noMargin isNavigation>
+    <Styled.Dashboard>
+      <ExposureNotification isEnActive />
 
-    <Styled.Wrapper>
-      <Statistics />
-    </Styled.Wrapper>
-  </Styled.Dashboard>
+      <ResultAnalysis />
+
+      <Styled.Wrapper padding>
+        <CallToActionPin onClick={() => null} />
+      </Styled.Wrapper>
+
+      <Styled.Wrapper>
+        <Statistics />
+      </Styled.Wrapper>
+    </Styled.Dashboard>
+  </Layout>
 );
 
 export default Dashboard;

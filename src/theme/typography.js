@@ -2,11 +2,9 @@ import styled from 'styled-components';
 import { FontWeight } from './fonts';
 import { Color } from './colors';
 
-const resolveDefaultColor = defaultColor => ({ color }) =>
-  color || defaultColor;
+const resolveDefaultColor = defaultColor => ({ color }) => color || defaultColor;
 
-const resolveDefaultFontWeight = defaultFontWeight => ({ fontWeight }) =>
-  fontWeight || defaultFontWeight;
+const resolveDefaultFontWeight = defaultFontWeight => ({ fontWeight }) => fontWeight || defaultFontWeight;
 
 export const H1 = styled.h1`
   font-size: 42px;
@@ -115,4 +113,8 @@ export const Name = styled.h1`
 export const Link = styled.a`
   color: ${Color.primary};
   font-weight: ${FontWeight.SemiBold};
+`;
+
+export const Strong = styled.strong`
+  font-weight: ${FontWeight.Bold};
 `;

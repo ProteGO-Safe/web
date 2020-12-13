@@ -12,8 +12,8 @@ export const Button = styled.button`
   min-height: 44px;
   padding: 7px 12px;
   font-family: 'Open Sans', sans-serif;
-  line-height: 1.5;
   font-size: 16px;
+  line-height: 1.5;
   font-weight: bold;
   font-stretch: normal;
   font-style: normal;
@@ -42,6 +42,18 @@ export const ButtonDefault = styled(Button)`
 
 export const ButtonOutline = styled(Button)`
   border-width: 2px;
+  border-style: solid;
+  background-color: ${Color.white};
+  border-color: ${Color.primary};
+  color: ${Color.primary};
+`;
+
+export const ButtonSmallOutline = styled(Button)`
+  min-height: 38px;
+  font-size: 14px;
+  line-height: 18px;
+  border-radius: 4px;
+  border-width: 1px;
   border-style: solid;
   background-color: ${Color.white};
   border-color: ${Color.primary};

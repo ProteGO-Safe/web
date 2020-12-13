@@ -43,7 +43,9 @@ const Statistics = ({
         />
       </Styled.Content>
 
-      <ToggleButton active={open} onClick={handleToggleButton} />
+      <Styled.ToggleButtonWrapper>
+        <ToggleButton active={open} onClick={handleToggleButton} />
+      </Styled.ToggleButtonWrapper>
     </Styled.Statistics>
   );
 };

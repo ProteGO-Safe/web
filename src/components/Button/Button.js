@@ -8,6 +8,7 @@ import {
   ButtonBorderArrow,
   ButtonDefault,
   ButtonOutline,
+  ButtonSmallOutline,
   Content,
   Description,
   Label
@@ -44,6 +45,9 @@ const Button = ({ children, description, disabled, icon, label, onClick, type })
     }
     case BUTTON_TYPES.OUTLINE: {
       return renderButton(ButtonOutline);
+    }
+    case BUTTON_TYPES.SMALL_OUTLINE: {
+      return renderButton(ButtonSmallOutline);
     }
     case BUTTON_TYPES.BORDER: {
       return renderButtonBorder(ButtonBorder);
