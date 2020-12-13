@@ -22,6 +22,7 @@ export { Onboarding } from './Onboarding';
 export { PrivacyPolicy } from './PrivacyPolicy';
 export { PrivacyPolicyDetails } from './PrivacyPolicyDetails';
 export { RatingApp } from './RatingApp';
+export { Recommendations } from './Recommendations';
 export { Registration } from './Registration';
 export { Regulations } from './Regulations';
 export { ReportBug } from './ReportBug';

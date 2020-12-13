@@ -7,6 +7,7 @@ export const ButtonWithDescription = styled.div`
   flex-flow: ${({ position }) => (position ? 'wrap column-reverse' : 'wrap column')};
   width: 100%;
   padding: ${({ position }) => (position ? '10px 32px 10px 20px' : '20px 32px 20px 20px')};
+  ${({ padding }) => padding && 'padding-right: 20px!important'};
   border: 1px solid ${({ color }) => color};
   border-radius: 4px;
 `;
@@ -22,7 +23,7 @@ export const Title = styled.span`
   svg {
     position: absolute;
     top: 5px;
-    right: -22px;
+    right: ${({ arrowPosition }) => (arrowPosition ? '-10px' : '-22px')};
     display: block;
     width: 12px;
     height: 12px;
@@ -33,8 +34,13 @@ export const Description = styled.span`
   display: inline-block;
   width: 100%;
   margin: ${({ position }) => (position ? '0 0 10px 0' : '10px 0 0 0')};
+  ${({ margin }) => margin && 'margin-top: 20px!important'};
   font-size: 14px;
   line-height: 22px;
   color: ${Color.black};
   font-weight: ${FontWeight.Normal};
+`;
+
+export const Children = styled(Description)`
+  margin: 0 0 20px 0 !important;
 `;

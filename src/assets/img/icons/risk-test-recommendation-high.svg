@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="102" height="113.436" viewBox="0 0 102 113.436">
+    <defs>
+        <style>
+            .a_risk-test-recommendation-high{fill:#e5edf6;}
+            .b_risk-test-recommendation-high{opacity:0.13;}
+            .c_risk-test-recommendation-high{fill:#2757a4;}
+            .d_risk-test-recommendation-high{fill:#fff;}
+            .e_risk-test-recommendation-high{fill:#b7b7b7;}
+            .f_risk-test-recommendation-high,
+            .g_risk-test-recommendation-high{fill:none;stroke-miterlimit:10;}
+            .f_risk-test-recommendation-high{stroke:#b7b7b7;stroke-width:2.873px;}
+            .g_risk-test-recommendation-high{stroke:#d5233f;stroke-linecap:round;stroke-width:1.6px;}
+        </style>
+    </defs>
+    <g transform="translate(-256 -184.564)">
+        <circle class="a_risk-test-recommendation-high" cx="51" cy="51" r="51" transform="translate(256 196)"/>
+        <g transform="translate(270.115 186)">
+            <path class="b_risk-test-recommendation-high" d="M76.919,15.23H58.7V10.448a1.326,1.326,0,0,0-1.326-1.326h-14.5a1.326,1.326,0,0,0-1.326,1.326V15.23H7.265a2.777,2.777,0,0,0-2.777,2.777v90.1a2.777,2.777,0,0,0,2.777,2.777H76.919A2.777,2.777,0,0,0,79.7,108.11v-90.1A2.776,2.776,0,0,0,76.919,15.23Z" transform="translate(-3.34 -3.095)"/>
+            <path class="c_risk-test-recommendation-high" d="M75.919,109.1H6.265a2.777,2.777,0,0,1-2.777-2.777v-90.1a2.777,2.777,0,0,1,2.777-2.777H75.919A2.777,2.777,0,0,1,78.7,16.219v90.1A2.777,2.777,0,0,1,75.919,109.1Z" transform="translate(-3.488 -2.455)"/>
+            <path class="d_risk-test-recommendation-high" d="M72.544,105.159H8.819A2.558,2.558,0,0,1,6.261,102.6V19.041a2.558,2.558,0,0,1,2.558-2.558H72.544A2.558,2.558,0,0,1,75.1,19.041V102.6A2.558,2.558,0,0,1,72.544,105.159Z" transform="translate(-3.077 -2.005)"/>
+            <path class="e_risk-test-recommendation-high" d="M52.385,20.743H24.557A3.362,3.362,0,0,1,21.2,17.382v-5.85A3.362,3.362,0,0,1,24.557,8.17H52.385a3.362,3.362,0,0,1,3.361,3.362v5.85A3.363,3.363,0,0,1,52.385,20.743Z" transform="translate(-0.866 -3.236)"/>
+            <path class="f_risk-test-recommendation-high" d="M47.528,16.444H28.19a2.862,2.862,0,0,1-2.862-2.862V6.734A2.862,2.862,0,0,1,28.19,3.872H47.528A2.862,2.862,0,0,1,50.39,6.734v6.847A2.861,2.861,0,0,1,47.528,16.444Z" transform="translate(-0.255 -3.872)"/>
+        </g>
+        <g transform="translate(285.556 222.367)">
+            <path class="g_risk-test-recommendation-high" d="M43.184,13.154A22.6,22.6,0,1,1,30.723,1.491" transform="translate(0 0)"/>
+            <path class="g_risk-test-recommendation-high" d="M17.114,4.492A10.453,10.453,0,0,0,8.582,0,10.46,10.46,0,0,0,0,4.564" transform="translate(14.452 30.425)"/>
+            <path class="g_risk-test-recommendation-high" d="M0,3.042A7.064,7.064,0,0,1,5.751,0a7.051,7.051,0,0,1,5.658,2.915" transform="translate(7.226 16.353)"/>
+            <path class="g_risk-test-recommendation-high" d="M0,3.042A7.065,7.065,0,0,1,5.751,0a7.051,7.051,0,0,1,5.658,2.915" transform="translate(27.002 16.353)"/>
+            <path class="g_risk-test-recommendation-high" d="M9.127,8.212A4.455,4.455,0,0,1,4.564,12.55,4.455,4.455,0,0,1,0,8.212C0,5.815,4.564,0,4.564,0S9.127,5.815,9.127,8.212Z" transform="translate(31.946 0)"/>
+        </g>
+    </g>
+</svg>

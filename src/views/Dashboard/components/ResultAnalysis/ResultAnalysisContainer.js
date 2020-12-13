@@ -12,7 +12,7 @@ import {
   // RiskTestLow,
   // RiskTestMiddle,
   // SickApprove,
-  // SickReported
+  // SickReported,
 } from './contents';
 import ResultAnalysis from './ResultAnalysis';
 

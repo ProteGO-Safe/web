@@ -14,6 +14,7 @@ export const Routes = {
   HistoryActivities: 'historyActivities',
   PrivacyPolicy: 'privacyPolicy',
   PrivacyPolicyDetails: 'privacyPolicyDetails',
+  Recommendations: 'recommendations',
   Regulations: 'regulations',
   ReportBug: 'reportBug',
   RiskTest: 'riskTest',
