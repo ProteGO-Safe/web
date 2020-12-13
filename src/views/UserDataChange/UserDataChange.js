@@ -3,6 +3,7 @@ import { Formik } from 'formik';
 import * as Yup from 'yup';
 import { useDispatch, useSelector } from 'react-redux';
 
+import { withTranslation } from 'react-i18next';
 import { saveUser } from '../../store/actions/user';
 import * as constants from '../../constants';
 import { chronicSickValues } from '../../constants';
@@ -13,9 +14,8 @@ import useNavigation from '../../hooks/useNavigation';
 import { revokeEnStatus } from '../../store/actions/nativeData';
 import { revokeManualCovid, revokeTorStatus } from '../../store/actions/triage';
 import { Routes } from '../../services/navigationService/routes';
-import { T } from '../../components';
 
-const UserDataChange = () => {
+const UserDataChange = ({ t }) => {
   const { goTo } = useNavigation();
   const dispatch = useDispatch();
   const { setLoader } = useLoaderContext();
@@ -41,7 +41,7 @@ const UserDataChange = () => {
     if (smokeNumber === undefined) {
       return undefined;
     }
-    return smokeNumber ? <T i18nKey="yes" /> : <T i18nKey="no" />;
+    return smokeNumber ? t('yes') : t('no');
   })();
 
   const isChronicSick = (() => {
@@ -63,7 +63,7 @@ const UserDataChange = () => {
 
   const validationSchema = Yup.object().shape({
     [constants.FIELD_NAME]: userNameValidationSchema,
-    [constants.FIELD_TERM1]: Yup.boolean().oneOf([true], <T i18nKey="name_form_text10" />)
+    [constants.FIELD_TERM1]: Yup.boolean().oneOf([true], t('name_form_text10'))
   });
 
   const handleSubmit = form => {
@@ -78,7 +78,7 @@ const UserDataChange = () => {
       chronicSicks: [...chronicSicksFromForm],
       bloodGroup: form[constants.FIELD_BLOOD_GROUP],
       smokeNumber: form[constants.FIELD_SMOKE_NUMBER],
-      isSmoking: form[constants.FIELD_SMOKE] === <T i18nKey="yes" />
+      isSmoking: form[constants.FIELD_SMOKE] === t('yes')
     };
 
     const goToHome = revoke => {
@@ -117,4 +117,4 @@ const UserDataChange = () => {
   );
 };
 
-export default UserDataChange;
+export default withTranslation()(UserDataChange);

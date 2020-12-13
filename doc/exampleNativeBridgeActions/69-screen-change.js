@@ -1,7 +1,7 @@
 window.onBridgeData(
   69,
   JSON.stringify({
-    name: 'importantInformation',
+    name: 'historyActivities',
     params: {
       key: 'value'
     }
