@@ -962,18 +962,6 @@ Array [
   width: inherit;
 }
 
-@media screen and (max-width:370px) {
-
-}
-
-@media screen and (max-width:370px) {
-
-}
-
-@media screen and (max-width:370px) {
-
-}
-
 <div
     className="c0"
     data-cy="smile-container"
@@ -1059,11 +1047,7 @@ Array [
 }
 
 .c1 {
-  position: fixed;
-  right: 50%;
-  bottom: 80px;
-  bottom: calc(80px + constant(safe-area-inset-bottom));
-  bottom: calc(80px + env(safe-area-inset-bottom));
+  position: relative;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1075,62 +1059,26 @@ Array [
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  width: calc(100% - 30px);
-  max-width: 384px;
-  margin-top: 24px;
-  padding: 10px 18px;
+  width: 100%;
+  border: 1px solid #0052a5;
   border-radius: 4px;
-  background-color: #ffffff;
-  box-shadow: 0 0 8px 0 rgba(0,0,0,0.65);
-  -webkit-transform: translateX(50%);
-  -ms-transform: translateX(50%);
-  transform: translateX(50%);
-  cursor: pointer;
-  z-index: 98;
-}
-
-.c1.small {
-  right: 15px;
-  bottom: 60px;
-  bottom: calc(60px + constant(safe-area-inset-bottom));
-  bottom: calc(60px + env(safe-area-inset-bottom));
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  width: 66px;
-  height: 66px;
-  padding: 16px;
-  border-radius: 50%;
-  box-shadow: 0 0 8px 0 rgba(0,0,0,0.75);
-  -webkit-transform: translateX(0);
-  -ms-transform: translateX(0);
-  transform: translateX(0);
+  padding: 14px 20px;
 }
 
 .c3 {
-  position: relative;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-flex-flow: wrap row;
-  -ms-flex-flow: wrap row;
-  flex-flow: wrap row;
-  width: calc(100% - 78px);
-  font-size: 16px;
-  line-height: 1.4;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  width: calc(100% - 60px);
+  padding-right: 34px;
+  font-size: 14px;
+  line-height: 22px;
+  color: #0052a5;
   font-weight: 700;
-  color: #d5233f;
-}
-
-.c3 img {
-  position: absolute;
-  top: 50%;
-  right: 0;
-  height: 14px;
-  width: 14px;
-  margin-top: -7px;
 }
 
 .c2 {
@@ -1138,24 +1086,37 @@ Array [
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  width: 46px;
-  height: 46px;
-  margin-right: 28px;
+  -webkit-flex-flow: wrap row;
+  -ms-flex-flow: wrap row;
+  flex-flow: wrap row;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  margin-right: 20px;
+  color: #0052a5;
 }
 
-.c2.small {
-  width: 36px;
-  height: 36px;
-  margin-right: 0;
+.c2 svg {
+  display: block;
+  max-width: 100%;
+  max-height: 100%;
 }
 
 .c4 {
   position: absolute;
   top: 50%;
-  right: -6px;
+  right: 14px;
   height: 12px;
   width: 12px;
   margin-top: -8px;
+  color: #0052a5;
   z-index: 10;
 }
 
@@ -1163,26 +1124,6 @@ Array [
   display: block;
   height: 100%;
   width: 100%;
-}
-
-@media screen and (max-width:370px) {
-  .c1 {
-    padding: 10px 14px;
-  }
-}
-
-@media screen and (max-width:370px) {
-  .c3 {
-    width: calc(100% - 56px);
-  }
-}
-
-@media screen and (max-width:370px) {
-  .c2 {
-    width: 36px;
-    height: 36px;
-    margin-right: 20px;
-  }
 }
 
 <div
@@ -1194,30 +1135,23 @@ Array [
     </p>
     <a
       className="c1"
-      color="#d5233f"
-      href="tel:222500115"
+      href="tel:222 500 115"
     >
       <svg
         className="c2"
-        color="#d5233f"
       >
         icon-contact.svg
       </svg>
       <div
         className="c3"
-        color="#d5233f"
+      />
+      <span
+        className="c4"
       >
-        call_helpline
-        <br />
-        222 500 115
-        <span
-          className="c4"
-        >
-          <svg>
-            arrow-current-color.svg
-          </svg>
-        </span>
-      </div>
+        <svg>
+          arrow-current-color.svg
+        </svg>
+      </span>
     </a>
   </div>,
   .c0 {
@@ -1242,18 +1176,6 @@ Array [
   font-weight: 600;
   line-height: 1.44;
   color: #1b1b1b;
-}
-
-@media screen and (max-width:370px) {
-
-}
-
-@media screen and (max-width:370px) {
-
-}
-
-@media screen and (max-width:370px) {
-
 }
 
 <div
@@ -1337,8 +1259,8 @@ Array [
   line-height: 1.61;
   color: #1b1b1b;
   white-space: pre-line;
-  -webkit-transition: padding 0.5s, max-height 0.4s cubic-bezier(0,1,0,1) -0.1s;
-  transition: padding 0.5s, max-height 0.4s cubic-bezier(0,1,0,1) -0.1s;
+  -webkit-transition: padding 0.5s,max-height 0.4s cubic-bezier(0,1,0,1) -0.1s;
+  transition: padding 0.5s,max-height 0.4s cubic-bezier(0,1,0,1) -0.1s;
   overflow: hidden;
 }
 
@@ -1350,18 +1272,6 @@ Array [
 
 .c4 a {
   color: #0052a5;
-}
-
-@media screen and (max-width:370px) {
-
-}
-
-@media screen and (max-width:370px) {
-
-}
-
-@media screen and (max-width:370px) {
-
 }
 
 <div
@@ -1488,8 +1398,8 @@ Array [
   line-height: 1.61;
   color: #1b1b1b;
   white-space: pre-line;
-  -webkit-transition: padding 0.5s, max-height 0.4s cubic-bezier(0,1,0,1) -0.1s;
-  transition: padding 0.5s, max-height 0.4s cubic-bezier(0,1,0,1) -0.1s;
+  -webkit-transition: padding 0.5s,max-height 0.4s cubic-bezier(0,1,0,1) -0.1s;
+  transition: padding 0.5s,max-height 0.4s cubic-bezier(0,1,0,1) -0.1s;
   overflow: hidden;
 }
 
@@ -1501,18 +1411,6 @@ Array [
 
 .c4 a {
   color: #0052a5;
-}
-
-@media screen and (max-width:370px) {
-
-}
-
-@media screen and (max-width:370px) {
-
-}
-
-@media screen and (max-width:370px) {
-
 }
 
 <div
@@ -1661,8 +1559,8 @@ Array [
   line-height: 1.61;
   color: #1b1b1b;
   white-space: pre-line;
-  -webkit-transition: padding 0.5s, max-height 0.4s cubic-bezier(0,1,0,1) -0.1s;
-  transition: padding 0.5s, max-height 0.4s cubic-bezier(0,1,0,1) -0.1s;
+  -webkit-transition: padding 0.5s,max-height 0.4s cubic-bezier(0,1,0,1) -0.1s;
+  transition: padding 0.5s,max-height 0.4s cubic-bezier(0,1,0,1) -0.1s;
   overflow: hidden;
 }
 
@@ -1674,18 +1572,6 @@ Array [
 
 .c4 a {
   color: #0052a5;
-}
-
-@media screen and (max-width:370px) {
-
-}
-
-@media screen and (max-width:370px) {
-
-}
-
-@media screen and (max-width:370px) {
-
 }
 
 <div
@@ -1751,18 +1637,6 @@ Array [
 .c2 {
   margin-bottom: 12px;
   color: #1b1b1b;
-}
-
-@media screen and (max-width:370px) {
-
-}
-
-@media screen and (max-width:370px) {
-
-}
-
-@media screen and (max-width:370px) {
-
 }
 
 <div
@@ -1890,18 +1764,6 @@ Array [
   line-height: 1.57;
   color: #0052a5;
   text-align: left;
-}
-
-@media screen and (max-width:370px) {
-
-}
-
-@media screen and (max-width:370px) {
-
-}
-
-@media screen and (max-width:370px) {
-
 }
 
 <button
@@ -2012,18 +1874,6 @@ Array [
   width: inherit;
 }
 
-@media screen and (max-width:370px) {
-
-}
-
-@media screen and (max-width:370px) {
-
-}
-
-@media screen and (max-width:370px) {
-
-}
-
 <div
     className="c0"
     data-cy="smile-container"
@@ -2109,11 +1959,7 @@ Array [
 }
 
 .c1 {
-  position: fixed;
-  right: 50%;
-  bottom: 80px;
-  bottom: calc(80px + constant(safe-area-inset-bottom));
-  bottom: calc(80px + env(safe-area-inset-bottom));
+  position: relative;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2125,62 +1971,26 @@ Array [
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  width: calc(100% - 30px);
-  max-width: 384px;
-  margin-top: 24px;
-  padding: 10px 18px;
+  width: 100%;
+  border: 1px solid #0052a5;
   border-radius: 4px;
-  background-color: #ffffff;
-  box-shadow: 0 0 8px 0 rgba(0,0,0,0.65);
-  -webkit-transform: translateX(50%);
-  -ms-transform: translateX(50%);
-  transform: translateX(50%);
-  cursor: pointer;
-  z-index: 98;
-}
-
-.c1.small {
-  right: 15px;
-  bottom: 60px;
-  bottom: calc(60px + constant(safe-area-inset-bottom));
-  bottom: calc(60px + env(safe-area-inset-bottom));
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  width: 66px;
-  height: 66px;
-  padding: 16px;
-  border-radius: 50%;
-  box-shadow: 0 0 8px 0 rgba(0,0,0,0.75);
-  -webkit-transform: translateX(0);
-  -ms-transform: translateX(0);
-  transform: translateX(0);
+  padding: 14px 20px;
 }
 
 .c3 {
-  position: relative;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-flex-flow: wrap row;
-  -ms-flex-flow: wrap row;
-  flex-flow: wrap row;
-  width: calc(100% - 78px);
-  font-size: 16px;
-  line-height: 1.4;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  width: calc(100% - 60px);
+  padding-right: 34px;
+  font-size: 14px;
+  line-height: 22px;
+  color: #0052a5;
   font-weight: 700;
-  color: #d5233f;
-}
-
-.c3 img {
-  position: absolute;
-  top: 50%;
-  right: 0;
-  height: 14px;
-  width: 14px;
-  margin-top: -7px;
 }
 
 .c2 {
@@ -2188,24 +1998,37 @@ Array [
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  width: 46px;
-  height: 46px;
-  margin-right: 28px;
+  -webkit-flex-flow: wrap row;
+  -ms-flex-flow: wrap row;
+  flex-flow: wrap row;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  margin-right: 20px;
+  color: #0052a5;
 }
 
-.c2.small {
-  width: 36px;
-  height: 36px;
-  margin-right: 0;
+.c2 svg {
+  display: block;
+  max-width: 100%;
+  max-height: 100%;
 }
 
 .c4 {
   position: absolute;
   top: 50%;
-  right: -6px;
+  right: 14px;
   height: 12px;
   width: 12px;
   margin-top: -8px;
+  color: #0052a5;
   z-index: 10;
 }
 
@@ -2213,26 +2036,6 @@ Array [
   display: block;
   height: 100%;
   width: 100%;
-}
-
-@media screen and (max-width:370px) {
-  .c1 {
-    padding: 10px 14px;
-  }
-}
-
-@media screen and (max-width:370px) {
-  .c3 {
-    width: calc(100% - 56px);
-  }
-}
-
-@media screen and (max-width:370px) {
-  .c2 {
-    width: 36px;
-    height: 36px;
-    margin-right: 20px;
-  }
 }
 
 <div
@@ -2244,30 +2047,23 @@ Array [
     </p>
     <a
       className="c1"
-      color="#d5233f"
-      href="tel:222500115"
+      href="tel:222 500 115"
     >
       <svg
         className="c2"
-        color="#d5233f"
       >
         icon-contact.svg
       </svg>
       <div
         className="c3"
-        color="#d5233f"
+      />
+      <span
+        className="c4"
       >
-        call_helpline
-        <br />
-        222 500 115
-        <span
-          className="c4"
-        >
-          <svg>
-            arrow-current-color.svg
-          </svg>
-        </span>
-      </div>
+        <svg>
+          arrow-current-color.svg
+        </svg>
+      </span>
     </a>
   </div>,
   .c0 {
@@ -2292,18 +2088,6 @@ Array [
   font-weight: 600;
   line-height: 1.44;
   color: #1b1b1b;
-}
-
-@media screen and (max-width:370px) {
-
-}
-
-@media screen and (max-width:370px) {
-
-}
-
-@media screen and (max-width:370px) {
-
 }
 
 <div
@@ -2387,8 +2171,8 @@ Array [
   line-height: 1.61;
   color: #1b1b1b;
   white-space: pre-line;
-  -webkit-transition: padding 0.5s, max-height 0.4s cubic-bezier(0,1,0,1) -0.1s;
-  transition: padding 0.5s, max-height 0.4s cubic-bezier(0,1,0,1) -0.1s;
+  -webkit-transition: padding 0.5s,max-height 0.4s cubic-bezier(0,1,0,1) -0.1s;
+  transition: padding 0.5s,max-height 0.4s cubic-bezier(0,1,0,1) -0.1s;
   overflow: hidden;
 }
 
@@ -2400,18 +2184,6 @@ Array [
 
 .c4 a {
   color: #0052a5;
-}
-
-@media screen and (max-width:370px) {
-
-}
-
-@media screen and (max-width:370px) {
-
-}
-
-@media screen and (max-width:370px) {
-
 }
 
 <div
@@ -2507,8 +2279,8 @@ Array [
   line-height: 1.61;
   color: #1b1b1b;
   white-space: pre-line;
-  -webkit-transition: padding 0.5s, max-height 0.4s cubic-bezier(0,1,0,1) -0.1s;
-  transition: padding 0.5s, max-height 0.4s cubic-bezier(0,1,0,1) -0.1s;
+  -webkit-transition: padding 0.5s,max-height 0.4s cubic-bezier(0,1,0,1) -0.1s;
+  transition: padding 0.5s,max-height 0.4s cubic-bezier(0,1,0,1) -0.1s;
   overflow: hidden;
 }
 
@@ -2520,18 +2292,6 @@ Array [
 
 .c4 a {
   color: #0052a5;
-}
-
-@media screen and (max-width:370px) {
-
-}
-
-@media screen and (max-width:370px) {
-
-}
-
-@media screen and (max-width:370px) {
-
 }
 
 <div
@@ -2630,8 +2390,8 @@ Array [
   line-height: 1.61;
   color: #1b1b1b;
   white-space: pre-line;
-  -webkit-transition: padding 0.5s, max-height 0.4s cubic-bezier(0,1,0,1) -0.1s;
-  transition: padding 0.5s, max-height 0.4s cubic-bezier(0,1,0,1) -0.1s;
+  -webkit-transition: padding 0.5s,max-height 0.4s cubic-bezier(0,1,0,1) -0.1s;
+  transition: padding 0.5s,max-height 0.4s cubic-bezier(0,1,0,1) -0.1s;
   overflow: hidden;
 }
 
@@ -2643,18 +2403,6 @@ Array [
 
 .c4 a {
   color: #0052a5;
-}
-
-@media screen and (max-width:370px) {
-
-}
-
-@media screen and (max-width:370px) {
-
-}
-
-@media screen and (max-width:370px) {
-
 }
 
 <div
@@ -2747,8 +2495,8 @@ Array [
   line-height: 1.61;
   color: #1b1b1b;
   white-space: pre-line;
-  -webkit-transition: padding 0.5s, max-height 0.4s cubic-bezier(0,1,0,1) -0.1s;
-  transition: padding 0.5s, max-height 0.4s cubic-bezier(0,1,0,1) -0.1s;
+  -webkit-transition: padding 0.5s,max-height 0.4s cubic-bezier(0,1,0,1) -0.1s;
+  transition: padding 0.5s,max-height 0.4s cubic-bezier(0,1,0,1) -0.1s;
   overflow: hidden;
 }
 
@@ -2760,18 +2508,6 @@ Array [
 
 .c4 a {
   color: #0052a5;
-}
-
-@media screen and (max-width:370px) {
-
-}
-
-@media screen and (max-width:370px) {
-
-}
-
-@media screen and (max-width:370px) {
-
 }
 
 <div
@@ -2851,18 +2587,6 @@ Array [
 .c2 {
   margin-bottom: 12px;
   color: #1b1b1b;
-}
-
-@media screen and (max-width:370px) {
-
-}
-
-@media screen and (max-width:370px) {
-
-}
-
-@media screen and (max-width:370px) {
-
 }
 
 <div
@@ -2990,18 +2714,6 @@ Array [
   line-height: 1.57;
   color: #0052a5;
   text-align: left;
-}
-
-@media screen and (max-width:370px) {
-
-}
-
-@media screen and (max-width:370px) {
-
-}
-
-@media screen and (max-width:370px) {
-
 }
 
 <button
@@ -3112,18 +2824,6 @@ Array [
   width: inherit;
 }
 
-@media screen and (max-width:370px) {
-
-}
-
-@media screen and (max-width:370px) {
-
-}
-
-@media screen and (max-width:370px) {
-
-}
-
 <div
     className="c0"
     data-cy="smile-container"
@@ -3209,11 +2909,7 @@ Array [
 }
 
 .c1 {
-  position: fixed;
-  right: 50%;
-  bottom: 80px;
-  bottom: calc(80px + constant(safe-area-inset-bottom));
-  bottom: calc(80px + env(safe-area-inset-bottom));
+  position: relative;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -3225,62 +2921,26 @@ Array [
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  width: calc(100% - 30px);
-  max-width: 384px;
-  margin-top: 24px;
-  padding: 10px 18px;
+  width: 100%;
+  border: 1px solid #0052a5;
   border-radius: 4px;
-  background-color: #ffffff;
-  box-shadow: 0 0 8px 0 rgba(0,0,0,0.65);
-  -webkit-transform: translateX(50%);
-  -ms-transform: translateX(50%);
-  transform: translateX(50%);
-  cursor: pointer;
-  z-index: 98;
-}
-
-.c1.small {
-  right: 15px;
-  bottom: 60px;
-  bottom: calc(60px + constant(safe-area-inset-bottom));
-  bottom: calc(60px + env(safe-area-inset-bottom));
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  width: 66px;
-  height: 66px;
-  padding: 16px;
-  border-radius: 50%;
-  box-shadow: 0 0 8px 0 rgba(0,0,0,0.75);
-  -webkit-transform: translateX(0);
-  -ms-transform: translateX(0);
-  transform: translateX(0);
+  padding: 14px 20px;
 }
 
 .c3 {
-  position: relative;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-flex-flow: wrap row;
-  -ms-flex-flow: wrap row;
-  flex-flow: wrap row;
-  width: calc(100% - 78px);
-  font-size: 16px;
-  line-height: 1.4;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  width: calc(100% - 60px);
+  padding-right: 34px;
+  font-size: 14px;
+  line-height: 22px;
+  color: #0052a5;
   font-weight: 700;
-  color: #d5233f;
-}
-
-.c3 img {
-  position: absolute;
-  top: 50%;
-  right: 0;
-  height: 14px;
-  width: 14px;
-  margin-top: -7px;
 }
 
 .c2 {
@@ -3288,24 +2948,37 @@ Array [
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  width: 46px;
-  height: 46px;
-  margin-right: 28px;
+  -webkit-flex-flow: wrap row;
+  -ms-flex-flow: wrap row;
+  flex-flow: wrap row;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  margin-right: 20px;
+  color: #0052a5;
 }
 
-.c2.small {
-  width: 36px;
-  height: 36px;
-  margin-right: 0;
+.c2 svg {
+  display: block;
+  max-width: 100%;
+  max-height: 100%;
 }
 
 .c4 {
   position: absolute;
   top: 50%;
-  right: -6px;
+  right: 14px;
   height: 12px;
   width: 12px;
   margin-top: -8px;
+  color: #0052a5;
   z-index: 10;
 }
 
@@ -3313,26 +2986,6 @@ Array [
   display: block;
   height: 100%;
   width: 100%;
-}
-
-@media screen and (max-width:370px) {
-  .c1 {
-    padding: 10px 14px;
-  }
-}
-
-@media screen and (max-width:370px) {
-  .c3 {
-    width: calc(100% - 56px);
-  }
-}
-
-@media screen and (max-width:370px) {
-  .c2 {
-    width: 36px;
-    height: 36px;
-    margin-right: 20px;
-  }
 }
 
 <div
@@ -3344,30 +2997,23 @@ Array [
     </p>
     <a
       className="c1"
-      color="#d5233f"
-      href="tel:222500115"
+      href="tel:222 500 115"
     >
       <svg
         className="c2"
-        color="#d5233f"
       >
         icon-contact.svg
       </svg>
       <div
         className="c3"
-        color="#d5233f"
+      />
+      <span
+        className="c4"
       >
-        call_helpline
-        <br />
-        222 500 115
-        <span
-          className="c4"
-        >
-          <svg>
-            arrow-current-color.svg
-          </svg>
-        </span>
-      </div>
+        <svg>
+          arrow-current-color.svg
+        </svg>
+      </span>
     </a>
   </div>,
   .c0 {
@@ -3392,18 +3038,6 @@ Array [
   font-weight: 600;
   line-height: 1.44;
   color: #1b1b1b;
-}
-
-@media screen and (max-width:370px) {
-
-}
-
-@media screen and (max-width:370px) {
-
-}
-
-@media screen and (max-width:370px) {
-
 }
 
 <div
@@ -3487,8 +3121,8 @@ Array [
   line-height: 1.61;
   color: #1b1b1b;
   white-space: pre-line;
-  -webkit-transition: padding 0.5s, max-height 0.4s cubic-bezier(0,1,0,1) -0.1s;
-  transition: padding 0.5s, max-height 0.4s cubic-bezier(0,1,0,1) -0.1s;
+  -webkit-transition: padding 0.5s,max-height 0.4s cubic-bezier(0,1,0,1) -0.1s;
+  transition: padding 0.5s,max-height 0.4s cubic-bezier(0,1,0,1) -0.1s;
   overflow: hidden;
 }
 
@@ -3500,18 +3134,6 @@ Array [
 
 .c4 a {
   color: #0052a5;
-}
-
-@media screen and (max-width:370px) {
-
-}
-
-@media screen and (max-width:370px) {
-
-}
-
-@media screen and (max-width:370px) {
-
 }
 
 <div
@@ -3607,8 +3229,8 @@ Array [
   line-height: 1.61;
   color: #1b1b1b;
   white-space: pre-line;
-  -webkit-transition: padding 0.5s, max-height 0.4s cubic-bezier(0,1,0,1) -0.1s;
-  transition: padding 0.5s, max-height 0.4s cubic-bezier(0,1,0,1) -0.1s;
+  -webkit-transition: padding 0.5s,max-height 0.4s cubic-bezier(0,1,0,1) -0.1s;
+  transition: padding 0.5s,max-height 0.4s cubic-bezier(0,1,0,1) -0.1s;
   overflow: hidden;
 }
 
@@ -3620,18 +3242,6 @@ Array [
 
 .c4 a {
   color: #0052a5;
-}
-
-@media screen and (max-width:370px) {
-
-}
-
-@media screen and (max-width:370px) {
-
-}
-
-@media screen and (max-width:370px) {
-
 }
 
 <div
@@ -3730,8 +3340,8 @@ Array [
   line-height: 1.61;
   color: #1b1b1b;
   white-space: pre-line;
-  -webkit-transition: padding 0.5s, max-height 0.4s cubic-bezier(0,1,0,1) -0.1s;
-  transition: padding 0.5s, max-height 0.4s cubic-bezier(0,1,0,1) -0.1s;
+  -webkit-transition: padding 0.5s,max-height 0.4s cubic-bezier(0,1,0,1) -0.1s;
+  transition: padding 0.5s,max-height 0.4s cubic-bezier(0,1,0,1) -0.1s;
   overflow: hidden;
 }
 
@@ -3743,18 +3353,6 @@ Array [
 
 .c4 a {
   color: #0052a5;
-}
-
-@media screen and (max-width:370px) {
-
-}
-
-@media screen and (max-width:370px) {
-
-}
-
-@media screen and (max-width:370px) {
-
 }
 
 <div
@@ -3847,8 +3445,8 @@ Array [
   line-height: 1.61;
   color: #1b1b1b;
   white-space: pre-line;
-  -webkit-transition: padding 0.5s, max-height 0.4s cubic-bezier(0,1,0,1) -0.1s;
-  transition: padding 0.5s, max-height 0.4s cubic-bezier(0,1,0,1) -0.1s;
+  -webkit-transition: padding 0.5s,max-height 0.4s cubic-bezier(0,1,0,1) -0.1s;
+  transition: padding 0.5s,max-height 0.4s cubic-bezier(0,1,0,1) -0.1s;
   overflow: hidden;
 }
 
@@ -3860,18 +3458,6 @@ Array [
 
 .c4 a {
   color: #0052a5;
-}
-
-@media screen and (max-width:370px) {
-
-}
-
-@media screen and (max-width:370px) {
-
-}
-
-@media screen and (max-width:370px) {
-
 }
 
 <div
@@ -3951,18 +3537,6 @@ Array [
 .c2 {
   margin-bottom: 12px;
   color: #1b1b1b;
-}
-
-@media screen and (max-width:370px) {
-
-}
-
-@media screen and (max-width:370px) {
-
-}
-
-@media screen and (max-width:370px) {
-
 }
 
 <div
@@ -4090,18 +3664,6 @@ Array [
   line-height: 1.57;
   color: #0052a5;
   text-align: left;
-}
-
-@media screen and (max-width:370px) {
-
-}
-
-@media screen and (max-width:370px) {
-
-}
-
-@media screen and (max-width:370px) {
-
 }
 
 <button
@@ -4542,8 +4104,8 @@ Array [
   line-height: 1.61;
   color: #1b1b1b;
   white-space: pre-line;
-  -webkit-transition: padding 0.5s, max-height 0.4s cubic-bezier(0,1,0,1) -0.1s;
-  transition: padding 0.5s, max-height 0.4s cubic-bezier(0,1,0,1) -0.1s;
+  -webkit-transition: padding 0.5s,max-height 0.4s cubic-bezier(0,1,0,1) -0.1s;
+  transition: padding 0.5s,max-height 0.4s cubic-bezier(0,1,0,1) -0.1s;
   overflow: hidden;
 }
 
@@ -4644,8 +4206,8 @@ Array [
   line-height: 1.61;
   color: #1b1b1b;
   white-space: pre-line;
-  -webkit-transition: padding 0.5s, max-height 0.4s cubic-bezier(0,1,0,1) -0.1s;
-  transition: padding 0.5s, max-height 0.4s cubic-bezier(0,1,0,1) -0.1s;
+  -webkit-transition: padding 0.5s,max-height 0.4s cubic-bezier(0,1,0,1) -0.1s;
+  transition: padding 0.5s,max-height 0.4s cubic-bezier(0,1,0,1) -0.1s;
   overflow: hidden;
 }
 
@@ -4766,8 +4328,8 @@ Array [
   line-height: 1.61;
   color: #1b1b1b;
   white-space: pre-line;
-  -webkit-transition: padding 0.5s, max-height 0.4s cubic-bezier(0,1,0,1) -0.1s;
-  transition: padding 0.5s, max-height 0.4s cubic-bezier(0,1,0,1) -0.1s;
+  -webkit-transition: padding 0.5s,max-height 0.4s cubic-bezier(0,1,0,1) -0.1s;
+  transition: padding 0.5s,max-height 0.4s cubic-bezier(0,1,0,1) -0.1s;
   overflow: hidden;
 }
 
@@ -4946,8 +4508,8 @@ Array [
   line-height: 1.61;
   color: #1b1b1b;
   white-space: pre-line;
-  -webkit-transition: padding 0.5s, max-height 0.4s cubic-bezier(0,1,0,1) -0.1s;
-  transition: padding 0.5s, max-height 0.4s cubic-bezier(0,1,0,1) -0.1s;
+  -webkit-transition: padding 0.5s,max-height 0.4s cubic-bezier(0,1,0,1) -0.1s;
+  transition: padding 0.5s,max-height 0.4s cubic-bezier(0,1,0,1) -0.1s;
   overflow: hidden;
 }
 
@@ -5071,8 +4633,8 @@ Array [
   line-height: 1.61;
   color: #1b1b1b;
   white-space: pre-line;
-  -webkit-transition: padding 0.5s, max-height 0.4s cubic-bezier(0,1,0,1) -0.1s;
-  transition: padding 0.5s, max-height 0.4s cubic-bezier(0,1,0,1) -0.1s;
+  -webkit-transition: padding 0.5s,max-height 0.4s cubic-bezier(0,1,0,1) -0.1s;
+  transition: padding 0.5s,max-height 0.4s cubic-bezier(0,1,0,1) -0.1s;
   overflow: hidden;
 }
 
@@ -5571,18 +5133,6 @@ Array [
   width: inherit;
 }
 
-@media screen and (max-width:370px) {
-
-}
-
-@media screen and (max-width:370px) {
-
-}
-
-@media screen and (max-width:370px) {
-
-}
-
 <div
     className="c0"
     data-cy="smile-container"
@@ -5693,18 +5243,6 @@ Array [
   font-weight: 600;
 }
 
-@media screen and (max-width:370px) {
-
-}
-
-@media screen and (max-width:370px) {
-
-}
-
-@media screen and (max-width:370px) {
-
-}
-
 <span
     onClick={[Function]}
   >
@@ -5749,11 +5287,7 @@ Array [
 }
 
 .c1 {
-  position: fixed;
-  right: 50%;
-  bottom: 80px;
-  bottom: calc(80px + constant(safe-area-inset-bottom));
-  bottom: calc(80px + env(safe-area-inset-bottom));
+  position: relative;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -5765,62 +5299,26 @@ Array [
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  width: calc(100% - 30px);
-  max-width: 384px;
-  margin-top: 24px;
-  padding: 10px 18px;
+  width: 100%;
+  border: 1px solid #0052a5;
   border-radius: 4px;
-  background-color: #ffffff;
-  box-shadow: 0 0 8px 0 rgba(0,0,0,0.65);
-  -webkit-transform: translateX(50%);
-  -ms-transform: translateX(50%);
-  transform: translateX(50%);
-  cursor: pointer;
-  z-index: 98;
-}
-
-.c1.small {
-  right: 15px;
-  bottom: 60px;
-  bottom: calc(60px + constant(safe-area-inset-bottom));
-  bottom: calc(60px + env(safe-area-inset-bottom));
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  width: 66px;
-  height: 66px;
-  padding: 16px;
-  border-radius: 50%;
-  box-shadow: 0 0 8px 0 rgba(0,0,0,0.75);
-  -webkit-transform: translateX(0);
-  -ms-transform: translateX(0);
-  transform: translateX(0);
+  padding: 14px 20px;
 }
 
 .c3 {
-  position: relative;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-flex-flow: wrap row;
-  -ms-flex-flow: wrap row;
-  flex-flow: wrap row;
-  width: calc(100% - 78px);
-  font-size: 16px;
-  line-height: 1.4;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  width: calc(100% - 60px);
+  padding-right: 34px;
+  font-size: 14px;
+  line-height: 22px;
+  color: #0052a5;
   font-weight: 700;
-  color: #d5233f;
-}
-
-.c3 img {
-  position: absolute;
-  top: 50%;
-  right: 0;
-  height: 14px;
-  width: 14px;
-  margin-top: -7px;
 }
 
 .c2 {
@@ -5828,24 +5326,37 @@ Array [
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  width: 46px;
-  height: 46px;
-  margin-right: 28px;
+  -webkit-flex-flow: wrap row;
+  -ms-flex-flow: wrap row;
+  flex-flow: wrap row;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  margin-right: 20px;
+  color: #0052a5;
 }
 
-.c2.small {
-  width: 36px;
-  height: 36px;
-  margin-right: 0;
+.c2 svg {
+  display: block;
+  max-width: 100%;
+  max-height: 100%;
 }
 
 .c4 {
   position: absolute;
   top: 50%;
-  right: -6px;
+  right: 14px;
   height: 12px;
   width: 12px;
   margin-top: -8px;
+  color: #0052a5;
   z-index: 10;
 }
 
@@ -5853,26 +5364,6 @@ Array [
   display: block;
   height: 100%;
   width: 100%;
-}
-
-@media screen and (max-width:370px) {
-  .c1 {
-    padding: 10px 14px;
-  }
-}
-
-@media screen and (max-width:370px) {
-  .c3 {
-    width: calc(100% - 56px);
-  }
-}
-
-@media screen and (max-width:370px) {
-  .c2 {
-    width: 36px;
-    height: 36px;
-    margin-right: 20px;
-  }
 }
 
 <div
@@ -5884,30 +5375,23 @@ Array [
     </p>
     <a
       className="c1"
-      color="#d5233f"
-      href="tel:222500115"
+      href="tel:222 500 115"
     >
       <svg
         className="c2"
-        color="#d5233f"
       >
         icon-contact.svg
       </svg>
       <div
         className="c3"
-        color="#d5233f"
+      />
+      <span
+        className="c4"
       >
-        call_helpline
-        <br />
-        222 500 115
-        <span
-          className="c4"
-        >
-          <svg>
-            arrow-current-color.svg
-          </svg>
-        </span>
-      </div>
+        <svg>
+          arrow-current-color.svg
+        </svg>
+      </span>
     </a>
   </div>,
   .c0 {
@@ -5932,18 +5416,6 @@ Array [
   font-weight: 600;
   line-height: 1.44;
   color: #1b1b1b;
-}
-
-@media screen and (max-width:370px) {
-
-}
-
-@media screen and (max-width:370px) {
-
-}
-
-@media screen and (max-width:370px) {
-
 }
 
 <div
@@ -6039,18 +5511,6 @@ Array [
   width: inherit;
 }
 
-@media screen and (max-width:370px) {
-
-}
-
-@media screen and (max-width:370px) {
-
-}
-
-@media screen and (max-width:370px) {
-
-}
-
 <div
     className="c0"
     data-cy="smile-container"
@@ -6136,11 +5596,7 @@ Array [
 }
 
 .c1 {
-  position: fixed;
-  right: 50%;
-  bottom: 80px;
-  bottom: calc(80px + constant(safe-area-inset-bottom));
-  bottom: calc(80px + env(safe-area-inset-bottom));
+  position: relative;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -6152,62 +5608,26 @@ Array [
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  width: calc(100% - 30px);
-  max-width: 384px;
-  margin-top: 24px;
-  padding: 10px 18px;
+  width: 100%;
+  border: 1px solid #0052a5;
   border-radius: 4px;
-  background-color: #ffffff;
-  box-shadow: 0 0 8px 0 rgba(0,0,0,0.65);
-  -webkit-transform: translateX(50%);
-  -ms-transform: translateX(50%);
-  transform: translateX(50%);
-  cursor: pointer;
-  z-index: 98;
-}
-
-.c1.small {
-  right: 15px;
-  bottom: 60px;
-  bottom: calc(60px + constant(safe-area-inset-bottom));
-  bottom: calc(60px + env(safe-area-inset-bottom));
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  width: 66px;
-  height: 66px;
-  padding: 16px;
-  border-radius: 50%;
-  box-shadow: 0 0 8px 0 rgba(0,0,0,0.75);
-  -webkit-transform: translateX(0);
-  -ms-transform: translateX(0);
-  transform: translateX(0);
+  padding: 14px 20px;
 }
 
 .c3 {
-  position: relative;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-flex-flow: wrap row;
-  -ms-flex-flow: wrap row;
-  flex-flow: wrap row;
-  width: calc(100% - 78px);
-  font-size: 16px;
-  line-height: 1.4;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  width: calc(100% - 60px);
+  padding-right: 34px;
+  font-size: 14px;
+  line-height: 22px;
+  color: #0052a5;
   font-weight: 700;
-  color: #CC4700;
-}
-
-.c3 img {
-  position: absolute;
-  top: 50%;
-  right: 0;
-  height: 14px;
-  width: 14px;
-  margin-top: -7px;
 }
 
 .c2 {
@@ -6215,24 +5635,37 @@ Array [
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  width: 46px;
-  height: 46px;
-  margin-right: 28px;
+  -webkit-flex-flow: wrap row;
+  -ms-flex-flow: wrap row;
+  flex-flow: wrap row;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  margin-right: 20px;
+  color: #0052a5;
 }
 
-.c2.small {
-  width: 36px;
-  height: 36px;
-  margin-right: 0;
+.c2 svg {
+  display: block;
+  max-width: 100%;
+  max-height: 100%;
 }
 
 .c4 {
   position: absolute;
   top: 50%;
-  right: -6px;
+  right: 14px;
   height: 12px;
   width: 12px;
   margin-top: -8px;
+  color: #0052a5;
   z-index: 10;
 }
 
@@ -6240,26 +5673,6 @@ Array [
   display: block;
   height: 100%;
   width: 100%;
-}
-
-@media screen and (max-width:370px) {
-  .c1 {
-    padding: 10px 14px;
-  }
-}
-
-@media screen and (max-width:370px) {
-  .c3 {
-    width: calc(100% - 56px);
-  }
-}
-
-@media screen and (max-width:370px) {
-  .c2 {
-    width: 36px;
-    height: 36px;
-    margin-right: 20px;
-  }
 }
 
 <div
@@ -6271,30 +5684,23 @@ Array [
     </p>
     <a
       className="c1"
-      color="#CC4700"
-      href="tel:222500115"
+      href="tel:222 500 115"
     >
       <svg
         className="c2"
-        color="#CC4700"
       >
         icon-contact.svg
       </svg>
       <div
         className="c3"
-        color="#CC4700"
+      />
+      <span
+        className="c4"
       >
-        call_helpline
-        <br />
-        222 500 115
-        <span
-          className="c4"
-        >
-          <svg>
-            arrow-current-color.svg
-          </svg>
-        </span>
-      </div>
+        <svg>
+          arrow-current-color.svg
+        </svg>
+      </span>
     </a>
   </div>,
   .c0 {
@@ -6319,18 +5725,6 @@ Array [
   font-weight: 600;
   line-height: 1.44;
   color: #1b1b1b;
-}
-
-@media screen and (max-width:370px) {
-
-}
-
-@media screen and (max-width:370px) {
-
-}
-
-@media screen and (max-width:370px) {
-
 }
 
 <div
@@ -6472,18 +5866,6 @@ Array [
   text-align: left;
 }
 
-@media screen and (max-width:370px) {
-
-}
-
-@media screen and (max-width:370px) {
-
-}
-
-@media screen and (max-width:370px) {
-
-}
-
 <button
     className="c0 c1 c2"
     data-cy="button-borderArrow"
@@ -6601,18 +5983,6 @@ Array [
   width: inherit;
 }
 
-@media screen and (max-width:370px) {
-
-}
-
-@media screen and (max-width:370px) {
-
-}
-
-@media screen and (max-width:370px) {
-
-}
-
 <div
     className="c0"
     data-cy="smile-container"
@@ -6698,11 +6068,7 @@ Array [
 }
 
 .c1 {
-  position: fixed;
-  right: 50%;
-  bottom: 80px;
-  bottom: calc(80px + constant(safe-area-inset-bottom));
-  bottom: calc(80px + env(safe-area-inset-bottom));
+  position: relative;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -6714,62 +6080,26 @@ Array [
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  width: calc(100% - 30px);
-  max-width: 384px;
-  margin-top: 24px;
-  padding: 10px 18px;
+  width: 100%;
+  border: 1px solid #0052a5;
   border-radius: 4px;
-  background-color: #ffffff;
-  box-shadow: 0 0 8px 0 rgba(0,0,0,0.65);
-  -webkit-transform: translateX(50%);
-  -ms-transform: translateX(50%);
-  transform: translateX(50%);
-  cursor: pointer;
-  z-index: 98;
-}
-
-.c1.small {
-  right: 15px;
-  bottom: 60px;
-  bottom: calc(60px + constant(safe-area-inset-bottom));
-  bottom: calc(60px + env(safe-area-inset-bottom));
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  width: 66px;
-  height: 66px;
-  padding: 16px;
-  border-radius: 50%;
-  box-shadow: 0 0 8px 0 rgba(0,0,0,0.75);
-  -webkit-transform: translateX(0);
-  -ms-transform: translateX(0);
-  transform: translateX(0);
+  padding: 14px 20px;
 }
 
 .c3 {
-  position: relative;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-flex-flow: wrap row;
-  -ms-flex-flow: wrap row;
-  flex-flow: wrap row;
-  width: calc(100% - 78px);
-  font-size: 16px;
-  line-height: 1.4;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  width: calc(100% - 60px);
+  padding-right: 34px;
+  font-size: 14px;
+  line-height: 22px;
+  color: #0052a5;
   font-weight: 700;
-  color: #d5233f;
-}
-
-.c3 img {
-  position: absolute;
-  top: 50%;
-  right: 0;
-  height: 14px;
-  width: 14px;
-  margin-top: -7px;
 }
 
 .c2 {
@@ -6777,24 +6107,37 @@ Array [
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  width: 46px;
-  height: 46px;
-  margin-right: 28px;
+  -webkit-flex-flow: wrap row;
+  -ms-flex-flow: wrap row;
+  flex-flow: wrap row;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  margin-right: 20px;
+  color: #0052a5;
 }
 
-.c2.small {
-  width: 36px;
-  height: 36px;
-  margin-right: 0;
+.c2 svg {
+  display: block;
+  max-width: 100%;
+  max-height: 100%;
 }
 
 .c4 {
   position: absolute;
   top: 50%;
-  right: -6px;
+  right: 14px;
   height: 12px;
   width: 12px;
   margin-top: -8px;
+  color: #0052a5;
   z-index: 10;
 }
 
@@ -6802,26 +6145,6 @@ Array [
   display: block;
   height: 100%;
   width: 100%;
-}
-
-@media screen and (max-width:370px) {
-  .c1 {
-    padding: 10px 14px;
-  }
-}
-
-@media screen and (max-width:370px) {
-  .c3 {
-    width: calc(100% - 56px);
-  }
-}
-
-@media screen and (max-width:370px) {
-  .c2 {
-    width: 36px;
-    height: 36px;
-    margin-right: 20px;
-  }
 }
 
 <div
@@ -6833,30 +6156,23 @@ Array [
     </p>
     <a
       className="c1"
-      color="#d5233f"
-      href="tel:222500115"
+      href="tel:222 500 115"
     >
       <svg
         className="c2"
-        color="#d5233f"
       >
         icon-contact.svg
       </svg>
       <div
         className="c3"
-        color="#d5233f"
+      />
+      <span
+        className="c4"
       >
-        call_helpline
-        <br />
-        222 500 115
-        <span
-          className="c4"
-        >
-          <svg>
-            arrow-current-color.svg
-          </svg>
-        </span>
-      </div>
+        <svg>
+          arrow-current-color.svg
+        </svg>
+      </span>
     </a>
   </div>,
   .c0 {
@@ -6881,18 +6197,6 @@ Array [
   font-weight: 600;
   line-height: 1.44;
   color: #1b1b1b;
-}
-
-@media screen and (max-width:370px) {
-
-}
-
-@media screen and (max-width:370px) {
-
-}
-
-@media screen and (max-width:370px) {
-
 }
 
 <div
@@ -6932,18 +6236,6 @@ Array [
 .c2 {
   margin-bottom: 12px;
   color: #1b1b1b;
-}
-
-@media screen and (max-width:370px) {
-
-}
-
-@media screen and (max-width:370px) {
-
-}
-
-@media screen and (max-width:370px) {
-
 }
 
 <div
@@ -7042,18 +6334,6 @@ Array [
 
 .c4 svg {
   width: inherit;
-}
-
-@media screen and (max-width:370px) {
-
-}
-
-@media screen and (max-width:370px) {
-
-}
-
-@media screen and (max-width:370px) {
-
 }
 
 <div
@@ -7234,18 +6514,6 @@ Array [
   font-weight: 600;
 }
 
-@media screen and (max-width:370px) {
-
-}
-
-@media screen and (max-width:370px) {
-
-}
-
-@media screen and (max-width:370px) {
-
-}
-
 <div
     className="c0"
     color="#598527"
@@ -7313,11 +6581,7 @@ Array [
 }
 
 .c1 {
-  position: fixed;
-  right: 50%;
-  bottom: 80px;
-  bottom: calc(80px + constant(safe-area-inset-bottom));
-  bottom: calc(80px + env(safe-area-inset-bottom));
+  position: relative;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -7329,62 +6593,26 @@ Array [
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  width: calc(100% - 30px);
-  max-width: 384px;
-  margin-top: 24px;
-  padding: 10px 18px;
+  width: 100%;
+  border: 1px solid #0052a5;
   border-radius: 4px;
-  background-color: #ffffff;
-  box-shadow: 0 0 8px 0 rgba(0,0,0,0.65);
-  -webkit-transform: translateX(50%);
-  -ms-transform: translateX(50%);
-  transform: translateX(50%);
-  cursor: pointer;
-  z-index: 98;
-}
-
-.c1.small {
-  right: 15px;
-  bottom: 60px;
-  bottom: calc(60px + constant(safe-area-inset-bottom));
-  bottom: calc(60px + env(safe-area-inset-bottom));
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  width: 66px;
-  height: 66px;
-  padding: 16px;
-  border-radius: 50%;
-  box-shadow: 0 0 8px 0 rgba(0,0,0,0.75);
-  -webkit-transform: translateX(0);
-  -ms-transform: translateX(0);
-  transform: translateX(0);
+  padding: 14px 20px;
 }
 
 .c3 {
-  position: relative;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-flex-flow: wrap row;
-  -ms-flex-flow: wrap row;
-  flex-flow: wrap row;
-  width: calc(100% - 78px);
-  font-size: 16px;
-  line-height: 1.4;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  width: calc(100% - 60px);
+  padding-right: 34px;
+  font-size: 14px;
+  line-height: 22px;
+  color: #0052a5;
   font-weight: 700;
-  color: #d5233f;
-}
-
-.c3 img {
-  position: absolute;
-  top: 50%;
-  right: 0;
-  height: 14px;
-  width: 14px;
-  margin-top: -7px;
 }
 
 .c2 {
@@ -7392,24 +6620,37 @@ Array [
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  width: 46px;
-  height: 46px;
-  margin-right: 28px;
+  -webkit-flex-flow: wrap row;
+  -ms-flex-flow: wrap row;
+  flex-flow: wrap row;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  margin-right: 20px;
+  color: #0052a5;
 }
 
-.c2.small {
-  width: 36px;
-  height: 36px;
-  margin-right: 0;
+.c2 svg {
+  display: block;
+  max-width: 100%;
+  max-height: 100%;
 }
 
 .c4 {
   position: absolute;
   top: 50%;
-  right: -6px;
+  right: 14px;
   height: 12px;
   width: 12px;
   margin-top: -8px;
+  color: #0052a5;
   z-index: 10;
 }
 
@@ -7417,26 +6658,6 @@ Array [
   display: block;
   height: 100%;
   width: 100%;
-}
-
-@media screen and (max-width:370px) {
-  .c1 {
-    padding: 10px 14px;
-  }
-}
-
-@media screen and (max-width:370px) {
-  .c3 {
-    width: calc(100% - 56px);
-  }
-}
-
-@media screen and (max-width:370px) {
-  .c2 {
-    width: 36px;
-    height: 36px;
-    margin-right: 20px;
-  }
 }
 
 <div
@@ -7448,30 +6669,23 @@ Array [
     </p>
     <a
       className="c1"
-      color="#d5233f"
-      href="tel:222500115"
+      href="tel:222 500 115"
     >
       <svg
         className="c2"
-        color="#d5233f"
       >
         icon-contact.svg
       </svg>
       <div
         className="c3"
-        color="#d5233f"
+      />
+      <span
+        className="c4"
       >
-        call_helpline
-        <br />
-        222 500 115
-        <span
-          className="c4"
-        >
-          <svg>
-            arrow-current-color.svg
-          </svg>
-        </span>
-      </div>
+        <svg>
+          arrow-current-color.svg
+        </svg>
+      </span>
     </a>
   </div>,
   .c0 {
@@ -7496,18 +6710,6 @@ Array [
   font-weight: 600;
   line-height: 1.44;
   color: #1b1b1b;
-}
-
-@media screen and (max-width:370px) {
-
-}
-
-@media screen and (max-width:370px) {
-
-}
-
-@media screen and (max-width:370px) {
-
 }
 
 <div
@@ -7601,18 +6803,6 @@ Array [
 
 .c4 svg {
   width: inherit;
-}
-
-@media screen and (max-width:370px) {
-
-}
-
-@media screen and (max-width:370px) {
-
-}
-
-@media screen and (max-width:370px) {
-
 }
 
 <div
@@ -7724,18 +6914,6 @@ Array [
   font-weight: 600;
 }
 
-@media screen and (max-width:370px) {
-
-}
-
-@media screen and (max-width:370px) {
-
-}
-
-@media screen and (max-width:370px) {
-
-}
-
 <div
     className="c0"
     color="#0052a5"
@@ -7776,11 +6954,7 @@ Array [
 }
 
 .c1 {
-  position: fixed;
-  right: 50%;
-  bottom: 80px;
-  bottom: calc(80px + constant(safe-area-inset-bottom));
-  bottom: calc(80px + env(safe-area-inset-bottom));
+  position: relative;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -7792,62 +6966,26 @@ Array [
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  width: calc(100% - 30px);
-  max-width: 384px;
-  margin-top: 24px;
-  padding: 10px 18px;
+  width: 100%;
+  border: 1px solid #0052a5;
   border-radius: 4px;
-  background-color: #ffffff;
-  box-shadow: 0 0 8px 0 rgba(0,0,0,0.65);
-  -webkit-transform: translateX(50%);
-  -ms-transform: translateX(50%);
-  transform: translateX(50%);
-  cursor: pointer;
-  z-index: 98;
-}
-
-.c1.small {
-  right: 15px;
-  bottom: 60px;
-  bottom: calc(60px + constant(safe-area-inset-bottom));
-  bottom: calc(60px + env(safe-area-inset-bottom));
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  width: 66px;
-  height: 66px;
-  padding: 16px;
-  border-radius: 50%;
-  box-shadow: 0 0 8px 0 rgba(0,0,0,0.75);
-  -webkit-transform: translateX(0);
-  -ms-transform: translateX(0);
-  transform: translateX(0);
+  padding: 14px 20px;
 }
 
 .c3 {
-  position: relative;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-flex-flow: wrap row;
-  -ms-flex-flow: wrap row;
-  flex-flow: wrap row;
-  width: calc(100% - 78px);
-  font-size: 16px;
-  line-height: 1.4;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  width: calc(100% - 60px);
+  padding-right: 34px;
+  font-size: 14px;
+  line-height: 22px;
+  color: #0052a5;
   font-weight: 700;
-  color: #d5233f;
-}
-
-.c3 img {
-  position: absolute;
-  top: 50%;
-  right: 0;
-  height: 14px;
-  width: 14px;
-  margin-top: -7px;
 }
 
 .c2 {
@@ -7855,24 +6993,37 @@ Array [
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  width: 46px;
-  height: 46px;
-  margin-right: 28px;
+  -webkit-flex-flow: wrap row;
+  -ms-flex-flow: wrap row;
+  flex-flow: wrap row;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  margin-right: 20px;
+  color: #0052a5;
 }
 
-.c2.small {
-  width: 36px;
-  height: 36px;
-  margin-right: 0;
+.c2 svg {
+  display: block;
+  max-width: 100%;
+  max-height: 100%;
 }
 
 .c4 {
   position: absolute;
   top: 50%;
-  right: -6px;
+  right: 14px;
   height: 12px;
   width: 12px;
   margin-top: -8px;
+  color: #0052a5;
   z-index: 10;
 }
 
@@ -7880,26 +7031,6 @@ Array [
   display: block;
   height: 100%;
   width: 100%;
-}
-
-@media screen and (max-width:370px) {
-  .c1 {
-    padding: 10px 14px;
-  }
-}
-
-@media screen and (max-width:370px) {
-  .c3 {
-    width: calc(100% - 56px);
-  }
-}
-
-@media screen and (max-width:370px) {
-  .c2 {
-    width: 36px;
-    height: 36px;
-    margin-right: 20px;
-  }
 }
 
 <div
@@ -7911,30 +7042,23 @@ Array [
     </p>
     <a
       className="c1"
-      color="#d5233f"
-      href="tel:222500115"
+      href="tel:222 500 115"
     >
       <svg
         className="c2"
-        color="#d5233f"
       >
         icon-contact.svg
       </svg>
       <div
         className="c3"
-        color="#d5233f"
+      />
+      <span
+        className="c4"
       >
-        call_helpline
-        <br />
-        222 500 115
-        <span
-          className="c4"
-        >
-          <svg>
-            arrow-current-color.svg
-          </svg>
-        </span>
-      </div>
+        <svg>
+          arrow-current-color.svg
+        </svg>
+      </span>
     </a>
   </div>,
   .c0 {
@@ -7959,18 +7083,6 @@ Array [
   font-weight: 600;
   line-height: 1.44;
   color: #1b1b1b;
-}
-
-@media screen and (max-width:370px) {
-
-}
-
-@media screen and (max-width:370px) {
-
-}
-
-@media screen and (max-width:370px) {
-
 }
 
 <div
@@ -8066,18 +7178,6 @@ Array [
   width: inherit;
 }
 
-@media screen and (max-width:370px) {
-
-}
-
-@media screen and (max-width:370px) {
-
-}
-
-@media screen and (max-width:370px) {
-
-}
-
 <div
     className="c0"
     data-cy="smile-container"
@@ -8163,11 +7263,7 @@ Array [
 }
 
 .c1 {
-  position: fixed;
-  right: 50%;
-  bottom: 80px;
-  bottom: calc(80px + constant(safe-area-inset-bottom));
-  bottom: calc(80px + env(safe-area-inset-bottom));
+  position: relative;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -8179,62 +7275,26 @@ Array [
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  width: calc(100% - 30px);
-  max-width: 384px;
-  margin-top: 24px;
-  padding: 10px 18px;
+  width: 100%;
+  border: 1px solid #0052a5;
   border-radius: 4px;
-  background-color: #ffffff;
-  box-shadow: 0 0 8px 0 rgba(0,0,0,0.65);
-  -webkit-transform: translateX(50%);
-  -ms-transform: translateX(50%);
-  transform: translateX(50%);
-  cursor: pointer;
-  z-index: 98;
-}
-
-.c1.small {
-  right: 15px;
-  bottom: 60px;
-  bottom: calc(60px + constant(safe-area-inset-bottom));
-  bottom: calc(60px + env(safe-area-inset-bottom));
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  width: 66px;
-  height: 66px;
-  padding: 16px;
-  border-radius: 50%;
-  box-shadow: 0 0 8px 0 rgba(0,0,0,0.75);
-  -webkit-transform: translateX(0);
-  -ms-transform: translateX(0);
-  transform: translateX(0);
+  padding: 14px 20px;
 }
 
 .c3 {
-  position: relative;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-flex-flow: wrap row;
-  -ms-flex-flow: wrap row;
-  flex-flow: wrap row;
-  width: calc(100% - 78px);
-  font-size: 16px;
-  line-height: 1.4;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  width: calc(100% - 60px);
+  padding-right: 34px;
+  font-size: 14px;
+  line-height: 22px;
+  color: #0052a5;
   font-weight: 700;
-  color: #d5233f;
-}
-
-.c3 img {
-  position: absolute;
-  top: 50%;
-  right: 0;
-  height: 14px;
-  width: 14px;
-  margin-top: -7px;
 }
 
 .c2 {
@@ -8242,24 +7302,37 @@ Array [
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  width: 46px;
-  height: 46px;
-  margin-right: 28px;
+  -webkit-flex-flow: wrap row;
+  -ms-flex-flow: wrap row;
+  flex-flow: wrap row;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  margin-right: 20px;
+  color: #0052a5;
 }
 
-.c2.small {
-  width: 36px;
-  height: 36px;
-  margin-right: 0;
+.c2 svg {
+  display: block;
+  max-width: 100%;
+  max-height: 100%;
 }
 
 .c4 {
   position: absolute;
   top: 50%;
-  right: -6px;
+  right: 14px;
   height: 12px;
   width: 12px;
   margin-top: -8px;
+  color: #0052a5;
   z-index: 10;
 }
 
@@ -8267,26 +7340,6 @@ Array [
   display: block;
   height: 100%;
   width: 100%;
-}
-
-@media screen and (max-width:370px) {
-  .c1 {
-    padding: 10px 14px;
-  }
-}
-
-@media screen and (max-width:370px) {
-  .c3 {
-    width: calc(100% - 56px);
-  }
-}
-
-@media screen and (max-width:370px) {
-  .c2 {
-    width: 36px;
-    height: 36px;
-    margin-right: 20px;
-  }
 }
 
 <div
@@ -8298,30 +7351,23 @@ Array [
     </p>
     <a
       className="c1"
-      color="#d5233f"
-      href="tel:222500115"
+      href="tel:222 500 115"
     >
       <svg
         className="c2"
-        color="#d5233f"
       >
         icon-contact.svg
       </svg>
       <div
         className="c3"
-        color="#d5233f"
+      />
+      <span
+        className="c4"
       >
-        call_helpline
-        <br />
-        222 500 115
-        <span
-          className="c4"
-        >
-          <svg>
-            arrow-current-color.svg
-          </svg>
-        </span>
-      </div>
+        <svg>
+          arrow-current-color.svg
+        </svg>
+      </span>
     </a>
   </div>,
   .c0 {
@@ -8346,18 +7392,6 @@ Array [
   font-weight: 600;
   line-height: 1.44;
   color: #1b1b1b;
-}
-
-@media screen and (max-width:370px) {
-
-}
-
-@media screen and (max-width:370px) {
-
-}
-
-@media screen and (max-width:370px) {
-
 }
 
 <div
@@ -8397,18 +7431,6 @@ Array [
 .c2 {
   margin-bottom: 12px;
   color: #1b1b1b;
-}
-
-@media screen and (max-width:370px) {
-
-}
-
-@media screen and (max-width:370px) {
-
-}
-
-@media screen and (max-width:370px) {
-
 }
 
 <div
@@ -8834,18 +7856,6 @@ Array [
   width: inherit;
 }
 
-@media screen and (max-width:370px) {
-
-}
-
-@media screen and (max-width:370px) {
-
-}
-
-@media screen and (max-width:370px) {
-
-}
-
 <div
     className="c0"
     data-cy="smile-container"
@@ -8956,18 +7966,6 @@ Array [
   font-weight: 600;
 }
 
-@media screen and (max-width:370px) {
-
-}
-
-@media screen and (max-width:370px) {
-
-}
-
-@media screen and (max-width:370px) {
-
-}
-
 <span
     onClick={[Function]}
   >
@@ -9012,11 +8010,7 @@ Array [
 }
 
 .c1 {
-  position: fixed;
-  right: 50%;
-  bottom: 80px;
-  bottom: calc(80px + constant(safe-area-inset-bottom));
-  bottom: calc(80px + env(safe-area-inset-bottom));
+  position: relative;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -9028,62 +8022,26 @@ Array [
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  width: calc(100% - 30px);
-  max-width: 384px;
-  margin-top: 24px;
-  padding: 10px 18px;
+  width: 100%;
+  border: 1px solid #0052a5;
   border-radius: 4px;
-  background-color: #ffffff;
-  box-shadow: 0 0 8px 0 rgba(0,0,0,0.65);
-  -webkit-transform: translateX(50%);
-  -ms-transform: translateX(50%);
-  transform: translateX(50%);
-  cursor: pointer;
-  z-index: 98;
-}
-
-.c1.small {
-  right: 15px;
-  bottom: 60px;
-  bottom: calc(60px + constant(safe-area-inset-bottom));
-  bottom: calc(60px + env(safe-area-inset-bottom));
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  width: 66px;
-  height: 66px;
-  padding: 16px;
-  border-radius: 50%;
-  box-shadow: 0 0 8px 0 rgba(0,0,0,0.75);
-  -webkit-transform: translateX(0);
-  -ms-transform: translateX(0);
-  transform: translateX(0);
+  padding: 14px 20px;
 }
 
 .c3 {
-  position: relative;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-flex-flow: wrap row;
-  -ms-flex-flow: wrap row;
-  flex-flow: wrap row;
-  width: calc(100% - 78px);
-  font-size: 16px;
-  line-height: 1.4;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  width: calc(100% - 60px);
+  padding-right: 34px;
+  font-size: 14px;
+  line-height: 22px;
+  color: #0052a5;
   font-weight: 700;
-  color: #d5233f;
-}
-
-.c3 img {
-  position: absolute;
-  top: 50%;
-  right: 0;
-  height: 14px;
-  width: 14px;
-  margin-top: -7px;
 }
 
 .c2 {
@@ -9091,24 +8049,37 @@ Array [
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  width: 46px;
-  height: 46px;
-  margin-right: 28px;
+  -webkit-flex-flow: wrap row;
+  -ms-flex-flow: wrap row;
+  flex-flow: wrap row;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  margin-right: 20px;
+  color: #0052a5;
 }
 
-.c2.small {
-  width: 36px;
-  height: 36px;
-  margin-right: 0;
+.c2 svg {
+  display: block;
+  max-width: 100%;
+  max-height: 100%;
 }
 
 .c4 {
   position: absolute;
   top: 50%;
-  right: -6px;
+  right: 14px;
   height: 12px;
   width: 12px;
   margin-top: -8px;
+  color: #0052a5;
   z-index: 10;
 }
 
@@ -9116,26 +8087,6 @@ Array [
   display: block;
   height: 100%;
   width: 100%;
-}
-
-@media screen and (max-width:370px) {
-  .c1 {
-    padding: 10px 14px;
-  }
-}
-
-@media screen and (max-width:370px) {
-  .c3 {
-    width: calc(100% - 56px);
-  }
-}
-
-@media screen and (max-width:370px) {
-  .c2 {
-    width: 36px;
-    height: 36px;
-    margin-right: 20px;
-  }
 }
 
 <div
@@ -9147,30 +8098,23 @@ Array [
     </p>
     <a
       className="c1"
-      color="#d5233f"
-      href="tel:222500115"
+      href="tel:222 500 115"
     >
       <svg
         className="c2"
-        color="#d5233f"
       >
         icon-contact.svg
       </svg>
       <div
         className="c3"
-        color="#d5233f"
+      />
+      <span
+        className="c4"
       >
-        call_helpline
-        <br />
-        222 500 115
-        <span
-          className="c4"
-        >
-          <svg>
-            arrow-current-color.svg
-          </svg>
-        </span>
-      </div>
+        <svg>
+          arrow-current-color.svg
+        </svg>
+      </span>
     </a>
   </div>,
   .c0 {
@@ -9195,18 +8139,6 @@ Array [
   font-weight: 600;
   line-height: 1.44;
   color: #1b1b1b;
-}
-
-@media screen and (max-width:370px) {
-
-}
-
-@media screen and (max-width:370px) {
-
-}
-
-@media screen and (max-width:370px) {
-
 }
 
 <div
@@ -9302,18 +8234,6 @@ Array [
   width: inherit;
 }
 
-@media screen and (max-width:370px) {
-
-}
-
-@media screen and (max-width:370px) {
-
-}
-
-@media screen and (max-width:370px) {
-
-}
-
 <div
     className="c0"
     data-cy="smile-container"
@@ -9399,11 +8319,7 @@ Array [
 }
 
 .c1 {
-  position: fixed;
-  right: 50%;
-  bottom: 80px;
-  bottom: calc(80px + constant(safe-area-inset-bottom));
-  bottom: calc(80px + env(safe-area-inset-bottom));
+  position: relative;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -9415,62 +8331,26 @@ Array [
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  width: calc(100% - 30px);
-  max-width: 384px;
-  margin-top: 24px;
-  padding: 10px 18px;
+  width: 100%;
+  border: 1px solid #0052a5;
   border-radius: 4px;
-  background-color: #ffffff;
-  box-shadow: 0 0 8px 0 rgba(0,0,0,0.65);
-  -webkit-transform: translateX(50%);
-  -ms-transform: translateX(50%);
-  transform: translateX(50%);
-  cursor: pointer;
-  z-index: 98;
-}
-
-.c1.small {
-  right: 15px;
-  bottom: 60px;
-  bottom: calc(60px + constant(safe-area-inset-bottom));
-  bottom: calc(60px + env(safe-area-inset-bottom));
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  width: 66px;
-  height: 66px;
-  padding: 16px;
-  border-radius: 50%;
-  box-shadow: 0 0 8px 0 rgba(0,0,0,0.75);
-  -webkit-transform: translateX(0);
-  -ms-transform: translateX(0);
-  transform: translateX(0);
+  padding: 14px 20px;
 }
 
 .c3 {
-  position: relative;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-flex-flow: wrap row;
-  -ms-flex-flow: wrap row;
-  flex-flow: wrap row;
-  width: calc(100% - 78px);
-  font-size: 16px;
-  line-height: 1.4;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  width: calc(100% - 60px);
+  padding-right: 34px;
+  font-size: 14px;
+  line-height: 22px;
+  color: #0052a5;
   font-weight: 700;
-  color: #CC4700;
-}
-
-.c3 img {
-  position: absolute;
-  top: 50%;
-  right: 0;
-  height: 14px;
-  width: 14px;
-  margin-top: -7px;
 }
 
 .c2 {
@@ -9478,24 +8358,37 @@ Array [
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  width: 46px;
-  height: 46px;
-  margin-right: 28px;
+  -webkit-flex-flow: wrap row;
+  -ms-flex-flow: wrap row;
+  flex-flow: wrap row;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  margin-right: 20px;
+  color: #0052a5;
 }
 
-.c2.small {
-  width: 36px;
-  height: 36px;
-  margin-right: 0;
+.c2 svg {
+  display: block;
+  max-width: 100%;
+  max-height: 100%;
 }
 
 .c4 {
   position: absolute;
   top: 50%;
-  right: -6px;
+  right: 14px;
   height: 12px;
   width: 12px;
   margin-top: -8px;
+  color: #0052a5;
   z-index: 10;
 }
 
@@ -9503,26 +8396,6 @@ Array [
   display: block;
   height: 100%;
   width: 100%;
-}
-
-@media screen and (max-width:370px) {
-  .c1 {
-    padding: 10px 14px;
-  }
-}
-
-@media screen and (max-width:370px) {
-  .c3 {
-    width: calc(100% - 56px);
-  }
-}
-
-@media screen and (max-width:370px) {
-  .c2 {
-    width: 36px;
-    height: 36px;
-    margin-right: 20px;
-  }
 }
 
 <div
@@ -9534,30 +8407,23 @@ Array [
     </p>
     <a
       className="c1"
-      color="#CC4700"
-      href="tel:222500115"
+      href="tel:222 500 115"
     >
       <svg
         className="c2"
-        color="#CC4700"
       >
         icon-contact.svg
       </svg>
       <div
         className="c3"
-        color="#CC4700"
+      />
+      <span
+        className="c4"
       >
-        call_helpline
-        <br />
-        222 500 115
-        <span
-          className="c4"
-        >
-          <svg>
-            arrow-current-color.svg
-          </svg>
-        </span>
-      </div>
+        <svg>
+          arrow-current-color.svg
+        </svg>
+      </span>
     </a>
   </div>,
   .c0 {
@@ -9582,18 +8448,6 @@ Array [
   font-weight: 600;
   line-height: 1.44;
   color: #1b1b1b;
-}
-
-@media screen and (max-width:370px) {
-
-}
-
-@media screen and (max-width:370px) {
-
-}
-
-@media screen and (max-width:370px) {
-
 }
 
 <div
@@ -9735,18 +8589,6 @@ Array [
   text-align: left;
 }
 
-@media screen and (max-width:370px) {
-
-}
-
-@media screen and (max-width:370px) {
-
-}
-
-@media screen and (max-width:370px) {
-
-}
-
 <button
     className="c0 c1 c2"
     data-cy="button-borderArrow"
@@ -9864,18 +8706,6 @@ Array [
   width: inherit;
 }
 
-@media screen and (max-width:370px) {
-
-}
-
-@media screen and (max-width:370px) {
-
-}
-
-@media screen and (max-width:370px) {
-
-}
-
 <div
     className="c0"
     data-cy="smile-container"
@@ -9961,11 +8791,7 @@ Array [
 }
 
 .c1 {
-  position: fixed;
-  right: 50%;
-  bottom: 80px;
-  bottom: calc(80px + constant(safe-area-inset-bottom));
-  bottom: calc(80px + env(safe-area-inset-bottom));
+  position: relative;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -9977,62 +8803,26 @@ Array [
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  width: calc(100% - 30px);
-  max-width: 384px;
-  margin-top: 24px;
-  padding: 10px 18px;
+  width: 100%;
+  border: 1px solid #0052a5;
   border-radius: 4px;
-  background-color: #ffffff;
-  box-shadow: 0 0 8px 0 rgba(0,0,0,0.65);
-  -webkit-transform: translateX(50%);
-  -ms-transform: translateX(50%);
-  transform: translateX(50%);
-  cursor: pointer;
-  z-index: 98;
-}
-
-.c1.small {
-  right: 15px;
-  bottom: 60px;
-  bottom: calc(60px + constant(safe-area-inset-bottom));
-  bottom: calc(60px + env(safe-area-inset-bottom));
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  width: 66px;
-  height: 66px;
-  padding: 16px;
-  border-radius: 50%;
-  box-shadow: 0 0 8px 0 rgba(0,0,0,0.75);
-  -webkit-transform: translateX(0);
-  -ms-transform: translateX(0);
-  transform: translateX(0);
+  padding: 14px 20px;
 }
 
 .c3 {
-  position: relative;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-flex-flow: wrap row;
-  -ms-flex-flow: wrap row;
-  flex-flow: wrap row;
-  width: calc(100% - 78px);
-  font-size: 16px;
-  line-height: 1.4;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  width: calc(100% - 60px);
+  padding-right: 34px;
+  font-size: 14px;
+  line-height: 22px;
+  color: #0052a5;
   font-weight: 700;
-  color: #d5233f;
-}
-
-.c3 img {
-  position: absolute;
-  top: 50%;
-  right: 0;
-  height: 14px;
-  width: 14px;
-  margin-top: -7px;
 }
 
 .c2 {
@@ -10040,24 +8830,37 @@ Array [
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  width: 46px;
-  height: 46px;
-  margin-right: 28px;
+  -webkit-flex-flow: wrap row;
+  -ms-flex-flow: wrap row;
+  flex-flow: wrap row;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  margin-right: 20px;
+  color: #0052a5;
 }
 
-.c2.small {
-  width: 36px;
-  height: 36px;
-  margin-right: 0;
+.c2 svg {
+  display: block;
+  max-width: 100%;
+  max-height: 100%;
 }
 
 .c4 {
   position: absolute;
   top: 50%;
-  right: -6px;
+  right: 14px;
   height: 12px;
   width: 12px;
   margin-top: -8px;
+  color: #0052a5;
   z-index: 10;
 }
 
@@ -10065,26 +8868,6 @@ Array [
   display: block;
   height: 100%;
   width: 100%;
-}
-
-@media screen and (max-width:370px) {
-  .c1 {
-    padding: 10px 14px;
-  }
-}
-
-@media screen and (max-width:370px) {
-  .c3 {
-    width: calc(100% - 56px);
-  }
-}
-
-@media screen and (max-width:370px) {
-  .c2 {
-    width: 36px;
-    height: 36px;
-    margin-right: 20px;
-  }
 }
 
 <div
@@ -10096,30 +8879,23 @@ Array [
     </p>
     <a
       className="c1"
-      color="#d5233f"
-      href="tel:222500115"
+      href="tel:222 500 115"
     >
       <svg
         className="c2"
-        color="#d5233f"
       >
         icon-contact.svg
       </svg>
       <div
         className="c3"
-        color="#d5233f"
+      />
+      <span
+        className="c4"
       >
-        call_helpline
-        <br />
-        222 500 115
-        <span
-          className="c4"
-        >
-          <svg>
-            arrow-current-color.svg
-          </svg>
-        </span>
-      </div>
+        <svg>
+          arrow-current-color.svg
+        </svg>
+      </span>
     </a>
   </div>,
   .c0 {
@@ -10144,18 +8920,6 @@ Array [
   font-weight: 600;
   line-height: 1.44;
   color: #1b1b1b;
-}
-
-@media screen and (max-width:370px) {
-
-}
-
-@media screen and (max-width:370px) {
-
-}
-
-@media screen and (max-width:370px) {
-
 }
 
 <div
@@ -10239,8 +9003,8 @@ Array [
   line-height: 1.61;
   color: #1b1b1b;
   white-space: pre-line;
-  -webkit-transition: padding 0.5s, max-height 0.4s cubic-bezier(0,1,0,1) -0.1s;
-  transition: padding 0.5s, max-height 0.4s cubic-bezier(0,1,0,1) -0.1s;
+  -webkit-transition: padding 0.5s,max-height 0.4s cubic-bezier(0,1,0,1) -0.1s;
+  transition: padding 0.5s,max-height 0.4s cubic-bezier(0,1,0,1) -0.1s;
   overflow: hidden;
 }
 
@@ -10252,18 +9016,6 @@ Array [
 
 .c4 a {
   color: #0052a5;
-}
-
-@media screen and (max-width:370px) {
-
-}
-
-@media screen and (max-width:370px) {
-
-}
-
-@media screen and (max-width:370px) {
-
 }
 
 <div
@@ -10390,8 +9142,8 @@ Array [
   line-height: 1.61;
   color: #1b1b1b;
   white-space: pre-line;
-  -webkit-transition: padding 0.5s, max-height 0.4s cubic-bezier(0,1,0,1) -0.1s;
-  transition: padding 0.5s, max-height 0.4s cubic-bezier(0,1,0,1) -0.1s;
+  -webkit-transition: padding 0.5s,max-height 0.4s cubic-bezier(0,1,0,1) -0.1s;
+  transition: padding 0.5s,max-height 0.4s cubic-bezier(0,1,0,1) -0.1s;
   overflow: hidden;
 }
 
@@ -10403,18 +9155,6 @@ Array [
 
 .c4 a {
   color: #0052a5;
-}
-
-@media screen and (max-width:370px) {
-
-}
-
-@media screen and (max-width:370px) {
-
-}
-
-@media screen and (max-width:370px) {
-
 }
 
 <div
@@ -10563,8 +9303,8 @@ Array [
   line-height: 1.61;
   color: #1b1b1b;
   white-space: pre-line;
-  -webkit-transition: padding 0.5s, max-height 0.4s cubic-bezier(0,1,0,1) -0.1s;
-  transition: padding 0.5s, max-height 0.4s cubic-bezier(0,1,0,1) -0.1s;
+  -webkit-transition: padding 0.5s,max-height 0.4s cubic-bezier(0,1,0,1) -0.1s;
+  transition: padding 0.5s,max-height 0.4s cubic-bezier(0,1,0,1) -0.1s;
   overflow: hidden;
 }
 
@@ -10576,18 +9316,6 @@ Array [
 
 .c4 a {
   color: #0052a5;
-}
-
-@media screen and (max-width:370px) {
-
-}
-
-@media screen and (max-width:370px) {
-
-}
-
-@media screen and (max-width:370px) {
-
 }
 
 <div
@@ -10653,18 +9381,6 @@ Array [
 .c2 {
   margin-bottom: 12px;
   color: #1b1b1b;
-}
-
-@media screen and (max-width:370px) {
-
-}
-
-@media screen and (max-width:370px) {
-
-}
-
-@media screen and (max-width:370px) {
-
 }
 
 <div
@@ -10794,18 +9510,6 @@ Array [
   text-align: left;
 }
 
-@media screen and (max-width:370px) {
-
-}
-
-@media screen and (max-width:370px) {
-
-}
-
-@media screen and (max-width:370px) {
-
-}
-
 <button
     className="c0 c1"
     data-cy="button-border"
@@ -10912,18 +9616,6 @@ Array [
 
 .c4 svg {
   width: inherit;
-}
-
-@media screen and (max-width:370px) {
-
-}
-
-@media screen and (max-width:370px) {
-
-}
-
-@media screen and (max-width:370px) {
-
 }
 
 <div
@@ -11036,18 +9728,6 @@ Array [
   font-weight: 600;
 }
 
-@media screen and (max-width:370px) {
-
-}
-
-@media screen and (max-width:370px) {
-
-}
-
-@media screen and (max-width:370px) {
-
-}
-
 <span
     onClick={[Function]}
   >
@@ -11092,11 +9772,7 @@ Array [
 }
 
 .c1 {
-  position: fixed;
-  right: 50%;
-  bottom: 80px;
-  bottom: calc(80px + constant(safe-area-inset-bottom));
-  bottom: calc(80px + env(safe-area-inset-bottom));
+  position: relative;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -11108,62 +9784,26 @@ Array [
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  width: calc(100% - 30px);
-  max-width: 384px;
-  margin-top: 24px;
-  padding: 10px 18px;
+  width: 100%;
+  border: 1px solid #0052a5;
   border-radius: 4px;
-  background-color: #ffffff;
-  box-shadow: 0 0 8px 0 rgba(0,0,0,0.65);
-  -webkit-transform: translateX(50%);
-  -ms-transform: translateX(50%);
-  transform: translateX(50%);
-  cursor: pointer;
-  z-index: 98;
-}
-
-.c1.small {
-  right: 15px;
-  bottom: 60px;
-  bottom: calc(60px + constant(safe-area-inset-bottom));
-  bottom: calc(60px + env(safe-area-inset-bottom));
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  width: 66px;
-  height: 66px;
-  padding: 16px;
-  border-radius: 50%;
-  box-shadow: 0 0 8px 0 rgba(0,0,0,0.75);
-  -webkit-transform: translateX(0);
-  -ms-transform: translateX(0);
-  transform: translateX(0);
+  padding: 14px 20px;
 }
 
 .c3 {
-  position: relative;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-flex-flow: wrap row;
-  -ms-flex-flow: wrap row;
-  flex-flow: wrap row;
-  width: calc(100% - 78px);
-  font-size: 16px;
-  line-height: 1.4;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  width: calc(100% - 60px);
+  padding-right: 34px;
+  font-size: 14px;
+  line-height: 22px;
+  color: #0052a5;
   font-weight: 700;
-  color: #d5233f;
-}
-
-.c3 img {
-  position: absolute;
-  top: 50%;
-  right: 0;
-  height: 14px;
-  width: 14px;
-  margin-top: -7px;
 }
 
 .c2 {
@@ -11171,24 +9811,37 @@ Array [
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  width: 46px;
-  height: 46px;
-  margin-right: 28px;
+  -webkit-flex-flow: wrap row;
+  -ms-flex-flow: wrap row;
+  flex-flow: wrap row;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  margin-right: 20px;
+  color: #0052a5;
 }
 
-.c2.small {
-  width: 36px;
-  height: 36px;
-  margin-right: 0;
+.c2 svg {
+  display: block;
+  max-width: 100%;
+  max-height: 100%;
 }
 
 .c4 {
   position: absolute;
   top: 50%;
-  right: -6px;
+  right: 14px;
   height: 12px;
   width: 12px;
   margin-top: -8px;
+  color: #0052a5;
   z-index: 10;
 }
 
@@ -11196,26 +9849,6 @@ Array [
   display: block;
   height: 100%;
   width: 100%;
-}
-
-@media screen and (max-width:370px) {
-  .c1 {
-    padding: 10px 14px;
-  }
-}
-
-@media screen and (max-width:370px) {
-  .c3 {
-    width: calc(100% - 56px);
-  }
-}
-
-@media screen and (max-width:370px) {
-  .c2 {
-    width: 36px;
-    height: 36px;
-    margin-right: 20px;
-  }
 }
 
 <div
@@ -11227,30 +9860,23 @@ Array [
     </p>
     <a
       className="c1"
-      color="#d5233f"
-      href="tel:222500115"
+      href="tel:222 500 115"
     >
       <svg
         className="c2"
-        color="#d5233f"
       >
         icon-contact.svg
       </svg>
       <div
         className="c3"
-        color="#d5233f"
+      />
+      <span
+        className="c4"
       >
-        call_helpline
-        <br />
-        222 500 115
-        <span
-          className="c4"
-        >
-          <svg>
-            arrow-current-color.svg
-          </svg>
-        </span>
-      </div>
+        <svg>
+          arrow-current-color.svg
+        </svg>
+      </span>
     </a>
   </div>,
   .c0 {
@@ -11275,18 +9901,6 @@ Array [
   font-weight: 600;
   line-height: 1.44;
   color: #1b1b1b;
-}
-
-@media screen and (max-width:370px) {
-
-}
-
-@media screen and (max-width:370px) {
-
-}
-
-@media screen and (max-width:370px) {
-
 }
 
 <div
@@ -11382,18 +9996,6 @@ Array [
   width: inherit;
 }
 
-@media screen and (max-width:370px) {
-
-}
-
-@media screen and (max-width:370px) {
-
-}
-
-@media screen and (max-width:370px) {
-
-}
-
 <div
     className="c0"
     data-cy="smile-container"
@@ -11479,11 +10081,7 @@ Array [
 }
 
 .c1 {
-  position: fixed;
-  right: 50%;
-  bottom: 80px;
-  bottom: calc(80px + constant(safe-area-inset-bottom));
-  bottom: calc(80px + env(safe-area-inset-bottom));
+  position: relative;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -11495,62 +10093,26 @@ Array [
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  width: calc(100% - 30px);
-  max-width: 384px;
-  margin-top: 24px;
-  padding: 10px 18px;
+  width: 100%;
+  border: 1px solid #0052a5;
   border-radius: 4px;
-  background-color: #ffffff;
-  box-shadow: 0 0 8px 0 rgba(0,0,0,0.65);
-  -webkit-transform: translateX(50%);
-  -ms-transform: translateX(50%);
-  transform: translateX(50%);
-  cursor: pointer;
-  z-index: 98;
-}
-
-.c1.small {
-  right: 15px;
-  bottom: 60px;
-  bottom: calc(60px + constant(safe-area-inset-bottom));
-  bottom: calc(60px + env(safe-area-inset-bottom));
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  width: 66px;
-  height: 66px;
-  padding: 16px;
-  border-radius: 50%;
-  box-shadow: 0 0 8px 0 rgba(0,0,0,0.75);
-  -webkit-transform: translateX(0);
-  -ms-transform: translateX(0);
-  transform: translateX(0);
+  padding: 14px 20px;
 }
 
 .c3 {
-  position: relative;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-flex-flow: wrap row;
-  -ms-flex-flow: wrap row;
-  flex-flow: wrap row;
-  width: calc(100% - 78px);
-  font-size: 16px;
-  line-height: 1.4;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  width: calc(100% - 60px);
+  padding-right: 34px;
+  font-size: 14px;
+  line-height: 22px;
+  color: #0052a5;
   font-weight: 700;
-  color: #d5233f;
-}
-
-.c3 img {
-  position: absolute;
-  top: 50%;
-  right: 0;
-  height: 14px;
-  width: 14px;
-  margin-top: -7px;
 }
 
 .c2 {
@@ -11558,24 +10120,37 @@ Array [
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  width: 46px;
-  height: 46px;
-  margin-right: 28px;
+  -webkit-flex-flow: wrap row;
+  -ms-flex-flow: wrap row;
+  flex-flow: wrap row;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  margin-right: 20px;
+  color: #0052a5;
 }
 
-.c2.small {
-  width: 36px;
-  height: 36px;
-  margin-right: 0;
+.c2 svg {
+  display: block;
+  max-width: 100%;
+  max-height: 100%;
 }
 
 .c4 {
   position: absolute;
   top: 50%;
-  right: -6px;
+  right: 14px;
   height: 12px;
   width: 12px;
   margin-top: -8px;
+  color: #0052a5;
   z-index: 10;
 }
 
@@ -11583,26 +10158,6 @@ Array [
   display: block;
   height: 100%;
   width: 100%;
-}
-
-@media screen and (max-width:370px) {
-  .c1 {
-    padding: 10px 14px;
-  }
-}
-
-@media screen and (max-width:370px) {
-  .c3 {
-    width: calc(100% - 56px);
-  }
-}
-
-@media screen and (max-width:370px) {
-  .c2 {
-    width: 36px;
-    height: 36px;
-    margin-right: 20px;
-  }
 }
 
 <div
@@ -11614,30 +10169,23 @@ Array [
     </p>
     <a
       className="c1"
-      color="#d5233f"
-      href="tel:222500115"
+      href="tel:222 500 115"
     >
       <svg
         className="c2"
-        color="#d5233f"
       >
         icon-contact.svg
       </svg>
       <div
         className="c3"
-        color="#d5233f"
+      />
+      <span
+        className="c4"
       >
-        call_helpline
-        <br />
-        222 500 115
-        <span
-          className="c4"
-        >
-          <svg>
-            arrow-current-color.svg
-          </svg>
-        </span>
-      </div>
+        <svg>
+          arrow-current-color.svg
+        </svg>
+      </span>
     </a>
   </div>,
   .c0 {
@@ -11662,18 +10210,6 @@ Array [
   font-weight: 600;
   line-height: 1.44;
   color: #1b1b1b;
-}
-
-@media screen and (max-width:370px) {
-
-}
-
-@media screen and (max-width:370px) {
-
-}
-
-@media screen and (max-width:370px) {
-
 }
 
 <div
@@ -12099,8 +10635,8 @@ Array [
   line-height: 1.61;
   color: #1b1b1b;
   white-space: pre-line;
-  -webkit-transition: padding 0.5s, max-height 0.4s cubic-bezier(0,1,0,1) -0.1s;
-  transition: padding 0.5s, max-height 0.4s cubic-bezier(0,1,0,1) -0.1s;
+  -webkit-transition: padding 0.5s,max-height 0.4s cubic-bezier(0,1,0,1) -0.1s;
+  transition: padding 0.5s,max-height 0.4s cubic-bezier(0,1,0,1) -0.1s;
   overflow: hidden;
 }
 
@@ -12201,8 +10737,8 @@ Array [
   line-height: 1.61;
   color: #1b1b1b;
   white-space: pre-line;
-  -webkit-transition: padding 0.5s, max-height 0.4s cubic-bezier(0,1,0,1) -0.1s;
-  transition: padding 0.5s, max-height 0.4s cubic-bezier(0,1,0,1) -0.1s;
+  -webkit-transition: padding 0.5s,max-height 0.4s cubic-bezier(0,1,0,1) -0.1s;
+  transition: padding 0.5s,max-height 0.4s cubic-bezier(0,1,0,1) -0.1s;
   overflow: hidden;
 }
 
@@ -12323,8 +10859,8 @@ Array [
   line-height: 1.61;
   color: #1b1b1b;
   white-space: pre-line;
-  -webkit-transition: padding 0.5s, max-height 0.4s cubic-bezier(0,1,0,1) -0.1s;
-  transition: padding 0.5s, max-height 0.4s cubic-bezier(0,1,0,1) -0.1s;
+  -webkit-transition: padding 0.5s,max-height 0.4s cubic-bezier(0,1,0,1) -0.1s;
+  transition: padding 0.5s,max-height 0.4s cubic-bezier(0,1,0,1) -0.1s;
   overflow: hidden;
 }
 
@@ -12503,8 +11039,8 @@ Array [
   line-height: 1.61;
   color: #1b1b1b;
   white-space: pre-line;
-  -webkit-transition: padding 0.5s, max-height 0.4s cubic-bezier(0,1,0,1) -0.1s;
-  transition: padding 0.5s, max-height 0.4s cubic-bezier(0,1,0,1) -0.1s;
+  -webkit-transition: padding 0.5s,max-height 0.4s cubic-bezier(0,1,0,1) -0.1s;
+  transition: padding 0.5s,max-height 0.4s cubic-bezier(0,1,0,1) -0.1s;
   overflow: hidden;
 }
 
@@ -12628,8 +11164,8 @@ Array [
   line-height: 1.61;
   color: #1b1b1b;
   white-space: pre-line;
-  -webkit-transition: padding 0.5s, max-height 0.4s cubic-bezier(0,1,0,1) -0.1s;
-  transition: padding 0.5s, max-height 0.4s cubic-bezier(0,1,0,1) -0.1s;
+  -webkit-transition: padding 0.5s,max-height 0.4s cubic-bezier(0,1,0,1) -0.1s;
+  transition: padding 0.5s,max-height 0.4s cubic-bezier(0,1,0,1) -0.1s;
   overflow: hidden;
 }
 
@@ -12853,18 +11389,6 @@ Array [
   width: inherit;
 }
 
-@media screen and (max-width:370px) {
-
-}
-
-@media screen and (max-width:370px) {
-
-}
-
-@media screen and (max-width:370px) {
-
-}
-
 <div
     className="c0"
     data-cy="smile-container"
@@ -12975,18 +11499,6 @@ Array [
   font-weight: 600;
 }
 
-@media screen and (max-width:370px) {
-
-}
-
-@media screen and (max-width:370px) {
-
-}
-
-@media screen and (max-width:370px) {
-
-}
-
 <span
     onClick={[Function]}
   >
@@ -13031,11 +11543,7 @@ Array [
 }
 
 .c1 {
-  position: fixed;
-  right: 50%;
-  bottom: 80px;
-  bottom: calc(80px + constant(safe-area-inset-bottom));
-  bottom: calc(80px + env(safe-area-inset-bottom));
+  position: relative;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -13047,62 +11555,26 @@ Array [
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  width: calc(100% - 30px);
-  max-width: 384px;
-  margin-top: 24px;
-  padding: 10px 18px;
+  width: 100%;
+  border: 1px solid #0052a5;
   border-radius: 4px;
-  background-color: #ffffff;
-  box-shadow: 0 0 8px 0 rgba(0,0,0,0.65);
-  -webkit-transform: translateX(50%);
-  -ms-transform: translateX(50%);
-  transform: translateX(50%);
-  cursor: pointer;
-  z-index: 98;
-}
-
-.c1.small {
-  right: 15px;
-  bottom: 60px;
-  bottom: calc(60px + constant(safe-area-inset-bottom));
-  bottom: calc(60px + env(safe-area-inset-bottom));
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  width: 66px;
-  height: 66px;
-  padding: 16px;
-  border-radius: 50%;
-  box-shadow: 0 0 8px 0 rgba(0,0,0,0.75);
-  -webkit-transform: translateX(0);
-  -ms-transform: translateX(0);
-  transform: translateX(0);
+  padding: 14px 20px;
 }
 
 .c3 {
-  position: relative;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-flex-flow: wrap row;
-  -ms-flex-flow: wrap row;
-  flex-flow: wrap row;
-  width: calc(100% - 78px);
-  font-size: 16px;
-  line-height: 1.4;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  width: calc(100% - 60px);
+  padding-right: 34px;
+  font-size: 14px;
+  line-height: 22px;
+  color: #0052a5;
   font-weight: 700;
-  color: #d5233f;
-}
-
-.c3 img {
-  position: absolute;
-  top: 50%;
-  right: 0;
-  height: 14px;
-  width: 14px;
-  margin-top: -7px;
 }
 
 .c2 {
@@ -13110,24 +11582,37 @@ Array [
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  width: 46px;
-  height: 46px;
-  margin-right: 28px;
+  -webkit-flex-flow: wrap row;
+  -ms-flex-flow: wrap row;
+  flex-flow: wrap row;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  margin-right: 20px;
+  color: #0052a5;
 }
 
-.c2.small {
-  width: 36px;
-  height: 36px;
-  margin-right: 0;
+.c2 svg {
+  display: block;
+  max-width: 100%;
+  max-height: 100%;
 }
 
 .c4 {
   position: absolute;
   top: 50%;
-  right: -6px;
+  right: 14px;
   height: 12px;
   width: 12px;
   margin-top: -8px;
+  color: #0052a5;
   z-index: 10;
 }
 
@@ -13135,26 +11620,6 @@ Array [
   display: block;
   height: 100%;
   width: 100%;
-}
-
-@media screen and (max-width:370px) {
-  .c1 {
-    padding: 10px 14px;
-  }
-}
-
-@media screen and (max-width:370px) {
-  .c3 {
-    width: calc(100% - 56px);
-  }
-}
-
-@media screen and (max-width:370px) {
-  .c2 {
-    width: 36px;
-    height: 36px;
-    margin-right: 20px;
-  }
 }
 
 <div
@@ -13166,30 +11631,23 @@ Array [
     </p>
     <a
       className="c1"
-      color="#d5233f"
-      href="tel:222500115"
+      href="tel:222 500 115"
     >
       <svg
         className="c2"
-        color="#d5233f"
       >
         icon-contact.svg
       </svg>
       <div
         className="c3"
-        color="#d5233f"
+      />
+      <span
+        className="c4"
       >
-        call_helpline
-        <br />
-        222 500 115
-        <span
-          className="c4"
-        >
-          <svg>
-            arrow-current-color.svg
-          </svg>
-        </span>
-      </div>
+        <svg>
+          arrow-current-color.svg
+        </svg>
+      </span>
     </a>
   </div>,
   .c0 {
@@ -13214,18 +11672,6 @@ Array [
   font-weight: 600;
   line-height: 1.44;
   color: #1b1b1b;
-}
-
-@media screen and (max-width:370px) {
-
-}
-
-@media screen and (max-width:370px) {
-
-}
-
-@media screen and (max-width:370px) {
-
 }
 
 <div
@@ -13321,18 +11767,6 @@ Array [
   width: inherit;
 }
 
-@media screen and (max-width:370px) {
-
-}
-
-@media screen and (max-width:370px) {
-
-}
-
-@media screen and (max-width:370px) {
-
-}
-
 <div
     className="c0"
     data-cy="smile-container"
@@ -13418,11 +11852,7 @@ Array [
 }
 
 .c1 {
-  position: fixed;
-  right: 50%;
-  bottom: 80px;
-  bottom: calc(80px + constant(safe-area-inset-bottom));
-  bottom: calc(80px + env(safe-area-inset-bottom));
+  position: relative;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -13434,62 +11864,26 @@ Array [
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  width: calc(100% - 30px);
-  max-width: 384px;
-  margin-top: 24px;
-  padding: 10px 18px;
+  width: 100%;
+  border: 1px solid #0052a5;
   border-radius: 4px;
-  background-color: #ffffff;
-  box-shadow: 0 0 8px 0 rgba(0,0,0,0.65);
-  -webkit-transform: translateX(50%);
-  -ms-transform: translateX(50%);
-  transform: translateX(50%);
-  cursor: pointer;
-  z-index: 98;
-}
-
-.c1.small {
-  right: 15px;
-  bottom: 60px;
-  bottom: calc(60px + constant(safe-area-inset-bottom));
-  bottom: calc(60px + env(safe-area-inset-bottom));
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  width: 66px;
-  height: 66px;
-  padding: 16px;
-  border-radius: 50%;
-  box-shadow: 0 0 8px 0 rgba(0,0,0,0.75);
-  -webkit-transform: translateX(0);
-  -ms-transform: translateX(0);
-  transform: translateX(0);
+  padding: 14px 20px;
 }
 
 .c3 {
-  position: relative;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-flex-flow: wrap row;
-  -ms-flex-flow: wrap row;
-  flex-flow: wrap row;
-  width: calc(100% - 78px);
-  font-size: 16px;
-  line-height: 1.4;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  width: calc(100% - 60px);
+  padding-right: 34px;
+  font-size: 14px;
+  line-height: 22px;
+  color: #0052a5;
   font-weight: 700;
-  color: #CC4700;
-}
-
-.c3 img {
-  position: absolute;
-  top: 50%;
-  right: 0;
-  height: 14px;
-  width: 14px;
-  margin-top: -7px;
 }
 
 .c2 {
@@ -13497,24 +11891,37 @@ Array [
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  width: 46px;
-  height: 46px;
-  margin-right: 28px;
+  -webkit-flex-flow: wrap row;
+  -ms-flex-flow: wrap row;
+  flex-flow: wrap row;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  margin-right: 20px;
+  color: #0052a5;
 }
 
-.c2.small {
-  width: 36px;
-  height: 36px;
-  margin-right: 0;
+.c2 svg {
+  display: block;
+  max-width: 100%;
+  max-height: 100%;
 }
 
 .c4 {
   position: absolute;
   top: 50%;
-  right: -6px;
+  right: 14px;
   height: 12px;
   width: 12px;
   margin-top: -8px;
+  color: #0052a5;
   z-index: 10;
 }
 
@@ -13522,26 +11929,6 @@ Array [
   display: block;
   height: 100%;
   width: 100%;
-}
-
-@media screen and (max-width:370px) {
-  .c1 {
-    padding: 10px 14px;
-  }
-}
-
-@media screen and (max-width:370px) {
-  .c3 {
-    width: calc(100% - 56px);
-  }
-}
-
-@media screen and (max-width:370px) {
-  .c2 {
-    width: 36px;
-    height: 36px;
-    margin-right: 20px;
-  }
 }
 
 <div
@@ -13553,30 +11940,23 @@ Array [
     </p>
     <a
       className="c1"
-      color="#CC4700"
-      href="tel:222500115"
+      href="tel:222 500 115"
     >
       <svg
         className="c2"
-        color="#CC4700"
       >
         icon-contact.svg
       </svg>
       <div
         className="c3"
-        color="#CC4700"
+      />
+      <span
+        className="c4"
       >
-        call_helpline
-        <br />
-        222 500 115
-        <span
-          className="c4"
-        >
-          <svg>
-            arrow-current-color.svg
-          </svg>
-        </span>
-      </div>
+        <svg>
+          arrow-current-color.svg
+        </svg>
+      </span>
     </a>
   </div>,
   .c0 {
@@ -13601,18 +11981,6 @@ Array [
   font-weight: 600;
   line-height: 1.44;
   color: #1b1b1b;
-}
-
-@media screen and (max-width:370px) {
-
-}
-
-@media screen and (max-width:370px) {
-
-}
-
-@media screen and (max-width:370px) {
-
 }
 
 <div
@@ -13752,18 +12120,6 @@ Array [
   line-height: 1.57;
   color: #0052a5;
   text-align: left;
-}
-
-@media screen and (max-width:370px) {
-
-}
-
-@media screen and (max-width:370px) {
-
-}
-
-@media screen and (max-width:370px) {
-
 }
 
 <button

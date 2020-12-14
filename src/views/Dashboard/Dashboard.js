@@ -1,5 +1,5 @@
 import React from 'react';
-import { CallToActionPin, Layout } from '../../components';
+import { CallToActionHealth, CallToActionPin, Layout } from '../../components';
 
 import { ExposureNotification, ResultAnalysis, Statistics } from './components';
 import * as Styled from './Dashboard.styled';
@@ -17,6 +17,10 @@ const Dashboard = () => (
 
       <Styled.Wrapper>
         <Statistics />
+      </Styled.Wrapper>
+
+      <Styled.Wrapper padding>
+        <CallToActionHealth onClick={() => null} />
       </Styled.Wrapper>
     </Styled.Dashboard>
   </Layout>

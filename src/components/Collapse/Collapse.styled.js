@@ -18,14 +18,13 @@ export const Header = styled.div`
   align-items: center;
   width: 100%;
   min-height: 54px;
-  padding: 12px 15px;
+  padding: ${({ padding }) => (padding ? '12px 15px 12px 0px' : '12px 15px')};
   font-size: 14px;
   font-weight: bold;
   line-height: 1.3;
   color: ${Color.primary};
   border-top: solid 1px ${Color.gray_7};
-  border-bottom: solid 1px
-    ${({ open }) => (open ? 'transparent' : Color.gray_7)};
+  border-bottom: solid 1px ${({ open }) => (open ? 'transparent' : Color.gray_7)};
 `;
 
 export const Title = styled.span`
@@ -46,12 +45,12 @@ export const Description = styled.div`
   width: 100%;
   max-height: ${({ open }) => (open ? '9999px' : '0')};
   padding: ${({ open }) => (open ? '0 15px 10px 15px' : '0 15px 0 15px')};
+  ${({ padding }) => padding && 'padding-left: 0!important; padding-right: 0!important;'};
   font-size: 14px;
   line-height: 1.61;
   color: ${Color.lightBlack};
   white-space: pre-line;
-  transition: padding ${({ open }) => (open ? '0.1s' : '0.5s')},
-    max-height 0.4s cubic-bezier(0, 1, 0, 1) -0.1s;
+  transition: padding ${({ open }) => (open ? '0.1s' : '0.5s')}, max-height 0.4s cubic-bezier(0, 1, 0, 1) -0.1s;
   overflow: hidden;
   ${({ open }) =>
     open &&

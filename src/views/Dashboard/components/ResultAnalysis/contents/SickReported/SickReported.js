@@ -5,7 +5,7 @@ import { Button } from '../../../../../../components';
 import { BUTTON_TYPES } from '../../../../../../components/Button/Button.constants';
 import * as Styled from './SickReported.styled';
 
-const SickReported = ({ dateLastRiskTest, dateRiskMonitoring, isInfected, onClick }) => (
+const SickReported = ({ dateLastRiskTest, dateRiskMonitoring, isInfected, handleRecommendation }) => (
   <Styled.SickReported>
     <ListStats isInfected={isInfected} dateRiskMonitoring={dateRiskMonitoring} dateLastRiskTest={dateLastRiskTest} />
 
@@ -14,7 +14,7 @@ const SickReported = ({ dateLastRiskTest, dateRiskMonitoring, isInfected, onClic
     </Styled.Text>
 
     <Styled.ButtonWrapper>
-      <Button onClick={onClick} type={BUTTON_TYPES.SMALL_OUTLINE}>
+      <Button onClick={handleRecommendation} type={BUTTON_TYPES.SMALL_OUTLINE}>
         <T i18nKey="result_analysis_text_28" />
       </Button>
     </Styled.ButtonWrapper>
