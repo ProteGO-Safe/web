@@ -8,7 +8,6 @@ export { ButtonWithIcon } from './ButtonWithIcon';
 export { CallHelpline } from './CallHelpline';
 export { CallHotline } from './CallHotline';
 export { CallToActionHealth } from './CallToActionHealth';
-export { CallToActionPin } from './CallToActionPin';
 export { CallToActionTemperature } from './CallToActionTemperature';
 export { Checkbox } from './Checkbox';
 export { CircleLoader } from './CircleLoader';

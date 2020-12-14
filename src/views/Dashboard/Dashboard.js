@@ -1,7 +1,7 @@
 import React from 'react';
-import { CallToActionHealth, CallToActionPin, Layout } from '../../components';
+import { CallToActionHealth, Layout } from '../../components';
 
-import { ExposureNotification, ResultAnalysis, Statistics } from './components';
+import { ExposureNotification, ResultAnalysis, Statistics, CallToActionPin, Wrapper } from './components';
 import * as Styled from './Dashboard.styled';
 
 const Dashboard = () => (
@@ -11,17 +11,15 @@ const Dashboard = () => (
 
       <ResultAnalysis />
 
-      <Styled.Wrapper padding>
-        <CallToActionPin onClick={() => null} />
-      </Styled.Wrapper>
+      <CallToActionPin />
 
-      <Styled.Wrapper>
+      <Wrapper>
         <Statistics />
-      </Styled.Wrapper>
+      </Wrapper>
 
-      <Styled.Wrapper padding>
+      <Wrapper padding>
         <CallToActionHealth onClick={() => null} />
-      </Styled.Wrapper>
+      </Wrapper>
     </Styled.Dashboard>
   </Layout>
 );
