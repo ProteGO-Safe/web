@@ -1,41 +1,49 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { withTranslation } from 'react-i18next';
-import { NavLink, ExposureNotificationImage, ToggleButton, T } from '../../../../components';
+import { ExposureNotificationImage, NavLink, T, ToggleButton } from '../../../../components';
 import * as Styled from './ExposureNotification.styled';
 
 import { ReactComponent as Arrow } from '../../../../assets/img/icons/angle-right-blue.svg';
+import { prepareKeyTranslation } from '../../../../utils/number';
 
 const ExposureNotification = ({
   active,
   color,
-  handleDisable,
+  handleEnable,
   handleToggleButton,
   keys,
   open,
   pathToEnable,
-  t,
-  updateKeys
+  updatedKeysDate
 }) => {
-  const text = active ? t('exposure_notification_text_2') : t('exposure_notification_text_3');
+  const keyTranslationLabels = {
+    number1: 'exposure_notification_text_13',
+    number2to4: 'exposure_notification_text_14',
+    number5to9999: 'exposure_notification_text_4',
+    number10000to999999: 'exposure_notification_text_15',
+    number1000000toInf: 'exposure_notification_text_16'
+  };
 
   return (
     <Styled.ExposureNotification>
       <Styled.Content>
         <Styled.Title>
-          <T i18nKey="exposure_notification_text_1" variables={{ color, text }} />
+          {active ? (
+            <T i18nKey="exposure_notification_text_11" variables={{ color }} />
+          ) : (
+            <T i18nKey="exposure_notification_text_12" variables={{ color }} />
+          )}
         </Styled.Title>
 
         {active ? (
           <>
             <Styled.Description open={open}>
-              <Styled.Keys>
-                <T i18nKey="exposure_notification_text_4" variables={{ keys }} />
-              </Styled.Keys>
-
-              <Styled.Keys>
-                <T i18nKey="exposure_notification_text_10" variables={{ date: updateKeys }} />
-              </Styled.Keys>
+              <Styled.Keys>{prepareKeyTranslation({ number: keys, labels: keyTranslationLabels })}</Styled.Keys>
+              {updatedKeysDate && (
+                <Styled.Keys>
+                  <T i18nKey="exposure_notification_text_10" variables={{ date: updatedKeysDate }} />
+                </Styled.Keys>
+              )}
 
               <NavLink to={pathToEnable}>
                 <Styled.KeysButton>
@@ -51,7 +59,7 @@ const ExposureNotification = ({
             <Styled.Text>
               <T i18nKey="exposure_notification_text_8" />
             </Styled.Text>
-            <Styled.Link onClick={handleDisable}>
+            <Styled.Link onClick={handleEnable}>
               <T i18nKey="exposure_notification_text_9" /> <Arrow />
             </Styled.Link>
           </>
@@ -68,11 +76,11 @@ const ExposureNotification = ({
 ExposureNotification.propTypes = {
   active: PropTypes.bool.isRequired,
   color: PropTypes.string.isRequired,
-  handleDisable: PropTypes.func.isRequired,
+  handleEnable: PropTypes.func.isRequired,
   handleToggleButton: PropTypes.func.isRequired,
   keys: PropTypes.number.isRequired,
   open: PropTypes.bool.isRequired,
   pathToEnable: PropTypes.string.isRequired
 };
 
-export default withTranslation()(ExposureNotification);
+export default ExposureNotification;

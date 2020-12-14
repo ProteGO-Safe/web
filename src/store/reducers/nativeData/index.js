@@ -144,11 +144,11 @@ const nativeBridgeReducer = (state = INITIAL_STATE, action) => {
     }
     case types.FETCH_EXPOSURE_AGGREGATE_STATISTICS: {
       const {
-        body: { lastRiskCheckTimestamp, todayKeysCount, last7daysKeysCount, totalKeysCount }
+        body: { enStats }
       } = action;
       return {
         ...state,
-        exposureAggregateStatistics: { lastRiskCheckTimestamp, todayKeysCount, last7daysKeysCount, totalKeysCount }
+        exposureAggregateStatistics: enStats
       };
     }
 

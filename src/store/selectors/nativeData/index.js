@@ -7,3 +7,4 @@ export const getLabTestPinUnsuccessfulAttempts = state =>
 export const getNativeRiskLevel = state => state.nativeData.riskLevel;
 export const getCovidStats = state => state.nativeData.covidStats || {};
 export const getExposureAggregateStatistics = state => state.nativeData.exposureAggregateStatistics || {};
+export const getServicesStatus = state => state.nativeData.servicesStatus || {};

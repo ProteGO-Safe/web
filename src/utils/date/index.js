@@ -24,6 +24,9 @@ export const getFormattedDateWithoutTime = timestamp =>
 
 // 15:35
 export const getFormattedTime = timestamp => {
+  if (!timestamp) {
+    return undefined;
+  }
   const fullDate = getDate(timestamp).toLocaleString(LOCAL_PL);
   const time = fullDate.split(', ')[1];
   const hour = time.split(':')[0];
@@ -33,16 +36,25 @@ export const getFormattedTime = timestamp => {
 
 // 27.10.2020
 export const getFormattedDay = timestamp => {
+  if (!timestamp) {
+    return undefined;
+  }
   const fullDate = getDate(timestamp).toLocaleString(LOCAL_PL);
   return fullDate.split(', ')[0];
 };
 
 // 27.10.2020, 15:35
 export const getFormattedDate = timestamp => {
+  if (!timestamp) {
+    return undefined;
+  }
   return `${getFormattedDay(timestamp)}, ${getFormattedTime(timestamp)}`;
 };
 
 export const getYear = timestamp => {
+  if (!timestamp) {
+    return undefined;
+  }
   const fullDate = getDate(timestamp).toLocaleString(LOCAL_PL);
   const date = fullDate.split(', ')[0];
   return date.split('.')[2];

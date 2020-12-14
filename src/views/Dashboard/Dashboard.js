@@ -7,7 +7,7 @@ import * as Styled from './Dashboard.styled';
 const Dashboard = () => (
   <Layout noMargin isNavigation hideBackButton>
     <Styled.Dashboard>
-      <ExposureNotification isEnActive />
+      <ExposureNotification />
 
       <ResultAnalysis />
 

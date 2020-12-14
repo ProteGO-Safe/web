@@ -16,7 +16,7 @@ export const fetchServicesStatusSuccess = servicesStatus => ({
   type: types.NATIVE_DATA_FETCH_SERVICES_STATUS_SUCCESS
 });
 
-export function fetchServicesStatus() {
+export const fetchServicesStatus = () => {
   return dispatch => {
     nativeBridge.getServicesStatus().then(servicesStatus => {
       if (servicesStatus) {

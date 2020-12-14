@@ -1,25 +1,39 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { Color } from '../../../../theme/colors';
 import { Routes } from '../../../../services/navigationService/routes';
 import ExposureNotification from './ExposureNotification';
+import useSupportExposureNotificationTracing from '../../../../hooks/useSupportExposureNotificationTracing';
+import { fetchExposureAggregateStatistics, fetchServicesStatus } from '../../../../store/actions/nativeData';
+import { getExposureAggregateStatistics } from '../../../../store/selectors/nativeData';
+import { getFormattedDate } from '../../../../utils/date';
 
-const ExposureNotificationContainer = ({ isEnActive }) => {
+const ExposureNotificationContainer = () => {
+  const dispatch = useDispatch();
+  const { todayKeysCount, lastRiskCheckTimestamp } = useSelector(getExposureAggregateStatistics);
+  const { areEnableAllServices, handleEnableServices } = useSupportExposureNotificationTracing();
   const [open, setOpen] = useState(false);
+
+  useEffect(() => {
+    dispatch(fetchExposureAggregateStatistics());
+    dispatch(fetchServicesStatus());
+    // eslint-disable-next-line
+  }, [dispatch]);
 
   const handleOpen = () => setOpen(prev => !prev);
 
-  const color = isEnActive ? Color.green_1 : Color.red;
+  const color = areEnableAllServices ? Color.green_1 : Color.red;
 
   return (
     <ExposureNotification
-      active={isEnActive}
+      active={areEnableAllServices}
       color={color}
-      handleDisable={() => null}
+      handleEnable={handleEnableServices}
       pathToEnable={Routes.HowItWorks}
       handleToggleButton={handleOpen}
-      keys={8000}
+      keys={todayKeysCount}
       open={open}
-      updateKeys="05.12.2020, 13:44"
+      updatedKeysDate={getFormattedDate(lastRiskCheckTimestamp)}
     />
   );
 };
