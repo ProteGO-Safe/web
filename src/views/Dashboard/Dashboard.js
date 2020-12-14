@@ -5,7 +5,7 @@ import { ExposureNotification, ResultAnalysis, Statistics } from './components';
 import * as Styled from './Dashboard.styled';
 
 const Dashboard = () => (
-  <Layout noMargin isNavigation>
+  <Layout noMargin isNavigation hideBackButton>
     <Styled.Dashboard>
       <ExposureNotification isEnActive />
 

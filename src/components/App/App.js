@@ -20,7 +20,6 @@ import useCheckLanguage from '../../hooks/useCheckLanguage';
 import useModalContext from '../../hooks/useModalContext';
 import useClearData from '../../hooks/useClearData';
 import * as Styled from './App.styled';
-import { fetchSubscribedDistricts } from '../../store/actions/restrictions';
 import useNavigation from '../../hooks/useNavigation';
 import ScreenFactory from '../../services/navigationService/Screen.factory';
 import useFirstRun from '../../hooks/useFirstRun';
@@ -50,7 +49,6 @@ function App() {
   useEffect(() => {
     dispatch(hideUploadHistoricalDataErrorMessage());
     dispatch(fetchFontScale());
-    dispatch(fetchSubscribedDistricts());
     dispatch(resetNavigationState());
     // eslint-disable-next-line
   }, [dispatch]);

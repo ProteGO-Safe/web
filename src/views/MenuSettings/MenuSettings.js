@@ -4,7 +4,7 @@ import { NavLink } from '../../components';
 
 const MenuSettings = ({ items }) => {
   const renderMenu = items.map(({ disabled, name, icon, path }) => (
-    <NavLink key={name} to={disabled ? undefined : path}>
+    <NavLink key={path} to={disabled ? undefined : path}>
       <Styled.Item disabled={disabled}>
         <Styled.Icon src={icon} />
         <Styled.Name>{name}</Styled.Name>

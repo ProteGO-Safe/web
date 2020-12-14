@@ -13,7 +13,8 @@ import { isAndroidWebView, isIOSWebView } from '../../utils/native';
 import {
   enStatusReceived,
   fetchExposureNotificationStatistics,
-  fetchLabTestSubscriptionSuccess
+  fetchLabTestSubscriptionSuccess,
+  fetchCovidStatisticsSuccess
 } from '../../store/actions/nativeData';
 import { fetchSubscribedDistricts } from '../../store/actions/restrictions';
 import { BACK_PRESSED } from '../../store/types/navigation';
@@ -87,6 +88,14 @@ const getServicesStatus = async () => {
   return callGetBridgeData(DATA_TYPE.NATIVE_SERVICES_STATUS);
 };
 
+const fetchCovidStatistics = async () => {
+  return callGetBridgeData(DATA_TYPE.COVID_STATISTICS);
+};
+
+const fetchExposureAggregateStatistics = async () => {
+  return callGetBridgeData(DATA_TYPE.EXPOSURE_AGGREGATE_STATISTICS);
+};
+
 const revokeEnStatus = async () => {
   return callGetBridgeData(DATA_TYPE.REVOKE_EN);
 };
@@ -97,6 +106,10 @@ const getFontScale = async () => {
 
 const getNativeVersion = async () => {
   return callGetBridgeData(DATA_TYPE.NATIVE_VERSION);
+};
+
+const getNotificationStatus = async () => {
+  return callGetBridgeData(DATA_TYPE.GET_NOTIFICATION_STATUS);
 };
 
 const getLanguage = async () => {
@@ -142,6 +155,12 @@ const uploadHistoricalData = async ({ pin, isInteroperabilityEnabled }) => {
 
 const setServicesState = async data => {
   await callNativeFunction('setBridgeData', DATA_TYPE.NATIVE_SERVICES_STATE, data);
+};
+
+const setNotificationStatus = enable => {
+  return callNativeFunction('setBridgeData', DATA_TYPE.SET_NOTIFICATION_STATUS, {
+    isCovidStatsNotificationEnabled: enable
+  });
 };
 
 const rateApp = async () => {
@@ -224,6 +243,12 @@ const handleLabTestSubscription = body => {
   dispatch(fetchLabTestSubscriptionSuccess(body));
 };
 
+const handleNewCovidStatistics = body => {
+  const store = StoreRegistry.getStore();
+  const { dispatch } = store;
+  dispatch(fetchCovidStatisticsSuccess(body));
+};
+
 const handleChangeScreen = body => {
   const store = StoreRegistry.getStore();
   const { dispatch } = store;
@@ -247,7 +272,8 @@ const callBridgeDataHandler = cond([
   [equals(DATA_TYPE.LANGUAGE), always(handleNativeLanguage)],
   [equals(DATA_TYPE.LAB_TEST_SUBSCRIPTION), always(handleLabTestSubscription)],
   [equals(DATA_TYPE.BACK_PRESSED), always(handleBackPressed)],
-  [equals(DATA_TYPE.CHANGE_SCREEN), always(handleChangeScreen)]
+  [equals(DATA_TYPE.CHANGE_SCREEN), always(handleChangeScreen)],
+  [equals(DATA_TYPE.COVID_STATISTICS), always(handleNewCovidStatistics)]
 ]);
 
 const onBridgeData = (dataType, dataString) => {
@@ -275,6 +301,8 @@ export default {
   changeLanguage,
   confirmActivities,
   setDiagnosisTimestamp,
+  fetchCovidStatistics,
+  fetchExposureAggregateStatistics,
   getExposureNotificationStatistics,
   getDistrictsStatus,
   getFontScale,
@@ -283,12 +311,14 @@ export default {
   getLabTestSubscription,
   getLanguage,
   getNativeVersion,
+  getNotificationStatus,
   getServicesStatus,
   getSubscribedDistricts,
   listActivities,
   rateApp,
   revokeEnStatus,
   setDistrictSubscription,
+  setNotificationStatus,
   setServicesState,
   turnOff,
   uploadHistoricalData,

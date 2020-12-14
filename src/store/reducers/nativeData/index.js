@@ -10,6 +10,21 @@ const INITIAL_STATE = {
     subscription: undefined,
     pinUnsuccessfulAttempts: [],
     uploadPinResult: undefined
+  },
+  covidStats: {
+    newCases: undefined,
+    totalCases: undefined,
+    newDeaths: undefined,
+    totalDeaths: undefined,
+    newRecovered: undefined,
+    totalRecovered: undefined,
+    updated: undefined
+  },
+  exposureAggregateStatistics: {
+    lastRiskCheckTimestamp: undefined,
+    todayKeysCount: undefined,
+    last7daysKeysCount: undefined,
+    totalKeysCount: undefined
   }
 };
 
@@ -118,6 +133,25 @@ const nativeBridgeReducer = (state = INITIAL_STATE, action) => {
         labTest: { ...labTest, subscription }
       };
     }
+    case types.FETCH_COVID_STATISTICS_SUCCESS: {
+      const {
+        body: { covidStats }
+      } = action;
+      return {
+        ...state,
+        covidStats
+      };
+    }
+    case types.FETCH_EXPOSURE_AGGREGATE_STATISTICS: {
+      const {
+        body: { lastRiskCheckTimestamp, todayKeysCount, last7daysKeysCount, totalKeysCount }
+      } = action;
+      return {
+        ...state,
+        exposureAggregateStatistics: { lastRiskCheckTimestamp, todayKeysCount, last7daysKeysCount, totalKeysCount }
+      };
+    }
+
     default:
       return state;
   }

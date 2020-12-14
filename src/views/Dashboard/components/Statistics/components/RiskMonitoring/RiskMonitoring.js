@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { T, Tooltip } from '../../../../../../components';
 import * as Styled from './RiskMonitoring.styled';
+import { prepareKeyTranslation } from './riskMonitoring.helpers';
 
 const RiskMonitoring = ({ keyAnalysisToday, keyAnalysisWeek, keyAnalysisTotal }) => (
   <Styled.RiskMonitoring>
@@ -23,24 +24,18 @@ const RiskMonitoring = ({ keyAnalysisToday, keyAnalysisWeek, keyAnalysisTotal })
       </Styled.Left>
 
       <Styled.Right>
-        <Styled.BoldItem>
-          <T i18nKey="statistics_text_10" variables={{ keys: keyAnalysisToday }} />
-        </Styled.BoldItem>
-        <Styled.BoldItem>
-          <T i18nKey="statistics_text_10" variables={{ keys: keyAnalysisWeek }} />
-        </Styled.BoldItem>
-        <Styled.BoldItem>
-          <T i18nKey="statistics_text_10" variables={{ keys: keyAnalysisTotal }} />
-        </Styled.BoldItem>
+        <Styled.BoldItem>{prepareKeyTranslation(keyAnalysisToday)}</Styled.BoldItem>
+        <Styled.BoldItem>{prepareKeyTranslation(keyAnalysisWeek)}</Styled.BoldItem>
+        <Styled.BoldItem>{prepareKeyTranslation(keyAnalysisTotal)}</Styled.BoldItem>
       </Styled.Right>
     </Styled.Content>
   </Styled.RiskMonitoring>
 );
 
 RiskMonitoring.propTypes = {
-  keyAnalysisToday: PropTypes.string.isRequired,
-  keyAnalysisWeek: PropTypes.string.isRequired,
-  keyAnalysisTotal: PropTypes.string.isRequired
+  keyAnalysisToday: PropTypes.number.isRequired,
+  keyAnalysisWeek: PropTypes.number.isRequired,
+  keyAnalysisTotal: PropTypes.number.isRequired
 };
 
 export default RiskMonitoring;

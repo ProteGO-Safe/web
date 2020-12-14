@@ -55,9 +55,9 @@ Statistics.propTypes = {
   dateUpdated: PropTypes.string.isRequired,
   districtItems: PropTypes.array.isRequired,
   handleToggleButton: PropTypes.func.isRequired,
-  keyAnalysisToday: PropTypes.string.isRequired,
-  keyAnalysisTotal: PropTypes.string.isRequired,
-  keyAnalysisWeek: PropTypes.string.isRequired,
+  keyAnalysisToday: PropTypes.number.isRequired,
+  keyAnalysisTotal: PropTypes.number.isRequired,
+  keyAnalysisWeek: PropTypes.number.isRequired,
   open: PropTypes.bool.isRequired
 };
 

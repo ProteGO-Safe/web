@@ -31,11 +31,15 @@ export const getFormattedTime = timestamp => {
   return `${hour}:${minutes}`;
 };
 
+// 27.10.2020
+export const getFormattedDay = timestamp => {
+  const fullDate = getDate(timestamp).toLocaleString(LOCAL_PL);
+  return fullDate.split(', ')[0];
+};
+
 // 27.10.2020, 15:35
 export const getFormattedDate = timestamp => {
-  const fullDate = getDate(timestamp).toLocaleString(LOCAL_PL);
-  const date = fullDate.split(', ')[0];
-  return `${date}, ${getFormattedTime(timestamp)}`;
+  return `${getFormattedDay(timestamp)}, ${getFormattedTime(timestamp)}`;
 };
 
 export const getYear = timestamp => {

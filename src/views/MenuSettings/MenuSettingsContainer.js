@@ -5,6 +5,7 @@ import MenuSettings from './MenuSettings';
 
 import LanguageIcon from '../../assets/img/icons/language.svg';
 import Bluetooth from '../../assets/img/icons/bluetooth.svg';
+import Notifications from '../../assets/img/icons/notifications.svg';
 import FlagUE from '../../assets/img/icons/flag-ue.svg';
 import { isVersionCompatibilityWithBluetoothModule } from '../../utils/version';
 import { Routes } from '../../services/navigationService/routes';
@@ -18,6 +19,11 @@ const MenuSettingsContainer = () => {
       name: <T i18nKey="menu_settings_item1" />,
       path: Routes.SettingsBluetooth,
       disabled: !isVersionCompatibilityWithBluetoothModule(servicesStatus)
+    },
+    {
+      icon: Notifications,
+      name: <T i18nKey="menu_settings_item4" />,
+      path: Routes.SettingsNotifications
     },
     {
       icon: LanguageIcon,
