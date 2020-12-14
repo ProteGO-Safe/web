@@ -12,7 +12,7 @@ const BlockBorder = ({ items = [], title }) => {
   return (
     <Styled.Wrapper>
       <Styled.SmallTitle>{title}</Styled.SmallTitle>
-      {items > 0 && <Styled.List>{renderItems}</Styled.List>}
+      {items.length > 0 && <Styled.List>{renderItems}</Styled.List>}
     </Styled.Wrapper>
   );
 };

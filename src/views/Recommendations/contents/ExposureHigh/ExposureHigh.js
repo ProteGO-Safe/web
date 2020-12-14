@@ -5,7 +5,7 @@ import * as Styled from '../content.styled';
 
 import { ReactComponent as Icon } from '../../../../assets/img/icons/exposure-high.svg';
 
-const ExposureHigh = ({ phoneNumber, handleHelpline }) => (
+const ExposureHigh = ({ pathToGoHelpline, phoneNumber }) => (
   <Styled.Wrapper>
     <Styled.MainTitle>
       <T i18nKey="recommendations_text_18" variables={{ color: Color.red }} />
@@ -34,14 +34,16 @@ const ExposureHigh = ({ phoneNumber, handleHelpline }) => (
         <T i18nKey="recommendations_text_5" />
       </CallHelpline>
 
-      <ButtonWithDescription
-        color={Color.primary}
-        onClick={handleHelpline}
-        description={<T i18nKey="recommendations_text_22" />}
-        title={<T i18nKey="recommendations_text_21" />}
-      >
-        <T i18nKey="recommendations_text_20" />
-      </ButtonWithDescription>
+      <Styled.Link href={pathToGoHelpline} target="_blank">
+        <ButtonWithDescription
+          color={Color.primary}
+          onClick={() => null}
+          description={<T i18nKey="recommendations_text_22" />}
+          title={<T i18nKey="recommendations_text_21" />}
+        >
+          <T i18nKey="recommendations_text_20" />
+        </ButtonWithDescription>
+      </Styled.Link>
     </Styled.BlockWrapper>
   </Styled.Wrapper>
 );

@@ -77,3 +77,8 @@ export const CollapseWrapper = styled.div`
   width: 100%;
   margin-bottom: 20px;
 `;
+
+export const Link = styled.a`
+  display: block;
+  width: 100%;
+`;
