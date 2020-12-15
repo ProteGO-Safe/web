@@ -7,7 +7,7 @@ import { ReactComponent as Icon } from '../../../../assets/img/icons/risk-test-r
 
 const RiskTestMiddle = ({ items }) => {
   const renderItems = items.map((item, key) => (
-    <Collapse noPadding key={key} title={<T i18nKey={item.title} />}>
+    <Collapse key={key} title={<T i18nKey={item.title} />}>
       <T i18nKey={item.content} />
     </Collapse>
   ));

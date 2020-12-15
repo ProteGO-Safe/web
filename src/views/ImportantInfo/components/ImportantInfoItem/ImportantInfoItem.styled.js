@@ -15,8 +15,8 @@ export const ImportantInfoItem = styled.div`
   border-radius: 4px;
   box-shadow: 2px 2px 3px ${hexToRgba(Color.black, 0.26)};
   transition: all 0.1s ease-in;
-
   font-size: 18px;
+  overflow: hidden;
 
   ${({ size }) =>
     size &&
@@ -25,10 +25,6 @@ export const ImportantInfoItem = styled.div`
     margin-bottom: 12px;
     padding: 1.5rem 1rem;
   `}
-
-  &:active {
-    box-shadow: inset 0 0 5px ${hexToRgba(Color.black, 0.26)};
-  }
 `;
 
 export const Badge = styled.span`

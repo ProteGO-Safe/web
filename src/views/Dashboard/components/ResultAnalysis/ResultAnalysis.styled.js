@@ -24,10 +24,12 @@ export const ResultAnalysis = styled.div`
 `;
 
 export const Title = styled.h1`
+  position: relative;
   display: block;
   width: 100%;
   margin: 0 0 10px 0;
   padding-left: 10px;
+  padding-right: 42px;
   font-size: 20px;
   line-height: 28px;
   font-weight: ${FontWeight.Bold};
@@ -55,11 +57,14 @@ export const CurrentStateText = styled.span`
 
 export const CurrentStateIcon = styled.div`
   position: absolute;
-  top: 20px;
+  top: 50%;
   right: 0;
-  display: block;
-  width: 34px;
-  height: 34px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 42px;
+  height: 42px;
+  transform: translateY(-50%);
 `;
 
 export const ToggleButtonWrapper = styled.div`

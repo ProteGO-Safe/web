@@ -8,9 +8,9 @@ export const ButtonWithIcon = styled.div`
   flex-flow: wrap row;
   align-items: center;
   width: 100%;
-  padding: 12px 30px 12px 14px;
+  padding: 10px 30px 10px 14px;
   border-radius: 4px;
-  box-shadow: 0 0 10px #0000001a;
+  border: 1px solid ${Color.primary};
   > svg {
     position: absolute;
     top: 50%;

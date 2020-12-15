@@ -22,11 +22,12 @@ export const Title = styled.span`
   color: ${({ color }) => color};
   svg {
     position: absolute;
-    top: 5px;
+    top: 50%;
     right: ${({ arrowPosition }) => (arrowPosition ? '-10px' : '-22px')};
     display: block;
     width: 12px;
     height: 12px;
+    margin-top: -6px;
   }
 `;
 

@@ -75,23 +75,25 @@ const CurrentRestrictions = ({
         </Styled.Title>
       </Styled.Container>
 
-      <FollowDistricts
-        items={subscribedDistricts}
-        dateUpdate={dateUpdate}
-        handleUnsubscribeDistrict={handleUnsubscribeDistrict}
-      />
-
-      <Styled.SearchWrapper>
-        <Input
-          reset={handleResetInput}
-          icon={SearchIcon}
-          type="text"
-          name="search"
-          placeholder=""
-          value={filterText}
-          onChange={handleChangeInput}
+      <Styled.Container>
+        <FollowDistricts
+          items={subscribedDistricts}
+          dateUpdate={dateUpdate}
+          handleUnsubscribeDistrict={handleUnsubscribeDistrict}
         />
-      </Styled.SearchWrapper>
+
+        <Styled.SearchWrapper>
+          <Input
+            reset={handleResetInput}
+            icon={SearchIcon}
+            type="text"
+            name="search"
+            placeholder=""
+            value={filterText}
+            onChange={handleChangeInput}
+          />
+        </Styled.SearchWrapper>
+      </Styled.Container>
 
       <Styled.Container>{renderList}</Styled.Container>
 

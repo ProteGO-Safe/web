@@ -3,6 +3,7 @@ import { Color } from '../../../../theme/colors';
 import { FontWeight } from '../../../../theme/fonts';
 
 export const CallToActionHealth = styled.div`
+  position: relative;
   display: flex;
   flex-flow: wrap row;
   align-items: center;
@@ -12,7 +13,7 @@ export const CallToActionHealth = styled.div`
   padding: 0 10px;
   border-radius: 4px;
   background-color: ${Color.primaryLighter};
-  box-shadow: 2px 2px 4px 0 ${Color.gray_1};
+  overflow: hidden;
 `;
 
 export const Image = styled.div`

@@ -15,7 +15,7 @@ export const InfoItem = {
   label: 'bottom_navigation_important_info',
   Icon: ImportantInfo,
   path: Routes.ImportantInformation,
-  panicButton: true
+  customButton: true
 };
 
 export const BurgerItem = {

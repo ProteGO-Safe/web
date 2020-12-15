@@ -3,6 +3,7 @@ import { Color } from '../../theme/colors';
 import { FontWeight } from '../../theme/fonts';
 
 export const Wrapper = styled.div`
+  position: relative;
   display: flex;
   flex-flow: wrap row;
   align-items: center;
@@ -11,6 +12,7 @@ export const Wrapper = styled.div`
   padding: 0 10px;
   border-radius: 4px;
   background-color: ${Color.primaryLighter};
+  overflow: hidden;
 `;
 
 export const Image = styled.div`

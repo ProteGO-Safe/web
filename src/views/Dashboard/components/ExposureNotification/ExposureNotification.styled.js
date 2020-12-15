@@ -23,7 +23,7 @@ export const Content = styled.div`
   display: flex;
   flex-flow: wrap row;
   width: calc(100% - 122px);
-  padding: 20px 0 12px 38px;
+  padding: 20px 0 18px 38px;
 `;
 
 export const Text = styled.span`
@@ -38,6 +38,7 @@ export const Link = styled.div`
   display: flex;
   flex-flow: nowrap row;
   align-items: center;
+  margin-top: 6px;
   font-size: 12px;
   line-height: 18px;
   color: ${Color.primary};
@@ -65,9 +66,6 @@ export const Description = styled.div`
       transition-timing-function: cubic-bezier(1, 0, 1, 0);
       transition-delay: 0s;
     `}
-  > * {
-    margin-bottom: 6px;
-  }
 `;
 
 export const Title = styled.div`
@@ -81,14 +79,25 @@ export const Title = styled.div`
 
 export const Keys = styled.div`
   width: 100%;
-  font-size: 10px;
+  font-size: 12px;
   line-height: 14px;
-  color: ${Color.gray_9};
-  strong {
-    color: ${Color.black};
-  }
+  color: ${Color.black};
+`;
+
+export const SmallKeys = styled(Keys)`
+  font-size: 10px;
 `;
 
 export const KeysButton = styled(Keys)`
+  font-size: 10px;
+  padding-top: 14px;
+  padding-bottom: 10px;
   color: ${Color.primary};
+`;
+
+export const ToggleButtonWrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  margin-top: 4px;
 `;

@@ -40,9 +40,9 @@ const ExposureNotification = ({
             <Styled.Description open={open}>
               <Styled.Keys>{prepareKeyTranslation({ number: keys, labels: keyTranslationLabels })}</Styled.Keys>
               {updatedKeysDate && (
-                <Styled.Keys>
+                <Styled.SmallKeys>
                   <T i18nKey="exposure_notification_text_10" variables={{ date: updatedKeysDate }} />
-                </Styled.Keys>
+                </Styled.SmallKeys>
               )}
 
               <NavLink to={pathToEnable}>
@@ -52,7 +52,9 @@ const ExposureNotification = ({
               </NavLink>
             </Styled.Description>
 
-            <ToggleButton active={open} onClick={handleToggleButton} />
+            <Styled.ToggleButtonWrapper>
+              <ToggleButton active={open} onClick={handleToggleButton} />
+            </Styled.ToggleButtonWrapper>
           </>
         ) : (
           <>
@@ -73,8 +75,12 @@ const ExposureNotification = ({
   );
 };
 
+ExposureNotification.defaultProps = {
+  active: false
+};
+
 ExposureNotification.propTypes = {
-  active: PropTypes.bool.isRequired,
+  active: PropTypes.bool,
   color: PropTypes.string.isRequired,
   handleEnable: PropTypes.func.isRequired,
   handleToggleButton: PropTypes.func.isRequired,

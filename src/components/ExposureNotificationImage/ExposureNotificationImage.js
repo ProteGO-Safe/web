@@ -9,8 +9,12 @@ const ExposureNotificationImage = ({ active, color }) => (
   </Styled.ExposureNotificationImage>
 );
 
+ExposureNotificationImage.defaultProps = {
+  active: false
+};
+
 ExposureNotificationImage.propTypes = {
-  active: PropTypes.bool.isRequired,
+  active: PropTypes.bool,
   color: PropTypes.string.isRequired
 };
 

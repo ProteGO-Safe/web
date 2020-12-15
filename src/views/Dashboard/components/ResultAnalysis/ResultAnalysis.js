@@ -9,13 +9,13 @@ const ResultAnalysis = ({ color, content, currentState, handleToggleButton, icon
   <Styled.ResultAnalysis color={color}>
     <Styled.Title>
       <T i18nKey="result_analysis_text_1" variables={{ userName }} />
+      {icon && <Styled.CurrentStateIcon>{icon}</Styled.CurrentStateIcon>}
     </Styled.Title>
 
     <Styled.CurrentState>
       <Styled.CurrentStateText>
         <T i18nKey="result_analysis_text_2" variables={{ state: t(currentState) }} />
       </Styled.CurrentStateText>
-      {icon && <Styled.CurrentStateIcon>{icon}</Styled.CurrentStateIcon>}
 
       <Styled.Content open={open}>{content}</Styled.Content>
     </Styled.CurrentState>
@@ -27,15 +27,16 @@ const ResultAnalysis = ({ color, content, currentState, handleToggleButton, icon
 );
 
 ResultAnalysis.defaultProps = {
-  color: Color.gradient_c2
+  color: Color.gradient_c2,
+  icon: null
 };
 
 ResultAnalysis.propTypes = {
   color: PropTypes.string,
-  content: PropTypes.object.isRequired,
+  content: PropTypes.node.isRequired,
   currentState: PropTypes.oneOfType([PropTypes.object, PropTypes.string]).isRequired,
   handleToggleButton: PropTypes.func.isRequired,
-  icon: PropTypes.object.isRequired,
+  icon: PropTypes.object,
   open: PropTypes.bool.isRequired,
   userName: PropTypes.string.isRequired
 };

@@ -5,5 +5,4 @@ export const Dashboard = styled.div`
   flex-flow: wrap row;
   align-items: flex-start;
   width: 100%;
-  padding-bottom: 42px;
 `;

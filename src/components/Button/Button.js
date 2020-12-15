@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { BUTTON_TYPES } from './Button.constants';
+import { RippleEffect } from '../index';
 import {
   ArrowRight,
   ButtonBlankSmall,
@@ -15,17 +16,22 @@ import {
 } from './Button.styled';
 
 import { ReactComponent as ArrowIcon } from '../../assets/img/icons/arrow-current-color.svg';
+import { Color } from '../../theme/colors';
+import useDelayedAction from '../../hooks/useDelayedAction';
 
 const Button = ({ children, description, disabled, icon, label, onClick, type }) => {
+  const { timeout } = useDelayedAction();
+
   const renderButton = Component => (
-    <Component data-cy={`button-${type}`} disabled={disabled} onClick={onClick} type="button">
+    <Component data-cy={`button-${type}`} disabled={disabled} onClick={() => timeout(onClick)} type="button">
       {icon}
       {label || children}
+      <RippleEffect color={type === BUTTON_TYPES.DEFAULT ? Color.white : Color.primaryLight} />
     </Component>
   );
 
   const renderButtonBorder = Component => (
-    <Component data-cy={`button-${type}`} disabled={disabled} onClick={onClick} type="button">
+    <Component data-cy={`button-${type}`} disabled={disabled} onClick={() => timeout(onClick)} type="button">
       {icon}
       <Content>
         <Label>{label || children}</Label>
@@ -36,6 +42,7 @@ const Button = ({ children, description, disabled, icon, label, onClick, type })
           <ArrowIcon />
         </ArrowRight>
       )}
+      <RippleEffect color={type === BUTTON_TYPES.DEFAULT ? Color.white : Color.primaryLight} />
     </Component>
   );
 
@@ -83,7 +90,8 @@ Button.propTypes = {
     BUTTON_TYPES.BORDER,
     BUTTON_TYPES.BORDER_ARROW,
     BUTTON_TYPES.DEFAULT,
-    BUTTON_TYPES.OUTLINE
+    BUTTON_TYPES.OUTLINE,
+    BUTTON_TYPES.SMALL_OUTLINE
   ])
 };
 

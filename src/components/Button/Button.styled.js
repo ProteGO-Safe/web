@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import { Color } from '../../theme/colors';
 
 export const Button = styled.button`
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -23,6 +24,7 @@ export const Button = styled.button`
   border-radius: 8px;
   cursor: pointer;
   text-transform: uppercase;
+  overflow: hidden;
   &:disabled {
     background: ${Color.darkGray};
     color: ${Color.white};

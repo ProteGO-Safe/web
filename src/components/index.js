@@ -41,6 +41,7 @@ export { PhoneNumber } from './PhoneNumber';
 export { Pin } from './Pin';
 export { Radio } from './Radio';
 export { ResultView } from './ResultView';
+export { RippleEffect } from './RippleEffect';
 export { RiskTestResult } from './RiskTestResult';
 export { Select } from './Select';
 export { Settings } from './Settings';

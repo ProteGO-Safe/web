@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import { withTranslation } from 'react-i18next';
 import PropTypes from 'prop-types';
 import { TYPES } from './ImportantInfoItem.constants';
-import { NavLink, T } from '../../../../components';
+import { NavLink, RippleEffect, T } from '../../../../components';
 import * as Styled from './ImportantInfoItem.styled';
 
 const ImportantInfoItem = ({ danger, description, icon, newFeature, path, size, title, type, t }) => {
@@ -40,6 +40,8 @@ const ImportantInfoItem = ({ danger, description, icon, newFeature, path, size, 
           <T i18nKey="important_info_button_info" />
         </Styled.LinkGov>
       )}
+
+      <RippleEffect />
     </Styled.ImportantInfoItem>
   );
 
