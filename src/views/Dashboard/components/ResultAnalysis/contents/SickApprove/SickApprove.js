@@ -5,9 +5,9 @@ import { Button } from '../../../../../../components';
 import { BUTTON_TYPES } from '../../../../../../components/Button/Button.constants';
 import * as Styled from './SickApprove.styled';
 
-const SickApprove = ({ dateLastRiskTest, dateRiskMonitoring, isInfected, handleRecommendation }) => (
+const SickApprove = ({ isInfected, handleRecommendation }) => (
   <Styled.SickApprove>
-    <ListStats isInfected={isInfected} dateRiskMonitoring={dateRiskMonitoring} dateLastRiskTest={dateLastRiskTest} />
+    <ListStats isInfected={isInfected} />
 
     <Styled.Text>
       <T i18nKey="result_analysis_text_25" />

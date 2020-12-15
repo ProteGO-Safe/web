@@ -3,9 +3,9 @@
         <style>
             .a_en-low{fill:#00a553;}
             .b_en-low{fill:#d8d8d8;}
-            .c_en-low{clip-path:url(#a);}
+            .c_en-low{clip-path:url(#a_en-low);}
         </style>
-        <clipPath id="a">
+        <clipPath id="a_en-low">
             <rect class="a_en-low" width="8.816" height="11.324" transform="translate(141.76 211.04)"/>
         </clipPath>
     </defs>

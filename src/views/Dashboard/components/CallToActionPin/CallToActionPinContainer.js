@@ -1,15 +1,14 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
 import CallToActionPin from './CallToActionPin';
 import useNavigation from '../../../../hooks/useNavigation';
 import { Routes } from '../../../../services/navigationService/routes';
-import { getTimeOfConfirmedCovid } from '../../../../store/selectors/triage';
+import useHealthStats from '../../../../hooks/useHealthStats';
 
 const CallToActionPinContainer = () => {
   const { goTo } = useNavigation();
-  const timeOfConfirmedCovid = useSelector(getTimeOfConfirmedCovid);
+  const { isCovidConfirmed } = useHealthStats();
 
-  if (timeOfConfirmedCovid) {
+  if (isCovidConfirmed) {
     return null;
   }
 

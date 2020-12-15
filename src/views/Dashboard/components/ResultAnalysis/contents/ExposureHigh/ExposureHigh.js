@@ -5,9 +5,9 @@ import { BUTTON_TYPES } from '../../../../../../components/Button/Button.constan
 import { Color } from '../../../../../../theme/colors';
 import * as Styled from './ExposureHigh.styled';
 
-const ExposureHigh = ({ dateLastRiskTest, dateRiskMonitoring, handlePickUpTest, handleRecommendation, isInfected }) => (
+const ExposureHigh = ({ handlePickUpTest, handleRecommendation, isInfected }) => (
   <Styled.ExposureHigh>
-    <ListStats isInfected={isInfected} dateRiskMonitoring={dateRiskMonitoring} dateLastRiskTest={dateLastRiskTest} />
+    <ListStats isInfected={isInfected} />
 
     <Styled.Text>
       <T i18nKey="result_analysis_text_19" />

@@ -8,9 +8,7 @@ const ExposureMiddleContainer = () => {
 
   return (
     <ExposureMiddle
-      dateLastRiskTest="13.10.2020, 12:23"
-      dateRiskMonitoring="05.12.2020, 13:44"
-      handlePickUpTest={() => null}
+      handlePickUpTest={() => goTo(Routes.LabTest)}
       handleRecommendation={() => goTo(Routes.Recommendations)}
       isInfected={false}
     />

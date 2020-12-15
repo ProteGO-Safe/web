@@ -1,7 +1,7 @@
 import { useMemo } from 'react';
 import { useSelector } from 'react-redux';
 import { getNativeRiskLevel } from '../../store/selectors/nativeData';
-import { getTriageLevel } from '../../store/selectors/triage';
+import { getTimeOfConfirmedCovid, getTimeOfConfirmedManualCovid, getTriageLevel } from '../../store/selectors/triage';
 
 const torLevels = {
   low: 'low',
@@ -13,6 +13,8 @@ const torLevels = {
 const useHealthStats = () => {
   const nativeRiskLevel = useSelector(getNativeRiskLevel);
   const triageLevel = useSelector(getTriageLevel);
+  const timeOfConfirmedManualCovid = useSelector(getTimeOfConfirmedManualCovid);
+  const timeOfConfirmedCovid = useSelector(getTimeOfConfirmedCovid);
 
   const torLevel = useMemo(() => {
     switch (triageLevel) {
@@ -44,7 +46,9 @@ const useHealthStats = () => {
     isTorLow: torLevel === torLevels.low,
     isTorMiddle: torLevel === torLevels.middle,
     isTorHigh: torLevel === torLevels.high,
-    isTorHighWithCovid: torLevel === torLevels.highCovid
+    isTorHighWithCovid: torLevel === torLevels.highCovid,
+    isCovidConfirmed: !!timeOfConfirmedCovid,
+    isCovidManual: !!timeOfConfirmedManualCovid
   };
 };
 

@@ -3,9 +3,9 @@ import { T } from '../../../../../../components';
 import { ListStats } from '../../components';
 import * as Styled from './RiskTestLow.styled';
 
-const RiskTestLow = ({ dateLastRiskTest, dateRiskMonitoring, isInfected }) => (
+const RiskTestLow = ({ isInfected }) => (
   <Styled.RiskTestLow>
-    <ListStats isInfected={isInfected} dateRiskMonitoring={dateRiskMonitoring} dateLastRiskTest={dateLastRiskTest} />
+    <ListStats isInfected={isInfected}/>
 
     <Styled.Text>
       <T i18nKey="result_analysis_text_9" />

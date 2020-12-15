@@ -1,11 +1,11 @@
 import { useSelector } from 'react-redux';
-import React from 'react';
+import { useTranslation } from 'react-i18next';
 import { getUserName } from '../../store/selectors/user';
-import { T } from '../../components';
 
 const useUserName = () => {
+  const { t } = useTranslation();
   const userName = useSelector(getUserName);
-  return userName === null ? <T i18nKey="name_form_text2" /> : userName;
+  return userName === null ? t('name_form_text2') : userName;
 };
 
 export default useUserName;

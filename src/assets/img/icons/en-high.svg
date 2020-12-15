@@ -3,10 +3,10 @@
         <style>
             .a_en-high{fill:#eba828;}
             .b_en-high{fill:#d8d8d8;}
-            .c_en-high{clip-path:url(#a);}
+            .c_en-high{clip-path:url(#a_en-high);}
             .d_en-high{fill:#d5233f;}
         </style>
-        <clipPath id="a">
+        <clipPath id="a_en-high">
             <rect class="a_en-high" width="8.816" height="33.324" transform="translate(141.76 189.04)"/>
         </clipPath>
     </defs>

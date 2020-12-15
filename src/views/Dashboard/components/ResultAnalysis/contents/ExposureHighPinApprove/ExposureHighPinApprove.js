@@ -8,16 +8,9 @@ import * as Styled from './ExposureHighPinApprove.styled';
 
 import { ReactComponent as Icon } from '../../../../../../assets/img/icons/icon-rejestracja.svg';
 
-const ExposureHighPinApprove = ({
-  dateLastRiskTest,
-  dateRiskMonitoring,
-  handleInstallApp,
-  handleLabTestResult,
-  handleRecommendation,
-  isInfected
-}) => (
+const ExposureHighPinApprove = ({ handleInstallApp, handleLabTestResult, handleRecommendation, isInfected }) => (
   <Styled.ExposureHighPinApprove>
-    <ListStats isInfected={isInfected} dateRiskMonitoring={dateRiskMonitoring} dateLastRiskTest={dateLastRiskTest} />
+    <ListStats isInfected={isInfected} />
 
     <Styled.Text>
       <T i18nKey="result_analysis_text_37" />

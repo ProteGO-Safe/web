@@ -5,16 +5,9 @@ import { Button, T } from '../../../../../../components';
 import { BUTTON_TYPES } from '../../../../../../components/Button/Button.constants';
 import * as Styled from './RiskTestHighSick.styled';
 
-const RiskTestHighSick = ({
-  currentState,
-  dateLastRiskTest,
-  dateRiskMonitoring,
-  isInfected,
-  handleRecommendation,
-  t
-}) => (
+const RiskTestHighSick = ({ currentState, dateLastRiskTest, isInfected, handleRecommendation, t }) => (
   <Styled.RiskTestHighSick>
-    <ListStats isInfected={isInfected} dateRiskMonitoring={dateRiskMonitoring} dateLastRiskTest={dateLastRiskTest} />
+    <ListStats isInfected={isInfected} />
 
     <Styled.Text>
       <T i18nKey="result_analysis_text_23" variables={{ date: dateLastRiskTest, currentState: t(currentState) }} />

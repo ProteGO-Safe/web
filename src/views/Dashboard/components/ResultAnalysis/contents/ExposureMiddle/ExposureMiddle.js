@@ -5,15 +5,9 @@ import { Color } from '../../../../../../theme/colors';
 import { BUTTON_TYPES } from '../../../../../../components/Button/Button.constants';
 import * as Styled from './ExposureMiddle.styled';
 
-const ExposureMiddle = ({
-  dateLastRiskTest,
-  dateRiskMonitoring,
-  handlePickUpTest,
-  handleRecommendation,
-  isInfected
-}) => (
+const ExposureMiddle = ({ handlePickUpTest, handleRecommendation, isInfected }) => (
   <Styled.ExposureMiddle>
-    <ListStats isInfected={isInfected} dateRiskMonitoring={dateRiskMonitoring} dateLastRiskTest={dateLastRiskTest} />
+    <ListStats isInfected={isInfected} />
 
     <Styled.Text>
       <T i18nKey="result_analysis_text_15" />

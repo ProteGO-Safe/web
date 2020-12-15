@@ -8,16 +8,9 @@ import * as Styled from './ExposureMiddlePinApprove.styled';
 
 import { ReactComponent as Icon } from '../../../../../../assets/img/icons/icon-rejestracja.svg';
 
-const ExposureMiddlePinApprove = ({
-  dateLastRiskTest,
-  dateRiskMonitoring,
-  handleInstallApp,
-  handleLabTestResult,
-  handleRecommendation,
-  isInfected
-}) => (
+const ExposureMiddlePinApprove = ({ handleInstallApp, handleLabTestResult, handleRecommendation, isInfected }) => (
   <Styled.ExposureMiddlePinApprove>
-    <ListStats isInfected={isInfected} dateRiskMonitoring={dateRiskMonitoring} dateLastRiskTest={dateLastRiskTest} />
+    <ListStats isInfected={isInfected} />
 
     <Styled.Text>
       <T i18nKey="result_analysis_text_29" />

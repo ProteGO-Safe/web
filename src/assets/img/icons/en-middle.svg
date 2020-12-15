@@ -3,10 +3,10 @@
         <style>
             .a_en-middle{fill:#eba828;}
             .b_en-middle{fill:#d8d8d8;}
-            .c_en-middle{clip-path:url(#a);}
+            .c_en-middle{clip-path:url(#a_en-middle);}
         </style>
-        <clipPath id="a">
-            <rect class="a" width="8.816" height="19.324" transform="translate(141.76 203.04)"/>
+        <clipPath id="a_en-middle">
+            <rect class="a_en-middle" width="8.816" height="19.324" transform="translate(141.76 203.04)"/>
         </clipPath>
     </defs>
     <g transform="translate(-138.794 -183.358)">
