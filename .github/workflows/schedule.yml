@@ -49,6 +49,7 @@ jobs:
   Check_POE:
     runs-on: ubuntu-latest
     needs: [Setup]
+    if: needs.Setup.outputs.ENVIRONMENT == 'DEV'
     outputs:
       UPGRADE: ${{ env.UPGRADE }}
     env:
@@ -103,7 +104,7 @@ jobs:
     needs: [Setup,Check_POE]
     env:
       LATEST_BRANCH: ${{ needs.Setup.outputs.LATEST_BRANCH }}
-    if: needs.Setup.outputs.ENVIRONMENT &&
+    if: needs.Setup.outputs.ENVIRONMENT == 'DEV' &&
         needs.Check_POE.outputs.UPGRADE
     strategy:
       matrix:
@@ -133,7 +134,7 @@ jobs:
   Build:
     runs-on: ubuntu-latest
     needs: [Setup,Check_POE]
-    if: needs.Setup.outputs.ENVIRONMENT &&
+    if: needs.Setup.outputs.ENVIRONMENT == 'DEV' &&
         needs.Check_POE.outputs.UPGRADE 
     strategy:
       matrix:
