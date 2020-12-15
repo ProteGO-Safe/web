@@ -8,6 +8,12 @@ import { Routes } from '../../services/navigationService/routes';
 
 const T = ({ i18nKey, t, variables }) => {
   let translated = t(i18nKey, variables);
+
+  if (translated.includes('[WBR]')) {
+    translated = reactStringReplace(translated, '[WBR]', () => '\u00AD');
+    translated = translated.join('');
+  }
+
   translated = reactStringReplace(translated, /\[PP\](.*?)\[\/PP\]/g, (match, i) => (
     <PrivacyPolicyModal key={match + i} text={match} />
   ));
