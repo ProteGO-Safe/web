@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import Statistics from './Statistics';
-import { fetchCovidStatistics, fetchExposureAggregateStatistics } from '../../../../store/actions/nativeData';
-import { getCovidStats, getExposureAggregateStatistics } from '../../../../store/selectors/nativeData';
+import { fetchCovidStatistics } from '../../../../store/actions/nativeData';
+import { getCovidStats } from '../../../../store/selectors/nativeData';
 import { getFormattedDay } from '../../../../utils/date';
 import { getSubscribedDistricts } from '../../../../store/selectors/restrictions';
 import { fetchSubscribedDistricts } from '../../../../store/actions/restrictions';
@@ -12,13 +12,11 @@ const StatisticsContainer = () => {
   const { updated, newCases, totalCases, newDeaths, totalDeaths, newRecovered, totalRecovered } = useSelector(
     getCovidStats
   );
-  const { todayKeysCount, last7daysKeysCount, totalKeysCount } = useSelector(getExposureAggregateStatistics);
   const subscribedDistricts = useSelector(getSubscribedDistricts);
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
     dispatch(fetchCovidStatistics());
-    dispatch(fetchExposureAggregateStatistics());
     dispatch(fetchSubscribedDistricts());
     // eslint-disable-next-line
   }, [dispatch]);
@@ -50,9 +48,6 @@ const StatisticsContainer = () => {
       dateUpdated={getFormattedDay(updated)}
       handleToggleButton={handleOpen}
       covidStats={covidStats}
-      keyAnalysisToday={todayKeysCount}
-      keyAnalysisWeek={last7daysKeysCount}
-      keyAnalysisTotal={totalKeysCount}
     />
   );
 };
