@@ -4,16 +4,12 @@ import { resolveData } from './TestBorderBox.helpers';
 import TestBorderBox from './TestBorderBox';
 import { fetchLabTestSubscription } from '../../store/actions/nativeData';
 import useLabTest from '../../hooks/useLabTest';
+import useHealthStats from '../../hooks/useHealthStats';
 
 const TestBorderBoxContainer = () => {
   const dispatch = useDispatch();
-  const {
-    isEnHigh,
-    isTorHigh,
-    isSubscriptionVerified,
-    isSubscriptionConfirmed,
-    isSubscriptionInProgress
-  } = useLabTest();
+  const { isEnHigh, isTorHigh } = useHealthStats();
+  const { isSubscriptionVerified, isSubscriptionConfirmed, isSubscriptionInProgress } = useLabTest();
 
   useEffect(() => {
     dispatch(fetchLabTestSubscription());

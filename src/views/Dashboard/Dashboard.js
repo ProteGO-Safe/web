@@ -1,7 +1,14 @@
 import React from 'react';
-import { CallToActionHealth, Layout } from '../../components';
+import { Layout } from '../../components';
 
-import { ExposureNotification, ResultAnalysis, Statistics, CallToActionPin, Wrapper } from './components';
+import {
+  ExposureNotification,
+  ResultAnalysis,
+  Statistics,
+  CallToActionPin,
+  Wrapper,
+  CallToActionHealth
+} from './components';
 import * as Styled from './Dashboard.styled';
 
 const Dashboard = () => (
@@ -17,9 +24,7 @@ const Dashboard = () => (
         <Statistics />
       </Wrapper>
 
-      <Wrapper padding>
-        <CallToActionHealth onClick={() => null} />
-      </Wrapper>
+      <CallToActionHealth />
     </Styled.Dashboard>
   </Layout>
 );

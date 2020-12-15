@@ -11,10 +11,12 @@ import Icon3 from '../../assets/img/icons/menu-boczne-polityka-prywatnosci_BLUE.
 import Icon4 from '../../assets/img/icons/menu-boczne-ustawienia_BLUE.svg';
 import Icon5 from '../../assets/img/icons/menu-boczne-moje-dane_BLUE.svg';
 import Icon6 from '../../assets/img/icons/menu-boczne-kwestionariusz_RED.svg';
+import useHealthStats from '../../hooks/useHealthStats';
 
 const MenuContainer = () => {
   const dispatch = useDispatch();
-  const { isEnHigh, isTorHigh, isSubscriptionInProgress } = useLabTest();
+  const { isSubscriptionInProgress } = useLabTest();
+  const { isEnHigh, isTorHigh } = useHealthStats();
 
   useEffect(() => {
     dispatch(fetchLabTestSubscription());

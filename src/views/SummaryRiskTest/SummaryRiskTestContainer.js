@@ -1,35 +1,33 @@
 import React from 'react';
 import { Layout } from '../../components';
-import { types, resolveData } from './SummaryRiskTest.helpers';
+import { resolveData, types } from './SummaryRiskTest.helpers';
 import SummaryRiskTest from './SummaryRiskTest';
-import useTriage from '../../hooks/useTriage';
-import useLabTest from '../../hooks/useLabTest';
 import useNavigation from '../../hooks/useNavigation';
 import useModalContext from '../../hooks/useModalContext';
+import useHealthStats from '../../hooks/useHealthStats';
 
 const SummaryRiskTestContainer = () => {
-  const { triageRiskLevel } = useTriage();
-  const { isEnHigh } = useLabTest();
+  const { isEnHigh, isTorLow, isTorMiddle, isTorHigh, isTorHighWithCovid } = useHealthStats();
   const { goTo } = useNavigation();
   const { openModal } = useModalContext();
 
   const resolveType = () => {
-    if (triageRiskLevel === 1 && !isEnHigh) {
+    if (isTorLow && !isEnHigh) {
       return types.TOR_GREEN_EN_NOT_RED;
     }
-    if (triageRiskLevel === 2 && !isEnHigh) {
+    if (isTorMiddle && !isEnHigh) {
       return types.TOR_ORANGE_EN_NOT_RED;
     }
-    if (triageRiskLevel === 3 && !isEnHigh) {
+    if ((isTorHigh || isTorHighWithCovid) && !isEnHigh) {
       return types.TOR_RED_EN_NOT_RED;
     }
-    if (triageRiskLevel === 1 && isEnHigh) {
+    if (isTorLow && isEnHigh) {
       return types.TOR_GREEN_EN_RED;
     }
-    if (triageRiskLevel === 2 && isEnHigh) {
+    if (isTorMiddle && isEnHigh) {
       return types.TOR_ORANGE_EN_RED;
     }
-    if (triageRiskLevel === 3 && isEnHigh) {
+    if ((isTorHigh || isTorHighWithCovid) && isEnHigh) {
       return types.TOR_RED_EN_RED;
     }
     return types.TOR_RED_EN_RED;

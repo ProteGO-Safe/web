@@ -1,22 +1,25 @@
 import { useSelector } from 'react-redux';
-import { and, equals } from 'ramda';
+import { and } from 'ramda';
 import { useState } from 'react';
 import { getNativeRiskLevel } from '../../store/selectors/nativeData';
 import { usePrevious } from '../usePrevious';
 import useSkippingFirstUpdate from '../useSkippingFirstUpdate';
 import { notEquals } from '../../helpers/logic';
+import useHealthStats from '../useHealthStats';
 
 const useExposureNotification = () => {
   const riskLevel = useSelector(getNativeRiskLevel);
   const previousRiskLevel = usePrevious(riskLevel);
 
+  const { isEnHigh } = useHealthStats();
+
   const [occurredHighEn, setOccurredHighEn] = useState(false);
 
   useSkippingFirstUpdate(() => {
-    if (and(equals(riskLevel, 3), notEquals(riskLevel, previousRiskLevel))) {
+    if (and(isEnHigh, notEquals(riskLevel, previousRiskLevel))) {
       setOccurredHighEn(true);
     }
-  }, [riskLevel, previousRiskLevel]);
+  }, [isEnHigh, riskLevel, previousRiskLevel]);
 
   return { occurredHighEn };
 };
