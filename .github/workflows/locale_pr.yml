@@ -1,0 +1,71 @@
+---
+
+name: Manaul trigger with locales PR
+on:
+  workflow_dispatch:
+    inputs:
+      branch:
+        description: 'Branch to check & PR'
+        required: true
+
+      
+jobs:
+
+  Setup:
+    runs-on: ubuntu-latest
+    outputs:
+      COMMIT_TO: ${{ env.COMMIT_TO }}
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      - name: Set branch to operate on
+        run: |
+            echo "COMMIT_TO={{ github.event.inputs.branch }}" >> $GITHUB_ENV
+        shell: bash
+      
+
+  Check_POE:
+    runs-on: ubuntu-latest
+    needs: [Setup]
+    env:
+      COMMIT_TO: ${{ needs.Setup.outputs.COMMIT_TO }}
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v2
+        with:
+          ref: release/${{ env.COMMIT_TO }}
+
+      - name: Make list of local files to dl
+        run: echo "LOCALES=$(find locales -type f -maxdepth 1 -name "*.json" -exec basename {} \;)" >> $GITHUB_ENV
+
+      - name: Download REMOTE LOCALES from POEditor
+        run: |
+          for l in ${{ env.LOCALES }};
+          do
+          	sh  locales/scripts/export.sh  -i ${{ secrets.POEDITOR_ID }} -t ${{ secrets.POEDITOR_TOKEN }} -l $l
+          done
+        shell: bash
+
+      - name: Get current date
+        run: echo "CURRENT_DATE=$(date +'%Y-%m-%dT%H:%M:%S')" >> $GITHUB_ENV
+      
+      - name: Create Pull Request
+        id: cpr
+        uses: peter-evans/create-pull-request@v3
+        with:
+          commit-message: Update Locales
+          branch: ${{ env.COMMIT_TO }}
+          title: '[LOCALES] Update to ${{ env.CURRENT_DATE }}'
+          body: |
+            Update locales
+          labels: |
+            locales
+            automated pr
+
+      - name: Check outputs
+        run: |
+          echo "Pull Request Number - ${{ steps.cpr.outputs.pull-request-number }}"
+          echo "Pull Request URL - ${{ steps.cpr.outputs.pull-request-url }}"
