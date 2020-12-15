@@ -8,8 +8,8 @@ export const Container = styled.div`
   flex-flow: wrap column;
   justify-content: flex-start;
   width: 100%;
-  max-width: 338px;
-  margin: ${({ noMargin }) => (noMargin ? '0 auto' : '24px auto 0')};
+  padding: 0 17px;
+  margin: ${({ noMargin }) => (noMargin ? '0' : '24px 0 0')};
   @media (max-width: 320px) {
     max-width: 290px;
   }
@@ -31,6 +31,7 @@ export const HistoryActivities = styled.div`
   flex-flow: wrap row;
   width: 100%;
   padding-bottom: 10px;
+  margin-bottom: 36px;
   border-top: 1px solid ${Color.gray_6};
   border-bottom: 2px solid ${Color.primaryLighter};
   &:after {
