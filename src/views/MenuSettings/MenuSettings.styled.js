@@ -31,15 +31,28 @@ export const Arrow = styled(ArrowRight)`
 `;
 
 export const Name = styled.span`
+  width: calc(100% - 68px);
+  margin-left: 68px;
+  padding-right: 14px;
   font-size: 18px;
   line-height: 24px;
   font-weight: 700;
   color: ${Color.primary};
 `;
 
-export const Icon = styled.img`
-  display: block;
-  max-width: 38px;
-  max-height: 38px;
-  margin-right: 30px;
+export const IconWrapper = styled.div`
+  position: absolute;
+  top: 0;
+  left: 30px;
+  display: flex;
+  flex-flow: wrap row;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 100%;
+  svg {
+    display: block;
+    max-width: 100%;
+    max-height: 100%;
+  }
 `;
