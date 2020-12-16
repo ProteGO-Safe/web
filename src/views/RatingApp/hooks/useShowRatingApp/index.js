@@ -32,7 +32,7 @@ const useShowRatingApp = () => {
 
   const wasShowedThreeTimesOnYear = () => {
     const currentYear = getYear(getTimestamp());
-    return showedRatingTimestamps.map(getYear).filter(year => year === currentYear).length > 3;
+    return showedRatingTimestamps.map(getYear).filter(year => year === currentYear).length >= 3;
   };
 
   if (isApplicationLiked || wasShowedThreeTimesOnYear()) {
