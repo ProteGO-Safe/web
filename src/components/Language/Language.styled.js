@@ -2,7 +2,6 @@ import styled from 'styled-components';
 import { Color } from '../../theme/colors';
 
 import Arrow from '../../assets/img/icons/angle-right-white.svg';
-import { DEVICE } from '../../theme/deviceResponsive';
 
 export const Language = styled.div`
   display: flex;
@@ -56,24 +55,29 @@ export const Language = styled.div`
     &__option {
       &s {
         position: absolute;
-        left: -2px;
-        width: calc(100% + 4px);
-        max-height: 170px;
+        top: -1px;
+        left: -1px;
+        width: calc(100% + 2px);
+        max-height: 188px;
         margin: 0;
         padding: 0;
         list-style: none;
         background: ${Color.white};
-        border-width: 3px 2px 2px 2px;
+        border-width: 1px;
         border-style: solid;
         border-color: ${Color.primary};
-        border-radius: 0 0 4px 4px;
+        border-radius: 4px;
         z-index: 999999;
-        overflow: auto;
-        ${DEVICE.XS} {
-          bottom: calc(100% - 6px);
-        }
-        ${DEVICE.minXS} {
-          top: calc(100% - 6px);
+        animation: openDropDown 0.3s;
+        overflow: hidden auto;
+
+        @keyframes openDropDown {
+          from {
+            opacity: 0;
+          }
+          to {
+            opacity: 1;
+          }
         }
       }
       &--placeholder {
@@ -104,7 +108,7 @@ export const Language = styled.div`
         position: relative;
       }
       &.has-label {
-        padding: 16px 14px;
+        padding: 14px;
         > span {
           display: flex;
           flex-flow: nowrap row;

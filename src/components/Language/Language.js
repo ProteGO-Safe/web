@@ -2,12 +2,7 @@ import React, { useRef, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import ReactFlagsSelect from 'react-flags-select';
 import * as Styled from './Language.styled';
-import {
-  convertToIso,
-  convertToLibraryCode,
-  prepareLanguagesCustomLabels,
-  prepareLanguages
-} from './language.helpers';
+import { convertToIso, convertToLibraryCode, prepareLanguagesCustomLabels, prepareLanguages } from './language.helpers';
 
 const Language = ({ customLabels, defaultLang, languages, onSelect }) => {
   const myInput = useRef();
