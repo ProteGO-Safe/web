@@ -5,6 +5,7 @@ import useNavigation from '../../../../../../hooks/useNavigation';
 import RiskTestMiddle from './RiskTestMiddle';
 import { getExposureAggregateStatistics } from '../../../../../../store/selectors/nativeData';
 import { getFormattedDate } from '../../../../../../utils/date';
+import { RecommendationsComponents } from '../../../../../Recommendations/recommendations.constant';
 
 const RiskTestMiddleContainer = () => {
   const { goTo } = useNavigation();
@@ -15,7 +16,7 @@ const RiskTestMiddleContainer = () => {
       currentState="result_analysis_variant_3"
       dateLastRiskTest={getFormattedDate(lastRiskCheckTimestamp)}
       isInfected={false}
-      handleRecommendation={() => goTo(Routes.Recommendations)}
+      handleRecommendation={() => goTo(Routes.Recommendations, { component: RecommendationsComponents.RiskTestMiddle })}
     />
   );
 };

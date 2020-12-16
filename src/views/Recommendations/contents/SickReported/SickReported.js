@@ -34,7 +34,7 @@ const SickReported = ({ phoneNumber, handlePath }) => (
         <T i18nKey="recommendations_text_5" />
       </CallHelpline>
 
-      <BlockBorder title={<T i18nKey="recommendations_text_37" />} />
+      <BlockBorder title={<T i18nKey="recommendations_text_37" />} hideItems />
     </Styled.BlockWrapper>
 
     <Styled.Title>

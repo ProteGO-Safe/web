@@ -5,6 +5,7 @@ import useNavigation from '../../../../../../hooks/useNavigation';
 import RiskTestHighSick from './RiskTestHighSick';
 import { getExposureAggregateStatistics } from '../../../../../../store/selectors/nativeData';
 import { getFormattedDate } from '../../../../../../utils/date';
+import { RecommendationsComponents } from '../../../../../Recommendations/recommendations.constant';
 
 const RiskTestHighSickContainer = () => {
   const { goTo } = useNavigation();
@@ -15,7 +16,7 @@ const RiskTestHighSickContainer = () => {
       currentState="result_analysis_variant_4"
       dateLastRiskTest={getFormattedDate(lastRiskCheckTimestamp)}
       isInfected={false}
-      handleRecommendation={() => goTo(Routes.Recommendations)}
+      handleRecommendation={() => goTo(Routes.Recommendations, { component: RecommendationsComponents.RiskTestHighSick })}
     />
   );
 };

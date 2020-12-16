@@ -30,7 +30,7 @@ const SickApprove = ({ handlePath }) => (
     </Styled.Description>
 
     <Styled.BlockWrapper>
-      <BlockBorder title={<T i18nKey="recommendations_text_37" />} />
+      <BlockBorder title={<T i18nKey="recommendations_text_37" />} hideItems />
     </Styled.BlockWrapper>
 
     <Styled.Title>
