@@ -16,10 +16,6 @@ export const Container = styled.header`
   background-color: ${Color.primary};
   transition: all 0.2s ease-in;
   z-index: 600;
-
-  @media (max-width: 300px) {
-    height: 40px;
-  }
 `;
 
 export const Logo = styled(LogoSVG)`

@@ -19,6 +19,9 @@ export const Item = styled.span`
   pointer-events: ${({ disabled }) => disabled && 'none'};
   cursor: ${({ disabled }) => disabled && 'default'};
   opacity: ${({ disabled }) => (disabled ? '0.4' : '1')};
+  @media (max-width: 300px) {
+    padding: 0 17px 0 24px;
+  }
 `;
 
 export const Arrow = styled(ArrowRight)`
@@ -28,16 +31,25 @@ export const Arrow = styled(ArrowRight)`
   width: 14px;
   height: 14px;
   margin-top: -7px;
+  @media (max-width: 300px) {
+    right: 17px;
+  }
 `;
 
 export const Name = styled.span`
   width: calc(100% - 68px);
   margin-left: 68px;
-  padding-right: 14px;
+  padding-right: 22px;
   font-size: 18px;
   line-height: 24px;
   font-weight: 700;
   color: ${Color.primary};
+  @media (max-width: 300px) {
+    width: calc(100% - 54px);
+    margin-left: 54px;
+    font-size: 14px;
+    line-height: 20px;
+  }
 `;
 
 export const IconWrapper = styled.div`
@@ -54,5 +66,9 @@ export const IconWrapper = styled.div`
     display: block;
     max-width: 100%;
     max-height: 100%;
+  }
+  @media (max-width: 300px) {
+    left: 24px;
+    width: 30px;
   }
 `;
