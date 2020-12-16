@@ -1,11 +1,10 @@
 import React from 'react';
-import { ListStats } from '../../components';
-import { Button, ButtonWithDescription, T } from '../../../../../../components';
-import { Color } from '../../../../../../theme/colors';
+import { ListStats, TestLabActionButton } from '../../components';
+import { Button, T } from '../../../../../../components';
 import { BUTTON_TYPES } from '../../../../../../components/Button/Button.constants';
 import * as Styled from './ExposureMiddle.styled';
 
-const ExposureMiddle = ({ handlePickUpTest, handleRecommendation, isInfected }) => (
+const ExposureMiddle = ({ handleRecommendation, isInfected }) => (
   <Styled.ExposureMiddle>
     <ListStats isInfected={isInfected} />
 
@@ -17,13 +16,7 @@ const ExposureMiddle = ({ handlePickUpTest, handleRecommendation, isInfected }) 
       <Button onClick={handleRecommendation} type={BUTTON_TYPES.SMALL_OUTLINE}>
         <T i18nKey="result_analysis_text_16" />
       </Button>
-
-      <ButtonWithDescription
-        color={Color.primary}
-        description={<T i18nKey="result_analysis_text_18" />}
-        onClick={handlePickUpTest}
-        title={<T i18nKey="result_analysis_text_17" />}
-      />
+      <TestLabActionButton />
     </Styled.ButtonsWrapper>
   </Styled.ExposureMiddle>
 );

@@ -3,9 +3,9 @@ import { useFormikContext } from 'formik';
 import isequal from 'lodash.isequal';
 import { NUMBER_OF_STEPS } from './ImprintFiller.constants';
 import { BloodGroup, ChronicSick, ManualCovidState, Name, Smoke, Summary } from './components';
-import { Stepper, Layout, NavigationBackGuard, T } from '../index';
-import useTriage from '../../hooks/useTriage';
+import { Layout, NavigationBackGuard, Stepper, T } from '../index';
 import useNavigation from '../../hooks/useNavigation';
+import useHealthStats from '../../hooks/useHealthStats';
 
 const steps = {
   1: {
@@ -31,7 +31,7 @@ const steps = {
 const ImprintFiller = () => {
   const { goBack } = useNavigation();
   const { resetForm, values, initialValues } = useFormikContext();
-  const { isManualCovid } = useTriage();
+  const { isCovidManual } = useHealthStats();
   const [step, setStep] = useState(1);
   const [showBackGuard, setShowBackGuard] = useState(false);
 
@@ -41,7 +41,7 @@ const ImprintFiller = () => {
     }
   }, [step]);
 
-  const numberOfSteps = isManualCovid ? NUMBER_OF_STEPS : NUMBER_OF_STEPS - 1;
+  const numberOfSteps = isCovidManual ? NUMBER_OF_STEPS : NUMBER_OF_STEPS - 1;
 
   const processBackOnFirstStep = () => {
     if (isequal(values, initialValues)) {
@@ -56,7 +56,7 @@ const ImprintFiller = () => {
       processBackOnFirstStep();
       return;
     }
-    if (step === 6 && !isManualCovid) {
+    if (step === 6 && !isCovidManual) {
       setStep(prev => prev - 2);
       return;
     }
@@ -64,7 +64,7 @@ const ImprintFiller = () => {
   };
 
   const goToNextStep = () => {
-    if (step === 4 && !isManualCovid) {
+    if (step === 4 && !isCovidManual) {
       setStep(prev => prev + 2);
       return;
     }
