@@ -9,7 +9,6 @@ const ExposureHighContainer = () => {
 
   return (
     <ExposureHigh
-      handlePickUpTest={() => goTo(Routes.LabTest)}
       handleRecommendation={() => goTo(Routes.Recommendations, { component: RecommendationsComponents.ExposureHigh })}
       isInfected={false}
     />

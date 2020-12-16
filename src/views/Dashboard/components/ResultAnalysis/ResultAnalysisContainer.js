@@ -30,7 +30,7 @@ import { ReactComponent as VirusHigh } from '../../../../assets/img/icons/virus-
 
 const ResultAnalysisContainer = () => {
   const username = useUserName();
-  const { signedUp } = useLabTest();
+  const { isSubscriptionConfirmed } = useLabTest();
   const healthStats = useHealthStats();
   const [open, setOpen] = useState(false);
 
@@ -85,7 +85,7 @@ const ResultAnalysisContainer = () => {
     if (and(isTorLow, isEnMiddle) || and(isTorMiddle, isEnMiddle) || and(noEn, isEnMiddle)) {
       return createDataView(
         Color.info,
-        signedUp ? ExposureMiddlePinApprove : ExposureMiddle,
+        isSubscriptionConfirmed ? ExposureMiddlePinApprove : ExposureMiddle,
         ENMiddle,
         'result_analysis_variant_3'
       );
@@ -101,13 +101,13 @@ const ResultAnalysisContainer = () => {
     ) {
       return createDataView(
         Color.red,
-        signedUp ? ExposureHighPinApprove : ExposureHigh,
+        isSubscriptionConfirmed ? ExposureHighPinApprove : ExposureHigh,
         ENHigh,
         'result_analysis_variant_4'
       );
     }
     return createDataView(Color.gradient_c2, NoData, null, 'result_analysis_variant_1');
-  }, [healthStats, signedUp]);
+  }, [healthStats, isSubscriptionConfirmed]);
 
   return (
     <>

@@ -1,9 +1,0 @@
-export { HomeContent } from './HomeContent';
-export { MakeDailyButton } from './MakeDailyButton';
-export { MakeDiagnosisButton } from './MakeDiagnosisButton';
-export { MoreInformation } from './MoreInformation';
-export { Smile } from './Smile';
-export { SmileNoData } from './SmileNoData';
-export { TriageRiskInformation } from './TriageRiskInformation';
-export { TriageInfoBorder } from './TriageInfoBorder';
-export { TriageRecommendations } from './TriageRecommendations';

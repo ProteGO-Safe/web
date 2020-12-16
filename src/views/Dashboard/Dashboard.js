@@ -3,6 +3,7 @@ import { Layout } from '../../components';
 
 import { ExposureNotification, ResultAnalysis, Statistics, CallToActionPin, CallToActionHealth } from './components';
 import * as Styled from './Dashboard.styled';
+import { InfoInteroperability, RatingApp } from '../index';
 
 const Dashboard = () => (
   <Layout noMargin isNavigation hideBackButton>
@@ -13,6 +14,9 @@ const Dashboard = () => (
       <Statistics />
       <CallToActionHealth />
     </Styled.Dashboard>
+
+    <InfoInteroperability />
+    <RatingApp />
   </Layout>
 );
 

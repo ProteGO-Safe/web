@@ -6,7 +6,14 @@ import 'moment/locale/ru';
 import 'moment/locale/uk';
 import 'moment/locale/en-gb';
 import { useDispatch, useSelector } from 'react-redux';
-import { FirstDiagnosisAsking, Home, NotSupported, Onboarding, Registration, StartScreen } from '../../views';
+import {
+  FirstDiagnosisAsking,
+  Dashboard,
+  NotSupported,
+  Onboarding,
+  Registration,
+  StartScreen,
+} from '../../views';
 import { fetchNativeVersion } from '../../store/actions/nativeData';
 import useFilledDiagnosis from '../../hooks/useFilledDiagnosis';
 import {
@@ -24,6 +31,7 @@ import useNavigation from '../../hooks/useNavigation';
 import ScreenFactory from '../../services/navigationService/Screen.factory';
 import useFirstRun from '../../hooks/useFirstRun';
 import { resetNavigationState } from '../../store/actions/navigation';
+import useCovidStateCleaner from '../../hooks/useCovidStateCleaner';
 
 function App() {
   const dispatch = useDispatch();
@@ -40,6 +48,7 @@ function App() {
   useCheckLanguage();
   useClearData();
   useFirstRun();
+  useCovidStateCleaner();
   const { route } = useNavigation();
 
   useEffect(() => {
@@ -75,7 +84,7 @@ function App() {
     if (!firstDiagnosisFinished) {
       return FirstDiagnosisAsking;
     }
-    return Home;
+    return Dashboard;
   })();
 
   const CurrentComponent = (() => {

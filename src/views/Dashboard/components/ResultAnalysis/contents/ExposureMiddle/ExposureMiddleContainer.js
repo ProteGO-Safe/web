@@ -9,7 +9,6 @@ const ExposureMiddleContainer = () => {
 
   return (
     <ExposureMiddle
-      handlePickUpTest={() => goTo(Routes.LabTest)}
       handleRecommendation={() => goTo(Routes.Recommendations, { component: RecommendationsComponents.ExposureMiddle })}
       isInfected={false}
     />
