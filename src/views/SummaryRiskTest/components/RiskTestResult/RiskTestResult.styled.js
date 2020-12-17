@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Color } from '../../theme/colors';
+import { Color } from '../../../../theme/colors';
 
 export const RiskTestResult = styled.div`
   position: relative;

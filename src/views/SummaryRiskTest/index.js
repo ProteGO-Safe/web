@@ -1,1 +1,1 @@
-export { default as SummaryRiskTest } from './SummaryRiskTestContainer';
+export { default as SummaryRiskTest } from './SummaryRiskTest';

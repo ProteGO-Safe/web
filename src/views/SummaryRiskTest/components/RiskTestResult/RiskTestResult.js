@@ -1,17 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import * as Styled from './RiskTestResult.styled';
-import { T } from '../index';
+import { T } from '../../../../components';
 
-const RiskTestResult = ({ color, icon, text }) => {
+const RiskTestResult = ({ color, icon, riskLevel }) => {
   return (
     <Styled.RiskTestResult color={color}>
       <Styled.Title>
         <T i18nKey="risk_test_result_title" />
       </Styled.Title>
-      <Styled.Result icon={icon}>
-        <T i18nKey={text} />
-      </Styled.Result>
+      <Styled.Result icon={icon}>{riskLevel}</Styled.Result>
     </Styled.RiskTestResult>
   );
 };
@@ -19,7 +17,7 @@ const RiskTestResult = ({ color, icon, text }) => {
 RiskTestResult.propTypes = {
   color: PropTypes.string.isRequired,
   icon: PropTypes.string.isRequired,
-  text: PropTypes.string.isRequired
+  riskLevel: PropTypes.node.isRequired
 };
 
 export default RiskTestResult;

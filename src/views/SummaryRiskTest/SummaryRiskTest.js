@@ -1,17 +1,26 @@
 import React from 'react';
-import { RiskTestResult, T } from '../../components';
+import { not, or } from 'ramda';
+import { Layout } from '../../components';
+import useHealthStats from '../../hooks/useHealthStats';
+import { LabTestReady, SimpleResult } from './views';
+import useLabTest from '../../hooks/useLabTest';
 import * as Styled from './SummaryRiskTest.styled';
 
-const SummaryRiskTest = ({ data }) => {
+const SummaryRiskTest = () => {
+  const { isEnHigh, isTorMiddle, isTorHigh, isEnMiddle } = useHealthStats();
+  const { isSubscriptionInProgress } = useLabTest();
+
+  const resolveView = () => {
+    if (not(isSubscriptionInProgress) && or(isEnMiddle, isEnHigh) && or(isTorMiddle, isTorHigh)) {
+      return <LabTestReady />;
+    }
+    return <SimpleResult />;
+  };
+
   return (
-    <Styled.SummaryRiskTest data-cy="view-summary-risk-test">
-      <Styled.Title>
-        <T i18nKey={data.title} />
-      </Styled.Title>
-      <RiskTestResult color={data.color} icon={data.icon} text={data.status} />
-      {data.description}
-      <Styled.ButtonWrapper>{data.buttons}</Styled.ButtonWrapper>
-    </Styled.SummaryRiskTest>
+    <Layout hideBackButton noPadding fullHeight hideBell>
+      <Styled.SummaryRiskTest data-cy="view-summary-risk-test">{resolveView()}</Styled.SummaryRiskTest>
+    </Layout>
   );
 };
 
