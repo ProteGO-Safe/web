@@ -5,16 +5,18 @@ import { FontWeight } from '../../../../../../theme/fonts';
 export const StatsItem = styled.div`
   display: flex;
   flex-flow: wrap row;
-  width: calc(100% / 3 - 1.33px);
+  flex: 1;
   overflow: hidden;
   &:not(:last-child) {
     margin-right: 2px;
   }
   &:first-child {
-    border-radius: 4px 0 0 4px;
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
   }
   &:last-child {
-    border-radius: 0 4px 4px 0;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
   }
 `;
 
