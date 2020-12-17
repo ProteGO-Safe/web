@@ -165,7 +165,7 @@ export const resolveData = (goTo, openModal, type) => {
         color: Color.green,
         icon: IconLow,
         status: 'risk_test_result_low',
-        title: 'summary_risk_test_title_6',
+        title: 'summary_risk_test_title_5',
         description: (
           <Styled.Description>
             <Styled.Paragraph>
