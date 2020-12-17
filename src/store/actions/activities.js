@@ -30,3 +30,7 @@ export const markActivityAsRead = id => ({
   data: { id },
   type: types.MARK_ACTIVITY_AS_READ
 });
+
+export const markAllActivitiesAsRead = () => ({
+  type: types.MARK_ALL_ACTIVITIES_AS_READ
+});

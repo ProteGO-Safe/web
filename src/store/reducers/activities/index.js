@@ -30,6 +30,14 @@ const notificationReducer = (state = INITIAL_STATE, action) => {
         activities: [...activities]
       };
     }
+    case types.MARK_ALL_ACTIVITIES_AS_READ: {
+      const { activities = [] } = state;
+
+      return {
+        ...state,
+        activities: [...activities.map(activity => ({ ...activity, isRead: true }))]
+      };
+    }
     default:
       return state;
   }
