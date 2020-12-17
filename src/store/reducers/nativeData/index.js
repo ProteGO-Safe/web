@@ -28,10 +28,13 @@ const INITIAL_STATE = {
   }
 };
 
-const setServicesStatusSuccess = (state, { servicesStatus = {} }, servicesStatusSetByNative) => {
+const setServicesStatusSuccess = (state, { servicesStatus: newServicesStatus = {} }, servicesStatusSetByNative) => {
+  const { servicesStatus: currentServicesStatus = {} } = state;
+  const { receivedServicesStatusMarker = 0 } = currentServicesStatus;
+  const { servicesStatus } = newServicesStatus;
   return {
     ...state,
-    ...servicesStatus,
+    servicesStatus: { ...servicesStatus, receivedServicesStatusMarker: receivedServicesStatusMarker + 1 },
     servicesStatusSetByNative
   };
 };

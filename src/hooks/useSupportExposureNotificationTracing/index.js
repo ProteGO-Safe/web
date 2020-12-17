@@ -5,7 +5,13 @@ import { enableServices } from '../../store/actions/nativeData';
 import { getServicesStatus } from '../../store/selectors/nativeData';
 
 const useSupportExposureNotificationTracing = () => {
-  const { isLocationOn, isBtOn, isNotificationEnabled, exposureNotificationStatus } = useSelector(getServicesStatus);
+  const {
+    isLocationOn,
+    isBtOn,
+    isNotificationEnabled,
+    exposureNotificationStatus,
+    receivedServicesStatusMarker
+  } = useSelector(getServicesStatus);
 
   const areEnableAllServices =
     (isIOSWebView() || isLocationOn) &&
@@ -34,7 +40,8 @@ const useSupportExposureNotificationTracing = () => {
 
   return {
     areEnableAllServices,
-    handleEnableServices
+    handleEnableServices,
+    receivedServicesMarker: receivedServicesStatusMarker
   };
 };
 

@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { not, ifElse } from 'ramda';
+import React, { useEffect, useState } from 'react';
+import { and, ifElse, not } from 'ramda';
 import CallToActionPin from './CallToActionPin';
 import useNavigation from '../../../../hooks/useNavigation';
 import { Routes } from '../../../../services/navigationService/routes';
@@ -9,7 +9,11 @@ import useSupportExposureNotificationTracing from '../../../../hooks/useSupportE
 const CallToActionPinContainer = () => {
   const { goTo } = useNavigation();
   const { isCovidConfirmed } = useHealthStats();
-  const { areEnableAllServices, handleEnableServices } = useSupportExposureNotificationTracing();
+  const {
+    areEnableAllServices,
+    handleEnableServices,
+    receivedServicesMarker
+  } = useSupportExposureNotificationTracing();
   const [pressed, setPressed] = useState(false);
 
   const handlePressed = ifElse(
@@ -18,12 +22,24 @@ const CallToActionPinContainer = () => {
     handleEnableServices
   );
 
+  const handleChangeServices = ifElse(
+    () => and(areEnableAllServices, pressed),
+    () => goTo(Routes.UploadHistoricalData),
+    () => setPressed(false)
+  );
+
   useEffect(() => {
     if (not(pressed)) {
       return;
     }
     handlePressed();
-  }, [pressed, handlePressed]);
+    // eslint-disable-next-line
+  }, [pressed]);
+
+  useEffect(() => {
+    handleChangeServices();
+    // eslint-disable-next-line
+  }, [receivedServicesMarker]);
 
   if (isCovidConfirmed) {
     return null;
