@@ -86,8 +86,8 @@ const ImprintFiller = () => {
       </Layout>
       {showBackGuard && (
         <NavigationBackGuard
-          title={<T i18nKey="lab_test_text23" />}
-          description={<T i18nKey="lab_test_text24" />}
+          title={<T i18nKey="imprint_filler_text1" />}
+          description={<T i18nKey="imprint_filler_text2" />}
           handleCancel={() => setShowBackGuard(false)}
           handleConfirm={() => goBack()}
         />
