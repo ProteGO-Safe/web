@@ -32,9 +32,11 @@ export const Content = styled.div`
       transition-timing-function: cubic-bezier(1, 0, 1, 0);
       transition-delay: 0s;
     `}
-  & > *:first-child {
+  ${({ existsStatsItems }) =>
+    existsStatsItems &&
+    `& > *:first-child {
     margin-top: 38px;
-  }
+  }`}
 `;
 
 export const ContentStats = styled.div`

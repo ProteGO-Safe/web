@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { not, or } from 'ramda';
 import Statistics from './Statistics';
 import { fetchCovidStatistics } from '../../../../store/actions/nativeData';
 import { getCovidStats } from '../../../../store/selectors/nativeData';
@@ -26,20 +27,23 @@ const StatisticsContainer = () => {
   const covidStats = [
     {
       name: 'statistics_text_3',
-      new: newCases,
-      total: totalCases
+      news: newCases,
+      totals: totalCases
     },
     {
       name: 'statistics_text_4',
-      new: newDeaths,
-      total: totalDeaths
+      news: newDeaths,
+      totals: totalDeaths
     },
     {
       name: 'statistics_text_5',
-      new: newRecovered,
-      total: totalRecovered
+      news: newRecovered,
+      totals: totalRecovered
     }
-  ];
+  ].filter(({ news, totals }) => {
+    // both props have to be a number
+    return not(or(not(Number.isInteger(news)), not(Number.isInteger(totals))));
+  });
 
   return (
     <Statistics
