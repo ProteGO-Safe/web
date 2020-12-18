@@ -77,13 +77,6 @@ const nativeBridgeReducer = (state = INITIAL_STATE, action) => {
         riskLevel
       };
     }
-    case types.NATIVE_DATA_FETCH_NATIVE_STATE: {
-      const { appState } = action;
-      return {
-        ...state,
-        ...appState
-      };
-    }
     case types.FETCH_VERSION_SUCCESS: {
       const {
         body: { appVersion }

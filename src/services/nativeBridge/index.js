@@ -3,11 +3,7 @@ import uniqueId from 'lodash.uniqueid';
 
 import { always, cond, equals } from 'ramda';
 import StoreRegistry from '../../store/storeRegistry';
-import {
-  FETCH_LANGUAGE,
-  NATIVE_DATA_FETCH_NATIVE_STATE,
-  NATIVE_DATA_SET_SERVICES_STATUS_SUCCESS
-} from '../../store/types/nativeData';
+import { FETCH_LANGUAGE, NATIVE_DATA_SET_SERVICES_STATUS_SUCCESS } from '../../store/types/nativeData';
 import { DATA_TYPE } from './nativeBridge.constants';
 import { isAndroidWebView, isIOSWebView } from '../../utils/native';
 import {
@@ -21,6 +17,7 @@ import { BACK_PRESSED } from '../../store/types/navigation';
 import { UPLOAD_HISTORICAL_DATA_FINISHED } from '../../store/types/app';
 import { changeRoute } from '../../store/actions/navigation';
 import { Routes } from '../navigationService/routes';
+import { fetchActivities } from '../../store/actions/activities';
 
 const nativeRequests = {};
 
@@ -219,13 +216,10 @@ const handleExposureSummary = data => {
 const handleNativeState = appState => {
   const store = StoreRegistry.getStore();
   const { dispatch } = store;
-  dispatch({
-    appState,
-    type: NATIVE_DATA_FETCH_NATIVE_STATE
-  });
   if (appState.appState === 1) {
     dispatch(fetchExposureNotificationStatistics());
     dispatch(fetchSubscribedDistricts());
+    dispatch(fetchActivities());
   }
 };
 const handleNativeLanguage = body => {
