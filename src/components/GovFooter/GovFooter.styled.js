@@ -4,7 +4,7 @@ import { Color } from '../../theme/colors';
 export const Wrapper = styled.footer`
   position: absolute;
   left: 0;
-  bottom: 24px;
+  bottom: calc(24px + env(safe-area-inset-bottom));
   display: flex;
   align-items: center;
   justify-content: space-between;
