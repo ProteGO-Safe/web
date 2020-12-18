@@ -9,7 +9,9 @@ import { ReactComponent as IconAdd } from '../../assets/img/icons/plus.svg';
 
 const FollowDistrictsSlider = ({ items }) => {
   const ref = useRef(null);
-  const renderItems = items.map(({ id, name, state }) => <StatusItem id={id} key={id} name={name} status={state} />);
+  const renderItems = items.map(({ id, name, state }) => (
+    <StatusItem isShadow id={id} key={id} name={name} status={state} />
+  ));
 
   const [width, setWidth] = useState(0);
 
@@ -21,7 +23,7 @@ const FollowDistrictsSlider = ({ items }) => {
   }, []);
 
   return (
-    <Styled.FollowDistrictsSlider>
+    <Styled.Wrapper>
       {items.length > 0 ? (
         <>
           <Styled.Title padding={width}>
@@ -45,7 +47,7 @@ const FollowDistrictsSlider = ({ items }) => {
           </Styled.Button>
         </NavLink>
       )}
-    </Styled.FollowDistrictsSlider>
+    </Styled.Wrapper>
   );
 };
 

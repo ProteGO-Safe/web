@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { Color } from '../../theme/colors';
 import { ReactComponent as ArrowRight } from '../../assets/img/icons/arrow-current-color.svg';
 
-export const MenuSettings = styled.div`
+export const Wrapper = styled.div`
   width: 100%;
 `;
 

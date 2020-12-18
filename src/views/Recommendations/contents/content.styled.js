@@ -6,7 +6,6 @@ export const Wrapper = styled.div`
   display: flex;
   flex-flow: wrap row;
   width: 100%;
-  padding: 22px 17px 0;
 `;
 
 export const MainTitle = styled.h1`

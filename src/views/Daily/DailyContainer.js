@@ -22,14 +22,7 @@ const DailyContainer = () => {
 
   const goToHistory = timestamp => goTo(Routes.DailyData, { id: timestamp });
 
-  return (
-    <Daily
-      previousDays={daysInDaily}
-      onFill={fill}
-      goToHistory={goToHistory}
-      today={today}
-    />
-  );
+  return <Daily previousDays={daysInDaily} onFill={fill} goToHistory={goToHistory} today={today} />;
 };
 
 export default DailyContainer;

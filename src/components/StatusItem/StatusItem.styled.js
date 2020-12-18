@@ -23,11 +23,15 @@ export const StatusItem = styled.div`
   align-items: center;
   flex-shrink: 0;
   width: auto;
-  margin: 2px 10px 8px 0;
+  margin: 2px 10px 10px 0;
   padding: 5px 8px;
   border-radius: 4px;
   background-color: ${Color.white};
-  box-shadow: 2px 2px 4px ${hexToRgba(Color.black, 0.3)};
+  ${({ shadow }) =>
+    shadow &&
+    `
+      box-shadow: 2px 2px 4px ${hexToRgba(Color.black, 0.3)};
+    `}
 `;
 
 export const Status = styled.div`

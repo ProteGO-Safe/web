@@ -38,7 +38,7 @@ const MenuSettingsContainer = () => {
   ];
 
   return (
-    <Layout isNavigation noMargin>
+    <Layout isNavigation noMargin noPadding>
       <MenuSettings items={MENU_ITEMS} />
     </Layout>
   );

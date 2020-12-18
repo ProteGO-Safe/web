@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { Color } from '../../theme/colors';
 
-export const CurrentRestrictions = styled.div`
+export const Wrapper = styled.div`
   width: 100%;
 `;
 
@@ -10,7 +10,7 @@ export const Container = styled.div`
   flex-flow: wrap column;
   justify-content: flex-start;
   width: 100%;
-  padding: 24px 17px 0;
+  padding: 0 0 24px 0;
 `;
 
 export const Title = styled.h2`

@@ -6,7 +6,7 @@ import * as Styled from './Dashboard.styled';
 import { InfoInteroperability, RatingApp } from '../index';
 
 const Dashboard = () => (
-  <Layout noMargin isNavigation hideBackButton>
+  <Layout noMargin noPadding isNavigation hideBackButton>
     <Styled.Dashboard>
       <ExposureNotification />
       <ResultAnalysis />

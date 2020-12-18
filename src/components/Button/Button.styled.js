@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { Color } from '../../theme/colors';
+import { FontWeight } from '../../theme/fonts';
 
 export const Button = styled.button`
   position: relative;
@@ -8,22 +9,17 @@ export const Button = styled.button`
   justify-content: center;
   flex-flow: wrap row;
   width: 100%;
-  max-width: 338px;
-  height: auto;
   min-height: 44px;
   padding: 7px 12px;
   font-family: 'Open Sans', sans-serif;
   font-size: 16px;
-  line-height: 1.5;
-  font-weight: bold;
-  font-stretch: normal;
-  font-style: normal;
-  letter-spacing: 0;
+  line-height: 22px;
+  font-weight: ${FontWeight.Bold};
   -webkit-appearance: none;
-  border-style: none;
   border-radius: 8px;
-  cursor: pointer;
+  border-style: none;
   text-transform: uppercase;
+  cursor: pointer;
   overflow: hidden;
   &:disabled {
     background: ${Color.darkGray};

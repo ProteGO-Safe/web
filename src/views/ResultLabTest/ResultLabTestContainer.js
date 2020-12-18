@@ -64,7 +64,7 @@ const ResultLabTestContainer = () => {
   }
 
   return (
-    <Layout isNavigation fullHeight noPadding hideBackButton>
+    <Layout isNavigation fullHeight hideBackButton>
       <ResultLabTest
         title={<T i18nKey="result_test_lab_text8" />}
         content={<T i18nKey="result_test_lab_text7" />}

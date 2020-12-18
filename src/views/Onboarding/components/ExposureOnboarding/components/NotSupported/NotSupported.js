@@ -1,5 +1,4 @@
 import React from 'react';
-import './NotSupported.scss';
 import { OnboardingContent, Button, Layout, T } from '../../../../../../components';
 import { isIOSWebView } from '../../../../../../utils/native';
 import { Icon } from './NotSupported.styled';

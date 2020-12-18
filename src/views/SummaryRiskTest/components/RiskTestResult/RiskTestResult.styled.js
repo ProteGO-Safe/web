@@ -4,12 +4,12 @@ import { Color } from '../../../../theme/colors';
 export const RiskTestResult = styled.div`
   position: relative;
   width: 100%;
-  padding: 2px 0 8px 16px;
+  padding: 2px 0 8px 21px;
   &:before {
     content: '';
     position: absolute;
     top: 0;
-    left: -5px;
+    left: 0;
     width: 5px;
     height: 100%;
     background-color: ${({ color }) => color};

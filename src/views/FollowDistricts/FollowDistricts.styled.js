@@ -3,7 +3,7 @@ import { Color } from '../../theme/colors';
 
 import IconStarSolid from '../../assets/img/icons/star-solid.svg';
 
-export const FollowDistricts = styled.div`
+export const Wrapper = styled.div`
   position: relative;
   width: 100%;
 `;
@@ -22,7 +22,8 @@ export const DateUpdate = styled.span`
 export const Content = styled.div`
   display: flex;
   flex-flow: wrap row;
-  width: 100%;
+  width: calc(100% + 34px);
+  margin: 0 -17px 0 -17px;
   padding: 10px 17px 0;
   background-color: ${Color.primaryLighter};
 `;

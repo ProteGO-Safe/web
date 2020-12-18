@@ -24,7 +24,7 @@ const HistoryActivities = ({ handleMarkAllRead, isMarkAllReadVisible, items }) =
   });
 
   return (
-    <Layout isNavigation noMargin>
+    <Layout isNavigation>
       <Styled.Container>
         <Styled.Title>
           <T i18nKey="history_notifications_text_1" />
@@ -32,7 +32,7 @@ const HistoryActivities = ({ handleMarkAllRead, isMarkAllReadVisible, items }) =
       </Styled.Container>
 
       {renderedItems.length > 0 ? (
-        <Styled.Container noMargin>
+        <Styled.Container>
           <Styled.HistoryActivities>
             {isMarkAllReadVisible && (
               <Styled.MarkAllRead onClick={handleMarkAllRead}>
@@ -44,7 +44,7 @@ const HistoryActivities = ({ handleMarkAllRead, isMarkAllReadVisible, items }) =
           </Styled.HistoryActivities>
         </Styled.Container>
       ) : (
-        <Styled.Container noMargin>
+        <Styled.Container>
           <HistoryActivitiesEmpty />
         </Styled.Container>
       )}

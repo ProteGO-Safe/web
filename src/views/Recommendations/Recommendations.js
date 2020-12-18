@@ -32,7 +32,7 @@ const Recommendations = () => {
   const Component = components[param];
 
   return (
-    <Layout isNavigation noMargin>
+    <Layout isNavigation>
       <Component />
     </Layout>
   );

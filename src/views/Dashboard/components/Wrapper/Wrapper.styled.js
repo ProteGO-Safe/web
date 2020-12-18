@@ -7,7 +7,6 @@ const Wrapper = styled.div`
   flex-flow: wrap row;
   align-items: flex-start;
   width: 100%;
-  max-width: 678px;
   margin: 21px auto 0;
   padding: ${({ padding }) => (padding ? '20px 17px 0' : '20px 0 0')};
 

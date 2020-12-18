@@ -13,7 +13,7 @@ const MenuSettings = ({ items }) => {
     </NavLink>
   ));
 
-  return <Styled.MenuSettings>{renderMenu}</Styled.MenuSettings>;
+  return <Styled.Wrapper>{renderMenu}</Styled.Wrapper>;
 };
 
 export default MenuSettings;

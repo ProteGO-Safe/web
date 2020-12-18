@@ -18,7 +18,7 @@ const SummaryRiskTest = () => {
   };
 
   return (
-    <Layout hideBackButton noPadding fullHeight hideBell>
+    <Layout hideBackButton fullHeight hideBell>
       <Styled.SummaryRiskTest data-cy="view-summary-risk-test">{resolveView()}</Styled.SummaryRiskTest>
     </Layout>
   );

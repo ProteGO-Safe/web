@@ -4,11 +4,13 @@ import Slider from 'react-slick';
 import { Button, Layout, T } from '../../../../components';
 import * as Styled from './Explainer.styled';
 
-const Explainer = ({ t, carouselRef, index, items, onClick, settings }) => {
+const Explainer = ({ carouselRef, index, items, onClick, settings }) => {
   return (
-    <Layout id="view-explainer" hideBackButton isGovFooter fullHeight noPadding>
+    <Layout id="view-explainer" hideBackButton isGovFooter fullHeight>
       {index < 1 ? (
-        <Styled.Title><T i18nKey="explainer_text1"/></Styled.Title>
+        <Styled.Title>
+          <T i18nKey="explainer_text1" />
+        </Styled.Title>
       ) : (
         <Styled.Title>
           <T i18nKey="explainer_text2" />
@@ -21,7 +23,7 @@ const Explainer = ({ t, carouselRef, index, items, onClick, settings }) => {
       </Styled.SliderWrapper>
 
       <Styled.ButtonWrapper data-cy="button-next-wrapper">
-        <Button onClick={onClick} label={<T i18nKey="button_next"/>} />
+        <Button onClick={onClick} label={<T i18nKey="button_next" />} />
       </Styled.ButtonWrapper>
     </Layout>
   );

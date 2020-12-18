@@ -6,14 +6,7 @@ import 'moment/locale/ru';
 import 'moment/locale/uk';
 import 'moment/locale/en-gb';
 import { useDispatch, useSelector } from 'react-redux';
-import {
-  FirstDiagnosisAsking,
-  Dashboard,
-  NotSupported,
-  Onboarding,
-  Registration,
-  StartScreen,
-} from '../../views';
+import { FirstDiagnosisAsking, Dashboard, NotSupported, Onboarding, Registration, StartScreen } from '../../views';
 import { fetchNativeVersion } from '../../store/actions/nativeData';
 import useFilledDiagnosis from '../../hooks/useFilledDiagnosis';
 import {
@@ -26,12 +19,12 @@ import useMigration from '../../hooks/useMigration';
 import useCheckLanguage from '../../hooks/useCheckLanguage';
 import useModalContext from '../../hooks/useModalContext';
 import useClearData from '../../hooks/useClearData';
-import * as Styled from './App.styled';
 import useNavigation from '../../hooks/useNavigation';
 import ScreenFactory from '../../services/navigationService/Screen.factory';
 import useFirstRun from '../../hooks/useFirstRun';
 import { resetNavigationState } from '../../store/actions/navigation';
 import useCovidStateCleaner from '../../hooks/useCovidStateCleaner';
+import * as Styled from './App.styled';
 
 function App() {
   const dispatch = useDispatch();

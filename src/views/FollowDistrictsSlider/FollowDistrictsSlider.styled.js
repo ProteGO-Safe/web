@@ -3,7 +3,7 @@ import { Color } from '../../theme/colors';
 import { ReactComponent as IconArrow } from '../../assets/img/icons/arrow-current-color.svg';
 import { FontWeight } from '../../theme/fonts';
 
-export const FollowDistrictsSlider = styled.div`
+export const Wrapper = styled.div`
   position: relative;
   display: flex;
   flex-flow: wrap row;

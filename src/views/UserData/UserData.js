@@ -3,7 +3,6 @@ import { Button, Imprint, Layout, T } from '../../components';
 import useSupportExposureNotificationTracing from '../../hooks/useSupportExposureNotificationTracing';
 import { Name, Paragraph } from '../../theme/typography';
 import { ButtonWrapper } from './UserData.styled';
-import './UserData.scss';
 import useUserName from '../../hooks/useUserName';
 import useNavigation from '../../hooks/useNavigation';
 import { Routes } from '../../services/navigationService/routes';

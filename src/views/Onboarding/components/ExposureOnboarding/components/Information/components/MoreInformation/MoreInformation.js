@@ -1,5 +1,4 @@
 import React from 'react';
-import './MoreInformation.scss';
 import { Button, Layout, OnboardingContent, T } from '../../../../../../../../components';
 import { Icon, Paragraph } from './MoreInformation.styled';
 

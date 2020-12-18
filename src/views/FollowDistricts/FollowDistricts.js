@@ -12,7 +12,7 @@ const FollowDistricts = ({ dateUpdate, handleUnsubscribeDistrict, items }) => {
   ));
 
   return (
-    <Styled.FollowDistricts>
+    <Styled.Wrapper>
       <Styled.DateUpdate>
         <T i18nKey="follow_district_date_update" /> {dateUpdate}
       </Styled.DateUpdate>
@@ -29,7 +29,7 @@ const FollowDistricts = ({ dateUpdate, handleUnsubscribeDistrict, items }) => {
           {renderItems}
         </Styled.Content>
       )}
-    </Styled.FollowDistricts>
+    </Styled.Wrapper>
   );
 };
 

@@ -14,7 +14,7 @@ const SettingsLanguages = ({ addTranslationPath, languages, selectedLang }) => {
   ));
 
   return (
-    <Styled.SettingsLanguages>
+    <Styled.Wrapper>
       <Styled.Title>
         <T i18nKey="settings_languages_text1" />
       </Styled.Title>
@@ -26,10 +26,11 @@ const SettingsLanguages = ({ addTranslationPath, languages, selectedLang }) => {
       <Styled.Title>
         <T i18nKey="settings_languages_text2" />
       </Styled.Title>
+
       {renderLanguages}
 
       <AddTranslation name={<T i18nKey="settings_languages_text3" />} path={addTranslationPath} />
-    </Styled.SettingsLanguages>
+    </Styled.Wrapper>
   );
 };
 

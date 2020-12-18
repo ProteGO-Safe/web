@@ -8,11 +8,6 @@ export const Container = styled.div`
   flex-flow: wrap column;
   justify-content: flex-start;
   width: 100%;
-  padding: 0 17px;
-  margin: ${({ noMargin }) => (noMargin ? '0' : '24px 0 0')};
-  @media (max-width: 320px) {
-    max-width: 290px;
-  }
 `;
 
 export const Title = styled.div`

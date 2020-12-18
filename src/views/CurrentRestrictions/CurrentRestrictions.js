@@ -68,7 +68,7 @@ const CurrentRestrictions = ({
   }, [isFlatten, flattenDistricts, listDistrictsItems, handleSubscribeDistrict, handleUnsubscribeDistrict]);
 
   return (
-    <Styled.CurrentRestrictions>
+    <Styled.Wrapper>
       <Styled.Container>
         <Styled.Title noMargin>
           <T i18nKey="current_restrictions_title_1" />
@@ -115,7 +115,7 @@ const CurrentRestrictions = ({
           </Styled.Small>
         </Styled.ButtonWrapper>
       </Styled.Container>
-    </Styled.CurrentRestrictions>
+    </Styled.Wrapper>
   );
 };
 

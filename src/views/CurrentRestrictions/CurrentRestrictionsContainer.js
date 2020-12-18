@@ -95,7 +95,7 @@ const CurrentRestrictionsContainer = () => {
   }, []);
 
   return (
-    <Layout isNavigation noMargin>
+    <Layout isNavigation>
       {fetchingDistrictsResult === FAILED ? (
         <NoData handleClick={() => handleFetchForceDistrictsStatus()} />
       ) : (
