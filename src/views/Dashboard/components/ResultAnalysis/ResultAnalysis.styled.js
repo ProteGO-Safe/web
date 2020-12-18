@@ -44,9 +44,7 @@ export const CurrentState = styled.div`
 `;
 
 export const CurrentStateText = styled.span`
-  display: flex;
-  flex-flow: wrap row;
-  align-items: flex-start;
+  display: inline-block;
   width: 100%;
   padding-left: 10px;
   font-size: 18px;
