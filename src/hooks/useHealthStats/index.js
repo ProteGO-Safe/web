@@ -38,7 +38,7 @@ const useHealthStats = () => {
   }, [triageLevel]);
 
   return {
-    noEn: nativeRiskLevel === undefined,
+    noEn: nativeRiskLevel === undefined || nativeRiskLevel === 0,
     isEnLow: nativeRiskLevel === 1,
     isEnMiddle: nativeRiskLevel === 2,
     isEnHigh: nativeRiskLevel === 3,
