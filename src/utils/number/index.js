@@ -1,7 +1,7 @@
 import React from 'react';
 import { T } from '../../components';
 
-const numberWithSpaces = number => {
+export const numberWithSpaces = number => {
   return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
 };
 
