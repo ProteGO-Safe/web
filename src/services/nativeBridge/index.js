@@ -155,7 +155,7 @@ const setServicesState = async data => {
 };
 
 const setNotificationStatus = enable => {
-  return callNativeFunction('setBridgeData', DATA_TYPE.SET_NOTIFICATION_STATUS, {
+  return callGetBridgeData(DATA_TYPE.SET_NOTIFICATION_STATUS, {
     isCovidStatsNotificationEnabled: enable
   });
 };
