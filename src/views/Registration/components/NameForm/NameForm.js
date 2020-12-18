@@ -2,7 +2,7 @@ import React from 'react';
 import { withTranslation } from 'react-i18next';
 import { useFormikContext } from 'formik';
 import { FIELD_NAME } from '../../../../constants';
-import { Button, InputWithCounter, Layout, T } from '../../../../components';
+import { Button, InputWithCounter, T } from '../../../../components';
 import { ButtonWrapper, Label } from '../../Registration.styled';
 
 const NameForm = ({ t }) => {
@@ -18,7 +18,7 @@ const NameForm = ({ t }) => {
   };
 
   return (
-    <Layout id="view-name-form" hideBackButton isGovFooter>
+    <>
       <Label>
         <T i18nKey="name_form_text1" />
       </Label>
@@ -39,7 +39,7 @@ const NameForm = ({ t }) => {
         <Button disabled={disabled} onClick={handleSubmit} label={<T i18nKey="name_form_text5" />} />
         <Button onClick={onSkip} type="outline" label={<T i18nKey="name_form_text6" />} />
       </ButtonWrapper>
-    </Layout>
+    </>
   );
 };
 

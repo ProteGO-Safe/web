@@ -4,7 +4,7 @@ import { Logo, Title, Paragraph } from './NotSupported.styled';
 
 const NotSupported = ({ url }) => {
   return (
-    <Layout hideBackButton isGovFooter>
+    <Layout hideBackButton isGovFooter hideBell>
       <Logo />
       <Title>
         <T i18nKey="not_supported_text1" />

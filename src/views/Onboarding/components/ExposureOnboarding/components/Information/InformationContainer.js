@@ -9,13 +9,7 @@ const InformationContainer = ({ onNext, onSkip }) => {
     return <MoreInformation onNext={onNext} />;
   }
 
-  return (
-    <Information
-      onNext={onNext}
-      onMore={() => setIsMoreInformationShowed(true)}
-      onSkip={onSkip}
-    />
-  );
+  return <Information onNext={onNext} onMore={() => setIsMoreInformationShowed(true)} onSkip={onSkip} />;
 };
 
 export default InformationContainer;

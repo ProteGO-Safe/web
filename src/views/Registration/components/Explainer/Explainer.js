@@ -1,12 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Slider from 'react-slick';
-import { Button, Layout, T } from '../../../../components';
+import { Button, T } from '../../../../components';
 import * as Styled from './Explainer.styled';
 
 const Explainer = ({ carouselRef, index, items, onClick, settings }) => {
   return (
-    <Layout id="view-explainer" hideBackButton isGovFooter fullHeight>
+    <>
       {index < 1 ? (
         <Styled.Title>
           <T i18nKey="explainer_text1" />
@@ -25,7 +25,7 @@ const Explainer = ({ carouselRef, index, items, onClick, settings }) => {
       <Styled.ButtonWrapper data-cy="button-next-wrapper">
         <Button onClick={onClick} label={<T i18nKey="button_next" />} />
       </Styled.ButtonWrapper>
-    </Layout>
+    </>
   );
 };
 

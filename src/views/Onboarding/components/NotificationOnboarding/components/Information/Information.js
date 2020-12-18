@@ -1,5 +1,5 @@
 import React from 'react';
-import { OnboardingContent, Button, Layout, T } from '../../../../../../components';
+import { Button, OnboardingContent, T } from '../../../../../../components';
 import { Icon } from './Information.styled';
 
 const Information = ({ onNext, onSkip }) => {
@@ -20,19 +20,17 @@ const Information = ({ onNext, onSkip }) => {
   ));
 
   return (
-    <Layout hideBackButton isGovFooter>
-      <OnboardingContent
-        icon={<Icon />}
-        title={<T i18nKey="notification_onboarding_information_text3" />}
-        buttons={renderButton}
-      >
-        <>
-          <p>
-            <T i18nKey="notification_onboarding_information_text1" />
-          </p>
-        </>
-      </OnboardingContent>
-    </Layout>
+    <OnboardingContent
+      icon={<Icon />}
+      title={<T i18nKey="notification_onboarding_information_text3" />}
+      buttons={renderButton}
+    >
+      <>
+        <p>
+          <T i18nKey="notification_onboarding_information_text1" />
+        </p>
+      </>
+    </OnboardingContent>
   );
 };
 

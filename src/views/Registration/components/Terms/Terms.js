@@ -3,7 +3,7 @@ import { useFormikContext } from 'formik';
 import { FormGroup } from '@material-ui/core';
 import { FIELD_TERM1 } from '../../../../constants';
 import { Annotation } from '../../../../theme/typography';
-import { Button, Checkbox, Layout, T } from '../../../../components';
+import { Button, Checkbox, T } from '../../../../components';
 import { ButtonWrapper, Paragraph, Small, Title } from '../../Registration.styled';
 
 const Terms = ({ handleClick }) => {
@@ -14,7 +14,7 @@ const Terms = ({ handleClick }) => {
   })();
 
   return (
-    <Layout id="view-terms" hideBackButton isGovFooter>
+    <>
       <Title>
         <T i18nKey="terms_text_1" />
       </Title>
@@ -46,7 +46,7 @@ const Terms = ({ handleClick }) => {
       <Small>
         <T i18nKey="terms_text_5" />
       </Small>
-    </Layout>
+    </>
   );
 };
 
