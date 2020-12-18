@@ -1,14 +1,13 @@
 import React from 'react';
-import { ListStats } from '../../components';
+import { ListStats, InstallKwarantannaActionButton } from '../../components';
 import { T } from '../../../../../../components/T';
-import { Button, ButtonWithDescription, ButtonWithIcon } from '../../../../../../components';
+import { Button, ButtonWithIcon } from '../../../../../../components';
 import { BUTTON_TYPES } from '../../../../../../components/Button/Button.constants';
-import { Color } from '../../../../../../theme/colors';
 import * as Styled from './ExposureMiddlePinApprove.styled';
 
 import { ReactComponent as Icon } from '../../../../../../assets/img/icons/icon-rejestracja.svg';
 
-const ExposureMiddlePinApprove = ({ handleInstallApp, handleLabTestResult, handleRecommendation, isInfected }) => (
+const ExposureMiddlePinApprove = ({ handleLabTestResult, handleRecommendation, isInfected }) => (
   <Styled.ExposureMiddlePinApprove>
     <ListStats isInfected={isInfected} />
 
@@ -31,15 +30,7 @@ const ExposureMiddlePinApprove = ({ handleInstallApp, handleLabTestResult, handl
 
     <Styled.ButtonsWrapper>
       <ButtonWithIcon icon={<Icon />} onClick={handleLabTestResult} name={<T i18nKey="result_analysis_text_33" />} />
-
-      <ButtonWithDescription
-        isTopDescription
-        color={Color.primary}
-        description={<T i18nKey="result_analysis_text_34" />}
-        onClick={handleInstallApp}
-        title={<T i18nKey="result_analysis_text_35" />}
-      />
-
+      <InstallKwarantannaActionButton />
       <Button onClick={handleRecommendation} type={BUTTON_TYPES.SMALL_OUTLINE}>
         <T i18nKey="result_analysis_text_36" />
       </Button>

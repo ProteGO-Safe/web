@@ -9,9 +9,10 @@ const ExposureHighPinApproveContainer = () => {
 
   return (
     <ExposureHighPinApprove
-      handleInstallApp={() => null}
       handleLabTestResult={() => goTo(Routes.LabTestResult)}
-      handleRecommendation={() => goTo(Routes.Recommendations, { component: RecommendationsComponents.ExposureHighPinApprove })}
+      handleRecommendation={() =>
+        goTo(Routes.Recommendations, { component: RecommendationsComponents.ExposureHighPinApprove })
+      }
       isInfected
     />
   );
