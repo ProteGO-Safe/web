@@ -41,6 +41,18 @@ export const Image = styled.div`
     background-color: ${Color.gradient_c1};
     border-radius: 50%;
   }
+  @media (max-width: 300px) {
+    width: 70px;
+    svg {
+      left: 6px;
+      width: 58px;
+    }
+    &:before {
+      width: 70px;
+      height: 70px;
+      margin: -35px 0 0 -35px;
+    }
+  }
 `;
 
 export const Content = styled.div`
@@ -48,6 +60,10 @@ export const Content = styled.div`
   flex-flow: wrap row;
   width: calc(100% - 106px);
   padding: 22px 0;
+
+  @media (max-width: 300px) {
+    width: calc(100% - 86px);
+  }
 `;
 
 export const Label = styled.span`
@@ -70,6 +86,10 @@ export const Label = styled.span`
     width: 12px;
     height: 12px;
     margin-left: 10px;
+  }
+
+  @media (max-width: 300px) {
+    padding-right: 14px;
   }
 `;
 
