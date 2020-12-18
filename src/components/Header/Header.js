@@ -1,4 +1,4 @@
-import React, { useCallback } from 'react';
+import React, { useCallback, useMemo } from 'react';
 import PropTypes from 'prop-types';
 import { Arrow, ArrowButton, Container, Logo } from './Header.styled';
 import { Bell, T } from '../index';
@@ -18,18 +18,21 @@ const Header = ({ hideBackButton, hideBell, onBackClick }) => {
     // eslint-disable-next-line
   }, [onBackClick, hideBackButton]);
 
-  useHandlingPhysicalBack(handleBackClick);
-
-  const renderBackButton = () => (
-    <ArrowButton onClick={handleBackClick}>
-      <Arrow />
-      <T i18nKey="button_back" />
-    </ArrowButton>
+  const backButton = useMemo(
+    () => (
+      <ArrowButton onClick={handleBackClick}>
+        <Arrow />
+        <T i18nKey="button_back" />
+      </ArrowButton>
+    ),
+    [handleBackClick]
   );
+
+  useHandlingPhysicalBack(handleBackClick);
 
   return (
     <Container hideBackButton={hideBackButton}>
-      {!hideBackButton ? renderBackButton() : null}
+      {!hideBackButton ? backButton : null}
       <Logo onClick={() => goTo(Routes.Home)} />
       {!hideBell ? <Bell /> : null}
     </Container>
