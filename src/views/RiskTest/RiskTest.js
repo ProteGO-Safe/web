@@ -5,7 +5,7 @@ import { Button, Layout, LineItem, T } from '../../components';
 import { Icon, ListTitle, Title } from './RiskTest.styled';
 
 const RiskTest = ({ goToHistory, onFill, previousDays }) => (
-  <Layout isNavigation hideBell>
+  <Layout isNavigation>
     <Title>
       <T i18nKey="risk_test_text1" />
     </Title>
