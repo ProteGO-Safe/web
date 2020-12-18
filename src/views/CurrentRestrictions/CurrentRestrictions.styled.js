@@ -10,7 +10,6 @@ export const Container = styled.div`
   flex-flow: wrap column;
   justify-content: flex-start;
   width: 100%;
-  padding: 0 0 24px 0;
 `;
 
 export const Title = styled.h2`

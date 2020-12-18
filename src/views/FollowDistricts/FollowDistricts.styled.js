@@ -13,7 +13,6 @@ export const DateUpdate = styled.span`
   flex-flow: nowrap row;
   justify-content: flex-end;
   width: 100%;
-  margin: 0 0 4px;
   font-size: 12px;
   line-height: 20px;
   color: ${Color.gray_5};
@@ -22,10 +21,8 @@ export const DateUpdate = styled.span`
 export const Content = styled.div`
   display: flex;
   flex-flow: wrap row;
-  width: calc(100% + 34px);
-  margin: 0 -17px 0 -17px;
-  padding: 10px 17px 0;
-  background-color: ${Color.primaryLighter};
+  width: 100%;
+  padding: 6px 0 0;
 `;
 
 export const Title = styled.h2`
