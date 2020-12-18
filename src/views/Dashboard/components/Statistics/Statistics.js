@@ -6,7 +6,7 @@ import { RiskMonitoring, StatsItem } from './components';
 import { Wrapper } from '../index';
 import * as Styled from './Statistics.styled';
 
-const Statistics = ({ covidStats = [], dateUpdated, districtItems, handleToggleButton, open }) => {
+const Statistics = ({ covidStats = [], dateUpdated, existsStatsItems, districtItems, handleToggleButton, open }) => {
   const renderStatsItems = useMemo(
     () =>
       covidStats.map(item => (
@@ -14,8 +14,6 @@ const Statistics = ({ covidStats = [], dateUpdated, districtItems, handleToggleB
       )),
     [covidStats]
   );
-
-  const existsStatsItems = useMemo(() => covidStats.length > 0, [covidStats]);
 
   return (
     <Wrapper>
@@ -50,6 +48,7 @@ const Statistics = ({ covidStats = [], dateUpdated, districtItems, handleToggleB
 Statistics.propTypes = {
   covidStats: PropTypes.array.isRequired,
   dateUpdated: PropTypes.string.isRequired,
+  existsStatsItems: PropTypes.bool.isRequired,
   districtItems: PropTypes.array.isRequired,
   handleToggleButton: PropTypes.func.isRequired,
   open: PropTypes.bool.isRequired

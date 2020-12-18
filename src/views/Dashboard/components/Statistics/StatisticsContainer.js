@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { not, or } from 'ramda';
 import Statistics from './Statistics';
@@ -45,15 +45,18 @@ const StatisticsContainer = () => {
     return not(or(not(Number.isInteger(news)), not(Number.isInteger(totals))));
   });
 
-  return (
+  const existsStatsItems = useMemo(() => covidStats.length > 0, [covidStats]);
+
+  return existsStatsItems ? (
     <Statistics
       districtItems={subscribedDistricts}
+      existsStatsItems={existsStatsItems}
       open={open}
       dateUpdated={getFormattedDay(updated)}
       handleToggleButton={handleOpen}
       covidStats={covidStats}
     />
-  );
+  ) : null;
 };
 
 export default StatisticsContainer;
