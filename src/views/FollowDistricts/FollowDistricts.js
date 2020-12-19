@@ -8,7 +8,7 @@ const FollowDistricts = ({ dateUpdate, handleUnsubscribeDistrict, items }) => {
     return null;
   }
   const renderItems = items.map(({ id, name, state }) => (
-    <StatusItem key={id} name={name} status={state} handleClick={() => handleUnsubscribeDistrict(id)} />
+    <StatusItem isShadow key={id} name={name} status={state} handleClick={() => handleUnsubscribeDistrict(id)} />
   ));
 
   return (
@@ -24,7 +24,7 @@ const FollowDistricts = ({ dateUpdate, handleUnsubscribeDistrict, items }) => {
       ) : (
         <Styled.Content>
           <Styled.Title>
-            <T i18nKey="follow_district_title" /> ({items.length}):
+            <T i18nKey="follow_district_title" />:
           </Styled.Title>
           {renderItems}
         </Styled.Content>
