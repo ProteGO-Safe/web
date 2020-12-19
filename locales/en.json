@@ -1040,7 +1040,7 @@
     "report_bug_text1": "Report an error",
     "report_bug_text2": "STOP COVID - ProteGO Safe is a free application that allows you to assess the risk of coronavirus infection based on the guidelines of the World Health Organization (WHO), keep a health diary and learn more about prevention. By observing the results and applying remedial measures, you minimise the risk of getting sick with",
     "report_bug_text3": "Do you have any questions? You have found an error? Feel free to contact us!",
-    "report_bug_text4": "protego@mc.gov.pl",
+    "report_bug_text4": "[EMAIL]protego@mc.gov.pl[/EMAIL]",
     "result_analysis_text_1": "Hello {{userName}},",
     "result_analysis_text_10": "We have analysed your responses from the last risk assessment test ({{date}}). You have been qualified to the group: {{currentState}}. [BR][BR] [B]Your symptoms don't indicate you're infected with COVID-19. However, in this situation, WHO and the CDC recommend a 10-day isolation.[/B]",
     "result_analysis_text_11": "Recommendations for you",

@@ -1040,7 +1040,7 @@
     "report_bug_text1": "Hata bildir",
     "report_bug_text2": "STOP COVID - ProteGO Safe, koronavirüs enfeksiyonu riskinizi Dünya Sağlık Örgütü (DSÖ) kriterlerine göre değerlendirebileceğiniz, sağlık durumu günlüğü tutabileceğiniz ve önlemlerle ilgili ayrıntılı bilgiler edinebileceğiniz ücretsiz bir uygulamadır. Sonuçları takip ederek ve tavsiyelere uyarak hastalanma riskinizi en aza indirirsiniz",
     "report_bug_text3": "Sorunuz mu var? Hata mı buldunuz? Bizimle iletişime geçin!",
-    "report_bug_text4": "protego@mc.gov.pl",
+    "report_bug_text4": "[EMAIL]protego@mc.gov.pl[/EMAIL]",
     "result_analysis_text_1": "Merhaba {{userName}},",
     "result_analysis_text_10": "Son risk değerlendirme testine ({{date}}) verdiğiniz cevapları analiz ettik. {{currentState}} grubundasınız.[BR][BR][B]Belirtileriniz COVID-19 hastalığına işaret etmiyor ancak bu durumda DSÖ ve CDC, 10 gün boyunca kendinizi izole etmenizi tavsiye ediyor.[/B]",
     "result_analysis_text_11": "Size özel tavsiyeler",
