@@ -123,7 +123,7 @@ export const prepareActivities = (
   return sortByTimestamp([
     ...activities,
     ...nativeNotifications.map(createActivityFromNativeNotification),
-    ...nativeExposures.map(createActivityFromNativeExposure),
+    ...nativeExposures.filter(({ riskLevel }) => riskLevel > 0).map(createActivityFromNativeExposure),
     ...createRiskChecks(restNativeRiskChecks)
   ]);
 };
