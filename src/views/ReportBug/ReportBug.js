@@ -1,5 +1,5 @@
 import React from 'react';
-import { Email, Layout, UrlCovid, T } from '../../components';
+import { Layout, T, UrlCovid } from '../../components';
 import { Color } from '../../theme/colors';
 import { FontWeight } from '../../theme/fonts';
 import { Paragraph } from '../../theme/typography';
@@ -18,9 +18,7 @@ const ReportBug = () => {
         <T i18nKey="report_bug_text3" />
       </Paragraph>
       <Paragraph color={Color.primary} fontWeight={FontWeight.Bold}>
-        <Email>
-          <T i18nKey="report_bug_text4" />
-        </Email>
+        <T i18nKey="report_bug_text4" />
       </Paragraph>
     </Layout>
   );
