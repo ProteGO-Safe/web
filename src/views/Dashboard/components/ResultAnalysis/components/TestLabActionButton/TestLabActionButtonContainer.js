@@ -9,7 +9,7 @@ import useNavigation from '../../../../../../hooks/useNavigation';
 
 const TestLabActionButtonContainer = () => {
   const { goTo } = useNavigation();
-  const { isEnHigh, isTorHigh, isEnMiddle, isTorMiddle } = useHealthStats();
+  const { isEnHigh, isTorHigCovid, isEnMiddle, isTorMiddle } = useHealthStats();
   const { isSubscriptionInProgress, isSubscriptionVerified } = useLabTest();
 
   const prepareData = (titleLabel, descriptionLabel, onClick) => {
@@ -21,7 +21,7 @@ const TestLabActionButtonContainer = () => {
   };
 
   const acceptableEn = or(isEnMiddle, isEnHigh);
-  const acceptableTor = or(isTorMiddle, isTorHigh);
+  const acceptableTor = or(isTorMiddle, isTorHigCovid);
 
   const data = useMemo(() => {
     if (and(acceptableTor, not(isSubscriptionInProgress))) {

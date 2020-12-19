@@ -8,8 +8,8 @@ import {
   ExposureMiddle,
   ExposureMiddlePinApprove,
   NoData,
-  RiskTestHigh,
-  RiskTestHighSick,
+  RiskTestHighNoCovid,
+  RiskTestHighCovid,
   RiskTestLow,
   RiskTestMiddle,
   SickApprove,
@@ -51,8 +51,8 @@ const ResultAnalysisContainer = () => {
       noEn,
       isTorLow,
       isTorMiddle,
-      isTorHigh,
-      isTorHighWithCovid,
+      isTorHighNoCovid,
+      isTorHigCovid,
       isEnLow,
       isEnMiddle,
       isEnHigh,
@@ -72,11 +72,11 @@ const ResultAnalysisContainer = () => {
     if (and(isTorMiddle, noEn) || and(isTorMiddle, isEnLow)) {
       return createDataView(Color.info, RiskTestMiddle, FaceMiddle, 'result_analysis_variant_3');
     }
-    if (and(isTorHigh, noEn) || and(isTorHigh, isEnLow)) {
-      return createDataView(Color.red, RiskTestHigh, FaceHigh, 'result_analysis_variant_4');
+    if (and(isTorHighNoCovid, noEn) || and(isTorHighNoCovid, isEnLow)) {
+      return createDataView(Color.red, RiskTestHighNoCovid, FaceHigh, 'result_analysis_variant_4');
     }
-    if (and(isTorHighWithCovid, noEn) || and(isTorHighWithCovid, isEnLow)) {
-      return createDataView(Color.red, RiskTestHighSick, FaceHigh, 'result_analysis_variant_4');
+    if (and(isTorHigCovid, noEn) || and(isTorHigCovid, isEnLow)) {
+      return createDataView(Color.red, RiskTestHighCovid, FaceHigh, 'result_analysis_variant_4');
     }
 
     if (and(noTor, isEnLow)) {
@@ -91,12 +91,12 @@ const ResultAnalysisContainer = () => {
       );
     }
     if (
-      and(isTorHigh, isEnMiddle) ||
-      and(isTorHighWithCovid, isEnMiddle) ||
+      and(isTorHighNoCovid, isEnMiddle) ||
+      and(isTorHigCovid, isEnMiddle) ||
       and(isTorLow, isEnHigh) ||
       and(isTorMiddle, isEnHigh) ||
-      and(isTorHigh, isEnHigh) ||
-      and(isTorHighWithCovid, isEnHigh) ||
+      and(isTorHighNoCovid, isEnHigh) ||
+      and(isTorHigCovid, isEnHigh) ||
       and(noTor, isEnHigh)
     ) {
       return createDataView(

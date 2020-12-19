@@ -2,23 +2,25 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import { Routes } from '../../../../../../services/navigationService/routes';
 import useNavigation from '../../../../../../hooks/useNavigation';
-import RiskTestHighSick from './RiskTestHighSick';
+import RiskTestHighCovid from './RiskTestHighCovid';
 import { getExposureAggregateStatistics } from '../../../../../../store/selectors/nativeData';
 import { getFormattedDate } from '../../../../../../utils/date';
 import { RecommendationsComponents } from '../../../../../Recommendations/recommendations.constant';
 
-const RiskTestHighSickContainer = () => {
+const RiskTestHighCovidContainer = () => {
   const { goTo } = useNavigation();
   const { lastRiskCheckTimestamp } = useSelector(getExposureAggregateStatistics);
 
   return (
-    <RiskTestHighSick
+    <RiskTestHighCovid
       currentState="result_analysis_variant_4"
       dateLastRiskTest={getFormattedDate(lastRiskCheckTimestamp)}
       isInfected={false}
-      handleRecommendation={() => goTo(Routes.Recommendations, { component: RecommendationsComponents.RiskTestHighSick })}
+      handleRecommendation={() =>
+        goTo(Routes.Recommendations, { component: RecommendationsComponents.RiskTestHighCovid })
+      }
     />
   );
 };
 
-export default RiskTestHighSickContainer;
+export default RiskTestHighCovidContainer;

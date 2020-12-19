@@ -6,7 +6,7 @@ import * as Styled from '../content.styled';
 
 import { ReactComponent as Icon } from '../../../../assets/img/icons/risk-test-recommendation-high.svg';
 
-const RiskTestHigh = ({ collapseItems }) => {
+const RiskTestHighCovid = ({ collapseItems }) => {
   const renderItems = collapseItems.map((item, key) => (
     <Collapse key={key} title={<T i18nKey={item.title} />}>
       <T i18nKey={item.content} />
@@ -34,7 +34,7 @@ const RiskTestHigh = ({ collapseItems }) => {
       </Styled.Title>
 
       <Styled.Description noPadding>
-        <T i18nKey="recommendations_text_23" />
+        <T i18nKey="recommendations_text_26" />
       </Styled.Description>
 
       <BlockBorder title={<T i18nKey="recommendations_text_25" />} />
@@ -46,4 +46,4 @@ const RiskTestHigh = ({ collapseItems }) => {
   );
 };
 
-export default RiskTestHigh;
+export default RiskTestHighCovid;

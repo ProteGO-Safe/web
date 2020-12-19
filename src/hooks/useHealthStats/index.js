@@ -6,7 +6,7 @@ import { getTimeOfConfirmedCovid, getTimeOfConfirmedManualCovid, getTriageLevel 
 const torLevels = {
   low: 'low',
   middle: 'middle',
-  high: 'high',
+  highNoCovid: 'highNoCovid',
   highCovid: 'highCovid'
 };
 
@@ -27,10 +27,10 @@ const useHealthStats = () => {
       }
       case 'isolation_call':
       case 'isolation_ambulance': {
-        return torLevels.high;
+        return torLevels.highCovid;
       }
       case 'call_doctor': {
-        return torLevels.highCovid;
+        return torLevels.highNoCovid;
       }
       default:
         return undefined;
@@ -45,8 +45,8 @@ const useHealthStats = () => {
     noTor: torLevel === undefined,
     isTorLow: torLevel === torLevels.low,
     isTorMiddle: torLevel === torLevels.middle,
-    isTorHigh: torLevel === torLevels.high,
-    isTorHighWithCovid: torLevel === torLevels.highCovid,
+    isTorHighNoCovid: torLevel === torLevels.highNoCovid,
+    isTorHigCovid: torLevel === torLevels.highCovid,
     isCovidConfirmed: !!timeOfConfirmedCovid,
     isCovidManual: !!timeOfConfirmedManualCovid
   };

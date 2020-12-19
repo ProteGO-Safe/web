@@ -1,8 +1,10 @@
 import useHealthStats from '../../../../hooks/useHealthStats';
 import { Color } from '../../../../theme/colors';
+import useTorHigh from '../useTorHigh';
 
 const useColor = () => {
-  const { isTorLow, isTorMiddle, isTorHigh} = useHealthStats();
+  const { isTorLow, isTorMiddle } = useHealthStats();
+  const isTorHigh = useTorHigh();
 
   if (isTorLow) {
     return Color.green;

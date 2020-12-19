@@ -4,8 +4,8 @@ import {
   ExposureHigh,
   ExposureHighPinApprove,
   ExposureMiddle,
-  RiskTestHigh,
-  RiskTestHighSick,
+  RiskTestHighNoCovid,
+  RiskTestHighCovid,
   RiskTestMiddle,
   SickApprove,
   SickReported
@@ -20,8 +20,8 @@ const Recommendations = () => {
     [RecommendationsComponents.ExposureHigh]: ExposureHigh,
     [RecommendationsComponents.ExposureHighPinApprove]: ExposureHighPinApprove,
     [RecommendationsComponents.ExposureMiddle]: ExposureMiddle,
-    [RecommendationsComponents.RiskTestHigh]: RiskTestHigh,
-    [RecommendationsComponents.RiskTestHighSick]: RiskTestHighSick,
+    [RecommendationsComponents.RiskTestHighNoCovid]: RiskTestHighNoCovid,
+    [RecommendationsComponents.RiskTestHighCovid]: RiskTestHighCovid,
     [RecommendationsComponents.RiskTestMiddle]: RiskTestMiddle,
     [RecommendationsComponents.SickApprove]: SickApprove,
     [RecommendationsComponents.SickReported]: SickReported

@@ -2,8 +2,8 @@ export const RecommendationsComponents = {
   ExposureHigh: 'ExposureHigh',
   ExposureHighPinApprove: 'ExposureHighPinApprove',
   ExposureMiddle: 'ExposureMiddle',
-  RiskTestHigh: 'RiskTestHigh',
-  RiskTestHighSick: 'RiskTestHighSick',
+  RiskTestHighNoCovid: 'RiskTestHighNoCovid',
+  RiskTestHighCovid: 'RiskTestHighCovid',
   RiskTestMiddle: 'RiskTestMiddle',
   SickApprove: 'SickApprove',
   SickReported: 'SickReported'

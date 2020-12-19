@@ -4,10 +4,12 @@ import { T } from '../../../../components/T';
 import SimpleResult from './SimpleResult';
 import useHealthStats from '../../../../hooks/useHealthStats';
 import useLabTest from '../../../../hooks/useLabTest';
+import useTorHigh from '../../hooks/useTorHigh';
 
 const SimpleResultContainer = () => {
-  const { isTorLow, isTorMiddle, isTorHigh, isEnMiddle, isEnHigh } = useHealthStats();
+  const { isTorLow, isTorMiddle, isEnMiddle, isEnHigh } = useHealthStats();
   const { isSubscriptionInProgress } = useLabTest();
+  const isTorHigh = useTorHigh();
 
   const resolveParagraphsLabels = () => {
     if (isTorHigh) {

@@ -3,10 +3,10 @@ import { withTranslation } from 'react-i18next';
 import { ListStats } from '../../components';
 import { Button, T } from '../../../../../../components';
 import { BUTTON_TYPES } from '../../../../../../components/Button/Button.constants';
-import * as Styled from './RiskTestHigh.styled';
+import * as Styled from './RiskTestHighNoCovid.styled';
 
-const RiskTestHigh = ({ currentState, dateLastRiskTest, isInfected, handleRecommendation, t }) => (
-  <Styled.RiskTestHigh>
+const RiskTestHighNoCovid = ({ currentState, dateLastRiskTest, isInfected, handleRecommendation, t }) => (
+  <Styled.Wrapper>
     <ListStats isInfected={isInfected} />
 
     <Styled.Text>
@@ -18,7 +18,7 @@ const RiskTestHigh = ({ currentState, dateLastRiskTest, isInfected, handleRecomm
         <T i18nKey="result_analysis_text_13" />
       </Button>
     </Styled.ButtonWrapper>
-  </Styled.RiskTestHigh>
+  </Styled.Wrapper>
 );
 
-export default withTranslation()(RiskTestHigh);
+export default withTranslation()(RiskTestHighNoCovid);

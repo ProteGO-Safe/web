@@ -16,7 +16,7 @@ import useHealthStats from '../../hooks/useHealthStats';
 const MenuContainer = () => {
   const dispatch = useDispatch();
   const { isSubscriptionInProgress } = useLabTest();
-  const { isEnHigh, isTorHigh } = useHealthStats();
+  const { isEnHigh, isTorHigCovid } = useHealthStats();
 
   useEffect(() => {
     dispatch(fetchLabTestSubscription());
@@ -62,7 +62,7 @@ const MenuContainer = () => {
     {
       icon: Icon6,
       color: 'blue',
-      path: isEnHigh && isTorHigh ? Routes.SummaryRiskTest : Routes.Diagnosis,
+      path: isEnHigh && isTorHigCovid ? Routes.SummaryRiskTest : Routes.Diagnosis,
       invisible: isSubscriptionInProgress || !isEnHigh,
       slug: 'menu_container_text10',
       title: 'menu_container_text10'
