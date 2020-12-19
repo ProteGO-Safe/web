@@ -85,11 +85,11 @@ export const Keys = styled.div`
 `;
 
 export const SmallKeys = styled(Keys)`
-  font-size: 10px;
+  font-size: 12px;
 `;
 
 export const KeysButton = styled(Keys)`
-  font-size: 10px;
+  font-size: 12px;
   padding-top: 14px;
   padding-bottom: 10px;
   color: ${Color.primary};
