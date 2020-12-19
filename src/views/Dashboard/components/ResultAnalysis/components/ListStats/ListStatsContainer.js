@@ -11,8 +11,8 @@ const ListStatsContainer = ({ isInfected }) => {
 
   return (
     <ListStats
-      dateLastRiskTest={getFormattedDate(lastRiskCheckTimestamp)}
-      dateRiskMonitoring={lastDate}
+      dateRiskMonitoring={getFormattedDate(lastRiskCheckTimestamp)}
+      dateLastRiskTest={lastDate}
       isInfected={isInfected}
     />
   );
