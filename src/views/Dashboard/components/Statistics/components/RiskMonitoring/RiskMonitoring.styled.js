@@ -5,7 +5,6 @@ import { FontWeight } from '../../../../../../theme/fonts';
 export const RiskMonitoring = styled.div`
   width: 100%;
   margin-top: 24px;
-  margin-bottom: 20px;
 `;
 
 export const Title = styled.div`

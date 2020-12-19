@@ -34,9 +34,14 @@ export const Content = styled.div`
     `}
   ${({ existsStatsItems }) =>
     existsStatsItems &&
-    `& > *:first-child {
-    margin-top: 38px;
-  }`}
+    `
+      & > *:first-child {
+        margin-top: 38px;
+      }
+      & > *:last-child {
+        margin-bottom: 20px;
+      }
+    `}
 `;
 
 export const ContentStats = styled.div`
