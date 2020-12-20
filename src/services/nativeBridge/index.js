@@ -21,8 +21,7 @@ import { fetchActivities } from '../../store/actions/activities';
 
 const nativeRequests = {};
 
-const sendNativeRequest = (functionName, dataType, data) => {
-  const requestId = uniqueId('request-');
+const sendNativeRequest = (functionName, requestId, dataType, data) => {
   if (process.env.NODE_ENV !== 'production') {
     console.log(
       `${Date.now()}: functionName: ${functionName}, dataType: ${dataType}, data: ${data}, requestId: ${requestId}`
@@ -52,7 +51,7 @@ const receiveNativeResponse = (body, dataType, requestId) => {
   delete nativeRequests[requestId];
 };
 
-const callNativeFunction = async (functionName, dataType, data) => {
+const callNativeFunction = async (functionName, dataType, data, requestId) => {
   const args = [dataType];
   if (data) {
     args.push(JSON.stringify(data));
@@ -62,12 +61,14 @@ const callNativeFunction = async (functionName, dataType, data) => {
     return invoke(window.NativeBridge, functionName, ...args);
   }
 
-  return sendNativeRequest(functionName, ...args);
+  return sendNativeRequest(functionName, requestId, ...args);
 };
 
-const callGetBridgeData = async (dataType, data = undefined) => {
+const callBridgeData = async (functionName, dataType, data = undefined) => {
+  const requestId = uniqueId('request-');
   try {
-    const json = await callNativeFunction('getBridgeData', dataType, data);
+    const json = await callNativeFunction(functionName, dataType, data, requestId);
+    callNativeFunction('bridgeDataReceived', dataType, undefined, requestId);
     if (json) {
       return JSON.parse(json);
     }
@@ -75,6 +76,14 @@ const callGetBridgeData = async (dataType, data = undefined) => {
     console.error('Error while parsing native response', error);
   }
   return '';
+};
+
+const callGetBridgeData = async (dataType, data = undefined) => {
+  return callBridgeData('getBridgeData', dataType, data);
+};
+
+const callSetBridgeData = async (dataType, data = undefined) => {
+  return callBridgeData('setBridgeData', dataType, data);
 };
 
 const listActivities = async () => {
@@ -137,21 +146,21 @@ const getExposureNotificationStatistics = async () => {
   return callGetBridgeData(DATA_TYPE.EXPOSURE_STATISTICS);
 };
 
-const setDiagnosisTimestamp = async timestamp => {
-  await callNativeFunction('setBridgeData', DATA_TYPE.FILLED_DIAGNOSIS, {
+const setDiagnosisTimestamp = timestamp => {
+  callSetBridgeData(DATA_TYPE.FILLED_DIAGNOSIS, {
     timestamp
   });
 };
 
-const uploadHistoricalData = async ({ pin, isInteroperabilityEnabled }) => {
-  await callNativeFunction('setBridgeData', DATA_TYPE.HISTORICAL_DATA, {
+const uploadHistoricalData = ({ pin, isInteroperabilityEnabled }) => {
+  callSetBridgeData(DATA_TYPE.HISTORICAL_DATA, {
     pin,
     isInteroperabilityEnabled
   });
 };
 
-const setServicesState = async data => {
-  await callNativeFunction('setBridgeData', DATA_TYPE.NATIVE_SERVICES_STATE, data);
+const setServicesState = data => {
+  callSetBridgeData(DATA_TYPE.NATIVE_SERVICES_STATE, data);
 };
 
 const setNotificationStatus = enable => {
@@ -160,20 +169,20 @@ const setNotificationStatus = enable => {
   });
 };
 
-const rateApp = async () => {
-  await callNativeFunction('setBridgeData', DATA_TYPE.RATING_APP, {
+const rateApp = () => {
+  callSetBridgeData(DATA_TYPE.RATING_APP, {
     appReview: true
   });
 };
 
-const turnOff = async () => {
-  await callNativeFunction('setBridgeData', DATA_TYPE.TURN_OFF, {
+const turnOff = () => {
+  callSetBridgeData(DATA_TYPE.TURN_OFF, {
     turnOff: true
   });
 };
 
 const confirmActivities = data => {
-  callNativeFunction('setBridgeData', DATA_TYPE.CONFIRM_ACTIVITIES, data);
+  callSetBridgeData(DATA_TYPE.CONFIRM_ACTIVITIES, data);
 };
 
 const uploadLabTestPin = async pin => {
@@ -279,12 +288,12 @@ const onBridgeData = (dataType, dataString) => {
   }
 };
 
-const clearAllData = async data => {
-  await callNativeFunction('setBridgeData', DATA_TYPE.CLEAR_ALL_DATA, data);
+const clearAllData = data => {
+  callSetBridgeData(DATA_TYPE.CLEAR_ALL_DATA, data);
 };
 
-const changeLanguage = async data => {
-  await callNativeFunction('setBridgeData', DATA_TYPE.LANGUAGE, data);
+const changeLanguage = data => {
+  callSetBridgeData(DATA_TYPE.LANGUAGE, data);
 };
 
 window.onBridgeData = onBridgeData;
