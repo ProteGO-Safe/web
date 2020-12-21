@@ -20,7 +20,7 @@ const useTriage = () => {
     isTriageTorHighNoCovid: and(isTorHighNoCovid, noEn) || and(isTorHighNoCovid, isEnLow),
     isTriageTorHighCovid: and(isTorHigCovid, noEn) || and(isTorHigCovid, isEnLow),
     isTriageEnLow: and(noTor, isEnLow),
-    isTriageEnMiddle: and(isTorLow, isEnMiddle) || and(isTorMiddle, isEnMiddle) || and(noEn, isEnMiddle),
+    isTriageEnMiddle: and(isTorLow, isEnMiddle) || and(isTorMiddle, isEnMiddle) || and(noTor, isEnMiddle),
     isTriageEnHigh:
       and(isTorHighNoCovid, isEnMiddle) ||
       and(isTorHigCovid, isEnMiddle) ||
