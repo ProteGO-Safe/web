@@ -1,15 +1,15 @@
 import React, { useMemo } from 'react';
-import { and, not, or } from 'ramda';
+import { and, not } from 'ramda';
 import LabTestActionButton from './LabTestActionButton';
-import useHealthStats from '../../../../../../hooks/useHealthStats';
 import useLabTest from '../../../../../../hooks/useLabTest';
 import { T } from '../../../../../../components';
 import { Routes } from '../../../../../../services/navigationService/routes';
 import useNavigation from '../../../../../../hooks/useNavigation';
+import useReadyForLabTest from '../../../../../../hooks/useReadyForLabTest';
 
 const LabTestActionButtonContainer = () => {
   const { goTo } = useNavigation();
-  const { noTor, noEn, isTorLow, isEnLow } = useHealthStats();
+  const readyForLabTest = useReadyForLabTest();
   const { isSubscriptionInProgress, isSubscriptionVerified } = useLabTest();
 
   const prepareData = (titleLabel, descriptionLabel, onClick) => {
@@ -19,8 +19,6 @@ const LabTestActionButtonContainer = () => {
       onClick
     };
   };
-
-  const readyForLabTest = and(not(or(noTor, isTorLow)), not(or(noEn, isEnLow)));
 
   const data = useMemo(() => {
     if (and(readyForLabTest, not(isSubscriptionInProgress))) {

@@ -12,11 +12,14 @@ import Icon4 from '../../assets/img/icons/menu-boczne-ustawienia_BLUE.svg';
 import Icon5 from '../../assets/img/icons/menu-boczne-moje-dane_BLUE.svg';
 import Icon6 from '../../assets/img/icons/menu-boczne-kwestionariusz_RED.svg';
 import useHealthStats from '../../hooks/useHealthStats';
+import useReadyForLabTest from '../../hooks/useReadyForLabTest';
 
 const MenuContainer = () => {
   const dispatch = useDispatch();
   const { isSubscriptionInProgress } = useLabTest();
-  const { isEnHigh, isTorHigCovid } = useHealthStats();
+  const { isEnHigh } = useHealthStats();
+
+  const readyForLabTest = useReadyForLabTest();
 
   useEffect(() => {
     dispatch(fetchLabTestSubscription());
@@ -62,7 +65,7 @@ const MenuContainer = () => {
     {
       icon: Icon6,
       color: 'blue',
-      path: isEnHigh && isTorHigCovid ? Routes.SummaryRiskTest : Routes.Diagnosis,
+      path: readyForLabTest ? Routes.SummaryRiskTest : Routes.Diagnosis,
       invisible: isSubscriptionInProgress || !isEnHigh,
       slug: 'menu_container_text10',
       title: 'menu_container_text10'
