@@ -13,7 +13,6 @@ const ExposureHighPinApproveContainer = () => {
       handleRecommendation={() =>
         goTo(Routes.Recommendations, { component: RecommendationsComponents.ExposureHighPinApprove })
       }
-      isInfected
     />
   );
 };

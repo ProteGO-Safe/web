@@ -9,7 +9,6 @@ const SickApproveContainer = () => {
 
   return (
     <SickApprove
-      isInfected={false}
       handleRecommendation={() => goTo(Routes.Recommendations, { component: RecommendationsComponents.SickApprove })}
     />
   );

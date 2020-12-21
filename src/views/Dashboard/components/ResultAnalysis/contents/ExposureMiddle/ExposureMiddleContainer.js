@@ -10,7 +10,6 @@ const ExposureMiddleContainer = () => {
   return (
     <ExposureMiddle
       handleRecommendation={() => goTo(Routes.Recommendations, { component: RecommendationsComponents.ExposureMiddle })}
-      isInfected={false}
     />
   );
 };

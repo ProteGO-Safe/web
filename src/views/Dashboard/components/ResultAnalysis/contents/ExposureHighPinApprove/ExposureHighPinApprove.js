@@ -7,9 +7,9 @@ import * as Styled from './ExposureHighPinApprove.styled';
 
 import { ReactComponent as Icon } from '../../../../../../assets/img/icons/icon-rejestracja.svg';
 
-const ExposureHighPinApprove = ({ handleLabTestResult, handleRecommendation, isInfected }) => (
+const ExposureHighPinApprove = ({ handleLabTestResult, handleRecommendation }) => (
   <Styled.ExposureHighPinApprove>
-    <ListStats isInfected={isInfected} />
+    <ListStats />
 
     <Styled.Text>
       <T i18nKey="result_analysis_text_37" />

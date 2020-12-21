@@ -2,7 +2,7 @@ import React from 'react';
 import RiskTestLow from './RiskTestLow';
 
 const RiskTestLowContainer = () => {
-  return <RiskTestLow isInfected={false} />;
+  return <RiskTestLow />;
 };
 
 export default RiskTestLowContainer;

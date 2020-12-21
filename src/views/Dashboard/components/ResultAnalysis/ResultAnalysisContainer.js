@@ -1,5 +1,4 @@
-import React, { useState, useMemo } from 'react';
-import { and } from 'ramda';
+import React, { useMemo, useState } from 'react';
 import { Color } from '../../../../theme/colors';
 import {
   ExposureHigh,
@@ -8,8 +7,8 @@ import {
   ExposureMiddle,
   ExposureMiddlePinApprove,
   NoData,
-  RiskTestHighNoCovid,
   RiskTestHighCovid,
+  RiskTestHighNoCovid,
   RiskTestLow,
   RiskTestMiddle,
   SickApprove,
@@ -27,11 +26,13 @@ import { ReactComponent as ENLow } from '../../../../assets/img/icons/en-low.svg
 import { ReactComponent as ENMiddle } from '../../../../assets/img/icons/en-middle.svg';
 import { ReactComponent as ENHigh } from '../../../../assets/img/icons/en-high.svg';
 import { ReactComponent as VirusHigh } from '../../../../assets/img/icons/virus-high.svg';
+import useTriage from '../../../../hooks/useTriage';
 
 const ResultAnalysisContainer = () => {
   const username = useUserName();
   const { isSubscriptionConfirmed } = useLabTest();
   const healthStats = useHealthStats();
+  const triage = useTriage();
   const [open, setOpen] = useState(false);
 
   const handleOpen = () => setOpen(prev => !prev);
@@ -47,18 +48,15 @@ const ResultAnalysisContainer = () => {
 
   const dataView = useMemo(() => {
     const {
-      noTor,
-      noEn,
-      isTorLow,
-      isTorMiddle,
-      isTorHighNoCovid,
-      isTorHigCovid,
-      isEnLow,
-      isEnMiddle,
-      isEnHigh,
-      isCovidConfirmed,
-      isCovidManual
-    } = healthStats;
+      isTriageTorLow,
+      isTriageTorMiddle,
+      isTriageTorHighNoCovid,
+      isTriageTorHighCovid,
+      isTriageEnLow,
+      isTriageEnMiddle,
+      isTriageEnHigh
+    } = triage;
+    const { isCovidConfirmed, isCovidManual } = healthStats;
     if (isCovidConfirmed) {
       return createDataView(Color.red, SickApprove, VirusHigh, 'result_analysis_variant_8');
     }
@@ -66,23 +64,23 @@ const ResultAnalysisContainer = () => {
       return createDataView(Color.red, SickReported, VirusHigh, 'result_analysis_variant_7');
     }
 
-    if (and(isTorLow, noEn) || and(isTorLow, isEnLow)) {
+    if (isTriageTorLow) {
       return createDataView(Color.green_1, RiskTestLow, FaceLow, 'result_analysis_variant_2');
     }
-    if (and(isTorMiddle, noEn) || and(isTorMiddle, isEnLow)) {
+    if (isTriageTorMiddle) {
       return createDataView(Color.info, RiskTestMiddle, FaceMiddle, 'result_analysis_variant_3');
     }
-    if (and(isTorHighNoCovid, noEn) || and(isTorHighNoCovid, isEnLow)) {
+    if (isTriageTorHighNoCovid) {
       return createDataView(Color.red, RiskTestHighNoCovid, FaceHigh, 'result_analysis_variant_4');
     }
-    if (and(isTorHigCovid, noEn) || and(isTorHigCovid, isEnLow)) {
+    if (isTriageTorHighCovid) {
       return createDataView(Color.red, RiskTestHighCovid, FaceHigh, 'result_analysis_variant_4');
     }
 
-    if (and(noTor, isEnLow)) {
+    if (isTriageEnLow) {
       return createDataView(Color.green_1, ExposureLow, ENLow, 'result_analysis_variant_2');
     }
-    if (and(isTorLow, isEnMiddle) || and(isTorMiddle, isEnMiddle) || and(noEn, isEnMiddle)) {
+    if (isTriageEnMiddle) {
       return createDataView(
         Color.info,
         isSubscriptionConfirmed ? ExposureMiddlePinApprove : ExposureMiddle,
@@ -90,15 +88,7 @@ const ResultAnalysisContainer = () => {
         'result_analysis_variant_3'
       );
     }
-    if (
-      and(isTorHighNoCovid, isEnMiddle) ||
-      and(isTorHigCovid, isEnMiddle) ||
-      and(isTorLow, isEnHigh) ||
-      and(isTorMiddle, isEnHigh) ||
-      and(isTorHighNoCovid, isEnHigh) ||
-      and(isTorHigCovid, isEnHigh) ||
-      and(noTor, isEnHigh)
-    ) {
+    if (isTriageEnHigh) {
       return createDataView(
         Color.red,
         isSubscriptionConfirmed ? ExposureHighPinApprove : ExposureHigh,
@@ -107,7 +97,7 @@ const ResultAnalysisContainer = () => {
       );
     }
     return createDataView(Color.gradient_c2, NoData, null, 'result_analysis_variant_1');
-  }, [healthStats, isSubscriptionConfirmed]);
+  }, [triage, healthStats, isSubscriptionConfirmed]);
 
   return (
     <>

@@ -1,12 +1,12 @@
 import React from 'react';
-import { ListStats, TestLabActionButton } from '../../components';
+import { ListStats, LabTestActionButton } from '../../components';
 import { Button, T } from '../../../../../../components';
 import { BUTTON_TYPES } from '../../../../../../components/Button/Button.constants';
 import * as Styled from './ExposureHigh.styled';
 
-const ExposureHigh = ({ handleRecommendation, isInfected }) => (
+const ExposureHigh = ({ handleRecommendation }) => (
   <Styled.ExposureHigh>
-    <ListStats isInfected={isInfected} />
+    <ListStats />
 
     <Styled.Text>
       <T i18nKey="result_analysis_text_19" />
@@ -16,7 +16,7 @@ const ExposureHigh = ({ handleRecommendation, isInfected }) => (
       <Button onClick={handleRecommendation} type={BUTTON_TYPES.SMALL_OUTLINE}>
         <T i18nKey="result_analysis_text_20" />
       </Button>
-      <TestLabActionButton />
+      <LabTestActionButton />
     </Styled.ButtonsWrapper>
   </Styled.ExposureHigh>
 );

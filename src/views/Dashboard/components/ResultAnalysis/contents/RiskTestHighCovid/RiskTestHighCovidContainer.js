@@ -13,7 +13,6 @@ const RiskTestHighCovidContainer = () => {
     <RiskTestHighCovid
       currentState="result_analysis_variant_4"
       dateLastRiskTest={lastDate}
-      isInfected={false}
       handleRecommendation={() =>
         goTo(Routes.Recommendations, { component: RecommendationsComponents.RiskTestHighCovid })
       }

@@ -10,7 +10,6 @@ const SickReportedContainer = () => {
   return (
     <SickReported
       currentState="result_analysis_variant_4"
-      isInfected={false}
       handleRecommendation={() => goTo(Routes.Recommendations, { component: RecommendationsComponents.SickReported })}
     />
   );

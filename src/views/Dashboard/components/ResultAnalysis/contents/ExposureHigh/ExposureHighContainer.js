@@ -10,7 +10,6 @@ const ExposureHighContainer = () => {
   return (
     <ExposureHigh
       handleRecommendation={() => goTo(Routes.Recommendations, { component: RecommendationsComponents.ExposureHigh })}
-      isInfected={false}
     />
   );
 };

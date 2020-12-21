@@ -1,15 +1,15 @@
 import React, { useMemo } from 'react';
 import { and, not, or } from 'ramda';
-import TestLabActionButton from './TestLabActionButton';
+import LabTestActionButton from './LabTestActionButton';
 import useHealthStats from '../../../../../../hooks/useHealthStats';
 import useLabTest from '../../../../../../hooks/useLabTest';
 import { T } from '../../../../../../components';
 import { Routes } from '../../../../../../services/navigationService/routes';
 import useNavigation from '../../../../../../hooks/useNavigation';
 
-const TestLabActionButtonContainer = () => {
+const LabTestActionButtonContainer = () => {
   const { goTo } = useNavigation();
-  const { isEnHigh, isTorHigCovid, isEnMiddle, isTorMiddle } = useHealthStats();
+  const { noTor, noEn, isTorLow, isEnLow } = useHealthStats();
   const { isSubscriptionInProgress, isSubscriptionVerified } = useLabTest();
 
   const prepareData = (titleLabel, descriptionLabel, onClick) => {
@@ -20,23 +20,22 @@ const TestLabActionButtonContainer = () => {
     };
   };
 
-  const acceptableEn = or(isEnMiddle, isEnHigh);
-  const acceptableTor = or(isTorMiddle, isTorHigCovid);
+  const readyForLabTest = and(not(or(noTor, isTorLow)), not(or(noEn, isEnLow)));
 
   const data = useMemo(() => {
-    if (and(acceptableTor, not(isSubscriptionInProgress))) {
+    if (and(readyForLabTest, not(isSubscriptionInProgress))) {
       return prepareData('result_analysis_text_17', 'result_analysis_text_18', () => goTo(Routes.LabTest));
     }
-    if (and(not(acceptableTor), not(isSubscriptionInProgress))) {
+    if (and(not(readyForLabTest), not(isSubscriptionInProgress))) {
       return prepareData('result_analysis_text_17_1', 'result_analysis_text_18_1', () => goTo(Routes.Diagnosis));
     }
     if (isSubscriptionVerified) {
       return prepareData('result_analysis_text_17_2', 'result_analysis_text_18_2');
     }
     return undefined;
-  }, [isSubscriptionInProgress, isSubscriptionVerified, acceptableTor, goTo]);
+  }, [isSubscriptionInProgress, isSubscriptionVerified, readyForLabTest, goTo]);
 
-  if (not(acceptableEn)) {
+  if (not(readyForLabTest)) {
     return null;
   }
 
@@ -44,7 +43,7 @@ const TestLabActionButtonContainer = () => {
     return null;
   }
 
-  return <TestLabActionButton title={data.title} description={data.description} onClick={data.onClick} />;
+  return <LabTestActionButton title={data.title} description={data.description} onClick={data.onClick} />;
 };
 
-export default TestLabActionButtonContainer;
+export default LabTestActionButtonContainer;

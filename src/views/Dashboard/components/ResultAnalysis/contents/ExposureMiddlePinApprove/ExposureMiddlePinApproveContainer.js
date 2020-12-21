@@ -11,7 +11,6 @@ const ExposureMiddlePinApproveContainer = () => {
     <ExposureMiddlePinApprove
       handleLabTestResult={() => goTo(Routes.LabTestResult)}
       handleRecommendation={() => goTo(Routes.Recommendations, { component: RecommendationsComponents.ExposureMiddle })}
-      isInfected
     />
   );
 };
