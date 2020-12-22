@@ -1,9 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { NavLink, VersionApp, Layout, T, Bell } from '../../components';
+import { NavLink, VersionApp, Layout, T } from '../../components';
 import './Menu.scss';
-
-import { ReactComponent as LogoSafeSafe } from '../../assets/img/logo/stopcovid_protegosafe_logo_sygnet.svg';
 
 const Menu = ({ items }) => {
   const renderItems = items.map(item => {
@@ -34,10 +32,6 @@ const Menu = ({ items }) => {
     <Layout hideBackButton isNavigation noMargin>
       <div className="menu__overlay" onClick={() => null} />
       <div className="menu menu__wrapper visible">
-        <div className="menu__user">
-          <LogoSafeSafe />
-          <Bell />
-        </div>
         <ul className="menu__items">{renderItems}</ul>
         <VersionApp />
       </div>

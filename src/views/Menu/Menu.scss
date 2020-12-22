@@ -12,12 +12,12 @@
 
   &__wrapper {
     position: fixed;
-    top: 0;
+    top: calc(52px + env(safe-area-inset-top));
     right: -100%;
     display: flex;
     flex-flow: wrap column;
     width: 100%;
-    min-height: calc(100vh - 50px);
+    min-height: calc(100vh - calc(52px + env(safe-area-inset-top)));
     background-color: $white;
     box-shadow: -3px -3px 6px #00000029;
     transition: all 0.2s linear;
@@ -29,32 +29,6 @@
 
     &.visible {
       right: 0;
-    }
-  }
-
-  &__user {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: calc(52px + env(safe-area-inset-top));
-    padding: 0 24px;
-    padding-top: env(safe-area-inset-top);
-    background-color: $blue_2;
-
-    img {
-      display: block;
-      width: auto;
-      height: 38px;
-      margin: auto 0;
-    }
-
-    p {
-      color: $blue_2;
-      font-size: 20px;
-      line-height: 26px;
-      letter-spacing: 0;
-      margin: 0;
     }
   }
 
