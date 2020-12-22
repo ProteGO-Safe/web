@@ -5,9 +5,7 @@ import { DiagnosisWrapper } from './Form.styled';
 const Form = ({ onBack, onNext, question }) => {
   const isCountryQuestion = question.items.some(value => value.id === 'p_5');
 
-  const renderContent = Component => (
-    <Component question={question} onBack={onBack} onNext={onNext} />
-  );
+  const renderContent = Component => <Component question={question} onBack={onBack} onNext={onNext} />;
 
   const chooseQuestion = () => {
     const { type } = question;
@@ -28,10 +26,7 @@ const Form = ({ onBack, onNext, question }) => {
   };
 
   return (
-    <DiagnosisWrapper
-      className="view view__diagnosis view__diagnosis--single"
-      data-cy="diagnosis-wrapper"
-    >
+    <DiagnosisWrapper className="view view__diagnosis view__diagnosis--single" data-cy="diagnosis-wrapper">
       {chooseQuestion()}
     </DiagnosisWrapper>
   );

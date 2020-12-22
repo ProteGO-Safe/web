@@ -1,42 +1,32 @@
 import styled from 'styled-components';
+import { Color } from '../../theme/colors';
 
-import govPLBlackUrl from '../../assets/img/logo/Logo-govpl.svg';
-import govTechBlackUrl from '../../assets/img/logo/govtech_black.svg';
-
-import govPLWhiteUrl from '../../assets/img/logo/Logo-govpl-WHITE.svg';
-import govTechWhiteUrl from '../../assets/img/logo/govtech_white.svg';
-
-export const Container = styled.footer`
+export const Wrapper = styled.footer`
+  position: absolute;
+  left: 0;
+  bottom: calc(24px + env(safe-area-inset-bottom));
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 70px;
-  overflow: hidden;
-  margin-top: auto;
-  padding: 22px 15px;
+  height: 32px;
   width: 100%;
+  padding: 0 17px 0;
+  background-color: ${Color.white};
+  overflow: hidden;
+  z-index: 999;
+  > svg {
+    display: block;
+    height: 32px;
+  }
 `;
 
-const GovLogo = styled.img`
-  height: 31px;
-`;
-
-export const GovPLBlackLogo = styled(GovLogo).attrs({
-  src: govPLBlackUrl
-})``;
-
-export const GovTechBlackLogo = styled(GovLogo).attrs({
-  src: govTechBlackUrl
-})``;
-
-export const GovPLWhiteLogo = styled(GovLogo).attrs({
-  src: govPLWhiteUrl
-})``;
-
-export const GovTechWhiteLogo = styled(GovLogo).attrs({
-  src: govTechWhiteUrl
-})`
-  /* It's not necessary, but svg has BAD viewbox */
-  height: 47px;
-  margin-right: -14px;
+export const SVG = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 32px;
+  > svg {
+    height: 47px;
+    margin-right: -12px;
+  }
 `;

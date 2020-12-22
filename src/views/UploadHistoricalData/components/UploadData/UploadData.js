@@ -1,21 +1,7 @@
 import React, { useEffect } from 'react';
 import InformationIcon from '../../../../assets/img/icons/bad.svg';
-import {
-  Button,
-  InfoIcon,
-  Layout,
-  Pin,
-  Warning,
-  T,
-  Tooltip,
-  WarningInEuropeTerm
-} from '../../../../components';
-import {
-  H5,
-  TextLink,
-  Paragraph,
-  SmallText
-} from '../../../../theme/typography';
+import { Button, InfoIcon, Layout, Pin, T, Tooltip, Warning, WarningInEuropeTerm } from '../../../../components';
+import { H5, Paragraph, SmallText, TextLink } from '../../../../theme/typography';
 import { Color } from '../../../../theme/colors';
 import { ButtonWrapper } from '../../UploadHistoricalData.styled';
 import useModalContext from '../../../../hooks/useModalContext';
@@ -42,23 +28,18 @@ const UploadData = ({
   }, []);
 
   const handleOpenModal = () => {
-    openModal(
-      <T i18nKey="upload_data_popup_4" />,
-      'normal',
-      <T i18nKey="upload_data_popup_3" />,
-      null
-    );
+    openModal({
+      value: <T i18nKey="upload_data_popup_4" />,
+      modalTitle: <T i18nKey="upload_data_popup_3" />
+    });
   };
 
   return (
-    <Layout isNavigation onBackClick={handleBack}>
+    <Layout isNavigation onBackClick={handleBack} hideBell>
       <Styled.Content>
         <H5>
           <T i18nKey="upload_data_text_1" />{' '}
-          <Tooltip
-            content={<T i18nKey="upload_data_popup_2" />}
-            title={<T i18nKey="upload_data_popup_1" />}
-          />
+          <Tooltip content={<T i18nKey="upload_data_popup_2" />} title={<T i18nKey="upload_data_popup_1" />} />
         </H5>
         <SmallText>
           <T i18nKey="upload_data_text_2" />{' '}
@@ -75,21 +56,12 @@ const UploadData = ({
       <WarningInEuropeTerm />
 
       <Styled.PinWrapper>
-        <Pin
-          initialValue={pin}
-          onChange={value => setPin(value)}
-          title={<T i18nKey="upload_data_text_8" />}
-        />
+        <Pin initialValue={pin} onChange={value => setPin(value)} title={<T i18nKey="upload_data_text_8" />} />
       </Styled.PinWrapper>
 
       {errorMessage && errorMessageVisible ? (
         <Styled.Warning>
-          <Warning
-            borderColor={Color.danger}
-            colorFont={Color.danger}
-            status="error"
-            title={errorMessage}
-          />
+          <Warning borderColor={Color.danger} colorFont={Color.danger} status="error" title={errorMessage} />
         </Styled.Warning>
       ) : null}
 
@@ -97,9 +69,7 @@ const UploadData = ({
         <Button
           onClick={onUploadData}
           label={<T i18nKey="upload_data_text_9" />}
-          disabled={
-            !pin || pin.length !== 6 || disableSubmitButton || disablePinInput
-          }
+          disabled={!pin || pin.length !== 6 || disableSubmitButton || disablePinInput}
         />
       </ButtonWrapper>
 

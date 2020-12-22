@@ -1,44 +1,42 @@
 import React from 'react';
-import { withTranslation } from 'react-i18next';
-import { Button, Layout } from '../../components';
+import { Button, Layout, T } from '../../components';
 import { ModalContent } from './components';
 import useModalContext from '../../hooks/useModalContext';
 import { Actions } from '../../components/ImprintFiller/ImprintFiller.styled';
-import { Paragraph, Title } from '../../theme/typography';
-import { Box, BoxTitle } from './userDataSettings.styled';
+import { Paragraph } from '../../theme/typography';
+import { Box, BoxTitle, Title } from './userDataSettings.styled';
 
 import warning from '../../assets/img/icons/warning.svg';
 
-const UserDataSettings = ({ t }) => {
+const UserDataSettings = () => {
   const { openModal } = useModalContext();
 
   const handleClick = () =>
-    openModal(
-      t('modal_content_text2'),
-      'dialog',
-      t('modal_content_text1'),
-      <ModalContent />
-    );
+    openModal({
+      value: <T i18nKey="modal_content_text2" />,
+      modalTitle: <T i18nKey="modal_content_text1" />,
+      modalFooter: <ModalContent />
+    });
 
   return (
     <Layout isNavigation>
-      <Title>{t('user_data_settings_text1')}</Title>
+      <Title>
+        <T i18nKey="user_data_settings_text1" />
+      </Title>
       <Box>
         <BoxTitle>
-          <img src={warning} alt={t('user_data_settings_text2')} />
-          {t('user_data_settings_text2')}
+          <img src={warning} alt={<T i18nKey="user_data_settings_text2" />} />
+          <T i18nKey="user_data_settings_text2" />
         </BoxTitle>
-        <Paragraph>{t('user_data_settings_text3')}</Paragraph>
+        <Paragraph>
+          <T i18nKey="user_data_settings_text3" />
+        </Paragraph>
       </Box>
       <Actions>
-        <Button
-          onClick={handleClick}
-          label={t('user_data_settings_text4')}
-          type="outline"
-        />
+        <Button onClick={handleClick} label={<T i18nKey="user_data_settings_text4" />} type="outline" />
       </Actions>
     </Layout>
   );
 };
 
-export default withTranslation()(UserDataSettings);
+export default UserDataSettings;

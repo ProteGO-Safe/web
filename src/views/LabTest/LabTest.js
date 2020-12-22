@@ -1,26 +1,17 @@
 import React from 'react';
-import { withTranslation } from 'react-i18next';
 import { NUMBER_OF_STEPS } from './labTest.constants';
-import { Stepper } from '../../components';
+import { Stepper, T } from '../../components';
 import { Step1, Step2, Step3 } from './components';
 import { H5 } from '../../theme/typography';
 import * as Styled from './LabTest.styled';
 
-const LabTest = ({
-  isInvalidPin,
-  loader,
-  onReset,
-  onSubmit,
-  pin,
-  setPin,
-  setStep,
-  step,
-  t
-}) => {
+const LabTest = ({ isInvalidPin, loader, onReset, onSubmit, pin, setPin, setStep, step }) => {
   return (
     <>
       <Styled.Content>
-        <H5>{t('lab_test_text1')}</H5>
+        <H5>
+          <T i18nKey="lab_test_text1" />
+        </H5>
         <Styled.LabTestStepper>
           <Stepper currentStep={step} numberOfSteps={NUMBER_OF_STEPS} />
         </Styled.LabTestStepper>
@@ -42,4 +33,4 @@ const LabTest = ({
   );
 };
 
-export default withTranslation()(LabTest);
+export default LabTest;

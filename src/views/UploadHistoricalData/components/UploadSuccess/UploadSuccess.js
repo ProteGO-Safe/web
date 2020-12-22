@@ -1,12 +1,11 @@
 import React from 'react';
-import { withTranslation } from 'react-i18next';
-import { Layout, ResultView } from '../../../../components';
+import { Layout, ResultView, T } from '../../../../components';
 import PositiveIcon from '../../../../assets/img/icons/success-icon.svg';
 
-const UploadSuccess = ({ t, finishUpload }) => {
+const UploadSuccess = ({ finishUpload }) => {
   const buttons = [
     {
-      label: t('ok'),
+      label: <T i18nKey="ok" />,
       onClick: finishUpload
     }
   ];
@@ -14,8 +13,8 @@ const UploadSuccess = ({ t, finishUpload }) => {
   return (
     <Layout hideBackButton isNavigation>
       <ResultView
-        title={t('upload_success_text1')}
-        text={t('upload_success_text2')}
+        title={<T i18nKey="upload_success_text1" />}
+        text={<T i18nKey="upload_success_text2" />}
         icon={PositiveIcon}
         buttons={buttons}
       />
@@ -23,4 +22,4 @@ const UploadSuccess = ({ t, finishUpload }) => {
   );
 };
 
-export default withTranslation()(UploadSuccess);
+export default UploadSuccess;

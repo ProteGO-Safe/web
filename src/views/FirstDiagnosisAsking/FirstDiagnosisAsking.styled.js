@@ -18,7 +18,7 @@ export const ButtonWrapper = styled.div`
 export const Paragraph = styled.p`
   margin-top: auto;
   margin-bottom: 24px;
-  font-size: 16px;
+  font-size: 20px;
   line-height: 1.44;
   font-weight: ${FontWeight.Normal};
   color: ${Color.lightBlack};

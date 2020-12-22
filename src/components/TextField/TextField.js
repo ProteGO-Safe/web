@@ -4,17 +4,7 @@ import { TextField as MuiTextField } from '@material-ui/core';
 
 import { Label, TextFieldWrapper, Information } from './TextField.styled';
 
-const TextField = ({
-  error,
-  disabled,
-  label,
-  name,
-  onChange,
-  placeholder,
-  info,
-  type,
-  value
-}) => (
+const TextField = ({ error, disabled, label, name, onChange, placeholder, info, type, value }) => (
   <TextFieldWrapper>
     {label && <Label>{label}</Label>}
     <MuiTextField
@@ -46,7 +36,7 @@ TextField.propTypes = {
   info: PropTypes.string,
   error: PropTypes.string,
   disabled: PropTypes.bool,
-  label: PropTypes.string,
+  label: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
   name: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,
   placeholder: PropTypes.string,

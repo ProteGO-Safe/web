@@ -1,14 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useFormikContext } from 'formik';
-import { withTranslation } from 'react-i18next';
-import {
-  Button,
-  FieldSet,
-  Radio,
-  Tooltip,
-  Layout,
-  T
-} from '../../../../../../components';
+import { Button, FieldSet, Radio, Tooltip, Layout, T } from '../../../../../../components';
 import { Title } from '../../../../Diagnosis.styled';
 
 import { VALUE_ABSENT, VALUE_PRESENT } from '../../../../../../constants';
@@ -17,7 +9,7 @@ import { questionPropType } from '../../../../prop-types';
 import { DIAGNOSIS_FORM_FIELDS } from '../../../../diagnosis.constants';
 import { Container } from '../../Form.styled';
 
-const GroupSingle = ({ t, onBack, onNext, question }) => {
+const GroupSingle = ({ onBack, onNext, question }) => {
   const { setFieldValue, values } = useFormikContext();
   const [answers, setAnswers] = useState([]);
 
@@ -64,13 +56,11 @@ const GroupSingle = ({ t, onBack, onNext, question }) => {
   };
 
   return (
-    <Layout id="view-diagnosis" onBackClick={back}>
+    <Layout id="view-diagnosis" onBackClick={back} hideBell>
       <Container>
         <Title explanation={tooltip}>
-          {t(text)}
-          {tooltip && (
-            <Tooltip sticky title={t(text)} content={<T i18nKey={tooltip} />} />
-          )}
+          <T i18nKey={text} />
+          {tooltip && <Tooltip sticky title={<T i18nKey={text} />} content={<T i18nKey={tooltip} />} />}
         </Title>
         <FieldSet>
           {answers.map(item => {
@@ -80,22 +70,16 @@ const GroupSingle = ({ t, onBack, onNext, question }) => {
                 key={id}
                 checked={values[id]}
                 content={
-                  explanation && (
-                    <Tooltip sticky title={t(name)} content={t(explanation)} />
-                  )
+                  explanation && <Tooltip sticky title={<T i18nKey={name} />} content={<T i18nKey={explanation} />} />
                 }
                 name={id}
                 onChange={() => handleChange(id)}
-                label={t(name)}
+                label={<T i18nKey={name} />}
               />
             );
           })}
         </FieldSet>
-        <Button
-          disabled={!someSelected}
-          onClick={next}
-          label={t('button_next')}
-        />
+        <Button disabled={!someSelected} onClick={next} label={<T i18nKey="button_next" />} />
       </Container>
     </Layout>
   );
@@ -105,4 +89,4 @@ GroupSingle.propTypes = {
   question: questionPropType
 };
 
-export default withTranslation()(GroupSingle);
+export default GroupSingle;

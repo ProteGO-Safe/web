@@ -2,16 +2,16 @@ import { useSelector } from 'react-redux';
 import { isIOSWebView } from '../../utils/native';
 import { EXPOSURE_NOTIFICATION_STATUS } from '../../utils/servicesStatus/servicesStatus.constants';
 import { enableServices } from '../../store/actions/nativeData';
+import { getServicesStatus } from '../../store/selectors/nativeData';
 
 const useSupportExposureNotificationTracing = () => {
   const {
-    servicesStatus: {
-      isLocationOn,
-      isBtOn,
-      isNotificationEnabled,
-      exposureNotificationStatus
-    }
-  } = useSelector(state => state.nativeData);
+    isLocationOn,
+    isBtOn,
+    isNotificationEnabled,
+    exposureNotificationStatus,
+    receivedServicesStatusMarker
+  } = useSelector(getServicesStatus);
 
   const areEnableAllServices =
     (isIOSWebView() || isLocationOn) &&
@@ -19,12 +19,7 @@ const useSupportExposureNotificationTracing = () => {
     isNotificationEnabled &&
     exposureNotificationStatus === EXPOSURE_NOTIFICATION_STATUS.ON;
 
-  const isExposureNotificationEnabled =
-    exposureNotificationStatus === EXPOSURE_NOTIFICATION_STATUS.OFF;
-
-  const showServiceWarning =
-    exposureNotificationStatus !== EXPOSURE_NOTIFICATION_STATUS.NOT_SUPPORTED &&
-    !areEnableAllServices;
+  const isExposureNotificationEnabled = exposureNotificationStatus === EXPOSURE_NOTIFICATION_STATUS.OFF;
 
   const handleEnableServices = () => {
     const servicesState = {};
@@ -46,7 +41,7 @@ const useSupportExposureNotificationTracing = () => {
   return {
     areEnableAllServices,
     handleEnableServices,
-    showServiceWarning
+    receivedServicesMarker: receivedServicesStatusMarker
   };
 };
 

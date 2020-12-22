@@ -1,13 +1,10 @@
 import { useSelector } from 'react-redux';
-import moment from 'moment';
+import { getFormattedDate } from '../../utils/date';
 
-export const dateFormat = 'D-MM-YYYY (HH:mm)';
 const descending = (a, b) => b - a;
 
 const getLastDate = (filledDays = []) => {
-  const sortedDays = filledDays
-    .sort(descending)
-    .map(_timestamp => moment.unix(_timestamp).format(dateFormat));
+  const sortedDays = filledDays.sort(descending).map(_timestamp => getFormattedDate(_timestamp));
 
   if (sortedDays.length > 0) {
     return sortedDays[0];

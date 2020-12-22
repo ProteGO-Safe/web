@@ -1,6 +1,5 @@
 import React from 'react';
 import moment from 'moment';
-import { withTranslation } from 'react-i18next';
 import { Grid } from '@material-ui/core';
 import { ImprintWrapper } from '../../../../components/Imprint/Imprint.styled';
 import { Paragraph, SmallText } from '../../../../theme/typography';
@@ -16,55 +15,64 @@ import {
   FIELD_TIME
 } from '../../../../constants';
 import { levels } from '../Form/constants';
+import { T } from '../../../../components';
 
-const Data = ({ t, data }) => {
+const Data = ({ data }) => {
   const date = moment(data[FIELD_TIME]).format('DD MMM, YYYY');
 
   return (
     <>
       <SmallText style={{ marginBottom: '19px' }}>
-        {t('data_text1')} {date}
+        <T i18nKey="data_text1" /> {date}
       </SmallText>
       <ImprintWrapper className="metrics-paragraph">
         <Grid container>
           <Grid item xs={6}>
             <Paragraph color={Color.lightBlack} fontWeight={FontWeight.Bold}>
-              {t('data_text2')}
+              <T i18nKey="data_text2" />
             </Paragraph>
             <SmallText>{data[FIELD_TEMPERATURE]} °C</SmallText>
           </Grid>
 
           <Grid item xs={6}>
             <Paragraph color={Color.lightBlack} fontWeight={FontWeight.Bold}>
-              {t('data_text3')}
+              <T i18nKey="data_text3" />
             </Paragraph>
-            <SmallText>{t(levels[data[FIELD_RUNNY_NOSE]])}</SmallText>
+            <SmallText>
+              <T i18nKey={levels[data[FIELD_RUNNY_NOSE]]} />
+            </SmallText>
           </Grid>
 
           <Grid item xs={6}>
             <Paragraph color={Color.lightBlack} fontWeight={FontWeight.Bold}>
-              {t('data_text4')}
+              <T i18nKey="data_text4" />
             </Paragraph>
-            <SmallText>{t(levels[data[FIELD_COUGH]])}</SmallText>
+            <SmallText>
+              <T i18nKey={levels[data[FIELD_COUGH]]} />
+            </SmallText>
           </Grid>
 
           <Grid item xs={6}>
             <Paragraph color={Color.lightBlack} fontWeight={FontWeight.Bold}>
-              {t('data_text5')}
+              <T i18nKey="data_text5" />
             </Paragraph>
-            <SmallText>{t(levels[data[FIELD_CHILLS]])}</SmallText>
+            <SmallText>
+              <T i18nKey={levels[data[FIELD_CHILLS]]} />
+            </SmallText>
           </Grid>
 
           <Grid item xs={6}>
             <Paragraph color={Color.lightBlack} fontWeight={FontWeight.Bold}>
-              {t('data_text6')}
+              <T i18nKey="data_text6" />
             </Paragraph>
-            <SmallText>{t(levels[data[FIELD_MUSCLE_PAIN]])}</SmallText>
+            <SmallText>
+              <T i18nKey={levels[data[FIELD_MUSCLE_PAIN]]} />
+            </SmallText>
           </Grid>
 
           <Grid item xs={6}>
             <Paragraph color={Color.lightBlack} fontWeight={FontWeight.Bold}>
-              {t('data_text7')}
+              <T i18nKey="data_text7" />
             </Paragraph>
             <SmallText>{data[FIELD_CONTACTS]}</SmallText>
           </Grid>
@@ -74,4 +82,4 @@ const Data = ({ t, data }) => {
   );
 };
 
-export default withTranslation()(Data);
+export default Data;

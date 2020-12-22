@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="102" height="113.436" viewBox="0 0 102 113.436">
+    <defs>
+        <style>
+            .a_exposure-high{fill:#eba828;}
+            .b_exposure-high{fill:#e5edf6;}
+            .c_exposure-high{opacity:0.13;}
+            .d_exposure-high{fill:#2757a4;}
+            .e_exposure-high{fill:#fff;}
+            .f_exposure-high{fill:#b7b7b7;}
+            .g_exposure-high{fill:none;stroke:#b7b7b7;stroke-miterlimit:10;stroke-width:2.873px;}
+            .h_exposure-high{fill:#d8d8d8;}
+            .i_exposure-high{clip-path:url(#a);}
+            .j_exposure-high{fill:#d5233f;}
+        </style>
+        <clipPath id="a">
+            <rect class="a_exposure-high" width="8.816" height="33.324" transform="translate(141.76 189.04)"/>
+        </clipPath>
+    </defs>
+    <g transform="translate(-256 -160.564)">
+        <g transform="translate(0 -24)">
+            <circle class="b_exposure-high" cx="51" cy="51" r="51" transform="translate(256 196)"/>
+            <g transform="translate(270 186)">
+                <path class="c_exposure-high" d="M76.919,15.23H58.7V10.448a1.326,1.326,0,0,0-1.326-1.326h-14.5a1.326,1.326,0,0,0-1.326,1.326V15.23H7.265a2.777,2.777,0,0,0-2.777,2.777v90.1a2.777,2.777,0,0,0,2.777,2.777H76.919A2.777,2.777,0,0,0,79.7,108.11v-90.1A2.776,2.776,0,0,0,76.919,15.23Z" transform="translate(-3.34 -3.095)"/>
+                <path class="d_exposure-high" d="M75.919,109.1H6.265a2.777,2.777,0,0,1-2.777-2.777v-90.1a2.777,2.777,0,0,1,2.777-2.777H75.919A2.777,2.777,0,0,1,78.7,16.219v90.1A2.777,2.777,0,0,1,75.919,109.1Z" transform="translate(-3.488 -2.455)"/>
+                <path class="e_exposure-high" d="M72.544,105.159H8.819A2.558,2.558,0,0,1,6.261,102.6V19.041a2.558,2.558,0,0,1,2.558-2.558H72.544A2.558,2.558,0,0,1,75.1,19.041V102.6A2.558,2.558,0,0,1,72.544,105.159Z" transform="translate(-3.077 -2.005)"/>
+                <path class="f_exposure-high" d="M52.385,20.743H24.557A3.362,3.362,0,0,1,21.2,17.382v-5.85A3.362,3.362,0,0,1,24.557,8.17H52.385a3.362,3.362,0,0,1,3.361,3.362v5.85A3.363,3.363,0,0,1,52.385,20.743Z" transform="translate(-0.866 -3.236)"/>
+                <path class="g_exposure-high" d="M47.528,16.444H28.19a2.862,2.862,0,0,1-2.862-2.862V6.734A2.862,2.862,0,0,1,28.19,3.872H47.528A2.862,2.862,0,0,1,50.39,6.734v6.847A2.861,2.861,0,0,1,47.528,16.444Z" transform="translate(-0.255 -3.872)"/>
+            </g>
+            <g transform="translate(162.206 40.643)">
+                <path class="h_exposure-high" d="M150.125,211.206V187.357a4,4,0,0,0-8,0v23.849a7.333,7.333,0,0,0,3.821,13.477h.18a7.332,7.332,0,0,0,4-13.478Zm.192,10.438a5.947,5.947,0,0,1-4.337,1.705,6,6,0,0,1-2.853-11.194.666.666,0,0,0,.333-.576V187.357a2.666,2.666,0,1,1,5.332,0V211.58a.664.664,0,0,0,.333.575,6.025,6.025,0,0,1,3,5.2A5.952,5.952,0,0,1,150.317,221.644Z"/>
+                <path class="h_exposure-high" d="M146.791,221.439a4,4,0,0,1-1.566-7.843.3.3,0,0,0,.236-.286V187.5a.665.665,0,1,1,1.33,0v25.812a.293.293,0,0,0,.235.284,4,4,0,0,1-.235,7.844Z"/>
+                <g class="i_exposure-high">
+                    <path class="j_exposure-high" d="M146.791,221.439a4,4,0,0,1-1.566-7.843.3.3,0,0,0,.236-.286V187.5a.665.665,0,1,1,1.33,0v25.812a.293.293,0,0,0,.235.284,4,4,0,0,1-.235,7.844Z"/>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

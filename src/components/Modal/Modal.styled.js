@@ -1,15 +1,17 @@
 import styled, { keyframes } from 'styled-components';
 import { Color } from '../../theme/colors';
-import { Paragraph } from '../../theme/typography';
+import { TYPE } from './Modal.helpers';
 
 const handleType = type => {
   switch (type) {
-    case 'dialog':
-      return '30px 40px 20px 40px';
-    case 'inner-content':
-      return '30px 20px 20px';
-    case 'normal':
+    case TYPE.CUSTOM:
+      return '30px 0 0';
+    case TYPE.DEFAULT:
+      return '30px 30px 20px';
+    case TYPE.ONLY_CONTENT:
       return '30px 40px';
+    case TYPE.TOOLTIP:
+      return '30px 30px 20px';
     default:
       return '30px 40px';
   }
@@ -40,8 +42,7 @@ export const Wrapper = styled.div`
   padding-top: 60px;
   padding-bottom: 70px;
   overflow-y: auto;
-  animation: ${({ open }) => (open ? animationModalShow : animationModalHide)}
-    0.3s 0s both;
+  animation: ${({ open }) => (open ? animationModalShow : animationModalHide)} 0.3s 0s both;
   transition: all 0.3s;
 `;
 
@@ -85,7 +86,8 @@ export const Title = styled.h2`
   color: ${Color.black};
 `;
 
-export const Text = styled(Paragraph)`
+export const Text = styled.div`
+  width: 100%;
   font-size: 14px;
   line-height: 22px;
   margin-bottom: 0 !important;
@@ -103,5 +105,4 @@ export const Description = styled.div`
   display: block;
   width: 100%;
   margin-top: 12px;
-  overflow-x: hidden;
 `;

@@ -4,19 +4,12 @@ import { Switcher } from '../Switcher';
 import { T } from '../index';
 import * as Styled from './WarningInEuropeTerm.styled';
 
-const WarningInEuropeTerm = ({
-  checked,
-  forceOpen,
-  handleClick,
-  name,
-  onChange
-}) => {
+const WarningInEuropeTerm = ({ checked, forceOpen, name, onChange }) => {
   const renderLabel = (
     <Styled.Content>
       <Styled.Flag />
       <Styled.Label>
-        <T i18nKey={checked ? 'turn_off' : 'turn_on'} />:{' '}
-        <T i18nKey="warning_in_europe_text1" />
+        <T i18nKey={checked ? 'turn_off' : 'turn_on'} />: <T i18nKey="warning_in_europe_text1" />
       </Styled.Label>
     </Styled.Content>
   );
@@ -24,20 +17,12 @@ const WarningInEuropeTerm = ({
   return (
     <Styled.WarningInEuropeTerm>
       <Styled.Container>
-        <Switcher
-          label={renderLabel}
-          checked={checked}
-          onChange={onChange}
-          name={name}
-        />
+        <Switcher label={renderLabel} checked={checked} onChange={onChange} name={name} />
       </Styled.Container>
 
       <Styled.TermDescription open={checked || forceOpen}>
         <Styled.Container>
-          <T i18nKey="warning_in_europe_term_text2" />{' '}
-          <Styled.Link onClick={handleClick}>
-            <T i18nKey="warning_in_europe_term_text3" />
-          </Styled.Link>
+          <T i18nKey="warning_in_europe_term_text_1" />{' '}
         </Styled.Container>
       </Styled.TermDescription>
     </Styled.WarningInEuropeTerm>

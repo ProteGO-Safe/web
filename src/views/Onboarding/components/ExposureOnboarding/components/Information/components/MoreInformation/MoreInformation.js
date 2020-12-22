@@ -1,18 +1,11 @@
 import React from 'react';
-import { withTranslation } from 'react-i18next';
-import './MoreInformation.scss';
-import {
-  Button,
-  Email,
-  Layout,
-  OnboardingContent
-} from '../../../../../../../../components';
+import { Button, OnboardingContent, T } from '../../../../../../../../components';
 import { Icon, Paragraph } from './MoreInformation.styled';
 
-const MoreInformation = ({ t, onNext }) => {
+const MoreInformation = ({ onNext }) => {
   const buttons = [
     {
-      label: t('button_next'),
+      label: <T i18nKey="button_next" />,
       onClick: onNext
     }
   ];
@@ -22,36 +15,51 @@ const MoreInformation = ({ t, onNext }) => {
   ));
 
   return (
-    <Layout hideBackButton isGovFooter>
-      <OnboardingContent icon={<Icon />} title="" buttons={renderButton}>
-        <Paragraph>
-          <strong>{t('more_information_text1')}</strong>{' '}
-          {t('more_information_text2')}
-        </Paragraph>
-        <Paragraph>{t('more_information_text3')}</Paragraph>
-        <Paragraph>
-          <strong>{t('more_information_text4')}</strong>
-        </Paragraph>
-        <Paragraph>{t('more_information_text5')}</Paragraph>
-
-        <Paragraph>{t('more_information_text6')}</Paragraph>
-        <Paragraph>{t('more_information_text7')}</Paragraph>
-        <Paragraph>{t('more_information_text8')}</Paragraph>
-        <Paragraph>{t('more_information_text9')}</Paragraph>
-        <Paragraph>{t('more_information_text10')}</Paragraph>
-        <Paragraph>{t('more_information_text11')}</Paragraph>
-        <Paragraph>{t('more_information_text12')}</Paragraph>
-        <Paragraph>{t('more_information_text13')}</Paragraph>
-        <Paragraph>
-          <strong>{t('more_information_text14')}</strong>
-        </Paragraph>
-        <Paragraph>
-          {t('more_information_text15')}{' '}
-          <Email>{t('more_information_text16')}</Email>
-        </Paragraph>
-      </OnboardingContent>
-    </Layout>
+    <OnboardingContent icon={<Icon />} title="" buttons={renderButton}>
+      <Paragraph>
+        <T i18nKey="more_information_text1" />
+      </Paragraph>
+      <Paragraph>
+        <T i18nKey="more_information_text3" />
+      </Paragraph>
+      <Paragraph>
+        <T i18nKey="more_information_text4" />
+      </Paragraph>
+      <Paragraph>
+        <T i18nKey="more_information_text5" />
+      </Paragraph>
+      <Paragraph>
+        <T i18nKey="more_information_text6" />
+      </Paragraph>
+      <Paragraph>
+        <T i18nKey="more_information_text7" />
+      </Paragraph>
+      <Paragraph>
+        <T i18nKey="more_information_text8" />
+      </Paragraph>
+      <Paragraph>
+        <T i18nKey="more_information_text9" />
+      </Paragraph>
+      <Paragraph>
+        <T i18nKey="more_information_text10" />
+      </Paragraph>
+      <Paragraph>
+        <T i18nKey="more_information_text11" />
+      </Paragraph>
+      <Paragraph>
+        <T i18nKey="more_information_text12" />
+      </Paragraph>
+      <Paragraph>
+        <T i18nKey="more_information_text13" />
+      </Paragraph>
+      <Paragraph>
+        <T i18nKey="more_information_text14" />
+      </Paragraph>
+      <Paragraph>
+        <T i18nKey="more_information_text15" />
+      </Paragraph>
+    </OnboardingContent>
   );
 };
 
-export default withTranslation()(MoreInformation);
+export default MoreInformation;

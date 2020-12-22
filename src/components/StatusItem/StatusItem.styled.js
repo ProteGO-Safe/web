@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { Color } from '../../theme/colors';
+import { hexToRgba } from '../../helpers/colors';
 
 import { ReactComponent as IconClose } from '../../assets/img/icons/close.svg';
 
@@ -20,11 +21,17 @@ export const StatusItem = styled.div`
   display: flex;
   flex-flow: nowrap row;
   align-items: center;
+  flex-shrink: 0;
   width: auto;
-  margin: 0 10px 10px 0;
+  margin: 2px 10px 10px 0;
   padding: 5px 8px;
   border-radius: 4px;
   background-color: ${Color.white};
+  ${({ shadow }) =>
+    shadow &&
+    `
+      box-shadow: 2px 2px 4px ${hexToRgba(Color.black, 0.3)};
+    `}
 `;
 
 export const Status = styled.div`

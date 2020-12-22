@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next';
 import { changeLanguage } from '../../store/actions/app';
 import { languages } from '../../utils/languages';
 import useDefaultLanguage from '../useDefaultLanguage';
-import { DEFAULT_LANGUAGE } from '../../constants';
+import { AVAILABLE_LANGUAGES, DEFAULT_LANGUAGE } from '../../constants';
 
 const useLanguage = () => {
   const dispatch = useDispatch();
@@ -12,11 +12,11 @@ const useLanguage = () => {
 
   const { defaultLanguage } = useDefaultLanguage();
 
+  const isPolish = defaultLanguage === AVAILABLE_LANGUAGES.pl;
+
   const changeAppLanguage = useCallback(
     language => {
-      i18n
-        .changeLanguage(language)
-        .then(value => dispatch(changeLanguage(language)));
+      i18n.changeLanguage(language).then(value => dispatch(changeLanguage(language)));
     },
     [dispatch, i18n]
   );
@@ -25,7 +25,8 @@ const useLanguage = () => {
     languages,
     changeAppLanguage,
     language: defaultLanguage,
-    isDefaultLanguage: defaultLanguage === DEFAULT_LANGUAGE
+    isDefaultLanguage: defaultLanguage === DEFAULT_LANGUAGE,
+    isPolish
   };
 };
 

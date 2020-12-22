@@ -1,21 +1,13 @@
 import React, { useEffect } from 'react';
-import classNames from 'classnames';
 import 'moment/locale/pl';
+import 'moment/locale/de';
+import 'moment/locale/tr';
+import 'moment/locale/ru';
 import 'moment/locale/uk';
 import 'moment/locale/en-gb';
 import { useDispatch, useSelector } from 'react-redux';
-import {
-  FirstDiagnosisAsking,
-  Home,
-  NotSupported,
-  Onboarding,
-  Registration,
-  StartScreen
-} from '../../views';
-import { Menu } from '../index';
+import { FirstDiagnosisAsking, Dashboard, NotSupported, Onboarding, Registration, StartScreen } from '../../views';
 import { fetchNativeVersion } from '../../store/actions/nativeData';
-import useMenuContext from '../../hooks/useMenuContext';
-import { Notification } from '../Notification';
 import useFilledDiagnosis from '../../hooks/useFilledDiagnosis';
 import {
   fetchFontScale,
@@ -25,14 +17,14 @@ import {
 import { isLocalPWA, isWebView } from '../../utils/native';
 import useMigration from '../../hooks/useMigration';
 import useCheckLanguage from '../../hooks/useCheckLanguage';
-import useNotification from '../../hooks/useNotification';
 import useModalContext from '../../hooks/useModalContext';
 import useClearData from '../../hooks/useClearData';
-import * as Styled from './App.styled';
-import { fetchSubscribedDistricts } from '../../store/actions/restrictions';
 import useNavigation from '../../hooks/useNavigation';
 import ScreenFactory from '../../services/navigationService/Screen.factory';
-import { Routes } from '../../services/navigationService/routes';
+import useFirstRun from '../../hooks/useFirstRun';
+import { resetNavigationState } from '../../store/actions/navigation';
+import useCovidStateCleaner from '../../hooks/useCovidStateCleaner';
+import * as Styled from './App.styled';
 
 function App() {
   const dispatch = useDispatch();
@@ -44,13 +36,13 @@ function App() {
     firstDiagnosisFinished,
     registrationFinished
   } = useSelector(state => state.app);
-  const { notification } = useNotification();
-  const { inProgress, visible: menuIsVisible } = useMenuContext();
   const { hasFilledAnyDiagnosis } = useFilledDiagnosis();
   useMigration();
   useCheckLanguage();
   useClearData();
-  const { goTo, route } = useNavigation();
+  useFirstRun();
+  useCovidStateCleaner();
+  const { route } = useNavigation();
 
   useEffect(() => {
     dispatch(fetchNativeVersion());
@@ -59,29 +51,15 @@ function App() {
   useEffect(() => {
     dispatch(hideUploadHistoricalDataErrorMessage());
     dispatch(fetchFontScale());
-    dispatch(fetchSubscribedDistricts());
-    goTo(Routes.Home);
+    dispatch(resetNavigationState());
     // eslint-disable-next-line
   }, [dispatch]);
-
-  useEffect(() => {
-    const navMenuButton = document.getElementById('nav_menu_button');
-
-    if (navMenuButton) {
-      setTimeout(() => navMenuButton.blur(), 100);
-    }
-  }, [menuIsVisible]);
 
   useEffect(() => {
     if (!dataFromNewestVersionMarked && hasFilledAnyDiagnosis) {
       dispatch(markDataFromNewestVersion());
     }
   }, [dataFromNewestVersionMarked, hasFilledAnyDiagnosis, dispatch]);
-
-  const className = classNames({
-    app: true,
-    'menu-visible': menuIsVisible && !inProgress
-  });
 
   const resolveHomeComponent = (() => {
     if (isWebView() && !isLocalPWA()) {
@@ -99,7 +77,7 @@ function App() {
     if (!firstDiagnosisFinished) {
       return FirstDiagnosisAsking;
     }
-    return Home;
+    return Dashboard;
   })();
 
   const CurrentComponent = (() => {
@@ -110,10 +88,8 @@ function App() {
   })();
 
   return (
-    <Styled.Container className={`${className} ${modal ? 'open-modal' : ''}`}>
+    <Styled.Container className={`${modal ? 'open-modal' : ''}`}>
       <CurrentComponent />
-      <Menu />
-      {notification && <Notification />}
     </Styled.Container>
   );
 }

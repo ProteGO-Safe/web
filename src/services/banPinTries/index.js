@@ -1,4 +1,6 @@
+import React from 'react';
 import pinTimeouts from './pin-timeouts.json';
+import { T } from '../../components/T';
 
 const MINUTE = 60 * 1000;
 
@@ -50,51 +52,60 @@ const getBanData = listOfTries => {
   );
 };
 
-const getCorrentMinuteForm = (lockdownTimeInMinutes, t) => {
+const getCorrentMinuteForm = lockdownTimeInMinutes => {
   if (lockdownTimeInMinutes === 1) {
-    return `${lockdownTimeInMinutes} ${t('upload_historical_data_text6')}`;
+    return { key: 'upload_historical_data_text6', time: lockdownTimeInMinutes };
   }
   if (lockdownTimeInMinutes > 4 && lockdownTimeInMinutes <= 21) {
-    return `${lockdownTimeInMinutes} ${t('upload_historical_data_text7')}`;
+    return { key: 'upload_historical_data_text7', time: lockdownTimeInMinutes };
   }
   const modulo = lockdownTimeInMinutes % 10;
   if (modulo > 1 && modulo <= 4) {
-    return `${lockdownTimeInMinutes} ${t('upload_historical_data_text8')}`;
+    return { key: 'upload_historical_data_text8', time: lockdownTimeInMinutes };
   }
-  return `${lockdownTimeInMinutes} ${t('upload_historical_data_text7')}`;
+  return { key: 'upload_historical_data_text7', time: lockdownTimeInMinutes };
 };
 
-const getLockdownInfo = (lockdownTime, t) => {
+const getLockdownInfo = lockdownTime => {
   const lockdownTimeInMinutes = lockdownTime / MINUTE;
   const lockdownTimeInHours = Math.floor(lockdownTimeInMinutes / 60);
   if (lockdownTimeInHours === 1) {
-    return `${lockdownTimeInHours} ${t('upload_historical_data_text4')}`;
+    return { key: 'upload_historical_data_text4', time: lockdownTimeInHours };
   }
   if (lockdownTimeInHours > 1) {
-    return `${lockdownTimeInHours} ${t('upload_historical_data_text5')}`;
+    return { key: 'upload_historical_data_text5', time: lockdownTimeInHours };
   }
-  return getCorrentMinuteForm(lockdownTimeInMinutes, t);
+  return getCorrentMinuteForm(lockdownTimeInMinutes);
 };
 
 const createErrorMessage = (
   { lockdownTime, currentLimitOfTries },
-  numberOfTries,
-  t
+  numberOfTries
 ) => {
   if (!numberOfTries) {
     return null;
   }
   if (lockdownTime) {
-    const lockdownMessage = getLockdownInfo(lockdownTime, t);
-    return t('upload_historical_data_text1', {
-      amount: numberOfTries,
-      seconds: lockdownMessage
-    });
+    const { key, time } = getLockdownInfo(lockdownTime);
+    return (
+      <T
+        i18nKey={key}
+        variables={{
+          amount: numberOfTries,
+          time
+        }}
+      />
+    );
   }
-  return t('ban-pin-tries_text1', {
-    amount: numberOfTries,
-    limit: currentLimitOfTries
-  });
+  return (
+    <T
+      i18nKey="ban-pin-tries_text1"
+      variables={{
+        amount: numberOfTries,
+        limit: currentLimitOfTries
+      }}
+    />
+  );
 };
 
 export default { createErrorMessage, getBanData };

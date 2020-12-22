@@ -23,7 +23,7 @@ export const Content = styled.div`
   align-items: center;
   justify-content: center;
   width: 100%;
-  padding: 0 24px;
+  padding: 0 24px calc(68px + env(safe-area-inset-bottom));
   flex: 1;
 `;
 
@@ -130,9 +130,7 @@ export const Info = styled.span`
 `;
 
 export const Footer = styled(GovFooter)`
-  max-width: 375px;
-  padding-bottom: calc(32px + constant(safe-area-inset-bottom));
-  padding-bottom: calc(32px + env(safe-area-inset-bottom));
+  background-color: transparent;
 `;
 
 export const Button = styled.button`

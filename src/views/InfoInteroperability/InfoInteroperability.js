@@ -12,9 +12,7 @@ const InfoInteroperability = () => {
   const { goTo } = useNavigation();
 
   const dispatch = useDispatch();
-  const interoperabilityModalShowed = useSelector(
-    getInteroperabilityModalShowed
-  );
+  const interoperabilityModalShowed = useSelector(getInteroperabilityModalShowed);
 
   const handleModalClickTrue = useCallback(() => {
     dispatch(hideInteroperabilityModal());
@@ -34,18 +32,10 @@ const InfoInteroperability = () => {
       onClose();
       return;
     }
-    openModal(
-      <ContentModal
-        title="info_interoperability_text1"
-        content="info_interoperability_text2"
-      />,
-      'inner-content',
-      null,
-      <FooterModal
-        handleClickTrue={handleModalClickTrue}
-        handleClickFalse={handleModalClickFalse}
-      />
-    );
+    openModal({
+      value: <ContentModal title="info_interoperability_text1" content="info_interoperability_text2" />,
+      modalFooter: <FooterModal handleClickTrue={handleModalClickTrue} handleClickFalse={handleModalClickFalse} />
+    });
     // eslint-disable-next-line
   }, [interoperabilityModalShowed]);
 

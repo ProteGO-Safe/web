@@ -1,17 +1,1 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Generator: Adobe Illustrator 24.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<svg version="1.1" id="kwestionariusz" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
-	 y="0px" viewBox="0 0 30 30" style="enable-background:new 0 0 30 30;" xml:space="preserve">
-<style type="text/css">
-	.test-st0{fill:none;stroke:#0052A5;stroke-width:1.0669;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
-</style>
-<path class="test-st0" d="M16.8,3.8c0-1.2-1-2.2-2.3-2.2s-2.3,1-2.3,2.2H9.5v3.8h10.1V3.8H16.8z"/>
-<path class="test-st0" d="M19.6,5.7H21c1.3,0,2.3,1,2.3,2.3v16c0,1.3-1,2.3-2.3,2.3H8.2c-1.3,0-2.3-1-2.3-2.3V7.9c0-1.3,1-2.3,2.3-2.3
-	h1.1"/>
-<polyline class="test-st0" points="8,11.9 9.2,12.9 12,10.3 "/>
-<line class="test-st0" x1="14" y1="11.6" x2="20.1" y2="11.6"/>
-<polyline class="test-st0" points="8,17.2 9.2,18.3 12,15.6 "/>
-<line class="test-st0" x1="14" y1="16.9" x2="20.1" y2="16.9"/>
-<polyline class="test-st0" points="8,21.9 9.2,23 12,20.3 "/>
-<line class="test-st0" x1="14" y1="21.6" x2="20.1" y2="21.6"/>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="34.239" height="47.961" viewBox="0 0 34.239 47.961"><defs><style>.a_i-am-sick-icon-7{fill:#0052a5;}</style></defs><g transform="translate(-1.275 -0.58)"><g transform="translate(7.948 0.58)"><path class="a_i-am-sick-icon-7" d="M29.447,13.869H10.721a.99.99,0,0,1-.99-.99V5.834a.99.99,0,0,1,.99-.99h4.111a5.255,5.255,0,0,1,10.321,0h4.295a.989.989,0,0,1,.989.99V12.88A.99.99,0,0,1,29.447,13.869ZM11.71,11.89H28.458V6.823h-4.2a.989.989,0,0,1-.989-.99,3.275,3.275,0,0,0-6.55,0,.99.99,0,0,1-.99.99H11.71V11.89ZM25.244,5.834h0Z" transform="translate(-9.731 -0.58)"/></g><g transform="translate(1.275 8.182)"><path class="a_i-am-sick-icon-7" d="M6.443,50.572a5.184,5.184,0,0,1-5.166-5.1V15.466a5.183,5.183,0,0,1,5.1-5.252H8.57a.99.99,0,0,1,0,1.979H6.529a3.254,3.254,0,0,0-2.374.976,3.187,3.187,0,0,0-.9,2.282V45.318a3.207,3.207,0,0,0,3.259,3.276H30.261a3.26,3.26,0,0,0,2.374-.978,3.182,3.182,0,0,0,.9-2.282V15.653a3.258,3.258,0,0,0-.978-2.374,3.219,3.219,0,0,0-2.282-.9H27.664a.99.99,0,0,1,0-1.979h2.6a5.353,5.353,0,0,1,3.674,1.458A5.149,5.149,0,0,1,35.513,15.5V45.318a5.184,5.184,0,0,1-5.1,5.253H6.443Z" transform="translate(-1.275 -10.213)"/></g><g transform="translate(5.168 16.897)"><path class="a_i-am-sick-icon-7" d="M9.422,28.053a.984.984,0,0,1-.633-.23L6.564,25.97a.988.988,0,1,1,1.265-1.519l1.557,1.3,4.553-4.229a.99.99,0,0,1,1.347,1.451l-5.191,4.82A.987.987,0,0,1,9.422,28.053Z" transform="translate(-6.207 -21.256)"/></g><g transform="translate(16.292 19.306)"><path class="a_i-am-sick-icon-7" d="M32.6,26.287H21.293a.99.99,0,1,1,0-1.979H32.6a.99.99,0,0,1,0,1.979Z" transform="translate(-20.303 -24.308)"/></g><g transform="translate(5.168 26.723)"><path class="a_i-am-sick-icon-7" d="M9.422,40.69a.984.984,0,0,1-.668-.259L6.528,38.39a.989.989,0,0,1,1.336-1.459L9.4,38.343l4.522-4.36A.988.988,0,0,1,15.3,35.406l-5.191,5.007A.979.979,0,0,1,9.422,40.69Z" transform="translate(-6.208 -33.706)"/></g><g transform="translate(16.292 29.132)"><path class="a_i-am-sick-icon-7" d="M32.6,38.737H21.293a.989.989,0,1,1,0-1.978H32.6a.989.989,0,1,1,0,1.978Z" transform="translate(-20.303 -36.759)"/></g><g transform="translate(5.168 35.438)"><path class="a_i-am-sick-icon-7" d="M9.422,51.732a.984.984,0,0,1-.668-.259L6.528,49.432a.989.989,0,0,1,1.336-1.459L9.4,49.385l4.522-4.36A.988.988,0,0,1,15.3,46.448l-5.191,5.007A.979.979,0,0,1,9.422,51.732Z" transform="translate(-6.208 -44.748)"/></g><g transform="translate(16.292 37.847)"><path class="a_i-am-sick-icon-7" d="M32.6,49.779H21.293a.989.989,0,1,1,0-1.978H32.6a.989.989,0,1,1,0,1.978Z" transform="translate(-20.303 -47.801)"/></g></g></svg>

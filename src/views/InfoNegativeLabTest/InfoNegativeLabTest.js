@@ -1,26 +1,35 @@
 import React from 'react';
-import { withTranslation } from 'react-i18next';
-import { Button } from '../../components';
+import { Button, T } from '../../components';
 import * as Styled from './InfoNegativeLabTest.styled';
 
-const InfoNegativeLabTest = ({ handleClickYes, handleClickCancel, t }) => (
+const InfoNegativeLabTest = ({ handleClickYes, handleClickCancel }) => (
   <Styled.InfoLabTest>
     <Styled.Icon />
-    <Styled.Title>{t('info_lab_test_text1')}</Styled.Title>
+    <Styled.Title>
+      <T i18nKey="info_lab_test_text1" />
+    </Styled.Title>
 
     <Styled.Description>
-      <Styled.Paragraph>{t('info_lab_test_text2')}</Styled.Paragraph>
-      <Styled.Strong>{t('info_lab_test_text3')}</Styled.Strong>
-      <Styled.Strong>{t('info_lab_test_text4')}</Styled.Strong>
+      <Styled.Paragraph>
+        <T i18nKey="info_lab_test_text2" />
+      </Styled.Paragraph>
+      <Styled.Strong>
+        <T i18nKey="info_lab_test_text3" />
+      </Styled.Strong>
+      <Styled.Strong>
+        <T i18nKey="info_lab_test_text4" />
+      </Styled.Strong>
     </Styled.Description>
 
     <Styled.ButtonsWrapper>
-      <Button onClick={handleClickYes}>{t('info_lab_test_text5')}</Button>
+      <Button onClick={handleClickYes}>
+        <T i18nKey="info_lab_test_text5" />
+      </Button>
       <Button onClick={handleClickCancel} type="outline">
-        {t('info_lab_test_text6')}
+        <T i18nKey="info_lab_test_text6" />
       </Button>
     </Styled.ButtonsWrapper>
   </Styled.InfoLabTest>
 );
 
-export default withTranslation()(InfoNegativeLabTest);
+export default InfoNegativeLabTest;

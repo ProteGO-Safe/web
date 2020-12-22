@@ -28,9 +28,7 @@ const DiagnosisContainer = () => {
       isElderly,
       evidence
     };
-    dispatch(fetchTriage(data)).then(triage =>
-      saveRiskTest(triage, evidence, allQuestions)
-    );
+    dispatch(fetchTriage(data)).then(triage => saveRiskTest(triage, evidence, allQuestions));
   };
 
   return (

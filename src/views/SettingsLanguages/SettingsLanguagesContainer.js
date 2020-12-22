@@ -17,7 +17,7 @@ const SettingsLanguagesContainer = ({ t }) => {
   });
 
   return (
-    <Layout isNavigation noMargin>
+    <Layout isNavigation>
       <SettingsLanguages
         addTranslationPath={Routes.AddTranslation}
         languages={availableLanguages}

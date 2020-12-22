@@ -1,28 +1,26 @@
 import styled from 'styled-components';
 import { Color } from '../../theme/colors';
+import { FontWeight } from '../../theme/fonts';
 
 export const Button = styled.button`
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-flow: wrap row;
   width: 100%;
-  max-width: 338px;
-  height: auto;
   min-height: 44px;
   padding: 7px 12px;
   font-family: 'Open Sans', sans-serif;
-  line-height: 1.5;
   font-size: 16px;
-  font-weight: bold;
-  font-stretch: normal;
-  font-style: normal;
-  letter-spacing: 0;
+  line-height: 22px;
+  font-weight: ${FontWeight.Bold};
   -webkit-appearance: none;
-  border-style: none;
   border-radius: 8px;
-  cursor: pointer;
+  border-style: none;
   text-transform: uppercase;
+  cursor: pointer;
+  overflow: hidden;
   &:disabled {
     background: ${Color.darkGray};
     color: ${Color.white};
@@ -42,6 +40,18 @@ export const ButtonDefault = styled(Button)`
 
 export const ButtonOutline = styled(Button)`
   border-width: 2px;
+  border-style: solid;
+  background-color: ${Color.white};
+  border-color: ${Color.primary};
+  color: ${Color.primary};
+`;
+
+export const ButtonSmallOutline = styled(Button)`
+  min-height: 38px;
+  font-size: 14px;
+  line-height: 18px;
+  border-radius: 4px;
+  border-width: 1px;
   border-style: solid;
   background-color: ${Color.white};
   border-color: ${Color.primary};

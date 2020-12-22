@@ -17,20 +17,11 @@ const ImportantInfo = ({ items }) => {
     height: '100%'
   };
 
-  const renderItems = items.map(item => {
-    const {
-      danger,
-      description,
-      icon,
-      link,
-      newFeature,
-      path,
-      title,
-      type
-    } = item;
+  const renderItems = items.map((item, key) => {
+    const { danger, description, icon, link, newFeature, path, title, type } = item;
     return (
       <ImportantInfoItem
-        key={title}
+        key={key}
         danger={danger}
         description={description}
         icon={icon}
@@ -45,7 +36,7 @@ const ImportantInfo = ({ items }) => {
   });
 
   return (
-    <Layout isNavigation noMargin noPadding>
+    <Layout isNavigation noMargin noPadding hideBackButton>
       <Styled.Container change={changeView}>
         {changeView ? (
           <Scrollbar scrollbarWidth={6} style={stylesScrollbar}>

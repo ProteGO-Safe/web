@@ -1,15 +1,16 @@
 import React from 'react';
-import { withTranslation } from 'react-i18next';
-import { Button } from '../../../../components';
+import { Button, T } from '../../../../components';
 import * as Styled from './ModalFooter.styled';
 
-const ModalFooter = ({ handleClickYes, handleClickCancel, t }) => (
+const ModalFooter = ({ handleClickYes, handleClickCancel }) => (
   <Styled.ModalFooter>
-    <Button onClick={handleClickYes}>{t('yes')}</Button>
+    <Button onClick={handleClickYes}>
+      <T i18nKey="yes" />
+    </Button>
     <Button onClick={handleClickCancel} type="outline">
-      {t('CANCEL_BUTTON_TITLE')}
+      <T i18nKey="CANCEL_BUTTON_TITLE" />
     </Button>
   </Styled.ModalFooter>
 );
 
-export default withTranslation()(ModalFooter);
+export default ModalFooter;

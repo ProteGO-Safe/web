@@ -21,3 +21,12 @@ export const BoxTitle = styled(H4)`
     margin-right: 10px;
   }
 `;
+
+export const Title = styled.h1`
+  margin-top: 0;
+  margin-bottom: 24px;
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 1.3;
+  color: ${Color.lightBlack};
+`;

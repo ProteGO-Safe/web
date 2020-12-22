@@ -1,14 +1,5 @@
 .view__diagnosis {
-  .banner {
-    grid-area: banner;
-  }
-
   .container {
-
-    h3 {
-      margin-top: 0;
-    }
-
     .content {
       grid-area: content;
       align-self: start;
@@ -17,10 +8,6 @@
 
     .fieldset {
       margin-bottom: 30px;
-    }
-
-    .button {
-      margin: 0 0 33px auto;
     }
   }
 }

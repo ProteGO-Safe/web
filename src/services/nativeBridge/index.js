@@ -3,24 +3,25 @@ import uniqueId from 'lodash.uniqueid';
 
 import { always, cond, equals } from 'ramda';
 import StoreRegistry from '../../store/storeRegistry';
-import {
-  FETCH_LAB_TEST_SUBSCRIPTION,
-  FETCH_LANGUAGE,
-  NATIVE_DATA_FETCH_EXPOSURE_NOTIFICATION_STATISTICS_SUCCESS,
-  NATIVE_DATA_FETCH_NATIVE_STATE,
-  NATIVE_DATA_SET_SERVICES_STATUS_SUCCESS
-} from '../../store/types/nativeData';
+import { FETCH_LANGUAGE, NATIVE_DATA_SET_SERVICES_STATUS_SUCCESS } from '../../store/types/nativeData';
 import { DATA_TYPE } from './nativeBridge.constants';
-import { UPLOAD_HISTORICAL_DATA_FINISHED } from '../../store/types/app';
 import { isAndroidWebView, isIOSWebView } from '../../utils/native';
-import { fetchExposureNotificationStatistics } from '../../store/actions/nativeData';
+import {
+  enStatusReceived,
+  fetchExposureNotificationStatistics,
+  fetchLabTestSubscriptionSuccess,
+  fetchCovidStatisticsSuccess
+} from '../../store/actions/nativeData';
 import { fetchSubscribedDistricts } from '../../store/actions/restrictions';
 import { BACK_PRESSED } from '../../store/types/navigation';
+import { UPLOAD_HISTORICAL_DATA_FINISHED } from '../../store/types/app';
+import { changeRoute } from '../../store/actions/navigation';
+import { Routes } from '../navigationService/routes';
+import { fetchActivities } from '../../store/actions/activities';
 
 const nativeRequests = {};
 
-const sendNativeRequest = (functionName, dataType, data) => {
-  const requestId = uniqueId('request-');
+const sendNativeRequest = (functionName, requestId, dataType, data) => {
   if (process.env.NODE_ENV !== 'production') {
     console.log(
       `${Date.now()}: functionName: ${functionName}, dataType: ${dataType}, data: ${data}, requestId: ${requestId}`
@@ -50,7 +51,7 @@ const receiveNativeResponse = (body, dataType, requestId) => {
   delete nativeRequests[requestId];
 };
 
-const callNativeFunction = async (functionName, dataType, data) => {
+const callNativeFunction = async (functionName, dataType, data, requestId) => {
   const args = [dataType];
   if (data) {
     args.push(JSON.stringify(data));
@@ -60,12 +61,14 @@ const callNativeFunction = async (functionName, dataType, data) => {
     return invoke(window.NativeBridge, functionName, ...args);
   }
 
-  return sendNativeRequest(functionName, ...args);
+  return sendNativeRequest(functionName, requestId, ...args);
 };
 
-const callGetBridgeData = async (dataType, data = undefined) => {
+const callBridgeData = async (functionName, dataType, data = undefined) => {
+  const requestId = uniqueId('request-');
   try {
-    const json = await callNativeFunction('getBridgeData', dataType, data);
+    const json = await callNativeFunction(functionName, dataType, data, requestId);
+    callNativeFunction('bridgeDataReceived', dataType, undefined, requestId);
     if (json) {
       return JSON.parse(json);
     }
@@ -75,12 +78,28 @@ const callGetBridgeData = async (dataType, data = undefined) => {
   return '';
 };
 
-const getNotification = async () => {
-  return callGetBridgeData(DATA_TYPE.NOTIFICATION);
+const callGetBridgeData = async (dataType, data = undefined) => {
+  return callBridgeData('getBridgeData', dataType, data);
+};
+
+const callSetBridgeData = async (dataType, data = undefined) => {
+  return callBridgeData('setBridgeData', dataType, data);
+};
+
+const listActivities = async () => {
+  return callGetBridgeData(DATA_TYPE.LIST_ACTIVITIES);
 };
 
 const getServicesStatus = async () => {
   return callGetBridgeData(DATA_TYPE.NATIVE_SERVICES_STATUS);
+};
+
+const fetchCovidStatistics = async () => {
+  return callGetBridgeData(DATA_TYPE.COVID_STATISTICS);
+};
+
+const fetchExposureAggregateStatistics = async () => {
+  return callGetBridgeData(DATA_TYPE.EXPOSURE_AGGREGATE_STATISTICS);
 };
 
 const revokeEnStatus = async () => {
@@ -93,6 +112,10 @@ const getFontScale = async () => {
 
 const getNativeVersion = async () => {
   return callGetBridgeData(DATA_TYPE.NATIVE_VERSION);
+};
+
+const getNotificationStatus = async () => {
+  return callGetBridgeData(DATA_TYPE.GET_NOTIFICATION_STATUS);
 };
 
 const getLanguage = async () => {
@@ -123,31 +146,43 @@ const getExposureNotificationStatistics = async () => {
   return callGetBridgeData(DATA_TYPE.EXPOSURE_STATISTICS);
 };
 
-const setDiagnosisTimestamp = async timestamp => {
-  await callNativeFunction('setBridgeData', DATA_TYPE.FILLED_DIAGNOSIS, {
+const setDiagnosisTimestamp = timestamp => {
+  callSetBridgeData(DATA_TYPE.FILLED_DIAGNOSIS, {
     timestamp
   });
 };
 
-const uploadHistoricalData = async ({ pin, isInteroperabilityEnabled }) => {
-  await callNativeFunction('setBridgeData', DATA_TYPE.HISTORICAL_DATA, {
+const uploadHistoricalData = ({ pin, isInteroperabilityEnabled }) => {
+  callSetBridgeData(DATA_TYPE.HISTORICAL_DATA, {
     pin,
     isInteroperabilityEnabled
   });
 };
 
-const setServicesState = async data => {
-  await callNativeFunction(
-    'setBridgeData',
-    DATA_TYPE.NATIVE_SERVICES_STATE,
-    data
-  );
+const setServicesState = data => {
+  callSetBridgeData(DATA_TYPE.NATIVE_SERVICES_STATE, data);
 };
 
-const turnOff = async () => {
-  await callNativeFunction('setBridgeData', DATA_TYPE.TURN_OFF, {
+const setNotificationStatus = enable => {
+  return callGetBridgeData(DATA_TYPE.SET_NOTIFICATION_STATUS, {
+    isCovidStatsNotificationEnabled: enable
+  });
+};
+
+const rateApp = () => {
+  callSetBridgeData(DATA_TYPE.RATING_APP, {
+    appReview: true
+  });
+};
+
+const turnOff = () => {
+  callSetBridgeData(DATA_TYPE.TURN_OFF, {
     turnOff: true
   });
+};
+
+const confirmActivities = data => {
+  callSetBridgeData(DATA_TYPE.CONFIRM_ACTIVITIES, data);
 };
 
 const uploadLabTestPin = async pin => {
@@ -181,24 +216,19 @@ const handleUploadHistoricalDataResponse = ({ result }) => {
   });
 };
 
-const handleExposureSummary = riskLevel => {
+const handleExposureSummary = data => {
   const store = StoreRegistry.getStore();
-  store.dispatch({
-    riskLevel,
-    type: NATIVE_DATA_FETCH_EXPOSURE_NOTIFICATION_STATISTICS_SUCCESS
-  });
+  const { riskLevel } = data;
+  store.dispatch(enStatusReceived(riskLevel));
 };
 
 const handleNativeState = appState => {
   const store = StoreRegistry.getStore();
   const { dispatch } = store;
-  dispatch({
-    appState,
-    type: NATIVE_DATA_FETCH_NATIVE_STATE
-  });
   if (appState.appState === 1) {
     dispatch(fetchExposureNotificationStatistics());
     dispatch(fetchSubscribedDistricts());
+    dispatch(fetchActivities());
   }
 };
 const handleNativeLanguage = body => {
@@ -213,10 +243,20 @@ const handleNativeLanguage = body => {
 const handleLabTestSubscription = body => {
   const store = StoreRegistry.getStore();
   const { dispatch } = store;
-  dispatch({
-    body,
-    type: FETCH_LAB_TEST_SUBSCRIPTION
-  });
+  dispatch(fetchLabTestSubscriptionSuccess(body));
+};
+
+const handleNewCovidStatistics = body => {
+  const store = StoreRegistry.getStore();
+  const { dispatch } = store;
+  dispatch(fetchCovidStatisticsSuccess(body));
+};
+
+const handleChangeScreen = body => {
+  const store = StoreRegistry.getStore();
+  const { dispatch } = store;
+  const { name, params } = body;
+  dispatch(changeRoute({ route: name, backRoute: Routes.Home, params }));
 };
 
 const handleBackPressed = () => {
@@ -229,15 +269,14 @@ const handleBackPressed = () => {
 
 const callBridgeDataHandler = cond([
   [equals(DATA_TYPE.NATIVE_SERVICES_STATUS), always(handleServicesStatus)],
-  [
-    equals(DATA_TYPE.HISTORICAL_DATA),
-    always(handleUploadHistoricalDataResponse)
-  ],
+  [equals(DATA_TYPE.HISTORICAL_DATA), always(handleUploadHistoricalDataResponse)],
   [equals(DATA_TYPE.EXPOSURE_STATISTICS), always(handleExposureSummary)],
   [equals(DATA_TYPE.NATIVE_STATE), always(handleNativeState)],
   [equals(DATA_TYPE.LANGUAGE), always(handleNativeLanguage)],
   [equals(DATA_TYPE.LAB_TEST_SUBSCRIPTION), always(handleLabTestSubscription)],
-  [equals(DATA_TYPE.BACK_PRESSED), always(handleBackPressed)]
+  [equals(DATA_TYPE.BACK_PRESSED), always(handleBackPressed)],
+  [equals(DATA_TYPE.CHANGE_SCREEN), always(handleChangeScreen)],
+  [equals(DATA_TYPE.COVID_STATISTICS), always(handleNewCovidStatistics)]
 ]);
 
 const onBridgeData = (dataType, dataString) => {
@@ -249,12 +288,12 @@ const onBridgeData = (dataType, dataString) => {
   }
 };
 
-const clearAllData = async data => {
-  await callNativeFunction('setBridgeData', DATA_TYPE.CLEAR_ALL_DATA, data);
+const clearAllData = data => {
+  callSetBridgeData(DATA_TYPE.CLEAR_ALL_DATA, data);
 };
 
-const changeLanguage = async data => {
-  await callNativeFunction('setBridgeData', DATA_TYPE.LANGUAGE, data);
+const changeLanguage = data => {
+  callSetBridgeData(DATA_TYPE.LANGUAGE, data);
 };
 
 window.onBridgeData = onBridgeData;
@@ -263,7 +302,10 @@ window.bridgeDataResponse = receiveNativeResponse;
 export default {
   clearAllData,
   changeLanguage,
+  confirmActivities,
   setDiagnosisTimestamp,
+  fetchCovidStatistics,
+  fetchExposureAggregateStatistics,
   getExposureNotificationStatistics,
   getDistrictsStatus,
   getFontScale,
@@ -272,11 +314,14 @@ export default {
   getLabTestSubscription,
   getLanguage,
   getNativeVersion,
-  getNotification,
+  getNotificationStatus,
   getServicesStatus,
   getSubscribedDistricts,
+  listActivities,
+  rateApp,
   revokeEnStatus,
   setDistrictSubscription,
+  setNotificationStatus,
   setServicesState,
   turnOff,
   uploadHistoricalData,
