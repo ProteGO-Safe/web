@@ -5,9 +5,7 @@ import { Color } from '../../theme/colors';
 export const VersionAppWrapper = styled.div`
   position: absolute;
   right: 0;
-  bottom: 0;
-  bottom: constant(safe-area-inset-bottom);
-  bottom: env(safe-area-inset-bottom);
+  bottom: calc(50px + env(safe-area-inset-bottom));
   display: flex;
   flex-flow: wrap row;
   width: auto;
