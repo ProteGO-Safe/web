@@ -1,42 +1,26 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { NavLink, VersionApp, Layout, T } from '../../components';
-import './Menu.scss';
+import useNavigation from '../../hooks/useNavigation';
+import { T } from '../../components';
+import * as Styled from './Menu.styled';
 
 const Menu = ({ items }) => {
+  const { goTo } = useNavigation();
+
   const renderItems = items.map(item => {
-    const { bottom, bold, color, disable, icon, path, slug, title, invisible } = item;
-
-    const isBottom = bottom ? 'bottom' : '';
-    const isBold = bold ? 'text-bold' : '';
-    const isDisable = disable ? 'disable' : '';
-    const isInvisible = invisible ? 'invisible' : '';
-
-    if (!title) {
-      return <li className="menu__item menu__item--empty" key={slug} />;
-    }
+    const { color, disable, icon, invisible, path, slug, title } = item;
 
     return (
-      !isInvisible && (
-        <li className={`menu__item ${isBottom} ${isDisable}`} key={slug}>
-          <NavLink className={`menu__item__link ${isBold} ${isDisable} ${color}`} onClick={() => null} to={path}>
-            <img className="menu__item__icon" src={icon} alt={<T i18nKey={title} />} />
-            <T i18nKey={title} />
-          </NavLink>
-        </li>
+      !invisible && (
+        <Styled.Item key={slug} disable={disable} color={color} onClick={() => goTo(path)}>
+          {icon}
+          <T i18nKey={title} />
+        </Styled.Item>
       )
     );
   });
 
-  return (
-    <Layout hideBackButton isNavigation noMargin>
-      <div className="menu__overlay" onClick={() => null} />
-      <div className="menu menu__wrapper visible">
-        <ul className="menu__items">{renderItems}</ul>
-        <VersionApp />
-      </div>
-    </Layout>
-  );
+  return <Styled.Wrapper>{renderItems}</Styled.Wrapper>;
 };
 
 Menu.defaultProps = {
@@ -44,7 +28,18 @@ Menu.defaultProps = {
 };
 
 Menu.propTypes = {
-  items: PropTypes.array
+  items: PropTypes.arrayOf(
+    PropTypes.shape({
+      color: PropTypes.string,
+      disable: PropTypes.bool,
+      // eslint-disable-next-line react/forbid-prop-types
+      icon: PropTypes.object.isRequired,
+      invisible: PropTypes.bool,
+      path: PropTypes.string.isRequired,
+      slug: PropTypes.string.isRequired,
+      title: PropTypes.string.isRequired
+    })
+  )
 };
 
 export default Menu;
