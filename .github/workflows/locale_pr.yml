@@ -4,10 +4,10 @@ name: Manaul trigger with locales PR
 on:
   workflow_dispatch:
       inputs:
-      SYNC_TERMS:
-        description: 'Remove unused labels'     
-        required: false
-        default: 'false'
+        SYNC_TERMS:
+          description: 'Remove unused labels'     
+          required: false
+          default: 'false'
 
 jobs:
 
