@@ -14,8 +14,8 @@ do
 done
 
 curl -s --show-error --fail -X POST https://api.poeditor.com/v2/projects/upload \
-     -d api_token="$token" \
-     -d id="$id" \
-     -d updating="terms" \
-     -d file="$output_dir/pl.json" \
-     -d sync_terms=1
+     -F api_token="$token" \
+     -F id="$id" \
+     -F updating="terms" \
+     -F file=@"$output_dir/pl.json" \
+     -F sync_terms=1
