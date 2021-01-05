@@ -41,7 +41,7 @@ jobs:
   POE_SYNC_TERMS:
     runs-on: ubuntu-latest
     needs: [Setup]
-    if: needs.Setup.outputs.ENVIRONMENT == 'DEV' && env.SYNC_TERMS == 'true'
+    if: needs.Setup.outputs.ENVIRONMENT == 'DEV' && needs.Setup.outputs.SYNC_TERMS == 'true'
     env:
       COMMIT_TO: ${{ needs.Setup.outputs.COMMIT_TO }}
       TEMP_BRANCH: ${{ needs.Setup.outputs.TEMP_BRANCH }}
@@ -59,7 +59,7 @@ jobs:
   POE_CHECK_UPDATE:
     runs-on: ubuntu-latest
     needs: [Setup]
-    if: needs.Setup.outputs.ENVIRONMENT == 'DEV' && env.SYNC_TERMS == 'false'
+    if: needs.Setup.outputs.ENVIRONMENT == 'DEV' && needs.Setup.outputs.SYNC_TERMS == 'false'
     outputs: 
       UPGRADE: ${{ env.UPGRADE }}
     env:
@@ -104,7 +104,7 @@ jobs:
   POE_MAKE_PR:
     runs-on: ubuntu-latest
     needs: [Setup,POE_CHECK_UPDATE]
-    if: needs.Setup.outputs.ENVIRONMENT == 'DEV' && env.SYNC_TERMS == 'false' && needs.POE_CHECK_UPDATE.outputs.UPGRADE == 'true'
+    if: needs.Setup.outputs.ENVIRONMENT == 'DEV' && needs.Setup.outputs.SYNC_TERMS == 'false' && needs.POE_CHECK_UPDATE.outputs.UPGRADE == 'true'
     env:
       COMMIT_TO: ${{ needs.Setup.outputs.COMMIT_TO }}
       TEMP_BRANCH: ${{ needs.Setup.outputs.TEMP_BRANCH }}
