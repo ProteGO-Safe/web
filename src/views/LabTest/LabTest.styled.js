@@ -2,11 +2,7 @@ import styled from 'styled-components';
 import { H5, Paragraph, SmallText } from '../../theme/typography';
 import { FontWeight } from '../../theme/fonts';
 import { Color } from '../../theme/colors';
-import {
-  StepLine,
-  StepperInner,
-  StepperWrapper
-} from '../../components/Stepper/Stepper.styled';
+import { StepLine, StepperInner, StepperWrapper } from '../../components/Stepper/Stepper.styled';
 
 export const Wrapper = styled.div`
   position: relative;

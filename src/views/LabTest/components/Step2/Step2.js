@@ -1,13 +1,12 @@
 import React, { useEffect, useRef } from 'react';
-import { withTranslation } from 'react-i18next';
 import { FieldSet } from '../../../../components/FieldSet';
-import { Button, Pin, Warning } from '../../../../components';
+import { Button, Pin, Warning, T } from '../../../../components';
 import * as Styled from '../../LabTest.styled';
 import { Color } from '../../../../theme/colors';
 import { BUTTON_TYPES } from '../../../../components/Button/Button.constants';
 import useLabTestPinBan from '../../../../hooks/useLabTestPinBan';
 
-const Step2 = ({ isInvalidPin, onReset, onSubmit, pin, setPin, t }) => {
+const Step2 = ({ isInvalidPin, onReset, onSubmit, pin, setPin }) => {
   const pinInputRef = useRef();
 
   const { message: banMessage, isBanned } = useLabTestPinBan();
@@ -28,17 +27,23 @@ const Step2 = ({ isInvalidPin, onReset, onSubmit, pin, setPin, t }) => {
   return (
     <>
       <Styled.Content>
-        <Styled.SubTitle>{t('lab_test_text6')}</Styled.SubTitle>
+        <Styled.SubTitle>
+          <T i18nKey="lab_test_text6" />
+        </Styled.SubTitle>
         <Styled.List>
-          <Styled.ListItem>{t('lab_test_text7')}</Styled.ListItem>
-          <Styled.ListItem>{t('lab_test_text8')}</Styled.ListItem>
+          <Styled.ListItem>
+            <T i18nKey="lab_test_text7" />
+          </Styled.ListItem>
+          <Styled.ListItem>
+            <T i18nKey="lab_test_text8" />
+          </Styled.ListItem>
         </Styled.List>
       </Styled.Content>
       <Pin
         initialValue={pinInputRef.current}
         onChange={value => setPin(value)}
         pinInputRef={pinInputRef}
-        title={t('lab_test_text9')}
+        title={<T i18nKey="lab_test_text9" />}
       />
       {isInvalidPin && (
         <>
@@ -47,14 +52,20 @@ const Step2 = ({ isInvalidPin, onReset, onSubmit, pin, setPin, t }) => {
               borderColor={Color.danger}
               colorFont={Color.danger}
               status="error"
-              title={t('lab_test_text12') && banMessage}
+              title={<T i18nKey="lab_test_text12" /> && banMessage}
             />
           </Styled.WarningWrapper>
           <Styled.Content>
-            <Styled.SubTitle>{t('lab_test_text13')}</Styled.SubTitle>
+            <Styled.SubTitle>
+              <T i18nKey="lab_test_text13" />
+            </Styled.SubTitle>
             <Styled.List>
-              <Styled.ListItem>{t('lab_test_text14')}</Styled.ListItem>
-              <Styled.ListItem>{t('lab_test_text15')}</Styled.ListItem>
+              <Styled.ListItem>
+                <T i18nKey="lab_test_text14" />
+              </Styled.ListItem>
+              <Styled.ListItem>
+                <T i18nKey="lab_test_text15" />
+              </Styled.ListItem>
             </Styled.List>
           </Styled.Content>
         </>
@@ -63,18 +74,14 @@ const Step2 = ({ isInvalidPin, onReset, onSubmit, pin, setPin, t }) => {
         <Button
           disabled={isConfirmBtnDisabled || isBanned}
           onClick={handleSubmit}
-          label={t('button_confirm')}
+          label={<T i18nKey="button_confirm" />}
         />
         {isInvalidPin && (
-          <Button
-            onClick={onReset}
-            label={t('lab_test_text17')}
-            type={BUTTON_TYPES.OUTLINE}
-          />
+          <Button onClick={onReset} label={<T i18nKey="lab_test_text17" />} type={BUTTON_TYPES.OUTLINE} />
         )}
       </FieldSet>
     </>
   );
 };
 
-export default withTranslation()(Step2);
+export default Step2;

@@ -1,13 +1,12 @@
 import React from 'react';
-import { withTranslation } from 'react-i18next';
 import { useFormikContext } from 'formik';
 import { FormGroup } from '@material-ui/core';
-import { Button, Radio } from '../../../index';
+import { Button, Radio, T } from '../../../index';
 import { FIELD_MANUAL_COVID } from '../../../../constants';
 import { Actions, Title, Label } from '../../ImprintFiller.styled';
 import * as Styled from './ManualCovidState.styled';
 
-const ManualCovidState = ({ t }) => {
+const ManualCovidState = ({ handelGoToNextStep }) => {
   const { setFieldValue, values } = useFormikContext();
 
   const yesManualCovid = values[FIELD_MANUAL_COVID] === true;
@@ -19,19 +18,29 @@ const ManualCovidState = ({ t }) => {
 
   return (
     <>
-      <Title>{t('manual_covid_state_text1')}</Title>
+      <Title>
+        <T i18nKey="manual_covid_state_text1" />
+      </Title>
       <FormGroup>
         <Radio
           checked={yesManualCovid}
           onChange={() => handleManualCovidRadio(true)}
           name={FIELD_MANUAL_COVID}
-          label={<Label>{t('manual_covid_state_text2')}</Label>}
+          label={
+            <Label>
+              <T i18nKey="manual_covid_state_text2" />
+            </Label>
+          }
         />
         <Radio
           checked={noManualCovid}
           onChange={() => handleManualCovidRadio(false)}
           name={FIELD_MANUAL_COVID}
-          label={<Label>{t('manual_covid_state_text3')}</Label>}
+          label={
+            <Label>
+              <T i18nKey="manual_covid_state_text3" />
+            </Label>
+          }
         />
       </FormGroup>
 
@@ -39,8 +48,12 @@ const ManualCovidState = ({ t }) => {
         <Styled.WarningBox>
           <Styled.Icon />
           <Styled.Description>
-            <Styled.Title>{t('manual_covid_state_text4')}</Styled.Title>
-            <Styled.Paragraph>{t('manual_covid_state_text5')}</Styled.Paragraph>
+            <Styled.Title>
+              <T i18nKey="manual_covid_state_text4" />
+            </Styled.Title>
+            <Styled.Paragraph>
+              <T i18nKey="manual_covid_state_text5" />
+            </Styled.Paragraph>
           </Styled.Description>
         </Styled.WarningBox>
       )}
@@ -48,12 +61,12 @@ const ManualCovidState = ({ t }) => {
       <Actions>
         <Button
           disabled={values[FIELD_MANUAL_COVID] === undefined}
-          onClick={() => setFieldValue('step', 6)}
-          label={t('button_next')}
+          onClick={handelGoToNextStep}
+          label={<T i18nKey="button_next" />}
         />
       </Actions>
     </>
   );
 };
 
-export default withTranslation()(ManualCovidState);
+export default ManualCovidState;

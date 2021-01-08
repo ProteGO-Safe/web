@@ -4,6 +4,7 @@ import FirstDiagnosisAsking from './FirstDiagnosisAsking';
 import { finishFirstDiagnosis } from '../../store/actions/app';
 import useNavigation from '../../hooks/useNavigation';
 import { Routes } from '../../services/navigationService/routes';
+import { Layout } from '../../components';
 
 const FirstDiagnosisAskingContainer = () => {
   const dispatch = useDispatch();
@@ -15,9 +16,9 @@ const FirstDiagnosisAskingContainer = () => {
     dispatch(finishFirstDiagnosis());
   };
   return (
-    <>
+    <Layout hideBackButton isGovFooter hideBell>
       <FirstDiagnosisAsking onYesClick={goToDiagnosis} onNoClick={goToHome} />
-    </>
+    </Layout>
   );
 };
 

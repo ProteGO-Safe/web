@@ -13,12 +13,7 @@ const Checkbox = ({ checked, content, error, label, name, onChange }) => (
       onChange={onChange}
       type="checkbox"
     />
-    <Styled.Label
-      data-cy={`checkbox-label-${name}`}
-      htmlFor={name}
-      error={error}
-      hasContent={!!content}
-    >
+    <Styled.Label data-cy={`checkbox-label-${name}`} htmlFor={name} error={error} hasContent={!!content}>
       <Styled.Text>{label}</Styled.Text>
       {content && content}
     </Styled.Label>

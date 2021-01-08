@@ -1,31 +1,21 @@
 import React from 'react';
-import { withTranslation } from 'react-i18next';
-import { Button, Content, Icon, ArrowRight } from './CallHelpline.styled';
+import * as Styled from './CallHelpline.styled';
 
-import IconContact from '../../assets/img/icons/icon-contact.svg';
+import { ReactComponent as IconContact } from '../../assets/img/icons/icon-contact.svg';
 import { ReactComponent as ArrowIcon } from '../../assets/img/icons/arrow-current-color.svg';
 
-const CallHelpline = ({ phoneNumber, color, hideText, t }) => {
-  const callText = t('call_helpline');
-  const tel = phoneNumber.split(' ').join('');
+const CallHelpline = ({ phoneNumber, children }) => (
+  <Styled.Wrapper href={`tel:${phoneNumber}`}>
+    <Styled.IconWrapper>
+      <IconContact />
+    </Styled.IconWrapper>
 
-  return (
-    <Button className={hideText && 'small'} href={`tel:${tel}`} color={color}>
-      <Icon className={hideText && 'small'} color={color}>
-        <img src={IconContact} alt={callText} />
-      </Icon>
-      {!hideText && (
-        <Content color={color}>
-          {callText}
-          <br />
-          {phoneNumber}
-          <ArrowRight>
-            <ArrowIcon />
-          </ArrowRight>
-        </Content>
-      )}
-    </Button>
-  );
-};
+    <Styled.Content>{children}</Styled.Content>
 
-export default withTranslation()(CallHelpline);
+    <Styled.ArrowRight>
+      <ArrowIcon />
+    </Styled.ArrowRight>
+  </Styled.Wrapper>
+);
+
+export default CallHelpline;

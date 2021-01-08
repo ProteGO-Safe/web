@@ -1,24 +1,25 @@
 import React from 'react';
-import { withTranslation } from 'react-i18next';
-import { Button } from '../../../../components';
+import { Button, T } from '../../../../components';
 import * as Styled from './NoData.styled';
 
-const NoData = ({ handleClick, t }) => (
+const NoData = ({ handleClick }) => (
   <Styled.Container>
     <Styled.NoData>
       <Styled.TitleWrapper>
         <Styled.Icon />
-        <Styled.Title>{t('current_restrictions_nodata_title')}</Styled.Title>
+        <Styled.Title>
+          <T i18nKey="current_restrictions_nodata_title" />
+        </Styled.Title>
       </Styled.TitleWrapper>
       <Styled.Description>
-        {t('current_restrictions_nodata_text')}
+        <T i18nKey="current_restrictions_nodata_text" />
       </Styled.Description>
     </Styled.NoData>
 
     <Button onClick={handleClick}>
-      {t('current_restrictions_nodata_button')}
+      <T i18nKey="current_restrictions_nodata_button" />
     </Button>
   </Styled.Container>
 );
 
-export default withTranslation()(NoData);
+export default NoData;

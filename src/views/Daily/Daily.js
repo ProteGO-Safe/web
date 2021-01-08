@@ -1,29 +1,16 @@
 import React from 'react';
-import { withTranslation } from 'react-i18next';
 import PropTypes from 'prop-types';
 import { daysDetailsPropType } from '../../utils/calendar';
-import { Button, Layout } from '../../components';
-import {
-  DiaryHistory,
-  DiaryLabel,
-  DiaryListItem,
-  Diarylist,
-  NotebookIcon,
-  Title
-} from './Daily.styled';
+import { Button, Layout, T } from '../../components';
+import { DiaryHistory, DiaryLabel, DiaryListItem, Diarylist, NotebookIcon, Title } from './Daily.styled';
 
 import arrowRight from '../../assets/img/icons/angle-right.svg';
 
-const Daily = ({ t, goToHistory, onFill, today, previousDays }) => {
+const Daily = ({ goToHistory, onFill, today, previousDays }) => {
   const renderDairyDays = previousDays.map(_obj => (
-    <DiaryListItem
-      key={_obj.timestamp}
-      onClick={() => goToHistory(_obj.timestamp)}
-    >
+    <DiaryListItem key={_obj.timestamp} onClick={() => goToHistory(_obj.timestamp)}>
       <span>
-        {t('daily_text6')}
-        <br />
-        {_obj.dayWeek}&nbsp;({_obj.day}&nbsp;r.)
+        <T i18nKey="daily_text6" variables={{ dayWeek: _obj.dayWeek, day: _obj.day }} />
       </span>
 
       <img src={arrowRight} alt="arrow" />
@@ -33,17 +20,15 @@ const Daily = ({ t, goToHistory, onFill, today, previousDays }) => {
   return (
     <Layout isNavigation>
       <Title>
-        {t('daily_text1')}
-        <br />
-        {t('daily_text2')}
+        <T i18nKey="daily_text1" />
       </Title>
       <Button onClick={onFill} type="border" icon={<NotebookIcon />}>
-        {t('daily_text3')}
-        {today} <br />
-        {t('daily_text4')}
+        <T i18nKey="daily_text3" variables={{ date: today }} />
       </Button>
       <DiaryHistory>
-        <DiaryLabel>{t('daily_text5')}</DiaryLabel>
+        <DiaryLabel>
+          <T i18nKey="daily_text5" />
+        </DiaryLabel>
         <Diarylist>{renderDairyDays}</Diarylist>
       </DiaryHistory>
     </Layout>
@@ -57,4 +42,4 @@ Daily.propTypes = {
   previousDays: daysDetailsPropType
 };
 
-export default withTranslation()(Daily);
+export default Daily;

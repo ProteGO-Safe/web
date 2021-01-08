@@ -9,7 +9,6 @@ export const WarningInEurope = styled.div`
   flex-flow: wrap column;
   align-items: flex-start;
   width: 100%;
-  margin-top: 24px;
 `;
 
 export const Container = styled.div`

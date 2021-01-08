@@ -32,7 +32,7 @@ export const MenuItem = styled(BottomNavigationActionBase)`
 
     &:before {
       content: '';
-      display: ${({ panicButton }) => (panicButton ? 'block' : 'none')};
+      display: ${({ custom }) => (custom ? 'block' : 'none')};
       position: absolute;
       top: -14px;
       left: 50%;
@@ -49,7 +49,7 @@ export const MenuItem = styled(BottomNavigationActionBase)`
       stroke: currentColor;
     }
 
-    &.panic-button {
+    &.custom-button {
       svg {
         position: relative;
         top: -12px;

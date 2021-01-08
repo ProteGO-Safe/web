@@ -1,20 +1,19 @@
 import React from 'react';
-import { withTranslation } from 'react-i18next';
 import PropTypes from 'prop-types';
 import Slider from 'react-slick';
-import { Button, Layout } from '../../../../components';
+import { Button, T } from '../../../../components';
 import * as Styled from './Explainer.styled';
 
-const Explainer = ({ t, carouselRef, index, items, onClick, settings }) => {
+const Explainer = ({ carouselRef, index, items, onClick, settings }) => {
   return (
-    <Layout id="view-explainer" hideBackButton isGovFooter fullHeight noPadding>
+    <>
       {index < 1 ? (
-        <Styled.Title>{t('explainer_text1')}</Styled.Title>
+        <Styled.Title>
+          <T i18nKey="explainer_text1" />
+        </Styled.Title>
       ) : (
         <Styled.Title>
-          {t('explainer_text2')}
-          <br />
-          {t('explainer_text3')}
+          <T i18nKey="explainer_text2" />
         </Styled.Title>
       )}
       <Styled.SliderWrapper data-cy={`explainer-step-${index + 1}`}>
@@ -24,9 +23,9 @@ const Explainer = ({ t, carouselRef, index, items, onClick, settings }) => {
       </Styled.SliderWrapper>
 
       <Styled.ButtonWrapper data-cy="button-next-wrapper">
-        <Button onClick={onClick} label={t('button_next')} />
+        <Button onClick={onClick} label={<T i18nKey="button_next" />} />
       </Styled.ButtonWrapper>
-    </Layout>
+    </>
   );
 };
 
@@ -39,4 +38,4 @@ Explainer.propTypes = {
   settings: PropTypes.object.isRequired
 };
 
-export default withTranslation()(Explainer);
+export default Explainer;

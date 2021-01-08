@@ -19,9 +19,7 @@ const UserDataChange = ({ t }) => {
   const { goTo } = useNavigation();
   const dispatch = useDispatch();
   const { setLoader } = useLoaderContext();
-  const { bloodGroup, chronicSicks, name, smokeNumber } = useSelector(
-    state => state.user
-  );
+  const { bloodGroup, chronicSicks, name, smokeNumber } = useSelector(state => state.user);
 
   const filledChronicsSicks = (() => {
     if (chronicSicks === undefined) {
@@ -31,13 +29,9 @@ const UserDataChange = ({ t }) => {
     chronicSicks.forEach(_obj => {
       const { name: filledName, description: filledDescription } = _obj;
       filledChronicsSicksToReturn[filledName] = true;
-      const foundedChronicsSick = chronicSickValues.find(
-        value => value.field === filledName
-      );
+      const foundedChronicsSick = chronicSickValues.find(value => value.field === filledName);
       if (foundedChronicsSick && filledDescription) {
-        filledChronicsSicksToReturn[
-          foundedChronicsSick.description
-        ] = filledDescription;
+        filledChronicsSicksToReturn[foundedChronicsSick.description] = filledDescription;
       }
     });
     return filledChronicsSicksToReturn;
@@ -54,9 +48,7 @@ const UserDataChange = ({ t }) => {
     if (chronicSicks === undefined) {
       return undefined;
     }
-    return chronicSicks.length === 0
-      ? constants.VALUE_IS_CHRONIC_SICK_NO
-      : constants.VALUE_IS_CHRONIC_SICK_YES;
+    return chronicSicks.length === 0 ? constants.VALUE_IS_CHRONIC_SICK_NO : constants.VALUE_IS_CHRONIC_SICK_YES;
   })();
 
   const initialValues = {
@@ -66,7 +58,6 @@ const UserDataChange = ({ t }) => {
     [constants.FIELD_SMOKE_NUMBER]: smokeNumber,
     [constants.FIELD_IS_CHRONIC_SICK]: isChronicSick,
     [constants.FIELD_MANUAL_COVID]: true,
-    step: 1,
     ...filledChronicsSicks
   };
 

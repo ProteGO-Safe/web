@@ -1,5 +1,4 @@
 import React from 'react';
-import { withTranslation } from 'react-i18next';
 import { useFormikContext } from 'formik';
 import { FormGroup } from '@material-ui/core';
 
@@ -15,11 +14,11 @@ import {
   VALUE_BLOOD_GROUP_BPLUS,
   VALUE_BLOOD_GROUP_UNDEFINED
 } from '../../../../constants';
-import { Button, Radio } from '../../../index';
+import { Button, Radio, T } from '../../../index';
 
 import { Actions, Label, Title } from '../../ImprintFiller.styled';
 
-const BloodGroup = ({ t }) => {
+const BloodGroup = ({ handelGoToNextStep }) => {
   const { setFieldValue, values } = useFormikContext();
 
   const renderRadios = [
@@ -56,7 +55,7 @@ const BloodGroup = ({ t }) => {
       value: VALUE_BLOOD_GROUP_0MINUS
     },
     {
-      text: t('imprint_text6'),
+      text: <T i18nKey="imprint_text6" />,
       value: VALUE_BLOOD_GROUP_UNDEFINED
     }
   ].map(({ text, value }) => (
@@ -71,17 +70,19 @@ const BloodGroup = ({ t }) => {
 
   return (
     <>
-      <Title>{t('blood_group_text1')}</Title>
+      <Title>
+        <T i18nKey="blood_group_text1" />
+      </Title>
       <FormGroup>{renderRadios}</FormGroup>
       <Actions>
         <Button
           disabled={!values[FIELD_BLOOD_GROUP]}
-          onClick={() => setFieldValue('step', 4)}
-          label={t('button_next')}
+          onClick={handelGoToNextStep}
+          label={<T i18nKey="button_next" />}
         />
       </Actions>
     </>
   );
 };
 
-export default withTranslation()(BloodGroup);
+export default BloodGroup;

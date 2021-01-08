@@ -4,7 +4,7 @@ import { Layout } from '../../components';
 
 const WarningInEuropeContainer = () => {
   return (
-    <Layout isNavigation noMargin>
+    <Layout isNavigation>
       <WarningInEurope />
     </Layout>
   );

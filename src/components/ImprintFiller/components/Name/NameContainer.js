@@ -5,32 +5,22 @@ import { FIELD_NAME, FIELD_TERM1 } from '../../../../constants';
 import './Name.scss';
 import Name from './Name';
 
-const NameContainer = () => {
-  const {
-    initialValues,
-    setErrors,
-    setFieldValue,
-    validateForm
-  } = useFormikContext();
+const NameContainer = ({ handelGoToNextStep }) => {
+  const { initialValues, setFieldValue, validateForm } = useFormikContext();
 
   const fields = [FIELD_NAME, FIELD_TERM1];
-
-  const goNextStep = () => {
-    setFieldValue('step', 2);
-    setErrors({});
-  };
 
   const handleNext = () => {
     validateForm().then(error => {
       if (!fields.some(field => Object.keys(error).includes(field))) {
-        goNextStep();
+        handelGoToNextStep();
       }
     });
   };
 
   const handleSkip = () => {
     setFieldValue(FIELD_NAME, initialValues[FIELD_NAME]);
-    goNextStep();
+    handelGoToNextStep();
   };
 
   return <Name handleNext={handleNext} handleSkip={handleSkip} />;

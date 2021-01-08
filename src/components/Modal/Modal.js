@@ -1,6 +1,7 @@
 import React from 'react';
 import useModalContext from '../../hooks/useModalContext';
 import { ModalClose } from './components';
+import { TYPE } from './Modal.helpers';
 import * as Styled from './Modal.styled';
 
 const Modal = ({ open }) => {
@@ -10,23 +11,22 @@ const Modal = ({ open }) => {
     <Styled.Wrapper open={open}>
       <Styled.Overlay onClick={onClose} open={open} />
       <Styled.Content type={type}>
-        {type === 'inner-content' ? (
-          <Styled.ContentWrapper>{content}</Styled.ContentWrapper>
-        ) : (
+        {type !== TYPE.ONLY_CONTENT && <ModalClose onClick={onClose} />}
+
+        {type !== TYPE.CUSTOM ? (
           <>
-            {(type !== 'dialog' || type === 'normal') && (
-              <ModalClose onClick={onClose} />
-            )}
             {title && <Styled.Title>{title}</Styled.Title>}
 
             <Styled.Description>
               <Styled.Text>{content}</Styled.Text>
             </Styled.Description>
           </>
+        ) : (
+          <Styled.ContentWrapper>{content}</Styled.ContentWrapper>
         )}
 
-        {footer && (type === 'dialog' || type === 'inner-content') && (
-          <Styled.Footer type={type}>{footer}</Styled.Footer>
+        {footer && type !== TYPE.TOOLTIP && (
+          <Styled.Footer>{footer}</Styled.Footer>
         )}
       </Styled.Content>
     </Styled.Wrapper>

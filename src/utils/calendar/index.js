@@ -2,7 +2,7 @@ import moment from 'moment';
 import PropTypes from 'prop-types';
 
 const dayWeekFormat = 'dddd';
-const dateFormat = 'D-MM-YYYY';
+const dateFormat = 'D.MM.YYYY';
 
 const createTimestampForDay = timestamp => {
   const { data } = timestamp[1];

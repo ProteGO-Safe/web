@@ -1,9 +1,8 @@
 import React from 'react';
-import { withTranslation } from 'react-i18next';
 import { FormGroup } from '@material-ui/core';
 import { useFormikContext } from 'formik';
-
-import { Button, Radio, Select } from '../../..';
+import { withTranslation } from 'react-i18next';
+import { Button, Radio, Select, T } from '../../..';
 import {
   FIELD_SMOKE,
   FIELD_SMOKE_NUMBER,
@@ -14,10 +13,10 @@ import {
   VALUE_SMOKE_NUMBER_5
 } from '../../../../constants';
 
-import { Actions, Label, Title } from '../../ImprintFiller.styled';
+import { Actions, Label, Title, Wrapper } from '../../ImprintFiller.styled';
 import * as Styled from './Smoke.styled';
 
-const Smoke = ({ t }) => {
+const Smoke = ({ handelGoToNextStep, t }) => {
   const { setFieldValue, values } = useFormikContext();
 
   const options = [
@@ -44,26 +43,39 @@ const Smoke = ({ t }) => {
 
   return (
     <>
-      <Title>{t('smoke_text1')}</Title>
-      <FormGroup>
-        <Radio
-          checked={isSmoking}
-          label={<Label>{t('smoke_text2')}</Label>}
-          name={FIELD_SMOKE}
-          onChange={() => handleSmokeRadio(t('yes'))}
-        />
-        <Radio
-          checked={noSmoking}
-          label={<Label>{t('smoke_text3')}</Label>}
-          name={FIELD_SMOKE}
-          onChange={() => handleSmokeRadio(t('no'))}
-        />
-      </FormGroup>
+      <Title>
+        <T i18nKey="smoke_text1" />
+      </Title>
+      <Wrapper>
+        <FormGroup>
+          <Radio
+            checked={isSmoking}
+            label={
+              <Label>
+                <T i18nKey="smoke_text2" />
+              </Label>
+            }
+            name={FIELD_SMOKE}
+            onChange={() => handleSmokeRadio(t('yes'))}
+          />
+          <Radio
+            checked={noSmoking}
+            label={
+              <Label>
+                <T i18nKey="smoke_text3" />
+              </Label>
+            }
+            name={FIELD_SMOKE}
+            onChange={() => handleSmokeRadio(t('no'))}
+          />
+        </FormGroup>
+      </Wrapper>
+
       {isSmoking && (
         <Styled.SelectWrapper>
           <Select
             changeHandler={setFieldValue}
-            label={t('smoke_text4')}
+            label={<T i18nKey="smoke_text4" />}
             name={FIELD_SMOKE_NUMBER}
             options={options}
             value={values[FIELD_SMOKE_NUMBER]}
@@ -73,8 +85,8 @@ const Smoke = ({ t }) => {
       <Actions>
         <Button
           disabled={!values[FIELD_SMOKE]}
-          onClick={() => setFieldValue('step', 5)}
-          label={t('button_next')}
+          onClick={handelGoToNextStep}
+          label={<T i18nKey="button_next" />}
         />
       </Actions>
     </>

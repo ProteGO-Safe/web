@@ -44,7 +44,8 @@
     "cypress/no-unnecessary-waiting": "error",
     "cypress/assertion-before-screenshot": "warn",
     "cypress/no-force": "warn",
-    "cypress/no-async-tests": "error"
+    "cypress/no-async-tests": "error",
+    "max-len": ["error", { "code": 120 }]
   },
   "globals": {
     "window": true,

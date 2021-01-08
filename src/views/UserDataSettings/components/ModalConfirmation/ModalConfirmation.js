@@ -1,15 +1,14 @@
 import React from 'react';
-import { withTranslation } from 'react-i18next';
 import { useDispatch } from 'react-redux';
 
-import { Button } from '../../../../components';
+import { Button, T } from '../../../../components';
 import useModalContext from '../../../../hooks/useModalContext';
 import { clearApplicationState } from '../../../../store/actions/app';
 
 import * as Styled from './ModalConfirmation.styled';
 import useLoaderContext from '../../../../hooks/useLoaderContext';
 
-const ModalConfirmation = ({ t }) => {
+const ModalConfirmation = () => {
   const dispatch = useDispatch();
   const { onClose } = useModalContext();
   const { setLoader } = useLoaderContext();
@@ -24,9 +23,9 @@ const ModalConfirmation = ({ t }) => {
 
   return (
     <Styled.ModalConfirmation>
-      <Button onClick={handleClose} label={t('ok')} />
+      <Button onClick={handleClose} label={<T i18nKey="ok" />} />
     </Styled.ModalConfirmation>
   );
 };
 
-export default withTranslation()(ModalConfirmation);
+export default ModalConfirmation;

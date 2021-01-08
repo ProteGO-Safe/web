@@ -1,19 +1,11 @@
 import React, { useCallback } from 'react';
 import PropTypes from 'prop-types';
-import { withTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
-import { Language } from '../../components';
+import { Language, T } from '../../components';
 import * as Styled from './StartScreen.styled';
 import { getFontScale } from '../../store/selectors/app';
 
-const StartScreen = ({
-  customLabels,
-  defaultLang,
-  languages,
-  onSelect,
-  onStartClick = Function.prototype,
-  t
-}) => {
+const StartScreen = ({ customLabels, defaultLang, languages, onSelect, onStartClick = Function.prototype }) => {
   const fontScale = useSelector(getFontScale);
   const handleStartClick = useCallback(onStartClick, []);
   const handleChangeView = fontScale > 1;
@@ -24,26 +16,22 @@ const StartScreen = ({
         <Styled.LogoWrapper>
           <Styled.Logo change={handleChangeView} />
         </Styled.LogoWrapper>
-        <Styled.Subtitle
-          change={handleChangeView}
-          data-cy="start-screen-subtitle"
-        >
-          {t('start_screen_subtitle')}
+        <Styled.Subtitle change={handleChangeView} data-cy="start-screen-subtitle">
+          <T i18nKey="start_screen_subtitle" />
         </Styled.Subtitle>
 
         <Styled.ChooseLang change={handleChangeView}>
-          <Styled.Label>{t('start_screen_label')}</Styled.Label>
-          <Styled.Info>{t('start_screen_info')}</Styled.Info>
-          <Language
-            languages={languages}
-            customLabels={customLabels}
-            defaultLang={defaultLang}
-            onSelect={onSelect}
-          />
+          <Styled.Label>
+            <T i18nKey="start_screen_label" />
+          </Styled.Label>
+          <Styled.Info>
+            <T i18nKey="start_screen_info" />
+          </Styled.Info>
+          <Language languages={languages} customLabels={customLabels} defaultLang={defaultLang} onSelect={onSelect} />
         </Styled.ChooseLang>
 
         <Styled.Button data-cy="start-screen-button" onClick={handleStartClick}>
-          {t('start_screen_button')}
+          <T i18nKey="start_screen_button" />
         </Styled.Button>
       </Styled.Content>
       <Styled.Footer />
@@ -55,4 +43,4 @@ StartScreen.propTypes = {
   onStartClick: PropTypes.func.isRequired
 };
 
-export default withTranslation()(StartScreen);
+export default StartScreen;

@@ -1,6 +1,6 @@
 ---
 
-name: test, build and deploy
+name: Test & Build
 on:
   release:
     types:
@@ -12,32 +12,19 @@ on:
       - '**'
 
 jobs:
-  test:
-    runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node-version: [13.x]
-    steps:
-      - name: Checkout Repo
-        uses: actions/checkout@v2
-      - run: yarn install
-      - run: yarn test
-  build:
-    runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node-version: [13.x]
-    steps:
-      - name: Checkout Repo
-        uses: actions/checkout@v2
 
+  Setup:
+    runs-on: ubuntu-latest
+    outputs:
+      ENVIRONMENT: ${{ env.ENVIRONMENT }}
+    steps:
       - name: Set env to DEV
         if: github.repository_owner != 'ProteGO-Safe'
             && startsWith(github.ref, 'refs/heads/release/')
             && github.event_name == 'push'
         run: |
           echo "ENVIRONMENT=DEV" >> $GITHUB_ENV
-
+          
       - name: Set env to STAGE
         if: startsWith(github.ref, 'refs/tags/')
             && github.repository_owner != 'ProteGO-Safe'
@@ -45,7 +32,7 @@ jobs:
             && github.event_name == 'release'
         run: |
           echo "ENVIRONMENT=STAGE" >> $GITHUB_ENV
-
+          
       - name: Set env to PROD
         if: startsWith(github.ref, 'refs/tags/')
             && github.repository_owner == 'ProteGO-Safe'
@@ -54,12 +41,58 @@ jobs:
         run: |
           echo "ENVIRONMENT=PROD" >> $GITHUB_ENV
 
+  Test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [13.x]
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v2
+      - name: Get yarn cache directory path
+        id: yarn-cache-dir-path
+        run: echo "::set-output name=dir::$(yarn cache dir)"
+      - uses: actions/cache@v2
+        id: yarn-cache # use this to check for `cache-hit` (`steps.yarn-cache.outputs.cache-hit != 'true'`)
+        with:
+          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-yarn-
+      - run: yarn install
+      - run: yarn test
+        
+  Build:
+    runs-on: ubuntu-latest
+    needs: [Setup]
+    strategy:
+      matrix:
+        node-version: [13.x]
+    env:
+      ENVIRONMENT: ${{ needs.Setup.outputs.ENVIRONMENT }}
+
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v2
+
+      - name: Get yarn cache directory path
+        id: yarn-cache-dir-path
+        run: echo "::set-output name=dir::$(yarn cache dir)"
+        
+      - uses: actions/cache@v2
+        id: yarn-cache # use this to check for `cache-hit` (`steps.yarn-cache.outputs.cache-hit != 'true'`)
+        with:
+          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-yarn-
+
       - name: Set Env's
         run: echo "PROJECT_ENVS=${{ secrets[env.EV] }}" >> $GITHUB_ENV
         env:
           EV: "${{ env.ENVIRONMENT }}_ENV"
-        if: env.ENVIRONMENT == 'STAGE' || env.ENVIRONMENT == 'PROD' || env.ENVIRONMENT == 'DEV'
-
+        if: ${{ needs.Setup.outputs.ENVIRONMENT }}
+        
       - name: Upload PL locale to the POEditor
         run: |
           sh  locales/scripts/upload.sh -l pl -i $POEDITOR_ID -t $POEDITOR_TOKEN | grep '"code":"200"' || exit 1
@@ -72,17 +105,17 @@ jobs:
         run: echo "CURL_COMMAND=${{ secrets[env.CURL] }}" >> $GITHUB_ENV
         env:
           CURL: "${{ env.ENVIRONMENT }}_CURL"
-        if: env.ENVIRONMENT == 'STAGE' || env.ENVIRONMENT == 'PROD' || env.ENVIRONMENT == 'DEV'
+        if: ${{ needs.Setup.outputs.ENVIRONMENT }}
 
       - name: Inject ENV's for builds
         run: 'echo "$PROJECT_ENVS" |base64 --decode > .env'
         shell: bash
-        if: env.ENVIRONMENT == 'STAGE' || env.ENVIRONMENT == 'PROD' || env.ENVIRONMENT == 'DEV'
+        if: ${{ needs.Setup.outputs.ENVIRONMENT }}
 
       - name: Exec correct curl
         run: 'base64 -d <<< $CURL_COMMAND | sh || true'
         shell: bash
-        if: env.ENVIRONMENT == 'STAGE' || env.ENVIRONMENT == 'PROD' || env.ENVIRONMENT == 'DEV'
+        if: ${{ needs.Setup.outputs.ENVIRONMENT }}
 
       - name: Show GITHUB_CONTEXT
         run: |
@@ -96,85 +129,8 @@ jobs:
       - run: yarn build
 
       - name: Archive Artifact
-        if: ( env.ENVIRONMENT == 'STAGE' || env.ENVIRONMENT == 'PROD' || env.ENVIRONMENT == 'DEV' )
+        if: ${{ needs.Setup.outputs.ENVIRONMENT }}
         uses: actions/upload-artifact@master
         with:
           name: build
           path: build
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    if: ( startsWith(github.ref, 'refs/tags') && github.event_name == 'release' )  || ( startsWith(github.ref, 'refs/heads/release/') && github.event_name == 'push' && github.repository_owner != 'ProteGO-Safe' )
-    steps:
-      - name: Checkout Repo
-        uses: actions/checkout@v2
-
-      - name: Set env to DEV
-        if: github.repository_owner != 'ProteGO-Safe'
-            && startsWith(github.ref, 'refs/heads/release/')
-            && github.event_name == 'push'
-        run: |
-          echo "name=ENVIRONMENT=DEV" >> $GITHUB_ENV
-
-      - name: Set env to STAGE
-        if: startsWith(github.ref, 'refs/tags/')
-            &&  github.repository_owner != 'ProteGO-Safe'
-            && startsWith( github.event.release.target_commitish, 'release' )
-            && github.event_name == 'release'
-        run: |
-          echo "ENVIRONMENT=STAGE" >> $GITHUB_ENV
-
-      - name: Set env to PROD
-        if: startsWith(github.ref, 'refs/tags/')
-            && github.repository_owner == 'ProteGO-Safe'
-            && ( github.event.release.target_commitish == 'master' || startsWith( github.event.release.target_commitish, 'release/3' ))
-            && github.event_name == 'release'
-        run: |
-          echo "ENVIRONMENT=PROD" >> $GITHUB_ENV
-
-      - name: Download Artifact
-        uses: actions/download-artifact@master
-        with:
-          name: build
-          path: build
-
-      - name: Set Env's from Git refs.
-        run: |
-          echo "SOURCE_NAME=${GITHUB_REF#refs/*/}" >> $GITHUB_ENV
-          echo "SOURCE_BRANCH=${GITHUB_REF#refs/heads/}" >> $GITHUB_ENV
-          echo "SOURCE_TAG=${GITHUB_REF#refs/tags/}" >> $GITHUB_ENV
-          echo "GCP_SA_KEY=${{ secrets[env.SECRET_ENV] }}" >> $GITHUB_ENV
-          echo "SECRET_PROJECT=${{ secrets[env.PROJECT_ENV] }}" >> $GITHUB_ENV
-          echo "SITE_PROJECT=${{ secrets[env.SITE_ENV] }}" >> $GITHUB_ENV
-        env:
-          SECRET_ENV: "${{ env.ENVIRONMENT }}_FIREBASE_HOSTING_SAFE"
-          PROJECT_ENV: "${{ env.ENVIRONMENT }}_FIREBASE_PROJECT"
-          SITE_ENV: "${{ env.ENVIRONMENT }}_FIREBASE_SITE"
-        if: env.ENVIRONMENT == 'STAGE' || env.ENVIRONMENT == 'PROD' || env.ENVIRONMENT == 'DEV'
-
-      - name: Set SITE_PROJECT for V4 PROD
-        run: |
-          echo "SITE_PROJECT=${{ secrets[env.SITE_ENV] }}-v4" >> $GITHUB_ENV
-        env:
-          SITE_ENV: "${{ env.ENVIRONMENT }}_FIREBASE_SITE"
-        if: ( env.ENVIRONMENT == 'PROD' && github.event.release.target_commitish == 'master' )
-
-      - name: Set SITE_PROJECT for V3 in PROD
-        run: |
-          echo "SITE_PROJECT=${{ secrets[env.SITE_ENV] }}" >> $GITHUB_ENV
-        env:
-          SITE_ENV: "${{ env.ENVIRONMENT }}_FIREBASE_SITE"
-        if: ( env.ENVIRONMENT == 'PROD' && startsWith( github.event.release.target_commitish, 'release/3' ) )
-
-      - run: cp firebase.json build/
-        if: ( env.ENVIRONMENT == 'STAGE' || env.ENVIRONMENT == 'PROD' || env.ENVIRONMENT == 'DEV' )
-
-      - name: Sed Firebase.json
-        run: sed -ie 's|site_to_sed|${{ env.SITE_PROJECT }}|g' firebase.json
-        if: ( env.ENVIRONMENT == 'STAGE' || env.ENVIRONMENT == 'PROD' || env.ENVIRONMENT == 'DEV' )
-
-      - name: Deploy to Firebase
-        if: ( env.ENVIRONMENT == 'STAGE' || env.ENVIRONMENT == 'PROD' || env.ENVIRONMENT == 'DEV' )
-        uses: w9jds/firebase-action@master
-        with:
-          args: deploy --only hosting --project $SECRET_PROJECT

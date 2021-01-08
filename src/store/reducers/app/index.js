@@ -20,7 +20,14 @@ const INITIAL_STATE = {
   registrationFinished: false,
   restrictionsModalShowed: false,
   interoperabilityModalShowed: false,
-  warningInEuropeTerm: false
+  warningInEuropeTerm: false,
+  rating: {
+    applicationLiked: undefined,
+    toShowTimestamps: [], // {timestamp: '', showed : ''}
+    showedTimestamps: [],
+    showed: undefined
+  },
+  firstRunTime: undefined
 };
 
 const appReducer = (state = INITIAL_STATE, action) => {
@@ -69,10 +76,7 @@ const appReducer = (state = INITIAL_STATE, action) => {
 
         return {
           ...state,
-          uploadHistoricalDataState: createUploadHistoricalDataState(
-            result,
-            state
-          )
+          uploadHistoricalDataState: createUploadHistoricalDataState(result, state)
         };
       })();
     case types.DATA_FROM_NEWEST_VERSION_MARKED: {
@@ -154,6 +158,53 @@ const appReducer = (state = INITIAL_STATE, action) => {
           warningInEuropeTerm: !prev
         };
       })();
+    }
+    case types.FIRST_RUN: {
+      const {
+        data: { timestamp }
+      } = action;
+      return {
+        ...state,
+        firstRunTime: timestamp
+      };
+    }
+    case types.APPLICATION_RATED: {
+      const { rating = {} } = state;
+      const {
+        data: { liked }
+      } = action;
+      return {
+        ...state,
+        rating: { ...rating, applicationLiked: liked }
+      };
+    }
+    case types.SHOWING_RATE_APPLICATION_SET: {
+      const { rating = {} } = state;
+      const { toShowTimestamps = [] } = rating;
+      const {
+        data: { timestamp }
+      } = action;
+      return {
+        ...state,
+        rating: { ...rating, toShowTimestamps: [...toShowTimestamps, { timestamp, showed: false }] }
+      };
+    }
+    case types.RATE_APPLICATION_SHOWED: {
+      const { rating = {} } = state;
+      const { showedTimestamps = [], toShowTimestamps = [] } = rating;
+      const {
+        data: { timestamp: showedTimestamp }
+      } = action;
+
+      return {
+        ...state,
+        rating: {
+          ...rating,
+          showed: true,
+          showedTimestamps: [...showedTimestamps, showedTimestamp],
+          toShowTimestamps: toShowTimestamps.map(({ timestamp }) => ({ timestamp, showed: true }))
+        }
+      };
     }
     default:
       return state;

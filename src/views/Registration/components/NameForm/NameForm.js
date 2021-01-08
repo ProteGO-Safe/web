@@ -2,17 +2,11 @@ import React from 'react';
 import { withTranslation } from 'react-i18next';
 import { useFormikContext } from 'formik';
 import { FIELD_NAME } from '../../../../constants';
-import { Button, InputWithCounter, Layout } from '../../../../components';
+import { Button, InputWithCounter, T } from '../../../../components';
 import { ButtonWrapper, Label } from '../../Registration.styled';
 
 const NameForm = ({ t }) => {
-  const {
-    errors,
-    values,
-    handleChange,
-    handleSubmit,
-    setFieldValue
-  } = useFormikContext();
+  const { errors, values, handleChange, handleSubmit, setFieldValue } = useFormikContext();
 
   const disabled = (() => {
     return !values[FIELD_NAME];
@@ -24,8 +18,10 @@ const NameForm = ({ t }) => {
   };
 
   return (
-    <Layout id="view-name-form" hideBackButton isGovFooter>
-      <Label>{t('name_form_text1')}</Label>
+    <>
+      <Label>
+        <T i18nKey="name_form_text1" />
+      </Label>
 
       <InputWithCounter
         min={1}
@@ -40,14 +36,10 @@ const NameForm = ({ t }) => {
       />
 
       <ButtonWrapper>
-        <Button
-          disabled={disabled}
-          onClick={handleSubmit}
-          label={t('name_form_text5')}
-        />
-        <Button onClick={onSkip} type="outline" label={t('name_form_text6')} />
+        <Button disabled={disabled} onClick={handleSubmit} label={<T i18nKey="name_form_text5" />} />
+        <Button onClick={onSkip} type="outline" label={<T i18nKey="name_form_text6" />} />
       </ButtonWrapper>
-    </Layout>
+    </>
   );
 };
 

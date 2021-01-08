@@ -1,53 +1,41 @@
 import React from 'react';
-import { withTranslation } from 'react-i18next';
-import { useSelector } from 'react-redux';
-import { Button, FieldSet, Layout } from '../../components';
-import {
-  Title,
-  Paragraph1,
-  Paragraph2,
-  WarningContent,
-  WarningLabel,
-  WarningList,
-  WarningListItem
-} from './Information.styled';
+import { Button, FieldSet, Layout, T } from '../../components';
+import * as Styled from './Information.styled';
 
 import warning from '../../assets/img/icons/warning.svg';
 
-const Information = ({ t, hideInformation }) => {
-  const { triageLevel } = useSelector(state => state.triage);
+const Information = ({ hideInformation }) => (
+  <Layout id="view-information" hideBell>
+    <Styled.Title>
+      <T i18nKey="information_text1" />
+    </Styled.Title>
+    <Styled.Paragraph1>
+      <T i18nKey="information_text2" />
+    </Styled.Paragraph1>
+    <Styled.WarningContent>
+      <Styled.WarningLabel>
+        <img src={warning} alt={<T i18nKey="information_text3" />} />
+        <T i18nKey="information_text3" />
+      </Styled.WarningLabel>
+      <Styled.Paragraph2>
+        <T i18nKey="information_text4" />
+      </Styled.Paragraph2>
+      <Styled.WarningList>
+        <Styled.WarningListItem>
+          <T i18nKey="information_text5" />
+        </Styled.WarningListItem>
+        <Styled.WarningListItem>
+          <T i18nKey="information_text7" />
+        </Styled.WarningListItem>
+        <Styled.WarningListItem>
+          <T i18nKey="information_text10" />
+        </Styled.WarningListItem>
+      </Styled.WarningList>
+    </Styled.WarningContent>
+    <FieldSet>
+      <Button onClick={hideInformation} label={<T i18nKey="button_next" />} />
+    </FieldSet>
+  </Layout>
+);
 
-  return (
-    <Layout id="view-information" hideBackButton={triageLevel === ''}>
-      <Title>{t('information_text1')}</Title>
-      <Paragraph1>{t('information_text2')}</Paragraph1>
-      <WarningContent>
-        <WarningLabel>
-          <img src={warning} alt={t('information_text3')} />
-          {t('information_text3')}
-        </WarningLabel>
-        <Paragraph2>{t('information_text4')}</Paragraph2>
-        <WarningList>
-          <WarningListItem>
-            <strong>{t('information_text5')}</strong>
-            {t('information_text6')}
-          </WarningListItem>
-          <WarningListItem>
-            {t('information_text7')}
-            <strong>{t('information_text8')}</strong>
-            {t('information_text9')}
-          </WarningListItem>
-          <WarningListItem>
-            {t('information_text10')} <strong>{t('information_text11')}</strong>{' '}
-            {t('information_text12')} <strong>{t('information_text13')}</strong>
-          </WarningListItem>
-        </WarningList>
-      </WarningContent>
-      <FieldSet>
-        <Button onClick={hideInformation} label={t('button_next')} />
-      </FieldSet>
-    </Layout>
-  );
-};
-
-export default withTranslation()(Information);
+export default Information;

@@ -14,8 +14,7 @@ const StartScreenContainer = ({ t }) => {
 
   const { language, changeAppLanguage, languages } = useLanguage();
 
-  const handleChangeLang = countryCode =>
-    changeAppLanguage(countryCode.toLowerCase());
+  const handleChangeLang = countryCode => changeAppLanguage(countryCode.toLowerCase());
 
   const languagesLabels = () => {
     return Object.keys(resources[language].languages).reduce((obj, item) => {

@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { Color } from '../../theme/colors';
 
-export const CurrentRestrictions = styled.div`
+export const Wrapper = styled.div`
   width: 100%;
 `;
 
@@ -10,11 +10,6 @@ export const Container = styled.div`
   flex-flow: wrap column;
   justify-content: flex-start;
   width: 100%;
-  max-width: 338px;
-  margin: 24px auto 0;
-  @media (max-width: 320px) {
-    max-width: 290px;
-  }
 `;
 
 export const Title = styled.h2`
@@ -51,14 +46,16 @@ export const Small = styled.span`
 `;
 
 export const UrlLink = styled.a`
-  display: inline-block;
+  display: flex;
+  flex-flow: wrap row;
+  justify-content: center;
   width: 100%;
 `;
 
 export const SearchWrapper = styled.div`
   display: block;
   width: 100%;
-  padding: 18px;
+  padding: 18px 0;
 `;
 
 export const NoResults = styled.div`

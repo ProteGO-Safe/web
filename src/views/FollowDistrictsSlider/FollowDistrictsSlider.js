@@ -1,37 +1,53 @@
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import PropTypes from 'prop-types';
-import { withTranslation } from 'react-i18next';
-import * as Styled from './FollowDistrictsSlider.styled';
 import { StatusItem } from '../../components/StatusItem';
-import { NavLink } from '../../components';
+import { NavLink, T } from '../../components';
 import { Routes } from '../../services/navigationService/routes';
+import * as Styled from './FollowDistrictsSlider.styled';
 
-const FollowDistrictsSlider = ({ items, t }) => {
+import { ReactComponent as IconAdd } from '../../assets/img/icons/plus.svg';
+
+const FollowDistrictsSlider = ({ items }) => {
+  const ref = useRef(null);
   const renderItems = items.map(({ id, name, state }) => (
-    <StatusItem id={id} key={id} name={name} status={state} />
+    <StatusItem isShadow id={id} key={id} name={name} status={state} />
   ));
 
+  const [width, setWidth] = useState(0);
+
+  useEffect(() => {
+    if (ref.current) {
+      const widthButton = ref.current.clientWidth;
+      setWidth(widthButton);
+    }
+  }, []);
+
   return (
-    <Styled.FollowDistrictsSlider padding={items.length === 0}>
+    <Styled.Wrapper>
       {items.length > 0 ? (
         <>
-          <NavLink to={Routes.CurrentRestrictions}>
-            <Styled.Title>
-              {t('follow_district_title')}:{' '}
-              <Styled.Badge>{items.length}</Styled.Badge>
-            </Styled.Title>
-          </NavLink>
+          <Styled.Title padding={width}>
+            <T i18nKey="follow_district_title" />
+
+            <NavLink to={Routes.CurrentRestrictions}>
+              <Styled.Add ref={ref}>
+                <IconAdd />
+                <T i18nKey="follow_district_text_1" />
+              </Styled.Add>
+            </NavLink>
+          </Styled.Title>
+
           <Styled.Slider>{renderItems}</Styled.Slider>
         </>
       ) : (
         <NavLink to={Routes.CurrentRestrictions}>
           <Styled.Button>
-            {t('follow_district_button_name')}
+            <T i18nKey="follow_district_button_name" />
             <Styled.Icon />
           </Styled.Button>
         </NavLink>
       )}
-    </Styled.FollowDistrictsSlider>
+    </Styled.Wrapper>
   );
 };
 
@@ -43,4 +59,4 @@ FollowDistrictsSlider.propTypes = {
   items: PropTypes.array
 };
 
-export default withTranslation()(FollowDistrictsSlider);
+export default FollowDistrictsSlider;

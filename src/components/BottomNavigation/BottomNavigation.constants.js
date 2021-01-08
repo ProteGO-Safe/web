@@ -15,14 +15,14 @@ export const InfoItem = {
   label: 'bottom_navigation_important_info',
   Icon: ImportantInfo,
   path: Routes.ImportantInformation,
-  panicButton: true
+  customButton: true
 };
 
 export const BurgerItem = {
   id: 'nav_menu_button',
   label: 'bottom_navigation_more',
   Icon: BurgerIcon,
-  openMenu: true
+  path: Routes.Menu
 };
 
 export const menuItems = [HomeItem, InfoItem, BurgerItem];

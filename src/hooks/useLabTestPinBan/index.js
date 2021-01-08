@@ -1,11 +1,9 @@
 import { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
-import { useTranslation } from 'react-i18next';
 import { getLabTestPinUnsuccessfulAttempts } from '../../store/selectors/nativeData';
 import banPinTries from '../../services/banPinTries';
 
 const useLabTestPinBan = () => {
-  const { t } = useTranslation();
   const pinUnsuccessfulAttempts = useSelector(
     getLabTestPinUnsuccessfulAttempts
   );
@@ -31,7 +29,7 @@ const useLabTestPinBan = () => {
 
   const message =
     banData &&
-    banPinTries.createErrorMessage(banData, pinUnsuccessfulAttempts.length, t);
+    banPinTries.createErrorMessage(banData, pinUnsuccessfulAttempts.length);
 
   const isBanned = banData && !!banData.lockdownTime;
 

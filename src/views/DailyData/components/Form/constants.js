@@ -12,11 +12,11 @@ export const marks = [
   },
   {
     value: 2,
-    label: 'form_text12'
+    label: ''
   },
   {
     value: 3,
-    label: 'form_text13'
+    label: ''
   },
   {
     value: 4,

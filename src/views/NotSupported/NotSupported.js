@@ -1,28 +1,25 @@
 import React from 'react';
-import { withTranslation } from 'react-i18next';
-import { Button, Layout, Url } from '../../components';
+import { Button, Layout, Url, T } from '../../components';
 import { Logo, Title, Paragraph } from './NotSupported.styled';
 
-const NotSupported = ({ t, url }) => {
+const NotSupported = ({ url }) => {
   return (
-    <Layout hideBackButton isGovFooter>
+    <Layout hideBackButton isGovFooter hideBell>
       <Logo />
-      <Title>{t('not_supported_text1')}</Title>
+      <Title>
+        <T i18nKey="not_supported_text1" />
+      </Title>
       <Paragraph>
-        {t('not_supported_text2')}
+        <T i18nKey="not_supported_text2" />
         <br />
-        {t('not_supported_text3')}
+        <T i18nKey="not_supported_text3" />
       </Paragraph>
 
       <Url value={url} underlineOff>
-        <Button
-          onClick={() => null}
-          text={t('not_supported_text4')}
-          type="primary"
-        />
+        <Button onClick={() => null} text={<T i18nKey="not_supported_text4" />} type="primary" />
       </Url>
     </Layout>
   );
 };
 
-export default withTranslation()(NotSupported);
+export default NotSupported;
