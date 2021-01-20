@@ -53,7 +53,6 @@ jobs:
     outputs:
       UPGRADE: ${{ env.UPGRADE }}
     env:
-      MIN_COVER: 25
       LOCAL_LOCALE: /tmp/local
       REMOTE_LOCALE: /tmp/remote
       LATEST_BRANCH: ${{ needs.Setup.outputs.LATEST_BRANCH }}
@@ -74,7 +73,7 @@ jobs:
           
       - name: Download REMOTE from POEditor
         run: |
-          sh  locales/scripts/download_all.sh -i ${{ secrets.POEDITOR_ID }} -t ${{ secrets.POEDITOR_TOKEN }} -p ${{ env.MIN_COVER }} -o ${{ env.REMOTE_LOCALE }}
+          sh  locales/scripts/download_all.sh -i ${{ secrets.POEDITOR_ID }} -t ${{ secrets.POEDITOR_TOKEN }} -o ${{ env.REMOTE_LOCALE }}
         shell: bash
       
       - name: Diff LOCAL with REMOTE
