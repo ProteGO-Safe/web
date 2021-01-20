@@ -26,5 +26,6 @@ for validate_result in validate_results:
 
 pl_file.close()
 checking_file.close()
-if len(validate_results) != 0:
-    sys.exit(1)
+for validate_result in validate_results:
+    if validate_result.valid is False:
+        sys.exit(1)
