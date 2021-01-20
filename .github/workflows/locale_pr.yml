@@ -79,6 +79,7 @@ jobs:
             echo "Processing $l"
             mv locales/$l.json /tmp/
           	sh  locales/scripts/export.sh  -i ${{ secrets.POEDITOR_ID }} -t ${{ secrets.POEDITOR_TOKEN }} -l $l
+            python3 locales/scripts/format_checker.py $l
             if ! diff -q locales/$l.json /tmp/$l.json 2>/dev/null
             then 
               echo "UPGRADE=true" >> $GITHUB_ENV
