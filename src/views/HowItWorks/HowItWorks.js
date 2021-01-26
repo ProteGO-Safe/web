@@ -1,169 +1,116 @@
 import React from 'react';
-import { withTranslation } from 'react-i18next';
 import { Collapse, Layout, T } from '../../components';
 import * as Styled from './HowItWorks.styled';
 
-const HowItWorks = ({ t }) => {
-  return (
-    <Layout isNavigation>
-      <Styled.MainTitle>
-        <T i18nKey="how_it_works_main_title1" />
-      </Styled.MainTitle>
-      <Styled.Image />
+const HowItWorks = () => (
+  <Layout isNavigation>
+    <Styled.MainTitle>
+      <T i18nKey="how_it_works_1" />
+    </Styled.MainTitle>
+    <Styled.Image />
+    <Styled.Paragraph>
+      <T i18nKey="how_it_works_2" />
+    </Styled.Paragraph>
+    <Styled.Title>
+      <T i18nKey="how_it_works_3" />
+    </Styled.Title>
+    <Styled.Paragraph>
+      <T i18nKey="how_it_works_4" />
+    </Styled.Paragraph>
+    <Styled.Warning>
+      <Styled.Icon />
+      <Styled.Description>
+        <T i18nKey="how_it_works_5" />
+      </Styled.Description>
+    </Styled.Warning>
+    <Styled.Title>
+      <T i18nKey="how_it_works_6" />
+    </Styled.Title>
+    <Styled.ListNumber>
+      <Styled.ListItem>
+        <T i18nKey="how_it_works_7" />
+      </Styled.ListItem>
+      <Styled.ListItem>
+        <T i18nKey="how_it_works_8" />
+      </Styled.ListItem>
+      <Styled.ListItem>
+        <T i18nKey="how_it_works_9" />
+      </Styled.ListItem>
+      <Styled.ListItem>
+        <T i18nKey="how_it_works_10" />
+      </Styled.ListItem>
+    </Styled.ListNumber>
+    <Styled.Title>
+      <T i18nKey="how_it_works_11" />
+    </Styled.Title>
+    <Styled.ListNumber>
+      <Styled.ListItem>
+        <T i18nKey="how_it_works_12" />
+      </Styled.ListItem>
+      <Styled.ListItem>
+        <T i18nKey="how_it_works_13" />
+      </Styled.ListItem>
+      <Styled.ListItem>
+        <T i18nKey="how_it_works_14" />
+      </Styled.ListItem>
+      <Styled.ListItem>
+        <T i18nKey="how_it_works_15" />
+      </Styled.ListItem>
+      <Styled.ListItem>
+        <T i18nKey="how_it_works_16" />
+      </Styled.ListItem>
+    </Styled.ListNumber>
+    <Styled.Paragraph>
+      <T i18nKey="how_it_works_17" />
+    </Styled.Paragraph>
+    <Styled.MainTitle mgrBottom>
+      <T i18nKey="how_it_works_18" />
+    </Styled.MainTitle>
+    <Collapse title={<T i18nKey="how_it_works_19" />}>
       <Styled.Paragraph>
-        <T i18nKey="how_it_works_paragraph1" />
+        <T i18nKey="how_it_works_20" />
       </Styled.Paragraph>
+    </Collapse>
+    <Collapse title={<T i18nKey="how_it_works_21" />}>
       <Styled.Paragraph>
-        <T i18nKey="how_it_works_paragraph2" />
+        <T i18nKey="how_it_works_22" />
       </Styled.Paragraph>
-      <Styled.Title>
-        <T i18nKey="how_it_works_title1" />
-      </Styled.Title>
+    </Collapse>
+    <Collapse title={<T i18nKey="how_it_works_23" />}>
       <Styled.Paragraph>
-        <T i18nKey="how_it_works_paragraph3_1" />
+        <T i18nKey="how_it_works_24" />
       </Styled.Paragraph>
+    </Collapse>
+    <Collapse title={<T i18nKey="how_it_works_25" />}>
       <Styled.Paragraph>
-        <T i18nKey="how_it_works_paragraph4" />
+        <T i18nKey="how_it_works_26" />
       </Styled.Paragraph>
-      <Styled.Warning>
-        <Styled.Icon />
-        <Styled.Description>
-          <T i18nKey="how_it_works_warning_description" />
-        </Styled.Description>
-      </Styled.Warning>
+    </Collapse>
+    <Collapse title={<T i18nKey="how_it_works_27" />}>
       <Styled.Paragraph>
-        <T i18nKey="how_it_works_paragraph5" />
+        <T i18nKey="how_it_works_28" />
       </Styled.Paragraph>
+    </Collapse>
+    <Collapse title={<T i18nKey="how_it_works_29" />}>
       <Styled.Paragraph>
-        <T i18nKey="how_it_works_paragraph6" />
+        <T i18nKey="how_it_works_30" />
       </Styled.Paragraph>
-      <Styled.Paragraph>
-        <T i18nKey="how_it_works_paragraph7" />
-      </Styled.Paragraph>
-      <Styled.Title>
-        <T i18nKey="how_it_works_title2" />
-      </Styled.Title>
-      <Styled.Paragraph>
-        <T i18nKey="how_it_works_paragraph8" />
-      </Styled.Paragraph>
-      <Styled.Paragraph>
-        <T i18nKey="how_it_works_paragraph9" />
-      </Styled.Paragraph>
-      <Styled.Paragraph>
-        <T i18nKey="how_it_works_paragraph10" />
-      </Styled.Paragraph>
-      <Styled.Paragraph>
-        <strong>
-          <T i18nKey="how_it_works_paragraph11_1" />
-        </strong>
-        <Styled.Link href={t('how_it_works_href_1')} target="_blank">
-          <T i18nKey="how_it_works_paragraph11_2" />
-        </Styled.Link>
-      </Styled.Paragraph>
-      <Styled.MainTitle>
-        <T i18nKey="how_it_works_main_title2" />
-      </Styled.MainTitle>
-      <Collapse title={<T i18nKey="how_it_works_collapse_title1" />}>
-        <Styled.Paragraph>
-          <T i18nKey="how_it_works_collapse_children1_1" />
-        </Styled.Paragraph>
-        <Styled.Paragraph>
-          <T i18nKey="how_it_works_collapse_children1_2" />
-        </Styled.Paragraph>
-        <Styled.Paragraph>
-          <T i18nKey="how_it_works_collapse_children1_3" />
-        </Styled.Paragraph>
-        <Styled.Paragraph>
-          <T i18nKey="how_it_works_collapse_children1_4" />
-        </Styled.Paragraph>
-        <Styled.Paragraph>
-          <T i18nKey="how_it_works_collapse_children1_5" />
-        </Styled.Paragraph>
-      </Collapse>
-      <Collapse title={<T i18nKey="how_it_works_collapse_title2" />}>
-        <Styled.Paragraph>
-          <T i18nKey="how_it_works_collapse_children2_1" />
-        </Styled.Paragraph>
-        <Styled.Paragraph>
-          <T i18nKey="how_it_works_collapse_children2_2" />
-        </Styled.Paragraph>
-        <Styled.Paragraph>
-          <T i18nKey="how_it_works_collapse_children2_3" />
-        </Styled.Paragraph>
-        <Styled.Paragraph>
-          <T i18nKey="how_it_works_collapse_children2_4" />
-        </Styled.Paragraph>
-      </Collapse>
-      <Collapse title={<T i18nKey="how_it_works_collapse_title3" />}>
-        <Styled.Paragraph>
-          <T i18nKey="how_it_works_collapse_children3_1" />
-        </Styled.Paragraph>
-        <Styled.Paragraph>
-          <T i18nKey="how_it_works_collapse_children3_2" />
-        </Styled.Paragraph>
-        <Styled.Paragraph>
-          <T i18nKey="how_it_works_collapse_children3_3" />
-        </Styled.Paragraph>
-        <Styled.Paragraph>
-          <T i18nKey="how_it_works_collapse_children3_4" />
-        </Styled.Paragraph>
-        <Styled.Paragraph>
-          <T i18nKey="how_it_works_collapse_children3_5" />
-        </Styled.Paragraph>
-      </Collapse>
-      <Collapse title={<T i18nKey="how_it_works_collapse_title4" />}>
-        <Styled.Paragraph>
-          <T i18nKey="how_it_works_collapse_children4_1" />
-        </Styled.Paragraph>
-        <Styled.Paragraph>
-          <T i18nKey="how_it_works_collapse_children4_2" />
-        </Styled.Paragraph>
-        <Styled.Paragraph>
-          <T i18nKey="how_it_works_collapse_children4_3" />
-        </Styled.Paragraph>
-      </Collapse>
-      <Collapse title={<T i18nKey="how_it_works_collapse_title5" />}>
-        <Styled.Paragraph>
-          <T i18nKey="how_it_works_collapse_children5_1" />
-        </Styled.Paragraph>
-        <Styled.Paragraph>
-          <T i18nKey="how_it_works_collapse_children5_2" />
-        </Styled.Paragraph>
-        <Styled.Paragraph>
-          <T i18nKey="how_it_works_collapse_children5_3" />
-        </Styled.Paragraph>
-        <Styled.Paragraph>
-          <T i18nKey="how_it_works_collapse_children5_4" />
-        </Styled.Paragraph>
-      </Collapse>
-      <Collapse title={<T i18nKey="how_it_works_collapse_title6" />}>
-        <Styled.Paragraph>
-          <T i18nKey="how_it_works_collapse_children6_1" />
-        </Styled.Paragraph>
-        <Styled.Paragraph>
-          <T i18nKey="how_it_works_collapse_children6_2" />
-        </Styled.Paragraph>
-        <Styled.Paragraph>
-          <T i18nKey="how_it_works_collapse_children6_3" />
-        </Styled.Paragraph>
-      </Collapse>
+    </Collapse>
+    <Styled.Title mgrTop semiBold>
+      <T i18nKey="how_it_works_31" />
+    </Styled.Title>
+    <Styled.ListNumber>
+      <Styled.ListItem>
+        <T i18nKey="how_it_works_32" />
+      </Styled.ListItem>
+      <Styled.ListItem>
+        <T i18nKey="how_it_works_33" />
+      </Styled.ListItem>
+      <Styled.ListItem>
+        <T i18nKey="how_it_works_34" />
+      </Styled.ListItem>
+    </Styled.ListNumber>
+  </Layout>
+);
 
-      <Styled.Title mgrTop>
-        <T i18nKey="how_it_works_title3" />
-      </Styled.Title>
-      <Styled.ListNumber>
-        <Styled.ListItem>
-          <T i18nKey="how_it_works_list_number_item1" />
-        </Styled.ListItem>
-        <Styled.ListItem>
-          <T i18nKey="how_it_works_list_number_item2" />
-        </Styled.ListItem>
-        <Styled.ListItem>
-          <T i18nKey="how_it_works_list_number_item3" />
-        </Styled.ListItem>
-      </Styled.ListNumber>
-    </Layout>
-  );
-};
-
-export default withTranslation()(HowItWorks);
+export default HowItWorks;
