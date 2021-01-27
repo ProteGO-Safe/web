@@ -14,8 +14,16 @@ const StatsItem = ({ name, newRecord, totalRecord }) => (
     </Styled.Header>
 
     <Styled.Content>
-      <Styled.Number>+ {numberWithSpaces(newRecord)}</Styled.Number>
-      <Styled.SmallNumber>{numberWithSpaces(totalRecord)}</Styled.SmallNumber>
+      <Styled.Number>
+        <ScaleText minFontSize={10} maxFontSize={20}>
+          {newRecord > 0 && '+'} {numberWithSpaces(newRecord)}
+        </ScaleText>
+      </Styled.Number>
+      <Styled.SmallNumber>
+        <ScaleText minFontSize={10} maxFontSize={12}>
+          {numberWithSpaces(totalRecord)}
+        </ScaleText>
+      </Styled.SmallNumber>
     </Styled.Content>
   </Styled.StatsItem>
 );

@@ -6,8 +6,25 @@ import { RiskMonitoring, StatsItem } from './components';
 import { Wrapper } from '../index';
 import * as Styled from './Statistics.styled';
 
-const Statistics = ({ covidStats = [], dateUpdated, existsStatsItems, districtItems, handleToggleButton, open }) => {
-  const renderStatsItems = useMemo(
+const Statistics = ({
+  covidStats = [],
+  dateUpdated,
+  districtItems,
+  existsCovidStatsItems,
+  existsVaccinationStatsItems,
+  handleToggleButton,
+  open,
+  vaccinationStats = []
+}) => {
+  const renderVaccinationStatsItems = useMemo(
+    () =>
+      vaccinationStats.map(item => (
+        <StatsItem key={item.name} name={item.name} newRecord={item.news} totalRecord={item.totals} />
+      )),
+    [vaccinationStats]
+  );
+
+  const renderCovidStatsItems = useMemo(
     () =>
       covidStats.map(item => (
         <StatsItem key={item.name} name={item.name} newRecord={item.news} totalRecord={item.totals} />
@@ -18,12 +35,23 @@ const Statistics = ({ covidStats = [], dateUpdated, existsStatsItems, districtIt
   return (
     <Wrapper>
       <Styled.Statistics>
-        <Styled.Update>
-          <T i18nKey="statistics_text_1" variables={{ date: dateUpdated }} />
-        </Styled.Update>
-        {existsStatsItems && (
+        {existsVaccinationStatsItems && (
           <Styled.ContentStats>
-            <Styled.Wrapper>{renderStatsItems}</Styled.Wrapper>
+            <Styled.Update>
+              <T i18nKey="statistics_text_15" variables={{ date: dateUpdated }} />
+            </Styled.Update>
+
+            <Styled.Wrapper mrgBottom>{renderVaccinationStatsItems}</Styled.Wrapper>
+          </Styled.ContentStats>
+        )}
+
+        {existsCovidStatsItems && (
+          <Styled.ContentStats>
+            <Styled.Update>
+              <T i18nKey="statistics_text_1" variables={{ date: dateUpdated }} />
+            </Styled.Update>
+
+            <Styled.Wrapper>{renderCovidStatsItems}</Styled.Wrapper>
 
             <Styled.Source>
               <T i18nKey="statistics_text_2" />
@@ -31,7 +59,7 @@ const Statistics = ({ covidStats = [], dateUpdated, existsStatsItems, districtIt
           </Styled.ContentStats>
         )}
 
-        <Styled.Content open={open} existsStatsItems={existsStatsItems}>
+        <Styled.Content open={open} existsStatsItems={existsCovidStatsItems || existsVaccinationStatsItems}>
           <FollowDistrictsSlider items={districtItems} />
 
           <RiskMonitoring />
@@ -48,10 +76,12 @@ const Statistics = ({ covidStats = [], dateUpdated, existsStatsItems, districtIt
 Statistics.propTypes = {
   covidStats: PropTypes.array.isRequired,
   dateUpdated: PropTypes.string.isRequired,
-  existsStatsItems: PropTypes.bool.isRequired,
+  existsCovidStatsItems: PropTypes.bool.isRequired,
+  existsVaccinationStatsItems: PropTypes.bool.isRequired,
   districtItems: PropTypes.array.isRequired,
   handleToggleButton: PropTypes.func.isRequired,
-  open: PropTypes.bool.isRequired
+  open: PropTypes.bool.isRequired,
+  vaccinationStats: PropTypes.array.isRequired
 };
 
 export default Statistics;
