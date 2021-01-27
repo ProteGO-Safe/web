@@ -39,7 +39,7 @@ export const Header = styled.div`
 
 export const Content = styled.div`
   display: flex;
-  flex-flow: wrap column;
+  flex-flow: wrap row;
   justify-content: center;
   align-items: center;
   width: 100%;
@@ -48,16 +48,32 @@ export const Content = styled.div`
 `;
 
 export const Number = styled.span`
-  display: inline;
-  font-size: 20px;
+  display: flex;
+  flex-flow: nowrap row;
+  width: 100%;
   line-height: 24px;
   font-weight: ${FontWeight.Bold};
   color: ${Color.black};
+  > * {
+    display: flex;
+    flex-flow: wrap row;
+    justify-content: center;
+    align-items: center;
+  }
 `;
 
 export const SmallNumber = styled(Number)`
-  font-size: 12px;
+  display: flex;
+  flex-flow: nowrap row;
+  justify-content: center;
+  width: 100%;
   line-height: 24px;
   font-weight: ${FontWeight.Normal};
   color: ${Color.gray_5};
+  > * {
+    display: flex;
+    flex-flow: wrap row;
+    justify-content: center;
+    align-items: center;
+  }
 `;
