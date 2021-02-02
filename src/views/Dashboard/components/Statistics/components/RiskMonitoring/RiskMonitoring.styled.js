@@ -18,11 +18,12 @@ export const Title = styled.div`
 export const Content = styled.div`
   display: flex;
   flex-flow: wrap row;
-  justify-content: space-between;
   width: 100%;
 `;
 
-export const Item = styled.span`
+export const Item = styled.div`
+  display: flex;
+  flex-flow: nowrap row;
   width: 100%;
   font-size: 12px;
   color: ${Color.gray_5};
@@ -31,19 +32,19 @@ export const Item = styled.span`
   }
 `;
 
-export const BoldItem = styled(Item)`
-  font-weight: ${FontWeight.Bold};
-  color: ${Color.black};
-`;
-
 export const Left = styled.div`
   display: flex;
-  flex-flow: wrap column;
+  flex-flow: wrap row;
+  justify-content: flex-start;
   width: calc(100% - 138px);
 `;
 
 export const Right = styled.div`
   display: flex;
-  flex-flow: wrap column;
-  width: 138px;
+  flex-flow: wrap row;
+  justify-content: flex-start;
+  width: 100%;
+  max-width: 138px;
+  font-weight: ${FontWeight.Bold};
+  color: ${Color.black};
 `;

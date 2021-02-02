@@ -20,29 +20,32 @@ const RiskMonitoring = ({ keyAnalysisToday, keyAnalysisWeek, keyAnalysisTotal })
         <Tooltip title={<T i18nKey="upload_data_popup_3" />} content={<T i18nKey="upload_data_popup_4" />} />
       </Styled.Title>
       <Styled.Content>
-        <Styled.Left>
-          <Styled.Item>
+        <Styled.Item>
+          <Styled.Left>
             <T i18nKey="statistics_text_7" />
-          </Styled.Item>
-          <Styled.Item>
-            <T i18nKey="statistics_text_8" />
-          </Styled.Item>
-          <Styled.Item>
-            <T i18nKey="statistics_text_9" />
-          </Styled.Item>
-        </Styled.Left>
-
-        <Styled.Right>
-          <Styled.BoldItem>
+          </Styled.Left>
+          <Styled.Right>
             {prepareKeyTranslation({ number: keyAnalysisToday, labels: keyTranslationLabels })}
-          </Styled.BoldItem>
-          <Styled.BoldItem>
+          </Styled.Right>
+        </Styled.Item>
+
+        <Styled.Item>
+          <Styled.Left>
+            <T i18nKey="statistics_text_8" />
+          </Styled.Left>
+          <Styled.Right>
             {prepareKeyTranslation({ number: keyAnalysisWeek, labels: keyTranslationLabels })}
-          </Styled.BoldItem>
-          <Styled.BoldItem>
+          </Styled.Right>
+        </Styled.Item>
+
+        <Styled.Item>
+          <Styled.Left>
+            <T i18nKey="statistics_text_9" />
+          </Styled.Left>
+          <Styled.Right>
             {prepareKeyTranslation({ number: keyAnalysisTotal, labels: keyTranslationLabels })}
-          </Styled.BoldItem>
-        </Styled.Right>
+          </Styled.Right>
+        </Styled.Item>
       </Styled.Content>
     </Styled.RiskMonitoring>
   );
