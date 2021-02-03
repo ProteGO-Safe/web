@@ -83,3 +83,11 @@ class SplitFormat:
                 if split[1][0] is ' ' or split[1][-1] is ' ':
                     return ValidateResult(False, f"illegal {tag} format in {checking_value}")
         return ValidateResult(True)
+
+
+class TagCounter:
+    @staticmethod
+    def validate(pl_value, checking_value):
+        if pl_value.count('[') != checking_value.count('[') or pl_value.count(']') != checking_value.count(']'):
+            return ValidateResult(False, f"wrong number of tags in {checking_value}")
+        return ValidateResult(True)

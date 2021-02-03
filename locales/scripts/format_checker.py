@@ -1,10 +1,10 @@
 import json
 import sys
 
-from validators import SingleTag, SpaceAtTheBeginOrEnd, ClosingTag, SplitFormat
+from validators import SingleTag, SpaceAtTheBeginOrEnd, ClosingTag, SplitFormat, TagCounter
 
 
-validators = [SpaceAtTheBeginOrEnd(), SingleTag(), ClosingTag(), SplitFormat()]
+validators = [SpaceAtTheBeginOrEnd(), SingleTag(), ClosingTag(), SplitFormat(), TagCounter()]
 
 lang = sys.argv[1]
 pl_file = open(f"locales/pl.json", )
