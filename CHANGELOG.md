@@ -4,6 +4,19 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## 4.9.0
+
+### Added
+- Information on COVID-19 statistics in Poland
+- History of application activity (information about performed checks, indicated threats, system notifications)
+- Possibility of redirecting to a specific application screen by system notification
+- Possibility to evaluate applications in the Google Play / Apple App Store
+- New translations of the application into Russian, German and Turki
+- Information about the checks carried out by the application on meetings with people who reported to have got sick with COVID-19
+
+### Changed
+- New design of the main screen: Shortcuts have been added to make it easier to send the PIN and complete the risk assessment test, the design of the main screen has been refreshed,
+
 ## 4.8.0
 
 ### Added
