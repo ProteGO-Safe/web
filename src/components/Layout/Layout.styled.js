@@ -20,9 +20,12 @@ export const Container = styled.div`
   flex-flow: wrap column;
   justify-content: flex-start;
   width: 100%;
-  min-height: ${({ fullHeight }) => (fullHeight ? 'calc(100vh - 138px)' : 'initial')};
+  min-height: ${({ fullHeight }) => (fullHeight ? 'calc(100vh - 52px)' : 'initial')};
   max-width: 504px;
   margin: ${({ noMargin }) => (noMargin ? '0 auto' : '24px auto 0')};
-  padding: ${({ noPadding }) => (noPadding ? '0 0 66px 0' : '0 17px 92px 17px')};
+  padding: ${({ noPadding }) =>
+    noPadding
+      ? '0 0 calc(66px + env(safe-area-inset-bottom)) 0'
+      : '0 17px calc(92px + env(safe-area-inset-bottom)) 17px'};
   animation: ${blink} 0.2s ease-in-out;
 `;

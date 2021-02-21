@@ -10,9 +10,8 @@ export const Update = styled.div`
   display: flex;
   width: 100%;
   margin-bottom: 10px;
-  padding: 0 17px;
   font-size: 16px;
-  line-height: 20px;
+  line-height: 22px;
   font-weight: ${FontWeight.Normal};
   color: ${Color.black};
 `;
@@ -54,7 +53,7 @@ export const ContentStats = styled.div`
 `;
 
 export const Wrapper = styled(ContentStats)`
-  margin-bottom: 0;
+  margin-bottom: ${({ mrgBottom }) => (mrgBottom ? '6px' : '0')};
   padding: 0;
 `;
 

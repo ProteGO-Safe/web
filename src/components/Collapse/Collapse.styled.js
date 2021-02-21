@@ -20,7 +20,7 @@ export const Header = styled.div`
   padding: 14px 10px 14px 0;
   font-size: 14px;
   font-weight: bold;
-  line-height: 1.3;
+  line-height: 20px;
   color: ${Color.primary};
   border-top: solid 1px ${Color.gray_7};
   border-bottom: solid 1px ${({ open }) => (open ? 'transparent' : Color.gray_7)};

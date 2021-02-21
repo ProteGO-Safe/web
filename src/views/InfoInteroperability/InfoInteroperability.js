@@ -34,7 +34,8 @@ const InfoInteroperability = () => {
     }
     openModal({
       value: <ContentModal title="info_interoperability_text1" content="info_interoperability_text2" />,
-      modalFooter: <FooterModal handleClickTrue={handleModalClickTrue} handleClickFalse={handleModalClickFalse} />
+      modalFooter: <FooterModal handleClickTrue={handleModalClickTrue} handleClickFalse={handleModalClickFalse} />,
+      closeCallback: handleModalClickFalse
     });
     // eslint-disable-next-line
   }, [interoperabilityModalShowed]);

@@ -10,9 +10,21 @@ import { fetchSubscribedDistricts } from '../../../../store/actions/restrictions
 
 const StatisticsContainer = () => {
   const dispatch = useDispatch();
-  const { updated, newCases, totalCases, newDeaths, totalDeaths, newRecovered, totalRecovered } = useSelector(
-    getCovidStats
-  );
+  const {
+    newCases,
+    newDeaths,
+    newRecovered,
+    newVaccinations,
+    newVaccinationsDose1,
+    newVaccinationsDose2,
+    totalCases,
+    totalDeaths,
+    totalRecovered,
+    totalVaccinations,
+    totalVaccinationsDose1,
+    totalVaccinationsDose2,
+    updated
+  } = useSelector(getCovidStats);
   const subscribedDistricts = useSelector(getSubscribedDistricts);
   const [open, setOpen] = useState(false);
 
@@ -23,6 +35,27 @@ const StatisticsContainer = () => {
   }, [dispatch]);
 
   const handleOpen = () => setOpen(prev => !prev);
+
+  const vaccinationStats = [
+    {
+      name: 'statistics_text_16',
+      news: newVaccinations,
+      totals: totalVaccinations
+    },
+    {
+      name: 'statistics_text_17',
+      news: newVaccinationsDose1,
+      totals: totalVaccinationsDose1
+    },
+    {
+      name: 'statistics_text_18',
+      news: newVaccinationsDose2,
+      totals: totalVaccinationsDose2
+    }
+  ].filter(({ news, totals }) => {
+    // both props have to be a number
+    return not(or(not(Number.isInteger(news)), not(Number.isInteger(totals))));
+  });
 
   const covidStats = [
     {
@@ -45,16 +78,20 @@ const StatisticsContainer = () => {
     return not(or(not(Number.isInteger(news)), not(Number.isInteger(totals))));
   });
 
-  const existsStatsItems = useMemo(() => covidStats.length > 0, [covidStats]);
+  const existsCovidStatsItems = useMemo(() => covidStats.length > 0, [covidStats]);
 
-  return existsStatsItems ? (
+  const existsVaccinationStatsItems = useMemo(() => vaccinationStats.length > 0, [vaccinationStats]);
+
+  return existsCovidStatsItems || existsVaccinationStatsItems ? (
     <Statistics
-      districtItems={subscribedDistricts}
-      existsStatsItems={existsStatsItems}
-      open={open}
-      dateUpdated={getFormattedDay(updated)}
-      handleToggleButton={handleOpen}
       covidStats={covidStats}
+      dateUpdated={getFormattedDay(updated)}
+      districtItems={subscribedDistricts}
+      existsCovidStatsItems={existsCovidStatsItems}
+      existsVaccinationStatsItems={existsVaccinationStatsItems}
+      handleToggleButton={handleOpen}
+      open={open}
+      vaccinationStats={vaccinationStats}
     />
   ) : null;
 };

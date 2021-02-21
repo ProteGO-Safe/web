@@ -7,6 +7,7 @@ export const ListStats = styled.div`
   flex-flow: wrap column;
   width: 100%;
   margin-bottom: 20px;
+  margin-top: 20px;
 `;
 
 export const ListStatsItem = styled.div`
