@@ -80,12 +80,20 @@ export const Title = styled.div`
 export const Keys = styled.div`
   width: 100%;
   font-size: 12px;
-  line-height: 14px;
+  line-height: 16px;
   color: ${Color.black};
 `;
 
+export const SmallKeysWrapper = styled.div`
+  display: flex;
+  flex-flow: wrap column;
+  width: 100%;
+  margin-top: 16px;
+  margin-bottom: 4px;
+`;
+
 export const SmallKeys = styled(Keys)`
-  font-size: 12px;
+  font-size: 10px;
 `;
 
 export const KeysButton = styled(Keys)`

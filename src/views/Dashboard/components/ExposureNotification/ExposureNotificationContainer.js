@@ -6,11 +6,10 @@ import ExposureNotification from './ExposureNotification';
 import useSupportExposureNotificationTracing from '../../../../hooks/useSupportExposureNotificationTracing';
 import { fetchExposureAggregateStatistics, fetchServicesStatus } from '../../../../store/actions/nativeData';
 import { getExposureAggregateStatistics } from '../../../../store/selectors/nativeData';
-import { getFormattedDate } from '../../../../utils/date';
 
 const ExposureNotificationContainer = () => {
   const dispatch = useDispatch();
-  const { todayKeysCount, lastRiskCheckTimestamp } = useSelector(getExposureAggregateStatistics);
+  const { todayKeysCount, last7daysKeysCount, totalKeysCount } = useSelector(getExposureAggregateStatistics);
   const { areEnableAllServices, handleEnableServices } = useSupportExposureNotificationTracing();
   const [open, setOpen] = useState(false);
 
@@ -31,9 +30,10 @@ const ExposureNotificationContainer = () => {
       handleEnable={handleEnableServices}
       pathToEnable={Routes.HowItWorks}
       handleToggleButton={handleOpen}
-      keys={todayKeysCount}
       open={open}
-      updatedKeysDate={getFormattedDate(lastRiskCheckTimestamp)}
+      todayKeys={todayKeysCount}
+      lastWeekKeys={last7daysKeysCount}
+      allKeys={totalKeysCount}
     />
   );
 };

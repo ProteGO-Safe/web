@@ -8,20 +8,37 @@ import { prepareKeyTranslation } from '../../../../utils/number';
 
 const ExposureNotification = ({
   active,
+  allKeys,
   color,
   handleEnable,
   handleToggleButton,
-  keys,
+  lastWeekKeys,
   open,
   pathToEnable,
-  updatedKeysDate
+  todayKeys
 }) => {
-  const keyTranslationLabels = {
+  const todayKeysTranslationLabels = {
     number1: 'exposure_notification_text_13',
     number2to4: 'exposure_notification_text_14',
     number5to9999: 'exposure_notification_text_4',
     number10000to999999: 'exposure_notification_text_15',
     number1000000toInf: 'exposure_notification_text_16'
+  };
+
+  const lastWeekKeysTranslationLabels = {
+    number1: 'exposure_notification_text_17',
+    number2to4: 'exposure_notification_text_18',
+    number5to9999: 'exposure_notification_text_19',
+    number10000to999999: 'exposure_notification_text_20',
+    number1000000toInf: 'exposure_notification_text_21'
+  };
+
+  const allKeysTranslationLabels = {
+    number1: 'exposure_notification_text_22',
+    number2to4: 'exposure_notification_text_23',
+    number5to9999: 'exposure_notification_text_24',
+    number10000to999999: 'exposure_notification_text_25',
+    number1000000toInf: 'exposure_notification_text_26'
   };
 
   return (
@@ -38,12 +55,18 @@ const ExposureNotification = ({
         {active ? (
           <>
             <Styled.Description open={open}>
-              <Styled.Keys>{prepareKeyTranslation({ number: keys, labels: keyTranslationLabels })}</Styled.Keys>
-              {updatedKeysDate && (
+              <Styled.Keys>
+                {prepareKeyTranslation({ number: todayKeys, labels: todayKeysTranslationLabels })}
+              </Styled.Keys>
+
+              <Styled.SmallKeysWrapper>
                 <Styled.SmallKeys>
-                  <T i18nKey="exposure_notification_text_10" variables={{ date: updatedKeysDate }} />
+                  {prepareKeyTranslation({ number: lastWeekKeys, labels: lastWeekKeysTranslationLabels })}
                 </Styled.SmallKeys>
-              )}
+                <Styled.SmallKeys>
+                  {prepareKeyTranslation({ number: allKeys, labels: allKeysTranslationLabels })}
+                </Styled.SmallKeys>
+              </Styled.SmallKeysWrapper>
 
               <NavLink to={pathToEnable}>
                 <Styled.KeysButton>
@@ -81,12 +104,14 @@ ExposureNotification.defaultProps = {
 
 ExposureNotification.propTypes = {
   active: PropTypes.bool,
+  allKeys: PropTypes.number.isRequired,
   color: PropTypes.string.isRequired,
   handleEnable: PropTypes.func.isRequired,
   handleToggleButton: PropTypes.func.isRequired,
-  keys: PropTypes.number.isRequired,
+  lastWeekKeys: PropTypes.number.isRequired,
   open: PropTypes.bool.isRequired,
-  pathToEnable: PropTypes.string.isRequired
+  pathToEnable: PropTypes.string.isRequired,
+  todayKeys: PropTypes.number.isRequired
 };
 
 export default ExposureNotification;
