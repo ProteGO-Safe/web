@@ -1,48 +1,37 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React from 'react';
 import { withTranslation } from 'react-i18next';
 import PropTypes from 'prop-types';
 import { TYPES } from './ImportantInfoItem.constants';
 import { NavLink, RippleEffect, T } from '../../../../components';
 import * as Styled from './ImportantInfoItem.styled';
 
-const ImportantInfoItem = ({ danger, description, icon, newFeature, path, size, title, type, t }) => {
-  const ref = useRef(null);
-  const [height, setHeight] = useState(0);
-  const windowWidth = window.innerWidth;
-
-  useEffect(() => {
-    if (ref.current) {
-      const wrapperHeight = ref.current.offsetHeight;
-      setHeight(wrapperHeight);
-    }
-  }, [ref]);
-
+const ImportantInfoItem = ({ danger, description, icon, newFeature, path, isSmallDevice, title, type, t }) => {
   const Content = () => (
-    <Styled.ImportantInfoItem ref={ref} size={size}>
+    <Styled.Wrapper>
       {newFeature && (
-        <Styled.Badge size={size}>
-          <T i18nKey="new" />
-        </Styled.Badge>
+        <Styled.TopLabel>
+          <T i18nKey="label_new" />
+        </Styled.TopLabel>
       )}
-      <Styled.Icon size={size}>{icon}</Styled.Icon>
-      <Styled.Content size={size}>
-        <Styled.Title size={size} danger={danger}>
+
+      <Styled.ItemContent size={isSmallDevice}>
+        <Styled.Icon size={isSmallDevice}>{icon}</Styled.Icon>
+
+        <Styled.Title size={isSmallDevice} danger={danger}>
           {title}
         </Styled.Title>
-        {windowWidth < 375 ? (
-          <Styled.Description size={size}>{description}</Styled.Description>
-        ) : (
-          height > 186 && <Styled.Description size={size}>{description}</Styled.Description>
-        )}
-      </Styled.Content>
-      {type === TYPES.LINK && (
-        <Styled.LinkGov size={size}>
-          <T i18nKey="important_info_button_info" />
-        </Styled.LinkGov>
-      )}
 
-      <RippleEffect />
-    </Styled.ImportantInfoItem>
+        <Styled.Description size={isSmallDevice}>{description}</Styled.Description>
+
+        {type === TYPES.LINK && (
+          <Styled.LinkGov size={isSmallDevice}>
+            <T i18nKey="important_info_button_info" />
+          </Styled.LinkGov>
+        )}
+
+        <RippleEffect />
+      </Styled.ItemContent>
+    </Styled.Wrapper>
   );
 
   switch (type) {
