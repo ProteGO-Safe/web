@@ -44,6 +44,7 @@ export { ResultView } from './ResultView';
 export { RippleEffect } from './RippleEffect';
 export { Select } from './Select';
 export { Settings } from './Settings';
+export { SliderBox } from './SliderBox';
 export { Stepper } from './Stepper';
 export { SubscribeItem } from './SubscribeItem';
 export { Switcher } from './Switcher';

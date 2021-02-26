@@ -9,6 +9,7 @@ const Wrapper = styled.div`
   width: 100%;
   margin: 21px auto 0;
   padding: ${({ padding }) => (padding ? '20px 17px 0' : '20px 0 0')};
+  ${({ pdgTop }) => pdgTop && `padding-top:${pdgTop}px !important;`}
 
   &:before {
     content: '';
