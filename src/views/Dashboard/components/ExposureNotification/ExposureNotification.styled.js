@@ -98,8 +98,8 @@ export const SmallKeys = styled(Keys)`
 
 export const KeysButton = styled(Keys)`
   font-size: 12px;
-  padding-top: 14px;
-  padding-bottom: 10px;
+  margin-top: 14px;
+  margin-bottom: 10px;
   color: ${Color.primary};
 `;
 

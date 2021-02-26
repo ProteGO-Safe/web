@@ -55,24 +55,28 @@ const ExposureNotification = ({
         {active ? (
           <>
             <Styled.Description open={open}>
-              <Styled.Keys>
-                {prepareKeyTranslation({ number: todayKeys, labels: todayKeysTranslationLabels })}
-              </Styled.Keys>
+              {(todayKeys || lastWeekKeys || allKeys) && (
+                <>
+                  <Styled.Keys>
+                    {prepareKeyTranslation({ number: todayKeys, labels: todayKeysTranslationLabels })}
+                  </Styled.Keys>
 
-              <Styled.SmallKeysWrapper>
-                <Styled.SmallKeys>
-                  {prepareKeyTranslation({ number: lastWeekKeys, labels: lastWeekKeysTranslationLabels })}
-                </Styled.SmallKeys>
-                <Styled.SmallKeys>
-                  {prepareKeyTranslation({ number: allKeys, labels: allKeysTranslationLabels })}
-                </Styled.SmallKeys>
-              </Styled.SmallKeysWrapper>
+                  <Styled.SmallKeysWrapper>
+                    <Styled.SmallKeys>
+                      {prepareKeyTranslation({ number: lastWeekKeys, labels: lastWeekKeysTranslationLabels })}
+                    </Styled.SmallKeys>
+                    <Styled.SmallKeys>
+                      {prepareKeyTranslation({ number: allKeys, labels: allKeysTranslationLabels })}
+                    </Styled.SmallKeys>
+                  </Styled.SmallKeysWrapper>
+                </>
+              )}
 
-              <NavLink to={pathToEnable}>
-                <Styled.KeysButton>
+              <Styled.KeysButton>
+                <NavLink to={pathToEnable}>
                   <T i18nKey="exposure_notification_text_5" />
-                </Styled.KeysButton>
-              </NavLink>
+                </NavLink>
+              </Styled.KeysButton>
             </Styled.Description>
 
             <Styled.ToggleButtonWrapper>
