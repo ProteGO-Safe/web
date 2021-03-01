@@ -13,14 +13,14 @@ export const fetchActivities = () => {
     nativeBridge.listActivities().then(body => {
       if (body) {
         const { notifications = [], riskChecks = [], exposures = [] } = body;
-        const data = { notifications, riskChecks, exposures };
-        dispatch(listActivitiesSuccess(data));
-        const confirmedIds = {
+        const fetchedIds = {
           notifications: notifications.map(mapToId),
           riskChecks: riskChecks.map(mapToId),
           exposures: exposures.map(mapToId)
         };
-        nativeBridge.confirmActivities(confirmedIds);
+        const data = { notifications, riskChecks, exposures, fetchedIds };
+        dispatch(listActivitiesSuccess(data));
+        nativeBridge.confirmActivities(fetchedIds);
       }
     });
   };

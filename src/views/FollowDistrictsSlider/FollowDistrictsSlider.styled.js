@@ -23,9 +23,16 @@ export const Title = styled.span`
   width: 100%;
   font-size: 16px;
   line-height: 22px;
-  padding-right: ${({ padding }) => padding}px;
   font-weight: ${FontWeight.Normal};
   color: ${Color.black};
+`;
+
+export const ButtonWrapper = styled.div`
+  position: relative;
+  display: flex;
+  width: 100%;
+  height: 20px;
+  margin-top: 10px;
 `;
 
 export const Add = styled.div`
@@ -55,7 +62,7 @@ export const Slider = styled.div`
   display: flex;
   flex-flow: nowrap row;
   width: calc(100% + 34px);
-  margin: 20px -17px 0 -17px;
+  margin: 14px -17px 0 -17px;
   overflow-x: auto;
   padding: 4px 6px 0 17px;
   -webkit-overflow-scrolling: touch;

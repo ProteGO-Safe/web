@@ -1,4 +1,5 @@
 import { v4 } from 'uuid';
+import { not } from 'ramda';
 import orderby from 'lodash.orderby';
 import { getFormattedDateWithoutTime as getDate } from '../../../utils/date';
 import { ACTIVITY_TYPE as TYPE } from '../../../constants';
@@ -116,14 +117,28 @@ export const prepareActivities = (
   currentActivities = [],
   nativeNotifications = [],
   nativeRiskChecks = [],
-  nativeExposures = []
+  nativeExposures = [],
+  fetchedIds = {}
 ) => {
-  const { activities, restNativeRiskChecks } = prepareActivitiesWithRiskChecks(nativeRiskChecks, currentActivities);
+  const {
+    notifications: notificationsIds = [],
+    riskChecks: riskChecksIds = [],
+    exposures: exposuresIds = []
+  } = fetchedIds;
+  const { activities, restNativeRiskChecks } = prepareActivitiesWithRiskChecks(
+    nativeRiskChecks.filter(({ id }) => not(riskChecksIds.includes(id))),
+    currentActivities
+  );
 
   return sortByTimestamp([
     ...activities,
-    ...nativeNotifications.map(createActivityFromNativeNotification),
-    ...nativeExposures.filter(({ riskLevel }) => riskLevel > 0).map(createActivityFromNativeExposure),
+    ...nativeNotifications
+      .filter(({ id }) => not(notificationsIds.includes(id)))
+      .map(createActivityFromNativeNotification),
+    ...nativeExposures
+      .filter(({ riskLevel }) => riskLevel > 0)
+      .filter(({ id }) => not(exposuresIds.includes(id)))
+      .map(createActivityFromNativeExposure),
     ...createRiskChecks(restNativeRiskChecks)
   ]);
 };

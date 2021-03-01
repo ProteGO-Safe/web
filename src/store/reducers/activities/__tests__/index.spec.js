@@ -2,22 +2,22 @@ import { v4 } from 'uuid';
 import { prepareActivities } from '../activities.helpers';
 import { ACTIVITY_TYPE as TYPE } from '../../../../constants';
 
-const createNativeNotification = (title, content, timestamp) => {
+const createNativeNotification = (title, content, timestamp, id = v4()) => {
   return {
-    id: v4(),
+    id,
     title,
     content,
     timestamp
   };
 };
-const createNativeExposures = (riskLevel, timestamp) => {
+const createNativeExposures = (riskLevel, timestamp, id = v4()) => {
   return {
-    id: v4(),
+    id,
     riskLevel,
     timestamp
   };
 };
-const createNativeRiskCheck = (keys, exposures, timestamp) => ({ id: v4(), keys, exposures, timestamp });
+const createNativeRiskCheck = (keys, exposures, timestamp, id = v4()) => ({ id, keys, exposures, timestamp });
 
 export const createActivity = ({
   title = '',
@@ -503,5 +503,28 @@ describe('prepare notifications activities', () => {
         type: TYPE.RISK_CHECK
       }
     ]);
+  });
+  it('should skip activities when some exist', () => {
+    const notification1Id = v4();
+    const notification2Id = v4();
+    const riskCheckId = v4();
+    const exposureId = v4();
+    const fetchedIds = {
+      notifications: [notification1Id, notification2Id],
+      riskChecks: [riskCheckId],
+      exposures: [exposureId]
+    };
+    const notifications = [
+      createNativeNotification('title1', 'content1', 6789, notification1Id),
+      createNativeNotification('title2', 'content2', 333, notification2Id)
+    ];
+    const activities = [];
+    const riskChecks = [
+      createNativeRiskCheck(1222, 1, 1607063627, riskCheckId) // 4 December 2020
+    ];
+    const exposures = [createNativeExposures(1, 5000, exposureId)];
+
+    const preparedActivities = prepareActivities(activities, notifications, riskChecks, exposures, fetchedIds);
+    expect(preparedActivities).toEqual([]);
   });
 });

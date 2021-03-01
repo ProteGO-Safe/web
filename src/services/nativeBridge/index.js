@@ -10,7 +10,9 @@ import {
   enStatusReceived,
   fetchExposureNotificationStatistics,
   fetchLabTestSubscriptionSuccess,
-  fetchCovidStatisticsSuccess
+  fetchCovidStatisticsSuccess,
+  fetchCovidStatistics as fetchCovidStatisticsAction,
+  fetchExposureAggregateStatistics as fetchExposureAggregateStatisticsAction
 } from '../../store/actions/nativeData';
 import { fetchSubscribedDistricts } from '../../store/actions/restrictions';
 import { BACK_PRESSED } from '../../store/types/navigation';
@@ -229,6 +231,8 @@ const handleNativeState = appState => {
     dispatch(fetchExposureNotificationStatistics());
     dispatch(fetchSubscribedDistricts());
     dispatch(fetchActivities());
+    dispatch(fetchCovidStatisticsAction());
+    dispatch(fetchExposureAggregateStatisticsAction());
   }
 };
 const handleNativeLanguage = body => {

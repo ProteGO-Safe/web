@@ -2,7 +2,7 @@ import React from 'react';
 import { T } from '../../components';
 
 export const numberWithSpaces = number => {
-  return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
+  return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
 };
 
 export const prepareKeyTranslation = ({

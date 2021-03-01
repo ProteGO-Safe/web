@@ -12,11 +12,12 @@ const LabTestActionButtonContainer = () => {
   const readyForLabTest = useReadyForLabTest();
   const { isSubscriptionInProgress, isSubscriptionVerified } = useLabTest();
 
-  const prepareData = (titleLabel, descriptionLabel, onClick) => {
+  const prepareData = (titleLabel, descriptionLabel, onClick, hideArrow = false) => {
     return {
       title: <T i18nKey={titleLabel} />,
       description: <T i18nKey={descriptionLabel} />,
-      onClick
+      onClick,
+      hideArrow
     };
   };
 
@@ -28,7 +29,7 @@ const LabTestActionButtonContainer = () => {
       return prepareData('result_analysis_text_17_1', 'result_analysis_text_18_1', () => goTo(Routes.Diagnosis));
     }
     if (isSubscriptionVerified) {
-      return prepareData('result_analysis_text_17_2', 'result_analysis_text_18_2');
+      return prepareData('result_analysis_text_17_2', 'result_analysis_text_18_2', () => null, true);
     }
     return undefined;
   }, [isSubscriptionInProgress, isSubscriptionVerified, readyForLabTest, goTo]);
@@ -41,7 +42,14 @@ const LabTestActionButtonContainer = () => {
     return null;
   }
 
-  return <LabTestActionButton title={data.title} description={data.description} onClick={data.onClick} />;
+  return (
+    <LabTestActionButton
+      title={data.title}
+      description={data.description}
+      onClick={data.onClick}
+      hideArrow={data.hideArrow}
+    />
+  );
 };
 
 export default LabTestActionButtonContainer;
