@@ -8,23 +8,50 @@ export const Wrapper = styled.div`
   display: flex;
   flex-flow: wrap row;
   width: 100%;
-  margin-top: 4px;
+  padding-top: 20px;
   > * {
     width: 100%;
   }
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    display: block;
+    width: 100%;
+    height: 1px;
+    transform: translateX(-50%);
+    background-color: ${Color.primaryLighter};
+  }
 `;
 
-export const Title = styled.span`
-  position: relative;
+export const Head = styled.div`
   display: flex;
   flex-flow: wrap row;
   align-items: center;
-  justify-content: space-between;
   width: 100%;
+`;
+
+export const IconTitle = styled.div`
+  display: block;
+  width: 24px;
+  height: 24px;
+  margin-right: 10px;
+  > svg {
+    display: block;
+    max-width: 100%;
+    max-height: 100%;
+  }
+`;
+
+export const Title = styled.div`
+  display: block;
+  width: calc(100% - 34px);
   font-size: 16px;
   line-height: 22px;
-  font-weight: ${FontWeight.Normal};
-  color: ${Color.black};
+  font-weight: 700;
+  color: ${({ primary }) => (primary ? Color.primary : Color.black)};
 `;
 
 export const ButtonWrapper = styled.div`
@@ -85,7 +112,7 @@ export const Button = styled.span`
 
 export const Icon = styled(IconArrow)`
   position: absolute;
-  top: 5px;
+  top: 6px;
   right: 4px;
   width: 12px;
   height: 12px;
