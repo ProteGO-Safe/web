@@ -15,11 +15,11 @@ const useTriage = () => {
   } = useHealthStats();
 
   return {
-    isTriageTorLow: and(isTorLow, noEn) || and(isTorLow, isEnLow),
+    isTriageTorLow: and(isTorLow, noEn),
     isTriageTorMiddle: and(isTorMiddle, noEn) || and(isTorMiddle, isEnLow),
     isTriageTorHighNoCovid: and(isTorHighNoCovid, noEn) || and(isTorHighNoCovid, isEnLow),
     isTriageTorHighCovid: and(isTorHigCovid, noEn) || and(isTorHigCovid, isEnLow),
-    isTriageEnLow: and(noTor, isEnLow),
+    isTriageEnLow: and(noTor, isEnLow) || and(isTorLow, isEnLow),
     isTriageEnMiddle: and(isTorLow, isEnMiddle) || and(isTorMiddle, isEnMiddle) || and(noTor, isEnMiddle),
     isTriageEnHigh:
       and(isTorHighNoCovid, isEnMiddle) ||
