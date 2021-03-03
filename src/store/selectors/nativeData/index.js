@@ -5,6 +5,6 @@ export const getLabTestSubscriptionStatus = state =>
 export const getLabTestPinUnsuccessfulAttempts = state =>
   state.nativeData.labTest && state.nativeData.labTest.pinUnsuccessfulAttempts;
 export const getNativeRiskLevel = state => state.nativeData.riskLevel;
-export const getCovidStats = state => state.nativeData.covidStats || {};
+export const getDashboardStats = state => state.nativeData.dashboardStats || {};
 export const getExposureAggregateStatistics = state => state.nativeData.exposureAggregateStatistics || {};
 export const getServicesStatus = state => state.nativeData.servicesStatus || {};

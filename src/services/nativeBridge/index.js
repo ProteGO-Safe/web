@@ -10,8 +10,8 @@ import {
   enStatusReceived,
   fetchExposureNotificationStatistics,
   fetchLabTestSubscriptionSuccess,
-  fetchCovidStatisticsSuccess,
-  fetchCovidStatistics as fetchCovidStatisticsAction,
+  fetchDashboardStatisticsSuccess,
+  fetchDashboardStatistics as fetchDashboardStatisticsAction,
   fetchExposureAggregateStatistics as fetchExposureAggregateStatisticsAction
 } from '../../store/actions/nativeData';
 import { fetchSubscribedDistricts } from '../../store/actions/restrictions';
@@ -96,8 +96,8 @@ const getServicesStatus = async () => {
   return callGetBridgeData(DATA_TYPE.NATIVE_SERVICES_STATUS);
 };
 
-const fetchCovidStatistics = async () => {
-  return callGetBridgeData(DATA_TYPE.COVID_STATISTICS);
+const fetchDashboardStatistics = async () => {
+  return callGetBridgeData(DATA_TYPE.DASHBOARD_STATISTICS);
 };
 
 const fetchExposureAggregateStatistics = async () => {
@@ -231,7 +231,7 @@ const handleNativeState = appState => {
     dispatch(fetchExposureNotificationStatistics());
     dispatch(fetchSubscribedDistricts());
     dispatch(fetchActivities());
-    dispatch(fetchCovidStatisticsAction());
+    dispatch(fetchDashboardStatisticsAction());
     dispatch(fetchExposureAggregateStatisticsAction());
   }
 };
@@ -250,10 +250,10 @@ const handleLabTestSubscription = body => {
   dispatch(fetchLabTestSubscriptionSuccess(body));
 };
 
-const handleNewCovidStatistics = body => {
+const handleNewDashboardStatistics = body => {
   const store = StoreRegistry.getStore();
   const { dispatch } = store;
-  dispatch(fetchCovidStatisticsSuccess(body));
+  dispatch(fetchDashboardStatisticsSuccess(body));
 };
 
 const handleChangeScreen = body => {
@@ -280,7 +280,7 @@ const callBridgeDataHandler = cond([
   [equals(DATA_TYPE.LAB_TEST_SUBSCRIPTION), always(handleLabTestSubscription)],
   [equals(DATA_TYPE.BACK_PRESSED), always(handleBackPressed)],
   [equals(DATA_TYPE.CHANGE_SCREEN), always(handleChangeScreen)],
-  [equals(DATA_TYPE.COVID_STATISTICS), always(handleNewCovidStatistics)]
+  [equals(DATA_TYPE.DASHBOARD_STATISTICS), always(handleNewDashboardStatistics)]
 ]);
 
 const onBridgeData = (dataType, dataString) => {
@@ -308,7 +308,7 @@ export default {
   changeLanguage,
   confirmActivities,
   setDiagnosisTimestamp,
-  fetchCovidStatistics,
+  fetchDashboardStatistics,
   fetchExposureAggregateStatistics,
   getExposureNotificationStatistics,
   getDistrictsStatus,

@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Color } from '../../../../theme/colors';
+import { Color } from '../../theme/colors';
 
 export const Wrapper = styled.div`
   position: relative;
@@ -27,25 +27,15 @@ export const Heading = styled.span`
   color: ${Color.black};
 `;
 
-export const FirstStats = styled.span`
+export const FirstLine = styled.span`
   width: 100%;
   margin-bottom: 6px;
   font-size: 10px;
   color: ${Color.darkGray};
-
-  strong {
-    font-size: 16px;
-    font-weight: 700;
-    color: ${Color.black};
-  }
 `;
 
-export const SecondStats = styled(FirstStats)`
+export const SecondLine = styled(FirstLine)`
   margin-bottom: 12px;
-
-  strong {
-    font-size: 12px;
-  }
 `;
 
 export const Line = styled.span`

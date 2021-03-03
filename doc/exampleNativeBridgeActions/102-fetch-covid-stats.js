@@ -1,20 +1,23 @@
 window.bridgeDataResponse(
   JSON.stringify({
-    covidStats: {
-      newCases: 123,
-      totalCases: 125000,
-      newDeaths: 15,
-      totalDeaths: 2000,
-      newRecovered: 200,
-      totalRecovered: 14000,
-      newVaccinations: 20000,
-      totalVaccinations: 450500,
-      newVaccinationsDose1: 19000,
-      totalVaccinationsDose1: 400500,
-      newVaccinationsDose2: 1000,
-      totalVaccinationsDose2: 50000,
-      updated: 123234234
-    }
+    updated: 123133131,
+    newCases: 2121,
+    newDeaths: 3214,
+    newRecovered: 432432,
+    newDeathsWithComorbidities: 432432,
+    newDeathsWithoutComorbidities: 323334,
+    newTests: 43234,
+    newVaccinations: 423434,
+    newVaccinationsDose1: 434322,
+    newVaccinationsDose2: 42,
+    newUndesirableReaction: 434,
+    totalCases: 0,
+    totalDeaths: 4343,
+    totalRecovered: 2,
+    totalVaccinations: 1,
+    totalVaccinationsDose1: 4,
+    totalVaccinationsDose2: 3,
+    totalUndesirableReaction: 4
   }),
   102,
   'request-1'
@@ -23,20 +26,23 @@ window.bridgeDataResponse(
 window.onBridgeData(
   102,
   JSON.stringify({
-    covidStats: {
-      newCases: 123,
-      totalCases: 125000,
-      newDeaths: 15,
-      totalDeaths: 2000,
-      newRecovered: 200,
-      totalRecovered: 14000,
-      newVaccinations: 20000,
-      totalVaccinations: 450500,
-      newVaccinationsDose1: 19000,
-      totalVaccinationsDose1: 400500,
-      newVaccinationsDose2: 1000,
-      totalVaccinationsDose2: 50000,
-      updated: 123234234
-    }
+    updated: 123133131,
+    newCases: 2121,
+    newDeaths: 3214,
+    newRecovered: 432432,
+    newDeathsWithComorbidities: 432432,
+    newDeathsWithoutComorbidities: 323334,
+    newTests: 43234,
+    newVaccinations: 423434,
+    newVaccinationsDose1: 434322,
+    newVaccinationsDose2: 42,
+    newUndesirableReaction: 434,
+    totalCases: 0,
+    totalDeaths: 4343,
+    totalRecovered: 2,
+    totalVaccinations: 1,
+    totalVaccinationsDose1: 4,
+    totalVaccinationsDose2: 3,
+    totalUndesirableReaction: 4
   })
 );

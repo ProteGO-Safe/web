@@ -26,6 +26,7 @@ export { Input } from './Input';
 export { InputDatePicker } from './InputDatePicker';
 export { InputSlider } from './InputSlider';
 export { InputWithCounter } from './InputWithCounter';
+export { ItemBox } from './ItemBox';
 export { default as Language } from './Language/Language';
 export { default as Layout } from './Layout/Layout';
 export { LineItem } from './LineItem';
