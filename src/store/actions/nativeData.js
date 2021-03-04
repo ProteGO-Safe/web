@@ -174,15 +174,15 @@ export const revokeEnStatus = () => {
   };
 };
 
-export const fetchCovidStatisticsSuccess = body => ({
+export const fetchDashboardStatisticsSuccess = body => ({
   body,
-  type: types.FETCH_COVID_STATISTICS_SUCCESS
+  type: types.FETCH_DASHBOARD_STATISTICS_SUCCESS
 });
 
-export const fetchCovidStatistics = () => {
+export const fetchDashboardStatistics = () => {
   return dispatch => {
-    nativeBridge.fetchCovidStatistics().then(data => {
-      dispatch(fetchCovidStatisticsSuccess(data));
+    nativeBridge.fetchDashboardStatistics().then(data => {
+      dispatch(fetchDashboardStatisticsSuccess(data));
     });
   };
 };
