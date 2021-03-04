@@ -3,4 +3,5 @@ export { default as CallToActionPin } from './CallToActionPin/CallToActionPinCon
 export { default as ExposureNotification } from './ExposureNotification/ExposureNotificationContainer';
 export { default as ResultAnalysis } from './ResultAnalysis/ResultAnalysisContainer';
 export { default as Statistics } from './Statistics/StatisticsContainer';
+export { default as Districts } from './Districts/DistrictsContainer';
 export { default as Wrapper } from './Wrapper/Wrapper.styled';
