@@ -8,6 +8,7 @@ export const Routes = {
   HowItWorks: 'howItWorks',
   IAmSick: 'iAmSick',
   ImportantInformation: 'importantInformation',
+  InfoVaccinations: 'InfoVaccinations',
   LabTest: 'labTest',
   LabTestResult: 'labTestResult',
   Menu: 'menu',

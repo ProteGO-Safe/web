@@ -30,9 +30,6 @@ const StatisticsContainer = () => {
     updated
   } = useSelector(getDashboardStats);
 
-  console.log(newCases)
-  console.log(totalCases)
-
   useEffect(() => {
     dispatch(fetchDashboardStatistics());
     dispatch(fetchSubscribedDistricts());
@@ -48,7 +45,7 @@ const StatisticsContainer = () => {
       return true;
     }
     return false;
-  }
+  };
 
   const vaccinationsBoxes = [
     {

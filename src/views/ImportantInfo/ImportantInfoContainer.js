@@ -29,7 +29,7 @@ const ImportantInfoContainer = () => {
       icon: <Icon7 />,
       title: <T i18nKey="important_info_title_7" />,
       description: <T i18nKey="important_info_description_7" />,
-      path: Routes.Home, // TODO: Change route !!!
+      path: Routes.InfoVaccinations,
       newFeature: true
     },
     {
