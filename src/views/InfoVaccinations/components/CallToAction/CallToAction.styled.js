@@ -109,7 +109,7 @@ export const Text = styled.p`
   font-size: 14px;
   line-height: 22px;
   font-weight: ${FontWeight.Normal};
-  color: ${Color.dark};
+  color: ${Color.lightBlack};
   strong {
     font-size: 16px;
   }

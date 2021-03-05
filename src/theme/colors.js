@@ -1,6 +1,5 @@
 export const Color = {
   black: '#000000',
-  dark: '#1B1B1B',
   danger: '#d5233f',
   darkGray: '#656565',
   gradient_c1: '#438AD1',
