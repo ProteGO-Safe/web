@@ -1,5 +1,5 @@
 import React from 'react';
-import { and, not } from 'ramda';
+import { and, not, or } from 'ramda';
 import useHealthStats from '../../../../../../hooks/useHealthStats';
 import useTriage from '../../../../../../hooks/useTriage';
 import CustomCallToActionButton from './CustomCallToActionButton';
@@ -20,7 +20,10 @@ const CustomCallToActionButtonContainer = () => {
     isTriageTorHighCovid,
     isTriageEnLow,
     isTriageEnMiddle,
-    isTriageEnHigh
+    isTriageEnHigh,
+    isTriageTorMiddleEnLow,
+    isTriageTorHighNoCovidEnLow,
+    isTriageTorHighCovidEnLow
   } = useTriage();
 
   const recommendationsText = <T i18nKey="result_analysis_text_26" />;
@@ -41,13 +44,13 @@ const CustomCallToActionButtonContainer = () => {
     if (isTriageTorLow) {
       return null;
     }
-    if (isTriageTorMiddle) {
+    if (or(isTriageTorMiddle, isTriageTorMiddleEnLow)) {
       return createData(recommendationsAction(RecommendationsComponents.RiskTestMiddle), recommendationsText);
     }
-    if (isTriageTorHighNoCovid) {
+    if (or(isTriageTorHighNoCovid, isTriageTorHighNoCovidEnLow)) {
       return createData(recommendationsAction(RecommendationsComponents.RiskTestHighNoCovid), recommendationsText);
     }
-    if (isTriageTorHighCovid) {
+    if (or(isTriageTorHighCovid, isTriageTorHighCovidEnLow)) {
       return createData(recommendationsAction(RecommendationsComponents.RiskTestHighCovid), recommendationsText);
     }
 
