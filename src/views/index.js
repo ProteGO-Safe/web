@@ -33,6 +33,7 @@ export { SettingsBluetooth } from './SettingsBluetooth';
 export { SettingsLanguages } from './SettingsLanguages';
 export { SettingsNotifications } from './SettingsNotifications';
 export { StartScreen } from './StartScreen';
+export { Statistics } from './Statistics';
 export { SummaryRiskTest } from './SummaryRiskTest';
 export { UploadHistoricalData } from './UploadHistoricalData';
 export { UserData } from './UserData';

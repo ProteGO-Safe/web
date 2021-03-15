@@ -1,0 +1,20 @@
+{
+  "newVaccinationsDose1": 29645,
+  "totalVaccinationsDose2": 1434640,
+  "totalUndesirableReaction": null,
+  "newCases": 9954,
+  "totalVaccinations": 4004734,
+  "newDeaths": 282,
+  "newRecovered": 9973,
+  "newVaccinationsDose2": 3491,
+  "newUndesirableReaction": 0,
+  "newDeathsWithoutComorbidities": 64,
+  "totalCases": 1811036,
+  "updated": 1615284006.273,
+  "totalVaccinationsDose1": 2570094,
+  "totalRecovered": 1503353,
+  "newDeathsWithComorbidities": 218,
+  "totalDeaths": 45599,
+  "newVaccinations": 33136,
+  "newTests": 54010
+}

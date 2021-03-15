@@ -38,7 +38,7 @@ export const H5 = styled.h5`
   font-weight: ${FontWeight.Bold};
   font-size: 20px;
   line-height: 1.25;
-  color: ${Color.lightBlack};
+  color: ${resolveDefaultColor(Color.lightBlack)};
 `;
 
 export const Paragraph = styled.p`
