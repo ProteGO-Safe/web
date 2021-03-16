@@ -4,8 +4,9 @@ import { Color } from '../../../../theme/colors';
 import { Routes } from '../../../../services/navigationService/routes';
 import ExposureNotification from './ExposureNotification';
 import useSupportExposureNotificationTracing from '../../../../hooks/useSupportExposureNotificationTracing';
-import { fetchExposureAggregateStatistics, fetchServicesStatus } from '../../../../store/actions/nativeData';
-import { getExposureAggregateStatistics } from '../../../../store/selectors/nativeData';
+import { fetchServicesStatus } from '../../../../store/actions/nativeData';
+import { fetchExposureAggregateStatistics } from '../../../../store/actions/statistics';
+import { getExposureAggregateStatistics } from '../../../../store/selectors/statistics';
 
 const ExposureNotificationContainer = () => {
   const dispatch = useDispatch();

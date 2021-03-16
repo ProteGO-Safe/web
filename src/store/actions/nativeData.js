@@ -173,29 +173,3 @@ export const revokeEnStatus = () => {
     });
   };
 };
-
-export const fetchDashboardStatisticsSuccess = body => ({
-  body,
-  type: types.FETCH_DASHBOARD_STATISTICS_SUCCESS
-});
-
-export const fetchDashboardStatistics = () => {
-  return dispatch => {
-    nativeBridge.fetchDashboardStatistics().then(data => {
-      dispatch(fetchDashboardStatisticsSuccess(data));
-    });
-  };
-};
-
-export const fetchExposureAggregateStatisticsSuccess = body => ({
-  body,
-  type: types.FETCH_EXPOSURE_AGGREGATE_STATISTICS
-});
-
-export const fetchExposureAggregateStatistics = () => {
-  return dispatch => {
-    nativeBridge.fetchExposureAggregateStatistics().then(data => {
-      dispatch(fetchExposureAggregateStatisticsSuccess(data));
-    });
-  };
-};

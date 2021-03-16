@@ -1,12 +1,19 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { VictoryArea, VictoryAxis, VictoryChart, VictoryLabel, VictoryCursorContainer } from 'victory';
+import { not } from 'ramda';
+import { VictoryArea, VictoryAxis, VictoryChart, VictoryLabel } from 'victory';
 import { Color } from '../../theme/colors';
 import { Small } from '../../theme/typography';
 import { styles } from './chart.helpers';
 import * as Styled from './Chart.styled';
 
 const Chart = ({ data, footer, header }) => {
+  if (not(data)) {
+    return null;
+  }
+  if (data.every(value => not(value))) {
+    return null;
+  }
   const parsedData = data && data.length > 2 ? data.slice(0, 2) : data;
 
   const renderData = parsedData.map((values, index) => {
@@ -21,8 +28,8 @@ const Chart = ({ data, footer, header }) => {
         height={80}
         // eslint-disable-next-line
         key={index}
-        labels={({ datum }) => datum.y}
-        labelComponent={<VictoryLabel renderInPortal />}
+        labels={({ datum }) => (parsedData.length >= 2 ? null : `+ ${datum.y}`)}
+        labelComponent={<VictoryLabel renderInPortal verticalAnchor="middle" textAnchor="end" />}
         style={styles[index]}
       />
     );
@@ -37,13 +44,7 @@ const Chart = ({ data, footer, header }) => {
       {/* Number of values is provided by props in order to display only the last value on the chart */}
       {/* All data elements should have the same length at the moment (14 days) */}
       <Styled.Chart numberOfValues={data[0].length}>
-        <VictoryChart
-          containerComponent={
-            <VictoryCursorContainer cursorDimension="y" cursorLabel={({ datum }) => Math.round(datum.y)} />
-          }
-          height={80}
-          padding={{ top: 15 }}
-        >
+        <VictoryChart height={80} padding={{ top: 15 }}>
           {renderData}
           <VictoryAxis style={{ axis: { stroke: Color.white } }} />
         </VictoryChart>
@@ -55,7 +56,6 @@ const Chart = ({ data, footer, header }) => {
   );
 };
 
-// example data
 Chart.defaultProps = {
   data: [],
   footer: '',
@@ -64,8 +64,8 @@ Chart.defaultProps = {
 
 Chart.propTypes = {
   data: PropTypes.arrayOf(PropTypes.array),
-  footer: PropTypes.string,
-  header: PropTypes.string
+  footer: PropTypes.node,
+  header: PropTypes.node
 };
 
 export default Chart;

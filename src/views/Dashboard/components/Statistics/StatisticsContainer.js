@@ -1,8 +1,8 @@
 import React, { useEffect, useMemo } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import Statistics from './Statistics';
-import { fetchDashboardStatistics } from '../../../../store/actions/nativeData';
-import { getDashboardStats } from '../../../../store/selectors/nativeData';
+import { fetchSummaryStatistics } from '../../../../store/actions/statistics';
+import { getStatisticsSummary } from '../../../../store/selectors/statistics';
 import { getFormattedDay } from '../../../../utils/date';
 import { fetchSubscribedDistricts } from '../../../../store/actions/restrictions';
 import { T } from '../../../../components/T';
@@ -28,10 +28,10 @@ const StatisticsContainer = () => {
     totalVaccinationsDose2,
     totalUndesirableReaction,
     updated
-  } = useSelector(getDashboardStats);
+  } = useSelector(getStatisticsSummary);
 
   useEffect(() => {
-    dispatch(fetchDashboardStatistics());
+    dispatch(fetchSummaryStatistics());
     dispatch(fetchSubscribedDistricts());
     // eslint-disable-next-line
   }, [dispatch]);

@@ -9,6 +9,7 @@ import * as Styled from './Statistics.styled';
 import { ReactComponent as Icon1 } from '../../../../assets/img/icons/icon-szczepienie.svg';
 import { ReactComponent as Icon2 } from '../../../../assets/img/icons/icon-wirus.svg';
 import { StatsItem } from './components';
+import { statisticTypes } from '../../../Statistics/statistics.constants';
 
 const Statistics = ({ dateUpdated, vaccinationsBoxes, covidStatsBoxes }) => {
   const { goTo } = useNavigation();
@@ -23,13 +24,13 @@ const Statistics = ({ dateUpdated, vaccinationsBoxes, covidStatsBoxes }) => {
     return <StatsItem label={label} value={value} smallSize={smallSize} withoutPlus={withoutPlus} />;
   };
 
-  const createBoxItem = item => {
+  const createBoxItem = (item, type) => {
     const { id, heading, firstLine, secondLine } = item;
 
     return (
       <ItemBox
         key={id}
-        onClick={() => null} // TODO: https://titans24.atlassian.net/browse/PSAFE-3442
+        onClick={() => goTo(Routes.Statistics, { type })}
         heading={heading}
         firstLine={renderStatsItem(firstLine)}
         secondLine={renderStatsItem(secondLine)}
@@ -37,8 +38,8 @@ const Statistics = ({ dateUpdated, vaccinationsBoxes, covidStatsBoxes }) => {
     );
   };
 
-  const renderedVaccinationStats = vaccinationsBoxes.map(createBoxItem);
-  const renderedCovidStats = covidStatsBoxes.map(createBoxItem);
+  const renderedVaccinationStats = vaccinationsBoxes.map(value => createBoxItem(value, statisticTypes.VACCINATIONS));
+  const renderedCovidStats = covidStatsBoxes.map(value => createBoxItem(value, statisticTypes.COVID));
 
   return (
     <Wrapper pdgTop="10">
@@ -49,14 +50,14 @@ const Statistics = ({ dateUpdated, vaccinationsBoxes, covidStatsBoxes }) => {
       <SliderBox
         icon={<Icon1 />}
         title={<T i18nKey="dashboard_statistic_2" variables={{ date: dateUpdated }} />}
-        handleHeadClick={() => goTo(Routes.Home)} // TODO: https://titans24.atlassian.net/browse/PSAFE-3442
+        handleHeadClick={() => goTo(Routes.Statistics, { type: statisticTypes.VACCINATIONS })}
         items={renderedVaccinationStats}
       />
 
       <SliderBox
         icon={<Icon2 />}
         title={<T i18nKey="dashboard_statistic_9" variables={{ date: dateUpdated }} />}
-        handleHeadClick={() => goTo(Routes.Home)} // TODO: https://titans24.atlassian.net/browse/PSAFE-3443
+        handleHeadClick={() => goTo(Routes.Statistics, { type: statisticTypes.COVID })}
         items={renderedCovidStats}
       />
     </Wrapper>

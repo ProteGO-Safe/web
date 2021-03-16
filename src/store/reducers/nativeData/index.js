@@ -10,32 +10,6 @@ const INITIAL_STATE = {
     subscription: undefined,
     pinUnsuccessfulAttempts: [],
     uploadPinResult: undefined
-  },
-  dashboardStats: {
-    updated: undefined,
-    newCases: undefined,
-    newDeaths: undefined,
-    newRecovered: undefined,
-    newDeathsWithComorbidities: undefined,
-    newDeathsWithoutComorbidities: undefined,
-    newTests: undefined,
-    newVaccinations: undefined,
-    newVaccinationsDose1: undefined,
-    newVaccinationsDose2: undefined,
-    newUndesirableReaction: undefined,
-    totalCases: undefined,
-    totalDeaths: undefined,
-    totalRecovered: undefined,
-    totalVaccinations: undefined,
-    totalVaccinationsDose1: undefined,
-    totalVaccinationsDose2: undefined,
-    totalUndesirableReaction: undefined
-  },
-  exposureAggregateStatistics: {
-    lastRiskCheckTimestamp: undefined,
-    todayKeysCount: undefined,
-    last7daysKeysCount: undefined,
-    totalKeysCount: undefined
   }
 };
 
@@ -140,23 +114,6 @@ const nativeBridgeReducer = (state = INITIAL_STATE, action) => {
         labTest: { ...labTest, subscription }
       };
     }
-    case types.FETCH_DASHBOARD_STATISTICS_SUCCESS: {
-      const { body } = action;
-      return {
-        ...state,
-        dashboardStats: body
-      };
-    }
-    case types.FETCH_EXPOSURE_AGGREGATE_STATISTICS: {
-      const {
-        body: { riskCheck }
-      } = action;
-      return {
-        ...state,
-        exposureAggregateStatistics: riskCheck
-      };
-    }
-
     default:
       return state;
   }

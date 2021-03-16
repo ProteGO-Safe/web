@@ -3,11 +3,19 @@ import PropTypes from 'prop-types';
 import SwipeableViews from 'react-swipeable-views';
 import Tab from '@material-ui/core/Tab';
 import { useTranslation } from 'react-i18next';
-import { Layout, Tabs } from '../../components';
-import { slidesStyles, tabsData } from './statistics.constants';
+import { Layout, T, Tabs } from '../../components';
+import { slidesStyles } from './statistics.constants';
 import { SlidesContainer } from './Statistics.styled';
 
-const Statistics = ({ districts, handleBack, lastUpdate, summary, voivodeships }) => {
+const Statistics = ({
+  districts,
+  existsDetailsStatistics,
+  headerLabel,
+  lastUpdate,
+  summary,
+  tabsData,
+  voivodeships
+}) => {
   const { t } = useTranslation();
 
   const [selectedTab, setSelectedTab] = useState(0);
@@ -20,36 +28,40 @@ const Statistics = ({ districts, handleBack, lastUpdate, summary, voivodeships }
     <Tab key={key} index={key} label={t(label)} onClick={() => setSelectedTab(key)} />
   ));
 
-  const renderViews = tabsData.map(({ component: Component }, key) => (
+  const renderViewsContent = Component => {
+    if (existsDetailsStatistics) {
+      return <Component districts={districts} lastUpdate={lastUpdate} summary={summary} voivodeships={voivodeships} />;
+    }
+    return null; // todo https://kyotu.atlassian.net/browse/PSAFE-3532
+  };
+
+  const renderedViews = tabsData.map(({ component }, key) => (
     // eslint-disable-next-line
     <div key={key} style={slidesStyles}>
-      <Component districts={districts} lastUpdate={lastUpdate} summary={summary} voivodeships={voivodeships} />
+      {renderViewsContent(component)}
     </div>
   ));
 
   return (
-    <Layout isNavigation logoText="COVID-19" noPadding onBackClick={handleBack} hideBell>
+    <Layout isNavigation logoText={<T i18nKey={headerLabel} />} noPadding hideBell>
       <Tabs handleChange={handleChangeTab} value={selectedTab}>
         {renderTabs}
       </Tabs>
       <SlidesContainer>
         <SwipeableViews index={selectedTab} onChangeIndex={setSelectedTab}>
-          {renderViews}
+          {renderedViews}
         </SwipeableViews>
       </SlidesContainer>
     </Layout>
   );
 };
 
-Statistics.defaultProps = {
-  handleBack: () => null
-};
-
 Statistics.propTypes = {
   districts: PropTypes.arrayOf(PropTypes.object).isRequired,
-  handleBack: PropTypes.func,
+  headerLabel: PropTypes.string.isRequired,
   lastUpdate: PropTypes.string.isRequired,
   summary: PropTypes.object.isRequired,
+  tabsData: PropTypes.arrayOf(PropTypes.object).isRequired,
   voivodeships: PropTypes.arrayOf(PropTypes.object).isRequired
 };
 

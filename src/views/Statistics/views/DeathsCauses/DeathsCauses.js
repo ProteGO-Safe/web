@@ -4,12 +4,10 @@ import { useSelector } from 'react-redux';
 import { ReactComponent as IconDeath } from '../../../../assets/img/icons/icon-death.svg';
 import { resolveChartHeader } from '../../statistics.helpers';
 import { Chart, T, Title } from '../../../../components';
-import { Legend, SubscribedDistrictsEmpty, UpdateDistricts } from '../../components';
+import { Legend, StatisticsTable, UpdateDistricts } from '../../components';
 import { getLastTwoWeeks } from '../../../../store/selectors/statistics';
-import { Small } from '../../../../theme/typography';
 import { Color } from '../../../../theme/colors';
 import { Slide } from '../../Statistics.styled';
-import { RowBody, RowHeader, Table, Tbody, TD, TH, Thead } from '../../../../components/Table/Table.styled';
 
 const DeathsCauses = ({ districts, lastUpdate, summary, voivodeships }) => {
   const chartLine1 = useSelector(getLastTwoWeeks)('deathsWithoutComorbidities');
@@ -18,47 +16,47 @@ const DeathsCauses = ({ districts, lastUpdate, summary, voivodeships }) => {
   const legendData = [
     {
       dot: Color.primaryLight_2,
+      key: 'newDeathsWithoutComorbidities',
       label: <T i18nKey="statistics_view_text_27" />,
       value: summary.newDeathsWithoutComorbidities
     },
     {
       dot: Color.red,
+      key: 'newDeathsWithComorbidities',
       label: <T i18nKey="statistics_view_text_28" />,
       value: summary.newDeathsWithComorbidities
     }
   ];
 
-  const renderedRowsForVoivodeshipsTable = voivodeships.map(voivodeship => (
-    <RowBody key={voivodeship.id}>
-      <TD align="left">
-        <Small color={Color.black}>{voivodeship.name}</Small>
-      </TD>
-      <TD>
-        <Small>{voivodeship.details.newDeathsWithoutComorbidities}</Small>
-      </TD>
-      <TD>
-        <Small>{voivodeship.details.newDeathsWithComorbidities}</Small>
-      </TD>
-    </RowBody>
-  ));
+  const voivodeshipsTableData = [
+    {
+      header: <T i18nKey="statistics_view_voivodeship" />,
+      field: 'name'
+    },
+    {
+      header: <T i18nKey="statistics_view_text_27" />,
+      field: 'newDeathsWithoutComorbidities'
+    },
+    {
+      header: <T i18nKey="statistics_view_text_28" />,
+      field: 'newDeathsWithComorbidities'
+    }
+  ];
 
-  const renderedRowsForDistrictsTable = districts.length ? (
-    districts.map(district => (
-      <RowBody key={district.id}>
-        <TD align="left">
-          <Small color={Color.black}>{district.name}</Small>
-        </TD>
-        <TD>
-          <Small>{district.newDeathsWithoutComorbidities}</Small>
-        </TD>
-        <TD>
-          <Small>{district.newDeathsWithComorbidities}</Small>
-        </TD>
-      </RowBody>
-    ))
-  ) : (
-    <SubscribedDistrictsEmpty colSpan={3} />
-  );
+  const districtsTableData = [
+    {
+      header: <T i18nKey="statistics_view_district" />,
+      field: 'name'
+    },
+    {
+      header: <T i18nKey="statistics_view_text_27" />,
+      field: 'newDeathsWithoutComorbidities'
+    },
+    {
+      header: <T i18nKey="statistics_view_text_28" />,
+      field: 'newDeathsWithComorbidities'
+    }
+  ];
 
   return (
     <Slide>
@@ -69,42 +67,9 @@ const DeathsCauses = ({ districts, lastUpdate, summary, voivodeships }) => {
       />
       <Legend data={legendData} />
       <Title icon={<IconDeath />} text={<T i18nKey="statistics_view_text_14" />} />
-
-      <Table>
-        <Thead>
-          <RowHeader>
-            <TH align="left" colspan={3}>
-              <T i18nKey="statistics_view_voivodeship" />
-            </TH>
-            <TH>
-              <T i18nKey="statistics_view_text_27" />
-            </TH>
-            <TH>
-              <T i18nKey="statistics_view_text_28" />
-            </TH>
-          </RowHeader>
-        </Thead>
-        <Tbody>{renderedRowsForVoivodeshipsTable}</Tbody>
-      </Table>
-
+      <StatisticsTable data={voivodeships} fields={voivodeshipsTableData} />
       <Title icon={<IconDeath />} text={<T i18nKey="statistics_view_text_15" />} />
-
-      <Table>
-        <Thead>
-          <RowHeader>
-            <TH align="left" colspan={3}>
-              <T i18nKey="statistics_view_district" />
-            </TH>
-            <TH>
-              <T i18nKey="statistics_view_text_27" />
-            </TH>
-            <TH>
-              <T i18nKey="statistics_view_text_28" />
-            </TH>
-          </RowHeader>
-        </Thead>
-        <Tbody>{renderedRowsForDistrictsTable}</Tbody>
-      </Table>
+      <StatisticsTable data={districts} fields={districtsTableData} noDataLabel="statistics_view_text_31" />
       <UpdateDistricts />
     </Slide>
   );

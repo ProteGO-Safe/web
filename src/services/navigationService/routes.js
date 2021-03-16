@@ -24,6 +24,7 @@ export const Routes = {
   SettingsBluetooth: 'settingsBluetooth',
   SettingsLanguages: 'settingsLanguages',
   SettingsNotifications: 'settingsNotifications',
+  Statistics: 'statistics',
   SummaryRiskTest: 'summaryRiskTest',
   UploadHistoricalData: 'uploadHistoricalData',
   UserData: 'userData',

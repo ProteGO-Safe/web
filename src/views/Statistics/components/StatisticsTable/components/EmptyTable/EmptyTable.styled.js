@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-import { TD } from '../../../../components/Table/Table.styled';
-import { Color } from '../../../../theme/colors';
+import { TD } from '../../../../../../components/Table/Table.styled';
+import { Color } from '../../../../../../theme/colors';
 
 export const Wrapper = styled(TD).attrs(props => ({
   colSpan: props.colSpan || undefined

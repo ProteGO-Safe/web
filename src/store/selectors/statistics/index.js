@@ -1,14 +1,25 @@
-export const getStatisticsSummary = state => state.statistics.summary;
+import { not } from 'ramda';
 
+export const getExposureAggregateStatistics = state => state.nativeData.exposureAggregate || {};
+
+export const getStatisticsSummary = state => state.statistics.summary || {};
+
+export const getExistsDetailsStatistics = state => state.statistics.details !== undefined;
 export const getVoivodeshipsData = state => {
-  return state.statistics.data.voivodeships;
+  if (not(state.statistics.details)) {
+    return [];
+  }
+  return state.statistics.details.voivodeships;
 };
 
 export const getLastTwoWeeks = state => propertyName => {
-  const values = state.statistics.data.lastDays[propertyName];
+  if (not(state.statistics.details)) {
+    return undefined;
+  }
+  const values = state.statistics.details.lastDays[propertyName];
 
-  if (!values) {
-    return 0;
+  if (not(values)) {
+    return undefined;
   }
 
   const { length } = values;
@@ -21,7 +32,10 @@ export const getLastTwoWeeks = state => propertyName => {
 };
 
 export const getDistrictsData = state => {
-  return state.statistics.data.voivodeships.reduce((total, voivodeship) => {
+  if (not(state.statistics.details)) {
+    return [];
+  }
+  return state.statistics.details.voivodeships.reduce((total, voivodeship) => {
     return [...total, ...voivodeship.districts];
   }, []);
 };
@@ -29,9 +43,14 @@ export const getDistrictsData = state => {
 export const getSubscribedDistrictsData = state => {
   const { subscribedDistricts } = state.restrictions;
 
-  return getDistrictsData(state).filter(distric => {
-    return subscribedDistricts.find(subscribedDistrict => subscribedDistrict.id === distric.id);
+  return getDistrictsData(state).filter(district => {
+    return subscribedDistricts.find(subscribedDistrict => subscribedDistrict.id === district.uiId);
   });
 };
 
-export const getUpdateDate = state => state.statistics.data.updated
+export const getUpdateDate = state => {
+  if (not(state.statistics.details)) {
+    return undefined;
+  }
+  return state.statistics.details.updated;
+};

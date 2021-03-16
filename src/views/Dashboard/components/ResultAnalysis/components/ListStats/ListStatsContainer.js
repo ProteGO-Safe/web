@@ -2,7 +2,7 @@ import React from 'react';
 import { not } from 'ramda';
 import { useSelector } from 'react-redux';
 import useFilledDiagnosis from '../../../../../../hooks/useFilledDiagnosis';
-import { getExposureAggregateStatistics } from '../../../../../../store/selectors/nativeData';
+import { getExposureAggregateStatistics } from '../../../../../../store/selectors/statistics';
 import ListStats from './ListStats';
 import { getFormattedDate } from '../../../../../../utils/date';
 import useHealthStats from '../../../../../../hooks/useHealthStats';

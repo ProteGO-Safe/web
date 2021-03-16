@@ -4,8 +4,8 @@ import { Small } from '../../../../theme/typography';
 import * as Styled from './Legend.styled';
 
 const Legend = ({ data }) => {
-  const boxes = data.map(({ dot, label, value }) => (
-    <Styled.Box key={label}>
+  const boxes = data.map(({ dot, key, label, value }) => (
+    <Styled.Box key={key}>
       <Styled.Label>
         {dot && <Styled.Dot color={dot} />}
         <Small color={Color.white}>
