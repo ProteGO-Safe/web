@@ -49,8 +49,8 @@ export const TD = styled.td`
   letter-spacing: 0;
   line-height: 19px;
   text-align: ${({ align }) => align || 'center'};
-  
-    &:first-child {
+
+  &:first-child {
     padding-left: 10px;
   }
 
