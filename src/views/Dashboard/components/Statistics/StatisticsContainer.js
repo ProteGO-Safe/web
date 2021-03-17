@@ -183,7 +183,7 @@ const StatisticsContainer = () => {
   const existsVaccinationStatsItems = useMemo(() => vaccinationsBoxes.length > 0, [vaccinationsBoxes]);
 
   return (
-    <Wrapper>
+    <Wrapper pdgTop="10">
       <Styled.Title>
         <T i18nKey="dashboard_statistic_1" />
       </Styled.Title>
