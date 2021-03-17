@@ -1,11 +1,9 @@
 import React from 'react';
 import { not } from 'ramda';
 import PropTypes from 'prop-types';
-import { Wrapper } from '../index';
 import { ItemBox, SliderBox, T } from '../../../../components';
 import useNavigation from '../../../../hooks/useNavigation';
 import { Routes } from '../../../../services/navigationService/routes';
-import * as Styled from './Statistics.styled';
 import { ReactComponent as Icon1 } from '../../../../assets/img/icons/icon-szczepienie.svg';
 import { ReactComponent as Icon2 } from '../../../../assets/img/icons/icon-wirus.svg';
 import { StatsItem } from './components';
@@ -42,11 +40,7 @@ const Statistics = ({ dateUpdated, vaccinationsBoxes, covidStatsBoxes }) => {
   const renderedCovidStats = covidStatsBoxes.map(value => createBoxItem(value, statisticTypes.COVID));
 
   return (
-    <Wrapper pdgTop="10">
-      <Styled.Title>
-        <T i18nKey="dashboard_statistic_1" />
-      </Styled.Title>
-
+    <>
       <SliderBox
         icon={<Icon1 />}
         title={<T i18nKey="dashboard_statistic_2" variables={{ date: dateUpdated }} />}
@@ -60,7 +54,7 @@ const Statistics = ({ dateUpdated, vaccinationsBoxes, covidStatsBoxes }) => {
         handleHeadClick={() => goTo(Routes.Statistics, { type: statisticTypes.COVID })}
         items={renderedCovidStats}
       />
-    </Wrapper>
+    </>
   );
 };
 

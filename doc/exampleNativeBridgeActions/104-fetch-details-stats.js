@@ -1,8 +1,8 @@
-window.bridgeDataResponse(
-  ,
-  104,
-  'request-1'
-);
+// window.bridgeDataResponse(
+//   ,
+//   104,
+//   'request-1'
+// );
 
 window.onBridgeData(
   104,

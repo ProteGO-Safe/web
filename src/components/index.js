@@ -14,6 +14,7 @@ export { CircleLoader } from './CircleLoader';
 export { Collapse } from './Collapse';
 export { Color } from './Color';
 export { Container } from './Container';
+export { DataUpdate } from './DataUpdate';
 export { StatusItem } from './StatusItem';
 export { Email } from './Email';
 export { Error } from './Error';
