@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import SwipeableViews from 'react-swipeable-views';
 import Tab from '@material-ui/core/Tab';
 import { useTranslation } from 'react-i18next';
-import { Layout, T, Tabs } from '../../components';
+import { DataUpdate, Layout, T, Tabs } from '../../components';
 import { slidesStyles } from './statistics.constants';
 import { SlidesContainer } from './Statistics.styled';
 
@@ -32,7 +32,7 @@ const Statistics = ({
     if (existsDetailsStatistics) {
       return <Component districts={districts} lastUpdate={lastUpdate} summary={summary} voivodeships={voivodeships} />;
     }
-    return null; // todo https://kyotu.atlassian.net/browse/PSAFE-3532
+    return <DataUpdate mrgT={32} />;
   };
 
   const renderedViews = tabsData.map(({ component }, key) => (

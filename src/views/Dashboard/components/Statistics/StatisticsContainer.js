@@ -5,7 +5,9 @@ import { fetchSummaryStatistics } from '../../../../store/actions/statistics';
 import { getStatisticsSummary } from '../../../../store/selectors/statistics';
 import { getFormattedDay } from '../../../../utils/date';
 import { fetchSubscribedDistricts } from '../../../../store/actions/restrictions';
-import { T } from '../../../../components/T';
+import { Wrapper } from '../index';
+import { DataUpdate, T } from '../../../../components';
+import * as Styled from './Statistics.styled';
 
 const StatisticsContainer = () => {
   const dispatch = useDispatch();
@@ -180,13 +182,23 @@ const StatisticsContainer = () => {
 
   const existsVaccinationStatsItems = useMemo(() => vaccinationsBoxes.length > 0, [vaccinationsBoxes]);
 
-  return existsCovidStatsItems || existsVaccinationStatsItems ? (
-    <Statistics
-      covidStatsBoxes={covidStatsBoxes}
-      dateUpdated={getFormattedDay(updated)}
-      vaccinationsBoxes={vaccinationsBoxes}
-    />
-  ) : null;
+  return (
+    <Wrapper pdgTop="10">
+      <Styled.Title>
+        <T i18nKey="dashboard_statistic_1" />
+      </Styled.Title>
+
+      {existsCovidStatsItems || existsVaccinationStatsItems ? (
+        <Statistics
+          covidStatsBoxes={covidStatsBoxes}
+          dateUpdated={getFormattedDay(updated)}
+          vaccinationsBoxes={vaccinationsBoxes}
+        />
+      ) : (
+        <DataUpdate />
+      )}
+    </Wrapper>
+  );
 };
 
 export default StatisticsContainer;
