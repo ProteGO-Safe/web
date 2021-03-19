@@ -129,16 +129,6 @@ export const fetchFontScale = () => {
   };
 };
 
-export const interoperabilityModalShowed = () => ({
-  type: types.INTEROPERABILITY_MODAL_SHOWED
-});
-
-export const hideInteroperabilityModal = () => {
-  return dispatch => {
-    dispatch(interoperabilityModalShowed());
-  };
-};
-
 export const warningInEuropeTermToggle = () => ({
   type: types.WARNING_IN_EUROPE_TERM_TOGGLE
 });

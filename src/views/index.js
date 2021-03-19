@@ -12,7 +12,6 @@ export { HowItWorks } from './HowItWorks';
 export { IAmSick } from './IAmSick';
 export { ImportantInfo } from './ImportantInfo';
 export { InfoVaccinations } from './InfoVaccinations';
-export { InfoInteroperability } from './InfoInteroperability';
 export { InfoNegativeLabTest } from './InfoNegativeLabTest';
 export { LabTest } from './LabTest';
 export { MenuSettings } from './MenuSettings';

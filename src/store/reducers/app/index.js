@@ -18,7 +18,6 @@ const INITIAL_STATE = {
     unsuccessfulAttempts: []
   },
   registrationFinished: false,
-  interoperabilityModalShowed: false,
   warningInEuropeTerm: false,
   rating: {
     applicationLiked: undefined,
@@ -134,12 +133,6 @@ const appReducer = (state = INITIAL_STATE, action) => {
       return {
         ...state,
         fontScale
-      };
-    }
-    case types.INTEROPERABILITY_MODAL_SHOWED: {
-      return {
-        ...state,
-        interoperabilityModalShowed: true
       };
     }
     case types.WARNING_IN_EUROPE_TERM_TOGGLE: {

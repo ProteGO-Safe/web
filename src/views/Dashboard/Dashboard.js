@@ -1,6 +1,6 @@
 import React from 'react';
 import { Layout } from '../../components';
-import { InfoInteroperability, RatingApp } from '../index';
+import { RatingApp } from '../index';
 import {
   ExposureNotification,
   ResultAnalysis,
@@ -22,7 +22,6 @@ const Dashboard = () => (
       <Districts />
     </Styled.Dashboard>
 
-    <InfoInteroperability />
     <RatingApp />
   </Layout>
 );
