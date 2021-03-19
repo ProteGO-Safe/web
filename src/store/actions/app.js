@@ -129,16 +129,6 @@ export const fetchFontScale = () => {
   };
 };
 
-export const restrictionsModalShowed = () => ({
-  type: types.RESTRICTIONS_MODAL_SHOWED
-});
-
-export const hideRestrictionsModal = () => {
-  return dispatch => {
-    dispatch(restrictionsModalShowed());
-  };
-};
-
 export const interoperabilityModalShowed = () => ({
   type: types.INTEROPERABILITY_MODAL_SHOWED
 });

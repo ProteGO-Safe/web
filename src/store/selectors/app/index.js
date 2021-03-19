@@ -4,7 +4,6 @@ export const getApplicationReseted = state => state.app.applicationReseted;
 export const getUploadHistoricalDataStateErrorMessageVisible = state =>
   state.app.uploadHistoricalDataState.errorMessageVisible;
 export const getFontScale = state => state.app.fontScale;
-export const getRestrictionsModalShowed = state => state.app.restrictionsModalShowed;
 export const getInteroperabilityModalShowed = state => state.app.interoperabilityModalShowed;
 export const getWarningInEuropeTermState = state => state.app.warningInEuropeTerm;
 export const getFirstRunTime = state => state.app.firstRunTime;
