@@ -11,6 +11,7 @@ const Statistics = ({
   districts,
   existsDetailsStatistics,
   headerLabel,
+  initTabIndex,
   lastUpdate,
   summary,
   tabsData,
@@ -18,7 +19,7 @@ const Statistics = ({
 }) => {
   const { t } = useTranslation();
 
-  const [selectedTab, setSelectedTab] = useState(0);
+  const [selectedTab, setSelectedTab] = useState(initTabIndex);
 
   const handleChangeTab = (event, newValue) => {
     setSelectedTab(newValue);

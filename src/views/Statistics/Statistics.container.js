@@ -18,6 +18,7 @@ const StatisticsContainer = () => {
   const { getParam } = useNavigation();
 
   const type = getParam('type');
+  const kind = getParam('kind');
 
   const existsDetailsStatistics = useSelector(getExistsDetailsStatistics);
   const voivodeships = useSelector(getVoivodeshipsData).map(
@@ -93,11 +94,20 @@ const StatisticsContainer = () => {
     dispatch(fetchDetailsStatistics());
   }, [dispatch]);
 
+  const resolveInitTabIndex = () => {
+    const index = statisticTabData[type].findIndex(value => value.kind === kind);
+    if (index === -1) {
+      return 0;
+    }
+    return index;
+  };
+
   return (
     <Statistics
       districts={districts}
       existsDetailsStatistics={existsDetailsStatistics}
       headerLabel={statisticHeadersLabelData[type]}
+      initTabIndex={resolveInitTabIndex()}
       lastUpdate={lastUpdate}
       summary={summary}
       tabsData={statisticTabData[type]}

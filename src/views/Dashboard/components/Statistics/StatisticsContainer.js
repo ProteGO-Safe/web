@@ -8,6 +8,7 @@ import { fetchSubscribedDistricts } from '../../../../store/actions/restrictions
 import { Wrapper } from '../index';
 import { DataUpdate, T } from '../../../../components';
 import * as Styled from './Statistics.styled';
+import { STATISTIC_KIND } from '../../../../constants';
 
 const StatisticsContainer = () => {
   const dispatch = useDispatch();
@@ -52,6 +53,7 @@ const StatisticsContainer = () => {
   const vaccinationsBoxes = [
     {
       id: '1',
+      kind: STATISTIC_KIND.VACCINATIONS,
       heading: <T i18nKey="dashboard_statistic_5" />,
       firstLine: {
         value: newVaccinations,
@@ -66,6 +68,7 @@ const StatisticsContainer = () => {
     },
     {
       id: '2',
+      kind: STATISTIC_KIND.DOSES,
       heading: <T i18nKey="dashboard_statistic_6" />,
       firstLine: {
         value: newVaccinationsDose1,
@@ -80,6 +83,7 @@ const StatisticsContainer = () => {
     },
     {
       id: '3',
+      kind: STATISTIC_KIND.DOSES,
       heading: <T i18nKey="dashboard_statistic_7" />,
       firstLine: {
         value: newVaccinationsDose2,
@@ -94,6 +98,7 @@ const StatisticsContainer = () => {
     },
     {
       id: '4',
+      kind: STATISTIC_KIND.UNDESIRABLE_REACTION,
       heading: <T i18nKey="dashboard_statistic_8" />,
       firstLine: {
         value: newUndesirableReaction,
@@ -111,6 +116,7 @@ const StatisticsContainer = () => {
   const covidStatsBoxes = [
     {
       id: '1',
+      kind: STATISTIC_KIND.CASES,
       heading: <T i18nKey="dashboard_statistic_10" />,
       firstLine: {
         value: newCases,
@@ -125,6 +131,7 @@ const StatisticsContainer = () => {
     },
     {
       id: '2',
+      kind: STATISTIC_KIND.RECOVERED,
       heading: <T i18nKey="dashboard_statistic_11" />,
       firstLine: {
         value: newRecovered,
@@ -139,6 +146,7 @@ const StatisticsContainer = () => {
     },
     {
       id: '3',
+      kind: STATISTIC_KIND.DEATHS,
       heading: <T i18nKey="dashboard_statistic_12" />,
       firstLine: {
         value: newDeaths,
@@ -153,6 +161,7 @@ const StatisticsContainer = () => {
     },
     {
       id: '4',
+      kind: STATISTIC_KIND.DEATHS_CAUSES,
       heading: <T i18nKey="dashboard_statistic_13" />,
       firstLine: {
         value: newDeathsWithoutComorbidities,
@@ -169,6 +178,7 @@ const StatisticsContainer = () => {
     },
     {
       id: '5',
+      kind: STATISTIC_KIND.TESTS,
       heading: <T i18nKey="dashboard_statistic_14" />,
       firstLine: {
         value: newTests,

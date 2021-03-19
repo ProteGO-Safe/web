@@ -23,12 +23,12 @@ const Statistics = ({ dateUpdated, vaccinationsBoxes, covidStatsBoxes }) => {
   };
 
   const createBoxItem = (item, type) => {
-    const { id, heading, firstLine, secondLine } = item;
+    const { id, heading, firstLine, kind, secondLine } = item;
 
     return (
       <ItemBox
         key={id}
-        onClick={() => goTo(Routes.Statistics, { type })}
+        onClick={() => goTo(Routes.Statistics, { type, kind })}
         heading={heading}
         firstLine={renderStatsItem(firstLine)}
         secondLine={renderStatsItem(secondLine)}

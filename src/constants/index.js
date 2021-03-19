@@ -154,3 +154,14 @@ export const ACTIVITY_TYPE = {
   RISK_CHECK: 'riskCheck',
   EXPOSURE: 'exposure'
 };
+
+export const STATISTIC_KIND = {
+  CASES: 'cases',
+  DEATHS: 'deaths',
+  DEATHS_CAUSES: 'deathsCauses',
+  DOSES: 'doses',
+  RECOVERED: 'recovered',
+  TESTS: 'tests',
+  UNDESIRABLE_REACTION: 'undesirableReaction',
+  VACCINATIONS: 'vaccinations'
+};
