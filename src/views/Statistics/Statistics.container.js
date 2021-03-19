@@ -87,7 +87,7 @@ const StatisticsContainer = () => {
   );
   const updated = useSelector(getUpdateDate);
 
-  const lastUpdate = moment(updated).format('DD.MM.YYYY');
+  const lastUpdate = moment.unix(updated).format('DD.MM.YYYY');
 
   useEffect(() => {
     dispatch(fetchDetailsStatistics());
