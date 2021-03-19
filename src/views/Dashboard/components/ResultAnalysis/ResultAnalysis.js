@@ -7,7 +7,6 @@ import {
   CurrentStateText,
   CustomCallToActionButton,
   Icon,
-  LabTestActionButton,
   ListStats,
   ResultAnalysisWrapper,
   SignedForLabTest
@@ -27,7 +26,6 @@ const ResultAnalysis = ({ handleToggleButton, isOpen, userName }) => (
         <ContentText />
         <SignedForLabTest />
         <CustomCallToActionButton />
-        <LabTestActionButton />
       </Styled.Content>
     </Styled.CurrentState>
 

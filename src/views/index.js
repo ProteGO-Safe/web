@@ -14,6 +14,7 @@ export { ImportantInfo } from './ImportantInfo';
 export { InfoVaccinations } from './InfoVaccinations';
 export { InfoNegativeLabTest } from './InfoNegativeLabTest';
 export { LabTest } from './LabTest';
+export { LabTestOnboarding } from './LabTestOnboarding';
 export { MenuSettings } from './MenuSettings';
 export { NotSupported } from './NotSupported';
 export { Menu } from './Menu';

@@ -7,7 +7,8 @@ import {
   Statistics,
   CallToActionPin,
   CallToActionHealth,
-  Districts
+  Districts,
+  LabTestActionButton
 } from './components';
 import * as Styled from './Dashboard.styled';
 
@@ -17,6 +18,7 @@ const Dashboard = () => (
       <ExposureNotification />
       <ResultAnalysis />
       <CallToActionPin />
+      <LabTestActionButton />
       <Statistics />
       <CallToActionHealth />
       <Districts />

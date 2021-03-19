@@ -1,3 +1,4 @@
+import moment from 'moment';
 import * as types from '../../types/nativeData';
 
 const INITIAL_STATE = {
@@ -8,6 +9,7 @@ const INITIAL_STATE = {
   language: undefined,
   labTest: {
     subscription: undefined,
+    subscriptionUpdated: undefined,
     pinUnsuccessfulAttempts: [],
     uploadPinResult: undefined
   }
@@ -111,7 +113,7 @@ const nativeBridgeReducer = (state = INITIAL_STATE, action) => {
       const { labTest } = state;
       return {
         ...state,
-        labTest: { ...labTest, subscription }
+        labTest: { ...labTest, subscription, subscriptionUpdated: moment().unix() }
       };
     }
     default:

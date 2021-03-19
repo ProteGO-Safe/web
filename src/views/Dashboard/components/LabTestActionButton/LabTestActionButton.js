@@ -1,12 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { RippleEffect } from '../../../../../../components';
-import { Wrapper } from '../../../index';
+import { RippleEffect } from '../../../../components';
+import { Wrapper } from '../index';
 import * as Styled from './LabTestActionButton.styled';
 
-import { ReactComponent as IconTest } from '../../../../../../assets/img/icons/reka-test.svg';
-import { ReactComponent as IconTestNotification } from '../../../../../../assets/img/icons/reka-test_noti.svg';
-import { ReactComponent as Arrow } from '../../../../../../assets/img/icons/angle-right-blue.svg';
+import { ReactComponent as IconTest } from '../../../../assets/img/icons/reka-test.svg';
+import { ReactComponent as IconTestNotification } from '../../../../assets/img/icons/reka-test_noti.svg';
+import { ReactComponent as Arrow } from '../../../../assets/img/icons/angle-right-blue.svg';
 
 const LabTestActionButton = ({ description, isIconNotification, onClick, title }) => {
   return (

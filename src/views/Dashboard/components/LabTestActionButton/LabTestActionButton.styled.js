@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-import { Color } from '../../../../../../theme/colors';
-import { FontWeight } from '../../../../../../theme/fonts';
+import { Color } from '../../../../theme/colors';
+import { FontWeight } from '../../../../theme/fonts';
 
 export const LabTestActionButton = styled.div`
   position: relative;
