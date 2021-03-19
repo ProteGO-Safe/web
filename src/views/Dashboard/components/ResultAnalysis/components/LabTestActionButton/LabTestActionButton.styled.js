@@ -1,8 +1,8 @@
 import styled from 'styled-components';
-import { Color } from '../../../../theme/colors';
-import { FontWeight } from '../../../../theme/fonts';
+import { Color } from '../../../../../../theme/colors';
+import { FontWeight } from '../../../../../../theme/fonts';
 
-export const CallToActionPin = styled.div`
+export const LabTestActionButton = styled.div`
   position: relative;
   display: flex;
   flex-flow: wrap row;
@@ -23,10 +23,10 @@ export const Image = styled.div`
   margin-right: 16px;
   svg {
     position: absolute;
-    right: 0;
+    left: ${({ iconPos }) => (iconPos ? '6px' : '0')};
     bottom: 0;
     display: block;
-    width: 50px;
+    width: 60px;
   }
   &:before {
     content: '';
@@ -47,10 +47,6 @@ export const Content = styled.div`
   flex-flow: wrap row;
   width: calc(100% - 76px);
   padding: 10px 0;
-
-  @media (max-width: 300px) {
-    width: calc(100% - 86px);
-  }
 `;
 
 export const Label = styled.span`
@@ -85,7 +81,4 @@ export const Text = styled.p`
   line-height: 22px;
   font-weight: ${FontWeight.Normal};
   color: ${Color.primary};
-  strong {
-    font-size: 16px;
-  }
 `;
