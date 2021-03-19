@@ -1,6 +1,6 @@
 import { not } from 'ramda';
 
-export const getExposureAggregateStatistics = state => state.nativeData.exposureAggregate || {};
+export const getExposureAggregateStatistics = state => state.statistics.exposureAggregate || {};
 
 export const getStatisticsSummary = state => state.statistics.summary || {};
 
