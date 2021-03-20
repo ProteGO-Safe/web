@@ -37,8 +37,7 @@ const LabTestActionButtonContainer = () => {
   }, []);
 
   const timeIsUp = useMemo(() => {
-    // todo https://kyotu.atlassian.net/browse/PSAFE-3546
-    return moment().diff(moment.unix(timeOfUpdatedSubscriptionStatus), 'hours') >= 1;
+    return moment().diff(moment.unix(timeOfUpdatedSubscriptionStatus), 'hours') >= 72;
   }, [timeOfUpdatedSubscriptionStatus]);
 
   const data = useMemo(() => {
