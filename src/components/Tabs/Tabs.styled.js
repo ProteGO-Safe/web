@@ -14,4 +14,9 @@ export const Tabs = styled.div`
     height: 3px;
     bottom: -1px;
   }
+
+  .MuiTab-textColorInherit:not(.Mui-selected) {
+    color: ${Color.gray_5};
+    opacity: 1;
+  }
 `;
