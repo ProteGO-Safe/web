@@ -13,7 +13,7 @@ const UndesirableReaction = ({ lastUpdate, summary }) => {
   const legendData = [
     {
       key: 'undesirableReactions',
-      label: <T i18nkey="statistics_view_today" />,
+      label: 'statistics_view_today',
       value: summary.totalUndesirableReaction
     }
   ];
@@ -33,7 +33,7 @@ const UndesirableReaction = ({ lastUpdate, summary }) => {
 
 UndesirableReaction.propTypes = {
   lastUpdate: PropTypes.string.isRequired,
-  summary: PropTypes.object.isRequired,
+  summary: PropTypes.object.isRequired
 };
 
 export default UndesirableReaction;

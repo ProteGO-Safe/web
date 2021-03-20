@@ -14,8 +14,13 @@ const Vaccinations = ({ districts, lastUpdate, summary, voivodeships }) => {
   const legendData = [
     {
       key: 'newVaccinations',
-      label: <T i18nkey="statistics_view_today" />,
+      label: 'statistics_view_today',
       value: summary.newVaccinations
+    },
+    {
+      key: 'totalVaccinations',
+      label: 'statistics_view_total',
+      value: summary.totalVaccinations
     }
   ];
 

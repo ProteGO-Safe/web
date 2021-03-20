@@ -14,8 +14,13 @@ const Cases = ({ districts, lastUpdate, summary, voivodeships }) => {
   const legendData = [
     {
       key: 'newCases',
-      label: <T i18nKey="statistics_view_today" />,
+      label: 'statistics_view_today',
       value: summary.newCases
+    },
+    {
+      key: 'totalCases',
+      label: 'statistics_view_total',
+      value: summary.totalCases
     }
   ];
 

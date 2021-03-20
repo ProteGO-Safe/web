@@ -2,6 +2,7 @@ import React from 'react';
 import { Color } from '../../../../theme/colors';
 import { Small } from '../../../../theme/typography';
 import * as Styled from './Legend.styled';
+import { T } from '../../../../components';
 
 const Legend = ({ data }) => {
   const boxes = data.map(({ dot, key, label, value }) => (
@@ -9,7 +10,9 @@ const Legend = ({ data }) => {
       <Styled.Label>
         {dot && <Styled.Dot color={dot} />}
         <Small color={Color.white}>
-          <strong>{label}</strong>
+          <strong>
+            <T i18nKey={label} />
+          </strong>
         </Small>
       </Styled.Label>
       <Styled.Value>{value}</Styled.Value>

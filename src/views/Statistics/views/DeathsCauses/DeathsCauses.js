@@ -17,13 +17,13 @@ const DeathsCauses = ({ districts, lastUpdate, summary, voivodeships }) => {
     {
       dot: Color.primaryLight_2,
       key: 'newDeathsWithoutComorbidities',
-      label: <T i18nKey="statistics_view_text_27" />,
+      label: 'statistics_view_text_27',
       value: summary.newDeathsWithoutComorbidities
     },
     {
       dot: Color.red,
       key: 'newDeathsWithComorbidities',
-      label: <T i18nKey="statistics_view_text_28" />,
+      label: 'statistics_view_text_28',
       value: summary.newDeathsWithComorbidities
     }
   ];

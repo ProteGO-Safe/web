@@ -14,8 +14,13 @@ const Recovered = ({ districts, lastUpdate, summary, voivodeships }) => {
   const legendData = [
     {
       key: 'newRecovered',
-      label: <T i18nKey="statistics_view_today" />,
+      label: 'statistics_view_today',
       value: summary.newRecovered
+    },
+    {
+      key: 'totalRecovered',
+      label: 'statistics_view_total',
+      value: summary.totalRecovered
     }
   ];
 

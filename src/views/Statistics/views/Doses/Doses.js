@@ -17,13 +17,13 @@ const Doses = ({ districts, lastUpdate, summary, voivodeships }) => {
     {
       dot: Color.primaryLight_2,
       key: 'newVaccinationsDose1',
-      label: <T i18nKey="statistics_view_text_23" />,
+      label: 'statistics_view_text_23',
       value: summary.newVaccinationsDose1
     },
     {
       dot: Color.red,
       key: 'newVaccinationsDose2',
-      label: <T i18nKey="statistics_view_text_24" />,
+      label: 'statistics_view_text_24',
       value: summary.newVaccinationsDose2
     }
   ];

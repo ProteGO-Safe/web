@@ -14,7 +14,7 @@ const Tests = ({ districts, lastUpdate, summary, voivodeships }) => {
   const legendData = [
     {
       key: 'newTests',
-      label: <T i18nkey="statistics_view_today" />,
+      label: 'statistics_view_today',
       value: summary.newTests
     }
   ];
