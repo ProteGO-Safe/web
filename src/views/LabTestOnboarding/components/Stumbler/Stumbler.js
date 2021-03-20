@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import { FieldSet } from '../../../../components/FieldSet';
 import { Button, Layout, Radio, T } from '../../../../components';
 import useNavigation from '../../../../hooks/useNavigation';
 import { Routes } from '../../../../services/navigationService/routes';
+import * as Styled from './Stumbler.styled';
 
 const Stumbler = ({ skipStumbler }) => {
   const { goTo } = useNavigation();
@@ -19,19 +19,33 @@ const Stumbler = ({ skipStumbler }) => {
 
   if (showResult) {
     return (
-      <Layout onBackClick={() => setShowResult(false)}>
-        <T i18nKey="lab_test_text26" />
-        <T i18nKey="lab_test_text27" />
-        <T i18nKey="lab_test_text28" />
-        <Button onClick={() => goTo(Routes.Home)} label={<T i18nKey="button_understand" />} />
+      <Layout onBackClick={() => setShowResult(false)} fullHeight>
+        <Styled.Title>
+          <T i18nKey="lab_test_text26" />
+        </Styled.Title>
+
+        <Styled.BoxBorder>
+          <T i18nKey="lab_test_text27" />
+        </Styled.BoxBorder>
+
+        <Styled.Text>
+          <T i18nKey="lab_test_text28" />
+        </Styled.Text>
+
+        <Styled.ButtonWrapper>
+          <Button onClick={() => goTo(Routes.Home)} label={<T i18nKey="button_understand" />} />
+        </Styled.ButtonWrapper>
       </Layout>
     );
   }
 
   return (
-    <Layout>
-      <T i18nKey="lab_test_text25" />
-      <FieldSet>
+    <Layout fullHeight>
+      <Styled.Title>
+        <T i18nKey="lab_test_text25" />
+      </Styled.Title>
+
+      <Styled.ContentFields>
         <Radio
           key="yes"
           checked={confirmed === true}
@@ -46,8 +60,11 @@ const Stumbler = ({ skipStumbler }) => {
           onChange={() => setConfirmed(false)}
           label={<T i18nKey="no" />}
         />
-      </FieldSet>
-      <Button disabled={confirmed === undefined} onClick={next} label={<T i18nKey="button_next" />} />
+      </Styled.ContentFields>
+
+      <Styled.ButtonWrapper>
+        <Button disabled={confirmed === undefined} onClick={next} label={<T i18nKey="button_next" />} />
+      </Styled.ButtonWrapper>
     </Layout>
   );
 };
