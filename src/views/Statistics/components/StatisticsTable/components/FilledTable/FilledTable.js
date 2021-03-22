@@ -1,11 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import orderby from 'lodash.orderby';
 import { not } from 'ramda';
 import PropTypes from 'prop-types';
-import { RowBody, RowHeader, Table, Tbody, TD, Thead } from '../../../../../../components/Table/Table.styled';
-import { Small } from '../../../../../../theme/typography';
+import { RowBody, RowHeader, Table, Tbody, Thead } from '../../../../../../components/Table/Table.styled';
 import { Color } from '../../../../../../theme/colors';
-import { TH } from '../../../../../../components/Table/componets';
+import { TH, TD } from '../../../../../../components/Table/componets';
 import { ARROW_TYPE } from '../../../../../../components/Table/table.constants';
 
 const FilledTable = ({ data, fields }) => {
@@ -54,11 +53,7 @@ const FilledTable = ({ data, fields }) => {
     <RowBody key={item.id}>
       {fields.map(({ field }, index) => {
         const isFirst = index === 0;
-        return (
-          <TD align={isFirst && 'left'} key={field}>
-            <Small color={isFirst && Color.black}>{item[field]}</Small>
-          </TD>
-        );
+        return <TD key={field} value={item[field]} color={isFirst && Color.black} align={isFirst ? 'left' : 'right'} />;
       })}
     </RowBody>
   ));

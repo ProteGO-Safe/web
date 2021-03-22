@@ -25,23 +25,6 @@ export const RowBody = styled.tr`
   }
 `;
 
-export const TH = styled.th`
-  padding: 5px 5px 6px;
-  color: ${Color.white};
-  font-size: 12px;
-  letter-spacing: 0;
-  line-height: 19px;
-  text-align: ${({ align }) => align || 'center'};
-
-  &:first-child {
-    padding-left: 10px;
-  }
-
-  &:last-child {
-    padding-right: 10px;
-  }
-`;
-
 export const TD = styled.td`
   padding: 2px 5px;
   color: ${Color.white};
@@ -49,12 +32,9 @@ export const TD = styled.td`
   letter-spacing: 0;
   line-height: 19px;
   text-align: ${({ align }) => align || 'center'};
+  padding-right: ${({ padding }) => padding || '10'}px;
 
   &:first-child {
     padding-left: 10px;
-  }
-
-  &:last-child {
-    padding-right: 10px;
   }
 `;
