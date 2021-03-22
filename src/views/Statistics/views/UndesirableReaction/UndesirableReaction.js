@@ -13,7 +13,7 @@ const UndesirableReaction = ({ lastUpdate, summary }) => {
   const legendData = [
     {
       key: 'undesirableReactions',
-      label: 'statistics_view_today',
+      label: 'statistics_view_total',
       value: summary.totalUndesirableReaction
     }
   ];
