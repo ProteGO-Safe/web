@@ -16,7 +16,7 @@ const LabTestOnBoarding = () => {
 
   useEffect(() => {
     if (isReadyForLabTest) {
-      goTo(Routes.LabTest);
+      gotToWithHomeAsBack(Routes.LabTest);
       return;
     }
     if (and(temporaryEn, insufficientTor)) {
