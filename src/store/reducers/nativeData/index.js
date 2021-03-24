@@ -1,3 +1,4 @@
+import moment from 'moment';
 import * as types from '../../types/nativeData';
 
 const INITIAL_STATE = {
@@ -8,23 +9,9 @@ const INITIAL_STATE = {
   language: undefined,
   labTest: {
     subscription: undefined,
+    subscriptionUpdated: undefined,
     pinUnsuccessfulAttempts: [],
     uploadPinResult: undefined
-  },
-  covidStats: {
-    newCases: undefined,
-    totalCases: undefined,
-    newDeaths: undefined,
-    totalDeaths: undefined,
-    newRecovered: undefined,
-    totalRecovered: undefined,
-    updated: undefined
-  },
-  exposureAggregateStatistics: {
-    lastRiskCheckTimestamp: undefined,
-    todayKeysCount: undefined,
-    last7daysKeysCount: undefined,
-    totalKeysCount: undefined
   }
 };
 
@@ -126,28 +113,9 @@ const nativeBridgeReducer = (state = INITIAL_STATE, action) => {
       const { labTest } = state;
       return {
         ...state,
-        labTest: { ...labTest, subscription }
+        labTest: { ...labTest, subscription, subscriptionUpdated: moment().unix() }
       };
     }
-    case types.FETCH_COVID_STATISTICS_SUCCESS: {
-      const {
-        body: { covidStats }
-      } = action;
-      return {
-        ...state,
-        covidStats
-      };
-    }
-    case types.FETCH_EXPOSURE_AGGREGATE_STATISTICS: {
-      const {
-        body: { enStats }
-      } = action;
-      return {
-        ...state,
-        exposureAggregateStatistics: enStats
-      };
-    }
-
     default:
       return state;
   }

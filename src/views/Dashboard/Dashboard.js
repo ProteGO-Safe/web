@@ -1,9 +1,16 @@
 import React from 'react';
 import { Layout } from '../../components';
-
-import { ExposureNotification, ResultAnalysis, Statistics, CallToActionPin, CallToActionHealth } from './components';
+import { RatingApp } from '../index';
+import {
+  ExposureNotification,
+  ResultAnalysis,
+  Statistics,
+  CallToActionPin,
+  CallToActionHealth,
+  Districts,
+  LabTestActionButton
+} from './components';
 import * as Styled from './Dashboard.styled';
-import { InfoInteroperability, RatingApp } from '../index';
 
 const Dashboard = () => (
   <Layout noMargin noPadding isNavigation hideBackButton>
@@ -11,11 +18,12 @@ const Dashboard = () => (
       <ExposureNotification />
       <ResultAnalysis />
       <CallToActionPin />
+      <LabTestActionButton />
       <Statistics />
       <CallToActionHealth />
+      <Districts />
     </Styled.Dashboard>
 
-    <InfoInteroperability />
     <RatingApp />
   </Layout>
 );

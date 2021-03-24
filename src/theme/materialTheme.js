@@ -57,6 +57,15 @@ export const materialTheme = createMuiTheme({
         marginTop: '-9px !important',
         paddingBottom: '0 !important'
       }
+    },
+    MuiTab: {
+      root: {
+        fontWeight: 'bold',
+        margin: '12px 0 0 0',
+        padding: '10px 12px 10px 12px',
+        fontSize: '16px',
+        lineHeight: '22px'
+      }
     }
   }
 });

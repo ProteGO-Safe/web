@@ -1,6 +1,6 @@
 window.bridgeDataResponse(
   JSON.stringify({
-    enStats: {
+    riskCheck: {
       lastRiskCheckTimestamp: 123234234,
       todayKeysCount: 8000,
       last7daysKeysCount: 28000,

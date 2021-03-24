@@ -5,8 +5,10 @@ import { Bell, T } from '../index';
 import useNavigation from '../../hooks/useNavigation';
 import { Routes } from '../../services/navigationService/routes';
 import useHandlingPhysicalBack from '../../hooks/useHandlingPhysicalBack';
+import { H5 } from '../../theme/typography';
+import { Color } from '../../theme/colors';
 
-const Header = ({ hideBackButton, hideBell, onBackClick }) => {
+const Header = ({ hideBackButton, hideBell, logoText, onBackClick }) => {
   const { goBack, goTo } = useNavigation();
 
   const handleBackClick = useCallback(() => {
@@ -33,7 +35,8 @@ const Header = ({ hideBackButton, hideBell, onBackClick }) => {
   return (
     <Container hideBackButton={hideBackButton}>
       {!hideBackButton ? backButton : null}
-      <Logo onClick={() => goTo(Routes.Home)} />
+      {!logoText && <Logo onClick={() => goTo(Routes.Home)} />}
+      {logoText && <H5 color={Color.white}>{logoText}</H5>}
       {!hideBell ? <Bell /> : null}
     </Container>
   );
@@ -42,12 +45,14 @@ const Header = ({ hideBackButton, hideBell, onBackClick }) => {
 Header.defaultProps = {
   hideBackButton: false,
   hideBell: false,
+  logoText: undefined,
   onBackClick: null
 };
 
 Header.propTypes = {
   hideBackButton: PropTypes.bool,
   hideBell: PropTypes.bool,
+  logoText: PropTypes.string,
   onBackClick: PropTypes.func
 };
 

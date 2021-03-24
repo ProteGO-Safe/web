@@ -7,6 +7,7 @@ import nativeData from './nativeData';
 import navigation from './navigation';
 import restrictions from './restrictions';
 import riskTest from './riskTest';
+import statistics from './statistics';
 import triage from './triage';
 import user from './user';
 import { APP_STATE_CLEARED } from '../types/app';
@@ -19,6 +20,7 @@ const reducers = combineReducers({
   navigation,
   restrictions,
   riskTest,
+  statistics,
   triage,
   user
 });

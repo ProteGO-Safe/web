@@ -13,7 +13,10 @@ const CurrentStateTextContainer = () => {
     isTriageTorHighCovid,
     isTriageEnLow,
     isTriageEnMiddle,
-    isTriageEnHigh
+    isTriageEnHigh,
+    isTriageTorMiddleEnLow,
+    isTriageTorHighNoCovidEnLow,
+    isTriageTorHighCovidEnLow
   } = useTriage();
 
   const currentState = (() => {
@@ -28,11 +31,16 @@ const CurrentStateTextContainer = () => {
       return 'result_analysis_variant_2';
     }
 
-    if (or(isTriageTorMiddle, isTriageEnMiddle)) {
+    if (or(or(isTriageTorMiddle, isTriageEnMiddle), isTriageTorMiddleEnLow)) {
       return 'result_analysis_variant_3';
     }
 
-    if (or(or(isTriageTorHighNoCovid, isTriageTorHighCovid), isTriageEnHigh)) {
+    if (
+      or(
+        or(or(isTriageTorHighNoCovid, isTriageTorHighCovid), or(isTriageEnHigh, isTriageTorHighNoCovidEnLow)),
+        isTriageTorHighCovidEnLow
+      )
+    ) {
       return 'result_analysis_variant_4';
     }
 

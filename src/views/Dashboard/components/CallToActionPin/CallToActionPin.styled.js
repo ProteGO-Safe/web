@@ -8,7 +8,7 @@ export const CallToActionPin = styled.div`
   flex-flow: wrap row;
   align-items: center;
   width: 100%;
-  min-height: 120px;
+  min-height: 87px;
   padding: 0 10px;
   border-radius: 4px;
   background-color: ${Color.primaryLighter};
@@ -18,15 +18,15 @@ export const CallToActionPin = styled.div`
 export const Image = styled.div`
   position: relative;
   display: block;
-  width: 90px;
-  min-height: 120px;
+  width: 60px;
+  min-height: 87px;
   margin-right: 16px;
   svg {
     position: absolute;
     right: 0;
     bottom: 0;
     display: block;
-    width: 72px;
+    width: 50px;
   }
   &:before {
     content: '';
@@ -34,29 +34,18 @@ export const Image = styled.div`
     top: 50%;
     left: 50%;
     display: block;
-    width: 90px;
-    height: 90px;
-    margin: -45px 0 0 -45px;
+    width: 60px;
+    height: 60px;
+    margin: -30px 0 0 -30px;
     background-color: ${Color.white};
     border-radius: 50%;
-  }
-  @media (max-width: 300px) {
-    width: 70px;
-    svg {
-      width: 58px;
-    }
-    &:before {
-      width: 70px;
-      height: 70px;
-      margin: -35px 0 0 -35px;
-    }
   }
 `;
 
 export const Content = styled.div`
   display: flex;
   flex-flow: wrap row;
-  width: calc(100% - 106px);
+  width: calc(100% - 76px);
   padding: 10px 0;
 
   @media (max-width: 300px) {

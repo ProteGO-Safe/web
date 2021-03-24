@@ -89,5 +89,7 @@ class TagCounter:
     @staticmethod
     def validate(pl_value, checking_value):
         if pl_value.count('[') != checking_value.count('[') or pl_value.count(']') != checking_value.count(']'):
+            if pl_value.count('[') == pl_value.count('[WBR]'):
+                return ValidateResult(True)
             return ValidateResult(False, f"wrong number of tags in {checking_value}")
         return ValidateResult(True)

@@ -1,10 +1,17 @@
-import { and, not, or } from 'ramda';
+import { and, or, not } from 'ramda';
 import useHealthStats from '../useHealthStats';
 
 const useReadyForLabTest = () => {
   const { noTor, noEn, isTorLow, isEnLow } = useHealthStats();
 
-  return and(not(or(noTor, isTorLow)), not(or(noEn, isEnLow)));
+  const insufficientEn = or(noEn, isEnLow);
+  const insufficientTor = or(noTor, isTorLow);
+
+  return {
+    insufficientEn,
+    insufficientTor,
+    isReadyForLabTest: and(not(insufficientEn), not(insufficientTor))
+  };
 };
 
 export default useReadyForLabTest;

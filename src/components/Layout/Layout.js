@@ -10,12 +10,13 @@ const Layout = ({
   id,
   isGovFooter,
   isNavigation,
+  logoText,
   noMargin,
   noPadding,
   onBackClick
 }) => (
   <Styled.Layout data-cy={id}>
-    <Header hideBackButton={hideBackButton} onBackClick={onBackClick} hideBell={hideBell} />
+    <Header hideBackButton={hideBackButton} logoText={logoText} onBackClick={onBackClick} hideBell={hideBell} />
     <Styled.Container noMargin={noMargin} noPadding={noPadding} fullHeight={fullHeight}>
       {children}
     </Styled.Container>
