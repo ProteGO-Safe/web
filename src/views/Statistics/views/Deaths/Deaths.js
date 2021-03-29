@@ -9,7 +9,7 @@ import { getLastTwoWeeks } from '../../../../store/selectors/statistics';
 import { Slide } from '../../Statistics.styled';
 
 const Deaths = ({ districts, lastUpdate, summary, voivodeships }) => {
-  const chartLine1 = useSelector(getLastTwoWeeks)('cases');
+  const chartLine1 = useSelector(getLastTwoWeeks)('deaths');
 
   const legendData = [
     {
