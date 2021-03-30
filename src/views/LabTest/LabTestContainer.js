@@ -9,9 +9,9 @@ import { getUploadLabTestPinResult } from '../../store/selectors/nativeData';
 import useNavigation from '../../hooks/useNavigation';
 import { Routes } from '../../services/navigationService/routes';
 
-const LabTestContainer = () => {
+const LabTestContainer = ({ goBack }) => {
   const dispatch = useDispatch();
-  const { goTo, goBack } = useNavigation();
+  const { goTo } = useNavigation();
 
   const uploadLabTestPinResult = useSelector(getUploadLabTestPinResult);
 

@@ -6,18 +6,14 @@ import { LabTestReady, SimpleResult } from './views';
 import useLabTest from '../../hooks/useLabTest';
 import * as Styled from './SummaryRiskTest.styled';
 import useTorHigh from './hooks/useTorHigh';
-import useNavigation from '../../hooks/useNavigation';
 
 const SummaryRiskTest = () => {
-  const { getParam } = useNavigation();
   const { isEnHigh, isTorMiddle, isEnMiddle } = useHealthStats();
   const { isSubscriptionInProgress } = useLabTest();
   const isTorHigh = useTorHigh();
 
-  const forceTemporaryEn = getParam('forceTemporaryEn');
-
   const resolveView = () => {
-    if (not(isSubscriptionInProgress) && (isEnMiddle || isEnHigh || forceTemporaryEn) && or(isTorMiddle, isTorHigh)) {
+    if (not(isSubscriptionInProgress) && (isEnMiddle || isEnHigh) && or(isTorMiddle, isTorHigh)) {
       return <LabTestReady />;
     }
     return <SimpleResult />;

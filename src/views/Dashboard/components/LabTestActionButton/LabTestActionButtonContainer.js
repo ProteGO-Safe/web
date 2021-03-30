@@ -29,7 +29,7 @@ const LabTestActionButtonContainer = () => {
     return prepareData(
       'result_analysis_text_17_3',
       'result_analysis_text_18_3',
-      () => goTo(Routes.LabTestOnboarding),
+      () => goTo(Routes.LabTest),
       undefined,
       false
     );

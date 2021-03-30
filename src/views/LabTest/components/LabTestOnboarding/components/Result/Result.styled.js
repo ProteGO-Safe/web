@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-import { Color } from '../../../../theme/colors';
-import { FontWeight } from '../../../../theme/fonts';
+import { Color } from '../../../../../../theme/colors';
+import { FontWeight } from '../../../../../../theme/fonts';
 
 export const Title = styled.h2`
   margin: 0 0 30px 0;
@@ -22,8 +22,13 @@ export const ButtonWrapper = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
-  margin-top: auto;
-  margin-bottom: 100px;
+  margin-top: 24px;
+
+  > * {
+    &:not(:last-child) {
+      margin-bottom: 10px;
+    }
+  }
 `;
 
 export const BoxBorder = styled.div`
@@ -48,22 +53,24 @@ export const BoxBorder = styled.div`
   }
 `;
 
-export const ContentFields = styled.div`
-  display: flex;
-  flex-direction: column;
+export const Annotation = styled.div`
+  display: inline-block;
   width: 100%;
-  padding: 0 5px;
+  margin-top: 24px;
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 400;
+  color: ${Color.black};
+`;
 
-  label {
-    padding-left: 40px;
+export const AnnotationContent = styled.span`
+  width: 100%;
+  font-size: 14px;
+  line-height: 22px;
+`;
 
-    > span {
-      text-transform: uppercase;
-      color: ${Color.gray_5};
-    }
-  }
-
-  > div:not(:last-child) {
-    margin-bottom: 30px;
-  }
+export const Link = styled.span`
+  display: inline;
+  color: ${Color.primary};
+  cursor: pointer;
 `;
