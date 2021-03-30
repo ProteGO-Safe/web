@@ -5,7 +5,10 @@ const LabTestOnBoarding = ({ answers, setAnswers, step, setStep, onFinish }) => 
   const [isReadyForLabTest, setIsReadyForLabTest] = useState(false);
 
   useEffect(() => {
-    if (answers[1] === true && Object.values(answers[3]).filter(value => value).length >= 2) {
+    if (answers[1] === true) {
+      setIsReadyForLabTest(true);
+    }
+    if (answers[3] && Object.values(answers[3]).filter(value => value).length >= 2) {
       setIsReadyForLabTest(true);
     }
     // eslint-disable-next-line
@@ -27,7 +30,7 @@ const LabTestOnBoarding = ({ answers, setAnswers, step, setStep, onFinish }) => 
     }
 
     if (step === 3) {
-      setIsReadyForLabTest(answers[1] === true && Object.values(answer).filter(value => value).length >= 2);
+      setIsReadyForLabTest(answers[1] === true || Object.values(answer).filter(value => value).length >= 2);
       setStep('result');
     }
   };
