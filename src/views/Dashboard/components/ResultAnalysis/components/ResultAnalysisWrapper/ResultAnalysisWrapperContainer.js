@@ -14,17 +14,25 @@ const ResultAnalysisWrapperContainer = ({ children }) => {
     isTriageTorHighCovid,
     isTriageEnLow,
     isTriageEnMiddle,
-    isTriageEnHigh
+    isTriageEnHigh,
+    isTriageTorMiddleEnLow,
+    isTriageTorHighNoCovidEnLow,
+    isTriageTorHighCovidEnLow
   } = useTriage();
 
   const resolveColor = () => {
     if (or(isCovidConfirmed, isCovidManual)) {
       return Color.red;
     }
-    if (or(or(isTriageTorHighNoCovid, isTriageTorHighCovid), isTriageEnHigh)) {
+    if (
+      or(
+        or(or(isTriageTorHighNoCovid, isTriageTorHighCovid), or(isTriageEnHigh, isTriageTorHighNoCovidEnLow)),
+        isTriageTorHighCovidEnLow
+      )
+    ) {
       return Color.red;
     }
-    if (or(isTriageTorMiddle, isTriageEnMiddle)) {
+    if (or(or(isTriageTorMiddle, isTriageEnMiddle), isTriageTorMiddleEnLow)) {
       return Color.info;
     }
     if (or(isTriageTorLow, isTriageEnLow)) {

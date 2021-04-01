@@ -21,7 +21,10 @@ const IconContainer = () => {
     isTriageTorHighCovid,
     isTriageEnLow,
     isTriageEnMiddle,
-    isTriageEnHigh
+    isTriageEnHigh,
+    isTriageTorMiddleEnLow,
+    isTriageTorHighNoCovidEnLow,
+    isTriageTorHighCovidEnLow
   } = useTriage();
 
   const icon = (() => {
@@ -33,11 +36,13 @@ const IconContainer = () => {
       return <FaceLow />;
     }
 
-    if (isTriageTorMiddle) {
+    if (or(isTriageTorMiddle, isTriageTorMiddleEnLow)) {
       return <FaceMiddle />;
     }
 
-    if (or(isTriageTorHighNoCovid, isTriageTorHighCovid)) {
+    if (
+      or(or(isTriageTorHighNoCovid, isTriageTorHighCovid), or(isTriageTorHighNoCovidEnLow, isTriageTorHighCovidEnLow))
+    ) {
       return <FaceHigh />;
     }
     if (isTriageEnLow) {

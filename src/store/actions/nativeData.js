@@ -173,29 +173,3 @@ export const revokeEnStatus = () => {
     });
   };
 };
-
-export const fetchCovidStatisticsSuccess = body => ({
-  body,
-  type: types.FETCH_COVID_STATISTICS_SUCCESS
-});
-
-export const fetchCovidStatistics = () => {
-  return dispatch => {
-    nativeBridge.fetchCovidStatistics().then(data => {
-      dispatch(fetchCovidStatisticsSuccess(data));
-    });
-  };
-};
-
-export const fetchExposureAggregateStatisticsSuccess = body => ({
-  body,
-  type: types.FETCH_EXPOSURE_AGGREGATE_STATISTICS
-});
-
-export const fetchExposureAggregateStatistics = () => {
-  return dispatch => {
-    nativeBridge.fetchExposureAggregateStatistics().then(data => {
-      dispatch(fetchExposureAggregateStatisticsSuccess(data));
-    });
-  };
-};

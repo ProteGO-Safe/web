@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import LabTest from './LabTest';
 import { PinVerificationLoader } from './components';
-import { NavigationBackGuard, Layout, T } from '../../components';
+import { Layout, NavigationBackGuard, T } from '../../components';
 import { NUMBER_OF_STEPS } from './labTest.constants';
 import { resetUploadLabTestPinResult, uploadLabTestPin } from '../../store/actions/nativeData';
 import { getUploadLabTestPinResult } from '../../store/selectors/nativeData';

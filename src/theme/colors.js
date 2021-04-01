@@ -1,4 +1,5 @@
 export const Color = {
+  base: '',
   black: '#000000',
   danger: '#d5233f',
   darkGray: '#656565',
@@ -24,6 +25,7 @@ export const Color = {
   orange: '#CC4700',
   primary: '#0052a5',
   primaryLight: '#006cd7',
+  primaryLight_2: '#428AD3',
   primaryLighter: '#E5EDF6',
   red: '#D5233F',
   secondary: '#006cd7',

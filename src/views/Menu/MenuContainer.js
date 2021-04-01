@@ -4,8 +4,6 @@ import { Routes } from '../../services/navigationService/routes';
 import { fetchLabTestSubscription } from '../../store/actions/nativeData';
 import { Layout, VersionApp } from '../../components';
 import useLabTest from '../../hooks/useLabTest';
-import useHealthStats from '../../hooks/useHealthStats';
-import useReadyForLabTest from '../../hooks/useReadyForLabTest';
 import Menu from './Menu';
 
 import { ReactComponent as Icon1 } from '../../assets/img/icons/menu-boczne-dziennik_BLUE.svg';
@@ -18,9 +16,6 @@ import { ReactComponent as Icon6 } from '../../assets/img/icons/menu-boczne-kwes
 const MenuContainer = () => {
   const dispatch = useDispatch();
   const { isSubscriptionInProgress } = useLabTest();
-  const { isEnHigh } = useHealthStats();
-
-  const readyForLabTest = useReadyForLabTest();
 
   useEffect(() => {
     dispatch(fetchLabTestSubscription());
@@ -60,8 +55,8 @@ const MenuContainer = () => {
     },
     {
       icon: <Icon6 />,
-      path: readyForLabTest ? Routes.SummaryRiskTest : Routes.Diagnosis,
-      invisible: isSubscriptionInProgress || !isEnHigh,
+      path: Routes.LabTestOnboarding,
+      invisible: isSubscriptionInProgress,
       slug: 'menu_container_text10',
       title: 'menu_container_text10'
     }

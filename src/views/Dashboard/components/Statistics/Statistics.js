@@ -1,87 +1,74 @@
-import React, { useMemo } from 'react';
+import React from 'react';
+import { not } from 'ramda';
 import PropTypes from 'prop-types';
-import { T, ToggleButton } from '../../../../components';
-import { FollowDistrictsSlider } from '../../../index';
-import { RiskMonitoring, StatsItem } from './components';
-import { Wrapper } from '../index';
-import * as Styled from './Statistics.styled';
+import { ItemBox, SliderBox, T } from '../../../../components';
+import useNavigation from '../../../../hooks/useNavigation';
+import { Routes } from '../../../../services/navigationService/routes';
+import { ReactComponent as Icon1 } from '../../../../assets/img/icons/icon-szczepienie.svg';
+import { ReactComponent as Icon2 } from '../../../../assets/img/icons/icon-wirus.svg';
+import { StatsItem } from './components';
+import { statisticTypes } from '../../../Statistics/statistics.constants';
 
-const Statistics = ({
-  covidStats = [],
-  dateUpdated,
-  districtItems,
-  existsCovidStatsItems,
-  existsVaccinationStatsItems,
-  handleToggleButton,
-  open,
-  vaccinationStats = []
-}) => {
-  const renderVaccinationStatsItems = useMemo(
-    () =>
-      vaccinationStats.map(item => (
-        <StatsItem key={item.name} name={item.name} newRecord={item.news} totalRecord={item.totals} />
-      )),
-    [vaccinationStats]
-  );
+const Statistics = ({ dateUpdated, vaccinationsBoxes, covidStatsBoxes }) => {
+  const { goTo } = useNavigation();
 
-  const renderCovidStatsItems = useMemo(
-    () =>
-      covidStats.map(item => (
-        <StatsItem key={item.name} name={item.name} newRecord={item.news} totalRecord={item.totals} />
-      )),
-    [covidStats]
-  );
+  const renderStatsItem = item => {
+    if (not(item)) {
+      return null;
+    }
+
+    const { value, label, smallSize, withoutPlus } = item;
+
+    return <StatsItem label={label} value={value} smallSize={smallSize} withoutPlus={withoutPlus} />;
+  };
+
+  const createBoxItem = (item, type) => {
+    const { id, heading, firstLine, kind, secondLine } = item;
+
+    return (
+      <ItemBox
+        key={id}
+        onClick={() => goTo(Routes.Statistics, { type, kind })}
+        heading={heading}
+        firstLine={renderStatsItem(firstLine)}
+        secondLine={renderStatsItem(secondLine)}
+      />
+    );
+  };
+
+  const renderedVaccinationStats = vaccinationsBoxes.map(value => createBoxItem(value, statisticTypes.VACCINATIONS));
+  const renderedCovidStats = covidStatsBoxes.map(value => createBoxItem(value, statisticTypes.COVID));
 
   return (
-    <Wrapper>
-      <Styled.Statistics>
-        {existsVaccinationStatsItems && (
-          <Styled.ContentStats>
-            <Styled.Update>
-              <T i18nKey="statistics_text_15" variables={{ date: dateUpdated }} />
-            </Styled.Update>
+    <>
+      <SliderBox
+        icon={<Icon1 />}
+        title={<T i18nKey="dashboard_statistic_2" variables={{ date: dateUpdated }} />}
+        handleHeadClick={() => goTo(Routes.Statistics, { type: statisticTypes.VACCINATIONS })}
+        items={renderedVaccinationStats}
+      />
 
-            <Styled.Wrapper mrgBottom>{renderVaccinationStatsItems}</Styled.Wrapper>
-          </Styled.ContentStats>
-        )}
-
-        {existsCovidStatsItems && (
-          <Styled.ContentStats>
-            <Styled.Update>
-              <T i18nKey="statistics_text_1" variables={{ date: dateUpdated }} />
-            </Styled.Update>
-
-            <Styled.Wrapper>{renderCovidStatsItems}</Styled.Wrapper>
-
-            <Styled.Source>
-              <T i18nKey="statistics_text_2" />
-            </Styled.Source>
-          </Styled.ContentStats>
-        )}
-
-        <Styled.Content open={open} existsStatsItems={existsCovidStatsItems || existsVaccinationStatsItems}>
-          <FollowDistrictsSlider items={districtItems} />
-
-          <RiskMonitoring />
-        </Styled.Content>
-
-        <Styled.ToggleButtonWrapper>
-          <ToggleButton active={open} onClick={handleToggleButton} />
-        </Styled.ToggleButtonWrapper>
-      </Styled.Statistics>
-    </Wrapper>
+      <SliderBox
+        icon={<Icon2 />}
+        title={<T i18nKey="dashboard_statistic_9" variables={{ date: dateUpdated }} />}
+        handleHeadClick={() => goTo(Routes.Statistics, { type: statisticTypes.COVID })}
+        items={renderedCovidStats}
+      />
+    </>
   );
 };
 
+Statistics.defaultProps = {
+  vaccinationsBoxes: [],
+  covidStatsBoxes: []
+};
+
 Statistics.propTypes = {
-  covidStats: PropTypes.array.isRequired,
+  // eslint-disable-next-line react/forbid-prop-types
+  covidStatsBoxes: PropTypes.array,
   dateUpdated: PropTypes.string.isRequired,
-  existsCovidStatsItems: PropTypes.bool.isRequired,
-  existsVaccinationStatsItems: PropTypes.bool.isRequired,
-  districtItems: PropTypes.array.isRequired,
-  handleToggleButton: PropTypes.func.isRequired,
-  open: PropTypes.bool.isRequired,
-  vaccinationStats: PropTypes.array.isRequired
+  // eslint-disable-next-line react/forbid-prop-types
+  vaccinationsBoxes: PropTypes.array
 };
 
 export default Statistics;

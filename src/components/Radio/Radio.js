@@ -16,12 +16,7 @@ const Radio = ({ checked, content, error, label, name, onChange, testId }) => {
         onChange={onChange}
         type="radio"
       />
-      <Styled.Label
-        data-cy={`radio-label-${name}-${testId}`}
-        error={error}
-        hasContent={!!content}
-        htmlFor={id}
-      >
+      <Styled.Label data-cy={`radio-label-${name}-${testId}`} error={error} hasContent={!!content} htmlFor={id}>
         <Styled.Text>{label}</Styled.Text>
         {content && content}
       </Styled.Label>

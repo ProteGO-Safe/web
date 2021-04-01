@@ -2,153 +2,152 @@ import styled from 'styled-components';
 import { Color } from '../../../../theme/colors';
 import { hexToRgba } from '../../../../helpers/colors';
 
-export const ImportantInfoItem = styled.div`
+export const Wrapper = styled.div`
+  position: relative;
+  width: 100%;
+  height: 100%;
+`;
+
+export const ItemContent = styled.div`
   position: relative;
   display: flex;
   flex-flow: wrap row;
-  justify-content: stretch;
-  align-items: stretch;
   width: 100%;
   height: 100%;
-  padding: 1.5rem 0.5rem;
   background: ${Color.gray_6};
   border-radius: 4px;
   box-shadow: 2px 2px 3px ${hexToRgba(Color.black, 0.26)};
   transition: all 0.1s ease-in;
-  font-size: 18px;
   overflow: hidden;
 
   ${({ size }) =>
-    size &&
-    `
-    align-items: center;
-    margin-bottom: 12px;
-    padding: 1.5rem 1rem;
+    size
+      ? `
+    align-content: flex-start;
+    padding: 20px 20px 26px 70px;
+    min-height: 0;
+  `
+      : `
+    align-content: space-between;
+    min-height: 204px;
+    padding: 30px 10px 28px;
   `}
 `;
 
-export const Badge = styled.span`
+export const TopLabel = styled.span`
   position: absolute;
-  right: 8px;
-  padding: 4px 6px;
-  font-size: 0.5em;
-  line-height: 0.7em;
-  color: ${Color.primary};
-  text-transform: uppercase;
-  border-radius: 4px;
-  border: 1px solid ${Color.primary};
-  ${({ size }) =>
-    size
-      ? `
-    bottom: 8px;
-  `
-      : `
-    top: 8px;
-  `}
+  top: -7px;
+  left: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 14px;
+  padding: 0 6px;
+  font-size: 10px;
+  line-height: 1;
+  font-weight: 600;
+  color: ${Color.white};
+  background-color: ${Color.primary};
+  border-radius: 14px;
+  transform: translateX(-50%);
+  z-index: 2;
 `;
 
 export const Icon = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 0.5em;
-  width: 100%;
-  height: 2.4em;
-  ${({ size }) =>
-    size &&
-    `
-    width: 2.4em;
-    height: 100%;
-    margin-right: 0.75rem;
-    margin-bottom: 0;
-  `}
+  margin-bottom: 12px;
+  padding: 0 14px;
+
   svg {
     display: block;
-    max-width: 100%;
-    max-height: 100%;
   }
-`;
 
-export const Content = styled.div`
-  display: flex;
-  flex-flow: wrap row;
-  width: 100%;
   ${({ size }) =>
-    size &&
-    `
-    width: calc(100% - 2.4em - 0.75rem);
+    size
+      ? `
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 70px;
+    height: 100%;
+    
+    svg {
+      max-width: 40px;
+      max-height: 44px;
+    }
+  `
+      : `
+    position: relative;
+    width: 100%;
+    height: 48px;
+    
+    svg {
+      max-width: 100%;
+      max-height: 100%;
+    }
   `}
 `;
 
 export const Title = styled.h2`
   display: flex;
   flex-flow: wrap row;
-  justify-content: center;
-  align-items: center;
   width: 100%;
   margin-top: 0;
-  margin-bottom: 0.4em;
-  font-size: 1em;
-  line-height: 1.2em;
+  margin-bottom: 8px;
+  font-size: 18px;
+  line-height: 24px;
   color: ${({ danger }) => (danger ? Color.danger : Color.primary)};
   font-weight: bold;
-  text-align: center;
+
   ${({ size }) =>
-    size &&
-    `
+    size
+      ? `
     justify-content: flex-start;
-    margin-bottom: 0;
     text-align: left;
+  `
+      : `
+    justify-content: center;
+    text-align: center;
   `}
-  @media (max-width: 320px) {
-    padding-right: 0;
-  }
-  @media (min-height: 812px) {
-    line-height: 1.4em;
-  }
 `;
 
 export const Description = styled.span`
   display: flex;
   flex-flow: wrap row;
-  justify-content: center;
   width: 100%;
-  margin-top: auto;
-  font-size: 0.556em;
-  line-height: 1.4em;
+  font-size: 10px;
+  line-height: 14px;
   color: ${Color.black};
-  text-align: center;
-
-  @media (max-width: 320px) {
-    padding-right: 0;
-  }
 
   ${({ size }) =>
-    size &&
-    `
-    justify-content: flex-start;
-    margin-top: 0.4em;
-    padding-right: 2rem;
+    size
+      ? `
     text-align: left;
+  `
+      : `
+    text-align: center;
   `}
 `;
 
 export const LinkGov = styled.div`
   position: absolute;
   bottom: 8px;
-  left: 0;
-  width: 100%;
-  font-size: 0.556em;
-  line-height: 1em;
+  font-size: 10px;
+  line-height: 14px;
   color: ${Color.primary};
   text-align: center;
+
   ${({ size }) =>
-    size &&
-    `
-    padding: 0 0.5rem;
-    font-size: 10px;
-    line-height: 1;
-    text-align: right;
+    size
+      ? `
+    right: 20px;
+    width: auto;
+  `
+      : `
+    left: 0;
+    width: 100%;
   `}
 `;
 

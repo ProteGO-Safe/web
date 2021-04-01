@@ -1,5 +1,4 @@
 import React from 'react';
-import Scrollbar from 'react-scrollbars-custom';
 import { useSelector } from 'react-redux';
 import { Layout } from '../../components';
 import { ImportantInfoItem } from './components';
@@ -10,15 +9,11 @@ const ImportantInfo = ({ items }) => {
   const fontScale = useSelector(getFontScale);
   const windowWidth = window.innerWidth;
 
-  const changeView = windowWidth < 375 || fontScale > 1;
-
-  const stylesScrollbar = {
-    width: '100%',
-    height: '100%'
-  };
+  const changeView = windowWidth < 375 || fontScale > 1 ? 1 : 0;
 
   const renderItems = items.map((item, key) => {
     const { danger, description, icon, link, newFeature, path, title, type } = item;
+
     return (
       <ImportantInfoItem
         key={key}
@@ -29,7 +24,7 @@ const ImportantInfo = ({ items }) => {
         path={path}
         title={title}
         type={type}
-        size={changeView}
+        isSmallDevice={changeView}
         newFeature={newFeature}
       />
     );
@@ -37,15 +32,7 @@ const ImportantInfo = ({ items }) => {
 
   return (
     <Layout isNavigation noMargin noPadding hideBackButton>
-      <Styled.Container change={changeView}>
-        {changeView ? (
-          <Scrollbar scrollbarWidth={6} style={stylesScrollbar}>
-            {renderItems}
-          </Scrollbar>
-        ) : (
-          renderItems
-        )}
-      </Styled.Container>
+      <Styled.Container size={changeView}>{renderItems}</Styled.Container>
     </Layout>
   );
 };

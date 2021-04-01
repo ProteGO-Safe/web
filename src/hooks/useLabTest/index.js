@@ -1,13 +1,14 @@
 import { useSelector } from 'react-redux';
 import { useState } from 'react';
 import { and } from 'ramda';
-import { getLabTestSubscriptionStatus } from '../../store/selectors/nativeData';
+import { getLabTestSubscriptionStatus, getTimeOfUpdatedSubscriptionStatus } from '../../store/selectors/nativeData';
 import { usePrevious } from '../usePrevious';
 import useSkippingFirstUpdate from '../useSkippingFirstUpdate';
 import { notEquals } from '../../helpers/logic';
 
 const useLabTest = () => {
   const subscriptionStatus = useSelector(getLabTestSubscriptionStatus);
+  const timeOfUpdatedSubscriptionStatus = useSelector(getTimeOfUpdatedSubscriptionStatus);
   const previousSubscriptionStatus = usePrevious(subscriptionStatus);
 
   const [signedUp, setSignedUp] = useState(false);
@@ -27,7 +28,8 @@ const useLabTest = () => {
     isSubscriptionVerified,
     isSubscriptionConfirmed,
     isSubscriptionInProgress,
-    signedUp
+    signedUp,
+    timeOfUpdatedSubscriptionStatus
   };
 };
 

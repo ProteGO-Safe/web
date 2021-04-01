@@ -9,12 +9,14 @@ import { isAndroidWebView, isIOSWebView } from '../../utils/native';
 import {
   enStatusReceived,
   fetchExposureNotificationStatistics,
-  fetchLabTestSubscriptionSuccess,
-  fetchCovidStatisticsSuccess,
-  fetchCovidStatistics as fetchCovidStatisticsAction,
-  fetchExposureAggregateStatistics as fetchExposureAggregateStatisticsAction
+  fetchLabTestSubscriptionSuccess
 } from '../../store/actions/nativeData';
 import { fetchSubscribedDistricts } from '../../store/actions/restrictions';
+import {
+  fetchSummaryStatisticsSuccess,
+  fetchSummaryStatistics as fetchSummaryStatisticsAction,
+  fetchExposureAggregateStatistics as fetchExposureAggregateStatisticsAction, fetchDetailsStatisticsSuccess
+} from '../../store/actions/statistics';
 import { BACK_PRESSED } from '../../store/types/navigation';
 import { UPLOAD_HISTORICAL_DATA_FINISHED } from '../../store/types/app';
 import { changeRoute } from '../../store/actions/navigation';
@@ -96,8 +98,12 @@ const getServicesStatus = async () => {
   return callGetBridgeData(DATA_TYPE.NATIVE_SERVICES_STATUS);
 };
 
-const fetchCovidStatistics = async () => {
-  return callGetBridgeData(DATA_TYPE.COVID_STATISTICS);
+const fetchSummaryStatistics = async () => {
+  return callGetBridgeData(DATA_TYPE.SUMMARY_STATISTICS);
+};
+
+const fetchDetailsStatistics = async () => {
+  return callGetBridgeData(DATA_TYPE.DETAILS_STATISTICS);
 };
 
 const fetchExposureAggregateStatistics = async () => {
@@ -231,7 +237,7 @@ const handleNativeState = appState => {
     dispatch(fetchExposureNotificationStatistics());
     dispatch(fetchSubscribedDistricts());
     dispatch(fetchActivities());
-    dispatch(fetchCovidStatisticsAction());
+    dispatch(fetchSummaryStatisticsAction());
     dispatch(fetchExposureAggregateStatisticsAction());
   }
 };
@@ -250,10 +256,16 @@ const handleLabTestSubscription = body => {
   dispatch(fetchLabTestSubscriptionSuccess(body));
 };
 
-const handleNewCovidStatistics = body => {
+const handleNewSummaryStatistics = body => {
   const store = StoreRegistry.getStore();
   const { dispatch } = store;
-  dispatch(fetchCovidStatisticsSuccess(body));
+  dispatch(fetchSummaryStatisticsSuccess(body));
+};
+
+const handleNewDetailsStatistics = body => {
+  const store = StoreRegistry.getStore();
+  const { dispatch } = store;
+  dispatch(fetchDetailsStatisticsSuccess(body));
 };
 
 const handleChangeScreen = body => {
@@ -280,7 +292,8 @@ const callBridgeDataHandler = cond([
   [equals(DATA_TYPE.LAB_TEST_SUBSCRIPTION), always(handleLabTestSubscription)],
   [equals(DATA_TYPE.BACK_PRESSED), always(handleBackPressed)],
   [equals(DATA_TYPE.CHANGE_SCREEN), always(handleChangeScreen)],
-  [equals(DATA_TYPE.COVID_STATISTICS), always(handleNewCovidStatistics)]
+  [equals(DATA_TYPE.SUMMARY_STATISTICS), always(handleNewSummaryStatistics)],
+  [equals(DATA_TYPE.DETAILS_STATISTICS), always(handleNewDetailsStatistics)]
 ]);
 
 const onBridgeData = (dataType, dataString) => {
@@ -308,7 +321,8 @@ export default {
   changeLanguage,
   confirmActivities,
   setDiagnosisTimestamp,
-  fetchCovidStatistics,
+  fetchSummaryStatistics,
+  fetchDetailsStatistics,
   fetchExposureAggregateStatistics,
   getExposureNotificationStatistics,
   getDistrictsStatus,

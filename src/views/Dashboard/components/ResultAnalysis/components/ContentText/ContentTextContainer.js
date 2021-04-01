@@ -19,7 +19,10 @@ const ContentTextContainer = ({ t }) => {
     isTriageTorHighCovid,
     isTriageEnLow,
     isTriageEnMiddle,
-    isTriageEnHigh
+    isTriageEnHigh,
+    isTriageTorMiddleEnLow,
+    isTriageTorHighNoCovidEnLow,
+    isTriageTorHighCovidEnLow
   } = useTriage();
 
   const translatedText = (() => {
@@ -41,10 +44,26 @@ const ContentTextContainer = ({ t }) => {
         />
       );
     }
+    if (isTriageTorMiddleEnLow) {
+      return (
+        <T
+          i18nKey="result_analysis_text_38"
+          variables={{ date: lastDate, currentState: t('result_analysis_variant_3') }}
+        />
+      );
+    }
     if (isTriageTorHighNoCovid) {
       return (
         <T
           i18nKey="result_analysis_text_12"
+          variables={{ date: lastDate, currentState: t('result_analysis_variant_4') }}
+        />
+      );
+    }
+    if (isTriageTorHighNoCovidEnLow) {
+      return (
+        <T
+          i18nKey="result_analysis_text_39"
           variables={{ date: lastDate, currentState: t('result_analysis_variant_4') }}
         />
       );
@@ -57,7 +76,14 @@ const ContentTextContainer = ({ t }) => {
         />
       );
     }
-
+    if (isTriageTorHighCovidEnLow) {
+      return (
+        <T
+          i18nKey="result_analysis_text_40"
+          variables={{ date: lastDate, currentState: t('result_analysis_variant_4') }}
+        />
+      );
+    }
     if (isTriageEnLow) {
       return <T i18nKey="result_analysis_text_14" />;
     }
