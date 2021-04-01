@@ -11,7 +11,6 @@ const INITIAL_STATE = {
     subscription: undefined,
     subscriptionUpdated: undefined,
     pinUnsuccessfulAttempts: [],
-    uploadPinResult: undefined
   }
 };
 
@@ -37,9 +36,6 @@ const resolvePinUnsuccessfulAttempts = (state, result) => {
   }
   if (result === 2) {
     return [...pinUnsuccessfulAttempts, new Date().getTime()];
-  }
-  if (result === 3) {
-    return [...pinUnsuccessfulAttempts];
   }
   return [...pinUnsuccessfulAttempts];
 };
@@ -94,16 +90,8 @@ const nativeBridgeReducer = (state = INITIAL_STATE, action) => {
         ...state,
         labTest: {
           ...labTest,
-          uploadPinResult: result,
           pinUnsuccessfulAttempts
         }
-      };
-    }
-    case types.RESET_UPLOAD_LAB_TEST_PIN_RESULT_SUCCESS: {
-      const { labTest } = state;
-      return {
-        ...state,
-        labTest: { ...labTest, uploadPinResult: undefined }
       };
     }
     case types.FETCH_LAB_TEST_SUBSCRIPTION: {
