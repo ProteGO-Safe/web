@@ -58,12 +58,7 @@ const Step2 = ({ isInvalidPin, isSafetyNetError, onReset, onSubmit, pin, setPin 
       {isInvalidPin && (
         <>
           <Styled.WarningWrapper>
-            <Warning
-              borderColor={Color.danger}
-              colorFont={Color.danger}
-              status="error"
-              title={<T i18nKey="lab_test_text12" /> && banMessage}
-            />
+            <Warning borderColor={Color.danger} colorFont={Color.danger} status="error" title={banMessage} />
           </Styled.WarningWrapper>
           <Styled.Content>
             <Styled.SubTitle>
