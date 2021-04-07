@@ -7,7 +7,7 @@ import useLabTest from '../../../../hooks/useLabTest';
 import useTorHigh from '../../hooks/useTorHigh';
 
 const SimpleResultContainer = () => {
-  const { isTorLow, isTorMiddle, isEnMiddle, isEnHigh } = useHealthStats();
+  const { isTorLow, isTorMiddle, isEnMiddle, isEnHigh, noEn } = useHealthStats();
   const { isSubscriptionInProgress } = useLabTest();
   const isTorHigh = useTorHigh();
 
@@ -35,11 +35,10 @@ const SimpleResultContainer = () => {
   };
 
   const resolveTitle = () => {
-    if (isTorLow) {
-      return <T i18nKey="summary_risk_test_title_3" />;
+    if (noEn) {
+      return <T i18nKey="summary_risk_test_title_2" />;
     }
-
-    return <T i18nKey="summary_risk_test_title_2" />;
+    return <T i18nKey="summary_risk_test_title_3" />;
   };
 
   return <SimpleResult paragraphsLabels={resolveParagraphsLabels()} title={resolveTitle()} />;

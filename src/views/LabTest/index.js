@@ -1,1 +1,1 @@
-export { default as LabTest } from './LabTestContainer';
+export { default as LabTest } from './LabTest.container';
