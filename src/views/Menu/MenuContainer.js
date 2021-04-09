@@ -55,7 +55,7 @@ const MenuContainer = () => {
     },
     {
       icon: <Icon6 />,
-      path: Routes.LabTestOnboarding,
+      path: Routes.LabTest,
       invisible: isSubscriptionInProgress,
       slug: 'menu_container_text10',
       title: 'menu_container_text10'
