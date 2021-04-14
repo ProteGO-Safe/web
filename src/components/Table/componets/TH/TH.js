@@ -5,8 +5,8 @@ import * as Styled from './TH.styled';
 
 import { ReactComponent as ArrowIcon } from '../../../../assets/img/icons/arrow-current-color.svg';
 
-const TH = ({ align, children, onClick, selected, type }) => (
-  <Styled.TH align={align} onClick={onClick}>
+const TH = ({ align, colspan, children, onClick, selected, type }) => (
+  <Styled.TH align={align} colspan={colspan} onClick={onClick}>
     {children}
 
     <Styled.Icon selected={selected} type={type}>
