@@ -6,6 +6,7 @@ import { Color } from '../../theme/colors';
 import { Small } from '../../theme/typography';
 import { styles } from './chart.helpers';
 import * as Styled from './Chart.styled';
+import { numberWithSpaces } from '../../utils/number';
 
 const Chart = ({ data, footer, header }) => {
   if (not(data)) {
@@ -28,7 +29,7 @@ const Chart = ({ data, footer, header }) => {
         height={80}
         // eslint-disable-next-line
         key={index}
-        labels={({ datum }) => (parsedData.length >= 2 ? null : `+ ${datum.y}`)}
+        labels={({ datum }) => (parsedData.length >= 2 ? null : `+ ${numberWithSpaces(datum.y)}`)}
         labelComponent={<VictoryLabel renderInPortal verticalAnchor="middle" textAnchor="end" />}
         style={styles[index]}
       />

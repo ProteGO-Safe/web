@@ -7,6 +7,7 @@ import { Color } from '../../../../../../theme/colors';
 import { TH, TD } from '../../../../../../components/Table/componets';
 import { CellContent } from './FilledTable.styled';
 import { ARROW_TYPE } from '../../../../../../components/Table/table.constants';
+import { numberWithSpaces } from '../../../../../../utils/number';
 
 const FilledTable = ({ data, fields }) => {
   const [sortedData, setSortedData] = useState(data);
@@ -58,7 +59,7 @@ const FilledTable = ({ data, fields }) => {
         return (
           <TD key={field} align={isFirst ? 'left' : 'right'}>
             <CellContent color={isFirst ? Color.black : Color.darkGray} isFirst={isFirst}>
-              {item[field]}
+              {numberWithSpaces(item[field])}
             </CellContent>
           </TD>
         );
