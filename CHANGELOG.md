@@ -4,6 +4,14 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## 4.11.0
+
+### Changed
+- Changes in pathway to sign up for a medical test for COVID-19,
+
+### Fixed
+- Fixed bugs in detailed COVID-19 and vaccination statistics.
+
 ## 4.10.0
 
 ### Added
