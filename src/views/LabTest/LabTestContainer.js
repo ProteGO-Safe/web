@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import LabTest from './LabTest';
 import { PinVerificationLoader } from './components';
 import { Layout, NavigationBackGuard, T } from '../../components';
 import { NUMBER_OF_STEPS } from './labTest.constants';
-import { resetUploadLabTestPinResult, uploadLabTestPin } from '../../store/actions/nativeData';
-import { getUploadLabTestPinResult } from '../../store/selectors/nativeData';
+import { uploadLabTestPin } from '../../store/actions/nativeData';
 import useNavigation from '../../hooks/useNavigation';
 import { Routes } from '../../services/navigationService/routes';
 
@@ -13,11 +12,10 @@ const LabTestContainer = ({ goBack }) => {
   const dispatch = useDispatch();
   const { goTo } = useNavigation();
 
-  const uploadLabTestPinResult = useSelector(getUploadLabTestPinResult);
-
   const [step, setStep] = useState(1);
   const [pin, setPin] = useState(undefined);
   const [isInvalidPin, setIsInvalidPin] = useState(false);
+  const [isSafetyNetError, setIsSafetyNetError] = useState(false);
   const [loader, setLoader] = useState(false);
   const [showBackGuard, setShowBackGuard] = useState(false);
 
@@ -27,39 +25,35 @@ const LabTestContainer = ({ goBack }) => {
     setPin(undefined);
     setStep(1);
     setIsInvalidPin(false);
+    setIsSafetyNetError(false);
   };
 
   useEffect(() => {
-    dispatch(resetUploadLabTestPinResult());
-    return () => {
-      dispatch(resetUploadLabTestPinResult());
-    };
-    // eslint-disable-next-line
-  }, []);
-
-  useEffect(() => {
-    if (uploadLabTestPinResult === 1) {
-      setLoader(false);
-      setStep(3);
+    if (step === 1) {
+      setIsSafetyNetError(false);
     }
-
-    if (uploadLabTestPinResult === 2) {
-      setLoader(false);
-      setIsInvalidPin(true);
-      setPin(undefined);
-    }
-
-    if (uploadLabTestPinResult === 3) {
-      goTo(Routes.Home);
-    }
-
-    // eslint-disable-next-line
-  }, [uploadLabTestPinResult]);
+  }, [step]);
 
   const handleSubmitPin = () => {
     setLoader(true);
     setIsInvalidPin(false);
-    dispatch(uploadLabTestPin(pin));
+    setIsSafetyNetError(false);
+    dispatch(uploadLabTestPin(pin)).then(({ result }) => {
+      setLoader(false);
+      if (result === 1) {
+        setStep(3);
+      }
+      if (result === 2) {
+        setIsInvalidPin(true);
+        setPin(undefined);
+      }
+      if (result === 3) {
+        goTo(Routes.Home);
+      }
+      if (result === 4) {
+        setIsSafetyNetError(true);
+      }
+    });
   };
 
   const back = () => {
@@ -85,6 +79,7 @@ const LabTestContainer = ({ goBack }) => {
       <Layout onBackClick={back} hideBackButton={hideBackButton}>
         <LabTest
           isInvalidPin={isInvalidPin}
+          isSafetyNetError={isSafetyNetError}
           loader={loader}
           onReset={handleResetSteps}
           onSubmit={handleSubmitPin}

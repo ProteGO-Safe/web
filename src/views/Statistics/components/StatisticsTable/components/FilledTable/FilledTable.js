@@ -5,7 +5,9 @@ import PropTypes from 'prop-types';
 import { RowBody, RowHeader, Table, Tbody, Thead } from '../../../../../../components/Table/Table.styled';
 import { Color } from '../../../../../../theme/colors';
 import { TH, TD } from '../../../../../../components/Table/componets';
+import { CellContent } from './FilledTable.styled';
 import { ARROW_TYPE } from '../../../../../../components/Table/table.constants';
+import { numberWithSpaces } from '../../../../../../utils/number';
 
 const FilledTable = ({ data, fields }) => {
   const [sortedData, setSortedData] = useState(data);
@@ -38,8 +40,8 @@ const FilledTable = ({ data, fields }) => {
     return (
       <TH
         key={field}
-        align={isFirst && 'left'}
-        colspan={isFirst && 3}
+        align={isFirst ? 'left' : 'right'}
+        colspan={isFirst && 5}
         onClick={() => sortData(field)}
         selected={field === sortBy}
         type={field === sortBy ? (ascending ? ARROW_TYPE.UP : ARROW_TYPE.DOWN) : ARROW_TYPE.DOWN}
@@ -53,10 +55,18 @@ const FilledTable = ({ data, fields }) => {
     <RowBody key={item.id}>
       {fields.map(({ field }, index) => {
         const isFirst = index === 0;
-        return <TD key={field} value={item[field]} color={isFirst && Color.black} align={isFirst ? 'left' : 'right'} />;
+
+        return (
+          <TD key={field} align={isFirst ? 'left' : 'right'}>
+            <CellContent color={isFirst ? Color.black : Color.darkGray} isFirst={isFirst}>
+              {numberWithSpaces(item[field])}
+            </CellContent>
+          </TD>
+        );
       })}
     </RowBody>
   ));
+
   return (
     <Table>
       <Thead>

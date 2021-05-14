@@ -1,6 +1,7 @@
 import React from 'react';
 import pinTimeouts from './pin-timeouts.json';
 import { T } from '../../components/T';
+import { LAB_TEST, UPLOAD_DATA } from './pin.types';
 
 const MINUTE = 60 * 1000;
 
@@ -28,10 +29,7 @@ const getBanData = listOfTries => {
 
       const timeBeetweenFirstAndLastTry = lastTimeTry - firstTimeTry;
       const timeSinceLastTry = now - lastTimeTry;
-      if (
-        timeBeetweenFirstAndLastTry < interval &&
-        timeSinceLastTry < curr.lockdownInMinutes * MINUTE
-      ) {
+      if (timeBeetweenFirstAndLastTry < interval && timeSinceLastTry < curr.lockdownInMinutes * MINUTE) {
         return {
           lockdownTime: curr.lockdownInMinutes * MINUTE,
           currentLimitOfTries: curr.numberOfTries
@@ -78,10 +76,17 @@ const getLockdownInfo = lockdownTime => {
   return getCorrentMinuteForm(lockdownTimeInMinutes);
 };
 
-const createErrorMessage = (
-  { lockdownTime, currentLimitOfTries },
-  numberOfTries
-) => {
+const resolveMessageKey = pinType => {
+  if (pinType === UPLOAD_DATA) {
+    return 'ban-pin-tries_text1';
+  }
+  if (pinType === LAB_TEST) {
+    return 'ban-pin-tries_text2';
+  }
+  return '';
+};
+
+const createErrorMessage = ({ lockdownTime, currentLimitOfTries }, numberOfTries, pinType) => {
   if (!numberOfTries) {
     return null;
   }
@@ -99,7 +104,7 @@ const createErrorMessage = (
   }
   return (
     <T
-      i18nKey="ban-pin-tries_text1"
+      i18nKey={resolveMessageKey(pinType)}
       variables={{
         amount: numberOfTries,
         limit: currentLimitOfTries

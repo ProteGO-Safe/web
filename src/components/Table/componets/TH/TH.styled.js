@@ -3,7 +3,7 @@ import { Color } from '../../../../theme/colors';
 import { ARROW_TYPE } from '../../table.constants';
 
 export const TH = styled.th`
-  padding: 5px 5px 6px;
+  padding: 5px 5px 6px 0;
   color: ${Color.white};
   font-size: 12px;
   letter-spacing: 0;
@@ -14,10 +14,6 @@ export const TH = styled.th`
 
   &:first-child {
     padding-left: 10px;
-  }
-
-  &:last-child {
-    padding-right: 10px;
   }
 `;
 

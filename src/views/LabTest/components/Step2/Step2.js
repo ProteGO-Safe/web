@@ -6,7 +6,7 @@ import { Color } from '../../../../theme/colors';
 import { BUTTON_TYPES } from '../../../../components/Button/Button.constants';
 import useLabTestPinBan from '../../../../hooks/useLabTestPinBan';
 
-const Step2 = ({ isInvalidPin, onReset, onSubmit, pin, setPin }) => {
+const Step2 = ({ isInvalidPin, isSafetyNetError, onReset, onSubmit, pin, setPin }) => {
   const pinInputRef = useRef();
 
   const { message: banMessage, isBanned } = useLabTestPinBan();
@@ -45,15 +45,20 @@ const Step2 = ({ isInvalidPin, onReset, onSubmit, pin, setPin }) => {
         pinInputRef={pinInputRef}
         title={<T i18nKey="lab_test_text9" />}
       />
+      {isSafetyNetError && (
+        <Styled.WarningWrapper>
+          <Warning
+            borderColor={Color.danger}
+            colorFont={Color.danger}
+            status="error"
+            title={<T i18nKey="lab_test_text53" />}
+          />
+        </Styled.WarningWrapper>
+      )}
       {isInvalidPin && (
         <>
           <Styled.WarningWrapper>
-            <Warning
-              borderColor={Color.danger}
-              colorFont={Color.danger}
-              status="error"
-              title={<T i18nKey="lab_test_text12" /> && banMessage}
-            />
+            <Warning borderColor={Color.danger} colorFont={Color.danger} status="error" title={banMessage} />
           </Styled.WarningWrapper>
           <Styled.Content>
             <Styled.SubTitle>
