@@ -18,7 +18,8 @@ export const getTimeAndTriageLevelOfLastRiskTest = state => {
   const triageLevel = Object.entries(riskTest)
     .filter(entry => obtainKey(entry) === timestamp)
     .map(entry => obtainValue(entry).triageLevel)
-    .slice(-1);
+    .slice(-1)
+    .pop();
 
   return { timestamp, triageLevel };
 };
