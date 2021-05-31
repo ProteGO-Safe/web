@@ -5,7 +5,7 @@ import { Step1, Step2, Step3 } from './components';
 import { H5 } from '../../theme/typography';
 import * as Styled from './LabTest.styled';
 
-const LabTest = ({ isInvalidPin, loader, onReset, onSubmit, pin, setPin, setStep, step }) => {
+const LabTest = ({ isInvalidPin, isSafetyNetError, loader, onReset, onSubmit, pin, setPin, setStep, step }) => {
   return (
     <>
       <Styled.Content>
@@ -20,6 +20,7 @@ const LabTest = ({ isInvalidPin, loader, onReset, onSubmit, pin, setPin, setStep
       {step === 2 && (
         <Step2
           isInvalidPin={isInvalidPin}
+          isSafetyNetError={isSafetyNetError}
           loader={loader}
           onReset={onReset}
           onSubmit={onSubmit}

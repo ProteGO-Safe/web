@@ -2,11 +2,10 @@ import { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { getLabTestPinUnsuccessfulAttempts } from '../../store/selectors/nativeData';
 import banPinTries from '../../services/banPinTries';
+import { LAB_TEST } from '../../services/banPinTries/pin.types';
 
 const useLabTestPinBan = () => {
-  const pinUnsuccessfulAttempts = useSelector(
-    getLabTestPinUnsuccessfulAttempts
-  );
+  const pinUnsuccessfulAttempts = useSelector(getLabTestPinUnsuccessfulAttempts);
 
   const [banData, setBanData] = useState(null);
 
@@ -27,9 +26,7 @@ const useLabTestPinBan = () => {
     return () => {};
   }, [banData, pinUnsuccessfulAttempts]);
 
-  const message =
-    banData &&
-    banPinTries.createErrorMessage(banData, pinUnsuccessfulAttempts.length);
+  const message = banData && banPinTries.createErrorMessage(banData, pinUnsuccessfulAttempts.length, LAB_TEST);
 
   const isBanned = banData && !!banData.lockdownTime;
 

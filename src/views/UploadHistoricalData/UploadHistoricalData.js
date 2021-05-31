@@ -16,6 +16,7 @@ import { hideUploadHistoricalDataErrorMessage } from '../../store/actions/app';
 import useNavigation from '../../hooks/useNavigation';
 import { Routes } from '../../services/navigationService/routes';
 import { NavigationBackGuard } from '../../components/NavigationBackGuard';
+import { UPLOAD_DATA } from '../../services/banPinTries/pin.types';
 
 const UploadHistoricalData = () => {
   const { goTo, goBack, getParam } = useNavigation();
@@ -110,7 +111,7 @@ const UploadHistoricalData = () => {
     if (status === uploadState.DENIED) {
       return null;
     }
-    return banData && banPinTries.createErrorMessage(banData, unsuccessfulAttempts.length);
+    return banData && banPinTries.createErrorMessage(banData, unsuccessfulAttempts.length, UPLOAD_DATA);
   };
   return (
     <>

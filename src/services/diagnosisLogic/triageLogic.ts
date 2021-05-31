@@ -300,3 +300,12 @@ export const getTriage = (query: QueryObject) => {
   }
   return resolveTriageLevel(query);
 };
+
+export const getTriageDataByTriageLevel = (triageLevel: string) => {
+  if (!Object.keys(triageLevelResponse).includes(triageLevel)) {
+    return undefined;
+  }
+  return Object.entries(triageLevelResponse)
+    .filter(entry => entry[0] === triageLevel)
+    .map(entry => entry[1])[0];
+};
