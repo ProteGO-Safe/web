@@ -1309,8 +1309,6 @@
     "triage_level_self_monitoring_content": "Yurt dışından Polonya'ya dönüyorsanız veya 31.03.2020 tarihinden sonra karantinaya alınan bir kişiyle birlikte yaşıyorsanız, otomatik olarak karantinaya alınacaksınız (sağlık durumunuz buna izin veriyorsa).",
     "turn_off": "Kapat",
     "turn_on": "Aç",
-    "upload_data_popup_1": "Veri gönderme işlemi nasıl gerçekleştirilir?",
-    "upload_data_popup_2": "Laboratuvar testi sonucu [COVID-19] hastası olduğunuz tespit edilirse bir İletişim Merkezi çalışanı sizinle iletişime geçer. [B]Çalışanın size vereceği PIN kodunu aşağıya girin[/B]. Bu sayede sizinle temas eden kişileri durumdan haberdar edebilirsiniz.[BR][BR]Endişelenmenize gerek yok, kimliğiniz gizli tutulacaktır.",
     "upload_data_popup_3": "STOP COVID – ProteGo Safe nasıl çalışır? Anahtar nedir?",
     "upload_data_popup_4": "STOP COVID – ProteGo Safe uygulamasının ana fonksiyonu [B]Exposure Notification API[/B] (temas bildirimleri modülü) teknolojisine dayanmaktadır. Bu teknoloji ile [B]Contact tracing[/B] işleminin gerçekleştirilmesi mümkün olmaktadır. Kullanıcı buna izin verdiğinde uygulama Bluetooth modülü yardımıyla [B]rastgele oluşturulan, 10 dakikada bir değiştirilen ve şifrelenen bir Anahtarı çevreye yayınlamaya başlar[/B]. Bluetooth tracing sistemi aracılığıyla çevreyi tarayarak benzer Anahtarlar yayınlayan diğer cihazları bulmaya çalışır. İki cihaz arasındaki temas yeterince uzun ise diğer cihazın şifreli Anahtarını kaydeder. Kullanıcının [COVID-19] testi pozitif çıktığında isterse Anahtarını temas ettiği diğer kullanıcılarla paylaşmak suretiyle onları uyarabilir.",
     "upload_data_text_1": "Verileri gönder",

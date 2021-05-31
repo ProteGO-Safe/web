@@ -1309,8 +1309,6 @@
     "triage_level_self_monitoring_content": "If you come back to Poland from abroad or live with a person sent to quarantine after 31 March 2020, you will be automatically sent to quarantine (if your health condition allows it).",
     "turn_off": "Disable",
     "turn_on": "Enable",
-    "upload_data_popup_1": "Providing data - how does it work?",
-    "upload_data_popup_2": "If the laboratory test will detect your infection with [COVID-19], you will be contacted by the Contact Centre Operator. [B]Enter the PIN Code it has provided below[/B] - this will let others know that they may have been in contact with the coronavirus.[BR][BR]Don't worry, we protect your privacy.",
     "upload_data_popup_3": "How does STOP COVID - ProteGo Safe work? What are the Keys?",
     "upload_data_popup_4": "The main functionality of STOP COVID - ProteGO Safe is based on [B]Exposure Notification API[/B] (exposure notification module), enabling the so-called [B]Contact tracing[/B]. If the user agrees, the application uses the Bluetooth module [B]to share a randomly generated encrypted Key changed every 10 minutes[/B]. Using Bluetooth, tracing scans the environment for other devices that share similar Keys. When the contact is long enough, it saves the encrypted Device Keys. If the user is diagnosed with [COVID-19] - they may voluntarily share the Keys and anonymously warn the people with whom they had contact.",
     "upload_data_text_1": "Provide data",

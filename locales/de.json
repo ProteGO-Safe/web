@@ -1309,8 +1309,6 @@
     "triage_level_self_monitoring_content": "Wenn Sie aus dem Ausland nach Polen zurückkehren oder mit einer Person zusammenleben, die nach dem 31.03.2020 in die Quarantäne gehen musste, dann müssen Sie sich auch automatisch in die Quarantäne begeben (sofern Ihr Gesundheitszustand dies zulässt).",
     "turn_off": "Aus",
     "turn_on": "Ein",
-    "upload_data_popup_1": "Datenübertragung - wie funktioniert sie?",
-    "upload_data_popup_2": "Wenn Ihr Test auf [COVID-19] ein positives Ergebnis haben sollte, dann nimmt ein Berater von der Kontaktstelle mit Ihnen Kontakt auf. [B]Tragen Sie die von ihm Ihnen zugewiesene PIN unten ein[/B] – so warnen Sie andere, dass sie vielleicht Kontakt mit einem Coronavirus-Infizierten hatten.[BR][BR]Machen Sie sich keine Sorgen, wir schützen Ihre Privatheit.",
     "upload_data_popup_3": "Wie funktioniert STOP COVID - ProteGo Safe? Was sind TEK-Schlüssel?",
     "upload_data_popup_4": "Die Hauptfunktionalität der App STOP COVID – ProteGO Safe basiert auf der [B]Exposure Notification API[/B] (Expositionsbenachrichtigung), die s.g. [B]Contact Tracing[/B] ermöglicht. Unter Voraussetzung Ihrer Einwilligung nutzt die App das Bluetooth Modul und [B]versendet einen automatisch generierten und alle 10 Minuten sich verändernden TEK-Schlüssel[/B]. Mithilfe von Bluetooth Tracing wird die Umgebung nach weiteren Geräten, die analogische TEK-Schlüssel versenden, durchgesucht. Wenn ein Kontakt ausreichend lange dauert, dann werden die verschlüsselten Schlüssel der beiden Geräte erfasst und gespeichert. Wenn einer der Benutzer an [COVID-19] erkrankt, dann kann er freiwillig seine TEK-Schlüssel bereitstellen und anonym die Personen, mit denen er Kontakt hatte, warnen.",
     "upload_data_text_1": "Daten übermitteln",

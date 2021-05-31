@@ -18,6 +18,7 @@ export { MenuSettings } from './MenuSettings';
 export { NotSupported } from './NotSupported';
 export { Menu } from './Menu';
 export { Onboarding } from './Onboarding';
+export { PinReceiver } from './PinReceiver';
 export { PrivacyPolicy } from './PrivacyPolicy';
 export { PrivacyPolicyDetails } from './PrivacyPolicyDetails';
 export { RatingApp } from './RatingApp';
