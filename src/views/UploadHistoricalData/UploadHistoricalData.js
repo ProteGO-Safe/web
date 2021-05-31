@@ -18,7 +18,7 @@ import { Routes } from '../../services/navigationService/routes';
 import { NavigationBackGuard } from '../../components/NavigationBackGuard';
 
 const UploadHistoricalData = () => {
-  const { goTo, goBack } = useNavigation();
+  const { goTo, goBack, getParam } = useNavigation();
   const { areEnableAllServices } = useSupportExposureNotificationTracing();
   const MAX_UPLOAD_TIME = 60;
   const dispatch = useDispatch();
@@ -32,7 +32,7 @@ const UploadHistoricalData = () => {
     }
   } = useSelector(state => state.app);
 
-  const [pin, setPin] = useState('');
+  const [pin, setPin] = useState(getParam('pin') || '');
   const [banData, setBanData] = useState(null);
   const [showBackGuard, setShowBackGuard] = useState(false);
   const [isUploading, setIsUploading] = useState(false);
