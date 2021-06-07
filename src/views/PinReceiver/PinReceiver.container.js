@@ -5,8 +5,7 @@ import nativeBridge from '../../services/nativeBridge';
 
 const PinReceiverContainer = () => {
   const onClickButton = () => {
-    // todo https://kyotu.atlassian.net/browse/PSAFE-3710
-    nativeBridge.sendSms('', '');
+    nativeBridge.sendSms('538400500', 'PINstopcovid');
   };
 
   return <PinReceiver onClickButton={onClickButton} />;
