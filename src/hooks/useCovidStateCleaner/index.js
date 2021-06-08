@@ -6,19 +6,17 @@ import {
   fetchServicesStatus,
   revokeEnStatus
 } from '../../store/actions/nativeData';
-import {
-  getTimeOfConfirmedCovid,
-  getTimeOfConfirmedManualCovid
-} from '../../store/selectors/triage';
-import {
-  resetTimeOfConfirmedCovid,
-  revokeManualCovid
-} from '../../store/actions/triage';
+import { getTimeOfConfirmedCovid, getTimeOfConfirmedManualCovid } from '../../store/selectors/triage';
+import { resetTimeOfConfirmedCovid, revokeManualCovid, setLowTriageLevel } from '../../store/actions/triage';
+import { getTimeAndTriageLevelOfLastRiskTest } from '../../store/selectors/riskTest';
 
 const useCovidStateCleaner = () => {
   const dispatch = useDispatch();
   const timeOfConfirmedCovid = useSelector(getTimeOfConfirmedCovid);
   const timeOfConfirmedManualCovid = useSelector(getTimeOfConfirmedManualCovid);
+  const { timestamp: timeOfLastRiskTest, triageLevel: riskLevelOfLastRiskTest } = useSelector(
+    getTimeAndTriageLevelOfLastRiskTest
+  );
 
   useEffect(() => {
     dispatch(fetchServicesStatus());
@@ -33,7 +31,12 @@ const useCovidStateCleaner = () => {
         dispatch(revokeManualCovid());
       });
     }
-  }, [dispatch, timeOfConfirmedCovid, timeOfConfirmedManualCovid]);
+    if (moment().diff(moment.unix(timeOfLastRiskTest), 'days') >= 10) {
+      if (['call_doctor', 'isolation_ambulance', 'isolation_call', 'quarantine'].includes(riskLevelOfLastRiskTest)) {
+        dispatch(setLowTriageLevel());
+      }
+    }
+  }, [dispatch, timeOfConfirmedCovid, timeOfConfirmedManualCovid, timeOfLastRiskTest, riskLevelOfLastRiskTest]);
 };
 
 export default useCovidStateCleaner;

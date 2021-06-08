@@ -26,13 +26,14 @@ export const RowBody = styled.tr`
 `;
 
 export const TD = styled.td`
-  padding: 2px 5px;
   color: ${Color.white};
   font-size: 12px;
   letter-spacing: 0;
   line-height: 19px;
   text-align: ${({ align }) => align || 'center'};
-  padding-right: ${({ padding }) => padding || '10'}px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  padding-right: ${({ padding }) => padding || 0}px;
 
   &:first-child {
     padding-left: 10px;

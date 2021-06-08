@@ -4,6 +4,19 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## 4.12.0
+
+### Added
+- Implementation of an automatic change of the Risk Assessment Test status to Low Risk 10 days after the last completion
+- more COVID-19 statistics in Poland
+
+### Changed
+- Improved transparency of the displayed data on COVID-19 and vaccination statistics
+- Changes to the content of messages that are displayed when the PIN code is incorrect
+
+### Fixed
+- Corrected error that occurred in rare cases when entering the PIN code
+
 ## 4.11.0
 
 ### Changed
