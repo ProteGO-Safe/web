@@ -3,6 +3,7 @@ import { Color } from '../../../../theme/colors';
 import { Small } from '../../../../theme/typography';
 import * as Styled from './Legend.styled';
 import { T } from '../../../../components';
+import { numberWithSpaces } from '../../../../utils/number';
 
 const Legend = ({ data }) => {
   const boxes = data.map(({ dot, key, label, value }) => (
@@ -15,7 +16,7 @@ const Legend = ({ data }) => {
           </strong>
         </Small>
       </Styled.Label>
-      <Styled.Value>{value}</Styled.Value>
+      <Styled.Value>{numberWithSpaces(value)}</Styled.Value>
     </Styled.Box>
   ));
 

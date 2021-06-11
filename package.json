@@ -45,7 +45,8 @@
     "yup": "^0.28.3"
   },
   "resolutions": {
-    "react-scripts/webpack/terser-webpack-plugin/cacache/y18n": "^3.2.1"
+    "lodash": "4.17.21",
+    "hosted-git-info": "2.8.9"
   },
   "scripts": {
     "start": "PORT=3001 react-scripts start",

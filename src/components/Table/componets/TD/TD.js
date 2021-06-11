@@ -1,18 +1,10 @@
-import React, { useEffect, useRef, useState } from 'react';
-import { Small } from '../../../../theme/typography';
+import React from 'react';
 import * as Styled from './TD.styled';
 
-const TD = ({ color, align, value }) => {
-  const [width, setWidth] = useState(0);
-  const ref = useRef(null);
-
-  useEffect(() => {
-    setWidth(ref.current.clientWidth);
-  }, [setWidth]);
-
+const TD = ({ children, colspan, align }) => {
   return (
-    <Styled.Wrapper ref={ref} align={align} padding={width * 0.35}>
-      <Small color={color}>{value}</Small>
+    <Styled.Wrapper align={align} colspan={colspan}>
+      {children}
     </Styled.Wrapper>
   );
 };

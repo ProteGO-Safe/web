@@ -1,11 +1,7 @@
 import moment from 'moment';
 import * as types from '../types/triage';
-import { getTriage } from '../../services/diagnosisLogic/triageLogic';
+import { getTriage, getTriageDataByTriageLevel } from '../../services/diagnosisLogic/triageLogic';
 import { firstDiagnosisFinished } from './app';
-
-export const triageFetchRequested = () => ({
-  type: types.TRIAGE_FETCH_REQUESTED
-});
 
 export const triageFetchSuccess = ({ data }) => ({
   data,
@@ -13,7 +9,6 @@ export const triageFetchSuccess = ({ data }) => ({
 });
 
 export const fetchTriage = data => async dispatch => {
-  dispatch(triageFetchRequested());
   dispatch(firstDiagnosisFinished());
   const result = getTriage(data);
   dispatch(triageFetchSuccess({ data: result }));
@@ -60,4 +55,9 @@ export const revokeManualCovidFinished = () => ({
 
 export const revokeManualCovid = () => dispatch => {
   dispatch(revokeManualCovidFinished());
+};
+
+export const setLowTriageLevel = () => dispatch => {
+  const data = getTriageDataByTriageLevel('no_risk');
+  dispatch(triageFetchSuccess({ data }));
 };

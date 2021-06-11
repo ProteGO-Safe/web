@@ -1,17 +1,15 @@
 import moment from 'moment';
 import {
-  TRIAGE_FETCH_REQUESTED,
   TRIAGE_FETCH_SUCCESS,
   TIME_OF_CONFIRMED_COVID_RESETED,
   WHOLE_TRIAGE_UPDATED,
   REVOKE_TOR_STATUS_FINISHED,
   CONFIRM_MANUAL_COVID_FINISHED,
-  REVOKE_MANUAL_COVID_FINISHED
+  REVOKE_MANUAL_COVID_FINISHED,
 } from '../../types/triage';
 import { UPLOAD_HISTORICAL_DATA_FINISHED } from '../../types/app';
 
 const INITIAL_STATE = {
-  isLoading: false,
   triageLevel: '',
   description: '',
   serious: [],
@@ -32,11 +30,6 @@ const obtainTimeOfConfirmedCovid = state => {
 
 const triageReducer = (state = INITIAL_STATE, action) => {
   switch (action.type) {
-    case TRIAGE_FETCH_REQUESTED:
-      return {
-        ...state,
-        isLoading: true
-      };
     case TRIAGE_FETCH_SUCCESS:
       return (() => {
         const {
@@ -47,8 +40,7 @@ const triageReducer = (state = INITIAL_STATE, action) => {
           ...state,
           triageLevel: triage_level,
           description,
-          serious,
-          isLoading: false
+          serious
         };
       })();
     case UPLOAD_HISTORICAL_DATA_FINISHED:
