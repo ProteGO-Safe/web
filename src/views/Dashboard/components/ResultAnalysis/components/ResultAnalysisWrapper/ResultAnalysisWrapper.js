@@ -3,15 +3,23 @@ import PropTypes from 'prop-types';
 import { Color } from '../../../../../../theme/colors';
 import * as Styled from './ResultAnalysisWrapper.styled';
 
-const ResultAnalysisWrapper = ({ color, children }) => <Styled.Wrapper color={color}>{children}</Styled.Wrapper>;
+const ResultAnalysisWrapper = ({ bckColor, color, children, fontColor }) => (
+  <Styled.Wrapper color={color} bckColor={bckColor} fontColor={fontColor}>
+    {children}
+  </Styled.Wrapper>
+);
 
 ResultAnalysisWrapper.defaultProps = {
-  color: Color.gradient_c2
+  bckColor: Color.white,
+  color: Color.gradient_c2,
+  fontColor: Color.black
 };
 
 ResultAnalysisWrapper.propTypes = {
+  bckColor: PropTypes.string,
   color: PropTypes.string,
-  children: PropTypes.node.isRequired
+  children: PropTypes.node.isRequired,
+  fontColor: PropTypes.string
 };
 
 export default ResultAnalysisWrapper;

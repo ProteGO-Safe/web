@@ -42,7 +42,11 @@ const ResultAnalysisWrapperContainer = ({ children }) => {
     return Color.gradient_c2;
   };
 
-  return <ResultAnalysisWrapper color={resolveColor()}>{children}</ResultAnalysisWrapper>;
+  return (
+    <ResultAnalysisWrapper color={resolveColor()} bckColor={Color.danger} fontColor={Color.white}>
+      {children}
+    </ResultAnalysisWrapper>
+  );
 };
 
 export default ResultAnalysisWrapperContainer;
