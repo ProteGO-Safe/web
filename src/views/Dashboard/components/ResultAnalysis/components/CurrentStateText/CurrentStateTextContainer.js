@@ -3,9 +3,11 @@ import { or } from 'ramda';
 import useHealthStats from '../../../../../../hooks/useHealthStats';
 import useTriage from '../../../../../../hooks/useTriage';
 import CurrentStateText from './CurrentStateText';
+import useLabTest from '../../../../../../hooks/useLabTest';
 
 const CurrentStateTextContainer = () => {
   const { isCovidConfirmed, isCovidManual } = useHealthStats();
+  const { isSubscriptionConfirmed } = useLabTest();
   const {
     isTriageTorLow,
     isTriageTorMiddle,
@@ -20,6 +22,9 @@ const CurrentStateTextContainer = () => {
   } = useTriage();
 
   const currentState = (() => {
+    if (isSubscriptionConfirmed) {
+      return 'result_analysis_variant_9';
+    }
     if (isCovidConfirmed) {
       return 'result_analysis_variant_8';
     }
