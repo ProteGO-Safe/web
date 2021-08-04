@@ -4,14 +4,14 @@ import { ModalClose } from './components';
 import { TYPE } from './Modal.helpers';
 import * as Styled from './Modal.styled';
 
-const Modal = ({ open }) => {
+const Modal = ({ disableOverlayClose, hideCloseButton, open }) => {
   const { content, footer, onClose, title, type } = useModalContext();
 
   return (
     <Styled.Wrapper open={open}>
-      <Styled.Overlay onClick={onClose} open={open} />
+      <Styled.Overlay onClick={disableOverlayClose ? () => null : () => onClose()} open={open} />
       <Styled.Content type={type}>
-        {type !== TYPE.ONLY_CONTENT && <ModalClose onClick={onClose} />}
+        {!hideCloseButton && <ModalClose onClick={onClose} />}
 
         {type !== TYPE.CUSTOM ? (
           <>
@@ -25,9 +25,7 @@ const Modal = ({ open }) => {
           <Styled.ContentWrapper>{content}</Styled.ContentWrapper>
         )}
 
-        {footer && type !== TYPE.TOOLTIP && (
-          <Styled.Footer>{footer}</Styled.Footer>
-        )}
+        {footer && type !== TYPE.TOOLTIP && <Styled.Footer>{footer}</Styled.Footer>}
       </Styled.Content>
     </Styled.Wrapper>
   );

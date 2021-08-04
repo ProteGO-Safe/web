@@ -4,6 +4,7 @@ export { Daily } from './Daily';
 export { DailyData } from './DailyData';
 export { Dashboard } from './Dashboard';
 export { Diagnosis } from './Diagnosis';
+export { ExposureNotificationContactDetection } from './ExposureNotificationContactDetection';
 export { FirstDiagnosisAsking } from './FirstDiagnosisAsking';
 export { FollowDistricts } from './FollowDistricts';
 export { FollowDistrictsSlider } from './FollowDistrictsSlider';
