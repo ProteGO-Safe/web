@@ -36,5 +36,5 @@ export const Label = styled.div`
   font-size: 12px;
   line-height: 18px;
   font-weight: ${FontWeight.Normal};
-  color: ${Color.black};
+  color: ${({ color }) => color || Color.black};
 `;

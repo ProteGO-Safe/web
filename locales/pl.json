@@ -1163,6 +1163,7 @@
     "result_analysis_text_8": "Ostatni test oceny ryzyka: {{date}}",
     "result_analysis_text_9": "Aplikacja nie wykryła kontaktu z osobą zakażoną koronawirusem. Dbaj o siebie i pamiętaj o zaleceniach sanitarnych.",
     "result_analysis_variant_1": "Brak danych do analizy ryzyka",
+    "result_analysis_variant_10": "[B]Wykryto kontakt z koronawirusem[/B]",
     "result_analysis_variant_2": "Niskie ryzyko infekcji",
     "result_analysis_variant_3": "Średnie ryzyko infekcji",
     "result_analysis_variant_4": "Wysokie ryzyko infekcji",

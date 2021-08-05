@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import ResultAnalysis from './ResultAnalysis';
 import useUserName from '../../../../hooks/useUserName';
-import { Color } from '../../../../theme/colors';
 
 const ResultAnalysisContainer = () => {
   const username = useUserName();
@@ -9,9 +8,7 @@ const ResultAnalysisContainer = () => {
 
   const handleOpen = () => setOpen(prev => !prev);
 
-  return (
-    <ResultAnalysis handleToggleButton={handleOpen} isOpen={open} userName={username} colorToggleButton={Color.white} />
-  );
+  return <ResultAnalysis handleToggleButton={handleOpen} isOpen={open} userName={username} />;
 };
 
 export default ResultAnalysisContainer;

@@ -9,3 +9,7 @@ export const Wrapper = styled.span`
   font-weight: ${FontWeight.Normal};
   color: inherit;
 `;
+
+export const TextContactDetected = styled(Wrapper)`
+  font-size: 16px;
+`;

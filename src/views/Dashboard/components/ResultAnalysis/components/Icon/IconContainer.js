@@ -58,11 +58,13 @@ const IconContainer = () => {
     return null;
   })();
 
+  const isBig = or(isTriageEnMiddle, isTriageEnHigh);
+
   if (icon === null) {
     return null;
   }
 
-  return <Icon icon={icon} isBigIcon />;
+  return <Icon icon={icon} isBig={isBig} />;
 };
 
 export default IconContainer;

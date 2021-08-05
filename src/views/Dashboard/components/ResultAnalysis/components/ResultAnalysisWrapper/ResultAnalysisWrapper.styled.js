@@ -16,12 +16,12 @@ export const Wrapper = styled.div`
     display: block;
     width: 5px;
     height: calc(100% - 6px);
-    background-color: ${({ color }) => color};
+    background-color: ${({ pipeColor }) => pipeColor};
     z-index: 20;
   }
 
   & > div:first-child {
-    background-color: ${({ bckColor }) => bckColor};
+    background-color: ${({ backgroundColor }) => backgroundColor};
     color: ${({ fontColor }) => fontColor};
   }
 `;
