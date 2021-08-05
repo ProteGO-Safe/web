@@ -7,7 +7,7 @@ export const ListStats = styled.div`
   flex-flow: wrap column;
   width: 100%;
   margin-bottom: 20px;
-  margin-top: 20px;
+  margin-top: 16px;
 `;
 
 export const ListStatsItem = styled.div`
@@ -35,6 +35,6 @@ export const Label = styled.div`
   padding-top: 1px;
   font-size: 12px;
   line-height: 18px;
-  font-weight: ${FontWeight.Normal};
+  font-weight: ${({ color }) => (color ? FontWeight.Bold : FontWeight.Normal)};
   color: ${({ color }) => color || Color.black};
 `;

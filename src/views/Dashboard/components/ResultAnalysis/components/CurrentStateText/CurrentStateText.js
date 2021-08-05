@@ -7,14 +7,10 @@ import { T } from '../../../../../../components/T';
 const CurrentStateText = ({ contactDetected, currentState, t }) => (
   <Styled.Wrapper>
     <T i18nKey="result_analysis_text_2" variables={{ state: t(currentState) }} />
-    {contactDetected && (
-      <>
-        <br />
-        <Styled.TextContactDetected>
-          <T i18nKey={contactDetected} />
-        </Styled.TextContactDetected>
-      </>
-    )}
+
+    <Styled.TextContactDetected display={contactDetected}>
+      <T i18nKey={contactDetected} />
+    </Styled.TextContactDetected>
   </Styled.Wrapper>
 );
 
