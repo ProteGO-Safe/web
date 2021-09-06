@@ -33,7 +33,7 @@ const ListStatsContainer = () => {
       return Color.red;
     }
     if (isTriageEnMiddle) {
-      return Color.orange_1;
+      return Color.info;
     }
     return undefined;
   })();

@@ -10,7 +10,7 @@ const useColor = () => {
     return Color.green_1;
   }
   if (isTorMiddle) {
-    return Color.orange_1;
+    return Color.info;
   }
   if (isTorHigh) {
     return Color.red;

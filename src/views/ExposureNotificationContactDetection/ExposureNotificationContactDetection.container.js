@@ -29,7 +29,7 @@ const ExposureNotificationContactDetectionContainer = () => {
       return { color: Color.red, icon: <EnHighIcon /> };
     }
     if (occurredMiddleEn) {
-      return { color: Color.orange_1, icon: <EnMiddleIcon /> };
+      return { color: Color.info, icon: <EnMiddleIcon /> };
     }
 
     return { color: Color.white, icon: null };

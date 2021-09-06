@@ -33,7 +33,7 @@ const ResultAnalysisWrapperContainer = ({ children }) => {
       return Color.red;
     }
     if (isTriageEnMiddle) {
-      return Color.orange_1;
+      return Color.info;
     }
     if (or(isTriageTorMiddle, isTriageTorMiddleEnLow)) {
       return Color.info;
@@ -47,12 +47,12 @@ const ResultAnalysisWrapperContainer = ({ children }) => {
 
   const resolveBackgroundColor = () => {
     if (isTriageEnMiddle) {
-      return Color.orange_1;
+      return Color.info;
     }
     if (isTriageEnHigh) {
       return Color.red;
     }
-    return Color.white;
+    return Color.info;
   };
 
   const resolveFontColor = () => {
