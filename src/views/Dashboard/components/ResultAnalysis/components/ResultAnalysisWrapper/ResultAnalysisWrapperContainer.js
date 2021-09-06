@@ -52,7 +52,7 @@ const ResultAnalysisWrapperContainer = ({ children }) => {
     if (isTriageEnHigh) {
       return Color.red;
     }
-    return Color.info;
+    return Color.white;
   };
 
   const resolveFontColor = () => {
