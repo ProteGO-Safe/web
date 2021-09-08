@@ -4,6 +4,17 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## 4.13.0
+
+### Added
+- Added support for deep links directly to the STOP COVID ProteGO Safe application
+- Added information about the need to remain in quarantine after signing up for a COVID-19 laboratory test
+- Users can now receive their PIN codes via text messages, the sending of which can be initiated in the app itself
+
+### Changed
+- Improved transparency of the displayed data on COVID-19 and vaccination statistics
+- Visual changes to the home screen in case of contact with a person with COVID-19
+
 ## 4.12.0
 
 ### Added
