@@ -17,6 +17,8 @@ export const addDays = (timestamp, number) => {
 
 export const getDate = timestamp => new Date(timestamp * 1000);
 
+const getSeparator = stringDate => (stringDate.includes(' o ') ? ' o ' : ', ');
+
 export const getFormattedDateWithoutTime = timestamp =>
   getDate(timestamp)
     .toLocaleString()
@@ -28,7 +30,8 @@ export const getFormattedTime = timestamp => {
     return undefined;
   }
   const fullDate = getDate(timestamp).toLocaleString(LOCAL_PL);
-  const time = fullDate.split(', ')[1];
+  const separator = getSeparator(fullDate);
+  const time = fullDate.split(separator)[1];
   const hour = time.split(':')[0];
   const minutes = time.split(':')[1];
   return `${hour}:${minutes}`;
@@ -40,7 +43,9 @@ export const getFormattedDay = timestamp => {
     return undefined;
   }
   const fullDate = getDate(timestamp).toLocaleString(LOCAL_PL);
-  return fullDate.split(', ')[0];
+  const separator = getSeparator(fullDate);
+
+  return fullDate.split(separator)[0];
 };
 
 // 27.10.2020, 15:35
@@ -56,6 +61,8 @@ export const getYear = timestamp => {
     return undefined;
   }
   const fullDate = getDate(timestamp).toLocaleString(LOCAL_PL);
-  const date = fullDate.split(', ')[0];
+  const separator = getSeparator(fullDate);
+
+  const date = fullDate.split(separator)[0];
   return date.split('.')[2];
 };

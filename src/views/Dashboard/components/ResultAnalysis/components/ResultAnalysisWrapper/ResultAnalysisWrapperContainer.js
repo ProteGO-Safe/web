@@ -20,7 +20,7 @@ const ResultAnalysisWrapperContainer = ({ children }) => {
     isTriageTorHighCovidEnLow
   } = useTriage();
 
-  const resolveColor = () => {
+  const resolvePipeColor = () => {
     if (or(isCovidConfirmed, isCovidManual)) {
       return Color.red;
     }
@@ -32,7 +32,10 @@ const ResultAnalysisWrapperContainer = ({ children }) => {
     ) {
       return Color.red;
     }
-    if (or(or(isTriageTorMiddle, isTriageEnMiddle), isTriageTorMiddleEnLow)) {
+    if (isTriageEnMiddle) {
+      return Color.info;
+    }
+    if (or(isTriageTorMiddle, isTriageTorMiddleEnLow)) {
       return Color.info;
     }
     if (or(isTriageTorLow, isTriageEnLow)) {
@@ -42,7 +45,32 @@ const ResultAnalysisWrapperContainer = ({ children }) => {
     return Color.gradient_c2;
   };
 
-  return <ResultAnalysisWrapper color={resolveColor()}>{children}</ResultAnalysisWrapper>;
+  const resolveBackgroundColor = () => {
+    if (isTriageEnMiddle) {
+      return Color.info;
+    }
+    if (isTriageEnHigh) {
+      return Color.red;
+    }
+    return Color.white;
+  };
+
+  const resolveFontColor = () => {
+    if (or(isTriageEnMiddle, isTriageEnHigh)) {
+      return Color.white;
+    }
+    return Color.black;
+  };
+
+  return (
+    <ResultAnalysisWrapper
+      pipeColor={resolvePipeColor()}
+      backgroundColor={resolveBackgroundColor()}
+      fontColor={resolveFontColor()}
+    >
+      {children}
+    </ResultAnalysisWrapper>
+  );
 };
 
 export default ResultAnalysisWrapperContainer;

@@ -10,6 +10,7 @@ export const RatingAppModalContent = styled.div`
   align-items: center;
   width: 100%;
   padding: 0 23px;
+  margin-top: 30px;
 `;
 
 export const Image = styled(IconStopCovid)`

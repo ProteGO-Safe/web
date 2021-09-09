@@ -11,17 +11,21 @@ const useExposureNotification = () => {
   const riskLevel = useSelector(getNativeRiskLevel);
   const previousRiskLevel = usePrevious(riskLevel);
 
-  const { isEnHigh } = useHealthStats();
+  const { isEnHigh, isEnMiddle } = useHealthStats();
 
   const [occurredHighEn, setOccurredHighEn] = useState(false);
+  const [occurredMiddleEn, setOccurredMiddleEn] = useState(false);
 
   useSkippingFirstUpdate(() => {
     if (and(isEnHigh, notEquals(riskLevel, previousRiskLevel))) {
       setOccurredHighEn(true);
     }
+    if (and(isEnMiddle, notEquals(riskLevel, previousRiskLevel))) {
+      setOccurredMiddleEn(true);
+    }
   }, [isEnHigh, riskLevel, previousRiskLevel]);
 
-  return { occurredHighEn };
+  return { occurredHighEn, occurredMiddleEn };
 };
 
 export default useExposureNotification;

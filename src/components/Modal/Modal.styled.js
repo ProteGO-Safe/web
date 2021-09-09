@@ -5,11 +5,9 @@ import { TYPE } from './Modal.helpers';
 const handleType = type => {
   switch (type) {
     case TYPE.CUSTOM:
-      return '30px 0 0';
+      return '0';
     case TYPE.DEFAULT:
       return '30px 30px 20px';
-    case TYPE.ONLY_CONTENT:
-      return '30px 40px';
     case TYPE.TOOLTIP:
       return '30px 30px 20px';
     default:

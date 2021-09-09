@@ -1,13 +1,13 @@
 import styled from 'styled-components';
-import { ReactComponent as IconArrow } from '../../assets/img/icons/angle-right-blue.svg';
+import { ReactComponent as IconArrow } from '../../assets/img/icons/angle-right-current.svg';
 import { FontWeight } from '../../theme/fonts';
-import { Color } from '../../theme/colors';
 
 export const ToggleButton = styled.div`
   display: flex;
   flex-flow: nowrap row;
   align-items: center;
   width: auto;
+  color: ${({ color }) => color};
 `;
 
 export const Name = styled.span`
@@ -15,7 +15,8 @@ export const Name = styled.span`
   font-size: 12px;
   line-height: 18px;
   font-weight: ${FontWeight.Bold};
-  color: ${Color.primary};
+  color: ${({ color }) => color};
+  transition: all 0.3s ease;
 `;
 
 export const Icon = styled(IconArrow)`
@@ -24,5 +25,10 @@ export const Icon = styled(IconArrow)`
   height: 10px;
   margin-left: 6px;
   transform: rotate(${({ active }) => (active ? '-90deg' : '90deg')});
+  color: ${({ color }) => color};
   transition: all 0.3s;
+
+  path {
+    fill: currentColor;
+  }
 `;
