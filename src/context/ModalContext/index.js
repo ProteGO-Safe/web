@@ -14,6 +14,8 @@ export const ModalProvider = ({ children }) => {
   const [title, setTitle] = useState(null);
   const [type, setType] = useState('');
   const [callback, setCallback] = useState(undefined);
+  const [disableOverlayClose, setDisableOverlayClose] = useState(false);
+  const [hideCloseButton, setHideCloseButton] = useState(false);
 
   const onClose = () => {
     setModal(false);
@@ -29,12 +31,22 @@ export const ModalProvider = ({ children }) => {
     return () => clearTimeout(timer);
   };
 
-  const openModal = ({ value, modalType, modalTitle, modalFooter, closeCallback }) => {
+  const openModal = ({
+    value,
+    modalType,
+    modalTitle,
+    modalFooter,
+    closeCallback,
+    disableOverlayClose,
+    hideCloseButton
+  }) => {
     setContent(value || EMPTY_MODAL_CONTENT);
     setType(modalType || TYPE.DEFAULT);
     setTitle(modalTitle || null);
     setFooter(modalFooter || null);
     setCallback(() => closeCallback || undefined);
+    setDisableOverlayClose(disableOverlayClose || false);
+    setHideCloseButton(hideCloseButton || false);
   };
 
   useEffect(() => {
@@ -54,7 +66,7 @@ export const ModalProvider = ({ children }) => {
       }}
     >
       {children}
-      <Modal open={modal} />
+      <Modal disableOverlayClose={disableOverlayClose} hideCloseButton={hideCloseButton} open={modal} />
     </ModalContext.Provider>
   );
 };

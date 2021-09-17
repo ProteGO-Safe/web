@@ -15,7 +15,8 @@ import { fetchSubscribedDistricts } from '../../store/actions/restrictions';
 import {
   fetchSummaryStatisticsSuccess,
   fetchSummaryStatistics as fetchSummaryStatisticsAction,
-  fetchExposureAggregateStatistics as fetchExposureAggregateStatisticsAction, fetchDetailsStatisticsSuccess
+  fetchExposureAggregateStatistics as fetchExposureAggregateStatisticsAction,
+  fetchDetailsStatisticsSuccess
 } from '../../store/actions/statistics';
 import { BACK_PRESSED } from '../../store/types/navigation';
 import { UPLOAD_HISTORICAL_DATA_FINISHED } from '../../store/types/app';
@@ -199,6 +200,13 @@ const uploadLabTestPin = async pin => {
   });
 };
 
+const sendSms = async (number, text) => {
+  callSetBridgeData(DATA_TYPE.SMS_SENDER, {
+    number,
+    text
+  });
+};
+
 const setDistrictSubscription = async (districtId, isSubscribed) => {
   const ADD = 1;
   const DELETE = 2;
@@ -338,6 +346,7 @@ export default {
   listActivities,
   rateApp,
   revokeEnStatus,
+  sendSms,
   setDistrictSubscription,
   setNotificationStatus,
   setServicesState,

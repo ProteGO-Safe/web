@@ -13,6 +13,7 @@ export const Routes = {
   LabTestResult: 'labTestResult',
   Menu: 'menu',
   HistoryActivities: 'historyActivities',
+  PinReceiver: 'pinReceiver',
   PrivacyPolicy: 'privacyPolicy',
   PrivacyPolicyDetails: 'privacyPolicyDetails',
   Recommendations: 'recommendations',

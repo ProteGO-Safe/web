@@ -5,16 +5,10 @@ export const ButtonWrapper = styled.div`
   flex-flow: wrap row;
   width: 100%;
   margin-top: auto;
-  margin-bottom: 24px;
-`;
-
-export const SuccessInfo = styled.div`
-  display: block;
-  width: 100%;
-  p {
-    margin-bottom: 10px !important;
+  * {
+    margin-bottom: 14px;
     &:last-child {
-      margin-bottom: 0 !important;
+      margin-bottom: 0;
     }
   }
 `;

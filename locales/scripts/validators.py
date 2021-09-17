@@ -38,9 +38,9 @@ class ValidateResult:
 class SpaceAtTheBeginOrEnd:
     @staticmethod
     def validate(pl_value, checking_value):
-        if pl_value[0] is ' ' and checking_value[0] is not ' ':
+        if pl_value[0] == ' ' and checking_value[0] != ' ':
             return ValidateResult(False, f"missing space in ${checking_value}")
-        if pl_value[-1] is ' ' and checking_value[-1] is not ' ':
+        if pl_value[-1] == ' ' and checking_value[-1] != ' ':
             return ValidateResult(False, f"missing space in ${checking_value}")
         return ValidateResult(True)
 
@@ -78,9 +78,9 @@ class SplitFormat:
                 split = item.split('|')
                 if len(split) != 2:
                     return ValidateResult(False, f"illegal {tag} format in {checking_value}")
-                if split[0][0] is ' ' or split[0][-1] is ' ':
+                if split[0][0] == ' ' or split[0][-1] == ' ':
                     return ValidateResult(False, f"illegal {tag} format in {checking_value}")
-                if split[1][0] is ' ' or split[1][-1] is ' ':
+                if split[1][0] == ' ' or split[1][-1] == ' ':
                     return ValidateResult(False, f"illegal {tag} format in {checking_value}")
         return ValidateResult(True)
 

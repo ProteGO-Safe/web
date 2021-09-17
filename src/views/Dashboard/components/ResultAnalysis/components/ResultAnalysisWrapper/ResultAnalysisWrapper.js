@@ -1,17 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Color } from '../../../../../../theme/colors';
 import * as Styled from './ResultAnalysisWrapper.styled';
 
-const ResultAnalysisWrapper = ({ color, children }) => <Styled.Wrapper color={color}>{children}</Styled.Wrapper>;
-
-ResultAnalysisWrapper.defaultProps = {
-  color: Color.gradient_c2
-};
+const ResultAnalysisWrapper = ({ backgroundColor, fontColor, pipeColor, children }) => (
+  <Styled.Wrapper pipeColor={pipeColor} backgroundColor={backgroundColor} fontColor={fontColor}>
+    {children}
+  </Styled.Wrapper>
+);
 
 ResultAnalysisWrapper.propTypes = {
-  color: PropTypes.string,
-  children: PropTypes.node.isRequired
+  backgroundColor: PropTypes.string.isRequired,
+  children: PropTypes.node.isRequired,
+  fontColor: PropTypes.string.isRequired,
+  pipeColor: PropTypes.string.isRequired
 };
 
 export default ResultAnalysisWrapper;

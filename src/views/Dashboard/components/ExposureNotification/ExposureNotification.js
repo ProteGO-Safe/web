@@ -5,6 +5,7 @@ import * as Styled from './ExposureNotification.styled';
 
 import { ReactComponent as Arrow } from '../../../../assets/img/icons/angle-right-blue.svg';
 import { prepareKeyTranslation } from '../../../../utils/number';
+import { Color } from '../../../../theme/colors';
 
 const ExposureNotification = ({
   active,
@@ -80,7 +81,7 @@ const ExposureNotification = ({
             </Styled.Description>
 
             <Styled.ToggleButtonWrapper>
-              <ToggleButton active={open} onClick={handleToggleButton} />
+              <ToggleButton active={open} onClick={handleToggleButton} color={Color.primary} />
             </Styled.ToggleButtonWrapper>
           </>
         ) : (

@@ -1,11 +1,13 @@
 import React, { useEffect } from 'react';
 import InformationIcon from '../../../../assets/img/icons/bad.svg';
-import { Button, InfoIcon, Layout, Pin, T, Tooltip, Warning, WarningInEuropeTerm } from '../../../../components';
+import { Button, InfoIcon, Layout, Pin, T, Warning, WarningInEuropeTerm } from '../../../../components';
 import { H5, Paragraph, SmallText, TextLink } from '../../../../theme/typography';
 import { Color } from '../../../../theme/colors';
 import { ButtonWrapper } from '../../UploadHistoricalData.styled';
 import useModalContext from '../../../../hooks/useModalContext';
 import * as Styled from './UploadData.styled';
+import useNavigation from '../../../../hooks/useNavigation';
+import { Routes } from '../../../../services/navigationService/routes';
 
 const UploadData = ({
   disableSubmitButton,
@@ -19,6 +21,7 @@ const UploadData = ({
   setPin
 }) => {
   const { openModal } = useModalContext();
+  const { goTo } = useNavigation();
 
   useEffect(() => {
     return () => {
@@ -39,7 +42,6 @@ const UploadData = ({
       <Styled.Content>
         <H5>
           <T i18nKey="upload_data_text_1" />{' '}
-          <Tooltip content={<T i18nKey="upload_data_popup_2" />} title={<T i18nKey="upload_data_popup_1" />} />
         </H5>
         <SmallText>
           <T i18nKey="upload_data_text_2" />{' '}
@@ -71,6 +73,7 @@ const UploadData = ({
           label={<T i18nKey="upload_data_text_9" />}
           disabled={!pin || pin.length !== 6 || disableSubmitButton || disablePinInput}
         />
+        <Button onClick={() => goTo(Routes.PinReceiver)} label={<T i18nKey="upload_data_text_11" />} type="outline" />
       </ButtonWrapper>
 
       {errorMessage && errorMessageVisible ? (
